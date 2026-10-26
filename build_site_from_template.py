@@ -28,7 +28,7 @@ SITE = "KPCambodianmathematics"
 SITE_URL = "https://kpcmath.netlify.app"
 KH = "០១២៣៤៥៦៧៨៩"
 # (grade, lesson number) -> teaching slide deck id in static/js/slides_templates.js
-SLIDE_DECKS = {(11, 1): "g11-sequences"}
+SLIDE_DECKS = {(11, 1): "g11-sequences", (11, 2): "g11-arith", (11, 3): "g11-geom"}
 
 
 def kh(n):

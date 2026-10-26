@@ -241,7 +241,7 @@
   }
   // templates with an id/ver open by themselves once per version; an older copy is replaced only if never edited
   function seedTemplates() {
-    var seeded = S.store.seeded || (S.store.seeded = {}), added = false;
+    var seeded = S.store.seeded || (S.store.seeded = {}), first = null;
     (window.KPSlideTemplates || []).forEach(function (t) {
       if (!t.id || seeded[t.id] === t.ver) return;
       Object.keys(S.store.decks).forEach(function (k) {
@@ -250,9 +250,11 @@
       });
       var d = t.build(window.KPSlides.api);
       d.id = uid(); d.tpl = t.id; d.updated = d.seededAt = Date.now();
-      addDeck(d); seeded[t.id] = t.ver; added = true;
+      addDeck(d); seeded[t.id] = t.ver; first = first || d;
     });
-    if (added) try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
+    if (!first) return;
+    S.store.current = first.id;  // open the first new deck in list order, not the last one added
+    try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
   }
   // studio.html?deck=<template id> (the lesson page's «ស្លាយបង្រៀន» button) opens the newest copy of that deck
   function openLinkedDeck() {
