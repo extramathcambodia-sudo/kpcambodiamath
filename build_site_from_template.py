@@ -27,6 +27,8 @@ SITE = "KPCambodianmathematics"
 # public address of the site (used in sitemap.xml / robots.txt) — change it after you choose a domain
 SITE_URL = "https://kpcmath.netlify.app"
 KH = "០១២៣៤៥៦៧៨៩"
+# (grade, lesson number) -> teaching slide deck id in static/js/slides_templates.js
+SLIDE_DECKS = {(11, 1): "g11-sequences"}
 
 
 def kh(n):
@@ -1497,6 +1499,9 @@ def build_lesson_book(data, g, idx, ls):
         chips += f'<span class="chip chip-soon">សំណួរពហុជ្រើសរើស {kh(len(qz))}</span>'
     if b.get("pages"):
         chips = f'<span class="chip chip-soon">{esc(b.get("track", ""))}</span><span class="chip chip-soon">ទំព័រ {kh(b["pages"][0])}–{kh(b["pages"][1])}</span>'
+    deck = SLIDE_DECKS.get((int(g["id"]), int(l["num"])))
+    if deck:
+        chips += f'<a class="chip chip-live" href="{base}studio.html?deck={deck}#slides">▶ ស្លាយបង្រៀន</a>'
     kicker = f"មេរៀនទី {kh(l['num'])} · គណិតវិទ្យា{esc(g['name'])}"
     if b.get("part_head"):
         kicker = f"{esc(b['part_head'])} · " + kicker

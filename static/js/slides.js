@@ -234,7 +234,8 @@
     if (!S.store || !S.store.decks) S.store = { current: null, decks: {} };
     if (!Object.keys(S.store.decks).length) addDeck(sampleDeck());
     seedTemplates();
-    S.deck = S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
+    openLinkedDeck();
+    S.deck =S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
     Object.keys(S.store.decks).forEach(function (k) { deckDefaults(S.store.decks[k]); });
     S.store.current = S.deck.id;
   }
@@ -252,6 +253,23 @@
       addDeck(d); seeded[t.id] = t.ver; added = true;
     });
     if (added) try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
+  }
+  // studio.html?deck=<template id> (the lesson page's «ស្លាយបង្រៀន» button) opens the newest copy of that deck
+  function openLinkedDeck() {
+    var want = new URLSearchParams(location.search).get('deck'), best = null;
+    if (!want) return;
+    Object.keys(S.store.decks).forEach(function (k) {
+      var d = S.store.decks[k];
+      if (d.tpl === want && (!best || (d.updated || 0) > (best.updated || 0))) best = d;
+    });
+    if (best) { S.store.current = best.id; return; }
+    (window.KPSlideTemplates || []).forEach(function (t) {
+      if (t.id !== want || best) return;
+      best = t.build(window.KPSlides.api);
+      best.id = uid(); best.tpl = t.id; best.updated = best.seededAt = Date.now();
+      addDeck(best);
+      try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
+    });
   }
   // header / footer text used by the «គំរូសាលា» theme
   function deckDefaults(d) {
