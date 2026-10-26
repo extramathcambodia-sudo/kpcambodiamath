@@ -191,6 +191,8 @@
     sl.els.forEach(function (el) {
       var d = buildEl(el);
       if (el.anim) d.classList.add(mode === 'show' ? 'sl-hidden' : 'sl-anim-mark');
+      // anim set to a name (not just true) groups elements that appear on the same click
+      if (el.anim && el.anim !== true) d.dataset.grp = el.anim;
       st.appendChild(d);
     });
     fit(st);
@@ -336,8 +338,9 @@
     },
     conclude: function (y, text, x) {
       x = x || 40;
-      return [T(x, y, 190, 80, '!!ដូចនេះ ៖!!', { size: 34, valign: 'middle', anim: true }),
-              SCHOOL.box(x + 190, y - 5, 1060 - x, 90, text, { size: 32, anim: true })];
+      var g = uid();
+      return [T(x, y, 190, 80, '!!ដូចនេះ ៖!!', { size: 34, valign: 'middle', anim: g }),
+              SCHOOL.box(x + 190, y - 5, 1060 - x, 90, text, { size: 32, anim: g })];
     },
     cover: function (sub, chapter, title, info) {
       var d = info || S.deck || {};
@@ -1094,7 +1097,11 @@
   }
   function next() {
     var sh = S.show, h = sh.st.querySelector('.sl-hidden');
-    if (h) { h.classList.remove('sl-hidden'); h.classList.add('sl-reveal'); return; }
+    if (h) {
+      var all = h.dataset.grp ? sh.st.querySelectorAll('.sl-hidden[data-grp="' + h.dataset.grp + '"]') : [h];
+      Array.prototype.forEach.call(all, function (x) { x.classList.remove('sl-hidden'); x.classList.add('sl-reveal'); });
+      return;
+    }
     if (sh.i < S.deck.slides.length - 1) showSlide(sh.i + 1);
     else if (sh.ov.classList.contains('end')) endShow();
     else { sh.ov.classList.add('end'); sh.st.innerHTML = '<div class="sl-endmsg">ចប់ការបញ្ចាំង — ចុចម្តងទៀតដើម្បីចេញ</div>'; sh.st.style.background = '#000'; }

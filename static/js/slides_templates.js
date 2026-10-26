@@ -16,7 +16,7 @@
       for (var k in o) e[k] = o[k];
       return e;
     };
-    K.step = function (x, y, w, text, o) { var e = K.line(x, y, w, text, o); e.anim = true; return e; };
+    K.step = function (x, y, w, text, o) { var e = K.line(x, y, w, text, o); e.anim = e.anim || true; return e; };
     // number line with a dot + label per term; open=true ends in "… →" (infinite sequence)
     K.numberLine = function (x, y, vals, color, open) {
       var gap = 50, w = open ? vals.length * gap + 90 : (vals.length - 1) * gap + 30, els = [
@@ -53,6 +53,8 @@
       return T(o.x == null ? 0 : o.x, o.y || 100, o.w || (o.x == null ? 1280 : 1000), 60, text,
                { size: o.size || 38, font: 'display', color: o.color || 'head', shadow: true, align: o.x == null ? 'center' : 'left', valign: 'middle' });
     };
+    // hide els until the click named key (steps with anim: key appear together with them)
+    K.at = function (key, els) { els.forEach(function (e) { e.anim = key; }); return els; };
     // table of contents with a smaller font, for long section names
     K.toc = function (items, size) { var s = S.toc(items); s.els[1].size = size; s.els[1].lh = '1.4'; return s; };
     // white label on a filled rounded bar
@@ -260,8 +262,8 @@
         step(100, 415, 660, R`ចំពោះ $n = 3$ នោះ  $a_3 = \dfrac{1}{3+2} = \dfrac{1}{5}$`, { size: 28, h: 80 }),
         step(100, 495, 660, R`ចំពោះ $n = 4$ នោះ  $a_4 = \dfrac{1}{4+2} = \dfrac{1}{6}$`, { size: 28, h: 80 }),
         step(100, 575, 700, R`គេបាន តួនៃស្វ៊ីត  $(a_n)_{1 \le n \le 4} :\ \dfrac{1}{3},\ \dfrac{1}{4},\ \dfrac{1}{5},\ \dfrac{1}{6}$`, { size: 28, h: 76 }),
-        step(800, 260, 200, '!!ដូចនេះ!!', { size: 32 }),
-        S.box(780, 330, 480, 110, R`ស្វ៊ីត $(a_n)_{1 \le n \le 4} :\ \dfrac{1}{3},\ \dfrac{1}{4},\ \dfrac{1}{5},\ \dfrac{1}{6}$`, { size: 26, anim: true, align: 'center' })
+        step(800, 260, 200, '!!ដូចនេះ!!', { size: 32, anim: 'ans' }),
+        S.box(780, 330, 480, 110, R`ស្វ៊ីត $(a_n)_{1 \le n \le 4} :\ \dfrac{1}{3},\ \dfrac{1}{4},\ \dfrac{1}{5},\ \dfrac{1}{6}$`, { size: 26, anim: 'ans', align: 'center' })
       ]),
 
       /* 12 solution 2 */ page([
@@ -288,8 +290,8 @@
         step(440, 410, 500, R`$a_4 = 9 = 2 \times 4 + 1$`, { size: 36 }),
         step(440, 470, 400, '...........................', { size: 32 }),
         step(50, 560, 650, R`តាមលំនាំគំរូ គេបាន ៖   $a_n = 2 \times n + 1$`, { size: 32 }),
-        step(680, 560, 140, '!!ដូចនេះ ៖!!', { size: 32 }),
-        S.box(820, 550, 440, 84, R`$a_n = 2n + 1,\ \forall n \in \mathbb{N}^*$`, { size: 32, anim: true, align: 'center' })
+        step(680, 560, 140, '!!ដូចនេះ ៖!!', { size: 32, anim: 'ans' }),
+        S.box(820, 550, 440, 84, R`$a_n = 2n + 1,\ \forall n \in \mathbb{N}^*$`, { size: 32, anim: 'ans', align: 'center' })
       ]),
 
       /* 15 method + exercise */ page([
@@ -420,9 +422,9 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
         T(60, 380, 1100, 64, R`❖ !!__សំគាល់__!!    ស្វ៊ីតកើន ឬ ស្វ៊ីតចុះ ជា !!ស្វ៊ីតម៉ូណូតូន!! ។`, { size: 34, anim: true }),
         T(160, 480, 300, 60, 'ស្វ៊ីតកើន', { size: 28, bold: true, fill: '#e7f0fb', border: 'title', bw: 2, radius: 10, align: 'center', valign: 'middle', color: 'title', anim: true }),
         T(160, 565, 300, 60, '!!ស្វ៊ីតចុះ!!', { size: 28, bold: true, fill: '#fff0f0', bw: 2, border: 'accent', radius: 10, align: 'center', valign: 'middle', anim: true }),
-        shape('arrow', 470, 520, 300, 24, { stroke: 'title', sw: 3, rot: 8, anim: true }),
-        shape('arrow', 470, 570, 300, 24, { stroke: 'accent', sw: 3, rot: -8, anim: true }),
-        T(790, 515, 360, 76, 'ស្វ៊ីតម៉ូណូតូន', { size: 30, bold: true, fill: 'title', color: '#ffffff', radius: 14, align: 'center', valign: 'middle', anim: true })
+        shape('arrow', 470, 520, 300, 24, { stroke: 'title', sw: 3, rot: 8, anim: 'mono' }),
+        shape('arrow', 470, 570, 300, 24, { stroke: 'accent', sw: 3, rot: -8, anim: 'mono' }),
+        T(790, 515, 360, 76, 'ស្វ៊ីតម៉ូណូតូន', { size: 30, bold: true, fill: 'title', color: '#ffffff', radius: 14, align: 'center', valign: 'middle', anim: 'mono' })
       ]),
 
       /* 33 exercise 1 */ page([
@@ -539,10 +541,10 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
         step(200, 329, 560, R`$a_3 = 6 = 4 + 2 = a_2 + 2$`, { size: 28, h: 52 }),
         step(200, 381, 560, '..........................................', { size: 24, h: 40 }),
         step(200, 421, 560, R`$a_n = a_{n-1} + 2$`, { size: 28, h: 52 }),
-        step(200, 473, 600, 'ចំនួន $2$ ហៅថា ផលសងរួមនៃស្វ៊ីត ។', { size: 28, h: 52 }),
+        step(200, 473, 600, 'ចំនួន $2$ ហៅថា ផលសងរួមនៃស្វ៊ីត ។', { size: 28, h: 52, anim: 'd2' }),
         T(40, 535, 770, 100, R`គេថាស្វ៊ីតចំនួនពិត  $(a_n):\ 2,\ 4,\ 6,\ 8,\ \ldots$  ជា !!ស្វ៊ីតនព្វន្ត!! មានផលសងរួមស្មើ $2$`, { size: 28, valign: 'middle', anim: true }),
         T(860, 160, 380, 36, '!!តំណាងលើបន្ទាត់ចំនួន!!', { size: 22, align: 'center' }),
-        T(930, 330, 260, 52, R`ផលសងរួម !!$d = 2$!!`, hot),
+        T(930, 330, 260, 52, R`ផលសងរួម !!$d = 2$!!`, Object.assign({ anim: 'd2' }, hot)),
         S.box(820, 400, 440, 230, R`!!__ជាទូទៅ ៖__!!  ផលសងរួមនៃស្វ៊ីតនព្វន្ត តាងដោយ $d$ កំណត់ដោយ
 $$d = a_2 - a_1 = a_3 - a_2 = \ldots = a_n - a_{n-1}$$`, { size: 20, anim: true })
       ].concat(hops(900, 270, ['2', '4', '6', '8', '…'], '+2', 80, { ops: 3 }))),
@@ -595,15 +597,16 @@ $$d = a_2 - a_1 = a_3 - a_2 = \ldots = a_n - a_{n-1}$$`, { size: 20, anim: true 
         K.solTitle(240, 100),
         line(40, 165, 780, R`!!ក.!!  គេមាន  $a_1 = 2$  និង  $d = a_2 - a_1 = 8 - 2 = 6$`, { size: 26, h: 52 }),
         step(40, 217, 780, R`តាមរូបមន្ត  $a_n = a_1 + (n - 1)d = 2 + (n - 1) \times 6 = 6n - 4$`, { size: 26, h: 52 }),
-        step(40, 269, 780, R`ចំពោះ  $n = 20 \Rightarrow a_{20} = 6 \times 20 - 4 = 116$`, { size: 26, h: 52 }),
+        step(40, 269, 780, R`ចំពោះ  $n = 20 \Rightarrow a_{20} = 6 \times 20 - 4 = 116$`, { size: 26, h: 52, anim: 'a20' }),
         S.box(60, 330, 520, 64, R`!!ដូចនេះ!!  តួទី 20 ៖  $a_{20} = 116$`, { size: 28, anim: true }),
         line(40, 420, 780, R`!!ខ.!!  តើចំនួន $236$ ជាតួទីប៉ុន្មាន?  គេមាន  $a_n = 6n - 4$`, { size: 26, h: 52 }),
         step(40, 472, 780, R`ដោយ  $a_n = 236 \Rightarrow 6n - 4 = 236 \Rightarrow 6n = 240 \Rightarrow n = 40$`, { size: 26, h: 52 }),
         S.box(60, 540, 520, 64, R`!!ដូចនេះ!!  $236$ ជាតួទី  $n = 40$`, { size: 28, anim: true }),
         T(860, 160, 380, 36, '!!តំណាងលើបន្ទាត់ចំនួន!!', { size: 22, align: 'center' }),
-        T(880, 345, 370, 56, R`$a_{20} = 2 + 19 \times 6 = 116$`, hot),
+        T(880, 345, 370, 56, R`$a_{20} = 2 + 19 \times 6 = 116$`, Object.assign({ anim: 'a20' }, hot)),
         kids(1080, 470, 190)
-      ].concat(hops(890, 280, ['2', '8', '14', '20', '…', '116'], '+6', 70, { ops: 3, hl: 5, size: 22 }))),
+      ].concat(hops(890, 280, ['2', '8', '14', '20', '…'], '+6', 70, { ops: 3, size: 22 }),
+               K.at('a20', hops(1240, 280, ['116'], '', 70, { hl: 0, size: 22 }).slice(1)))),
 
       /* 10 practice 2: page numbers */ page([
         T(40, 100, 1220, 64, R`!!__លំហាត់គំរូ ២ ៖__!!   សៀវភៅមួយក្បាល $100$ ទំព័រ ចុះលេខទំព័រពី $1$ ដល់ $100$ ។ រកចំនួនទំព័រដែលមានលេខខាងចុង $5$ ។`, { size: 25, valign: 'middle' }),
@@ -613,9 +616,9 @@ $$d = a_2 - a_1 = a_3 - a_2 = \ldots = a_n - a_{n-1}$$`, { size: 20, anim: true 
         step(40, 330, 820, R`គេបាន  $a_1 = 5,\ \ a_n = 95$  និង  $d = a_2 - a_1 = 15 - 5 = 10$`, { size: 26, h: 52 }),
         step(40, 382, 820, R`តាមរូបមន្ត  $a_n = a_1 + (n - 1)d \Rightarrow 95 = 5 + (n - 1) \times 10$`, { size: 26, h: 52 }),
         step(40, 434, 820, R`$\Rightarrow 95 = 10n - 5 \Rightarrow n = 10$`, { size: 26, h: 52 }),
-        S.box(40, 520, 800, 72, R`!!ដូចនេះ!!  ទំព័រដែលមានលេខខាងចុង $5$ មាន $10$ ទំព័រ`, { size: 28, anim: true }),
+        S.box(40, 520, 800, 72, R`!!ដូចនេះ!!  ទំព័រដែលមានលេខខាងចុង $5$ មាន $10$ ទំព័រ`, { size: 28, anim: 'p10' }),
         T(880, 180, 376, 36, '!!ទំព័រដែលមានលេខខាងចុង 5!!', { size: 20, align: 'center' }),
-        T(880, 362, 376, 50, 'សរុប !!10!! ទំព័រ', hot),
+        T(880, 362, 376, 50, 'សរុប !!10!! ទំព័រ', Object.assign({ anim: 'p10' }, hot)),
         kids(1080, 470, 180)
       ].concat(pages)),
 
@@ -626,7 +629,7 @@ $$d = a_2 - a_1 = a_3 - a_2 = \ldots = a_n - a_{n-1}$$`, { size: 20, anim: true 
         step(40, 255, 600, R`!!ក.!!  តាមរូបមន្ត  $a_n = a_1 + (n - 1)d$`, { size: 25, h: 48 }),
         step(80, 303, 560, R`$a_5 = a_1 + 4d = 17 \qquad (1)$`, { size: 25, h: 48 }),
         step(80, 351, 560, R`$a_{12} = a_1 + 11d = 45 \qquad (2)$`, { size: 25, h: 48 }),
-        step(40, 399, 600, R`$(2) - (1)$ ៖   $7d = 28 \Rightarrow d = 4$`, { size: 25, h: 48 }),
+        step(40, 399, 600, R`$(2) - (1)$ ៖   $7d = 28 \Rightarrow d = 4$`, { size: 25, h: 48, anim: 'd7' }),
         step(40, 447, 600, R`តាម $(1)$ ៖   $a_1 = 17 - 4 \times 4 = 1$`, { size: 25, h: 48 }),
         S.box(80, 502, 480, 62, R`!!ដូចនេះ!!   $a_1 = 1,\ \ d = 4$`, { size: 26, anim: true, align: 'center' }),
         step(660, 255, 410, R`!!ខ.!!  តួទូទៅនៃស្វ៊ីត ៖`, { size: 25, h: 48 }),
@@ -634,11 +637,11 @@ $$d = a_2 - a_1 = a_3 - a_2 = \ldots = a_n - a_{n-1}$$`, { size: 20, anim: true 
         step(660, 351, 410, R`ចំពោះ  $n = 30$ ៖`, { size: 25, h: 48 }),
         step(680, 399, 400, R`$a_{30} = 4 \times 30 - 3 = 117$`, { size: 25, h: 48 }),
         S.box(640, 502, 430, 62, R`!!ដូចនេះ!!  $a_n = 4n - 3,\ \ a_{30} = 117$`, { size: 24, anim: true, align: 'center' }),
-        T(1080, 255, 190, 34, R`$7d = 45 - 17 = 28$`, { size: 18, align: 'center' }),
-        T(1100, 295, 160, 52, R`$a_5 = 17$`, { size: 22, fill: '#e7f0fb', border: '#1f4e9c', bw: 2, radius: 10, align: 'center', valign: 'middle' }),
-        shape('arrow', 1155, 370, 50, 16, { stroke: 'brand', sw: 4, rot: 90 }),
-        T(1200, 362, 70, 32, R`$+7d$`, { size: 18 }),
-        T(1100, 412, 160, 52, R`$a_{12} = 45$`, { size: 22, fill: '#fff4e6', border: '#f68c1f', bw: 2, radius: 10, align: 'center', valign: 'middle' }),
+        T(1080, 255, 190, 34, R`$7d = 45 - 17 = 28$`, { size: 18, align: 'center', anim: 'd7' }),
+        T(1100, 295, 160, 52, R`$a_5 = 17$`, { size: 22, fill: '#e7f0fb', border: '#1f4e9c', bw: 2, radius: 10, align: 'center', valign: 'middle', anim: 'd7' }),
+        shape('arrow', 1155, 370, 50, 16, { stroke: 'brand', sw: 4, rot: 90, anim: 'd7' }),
+        T(1200, 362, 70, 32, R`$+7d$`, { size: 18, anim: 'd7' }),
+        T(1100, 412, 160, 52, R`$a_{12} = 45$`, { size: 22, fill: '#fff4e6', border: '#f68c1f', bw: 2, radius: 10, align: 'center', valign: 'middle', anim: 'd7' }),
         tip(40, 582, 1030, 70, R`!!គន្លឹះ ៖!! ស្វ៊ីតនព្វន្តមាន $a_m - a_k = (m - k)d$  ឧ. $a_{12} - a_5 = 7d$  ដូច្នេះ អាចរក $d$ បានភ្លាមៗ ដោយមិនចាំបាច់រក $a_1$ មុន ។`, { anim: true })
       ]),
 
@@ -795,8 +798,8 @@ $b = \dfrac{4 + 10}{2} = 7$
         T(50, 160, 600, 40, '!!__ការទាញរករូបមន្ត ៖__!!', { size: 26 }),
         step(110, 202, 760, R`$S_n = a_1 + a_2 + \ldots + a_{n-1} + a_n$`, { size: 25, h: 44 }),
         step(60, 246, 810, R`$+\ \ S_n = a_n + a_{n-1} + \ldots + a_2 + a_1$`, { size: 25, h: 44 }),
-        shape('rect', 60, 294, 800, 3, { fill: 'title', anim: true }),
-        step(90, 302, 900, R`$2S_n = (a_1 + a_n) + (a_1 + a_n) + \ldots + (a_1 + a_n)$`, { size: 25, h: 44 }),
+        shape('rect', 60, 294, 800, 3, { fill: 'title', anim: 'add' }),
+        step(90, 302, 900, R`$2S_n = (a_1 + a_n) + (a_1 + a_n) + \ldots + (a_1 + a_n)$`, { size: 25, h: 44, anim: 'add' }),
         step(90, 346, 900, R`$2S_n = n(a_1 + a_n)$    (មាន $n$ ដង)`, { size: 25, h: 44 }),
         S.box(50, 400, 1000, 124, R`!!__រូបមន្ត ៖__!!
 $S_n = \dfrac{n}{2}(a_1 + a_n) \qquad$ ឬ $\qquad S_n = \dfrac{n}{2}[2a_1 + (n - 1)d]$`, { size: 28, align: 'center' }),
@@ -845,13 +848,13 @@ $S_n = \dfrac{n}{2}(a_1 + a_n) \qquad$ ឬ $\qquad S_n = \dfrac{n}{2}[2a_1 + (n 
         step(50, 300, 1000, R`!!ក.!!  $a_n = a_1 + (n - 1)d = 51 + (n - 1)(-4)$`, { size: 25, h: 46 }),
         S.box(560, 348, 380, 56, R`$a_n = 55 - 4n$`, { size: 28, align: 'center', anim: true }),
         step(50, 412, 1000, R`!!ខ.!!  $a_n > 0 \iff 55 - 4n > 0 \iff n < 13.75 \Rightarrow n = 1, 2, \ldots, 13$`, { size: 25, h: 46 }),
-        step(90, 458, 960, R`មាន !!13 តួវិជ្ជមាន!! ព្រោះ  $a_{13} = 3 > 0$  និង  $a_{14} = -1 < 0$`, { size: 25, h: 46 }),
+        step(90, 458, 960, R`មាន !!13 តួវិជ្ជមាន!! ព្រោះ  $a_{13} = 3 > 0$  និង  $a_{14} = -1 < 0$`, { size: 25, h: 46, anim: 'pos' }),
         step(250, 504, 700, R`$S_{13} = \dfrac{13}{2}(a_1 + a_{13}) = \dfrac{13}{2}(51 + 3)$`, { size: 25, h: 58 }),
         S.box(300, 570, 520, 60, R`!!ដូចនេះ!!   $S_{13} = 351$`, { size: 28, align: 'center', anim: true }),
         T(1060, 160, 120, 28, R`$a_1 = 51$`, { size: 16 }),
-        T(1160, 380, 110, 28, R`$a_{14} = -1$`, { size: 16 }),
-        T(1065, 420, 200, 30, 'តួវិជ្ជមាន 13 តួ', { size: 18, color: 'title', align: 'center' }),
-        tip(1065, 470, 200, 150, R`!!គន្លឹះ ៖!! ពេល $d < 0$ ផលបូក $S_n$ ធំបំផុត ពេលបូកតែតួវិជ្ជមាន`, { size: 16 })
+        T(1160, 380, 110, 28, R`$a_{14} = -1$`, { size: 16, anim: 'pos' }),
+        T(1065, 420, 200, 30, 'តួវិជ្ជមាន 13 តួ', { size: 18, color: 'title', align: 'center', anim: 'pos' }),
+        tip(1065, 470, 200, 150, R`!!គន្លឹះ ៖!! ពេល $d < 0$ ផលបូក $S_n$ ធំបំផុត ពេលបូកតែតួវិជ្ជមាន`, { size: 16, anim: true })
       ].concat(bars(1065, 190, 200, 180, desc, { values: false, hl: 13 }))),
 
       /* 32 practice 2: stadium */ page([
@@ -874,12 +877,12 @@ $S_n = \dfrac{n}{2}(a_1 + a_n) \qquad$ ឬ $\qquad S_n = \dfrac{n}{2}[2a_1 + (n 
         step(50, 338, 1000, R`ផលបូក ៖  $(a - d) + a + (a + d) = 3a = 24 \Rightarrow a = 8$`, { size: 25, h: 46 }),
         step(50, 384, 1000, R`ផលគុណ ៖  $(8 - d) \cdot 8 \cdot (8 + d) = 440 \Rightarrow 64 - d^2 = 55$`, { size: 25, h: 46 }),
         step(50, 430, 1000, R`$\Rightarrow d^2 = 9 \Rightarrow d = 3$  ឬ  $d = -3$`, { size: 25, h: 46 }),
-        S.box(200, 484, 660, 56, R`!!ដូចនេះ!!  បីចំនួននោះគឺ  $5,\ 8,\ 11$  ឬ  $11,\ 8,\ 5$`, { size: 26, align: 'center', anim: true }),
+        S.box(200, 484, 660, 56, R`!!ដូចនេះ!!  បីចំនួននោះគឺ  $5,\ 8,\ 11$  ឬ  $11,\ 8,\ 5$`, { size: 26, align: 'center', anim: 'three' }),
         tip(50, 552, 1000, 100, R`!!__គន្លឹះ ៖__!!  ចំពោះបីតួតគ្នា តាងដោយ $a - d,\ a,\ a + d$ ព្រោះពេលបូក $d$ លុបគ្នាអស់ ហើយ $a$ ជាមធ្យមនព្វន្ត ។
 ផ្ទៀងផ្ទាត់ ៖  $5 + 8 + 11 = 24,\ \ 5 \times 8 \times 11 = 440$`, { size: 21, anim: true }),
         T(1060, 410, 210, 70, R`$d = 3$
-បូក = 24 , គុណ = 440`, { size: 18, align: 'center' })
-      ].concat(chain(1095, 330, ['5', '8', '11'], { r: 30, gap: 72, op: '$+d$', hl: [1], size: 22, sub: ['a − d', 'a', 'a + d'] }))),
+បូក = 24 , គុណ = 440`, { size: 18, align: 'center', anim: 'three' })
+      ].concat(K.at('three', chain(1095, 330, ['5', '8', '11'], { r: 30, gap: 72, op: '$+d$', hl: [1], size: 22, sub: ['a − d', 'a', 'a + d'] })))),
 
       /* 34 practice 4: bonus */ page([
         title('លំហាត់គំរូ ៤'),
@@ -1074,9 +1077,9 @@ $a_n = a_k \times q^{n-k}$         ឧ.  $a_6 = a_3 \times q^3$`, { size: 28 }),
         step(130, 314, 900, R`ឆ្នាំ $2002$ ៖   $a_3 = 2 \times 1.04 \times 1.04 = 2 \times 1.04^2$`, { size: 25, h: 46 }),
         step(80, 360, 1150, R`ចំនួនប្រជាជនបង្កើតបានជាស្វ៊ីតធរណីមាត្រ ដែលមាន  $a_1 = 2$  និង  $q = 1.04$`, { size: 25, h: 46 }),
         step(80, 406, 1150, R`ឆ្នាំ $2009$ ជាឆ្នាំទី $10$ ៖   $a_{10} = 2 \times 1.04^9 \approx 2.85$`, { size: 25, h: 46 }),
-        S.box(100, 458, 950, 56, R`!!ដូចនេះ!!  នៅឆ្នាំ $2009$ ក្រុងនោះមានប្រជាជនប្រហែល $2.85$ លាននាក់ ។`, { size: 25, anim: true }),
+        S.box(100, 458, 950, 56, R`!!ដូចនេះ!!  នៅឆ្នាំ $2009$ ក្រុងនោះមានប្រជាជនប្រហែល $2.85$ លាននាក់ ។`, { size: 25, anim: 'pop' }),
         kids(1095, 500, 170)
-      ].concat(bars(100, 524, 950, 104, people, { texts: ptxt, hl: 9, labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009'] }))),
+      ].concat(K.at('pop', bars(100, 524, 950, 104, people, { texts: ptxt, hl: 9, labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009'] })))),
 
       /* 12 geometric mean */ page([
         sec('៣. មធ្យមធរណីមាត្រ'),
@@ -1084,14 +1087,14 @@ $a_n = a_k \times q^{n-k}$         ឧ.  $a_6 = a_3 \times q^3$`, { size: 28 }),
         step(380, 205, 560, R`$a_1 \times a_6 = a_1 \times a_1 q^5 = a_1^2 q^5$`, { size: 25, h: 46 }),
         step(380, 251, 560, R`$a_2 \times a_5 = a_1 q \times a_1 q^4 = a_1^2 q^5$`, { size: 25, h: 46 }),
         step(380, 297, 560, R`$a_3 \times a_4 = a_1 q^2 \times a_1 q^3 = a_1^2 q^5$`, { size: 25, h: 46 }),
-        step(80, 343, 1150, R`ដូចនេះ   $a_1 \times a_6 = a_2 \times a_5 = a_3 \times a_4$   (តួដែលនៅឆ្ងាយស្មើពីតួចុងទាំងពីរ)`, { size: 25, h: 46 }),
+        step(80, 343, 1150, R`ដូចនេះ   $a_1 \times a_6 = a_2 \times a_5 = a_3 \times a_4$   (តួដែលនៅឆ្ងាយស្មើពីតួចុងទាំងពីរ)`, { size: 25, h: 46, anim: 'pair' }),
         T(770, 400, 480, 80, R`$a_1 \times a_6 = a_2 \times a_5 = a_3 \times a_4$
-តួនៅឆ្ងាយស្មើពីចុងទាំងពីរ`, { size: 22 }),
+តួនៅឆ្ងាយស្មើពីចុងទាំងពីរ`, { size: 22, anim: 'pair' }),
         S.box(80, 515, 990, 136, R`!!លក្ខណៈ ៖!!   $a_p \times a_{n-p+1} = a_1 \times a_n$
 បើ $a, b, c$ ជាស្វ៊ីតធរណីមាត្រ នោះ $b^2 = a \times c$ ហើយ $b$ ហៅថា !!មធ្យមធរណីមាត្រ!! នៃ $a$ និង $c$ ។`, { size: 26, anim: true }),
         kids(1095, 500, 170)
-      ].concat(chain(230, 425, ['$a_1$', '$a_2$', '$a_3$', '$a_4$', '$a_5$', '$a_6$'], { r: 26, gap: 92, size: 20 }),
-               K.bracket(230, 690, 453, 46, '#1f4e9c'), K.bracket(322, 598, 453, 32, '#c00000'), K.bracket(414, 506, 453, 18, '#f68c1f'))),
+      ].concat(K.at('pair', chain(230, 425, ['$a_1$', '$a_2$', '$a_3$', '$a_4$', '$a_5$', '$a_6$'], { r: 26, gap: 92, size: 20 }).concat(
+               K.bracket(230, 690, 453, 46, '#1f4e9c'), K.bracket(322, 598, 453, 32, '#c00000'), K.bracket(414, 506, 453, 18, '#f68c1f'))))),
 
       /* 13 practice 3 */ page([
         line(80, 100, 400, '!!__លំហាត់គំរូ ៣ ៖__!!', { size: 28, h: 50 }),
@@ -1329,19 +1332,19 @@ $$S_n = a_1 + a_2 + \cdots + a_n = \dfrac{a_1(q^n - 1)}{q - 1}$$`, { size: 27, a
         step(260, 266, 260, R`$S_2 = 19.8$`, { size: 26, h: 44 }),
         step(260, 310, 260, R`$S_3 = 19.98$`, { size: 26, h: 44 }),
         step(260, 354, 260, R`$S_4 = 19.998$`, { size: 26, h: 44 }),
-        step(560, 222, 680, R`កាលណា $n$ កាន់តែធំ $S_n$ កាន់តែខិតជិត $20$`, { size: 26, h: 46 }),
+        step(560, 222, 680, R`កាលណា $n$ កាន់តែធំ $S_n$ កាន់តែខិតជិត $20$`, { size: 26, h: 46, anim: 'lim' }),
         step(640, 270, 560, R`$S_n \to 20$   កាលណា   $n \to +\infty$`, { size: 26, h: 46 }),
-        shape('arrow', 620, 372, 620, 14, { stroke: 'title', sw: 2 }),
-        shape('rect', 900, 368, 2, 22, { fill: 'title' }),
-        shape('ellipse', 691, 370, 18, 18, { fill: 'brand' }),
-        shape('ellipse', 1051, 370, 18, 18, { fill: 'brand' }),
-        shape('ellipse', 1087, 370, 18, 18, { fill: 'brand' }),
-        T(670, 326, 60, 36, 'S₁', { size: 22, bold: true, color: 'brand', align: 'center' }),
-        T(1022, 326, 50, 36, 'S₂', { size: 22, bold: true, color: 'brand', align: 'center' }),
-        T(1076, 326, 50, 36, 'S₃', { size: 22, bold: true, color: 'brand', align: 'center' }),
-        T(670, 394, 60, 32, '18', { size: 22, color: 'title', align: 'center' }),
-        T(870, 394, 60, 32, '19', { size: 22, color: 'title', align: 'center' }),
-        T(1070, 394, 60, 32, '20', { size: 22, bold: true, color: 'accent', align: 'center' }),
+        shape('arrow', 620, 372, 620, 14, { stroke: 'title', sw: 2 , anim: 'lim' }),
+        shape('rect', 900, 368, 2, 22, { fill: 'title' , anim: 'lim' }),
+        shape('ellipse', 691, 370, 18, 18, { fill: 'brand' , anim: 'lim' }),
+        shape('ellipse', 1051, 370, 18, 18, { fill: 'brand' , anim: 'lim' }),
+        shape('ellipse', 1087, 370, 18, 18, { fill: 'brand' , anim: 'lim' }),
+        T(670, 326, 60, 36, 'S₁', { size: 22, bold: true, color: 'brand', align: 'center' , anim: 'lim' }),
+        T(1022, 326, 50, 36, 'S₂', { size: 22, bold: true, color: 'brand', align: 'center' , anim: 'lim' }),
+        T(1076, 326, 50, 36, 'S₃', { size: 22, bold: true, color: 'brand', align: 'center' , anim: 'lim' }),
+        T(670, 394, 60, 32, '18', { size: 22, color: 'title', align: 'center' , anim: 'lim' }),
+        T(870, 394, 60, 32, '19', { size: 22, color: 'title', align: 'center' , anim: 'lim' }),
+        T(1070, 394, 60, 32, '20', { size: 22, bold: true, color: 'accent', align: 'center' , anim: 'lim' }),
         step(80, 432, 1150, R`ដោយ   $S_n = \dfrac{a_1(1 - q^n)}{1 - q}$   ហើយបើ $|q| < 1$ នោះ $q^n \to 0$ កាលណា $n \to +\infty$`, { size: 25, h: 62 }),
         S.box(80, 504, 990, 148, R`!!រូបមន្ត ៖!!  ផលបូកនៃស្វ៊ីតធរណីមាត្រអនន្តតួ ដែល $|q| < 1$ គឺ ៖
 $$S = a_1 + a_1 q + a_1 q^2 + \cdots = \dfrac{a_1}{1 - q}$$`, { size: 26, anim: true }),
@@ -1394,11 +1397,11 @@ $$S = a_1 + a_1 q + a_1 q^2 + \cdots = \dfrac{a_1}{1 - q}$$`, { size: 26, anim: 
         s26(130, 210, 500, R`$S_8 = \dfrac{2(2^8 - 1)}{2 - 1} = 510$`, { h: 66 }),
         s26(80, 290, 560, R`!!__លំហាត់ ២ ៖__!!   $a_1 = 1,\ q = \dfrac{1}{3}$`, { h: 64 }),
         s26(130, 358, 500, R`$S = \dfrac{1}{1 - \frac{1}{3}} = \dfrac{3}{2}$`, { h: 72 }),
-        s26(80, 470, 940, R`!!__លំហាត់ ៤ ៖__!!   $15 = \dfrac{5}{1 - q} \Rightarrow 1 - q = \dfrac{1}{3} \Rightarrow q = \dfrac{2}{3}$`, { h: 70 }),
         l26(700, 160, 540, '!!__លំហាត់ ៣ ៖__!!'),
         s26(700, 208, 560, R`$0.777\cdots = 0.7 + 0.07 + 0.007 + \cdots$`),
         s26(700, 256, 560, R`$a_1 = 0.7,\ q = 0.1$`),
         s26(700, 304, 560, R`$S = \dfrac{0.7}{1 - 0.1} = \dfrac{0.7}{0.9} = \dfrac{7}{9}$`, { h: 70 }),
+        s26(80, 470, 940, R`!!__លំហាត់ ៤ ៖__!!   $15 = \dfrac{5}{1 - q} \Rightarrow 1 - q = \dfrac{1}{3} \Rightarrow q = \dfrac{2}{3}$`, { h: 70 }),
         kids()
       ]),
 
@@ -1422,8 +1425,8 @@ $16 + 8 + 4 + 2 + \ldots$`, [R`$S = 30$`, R`$S = 32$`, R`$S = 34$`, R`$S = 64$`]
   }
 
   window.KPSlideTemplates = [
-    { id: 'g11-sequences', ver: 3, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences },
-    { id: 'g11-arith', ver: 1, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតនព្វន្ត (៣៩ ស្លាយ)', build: arithmetic },
-    { id: 'g11-geom', ver: 1, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតធរណីមាត្រ (៤០ ស្លាយ)', build: geometric }
+    { id: 'g11-sequences', ver: 4, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences },
+    { id: 'g11-arith', ver: 2, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតនព្វន្ត (៣៩ ស្លាយ)', build: arithmetic },
+    { id: 'g11-geom', ver: 2, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតធរណីមាត្រ (៤០ ស្លាយ)', build: geometric }
   ];
 })();
