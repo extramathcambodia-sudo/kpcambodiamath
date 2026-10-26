@@ -233,9 +233,25 @@
     try { S.store = JSON.parse(localStorage.getItem(KEY)); } catch (e) { S.store = null; }
     if (!S.store || !S.store.decks) S.store = { current: null, decks: {} };
     if (!Object.keys(S.store.decks).length) addDeck(sampleDeck());
+    seedTemplates();
     S.deck = S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
     Object.keys(S.store.decks).forEach(function (k) { deckDefaults(S.store.decks[k]); });
     S.store.current = S.deck.id;
+  }
+  // templates with an id/ver open by themselves once per version; an older copy is replaced only if never edited
+  function seedTemplates() {
+    var seeded = S.store.seeded || (S.store.seeded = {}), added = false;
+    (window.KPSlideTemplates || []).forEach(function (t) {
+      if (!t.id || seeded[t.id] === t.ver) return;
+      Object.keys(S.store.decks).forEach(function (k) {
+        var o = S.store.decks[k];
+        if (o.tpl === t.id && o.updated === o.seededAt) delete S.store.decks[k];
+      });
+      var d = t.build(window.KPSlides.api);
+      d.id = uid(); d.tpl = t.id; d.updated = d.seededAt = Date.now();
+      addDeck(d); seeded[t.id] = t.ver; added = true;
+    });
+    if (added) try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
   }
   // header / footer text used by the «គំរូសាលា» theme
   function deckDefaults(d) {

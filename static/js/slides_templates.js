@@ -374,6 +374,6 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
   }
 
   window.KPSlideTemplates = [
-    { name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences }
+    { id: 'g11-sequences', ver: 2, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences }
   ];
 })();
