@@ -16,8 +16,20 @@
               deco: '<div class="sl-deco" style="inset:18px;border:5px double #b8860b;border-radius:10px"></div>' },
     sunset: { name: 'ថ្ងៃលិច', bg: 'linear-gradient(135deg,#e8590c,#f59f00)', title: '#ffffff', text: '#fff9db', accent: '#1864ab', card: 'rgba(255,255,255,0.2)' },
     night:  { name: 'យប់', bg: '#101828', title: '#63e6be', text: '#e9ecef', accent: '#74c0fc', card: 'rgba(255,255,255,0.08)',
-              deco: '<div class="sl-deco" style="left:60px;bottom:40px;width:160px;height:8px;border-radius:4px;background:#63e6be"></div>' }
+              deco: '<div class="sl-deco" style="left:60px;bottom:40px;width:160px;height:8px;border-radius:4px;background:#63e6be"></div>' },
+    // classroom style: school name header, page badge, navy footer with the teacher's name
+    school: { name: 'គំរូសាលា', bg: '#f7f8fa', title: '#0b2e6f', text: '#13306b', accent: '#c92a2a', brand: '#f08c00', card: '#ffffff', math: '#a61e1e',
+              titleFont: true, deco: schoolDeco }
   };
+
+  function schoolDeco(deck, sl, idx) {
+    if (sl.plain) return '';
+    var n = idx + 1;
+    return '<div class="sl-deco sl-hdr"><b style="color:#0b2e6f">' + esc(deck.school || '') + '</b> <b style="color:#f08c00">' + esc(deck.school2 || '') + '</b></div>' +
+      '<div class="sl-deco" style="left:0;top:100px;width:100%;height:3px;background:#f08c00"></div>' +
+      '<div class="sl-deco sl-badge">' + (n < 10 ? '0' : '') + n + '</div>' +
+      '<div class="sl-deco sl-ftr"><span>🎓</span><b>' + esc(deck.teacher || '') + '</b><span>📖</span></div>';
+  }
 
   var S = { store: null, deck: null, cur: 0, sel: null, edit: null, undo: [], redo: [], undoKey: '', undoT: 0,
             scale: 1, clip: null, show: null, built: false, tab: 'home' };
@@ -44,7 +56,12 @@
     var t = th();
     return role === 'title' ? t.title : (role === 'sub' || role === 'ans') ? t.accent : t.text;
   }
-  function resolveFill(f) { var t = th(); return f === 'card' ? t.card : f === 'accent' ? t.accent : f; }
+  // colour tokens follow the theme: card / accent / brand / title / text
+  function resolveFill(f) {
+    var t = th();
+    return f === 'card' ? t.card : f === 'accent' ? t.accent : f === 'brand' ? (t.brand || t.accent) : f === 'title' ? t.title : f === 'text' ? t.text : f;
+  }
+  var DISPLAY_FONT = "'Koulen', 'Kantumruy Pro', sans-serif";
   function hexOr(c, d) { return /^#[0-9a-f]{6}$/i.test(c || '') ? c : d; }
 
   /* ---------------- text formatting (KaTeX + **bold**) ---------------- */
@@ -60,28 +77,32 @@
       .replace(/^#{1,4}\s*(.+)$/gm, '<b>$1</b>')
       .replace(/^\s*\*\*\s*$/gm, '')
       .replace(/\*\*([^*]+?)\*\*/g, '<b>$1</b>')
+      .replace(/__(.+?)__/g, '<u>$1</u>')
+      .replace(/!!(.+?)!!/g, '<span class="sl-c-accent">$1</span>')
+      .replace(/==(.+?)==/g, '<span class="sl-c-brand">$1</span>')
       .replace(/\\q?quad\b/g, '&emsp;')
       .replace(/\n/g, '<br>');
   }
+  // maths is swapped for placeholders first so **bold** / !!colour!! may wrap formulas
   function fmt(text) {
-    text = text || ''; var out = '', last = 0;
-    text.replace(MATH_RE, function (m) {
-      var off = arguments[arguments.length - 2];
-      out += plain(text.slice(last, off));
-      if (m.slice(0, 6) === '\\begin') out += tex(m, true);
-      else if (m.slice(0, 2) === '$$' || m.slice(0, 2) === '\\[') out += tex(m.slice(2, -2), true);
-      else if (m.slice(0, 2) === '\\(') out += tex(m.slice(2, -2), false);
-      else out += tex(m.slice(1, -1), false);
-      last = off + m.length; return m;
+    var maths = [];
+    var src = String(text || '').replace(MATH_RE, function (m) {
+      var h;
+      if (m.slice(0, 6) === '\\begin') h = tex(m, true);
+      else if (m.slice(0, 2) === '$$' || m.slice(0, 2) === '\\[') h = tex(m.slice(2, -2), true);
+      else if (m.slice(0, 2) === '\\(') h = tex(m.slice(2, -2), false);
+      else h = tex(m.slice(1, -1), false);
+      maths.push(h);
+      return '\u0000' + (maths.length - 1) + '\u0000';
     });
-    return out + plain(text.slice(last));
+    return plain(src).replace(/\u0000(\d+)\u0000/g, function (m, i) { return maths[+i]; });
   }
 
   /* ---------------- painting ---------------- */
   function shapeSVG(el) {
     var w = el.w, h = el.h, sw = el.sw != null ? el.sw : 0, t = th();
     var fill = el.shape === 'line' || el.shape === 'arrow' ? 'none' : (resolveFill(el.fill) || t.accent);
-    var stroke = el.stroke || (el.shape === 'line' || el.shape === 'arrow' ? t.accent : 'none');
+    var stroke = resolveFill(el.stroke) || (el.shape === 'line' || el.shape === 'arrow' ? t.accent : 'none');
     if ((el.shape === 'line' || el.shape === 'arrow') && !sw) sw = 6;
     var a = 'fill="' + esc(fill) + '" stroke="' + esc(stroke) + '" stroke-width="' + sw + '"', b = sw / 2, body;
     switch (el.shape) {
@@ -108,24 +129,31 @@
     if (el.type === 'text') {
       var box = document.createElement('div'), inner = document.createElement('div');
       box.className = 'sl-txt';
+      var display = el.font === 'display' || (el.font == null && el.role === 'title' && th().titleFont);
       box.style.fontSize = el.size + 'px';
-      box.style.color = el.color || roleColor(el.role);
-      box.style.fontWeight = el.bold ? '700' : '400';
+      box.style.color = el.color ? resolveFill(el.color) : roleColor(el.role);
+      if (el.color) box.style.setProperty('--sl-math', resolveFill(el.color));
+      box.style.fontWeight = el.bold && !display ? '700' : '400';
       box.style.fontStyle = el.italic ? 'italic' : 'normal';
       box.style.textAlign = el.align;
       box.style.justifyContent = el.valign === 'middle' ? 'center' : el.valign === 'bottom' ? 'flex-end' : 'flex-start';
+      if (display) { box.style.fontFamily = DISPLAY_FONT; box.style.lineHeight = '1.35'; }
       if (el.fill) { box.style.background = resolveFill(el.fill); box.style.padding = '14px 22px'; }
+      if (el.border) { box.style.border = (el.bw || 3) + 'px solid ' + resolveFill(el.border); box.style.padding = '6px 20px'; }
       if (el.radius) box.style.borderRadius = el.radius + 'px';
       inner.innerHTML = fmt(el.text);
       box.appendChild(inner); d.appendChild(box);
     } else if (el.type === 'image') {
       var img = document.createElement('img'); img.src = el.src; img.alt = ''; img.draggable = false;
       d.appendChild(img);
+    } else if (el.type === 'timer') {
+      d.innerHTML = '<div class="sl-clock" style="font-size:' + Math.round(el.h * 0.55) + 'px"><span>' + clock(el.sec) + '</span></div>';
     } else {
       d.innerHTML = shapeSVG(el);
     }
     return d;
   }
+  function clock(s) { s = Math.max(0, Math.round(s || 0)); return Math.floor(s / 60) + ':' + (s % 60 < 10 ? '0' : '') + (s % 60); }
   function place(d, el) {
     d.style.left = el.x + 'px'; d.style.top = el.y + 'px'; d.style.width = el.w + 'px'; d.style.height = el.h + 'px';
     d.style.transform = el.rot ? 'rotate(' + el.rot + 'deg)' : '';
@@ -138,11 +166,15 @@
       while (inner.offsetHeight > avail() + 1 && fs > 12 && n++ < 80) { fs -= fs > 30 ? 2 : 1; b.style.fontSize = fs + 'px'; }
     });
   }
-  function paint(sl, st, mode) {
+  function paint(sl, st, mode, idx) {
     var t = th();
     st.innerHTML = '';
     st.style.background = sl.bg || t.bg;
-    if (t.deco) st.insertAdjacentHTML('beforeend', t.deco);
+    st.style.setProperty('--sl-accent', t.accent);
+    st.style.setProperty('--sl-brand', t.brand || t.accent);
+    if (t.math) st.style.setProperty('--sl-math', t.math); else st.style.removeProperty('--sl-math');
+    var deco = typeof t.deco === 'function' ? t.deco(S.deck, sl, idx || 0) : t.deco;
+    if (deco) st.insertAdjacentHTML('beforeend', deco);
     sl.els.forEach(function (el) {
       var d = buildEl(el);
       if (el.anim) d.classList.add(mode === 'show' ? 'sl-hidden' : 'sl-anim-mark');
@@ -189,9 +221,17 @@
     if (!S.store || !S.store.decks) S.store = { current: null, decks: {} };
     if (!Object.keys(S.store.decks).length) addDeck(sampleDeck());
     S.deck = S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
+    Object.keys(S.store.decks).forEach(function (k) { deckDefaults(S.store.decks[k]); });
     S.store.current = S.deck.id;
   }
-  function addDeck(d) { S.store.decks[d.id] = d; S.store.current = d.id; S.deck = d; S.cur = 0; S.sel = null; S.undo = []; S.redo = []; }
+  // header / footer text used by the «គំរូសាលា» theme
+  function deckDefaults(d) {
+    if (d.school == null) d.school = 'KP';
+    if (d.school2 == null) d.school2 = 'Cambodian Mathematics';
+    if (d.teacher == null) d.teacher = 'បង្រៀនដោយ លោកគ្រូ ...';
+    return d;
+  }
+  function addDeck(d) { deckDefaults(d); S.store.decks[d.id] = d; S.store.current = d.id; S.deck = d; S.cur = 0; S.sel = null; S.undo = []; S.redo = []; }
 
   /* ---------------- layouts & sample ---------------- */
   var LAYOUTS = {
@@ -210,8 +250,109 @@
                 T(140, 190, 1000, 300, '$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$', { size: 44, align: 'center', valign: 'middle', fill: 'card', radius: 24 }),
                 T(140, 520, 1000, 120, 'ដែល $a \\neq 0$ និង $\\Delta = b^2 - 4ac \\geq 0$', { size: 28, align: 'center', role: 'sub' })]; } },
     question: { name: '❓ សំណួរ + ចម្លើយ', make: function () { return questionEls('សំណួរ', 'គណនា $2 + 3 \\times 4$ ។', ['$20$', '$14$', '$24$', '$9$'], 'ខ', ''); } },
-    blank:    { name: '⬜ ទទេ', make: function () { return []; } }
+    blank:    { name: '⬜ ទទេ', make: function () { return []; } },
+    // classroom layouts — designed for the «គំរូសាលា» theme (header 0–105, footer 656–720)
+    s_cover:  { name: '🏫 គម្រប (Cover)', slide: function () { return SCHOOL.cover('គណិតវិទ្យា ថ្នាក់ទី..', '==ជំពូកទី១==      មេរៀនទី១', 'ចំណងជើងមេរៀន'); } },
+    s_toc:    { name: '🏫 មាតិកា', slide: function () { return SCHOOL.toc(['==១. ផ្នែកទី១==', '២. ផ្នែកទី២']); } },
+    s_goal:   { name: '🏫 វត្ថុបំណង', slide: function () { return SCHOOL.objective(['បំណងទី ១ ...', 'បំណងទី ២ ...']); } },
+    s_def:    { name: '🏫 និយមន័យ (ប្រអប់ក្រហម)', slide: function () { return SCHOOL.page([
+                SCHOOL.heading('១. ចំណងជើងផ្នែក'),
+                SCHOOL.box(50, 215, 1180, 150, '!!__និយមន័យ ៖__!! សរសេរនិយមន័យនៅទីនេះ $a_n$ ...'),
+                T(60, 390, 1160, 250, 'ពន្យល់បន្ថែម ...', { size: 30 })]); } },
+    s_ex:     { name: '🏫 លំហាត់ + ដំណោះស្រាយ', slide: function () { return SCHOOL.page([
+                T(40, 115, 1200, 70, '!!__លំហាត់ ៖__!!  គេមានអនុគមន៍ $f(x) = 2x - 1$ ចូររកតម្លៃនៃ $f(1)$', { size: 32 }),
+                T(80, 190, 300, 60, '!!__ដំណោះស្រាយ__!!', { size: 32 }),
+                T(110, 260, 900, 70, '$\\Rightarrow f(1) = 2(1) - 1 = 1$', { size: 34, anim: true })].concat(SCHOOL.conclude(560, '$f(1) = 1$'))); } },
+    s_quiz:   { name: '🏫 ពង្រឹងពុទ្ធិ (Quiz + ⏱)', slide: function () { return SCHOOL.quiz('១. សំណួរ ...', ['$a_n = 2n$', '$a_n = 4n - 2$', '$a_n = 3n - 1$', '$a_n = n + 1$'], 0); } },
+    s_home:   { name: '🏫 កិច្ចការផ្ទះ', slide: function () { return SCHOOL.homework('កំណត់តួទី !!$n$!! នៃស្វ៊ីតខាងក្រោម ៖\nក. $5, 7, 9, 11, \\ldots$'); } },
+    s_thanks: { name: '🏫 សូមអរគុណ', slide: function () { return SCHOOL.thanks(); } }
   };
+
+  /* builders for the classroom style; also used by templates (KPSlides.api) */
+  function shp(shape, x, y, w, h, o) {
+    var e = { id: uid(), type: 'shape', shape: shape, x: x, y: y, w: w, h: h, fill: null, stroke: null, sw: 0 };
+    for (var k in o) e[k] = o[k];
+    return e;
+  }
+  function timerEl(x, y, w, h, sec) { return { id: uid(), type: 'timer', x: x, y: y, w: w, h: h, sec: sec || 30 }; }
+  var SCHOOL = {
+    page: function (els, o) { var s = newSlide(els); for (var k in o) s[k] = o[k]; return s; },
+    heading: function (text, y) { return T(40, y || 112, 1200, 90, text, { size: 50, font: 'display', color: 'accent' }); },
+    box: function (x, y, w, h, text, o) {
+      var e = T(x, y, w, h, text, { size: 30, border: 'accent', fill: 'card', radius: 12, valign: 'middle' });
+      for (var k in o) e[k] = o[k];
+      return e;
+    },
+    conclude: function (y, text, x) {
+      x = x || 40;
+      return [T(x, y, 190, 80, '!!ដូចនេះ ៖!!', { size: 34, valign: 'middle', anim: true }),
+              SCHOOL.box(x + 190, y - 5, 1060 - x, 90, text, { size: 32, anim: true })];
+    },
+    cover: function (sub, chapter, title, info) {
+      var d = info || S.deck || {};
+      return SCHOOL.page([
+        shp('ellipse', 700, 300, 900, 700, { fill: '#dbe6f5' }),
+        shp('ellipse', 620, 560, 820, 420, { fill: 'brand' }),
+        shp('ellipse', 760, 600, 700, 400, { fill: 'title' }),
+        shp('ellipse', 940, -300, 680, 640, { fill: 'title' }),
+        shp('ellipse', 1110, -280, 420, 420, { fill: 'brand' }),
+        T(60, 40, 900, 110, (d.school || '') + ' ==' + (d.school2 || '') + '==', { size: 60, font: 'display', color: 'title' }),
+        T(70, 200, 720, 70, '==' + sub + '==', { size: 36, font: 'display', color: 'title' }),
+        T(70, 270, 820, 90, chapter, { size: 54, font: 'display', color: 'title' }),
+        T(60, 380, 860, 220, title, { size: 120, font: 'display', color: 'brand', valign: 'middle' }),
+        T(60, 620, 600, 60, d.teacher || '', { size: 26, color: 'title', bold: true })
+      ], { plain: true });
+    },
+    toc: function (items, quads) {
+      var q = quads || ['វិន័យ និង\nការទទួលខុសត្រូវ', 'សុវត្ថិភាព\nសិស្សគ្រប់រូប', 'ឧត្តមភាព\nក្នុងការសិក្សា', 'ឥរិយាបថ\nវិជ្ជមាន'];
+      var els = [T(40, 110, 560, 120, 'មាតិកា', { size: 96, font: 'display', color: 'title' }),
+                 T(110, 250, 620, 380, items.join('\n'), { size: 60, font: 'display', color: 'title' })];
+      [[740, 135, 'title'], [1010, 135, 'brand'], [740, 395, 'brand'], [1010, 395, 'title']].forEach(function (p, i) {
+        els.push(T(p[0], p[1], 260, 250, q[i], { fill: p[2], color: '#ffffff', size: 26, bold: true, align: 'center', valign: 'middle', radius: 30 }));
+      });
+      els.push(shp('ellipse', 935, 330, 150, 130, { fill: '#ffffff', stroke: '#f08c00', sw: 4 }));
+      els.push(T(935, 352, 150, 90, '🏫', { size: 54, align: 'center', valign: 'middle' }));
+      return SCHOOL.page(els);
+    },
+    objective: function (items, note) {
+      var els = [T(50, 115, 520, 90, 'វត្ថុបំណង', { size: 70, font: 'display', color: 'title' }),
+                 T(50, 210, 760, 80, 'ក្រោយពីសិក្សាមេរៀននេះចប់ សិស្សទទួលបាន', { size: 44, font: 'display', color: 'brand' }),
+                 shp('rect', 100, 300, 90, 5, { fill: 'brand' })];
+      items.forEach(function (it, i) { els.push(T(100, 330 + i * 90, 660, 80, '✅  ' + it, { size: 30, valign: 'middle', italic: true, color: 'title' })); });
+      els.push(T(750, 120, 480, 72, note || 'ប្អូនៗ អាចសិក្សាបន្ថែម នៅក្នុងសៀវភៅ', { fill: 'title', color: '#ffffff', size: 26, bold: true, align: 'center', valign: 'middle', radius: 14 }));
+      els.push(T(880, 210, 280, 400, '📗\nដាក់រូបសៀវភៅ\n(បញ្ចូល › រូបភាព)', { fill: '#eef3e2', border: '#ced4da', bw: 2, size: 22, align: 'center', valign: 'middle', color: '#868e96' }));
+      return SCHOOL.page(els);
+    },
+    quiz: function (q, opts, ans, sec, title) {
+      var keys = ['ក', 'ខ', 'គ', 'ឃ'], els = [
+        T(200, 115, 620, 80, title || 'ពង្រឹងពុទ្ធិ', { size: 52, font: 'display', color: 'accent', align: 'center' }),
+        T(40, 200, 800, 60, '!!ចូរគូសរង្វង់ ◯ ខាងមុខចម្លើយដែលត្រឹមត្រូវ ៖!!', { size: 30, align: 'center' }),
+        T(40, 270, 820, 120, q, { size: 32 }),
+        timerEl(880, 170, 360, 230, sec || 30)];
+      opts.forEach(function (o, i) {
+        var x = 70 + (i % 2) * 400, y = 400 + Math.floor(i / 2) * 95;
+        els.push(T(x, y, 380, 80, '!!' + keys[i] + '.!!  ' + o, { size: 32, valign: 'middle' }));
+        if (i === ans) els.push(shp('ellipse', x - 6, y + 8, 66, 64, { fill: 'none', stroke: 'title', sw: 4, anim: true }));
+      });
+      return SCHOOL.page(els);
+    },
+    homework: function (body) {
+      return SCHOOL.page([T(340, 190, 600, 110, 'កិច្ចការផ្ទះ', { size: 72, font: 'display', color: 'accent', align: 'center' }),
+                          SCHOOL.box(140, 315, 1000, 310, body, { radius: 40, size: 40 })]);
+    },
+    thanks: function () {
+      return SCHOOL.page([
+        T(50, 170, 640, 110, '==សូមអរគុណ ខិតខំរៀនសូត្រ==', { size: 60, font: 'display', align: 'center' }),
+        shp('rect', 80, 295, 580, 4, { fill: '#a5c8f0' }),
+        T(80, 320, 600, 160, 'វិន័យ ការគោរព ការទទួលខុសត្រូវ និងភាពស្មោះត្រង់ ជាតម្លៃសំខាន់ដែលជួយឱ្យសិស្សទទួលបានជោគជ័យ ទាំងក្នុង និងក្រៅថ្នាក់រៀន ។', { size: 26, bold: true, color: 'title' }),
+        T(110, 510, 520, 90, 'Together We Create', { fill: 'title', color: '#ffffff', size: 38, italic: true, align: 'center', valign: 'middle' }),
+        T(760, 140, 460, 440, '🎓\nLearn Today,\n==Lead Tomorrow!==', { size: 50, font: 'display', color: 'title', align: 'center', valign: 'middle' })]);
+    }
+  };
+  function layoutSlide(k) {
+    var L = LAYOUTS[k] || LAYOUTS.content;
+    return L.slide ? L.slide() : newSlide(L.make());
+  }
 
   function questionEls(title, q, opts, ans, ansText) {
     var keys = ['ក', 'ខ', 'គ', 'ឃ', 'ង'], els = [
@@ -366,7 +507,7 @@
           colorIn('color', 'ពណ៌អក្សរ'), true) +
         grp('តម្រឹម', b('align', '⇤', '', { v: 'left', title: 'ឆ្វេង' }) + b('align', '↔', '', { v: 'center', title: 'កណ្តាល' }) + b('align', '⇥', '', { v: 'right', title: 'ស្តាំ' }) +
           '<span class="sl-sep"></span>' + b('valign', '⤒', '', { v: 'top', title: 'ខាងលើ' }) + b('valign', '⇕', '', { v: 'middle', title: 'កណ្តាលបញ្ឈរ' }) + b('valign', '⤓', '', { v: 'bottom', title: 'ខាងក្រោម' }), true) +
-        grp('រូបរាង', colorIn('fill', 'ផ្ទៃ') + b('nofill', '⊘', '', { title: 'គ្មានផ្ទៃ' }) + colorIn('stroke', 'បន្ទាត់') +
+        grp('រូបរាង', colorIn('fill', 'ផ្ទៃ') + b('nofill', '⊘', '', { title: 'គ្មានផ្ទៃ' }) + b('border', '▢', 'ស៊ុម', { title: 'ស៊ុមក្រហមជុំវិញប្រអប់អក្សរ' }) + colorIn('stroke', 'បន្ទាត់') +
           '<select class="sl-sel-in" data-prop="sw" title="កម្រាស់បន្ទាត់"><option value="0">0</option><option value="2">2</option><option value="4">4</option><option value="6">6</option><option value="10">10</option><option value="16">16</option></select>' +
           '<input class="sl-num" type="number" step="15" data-prop="rot" title="បង្វិល (ដឺក្រេ)" placeholder="°">', true) +
         grp('ចលនា', b('anim', '✨', 'បង្ហាញពេលចុច', { title: 'ធាតុនេះលាក់ ហើយបង្ហាញនៅពេលចុចក្នុងពេលបញ្ចាំង' }), true) +
@@ -380,7 +521,8 @@
         grp('រាង', b('ins-shape', '▭', '', { v: 'rect', title: 'ចតុកោណ' }) + b('ins-shape', '▢', '', { v: 'round', title: 'ចតុកោណជ្រុងមូល' }) +
           b('ins-shape', '◯', '', { v: 'ellipse', title: 'រង្វង់ / អេលីប' }) + b('ins-shape', '△', '', { v: 'triangle', title: 'ត្រីកោណ' }) +
           b('ins-shape', '─', '', { v: 'line', title: 'បន្ទាត់' }) + b('ins-shape', '➜', '', { v: 'arrow', title: 'ព្រួញ' })) +
-        grp('មេរៀន', b('lesson', '📚', 'បង្កើតពីមេរៀន', { big: true, title: 'បង្កើតស្លាយដោយស្វ័យប្រវត្តិពីមេរៀន និងធនាគារសំណួរ' }) +
+        grp('ឧបករណ៍', b('ins-timer', '⏱', 'នាឡិការាប់ថយ', { big: true, title: 'នាឡិការាប់ថយក្រោយ — ចុចលើវាពេលបញ្ចាំងដើម្បីចាប់ផ្តើម (ចុចពីរដងដើម្បីប្តូរវិនាទី)' })) +
+        grp('មេរៀន', b('tpl', '🏫', 'គំរូមេរៀន ▾', { big: true, title: 'បទបង្ហាញគំរូដែលរៀបចំរួច' }) + b('lesson', '📚', 'បង្កើតពីមេរៀន', { big: true, title: 'បង្កើតស្លាយដោយស្វ័យប្រវត្តិពីមេរៀន និងធនាគារសំណួរ' }) +
           b('add-layout', '❓', 'ស្លាយសំណួរ', { big: true, v: 'question' }) + b('add-layout', '∑', 'ស្លាយរូបមន្ត', { big: true, v: 'formula' }));
     },
     design: function () {
@@ -390,7 +532,10 @@
                '<b style="color:' + t.title + '">Aa</b><i style="background:' + t.accent + '"></i></span><span>' + t.name + '</span></button>';
       }).join('');
       return grp('ប្រធានបទ (Theme)', cards) +
-        grp('ផ្ទៃស្លាយ', colorIn('bg', 'ពណ៌ផ្ទៃ') + '<div class="sl-col">' + b('bg-all', '🎨', 'អនុវត្តគ្រប់ស្លាយ') + b('bg-reset', '↺', 'តាមប្រធានបទ') + '</div>');
+        grp('ផ្ទៃស្លាយ', colorIn('bg', 'ពណ៌ផ្ទៃ') + '<div class="sl-col">' + b('bg-all', '🎨', 'អនុវត្តគ្រប់ស្លាយ') + b('bg-reset', '↺', 'តាមប្រធានបទ') + '</div>') +
+        grp('ក្បាល / ជើងស្លាយ (គំរូសាលា)', '<div class="sl-col"><input class="sl-name" data-prop="school" placeholder="ឈ្មោះសាលា (ពណ៌ខៀវ)">' +
+          '<input class="sl-name" data-prop="school2" placeholder="ឈ្មោះសាលា (ពណ៌ទឹកក្រូច)"></div><div class="sl-col"><input class="sl-name" data-prop="teacher" placeholder="បង្រៀនដោយ លោកគ្រូ ...">' +
+          b('plain', '🚫', 'លាក់ក្បាល/ជើងស្លាយនេះ') + '</div>');
     },
     show: function () {
       return grp('ចាប់ផ្តើម', b('show-start', '▶', 'ពីដើម (F5)', { big: true }) + b('show-cur', '▷', 'ពីស្លាយនេះ', { big: true, title: 'Shift+F5' })) +
@@ -432,7 +577,16 @@
     root.addEventListener('input', onInput);
     root.addEventListener('change', onInput);
     stage.addEventListener('pointerdown', onStageDown);
-    stage.addEventListener('dblclick', function (e) { if (e.target.closest('textarea')) return; var d = e.target.closest('.sl-el'); if (d) startEdit(d.dataset.id); });
+    stage.addEventListener('dblclick', function (e) {
+      if (e.target.closest('textarea')) return;
+      var d = e.target.closest('.sl-el'); if (!d) return;
+      if (d.classList.contains('sl-timer')) {
+        var el = selEl(), v = el && prompt('ចំនួនវិនាទី', el.sec);
+        if (v && +v > 0) setProp('sec', Math.round(+v));
+        return;
+      }
+      startEdit(d.dataset.id);
+    });
     notes.addEventListener('input', function () { pushUndo('notes'); slide().notes = notes.value; save(); });
     root.querySelector('.sl-f-img').addEventListener('change', function (e) { if (e.target.files[0]) addImageFile(e.target.files[0]); e.target.value = ''; });
     root.querySelector('.sl-f-json').addEventListener('change', function (e) { if (e.target.files[0]) importJSON(e.target.files[0]); e.target.value = ''; });
@@ -449,7 +603,7 @@
     });
     document.addEventListener('keydown', onKey);
     document.addEventListener('paste', onPaste);
-    document.addEventListener('pointerdown', function (e) { if (!e.target.closest('.sl-menu') && !e.target.closest('[data-act="new"]')) closeMenu(); });
+    document.addEventListener('pointerdown', function (e) { if (!e.target.closest('.sl-menu') && !e.target.closest('[data-act="new"],[data-act="tpl"]')) closeMenu(); });
     if (window.ResizeObserver) new ResizeObserver(fitStage).observe(wrap); else window.addEventListener('resize', fitStage);
     S.built = true;
   }
@@ -477,15 +631,15 @@
       return '<div class="sl-th' + (i === S.cur ? ' on' : '') + '" data-i="' + i + '" draggable="true"><span class="sl-th-n">' + kh(i + 1) + '</span>' +
              '<div class="sl-th-box"><div class="sl-stage"></div></div></div>';
     }).join('');
-    thumbs.querySelectorAll('.sl-th').forEach(function (t, i) { paint(S.deck.slides[i], t.querySelector('.sl-stage'), 'thumb'); });
+    thumbs.querySelectorAll('.sl-th').forEach(function (t, i) { paint(S.deck.slides[i], t.querySelector('.sl-stage'), 'thumb', i); });
   }
   function renderThumb(i) {
     var t = thumbs.querySelector('.sl-th[data-i="' + i + '"]');
-    if (t && S.deck.slides[i]) paint(S.deck.slides[i], t.querySelector('.sl-stage'), 'thumb');
+    if (t && S.deck.slides[i]) paint(S.deck.slides[i], t.querySelector('.sl-stage'), 'thumb', i);
   }
   function renderStage() {
     var sl = slide();
-    paint(sl, stage, 'edit');
+    paint(sl, stage, 'edit', S.cur);
     drawSel();
     if (document.activeElement !== notes) notes.value = sl.notes || '';
     root.querySelector('.sl-count').textContent = 'ស្លាយ ' + kh(S.cur + 1) + ' / ' + kh(S.deck.slides.length);
@@ -516,7 +670,7 @@
     ribbon.querySelectorAll('[data-act="align"],[data-act="valign"]').forEach(function (x) { x.classList.toggle('on', !!el && el[x.dataset.act] === x.dataset.v); });
     ribbon.querySelectorAll('[data-act="theme"]').forEach(function (x) { x.classList.toggle('on', x.dataset.v === S.deck.theme); });
     var tog = function (a, v) { var x = q('[data-act="' + a + '"]'); if (x) x.classList.toggle('on', !!v); };
-    tog('bold', el && el.bold); tog('italic', el && el.italic); tog('anim', el && el.anim);
+    tog('bold', el && el.bold); tog('italic', el && el.italic); tog('anim', el && el.anim); tog('border', el && el.border); tog('plain', slide().plain);
     var set = function (p, v) { var x = q('[data-prop="' + p + '"]'); if (x && document.activeElement !== x) x.value = v; };
     if (el) {
       set('size', el.size || '');
@@ -527,6 +681,7 @@
       set('rot', el.rot || 0);
     }
     set('bg', hexOr(slide().bg, '#ffffff'));
+    set('school', S.deck.school || ''); set('school2', S.deck.school2 || ''); set('teacher', S.deck.teacher || '');
     var ds = q('[data-prop="deck"]');
     if (ds) {
       ds.innerHTML = Object.keys(S.store.decks).map(function (k) { return S.store.decks[k]; })
@@ -548,10 +703,28 @@
     document.body.appendChild(m);
   }
 
+  function templateMenu(btn) {
+    if (document.querySelector('.sl-menu')) { closeMenu(); return; }
+    var list = window.KPSlideTemplates || [];
+    var m = document.createElement('div'); m.className = 'sl-menu';
+    m.innerHTML = list.length ? list.map(function (t, i) { return '<button data-i="' + i + '">' + esc(t.name) + '</button>'; }).join('')
+                              : '<div style="padding:8px 12px;font-size:12px">មិនទាន់មានគំរូ</div>';
+    var r = btn.getBoundingClientRect();
+    m.style.left = r.left + 'px'; m.style.top = r.bottom + 4 + 'px';
+    m.addEventListener('click', function (e) {
+      var x = e.target.closest('[data-i]'); if (!x) return;
+      closeMenu(); commitEdit();
+      var d = list[+x.dataset.i].build(window.KPSlides.api);
+      d.id = uid(); d.updated = Date.now();
+      addDeck(d); renderAll(); save(); status('✓ បានបង្កើត «' + d.name + '» (' + kh(d.slides.length) + ' ស្លាយ)');
+    });
+    document.body.appendChild(m);
+  }
+
   /* ---------------- actions ---------------- */
   function addSlide(layout) {
     commitEdit(); pushUndo();
-    S.deck.slides.splice(S.cur + 1, 0, newSlide((LAYOUTS[layout] || LAYOUTS.content).make()));
+    S.deck.slides.splice(S.cur + 1, 0, layoutSlide(layout));
     S.cur++; S.sel = null; renderAll(); save();
   }
   function addEl(el, edit) {
@@ -578,6 +751,10 @@
       case 'italic': if (el) setProp('italic', !el.italic); break;
       case 'align': case 'valign': if (el) setProp(act, v); break;
       case 'nofill': if (el) setProp('fill', el.type === 'shape' ? 'none' : null); break;
+      case 'border': if (el && el.type === 'text') setProp('border', el.border ? null : 'accent'); break;
+      case 'plain': change(function () { s.plain = !s.plain; }); break;
+      case 'ins-timer': addEl(timerEl(880, 170, 360, 230, 30)); break;
+      case 'tpl': templateMenu(a); break;
       case 'anim': if (el) setProp('anim', !el.anim); break;
       case 'front': if (el) change(function () { s.els.splice(s.els.indexOf(el), 1); s.els.push(el); }); break;
       case 'back': if (el) change(function () { s.els.splice(s.els.indexOf(el), 1); s.els.unshift(el); }); break;
@@ -599,11 +776,11 @@
       case 'bg-reset': change(function () { s.bg = null; }); break;
       case 'show-start': present(0); break;
       case 'show-cur': present(S.cur); break;
-      case 'new-deck': commitEdit(); addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: S.deck.theme, updated: Date.now(), slides: [newSlide(LAYOUTS.title.make())] }); renderAll(); save(); break;
+      case 'new-deck': commitEdit(); addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: S.deck.theme, updated: Date.now(), slides: [layoutSlide(S.deck && S.deck.theme === 'school' ? 's_cover' : 'title')] }); renderAll(); save(); break;
       case 'del-deck':
         if (!confirm('លុបបទបង្ហាញ «' + S.deck.name + '» ? (មិនអាចត្រឡប់វិញបានទេ)')) break;
         delete S.store.decks[S.deck.id];
-        if (!Object.keys(S.store.decks).length) addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: 'ocean', updated: Date.now(), slides: [newSlide(LAYOUTS.title.make())] });
+        if (!Object.keys(S.store.decks).length) addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: 'ocean', updated: Date.now(), slides: [layoutSlide(S.deck && S.deck.theme === 'school' ? 's_cover' : 'title')] });
         else switchDeck(Object.keys(S.store.decks)[0]);
         renderAll(); save(); break;
       case 'export': exportJSON(); break;
@@ -616,6 +793,7 @@
     var p = e.target.dataset.prop; if (!p) return;
     var v = e.target.value, el = selEl();
     if (p === 'deck') { if (e.type === 'change') { switchDeck(v); renderAll(); } return; }
+    if (p === 'school' || p === 'school2' || p === 'teacher') { S.deck[p] = v; renderStage(); clearTimeout(S.thumbT); S.thumbT = setTimeout(renderThumbs, 400); save(); return; }
     if (p === 'deckname') { S.deck.name = v || 'គ្មានចំណងជើង'; root.querySelector('.sl-title').textContent = S.deck.name; save(); return; }
     if (p === 'bg') { var s = slide(); change(function () { s.bg = v; }, 'bg' + s.id); return; }
     if (!el) return;
@@ -814,7 +992,7 @@
     commitEdit();
     var box = document.createElement('div'); box.id = 'sl-print';
     document.body.appendChild(box);
-    S.deck.slides.forEach(function (s) { var p = document.createElement('div'); p.className = 'sl-stage sl-page'; box.appendChild(p); paint(s, p, 'print'); });
+    S.deck.slides.forEach(function (s, i) { var p = document.createElement('div'); p.className = 'sl-stage sl-page'; box.appendChild(p); paint(s, p, 'print', i); });
     var st = document.createElement('style'); st.textContent = '@page{size:1280px 720px;margin:0}';
     document.head.appendChild(st); document.body.classList.add('sl-printing');
     var done = function () { box.remove(); st.remove(); document.body.classList.remove('sl-printing'); window.removeEventListener('afterprint', done); };
@@ -842,6 +1020,7 @@
       else if (k === 'b' || k === 'B' || k === '.') ov.classList.toggle('black');
       else if (k === 'p' || k === 'P') togglePen();
       else if (k === 'e' || k === 'E') clearPen();
+      else if (k === 't' || k === 'T') { var c = sh.st.querySelector('.sl-clock'); if (c) toggleClock(c); }
     };
     sh.resize = function () { layoutShow(); };
     sh.fsch = function () { if (document.fullscreenElement) sh.fs = true; else if (sh.fs) endShow(); };
@@ -853,6 +1032,8 @@
     ov.addEventListener('click', function (e) {
       var bt = e.target.closest('[data-s]');
       if (bt) { var s = bt.dataset.s; if (s === 'prev') prev(); else if (s === 'next') next(); else if (s === 'pen') togglePen(); else if (s === 'clear') clearPen(); else if (s === 'black') ov.classList.toggle('black'); else endShow(); return; }
+      var ck = e.target.closest('.sl-clock');
+      if (ck && !sh.pen) { toggleClock(ck); return; }
       if (!sh.pen) next();
     });
     ov.addEventListener('contextmenu', function (e) { e.preventDefault(); prev(); });
@@ -871,7 +1052,8 @@
   function showSlide(i, revealAll) {
     var sh = S.show; sh.i = Math.max(0, Math.min(S.deck.slides.length - 1, i));
     sh.ov.classList.remove('end');
-    paint(S.deck.slides[sh.i], sh.st, 'show');
+    stopClocks();
+    paint(S.deck.slides[sh.i], sh.st, 'show', sh.i);
     if (revealAll) sh.st.querySelectorAll('.sl-hidden').forEach(function (x) { x.classList.remove('sl-hidden'); });
     sh.st.classList.remove('sl-fade'); void sh.st.offsetWidth; sh.st.classList.add('sl-fade');
     sh.ov.querySelector('.sl-show-n').textContent = kh(sh.i + 1) + ' / ' + kh(S.deck.slides.length);
@@ -889,8 +1071,32 @@
     if (sh.ov.classList.contains('end')) { sh.ov.classList.remove('end'); showSlide(sh.i, true); return; }
     if (sh.i > 0) showSlide(sh.i - 1, true);
   }
+  // countdown timers: click (or T) starts / pauses, a finished timer restarts
+  var clocks = [];
+  function toggleClock(c) {
+    var id = c.closest('.sl-el').dataset.id, el = null;
+    S.deck.slides[S.show.i].els.forEach(function (x) { if (x.id === id) el = x; });
+    if (!el) return;
+    if (c._run) { clearInterval(c._run); c._run = null; c.classList.remove('run'); return; }
+    if (c._left == null || c._left <= 0) { c._left = el.sec; c.classList.remove('done'); }
+    c.classList.add('run');
+    c._run = setInterval(function () {
+      c._left--; c.firstChild.textContent = clock(c._left);
+      if (c._left <= 0) { clearInterval(c._run); c._run = null; c.classList.remove('run'); c.classList.add('done'); beep(); }
+    }, 1000);
+    clocks.push(c);
+  }
+  function stopClocks() { clocks.forEach(function (c) { clearInterval(c._run); }); clocks = []; }
+  function beep() {
+    try {
+      var A = new (window.AudioContext || window.webkitAudioContext)(), o = A.createOscillator(), g = A.createGain();
+      o.frequency.value = 880; o.connect(g); g.connect(A.destination); g.gain.setValueAtTime(0.25, A.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, A.currentTime + 1.2); o.start(); o.stop(A.currentTime + 1.2);
+    } catch (e) {}
+  }
   function endShow() {
     var sh = S.show; if (!sh) return;
+    stopClocks();
     S.show = null;
     document.removeEventListener('keydown', sh.key, true);
     window.removeEventListener('resize', sh.resize);
@@ -914,6 +1120,8 @@
 
   /* ---------------- public ---------------- */
   window.KPSlides = {
+    // building blocks for template decks (static/js/slides_templates.js)
+    api: { T: T, shape: shp, timer: timerEl, slide: SCHOOL.page, school: SCHOOL, kh: kh, uid: uid },
     open: function () {
       if (!S.built) { load(); build(); setTab('home'); }
       requestAnimationFrame(function () { fitStage(); renderAll(); });
