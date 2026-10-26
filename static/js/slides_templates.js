@@ -1424,9 +1424,415 @@ $16 + 8 + 4 + 2 + \ldots$`, [R`$S = 30$`, R`$S = 32$`, R`$S = 34$`, R`$S = 64$`]
              teacher: K.info.teacher, slides: slides };
   }
 
+  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៤ ផលបូកតួនៃស្វ៊ីតផ្សេងៗ — content from the lesson page (book pages 24–35)
+  function sums(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, rows = K.rows;
+    var sec = function (text, y) { return title(text, { x: 60, y: y, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var head = function (x, y, text) { return line(x, y, 500, '!!__' + text + '__!!', { size: 26, h: 44 }); };
+    // difference table: one row per sequence; a lower row sits between the cells above it
+    var diffTable = function (x, y, rowsIn, o) {
+      o = o || {};
+      var gap = o.gap || 92, cw = 74, ch = 42, lw = o.lw || 250, els = [];
+      rowsIn.forEach(function (r, ri) {
+        var ry = y + ri * 58, shift = (r.depth || 0) * gap / 2, a = r.anim;
+        els.push(T(x, ry, lw, ch, r.label, { size: 20, bold: true, color: ri ? 'brand' : 'title', valign: 'middle', anim: a }));
+        r.vals.forEach(function (v, i) {
+          els.push(T(x + lw + shift + i * gap, ry, cw, ch, '$' + v + '$', { size: 22, align: 'center', valign: 'middle', radius: 8,
+            fill: ri === 0 ? '#e7f0fb' : ri === 1 ? '#fff4e6' : '#ebfbee', border: ri === 0 ? '#1f4e9c' : ri === 1 ? '#f68c1f' : '#2f9e44', bw: 2, anim: a }));
+        });
+      });
+      return els;
+    };
+    // 4 × 4 square split into L-shaped layers 1, 3, 5, 7 (1 + 3 + 5 + 7 = 4²)
+    var oddSquare = function (x, y, key) {
+      var cols = ['#1f4e9c', '#f68c1f', '#2f9e44', '#c00000'], els = [];
+      for (var r = 0; r < 4; r++) for (var c = 0; c < 4; c++)
+        els.push(shape('rect', x + c * 46, y + r * 46, 44, 44, { fill: cols[Math.max(r, c)], anim: 'L' + Math.max(r, c) }));
+      els.push(T(x - 20, y + 192, 224, 34, '$1 + 3 + 5 + 7 = 4^2$', { size: 20, align: 'center', anim: key }));
+      return els;
+    };
+
+    var slides = [
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី១==        មេរៀនទី៤', 'ផលបូកតួនៃស្វ៊ីតផ្សេងៗ', K.info),
+      /* 2 */ K.toc(['==១.របៀបគណនាផលបូក==', '២.ផលបូកតាមលំនាំគំរូ', R`៣.និមិត្តសញ្ញា $\Sigma$`], 50),
+      /* 3 */ S.objective([R`គណនាផលបូកតួនៃស្វ៊ីត និងប្រើនិមិត្តសញ្ញា $\Sigma$`, R`កំណត់តួទី $n$ តាមផលសងតួលំដាប់ទី ១ និងទី ២`]),
+
+      /* 4 review + motivation */ page([
+        sec('រំលឹកមេរៀនចាស់'),
+        l(60, 165, 1000, R`!!__លំហាត់ ៖__!!  គណនា  $S = 1 + 2 + 3 + \ldots + 100$`, { size: 28 }),
+        s(100, 220, 900, R`ជាស្វ៊ីតនព្វន្ត  $a_1 = 1,\ d = 1,\ n = 100$`),
+        s(100, 268, 900, R`$S = \dfrac{n(a_1 + a_n)}{2} = \dfrac{100(1 + 100)}{2} = 5050$`, { h: 62 }),
+        l(60, 360, 1000, R`!!__សំណួរ ៖__!!  ចុះផលបូក  $1^2 + 2^2 + 3^2 + \ldots + n^2$  វិញ?`, { size: 28 }),
+        s(100, 418, 960, R`$1,\ 4,\ 9,\ 16,\ \ldots$  មិនមែនជា !!ស្វ៊ីតនព្វន្ត!! (ផលសង $3, 5, 7$ មិនថេរ)`),
+        s(100, 466, 960, R`ក៏មិនមែនជា !!ស្វ៊ីតធរណីមាត្រ!! (ផលធៀប $4, \frac{9}{4}, \ldots$ មិនថេរ)`),
+        S.box(100, 530, 900, 96, 'ត្រូវរកវិធីផ្សេងទៀត ដើម្បីគណនាផលបូក → !!មេរៀនទី៤ ៖ ផលបូកតួនៃស្វ៊ីតផ្សេងៗ!!', { size: 26, anim: true }),
+        kids()
+      ]),
+
+      /* 5 section 1 + example 1 setup */ page([
+        sec('១. របៀបគណនាផលបូក'),
+        tip(60, 160, 1180, 90, 'ចំពោះស្វ៊ីតផ្សេងៗ គេពុំអាចប្រើរូបមន្តផលបូកនៃស្វ៊ីតនព្វន្ត ឬស្វ៊ីតធរណីមាត្របានឡើយ ។ ត្រូវប្រើវិធីផ្សេងៗទៅតាមទម្រង់នៃស្វ៊ីត ។', { size: 24 }),
+        l(60, 265, 1100, R`!!__ឧទាហរណ៍ ១ ៖__!!  គណនា  $S = 1^2 + 2^2 + 3^2 + \ldots + n^2$`, { size: 27 }),
+        s(60, 318, 1100, R`ប្រើសមភាព   $(k + 1)^3 - k^3 = 3k^2 + 3k + 1$   ដោយឱ្យ $k$ យកតម្លៃពី $1$ ដល់ $n$ ៖`),
+        s(200, 372, 800, R`$k = 1$ ៖    $2^3 - 1^3 = 3 \times 1^2 + 3 \times 1 + 1$`),
+        s(200, 418, 800, R`$k = 2$ ៖    $3^3 - 2^3 = 3 \times 2^2 + 3 \times 2 + 1$`),
+        s(200, 464, 800, R`$k = 3$ ៖    $4^3 - 3^3 = 3 \times 3^2 + 3 \times 3 + 1$`),
+        s(200, 506, 800, '..............................................................', { h: 34 }),
+        s(200, 542, 800, R`$k = n$ ៖    $(n + 1)^3 - n^3 = 3 \times n^2 + 3 \times n + 1$`),
+        T(1000, 400, 260, 120, R`!!គន្លឹះ ៖!! តួ $2^3, 3^3, \ldots, n^3$ លុបគ្នាពេលបូក`, { size: 20, fill: '#fff4e6', border: '#f68c1f', bw: 2, radius: 14, valign: 'middle', anim: true })
+      ]),
+
+      /* 6 example 1 result */ page([
+        sec('ឧទាហរណ៍ ១ (ត)'),
+        l(60, 160, 1100, 'បូកអង្គ និងអង្គនៃសមភាពទាំងអស់ (តួ $2^3, 3^3, \\ldots, n^3$ លុបគ្នា) គេបាន ៖', { size: 25 }),
+        s(80, 214, 1100, R`$(n + 1)^3 - 1^3 = 3(1^2 + 2^2 + \ldots + n^2) + 3(1 + 2 + \ldots + n) + (1 + 1 + \ldots + 1)$`, { size: 24 }),
+        s(250, 266, 900, R`$= 3S + 3 \times \dfrac{n(n + 1)}{2} + n$`, { h: 62 }),
+        s(80, 336, 1100, R`$\Rightarrow 3S = (n + 1)^3 - 1 - \dfrac{3n(n + 1)}{2} - n = \dfrac{n(n + 1)(2n + 1)}{2}$`, { h: 66 }),
+        S.box(150, 440, 900, 100, R`!!ដូចនេះ!!     $1^2 + 2^2 + 3^2 + \ldots + n^2 = \dfrac{n(n + 1)(2n + 1)}{6}$`, { size: 30, align: 'center', anim: true }),
+        tip(150, 560, 900, 70, R`!!ផ្ទៀងផ្ទាត់ ៖!!  $n = 3$ ៖  $1 + 4 + 9 = 14$  និង  $\dfrac{3 \times 4 \times 7}{6} = 14$ ✓`, { size: 22, anim: true }),
+        kids()
+      ]),
+
+      /* 7 example 2: telescoping fractions */ page([
+        l(60, 100, 1180, R`!!__ឧទាហរណ៍ ២ ៖__!!  គណនា  $S = \dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dfrac{1}{3 \cdot 4} + \ldots + \dfrac{1}{n(n + 1)}$`, { size: 26, h: 66 }),
+        s(60, 170, 1100, R`ប្រើសមភាព   $\dfrac{1}{k(k + 1)} = \dfrac{1}{k} - \dfrac{1}{k + 1}$   ដោយឱ្យ $k$ យកតម្លៃពី $1$ ដល់ $n$ ៖`, { h: 64 }),
+        s(160, 240, 460, R`$\dfrac{1}{1 \cdot 2} = \dfrac{1}{1} - \dfrac{1}{2}$`, { h: 62 }),
+        s(160, 302, 460, R`$\dfrac{1}{2 \cdot 3} = \dfrac{1}{2} - \dfrac{1}{3}$`, { h: 62 }),
+        s(160, 364, 460, R`$\dfrac{1}{3 \cdot 4} = \dfrac{1}{3} - \dfrac{1}{4}$`, { h: 62 }),
+        s(160, 424, 460, '..........................................', { h: 34 }),
+        s(160, 458, 460, R`$\dfrac{1}{n(n + 1)} = \dfrac{1}{n} - \dfrac{1}{n + 1}$`, { h: 62 }),
+        s(660, 300, 600, 'បូកអង្គ និងអង្គ (តួកណ្តាលលុបគ្នាអស់) គេបាន ៖', { size: 24 }),
+        s(720, 352, 500, R`$S = 1 - \dfrac{1}{n + 1} = \dfrac{n}{n + 1}$`, { size: 28, h: 66 }),
+        S.box(100, 545, 1000, 96, R`!!ដូចនេះ!!   $\dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \ldots + \dfrac{1}{n(n + 1)} = \dfrac{n}{n + 1}$`, { size: 28, align: 'center', anim: true }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 8 worked example: sum of cubes */ page([
+        l(60, 100, 1180, R`!!__លំហាត់គំរូ ៖__!!  គណនាផលបូក  $S = 1^3 + 2^3 + 3^3 + \ldots + n^3$`, { size: 28, h: 54 }),
+        K.solTitle(440, 158),
+        s(60, 220, 1180, R`ប្រើសមភាព   $(k + 1)^4 - k^4 = 4k^3 + 6k^2 + 4k + 1$   ដោយឱ្យ $k$ យកតម្លៃពី $1$ ដល់ $n$ ៖`),
+        s(160, 272, 1000, R`$2^4 - 1^4 = 4 \times 1^3 + 6 \times 1^2 + 4 \times 1 + 1$`),
+        s(160, 318, 1000, R`$3^4 - 2^4 = 4 \times 2^3 + 6 \times 2^2 + 4 \times 2 + 1$`),
+        s(160, 360, 1000, '..............................................................', { h: 34 }),
+        s(160, 396, 1000, R`$(n + 1)^4 - n^4 = 4 \times n^3 + 6 \times n^2 + 4 \times n + 1$`),
+        s(60, 456, 1180, R`បូកអង្គ និងអង្គ ៖   $(n + 1)^4 - 1 = 4S + 6 \times \dfrac{n(n + 1)(2n + 1)}{6} + 4 \times \dfrac{n(n + 1)}{2} + n$`, { size: 24, h: 64 }),
+        S.box(100, 540, 1000, 100, R`!!ដូចនេះ!!   $1^3 + 2^3 + \ldots + n^3 = \dfrac{n^2(n + 1)^2}{4} = \left[\dfrac{n(n + 1)}{2}\right]^2$`, { size: 28, align: 'center', anim: true }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 9 practice */ page([
+        sec('ប្រតិបត្តិ'),
+
+      ].concat(rows([
+        { q: R`គណនា  $S = 12^3 + 13^3 + 14^3 + \ldots + 50^3$`, a: '$S = 1621269$' },
+        { q: R`គណនា  $S = \dfrac{1}{1 \cdot 2 \cdot 3} + \dfrac{1}{2 \cdot 3 \cdot 4} + \ldots + \dfrac{1}{n(n+1)(n+2)}$`, a: R`$\dfrac{1}{2}\left(\dfrac{1}{2} - \dfrac{1}{(n+1)(n+2)}\right)$` }
+      ], { y: 180, h: 110, gap: 150, size: 25, ansSize: 21, ansW: 270 }), [
+        tip(60, 590, 1000, 56, R`!!គន្លឹះ ៖!! ក. $S = \sum_{k=1}^{50} k^3 - \sum_{k=1}^{11} k^3$      ខ. $\dfrac{1}{k(k+1)(k+2)} = \dfrac{1}{2}\left[\dfrac{1}{k(k+1)} - \dfrac{1}{(k+1)(k+2)}\right]$`, { size: 19, anim: true })
+      ])),
+
+      /* 10 section 2: patterns */ page([
+        sec('២. គណនាផលបូកតាមលំនាំគំរូ'),
+        tip(60, 160, 1180, 60, 'ចំពោះស្វ៊ីតដែលមានតួជាចំនួនគត់ គេអាចគណនាផលបូកវាតាមការសង្កេតលំនាំគំរូ ។', { size: 24 }),
+        l(60, 236, 800, '!!__ឧទាហរណ៍ ៖__!!  ផលបូកចំនួនសេសតគ្នា', { size: 27 }),
+        s(200, 290, 520, R`$1 = 1 = 1^2$`, { anim: 'L0' }),
+        s(200, 338, 520, R`$1 + 3 = 4 = 2^2$`, { anim: 'L1' }),
+        s(200, 386, 520, R`$1 + 3 + 5 = 9 = 3^2$`, { anim: 'L2' }),
+        s(200, 434, 520, R`$1 + 3 + 5 + 7 = 16 = 4^2$`, { anim: 'L3' }),
+        S.box(100, 520, 760, 80, R`!!ដូចនេះ!!   $1 + 3 + 5 + \ldots + (2n - 1) = n^2$`, { size: 30, align: 'center', anim: true })
+      ].concat(oddSquare(940, 270, 'L3'))),
+
+      /* 11 worked example + practice */ page([
+        l(60, 100, 1180, R`!!__លំហាត់គំរូ ៖__!!  គណនាផលបូក $n$ តួនៃចំនួនគូ   $S = 2 + 4 + 6 + \ldots + 2n$`, { size: 26 }),
+        s(140, 156, 520, R`$2 = 2 = 1 \times 2$`),
+        s(140, 200, 520, R`$2 + 4 = 6 = 2 \times 3$`),
+        s(140, 244, 520, R`$2 + 4 + 6 = 12 = 3 \times 4$`),
+        s(140, 288, 520, R`$2 + 4 + 6 + 8 = 20 = 4 \times 5$`),
+        S.box(660, 200, 560, 76, R`!!ដូចនេះ!!   $2 + 4 + \ldots + 2n = n(n + 1)$`, { size: 26, align: 'center', anim: true }),
+        l(60, 360, 700, '!!__ប្រតិបត្តិ ៖__!!  គេឱ្យលំនាំគំរូនៃស្វ៊ីតខាងក្រោម ៖', { size: 26 }),
+        T(140, 412, 520, 230, R`$1 = 1$
+$1 + 7 = 8$
+$1 + 7 + 19 = 27$
+$1 + 7 + 19 + 37 = 64$
+$1 + 7 + 19 + 37 + 61 = 125$`, { size: 24 }),
+        l(660, 420, 600, R`គណនាផលបូកនៃស្វ៊ីតនេះដែលមាន $10$ តួ ។`, { size: 25 }),
+        s(680, 480, 560, R`ផលបូក $n$ តួ $= n^3$   ($1,\ 8,\ 27,\ 64,\ 125$)`),
+        S.box(700, 540, 400, 64, R`$S_{10} = 10^3 = 1000$`, { size: 28, align: 'center', anim: true })
+      ]),
+
+      /* 12 sigma notation */ page([
+        sec(R`៣. និមិត្តសញ្ញា $\Sigma$ សម្រាប់ផលបូកនៃស្វ៊ីត`),
+        S.box(60, 160, 720, 170, R`!!__សញ្ញាណ $\Sigma$ ៖__!!  ផលបូកតួនៃស្វ៊ីត $a_1, a_2, \ldots, a_n$ សរសេរដោយប្រើនិមិត្តសញ្ញា $\Sigma$ (អានថា !!ស៊ិចម៉ា!!) ៖
+$$\sum_{k=1}^{n} a_k = a_1 + a_2 + a_3 + \ldots + a_n$$`, { size: 24 }),
+        T(60, 336, 720, 40, R`ក្នុងនោះ $k$ យកតម្លៃពី $1, 2, 3, \ldots$ រហូតដល់ $n$ ។`, { size: 22 }),
+        T(900, 200, 180, 170, R`$$\sum_{k=1}^{n} a_k$$`, { size: 56, align: 'center', valign: 'middle' }),
+        T(1080, 180, 190, 40, '← តួចុងក្រោយ $n$', { size: 18, color: 'brand', anim: 'parts' }),
+        T(1080, 262, 190, 40, '← តួទូទៅ $a_k$', { size: 18, color: 'brand', anim: 'parts' }),
+        T(1080, 336, 190, 40, '← ចាប់ពី $k = 1$', { size: 18, color: 'brand', anim: 'parts' }),
+        l(60, 392, 600, '!!__ឧទាហរណ៍ ៖__!!', { size: 26 }),
+        s(100, 440, 1100, R`$1 + 2 + 3 + \ldots + n = \displaystyle\sum_{k=1}^{n} k = \dfrac{n(n + 1)}{2}$`, { size: 26, h: 70 }),
+        s(100, 516, 1100, R`$1^2 + 2^2 + 3^2 + \ldots + n^2 = \displaystyle\sum_{k=1}^{n} k^2 = \dfrac{n(n + 1)(2n + 1)}{6}$`, { size: 26, h: 70 }),
+        s(100, 592, 1100, R`$1^3 + 2^3 + 3^3 + \ldots + n^3 = \displaystyle\sum_{k=1}^{n} k^3 = \left[\dfrac{n(n + 1)}{2}\right]^2$`, { size: 26, h: 70 })
+      ]),
+
+      /* 13 worked example 1: write with sigma */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ១ ៖__!!  សរសេរផលបូកខាងក្រោមដោយប្រើនិមិត្តសញ្ញា $\Sigma$ ៖`, { size: 27 }),
+        l(140, 150, 1100, R`ក. $1^3 + 2^3 + \ldots + n^3$      ខ. $2 + 4 + 6 + \ldots + 100$      គ. $\dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{4} - \dfrac{1}{5} + \ldots + \dfrac{1}{50}$`, { size: 25, h: 62 }),
+        K.solTitle(440, 220),
+        s(60, 280, 1180, R`!!ក.!!   $1^3 + 2^3 + \ldots + n^3 = \displaystyle\sum_{k=1}^{n} k^3$`, { h: 70 }),
+        s(60, 356, 1180, R`!!ខ.!!   $2 + 4 + \ldots + 100 = 2 \times 1 + 2 \times 2 + \ldots + 2 \times 50$  មានតួទូទៅ $2n$ ដែល $n$ ពី $1$ ដល់ $50$`),
+        s(120, 404, 1100, R`$\Rightarrow\ 2 + 4 + 6 + \ldots + 100 = \displaystyle\sum_{n=1}^{50} 2n$`, { h: 70 }),
+        s(60, 480, 1180, R`!!គ.!!   តួទូទៅ $\dfrac{(-1)^n}{n}$ ដែល $n$ ពី $2$ ដល់ $50$`, { h: 62 }),
+        s(120, 548, 1100, R`$\Rightarrow\ \dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{4} - \ldots + \dfrac{1}{50} = \displaystyle\sum_{n=2}^{50} \dfrac{(-1)^n}{n}$`, { h: 80 })
+      ]),
+
+      /* 14 worked example 2: expand */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ២ ៖__!!  សរសេរគ្រប់តួទាំងអស់នៃផលបូក ដោយមិនប្រើនិមិត្តសញ្ញា $\Sigma$ ៖`, { size: 27 }),
+        l(140, 156, 1100, R`ក. $\displaystyle\sum_{k=1}^{6} 2$          ខ. $\displaystyle\sum_{n=2}^{5} (2n + 1)$          គ. $\displaystyle\sum_{j=1}^{5} j(j + 1)$`, { size: 26, h: 80 }),
+        K.solTitle(440, 250),
+        s(100, 316, 1100, R`!!ក.!!   $\displaystyle\sum_{k=1}^{6} 2 = 2 + 2 + 2 + 2 + 2 + 2$   $(= 12)$`, { h: 76 }),
+        s(100, 402, 1100, R`!!ខ.!!   $\displaystyle\sum_{n=2}^{5} (2n + 1) = 5 + 7 + 9 + 11$   $(= 32)$`, { h: 76 }),
+        s(100, 488, 1100, R`!!គ.!!   $\displaystyle\sum_{j=1}^{5} j(j + 1) = 2 + 6 + 12 + 20 + 30$   $(= 70)$`, { h: 76 }),
+        tip(100, 580, 900, 56, R`!!ចំណាំ ៖!! អក្សរ $k, n, j$ ជាអថេររាប់ — ប្តូរឈ្មោះបាន ដោយមិនប្រែប្រួលផលបូក ។`, { size: 21, anim: true }),
+        kids()
+      ]),
+
+      /* 15 practice: write with sigma */ page([
+        sec(R`ប្រតិបត្តិ — សរសេរដោយប្រើ $\Sigma$`)
+      ].concat(rows([
+        { q: R`$2 + 5 + 8 + \ldots + (3n - 1)$`, a: R`$\displaystyle\sum_{k=1}^{n} (3k - 1)$` },
+        { q: R`$3 + 6 + 12 + \ldots + 3(2)^{n-1}$`, a: R`$\displaystyle\sum_{k=1}^{n} 3 \times 2^{k-1}$` },
+        { q: R`$1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \ldots + \frac{1}{100}$`, a: R`$\displaystyle\sum_{k=1}^{100} \frac{1}{k}$` }
+      ], { y: 190, h: 96, gap: 130, size: 26, ansSize: 22 }))),
+
+      /* 16 sigma properties */ page([
+        sec('លក្ខណៈនៃស៊ិចម៉ា'),
+        S.box(60, 160, 1000, 380, R`!!__លក្ខណៈ ៖__!!
+!!១.!!  $\displaystyle\sum_{k=1}^{n} c = nc$   ($c$ ជាចំនួនថេរ)
+!!២.!!  $\displaystyle\sum_{k=1}^{n} c\,a_k = c\sum_{k=1}^{n} a_k$
+!!៣.!!  $\displaystyle\sum_{k=1}^{n} (a_k + b_k) = \sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k$
+!!៤.!!  $\displaystyle\sum_{k=1}^{n} (a_k - b_k) = \sum_{k=1}^{n} a_k - \sum_{k=1}^{n} b_k$
+!!៥.!!  $\displaystyle\sum_{k=1}^{n} (a_k + b_k)^2 = \sum_{k=1}^{n} a_k^2 + 2\sum_{k=1}^{n} a_k b_k + \sum_{k=1}^{n} b_k^2$`, { size: 25, lh: '1.55' }),
+        tip(60, 560, 1000, 76, R`!!ប្រយ័ត្ន ៖!!  $\displaystyle\sum a_k b_k \neq \sum a_k \cdot \sum b_k$   និង   $\displaystyle\sum a_k^2 \neq \left(\sum a_k\right)^2$`, { size: 22, anim: true }),
+        kids(1095, 380, 170)
+      ]),
+
+      /* 17 proofs */ page([
+        sec('សម្រាយបញ្ជាក់'),
+        s(60, 160, 1180, R`!!១.!!   $\displaystyle\sum_{k=1}^{n} c = \underbrace{c + c + \ldots + c}_{n \text{ តួ}} = nc$`, { h: 82 }),
+        s(60, 252, 1180, R`!!២.!!   $\displaystyle\sum_{k=1}^{n} c\,a_k = c a_1 + c a_2 + \ldots + c a_n = c(a_1 + a_2 + \ldots + a_n) = c\sum_{k=1}^{n} a_k$`, { h: 76 }),
+        s(60, 338, 1180, R`!!៣.!!   $\displaystyle\sum_{k=1}^{n} (a_k + b_k) = (a_1 + b_1) + \ldots + (a_n + b_n) = (a_1 + \ldots + a_n) + (b_1 + \ldots + b_n)$`, { h: 76, size: 23 }),
+        s(60, 424, 1180, R`!!៤.!!   ស្រដៀងនឹង !!៣.!! ដោយប្តូរសញ្ញា $+$ ទៅ $-$`),
+        s(60, 480, 1180, R`!!៥.!!   $\displaystyle\sum_{k=1}^{n} (a_k + b_k)^2 = \sum_{k=1}^{n} (a_k^2 + 2a_k b_k + b_k^2) = \sum_{k=1}^{n} a_k^2 + 2\sum_{k=1}^{n} a_k b_k + \sum_{k=1}^{n} b_k^2$`, { h: 76, size: 23 }),
+        kids(1100, 560, 120)
+      ]),
+
+      /* 18 worked example: compute sums */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ៖__!!  គណនា    ក. $\displaystyle\sum_{k=1}^{15} (4k + 3)$          ខ. $\displaystyle\sum_{k=1}^{20} (k + 3)k$`, { size: 27, h: 80 }),
+        K.solTitle(440, 186),
+        s(60, 246, 560, R`!!ក.!!  $\displaystyle\sum_{k=1}^{15} (4k + 3) = 4\sum_{k=1}^{15} k + \sum_{k=1}^{15} 3$`, { h: 76 }),
+        s(120, 326, 500, R`$= 4 \times \dfrac{15 \times 16}{2} + 15 \times 3$`, { h: 64 }),
+        s(120, 394, 500, R`$= 480 + 45 = 525$`),
+        S.box(80, 462, 440, 60, R`!!ដូចនេះ!!   $\displaystyle\sum_{k=1}^{15} (4k + 3) = 525$`, { size: 24, align: 'center', anim: true, h: 76 }),
+        s(660, 246, 600, R`!!ខ.!!  $\displaystyle\sum_{k=1}^{20} (k + 3)k = \sum_{k=1}^{20} k^2 + 3\sum_{k=1}^{20} k$`, { h: 76 }),
+        s(720, 326, 540, R`$= \dfrac{20 \times 21 \times 41}{6} + 3 \times \dfrac{20 \times 21}{2}$`, { h: 64 }),
+        s(720, 394, 540, R`$= 2870 + 630 = 3500$`),
+        S.box(680, 462, 480, 76, R`!!ដូចនេះ!!   $\displaystyle\sum_{k=1}^{20} (k + 3)k = 3500$`, { size: 24, align: 'center', anim: true }),
+        tip(80, 570, 1080, 66, R`!!គន្លឹះ ៖!! បំបែកជាផលបូកនៃ $\sum k^2,\ \sum k,\ \sum c$ រួចប្រើរូបមន្តដែលស្គាល់ ។`, { size: 22, anim: true })
+      ]),
+
+      /* 19 practice: compute */ page([
+        sec('ប្រតិបត្តិ — គណនា')
+      ].concat(rows([
+        { q: R`$\displaystyle\sum_{k=1}^{20} (3k + 1)$`, a: '$650$' },
+        { q: R`$\displaystyle\sum_{k=1}^{7} 2^k$`, a: '$254$' },
+        { q: R`$\displaystyle\sum_{k=4}^{14} (4k - 3)$`, a: '$363$' },
+        { q: R`$\displaystyle\sum_{k=1}^{n} (3 + k)^2$`, a: R`$\dfrac{n}{6}(2n^2 + 21n + 73)$` },
+        { q: R`$\displaystyle\sum_{k=1}^{30} k(k + 1)$`, a: '$9920$' }
+      ], { y: 160, h: 82, gap: 96, w: 620, size: 24, ansX: 790, ansW: 420, ansSize: 22 }))),
+
+      /* 20-22 quizzes */
+      S.quiz(R`!!១.!! $\displaystyle\sum_{k=1}^{n} k$  ស្មើ ៖`, [R`$\frac{n(n - 1)}{2}$`, R`$\frac{n(n + 1)}{2}$`, R`$\frac{n(n+1)(2n+1)}{6}$`, '$n^2$'], 1),
+      S.quiz(R`!!២.!! $\displaystyle\sum_{k=1}^{5} k^2$  ស្មើ ៖`, ['$15$', '$55$', '$25$', '$30$'], 1),
+      S.quiz(R`!!៣.!! $\dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \ldots + \dfrac{1}{9 \cdot 10}$  ស្មើ ៖`, [R`$\frac{1}{10}$`, '$1$', R`$\frac{9}{10}$`, R`$\frac{10}{11}$`], 2),
+
+      /* 23 homework 1 */ S.homework(R`!!១.!! សរសេរដោយប្រើ $\Sigma$ ៖  $1 + 4 + 9 + \ldots + 484$  និង  $1 \times 3 + 2 \times 4 + \ldots + 20 \times 22$
+!!២.!! គណនា  $\displaystyle\sum_{k=1}^{11} k^2,\ \ \sum_{k=1}^{24} k^2,\ \ \sum_{k=12}^{24} k^2$
+!!៣.!! គណនា  $\displaystyle\sum_{k=1}^{24} k^3,\ \ \sum_{k=1}^{15} k^3,\ \ \sum_{k=16}^{24} k^3$`),
+
+      /* ===== part 2: n-th term from differences ===== */
+      /* 24 */ K.toc([R`==៤.កំណត់តួទី $n$ តាមផលសងតួ==`, '៤.១.ផលសងតួលំដាប់ទី ១', '៤.២.ផលសងតួលំដាប់ទី ២'], 46),
+      /* 25 */ S.objective(['កំណត់ផលសងតួលំដាប់ទី ១ និងទី ២ នៃស្វ៊ីត', R`កំណត់តួទី $n$ និងគណនាផលបូក $n$ តួដំបូង`]),
+
+      /* 26 homework answers */ page([
+        sec('កំណែកិច្ចការផ្ទះ'),
+        s(60, 160, 1180, R`!!១.!!   $1 + 4 + \ldots + 484 = \displaystyle\sum_{k=1}^{22} k^2$  ;   $1 \times 3 + 2 \times 4 + \ldots + 20 \times 22 = \displaystyle\sum_{k=1}^{20} k(k + 2)$`, { h: 76, size: 23 }),
+        s(60, 250, 1180, R`!!២.!!   $\displaystyle\sum_{k=1}^{11} k^2 = \dfrac{11 \times 12 \times 23}{6} = 506$  ;   $\displaystyle\sum_{k=1}^{24} k^2 = \dfrac{24 \times 25 \times 49}{6} = 4900$`, { h: 76, size: 23 }),
+        s(120, 334, 1100, R`$\displaystyle\sum_{k=12}^{24} k^2 = \sum_{k=1}^{24} k^2 - \sum_{k=1}^{11} k^2 = 4900 - 506 = 4394$`, { h: 76, size: 23 }),
+        s(60, 424, 1180, R`!!៣.!!   $\displaystyle\sum_{k=1}^{24} k^3 = \left(\dfrac{24 \times 25}{2}\right)^2 = 90000$  ;   $\displaystyle\sum_{k=1}^{15} k^3 = \left(\dfrac{15 \times 16}{2}\right)^2 = 14400$`, { h: 76, size: 23 }),
+        s(120, 508, 1100, R`$\displaystyle\sum_{k=16}^{24} k^3 = 90000 - 14400 = 75600$`, { h: 76, size: 23 }),
+        kids(1100, 540, 140)
+      ]),
+
+      /* 27 first differences: table */ page([
+        sec(R`៤. របៀបកំណត់តួទី $n$ តាមផលសងតួនៃស្វ៊ីត`),
+        tip(60, 155, 1180, 60, R`គេអាចកំណត់តួទី $n$ របស់ស្វ៊ីតដែលពុំមែនជាស្វ៊ីតនព្វន្ត ឬស្វ៊ីតធរណីមាត្រ តាមរបៀបខាងក្រោម ៖`, { size: 23 }),
+        title('៤.១ ផលសងតួលំដាប់ទី ១ នៃស្វ៊ីត', { x: 60, y: 222, size: 28, color: 'head' }),
+        l(60, 282, 1100, R`!!__ឧទាហរណ៍ ១ ៖__!!  កំណត់តួទី $n$ នៃស្វ៊ីត   $1,\ 3,\ 7,\ 13,\ 21,\ 31,\ \ldots$`, { size: 26 }),
+        s(60, 334, 1180, 'ស្វ៊ីតនេះមិនមែនជាស្វ៊ីតនព្វន្ត ក៏មិនមែនជាស្វ៊ីតធរណីមាត្រ ។ គេធ្វើផលសងនៃតួតគ្នា ៖', { size: 24 }),
+
+      ].concat(diffTable(60, 400, [
+        { label: R`$n$`, vals: ['1', '2', '3', '4', '5', '6'] },
+        { label: R`ស្វ៊ីត $(a_n)$`, vals: ['1', '3', '7', '13', '21', '31'] },
+        { label: 'ផលសងលំដាប់ទី ១', vals: ['2', '4', '6', '8', '10'], depth: 1, anim: 'd1' }
+      ], { gap: 86, lw: 230 }), [
+        S.box(860, 520, 380, 110, R`ផលសងតួ $2, 4, 6, 8, \ldots$ ជា !!ស្វ៊ីតនព្វន្ត!! ងាយរក`, { size: 22, anim: true })
+      ])),
+
+      /* 28 first differences: derivation */ page([
+        l(60, 100, 1100, R`!!__ឧទាហរណ៍ ១ (ត) ៖__!!  ស្វ៊ីត  $1,\ 3,\ 7,\ 13,\ 21,\ 31,\ \ldots$`, { size: 26 }),
+        s(140, 156, 520, R`$a_2 - a_1 = 3 - 1 = 2 \times 1$`),
+        s(140, 202, 520, R`$a_3 - a_2 = 7 - 3 = 2 \times 2$`),
+        s(140, 248, 520, R`$a_4 - a_3 = 13 - 7 = 2 \times 3$`),
+        s(140, 290, 520, '...........................................', { h: 34 }),
+        s(140, 326, 520, R`$a_n - a_{n-1} = 2 \times (n - 1)$`),
+        s(60, 384, 1180, R`បូកអង្គ និងអង្គ ៖   $a_n - 1 = 2[1 + 2 + 3 + \ldots + (n - 1)] = 2 \times \dfrac{n(n - 1)}{2}$`, { h: 64 }),
+        s(140, 456, 1000, R`$\Rightarrow\ a_n = n(n - 1) + 1 = n^2 - n + 1$`),
+        S.box(100, 530, 1000, 76, R`!!ដូចនេះ!!   តួទី $n$ នៃស្វ៊ីត $1, 3, 7, 13, 21, 31, \ldots$ គឺ   $a_n = n^2 - n + 1$`, { size: 26, align: 'center', anim: true }),
+        tip(700, 156, 540, 120, R`!!ផ្ទៀងផ្ទាត់ ៖!!  $a_4 = 16 - 4 + 1 = 13$ ✓
+$a_6 = 36 - 6 + 1 = 31$ ✓`, { size: 22, anim: true })
+      ]),
+
+      /* 29 general rule */ page([
+        title('ជាទូទៅ', { x: 60, size: 34, color: 'head' }),
+        S.box(60, 160, 1180, 130, R`គេមានស្វ៊ីត $(a_n)$ និង   $b_1 = a_2 - a_1,\ b_2 = a_3 - a_2,\ \ldots,\ b_{n-1} = a_n - a_{n-1}$ ។
+ស្វ៊ីត $(b_n)$ ៖ $b_1, b_2, \ldots, b_{n-1}$ ហៅថា !!ផលសងតួលំដាប់ទី ១!! នៃស្វ៊ីត $(a_n)$ ។`, { size: 24 }),
+        l(60, 306, 1100, R`!!__ឧទាហរណ៍ ២ ៖__!!  បង្ហាញថា  $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k$   ចំពោះ $n \ge 2$`, { size: 26, h: 70 }),
+        s(100, 380, 1100, R`បូកអង្គ និងអង្គនៃ  $a_2 - a_1 = b_1,\ a_3 - a_2 = b_2,\ \ldots,\ a_n - a_{n-1} = b_{n-1}$  ៖`, { size: 24 }),
+        s(160, 430, 1000, R`$a_n - a_1 = b_1 + b_2 + \ldots + b_{n-1}\ \Rightarrow\ a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k$`, { h: 70 }),
+        S.box(60, 520, 1180, 110, R`!!__រូបមន្ត ៖__!!  បើ  $b_n = a_{n+1} - a_n,\ n = 1, 2, 3, \ldots$  នោះ    $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k$   ចំពោះ $n \ge 2$`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 30 worked example 1 */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ១ ៖__!!  កំណត់តួទី $n$ នៃស្វ៊ីត   $2,\ 4,\ 8,\ 14,\ 22,\ 32,\ \ldots$`, { size: 27 }),
+        K.solTitle(440, 156),
+        s(60, 216, 1180, R`តាង $b_n = a_{n+1} - a_n$ ៖   ស្វ៊ីត $(b_n)$ ៖  $2,\ 4,\ 6,\ 8,\ \ldots$   ជាស្វ៊ីតនព្វន្ត  $b_1 = 2,\ d = 2$`),
+        s(140, 264, 1000, R`$\Rightarrow\ b_n = 2 + 2(n - 1) = 2n$`),
+        s(60, 316, 1180, R`ចំពោះ $n \ge 2$ ៖   $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k = 2 + \sum_{k=1}^{n-1} 2k = 2 + 2 \times \dfrac{n(n - 1)}{2}$`, { h: 72 }),
+        s(240, 394, 900, R`$= n^2 - n + 2$`),
+        s(60, 446, 1180, R`ចំពោះ $n = 1$ ៖   $a_1 = 1 - 1 + 2 = 2$  ពិត ។`),
+        S.box(160, 520, 860, 76, R`!!ដូចនេះ!!   $a_n = n^2 - n + 2$`, { size: 30, align: 'center', anim: true }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 31 worked example 2: n-th term */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ២ ៖__!!  ស្វ៊ីត   $1,\ 2,\ 5,\ 10,\ 17,\ \ldots$`, { size: 27 }),
+        l(140, 150, 1100, R`ក. កំណត់តួទី $n$ នៃស្វ៊ីតនេះ ។      ខ. គណនាផលបូក $n$ តួដំបូងនៃស្វ៊ីតនេះ ។`, { size: 25 }),
+        K.solTitle(440, 206),
+        s(60, 264, 1180, R`!!ក.!!  ស្វ៊ីត $(b_n)$ ៖  $1,\ 3,\ 5,\ 7,\ \ldots$   ជាស្វ៊ីតនព្វន្ត  $b_1 = 1,\ d = 2\ \Rightarrow\ b_n = 2n - 1$`),
+        s(60, 316, 1180, R`ចំពោះ $n \ge 2$ ៖   $a_n = 1 + \displaystyle\sum_{k=1}^{n-1} (2k - 1) = 1 + 2 \times \dfrac{n(n - 1)}{2} - (n - 1)$`, { h: 72 }),
+        s(240, 394, 900, R`$= 1 + n^2 - n - n + 1 = n^2 - 2n + 2$`),
+        s(60, 446, 1180, R`ចំពោះ $n = 1$ ៖   $a_1 = 1 - 2 + 2 = 1$  ពិត ។`),
+        S.box(160, 520, 860, 76, R`!!ដូចនេះ!!   $a_n = n^2 - 2n + 2$`, { size: 30, align: 'center', anim: true }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 32 worked example 2: sum */ page([
+        l(60, 100, 1100, R`!!ខ.!!  គណនាផលបូក $n$ តួដំបូងនៃស្វ៊ីត $(a_n)$ ដែល  $a_n = n^2 - 2n + 2$`, { size: 27 }),
+        s(60, 160, 1180, R`$S_n = \displaystyle\sum_{k=1}^{n} (k^2 - 2k + 2) = \sum_{k=1}^{n} k^2 - 2\sum_{k=1}^{n} k + 2n$`, { h: 76 }),
+        s(160, 244, 1000, R`$= \dfrac{n(n + 1)(2n + 1)}{6} - n(n + 1) + 2n$`, { h: 66 }),
+        s(160, 318, 1000, R`$= \dfrac{n}{6}\left[(n + 1)(2n + 1) - 6(n + 1) + 12\right] = \dfrac{n}{6}(2n^2 - 3n + 7)$`, { h: 66 }),
+        S.box(160, 410, 860, 90, R`!!ដូចនេះ!!   $S_n = \dfrac{1}{6}n(2n^2 - 3n + 7)$`, { size: 30, align: 'center', anim: true }),
+        tip(160, 520, 860, 66, R`!!ផ្ទៀងផ្ទាត់ ៖!!  $S_3 = 1 + 2 + 5 = 8$  និង  $\dfrac{3(18 - 9 + 7)}{6} = 8$ ✓`, { size: 22, anim: true }),
+        kids()
+      ]),
+
+      /* 33 practice */ page([
+        sec('ប្រតិបត្តិ')
+      ].concat(rows([
+        { q: R`ក. កំណត់តួទី $n$ នៃស្វ៊ីត $4,\ 5,\ 7,\ 10,\ 14,\ \ldots$      ខ. គណនាផលបូក $n$ តួដំបូង`, a: R`$a_n = \dfrac{n^2 - n + 8}{2}$ ; $S_n = \dfrac{n(n^2 + 23)}{6}$` },
+        { q: R`ក. កំណត់តួទី $n$ នៃស្វ៊ីត $3,\ 5,\ 8,\ 12,\ 17,\ 23,\ \ldots$      ខ. គណនាផលបូក $n$ តួដំបូង`, a: R`$a_n = 3 + \dfrac{(n - 1)(n + 2)}{2}$ ; $S_n = \dfrac{n}{6}(n^2 + 3n + 14)$` }
+      ], { y: 180, h: 90, gap: 200, w: 1110, size: 24, ansX: 126, ansW: 1110, ansSize: 22 }).map(function (e) {
+        if (e.anim && e.x === 126) e.y += 100;   // answer chips go under their question
+        return e;
+      }))),
+
+      /* 34 second differences */ page([
+        title('៤.២ ផលសងតួលំដាប់ទី ២ នៃស្វ៊ីត', { x: 60, size: 30, color: 'head' }),
+        tip(60, 160, 1180, 86, R`បើស្វ៊ីត $(b_n)$ នៅតែមិនអាចកំណត់តួទី $n$ នៃ $(a_n)$ បាន គេធ្វើផលសងតួនៃស្វ៊ីត $(b_n)$ បន្តទៀត ហៅថា !!ផលសងតួលំដាប់ទី ២!! នៃស្វ៊ីត $(a_n)$ ។`, { size: 23 }),
+        l(60, 262, 1100, R`!!__ឧទាហរណ៍ ៖__!!  កំណត់តួទី $n$ នៃស្វ៊ីត $(a_n)$ ៖   $1,\ 2,\ 6,\ 15,\ 31,\ 56,\ \ldots$`, { size: 26 }),
+
+      ].concat(diffTable(60, 330, [
+        { label: R`$n$`, vals: ['1', '2', '3', '4', '5', '6'] },
+        { label: R`ស្វ៊ីត $(a_n)$`, vals: ['1', '2', '6', '15', '31', '56'] },
+        { label: R`លំដាប់ទី ១  $(b_n)$`, vals: ['1', '4', '9', '16', '25'], depth: 1, anim: 'd1' },
+        { label: R`លំដាប់ទី ២  $(c_n)$`, vals: ['3', '5', '7', '9'], depth: 2, anim: 'd2' }
+      ], { gap: 86, lw: 230 }), [
+        S.box(800, 560, 440, 80, R`$c_n$ ៖ $3, 5, 7, 9, \ldots$ ជា !!ស្វ៊ីតនព្វន្ត!!`, { size: 22, align: 'center', anim: 'd2' })
+      ])),
+
+      /* 35 second differences: solution */ page([
+        l(60, 100, 1100, R`!!__ឧទាហរណ៍ (ត) ៖__!!  ស្វ៊ីត  $1,\ 2,\ 6,\ 15,\ 31,\ 56,\ \ldots$`, { size: 26 }),
+        s(60, 156, 1180, R`ផលសងលំដាប់ទី ២ ៖  $c_n = 3 + 2(n - 1) = 2n + 1$`),
+        s(60, 206, 1180, R`$b_n = b_1 + \displaystyle\sum_{k=1}^{n-1} c_k = 1 + \sum_{k=1}^{n-1} (2k + 1) = 1 + n(n - 1) + (n - 1) = n^2$`, { h: 72 }),
+        s(60, 286, 1180, R`$a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k = 1 + \sum_{k=1}^{n-1} k^2 = 1 + \dfrac{(n - 1)n(2n - 1)}{6}$`, { h: 72 }),
+        s(60, 366, 1180, R`ចំពោះ $n = 1$ ៖  $a_1 = 1$  ពិត ។`),
+        S.box(160, 430, 860, 90, R`!!ដូចនេះ!!   $a_n = \dfrac{1}{6}(2n - 1)(n - 1)n + 1$`, { size: 30, align: 'center', anim: true }),
+        S.box(60, 540, 1180, 100, R`!!__ជាទូទៅ ៖__!!  $c_n = b_{n+1} - b_n$ ជា !!ផលសងតួលំដាប់ទី ២!! ៖   $b_n = b_1 + \displaystyle\sum_{k=1}^{n-1} c_k$   រួច   $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k$   $(n \ge 2)$`, { size: 23, anim: true })
+      ]),
+
+      /* 36 worked example: n-th term */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ៖__!!  ស្វ៊ីត   $4,\ 18,\ 48,\ 100,\ 180,\ 294,\ \ldots$`, { size: 27 }),
+        l(140, 150, 1100, R`ក. កំណត់តួទី $n$ នៃស្វ៊ីតនេះ ។      ខ. គណនាផលបូក $n$ តួដំបូង ។`, { size: 25 }),
+        s(60, 210, 1180, R`!!ក.!!  $(b_n)$ ៖ $14,\ 30,\ 52,\ 80,\ 114,\ \ldots$     $(c_n)$ ៖ $16,\ 22,\ 28,\ 34,\ \ldots$  ជាស្វ៊ីតនព្វន្ត  $d = 6$`),
+        s(120, 258, 1100, R`$c_n = 16 + 6(n - 1) = 6n + 10$`),
+        s(120, 306, 1100, R`$b_n = 14 + \displaystyle\sum_{k=1}^{n-1} (6k + 10) = 14 + 3n(n - 1) + 10(n - 1) = 3n^2 + 7n + 4$`, { h: 72 }),
+        s(120, 386, 1100, R`$a_n = 4 + \displaystyle\sum_{k=1}^{n-1} (3k^2 + 7k + 4) = 4 + \dfrac{(n - 1)n(2n - 1)}{2} + \dfrac{7(n - 1)n}{2} + 4(n - 1)$`, { h: 72, size: 23 }),
+        s(400, 464, 800, R`$= n^3 + 2n^2 + n = n(n + 1)^2$`),
+        S.box(160, 530, 860, 80, R`!!ដូចនេះ!!   $a_n = n^3 + 2n^2 + n$`, { size: 30, align: 'center', anim: true }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 37 worked example: sum */ page([
+        l(60, 100, 1100, R`!!ខ.!!  គណនាផលបូក $n$ តួដំបូងនៃស្វ៊ីត  $a_n = n^3 + 2n^2 + n$`, { size: 27 }),
+        s(60, 160, 1180, R`$S_n = \displaystyle\sum_{k=1}^{n} k^3 + 2\sum_{k=1}^{n} k^2 + \sum_{k=1}^{n} k$`, { h: 76 }),
+        s(160, 244, 1080, R`$= \dfrac{n^2(n + 1)^2}{4} + \dfrac{n(n + 1)(2n + 1)}{3} + \dfrac{n(n + 1)}{2}$`, { h: 66 }),
+        s(160, 318, 1080, R`$= \dfrac{n(n + 1)}{12}\left[3n(n + 1) + 4(2n + 1) + 6\right] = \dfrac{n(n + 1)(3n^2 + 11n + 10)}{12}$`, { h: 66 }),
+        S.box(160, 410, 860, 90, R`!!ដូចនេះ!!   $S_n = \dfrac{1}{12}n(n + 1)(3n^2 + 11n + 10)$`, { size: 30, align: 'center', anim: true }),
+        tip(160, 520, 860, 66, R`!!ផ្ទៀងផ្ទាត់ ៖!!  $S_1 = \dfrac{1 \times 2 \times 24}{12} = 4 = a_1$ ✓`, { size: 22, anim: true }),
+        kids()
+      ]),
+
+      /* 38 practice */ page([
+        sec('ប្រតិបត្តិ'),
+        l(80, 200, 1100, R`កំណត់តួទី $n$ នៃស្វ៊ីត   $1,\ 2,\ 5,\ 12,\ 27,\ 58,\ 121,\ \ldots$`, { size: 30 }),
+        s(120, 290, 1100, R`ផលសងលំដាប់ទី ១ ៖  $1,\ 3,\ 7,\ 15,\ 31,\ 63,\ \ldots$   $(= 2^n - 1)$`, { size: 26 }),
+        s(120, 350, 1100, R`$a_n = 1 + \displaystyle\sum_{k=1}^{n-1} (2^k - 1) = 1 + (2^n - 2) - (n - 1)$`, { size: 26, h: 72 }),
+        S.box(300, 450, 600, 80, R`!!ចម្លើយ ៖!!   $a_n = 2^n - n$`, { size: 32, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 39-41 quizzes */
+      S.quiz(R`!!១.!! ស្វ៊ីត $1,\ 2,\ 4,\ 7,\ 11,\ \ldots$ មានផលសងតួលំដាប់ទី ១ គឺ ៖`, [R`$2, 4, 8, \ldots$`, R`$1, 2, 3, 4, \ldots$`, R`$1, 1, 1, \ldots$`, R`$1, 3, 5, \ldots$`], 1),
+      S.quiz(R`!!២.!! ស្វ៊ីត $2,\ 5,\ 10,\ 17,\ 26,\ \ldots$ មានតួទូទៅ ៖`, [R`$a_n = 3n - 1$`, R`$a_n = 2n^2$`, R`$a_n = n^2 + 1$`, R`$a_n = n^2 + 2$`], 2),
+      S.quiz(R`!!៣.!! បើ $b_k = a_{k+1} - a_k$ នោះ $a_n$ ស្មើ ៖`, [R`$\sum_{k=1}^{n} b_k$`, R`$a_1 + \sum_{k=1}^{n} b_k$`, R`$a_1 \sum_{k=1}^{n-1} b_k$`, R`$a_1 + \sum_{k=1}^{n-1} b_k$`], 3),
+
+      /* 42 homework 2 */ S.homework(R`!!១.!! សម្រួល $\displaystyle\sum_{k=1}^{n} k(k+1)$ រួចគណនា  $1 \times 2 + 2 \times 3 + \ldots + 28 \times 29$
+!!២.!! កំណត់តួទី $n$ និងផលបូក $n$ តួដំបូងនៃស្វ៊ីត  $1,\ 5,\ 14,\ 30,\ 55,\ 91,\ \ldots$
+!!៣.!! កំណត់តួទី $n$ នៃស្វ៊ីត $(a_n)$ ៖  $p,\ q,\ p,\ q,\ p,\ q,\ \ldots$`),
+
+      /* 43 */ S.thanks()
+    ];
+    return { name: 'ថ្នាក់ទី១១ · មេរៀនទី៤ ផលបូកតួនៃស្វ៊ីតផ្សេងៗ', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
+             teacher: K.info.teacher, slides: slides };
+  }
+
   window.KPSlideTemplates = [
     { id: 'g11-sequences', ver: 5, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences },
     { id: 'g11-arith', ver: 3, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតនព្វន្ត (៣៩ ស្លាយ)', build: arithmetic },
-    { id: 'g11-geom', ver: 3, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតធរណីមាត្រ (៤០ ស្លាយ)', build: geometric }
+    { id: 'g11-geom', ver: 3, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតធរណីមាត្រ (៤០ ស្លាយ)', build: geometric },
+    { id: 'g11-sums', ver: 1, name: '📘 ថ្នាក់ទី១១ · ផលបូកតួនៃស្វ៊ីតផ្សេងៗ (៤៣ ស្លាយ)', build: sums }
   ];
 })();
