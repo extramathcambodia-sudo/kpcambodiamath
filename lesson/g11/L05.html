@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៥ : ទំនាក់ទំនងតួនៃស៊ីត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៥ «ទំនាក់ទំនងតួនៃស៊ីត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៥ : ទំនាក់ទំនងតួនៃស៊ីត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៥ «ទំនាក់ទំនងតួនៃស៊ីត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g11">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li aria-current="page">មេរៀនទី ៥</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៥</span>
+      <div><span class="ls-kicker">ថ្នាក់វិទ្យាសាស្ត្រ · ជំពូកទី ១ ស៊ីតនិងអនុមានរួមគណិតវិទ្យា · មេរៀនទី ៥ · គណិតវិទ្យាថ្នាក់ទី ១១</span><h1>ទំនាក់ទំនងតួនៃស៊ីត</h1><div class="ls-chips"><span class="chip chip-soon">ថ្នាក់វិទ្យាសាស្ត្រ</span><span class="chip chip-soon">ទំព័រ ៣៦–៤៣</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. កំណត់តួទី <span class="mi">\(n\)</span> ដោយប្រើស៊ីតជំនួយ</a></li><li class="sub"><a href="#u2">២. ទំនាក់ទំនងរវាង <span class="mi">\(a_n\)</span> និង <span class="mi">\(S_n\)</span></a></li><li class="sub"><a href="#u3">៣. ទំនាក់ទំនងកំណើនតួក្នុងទម្រង់ <span class="mi">\(a_{n+2} + pa_{n+1} + qa_n = 0\)</span></a></li><li class="sub"><a href="#u4">៤. ទំព័រសៀវភៅដើម</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-11.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white"><header class="bx-h"><b>វត្ថុបំណង</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> ដោយប្រើស៊ីតជំនួយ</p></li>
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> តាមទំនាក់ទំនងរវាង <span class="mi">\(a_n\)</span> និង <span class="mi">\(S_n\)</span></p></li>
+<li><p>កំណត់តួទូទៅនៃទំនាក់ទំនងតួក្នុងទម្រង់ <span class="mi">\(a_{n+2} + pa_{n+1} + qa_n = 0\)</span> ។</p></li>
+</ol>
+</div></section>
+<h3 id="u1">កំណត់តួទី <span class="mi">\(n\)</span> ដោយប្រើស៊ីតជំនួយ</h3>
+<p>គេបានសិក្សារួចមកហើយនូវទំនាក់ទំនងតួនៃស៊ីតនព្វន្ត និងស៊ីតធរណីមាត្រ ។</p>
+<p>ចំពោះស៊ីតនព្វន្ត <span class="mi">\(a_{n+1} = a_n + d\)</span>, <span class="mi">\(d\)</span> ជាផលសងរួម ។</p>
+<p>ចំពោះស៊ីតធរណីមាត្រ <span class="mi">\(a_{n+1} = a_n \times q\)</span>, <span class="mi">\(q\)</span> ជាផលធៀបរួម ។</p>
+<p>តទៅទៀតគេនឹងសិក្សាអំពីទំនាក់ទំនងតួនៃស៊ីតផ្សេងៗទៀតដោយកំណត់រកតួទី <span class="mi">\(n\)</span> នៃស៊ីតនោះ ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>កំណត់តួទូទៅនៃស៊ីត <span class="mi">\((a_n)\)</span> ដោយទំនាក់ទំនងកំណើន <span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(a_{n+1} = 1 + 4a_n\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>របៀបទី ១</strong> ៖ គេមាន <span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(a_{n+1} = 1 + 4a_n\)</span> គេអាចកំណត់ <div class="md">\[\begin{aligned}
+a_2 &amp;= 1 + 4a_1 = 1 + 4\\
+a_3 &amp;= 1 + 4a_2 = 1 + 4 \times (1 + 4) = 1 + 4 + 4^2\\
+a_4 &amp;= 1 + 4a_3 = 1 + 4 \times (1 + 4 + 4^2) = 1 + 4 + 4^2 + 4^3\\
+&amp;\ \,\vdots
+\end{aligned}\]</div> នោះ <span class="mi">\(a_n = 1 + 4 + 4^2 + 4^3 + \ldots + 4^{n-1}\)</span> ។ គេបាន <div class="md">\[a_n = 1 + 4 + 4^2 + 4^3 + \ldots + 4^{n-1} = \frac{1 \times (4^n - 1)}{4 - 1} = \frac{4^n - 1}{3} \text{ ។}\]</div> ដូច្នេះ តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(a_n = \dfrac{4^n - 1}{3}\)</span> ។</p>
+<p><strong>របៀបទី ២</strong> ៖ ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <span class="mi">\(a_{n+1} = 1 + 4a_n\)</span>, <span class="mi">\(a_n = 1 + 4a_{n-1}\)</span> នោះ <div class="md">\[\begin{gathered}
+\begin{aligned}
+a_{n+1} - a_n &amp;= 1 + 4a_n - (1 + 4a_{n-1})\\
+&amp;= 4(a_n - a_{n-1})
+\end{aligned}\\
+(1)
+\end{gathered}\]</div> បើគេតាង <span class="mi">\(b_n = a_{n+1} - a_n\)</span> នោះពី <span class="mi">\((1)\)</span> គេបាន <span class="mi">\(b_n = 4b_{n-1} \Rightarrow \dfrac{b_n}{b_{n-1}} = 4\)</span> នោះស៊ីត <span class="mi">\((b_n)\)</span> ជាស៊ីតធរណីមាត្រដែលមានផលធៀបរួមស្មើនឹង <span class="mi">\(4\)</span> និងមានតួទី <span class="mi">\(1\)</span> និងតួទី <span class="mi">\(n\)</span> គឺ <span class="mi">\(b_1 = a_2 - a_1 = 1 + 4 \times 1 - 1 = 4\)</span>, <span class="mi">\(b_n = 4 \times 4^{n-1} = 4^n\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((b_n)\)</span> ជាផលសងស៊ីត <span class="mi">\((a_n)\)</span> តាមរូបមន្ត ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <div class="md">\[\begin{aligned}
+a_n &amp;= a_1 + \sum_{k=1}^{n-1} 4^k = 1 + 4^1 + 4^2 + \ldots + 4^{n-1}\\
+&amp;= \frac{1 \times (4^n - 1)}{4 - 1} = \frac{4^n - 1}{3} \text{ ។}
+\end{aligned}\]</div> ដូច្នេះ តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(a_n = \dfrac{4^n - 1}{3}\)</span> ។</p>
+<p><strong>របៀបទី ៣</strong> ៖ គេប្រើស៊ីតជំនួយ <span class="mi">\((r_n)\)</span> រួចធ្វើផលដក <span class="mi">\(a_{n+1} - r_n\)</span> ។</p>
+<p>គេឱ្យ <span class="mi">\(r_n = -\dfrac{1}{3}\)</span> គេបាន <span class="mi">\(a_{n+1} + \dfrac{1}{3} = 1 + 4a_n + \dfrac{1}{3} = 4a_n + \dfrac{4}{3} = 4 \cdot \left(a_n + \dfrac{1}{3}\right)\)</span> ។</p>
+<p>តាង <span class="mi">\(V_{n+1} = a_{n+1} + \dfrac{1}{3}\)</span> ហើយ <span class="mi">\(V_n = a_n + \dfrac{1}{3}\)</span> <span class="mi">\((1)\)</span></p>
+<p>គេបាន <span class="mi">\(V_{n+1} = 4V_n\)</span> ហើយ <span class="mi">\(V_n = 4^{n-1} \cdot V_1\)</span> ។ គេអាចគណនា <span class="mi">\(V_1\)</span> តាមទំនាក់ទំនង <span class="mi">\((1)\)</span> គឺ <span class="mi">\(V_1 = a_1 + \dfrac{1}{3} = \dfrac{4}{3}\)</span> ។</p>
+<p>គេបាន <span class="mi">\(V_n = 4^{n-1} \cdot \dfrac{4}{3} = \dfrac{1}{3} \cdot 4^n\)</span> ។ គេអាចគណនា <span class="mi">\(a_n\)</span> តាមទំនាក់ទំនង <span class="mi">\((1)\)</span> គឺ <span class="mi">\(a_n = V_n - \dfrac{1}{3} = \dfrac{1}{3} \cdot 4^n - \dfrac{1}{3} = \dfrac{4^n - 1}{3}\)</span> ។</p>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<p>ដើម្បីកំណត់រកតម្លៃនៃស៊ីតជំនួយ <span class="mi">\((r_n)\)</span> គេតាង <span class="mi">\(r_n = \alpha \cdot n + \beta\)</span> (<span class="mi">\(\alpha, \beta\)</span> ថេរ) ជាស៊ីតដែលផ្ទៀងផ្ទាត់ <span class="mi">\(a_{n+1} = 1 + 4a_n\)</span> ។ ជំនួសស៊ីតជំនួយទៅក្នុងស៊ីត <span class="mi">\((a_n)\)</span> គេបានសមីការដែលអាចឱ្យ គេកំណត់រក <span class="mi">\(\alpha\)</span> និង <span class="mi">\(\beta\)</span> ។ <div class="md">\[\begin{aligned}
+a_{n+1} &amp;= 1 + 4a_n \iff \alpha \cdot (n + 1) + \beta\\
+&amp;= 1 + 4 \cdot (\alpha \cdot n + \beta) \text{ ឬ } 3 \cdot \alpha \cdot n + 3 \cdot \beta - \alpha + 1 = 0
+\end{aligned}\]</div> គេបាន <span class="mi">\(\begin{cases} 3 \cdot \alpha = 0\\ 3 \cdot \beta - \alpha + 1 = 0 \end{cases}\)</span> ហើយ <span class="mi">\(\alpha = 0\)</span>, <span class="mi">\(\beta = -\dfrac{1}{3}\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(r_n = -\dfrac{1}{3}\)</span> ដូច្នេះស៊ីត <span class="mi">\((r_n)\)</span> ហៅថា <strong>ស៊ីតជំនួយ</strong> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេប្រើស៊ីតជំនួយ <span class="mi">\((r_n)\)</span> ដែល <span class="mi">\(r_n = \alpha \cdot n + \beta\)</span> (<span class="mi">\(\alpha, \beta\)</span> ថេរ) ដែលផ្ទៀងផ្ទាត់ទំនាក់ទំនងនៃស៊ីត ។ ក្នុងករណីនេះ គេជំនួស <span class="mi">\((r_n)\)</span> ក្នុងទំនាក់ទំនងនៃស៊ីត រួចគណនា តម្លៃ <span class="mi">\(\alpha\)</span> និង <span class="mi">\(\beta\)</span> បន្ទាប់មកកំណត់បានស៊ីត <span class="mi">\((r_n)\)</span> គេនឹងធ្វើផលសង <span class="mi">\(a_{n+1} - r_n\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយ <span class="mi">\(a_1 = 3\)</span>, <span class="mi">\(a_{n+1} = 2a_n - n + 1\)</span> ។ កំណត់តួទី <span class="mi">\(n\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាង <span class="mi">\((r_n)\)</span> ដែល <span class="mi">\(r_n = \alpha n + \beta\)</span> ជាស៊ីតជំនួយ ។ គេបាន <div class="md">\[\begin{aligned}
+a_{n+1} = 2a_n - n + 1 &amp;\iff \alpha \cdot (n + 1) + \beta\\
+&amp;= 2(\alpha \cdot n + \beta) - n + 1\\
+&amp;\iff n \cdot (\alpha - 1) + \beta - \alpha + 1 = 0
+\end{aligned}\]</div> គេបានប្រព័ន្ធ <span class="mi">\(\begin{cases} \alpha - 1 = 0\\ \beta - \alpha + 1 = 0 \end{cases}\)</span> ហើយ <span class="mi">\(\alpha = 1\)</span>, <span class="mi">\(\beta = 0\)</span> ។</p>
+<p>នោះ <span class="mi">\((r_n) = n\)</span> ធ្វើផលសងរវាងស៊ីត <span class="mi">\(a_{n+1} - r_n\)</span> គេបាន ៖ <div class="md">\[\begin{gathered}
+a_{n+1} - n = 2a_n - n + 1 - n = 2a_n - 2n + 1,\\
+a_{n+1} - (n + 1) = 2(a_n - n)
+\end{gathered}\]</div> តាង <span class="mi">\(V_n = a_n - n\)</span> <span class="mi">\((1)\)</span> នោះ <span class="mi">\(V_{n+1} = a_{n+1} - (n + 1)\)</span> គេបាន <span class="mi">\(V_{n+1} = 2 \cdot V_n\)</span> ហើយ <span class="mi">\(V_n = 2^{n-1} \cdot V_1\)</span> ។</p>
+<p>គេគណនា <span class="mi">\(V_1\)</span> តាម <span class="mi">\(V_n = a_n - n\)</span>, <span class="mi">\(V_1 = a_1 - 1 = 3 - 1 = 2\)</span>, <span class="mi">\(V_n = 2^{n-1} \cdot 2 = 2^n\)</span> ។</p>
+<p>គេអាចគណនា <span class="mi">\(V_n\)</span> តាម <span class="mi">\((1)\)</span> គឺ <span class="mi">\(V_n = a_n - n\)</span> នោះ <span class="mi">\(a_n = V_n + n = 2^n + n\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(a_n = 2^n + n\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយ <span class="mi">\(a_1 = 5\)</span>, <span class="mi">\(a_n = 2a_{n-1} - n\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(a_n = 2^n + (n + 2)\)</span> ។</p></details>
+</div></section>
+<h3 id="u2">ទំនាក់ទំនងរវាង <span class="mi">\(a_n\)</span> និង <span class="mi">\(S_n\)</span></h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(S_n = n^2 + n\)</span> ។ កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p>
+<p>គេមានផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <div class="md">\[S_n = n^2 + n \iff S_n = a_1 + a_2 + a_3 + \ldots + a_{n-1} + a_n = n^2 + n\]</div> <div class="md">\[\Rightarrow S_{n-1} = a_1 + a_2 + a_3 + \ldots + a_{n-1} = (n - 1)^2 + (n - 1) \text{ ។}\]</div> ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <span class="mi">\(S_n - S_{n-1} = a_n = n^2 + n - [(n - 1)^2 + (n - 1)]\)</span> <div class="md">\[\begin{gathered}
+\begin{aligned}
+a_n &amp;= n^2 + n - (n - 1)^2 - n + 1\\
+&amp;= n^2 + n - n^2 + 2n - 1 - n + 1 = 2n
+\end{aligned}\\
+\text{នោះ } a_n = 2n \text{ ។}
+\end{gathered}\]</div> ចំពោះ <span class="mi">\(n = 1\)</span> គេបាន <span class="mi">\(S_1 = 1^2 + 1 = 2\)</span> ពិត ព្រោះ (<span class="mi">\(S_1 = a_1 = 2\)</span>) ។</p>
+<p>ដូច្នេះ <span class="mi">\(a_n = 2n\)</span> ។</p>
+</div></section>
+<p>ឧបមាថា <span class="mi">\(S_n\)</span> គឺជាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> នោះ <span class="mi">\(S_n = a_1 + a_2 + \ldots + a_{n-1} + a_n\)</span> និង <span class="mi">\(S_{n-1} = a_1 + a_2 + \ldots + a_{n-1}\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <span class="mi">\(S_n - S_{n-1} = a_n\)</span> ។ ម្យ៉ាងទៀត <span class="mi">\(S_1 = a_1\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <span class="mi">\(S_n - S_{n-1} = a_n\)</span> និង <span class="mi">\(S_1 = a_1\)</span> ។</p>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<p><span class="mi">\(S_n\)</span> និង <span class="mi">\(S_{n+1}\)</span> មានភាពចាំបាច់ដើម្បីរក <span class="mi">\(a_{n+1}\)</span> គឺ <span class="mi">\(a_{n+1} = S_{n+1} - S_n\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គេមានផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(S_n = n^3 + 2n\)</span> ។ កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>គេមានផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(S_n = n^3 + 2n \Rightarrow S_{n-1} = (n - 1)^3 + 2(n - 1)\)</span> <div class="md">\[\begin{aligned}
+a_n = S_n - S_{n-1} &amp;= n^3 + 2n - (n - 1)^3 - 2(n - 1)\\
+&amp;= n^3 + 2n - 2n + 2 - n^3\\
+&amp;\quad{} + 3n^2 - 3n + 1\\
+&amp;= 3n^2 - 3n + 3 \text{ ។}
+\end{aligned}\]</div> ដូច្នេះ តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(a_n = 3n^2 - 3n + 3\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេមាន <span class="mi">\(S_n = 4 - a_n - \dfrac{1}{2^{n-2}}\)</span> <span class="mi">\((n = 1, 2, 3, \ldots)\)</span> ជាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>កំណត់ទំនាក់ទំនងកំណើនរវាង <span class="mi">\(a_{n+1}\)</span> និង <span class="mi">\(a_n\)</span> ។</p></li>
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols1">
+<li><p><span class="mi">\(2a_{n+1} = a_n + \dfrac{1}{2^{n-1}}\)</span></p></li>
+<li><p><span class="mi">\(a_n = \dfrac{2n}{2^n}\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u3">ទំនាក់ទំនងកំណើនតួក្នុងទម្រង់ <span class="mi">\(a_{n+2} + pa_{n+1} + qa_n = 0\)</span></h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ដោយ <span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(a_2 = 3\)</span> ដែល <span class="mi">\(a_{n+2} = 3a_{n+1} - 2a_n\)</span> <span class="mi">\((n = 1, 2, \ldots)\)</span> ។</p>
+<p>គេស្គាល់ <span class="mi">\(a_1\)</span>, <span class="mi">\(a_2\)</span> គេអាចគណនាតួ <span class="mi">\(a_3\)</span> និងតួបន្តបន្ទាប់ដើម្បីពិនិត្យមើលលំនាំគំរូ <div class="md">\[\begin{aligned}
+a_3 &amp;= 3 \cdot a_2 - 2 \cdot a_1 = 9 - 2 = 7\\
+a_4 &amp;= 3 \cdot a_3 - 2 \cdot a_2 = 21 - 6 = 15\\
+a_5 &amp;= 3 \cdot a_4 - 2 \cdot a_3 = 45 - 14 = 31\\
+a_6 &amp;= 3 \cdot a_5 - 2 \cdot a_4 = 93 - 30 = 63
+\end{aligned}\]</div> គណនាផលសងតួនៃស៊ីតនេះ <div class="md">\[\begin{gathered}
+a_2 - a_1 = 2, \quad{} a_3 - a_2 = 2^2,\\
+a_4 - a_3 = 2^3, \quad{} \ldots,\\
+a_n - a_{n-1} = 2^{n-1}
+\end{gathered}\]</div> <div class="md">\[\begin{gathered}
+a_n - a_1 = 2 + 2^2 + 2^3 + \ldots + 2^{n-1} \quad{} \text{នោះ}\\
+a_n = 1 + 2 + 2^2 + 2^3 + \ldots + 2^{n-1}
+\end{gathered}\]</div> ជាផលបូកតួនៃស៊ីតធរណីមាត្រដែលមាន <span class="mi">\(1\)</span> ជាតួទី <span class="mi">\(1\)</span> និងផលធៀបរួមស្មើនឹង <span class="mi">\(2\)</span> គេបាន <span class="mi">\(a_n = 2^n - 1\)</span> ។</p>
+<p>ជាទូទៅគេអាចគណនា <span class="mi">\(a_n\)</span> តាមវិធីខាងក្រោម ៖ <div class="md">\[\begin{aligned}
+&amp;a_{n+2} = 3a_{n+1} - 2a_n\\
+&amp;\iff a_{n+2} - 2a_{n+1} = a_{n+1} - 2a_n\\
+&amp;= a_n - 2a_{n-1} = a_{n-1} - 2a_{n-2} = \ldots\\
+&amp;= a_2 - 2a_1 = 3 - 2 \times 1 = 1
+\end{aligned}\]</div> នោះ <span class="mi">\(a_{n+2} - 2a_{n+1} = a_{n+1} - 2a_n = 1\)</span> <span class="mi">\((1)\)</span> ។</p>
+<p>ម្យ៉ាងទៀត <span class="mi">\(a_{n+2} = 3a_{n+1} - 2a_n \iff a_{n+2} - a_{n+1} = 2(a_{n+1} - a_n)\)</span> ។</p>
+<p>តាង <span class="mi">\(b_n = a_{n+1} - a_n\)</span> នោះ <span class="mi">\((b_n)\)</span> ឬ <span class="mi">\((a_{n+1} - a_n)\)</span> ជាស៊ីតធរណីមាត្រដែលមានផលធៀបរួមស្មើនឹង <span class="mi">\(2\)</span> និងតួទី <span class="mi">\(1\)</span> ស្មើនឹង <span class="mi">\(b_1 = a_2 - a_1 = 3 - 1 = 2\)</span> ហើយ <span class="mi">\(b_n = 2 \cdot (2)^{n-1} = 2^n\)</span> <span class="mi">\((2)\)</span></p>
+<p>តាម <span class="mi">\((1)\)</span> និង <span class="mi">\((2)\)</span> គេបាន <div class="md">\[\begin{cases}
+a_{n+1} - 2a_n = 1 &amp; (1)\\
+a_{n+1} - a_n = 2^n &amp; (2)
+\end{cases}\]</div> ដក <span class="mi">\((1) - (2)\)</span> គេបាន <span class="mi">\(-a_n = 1 - 2^n\)</span> ។</p>
+<p>ដូច្នេះ តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(a_n = 2^n - 1\)</span> ។</p>
+</div></section>
+<p>គេបានរបៀបរកតួទូទៅតាមទំនាក់ទំនងដូចខាងក្រោម ៖</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><strong>របៀបដោះស្រាយ <span class="mi">\(a_{n+2} + pa_{n+1} + qa_n = 0\)</span></strong></p>
+<p>បើទំនាក់ទំនងនៃស៊ីត <span class="mi">\((a_n)\)</span> មានទម្រង់ <span class="mi">\(a_{n+2} + pa_{n+1} + qa_n = 0\)</span> គេពិចារណាពីរចំនួន <span class="mi">\(\alpha\)</span> និង <span class="mi">\(\beta\)</span> ដែលបំពេញលក្ខខណ្ឌ <span class="mi">\(\alpha + \beta = -p\)</span>, <span class="mi">\(\alpha\beta = q\)</span> នោះគេបាន <span class="mi">\(a_{n+2} - (\alpha + \beta)a_{n+1} + \alpha\beta a_n = 0\)</span> ។</p>
+<p>ទំនាក់ទំនងនេះអាចបម្លែងតាមរបៀបពីរយ៉ាងដូចខាងក្រោម ៖ <div class="md">\[\begin{gathered}
+a_{n+2} - \alpha a_{n+1} = \beta(a_{n+1} - \alpha a_n)\\
+a_{n+2} - \beta a_{n+1} = \alpha(a_{n+1} - \beta a_n)
+\end{gathered}\]</div> ទំនាក់ទំនងទាំង <span class="mi">\(2\)</span> ខាងលើនេះ គឺជាស៊ីតធរណីមាត្រអាចឱ្យគេរក <span class="mi">\(a_n\)</span> បាន ។</p>
+<p>គេអាចរក <span class="mi">\(\alpha\)</span> និង <span class="mi">\(\beta\)</span> ដោយដោះស្រាយសមីការ <span class="mi">\(x^2 + px + q = 0\)</span> ព្រោះគេស្គាល់ផលបូកនិងផលគុណវា ។</p>
+<p>សមីការ <span class="mi">\(x^2 + px + q = 0\)</span> ហៅថា “<strong>សមីការសម្គាល់</strong>នៃ <span class="mi">\(a_{n+2} - (\alpha + \beta)a_{n+1} + \alpha\beta a_n = 0\)</span>” ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>ស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយ <span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(a_2 = 13\)</span>, <span class="mi">\(a_{n+2} = a_{n+1} + 6a_n\)</span> <span class="mi">\((n = 1, 2, \ldots)\)</span> ។ កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(a_{n+2} = a_{n+1} + 6a_n \iff a_{n+2} - a_{n+1} - 6a_n = 0\)</span></p>
+<p>សមីការសម្គាល់ ៖ <span class="mi">\(x^2 - x - 6 = 0\)</span> សមីការមានឫស <span class="mi">\(x = 3\)</span> ឬ <span class="mi">\(x = -2\)</span> ។ គេបាន <div class="md">\[\begin{cases}
+a_{n+2} + 2a_{n+1} = 3(a_{n+1} + 2a_n) &amp; (i)\\
+a_{n+2} - 3a_{n+1} = -2(a_{n+1} - 3a_n) &amp; (ii)
+\end{cases}\]</div> <span class="mi">\((i)\)</span> <span class="mi">\(a_{n+2} + 2a_{n+1} = 3(a_{n+1} + 2a_n)\)</span> ។ តាង <span class="mi">\(b_n = a_{n+1} + 2a_n\)</span> នោះស៊ីត <span class="mi">\((b_n)\)</span> ជាស៊ីតធរណីមាត្រដែលមានផលធៀបរួមស្មើនឹង <span class="mi">\(3\)</span> ហើយតួទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(b_1 = a_2 + 2a_1 = 13 + 2 \times 1 = 15\)</span> និង <span class="mi">\(b_n = 15 \cdot (3)^{n-1}\)</span> ។ គេបាន <span class="mi">\(a_{n+1} + 2a_n = 15 \cdot (3)^{n-1}\)</span> <span class="mi">\((1)\)</span> ។</p>
+<p><span class="mi">\((ii)\)</span> <span class="mi">\(a_{n+2} - 3a_{n+1} = -2(a_{n+1} - 3a_n)\)</span> ។ តាង <span class="mi">\(c_n = a_{n+1} - 3a_n\)</span> នោះស៊ីត <span class="mi">\((c_n)\)</span> ជាស៊ីតធរណីមាត្រដែលមានផលធៀបរួមស្មើនឹង <span class="mi">\(-2\)</span> ហើយតួទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(c_1 = a_2 - 3a_1 = 13 - 3 \times 1 = 10\)</span> និង <span class="mi">\(c_n = 10 \cdot (-2)^{n-1}\)</span> ។ គេបាន <span class="mi">\(a_{n+1} - 3a_n = 10 \cdot (-2)^{n-1}\)</span> <span class="mi">\((2)\)</span> ។</p>
+<p>តាម <span class="mi">\((1)\)</span> និង <span class="mi">\((2)\)</span> គេបាន <div class="md">\[\begin{cases}
+a_{n+1} + 2a_n = 15 \cdot (3)^{n-1} &amp; (1)\\
+a_{n+1} - 3a_n = 10 \cdot (-2)^{n-1} &amp; (2)
+\end{cases}\]</div> ដក <span class="mi">\((1) - (2)\)</span> ៖ <span class="mi">\(5a_n = 15(3)^{n-1} - 10(-2)^{n-1}\)</span> <div class="md">\[a_n = 3 \times 3^{n-1} - 2 \times (-2)^{n-1} = 3^n + (-2)^n\]</div> ដូច្នេះ តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <span class="mi">\(a_n = 3^n + (-2)^n\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយទំនាក់ទំនង <span class="mi">\(a_1 = 0\)</span>, <span class="mi">\(a_2 = 3\)</span>, <span class="mi">\(a_{n+2} = 4a_{n+1} - 3a_n\)</span> <span class="mi">\((n = 1, 2, \ldots)\)</span> ។ កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(a_n = \dfrac{1}{2}(3^n - 3)\)</span> ។</p></details>
+</div></section>
+<h3 id="u4">ទំព័រសៀវភៅដើម</h3><details class="ans sol-all"><summary>បើកមើលទំព័រសៀវភៅពុម្ព</summary><div class="pdf-note">មេរៀននេះបង្ហាញជាទំព័រពីសៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី ១១ (ថ្នាក់វិទ្យាសាស្ត្រ) ទំព័រ ៣៦–៤៣។</div><figure class="bk-page" id="p36"><img src="pages/sc1-p036.webp" alt="ទំព័រ ៣៦" loading="lazy" width="1100"><figcaption>ទំព័រ ៣៦</figcaption></figure><figure class="bk-page" id="p37"><img src="pages/sc1-p037.webp" alt="ទំព័រ ៣៧" loading="lazy" width="1100"><figcaption>ទំព័រ ៣៧</figcaption></figure><figure class="bk-page" id="p38"><img src="pages/sc1-p038.webp" alt="ទំព័រ ៣៨" loading="lazy" width="1100"><figcaption>ទំព័រ ៣៨</figcaption></figure><figure class="bk-page" id="p39"><img src="pages/sc1-p039.webp" alt="ទំព័រ ៣៩" loading="lazy" width="1100"><figcaption>ទំព័រ ៣៩</figcaption></figure><figure class="bk-page" id="p40"><img src="pages/sc1-p040.webp" alt="ទំព័រ ៤០" loading="lazy" width="1100"><figcaption>ទំព័រ ៤០</figcaption></figure><figure class="bk-page" id="p41"><img src="pages/sc1-p041.webp" alt="ទំព័រ ៤១" loading="lazy" width="1100"><figcaption>ទំព័រ ៤១</figcaption></figure><figure class="bk-page" id="p42"><img src="pages/sc1-p042.webp" alt="ទំព័រ ៤២" loading="lazy" width="1100"><figcaption>ទំព័រ ៤២</figcaption></figure><figure class="bk-page" id="p43"><img src="pages/sc1-p043.webp" alt="ទំព័រ ៤៣" loading="lazy" width="1100"><figcaption>ទំព័រ ៤៣</figcaption></figure></details><h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយទំនាក់ទំនងកំណើនដូចខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(a_1 = 3\)</span>, <span class="mi">\(a_{n+1} = 2a_n - 4\)</span></p></li>
+<li><p><span class="mi">\(a_1 = 5\)</span>, <span class="mi">\(a_{n+1} = 3a_n - 2n\)</span> ។</p></li>
+</ol>
+<p>កំណត់តួទី <span class="mi">\(4\)</span> នៃស៊ីតនេះ ។</p>
+</div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយទំនាក់ទំនងកំណើន <span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(a_2 = 2\)</span>, <span class="mi">\(a_{n+2} = a_{n+1} + a_n\)</span> ។ កំណត់តួទី <span class="mi">\(7\)</span> នៃស៊ីតនេះ ។</p>
+</div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយទំនាក់ទំនងកំណើន <span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(a_{n+1} = pa_n + q\)</span> ។ គណនាតម្លៃ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span> បើគេដឹងតួទី <span class="mi">\(3\)</span> ស្មើនឹង <span class="mi">\(6\)</span> និងតួទី <span class="mi">\(5\)</span> ស្មើនឹង <span class="mi">\(86\)</span> ។</p>
+</div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>កំណត់តួទូទៅនៃស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយទំនាក់ទំនងកំណើនដូចខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(3a_{n+1} = 2a_n + 3\)</span> <span class="mi">\((n = 1, 2, \ldots)\)</span></p></li>
+<li><p><span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(3a_{n+1} = 3a_n + 4\)</span> <span class="mi">\((n = 1, 2, \ldots)\)</span></p></li>
+<li><p><span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(a_{n+1} = a_n + n\)</span> <span class="mi">\((n = 1, 2, \ldots)\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយ <span class="mi">\(a_1 = 4\)</span>, <span class="mi">\(a_{n+1} = \dfrac{4a_n - 9}{a_n - 2}\)</span> <span class="mi">\((n = 1, 2, 3, \ldots)\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>ស្រាយបញ្ជាក់ថា <span class="mi">\(a_n \ne 3\)</span> ចំពោះគ្រប់ <span class="mi">\(n\)</span> ។</p></li>
+<li><p>យក <span class="mi">\(b_n = \dfrac{1}{a_n - 3}\)</span> និងកំណត់តួទូទៅនៃស៊ីត <span class="mi">\((b_n)\)</span> ។ កំណត់តួទូទៅនៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គេមាន <span class="mi">\(S_n\)</span> ជាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> ។ បើ <span class="mi">\(S_n\)</span> បំពេញលក្ខខណ្ឌ <span class="mi">\(S_n = 4 - a_n - \dfrac{1}{2^{n-2}}\)</span> <span class="mi">\((n = 1, 2, 3, \ldots)\)</span> នោះចូរ ៖</p>
+<ol class="list olka cols1">
+<li><p>កំណត់ដោយទំនាក់ទំនងកំណើនរវាង <span class="mi">\(a_{n+1}\)</span> និង <span class="mi">\(a_n\)</span> ។</p></li>
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេមាន <span class="mi">\(S_n\)</span> ជាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> ហើយបំពេញលក្ខខណ្ឌ <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(a_1 = 1\)</span>, <span class="mi">\(S_n = a_{n+1} + n^2\)</span> <span class="mi">\((n \ge 1)\)</span> ។ កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p>
+</div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេមាន <span class="mi">\(S_n\)</span> ជាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> ហើយ <span class="mi">\(S_n\)</span> បំពេញលក្ខខណ្ឌ <span class="mi">\(S_n = \dfrac{n}{n-1} \cdot a_n\)</span>, <span class="mi">\(n \ge 2\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>បញ្ជាក់រក <span class="mi">\(a_n\)</span> <span class="mi">\((n \ge 3)\)</span> អនុគមន៍នឹង <span class="mi">\(n\)</span> និង <span class="mi">\(a_{n-1}\)</span> ។</p></li>
+<li><p>បញ្ជាក់រក <span class="mi">\(S_n\)</span> <span class="mi">\((n \ge 2)\)</span> អនុគមន៍នឹង <span class="mi">\(n\)</span> និង <span class="mi">\(S_{n-1}\)</span> ។</p></li>
+<li><p>ឧបមាថា <span class="mi">\(a_1 = 1\)</span> រកតួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(S_n\)</span> ដែល <span class="mi">\(n \ge 1\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយទំនាក់ទំនងកំណើន <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(a_1 = 2\)</span>, <span class="mi">\(a_{n+1} = \dfrac{a_n}{a_n + 3}\)</span> <span class="mi">\((n = 1, 2, 3, \ldots)\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>តាង <span class="mi">\(b_n = \dfrac{1}{a_n}\)</span> ។ កំណត់ទំនាក់ទំនងកំណើនរវាង <span class="mi">\(b_n\)</span> និង <span class="mi">\(b_{n+1}\)</span> ។</p></li>
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(a_n\)</span> ។</p></li>
+</ol>
+</div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៥ ទំនាក់ទំនងតួនៃស៊ីត (វិទ្យាសាស្ត្រ)</b> — ២០ សំណួរ · ៣៥ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=bk_g11_L05">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L04.html"><small>← មេរៀនមុន</small><b>ផលបូកតួនៃស៊ីតផ្សេងៗ</b></a><a class="next" href="L06.html"><small>មេរៀនបន្ទាប់ →</small><b>វិចារអនុមានរួមគណិតវិទ្យា</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(S_n\\)<\/span> ជាផលបូក <span class=\"mi\">\\(n\\)<\/span> តួដំបូងនៃស៊ីត នោះសម្រាប់ <span class=\"mi\">\\(n \\ge 2\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(a_n = S_n - S_{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = S_n + S_{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = S_{n+1} - S_{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = \\dfrac{S_n}{n}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(S_n - S_{n-1} = a_n\\)<\/span> ។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំពោះគ្រប់ស៊ីត តួទី <span class=\"mi\">\\(1\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(a_1 = S_1\\)<\/span>", "<span class=\"mi\">\\(a_1 = 0\\)<\/span>", "<span class=\"mi\">\\(a_1 = S_2 - S_1\\)<\/span>", "<span class=\"mi\">\\(a_1 = S_0\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលបូកតួទី ១ តែមួយគឺ <span class=\"mi\">\\(S_1 = a_1\\)<\/span> ។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេដឹង <span class=\"mi\">\\(S_n = n^2\\)<\/span> ។ តួទី <span class=\"mi\">\\(n\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a_n = n^2\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(n^2 - (n - 1)^2 = 2n - 1\\)<\/span> ហើយ <span class=\"mi\">\\(a_1 = S_1 = 1\\)<\/span> ក៏ផ្ទៀងផ្ទាត់ ។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេដឹង <span class=\"mi\">\\(S_n = 2^n - 1\\)<\/span> ។ តួទី <span class=\"mi\">\\(n\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a_n = 2^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^n\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^n - 1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_n = (2^n - 1) - (2^{n-1} - 1) = 2^{n-1}\\)<\/span> ។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេដឹង <span class=\"mi\">\\(S_n = n^3 + 2n\\)<\/span> ។ តួទី <span class=\"mi\">\\(2\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_2 = S_2 - S_1 = 12 - 3 = 9\\)<\/span> ។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 3\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = a_n + 5\\)<\/span> ជាស៊ីត ៖", "options": ["ធរណីមាត្រ <span class=\"mi\">\\(q = 3\\)<\/span>", "ធរណីមាត្រ <span class=\"mi\">\\(q = 5\\)<\/span>", "នព្វន្ត <span class=\"mi\">\\(d = 5\\)<\/span>", "នព្វន្ត <span class=\"mi\">\\(d = 3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តួបន្ទាប់ស្មើតួមុនបូក <span class=\"mi\">\\(5\\)<\/span> ។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 3\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = a_n + 5\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = 3 \\cdot 5^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = 5n + 3\\)<\/span>", "<span class=\"mi\">\\(a_n = 5n - 2\\)<\/span>", "<span class=\"mi\">\\(a_n = 3n + 5\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_n = 3 + 5(n - 1) = 5n - 2\\)<\/span> ។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 2\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = 3a_n\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = 2 \\cdot 3^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = 3 \\cdot 2^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = 2 + 3(n - 1)\\)<\/span>", "<span class=\"mi\">\\(a_n = 6^{n-1}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ស៊ីតធរណីមាត្រ <span class=\"mi\">\\(a_1 = 2\\)<\/span>, <span class=\"mi\">\\(q = 3\\)<\/span> ។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_{n+1} = 2a_n + 1\\)<\/span> អាចសរសេរ <span class=\"mi\">\\(a_{n+1} + c = 2(a_n + c)\\)<\/span> ដែល <span class=\"mi\">\\(c\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_{n+1} + c = 2a_n + 2c \\Rightarrow c = 1\\)<\/span> ។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = 2a_n + 1\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = 2^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^n + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n - 1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_n + 1 = 2^n\\)<\/span> ព្រោះ <span class=\"mi\">\\((a_n + 1)\\)<\/span> ជាស៊ីតធរណីមាត្រ <span class=\"mi\">\\(q = 2\\)<\/span>, តួដំបូង <span class=\"mi\">\\(2\\)<\/span> ។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = 2a_n + 1\\)<\/span> ។ តម្លៃ <span class=\"mi\">\\(a_4\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(31\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1, 3, 7, 15\\)<\/span> ។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំពោះ <span class=\"mi\">\\(a_{n+1} = pa_n + q\\)<\/span> (<span class=\"mi\">\\(p \\ne 1\\)<\/span>) ចំនួន <span class=\"mi\">\\(\\alpha\\)<\/span> ដែលធ្វើឱ្យ <span class=\"mi\">\\(a_{n+1} - \\alpha = p(a_n - \\alpha)\\)<\/span> គឺជាចម្លើយនៃ ៖", "options": ["<span class=\"mi\">\\(\\alpha = p\\alpha + q\\)<\/span>", "<span class=\"mi\">\\(p\\alpha = q\\)<\/span>", "<span class=\"mi\">\\(\\alpha = p + q\\)<\/span>", "<span class=\"mi\">\\(\\alpha = pq\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ដកសមីការ <span class=\"mi\">\\(\\alpha = p\\alpha + q\\)<\/span> ពី <span class=\"mi\">\\(a_{n+1} = pa_n + q\\)<\/span> ។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 2\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = 3a_n - 2\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = 3n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 3^n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2 \\cdot 3^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = 3^{n-1} + 1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\alpha = 3\\alpha - 2 \\Rightarrow \\alpha = 1\\)<\/span>; <span class=\"mi\">\\(a_n - 1 = (2 - 1)3^{n-1}\\)<\/span> ។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = a_n + n\\)<\/span> ។ តម្លៃ <span class=\"mi\">\\(a_5\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1, 2, 4, 7, 11\\)<\/span> ។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = a_n + n\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = \\dfrac{n(n + 1)}{2}\\)<\/span>", "<span class=\"mi\">\\(a_n = 1 + \\dfrac{n(n - 1)}{2}\\)<\/span>", "<span class=\"mi\">\\(a_n = n^2\\)<\/span>", "<span class=\"mi\">\\(a_n = 1 + \\dfrac{n(n + 1)}{2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_n = 1 + \\sum_{k=1}^{n-1} k = 1 + \\dfrac{n(n - 1)}{2}\\)<\/span> ។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = a_n + 2^n\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = 2^n + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^{n+1} - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^n - 1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_n = 1 + (2 + 4 + \\ldots + 2^{n-1}) = 2^n - 1\\)<\/span> ។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_2 = 3\\)<\/span> និង <span class=\"mi\">\\(a_{n+2} = 3a_{n+1} - 2a_n\\)<\/span> ។ តម្លៃ <span class=\"mi\">\\(a_3\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_3 = 3(3) - 2(1) = 7\\)<\/span> ។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_2 = 3\\)<\/span> និង <span class=\"mi\">\\(a_{n+2} = 3a_{n+1} - 2a_n\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = 2n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = n^2 - n + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 3^{n-1}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_{n+2} - a_{n+1} = 2(a_{n+1} - a_n)\\)<\/span> ដូច្នេះ <span class=\"mi\">\\(a_{n+1} - a_n = 2^n\\)<\/span> ហើយ <span class=\"mi\">\\(a_n = 2^n - 1\\)<\/span> ។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេដឹង <span class=\"mi\">\\(S_n = 3n^2 - n\\)<\/span> ។ ស៊ីត <span class=\"mi\">\\((a_n)\\)<\/span> ជា ៖", "options": ["ស៊ីតនព្វន្ត <span class=\"mi\">\\(d = 3\\)<\/span>", "ស៊ីតនព្វន្ត <span class=\"mi\">\\(d = 6\\)<\/span>", "មិនមែននព្វន្ត មិនមែនធរណីមាត្រ", "ស៊ីតធរណីមាត្រ <span class=\"mi\">\\(q = 3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_n = 3n^2 - n - 3(n - 1)^2 + (n - 1) = 6n - 4\\)<\/span> ដូច្នេះ <span class=\"mi\">\\(d = 6\\)<\/span> ។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_1 = 4\\)<\/span>, <span class=\"mi\">\\(a_{n+1} = \\dfrac{1}{2}a_n + 1\\)<\/span> ។ តម្លៃ <span class=\"mi\">\\(a_3\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{7}{4}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{5}{2}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_2 = 3\\)<\/span>, <span class=\"mi\">\\(a_3 = \\dfrac{3}{2} + 1 = \\dfrac{5}{2}\\)<\/span> ។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

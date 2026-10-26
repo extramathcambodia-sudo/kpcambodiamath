@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១១ : សមីការបន្ទាត់ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១១ «សមីការបន្ទាត់» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១១ : សមីការបន្ទាត់ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១១ «សមីការបន្ទាត់» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ១១</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១១</span>
+      <div><span class="ls-kicker">ជំពូកទី ៤ ធរណីមាត្រក្នុងប្លង់ · មេរៀនទី ១១ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>សមីការបន្ទាត់</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រក្នុងប្លង់</span><span class="chip chip-soon">៨ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. និយមន័យ</a></li><li class="sub"><a href="#u2">២. សមីការបន្ទាត់កាត់តាមមួយចំណុច ដឹងមេគុណប្រាប់ទិស</a></li><li class="sub"><a href="#u3">៣. សមីការបន្ទាត់កាត់តាមពីរចំណុច</a></li><li class="sub"><a href="#u4">៤. បន្ទាត់ស្រប</a></li><li class="sub"><a href="#u5">៥. បន្ទាត់កែង</a></li><li class="sub"><a href="#u6">៦. ចម្ងាយពីចំណុចមួយទៅបន្ទាត់</a></li><li class="sub"><a href="#u7">៧. ការប្រើកូអរដោនេ ដើម្បីបង្ហាញលក្ខណៈនៃរូប</a></li><li class="sub"><a href="#u8">៨. សមីការនៃសំណុំចំណុច</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃសមីការបន្ទាត់ និងធរណីមាត្រវិភាគ Descartes-Fermat</b></header><div class="bx-b">
+<p>ការសិក្សាអំពីបន្ទាត់ត្រង់ក្នុងប្លង់កូអរដោនេ គឺជាផ្នែកមួយនៃធរណីមាត្រវិភាគដែលអភិវឌ្ឍដោយ ដេកាត (Descartes) និង ហ្វែម៉ា (Fermat)។ គំនិតនៃមេគុណប្រាប់ទិស (slope) និងសមីការបន្ទាត់ <span class="mi">\(y = mx + c\)</span> បានជួយសម្រួលដល់ការគណនាចម្ងាយ ទិសដៅ និងចំណុចប្រសព្វនៃបន្ទាត់ក្នុងវិស័យវិស្វកម្ម និងរូបវិទ្យាយ៉ាងច្រើន។</p>
+<p>ក្នុងវិស្វកម្មសំណង់ប្រាសាទបុរាណខ្មែរ ខ្សែបន្ទាត់តម្រង់ទិសត្រូវបានកំណត់យ៉ាងសុក្រឹតតាមទិសទាំងបួន (កើត លិច ជើង ត្បូង) ដោយស្ថាបត្យករខ្មែរបានប្រើបន្ទាត់ធរណីមាត្រដើម្បីតម្រង់ផ្លូវថ្នល់ គូទឹក និងកំពែងប្រាសាទឱ្យស្រប និងកែងគ្នាយ៉ាងត្រឹមត្រូវឥតខ្ចោះ។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ?</b></header><div class="bx-b">
+<p>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ៖<br/>
+១. ការដៅចំណុច និងការប្រើប្រាស់រូបមន្តចម្ងាយក្នុងប្លង់កូអរដោនេ<br/>
+២. ការដោះស្រាយសមីការ និងប្រព័ន្ធសមីការដឺក្រេទីមួយ<br/>
+៣. គំនិតមូលដ្ឋាននៃមុំ និងត្រីកោណមាត្រ</p>
+</div></section>
+<h3 id="u1">និយមន័យ</h3>
+<p>សមីការបន្ទាត់ដែលមានរាងទូទៅ <span class="mi">\(y = ax + b\)</span> ដែល <span class="mi">\(a\)</span> ហៅថាមេគុណប្រាប់ទិស ហើយ <span class="mi">\(b\)</span> ជាអរដោនេនៃចំណុចប្រសព្វរវាងបន្ទាត់ និងអ័ក្សអរដោនេ ។</p>
+<h3 id="u2">សមីការបន្ទាត់កាត់តាមមួយចំណុច ដឹងមេគុណប្រាប់ទិស</h3>
+<p>បន្ទាត់ <span class="mi">\(L\)</span> កាត់តាមចំណុច <span class="mi">\(A(x_1, y_1)\)</span> និងមានមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> ។ ចំពោះគ្រប់ចំណុច <span class="mi">\(M(x, y)\)</span> នៃបន្ទាត់ <span class="mi">\(L\)</span> ផ្សេងពីចំណុច <span class="mi">\(A(x_1, y_1)\)</span> មេគុណប្រាប់ទិសនៃបន្ទាត់ <span class="mi">\(L\)</span> គឺ <span class="mi">\(m = \frac{y - y_1}{x - x_1}\)</span>, <div class="md">\[y - y_1 = m(x - x_1) \text{~។}\]</div></p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សមីការនៃបន្ទាត់កាត់តាមចំណុច <span class="mi">\((x_1, y_1)\)</span> និងមានមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> គឺ <span class="mi">\(y - y_1 = m(x - x_1)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>កំណត់សមីការបន្ទាត់កាត់តាមចំណុច <span class="mi">\(A(0, 2)\)</span> និងមានមេគុណប្រាប់ទិស <span class="mi">\(3\)</span> ។<br/>
+សមីការបន្ទាត់ <span class="mi">\(y - y_1 = m(x - x_1)\)</span> <div class="md">\[y - 2 = 3(x - 0)\]</div> <div class="md">\[y = 3x + 2 \text{~។}\]</div></p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់សមីការបន្ទាត់កាត់តាមចំណុច <span class="mi">\((-1, 1)\)</span> និងមានមេគុណប្រាប់ទិសស្មើ <span class="mi">\(-3\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<span class="mi">\(y = -3x - 2\)</span> ។</p></details>
+</div></section>
+<h3 id="u3">សមីការបន្ទាត់កាត់តាមពីរចំណុច</h3>
+<p>បន្ទាត់ <span class="mi">\(L\)</span> កាត់តាមពីរចំណុច <span class="mi">\(A(x_1, y_1)\)</span> និង <span class="mi">\(B(x_2, y_2)\)</span> ដែលករណី <span class="mi">\(x_1 \neq x_2\)</span> ។ បន្ទាត់ <span class="mi">\(L\)</span> មានមេគុណប្រាប់ទិស <span class="mi">\(m = \frac{y_2 - y_1}{x_2 - x_1}\)</span> ។<br/>
+ដោយបន្ទាត់ <span class="mi">\(L\)</span> កាត់តាមចំណុច <span class="mi">\(A(x_1, y_1)\)</span> និងមានមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> នោះ <span class="mi">\(L\)</span> មានសមីការ <span class="mi">\(y - y_1 = m(x - x_1)\)</span> ឬ <div class="md">\[y - y_1 = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1) \text{~។}\]</div> ករណីពិសេសបើ <span class="mi">\(x_1 = x_2\)</span> គេបានសមីការបន្ទាត់ <span class="mi">\(x = x_1\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សមីការនៃបន្ទាត់កាត់តាមពីរចំណុច <span class="mi">\((x_1, y_1)\)</span> និង <span class="mi">\((x_2, y_2)\)</span> គឺ <div class="md">\[\text{ចំពោះ } x_1 \neq x_2 : y - y_1 = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1)\]</div> <div class="md">\[\text{ចំពោះ } x_1 = x_2 : x = x_1 \text{~។}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>កំណត់សមីការបន្ទាត់ <span class="mi">\(L\)</span> ដែលកាត់តាមពីរចំណុច <span class="mi">\(A(-2, 3)\)</span> និង <span class="mi">\(B(-1, 2)\)</span> ។<br/>
+សមីការនៃបន្ទាត់ <span class="mi">\(L\)</span> ដែលកាត់តាមពីរចំណុច <span class="mi">\(A(-2, 3)\)</span> និង <span class="mi">\(B(-1, 2)\)</span> គឺ <span class="mi">\(L: y - 3 = \frac{2 - 3}{-1 - (-2)}[x - (-2)]\)</span> <div class="md">\[y = -x + 1 \text{~។}\]</div></p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><strong>សម្គាល់ :</strong> បើគេបំប្លែងសមីការ <span class="mi">\(y = -x + 1\)</span> និង <span class="mi">\((2)\)</span> ជាទម្រង់ <span class="mi">\(x + y - 1 = 0\)</span> នោះគេបានសមីការទូទៅនៃបន្ទាត់ <span class="mi">\(L\)</span> ។ ជាទូទៅទម្រង់សមីការបន្ទាត់គឺ <span class="mi">\(ax + by + c = 0\)</span> ។</p>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>១.</strong>  កំណត់សមីការនៃបន្ទាត់ ដែលកាត់តាមគូនៃចំណុចខាងក្រោម ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A(2, 3)\)</span> និង <span class="mi">\(B(10, 5)\)</span> <strong>ខ.</strong>  <span class="mi">\(C(5, -1)\)</span> និង <span class="mi">\(D(-1, 8)\)</span> ។<br/>
+<strong>២.</strong>  កំណត់កូអរដោនេនៃចំណុចប្រសព្វនៃបន្ទាត់ពីរ <span class="mi">\(x + y - 4 = 0\)</span> និង <span class="mi">\(2x - y + 1 = 0\)</span> ។ កំណត់សមីការនៃបន្ទាត់ដែលកាត់តាមចំណុចប្រសព្វនេះ និងចំណុច <span class="mi">\((-2, 1)\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>១.</strong>  <strong>ក.</strong>  <span class="mi">\(AB : y = \frac{1}{4}x + \frac{5}{2}\)</span> <strong>ខ.</strong>  <span class="mi">\(CD : y = -\frac{3}{2}x + \frac{13}{2}\)</span><br/>
+<strong>២.</strong>  <span class="mi">\(y = \frac{2}{3}x + \frac{7}{3}\)</span> ។</p></details>
+</div></section>
+<h3 id="u4">បន្ទាត់ស្រប</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរស្របគ្នា កាលណាបន្ទាត់ទាំងពីរស្ថិតក្នុងប្លង់តែមួយ ហើយគ្មានចំណុចរួម ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ពីរ <span class="mi">\(D: y = mx + n\)</span> និង <span class="mi">\(D': y = m'x + n'\)</span> ។ បង្ហាញថាបន្ទាត់ <span class="mi">\(D\)</span> ស្រប <span class="mi">\(D'\)</span> លុះត្រាតែ <span class="mi">\(m = m'\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>យកចំណុច <span class="mi">\(A\)</span> ជាប្រសព្វនៃបន្ទាត់ <span class="mi">\(D: y = mx + n\)</span> និងអ័ក្សអាប់ស៊ីស ហើយ <span class="mi">\(B\)</span> ជាចំណុចមួយនៅលើបន្ទាត់ <span class="mi">\(D\)</span> និង <span class="mi">\(C\)</span> ជាចំណោលកែងនៃ <span class="mi">\(B\)</span> មកលើអ័ក្សអាប់ស៊ីស នោះមេគុណប្រាប់ទិសនៃបន្ទាត់ <span class="mi">\(D\)</span> គឺ <span class="mi">\(m = \frac{BC}{AC}\)</span> ។<br/>
+យកចំណុច <span class="mi">\(A'\)</span> ជាប្រសព្វនៃបន្ទាត់ <span class="mi">\(D': y = m'x + n'\)</span> និងអ័ក្សអាប់ស៊ីស ហើយ <span class="mi">\(B'\)</span> ជាចំណុចមួយនៅលើបន្ទាត់ <span class="mi">\(D'\)</span> និង <span class="mi">\(C'\)</span> ជាចំណោលកែងនៃ <span class="mi">\(B'\)</span> មកលើអ័ក្សអាប់ស៊ីស នោះមេគុណប្រាប់ទិសនៃបន្ទាត់ <span class="mi">\(D'\)</span> គឺ <span class="mi">\(m' = \frac{B'C'}{A'C'}\)</span> ដោយបន្ទាត់ <span class="mi">\(D \parallel D' \Leftrightarrow \alpha = \alpha'\)</span> នោះ <span class="mi">\(\triangle ABC \sim \triangle A'B'C'\)</span> គេបាន <span class="mi">\(\frac{BC}{B'C'} = \frac{AC}{A'C'} \Leftrightarrow \frac{BC}{AC} = \frac{B'C'}{A'C'} \Leftrightarrow m = m'\)</span> ។</p>
+</div></section>
+<p><strong>លក្ខខណ្ឌស្របគ្នានៃបន្ទាត់ពីរ</strong></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ពីរ <span class="mi">\(D: y = mx + n\)</span> និង <span class="mi">\(D': y = m'x + n'\)</span> បន្ទាត់ <span class="mi">\(D\)</span> ស្រប <span class="mi">\(D'\)</span> លុះត្រាតែ <span class="mi">\(m = m'\)</span> ឬ <span class="mi">\(D \parallel D' \Leftrightarrow m = m'\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១</span><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(D\)</span> កាត់គល់ <span class="mi">\(O\)</span> ហើយស្របទៅនឹងបន្ទាត់ដែលកាត់តាមពីរចំណុច <span class="mi">\((2, 3)\)</span> និង <span class="mi">\((4, -2)\)</span> ។ រកសមីការនៃបន្ទាត់ <span class="mi">\(D\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+រកមេគុណប្រាប់ទិសនៃបន្ទាត់ <span class="mi">\(D'\)</span> កាត់តាមចំណុច <span class="mi">\((2, 3)\)</span> និង <span class="mi">\((4, -2)\)</span> គឺ <div class="md">\[m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{-2 - 3}{4 - 2} = -\frac{5}{2}\]</div> បន្ទាត់ <span class="mi">\(D \parallel D'\)</span> នោះ <span class="mi">\(m = m' = -\frac{5}{2}\)</span><br/>
+បន្ទាត់ <span class="mi">\(D: y = -\frac{5}{2}x\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>១.</strong>  តើបន្ទាត់ណាមួយជាបន្ទាត់ដែលស្របគ្នាក្នុងចំណោមបន្ទាត់ខាងក្រោមនេះ ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(L_1 : 6x + 3y = 1\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(L_2 : y = 3x - 2\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(L_3 : 2x - y = 5\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(L_4 : y = -2x + 5\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>២.</strong>  រកសមីការបន្ទាត់កាត់តាមចំណុច <span class="mi">\(A(2, 1)\)</span> ហើយស្របទៅនឹងបន្ទាត់ <span class="mi">\(D : y = 2x + 5\)</span> ។</p>
+</div></section>
+<h3 id="u5">បន្ទាត់កែង</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ពីរ <span class="mi">\(D: y = mx + n\)</span> និង <span class="mi">\(D': y = m'x + n'\)</span> បង្ហាញថាបន្ទាត់ <span class="mi">\(D\)</span> កែង <span class="mi">\(D'\)</span> លុះត្រាតែ <span class="mi">\(mm' = -1\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>តាង <span class="mi">\(P\)</span> និង <span class="mi">\(Q\)</span> ជាចំណុចប្រសព្វរៀងគ្នារវាងបន្ទាត់ <span class="mi">\(x = 1\)</span> ជាមួយ <span class="mi">\(D_3\)</span> និង <span class="mi">\(D_4\)</span> ។ បើ <span class="mi">\(OP\)</span> កែងទៅនឹង <span class="mi">\(OQ\)</span> លុះត្រាតែ <span class="mi">\(PQ^2 = OP^2 + OQ^2\)</span> (1)<br/>
+ដោយកូអរដោនេនៃ <span class="mi">\(P(1, m)\)</span> និង <span class="mi">\(Q(1, m')\)</span> នោះសមីការ (1) គេអាចសរសេរ <div class="md">\[(m - m')^2 = (1^2 + m^2) + (1^2 + m'^2) \Leftrightarrow m^2 - 2mm' + m'^2 = 2 + m^2 + m'^2 \text{ ហើយ } mm' = -1 \text{~។}\]</div></p>
+</div></section>
+<p><strong>លក្ខខណ្ឌកែងគ្នានៃបន្ទាត់ពីរ</strong></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ពីរ <span class="mi">\(D: y = mx + n\)</span> និង <span class="mi">\(D': y = m'x + n'\)</span><br/>
+បន្ទាត់ <span class="mi">\(D\)</span> កែង <span class="mi">\(D'\)</span> លុះត្រាតែ <span class="mi">\(mm' = -1\)</span> ឬ <span class="mi">\(D \perp D' \Leftrightarrow mm' = -1\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">២</span><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(D\)</span> កាត់តាមចំណុច <span class="mi">\(A(1, 2)\)</span> ហើយកែងទៅនឹងបន្ទាត់ <span class="mi">\(D'\)</span> កាត់តាមចំណុចពីរ <span class="mi">\(B(3, -2)\)</span> និង <span class="mi">\(C(-4, 1)\)</span> ។ រកសមីការបន្ទាត់ <span class="mi">\(D\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាង <span class="mi">\(m\)</span> និង <span class="mi">\(m'\)</span> ជាមេគុណប្រាប់ទិសនៃសមីការបន្ទាត់ <span class="mi">\(D\)</span> និង <span class="mi">\(D'\)</span> ។ បន្ទាត់ <span class="mi">\(D'\)</span> កាត់តាមចំណុច <span class="mi">\(B(3, -2)\)</span> និង <span class="mi">\(C(-4, 1)\)</span> នោះ <div class="md">\[m' = \frac{y_2 - y_1}{x_2 - x_1} = \frac{1 - (-2)}{-4 - 3} = -\frac{3}{7}\]</div></p>
+<p>បើបន្ទាត់ <span class="mi">\(D \perp D'\)</span> នោះ <span class="mi">\(mm' = -1\)</span> ដូច្នេះ <span class="mi">\(m = -\frac{1}{m'} = \frac{7}{3}\)</span><br/>
+សមីការបន្ទាត់ <span class="mi">\(D : y - y_1 = m(x - x_1)\)</span> <div class="md">\[y - 2 = \frac{7}{3}(x - 1)\]</div> ដូច្នេះ <span class="mi">\(D : y = \frac{7}{3}x - \frac{1}{3}\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ក្នុងប្លង់កូអរដោនេគេមានចំណុច <span class="mi">\(A(2, 3)\)</span> និង <span class="mi">\(B(1, 2)\)</span> ។<br/>
+<strong>ក.</strong>  រកសមីការបន្ទាត់ <span class="mi">\(AB\)</span> ។<br/>
+<strong>ខ.</strong>  កំណត់សមីការបន្ទាត់ <span class="mi">\(L\)</span> កាត់តាមគល់ <span class="mi">\(O\)</span> ហើយកែងនឹងបន្ទាត់ <span class="mi">\(AB\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  <span class="mi">\(y = x + 1\)</span> <strong>ខ.</strong>  <span class="mi">\(y = -x\)</span> ។</p></details>
+</div></section>
+<h3 id="u6">ចម្ងាយពីចំណុចមួយទៅបន្ទាត់</h3>
+<p>ចំណុច <span class="mi">\(P(x_1, y_1)\)</span> ជាចំណុចមិននៅលើបន្ទាត់ <span class="mi">\(L : ax + by + c = 0\)</span> គេសន្មតថា <span class="mi">\(a \neq 0\)</span> និង <span class="mi">\(b \neq 0\)</span> ។<br/>
+តាមចំណុច <span class="mi">\(A(x_2, y_1)\)</span> និង <span class="mi">\(B(x_1, y_2)\)</span> នៃបន្ទាត់ <span class="mi">\(L\)</span> គេគូសបន្ទាត់ពីរដែលស្របរៀងគ្នាទៅនឹងអ័ក្សអាប់ស៊ីស និងអ័ក្សអរដោនេ ហើយប្រសព្វគ្នាត្រង់ចំណុច <span class="mi">\(P(x_1, y_1)\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>តាង <span class="mi">\(ax_1 + by_1 + c = k\)</span> (1)<br/>
+ដោយចំណុច <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> លើ <span class="mi">\(L\)</span> នោះ<br/>
+<span class="mi">\(ax_2 + by_1 + c = 0\)</span> (2)<br/>
+<span class="mi">\(ax_1 + by_2 + c = 0\)</span> (3)<br/>
+គេបាន <span class="mi">\((1) - (2) : a(x_1 - x_2) = k\)</span><br/>
+<span class="mi">\((1) - (3) : b(y_1 - y_2) = k\)</span><br/>
+នោះ <span class="mi">\(x_1 - x_2 = \frac{k}{a}\)</span>, <span class="mi">\(y_1 - y_2 = \frac{k}{b}\)</span> (4)</p>
+<p>ក្នុងត្រីកោណកែង <span class="mi">\(PAB\)</span> ដែលមានកម្ពស់ <span class="mi">\(PH\)</span> គេបាន<br/>
+<span class="mi">\(PH \cdot AB = PA \cdot PB\)</span> នោះ<br/>
+<div class="md">\[PH = \frac{PA \times PB}{AB} \Rightarrow PH^2 = \frac{PA^2 \times PB^2}{AB^2}\]</div><br/>
+ដោយ <span class="mi">\(PA^2 = (x_1 - x_2)^2\)</span>, <span class="mi">\(PB^2 = (y_1 - y_2)^2\)</span>, <span class="mi">\(AB^2 = (x_1 - x_2)^2 + (y_1 - y_2)^2\)</span></p>
+<p>គេបាន <div class="md">\[PH^2 = \frac{PA^2 \cdot PB^2}{AB^2} = \frac{(x_1 - x_2)^2 \cdot (y_1 - y_2)^2}{(x_1 - x_2)^2 + (y_1 - y_2)^2} = \frac{\frac{k^2}{a^2} \cdot \frac{k^2}{b^2}}{\frac{k^2}{a^2} + \frac{k^2}{b^2}} = \frac{k^2}{a^2 + b^2} \text{ តាម (4)}\]</div> ដូច្នេះ <div class="md">\[PH = \frac{|k|}{\sqrt{a^2 + b^2}} = \frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}} \text{~។}\]</div></p>
+<p><strong>ចម្ងាយរវាងចំណុចមួយនិងបន្ទាត់មួយ</strong></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ចម្ងាយ <span class="mi">\(d\)</span> រវាងចំណុច <span class="mi">\((x_1, y_1)\)</span> និងបន្ទាត់ <span class="mi">\(ax + by + c = 0\)</span> គឺ <div class="md">\[d = \frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}} \text{~។}\]</div></p>
+</div></section>
+<p><strong>សម្គាល់</strong> រូបមន្តនេះពិតចំពោះ <span class="mi">\((a = 0 \)</span> និង <span class="mi">\( b \neq 0 \)</span> ឬ <span class="mi">\( a \neq 0 \)</span> និង <span class="mi">\( b = 0)\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់គំរូ ៣</b></header><div class="bx-b">
+<p><br/>
+<strong>ក.</strong>  រកចម្ងាយ <span class="mi">\(d\)</span> ពីចំណុចគល់តម្រុយ <span class="mi">\(O\)</span> ទៅបន្ទាត់ <span class="mi">\(4x - 3y - 5 = 0\)</span> ។<br/>
+<strong>ខ.</strong>  រកចម្ងាយ <span class="mi">\(d\)</span> ពីចំណុច <span class="mi">\((3, \sqrt{2})\)</span> ទៅបន្ទាត់ <span class="mi">\(\frac{1}{2}x + \sqrt{2}y = 2\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<strong>ក.</strong>  ចម្ងាយ <span class="mi">\(d\)</span> ពីចំណុចគល់តម្រុយ <span class="mi">\(O\)</span> ទៅបន្ទាត់ <span class="mi">\(4x - 3y - 5 = 0\)</span> គឺ<br/>
+<div class="md">\[d = \frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}}\]</div> <div class="md">\[d = \frac{|4 \times 0 - 3 \times 0 - 5|}{\sqrt{4^2 + 3^2}} = \frac{|-5|}{5} = 1 \text{~។}\]</div> <strong>ខ.</strong>  ចម្ងាយពីចំណុច <span class="mi">\((3, \sqrt{2})\)</span> ទៅបន្ទាត់ <span class="mi">\(\frac{1}{2}x + \sqrt{2}y = 2\)</span> ឬ <span class="mi">\(\frac{1}{2}x + \sqrt{2}y - 2 = 0\)</span><br/>
+<div class="md">\[d = \frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}}\]</div> <div class="md">\[d = \frac{|\frac{1}{2} \times 3 + \sqrt{2} \times \sqrt{2} - 2|}{\sqrt{\left(\frac{1}{2}\right)^2 + (\sqrt{2})^2}} = \frac{\frac{3}{2}}{\frac{3}{2}} = 1 \text{~។}\]</div></p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>ក.</strong>  គណនាចម្ងាយពីចំណុច <span class="mi">\(A(0, 2)\)</span> ទៅបន្ទាត់ <span class="mi">\(D_1 : x + \sqrt{2}y - 10 = 0\)</span> ។<br/>
+<strong>ខ.</strong>  គណនាចម្ងាយពីចំណុច <span class="mi">\(B(-3, 2)\)</span> ទៅបន្ទាត់ <span class="mi">\(D_2 : 3x + 2y - 3 = 0\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  <span class="mi">\(d = (10 - 2\sqrt{2})\frac{\sqrt{3}}{3}\)</span> <strong>ខ.</strong>  <span class="mi">\(d = \frac{8\sqrt{13}}{13}\)</span> ។</p></details>
+</div></section>
+<h3 id="u7">ការប្រើកូអរដោនេ ដើម្បីបង្ហាញលក្ខណៈនៃរូប</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A(1, 3)\)</span>, <span class="mi">\(B(3, 7)\)</span> និង <span class="mi">\(C(7, 5)\)</span> ក្នុងតម្រុយកូអរដោនេ ។ បង្ហាញថា <span class="mi">\(\triangle ABC\)</span> ជាត្រីកោណកែង ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>មេគុណប្រាប់ទិស <span class="mi">\(m\)</span> នៃបន្ទាត់ <span class="mi">\(AB\)</span> គឺ <span class="mi">\(m = \frac{7 - 3}{3 - 1} = 2\)</span><br/>
+មេគុណប្រាប់ទិសនៃបន្ទាត់ <span class="mi">\(BC\)</span> គឺ <span class="mi">\(m' = \frac{5 - 7}{7 - 3} = -\frac{1}{2}\)</span><br/>
+<span class="mi">\(m \cdot m' = 2 \cdot \left(-\frac{1}{2}\right) = -1\)</span> នោះ <span class="mi">\(AB \perp BC\)</span><br/>
+ដូច្នេះ <span class="mi">\(\triangle ABC\)</span> ជាត្រីកោណកែង ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>បង្ហាញថាអង្កត់ទ្រូងនៃប្រលេឡូក្រាម <span class="mi">\(ABCD\)</span> មួយកាត់គ្នាត្រង់ចំណុចកណ្ដាលរៀងគ្នា ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេដាក់កំពូល <span class="mi">\(A\)</span> ត្រួតលើគល់ <span class="mi">\(O\)</span> និង <span class="mi">\(B\)</span> នៅលើអ័ក្សអាប់ស៊ីស ។ គេបាន <span class="mi">\(A(0, 0)\)</span>, <span class="mi">\(B(a, 0)\)</span>, <span class="mi">\(D(b, c)\)</span> និង <span class="mi">\(C(a+b, c)\)</span> ។<br/>
+តាង <span class="mi">\(I\)</span> ជាចំណុចកណ្ដាលនៃអង្កត់ទ្រូង <span class="mi">\(AC\)</span> គឺ <span class="mi">\(I\left(\frac{a+b}{2}, \frac{c}{2}\right)\)</span> (1)<br/>
+តាង <span class="mi">\(J\)</span> ជាចំណុចកណ្ដាលនៃអង្កត់ទ្រូង <span class="mi">\(DB\)</span> គឺ <span class="mi">\(J\left(\frac{a+b}{2}, \frac{c}{2}\right)\)</span> (2)<br/>
+តាម (1) និង (2) គេបានចំណុច <span class="mi">\(I\)</span> ត្រួតស៊ីលើ <span class="mi">\(J\)</span> ។ ដូច្នេះ អង្កត់ទ្រូង <span class="mi">\(AC\)</span> ប្រសព្វ <span class="mi">\(BD\)</span> ត្រង់ចំណុចកណ្ដាលរៀងគ្នា ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>ក.</strong>  បង្ហាញថាមេដ្យានដែលគូសចេញពីកំពូលនៃមុំកែងស្មើពាក់កណ្ដាលអ៊ីប៉ូតេនុស ។<br/>
+<strong>ខ.</strong>  បង្ហាញថាអង្កត់ទ្រូងនៃចតុកោណស្មើកែងគ្នា ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  <span class="mi">\(AD = DC = \frac{1}{2}AB\)</span> <strong>ខ.</strong>  ... ។</p></details>
+</div></section>
+<h3 id="u8">សមីការនៃសំណុំចំណុច</h3>
+<h4>សំណុំចំណុច</h4>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេមានមុំស្រួច <span class="mi">\(\angle ABC\)</span> មួយ ។ ចំណុច <span class="mi">\(M\)</span> ផ្លាស់ទីក្នុងមុំ <span class="mi">\(\angle ABC\)</span> ហើយមានចម្ងាយស្មើពី ជ្រុងទាំងពីរនៃមុំ ។ បណ្ដុំនៃចំណុច <span class="mi">\(M\)</span> បង្កើតបានជាកន្លះបន្ទាត់ពុះនៃមុំ <span class="mi">\(\angle ABC\)</span> ។ កន្លះបន្ទាត់ពុះនេះហៅថា សំណុំចំណុចនៃចំណុច <span class="mi">\(M\)</span> ដែលបំពេញលក្ខខណ្ឌ "នៅក្នុង <span class="mi">\(\angle ABC\)</span> និងមានចម្ងាយស្មើពីជ្រុងទាំងពីរនៃមុំ" ។</p>
+<p>គេកំណត់សរសេរ <span class="mi">\(\{M/M \)</span> នៅក្នុង <span class="mi">\( \angle ABC \)</span> និងមានចម្ងាយស្មើពីជ្រុងទាំងពីរនៃមុំនោះ <span class="mi">\(\}\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណុំចំណុចនៃចំណុច ដែលបំពេញលក្ខខណ្ឌ <span class="mi">\(p\)</span> គឺរូបធរណីមាត្រផ្ដុំដោយចំណុចទាំងអស់ដែលបំពេញលក្ខខណ្ឌ <span class="mi">\(p\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><strong>ក.</strong>  សំណុំចំណុចនៃចំណុចដែលមានចម្ងាយថេរ <span class="mi">\(d\)</span> ពីបន្ទាត់នឹង <span class="mi">\(L\)</span> គឺជាបន្ទាត់ស្របពីរ <span class="mi">\(L_1\)</span> និង <span class="mi">\(L_2\)</span> ដែលស្របនឹងចម្ងាយ <span class="mi">\(d\)</span> ពីបន្ទាត់នឹង <span class="mi">\(L\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><strong>ខ.</strong>  សំណុំចំណុចនៃចំណុចដែលមានចម្ងាយថេរ <span class="mi">\(r\)</span> ពីចំណុចនឹង <span class="mi">\(O\)</span> មួយគឺ <span class="mi">\(\{M \mid OM = r\}\)</span> ជារង្វង់ ដែលមានផ្ចិត <span class="mi">\(O\)</span> និងកាំ <span class="mi">\(r\)</span> ។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់គំរូ ៤</b></header><div class="bx-b">
+<p>រកសំណុំនៃចំណុច <span class="mi">\(P\)</span> ដែលមានចម្ងាយស្មើគ្នាពីចំណុចពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+យកបន្ទាត់ <span class="mi">\(AB\)</span> ជាអ័ក្សអាប់ស៊ីស និងយកមេដ្យាទ័រនៃ <span class="mi">\(AB\)</span> ជាអ័ក្សអរដោនេ ។ តាង <span class="mi">\(A(a, 0)\)</span> និង <span class="mi">\(B(-a, 0)\)</span> ដែល <span class="mi">\(a \neq 0\)</span> និងយក <span class="mi">\(P(x, y)\)</span> ។<br/>
+<strong>១.</strong>  លក្ខខណ្ឌគឺ <span class="mi">\(PA = PB\)</span> ឬ <span class="mi">\(PA^2 = PB^2\)</span><br/>
+តាមរូបមន្តចម្ងាយរវាងពីរចំណុច គេបាន<br/>
+<span class="mi">\((x - a)^2 + y^2 = (x + a)^2 + y^2\)</span> ។<br/>
+ដោះស្រាយសមីការនេះ គេបាន <span class="mi">\(4ax = 0\)</span><br/>
+ដោយ <span class="mi">\(a \neq 0\)</span> គេបាន <span class="mi">\(x = 0\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>សមីការនៃសំណុំចំណុចនៃចំណុច <span class="mi">\(P\)</span> គឺបន្ទាត់ <span class="mi">\(x = 0\)</span> ឬអ័ក្សអរដោនេ ។<br/>
+<strong>២.</strong>  ច្រាសមកវិញយក <span class="mi">\(Q(0, y)\)</span> ជាចំណុចនៅលើអ័ក្សអរដោនេ នោះ<br/>
+<span class="mi">\(QA = \sqrt{a^2 + y^2}\)</span> និង <span class="mi">\(QB = \sqrt{a^2 + y^2}\)</span> ដូច្នេះ <span class="mi">\(QA = QB\)</span> ។<br/>
+ចំណុចនីមួយៗនៅលើអ័ក្សអរដោនេ មានចម្ងាយស្មើពីចំណុចនឹងពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។<br/>
+ដូច្នេះ សំណុំចំណុចនៃចំណុច <span class="mi">\(P\)</span> គឺជាមេដ្យាទ័រនៃអង្កត់ <span class="mi">\(AB\)</span> ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណុំដើម្បីបង្ហាញថារូប <span class="mi">\(F\)</span> ជាសំណុំចំណុចដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌ <span class="mi">\(p\)</span> ដែលឱ្យ ។ គេត្រូវបង្ហាញថា<br/>
+<strong>១.</strong>  គ្រប់ចំណុចដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌដែលឱ្យត្រូវនៅលើរូប <span class="mi">\(F\)</span> ។<br/>
+<strong>២.</strong>  គ្រប់ចំណុចនៅលើរូប <span class="mi">\(F\)</span> ត្រូវផ្ទៀងផ្ទាត់លក្ខខណ្ឌដែលឱ្យ ។</p>
+</div></section>
+<h4>សមីការនៃសំណុំចំណុច</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យចំណុចនឹងពីរ <span class="mi">\(A(2, 0)\)</span> និង <span class="mi">\(B(0, 1)\)</span> ។ រកសំណុំចំណុចនៃចំណុច <span class="mi">\(P\)</span> ដែលផ្ទៀងផ្ទាត់សមីការ <span class="mi">\(AP^2 - BP^2 = 1\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+យក <span class="mi">\(P(x, y)\)</span> ដែល <span class="mi">\(AP^2 - BP^2 = 1\)</span><br/>
+<div class="md">\[[(x - 2)^2 + y^2] - [x^2 + (y - 1)^2] = 1\]</div> <span class="mi">\(2x - y - 1 = 0\)</span> ជាសមីការសំណុំចំណុចនៃ <span class="mi">\(P\)</span> ។<br/>
+ច្រាសមកវិញ បើចំណុច <span class="mi">\(P\)</span> មួយនៅលើបន្ទាត់ <span class="mi">\(2x - y - 1 = 0\)</span> នោះ <span class="mi">\(P\)</span> បំពេញលក្ខខណ្ឌ <span class="mi">\(AP^2 - BP^2 = 1\)</span><br/>
+ដូច្នេះ សមីការសំណុំចំណុចនៃចំណុច <span class="mi">\(P\)</span> គឺ បន្ទាត់ <span class="mi">\(2x - y - 1 = 0\)</span> ។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យចំណុចនឹងពីរ <span class="mi">\(A(0, 1)\)</span> និង <span class="mi">\(B(-2, 0)\)</span> ។ រកសំណុំចំណុចនៃចំណុច <span class="mi">\(P\)</span> ដែលផ្ទៀងផ្ទាត់សមីការ <span class="mi">\(AP^2 - BP^2 = 4\)</span> ។<br/>
+យក <span class="mi">\(P(x, y)\)</span> ដែល <span class="mi">\(AP^2 - BP^2 = 4 \Leftrightarrow [x^2 + (y - 1)^2] - [(x + 2)^2 + y^2] = 4 \Leftrightarrow 4x + 2y + 7 = 0\)</span> ។<br/>
+ដូច្នេះ សមីការសំណុំចំណុចនៃចំណុច <span class="mi">\(P\)</span> គឺបន្ទាត់ <span class="mi">\(4x + 2y + 7 = 0\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេឱ្យចំណុចនឹងពីរ <span class="mi">\(A(2, 0)\)</span> និង <span class="mi">\(B(-2, 0)\)</span> ។ រកសំណុំចំណុចនៃចំណុច <span class="mi">\(P\)</span> ដែលផ្ទៀងផ្ទាត់សមីការ <span class="mi">\(AP^2 - BP^2 = 16\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+សំណុំចំណុចនៃ <span class="mi">\(P\)</span> គឺបន្ទាត់ <span class="mi">\(x = -2\)</span> ។</p></details>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>គណនាមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> នៃបន្ទាត់កាត់តាមពីរចំណុច ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A(1, 2)\)</span> និង <span class="mi">\(B(4, 8)\)</span></p></li>
+<li><p><span class="mi">\(C(-2, 3)\)</span> និង <span class="mi">\(D(4, -1)\)</span></p></li>
+<li><p><span class="mi">\(E(3, 5)\)</span> និង <span class="mi">\(F(7, 5)\)</span></p></li>
+<li><p><span class="mi">\(P(2, -4)\)</span> និង <span class="mi">\(Q(2, 6)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> នៃបន្ទាត់កាត់តាមពីរចំណុច ៖<br/>
+រូបមន្ត ៖ <span class="mi">\(m = \dfrac{y_2 - y_1}{x_2 - x_1}\)</span><br/>
+<strong>ក.</strong>  <span class="mi">\(A(1, 2)\)</span> និង <span class="mi">\(B(4, 8)\)</span> ៖<br/>
+<span class="mi">\(m = \dfrac{8 - 2}{4 - 1} = \dfrac{6}{3} = 2\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(C(-2, 3)\)</span> និង <span class="mi">\(D(4, -1)\)</span> ៖<br/>
+<span class="mi">\(m = \dfrac{-1 - 3}{4 - (-2)} = \dfrac{-4}{6} = -\dfrac{2}{3}\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(E(3, 5)\)</span> និង <span class="mi">\(F(7, 5)\)</span> ៖<br/>
+<span class="mi">\(m = \dfrac{5 - 5}{7 - 3} = \dfrac{0}{4} = 0\)</span> (បន្ទាត់ផ្ដេក)<br/>
+<strong>ឃ.</strong>  <span class="mi">\(P(2, -4)\)</span> និង <span class="mi">\(Q(2, 6)\)</span> ៖<br/>
+<span class="mi">\(x_2 - x_1 = 2 - 2 = 0\)</span> នាំឱ្យ <span class="mi">\(m\)</span> គ្មានកំណត់ (បន្ទាត់ឈរ <span class="mi">\(x = 2\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>រកមុំលំអៀង <span class="mi">\(\alpha\)</span> នៃបន្ទាត់ធៀបនឹងអ័ក្សអាប់ស៊ីស <span class="mi">\(Ox\)</span> បើដឹងថាមេគុណប្រាប់ទិសស្មើ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(m = 1\)</span></p></li>
+<li><p><span class="mi">\(m = \sqrt{3}\)</span></p></li>
+<li><p><span class="mi">\(m = \dfrac{\sqrt{3}}{3}\)</span></p></li>
+<li><p><span class="mi">\(m = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកមុំលំអៀង <span class="mi">\(\alpha\)</span> ធៀបនឹងអ័ក្ស <span class="mi">\(Ox\)</span> (<span class="mi">\(m = \tan \alpha, \alpha \in [0^\circ, 180^\circ)\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(m = 1 \implies \tan \alpha = 1 \implies \alpha = 45^\circ\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(m = \sqrt{3} \implies \tan \alpha = \sqrt{3} \implies \alpha = 60^\circ\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(m = \dfrac{\sqrt{3}}{3} \implies \tan \alpha = \dfrac{\sqrt{3}}{3} \implies \alpha = 30^\circ\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\(m = 0 \implies \tan \alpha = 0 \implies \alpha = 0^\circ\)</span> (បន្ទាត់ស្របនឹងអ័ក្ស <span class="mi">\(Ox\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់ដែលមានមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> និងកាត់តាមចំណុច <span class="mi">\(A\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(m = 2, \quad{} A(1, 3)\)</span></p></li>
+<li><p><span class="mi">\(m = -3, \quad{} A(2, -1)\)</span></p></li>
+<li><p><span class="mi">\(m = \dfrac{1}{2}, \quad{} A(-4, 2)\)</span></p></li>
+<li><p><span class="mi">\(m = -\dfrac{2}{3}, \quad{} A(3, 0)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់តាមទម្រង់ចំណុច-មេគុណប្រាប់ទិស <span class="mi">\(y - y_1 = m(x - x_1)\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(m = 2, A(1, 3)\)</span> ៖<br/>
+<span class="mi">\(y - 3 = 2(x - 1) \iff y = 2x + 1\)</span> (ឬ <span class="mi">\(2x - y + 1 = 0\)</span>)<br/>
+<strong>ខ.</strong>  <span class="mi">\(m = -3, A(2, -1)\)</span> ៖<br/>
+<span class="mi">\(y - (-1) = -3(x - 2) \iff y + 1 = -3x + 6 \iff y = -3x + 5\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(m = \dfrac{1}{2}, A(-4, 2)\)</span> ៖<br/>
+<span class="mi">\(y - 2 = \dfrac{1}{2}(x + 4) \iff y = \dfrac{1}{2}x + 4\)</span> (ឬ <span class="mi">\(x - 2y + 8 = 0\)</span>)<br/>
+<strong>ឃ.</strong>  <span class="mi">\(m = -\dfrac{2}{3}, A(3, 0)\)</span> ៖<br/>
+<span class="mi">\(y - 0 = -\dfrac{2}{3}(x - 3) \iff y = -\dfrac{2}{3}x + 2\)</span> (ឬ <span class="mi">\(2x + 3y - 6 = 0\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់ដែលមានមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> និងចំណុចប្រសព្វជាមួយអ័ក្ស <span class="mi">\(Oy\)</span> ស្មើ <span class="mi">\(b\)</span> (<span class="mi">\(y\)</span>-intercept) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(m = 3, \quad{} b = -2\)</span></p></li>
+<li><p><span class="mi">\(m = -1, \quad{} b = 5\)</span></p></li>
+<li><p><span class="mi">\(m = \dfrac{3}{4}, \quad{} b = 0\)</span></p></li>
+<li><p><span class="mi">\(m = 0, \quad{} b = 4\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់តាមទម្រង់ <span class="mi">\(y = mx + b\)</span> (<span class="mi">\(b\)</span> ជាចំណុចប្រសព្វលើអ័ក្ស <span class="mi">\(Oy\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(m = 3, b = -2 \implies y = 3x - 2\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(m = -1, b = 5 \implies y = -x + 5\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(m = \dfrac{3}{4}, b = 0 \implies y = \dfrac{3}{4}x\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\(m = 0, b = 4 \implies y = 4\)</span> (បន្ទាត់ផ្ដេក)។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាមពីរចំណុច ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A(2, 5)\)</span> និង <span class="mi">\(B(4, 9)\)</span></p></li>
+<li><p><span class="mi">\(A(-1, 4)\)</span> និង <span class="mi">\(B(3, -2)\)</span></p></li>
+<li><p><span class="mi">\(A(0, 3)\)</span> និង <span class="mi">\(B(4, 0)\)</span></p></li>
+<li><p><span class="mi">\(A(-2, -3)\)</span> និង <span class="mi">\(B(1, 3)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់កាត់តាមពីរចំណុច ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A(2, 5)\)</span> និង <span class="mi">\(B(4, 9)\)</span> ៖<br/>
+<span class="mi">\(m = \dfrac{9 - 5}{4 - 2} = \dfrac{4}{2} = 2\)</span><br/>
+<span class="mi">\(y - 5 = 2(x - 2) \iff y = 2x + 1\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(A(-1, 4)\)</span> និង <span class="mi">\(B(3, -2)\)</span> ៖<br/>
+<span class="mi">\(m = \dfrac{-2 - 4}{3 - (-1)} = \dfrac{-6}{4} = -\dfrac{3}{2}\)</span><br/>
+<span class="mi">\(y - 4 = -\dfrac{3}{2}(x + 1) \iff y = -\dfrac{3}{2}x + \dfrac{5}{2}\)</span> (ឬ <span class="mi">\(3x + 2y - 5 = 0\)</span>)<br/>
+<strong>គ.</strong>  <span class="mi">\(A(0, 3)\)</span> និង <span class="mi">\(B(4, 0)\)</span> ៖<br/>
+<span class="mi">\(m = \dfrac{0 - 3}{4 - 0} = -\dfrac{3}{4} \implies y = -\dfrac{3}{4}x + 3\)</span> (ឬ <span class="mi">\(3x + 4y - 12 = 0\)</span>)<br/>
+<strong>ឃ.</strong>  <span class="mi">\(A(-2, -3)\)</span> និង <span class="mi">\(B(1, 3)\)</span> ៖<br/>
+<span class="mi">\(m = \dfrac{3 - (-3)}{1 - (-2)} = \dfrac{6}{3} = 2\)</span><br/>
+<span class="mi">\(y - 3 = 2(x - 1) \iff y = 2x + 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>សរសេរសមីការបន្ទាត់កាត់តាមចំណុចប្រសព្វលើអ័ក្ស <span class="mi">\(A(a, 0)\)</span> និង <span class="mi">\(B(0, b)\)</span> ជាទម្រង់ <span class="mi">\(\dfrac{x}{a} + \dfrac{y}{b} = 1\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(a = 3, \quad{} b = 4\)</span></p></li>
+<li><p><span class="mi">\(a = -2, \quad{} b = 5\)</span></p></li>
+<li><p><span class="mi">\(a = 4, \quad{} b = -3\)</span></p></li>
+<li><p><span class="mi">\(a = -5, \quad{} b = -2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរសមីការបន្ទាត់ជាទម្រង់កាត់អ័ក្ស <span class="mi">\(\dfrac{x}{a} + \dfrac{y}{b} = 1\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(a = 3, b = 4 \implies \dfrac{x}{3} + \dfrac{y}{4} = 1 \iff 4x + 3y - 12 = 0\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(a = -2, b = 5 \implies \dfrac{x}{-2} + \dfrac{y}{5} = 1 \iff 5x - 2y + 10 = 0\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(a = 4, b = -3 \implies \dfrac{x}{4} + \dfrac{y}{-3} = 1 \iff 3x - 4y - 12 = 0\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\(a = -5, b = -2 \implies \dfrac{x}{-5} + \dfrac{y}{-2} = 1 \iff 2x + 5y + 10 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>បំប្លែងសមីការទូទៅនៃបន្ទាត់ខាងក្រោមទៅជាទម្រង់ <span class="mi">\(y = mx + b\)</span> និងបញ្ជាក់មេគុណប្រាប់ទិស <span class="mi">\(m\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2x - y + 5 = 0\)</span></p></li>
+<li><p><span class="mi">\(3x + 4y - 12 = 0\)</span></p></li>
+<li><p><span class="mi">\(5x - 2y = 8\)</span></p></li>
+<li><p><span class="mi">\(x + 3y + 6 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងទៅជាទម្រង់ <span class="mi">\(y = mx + b\)</span> និងបញ្ជាក់ <span class="mi">\(m\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(2x - y + 5 = 0 \iff y = 2x + 5 \implies m = 2, b = 5\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(3x + 4y - 12 = 0 \iff 4y = -3x + 12 \iff y = -\dfrac{3}{4}x + 3 \implies m = -\dfrac{3}{4}, b = 3\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(5x - 2y = 8 \iff 2y = 5x - 8 \iff y = \dfrac{5}{2}x - 4 \implies m = \dfrac{5}{2}, b = -4\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\(x + 3y + 6 = 0 \iff 3y = -x - 6 \iff y = -\dfrac{1}{3}x - 2 \implies m = -\dfrac{1}{3}, b = -2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>សរសេរសមីការបន្ទាត់ផ្ដេក និងបន្ទាត់ឈរ ៖</p>
+<ol class="list olka cols2">
+<li><p>បន្ទាត់ផ្ដេកកាត់តាម <span class="mi">\(A(3, -4)\)</span></p></li>
+<li><p>បន្ទាត់ឈរកាត់តាម <span class="mi">\(B(-2, 5)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការបន្ទាត់ផ្ដេក និងបន្ទាត់ឈរ ៖<br/>
+<strong>ក.</strong>  បន្ទាត់ផ្ដេកកាត់តាម <span class="mi">\(A(3, -4)\)</span> មានសមីការគឺ <span class="mi">\(y = -4\)</span>។<br/>
+<strong>ខ.</strong>  បន្ទាត់ឈរកាត់តាម <span class="mi">\(B(-2, 5)\)</span> មានសមីការគឺ <span class="mi">\(x = -2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាមគល់កូអរដោនេ <span class="mi">\(O(0, 0)\)</span> និងចំណុច <span class="mi">\(P(3, -5)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់កាត់តាម <span class="mi">\(O(0, 0)\)</span> និង <span class="mi">\(P(3, -5)\)</span> ៖<br/>
+មេគុណប្រាប់ទិស ៖ <span class="mi">\(m = \dfrac{-5 - 0}{3 - 0} = -\dfrac{5}{3}\)</span><br/>
+បន្ទាត់កាត់តាមគល់ <span class="mi">\(O(0, 0)\)</span> នាំឱ្យ <span class="mi">\(b = 0\)</span> ៖<br/>
+សមីការបន្ទាត់គឺ <span class="mi">\(y = -\dfrac{5}{3}x\)</span> (ឬ <span class="mi">\(5x + 3y = 0\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ពិនិត្យថាតើចំណុច <span class="mi">\(M(2, 1)\)</span> ស្ថិតនៅលើបន្ទាត់ <span class="mi">\((d): 3x - 4y - 2 = 0\)</span> ដែរឬទេ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យចំណុច <span class="mi">\(M(2, 1)\)</span> លើ <span class="mi">\((d): 3x - 4y - 2 = 0\)</span> ៖<br/>
+ជំនួស <span class="mi">\(x = 2\)</span> និង <span class="mi">\(y = 1\)</span> ចូលក្នុងសមីការ <span class="mi">\((d)\)</span> ៖<br/>
+<span class="mi">\(3(2) - 4(1) - 2 = 6 - 4 - 2 = 0\)</span> (ពិត)<br/>
+ដូចនេះ ចំណុច <span class="mi">\(M(2, 1)\)</span> ស្ថិតនៅលើបន្ទាត់ <span class="mi">\((d)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាម <span class="mi">\(A(2, 3)\)</span> និងស្របនឹងបន្ទាត់ <span class="mi">\((d): y = 3x - 1\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់កាត់តាម <span class="mi">\(A(2, 3)\)</span> ស្របនឹង <span class="mi">\((d): y = 3x - 1\)</span> ៖<br/>
+បន្ទាត់ស្របគ្នាមានមេគុណប្រាប់ទិសស្មើគ្នា ៖ <span class="mi">\(m' = m = 3\)</span><br/>
+សមីការបន្ទាត់គឺ ៖<br/>
+<span class="mi">\(y - 3 = 3(x - 2) \iff y = 3x - 6 + 3 \iff y = 3x - 3\)</span> (ឬ <span class="mi">\(3x - y - 3 = 0\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាម <span class="mi">\(B(-1, 4)\)</span> និងស្របនឹងបន្ទាត់ <span class="mi">\((d): 2x + 5y - 7 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់កាត់តាម <span class="mi">\(B(-1, 4)\)</span> ស្របនឹង <span class="mi">\((d): 2x + 5y - 7 = 0\)</span> ៖<br/>
+មេគុណប្រាប់ទិសនៃ <span class="mi">\((d)\)</span> ៖ <span class="mi">\(5y = -2x + 7 \implies m = -\dfrac{2}{5}\)</span><br/>
+សមីការបន្ទាត់ស្របគឺ ៖<br/>
+<span class="mi">\(y - 4 = -\dfrac{2}{5}(x + 1) \iff 5(y - 4) = -2(x + 1)\)</span><br/>
+<span class="mi">\(\iff 5y - 20 = -2x - 2 \iff 2x + 5y - 18 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាម <span class="mi">\(C(3, -2)\)</span> និងកែងនឹងបន្ទាត់ <span class="mi">\((d): y = 2x + 5\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់កាត់តាម <span class="mi">\(C(3, -2)\)</span> កែងនឹង <span class="mi">\((d): y = 2x + 5\)</span> ៖<br/>
+មេគុណប្រាប់ទិសនៃ <span class="mi">\((d)\)</span> គឺ <span class="mi">\(m = 2\)</span> នាំឱ្យមេគុណប្រាប់ទិសបន្ទាត់កែងគឺ ៖<br/>
+<span class="mi">\(m_{\perp} = -\dfrac{1}{m} = -\dfrac{1}{2}\)</span><br/>
+សមីការបន្ទាត់គឺ ៖<br/>
+<span class="mi">\(y - (-2) = -\dfrac{1}{2}(x - 3) \iff y + 2 = -\dfrac{1}{2}x + \dfrac{3}{2}\)</span><br/>
+<span class="mi">\(\iff y = -\dfrac{1}{2}x - \dfrac{1}{2}\)</span> (ឬ <span class="mi">\(x + 2y + 1 = 0\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាម <span class="mi">\(D(-2, 1)\)</span> និងកែងនឹងបន្ទាត់ <span class="mi">\((d): 3x - 4y + 6 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់កាត់តាម <span class="mi">\(D(-2, 1)\)</span> កែងនឹង <span class="mi">\((d): 3x - 4y + 6 = 0\)</span> ៖<br/>
+មេគុណប្រាប់ទិសនៃ <span class="mi">\((d)\)</span> គឺ <span class="mi">\(m = \dfrac{3}{4}\)</span> នាំឱ្យ ៖<br/>
+<span class="mi">\(m_{\perp} = -\dfrac{4}{3}\)</span><br/>
+សមីការបន្ទាត់កែងគឺ ៖<br/>
+<span class="mi">\(y - 1 = -\dfrac{4}{3}(x + 2) \iff 3(y - 1) = -4(x + 2)\)</span><br/>
+<span class="mi">\(\iff 3y - 3 = -4x - 8 \iff 4x + 3y + 5 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>កំណត់ទីតាំងធៀបរវាងគូនៃបន្ទាត់ខាងក្រោម (ស្រប កែង ឬកាត់គ្នា) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((d_1): 2x - 3y + 4 = 0\)</span> និង <span class="mi">\((d_2): 4x - 6y - 5 = 0\)</span></p></li>
+<li><p><span class="mi">\((d_1): 3x + 2y - 1 = 0\)</span> និង <span class="mi">\((d_2): 2x - 3y + 7 = 0\)</span></p></li>
+<li><p><span class="mi">\((d_1): y = 4x - 2\)</span> និង <span class="mi">\((d_2): y = 4x + 3\)</span></p></li>
+<li><p><span class="mi">\((d_1): x - 2y = 3\)</span> និង <span class="mi">\((d_2): 2x + y = 5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ទីតាំងធៀបនៃគូនៃបន្ទាត់ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\((d_1): 2x - 3y + 4 = 0\)</span> (<span class="mi">\(m_1 = \dfrac{2}{3}\)</span>) និង <span class="mi">\((d_2): 4x - 6y - 5 = 0\)</span> (<span class="mi">\(m_2 = \dfrac{4}{6} = \dfrac{2}{3}\)</span>) ៖<br/>
+ដោយ <span class="mi">\(m_1 = m_2 = \dfrac{2}{3}\)</span> និង <span class="mi">\(\dfrac{4}{-5} \ne \dfrac{2}{4}\)</span> នោះ <span class="mi">\((d_1) \parallel (d_2)\)</span> (<strong>ស្របគ្នា</strong>)។<br/>
+<strong>ខ.</strong>  <span class="mi">\((d_1): 3x + 2y - 1 = 0\)</span> (<span class="mi">\(m_1 = -\dfrac{3}{2}\)</span>) និង <span class="mi">\((d_2): 2x - 3y + 7 = 0\)</span> (<span class="mi">\(m_2 = \dfrac{2}{3}\)</span>) ៖<br/>
+<span class="mi">\(m_1 \cdot m_2 = \left(-\dfrac{3}{2}\right)\left(\dfrac{2}{3}\right) = -1 \implies (d_1) \perp (d_2)\)</span> (<strong>កែងគ្នា</strong>)។<br/>
+<strong>គ.</strong>  <span class="mi">\((d_1): y = 4x - 2\)</span> និង <span class="mi">\((d_2): y = 4x + 3\)</span> ៖<br/>
+<span class="mi">\(m_1 = m_2 = 4\)</span> និង <span class="mi">\(b_1 \ne b_2 \implies (d_1) \parallel (d_2)\)</span> (<strong>ស្របគ្នា</strong>)។<br/>
+<strong>ឃ.</strong>  <span class="mi">\((d_1): x - 2y = 3\)</span> (<span class="mi">\(m_1 = \dfrac{1}{2}\)</span>) និង <span class="mi">\((d_2): 2x + y = 5\)</span> (<span class="mi">\(m_2 = -2\)</span>) ៖<br/>
+<span class="mi">\(m_1 \cdot m_2 = \left(\dfrac{1}{2}\right)(-2) = -1 \implies (d_1) \perp (d_2)\)</span> (<strong>កែងគ្នា</strong>)។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យបន្ទាត់ <span class="mi">\((d_1): mx + 2y - 1 = 0\)</span> និង <span class="mi">\((d_2): 3x - 6y + 2 = 0\)</span> ស្របគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ <span class="mi">\(m\)</span> ដើម្បីឱ្យ <span class="mi">\((d_1): mx + 2y - 1 = 0\)</span> ស្របនឹង <span class="mi">\((d_2): 3x - 6y + 2 = 0\)</span> ៖<br/>
+លក្ខខណ្ឌស្របគ្នា ៖ <span class="mi">\(\dfrac{m}{3} = \dfrac{2}{-6} \ne \dfrac{-1}{2}\)</span><br/>
+<span class="mi">\(\iff \dfrac{m}{3} = -\dfrac{1}{3} \iff m = -1\)</span><br/>
+ដោយ <span class="mi">\(\dfrac{2}{-6} = -\dfrac{1}{3} \ne -\dfrac{1}{2}\)</span> នោះបន្ទាត់ទាំងពីរស្របគ្នាដាច់ខាត។<br/>
+ដូចនេះ <span class="mi">\(m = -1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យបន្ទាត់ <span class="mi">\((d_1): 2x + my - 3 = 0\)</span> និង <span class="mi">\((d_2): 3x - 2y + 4 = 0\)</span> កែងគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ <span class="mi">\(m\)</span> ដើម្បីឱ្យ <span class="mi">\((d_1): 2x + my - 3 = 0\)</span> កែងនឹង <span class="mi">\((d_2): 3x - 2y + 4 = 0\)</span> ៖<br/>
+លក្ខខណ្ឌកែងគ្នានៃបន្ទាត់ទូទៅ <span class="mi">\(A_1 A_2 + B_1 B_2 = 0\)</span> ៖<br/>
+<span class="mi">\(2(3) + m(-2) = 0 \iff 6 - 2m = 0 \iff 2m = 6 \iff m = 3\)</span>។<br/>
+ដូចនេះ តម្លៃដែលត្រូវរកគឺ <span class="mi">\(m = 3\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>រកកូអរដោនេចំណុចប្រសព្វ <span class="mi">\(I\)</span> នៃបន្ទាត់ទាំងពីរ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((d_1): 2x - y = 3\)</span> និង <span class="mi">\((d_2): x + 2y = 4\)</span></p></li>
+<li><p><span class="mi">\((d_1): 3x + 2y = 12\)</span> និង <span class="mi">\((d_2): 5x - 3y = 1\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកកូអរដោនេចំណុចប្រសព្វ <span class="mi">\(I\)</span> នៃបន្ទាត់ទាំងពីរ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} 2x - y = 3 \iff y = 2x - 3 \\ x + 2y = 4 \end{cases}\)</span><br/>
+ជំនួស <span class="mi">\(y\)</span> ចូលសមីការទីពីរ ៖<br/>
+<span class="mi">\(x + 2(2x - 3) = 4 \iff 5x - 6 = 4 \iff 5x = 10 \iff x = 2\)</span><br/>
+<span class="mi">\(y = 2(2) - 3 = 1\)</span>។<br/>
+ដូចនេះ ចំណុចប្រសព្វគឺ <span class="mi">\(I(2, 1)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} 3x + 2y = 12 \quad{} (\times 3) \\ 5x - 3y = 1 \quad{} (\times 2) \end{cases} \iff \begin{cases} 9x + 6y = 36 \\ 10x - 6y = 2 \end{cases}\)</span><br/>
+បូកសមីការទាំងពីរ ៖ <span class="mi">\(19x = 38 \iff x = 2\)</span><br/>
+ជំនួស <span class="mi">\(x = 2\)</span> ចូលសមីការទីមួយ ៖<br/>
+<span class="mi">\(3(2) + 2y = 12 \iff 2y = 6 \iff y = 3\)</span>។<br/>
+ដូចនេះ ចំណុចប្រសព្វគឺ <span class="mi">\(I(2, 3)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>បង្ហាញថាបន្ទាត់ទាំងបី <span class="mi">\((d_1): x - y = 1\)</span>, <span class="mi">\((d_2): 2x + y = 5\)</span> និង <span class="mi">\((d_3): 3x - 2y = 4\)</span> ប្រសព្វគ្នានៅមួយចំណុច (Concurrent)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\((d_1): x - y = 1\)</span>, <span class="mi">\((d_2): 2x + y = 5\)</span> និង <span class="mi">\((d_3): 3x - 2y = 4\)</span> ប្រសព្វគ្នានៅមួយចំណុច ៖<br/>
+រកចំណុចប្រសព្វនៃ <span class="mi">\((d_1)\)</span> និង <span class="mi">\((d_2)\)</span> ៖<br/>
+បូកសមីការទាំងពីរ ៖ <span class="mi">\((x - y) + (2x + y) = 1 + 5 \iff 3x = 6 \iff x = 2\)</span><br/>
+<span class="mi">\(y = x - 1 = 2 - 1 = 1 \implies I(2, 1)\)</span>។<br/>
+ផ្ទៀងផ្ទាត់ចំណុច <span class="mi">\(I(2, 1)\)</span> ជាមួយបន្ទាត់ <span class="mi">\((d_3)\)</span> ៖<br/>
+<span class="mi">\(3(2) - 2(1) = 6 - 2 = 4\)</span> (ពិត)។<br/>
+ដោយសារ <span class="mi">\(I(2, 1)\)</span> ផ្ទៀងផ្ទាត់សមីការទាំងបី បន្ទាត់ទាំងបីប្រសព្វគ្នានៅចំណុច <span class="mi">\(I(2, 1)\)</span> តែមួយ។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>រកសមីការមេដ្យាទ័រនៃអង្កត់ <span class="mi">\(AB\)</span> ដោយដឹងថា <span class="mi">\(A(1, 2)\)</span> និង <span class="mi">\(B(5, 6)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការមេដ្យាទ័រនៃអង្កត់ <span class="mi">\(AB\)</span> ដែល <span class="mi">\(A(1, 2)\)</span> និង <span class="mi">\(B(5, 6)\)</span> ៖<br/>
+1. ចំណុចកណ្តាល <span class="mi">\(M\)</span> នៃ <span class="mi">\(AB\)</span> ៖<br/>
+<span class="mi">\(x_M = \dfrac{1 + 5}{2} = 3, \quad{} y_M = \dfrac{2 + 6}{2} = 4 \implies M(3, 4)\)</span><br/>
+2. មេគុណប្រាប់ទិស <span class="mi">\(AB\)</span> ៖<br/>
+<span class="mi">\(m_{AB} = \dfrac{6 - 2}{5 - 1} = \dfrac{4}{4} = 1\)</span><br/>
+3. មេគុណប្រាប់ទិសបន្ទាត់មេដ្យាទ័រ ៖<br/>
+<span class="mi">\(m_{\perp} = -\dfrac{1}{1} = -1\)</span><br/>
+4. សមីការមេដ្យាទ័រ ៖<br/>
+<span class="mi">\(y - 4 = -1(x - 3) \iff y - 4 = -x + 3 \iff x + y - 7 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>រកសមីការមេដ្យាទ័រនៃអង្កត់ <span class="mi">\(CD\)</span> ដោយដឹងថា <span class="mi">\(C(-2, 3)\)</span> និង <span class="mi">\(D(4, -1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការមេដ្យាទ័រនៃអង្កត់ <span class="mi">\(CD\)</span> ដែល <span class="mi">\(C(-2, 3)\)</span> និង <span class="mi">\(D(4, -1)\)</span> ៖<br/>
+1. ចំណុចកណ្តាល <span class="mi">\(M\)</span> ៖<br/>
+<span class="mi">\(x_M = \dfrac{-2 + 4}{2} = 1, \quad{} y_M = \dfrac{3 - 1}{2} = 1 \implies M(1, 1)\)</span><br/>
+2. មេគុណប្រាប់ទិស <span class="mi">\(CD\)</span> ៖<br/>
+<span class="mi">\(m_{CD} = \dfrac{-1 - 3}{4 - (-2)} = \dfrac{-4}{6} = -\dfrac{2}{3}\)</span><br/>
+3. មេគុណប្រាប់ទិសបន្ទាត់មេដ្យាទ័រ ៖<br/>
+<span class="mi">\(m_{\perp} = \dfrac{3}{2}\)</span><br/>
+4. សមីការមេដ្យាទ័រ ៖<br/>
+<span class="mi">\(y - 1 = \dfrac{3}{2}(x - 1) \iff 2y - 2 = 3x - 3 \iff 3x - 2y - 1 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ក្នុងត្រីកោណ <span class="mi">\(ABC\)</span> ដែល <span class="mi">\(A(1, 4), B(-2, 1), C(4, -1)\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p>រកសមីការមេដ្យាន <span class="mi">\(AM\)</span> គូសចេញពីកំពូល <span class="mi">\(A\)</span>។</p></li>
+<li><p>រកសមីការកម្ពស់ <span class="mi">\(AH\)</span> គូសកែងនឹងជ្រុង <span class="mi">\(BC\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុងត្រីកោណ <span class="mi">\(ABC\)</span> ដែល <span class="mi">\(A(1, 4), B(-2, 1), C(4, -1)\)</span> ៖<br/>
+<strong>ក.</strong>  រកសមីការមេដ្យាន <span class="mi">\(AM\)</span> ៖<br/>
+ចំណុចកណ្តាល <span class="mi">\(M\)</span> នៃ <span class="mi">\(BC\)</span> ៖<br/>
+<span class="mi">\(x_M = \dfrac{-2 + 4}{2} = 1, \quad{} y_M = \dfrac{1 - 1}{2} = 0 \implies M(1, 0)\)</span><br/>
+ដោយ <span class="mi">\(A(1, 4)\)</span> និង <span class="mi">\(M(1, 0)\)</span> មានអាប់ស៊ីស <span class="mi">\(x = 1\)</span> ដូចគ្នា<br/>
+នាំឱ្យសមីការមេដ្យាន <span class="mi">\(AM\)</span> គឺជាបន្ទាត់ឈរ ៖ <span class="mi">\(x = 1\)</span> (ឬ <span class="mi">\(x - 1 = 0\)</span>)។<br/>
+<strong>ខ.</strong>  រកសមីការកម្ពស់ <span class="mi">\(AH\)</span> គូសកែងនឹង <span class="mi">\(BC\)</span> ៖<br/>
+មេគុណប្រាប់ទិសនៃ <span class="mi">\(BC\)</span> ៖ <span class="mi">\(m_{BC} = \dfrac{-1 - 1}{4 - (-2)} = -\dfrac{2}{6} = -\dfrac{1}{3}\)</span><br/>
+មេគុណប្រាប់ទិសកម្ពស់ <span class="mi">\(AH\)</span> ៖ <span class="mi">\(m_{AH} = 3\)</span><br/>
+សមីការកម្ពស់កាត់តាម <span class="mi">\(A(1, 4)\)</span> ៖<br/>
+<span class="mi">\(y - 4 = 3(x - 1) \iff y = 3x + 1\)</span> (ឬ <span class="mi">\(3x - y + 1 = 0\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>តាមត្រីកោណក្នុងលំហាត់ទី ២២ រកសមីការបន្ទាត់មធ្យមដែលស្របនឹងជ្រុង <span class="mi">\(BC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់មធ្យមដែលស្របនឹង <span class="mi">\(BC\)</span> ក្នុង <span class="mi">\(\triangle ABC\)</span> ៖<br/>
+បន្ទាត់មធ្យមកាត់តាមចំណុចកណ្តាល <span class="mi">\(M_{AB}\)</span> នៃ <span class="mi">\(AB\)</span> និងស្របនឹង <span class="mi">\(BC\)</span>។<br/>
+- ចំណុចកណ្តាល <span class="mi">\(M_{AB}\)</span> ៖<br/>
+<span class="mi">\(x = \dfrac{1 - 2}{2} = -\dfrac{1}{2}, \quad{} y = \dfrac{4 + 1}{2} = \dfrac{5}{2} \implies M_{AB}\left(-\dfrac{1}{2}, \dfrac{5}{2}\right)\)</span><br/>
+- មេគុណប្រាប់ទិស <span class="mi">\(m = m_{BC} = -\dfrac{1}{3}\)</span><br/>
+សមីការបន្ទាត់មធ្យម ៖<br/>
+<span class="mi">\(y - \dfrac{5}{2} = -\dfrac{1}{3}\left(x + \dfrac{1}{2}\right) \iff 6y - 15 = -2x - 1\)</span><br/>
+<span class="mi">\(\iff 2x + 6y - 14 = 0 \iff x + 3y - 7 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គណនាចម្ងាយពីចំណុច <span class="mi">\(P(2, 3)\)</span> ទៅកាន់បន្ទាត់ <span class="mi">\((d): 3x + 4y - 8 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចម្ងាយពី <span class="mi">\(P(2, 3)\)</span> ទៅ <span class="mi">\((d): 3x + 4y - 8 = 0\)</span> ៖<br/>
+រូបមន្ត ៖ <span class="mi">\(d(P, (d)) = \dfrac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}\)</span><br/>
+<span class="mi">\(d = \dfrac{|3(2) + 4(3) - 8|}{\sqrt{3^2 + 4^2}} = \dfrac{|6 + 12 - 8|}{\sqrt{25}} = \dfrac{10}{5} = 2\)</span> ឯកតាប្រវែង។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គណនាចម្ងាយពីគល់កូអរដោនេ <span class="mi">\(O(0, 0)\)</span> ទៅកាន់បន្ទាត់ <span class="mi">\((d): 5x - 12y + 26 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចម្ងាយពីគល់ <span class="mi">\(O(0, 0)\)</span> ទៅ <span class="mi">\((d): 5x - 12y + 26 = 0\)</span> ៖<br/>
+<span class="mi">\(d = \dfrac{|5(0) - 12(0) + 26|}{\sqrt{5^2 + (-12)^2}} = \dfrac{26}{\sqrt{25 + 144}} = \dfrac{26}{\sqrt{169}} = \dfrac{26}{13} = 2\)</span> ឯកតាប្រវែង។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គណនាចម្ងាយរវាងបន្ទាត់ស្របគ្នាពីរ <span class="mi">\((d_1): 3x - 4y + 5 = 0\)</span> និង <span class="mi">\((d_2): 3x - 4y - 10 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចម្ងាយរវាងបន្ទាត់ស្រប <span class="mi">\((d_1): 3x - 4y + 5 = 0\)</span> និង <span class="mi">\((d_2): 3x - 4y - 10 = 0\)</span> ៖<br/>
+រូបមន្តចម្ងាយរវាងបន្ទាត់ស្រប ៖ <span class="mi">\(d = \dfrac{|C_1 - C_2|}{\sqrt{A^2 + B^2}}\)</span><br/>
+<span class="mi">\(d = \dfrac{|5 - (-10)|}{\sqrt{3^2 + (-4)^2}} = \dfrac{15}{\sqrt{25}} = \dfrac{15}{5} = 3\)</span> ឯកតាប្រវែង។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>គណនាចម្ងាយរវាងបន្ទាត់ស្របគ្នាពីរ <span class="mi">\((d_1): 2x + y - 4 = 0\)</span> និង <span class="mi">\((d_2): 2x + y + 6 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចម្ងាយរវាង <span class="mi">\((d_1): 2x + y - 4 = 0\)</span> និង <span class="mi">\((d_2): 2x + y + 6 = 0\)</span> ៖<br/>
+<span class="mi">\(d = \dfrac{|-4 - 6|}{\sqrt{2^2 + 1^2}} = \dfrac{|-10|}{\sqrt{5}} = \dfrac{10}{\sqrt{5}} = 2\sqrt{5}\)</span> ឯកតាប្រវែង។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គណនាផ្ទៃក្រឡានៃត្រីកោណដែលកំណត់ដោយបន្ទាត់ទាំងបី <span class="mi">\(x = 0\)</span>, <span class="mi">\(y = 0\)</span> និង <span class="mi">\(3x + 4y = 12\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផ្ទៃក្រឡាត្រីកោណកំណត់ដោយ <span class="mi">\(x = 0\)</span>, <span class="mi">\(y = 0\)</span> និង <span class="mi">\(3x + 4y = 12\)</span> ៖<br/>
+- ចំណុចប្រសព្វលើអ័ក្ស <span class="mi">\(Ox\)</span> (<span class="mi">\(y = 0\)</span>) ៖ <span class="mi">\(3x = 12 \iff x = 4 \implies A(4, 0)\)</span><br/>
+- ចំណុចប្រសព្វលើអ័ក្ស <span class="mi">\(Oy\)</span> (<span class="mi">\(x = 0\)</span>) ៖ <span class="mi">\(4y = 12 \iff y = 3 \implies B(0, 3)\)</span><br/>
+ត្រីកោណនេះជាត្រីកោណកែងត្រង់ <span class="mi">\(O(0, 0)\)</span> ដែលមានប្រវែងបាត <span class="mi">\(a = 4\)</span> និងកម្ពស់ <span class="mi">\(b = 3\)</span> ៖<br/>
+<span class="mi">\(S = \dfrac{1}{2}ab = \dfrac{1}{2}(4)(3) = 6\)</span> ឯកតាផ្ទៃ។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាមចំណុចប្រសព្វនៃ <span class="mi">\((d_1): 2x - y = 1\)</span> និង <span class="mi">\((d_2): x + 3y = 11\)</span> ហើយស្របនឹងបន្ទាត់ <span class="mi">\(3x - 2y + 4 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់កាត់តាមប្រសព្វនៃ <span class="mi">\((d_1): 2x - y = 1\)</span> និង <span class="mi">\((d_2): x + 3y = 11\)</span> ស្របនឹង <span class="mi">\(3x - 2y + 4 = 0\)</span> ៖<br/>
+1. រកប្រសព្វ <span class="mi">\(I\)</span> ៖<br/>
+<span class="mi">\(y = 2x - 1 \implies x + 3(2x - 1) = 11 \iff 7x = 14 \iff x = 2\)</span><br/>
+<span class="mi">\(y = 2(2) - 1 = 3 \implies I(2, 3)\)</span><br/>
+2. មេគុណប្រាប់ទិសស្របនឹង <span class="mi">\(3x - 2y + 4 = 0\)</span> គឺ <span class="mi">\(m = \dfrac{3}{2}\)</span><br/>
+3. សមីការបន្ទាត់ ៖<br/>
+<span class="mi">\(y - 3 = \dfrac{3}{2}(x - 2) \iff 2y - 6 = 3x - 6 \iff 3x - 2y = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាម <span class="mi">\(P(1, 2)\)</span> ហើយបង្កើតជាមួយអ័ក្សកូអរដោនេបានជាត្រីកោណសមបាតក្នុងចតុកោណភាគទី ១។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់កាត់តាម <span class="mi">\(P(1, 2)\)</span> បង្កើតបានត្រីកោណសមបាតក្នុងចតុកោណភាគទី ១ ៖<br/>
+បន្ទាត់កាត់អ័ក្សត្រង់ <span class="mi">\(A(a, 0)\)</span> និង <span class="mi">\(B(0, a)\)</span> ដោយ <span class="mi">\(a &gt; 0\)</span> ៖<br/>
+សមីការបន្ទាត់តាមទម្រង់កាត់អ័ក្ស ៖ <span class="mi">\(\dfrac{x}{a} + \dfrac{y}{a} = 1 \iff x + y = a\)</span><br/>
+ដោយបន្ទាត់កាត់តាម <span class="mi">\(P(1, 2)\)</span> ៖<br/>
+<span class="mi">\(1 + 2 = a \implies a = 3\)</span><br/>
+ដូចនេះ សមីការបន្ទាត់គឺ <span class="mi">\(x + y - 3 = 0\)</span> (ឬ <span class="mi">\(y = -x + 3\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គណនាតង់សង់នៃមុំស្រួចរវាងបន្ទាត់ <span class="mi">\((d_1): y = 2x + 1\)</span> និង <span class="mi">\((d_2): y = 3x - 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតង់សង់នៃមុំស្រួចរវាង <span class="mi">\((d_1): y = 2x + 1\)</span> និង <span class="mi">\((d_2): y = 3x - 2\)</span> ៖<br/>
+មេគុណប្រាប់ទិស ៖ <span class="mi">\(m_1 = 2, m_2 = 3\)</span><br/>
+រូបមន្ត ៖ <span class="mi">\(\tan \theta = \left|\dfrac{m_2 - m_1}{1 + m_1 m_2}\right|\)</span><br/>
+<span class="mi">\(\tan \theta = \left|\dfrac{3 - 2}{1 + 3(2)}\right| = \dfrac{1}{7}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>គណនាមុំស្រួចរវាងបន្ទាត់ <span class="mi">\((d_1): x - 2y + 3 = 0\)</span> និង <span class="mi">\((d_2): 3x - y - 1 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាមុំស្រួចរវាង <span class="mi">\((d_1): x - 2y + 3 = 0\)</span> និង <span class="mi">\((d_2): 3x - y - 1 = 0\)</span> ៖<br/>
+មេគុណប្រាប់ទិស ៖ <span class="mi">\(m_1 = \dfrac{1}{2}, m_2 = 3\)</span><br/>
+<span class="mi">\(\tan \theta = \left|\dfrac{3 - \frac{1}{2}}{1 + 3\left(\frac{1}{2}\right)}\right| = \left|\dfrac{\frac{5}{2}}{\frac{5}{2}}\right| = 1\)</span><br/>
+ដោយ <span class="mi">\(\tan \theta = 1\)</span> និង <span class="mi">\(\theta\)</span> ជាមុំស្រួច នាំឱ្យ <span class="mi">\(\theta = 45^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់កាត់តាម <span class="mi">\(A(3, 2)\)</span> ហើយបង្កើតបានមុំ <span class="mi">\(45^\circ\)</span> ជាមួយបន្ទាត់ <span class="mi">\(x - y + 2 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់កាត់តាម <span class="mi">\(A(3, 2)\)</span> បង្កើតបានមុំ <span class="mi">\(45^\circ\)</span> ជាមួយ <span class="mi">\(x - y + 2 = 0\)</span> (<span class="mi">\(m_0 = 1\)</span>) ៖<br/>
+តាង <span class="mi">\(m\)</span> ជាមេគុណប្រាប់ទិសបន្ទាត់ដែលត្រូវរក ៖<br/>
+<span class="mi">\(\tan 45^\circ = \left|\dfrac{m - 1}{1 + m(1)}\right| = 1\)</span><br/>
+- ករណីទី ១ ៖ <span class="mi">\(\dfrac{m - 1}{1 + m} = -1 \iff m - 1 = -1 - m \iff 2m = 0 \iff m = 0\)</span><br/>
+សមីការបន្ទាត់ ៖ <span class="mi">\(y - 2 = 0(x - 3) \iff y = 2\)</span> (បន្ទាត់ផ្ដេក)។<br/>
+- ករណីទី ២ ៖ <span class="mi">\(\dfrac{m - 1}{1 + m} = 1 \iff m - 1 = 1 + m\)</span> (គ្មានតម្លៃ <span class="mi">\(m\)</span> ទេ ពោលគឺបន្ទាត់ឈរ)<br/>
+បន្ទាត់ឈរកាត់តាម <span class="mi">\(A(3, 2)\)</span> មានសមីការគឺ <span class="mi">\(x = 3\)</span>។<br/>
+ដូចនេះ បន្ទាត់ទាំងពីរគឺ <span class="mi">\(y = 2\)</span> និង <span class="mi">\(x = 3\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បង្ហាញថាក្រុមបន្ទាត់ <span class="mi">\((m-1)x + (2m+1)y - 5m + 2 = 0\)</span> តែងតែកាត់តាមចំណុចថេរមួយជានិច្ចគ្រប់តម្លៃ <span class="mi">\(m\)</span>។ រកកូអរដោនេចំណុចថេរនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថាក្រុមបន្ទាត់ <span class="mi">\((m-1)x + (2m+1)y - 5m + 2 = 0\)</span> កាត់តាមចំណុចថេរ ៖<br/>
+ផ្តុំតួតាមអថេរ <span class="mi">\(m\)</span> ៖<br/>
+<span class="mi">\(m(x + 2y - 5) + (-x + y + 2) = 0\)</span><br/>
+សមីការនេះពិតចំពោះគ្រប់ <span class="mi">\(m \in \mathbb{R}\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(\begin{cases} x + 2y - 5 = 0 \quad{} (1) \\ -x + y + 2 = 0 \quad{} (2) \end{cases}\)</span><br/>
+បូក <span class="mi">\((1)\)</span> និង <span class="mi">\((2)\)</span> ៖ <span class="mi">\(3y - 3 = 0 \iff y = 1\)</span><br/>
+ជំនួសចូល <span class="mi">\((2)\)</span> ៖ <span class="mi">\(x = y + 2 = 1 + 2 = 3\)</span>។<br/>
+ដូចនេះ គ្រប់បន្ទាត់នៃគ្រួសារនេះតែងតែកាត់តាមចំណុចថេរ <span class="mi">\(I(3, 1)\)</span> ជានិច្ច។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់ពុះមុំរវាងបន្ទាត់ <span class="mi">\((d_1): 3x + 4y - 5 = 0\)</span> និង <span class="mi">\((d_2): 5x + 12y - 13 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់ពុះមុំរវាង <span class="mi">\((d_1): 3x + 4y - 5 = 0\)</span> និង <span class="mi">\((d_2): 5x + 12y - 13 = 0\)</span> ៖<br/>
+រូបមន្តបន្ទាត់ពុះមុំ ៖<br/>
+<span class="mi">\(\dfrac{3x + 4y - 5}{\sqrt{3^2 + 4^2}} = \pm \dfrac{5x + 12y - 13}{\sqrt{5^2 + 12^2}}\)</span><br/>
+<span class="mi">\(\iff \dfrac{3x + 4y - 5}{5} = \pm \dfrac{5x + 12y - 13}{13}\)</span><br/>
+- សញ្ញាបូក (+) ៖<br/>
+<span class="mi">\(13(3x + 4y - 5) = 5(5x + 12y - 13)\)</span><br/>
+<span class="mi">\(\iff 39x + 52y - 65 = 25x + 60y - 65\)</span><br/>
+<span class="mi">\(\iff 14x - 8y = 0 \iff 7x - 4y = 0\)</span><br/>
+- សញ្ញាដក (<span class="mi">\(-\)</span>) ៖<br/>
+<span class="mi">\(13(3x + 4y - 5) = -5(5x + 12y - 13)\)</span><br/>
+<span class="mi">\(\iff 39x + 52y - 65 = -25x - 60y + 65\)</span><br/>
+<span class="mi">\(\iff 64x + 112y - 130 = 0 \iff 32x + 56y - 65 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់ឆ្លុះនៃ <span class="mi">\((d): y = 2x - 3\)</span> ធៀបនឹងអ័ក្សអាប់ស៊ីស <span class="mi">\(Ox\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់ឆ្លុះនៃ <span class="mi">\((d): y = 2x - 3\)</span> ធៀបនឹងអ័ក្ស <span class="mi">\(Ox\)</span> ៖<br/>
+ការឆ្លុះធៀបនឹង <span class="mi">\(Ox\)</span> ប្តូរ <span class="mi">\((x, y) \to (x, -y)\)</span> ៖<br/>
+<span class="mi">\(-y = 2x - 3 \iff y = -2x + 3\)</span> (ឬ <span class="mi">\(2x + y - 3 = 0\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់ឆ្លុះនៃ <span class="mi">\((d): 2x - 3y + 6 = 0\)</span> ធៀបនឹងអ័ក្សអរដោនេ <span class="mi">\(Oy\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់ឆ្លុះនៃ <span class="mi">\((d): 2x - 3y + 6 = 0\)</span> ធៀបនឹងអ័ក្ស <span class="mi">\(Oy\)</span> ៖<br/>
+ការឆ្លុះធៀបនឹង <span class="mi">\(Oy\)</span> ប្តូរ <span class="mi">\((x, y) \to (-x, y)\)</span> ៖<br/>
+<span class="mi">\(2(-x) - 3y + 6 = 0 \iff -2x - 3y + 6 = 0 \iff 2x + 3y - 6 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>រកសមីការបន្ទាត់ឆ្លុះនៃ <span class="mi">\((d): x + 2y - 4 = 0\)</span> ធៀបនឹងបន្ទាត់ <span class="mi">\(y = x\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការបន្ទាត់ឆ្លុះនៃ <span class="mi">\((d): x + 2y - 4 = 0\)</span> ធៀបនឹងបន្ទាត់ <span class="mi">\(y = x\)</span> ៖<br/>
+ការឆ្លុះធៀបនឹងបន្ទាត់ <span class="mi">\(y = x\)</span> ប្តូរ <span class="mi">\((x, y) \to (y, x)\)</span> ៖<br/>
+<span class="mi">\(y + 2x - 4 = 0 \iff 2x + y - 4 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>រកកូអរដោនេនៃចំណុចឆ្លុះនៃ <span class="mi">\(P(1, 2)\)</span> ធៀបនឹងបន្ទាត់ <span class="mi">\((d): x - y + 1 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកកូអរដោនេចំណុចឆ្លុះនៃ <span class="mi">\(P(1, 2)\)</span> ធៀបនឹង <span class="mi">\((d): x - y + 1 = 0\)</span> ៖<br/>
+ពិនិត្យចំណុច <span class="mi">\(P(1, 2)\)</span> ៖<br/>
+<span class="mi">\(1 - 2 + 1 = 0\)</span> (ផ្ទៀងផ្ទាត់)។<br/>
+ដោយសារចំណុច <span class="mi">\(P(1, 2)\)</span> ស្ថិតនៅលើបន្ទាត់ <span class="mi">\((d)\)</span> ស្រាប់ នោះចំណុចឆ្លុះរបស់វាធៀបនឹងបន្ទាត់ <span class="mi">\((d)\)</span> គឺជាចំណុច <span class="mi">\(P\)</span> ដដែល ៖<br/>
+ដូចនេះ <span class="mi">\(P'(1, 2)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>រកកូអរដោនេនៃចំណុចឆ្លុះនៃ <span class="mi">\(Q(-1, 3)\)</span> ធៀបនឹងបន្ទាត់ <span class="mi">\((d): 2x + y - 4 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកកូអរដោនេចំណុចឆ្លុះនៃ <span class="mi">\(Q(-1, 3)\)</span> ធៀបនឹង <span class="mi">\((d): 2x + y - 4 = 0\)</span> ៖<br/>
+1. សមីការបន្ទាត់កែងកាត់តាម <span class="mi">\(Q\)</span> ៖ <span class="mi">\(m_{\perp} = \dfrac{1}{2}\)</span><br/>
+<span class="mi">\(y - 3 = \dfrac{1}{2}(x + 1) \iff x - 2y + 7 = 0\)</span><br/>
+2. ចំណោលកែង <span class="mi">\(H\)</span> លើ <span class="mi">\((d)\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} 2x + y = 4 \\ x - 2y = -7 \end{cases} \implies 2(2y - 7) + y = 4 \iff 5y = 18 \iff y = \dfrac{18}{5}\)</span><br/>
+<span class="mi">\(x = 2\left(\dfrac{18}{5}\right) - 7 = -\dfrac{1}{5} \implies H\left(-\dfrac{1}{5}, \dfrac{18}{5}\right)\)</span><br/>
+3. ចំណុចឆ្លុះ <span class="mi">\(Q'(x', y')\)</span> ៖<br/>
+<span class="mi">\(x' = 2x_H - x_Q = 2\left(-\dfrac{1}{5}\right) - (-1) = \dfrac{3}{5}\)</span><br/>
+<span class="mi">\(y' = 2y_H - y_Q = 2\left(\dfrac{18}{5}\right) - 3 = \dfrac{21}{5}\)</span><br/>
+ដូចនេះ <span class="mi">\(Q'\left(\dfrac{3}{5}, \dfrac{21}{5}\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>រកចំណុច <span class="mi">\(M\)</span> លើបន្ទាត់ <span class="mi">\((d): x - y + 1 = 0\)</span> ដែលធ្វើឱ្យផលបូកចម្ងាយ <span class="mi">\(MA + MB\)</span> មានតម្លៃតូចបំផុត ដោយដឹងថា <span class="mi">\(A(1, 3)\)</span> និង <span class="mi">\(B(5, 1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(M \in (d): x - y + 1 = 0\)</span> ដើម្បីឱ្យ <span class="mi">\(MA + MB\)</span> តូចបំផុត (<span class="mi">\(A(1, 3), B(5, 1)\)</span>) ៖<br/>
+ពិនិត្យទីតាំងធៀបនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ធៀបនឹង <span class="mi">\((d)\)</span> ៖<br/>
+- ចំពោះ <span class="mi">\(A(1, 3)\)</span> ៖ <span class="mi">\(1 - 3 + 1 = -1 &lt; 0\)</span><br/>
+- ចំពោះ <span class="mi">\(B(5, 1)\)</span> ៖ <span class="mi">\(5 - 1 + 1 = 5 &gt; 0\)</span><br/>
+ដោយសារតម្លៃមានសញ្ញាផ្ទុយគ្នា ចំណុច <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ស្ថិតនៅសងខាងបន្ទាត់ <span class="mi">\((d)\)</span>។<br/>
+តាមវិសមភាពត្រីកោណ <span class="mi">\(MA + MB \ge AB\)</span> នាំឱ្យផលបូកតូចបំផុតកាលណា <span class="mi">\(M\)</span> គឺជាចំណុចប្រសព្វរវាងអង្កត់ <span class="mi">\(AB\)</span> និងបន្ទាត់ <span class="mi">\((d)\)</span>។<br/>
+សមីការបន្ទាត់ <span class="mi">\(AB\)</span> ៖ <span class="mi">\(m = \dfrac{1 - 3}{5 - 1} = -\dfrac{1}{2}\)</span><br/>
+<span class="mi">\(y - 3 = -\dfrac{1}{2}(x - 1) \iff x + 2y - 7 = 0\)</span><br/>
+ដោះស្រាយប្រព័ន្ធ ៖<br/>
+<span class="mi">\(\begin{cases} x - y = -1 \iff x = y - 1 \\ x + 2y = 7 \end{cases} \implies (y - 1) + 2y = 7 \iff 3y = 8 \iff y = \dfrac{8}{3}\)</span><br/>
+<span class="mi">\(x = \dfrac{8}{3} - 1 = \dfrac{5}{3}\)</span>។<br/>
+ដូចនេះ ចំណុចដែលត្រូវរកគឺ <span class="mi">\(M\left(\dfrac{5}{3}, \dfrac{8}{3}\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>រកកូអរដោនេអរតូសង់ <span class="mi">\(H\)</span> នៃត្រីកោណ <span class="mi">\(ABC\)</span> ដែល <span class="mi">\(A(2, 5), B(-1, 1), C(4, 1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកអរតូសង់ <span class="mi">\(H\)</span> នៃ <span class="mi">\(\triangle ABC\)</span> ដែល <span class="mi">\(A(2, 5), B(-1, 1), C(4, 1)\)</span> ៖<br/>
+ជ្រុង <span class="mi">\(BC\)</span> ស្ថិតលើបន្ទាត់ផ្ដេក <span class="mi">\(y = 1\)</span>។<br/>
+- កម្ពស់គូសចេញពី <span class="mi">\(A(2, 5)\)</span> កែងនឹង <span class="mi">\(BC\)</span> គឺជាបន្ទាត់ឈរ ៖ <span class="mi">\(x = 2\)</span><br/>
+- មេគុណប្រាប់ទិសនៃ <span class="mi">\(AC\)</span> ៖ <span class="mi">\(m_{AC} = \dfrac{1 - 5}{4 - 2} = -2\)</span><br/>
+- កម្ពស់គូសចេញពី <span class="mi">\(B(-1, 1)\)</span> កែងនឹង <span class="mi">\(AC\)</span> មានមេគុណប្រាប់ទិស <span class="mi">\(m = \dfrac{1}{2}\)</span> ៖<br/>
+<span class="mi">\(y - 1 = \dfrac{1}{2}(x + 1) \iff y = \dfrac{1}{2}x + \dfrac{3}{2}\)</span><br/>
+ជំនួស <span class="mi">\(x = 2\)</span> ចូល ៖ <span class="mi">\(y = \dfrac{1}{2}(2) + \dfrac{3}{2} = \dfrac{5}{2}\)</span>។<br/>
+ដូចនេះ អរតូសង់គឺ <span class="mi">\(H\left(2, \dfrac{5}{2}\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>រកកូអរដោនេផ្ចិតរង្វង់ចារឹកក្រៅត្រីកោណ <span class="mi">\(ABC\)</span> ក្នុងលំហាត់ទី ៤២។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកផ្ចិតរង្វង់ចារឹកក្រៅ <span class="mi">\(O\)</span> នៃ <span class="mi">\(\triangle ABC\)</span><br/>
+ដែល <span class="mi">\(A(2, 5)\)</span>, <span class="mi">\(B(-1, 1)\)</span>, <span class="mi">\(C(4, 1)\)</span> ៖<br/>
+- មេដ្យាទ័រនៃ <span class="mi">\(BC\)</span> ៖ កាត់តាមចំណុចកណ្តាល <span class="mi">\(\left(\dfrac{3}{2}, 1\right)\)</span> និងឈរកែងនឹង <span class="mi">\(y = 1\)</span> ៖<br/>
+<span class="mi">\(x = \dfrac{3}{2}\)</span><br/>
+- មេដ្យាទ័រនៃ <span class="mi">\(AC\)</span> ៖ កាត់តាមចំណុចកណ្តាល <span class="mi">\((3, 3)\)</span> មានមេគុណប្រាប់ទិស <span class="mi">\(m_{\perp} = \dfrac{1}{2}\)</span> ៖<br/>
+<span class="mi">\(y - 3 = \dfrac{1}{2}(x - 3) \iff y = \dfrac{1}{2}x + \dfrac{3}{2}\)</span><br/>
+ជំនួស <span class="mi">\(x = \dfrac{3}{2}\)</span> ចូល ៖<br/>
+<span class="mi">\(y = \dfrac{1}{2}\left(\dfrac{3}{2}\right) + \dfrac{3}{2} = \dfrac{9}{4}\)</span>។<br/>
+ដូចនេះ ផ្ចិតរង្វង់ចារឹកក្រៅគឺ <span class="mi">\(O\left(\dfrac{3}{2}, \dfrac{9}{4}\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>បង្ហាញថាផ្ចិតរង្វង់ចារឹកក្រៅ <span class="mi">\(O\)</span>, ទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> និងអរតូសង់ <span class="mi">\(H\)</span> នៃត្រីកោណ <span class="mi">\(ABC\)</span> ខាងលើរត់ត្រង់ជួរគ្នា (បន្ទាត់អឺល័រ Euler Line)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(O, G, H\)</span> រត់ត្រង់ជួរគ្នា (បន្ទាត់អឺល័រ Euler Line) ៖<br/>
+យើងមាន <span class="mi">\(O\left(\dfrac{3}{2}, \dfrac{9}{4}\right)\)</span> និង <span class="mi">\(H\left(2, \dfrac{5}{2}\right)\)</span>។<br/>
+ទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> នៃ <span class="mi">\(\triangle ABC\)</span> ៖<br/>
+<span class="mi">\(x_G = \dfrac{2 - 1 + 4}{3} = \dfrac{5}{3}, \quad{} y_G = \dfrac{5 + 1 + 1}{3} = \dfrac{7}{3} \implies G\left(\dfrac{5}{3}, \dfrac{7}{3}\right)\)</span><br/>
+គណនាមេគុណប្រាប់ទិស ៖<br/>
+<span class="mi">\(m_{OH} = \dfrac{\frac{5}{2} - \frac{9}{4}}{2 - \frac{3}{2}} = \dfrac{\frac{1}{4}}{\frac{1}{2}} = \dfrac{1}{2}\)</span><br/>
+<span class="mi">\(m_{OG} = \dfrac{\frac{7}{3} - \frac{9}{4}}{\frac{5}{3} - \frac{3}{2}} = \dfrac{\frac{1}{12}}{\frac{1}{6}} = \dfrac{1}{2}\)</span><br/>
+ដោយ <span class="mi">\(m_{OH} = m_{OG} = \dfrac{1}{2}\)</span> និងមានចំណុច <span class="mi">\(O\)</span> រួម នោះចំណុចទាំងបី <span class="mi">\(O, G, H\)</span> រត់ត្រង់ជួរគ្នា (ស្ថិតនៅលើបន្ទាត់អឺល័រ)។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>រកផ្ទៃក្រឡាប្រលេឡូក្រាមដែលកំណត់ដោយបន្ទាត់បួន ៖ <span class="mi">\(y = 2x, y = 2x + 4, y = -x, y = -x + 6\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកផ្ទៃក្រឡាប្រលេឡូក្រាមកំណត់ដោយ <span class="mi">\(y = 2x, y = 2x + 4, y = -x, y = -x + 6\)</span> ៖<br/>
+រូបមន្តផ្ទៃក្រឡាប្រលេឡូក្រាមកំណត់ដោយគូនៃបន្ទាត់ស្រប <span class="mi">\(y = m_1 x + c_1, y = m_1 x + c_2\)</span> និង <span class="mi">\(y = m_2 x + d_1, y = m_2 x + d_2\)</span> ៖<br/>
+<span class="mi">\(S = \dfrac{|(c_2 - c_1)(d_2 - d_1)|}{|m_1 - m_2|}\)</span><br/>
+ដោយ <span class="mi">\(m_1 = 2, c_1 = 0, c_2 = 4\)</span> និង <span class="mi">\(m_2 = -1, d_1 = 0, d_2 = 6\)</span> ៖<br/>
+<span class="mi">\(S = \dfrac{|(4 - 0)(6 - 0)|}{|2 - (-1)|} = \dfrac{24}{3} = 8\)</span> ឯកតាផ្ទៃ។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ជម្រាលផ្លូវឡើងភ្នំក្នុងវិស្វកម្មសំណង់ ៖</strong> ផ្លូវជាតិឡើងចំណោតភ្នំពីកម្ពស់ <span class="mi">\(50\text{ m}\)</span> ដល់ <span class="mi">\(250\text{ m}\)</span> លើចម្ងាយផ្ដេក <span class="mi">\(4000\text{ m}\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនាមេគុណប្រាប់ទិស <span class="mi">\(m\)</span> និងភាគរយជម្រាល (<span class="mi">\(\%\)</span>)។</p></li>
+<li><p>គណនាមុំលំអៀង <span class="mi">\(\alpha\)</span> ធៀបនឹងប្លង់ផ្ដេក។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ជម្រាលផ្លូវឡើងភ្នំក្នុងវិស្វកម្មសំណង់ ៖</strong><br/>
+បម្រែបម្រួលកម្ពស់ ៖ <span class="mi">\(\Delta y = 250 - 50 = 200\text{ m}\)</span><br/>
+ចម្ងាយផ្ដេក ៖ <span class="mi">\(\Delta x = 4000\text{ m}\)</span><br/>
+<strong>ក.</strong>  មេគុណប្រាប់ទិស និងភាគរយជម្រាល ៖<br/>
+<span class="mi">\(m = \dfrac{\Delta y}{\Delta x} = \dfrac{200}{4000} = \dfrac{1}{20} = 0.05\)</span><br/>
+ភាគរយជម្រាល ៖ <span class="mi">\(0.05 \times 100\% = 5\%\)</span><br/>
+<strong>ខ.</strong>  មុំលំអៀងធៀបនឹងប្លង់ផ្ដេក ៖<br/>
+<span class="mi">\(\tan \alpha = 0.05 \implies \alpha = \arctan(0.05) \approx 2.86^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - បណ្តាញបំពង់ចែកចាយទឹកស្អាត ៖</strong> បំពង់មេរត់តាមបន្ទាត់ <span class="mi">\(3x - 4y + 20 = 0\)</span> (<span class="mi">\(\text{km}\)</span>)។ ភូមិមួយនៅ <span class="mi">\(V(2, 9)\)</span> ត្រូវតទុយោកាត់កែងទៅបំពង់មេ។ គណនាប្រវែងខ្លីបំផុតនៃទុយោមែក និងរកកូអរដោនេចំណុចតភ្ជាប់លើបំពង់មេ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - បណ្តាញបំពង់ចែកចាយទឹកស្អាត ៖</strong><br/>
+បំពង់មេ <span class="mi">\((d): 3x - 4y + 20 = 0\)</span> និងភូមិ <span class="mi">\(V(2, 9)\)</span> គិតជា <span class="mi">\(\text{km}\)</span> ៖<br/>
+- ប្រវែងខ្លីបំផុតនៃទុយោមែក (ចម្ងាយកាត់កែង) ៖<br/>
+<span class="mi">\(d = \dfrac{|3(2) - 4(9) + 20|}{\sqrt{3^2 + (-4)^2}} = \dfrac{|6 - 36 + 20|}{5} = \dfrac{|-10|}{5} = 2\text{ km}\)</span>។<br/>
+- កូអរដោនេចំណុចតភ្ជាប់ <span class="mi">\(H\)</span> លើបំពង់មេ ៖<br/>
+បន្ទាត់ទុយោមែកកាត់តាម <span class="mi">\(V(2, 9)\)</span> និងកែងនឹង <span class="mi">\((d)\)</span> ៖<br/>
+<span class="mi">\(4x + 3y - 35 = 0\)</span><br/>
+ដោះស្រាយប្រព័ន្ធ ៖<br/>
+<span class="mi">\(\begin{cases} 3x - 4y = -20 \quad{} (\times 3) \\ 4x + 3y = 35 \quad{} (\times 4) \end{cases} \implies 25x = 80 \iff x = 3.2\)</span><br/>
+<span class="mi">\(y = \dfrac{35 - 4(3.2)}{3} = 7.4\)</span><br/>
+ដូចនេះ ចំណុចតភ្ជាប់គឺ <span class="mi">\(H(3.2, 7.4)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - គំរូសេដ្ឋកិច្ចលីនេអ៊ែរចំណាយ-ចំណូល ៖</strong> រោងចក្រមានថ្លៃដើមថេរ <span class="mi">\(500\$\)</span> និងអថេរ <span class="mi">\(20\$\)</span>/ឯកតា។ តម្លៃលក់ <span class="mi">\(35\$\)</span>/ឯកតា។ សរសេរសមីការចំណាយ <span class="mi">\(C(x)\)</span> និងចំណូល <span class="mi">\(R(x)\)</span> រួចរកចំណុចរួចដើម (Break-even Point)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - គំរូសេដ្ឋកិច្ចលីនេអ៊ែរចំណាយ-ចំណូល ៖</strong><br/>
+តាង <span class="mi">\(x\)</span> ជាចំនួនឯកតាផលិតផល (<span class="mi">\(x \ge 0\)</span>) ៖<br/>
+- សមីការចំណាយសរុប ៖ <span class="mi">\(C(x) = 20x + 500\)</span><br/>
+- សមីការចំណូលសរុប ៖ <span class="mi">\(R(x) = 35x\)</span><br/>
+ចំណុចរួចដើម (Break-even Point) កើតមានពេល <span class="mi">\(R(x) = C(x)\)</span> ៖<br/>
+<span class="mi">\(35x = 20x + 500 \iff 15x = 500 \iff x = \dfrac{500}{15} = \dfrac{100}{3} \approx 33.33\)</span><br/>
+ដើម្បីរួចដើម និងចាប់ផ្តើមចំណេញ រោងចក្រត្រូវផលិត និងលក់យ៉ាងតិច <span class="mi">\(34\)</span> ឯកតា។<br/>
+ចំណូលត្រង់ចំណុចរួចដើមគឺ <span class="mi">\(R\left(\dfrac{100}{3}\right) = 35 \times \dfrac{100}{3} \approx 1166.67\$\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - គន្លងចុះចតនៃយន្តហោះ (Glideslope) ៖</strong> យន្តហោះចុះចតតាមបន្ទាត់មុំស្រុត <span class="mi">\(3^\circ\)</span> ទៅគល់ <span class="mi">\(O(0, 0)\)</span> (<span class="mi">\(\tan 3^\circ \approx 0.0524\)</span>)។ រកសមីការបន្ទាត់នៃគន្លងចុះចត ហើយបើចម្ងាយផ្ដេក <span class="mi">\(10\text{ km}\)</span> តើយន្តហោះនៅកម្ពស់ប៉ុន្មានម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - គន្លងចុះចតនៃយន្តហោះ (Glideslope) ៖</strong><br/>
+មុំស្រុតចុះ <span class="mi">\(3^\circ\)</span> នាំឱ្យមេគុណប្រាប់ទិសគឺ <span class="mi">\(m = -\tan 3^\circ \approx -0.0524\)</span>។<br/>
+សមីការបន្ទាត់ចុះចតកាត់តាមចំណុចប៉ះដី <span class="mi">\(O(0, 0)\)</span> គឺ ៖<br/>
+<span class="mi">\(y = -0.0524x\)</span> (ឬកម្ពស់ធៀបនឹងចម្ងាយ <span class="mi">\(h(x) = 0.0524x\)</span>)។<br/>
+នៅចម្ងាយផ្ដេក <span class="mi">\(x = 10\text{ km} = 10000\text{ m}\)</span> ៖<br/>
+កម្ពស់យន្តហោះគឺ ៖<br/>
+<span class="mi">\(h = 0.0524 \times 10000 = 524\text{ m}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - គន្លាតសុវត្ថិភាពផ្លូវរថភ្លើងល្បឿនលឿន ៖</strong> ផ្លូវរថភ្លើងពីរមានសមីការ <span class="mi">\(4x - 3y + 15 = 0\)</span> និង <span class="mi">\(4x - 3y - 10 = 0\)</span> (ម៉ែត្រ)។ បញ្ជាក់ថាផ្លូវទាំងពីរស្របគ្នា រួចគណនាគម្លាតកាត់កែងរវាងផ្លូវទាំងពីរ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - គន្លាតសុវត្ថិភាពផ្លូវរថភ្លើងល្បឿនលឿន ៖</strong><br/>
+សមីការផ្លូវរថភ្លើងទាំងពីរ ៖<br/>
+<span class="mi">\((d_1): 4x - 3y + 15 = 0\)</span> និង <span class="mi">\((d_2): 4x - 3y - 10 = 0\)</span> (គិតជាម៉ែត្រ) ៖<br/>
+- បញ្ជាក់ភាពស្របគ្នា ៖<br/>
+បន្ទាត់ទាំងពីរមានមេគុណនាំមុខ <span class="mi">\(A = 4, B = -3\)</span> ដូចគ្នា នាំឱ្យមេគុណប្រាប់ទិសស្មើគ្នា <span class="mi">\(m_1 = m_2 = \dfrac{4}{3}\)</span>។ ដោយសារ <span class="mi">\(C_1 = 15 \ne C_2 = -10\)</span> នោះផ្លូវទាំងពីរស្របគ្នាដាច់ខាត។<br/>
+- គម្លាតកាត់កែងរវាងផ្លូវទាំងពីរ ៖<br/>
+<span class="mi">\(d = \dfrac{|C_1 - C_2|}{\sqrt{A^2 + B^2}} = \dfrac{|15 - (-10)|}{\sqrt{4^2 + (-3)^2}} = \dfrac{25}{\sqrt{25}} = \dfrac{25}{5} = 5\text{ m}\)</span>។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ៤ ធរណីមាត្រក្នុងប្លង់ និងសមីការបន្ទាត់-រង្វង់</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c04">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L10.html"><small>← មេរៀនមុន</small><b>កូអរដោនេនៃចំណុច</b></a><a class="next" href="L12.html"><small>មេរៀនបន្ទាប់ →</small><b>សមីការរង្វង់</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មេគុណប្រាប់ទិសនៃបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(-2, -1)\\)<\/span> និង <span class=\"mi\">\\(B(-1, 0)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = 3x - 2\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{-1}{3}\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = 5x - 2\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(\\frac{-1}{5}\\)<\/span>", "<span class=\"mi\">\\(-5\\)<\/span>", "<span class=\"mi\">\\(\\frac{5}{2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមចំណុច <span class=\"mi\">\\(A(-1, 2)\\)<\/span> និងមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = -x + 2\\)<\/span>", "<span class=\"mi\">\\(y = 3x + 5\\)<\/span>", "<span class=\"mi\">\\(y = -3x + 5\\)<\/span>", "<span class=\"mi\">\\(y = 3x - 5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយស្របនឹងបន្ទាត់ <span class=\"mi\">\\(y = 4x + 3\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(-4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មេគុណប្រាប់ទិសនៃបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(1, 2)\\)<\/span> និង <span class=\"mi\">\\(B(-1, 0)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = -4x - 2\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(-4\\)<\/span>", "<span class=\"mi\">\\(\\frac{-4}{2}\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មេគុណប្រាប់ទិសនៃបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(1, 2)\\)<\/span> និង <span class=\"mi\">\\(B(3, 4)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយស្របនឹងបន្ទាត់ <span class=\"mi\">\\(y = 2x + 3\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយស្របនឹងបន្ទាត់ <span class=\"mi\">\\(y = -3x + 3\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{-3}\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = -2x - 2\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(\\frac{-2}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមចំណុច <span class=\"mi\">\\(A(-1, 2)\\)<\/span> និងមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = -2x\\)<\/span>", "<span class=\"mi\">\\(y = 2x + 0\\)<\/span>", "<span class=\"mi\">\\(y = -x + 2\\)<\/span>", "<span class=\"mi\">\\(y = -3x + 3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយស្របនឹងបន្ទាត់ <span class=\"mi\">\\(y = -x + 3\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{-1}\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមចំណុច <span class=\"mi\">\\(A(2, -3)\\)<\/span> និងមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = 2x + -3\\)<\/span>", "<span class=\"mi\">\\(y = 3x - 9\\)<\/span>", "<span class=\"mi\">\\(y = -2x + 0\\)<\/span>", "<span class=\"mi\">\\(y = -3x + -9\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មេគុណប្រាប់ទិសនៃបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(-2, -1)\\)<\/span> និង <span class=\"mi\">\\(B(3, 4)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមចំណុច <span class=\"mi\">\\(A(2, -3)\\)<\/span> និងមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = 2x + 1\\)<\/span>", "<span class=\"mi\">\\(y = 2x + -3\\)<\/span>", "<span class=\"mi\">\\(y = -2x - 1\\)<\/span>", "<span class=\"mi\">\\(y = -2x + 1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មេគុណប្រាប់ទិសនៃបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(2, 3)\\)<\/span> និង <span class=\"mi\">\\(B(4, 7)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មេគុណប្រាប់ទិសនៃបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(-1, 4)\\)<\/span> និង <span class=\"mi\">\\(B(3, -4)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មេគុណប្រាប់ទិសនៃបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(0, 5)\\)<\/span> និង <span class=\"mi\">\\(B(5, 0)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(-5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយស្របនឹងបន្ទាត់ <span class=\"mi\">\\(y = 5x - 1\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(-5\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{5}\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{5}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយស្របនឹងបន្ទាត់ <span class=\"mi\">\\(2x - y + 3 = 0\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយស្របនឹងបន្ទាត់ <span class=\"mi\">\\(3x + y - 4 = 0\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{3}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = 2x + 1\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = -3x + 4\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកែងនឹងបន្ទាត់ <span class=\"mi\">\\(x - 2y + 5 = 0\\)<\/span> មានមេគុណប្រាប់ទិសស្មើ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមគល់តម្រុយ និងមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m=4\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y=4x\\)<\/span>", "<span class=\"mi\">\\(y=4x+1\\)<\/span>", "<span class=\"mi\">\\(y=-4x\\)<\/span>", "<span class=\"mi\">\\(x=4y\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមចំណុច <span class=\"mi\">\\(A(1, 1)\\)<\/span> និងមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y=2x-1\\)<\/span>", "<span class=\"mi\">\\(y=2x+1\\)<\/span>", "<span class=\"mi\">\\(y=-2x+3\\)<\/span>", "<span class=\"mi\">\\(y=2x\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមចំណុច <span class=\"mi\">\\(A(2, -1)\\)<\/span> និងមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m=-1\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y=-x+1\\)<\/span>", "<span class=\"mi\">\\(y=-x+3\\)<\/span>", "<span class=\"mi\">\\(y=x-3\\)<\/span>", "<span class=\"mi\">\\(y=-x-1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(1, 2)\\)<\/span> និង <span class=\"mi\">\\(B(2, 5)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y=3x-1\\)<\/span>", "<span class=\"mi\">\\(y=3x+1\\)<\/span>", "<span class=\"mi\">\\(y=-3x+5\\)<\/span>", "<span class=\"mi\">\\(y=2x+1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(-1, 3)\\)<\/span> និង <span class=\"mi\">\\(B(2, 0)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y=-x+2\\)<\/span>", "<span class=\"mi\">\\(y=-x+3\\)<\/span>", "<span class=\"mi\">\\(y=x+4\\)<\/span>", "<span class=\"mi\">\\(y=-x-1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាមពីរចំណុច <span class=\"mi\">\\(A(0, 4)\\)<\/span> និង <span class=\"mi\">\\(B(4, 0)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y=x+4\\)<\/span>", "<span class=\"mi\">\\(y=-x+4\\)<\/span>", "<span class=\"mi\">\\(y=-x-4\\)<\/span>", "<span class=\"mi\">\\(y=x-4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចម្ងាយពីគល់តម្រុយ <span class=\"mi\">\\(O(0,0)\\)<\/span> ទៅបន្ទាត់ <span class=\"mi\">\\(3x + 4y - 10 = 0\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចម្ងាយពីគល់តម្រុយ <span class=\"mi\">\\(O(0,0)\\)<\/span> ទៅបន្ទាត់ <span class=\"mi\">\\(5x - 12y + 26 = 0\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(26\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចម្ងាយពីចំណុច <span class=\"mi\">\\(A(1, 2)\\)<\/span> ទៅបន្ទាត់ <span class=\"mi\">\\(3x - 4y + 10 = 0\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចម្ងាយពីចំណុច <span class=\"mi\">\\(A(2, -1)\\)<\/span> ទៅបន្ទាត់ <span class=\"mi\">\\(4x + 3y - 15 = 0\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាម <span class=\"mi\">\\(A(1, 2)\\)<\/span> និងស្របនឹងបន្ទាត់ <span class=\"mi\">\\(y = 3x - 1\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = 3x - 1\\)<\/span>", "<span class=\"mi\">\\(y = 3x + 1\\)<\/span>", "<span class=\"mi\">\\(y = 3x - 2\\)<\/span>", "<span class=\"mi\">\\(y = -3x + 5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាម <span class=\"mi\">\\(A(-1, 3)\\)<\/span> និងស្របនឹងបន្ទាត់ <span class=\"mi\">\\(y = -2x + 4\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = -2x + 1\\)<\/span>", "<span class=\"mi\">\\(y = -2x + 3\\)<\/span>", "<span class=\"mi\">\\(y = 2x + 5\\)<\/span>", "<span class=\"mi\">\\(y = -2x\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាម <span class=\"mi\">\\(A(2, 1)\\)<\/span> និងកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = -x + 3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = x - 1\\)<\/span>", "<span class=\"mi\">\\(y = x + 1\\)<\/span>", "<span class=\"mi\">\\(y = -x + 3\\)<\/span>", "<span class=\"mi\">\\(y = x - 2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការបន្ទាត់កាត់តាម <span class=\"mi\">\\(A(3, 4)\\)<\/span> និងកែងនឹងបន្ទាត់ <span class=\"mi\">\\(y = -\\frac{1}{2}x + 1\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(y = 2x - 2\\)<\/span>", "<span class=\"mi\">\\(y = 2x + 2\\)<\/span>", "<span class=\"mi\">\\(y = -2x + 10\\)<\/span>", "<span class=\"mi\">\\(y = \\frac{1}{2}x + \\frac{5}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "កូអរដោនេចំណុចប្រសព្វនៃបន្ទាត់ <span class=\"mi\">\\(y = x + 1\\)<\/span> និង <span class=\"mi\">\\(y = -x + 3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((1, 2)\\)<\/span>", "<span class=\"mi\">\\((2, 1)\\)<\/span>", "<span class=\"mi\">\\((1, 1)\\)<\/span>", "<span class=\"mi\">\\((2, 3)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កូអរដោនេចំណុចប្រសព្វនៃបន្ទាត់ <span class=\"mi\">\\(2x - y = 3\\)<\/span> និង <span class=\"mi\">\\(x + y = 3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((2, 1)\\)<\/span>", "<span class=\"mi\">\\((1, 2)\\)<\/span>", "<span class=\"mi\">\\((3, 0)\\)<\/span>", "<span class=\"mi\">\\((0, 3)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចម្ងាយរវាងបន្ទាត់ស្របពីរ <span class=\"mi\">\\(2x - y + 1 = 0\\)<\/span> និង <span class=\"mi\">\\(2x - y + 6 = 0\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(\\sqrt{5}\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\sqrt{5}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចម្ងាយរវាងបន្ទាត់ស្របពីរ <span class=\"mi\">\\(3x + 4y - 5 = 0\\)<\/span> និង <span class=\"mi\">\\(3x + 4y + 5 = 0\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើចំណុចមួយណាស្ថិតនៅលើបន្ទាត់ <span class=\"mi\">\\(2x - 3y + 6 = 0\\)<\/span>?", "options": ["<span class=\"mi\">\\((0, 2)\\)<\/span>", "<span class=\"mi\">\\((3, 0)\\)<\/span>", "<span class=\"mi\">\\((1, 1)\\)<\/span>", "<span class=\"mi\">\\((-3, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើចំណុចមួយណាស្ថិតនៅលើបន្ទាត់ <span class=\"mi\">\\(y = -4x + 5\\)<\/span>?", "options": ["<span class=\"mi\">\\((1, 1)\\)<\/span>", "<span class=\"mi\">\\((2, 3)\\)<\/span>", "<span class=\"mi\">\\((0, -5)\\)<\/span>", "<span class=\"mi\">\\((-1, 1)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សំណុំចំណុចដែលមានចម្ងាយស្មើពីចំណុច <span class=\"mi\">\\(A(0, 2)\\)<\/span> និង <span class=\"mi\">\\(B(0, -2)\\)<\/span> គឺ៖", "options": ["អ័ក្សអាប់ស៊ីស", "អ័ក្សអរដោនេ", "បន្ទាត់ <span class=\"mi\">\\(y=x\\)<\/span>", "បន្ទាត់ <span class=\"mi\">\\(y=-x\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សំណុំចំណុចដែលមានចម្ងាយស្មើពីចំណុច <span class=\"mi\">\\(A(3, 0)\\)<\/span> និង <span class=\"mi\">\\(B(-3, 0)\\)<\/span> គឺ៖", "options": ["អ័ក្សអរដោនេ", "អ័ក្សអាប់ស៊ីស", "បន្ទាត់ <span class=\"mi\">\\(y=x\\)<\/span>", "បន្ទាត់ <span class=\"mi\">\\(y=-x\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ដែលមានសមីការ <span class=\"mi\">\\(x = 5\\)<\/span> គឺជា៖", "options": ["បន្ទាត់ឈរស្របនឹងអ័ក្សអរដោនេ", "បន្ទាត់ដេកស្របនឹងអ័ក្សអាប់ស៊ីស", "បន្ទាត់កាត់តាមគល់តម្រុយ", "កន្លះបន្ទាត់ពុះទីមួយ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ដែលមានសមីការ <span class=\"mi\">\\(y = -3\\)<\/span> គឺជា៖", "options": ["បន្ទាត់ដេកស្របនឹងអ័ក្សអាប់ស៊ីស", "បន្ទាត់ឈរស្របនឹងអ័ក្សអរដោនេ", "បន្ទាត់កាត់តាមគល់តម្រុយ", "កន្លះបន្ទាត់ពុះទីពីរ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ប្រសិនបើបន្ទាត់ពីរមានមេគុណប្រាប់ទិស <span class=\"mi\">\\(m_1\\)<\/span> និង <span class=\"mi\">\\(m_2\\)<\/span> ស្មើគ្នា ហើយចំណុចកាត់អ័ក្សអរដោនេខុសគ្នា នោះបន្ទាត់ទាំងពីរ៖", "options": ["ស្របគ្នាដាច់ខាត", "ត្រួតស៊ីគ្នា", "កែងគ្នា", "កាត់គ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

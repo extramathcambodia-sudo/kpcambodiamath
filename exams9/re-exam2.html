@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>វិញ្ញាសាព្យាករណ៍សញ្ញាបត្រមធ្យមសិក្សាបឋមភូមិ ទី២ — KPCambodianmathematics</title>
+<meta name="description" content="វិញ្ញាសាព្យាករណ៍សញ្ញាបត្រមធ្យមសិក្សាបឋមភូមិ ទី២ និងអត្រាកំណែលម្អិត">
+<meta name="theme-color" content="#102a43">
+<link rel="icon" href="../static/img/logo.png" type="image/png">
+<link rel="stylesheet" href="../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../static/css/site.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../static/katex/katex.min.css">
+<link rel="stylesheet" href="../static/css/lesson.css">
+<style>
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+</style>
+<style>
+.ex-q{position:relative;padding-left:2.1em}
+.ex-badge{position:absolute;left:0;top:.2em;display:grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.85em}
+.ex-ch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 16px;margin:4px 0 12px 2.1em}
+@media(max-width:640px){.ex-ch{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ex-pts{font-weight:500;color:var(--ink-3);font-size:.85em}
+.ex-roman{color:#d6336c}
+.ls-paper h3{margin-top:26px}
+.ans-sect{margin-top:22px;color:#c2255c}
+.ex-head{text-align:center;margin-bottom:18px}
+.ex-head b{display:block;font-size:20px}
+.ex-ans{margin-top:34px;border-top:2px dashed #e99bba;padding-top:10px}
+.ex-ans>summary{cursor:pointer;font-weight:700;font-size:18px;color:#c2255c;list-style:none;padding:10px 0}
+.ex-ans>summary::-webkit-details-marker{display:none}
+.ex-ans>summary::before{content:'▸ '}.ex-ans[open]>summary::before{content:'▾ '}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-toc a.on{font-weight:700}
+@media print{.site-header,.site-footer,.ls-side,.ls-pager,.no-print{display:none!important}.ex-ans{display:none}}
+</style>
+<style>
+.brand img{border-radius:50%;object-fit:cover}
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+@media(max-width:520px){.brand-text b{font-size:15px}.brand-text small{display:none}.brand img{width:32px;height:32px}}
+.ls-paper .tbl{overflow-x:auto}
+.test-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.chapter small{display:block;color:var(--ink-3);font-size:13.5px}
+.chapter b{display:block}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../KPCambodianmathematics.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../static/img/logo.png" alt="" width="38" height="38">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ ថ្នាក់ទី ៧–១០</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">ថ្នាក់រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-grades"><a href="../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន · តេស្ត · លំហាត់</span></span></a><a href="../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន · តេស្ត · លំហាត់</span></span></a><a href="../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន · តេស្ត · លំហាត់</span></span></a><a href="../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន · តេស្ត · លំហាត់</span></span></a></div></li>
+        <li class="nav-item current"><a class="nav-link" href="../KPCambodianmathematics.html#tests">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item"><a class="nav-link" href="../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html">Exam Studio</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-primary btn-sm" href="../KPCambodianmathematics.html#tests">ធ្វើតេស្ត</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../KPCambodianmathematics.html">ទំព័រដើម</a></li><li><a href="../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="index.html">វិញ្ញាសាត្រៀមប្រឡង</a></li><li aria-current="page">វិញ្ញាសាព្យាករណ៍ ទី២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២៧</span>
+      <div><span class="ls-kicker">កម្រងទី៣ · វិញ្ញាសាព្យាករណ៍សម្រាប់ឆ្នាំ២០២៦</span><h1>វិញ្ញាសាព្យាករណ៍សញ្ញាបត្រមធ្យមសិក្សាបឋមភូមិ ទី២</h1>
+      <div class="ls-chips"><span class="chip chip-soon">វិញ្ញាសា គណិតវិទ្យា</span><span class="chip chip-soon">២០២៦</span><span class="chip chip-soon">ពិន្ទុសរុប ១០០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side"><div class="ls-side-box"><div class="ls-side-t">វិញ្ញាសាទាំងអស់</div><ol class="ls-toc"><li><b>កម្រងទី១ ៖ វិញ្ញាសាប្រឡងឆ្នាំចាស់ៗ</b></li><li class="sub"><a href="exam25.html">ឆ្នាំ២០២៥</a></li><li class="sub"><a href="exam24.html">ឆ្នាំ២០២៤</a></li><li class="sub"><a href="exam23.html">ឆ្នាំ២០២៣</a></li><li class="sub"><a href="exam22.html">ឆ្នាំ២០២២</a></li><li class="sub"><a href="exam21.html">ឆ្នាំ២០២១</a></li><li><b>កម្រងទី២ ៖ វិញ្ញាសាត្រៀមប្រឡង</b></li><li class="sub"><a href="pre-exam1.html">វិញ្ញាសាត្រៀម ទី១</a></li><li class="sub"><a href="pre-exam2.html">វិញ្ញាសាត្រៀម ទី២</a></li><li class="sub"><a href="pre-exam3.html">វិញ្ញាសាត្រៀម ទី៣</a></li><li class="sub"><a href="pre-exam4.html">វិញ្ញាសាត្រៀម ទី៤</a></li><li class="sub"><a href="pre-exam5.html">វិញ្ញាសាត្រៀម ទី៥</a></li><li class="sub"><a href="pre-exam6.html">វិញ្ញាសាត្រៀម ទី៦</a></li><li class="sub"><a href="pre-exam7.html">វិញ្ញាសាត្រៀម ទី៧</a></li><li class="sub"><a href="pre-exam8.html">វិញ្ញាសាត្រៀម ទី៨</a></li><li class="sub"><a href="pre-exam9.html">វិញ្ញាសាត្រៀម ទី៩</a></li><li class="sub"><a href="pre-exam10.html">វិញ្ញាសាត្រៀម ទី១០</a></li><li class="sub"><a href="pre-exam11.html">វិញ្ញាសាត្រៀម ទី១១</a></li><li class="sub"><a href="pre-exam12.html">វិញ្ញាសាត្រៀម ទី១២</a></li><li class="sub"><a href="pre-exam13.html">វិញ្ញាសាត្រៀម ទី១៣</a></li><li class="sub"><a href="pre-exam14.html">វិញ្ញាសាត្រៀម ទី១៤</a></li><li class="sub"><a href="pre-exam15.html">វិញ្ញាសាត្រៀម ទី១៥</a></li><li class="sub"><a href="pre-exam16.html">វិញ្ញាសាត្រៀម ទី១៦</a></li><li class="sub"><a href="pre-exam17.html">វិញ្ញាសាត្រៀម ទី១៧</a></li><li class="sub"><a href="pre-exam18.html">វិញ្ញាសាត្រៀម ទី១៨</a></li><li class="sub"><a href="pre-exam19.html">វិញ្ញាសាត្រៀម ទី១៩</a></li><li class="sub"><a href="pre-exam20.html">វិញ្ញាសាត្រៀម ទី២០</a></li><li><b>កម្រងទី៣ ៖ វិញ្ញាសាព្យាករណ៍សម្រាប់ឆ្នាំ២០២៦</b></li><li class="sub"><a href="re-exam1.html">វិញ្ញាសាព្យាករណ៍ ទី១</a></li><li class="sub"><a class="on" href="re-exam2.html">វិញ្ញាសាព្យាករណ៍ ទី២</a></li><li class="sub"><a href="re-exam3.html">វិញ្ញាសាព្យាករណ៍ ទី៣</a></li><li class="sub"><a href="re-exam4.html">វិញ្ញាសាព្យាករណ៍ ទី៤</a></li><li class="sub"><a href="re-exam5.html">វិញ្ញាសាព្យាករណ៍ ទី៥</a></li></ol></div></aside>
+    <article class="ls-paper">
+<p class="no-print"><button class="btn btn-ghost btn-sm" type="button" onclick="window.print()">បោះពុម្ពវិញ្ញាសា</button></p>
+<div class="ex-head"><b>វិញ្ញាសា គណិតវិទ្យា</b>សម័យប្រឡង ២០២៦</div>
+<h3 id="x1"><span class="ex-roman">I.</span> <span class="ex-pts">(១០ ពិន្ទុ)</span></h3><p>ចូរគូសសញ្ញា ✓ ក្នុងប្រអប់ខាងមុខចម្លើយដែលត្រឹមត្រូវតែមួយគត់</p>
+<p class="ex-q"><span class="ex-badge">១</span> គណនាផលបូក <span class="mi">\(3\sqrt{48}-5\sqrt{75}+2\sqrt{27}\)</span></p>
+<div class="ex-ch"><span>☐ <strong>ក.</strong> <span class="mi">\(-7\sqrt{3}\)</span></span><span>☐ <strong>ខ.</strong> <span class="mi">\(7\sqrt{3}\)</span></span><span>☐ <strong>គ.</strong> <span class="mi">\(-5\sqrt{3}\)</span></span><span>☐ <strong>ឃ.</strong> <span class="mi">\(5\sqrt{3}\)</span></span></div>
+<p class="ex-q"><span class="ex-badge">២</span> គេមានបន្ទាត់ <span class="mi">\(d:y=-2x+4\)</span> និងបន្ទាត់ <span class="mi">\(L:y=mx-1\)</span>។ រកតម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យ <span class="mi">\(d\perp L\)</span></p>
+<div class="ex-ch"><span>☐ <strong>ក.</strong> <span class="mi">\(m=2\)</span></span><span>☐ <strong>ខ.</strong> <span class="mi">\(m=-2\)</span></span><span>☐ <strong>គ.</strong> <span class="mi">\(m=\dfrac{1}{2}\)</span></span><span>☐ <strong>ឃ.</strong> <span class="mi">\(m=-\dfrac{1}{2}\)</span></span></div>
+<h3 id="x2"><span class="ex-roman">II.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3><p>គណនាកន្សោមខាងក្រោម</p>
+<p><span class="mi">\(A=12\sqrt{45}-7\sqrt{20}+4\sqrt{80}\)</span> <span class="mi">\(B=\dfrac{\sqrt{5}-\sqrt{3}}{\sqrt{5}+\sqrt{3}}+\dfrac{\sqrt{5}+\sqrt{3}}{\sqrt{5}-\sqrt{3}}\)</span></p>
+<p><span class="mi">\(C=(3+\sqrt{5}+\sqrt{2})(3+\sqrt{5}-\sqrt{2})\)</span></p>
+<h3 id="x3"><span class="ex-roman">III.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3><p>ដោះស្រាយសមីការ និងប្រព័ន្ធវិសមីការខាងក្រោម</p>
+<p>ក. <span class="mi">\(\dfrac{2x-1}{3}-\dfrac{x+4}{6}=2-\dfrac{x-2}{2}\)</span> គ. <span class="mi">\((x-3)^2-4(x-3)=0\)</span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> <span class="mi">\(\begin{cases} 3x-2 \leq 2x+5 \\ 4x+1 &gt; 2x-7 \end{cases}\)</span></p>
+<h3 id="x4"><span class="ex-roman">IV.</span> <span class="ex-pts">(១០ ពិន្ទុ)</span></h3><p>គេមានកន្សោម <span class="mi">\(A=x^2-25-(2x-3)(x-5)\)</span> និង <span class="mi">\(B=x^2-10x+25\)</span></p>
+<p class="ex-q"><span class="ex-badge">ក</span> ដាក់កន្សោម <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាផលគុណកត្តាដឺក្រេទី១ នៃ <span class="mi">\(x\)</span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> សម្រួលកន្សោមសនិទាន <span class="mi">\(P=\dfrac{A}{B}\)</span></p>
+<p class="ex-q"><span class="ex-badge">គ</span> កំណត់តម្លៃ <span class="mi">\(x\)</span> ដែលធ្វើឱ្យកន្សោម <span class="mi">\(P\)</span> គ្មានន័យ</p>
+<h3 id="x5"><span class="ex-roman">V.</span> <span class="ex-pts">(១០ ពិន្ទុ)</span></h3><p>សុភាមានប្រាក់ <span class="mi">\(1\,200\,000\)</span> រៀល។ គាត់យក <span class="mi">\(35\%\)</span> នៃប្រាក់នេះទៅទិញទូរស័ព្ទ ហើយយកប្រាក់ដែលនៅសល់</p>
+<p>ទៅដាក់ធនាគារដោយទទួលបានអត្រាការប្រាក់ <span class="mi">\(8\%\)</span> ក្នុងមួយឆ្នាំ។</p>
+<p>ក. រកប្រាក់ដែលគាត់នៅសល់ក្រោយទិញទូរស័ព្ទ ខ. រកការប្រាក់ដែលគាត់ទទួលបានក្នុងមួយឆ្នាំ</p>
+<h3 id="x6"><span class="ex-roman">VI.</span> <span class="ex-pts">(១០ ពិន្ទុ)</span></h3><p>ក្នុងប្រអប់មួយមានគ្រាប់បាល់ពណ៌ស និងពណ៌ខៀវសរុប <span class="mi">\(36\)</span> គ្រាប់។ គេដឹងថាប្រូបាបចាប់បានគ្រាប់បាល់</p>
+<p>ពណ៌ខៀវមួយគ្រាប់ស្មើនឹង <span class="mi">\(\dfrac{5}{9}\)</span>។</p>
+<p>ក. រកចំនួនគ្រាប់បាល់ពណ៌ខៀវ ខ. រកប្រូបាបចាប់បានគ្រាប់បាល់ពណ៌ស</p>
+<h3 id="x7"><span class="ex-roman">VII.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3><p>ក្នុងតម្រុយអរតូណរមេ <span class="mi">\((xOy)\)</span> គេឱ្យចំណុច <span class="mi">\(A(-3,2)\)</span>, <span class="mi">\(B(1,-6)\)</span> និង <span class="mi">\(C(2,3)\)</span>។</p>
+<p class="ex-q"><span class="ex-badge">ក</span> គណនាប្រវែង <span class="mi">\(AB\)</span> និងរកកូអរដោនេនៃចំណុចកណ្តាល <span class="mi">\(M\)</span> នៃអង្កត់ <span class="mi">\([AB]\)</span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> រកសមីការបន្ទាត់ <span class="mi">\((AB)\)</span></p>
+<p class="ex-q"><span class="ex-badge">គ</span> រកសមីការបន្ទាត់ <span class="mi">\((\Delta)\)</span> ដែលកាត់តាម <span class="mi">\(C\)</span> ហើយស្របនឹង <span class="mi">\((AB)\)</span></p>
+<p class="ex-q"><span class="ex-badge">ឃ</span> រកសមីការបន្ទាត់ <span class="mi">\((L)\)</span> ដែលកាត់តាម <span class="mi">\(M\)</span> ហើយកែងនឹង <span class="mi">\((AB)\)</span></p>
+<h3 id="x8"><span class="ex-roman">VIII.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3><p>គេមានរង្វង់ផ្ចិត <span class="mi">\(O\)</span> កាំ <span class="mi">\(3\,\mathrm{cm}\)</span>។ ពីចំណុច <span class="mi">\(P\)</span> ក្រៅរង្វង់ គេគូសបន្ទាត់ប៉ះ <span class="mi">\(PA\)</span> និង <span class="mi">\(PB\)</span></p>
+<p>ទៅរង្វង់ត្រង់ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span>។ គេដឹងថា <span class="mi">\(PA=3x-5\)</span> និង <span class="mi">\(PB=x+1\)</span>។</p>
+<p>ក. រកតម្លៃ <span class="mi">\(x\)</span> និងប្រវែង <span class="mi">\(PA\)</span> ខ. បង្ហាញថា <span class="mi">\(OA\perp PA\)</span> និង <span class="mi">\(OB\perp PB\)</span></p>
+<p class="ex-q"><span class="ex-badge">គ</span> គណនាបរិមាត្រ និងផ្ទៃក្រឡានៃចតុកោណ <span class="mi">\(PAOB\)</span></p>
+
+<details class="ex-ans"><summary>មើលអត្រាកំណែ (ចម្លើយលម្អិត)</summary>
+<p>អត្រាកំណែ<br/>
+</p>
+<h4 class="ans-sect">លំហាត់ I <span class="ex-pts">(១០ ពិន្ទុ)</span></h4>
+<p class="ex-q"><span class="ex-badge">១</span> គណនាផលបូក <span class="mi">\(3\sqrt{48}-5\sqrt{75}+2\sqrt{27}\)</span> <div class="md">\[\begin{aligned}
+A &amp;= 3\sqrt{48}-5\sqrt{75}+2\sqrt{27} \\
+  &amp;= 3\sqrt{16\times 3}-5\sqrt{25\times 3}+2\sqrt{9\times 3}\\
+  &amp;= 3(4\sqrt{3})-5(5\sqrt{3})+2(3\sqrt{3})\\
+  &amp;= 12\sqrt{3}-25\sqrt{3}+6\sqrt{3}\\
+  &amp;= -7\sqrt{3}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> ជ្រើសរើស ក. <span class="mi">\(\displaystyle  -7\sqrt{3}\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">២</span> រកតម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យ <span class="mi">\(d\perp L\)</span></p>
+<p>បន្ទាត់ <span class="mi">\(d:y=-2x+4\)</span> មានមេគុណប្រាប់ទិស <span class="mi">\(a_d=-2\)</span><br/>
+បន្ទាត់ <span class="mi">\(L:y=mx-1\)</span> មានមេគុណប្រាប់ទិស <span class="mi">\(a_L=m\)</span></p>
+<p>ដើម្បីឱ្យ <span class="mi">\(d\perp L\)</span> លុះត្រាតែ <span class="mi">\(a_d \times a_L = -1\)</span> <div class="md">\[\begin{aligned}
+-2m &amp;= -1\\
+m &amp;= \frac{1}{2}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> ជ្រើសរើស គ. <span class="mi">\(\displaystyle  m=\frac{1}{2}\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ II <span class="ex-pts">(១៥ ពិន្ទុ)</span></h4>
+<p>គណនាកន្សោម <span class="mi">\(A\)</span>, <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> <div class="md">\[\begin{aligned}
+A&amp;=12\sqrt{45}-7\sqrt{20}+4\sqrt{80}\\
+&amp;=12(3\sqrt{5})-7(2\sqrt{5})+4(4\sqrt{5})\\
+&amp;=36\sqrt{5}-14\sqrt{5}+16\sqrt{5}\\
+&amp;=38\sqrt{5}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle A=38\sqrt{5}\)</span></span></p>
+<p><div class="md">\[\begin{aligned}
+B&amp;=\frac{\sqrt{5}-\sqrt{3}}{\sqrt{5}+\sqrt{3}}+\frac{\sqrt{5}+\sqrt{3}}{\sqrt{5}-\sqrt{3}}\\
+&amp;=\frac{(\sqrt{5}-\sqrt{3})^2+(\sqrt{5}+\sqrt{3})^2}{(\sqrt{5}+\sqrt{3})(\sqrt{5}-\sqrt{3})}\\
+&amp;=\frac{(5-2\sqrt{15}+3)+(5+2\sqrt{15}+3)}{5-3}\\
+&amp;=\frac{8-2\sqrt{15}+8+2\sqrt{15}}{2}\\
+&amp;=\frac{16}{2}=8
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle B=8\)</span></span></p>
+<p><div class="md">\[\begin{aligned}
+C&amp;=(3+\sqrt{5}+\sqrt{2})(3+\sqrt{5}-\sqrt{2})\\
+&amp;=(3+\sqrt{5})^2-(\sqrt{2})^2\\
+&amp;=9+6\sqrt{5}+5-2\\
+&amp;=12+6\sqrt{5}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle C=12+6\sqrt{5}\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ III <span class="ex-pts">(១៥ ពិន្ទុ)</span></h4>
+<p class="ex-q"><span class="ex-badge">ក</span> ដោះស្រាយសមីការ <span class="mi">\(\dfrac{2x-1}{3}-\dfrac{x+4}{6}=2-\dfrac{x-2}{2}\)</span> <div class="md">\[\begin{aligned}
+\frac{2x-1}{3}-\frac{x+4}{6}&amp;=2-\frac{x-2}{2}\\
+2(2x-1)-(x+4)&amp;=12-3(x-2)\\
+4x-2-x-4&amp;=12-3x+6\\
+3x-6&amp;=18-3x\\
+6x&amp;=24\\
+x&amp;=4
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle x=4\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> ដោះស្រាយប្រព័ន្ធវិសមីការ <span class="mi">\(\begin{cases} 3x-2 \leq 2x+5 \\ 4x+1 &gt; 2x-7 \end{cases}\)</span> <div class="md">\[\begin{cases}
+3x-2 \leq 2x+5 \quad{} &amp;(1)\\
+4x+1 &gt; 2x-7 \quad{} &amp;(2)
+\end{cases}\]</div> ដោះស្រាយវិសមីការ (1): <div class="md">\[\begin{aligned}
+3x-2x&amp;\le 5+2\\
+x&amp;\le 7
+\end{aligned}\]</div> ដោះស្រាយវិសមីការ (2): <div class="md">\[\begin{aligned}
+4x-2x&amp;&gt;-7-1\\
+2x&amp;&gt;-8\\
+x&amp;&gt;-4
+\end{aligned}\]</div> ប្រសព្វចម្លើយទាំងពីរ៖</p>
+<p>បកស្រាយចម្លើយលើក្រាប<br/>
+<div class="center"><img alt="" class="fig" loading="lazy" src="../lesson/fig/ce0cd728e753f6d0.svg"/></div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle -4 &lt; x \le 7\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">គ</span> ដោះស្រាយសមីការ <span class="mi">\((x-3)^2-4(x-3)=0\)</span> <div class="md">\[\begin{aligned}
+(x-3)^2-4(x-3)&amp;=0\\
+(x-3)(x-3-4)&amp;=0\\
+(x-3)(x-7)&amp;=0\\
+x-3=0\quad{}&amp;\text{ឬ}\quad{} x-7=0\\
+x=3\quad{}&amp;\text{ឬ}\quad{} x=7
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle x=3\)</span> ឬ <span class="mi">\(\displaystyle x=7\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ IV <span class="ex-pts">(១០ ពិន្ទុ)</span></h4>
+<p>គេមានកន្សោម <span class="mi">\(A=x^2-25-(2x-3)(x-5)\)</span><br/>
+និង <span class="mi">\(B=x^2-10x+25\)</span></p>
+<p class="ex-q"><span class="ex-badge">ក</span> ដាក់កន្សោម <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាផលគុណកត្តាដឺក្រេទី១ នៃ <span class="mi">\(x\)</span> <div class="md">\[\begin{aligned}
+A&amp;=x^2-25-(2x-3)(x-5)\\
+&amp;=(x-5)(x+5)-(2x-3)(x-5)\\
+&amp;=(x-5)(x+5-2x+3)\\
+&amp;=(x-5)(-x+8)
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle A=(x-5)(-x+8)\)</span></span></p>
+<p><div class="md">\[\begin{aligned}
+B&amp;=x^2-10x+25\\
+&amp;=(x-5)^2
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle B=(x-5)^2\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> សម្រួលកន្សោមសនិទាន <span class="mi">\(P=\dfrac{A}{B}\)</span> <div class="md">\[P=\frac{(x-5)(-x+8)}{(x-5)^2}\]</div> ចំពោះ <span class="mi">\(x \neq 5\)</span> <div class="md">\[P=\frac{-x+8}{x-5}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle P=\frac{-x+8}{x-5}\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">គ</span> កំណត់តម្លៃ <span class="mi">\(x\)</span> ដែលធ្វើឱ្យកន្សោម <span class="mi">\(P\)</span> គ្មានន័យ</p>
+<p>កន្សោម <span class="mi">\(P\)</span> គ្មានន័យលុះត្រាតែភាគបែងស្មើ <span class="mi">\(0\)</span> ៖ <div class="md">\[x-5=0 \Rightarrow x=5\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle x=5\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ V <span class="ex-pts">(១០ ពិន្ទុ)</span></h4>
+<p>សុភាមានប្រាក់ <span class="mi">\(1\,200\,000\)</span> រៀល។</p>
+<p class="ex-q"><span class="ex-badge">ក</span> រកប្រាក់ដែលគាត់នៅសល់ក្រោយទិញទូរស័ព្ទ</p>
+<p>ប្រាក់យកទៅទិញទូរស័ព្ទ៖ <div class="md">\[1\,200\,000\times \frac{35}{100}=420\,000\text{ ៛}\]</div> ប្រាក់នៅសល់៖ <div class="md">\[1\,200\,000-420\,000=780\,000\text{ ៛}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> ប្រាក់នៅសល់ <span class="mi">\(\displaystyle  780\,000\)</span> ៛ </span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> រកការប្រាក់ដែលគាត់ទទួលបានក្នុងមួយឆ្នាំ (អត្រា <span class="mi">\(8\%\)</span>) <div class="md">\[780\,000\times 8\% = 780\,000\times \frac{8}{100}=62\,400\text{ ៛}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> ការប្រាក់ <span class="mi">\(\displaystyle  62\,400\)</span> ៛ </span></p>
+<h4 class="ans-sect">លំហាត់ VI <span class="ex-pts">(១០ ពិន្ទុ)</span></h4>
+<p>ចំនួនគ្រាប់បាល់សរុបមាន <span class="mi">\(36\)</span> គ្រាប់។</p>
+<p class="ex-q"><span class="ex-badge">ក</span> រកចំនួនគ្រាប់បាល់ពណ៌ខៀវ</p>
+<p>តាង <span class="mi">\(n\)</span> ជាចំនួនបាល់ពណ៌ខៀវ។<br/>
+ប្រូបាបចាប់បានបាល់ខៀវគឺ <span class="mi">\(P=\frac{5}{9}\)</span> <div class="md">\[\begin{aligned}
+\frac{n}{36}&amp;=\frac{5}{9}\\
+n&amp;=\frac{36\times 5}{9}=20
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> បាល់ខៀវ <span class="mi">\(\displaystyle  20 \)</span> គ្រាប់ </span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> រកប្រូបាបចាប់បានគ្រាប់បាល់ពណ៌ស</p>
+<p>ព្រឹត្តិការណ៍នេះជាព្រឹត្តិការណ៍ផ្ទុយនឹងព្រឹត្តិការណ៍ដែលចាប់បានបាល់ពណ៌ខៀវ៖ <div class="md">\[P(\text{ស})=1-\frac{5}{9}=\frac{4}{9}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle P(\)</span> ស <span class="mi">\(\displaystyle )=\frac{4}{9}\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ VII <span class="ex-pts">(១៥ ពិន្ទុ)</span></h4>
+<p>គេឱ្យចំណុច <span class="mi">\(A(-3,2)\)</span>, <span class="mi">\(B(1,-6)\)</span> និង <span class="mi">\(C(2,3)\)</span></p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="../lesson/fig/fb67f6924656ef32.svg"/></div></p>
+<p class="ex-q"><span class="ex-badge">ក</span> គណនាប្រវែង <span class="mi">\(AB\)</span> និងរកកូអរដោនេចំណុចកណ្តាល <span class="mi">\(M\)</span> នៃអង្កត់ <span class="mi">\([AB]\)</span> <div class="md">\[\begin{aligned}
+AB&amp;=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\\
+&amp;=\sqrt{(1-(-3))^2+(-6-2)^2}\\
+&amp;=\sqrt{4^2+(-8)^2}\\
+&amp;=\sqrt{16+64}=\sqrt{80}=4\sqrt{5}
+\end{aligned}\]</div> កូអរដោនេចំណុច <span class="mi">\(M\)</span> ជាកណ្តាល <span class="mi">\([AB]\)</span> <div class="md">\[\begin{aligned}
+M&amp;=\left(\frac{x_A+x_B}{2},\frac{y_A+y_B}{2}\right)\\
+&amp;=\left(\frac{-3+1}{2},\frac{2+(-6)}{2}\right)\\
+&amp;=(-1,-2)
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle AB=4\sqrt{5},\quad{} M(-1,-2)\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> រកសមីការបន្ទាត់ <span class="mi">\((AB)\)</span></p>
+<p>មេគុណប្រាប់ទិស <div class="md">\[a_{AB}=\frac{y_B-y_A}{x_B-x_A}=\frac{-6-2}{1-(-3)}=\frac{-8}{4}=-2\]</div> សមីការមានរាង <span class="mi">\(y-y_A=a_{AB}(x-x_A)\)</span> <div class="md">\[\begin{aligned}
+y-2&amp;=-2(x-(-3))\\
+y&amp;=-2x-6+2\\
+y&amp;=-2x-4
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle (AB):\ y=-2x-4\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">គ</span> រកសមីការបន្ទាត់ <span class="mi">\((\Delta)\)</span> ដែលកាត់តាម <span class="mi">\(C\)</span> ហើយស្របនឹង <span class="mi">\((AB)\)</span></p>
+<p>ដោយ <span class="mi">\((\Delta)\parallel(AB)\)</span> នោះ <span class="mi">\(a_\Delta=a_{AB}=-2\)</span></p>
+<p>បន្ទាត់ <span class="mi">\((\Delta)\)</span> កាត់តាម <span class="mi">\(C(2,3)\)</span>៖ <div class="md">\[\begin{aligned}
+y-y_C&amp;=a_\Delta(x-x_C)\\
+y-3&amp;=-2(x-2)\\
+y&amp;=-2x+4+3\\
+y&amp;=-2x+7
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle (\Delta):\ y=-2x+7\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">ឃ</span> រកសមីការបន្ទាត់ <span class="mi">\((L)\)</span> ដែលកាត់តាម <span class="mi">\(M\)</span> ហើយកែងនឹង <span class="mi">\((AB)\)</span></p>
+<p>ដោយ <span class="mi">\((L)\perp(AB)\)</span> នោះ <span class="mi">\(a_L\cdot a_{AB}=-1 \Rightarrow a_L(-2)=-1 \Rightarrow a_L=\frac{1}{2}\)</span></p>
+<p>បន្ទាត់ <span class="mi">\((L)\)</span> កាត់តាម <span class="mi">\(M(-1,-2)\)</span>៖ <div class="md">\[\begin{aligned}
+y-y_M&amp;=a_L(x-x_M)\\
+y-(-2)&amp;=\frac{1}{2}(x-(-1))\\
+y+2&amp;=\frac{1}{2}x+\frac{1}{2}\\
+y&amp;=\frac{1}{2}x-\frac{3}{2}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle (L):\ y=\frac{1}{2}x-\frac{3}{2}\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ VIII <span class="ex-pts">(១៥ ពិន្ទុ)</span></h4>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="../lesson/fig/e8f4716cdf66b17b.svg"/></div></p>
+<p class="ex-q"><span class="ex-badge">ក</span> រកតម្លៃ <span class="mi">\(x\)</span> និងប្រវែង <span class="mi">\(PA\)</span></p>
+<p>តាមលក្ខណៈបន្ទាត់ប៉ះរង្វង់ចេញពីចំណុចមួយនៅក្រៅរង្វង់ គឺ <span class="mi">\(PA=PB\)</span>។ <div class="md">\[\begin{aligned}
+3x-5&amp;=x+1\\
+2x&amp;=6\\
+x&amp;=3
+\end{aligned}\]</div> ប្រវែង <span class="mi">\(PA=3(3)-5=9-5=4\,\mathrm{cm}\)</span></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle x=3,\quad{} PA=4\,\mathrm{cm}\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">ខ</span> បង្ហាញថា <span class="mi">\(OA\perp PA\)</span> និង <span class="mi">\(OB\perp PB\)</span></p>
+<p>គេមាន <div class="md">\[\angle OAP=90^\circ\quad{} \text{(ព្រោះ }PA\text{ ប៉ះរង្វង់ត្រង់ }A\text{)}\]</div> នាំឱ្យ <span class="mi">\(OA\perp PA\)</span></p>
+<p>ហើយ <div class="md">\[\angle OBP=90^\circ\quad{} \text{(ព្រោះ }PB\text{ ប៉ះរង្វង់ត្រង់ }B\text{)}\]</div> នាំឱ្យ <span class="mi">\(OB\perp PB\)</span></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle OA\perp PA,\quad{} OB\perp PB\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">គ</span> គណនាបរិមាត្រ និងផ្ទៃក្រឡានៃចតុកោណ <span class="mi">\(PAOB\)</span></p>
+<p>រង្វង់មានកាំ <span class="mi">\(OA=OB=3\,\mathrm{cm}\)</span> ហើយ <span class="mi">\(PA=PB=4\,\mathrm{cm}\)</span>។</p>
+<p>បរិមាត្រ៖ <div class="md">\[P = PA+PB+OA+OB = 4+4+3+3=14\,\mathrm{cm}\]</div></p>
+<p>ផ្ទៃក្រឡា៖</p>
+<p>ដោយ <span class="mi">\(\triangle PAO\)</span> និង <span class="mi">\(\triangle PBO\)</span> ជាត្រីកោណកែងប៉ុនគ្នា (<span class="mi">\(S_{PAO}=S_{PBO}\)</span>)៖ <div class="md">\[\begin{aligned}
+S_{PAOB} &amp;= 2 \times S_{PAO} \\
+&amp;= 2 \times \left(\frac{1}{2} \times PA \times OA\right) \\
+&amp;= 4 \times 3 = 12\,\mathrm{cm}^2
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle P=14\,\mathrm{cm},\quad{} S_{PAOB}=12\,\mathrm{cm}^2\)</span></span></p>
+</details>
+<nav class="ls-pager"><a class="prev" href="re-exam1.html"><small>← វិញ្ញាសាមុន</small><b>វិញ្ញាសាព្យាករណ៍ ទី១</b></a><a class="next" href="re-exam3.html"><small>វិញ្ញាសាបន្ទាប់ →</small><b>វិញ្ញាសាព្យាករណ៍ ទី៣</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../KPCambodianmathematics.html"><img src="../static/img/logo.png" alt="" width="38" height="38"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១០។ ដំណើរការបានដោយមិនចាំបាច់មានអ៊ីនធឺណិត។</p>
+      </div>
+      <div class="footer-col"><h4>ថ្នាក់រៀន</h4><ul><li><a href="../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../grade-10.html">ថ្នាក់ទី ១០</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត</h4><ul><li><a href="../KPCambodianmathematics.html#tests">តេស្តតាមមេរៀន</a></li><li><a href="../KPCambodianmathematics.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../index.html">Exam Studio (គ្រូ)</a></li></ul></div>
+      <div class="footer-col"><h4>ឧបករណ៍</h4><ul><li><a href="../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li><li><a href="../lesson-g7-l01.html">មេរៀនគំរូ (KhmerMath)</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១០</p>
+    </div>
+  </div>
+</footer>
+<script src="../static/js/site.js" defer></script>
+<script src="../static/katex/katex.min.js" defer></script>
+<script src="../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../static/js/lesson.js" defer></script>
+</body>
+</html>

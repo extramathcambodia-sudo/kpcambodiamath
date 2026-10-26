@@ -1,0 +1,1701 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៣ : តក្កវិទ្យា — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៣ «តក្កវិទ្យា» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៣ : តក្កវិទ្យា — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៣ «តក្កវិទ្យា» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ៣</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៣</span>
+      <div><span class="ls-kicker">ជំពូកទី ២ តក្កវិទ្យា សំណុំ និងចំនួន · មេរៀនទី ៣ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>តក្កវិទ្យា</h1><div class="ls-chips"><span class="chip chip-soon">តក្កវិទ្យា សំណុំ និងចំនួន</span><span class="chip chip-soon">៤ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សំណើ</a></li><li class="sub"><a href="#u2">២. ឈ្នាប់តក្កវិទ្យា</a></li><li class="sub"><a href="#u3">៣. ឈ្នាប់មិន (<span class="mi">\(\bar{p}\)</span>)</a></li><li class="sub"><a href="#u4">៤. ប្រភេទនៃសម្រាយបញ្ជាក់</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃតក្កវិទ្យា និងអ្នកប្រាជ្ញ Aristotle-Boole</b></header><div class="bx-b">
+<p><strong>តក្កវិទ្យា (Logic)</strong> មានប្រភពដើមមកពីពាក្យក្រិកបុរាណ <em>"Logos"</em> ដែលមានន័យថា «ហេតុផល» ឬ «ការគិតត្រិះរិះ»។ ទស្សនវិទូក្រិកដ៏ល្បីល្បាញលោក អារីស្តូត (Aristotle, ៣៨៤–៣២២ មុន គ.ស.) ត្រូវបានគេប្រសិទ្ធនាមថាជា «បិតានៃតក្កវិទ្យា» ដោយសារលោកបានបង្កើតប្រព័ន្ធតក្កវិទ្យាផ្លូវការដំបូងគេហៅថា ត្រីវែកញែក (Syllogism)។</p>
+<p>នៅសតវត្សទី១៩ គណិតវិទូជនជាតិអង់គ្លេស ចច ប៊ូល (George Boole, ១៨១៥–១៨៦៤) បានបង្កើតប្រព័ន្ធតក្កវិទ្យាពីជគណិត (Boolean Algebra) ដោយបំប្លែងសំណើ និងការគិតត្រិះរិះឱ្យទៅជានិមិត្តសញ្ញាពីជគណិត និងតម្លៃពិត (True=1, False=0)។ ការរកឃើញនេះបានក្លាយជាមូលដ្ឋានគ្រឹះមិនអាចខ្វះបានសម្រាប់ការរចនាសៀគ្វីអេឡិចត្រូនិក ប្រព័ន្ធកុំព្យូទ័រ និងបញ្ញាសិប្បនិម្មិត (AI) នៅសតវត្សទី២១។</p>
+<p>នៅក្នុងអារ្យធម៌ខ្មែរ បុព្វបុរសខ្មែរបានប្រើប្រាស់វិធានតក្កវិទ្យាយ៉ាងខ្ជាប់ខ្ជួនក្នុងការតាក់តែងច្បាប់ ក្រឹត្យក្រមរដ្ឋបាល និងទស្សនវិជ្ជាពុទ្ធសាសនា (អភិធម្ម និងហេតុផលកម្មផល) ដែលជាមូលដ្ឋាននៃសេចក្តីស្ងប់ និងភាពរុងរឿងនៃចក្រភពអង្គរ។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ?</b></header><div class="bx-b">
+<p>រំលឹកចំណេះដឹងពីថ្នាក់ក្រោម៖<br/>
+១. ការស្គាល់ពីប្រយោគប្រាប់ ប្រយោគសំណួរ និងប្រយោគបញ្ជា។<br/>
+២. ការវាយតម្លៃភាពពិត ឬមិនពិតនៅក្នុងជីវភាពរស់នៅប្រចាំថ្ងៃ។</p>
+</div></section>
+<h3 id="u1">សំណើ</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងការពិភាក្សាគ្នា គេតែងសង្កេតឃើញថា មានការលើកឡើងនូវអំណះអំណាងផ្សេងៗគ្នា ដែលអំណះអំណាងខ្លះពិត ខ្លះមិនពិត (ពេលដែលគេដឹង)និងខ្លះទៀតមិនអាចសន្និដ្ឋានបាន(ពេលដែលគេមិនដឹង) ។ ដូចជាអំណះអំណាងខាងក្រោមនេះ ៖<br/>
+<strong>ក.</strong>  " 5 ជាចំនួនបឋម" ជាអំណះអំណាងពិត ។<br/>
+<strong>ខ.</strong>  "ថ្ងៃមាន 5 ថ្ងៃ" ជាអំណះអំណាងមិនពិត ។<br/>
+<strong>គ.</strong>  "សុភីមានមាឌតូច" ជាអំណះអំណាងមិនអាចថាពិតឬមិនពិត ព្រោះគេមិនបានកំណត់ថាទំហំខ្លួនប៉ុណ្ណាដែលបញ្ជាក់ថាមានមាឌតូចនោះ ។<br/>
+អំណះអំណាង <strong>ក.</strong>  ដែលគេអាចសម្រេចបានថាពិត និងអំណះអំណាង <strong>ខ.</strong>  ដែលគេអាចសម្រេចថាមិនពិត ហៅថា <strong>សំណើ</strong> ។ ចំណែកអំណះអំណាង <strong>គ.</strong>  ដែលគេមិនអាចសម្រេចថាពិតឬមិនពិត មិនមែនជាសំណើទេ ។</p>
+<p>គេតាងឈ្មោះនៃសំណើដោយអក្សរ <span class="mi">\(p, q, r, s, ...\)</span></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><span class="mi">\(p\)</span> : ភ្នំពេញជារាជធានីនៃព្រះរាជាណាចក្រកម្ពុជា <span class="mi">\(q\)</span> : ភ្នំពេញជាមជ្ឈមណ្ឌលសេដ្ឋកិច្ចនៃព្រះរាជាណាចក្រកម្ពុជា <span class="mi">\(r\)</span> : ប្រាសាទអង្គរវត្តស្ថិតនៅក្នុងខេត្តសៀមរាប ។</p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>សំណើ គឺជាអំណះអំណាងទាំងឡាយណាដែលគេអាចសម្រេចថាពិតឬក៏មិនពិត ។</p>
+</div></section>
+<p><strong>តម្លៃភាពពិត</strong></p>
+<ul>
+<li><p>បើសំណើ <span class="mi">\(p\)</span> ពិតនោះគេថា <span class="mi">\(p\)</span> មានតម្លៃភាពពិតស្មើនឹង 1 ។ គេកំណត់សរសេរ ត.<span class="mi">\((p) = 1\)</span> ។</p></li>
+<li><p>បើសំណើ <span class="mi">\(p\)</span> មិនពិតនោះគេថា <span class="mi">\(p\)</span> មានតម្លៃភាពពិតស្មើនឹង 0 ។ គេកំណត់សរសេរ ត.<span class="mi">\((p) = 0\)</span> ។</p></li>
+</ul>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ចូរជ្រើសរើសអំណះអំណាងដែលជាសំណើក្នុងចំណោមអំណះអំណាងខាងក្រោម ហើយកំណត់តម្លៃភាពពិតនៃសំណើទាំងនោះ ។<br/>
+<strong>ក.</strong>  សត្វគោតូចជាងសត្វឆ្មា ។<br/>
+<strong>ខ.</strong>  <span class="mi">\(2021\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ។<br/>
+<strong>គ.</strong>  ថ្ងៃស្អែកនឹងមានភ្លៀងខ្លាំងបំផុតនៅភ្នំពេញ ។</p>
+</div></section>
+<h3 id="u2">ឈ្នាប់តក្កវិទ្យា</h3>
+<h4>ឈ្នាប់និង ( <span class="mi">\(\land\)</span> )</h4>
+<p>គេអាចភ្ជាប់សំណើ <span class="mi">\(p\)</span> ជាមួយសំណើ <span class="mi">\(q\)</span> ក្នុងឧទាហរណ៍ 2 ខាងលើដោយប្រើ "ឈ្នាប់និង" នោះគេបានសំណើថ្មី "ភ្នំពេញជារាជធានី និងជាមជ្ឈមណ្ឌលសេដ្ឋកិច្ចនៃព្រះរាជាណាចក្រកម្ពុជា" ដែលគេហៅថា <strong>សំណើឈ្នាប់និង</strong> នៃសំណើទាំងពីរ ។</p>
+<p>គេកំណត់សរសេរ <span class="mi">\(p \land q\)</span> (អានថា <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span>) ។</p>
+<p><strong>សម្គាល់</strong> សំណើ <span class="mi">\(p \land q\)</span> ពិតតែក្នងករណីសំណើ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span> ពិតទាំងពីរ ។</p>
+<p>តារាងភាពពិត</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \land q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១</span><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ <span class="mi">\(p\)</span> : "7 ជាតួចែកនៃ 15" និង <span class="mi">\(q\)</span> : "7 ជាចំនួនបឋម" ។<br/>
+កំណត់សំណើ <span class="mi">\(p \land q\)</span> និងតម្លៃភាពពិតនៃ <span class="mi">\(p \land q\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<span class="mi">\(p \land q\)</span> : " 7 ជាតួចែកនៃ 15 និងជាចំនួនបឋម "<br/>
+ត.<span class="mi">\((p) = 0\)</span> ហើយ ត.<span class="mi">\((q) = 1\)</span> នោះ ត.<span class="mi">\((p \land q) = 0\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ <span class="mi">\(r\)</span> : 24 ជាពហុគុណនៃ 6 និង <span class="mi">\(s\)</span> : 24 ជាចំនួនគត់គូ ។<br/>
+ចូរកំណត់សំណើ <span class="mi">\(r \land s\)</span> និង <strong>ត.</strong>  <span class="mi">\((r \land s)\)</span> ។</p>
+</div></section>
+<h4>ឈ្នាប់ឬ ( <span class="mi">\(\lor\)</span> )</h4>
+<p>គេភ្ជាប់សំណើ <span class="mi">\(p\)</span> ជាមួយសំណើ <span class="mi">\(q\)</span> ក្នុងឧទាហរណ៍ 2 ទំព័រ 36 ដោយប្រើ "<strong>ឈ្នាប់ឬ</strong>" នោះគេបានសំណើថ្មី "ភ្នំពេញជារាជធានី ឬជាមជ្ឈមណ្ឌលសេដ្ឋកិច្ចនៃព្រះរាជាណាចក្រកម្ពុជា" ដែលគេហៅថា<strong>សំណើឈ្នាប់ឬ</strong>នៃសំណើទាំងពីរ ។ គេកំណត់សរសេរ <span class="mi">\(p \lor q\)</span> (អានថា <span class="mi">\(p\)</span> ឬ <span class="mi">\(q\)</span>) ។</p>
+<p><strong>សម្គាល់</strong> : សំណើ <span class="mi">\(p \lor q\)</span> ជាសំណើមិនពិតតែក្នងករណីដែលសំណើ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span> មិនពិតទាំងពីរ ។</p>
+<p>តារាងភាពពិត</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \lor q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">២</span><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ <span class="mi">\(r\)</span> : <span class="mi">\(2021\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> និង <span class="mi">\(s\)</span> : <span class="mi">\(2024\)</span> ជាចំនួនគត់គូ ។<br/>
+កំណត់សំណើ <span class="mi">\(r \lor s\)</span> និងតម្លៃភាពពិតនៃ <span class="mi">\(r \lor s\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គេបានសំណើ <span class="mi">\(r \lor s\)</span> : " <span class="mi">\(2024\)</span> ចែកដាច់នឹង 3 ឬជាចំនួនគត់គូ " ។<br/>
+ដោយ ត.<span class="mi">\((r) = 0 \quad{}\)</span> ត.<span class="mi">\((s) = 1\)</span> នោះ ត.<span class="mi">\((r \lor s) = 1\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេមានសំណើពីរដូចខាងក្រោម ៖<br/>
+<span class="mi">\(p\)</span> : 37 ជាចំនួនបឋម<br/>
+<span class="mi">\(q\)</span> : 37 ចែកដាច់នឹង 5 ។ ចូរកំណត់សំណើ <span class="mi">\(p \lor q\)</span> និង ត.<span class="mi">\((p \lor q)\)</span> ។</p>
+</div></section>
+<h3 id="u3">ឈ្នាប់មិន (<span class="mi">\(\bar{p}\)</span>)</h3>
+<p>គេមានសំណើ <span class="mi">\(p\)</span> : ដារ៉ាជាសិស្សចូលចិត្តរៀនគណិតវិទ្យា ។ គេអាចសរសេរប្រយោគបដិសេធនៃសំណើ <span class="mi">\(p\)</span> នេះថា " ដារ៉ាជាសិស្សមិនចូលចិត្តរៀនគណិតវិទ្យា" ដែលគេហៅថា <strong>សំណើឈ្នាប់មិនឬសំណើបដិសេធ</strong>នៃ <span class="mi">\(p\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(\bar{p}\)</span> (អានថាមិន <span class="mi">\(p\)</span> ) ។ សំណើ <span class="mi">\(p\)</span> និងសំណើ <span class="mi">\(\bar{p}\)</span> មានតម្លៃភាពពិតខុសគ្នា ។</p>
+<p>តារាងភាពពិត</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់គំរូ ៣</b></header><div class="bx-b">
+<p>គេមានសំណើ <span class="mi">\(r\)</span> : <span class="mi">\(3\)</span> ជាតួចែកនៃ <span class="mi">\(2022\)</span><br/>
+<span class="mi">\(s\)</span> : <span class="mi">\(1^2 + 2^2 + 3^2 &lt; (1 + 2 + 3)^2\)</span><br/>
+<span class="mi">\(q\)</span> : <span class="mi">\((1^3 + 2^3 + 3^3) \geq (1 + 2 + 3)^3\)</span> ។<br/>
+កំណត់សំណើឈ្នាប់មិន និងតម្លៃភាពពិតសំណើឈ្នាប់មិនរបស់សំណើខាងលើ ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គេបាន <span class="mi">\(\bar{r}\)</span> : <span class="mi">\(3\)</span> មិនមែនជាតួចែកនៃ <span class="mi">\(2022\)</span><br/>
+<span class="mi">\(\bar{s}\)</span> : <span class="mi">\(1^2 + 2^2 + 3^2 \geq (1 + 2 + 3)^2\)</span><br/>
+<span class="mi">\(\bar{q}\)</span> : <span class="mi">\(1^3 + 2^3 + 3^3 &lt; (1 + 2 + 3)^3\)</span><br/>
+តម្លៃភាពពិត <span class="mi">\((\bar{r}) = 0\)</span>, <span class="mi">\((\bar{s}) = 0\)</span>, <span class="mi">\((\bar{q}) = 1\)</span> ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានសំណើ <span class="mi">\(p\)</span> : រថយន្តទេសចរណ៍នេះមានពណ៌មាស ។ គេបាន <span class="mi">\(\bar{p}\)</span> រថយន្តទេសចរណ៍នេះមានពណ៌ខុសពីពណ៌មាស ។ គេបាន <span class="mi">\(\bar{\bar{p}}\)</span> : រថយន្តទេសចរណ៍នេះមិនមានពណ៌ខុសពីពណ៌មាស មានន័យថា រថយន្តទេសចរណ៍មានពណ៌មាស ។ ដូច្នេះ សំណើ <span class="mi">\(\bar{\bar{p}}\)</span> និង <span class="mi">\(p\)</span> គឺជាសំណើតែមួយ ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណើ <span class="mi">\(\bar{\bar{p}}\)</span> និង <span class="mi">\(p\)</span> គឺជាសំណើតែមួយ ។ គេសរសេរ <span class="mi">\(\bar{\bar{p}} = p\)</span> ។</p>
+</div></section>
+<p><strong>សម្គាល់</strong> ដើម្បីសរសេរសំណើឈ្នាប់មិននៃសំណើមួយ គេប្រើពាក្យឈ្នាប់មិននៅពីមុខកិរិយាស័ព្ទ និងគុណនាម ឬជំនួសដោយគុណនាមផ្ទុយរបស់វា ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់គំរូ ៤</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ៖<br/>
+<span class="mi">\(p\)</span> : អារីយ៉ានេះផលិតដោយក្រុមហ៊ុនអ៊ិយមម៉ង់ ។<br/>
+<span class="mi">\(q\)</span> : អារីយ៉ានេះមានគុណភាពល្អ ។<br/>
+កំណត់សំណើ <span class="mi">\(\bar{p}\)</span>, <span class="mi">\(\bar{q}\)</span>, <span class="mi">\(\bar{p} \land \bar{q}\)</span> និង <span class="mi">\(\bar{p} \lor \bar{q}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គេបានសំណើដូចខាងក្រោម៖<br/>
+<span class="mi">\(\bar{p}\)</span> : អារីយ៉ានេះ មិនបានផលិតដោយក្រុមហ៊ុនអ៊ិយមម៉ង់ទេ ។<br/>
+<span class="mi">\(\bar{q}\)</span> : អារីយ៉ានេះ មិនមានគុណភាពល្អ ។<br/>
+<span class="mi">\(\bar{p} \land \bar{q}\)</span> : អារីយ៉ានេះ មិនបានផលិតដោយក្រុមហ៊ុនអ៊ិយមម៉ង់ និងមិនមានគុណភាពល្អ ។<br/>
+<span class="mi">\(\bar{p} \lor \bar{q}\)</span> : អារីយ៉ានេះ មិនបានផលិតដោយក្រុមហ៊ុនអ៊ិយមម៉ង់ ឬមិនមានគុណភាពល្អ ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ៖<br/>
+<span class="mi">\(r\)</span> : កុំព្យូទ័រនេះមានអានុភាពខ្លាំង<br/>
+<span class="mi">\(s\)</span> : កម្មវិធីអ៊ិនធឺណេតនៃកុំព្យូទ័រនេះដំណើរការបានស្រួល ។<br/>
+កំណត់សំណើ <span class="mi">\(\bar{r}\)</span>, <span class="mi">\(\bar{s}\)</span>, <span class="mi">\(\bar{r} \land \bar{s}\)</span> និង <span class="mi">\(\bar{r} \lor \bar{s}\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span> នោះ គេបានលក្ខណៈដឺម៉ហ្គាន់ (De Morgan)<br/>
+1. <span class="mi">\(\overline{p \land q} = \bar{p} \lor \bar{q}\)</span> 2. <span class="mi">\(\overline{p \lor q} = \bar{p} \land \bar{q}\)</span> ។</p>
+</div></section>
+<p><strong>សម្រាយបញ្ជាក់</strong></p>
+<p>តារាងភាពពិត</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \land q\)</span></th>
+<th><span class="mi">\(\overline{p \land q}\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(\bar{q}\)</span></th>
+<th><span class="mi">\(\bar{p} \lor \bar{q}\)</span></th>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \lor q\)</span></th>
+<th><span class="mi">\(\overline{p \lor q}\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(\bar{q}\)</span></th>
+<th><span class="mi">\(\bar{p} \land \bar{q}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<h4>ឈ្នាប់នាំឱ្យ ( <span class="mi">\(\Rightarrow\)</span> )</h4>
+<p>គេមានសំណើ <span class="mi">\(p\)</span> : <span class="mi">\(15\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> និង <span class="mi">\(q\)</span> : <span class="mi">\(15\)</span> ជាពហុគុណនៃ <span class="mi">\(5\)</span> ។ គេបង្កើតសំណើថ្មី "បើ <span class="mi">\(15\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> នោះ <span class="mi">\(15\)</span> ជាពហុគុណនៃ <span class="mi">\(5\)</span> " ដែលភ្ជាប់សំណើ <span class="mi">\(p\)</span> ជាមួយ <span class="mi">\(q\)</span> ដោយឈ្នាប់នាំឱ្យ ហៅថា <strong>សំណើឈ្នាប់នាំឱ្យ</strong> ឬ<strong>សំណើលក្ខខណ្ឌ</strong> នៃសំណើ <span class="mi">\(p\)</span>, <span class="mi">\(q\)</span> ។<br/>
+គេកំណត់សរសេរ <span class="mi">\(p \Rightarrow q\)</span> (អានថា <span class="mi">\(p\)</span> នាំឱ្យ <span class="mi">\(q\)</span> ) <span class="mi">\(p\)</span> ជាតួសំណើ <span class="mi">\(q\)</span> ជាវិបាក ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់គំរូ ៥</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ : <span class="mi">\(p\)</span> : ស្រីរ័ត្នទៅបណ្ណាល័យ ។<br/>
+<span class="mi">\(q\)</span> : ស្រីរ័ត្នសិក្សាស្រាវជ្រាវ ។<br/>
+កំណត់សំណើ <span class="mi">\(p \Rightarrow q\)</span>, <span class="mi">\(q \Rightarrow p\)</span>, <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<span class="mi">\(p \Rightarrow q\)</span> : បើស្រីរ័ត្នទៅបណ្ណាល័យនោះ នាងនឹងសិក្សាស្រាវជ្រាវ ។<br/>
+<span class="mi">\(q \Rightarrow p\)</span> : បើស្រីរ័ត្នសិក្សាស្រាវជ្រាវ នោះនាងទៅបណ្ណាល័យ ។<br/>
+<span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> : បើស្រីរ័ត្នមិនសិក្សាស្រាវជ្រាវ នោះនាងមិនទៅបណ្ណាល័យ ។</p>
+<p><strong>សម្គាល់</strong> សំណើ <span class="mi">\(q \Rightarrow p\)</span> ហៅថាសំណើច្រាសនៃសំណើ <span class="mi">\(p \Rightarrow q\)</span> ។<br/>
+សំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ហៅថាសំណើផ្ទុយពីសមមូលកុងត្រានៃសំណើ <span class="mi">\(p \Rightarrow q\)</span> ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់គំរូ ៦</b></header><div class="bx-b">
+<p><span class="mi">\(p\)</span> : រស្មីចុះឈ្មោះរៀនគណនេយ្យ<br/>
+<span class="mi">\(q\)</span> : រស្មីរៀនផ្នែកតុលាការឧក្រិដ្ឋកម្ម ។ សរសេរសំណើ " បើរស្មីរៀនផ្នែកតុលាការឧក្រិដ្ឋកម្មនោះគាត់មិនចុះឈ្មោះរៀនគណនេយ្យ " ដោយប្រើនិមិត្តសញ្ញាឈ្នាប់នាំឱ្យ ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+បើរស្មីរៀនផ្នែកតុលាការឧក្រិដ្ឋកម្ម នោះគាត់មិនចុះឈ្មោះរៀនគណនេយ្យ<br/>
+បើ <span class="mi">\(q\)</span> នោះមិន <span class="mi">\(p\)</span> តាងដោយ <span class="mi">\(q \Rightarrow \bar{p}\)</span> ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណើ <span class="mi">\(p \Rightarrow q\)</span> មិនពិតក្នុងករណីសំណើ <span class="mi">\(p\)</span> ពិត ហើយសំណើ <span class="mi">\(q\)</span> មិនពិត ក្រៅពីនេះ វាជាសំណើពិត ។</p>
+</div></section>
+<p>បើ <span class="mi">\(p\)</span> : ជាសំណើពិត នោះ <span class="mi">\(\bar{p}\)</span> ជាសំណើមិនពិត<br/>
+<span class="mi">\(q\)</span> : ជាសំណើមិនពិត នោះ <span class="mi">\(\bar{q}\)</span> ជាសំណើពិត<br/>
+ដូច្នេះ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ជាសំណើមិនពិត ចំពោះករណី <span class="mi">\(p\)</span> ពិត ហើយ <span class="mi">\(q\)</span> មិនពិតក្រៅពីនេះវាជាសំណើពិត ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>សន្និដ្ឋាន</b></header><div class="bx-b">
+<p>សំណើ <span class="mi">\(p \Rightarrow q\)</span> និង <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> មានតម្លៃភាពពិតដូចគ្នា ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនការហ្វេភេសជ្ជៈបានផ្សាយពាណិជ្ជកម្មថា " បើអ្នកផឹកកាហ្វេភេសជ្ជៈនេះអ្នកនឹងមិនមានអារម្មណ៍ងងុយគេងឡើយ " ។ តាងសំណើលក្ខខណ្ឌនេះដោយប្រើសញ្ញាឈ្នាប់ ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<span class="mi">\(p \Rightarrow q\)</span> ។</p></details>
+</div></section>
+<h4>ឈ្នាប់សមមូល ( <span class="mi">\(\Leftrightarrow\)</span> )</h4>
+<p>ឧទាហរណ៍អ្នកនិយាយទៅកាន់មិត្តភក្ដិរបស់អ្នកថា " បើខ្ញុំជាសិស្សពូកែគណិតវិទ្យា នោះខ្ញុំបានពិន្ទុគណិតវិទ្យាល្អ " ដែលតាងដោយ <span class="mi">\(p \Rightarrow q\)</span> បន្ទាប់មកអ្នកនិយាយទៅមិត្តភក្ដិផ្សេងទៀតរបស់អ្នកថា " បើខ្ញុំបានពិន្ទុគណិតវិទ្យាល្អនោះខ្ញុំជាសិស្សពូកែគណិតវិទ្យា " ដែលតាងដោយ <span class="mi">\(q \Rightarrow p\)</span> ។ បើគេចងសំណើ <span class="mi">\(p \Rightarrow q\)</span> និង <span class="mi">\(q \Rightarrow p\)</span> ដោយប្រើឈ្នាប់សមមូលគេបាន " ខ្ញុំជាសិស្សពូកែគណិតវិទ្យាលុះត្រាតែខ្ញុំបានពិន្ទុគណិតវិទ្យាល្អ " ដែលគេហៅថា<strong>សំណើឈ្នាប់សមមូល</strong>នៃសំណើ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span> ។<br/>
+គេកំណត់សរសេរ <span class="mi">\((p \Leftrightarrow q)\)</span> (អានថា <span class="mi">\(p\)</span> សមមូល <span class="mi">\(q\)</span>) ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ចូរពិនិត្យមើលសំណើ " ខ្ញុំទៅផ្សារលុះត្រាតែខ្ញុំអស់ម្ហូបញ៉ាំ " ។ សំណើនេះមានន័យថា " បើខ្ញុំទៅផ្សារនោះខ្ញុំអស់ម្ហូបញ៉ាំ និងបើខ្ញុំអស់ម្ហូបញ៉ាំ នោះខ្ញុំនឹងទៅផ្សារ " ។ ដូច្នេះ ដើម្បីឱ្យសំណើខាងលើនេះពិត គេត្រូវរកឱ្យឃើញករណីដែលធ្វើឱ្យសំណើ " បើខ្ញុំទៅផ្សារនោះខ្ញុំអស់ម្ហូបញ៉ាំ " និងសំណើ "បើខ្ញុំអស់ម្ហូបញ៉ាំ នោះខ្ញុំនឹងទៅផ្សារ " ពិតទាំងពីរព្រមគ្នា ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\(p \Leftrightarrow q \equiv (p \Rightarrow q) \land (q \Rightarrow p)\)</span> ។</p>
+</div></section>
+<p><strong>សម្គាល់</strong> : សំណើឈ្នាប់សមមូលពិតតែក្នងករណីដែលសំណើទាំងពីរមានតម្លៃភាពពិតដូចគ្នា ។</p>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ <span class="mi">\(p\)</span> : <span class="mi">\(x^2 + x - 2 = 0\)</span> <span class="mi">\(q\)</span> : <span class="mi">\(x = 1\)</span>, <span class="mi">\(x = -2\)</span> ។<br/>
+<strong>ក.</strong>  បង្ហាញថា <span class="mi">\(p \Rightarrow q\)</span> ជាសំណើពិត <span class="mi">\(q \Rightarrow p\)</span> ជាសំណើពិត<br/>
+<strong>ខ.</strong>  បង្ហាញថា <span class="mi">\(p \Leftrightarrow q\)</span> ។</p>
+</div></section>
+<h3 id="u4">ប្រភេទនៃសម្រាយបញ្ជាក់</h3>
+<p>ផ្នែកដ៏មានសារៈសំខាន់ក្នងគណិតវិទ្យា គឺជាការធ្វើសម្រាយបញ្ជាក់គណិតវិទ្យា ។ គេមានរបៀបធ្វើសម្រាយបញ្ជាក់ផ្សេងៗគ្នាជាច្រើនប៉ុន្តែគេនឹងលើកយកប្រភេទសម្រាយបញ្ជាក់ចំណោទដែលមានលក្ខណៈរួម និងប្រើប្រាស់ញឹកញាប់គេមកសិក្សា ។</p>
+<h4>ការស្រាយបញ្ជាក់ដោយផ្ទាល់</h4>
+<p>ប្រភេទនៃសម្រាយបញ្ជាក់នេះគឺការស្រាយបញ្ជាក់ត្រង់ៗទៅតាមអ្វីដែលគេចង់បាន ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់គំរូ ៧</b></header><div class="bx-b">
+<p>បង្ហាញថាបើ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ជាចំនួនសនិទាននោះ <span class="mi">\(x + y\)</span> គឺជាចំនួនសនិទាន ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+បើ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ជាចំនួនសនិទាននោះ គេអាចតាង <span class="mi">\(x = \frac{a}{b}\)</span> និង <span class="mi">\(y = \frac{m}{n}\)</span> ដែល <span class="mi">\(a\)</span>, <span class="mi">\(b\)</span>, <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> ជាចំនួនគត់រ៉ឺឡាទីប ហើយ <span class="mi">\(b \neq 0\)</span>, <span class="mi">\(n \neq 0\)</span> ។<br/>
+គេបាន <span class="mi">\(x + y = \frac{a}{b} + \frac{m}{n} = \frac{an + bm}{bn}\)</span> ដោយ <span class="mi">\(an + bm\)</span> និង <span class="mi">\(bn\)</span> ជាចំនួនគត់រ៉ឺឡាទីប<br/>
+នោះ <span class="mi">\(x + y\)</span> ជាចំនួនសនិទាន ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់គំរូ ៨</b></header><div class="bx-b">
+<p>បង្ហាញថាបើ <span class="mi">\(|x| &gt; |y|\)</span> នោះ <span class="mi">\(x^2 &gt; y^2\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ដោយ <span class="mi">\(|x| &gt; |y|\)</span> នោះគេបាន <span class="mi">\(|x|^2 &gt; |y|^2\)</span> ។<br/>
+ប៉ុន្តែ <span class="mi">\(|x|^2 = x^2\)</span> និង <span class="mi">\(|y|^2 = y^2\)</span> ដូច្នេះ <span class="mi">\(x^2 &gt; y^2\)</span> ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់គំរូ ៩</b></header><div class="bx-b">
+<p>ក្នុង <span class="mi">\(\Delta ABC\)</span> ដែល <span class="mi">\(EF \parallel BC\)</span> ។ ចូរស្រាយបញ្ជាក់ថា <span class="mi">\(\frac{AE}{AB} = \frac{AF}{AC} = \frac{EF}{BC}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ស្រាយបញ្ជាក់ថា <span class="mi">\(\frac{AE}{AB} = \frac{AF}{AC} = \frac{EF}{BC}\)</span><br/>
+យើងមាន <span class="mi">\(EF \parallel BC\)</span><br/>
+តាមទ្រឹស្ដីបទតាលែស គេបាន <span class="mi">\(\frac{AE}{AB} = \frac{AF}{AC}\)</span> (1)<br/>
+ម្យ៉ាងទៀត បើយើងគូស <span class="mi">\(EN \parallel AC\)</span> នោះចតុកោណ <span class="mi">\(EFCN\)</span> ជាប្រលេឡូក្រាម</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><span class="mi">\(NC = EF\)</span> (ជ្រុងឈមនៃប្រលេឡូក្រាម <span class="mi">\(EFCN\)</span> ) ។<br/>
+គេបាន <span class="mi">\(\frac{BC}{NC} = \frac{BA}{AE}\)</span> ឬ <span class="mi">\(\frac{NC}{BC} = \frac{AE}{BA}\)</span> ឬតែ <span class="mi">\(NC = EF\)</span> នោះ <span class="mi">\(\frac{EF}{BC} = \frac{AE}{AB}\)</span> (2)<br/>
+តាម (1) និង (2) គេបាន <span class="mi">\(\frac{AE}{AB} = \frac{AF}{AC} = \frac{EF}{BC}\)</span><br/>
+ដូច្នេះ <span class="mi">\(\frac{AE}{AB} = \frac{AF}{AC} = \frac{EF}{BC}\)</span> ពិត ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>បង្ហាញថា ៖<br/>
+<strong>ក.</strong>  បើ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ជាចំនួនគត់សេស នោះ <span class="mi">\(x + y\)</span> ជាចំនួនគត់គូ ។<br/>
+<strong>ខ.</strong>  បើ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ជាចំនួនគត់សេស នោះ <span class="mi">\(xy\)</span> ជាចំនួនគត់សេស ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  តាង <span class="mi">\(x = 2n + 1, \; y = 2m + 1\)</span><br/>
+គេបាន <span class="mi">\(x + y = (2n + 1) + (2m + 1) = 2(n + m + 1)\)</span> ជាចំនួនគត់គូ ។<br/>
+<strong>ខ.</strong>  <span class="mi">\(xy = (2n + 1)(2m + 1) = 4nm + 2n + 2m + 1 = 2(2mn + m + n) + 1\)</span> ជាចំនួនគត់សេស ។</p></details>
+</div></section>
+<h4>ការស្រាយបញ្ជាក់តាមសំណើផ្ទុយពីសមមូលកុងត្រា</h4>
+<p>គេដឹងថាសំណើ <span class="mi">\(p \Rightarrow q\)</span> និងសំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> មានតម្លៃភាពពិតដូចគ្នា ។ សំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ជាសំណើផ្ទុយពីសមមូលកុងត្រានៃសំណើ <span class="mi">\(p \Rightarrow q\)</span> ។ ដូច្នេះ ដើម្បីបង្ហាញសំណើ <span class="mi">\(p \Rightarrow q\)</span> ពិត នោះគេអាចបង្ហាញថាសំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ពិតជាការស្រេច ព្រោះថាគេយកសំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> មកបង្ហាញ វាមានភាពងាយស្រួលជាងការបង្ហាញសំណើ <span class="mi">\(p \Rightarrow q\)</span> ចំពោះករណីមួយចំនួន ។ ‘ <strong>របៀបដោះស្រាយ</strong> : ឧបមាថា គេចង់បង្ហាញសំណើ <span class="mi">\(p \Rightarrow q\)</span> ពិត</p>
+<ul>
+<li><p>ជំហានទី 1 : ត្រូវកំណត់សំណើ <span class="mi">\(p\)</span> និងសំណើ <span class="mi">\(q\)</span> ឱ្យបានត្រឹមត្រូវ ។</p></li>
+<li><p>ជំហានទី 2 : ត្រូវកំណត់សំណើ <span class="mi">\(\bar{p}\)</span> និងសំណើ <span class="mi">\(\bar{q}\)</span> ។</p></li>
+<li><p>ជំហានទី 3 : គេផ្ដើមពី <span class="mi">\(\bar{q}\)</span> បញ្ជាក់រហូតគេបានសំណើ <span class="mi">\(\bar{p}\)</span> ដែលជាសំណើផ្ទុយពីសមមូលកុងត្រាមានន័យថាគេបានបង្ហាញថា <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ពិត ។ ដូច្នេះ គេបាន <span class="mi">\(p \Rightarrow q\)</span> ជាសំណើពិត ។</p></li>
+</ul>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់គំរូ ១០</b></header><div class="bx-b">
+<p>បង្ហាញថា បើ <span class="mi">\(n^2\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(n\)</span> ជាចំនួនគត់គូ ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<strong>ជំហានទី 1</strong> : កំណត់សំណើ <span class="mi">\(p\)</span> និងសំណើ <span class="mi">\(q\)</span><br/>
+តាង <span class="mi">\(p : n^2\)</span> ជាចំនួនគត់គូ និង <span class="mi">\(q : n\)</span> ជាចំនួនគត់គូ ។<br/>
+គេបានសំណើដើម " បើ <span class="mi">\(n^2\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(n\)</span> ជាចំនួនគត់គូ " អាចតាងដោយសំណើ <span class="mi">\(p \Rightarrow q\)</span> ។<br/>
+<strong>ជំហានទី 2</strong> : កំណត់សំណើ <span class="mi">\(\bar{p}\)</span> និងសំណើ <span class="mi">\(\bar{q}\)</span><br/>
+គេបានសំណើ <span class="mi">\(\bar{p} : n^2\)</span> ជាចំនួនគត់សេស <span class="mi">\(\bar{q} : n\)</span> ជាចំនួនគត់សេស ។<br/>
+គេមានសំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> គឺ " បើ <span class="mi">\(n\)</span> ជាចំនួនគត់សេសនោះ <span class="mi">\(n^2\)</span> ជាចំនួនគត់សេស "<br/>
+<strong>ជំហានទី 3</strong> : បង្ហាញថាសំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ពិត<br/>
+ដោយសំណើ <span class="mi">\(\bar{q} : n\)</span> ជាចំនួនគត់សេសនោះគេអាចតាង <span class="mi">\(n = 2k + 1\)</span> ដែល <span class="mi">\(k\)</span> ជាចំនួនគត់ ។<br/>
+គេបាន <span class="mi">\(n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 = 2m + 1\)</span><br/>
+ដែល <span class="mi">\(m = 2k^2 + 2k\)</span> ជាចំនួនគត់ ។<br/>
+ដូច្នេះ <span class="mi">\(n^2\)</span> ជាចំនួនគត់សេស(ពិត) ។ គេបានសំណើ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ពិត នោះ <span class="mi">\(p \Rightarrow q\)</span> ក៏ពិតដែរ ។<br/>
+ដូច្នេះ " បើ <span class="mi">\(n^2\)</span> ជាចំនួនគត់គូនោះ <span class="mi">\(n\)</span> ជាចំនួនគត់គូ " ជាសំណើពិត ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>ក.</strong>  បង្ហាញថាចំពោះចំនួនគត់ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> បើផលគុណ <span class="mi">\(mn\)</span> មិនមែនជាពហុគុណនៃ 3 នោះ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> ក៏មិនមែនជាពហុគុណនៃ 3 ដែរ ។<br/>
+<strong>ខ.</strong>  បង្ហាញថា បើមុំណាមួយនៃបន្ទាត់ពីរជាមុំស្មើគ្នា នោះបន្ទាត់ទាំងពីរនោះស្របគ្នា ។</p>
+</div></section>
+<h4>ការស្រាយបញ្ជាក់តាមសំណើផ្ទុយពីការពិត</h4>
+<p>ប្រភេទនៃសម្រាយបញ្ជាក់នេះមានសារៈប្រយោជន៍បំផុត សម្រាប់បង្ហាញចំណោទបញ្ហាមួយចំនួនដែលពេលខ្លះគេមិនអាចរកបាននូវចំណុចចាប់ផ្ដើមមកបកស្រាយតាមសម្រាយបញ្ជាក់ធម្មតា ។ វិធីនេះតម្រូវឱ្យគេផ្ដើមចេញពីសំណើឈ្នាប់មិននៃសំណើដែលគេឱ្យបង្ហាញថាពិតរហូតទទួលបានសំណើថ្មី ដែលផ្ទុយពីទ្រឹស្ដីក្នុងគណិតវិទ្យា ។ ដូច្នេះ សំណើឈ្នាប់មិនជាសំណើមិនពិត មានន័យថាសំណើដើមដែលគេតម្រូវឱ្យបង្ហាញនោះត្រូវតែពិត ។</p>
+<p><strong>របៀបដោះស្រាយ</strong></p>
+<ul>
+<li><p>ជំហានទី 1 : តាង <span class="mi">\(p\)</span> ជាសំណើដែលត្រូវបង្ហាញ ។</p></li>
+<li><p>ជំហានទី 2 : កំណត់សំណើ <span class="mi">\(\bar{p}\)</span> ។</p></li>
+<li><p>ជំហានទី 3 : ឧបមាថាសំណើ <span class="mi">\(\bar{p}\)</span> ពិត ។ រួចបកស្រាយបន្តបន្ទាប់រហូតដល់បានលទ្ធផលផ្ទុយពីទ្រឹស្ដីគណិតវិទ្យា ។ គេបានសំណើ <span class="mi">\(\bar{p}\)</span> មិនពិត ។ ដូច្នេះសំណើ <span class="mi">\(p\)</span> ពិត ព្រោះតម្លៃភាពពិតរវាងសំណើ <span class="mi">\(p\)</span> និងសំណើ <span class="mi">\(\bar{p}\)</span> មានតម្លៃផ្ទុយគ្នា ។</p></li>
+</ul>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់គំរូ ១១</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\(\sqrt{2}\)</span> គឺជាចំនួនអសនិទាន ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<strong>ជំហានទី 1</strong> : តាងសំណើ <span class="mi">\(p : \sqrt{2}\)</span> " គឺជាចំនួនអសនិទាន " ។<br/>
+<strong>ជំហានទី 2</strong> : គេបានសំណើ <span class="mi">\(\bar{p} : \sqrt{2}\)</span> " គឺជាចំនួនសនិទាន " ។<br/>
+<strong>ជំហានទី 3</strong> : ឧបមាថាសំណើ <span class="mi">\(\bar{p}\)</span> ពិត នោះគេអាចសរសេរ <span class="mi">\(\sqrt{2} = \frac{a}{b}\)</span> ដែល <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ជាចំនួនគត់បឋមរវាងគ្នា ។ ចំនួនគត់បឋមរវាងគ្នាគឺ <span class="mi">\(GCD(a, b) = 1\)</span> ។<br/>
+គេបាន <span class="mi">\(\frac{a^2}{b^2} = 2\)</span> ឬ <span class="mi">\(a^2 = 2b^2\)</span> ។ គេបាន <span class="mi">\(a^2\)</span> គឺជាពហុគុណនៃ 2 ដូច្នេះ <span class="mi">\(a^2\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(a\)</span> ក៏ជាចំនួនគត់គូដែរ ។<br/>
+តាង <span class="mi">\(a = 2k\)</span> ដែល <span class="mi">\(k\)</span> ជាចំនួនគត់<br/>
+គេបាន <span class="mi">\(2b^2 = a^2 = 4k^2\)</span><br/>
+<span class="mi">\(b^2 = 2k^2\)</span> ។<br/>
+ដូច្នេះ <span class="mi">\(b^2\)</span> ជាចំនួនគត់គូនោះ <span class="mi">\(b\)</span> ក៏ជាចំនួនគត់គូដែរ ។<br/>
+ដោយ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ជាចំនួនគត់គូនោះ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> មាន 2 ជាតួចែករួម<br/>
+<span class="mi">\(GCD(a, b) = 2\)</span> ដែលផ្ទុយពីលក្ខខណ្ឌដែល <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ជាចំនួនគត់បឋមរវាងគ្នានោះគេបាន <span class="mi">\(\sqrt{2}\)</span> មិនមែនជាចំនួនសនិទានទេ ។<br/>
+ដូច្នេះ <span class="mi">\(\sqrt{2}\)</span> ជាចំនួនអសនិទាន ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់គំរូ ១២</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\(\sqrt[4]{2}\)</span> ជាចំនួនអសនិទាន ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាងសំណើ <span class="mi">\(p\)</span> : " <span class="mi">\(\sqrt[4]{2}\)</span> ជាចំនួនអសនិទាន "<br/>
+គេបានសំណើ <span class="mi">\(\bar{p}\)</span> : " <span class="mi">\(\sqrt[4]{2}\)</span> ជាចំនួនសនិទាន "<br/>
+ឧបមាសំណើ <span class="mi">\(\bar{p}\)</span> ពិត នោះគេបាន <span class="mi">\(\sqrt[4]{2} = \frac{a}{b}\)</span> ដែល <span class="mi">\(a, b\)</span> ជាចំនួនគត់ និង <span class="mi">\(a, b\)</span> ជាចំនួនបឋមរវាងគ្នា<br/>
+គេបាន <span class="mi">\(\frac{a^4}{b^4} = 2\)</span> ឬ <span class="mi">\(a^4 = 2b^4 \quad{} (1)\)</span><br/>
+នោះ <span class="mi">\(a^4\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(a\)</span> ជាចំនួនគត់គូដែរ ។<br/>
+ស្រាយបញ្ជាក់ថា បើ <span class="mi">\(a^4\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(a\)</span> ជាចំនួនគត់គូ<br/>
+តាង <span class="mi">\(p :\)</span> " <span class="mi">\(a^4\)</span> ជាចំនួនគត់គូ "<br/>
+<span class="mi">\(q :\)</span> " <span class="mi">\(a\)</span> ជាចំនួនគត់គូ "<br/>
+គេបាន <span class="mi">\(\bar{p} :\)</span> " <span class="mi">\(a^4\)</span> ជាចំនួនគត់សេស "<br/>
+<span class="mi">\(\bar{q} :\)</span> " <span class="mi">\(a\)</span> ជាចំនួនគត់សេស "<br/>
+យើងស្រាយបញ្ជាក់ <span class="mi">\(\bar{q} \Rightarrow \bar{p}\)</span> ពិត នោះ <span class="mi">\(p \Rightarrow q\)</span> ក៏ពិតដែរ<br/>
+បើ <span class="mi">\(a\)</span> ជាចំនួនគត់សេស នោះ <span class="mi">\(a = 2k + 1\)</span>, <span class="mi">\(k\)</span> ជាចំនួនគត់<br/>
+<span class="mi">\(a^4 = (2k + 1)^4\)</span><br/>
+<span class="mi">\(= 16k^4 + 32k^3 + 24k^2 + 8k + 1\)</span><br/>
+<span class="mi">\(= 2(8k^4 + 16k^3 + 12k^2 + 4k) + 1\)</span><br/>
+<span class="mi">\(= 2M + 1\)</span> ដែល <span class="mi">\(M = 8k^4 + 16k^3 + 12k^2 + 4k\)</span><br/>
+គេបាន <span class="mi">\(a^4\)</span> ជាចំនួនគត់សេស (ផ្ទុយពីសមម្មតិកម្ម)<br/>
+ដូច្នេះ <span class="mi">\(a^4\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(a\)</span> ក៏ជាចំនួនគត់គូដែរ<br/>
+បើ <span class="mi">\(a\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(a = 2k\)</span>, <span class="mi">\(k\)</span> ជាចំនួនគត់<br/>
+គេបាន <span class="mi">\(a^4 = 16k^4\)</span> ជំនួសក្នុង (1) គេបាន <span class="mi">\(2b^4 = 16k^4 \Rightarrow b^4 = 8k^4\)</span><br/>
+ដូច្នេះ <span class="mi">\(b^4\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(b\)</span> ក៏ជាចំនួនគត់គូដែរ<br/>
+ដោយ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ជាចំនួនគត់គូ នោះ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> មានតួចែករួម ដែលផ្ទុយពីលក្ខខណ្ឌដែល <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ជាចំនួនបឋមរវាងគ្នា នោះគេបាន <span class="mi">\(\sqrt[4]{2}\)</span> មិនមែនជាចំនួនសនិទានទេ ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>ក.</strong>  បង្ហាញថា <span class="mi">\(\sqrt{3}\)</span> គឺជាចំនួនអសនិទាន ។<br/>
+<strong>ខ.</strong>  បង្ហាញថា <span class="mi">\(\sqrt[4]{3}\)</span> គឺជាចំនួនអសនិទាន ។</p>
+</div></section>
+<h4>ការស្រាយបញ្ជាក់តាមលក្ខខណ្ឌ</h4>
+<p><strong>ជំហាននៃសម្រាយបញ្ជាក់ <span class="mi">\(p \Leftrightarrow q\)</span></strong></p>
+<ul>
+<li><p>ជំហានទី 1 : បង្ហាញថា <span class="mi">\(p\)</span> ជាលក្ខខណ្ឌគ្រប់គ្រាន់សម្រាប់ <span class="mi">\(q\)</span></p></li>
+<li><p>ជំហានទី 2 : បង្ហាញថា <span class="mi">\(q\)</span> ជាលក្ខខណ្ឌចាំបាច់សម្រាប់ <span class="mi">\(p\)</span> ។</p></li>
+</ul>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់គំរូ ១៣</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\(x^2 + 5x + 6 = 0\)</span> លុះត្រាតែ <span class="mi">\(x = -2\)</span> ឬ <span class="mi">\(x = -3\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាង <span class="mi">\(p : x^2 + 5x + 6 = 0\)</span> , <span class="mi">\(q : x = -2\)</span> ឬ <span class="mi">\(x = -3\)</span><br/>
+បង្ហាញថា <span class="mi">\(p \Leftrightarrow q\)</span> គឺបង្ហាញថា <span class="mi">\((x^2 + 5x + 6 = 0) \Rightarrow (x = -2 \)</span> ឬ <span class="mi">\( x = -3)\)</span> :<br/>
+បើ <span class="mi">\(x^2 + 5x + 6 = 0\)</span> នោះគេបាន <span class="mi">\((x + 2)(x + 3) = 0\)</span><br/>
+នោះ <span class="mi">\(x + 2 = 0\)</span> ឬ <span class="mi">\(x + 3 = 0\)</span> គេបាន <span class="mi">\(x = -2\)</span> ឬ <span class="mi">\(x = -3\)</span> ។<br/>
+ដូច្នេះ <span class="mi">\(x^2 + 5x + 6 = 0 \Rightarrow (x = -2 \)</span> ឬ <span class="mi">\( x = -3) \quad{} (1)\)</span><br/>
+បង្ហាញថា <span class="mi">\(q \Leftrightarrow p\)</span> គឺបង្ហាញថា <span class="mi">\((x = -2 \)</span> ឬ <span class="mi">\( x = -3) \Rightarrow (x^2 + 5x + 6 = 0)\)</span><br/>
+បើ <span class="mi">\(x = -2\)</span> នោះ <span class="mi">\(x^2 + 5x + 6 = (-2)^2 + 5(-2) + 6 = 4 - 10 + 6 = 0\)</span><br/>
+បើ <span class="mi">\(x = -3\)</span> នោះ <span class="mi">\(x^2 + 5x + 6 = (-3)^2 + 5(-3) + 6 = 9 - 15 + 6 = 0\)</span><br/>
+ដូច្នេះ <span class="mi">\((x = -2 \)</span> ឬ <span class="mi">\( x = -3) \Rightarrow x^2 + 5x + 6 = 0 \quad{} (2)\)</span><br/>
+តាម (1) និង (2) គេបាន <span class="mi">\((x^2 + 5x + 6 = 0) \Leftrightarrow (x = -2 \)</span> ឬ <span class="mi">\( x = -3)\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>បង្ហាញថា<br/>
+<strong>ក.</strong>  <span class="mi">\(x^3 - 4x = 0\)</span> លុះត្រាតែ <span class="mi">\((x = 0 \)</span> ឬ <span class="mi">\( x = -2 \)</span> ឬ <span class="mi">\( x = 2)\)</span> ។<br/>
+<strong>ខ.</strong>  <span class="mi">\(x^2 + y^2 = 0\)</span> លុះត្រាតែ <span class="mi">\((x = 0 \)</span> និង <span class="mi">\( y = 0)\)</span> ។</p>
+</div></section>
+<p><strong>សម្គាល់</strong> : គេមានសំណើពីរ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span></p>
+<ul>
+<li><p>បើ <span class="mi">\(p \Rightarrow q\)</span> នោះគេថាសំណើ <span class="mi">\(p\)</span> ជាលក្ខខណ្ឌគ្រប់គ្រាន់សម្រាប់ <span class="mi">\(q\)</span> និង <span class="mi">\(q\)</span> ជាលក្ខខណ្ឌចាំបាច់សម្រាប់សំណើ <span class="mi">\(p\)</span> ។</p></li>
+<li><p><span class="mi">\(p \Leftrightarrow q\)</span> នោះគេថាសំណើ <span class="mi">\(p\)</span> ជាលក្ខខណ្ឌចាំបាច់ និងលក្ខខណ្ឌគ្រប់គ្រាន់សម្រាប់ <span class="mi">\(q\)</span> ។</p></li>
+</ul>
+<p>តាមឧទាហរណ៍ខាងលើ គេបានសំណើ <span class="mi">\(x^2 + 5x + 6 = 0\)</span> គឺជាលក្ខខណ្ឌចាំបាច់និងគ្រប់គ្រាន់សម្រាប់សំណើ <span class="mi">\(x = -2\)</span> ឬ <span class="mi">\(x = -3\)</span> ។</p>
+<h4>ការស្រាយបញ្ជាក់តាមឧទាហរណ៍ផ្ទុយ</h4>
+<p>វិធីនេះតម្រូវឱ្យគេរកឧទាហរណ៍មួយមកបញ្ជាក់ថា សំណើត្រូវបង្ហាញជាសំណើមិនពិត ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់គំរូ ១៤</b></header><div class="bx-b">
+<p>តើពិតដែរឬទេ ចំពោះគ្រប់ចំនួនគត់វិជ្ជមាន <span class="mi">\(x\)</span> គេបានចំនួនគត់វិជ្ជមាន <span class="mi">\(y\)</span> ដែល <span class="mi">\(x = y^2\)</span> ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p> យក <span class="mi">\(x = 5\)</span> គេបាន <span class="mi">\(y^2 = 5\)</span> ។ ដូច្នេះ គេមិនអាចរកបានចំនួនគត់វិជ្ជមាន <span class="mi">\(y\)</span> ដែល <span class="mi">\(y^2 = 5\)</span> បានទេ ។ ដូច្នេះ សំណើខាងលើមិនពិត ។ (<span class="mi">\((\sqrt{5})^2 = 5\)</span> និង <span class="mi">\((-\sqrt{5})^2 = 5\)</span> , តែ <span class="mi">\(\sqrt{5}\)</span> និង <span class="mi">\(-\sqrt{5}\)</span> មិនមែនជាចំនួនគត់វិជ្ជមាន)</p>
+<p><strong>សម្គាល់</strong> ការយកតម្លៃ <span class="mi">\(x = 5\)</span> មកបញ្ជាក់ថា សំណើមិនពិតបែបនេះហៅថា ឧទាហរណ៍ផ្ទុយ ។ ដូច្នេះ ឧទាហរណ៍ផ្ទុយមួយប៉ុណ្ណោះអាចធ្វើសំណើឬអំណះអំណាងនោះមិនពិតបាន ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់គំរូ ១៥</b></header><div class="bx-b">
+<p>តើសំណើ <span class="mi">\(p\)</span> : "ប្រជាជនរស់នៅទីក្រុងភ្នំពេញគឺជាជនជាតិខ្មែរ" ពិតឬមិនពិត?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p> ជនជាតិចិនម្នាក់ឈ្មោះគឹមហេង ជាប្រជាជនដែលរស់នៅទីក្រុងភ្នំពេញ ។ ការលើកយកជនជាតិចិនម្នាក់ឈ្មោះគឹមហេង មកបញ្ជាក់ថាសំណើមិនពិត បែបនេះហៅថា ឧទាហរណ៍ផ្ទុយ ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>បង្ហាញថាសំណើខាងក្រោមនេះមិនពិតដោយប្រើឧទាហរណ៍ផ្ទុយ ៖<br/>
+<strong>ក.</strong>  អង្គការអាស៊ានមានសមាជិកមកពីគ្រប់ប្រទេសក្នុងទ្វីបអាស៊ី ។<br/>
+<strong>ខ.</strong>  គ្រប់ចំនួនបឋមគឺជាចំនួនគត់សេស ។<br/>
+<strong>គ.</strong>  បើ <span class="mi">\(p, q\)</span> ជាចំនួនបឋម និង <span class="mi">\(n = p^2 + q^2\)</span> នោះ <span class="mi">\(n\)</span> ជាចំនួនបឋម ។<br/>
+<strong>ឃ.</strong>  បើ <span class="mi">\(a &gt; b\)</span> នោះ <span class="mi">\(a^2 &gt; b^2\)</span> ចំពោះគ្រប់ចំនួនពិត <span class="mi">\(a, b\)</span> ។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ក្នុងចំណោមប្រយោគខាងក្រោម តើប្រយោគណាខ្លះជាសំណើ? ចូរបញ្ជាក់តម្លៃភាពពិតនៃសំណើនីមួយៗ ៖</p>
+<ol class="list olka cols2">
+<li><p>ភ្នំពេញជារាជធានីនៃប្រទេសកម្ពុជា។</p></li>
+<li><p>តើថ្ងៃនេះអ្នកសុខសប្បាយទេ?</p></li>
+<li><p><span class="mi">\(5 + 7 = 12\)</span></p></li>
+<li><p><span class="mi">\(2x - 3 = 5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមនិយមន័យ សំណើគឺជាល្បះប្រកាសដែលផ្ទៀងផ្ទាត់ថាតម្លៃពិត ឬមិនពិតតែមួយគត់ មិនអាចពិតផងនិងមិនពិតផងក្នុងពេលតែមួយបានឡើយ ៖<br/>
+<strong>ក.</strong>  «ភ្នំពេញជារាជធានីនៃប្រទេសកម្ពុជា» ៖ <strong>ជាសំណើ</strong>។ ដោយសារភ្នំពេញពិតជារាជធានីស្របច្បាប់នៃកម្ពុជា នោះតម្លៃភាពពិតគឺ <strong>ពិត (P ឬ 1)</strong>។<br/>
+<strong>ខ.</strong>  «តើថ្ងៃនេះអ្នកសុខសប្បាយទេ?» ៖ <strong>មិនមែនជាសំណើទេ</strong> ព្រោះជាល្បះសំនួរ ពុំអាចកំណត់តម្លៃពិតឬមិនពិតបានឡើយ។<br/>
+<strong>គ.</strong>  «<span class="mi">\(5 + 7 = 12\)</span>» ៖ <strong>ជាសំណើ</strong>។ ដោយ <span class="mi">\(5 + 7 = 12\)</span> ពិតប្រាកដមែន នោះតម្លៃភាពពិតគឺ <strong>ពិត (P ឬ 1)</strong>។<br/>
+<strong>ឃ.</strong>  «<span class="mi">\(2x - 3 = 5\)</span>» ៖ <strong>មិនមែនជាសំណើទេ</strong> ព្រោះជាល្បះបើក (Open sentence) ដែលអាស្រ័យនឹងអថេរ <span class="mi">\(x\)</span>។ វាក្លាយជាសំណើបានលុះត្រាតែមានការកំណត់តម្លៃជាក់លាក់នៃ <span class="mi">\(x\)</span> ឬមានបរិមាណករ។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>កំណត់តម្លៃភាពពិតនៃសំណើខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>គ្រប់ចំនួនបឋមសុទ្ធតែជាចំនួនសេស។</p></li>
+<li><p>ត្រីកោណសម័ង្សមានជ្រុងទាំងបីស្មើគ្នា។</p></li>
+<li><p><span class="mi">\(\sqrt{2}\)</span> ជាចំនួនសនិទាន។</p></li>
+<li><p>ផលបូកមុំក្នុងនៃត្រីកោណស្មើនឹង <span class="mi">\(180^\circ\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់តម្លៃភាពពិតនៃសំណើនីមួយៗ ៖<br/>
+<strong>ក.</strong>  «គ្រប់ចំនួនបឋមសុទ្ធតែជាចំនួនសេស» ៖ <strong>មិនពិត (F ឬ 0)</strong> ព្រោះមានលេខ <span class="mi">\(2\)</span> ជាចំនួនបឋម (មានតួចែកតែពីរគឺ <span class="mi">\(1\)</span> និង <span class="mi">\(2\)</span>) ប៉ុន្តែលេខ <span class="mi">\(2\)</span> ជាចំនួនគត់គូ។<br/>
+<strong>ខ.</strong>  «ត្រីកោណសម័ង្សមានជ្រុងទាំងបីស្មើគ្នា» ៖ <strong>ពិត (P ឬ 1)</strong> ព្រោះតាមនិយមន័យធរណីមាត្រ ត្រីកោណសម័ង្សមានជ្រុងទាំងបីមានប្រវែងស្មើគ្នា និងមុំទាំងបីស្មើ <span class="mi">\(60^\circ\)</span>។<br/>
+<strong>គ.</strong>  «<span class="mi">\(\sqrt{2}\)</span> ជាចំនួនសនិទាន» ៖ <strong>មិនពិត (F ឬ 0)</strong> ព្រោះ <span class="mi">\(\sqrt{2} \approx 1.41421356\dots\)</span> មិនអាចសរសេរជាទម្រង់ប្រភាគ <span class="mi">\(\frac{a}{b}\)</span> (<span class="mi">\(a, b \in \mathbb{Z}, b \neq 0\)</span>) បានឡើយ ពោលគឺវាជាចំនួនអសនិទាន (<span class="mi">\(\sqrt{2} \in \mathbb{R} \setminus \mathbb{Q}\)</span>)។<br/>
+<strong>ឃ.</strong>  «ផលបូកមុំក្នុងនៃត្រីកោណស្មើនឹង <span class="mi">\(180^\circ\)</span>» ៖ <strong>ពិត (P ឬ 1)</strong> ព្រោះតាមទ្រឹស្តីបទធរណីមាត្រអឺគ្លីដ ផលបូករង្វាស់មុំក្នុងទាំងបីនៃគ្រប់ត្រីកោណតែងតែស្មើ <span class="mi">\(180^\circ\)</span> ជានិច្ច។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>សរសេរសំណើបដិសេធ <span class="mi">\(\bar{p}\)</span> នៃសំណើ <span class="mi">\(p\)</span> ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(p\)</span> ៖ «អង្គរវត្តស្ថិតនៅក្នុងខេត្តសៀមរាប»</p></li>
+<li><p><span class="mi">\(p\)</span> ៖ «<span class="mi">\(7\)</span> ជាចំនួនគត់គូ»</p></li>
+<li><p><span class="mi">\(p\)</span> ៖ «<span class="mi">\(\sqrt{9} = 3\)</span>»</p></li>
+<li><p><span class="mi">\(p\)</span> ៖ «<span class="mi">\(5 &lt; 3\)</span>»</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើបដិសេធ <span class="mi">\(\bar{p}\)</span> មានន័យផ្ទុយទាំងស្រុងពី <span class="mi">\(p\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(p\)</span> ៖ «អង្គរវត្តស្ថិតនៅក្នុងខេត្តសៀមរាប»<br/>
+<span class="mi">\(\implies \bar{p}\)</span> ៖ «អង្គរវត្ត<strong>មិនស្ថិតនៅ</strong>ក្នុងខេត្តសៀមរាបទេ»។<br/>
+<strong>ខ.</strong>  <span class="mi">\(p\)</span> ៖ «<span class="mi">\(7\)</span> ជាចំនួនគត់គូ»<br/>
+<span class="mi">\(\implies \bar{p}\)</span> ៖ «<span class="mi">\(7\)</span> <strong>មិនមែនជា</strong>ចំនួនគត់គូទេ» (ឬ «<span class="mi">\(7\)</span> ជាចំនួនគត់សេស»)។<br/>
+<strong>គ.</strong>  <span class="mi">\(p\)</span> ៖ «<span class="mi">\(\sqrt{9} = 3\)</span>»<br/>
+<span class="mi">\(\implies \bar{p}\)</span> ៖ «<span class="mi">\(\sqrt{9} \neq 3\)</span>»។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(p\)</span> ៖ «<span class="mi">\(5 &lt; 3\)</span>»<br/>
+<span class="mi">\(\implies \bar{p}\)</span> ៖ «<span class="mi">\(5 \geq 3\)</span>»។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>កំណត់តម្លៃភាពពិតនៃ <span class="mi">\(\bar{p}\)</span> បើដឹងថាតម្លៃភាពពិតនៃ <span class="mi">\(p\)</span> គឺ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(p\)</span> ពិត (T)</p></li>
+<li><p><span class="mi">\(p\)</span> មិនពិត (F)</p></li>
+<li><p><span class="mi">\(p\)</span> ៖ «<span class="mi">\(2^3 = 6\)</span>»</p></li>
+<li><p><span class="mi">\(p\)</span> ៖ «<span class="mi">\(3 + 4 \neq 8\)</span>»</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមនិយមន័យសំណើបដិសេធ ត.<span class="mi">\(( \bar{p} ) = 1 - \)</span> ត. <span class="mi">\((p)\)</span> ៖<br/>
+<strong>ក.</strong>  បើ <span class="mi">\(p\)</span> ពិត (P ឬ 1) នាំឱ្យ <span class="mi">\(\bar{p}\)</span> <strong>មិនពិត (F ឬ 0)</strong>។<br/>
+<strong>ខ.</strong>  បើ <span class="mi">\(p\)</span> មិនពិត (F ឬ 0) នាំឱ្យ <span class="mi">\(\bar{p}\)</span> <strong>ពិត (P ឬ 1)</strong>។<br/>
+<strong>គ.</strong>  សំណើ <span class="mi">\(p\)</span> ៖ «<span class="mi">\(2^3 = 6\)</span>»។ ដោយ <span class="mi">\(2^3 = 8 \neq 6\)</span> នាំឱ្យ ត.<span class="mi">\((p) = 0\)</span> (មិនពិត)។ ដូច្នេះ ត.<span class="mi">\((\bar{p}) = \)</span> <b>ពិត (P ឬ 1)</b>  ដែល <span class="mi">\(\bar{p}\)</span> ៖ «<span class="mi">\(2^3 \neq 6\)</span>»។<br/>
+<strong>ឃ.</strong>  សំណើ <span class="mi">\(p\)</span> ៖ «<span class="mi">\(3 + 4 \neq 8\)</span>»។ ដោយ <span class="mi">\(3 + 4 = 7 \neq 8\)</span> នាំឱ្យ ត.<span class="mi">\((p) = 1\)</span> (ពិត)។ ដូច្នេះ ត.<span class="mi">\((\bar{p}) = \)</span> <b>មិនពិត (F ឬ 0)</b>  ដែល <span class="mi">\(\bar{p}\)</span> ៖ «<span class="mi">\(3 + 4 = 8\)</span>»។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេមានសំណើពីរ <span class="mi">\(p\)</span> ៖ «ចំនួនសិស្សកំពុងកើនឡើង» និង <span class="mi">\(q\)</span> ៖ «សិស្សចូលចិត្តរៀនគណិតវិទ្យា»។ ចូរសរសេរសំណើខាងក្រោមជាភាសានិយាយ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(p \land q\)</span></p></li>
+<li><p><span class="mi">\(p \lor q\)</span></p></li>
+<li><p><span class="mi">\(\bar{q}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេមាន <span class="mi">\(p\)</span> ៖ «ចំនួនសិស្សកំពុងកើនឡើង» និង <span class="mi">\(q\)</span> ៖ «សិស្សចូលចិត្តរៀនគណិតវិទ្យា» ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(p \land q\)</span> (ឈ្នាប់ «និង») ៖ «ចំនួនសិស្សកំពុងកើនឡើង <strong>និង</strong> សិស្សចូលចិត្តរៀនគណិតវិទ្យា»។<br/>
+<strong>ខ.</strong>  <span class="mi">\(p \lor q\)</span> (ឈ្នាប់ «ឬ») ៖ «ចំនួនសិស្សកំពុងកើនឡើង <strong>ឬ</strong> សិស្សចូលចិត្តរៀនគណិតវិទ្យា»។<br/>
+<strong>គ.</strong>  <span class="mi">\(\bar{q}\)</span> (បដិសេធ <span class="mi">\(q\)</span>) ៖ «សិស្ស<strong>មិនចូលចិត្ត</strong>រៀនគណិតវិទ្យាទេ»។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>យោងតាមសំណើក្នុងលំហាត់ទី ៥ សរសេរសំណើខាងក្រោមជាភាសានិយាយ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(p \lor \bar{q}\)</span></p></li>
+<li><p><span class="mi">\(\bar{p} \land \bar{q}\)</span></p></li>
+<li><p><span class="mi">\(p \implies q\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>យោងតាមសំណើក្នុងលំហាត់ទី ៥ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(p \lor \bar{q}\)</span> ៖ «ចំនួនសិស្សកំពុងកើនឡើង ឬ សិស្សមិនចូលចិត្តរៀនគណិតវិទ្យាទេ»។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\bar{p} \land \bar{q}\)</span> ៖ «ចំនួនសិស្សមិនកើនឡើងទេ ហើយ សិស្សមិនចូលចិត្តរៀនគណិតវិទ្យាទេ»។<br/>
+<strong>គ.</strong>  <span class="mi">\(p \implies q\)</span> ៖ «<strong>ប្រសិនបើ</strong>ចំនួនសិស្សកំពុងកើនឡើង <strong>នោះ</strong>សិស្សចូលចិត្តរៀនគណិតវិទ្យា»។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេឱ្យសំណើ <span class="mi">\(p\)</span> ៖ «<span class="mi">\(4\)</span> ជាចំនួនគូ» (ពិត) និង <span class="mi">\(q\)</span> ៖ «<span class="mi">\(5\)</span> ជាចំនួនគូ» (មិនពិត)។ កំណត់តម្លៃភាពពិតនៃ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(p \land q\)</span></p></li>
+<li><p><span class="mi">\(p \lor q\)</span></p></li>
+<li><p><span class="mi">\(\bar{p} \lor q\)</span></p></li>
+<li><p><span class="mi">\(p \land \bar{q}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោយ <span class="mi">\(p\)</span> ពិត (ត.<span class="mi">\((p) = 1\)</span>) និង <span class="mi">\(q\)</span> មិនពិត (ត.<span class="mi">\((q) = 0\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(p \land q \equiv 1 \land 0 = 0\)</span> ៖ <strong>មិនពិត (F)</strong>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(p \lor q \equiv 1 \lor 0 = 1\)</span> ៖ <strong>ពិត (P)</strong>។<br/>
+<strong>គ.</strong>  ដោយ <span class="mi">\(\bar{p} = 0 \implies \bar{p} \lor q \equiv 0 \lor 0 = 0\)</span> ៖ <strong>មិនពិត (F)</strong>។<br/>
+<strong>ឃ.</strong>  ដោយ <span class="mi">\(\bar{q} = 1 \implies p \land \bar{q} \equiv 1 \land 1 = 1\)</span> ៖ <strong>ពិត (P)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>កំណត់តម្លៃភាពពិតនៃសំណើឈ្នាប់ «និង» (<span class="mi">\(p \land q\)</span>) ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3 &gt; 1\)</span> និង <span class="mi">\(2 + 2 = 4\)</span></p></li>
+<li><p><span class="mi">\(5 &lt; 2\)</span> និង ភ្នំពេញនៅប្រទេសកម្ពុជា</p></li>
+<li><p><span class="mi">\(\sqrt{4} = 2\)</span> និង <span class="mi">\(3\)</span> ជាចំនួនគត់គូ</p></li>
+<li><p><span class="mi">\((-2)^2 = -4\)</span> និង <span class="mi">\(1\)</span> ជាចំនួនបឋម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើឈ្នាប់ «និង» (<span class="mi">\(p \land q\)</span>) ពិតលុះត្រាតែសំណើផ្សំទាំងពីរពិតព្រមគ្នា ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(3 &gt; 1\)</span> (ពិត) និង <span class="mi">\(2 + 2 = 4\)</span> (ពិត) ៖ <span class="mi">\(1 \land 1 = 1 \implies\)</span> <strong>ពិត (P)</strong>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(5 &lt; 2\)</span> (មិនពិត) និង ភ្នំពេញនៅប្រទេសកម្ពុជា (ពិត) ៖ <span class="mi">\(0 \land 1 = 0 \implies\)</span> <strong>មិនពិត (F)</strong>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\sqrt{4} = 2\)</span> (ពិត) និង <span class="mi">\(3\)</span> ជាចំនួនគូ (មិនពិត) ៖ <span class="mi">\(1 \land 0 = 0 \implies\)</span> <strong>មិនពិត (F)</strong>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\((-2)^2 = -4\)</span> (មិនពិត ព្រោះ <span class="mi">\((-2)^2=4\)</span>) និង <span class="mi">\(1\)</span> ជាចំនួនបឋម (មិនពិត) ៖ <span class="mi">\(0 \land 0 = 0 \implies\)</span> <strong>មិនពិត (F)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>កំណត់តម្លៃភាពពិតនៃសំណើឈ្នាប់ «ឬ» (<span class="mi">\(p \lor q\)</span>) ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3 &gt; 1\)</span> ឬ <span class="mi">\(2 + 2 = 5\)</span></p></li>
+<li><p><span class="mi">\(5 &lt; 2\)</span> ឬ <span class="mi">\(4\)</span> ជាចំនួនបឋម</p></li>
+<li><p><span class="mi">\(\pi\)</span> ជាចំនួនអសនិទាន ឬ <span class="mi">\(0\)</span> ជាចំនួនវិជ្ជមាន</p></li>
+<li><p><span class="mi">\(2^4 = 16\)</span> ឬ <span class="mi">\(7 \times 8 = 56\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើឈ្នាប់ «ឬ» (<span class="mi">\(p \lor q\)</span>) មិនពិតលុះត្រាតែសំណើទាំងពីរមិនពិតព្រមគ្នា ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(3 &gt; 1\)</span> (ពិត) ឬ <span class="mi">\(2 + 2 = 5\)</span> (មិនពិត) ៖ <span class="mi">\(1 \lor 0 = 1 \implies\)</span> <strong>ពិត (P)</strong>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(5 &lt; 2\)</span> (មិនពិត) ឬ <span class="mi">\(4\)</span> ជាចំនួនបឋម (មិនពិត) ៖ <span class="mi">\(0 \lor 0 = 0 \implies\)</span> <strong>មិនពិត (F)</strong>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\pi\)</span> ជាចំនួនអសនិទាន (ពិត) ឬ <span class="mi">\(0\)</span> ជាចំនួនវិជ្ជមាន (មិនពិត) ៖ <span class="mi">\(1 \lor 0 = 1 \implies\)</span> <strong>ពិត (P)</strong>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(2^4 = 16\)</span> (ពិត) ឬ <span class="mi">\(7 \times 8 = 56\)</span> (ពិត) ៖ <span class="mi">\(1 \lor 1 = 1 \implies\)</span> <strong>ពិត (P)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គេឱ្យសំណើ <span class="mi">\(p, q\)</span> ដែល <span class="mi">\(p\)</span> ពិត និង <span class="mi">\(q\)</span> មិនពិត។ កំណត់តម្លៃភាពពិតនៃ <span class="mi">\(\overline{p \land q}\)</span> និង <span class="mi">\(\bar{p} \lor \bar{q}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេមាន <span class="mi">\(p\)</span> ពិត (<span class="mi">\(p = 1\)</span>) និង <span class="mi">\(q\)</span> មិនពិត (<span class="mi">\(q = 0\)</span>) ៖<br/>
+- គណនា <span class="mi">\(\overline{p \land q}\)</span> ៖<br/>
+<span class="mi">\(p \land q = 1 \land 0 = 0 \implies \overline{p \land q} = \bar{0} = 1\)</span> (<strong>ពិត</strong>)។<br/>
+- គណនា <span class="mi">\(\bar{p} \lor \bar{q}\)</span> ៖<br/>
+<span class="mi">\(\bar{p} = \bar{1} = 0\)</span> និង <span class="mi">\(\bar{q} = \bar{0} = 1\)</span> នាំឱ្យ <span class="mi">\(\bar{p} \lor \bar{q} = 0 \lor 1 = 1\)</span> (<strong>ពិត</strong>)។<br/>
+ដូចនេះ <span class="mi">\(\overline{p \land q}\)</span> និង <span class="mi">\(\bar{p} \lor \bar{q}\)</span> សុទ្ធតែមានតម្លៃភាពពិត <strong>ពិត (P ឬ 1)</strong> ដូចគ្នា។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គេឱ្យសំណើ <span class="mi">\(p, q\)</span> ដែល <span class="mi">\(p\)</span> មិនពិត និង <span class="mi">\(q\)</span> ពិត។ កំណត់តម្លៃភាពពិតនៃ <span class="mi">\(\overline{p \lor q}\)</span> និង <span class="mi">\(\bar{p} \land \bar{q}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេមាន <span class="mi">\(p\)</span> មិនពិត (<span class="mi">\(p = 0\)</span>) និង <span class="mi">\(q\)</span> ពិត (<span class="mi">\(q = 1\)</span>) ៖<br/>
+- គណនា <span class="mi">\(\overline{p \lor q}\)</span> ៖<br/>
+<span class="mi">\(p \lor q = 0 \lor 1 = 1 \implies \overline{p \lor q} = \bar{1} = 0\)</span> (<strong>មិនពិត</strong>)។<br/>
+- គណនា <span class="mi">\(\bar{p} \land \bar{q}\)</span> ៖<br/>
+<span class="mi">\(\bar{p} = \bar{0} = 1\)</span> និង <span class="mi">\(\bar{q} = \bar{1} = 0\)</span> នាំឱ្យ <span class="mi">\(\bar{p} \land \bar{q} = 1 \land 0 = 0\)</span> (<strong>មិនពិត</strong>)។<br/>
+ដូចនេះ <span class="mi">\(\overline{p \lor q}\)</span> និង <span class="mi">\(\bar{p} \land \bar{q}\)</span> សុទ្ធតែមានតម្លៃភាពពិត <strong>មិនពិត (F ឬ 0)</strong> ដូចគ្នា។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>បញ្ជាក់ថាតើច្បាប់ដឺម៉ូហ្គង់ <span class="mi">\(\overline{p \land q} \iff \bar{p} \lor \bar{q}\)</span> ជាតក្កវិទ្យាសច្ចភាព (Tautology) ដែរឬទេ ដោយសង់តារាងភាពពិត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់តារាងភាពពិតផ្ទៀងផ្ទាត់ច្បាប់ដឺម៉ូហ្គង់ទីមួយ <span class="mi">\(\overline{p \land q} \iff \bar{p} \lor \bar{q}\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \land q\)</span></th>
+<th><span class="mi">\(\overline{p \land q}\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(\bar{q}\)</span></th>
+<th><span class="mi">\(\bar{p} \lor \bar{q}\)</span></th>
+<th>សមមូល</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ដោយសារជួរឈរ <span class="mi">\(\overline{p \land q}\)</span> និង <span class="mi">\(\bar{p} \lor \bar{q}\)</span> ផ្តល់តម្លៃស្មើគ្នាគ្រប់បន្ទាត់ នាំឱ្យកន្សោមសមមូលយកតម្លៃ <span class="mi">\(1\)</span> ជានិច្ច។ ដូច្នេះវាជា <strong>សច្ចភាព (Tautology)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតនៃច្បាប់ដឺម៉ូហ្គង់ទីពីរ ៖ <span class="mi">\(\overline{p \lor q} \iff \bar{p} \land \bar{q}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់តារាងភាពពិតផ្ទៀងផ្ទាត់ច្បាប់ដឺម៉ូហ្គង់ទីពីរ <span class="mi">\(\overline{p \lor q} \iff \bar{p} \land \bar{q}\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \lor q\)</span></th>
+<th><span class="mi">\(\overline{p \lor q}\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(\bar{q}\)</span></th>
+<th><span class="mi">\(\bar{p} \land \bar{q}\)</span></th>
+<th>សមមូល</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>1</td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>លទ្ធផលនៃ <span class="mi">\(\overline{p \lor q}\)</span> និង <span class="mi">\(\bar{p} \land \bar{q}\)</span> ដូចគ្នាគ្រប់ករណី ដូច្នេះច្បាប់ដឺម៉ូហ្គង់ទីពីរជាសច្ចភាពពិតប្រាកដ។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>កំណត់តម្លៃភាពពិតនៃសំណើមានលក្ខខណ្ឌ «<span class="mi">\(p \implies q\)</span>» ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>បើ <span class="mi">\(2 + 2 = 4\)</span> នោះ <span class="mi">\(3 \times 3 = 9\)</span></p></li>
+<li><p>បើ <span class="mi">\(2 + 2 = 4\)</span> នោះ <span class="mi">\(3 \times 3 = 8\)</span></p></li>
+<li><p>បើ <span class="mi">\(2 + 2 = 5\)</span> នោះ <span class="mi">\(3 \times 3 = 9\)</span></p></li>
+<li><p>បើ <span class="mi">\(2 + 2 = 5\)</span> នោះ <span class="mi">\(3 \times 3 = 8\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើមានលក្ខខណ្ឌ <span class="mi">\(p \implies q\)</span> មិនពិតតែមួយករណីគត់ គឺនៅពេល <span class="mi">\(p\)</span> ពិត តែ <span class="mi">\(q\)</span> មិនពិត (<span class="mi">\(1 \implies 0 = 0\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(2 + 2 = 4\)</span> (<span class="mi">\(1\)</span>) <span class="mi">\(\implies 3 \times 3 = 9\)</span> (<span class="mi">\(1\)</span>) ៖ <span class="mi">\(1 \implies 1 = 1\)</span> <span class="mi">\(\implies\)</span> <strong>ពិត (P)</strong>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(2 + 2 = 4\)</span> (<span class="mi">\(1\)</span>) <span class="mi">\(\implies 3 \times 3 = 8\)</span> (<span class="mi">\(0\)</span>) ៖ <span class="mi">\(1 \implies 0 = 0\)</span> <span class="mi">\(\implies\)</span> <strong>មិនពិត (F)</strong>។<br/>
+<strong>គ.</strong>  <span class="mi">\(2 + 2 = 5\)</span> (<span class="mi">\(0\)</span>) <span class="mi">\(\implies 3 \times 3 = 9\)</span> (<span class="mi">\(1\)</span>) ៖ <span class="mi">\(0 \implies 1 = 1\)</span> <span class="mi">\(\implies\)</span> <strong>ពិត (P)</strong>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(2 + 2 = 5\)</span> (<span class="mi">\(0\)</span>) <span class="mi">\(\implies 3 \times 3 = 8\)</span> (<span class="mi">\(0\)</span>) ៖ <span class="mi">\(0 \implies 0 = 1\)</span> <span class="mi">\(\implies\)</span> <strong>ពិត (P)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>សរសេរសំណើផ្ទុយ (Converse) នៃសំណើ ៖ «ប្រសិនបើត្រីកោណមួយជាត្រីកោណសម័ង្ស នោះវាជាត្រីកោណសមបាត»។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម <span class="mi">\(p \implies q\)</span> ៖ «ប្រសិនបើត្រីកោណមួយជាត្រីកោណសម័ង្ស (<span class="mi">\(p\)</span>) នោះវាជាត្រីកោណសមបាត (<span class="mi">\(q\)</span>)»។<br/>
+<strong>សំណើផ្ទុយ (Converse)</strong> <span class="mi">\(q \implies p\)</span> គឺ ៖<br/>
+«<strong>ប្រសិនបើត្រីកោណមួយជាត្រីកោណសមបាត នោះវាជាត្រីកោណសម័ង្ស</strong>»។<br/>
+(សម្គាល់ ៖ សំណើផ្ទុយនេះមិនពិតទេ ព្រោះត្រីកោណសមបាតអាចមានជ្រុងពីរស្មើគ្នា មិនចាំបាច់មានជ្រុងទាំងបីស្មើគ្នាឡើយ)។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>សរសេរសំណើច្រាស (Inverse) នៃសំណើ ៖ «បើ <span class="mi">\(x = 2\)</span> នោះ <span class="mi">\(x^2 = 4\)</span>»។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ «បើ <span class="mi">\(x = 2\)</span> (<span class="mi">\(p\)</span>) នោះ <span class="mi">\(x^2 = 4\)</span> (<span class="mi">\(q\)</span>)»។<br/>
+<strong>សំណើច្រាស (Inverse)</strong> <span class="mi">\(\bar{p} \implies \bar{q}\)</span> គឺ ៖<br/>
+«<strong>បើ <span class="mi">\(x \neq 2\)</span> នោះ <span class="mi">\(x^2 \neq 4\)</span></strong>»។<br/>
+(សម្គាល់ ៖ សំណើច្រាសនេះមិនពិតទេ ព្រោះចំពោះ <span class="mi">\(x = -2 \neq 2\)</span> យើងនៅតែទទួលបាន <span class="mi">\((-2)^2 = 4\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>សរសេរសំណើផ្ទុយពីច្រាស (Contrapositive) នៃសំណើ ៖ «បើ <span class="mi">\(x = 2\)</span> នោះ <span class="mi">\(x^2 = 4\)</span>»។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ «បើ <span class="mi">\(x = 2\)</span> (<span class="mi">\(p\)</span>) នោះ <span class="mi">\(x^2 = 4\)</span> (<span class="mi">\(q\)</span>)»។<br/>
+<strong>សំណើផ្ទុយពីច្រាស (Contrapositive)</strong> <span class="mi">\(\bar{q} \implies \bar{p}\)</span> គឺ ៖<br/>
+«<strong>បើ <span class="mi">\(x^2 \neq 4\)</span> នោះ <span class="mi">\(x \neq 2\)</span></strong>»។<br/>
+(សំណើផ្ទុយពីច្រាសតែងតែមានតម្លៃភាពពិតស្មើនឹងសំណើដើមជានិច្ច)។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>បង្ហាញថាសំណើ <span class="mi">\(p \implies q\)</span> និងសំណើផ្ទុយពីច្រាស <span class="mi">\(\bar{q} \implies \bar{p}\)</span> មានតម្លៃភាពពិតដូចគ្នាជានិច្ច (សមមូលតក្កវិទ្យា)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់តារាងភាពពិតប្រៀបធៀប <span class="mi">\(p \implies q\)</span> និង <span class="mi">\(\bar{q} \implies \bar{p}\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(\bar{q}\)</span></th>
+<th><span class="mi">\(p \implies q\)</span></th>
+<th><span class="mi">\(\bar{q} \implies \bar{p}\)</span></th>
+<th>សមមូល</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ជួរឈរនៃ <span class="mi">\(p \implies q\)</span> និង <span class="mi">\(\bar{q} \implies \bar{p}\)</span> មានតម្លៃពិតដូចគ្នាបេះបិទគ្រប់ករណី។ ដូចនេះ សំណើទាំងពីរសមមូលគ្នាតាមតក្កវិទ្យា (<span class="mi">\(p \implies q \equiv \bar{q} \implies \bar{p}\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>កំណត់តម្លៃភាពពិតនៃសំណើសមមូល <span class="mi">\(p \iff q\)</span> ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 = 9 \iff x = 3\)</span></p></li>
+<li><p><span class="mi">\(x + 2 = 5 \iff x = 3\)</span></p></li>
+<li><p>ត្រីកោណមួយមានមុំកែង <span class="mi">\(\iff\)</span> ផលបូកមុំពីរទៀតស្មើ <span class="mi">\(90^\circ\)</span></p></li>
+<li><p><span class="mi">\(2\)</span> ជាចំនួនគត់គូ <span class="mi">\(\iff 2\)</span> ជាចំនួនបឋម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើសមមូល <span class="mi">\(p \iff q\)</span> ពិតកាលណា <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span> មានតម្លៃភាពពិតដូចគ្នា (<span class="mi">\(1 \iff 1 = 1\)</span> និង <span class="mi">\(0 \iff 0 = 1\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(x^2 = 9 \iff x = 3\)</span> ៖ <strong>មិនពិត (F)</strong> ព្រោះ <span class="mi">\(x^2 = 9 \implies x = 3 \lor x = -3\)</span>។ ដូច្នេះ <span class="mi">\(x=-3\)</span> ផ្ទៀងផ្ទាត់អង្គខាងឆ្វេងតែមិនផ្ទៀងផ្ទាត់អង្គខាងស្តាំ (<span class="mi">\(1 \iff 0 = 0\)</span>)។<br/>
+<strong>ខ.</strong>  <span class="mi">\(x + 2 = 5 \iff x = 3\)</span> ៖ <strong>ពិត (P)</strong> ព្រោះសមីការទាំងពីរសមមូលគ្នាទាំងស្រុងលើ <span class="mi">\(\mathbb{R}\)</span>។<br/>
+<strong>គ.</strong>  «ត្រីកោណកែង <span class="mi">\(\iff\)</span> ផលបូកមុំពីរទៀតស្មើ <span class="mi">\(90^\circ\)</span>» ៖ <strong>ពិត (P)</strong> ព្រោះផលបូកមុំក្នុងត្រីកោណស្មើ <span class="mi">\(180^\circ\)</span> កាលណាមុំមួយកែង (<span class="mi">\(90^\circ\)</span>) មុំពីរទៀតត្រូវតែមានផលបូកស្មើ <span class="mi">\(90^\circ\)</span> ជានិច្ច។<br/>
+<strong>ឃ.</strong>  «<span class="mi">\(2\)</span> ជាចំនួនគូ <span class="mi">\(\iff 2\)</span> ជាចំនួនបឋម» ៖ <strong>ពិត (P)</strong> ព្រោះសំណើទាំងពីរជាសំណើពិតស្របគ្នា (<span class="mi">\(1 \iff 1 = 1\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតសម្រាប់កន្សោមតក្កវិទ្យា ៖ <span class="mi">\((p \land q) \implies p\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់តារាងភាពពិតសម្រាប់ <span class="mi">\((p \land q) \implies p\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \land q\)</span></th>
+<th><span class="mi">\((p \land q) \implies p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>គ្រប់បន្ទាត់ក្នុងតារាងសុទ្ធតែទទួលបានតម្លៃពិត <span class="mi">\(1\)</span> ជានិច្ច ហេតុនេះកន្សោមនេះជា <strong>សច្ចភាព (Tautology)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតសម្រាប់កន្សោមតក្កវិទ្យា ៖ <span class="mi">\(p \implies (p \lor q)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់តារាងភាពពិតសម្រាប់ <span class="mi">\(p \implies (p \lor q)\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \lor q\)</span></th>
+<th><span class="mi">\(p \implies (p \lor q)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>កន្សោមផ្តល់តម្លៃ <span class="mi">\(1\)</span> គ្រប់ករណី ដូចនេះវាជា <strong>សច្ចភាព (Tautology)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតសម្រាប់កន្សោមតក្កវិទ្យា ៖ <span class="mi">\((p \implies q) \land p \implies q\)</span> (វិធាន Modus Ponens)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>វិធាន Modus Ponens ៖ <span class="mi">\([(p \implies q) \land p] \implies q\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(p \implies q\)</span></th>
+<th><span class="mi">\((p \implies q) \land p\)</span></th>
+<th>វិធាន MP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ជួរឈរចុងក្រោយមានតម្លៃពិត <span class="mi">\(1\)</span> គ្រប់បន្ទាត់ នាំឱ្យវិធាន Modus Ponens ជាសច្ចភាព។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតសម្រាប់កន្សោមតក្កវិទ្យា ៖ <span class="mi">\((p \implies q) \land \bar{q} \implies \bar{p}\)</span> (វិធាន Modus Tollens)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>វិធាន Modus Tollens ៖ <span class="mi">\([(p \implies q) \land \bar{q}] \implies \bar{p}\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(\bar{q}\)</span></th>
+<th><span class="mi">\(p \implies q\)</span></th>
+<th><span class="mi">\((p \implies q) \land \bar{q}\)</span></th>
+<th>វិធាន MT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ជួរឈរចុងក្រោយទទួលបាន <span class="mi">\(1\)</span> គ្រប់បន្ទាត់ នាំឱ្យវិធាន Modus Tollens ជាសច្ចភាព។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតសម្រាប់កន្សោមតក្កវិទ្យា ៖ <span class="mi">\((p \lor q) \land \bar{p} \implies q\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>Disjunctive Syllogism ៖ <span class="mi">\([(p \lor q) \land \bar{p}] \implies q\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(p \lor q\)</span></th>
+<th><span class="mi">\((p \lor q) \land \bar{p}\)</span></th>
+<th>លទ្ធផល</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>គ្រប់ករណីសុទ្ធតែពិត ហេតុនេះជាសច្ចភាព។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតសម្រាប់កន្សោមតក្កវិទ្យា ៖ <span class="mi">\((p \implies q) \land (q \implies r) \implies (p \implies r)\)</span> (លក្ខណៈឆ្លង)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>Hypothetical Syllogism (លក្ខណៈឆ្លង) ៖<br/>
+<span class="mi">\([(p \implies q) \land (q \implies r)] \implies (p \implies r)\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(r\)</span></th>
+<th><span class="mi">\(p \Rightarrow q\)</span></th>
+<th><span class="mi">\(q \Rightarrow r\)</span></th>
+<th>និង</th>
+<th><span class="mi">\(p \Rightarrow r\)</span></th>
+<th>កន្សោម</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ជួរឈរចុងក្រោយមានតម្លៃ <span class="mi">\(1\)</span> ទាំង ៨ ករណី ដូច្នេះវាជាសច្ចភាព។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>សង់តារាងភាពពិតសម្រាប់កន្សោមតក្កវិទ្យា ៖ <span class="mi">\((p \land \bar{p})\)</span> និងបញ្ជាក់ថាវាជាវិសមភាពតក្កវិទ្យា (Contradiction)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់តារាងភាពពិតសម្រាប់ <span class="mi">\((p \land \bar{p})\)</span> ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(p \land \bar{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ដោយសារគ្រប់បន្ទាត់សុទ្ធតែមិនពិត (<span class="mi">\(0\)</span>) ជានិច្ច ហេតុនេះកន្សោម <span class="mi">\(p \land \bar{p}\)</span> គឺជា <strong>វិសមភាពតក្កវិទ្យា (Contradiction)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>បញ្ជាក់ថាកន្សោមខាងក្រោមជាសច្ចភាព (Tautology) ៖ <span class="mi">\(p \lor \bar{p}\)</span> (ច្បាប់កណ្តាលមិនរាប់បញ្ចូល)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់តារាងភាពពិតសម្រាប់ <span class="mi">\(p \lor \bar{p}\)</span> (ច្បាប់កណ្តាលមិនរាប់បញ្ចូល) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(p \lor \bar{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>កន្សោមតែងតែពិត (<span class="mi">\(1\)</span>) ជានិច្ចគ្រប់ករណី ហេតុនេះ <span class="mi">\(p \lor \bar{p}\)</span> ជា <strong>សច្ចភាព (Tautology)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>បង្ហាញថាកន្សោម <span class="mi">\(p \implies q\)</span> សមមូលនឹង <span class="mi">\(\bar{p} \lor q\)</span> ដោយប្រើតារាងភាពពិត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(p \implies q \equiv \bar{p} \lor q\)</span> ដោយតារាងភាពពិត ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(p\)</span></th>
+<th><span class="mi">\(q\)</span></th>
+<th><span class="mi">\(\bar{p}\)</span></th>
+<th><span class="mi">\(p \implies q\)</span></th>
+<th><span class="mi">\(\bar{p} \lor q\)</span></th>
+<th>សមមូល</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ជួរឈរទី ៤ និងទី ៥ មានតម្លៃពិតដូចគ្នាបេះបិទគ្រប់បន្ទាត់ នាំឱ្យសមភាពតក្កវិទ្យា <span class="mi">\(p \implies q \equiv \bar{p} \lor q\)</span> ត្រូវបានស្រាយបញ្ជាក់។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>បង្ហាញថាកន្សោម <span class="mi">\(\overline{p \implies q}\)</span> សមមូលនឹង <span class="mi">\(p \land \bar{q}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(\overline{p \implies q} \equiv p \land \bar{q}\)</span> ៖<br/>
+តាមសមមូលតក្កវិទ្យាក្នុងលំហាត់ទី ២៨ គេមាន ៖<br/>
+<span class="mi">\(p \implies q \equiv \bar{p} \lor q\)</span>។<br/>
+បំពាក់បដិសេធលើអង្គទាំងសងខាង ៖<br/>
+<span class="mi">\(\overline{p \implies q} \equiv \overline{\bar{p} \lor q}\)</span>។<br/>
+អនុវត្តច្បាប់ដឺម៉ូហ្គង់ <span class="mi">\(\overline{A \lor B} \equiv \bar{A} \land \bar{B}\)</span> ៖<br/>
+<span class="mi">\(\overline{\bar{p} \lor q} \equiv \bar{\bar{p}} \land \bar{q}\)</span>។<br/>
+ដោយសារ <span class="mi">\(\bar{\bar{p}} \equiv p\)</span> (បដិសេធពីរដងត្រឡប់ជាដើម) គេទាញបាន ៖<br/>
+<span class="mi">\(\overline{p \implies q} \equiv p \land \bar{q}\)</span> ពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>សរសេរសំណើបដិសេធនៃសំណើ ៖ «បើមេឃភ្លៀង នោះផ្លូវសើម»។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ «បើមេឃភ្លៀង (<span class="mi">\(p\)</span>) នោះផ្លូវសើម (<span class="mi">\(q\)</span>)»។<br/>
+តាមរូបមន្តបដិសេធ <span class="mi">\(\overline{p \implies q} \equiv p \land \bar{q}\)</span> ៖<br/>
+សំណើបដិសេធគឺ ៖<br/>
+«<strong>មេឃភ្លៀង ប៉ុន្តែផ្លូវមិនសើមទេ</strong>»។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>សរសេរសំណើបដិសេធនៃសំណើ ៖ «បើ <span class="mi">\(x &gt; 0\)</span> នោះ <span class="mi">\(x^2 &gt; 0\)</span>»។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ «បើ <span class="mi">\(x &gt; 0\)</span> (<span class="mi">\(p\)</span>) នោះ <span class="mi">\(x^2 &gt; 0\)</span> (<span class="mi">\(q\)</span>)»។<br/>
+តាមរូបមន្តបដិសេធ <span class="mi">\(\overline{p \implies q} \equiv p \land \bar{q}\)</span> ៖<br/>
+សំណើបដិសេធគឺ ៖<br/>
+«<strong><span class="mi">\(x &gt; 0\)</span> និង <span class="mi">\(x^2 \leq 0\)</span></strong>»។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>បញ្ជាក់តម្លៃភាពពិតនៃសំណើមានបរិមាណករ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 \geq 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 \geq 0\)</span> ៖<br/>
+<strong>ពិត (P)</strong> ព្រោះការ៉េនៃគ្រប់ចំនួនពិត (វិជ្ជមាន អវិជ្ជមាន ឬសូន្យ) តែងតែធំជាង ឬស្មើ <span class="mi">\(0\)</span> ជានិច្ច។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>បញ្ជាក់តម្លៃភាពពិតនៃសំណើ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 &gt; 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 &gt; 0\)</span> ៖<br/>
+<strong>មិនពិត (F)</strong> ព្រោះចំពោះ <span class="mi">\(x = 0 \in \mathbb{R}\)</span> នោះ <span class="mi">\(0^2 = 0 \not&gt; 0\)</span> (មិនធំជាងដាច់ខាតពីសូន្យទេ)។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បញ្ជាក់តម្លៃភាពពិតនៃសំណើ <span class="mi">\(\exists x \in \mathbb{R},\; x^2 = 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើ <span class="mi">\(\exists x \in \mathbb{R},\; x^2 = 2\)</span> ៖<br/>
+<strong>ពិត (P)</strong> ព្រោះមានចំនួនពិត <span class="mi">\(x = \sqrt{2} \in \mathbb{R}\)</span> (ឬ <span class="mi">\(x = -\sqrt{2} \in \mathbb{R}\)</span>) ដែល <span class="mi">\((\pm\sqrt{2})^2 = 2\)</span> ផ្ទៀងផ្ទាត់សមីការ។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>បញ្ជាក់តម្លៃភាពពិតនៃសំណើ <span class="mi">\(\exists x \in \mathbb{Q},\; x^2 = 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើ <span class="mi">\(\exists x \in \mathbb{Q},\; x^2 = 2\)</span> ៖<br/>
+<strong>មិនពិត (F)</strong> ព្រោះឫសនៃសមីការ <span class="mi">\(x^2 = 2\)</span> គឺ <span class="mi">\(x = \pm\sqrt{2}\)</span> ដែលជាចំនួនអសនិទាន មិនអាចជាចំនួនសនិទានបានឡើយ (<span class="mi">\(\pm\sqrt{2} \notin \mathbb{Q}\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>បញ្ជាក់តម្លៃភាពពិតនៃសំណើ <span class="mi">\(\forall n \in \mathbb{N},\; 2n + 1\)</span> ជាចំនួនសេស។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើ <span class="mi">\(\forall n \in \mathbb{N},\; 2n + 1\)</span> ជាចំនួនសេស ៖<br/>
+<strong>ពិត (P)</strong> ព្រោះចំពោះគ្រប់ <span class="mi">\(n \in \mathbb{N}\)</span> កន្សោម <span class="mi">\(2n\)</span> ចែកដាច់នឹង <span class="mi">\(2\)</span> ជានិច្ច (ជាចំនួនគូ) នាំឱ្យ <span class="mi">\(2n + 1\)</span> មិនអាចចែកដាច់នឹង <span class="mi">\(2\)</span> ឡើយ ពោលគឺវាជាចំនួនសេសជានិច្ច។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>បញ្ជាក់តម្លៃភាពពិតនៃសំណើ <span class="mi">\(\exists n \in \mathbb{N},\; n^2 + n\)</span> ជាចំនួនសេស។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើ <span class="mi">\(\exists n \in \mathbb{N},\; n^2 + n\)</span> ជាចំនួនសេស ៖<br/>
+<strong>មិនពិត (F)</strong> ព្រោះ <span class="mi">\(n^2 + n = n(n + 1)\)</span> គឺជាផលគុណនៃពីរចំនួនគត់ជាប់គ្នា ដែលតែងតែមានកត្តាមួយជាចំនួនគូជានិច្ច ហេតុនេះផលគុណ <span class="mi">\(n(n+1)\)</span> ត្រូវតែជាចំនួនគូជានិច្ចចំពោះគ្រប់ <span class="mi">\(n \in \mathbb{N}\)</span> (គ្មាន <span class="mi">\(n\)</span> ណាធ្វើឱ្យចេញចំនួនសេសបានឡើយ)។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>សរសេរសំណើបដិសេធនៃសំណើ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 + 1 &gt; 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 + 1 &gt; 0\)</span>។<br/>
+តាមវិធានបដិសេធនៃបរិមាណករសកល <span class="mi">\(\overline{\forall x, P(x)} \equiv \exists x, \overline{P(x)}\)</span> ៖<br/>
+សំណើបដិសេធគឺ ៖ <strong><span class="mi">\(\exists x \in \mathbb{R},\; x^2 + 1 \leq 0\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>សរសេរសំណើបដិសេធនៃសំណើ <span class="mi">\(\exists x \in \mathbb{R},\; x^2 - 4 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ <span class="mi">\(\exists x \in \mathbb{R},\; x^2 - 4 = 0\)</span>។<br/>
+តាមវិធានបដិសេធនៃបរិមាណករអត្ថិភាព <span class="mi">\(\overline{\exists x, P(x)} \equiv \forall x, \overline{P(x)}\)</span> ៖<br/>
+សំណើបដិសេធគឺ ៖ <strong><span class="mi">\(\forall x \in \mathbb{R},\; x^2 - 4 \neq 0\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>សរសេរសំណើបដិសេធនៃសំណើ <span class="mi">\(\forall x \in \mathbb{R},\; x &gt; 2 \implies x^2 &gt; 4\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ <span class="mi">\(\forall x \in \mathbb{R},\; (x &gt; 2 \implies x^2 &gt; 4)\)</span>។<br/>
+ដោយសារបដិសេធនៃ <span class="mi">\(p \implies q\)</span> គឺ <span class="mi">\(p \land \bar{q}\)</span> គេបាន ៖<br/>
+សំណើបដិសេធគឺ ៖ <strong><span class="mi">\(\exists x \in \mathbb{R},\; (x &gt; 2 \land x^2 \leq 4)\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>សរសេរសំណើបដិសេធនៃសំណើ <span class="mi">\(\exists x \in \mathbb{N},\; x\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> និង <span class="mi">\(5\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណើដើម ៖ <span class="mi">\(\exists x \in \mathbb{N},\; (x \vdots 3 \land x \vdots 5)\)</span>។<br/>
+តាមច្បាប់ដឺម៉ូហ្គង់ បដិសេធនៃ «<span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span>» គឺ «មិន <span class="mi">\(A\)</span> ឬ មិន <span class="mi">\(B\)</span>» ៖<br/>
+សំណើបដិសេធគឺ ៖<br/>
+<strong><span class="mi">\(\forall x \in \mathbb{N},\; (x \)</span> មិនចែកដាច់នឹង <span class="mi">\( 3 \lor x \)</span> មិនចែកដាច់នឹង <span class="mi">\( 5)\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>រកឧទាហរណ៍ប្រឆាំង (Counterexample) បង្ហាញថាសំណើ «គ្រប់ចំនួនបឋមជាចំនួនសេស» មិនពិត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកឧទាហរណ៍ប្រឆាំងបង្ហាញថាសំណើ «គ្រប់ចំនួនបឋមជាចំនួនសេស» មិនពិត ៖<br/>
+<strong>ឧទាហរណ៍ប្រឆាំង</strong> ៖ ជ្រើសរើសយកលេខ <span class="mi">\(2\)</span>។<br/>
+- <span class="mi">\(2\)</span> ជាចំនួនបឋមពិតប្រាកដ (មានតួចែកវិជ្ជមានតែពីរគឺ <span class="mi">\(1\)</span> និង <span class="mi">\(2\)</span>)។<br/>
+- ប៉ុន្តែលេខ <span class="mi">\(2\)</span> ជាចំនួនគូ មិនមែនជាចំនួនសេសឡើយ។<br/>
+ដូច្នេះ វត្តមាននៃលេខ <span class="mi">\(2\)</span> បញ្ជាក់ថាសំណើខាងលើមិនពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>រកឧទាហរណ៍ប្រឆាំងបង្ហាញថាសំណើ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 &gt; x\)</span> មិនពិត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកឧទាហរណ៍ប្រឆាំងចំពោះសំណើ <span class="mi">\(\forall x \in \mathbb{R},\; x^2 &gt; x\)</span> ៖<br/>
+<strong>ឧទាហរណ៍ប្រឆាំង</strong> ៖ ជ្រើសរើសយក <span class="mi">\(x = \dfrac{1}{2} \in \mathbb{R}\)</span>។<br/>
+គណនាការ៉េ ៖ <span class="mi">\(\left(\dfrac{1}{2}\right)^2 = \dfrac{1}{4}\)</span>។<br/>
+សង្កេតឃើញថា <span class="mi">\(\dfrac{1}{4} &lt; \dfrac{1}{2}\)</span> ពោលគឺ <span class="mi">\(x^2 \not&gt; x\)</span>។<br/>
+(ឬយក <span class="mi">\(x = 0 \implies 0^2 = 0 \not&gt; 0\)</span> ឬ <span class="mi">\(x = 1 \implies 1^2 = 1 \not&gt; 1\)</span>)។<br/>
+ដូចនេះ សំណើខាងលើមិនពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>រកឧទាហរណ៍ប្រឆាំងបង្ហាញថាសំណើ <span class="mi">\(\forall a, b \in \mathbb{R},\; |a + b| = |a| + |b|\)</span> មិនពិត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកឧទាហរណ៍ប្រឆាំងចំពោះ <span class="mi">\(\forall a, b \in \mathbb{R},\; |a + b| = |a| + |b|\)</span> ៖<br/>
+<strong>ឧទាហរណ៍ប្រឆាំង</strong> ៖ ជ្រើសរើសយក <span class="mi">\(a = 3\)</span> និង <span class="mi">\(b = -5\)</span>។<br/>
+- អង្គខាងឆ្វេង ៖ <span class="mi">\(|a + b| = |3 + (-5)| = |-2| = 2\)</span>។<br/>
+- អង្គខាងស្តាំ ៖ <span class="mi">\(|a| + |b| = |3| + |-5| = 3 + 5 = 8\)</span>។<br/>
+ដោយ <span class="mi">\(2 \neq 8\)</span> នាំឱ្យសមភាពមិនពិតជានិច្ចឡើយ (វាពិតលុះត្រាតែ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> មានសញ្ញាដូចគ្នា ពោលគឺ <span class="mi">\(ab \geq 0\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់ដោយផ្ទុយ (Proof by Contradiction) ៖ បើ <span class="mi">\(3n + 2\)</span> សេស នោះ <span class="mi">\(n\)</span> សេស (<span class="mi">\(n \in \mathbb{Z}\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្រាយបញ្ជាក់ដោយផ្ទុយ ៖ «បើ <span class="mi">\(3n + 2\)</span> សេស នោះ <span class="mi">\(n\)</span> សេស (<span class="mi">\(n \in \mathbb{Z}\)</span>)» ៖<br/>
+- <strong>សម្មតិកម្មផ្ទុយ</strong> ៖ សន្មតថា <span class="mi">\(n\)</span> <strong>មិនមែនជាចំនួនសេស</strong> ពោលគឺ <span class="mi">\(n\)</span> ជាចំនួនគូ។<br/>
+- តាមនិយមន័យចំនួនគូ មានចំនួនគត់ <span class="mi">\(k \in \mathbb{Z}\)</span> ដែល <span class="mi">\(n = 2k\)</span>។<br/>
+- ជំនួស <span class="mi">\(n = 2k\)</span> ចូលទៅក្នុងកន្សោម <span class="mi">\(3n + 2\)</span> ៖<br/>
+<span class="mi">\(3n + 2 = 3(2k) + 2 = 6k + 2 = 2(3k + 1)\)</span>។<br/>
+- ដោយ <span class="mi">\(k \in \mathbb{Z} \implies 3k + 1 \in \mathbb{Z}\)</span> នាំឱ្យ <span class="mi">\(3n + 2 = 2m\)</span> (<span class="mi">\(m = 3k+1\)</span>) គឺជាចំនួនគត់គូ។<br/>
+- លទ្ធផលនេះ<strong>ផ្ទុយស្រឡះ</strong>ពីបម្រាប់ដើមដែលថា <span class="mi">\(3n + 2\)</span> ជាចំនួនសេស!<br/>
+- ដូចនេះ ការសន្មតផ្ទុយមិនត្រឹមត្រូវឡើយ ពោលគឺ <span class="mi">\(n\)</span> ត្រូវតែជាចំនួនសេស។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់ដោយផ្ទុយ ៖ បើ <span class="mi">\(n^2\)</span> គូ នោះ <span class="mi">\(n\)</span> គូ (<span class="mi">\(n \in \mathbb{Z}\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្រាយបញ្ជាក់ដោយផ្ទុយ ៖ «បើ <span class="mi">\(n^2\)</span> គូ នោះ <span class="mi">\(n\)</span> គូ (<span class="mi">\(n \in \mathbb{Z}\)</span>)» ៖<br/>
+- <strong>សម្មតិកម្មផ្ទុយ</strong> ៖ សន្មតថា <span class="mi">\(n\)</span> ជាចំនួនសេស។<br/>
+- តាមនិយមន័យចំនួនសេស មាន <span class="mi">\(k \in \mathbb{Z}\)</span> ដែល <span class="mi">\(n = 2k + 1\)</span>។<br/>
+- គណនាការ៉េនៃ <span class="mi">\(n\)</span> ៖<br/>
+<span class="mi">\(n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1\)</span>។<br/>
+- តាង <span class="mi">\(m = 2k^2 + 2k \in \mathbb{Z}\)</span> គេបាន <span class="mi">\(n^2 = 2m + 1\)</span> ដែលជាទម្រង់នៃចំនួនសេស។<br/>
+- លទ្ធផលនេះ<strong>ផ្ទុយពីបម្រាប់</strong>ដែលកំណត់ថា <span class="mi">\(n^2\)</span> ជាចំនួនគូ!<br/>
+- ដូចនេះ ការសន្មតមិនពិត នាំឱ្យ <span class="mi">\(n\)</span> ត្រូវតែជាចំនួនគូ។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការវិភាគសេចក្តីថ្លែងការណ៍ ៖</strong> ក្នុងសវនាការមួយ ជនសង្ស័យបីនាក់ ក, ខ, និង គ ផ្តល់ចម្លើយដូចតទៅ ៖</p>
+<ol class="list olka cols3">
+<li><p>ក ៖ «ខ ជាចោរ»</p></li>
+<li><p>ខ ៖ «គ ជាចោរ»</p></li>
+<li><p>គ ៖ «ខ្ញុំមិនមែនជាចោរទេ»</p></li>
+</ol>
+<p>បើដឹងថាមានតែមនុស្សម្នាក់គត់និយាយពិត និងមានចោរតែម្នាក់គត់ តើនរណាជាចោរពិតប្រាកដ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការវិភាគសេចក្តីថ្លែងការណ៍ ៖</strong><br/>
+ចម្លើយ ៖ ក ៖ «ខ ជាចោរ», ខ ៖ «គ ជាចោរ», គ ៖ «ខ្ញុំមិនមែនជាចោរទេ»។<br/>
+បម្រាប់ ៖ មានមនុស្សម្នាក់គត់និយាយពិត និងមានចោរតែម្នាក់គត់។<br/>
+យើងបង្កើតតារាងវិភាគគ្រប់លទ្ធភាពនៃអ្នកជាចោរ ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>បើចោរជា</th>
+<th>សម្តី ក</th>
+<th>សម្តី ខ</th>
+<th>សម្តី គ</th>
+<th>ចំនួនអ្នកពិត</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ក</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1 នាក់ (គ ពិត)</td>
+</tr>
+<tr>
+<td>ខ</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>2 នាក់ (ផ្ទុយបម្រាប់)</td>
+</tr>
+<tr>
+<td>គ</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1 នាក់ (ខ ពិត)</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>- បើ ខ ជាចោរ <span class="mi">\(\implies\)</span> ទាំង ក និង គ និយាយពិត (មាន ២ នាក់និយាយពិត ផ្ទុយពីបម្រាប់)។<br/>
+- បើ ក ជាចោរ <span class="mi">\(\implies\)</span> មានតែ គ ម្នាក់គត់និយាយពិត។<br/>
+- បើ គ ជាចោរ <span class="mi">\(\implies\)</span> មានតែ ខ ម្នាក់គត់និយាយពិត (ហើយ គ និយាយកុហក)។<br/>
+ប្រសិនបើសន្មតតាមគោលការណ៍ទូទៅនៃសំណួរតក្កវិទ្យាតុលាការ ដែលចោរមិនដែលសារភាពខ្លួនឯង និងតែងកុហក នោះ <strong>គ ជាចោរពិតប្រាកដ</strong> (ខ និយាយពិត) ឬផ្អែកតាមការផ្ទៀងផ្ទាត់តក្កវិទ្យា ចោរគឺ <strong>គ</strong> (ឬ <strong>ក</strong>)។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - សៀគ្វីអគ្គិសនីតក្កវិទ្យា ៖</strong> អំពូលភ្លើងមួយត្រូវភ្ជាប់ទៅនឹងកុងតាក់ពីរ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>បើកុងតាក់ទាំងពីរតជាស៊េរី តើអំពូលភ្លឺនៅពេលណា? ចូរសរសេររូបមន្តតក្កវិទ្យា។</p></li>
+<li><p>បើកុងតាក់ទាំងពីរតជាស្រប តើអំពូលភ្លឺនៅពេលណា? ចូរសរសេររូបមន្តតក្កវិទ្យា។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - សៀគ្វីអគ្គិសនីតក្កវិទ្យា ៖</strong><br/>
+តាង <span class="mi">\(p = 1\)</span> (កុងតាក់ <span class="mi">\(p\)</span> បិទ), <span class="mi">\(p = 0\)</span> (កុងតាក់ <span class="mi">\(p\)</span> បើក)។ ដូចគ្នាសម្រាប់ <span class="mi">\(q\)</span>។ តាង <span class="mi">\(L\)</span> ជាស្ថានភាពអំពូល (<span class="mi">\(L = 1\)</span> អំពូលភ្លឺ, <span class="mi">\(L = 0\)</span> អំពូលរលត់) ៖<br/>
+<strong>ក.</strong>  <strong>តជាស៊េរី</strong> ៖ ចរន្តអគ្គិសនីឆ្លងកាត់បានលុះត្រាតែកុងតាក់ទាំងពីរត្រូវបានបិទព្រមគ្នា។<br/>
+- អំពូលភ្លឺនៅពេលកុងតាក់ <span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span> បិទព្រមគ្នា (<span class="mi">\(p = 1\)</span> និង <span class="mi">\(q = 1\)</span>)។<br/>
+- រូបមន្តតក្កវិទ្យា ៖ <strong><span class="mi">\(L = p \land q\)</span></strong>។<br/>
+<strong>ខ.</strong>  <strong>តជាស្រប</strong> ៖ ចរន្តអគ្គិសនីអាចឆ្លងកាត់តាមខ្សែណាមួយក៏បាន។<br/>
+- អំពូលភ្លឺនៅពេលកុងតាក់ <span class="mi">\(p\)</span> ឬកុងតាក់ <span class="mi">\(q\)</span> យ៉ាងហោចមួយត្រូវបានបិទ។<br/>
+- រូបមន្តតក្កវិទ្យា ៖ <strong><span class="mi">\(L = p \lor q\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ប្រព័ន្ធសុវត្ថិភាព ៖</strong> ប្រព័ន្ធរោទិ៍សុវត្ថិភាពមួយនឹងបន្លឺឡើងលុះត្រាតែ «ទ្វាររបងត្រូវបានបើក (<span class="mi">\(p\)</span>) <strong>និង</strong> ឧបករណ៍ចាប់សញ្ញាចលនាដំណើរការ (<span class="mi">\(q\)</span>)» ឬ «ប៊ូតុងអាសន្នត្រូវបានចុច (<span class="mi">\(r\)</span>)»។ ចូរសរសេរកន្សោមតក្កវិទ្យាតំណាងឱ្យលក្ខខណ្ឌដែលប្រព័ន្ធរោទិ៍ដំណើរការ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ប្រព័ន្ធសុវត្ថិភាព ៖</strong><br/>
+តាងសំណើផ្សំ ៖<br/>
+- <span class="mi">\(p\)</span> ៖ «ទ្វាររបងត្រូវបានបើក»<br/>
+- <span class="mi">\(q\)</span> ៖ «ឧបករណ៍ចាប់សញ្ញាចលនាដំណើរការ»<br/>
+- <span class="mi">\(r\)</span> ៖ «ប៊ូតុងអាសន្នត្រូវបានចុច»<br/>
+- <span class="mi">\(S\)</span> ៖ «ប្រព័ន្ធរោទិ៍សុវត្ថិភាពបន្លឺឡើង»<br/>
+តាមលក្ខខណ្ឌប្រព័ន្ធ ប្រព័ន្ធរោទិ៍ដំណើរការកាលណា (<span class="mi">\(p\)</span> និង <span class="mi">\(q\)</span>) ឬ <span class="mi">\(r\)</span> ផ្ទៀងផ្ទាត់។<br/>
+កន្សោមតក្កវិទ្យាតំណាងឱ្យលក្ខខណ្ឌដំណើរការគឺ ៖<br/>
+<strong><span class="mi">\(S = (p \land q) \lor r\)</span></strong>។<br/>
+(ប្រព័ន្ធនឹងបន្លឺសំឡេងរោទិ៍កាលណា <span class="mi">\(S = 1\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការត្រួតពិនិត្យកម្មវិធីកុំព្យូទ័រ ៖</strong> កម្មវិធីមួយអនុញ្ញាតឱ្យចូលប្រើប្រាស់បាន លុះត្រាតែលក្ខខណ្ឌខាងក្រោមពិត ៖ <span class="mi">\((\)</span> Password ត្រឹមត្រូវ <span class="mi">\( \land \)</span> គណនីសកម្ម <span class="mi">\() \lor \)</span> មានសិទ្ធិជា Admin  ។ ប្រសិនបើអ្នកប្រើប្រាស់ម្នាក់វាយ Password ខុស ប៉ុន្តែគាត់មានសិទ្ធិជា Admin តើប្រព័ន្ធអនុញ្ញាតឱ្យគាត់ចូលប្រើប្រាស់ដែរឬទេ? ចូរពន្យល់ដោយប្រើតក្កវិទ្យា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការត្រួតពិនិត្យកម្មវិធីកុំព្យូទ័រ ៖</strong><br/>
+លក្ខខណ្ឌអនុញ្ញាតចូលប្រើប្រាស់ ៖<br/>
+<span class="mi">\(\text{Access} = (P \land A) \lor \text{Admin}\)</span> ដែល ៖<br/>
+- <span class="mi">\(P\)</span> ៖ Password ត្រឹមត្រូវ<br/>
+- <span class="mi">\(A\)</span> ៖ គណនីសកម្ម<br/>
+- <span class="mi">\(\text{Admin}\)</span> ៖ មានសិទ្ធិជា Admin<br/>
+តាមបម្រាប់ ៖<br/>
+- អ្នកប្រើប្រាស់វាយ Password ខុស <span class="mi">\(\implies P = 0\)</span> (មិនពិត)។<br/>
+- គាត់មានសិទ្ធិជា Admin <span class="mi">\(\implies \text{Admin} = 1\)</span> (ពិត)។<br/>
+ជំនួសតម្លៃភាពពិតចូលកន្សោមតក្កវិទ្យា ៖<br/>
+<span class="mi">\(\text{Access} = (0 \land A) \lor 1 = 0 \lor 1 = \)</span> <b>1 (ពិត)</b> ។<br/>
+<strong>សេចក្តីសន្និដ្ឋាន</strong> ៖ ប្រព័ន្ធ<strong>នៅតែអនុញ្ញាត</strong>ឱ្យគាត់ចូលប្រើប្រាស់បានដដែល ពីព្រោះឈ្នាប់ «ឬ» (<span class="mi">\(\lor\)</span>) ជាមួយសំណើ Admin ដ៏ពិត ធ្វើឱ្យកន្សោមទាំងមូលមានតម្លៃពិតជានិច្ច ទោះបីជាការផ្ទៀងផ្ទាត់ Password មិនពិតក៏ដោយ។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ២ តក្កវិទ្យា សំណុំ និងចំនួន</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c02">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L02.html"><small>← មេរៀនមុន</small><b>ប្រមាណវិធីចែកពហុធា</b></a><a class="next" href="L04.html"><small>មេរៀនបន្ទាប់ →</small><b>សំណុំ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើល្បះមួយណាខាងក្រោមជាសំណើ?", "options": ["សូមបិទទ្វារ!", "តើអ្នកសុខសប្បាយជាទេ?", "ភ្នំពេញជារាជធានីនៃប្រទេសកម្ពុជា", "អូហូ! ផ្កានេះស្អាតណាស់!"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើល្បះមួយណាខាងក្រោមមិនមែនជាសំណើ?", "options": ["<span class=\"mi\">\\(5 &gt; 3\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span> ជាចំនួនគត់គូ", "ចូរដោះស្រាយសមីការ <span class=\"mi\">\\(x + 2 = 5\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span> ជាចំនួនអវិជ្ជមាន"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើ <span class=\"mi\">\\(p\\)<\/span> ៖ «<span class=\"mi\">\\(7\\)<\/span> ជាចំនួនបឋម»។ តើតម្លៃភាពពិតនៃសំណើ <span class=\"mi\">\\(p\\)<\/span> ជាអ្វី?", "options": ["ពិត (1)", "មិនពិត (0)", "មិនអាចកំណត់បាន", "ទាំងពិតទាំងមិនពិត"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើ <span class=\"mi\">\\(q\\)<\/span> ៖ «<span class=\"mi\">\\(2^3 = 6\\)<\/span>»។ តើតម្លៃភាពពិតនៃសំណើ <span class=\"mi\">\\(q\\)<\/span> ជាអ្វី?", "options": ["ពិត (1)", "មិនពិត (0)", "ពិតពាក់កណ្តាល", "មិនអាចកំណត់បាន"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើសំណើណាខាងក្រោមនេះជាសំណើមិនពិត (0)?", "options": ["<span class=\"mi\">\\(\\sqrt{9} = 3\\)<\/span>", "<span class=\"mi\">\\((-2)^2 = 4\\)<\/span>", "<span class=\"mi\">\\(-5 &gt; -2\\)<\/span>", "<span class=\"mi\">\\(3 + 4 = 7\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើបើក <span class=\"mi\">\\(P(x)\\)<\/span> ៖ «<span class=\"mi\">\\(2x - 1 = 5\\)<\/span>»។ តើតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ណាធ្វើឱ្យ <span class=\"mi\">\\(P(x)\\)<\/span> ក្លាយជាសំណើពិត?", "options": ["<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើបើក <span class=\"mi\">\\(Q(x)\\)<\/span> ៖ «<span class=\"mi\">\\(x^2 \\leq 4\\)<\/span> លើ <span class=\"mi\">\\(\\mathbb{Z}\\)<\/span>»។ តើចំណុចណាធ្វើឱ្យ <span class=\"mi\">\\(Q(x)\\)<\/span> ក្លាយជាសំណើមិនពិត?", "options": ["<span class=\"mi\">\\(x = 0\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើសំណើណាខាងក្រោមនេះជាសំណើពិត (1)?", "options": ["គ្រប់ចំនួនគត់សុទ្ធតែជាចំនួនវិជ្ជមាន", "ផលបូកមុំក្នុងត្រីកោណស្មើនឹង <span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span> ជាចំនួនគត់អវិជ្ជមានដាច់ខាត", "<span class=\"mi\">\\(\\pi\\)<\/span> ជាចំនួនសនិទាន"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើនិមិត្តសញ្ញាណាប្រើសម្រាប់សម្គាល់តម្លៃភាពពិត «ពិត» និង «មិនពិត» ក្នុងតក្កវិទ្យា?", "options": ["<span class=\"mi\">\\(+\\)<\/span> និង <span class=\"mi\">\\(-\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span> និង <span class=\"mi\">\\(0\\)<\/span> (ឬ T និង F)", "<span class=\"mi\">\\(\\alpha\\)<\/span> និង <span class=\"mi\">\\(\\beta\\)<\/span>", "<span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើគេដឹងថាសំណើ <span class=\"mi\">\\(p\\)<\/span> ពិត (<span class=\"mi\">\\(1\\)<\/span>) នោះតម្លៃភាពពិតនៃបដិសេធ <span class=\"mi\">\\(\\bar{p}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "មិនអាចកំណត់", "<span class=\"mi\">\\(2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើឈ្នាប់តក្កវិទ្យាណាដែលមាននិមិត្តសញ្ញា «<span class=\"mi\">\\(\\land\\)<\/span>»?", "options": ["ឈ្នាប់ ឬ", "ឈ្នាប់ និង", "ឈ្នាប់ នាំឱ្យ", "ឈ្នាប់ សមមូល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើឈ្នាប់តក្កវិទ្យាណាដែលមាននិមិត្តសញ្ញា «<span class=\"mi\">\\(\\lor\\)<\/span>»?", "options": ["ឈ្នាប់ និង", "ឈ្នាប់ ឬ", "ឈ្នាប់ មិន", "ឈ្នាប់ សមមូល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើឈ្នាប់តក្កវិទ្យាណាដែលមាននិមិត្តសញ្ញា «<span class=\"mi\">\\(\\implies\\)<\/span>»?", "options": ["ឈ្នាប់ នាំឱ្យ (លក្ខខណ្ឌ)", "ឈ្នាប់ សមមូល", "ឈ្នាប់ និង", "ឈ្នាប់ ឬ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើឈ្នាប់តក្កវិទ្យាណាដែលមាននិមិត្តសញ្ញា «<span class=\"mi\">\\(\\iff\\)<\/span>»?", "options": ["ឈ្នាប់ និង", "ឈ្នាប់ ឬ", "ឈ្នាប់ នាំឱ្យ", "ឈ្នាប់ សមមូល"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សំណើផ្សំ <span class=\"mi\">\\(p \\land q\\)<\/span> ពិត (<span class=\"mi\">\\(1\\)<\/span>) លុះត្រាតែ ៖", "options": ["<span class=\"mi\">\\(p\\)<\/span> ពិត ឬ <span class=\"mi\">\\(q\\)<\/span> ពិត", "<span class=\"mi\">\\(p\\)<\/span> និង <span class=\"mi\">\\(q\\)<\/span> ពិតទាំងពីរ", "<span class=\"mi\">\\(p\\)<\/span> មិនពិត និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត", "<span class=\"mi\">\\(p\\)<\/span> ពិត និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សំណើផ្សំ <span class=\"mi\">\\(p \\lor q\\)<\/span> មិនពិត (<span class=\"mi\">\\(0\\)<\/span>) លុះត្រាតែ ៖", "options": ["<span class=\"mi\">\\(p\\)<\/span> ពិត និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត", "<span class=\"mi\">\\(p\\)<\/span> មិនពិត និង <span class=\"mi\">\\(q\\)<\/span> ពិត", "<span class=\"mi\">\\(p\\)<\/span> និង <span class=\"mi\">\\(q\\)<\/span> មិនពិតទាំងពីរ", "<span class=\"mi\">\\(p\\)<\/span> និង <span class=\"mi\">\\(q\\)<\/span> ពិតទាំងពីរ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សំណើលក្ខខណ្ឌ <span class=\"mi\">\\(p \\implies q\\)<\/span> មិនពិត (<span class=\"mi\">\\(0\\)<\/span>) តែក្នុងករណីណា?", "options": ["<span class=\"mi\">\\(p\\)<\/span> ពិត និង <span class=\"mi\">\\(q\\)<\/span> ពិត", "<span class=\"mi\">\\(p\\)<\/span> ពិត និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត", "<span class=\"mi\">\\(p\\)<\/span> មិនពិត និង <span class=\"mi\">\\(q\\)<\/span> ពិត", "<span class=\"mi\">\\(p\\)<\/span> មិនពិត និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សំណើសមមូល <span class=\"mi\">\\(p \\iff q\\)<\/span> ពិត (<span class=\"mi\">\\(1\\)<\/span>) កាលណា ៖", "options": ["<span class=\"mi\">\\(p\\)<\/span> និង <span class=\"mi\">\\(q\\)<\/span> មានតម្លៃភាពពិតដូចគ្នា", "<span class=\"mi\">\\(p\\)<\/span> ពិត និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត", "<span class=\"mi\">\\(p\\)<\/span> មិនពិត និង <span class=\"mi\">\\(q\\)<\/span> ពិត", "<span class=\"mi\">\\(p\\)<\/span> និង <span class=\"mi\">\\(q\\)<\/span> មានតម្លៃភាពពិតផ្ទុយគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(p\\)<\/span> ពិត (<span class=\"mi\">\\(1\\)<\/span>) និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត (<span class=\"mi\">\\(0\\)<\/span>) នោះតម្លៃភាពពិតនៃ <span class=\"mi\">\\(p \\land q\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "មិនអាចដឹង", "<span class=\"mi\">\\(p\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(p\\)<\/span> មិនពិត (<span class=\"mi\">\\(0\\)<\/span>) និង <span class=\"mi\">\\(q\\)<\/span> ពិត (<span class=\"mi\">\\(1\\)<\/span>) នោះតម្លៃភាពពិតនៃ <span class=\"mi\">\\(p \\lor q\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "មិនពិតជានិច្ច", "ស្មើ <span class=\"mi\">\\(p\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(p\\)<\/span> មិនពិត (<span class=\"mi\">\\(0\\)<\/span>) និង <span class=\"mi\">\\(q\\)<\/span> មិនពិត (<span class=\"mi\">\\(0\\)<\/span>) នោះតម្លៃភាពពិតនៃ <span class=\"mi\">\\(p \\implies q\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "មិនអាចកំណត់", "<span class=\"mi\">\\(-1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តារាងភាពពិតដែលមាន <span class=\"mi\">\\(3\\)<\/span> សំណើសាមញ្ញ <span class=\"mi\">\\(p, q, r\\)<\/span> ត្រូវមានចំនួនបន្ទាត់សរុបស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(4\\)<\/span> បន្ទាត់", "<span class=\"mi\">\\(6\\)<\/span> បន្ទាត់", "<span class=\"mi\">\\(8\\)<\/span> បន្ទាត់", "<span class=\"mi\">\\(9\\)<\/span> បន្ទាត់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើដើម ៖ <span class=\"mi\">\\(p \\implies q\\)<\/span>។ តើសំណើផ្ទុយ (Converse) គឺអ្វី?", "options": ["<span class=\"mi\">\\(q \\implies p\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\implies \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(\\bar{q} \\implies \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\lor q\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើដើម ៖ <span class=\"mi\">\\(p \\implies q\\)<\/span>។ តើសំណើច្រាស (Inverse) គឺអ្វី?", "options": ["<span class=\"mi\">\\(q \\implies p\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\implies \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(\\bar{q} \\implies \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(\\bar{q} \\implies p\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើដើម ៖ <span class=\"mi\">\\(p \\implies q\\)<\/span>។ តើសំណើផ្ទុយពីច្រាស (Contrapositive) គឺអ្វី?", "options": ["<span class=\"mi\">\\(q \\implies p\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\implies \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(\\bar{q} \\implies \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p \\land \\bar{q}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សំណើដើម <span class=\"mi\">\\(p \\implies q\\)<\/span> តែងតែសមមូលនឹងសំណើណា?", "options": ["សំណើផ្ទុយ <span class=\"mi\">\\(q \\implies p\\)<\/span>", "សំណើច្រាស <span class=\"mi\">\\(\\bar{p} \\implies \\bar{q}\\)<\/span>", "សំណើផ្ទុយពីច្រាស <span class=\"mi\">\\(\\bar{q} \\implies \\bar{p}\\)<\/span>", "សំណើបដិសេធ <span class=\"mi\">\\(\\bar{p} \\land \\bar{q}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សំណើផ្ទុយ <span class=\"mi\">\\(q \\implies p\\)<\/span> តែងតែសមមូលនឹងសំណើណា?", "options": ["សំណើដើម <span class=\"mi\">\\(p \\implies q\\)<\/span>", "សំណើច្រាស <span class=\"mi\">\\(\\bar{p} \\implies \\bar{q}\\)<\/span>", "សំណើផ្ទុយពីច្រាស <span class=\"mi\">\\(\\bar{q} \\implies \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p \\land q\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើ ៖ «បើ <span class=\"mi\">\\(x = 3\\)<\/span> នោះ <span class=\"mi\">\\(x^2 = 9\\)<\/span>»។ តើសំណើផ្ទុយ (Converse) គឺ ៖", "options": ["បើ <span class=\"mi\">\\(x \\neq 3\\)<\/span> នោះ <span class=\"mi\">\\(x^2 \\neq 9\\)<\/span>", "បើ <span class=\"mi\">\\(x^2 = 9\\)<\/span> នោះ <span class=\"mi\">\\(x = 3\\)<\/span>", "បើ <span class=\"mi\">\\(x^2 \\neq 9\\)<\/span> នោះ <span class=\"mi\">\\(x \\neq 3\\)<\/span>", "បើ <span class=\"mi\">\\(x = 9\\)<\/span> នោះ <span class=\"mi\">\\(x^2 = 3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើ ៖ «បើត្រីកោណមួយមានមុំកែង នោះវាជាត្រីកោណកែង»។ តើសំណើច្រាស (Inverse) គឺ ៖", "options": ["បើត្រីកោណមួយមិនមានមុំកែង នោះវាមិនមែនជាត្រីកោណកែង", "បើត្រីកោណមួយជាត្រីកោណកែង នោះវាមានមុំកែង", "បើត្រីកោណមួយមិនមែនជាត្រីកោណកែង នោះវាមិនមានមុំកែង", "បើត្រីកោណមួយសមបាត នោះវាមានមុំកែង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើ ៖ «បើ <span class=\"mi\">\\(n\\)<\/span> ជាចំនួនគត់សេស នោះ <span class=\"mi\">\\(n^2\\)<\/span> ជាចំនួនគត់សេស»។ តើសំណើផ្ទុយពីច្រាស គឺ ៖", "options": ["បើ <span class=\"mi\">\\(n^2\\)<\/span> ជាចំនួនសេស នោះ <span class=\"mi\">\\(n\\)<\/span> ជាចំនួនសេស", "បើ <span class=\"mi\">\\(n\\)<\/span> មិនមែនជាចំនួនសេស នោះ <span class=\"mi\">\\(n^2\\)<\/span> មិនមែនជាចំនួនសេស", "បើ <span class=\"mi\">\\(n^2\\)<\/span> មិនមែនជាចំនួនសេស នោះ <span class=\"mi\">\\(n\\)<\/span> មិនមែនជាចំនួនសេស", "បើ <span class=\"mi\">\\(n\\)<\/span> ជាចំនួនគូ នោះ <span class=\"mi\">\\(n^2\\)<\/span> ជាចំនួនសេស"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើទម្រង់សមមូលនៃសំណើលក្ខខណ្ឌ <span class=\"mi\">\\(p \\implies q\\)<\/span> ដោយប្រើឈ្នាប់ «ឬ» គឺអ្វី?", "options": ["<span class=\"mi\">\\(p \\lor q\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\lor q\\)<\/span>", "<span class=\"mi\">\\(p \\lor \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\lor \\bar{q}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើបដិសេធនៃសំណើលក្ខខណ្ឌ <span class=\"mi\">\\(p \\implies q\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\(\\bar{p} \\implies \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(p \\land \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\land q\\)<\/span>", "<span class=\"mi\">\\(q \\implies p\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើសំណើណាខាងក្រោមនេះជា សច្ចភាព (Tautology - ពិតជានិច្ច)?", "options": ["<span class=\"mi\">\\(p \\land \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p \\lor \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p \\implies \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p \\land q\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើសំណើណាខាងក្រោមនេះជា វិវាទភាព (Contradiction - មិនពិតជានិច្ច)?", "options": ["<span class=\"mi\">\\(p \\lor \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p \\implies p\\)<\/span>", "<span class=\"mi\">\\(p \\land \\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p \\iff p\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តាមច្បាប់ដឺម៉ូហ្គង់ (De Morgan’s Law) កន្សោម <span class=\"mi\">\\(\\overline{p \\land q}\\)<\/span> សមមូលនឹង ៖", "options": ["<span class=\"mi\">\\(\\bar{p} \\land \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\lor \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(p \\lor q\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\implies \\bar{q}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តាមច្បាប់ដឺម៉ូហ្គង់ (De Morgan’s Law) កន្សោម <span class=\"mi\">\\(\\overline{p \\lor q}\\)<\/span> សមមូលនឹង ៖", "options": ["<span class=\"mi\">\\(\\bar{p} \\land \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\lor \\bar{q}\\)<\/span>", "<span class=\"mi\">\\(p \\land q\\)<\/span>", "<span class=\"mi\">\\(\\bar{p} \\iff \\bar{q}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ច្បាប់ស្រូប (Absorption law) ៖ <span class=\"mi\">\\(p \\land (p \\lor q)\\)<\/span> សមមូលនឹង ៖", "options": ["<span class=\"mi\">\\(q\\)<\/span>", "<span class=\"mi\">\\(p\\)<\/span>", "<span class=\"mi\">\\(p \\land q\\)<\/span>", "<span class=\"mi\">\\(p \\lor q\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ច្បាប់បដិសេធទ្វេ ៖ <span class=\"mi\">\\(\\overline{\\bar{p}}\\)<\/span> សមមូលនឹង ៖", "options": ["<span class=\"mi\">\\(\\bar{p}\\)<\/span>", "<span class=\"mi\">\\(p\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\((p \\land q) \\implies p\\)<\/span> ជា ៖", "options": ["សច្ចភាព (Tautology)", "វិវាទភាព (Contradiction)", "សំណើមិនពិតជានិច្ច", "សំណើបើក"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\(p \\implies (p \\lor q)\\)<\/span> ជា ៖", "options": ["វិវាទភាព", "សច្ចភាព", "មិនអាចកំណត់បាន", "សំណើមិនពិត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើកន្សោម <span class=\"mi\">\\(p \\land 1\\)<\/span> (ដែល <span class=\"mi\">\\(1\\)<\/span> ជាសំណើពិត) សមមូលនឹងអ្វី?", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(p\\)<\/span>", "<span class=\"mi\">\\(\\bar{p}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើកន្សោម <span class=\"mi\">\\(p \\lor 0\\)<\/span> (ដែល <span class=\"mi\">\\(0\\)<\/span> ជាសំណើមិនពិត) សមមូលនឹងអ្វី?", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(p\\)<\/span>", "<span class=\"mi\">\\(\\bar{p}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើនិមិត្តសញ្ញា «<span class=\"mi\">\\(\\forall\\)<\/span>» ហៅថាអ្វីក្នុងតក្កវិទ្យា?", "options": ["បរិមាណករសកល (ចំពោះគ្រប់)", "បរិមាណករអត្ថិភាព (មានយ៉ាងហោចមួយ)", "និមិត្តសញ្ញាសមមូល", "និមិត្តសញ្ញាបដិសេធ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើនិមិត្តសញ្ញា «<span class=\"mi\">\\(\\exists\\)<\/span>» ហៅថាអ្វីក្នុងតក្កវិទ្យា?", "options": ["បរិមាណករសកល (ចំពោះគ្រប់)", "បរិមាណករអត្ថិភាព (មានយ៉ាងហោចមួយ)", "និមិត្តសញ្ញាជាធាតុ", "និមិត្តសញ្ញាសំណុំទទេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើបដិសេធនៃសំណើ «<span class=\"mi\">\\(\\forall x \\in \\mathbb{R} , P(x)\\)<\/span>» គឺអ្វី?", "options": ["<span class=\"mi\">\\(\\forall x \\in \\mathbb{R} , \\overline{P(x)}\\)<\/span>", "<span class=\"mi\">\\(\\exists x \\in \\mathbb{R} , \\overline{P(x)}\\)<\/span>", "<span class=\"mi\">\\(\\exists x \\in \\mathbb{R} , P(x)\\)<\/span>", "<span class=\"mi\">\\(\\forall x \\notin \\mathbb{R} , P(x)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើបដិសេធនៃសំណើ «<span class=\"mi\">\\(\\exists x \\in \\mathbb{Z} , Q(x)\\)<\/span>» គឺអ្វី?", "options": ["<span class=\"mi\">\\(\\forall x \\in \\mathbb{Z} , \\overline{Q(x)}\\)<\/span>", "<span class=\"mi\">\\(\\exists x \\in \\mathbb{Z} , \\overline{Q(x)}\\)<\/span>", "<span class=\"mi\">\\(\\forall x \\in \\mathbb{Z} , Q(x)\\)<\/span>", "<span class=\"mi\">\\(\\exists x \\notin \\mathbb{Z} , Q(x)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើ ៖ «<span class=\"mi\">\\(\\forall x \\in \\mathbb{R} , x^2 \\ge 0\\)<\/span>»។ តើតម្លៃភាពពិតនៃសំណើនេះគឺអ្វី?", "options": ["ពិត (<span class=\"mi\">\\(1\\)<\/span>)", "មិនពិត (<span class=\"mi\">\\(0\\)<\/span>)", "ពិតតែចំពោះ <span class=\"mi\">\\(x &gt; 0\\)<\/span>", "មិនអាចកំណត់បាន"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណើ ៖ «<span class=\"mi\">\\(\\exists x \\in \\mathbb{R} , x^2 &lt; 0\\)<\/span>»។ តើតម្លៃភាពពិតនៃសំណើនេះគឺអ្វី?", "options": ["ពិត (<span class=\"mi\">\\(1\\)<\/span>)", "មិនពិត (<span class=\"mi\">\\(0\\)<\/span>)", "ពិតចំពោះ <span class=\"mi\">\\(x = -1\\)<\/span>", "មិនអាចកំណត់បាន"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើបដិសេធនៃសំណើ «សិស្សទាំងអស់ក្នុងថ្នាក់បានប្រឡងជាប់» គឺអ្វី?", "options": ["សិស្សទាំងអស់ក្នុងថ្នាក់ប្រឡងធ្លាក់", "មានសិស្សយ៉ាងហោចណាស់ម្នាក់ក្នុងថ្នាក់ប្រឡងធ្លាក់", "គ្មានសិស្សណាម្នាក់ប្រឡងជាប់ឡើយ", "សិស្សភាគច្រើនប្រឡងធ្លាក់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើបដិសេធនៃសំណើ «<span class=\"mi\">\\(\\forall x \\in \\mathbb{R} , x + 1 &gt; x\\)<\/span>» គឺអ្វី?", "options": ["<span class=\"mi\">\\(\\forall x \\in \\mathbb{R} , x + 1 \\leq x\\)<\/span>", "<span class=\"mi\">\\(\\exists x \\in \\mathbb{R} , x + 1 \\leq x\\)<\/span>", "<span class=\"mi\">\\(\\exists x \\in \\mathbb{R} , x + 1 &lt; x\\)<\/span>", "<span class=\"mi\">\\(\\forall x \\in \\mathbb{R} , x + 1 &lt; x\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

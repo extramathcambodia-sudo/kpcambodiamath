@@ -1,0 +1,6935 @@
+/* khmermath.org — geometric constructions (construct/*.html), step by step.
+ *
+ * A page holds <div class="cx" data-cx="NAME"> with an <ol class="cx-steps"> of
+ * captions, written in the page so the Khmer text is edited there. This file
+ * draws the figure for each step on an SVG «sheet of paper»: a compass that
+ * swings to draw each arc, a ruler for each line. Students step through it
+ * (or play it all), drag the given points, and change the compass opening to
+ * see when the construction fails.
+ *
+ * A construction is CX[NAME] = { steps, start, figure(state), draw(f, i, …), anim(f, i) }:
+ * start holds the points students may drag and the compass opening k; figure() works
+ * out the geometry; draw() shows step i; anim() names the arcs or the line to animate on
+ * arriving at a step. limit(state, key, p) may refuse a drag and place(state, key, p)
+ * may move it (a point kept on a line); warnFrom is the first step at which the
+ * warning is shown, when figure().meet is false. The slider is good when k > 0.5,
+ * or when kOk(k) says so; kSnap(value) may pull the slider onto a value. A button
+ * with data-preset="NAME" in the page runs presets.NAME(state) (a ready-made case).
+ * The slider may count something else than a share: kScale is what one unit of k is on
+ * the slider (100 by default), kText(state, words) the line under it (words: what the page
+ * says for a good or a bad value); fill(state) gives the
+ * words for the <span data-fill="KEY"> of the captions when they depend on the state.
+ * anim() may return { rulers: [[p, q], ...] } to draw several lines one after another, or
+ * { phases: [{ dur, draw(t, drawn, tools) }, ...] } for a movement of its own (the set square).
+ * A page may hold several constructions, one shown at a time: a <div class="cx-tabs"> of
+ * role="tab" buttons, each naming its .cx by aria-controls (the special angles).
+ */
+(function () {
+  'use strict';
+  var NS = 'http://www.w3.org/2000/svg';
+  var W = 640, H = 460;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function poly(g, pts, attrs) {
+    var pStr = pts.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' ');
+    var a = { points: pStr };
+    if (attrs) for (var k in attrs) a[k] = attrs[k];
+    return el('polygon', a, g);
+  }
+  var add = function (a, b) { return [a[0] + b[0], a[1] + b[1]]; };
+  var sub = function (a, b) { return [a[0] - b[0], a[1] - b[1]]; };
+  var mul = function (a, k) { return [a[0] * k, a[1] * k]; };
+  var len = function (a) { return Math.hypot(a[0], a[1]); };
+  var unit = function (a) { var l = len(a) || 1; return [a[0] / l, a[1] / l]; };
+  var ease = function (t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
+  var onCircle = function (c, r, t) { return [c[0] + r * Math.cos(t), c[1] + r * Math.sin(t)]; };
+  function arcPath(c, r, t1, t2) {
+    var p = onCircle(c, r, t1), q = onCircle(c, r, t2);
+    return 'M' + p[0].toFixed(1) + ' ' + p[1].toFixed(1) + 'A' + r.toFixed(1) + ' ' + r.toFixed(1) + ' 0 ' +
+      (Math.abs(t2 - t1) > Math.PI ? 1 : 0) + ' ' + (t2 > t1 ? 1 : 0) + ' ' + q[0].toFixed(1) + ' ' + q[1].toFixed(1);
+  }
+
+  // ------------------------------------------------------- the tools ---
+  // A compass seen from above: needle at c, pencil at e, legs meeting at a hinge.
+  function drawCompass(g, c, e) {
+    var r = len(sub(e, c)), legs = Math.max(r * 0.58 + 46, r / 2 + 24);
+    var mid = mul(add(c, e), 0.5), d = unit(sub(e, c)), n = [d[1], -d[0]];
+    if (n[1] > 0) n = mul(n, -1);                       // hinge towards the top of the sheet
+    var hinge = add(mid, mul(n, Math.sqrt(Math.max(legs * legs - r * r / 4, 0))));
+    var top = add(hinge, mul(n, 26));
+    el('line', { x1: hinge[0], y1: hinge[1], x2: top[0], y2: top[1], class: 'cx-c-handle' }, g);
+    el('line', { x1: hinge[0], y1: hinge[1], x2: c[0], y2: c[1], class: 'cx-c-leg' }, g);
+    el('line', { x1: hinge[0], y1: hinge[1], x2: e[0], y2: e[1], class: 'cx-c-leg' }, g);
+    el('circle', { cx: c[0], cy: c[1], r: 3.2, class: 'cx-c-needle' }, g);
+    el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, g);
+    el('circle', { cx: hinge[0], cy: hinge[1], r: 6, class: 'cx-c-hinge' }, g);
+    return hinge;
+  }
+  // A ruler laid along p→q, set a little to one side of the line it draws.
+  function drawRuler(g, p, q) {
+    var d = unit(sub(q, p)), n = [-d[1], d[0]], a = add(p, mul(d, -46)), b = add(q, mul(d, 46));
+    var off = mul(n, 4), w = mul(n, 34);
+    var pts = [add(a, off), add(b, off), add(add(b, off), w), add(add(a, off), w)];
+    el('polygon', { points: pts.map(function (x) { return x.join(','); }).join(' '), class: 'cx-ruler' }, g);
+    var L = len(sub(b, a));
+    for (var s = 0; s <= L; s += 14) {
+      var t = add(add(a, off), mul(d, s)), k = s % 70 === 0 ? 12 : 7;
+      el('line', { x1: t[0], y1: t[1], x2: t[0] + n[0] * k, y2: t[1] + n[1] * k, class: 'cx-ruler-tick' }, g);
+    }
+  }
+
+  // A set square: its right angle at c, one side of the right angle along w (the edge that is
+  // drawn along), the other along p (the edge that rests against the ruler).
+  function drawSetSquare(g, c, w, p, lw, lp, alpha) {
+    var a = add(c, mul(w, lw)), b = add(c, mul(p, lp)), m = mul(add(add(c, a), b), 1 / 3);
+    var grp = el('g', { opacity: alpha == null ? 1 : alpha }, g);
+    var pts = function (list) { return list.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' '); };
+    var inner = [c, a, b].map(function (x) { return add(m, mul(sub(x, m), 0.42)); });
+    // one shape with a hole, so that what lies under the hole stays readable
+    var ring = function (list) { return 'M' + list.map(function (x) { return x[0].toFixed(1) + ' ' + x[1].toFixed(1); }).join('L') + 'Z'; };
+    el('path', { d: ring([c, a, b]) + ring(inner), 'fill-rule': 'evenodd', class: 'cx-sq' }, grp);
+    el('polyline', { points: pts([add(c, mul(w, 12)), add(add(c, mul(w, 12)), mul(p, 12)), add(c, mul(p, 12))]), class: 'cx-sq-in' }, grp);
+  }
+
+  // ----------------------------------------------- the constructions ---
+  var CX = {};
+
+  // Perpendicular bisector of AB: arcs of the same radius from A and from B
+  // meet at P and Q; the line PQ cuts AB at its midpoint M, at right angles.
+  CX['segment-bisector'] = {
+    steps: 7,
+    start: { A: [170, 248], B: [470, 248], k: 0.72 },
+    limit: function (s, key, p) { return len(sub(p, s[key === 'A' ? 'B' : 'A'])) >= 90; },
+    figure: function (s) {
+      var A = s.A, B = s.B, AB = len(sub(B, A)), r = s.k * AB, M = mul(add(A, B), 0.5);
+      var u = unit(sub(B, A)), n = [u[1], -u[0]];
+      if (n[1] > 0) n = mul(n, -1);
+      var meet = r > AB / 2 + 0.5, h = meet ? Math.sqrt(r * r - AB * AB / 4) : 0;
+      var P = add(M, mul(n, h)), Q = add(M, mul(n, -h));
+      // arcs around where they meet (or, too short, around the middle of AB)
+      var spread = 0.42;
+      var aim = function (from, to) { return Math.atan2(to[1] - from[1], to[0] - from[0]); };
+      var tAP = meet ? aim(A, P) : aim(A, M) - 0.9, tAQ = meet ? aim(A, Q) : aim(A, M) + 0.9;
+      var tBP = meet ? aim(B, P) : aim(B, M) + 0.9, tBQ = meet ? aim(B, Q) : aim(B, M) - 0.9;
+      var fix = function (t, ref) { while (t - ref > Math.PI) t -= 2 * Math.PI; while (ref - t > Math.PI) t += 2 * Math.PI; return t; };
+      tAQ = fix(tAQ, tAP); tBQ = fix(tBQ, tBP);
+      return {
+        meet: meet, r: r, A: A, B: B, M: M, P: P, Q: Q, n: n, u: u,
+        arcs: [
+          { c: A, t1: tAP - spread, t2: tAP + spread }, { c: A, t1: tAQ - spread, t2: tAQ + spread },
+          { c: B, t1: tBP + spread, t2: tBP - spread }, { c: B, t1: tBQ + spread, t2: tBQ - spread },
+        ],
+      };
+    },
+    // what step i shows; anim(i) returns the animation to play on arriving there
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      el('line', { x1: f.A[0], y1: f.A[1], x2: f.B[0], y2: f.B[1], class: 'cx-seg' }, ink);
+      if (i === 1) {                                     // the opening: more than half of AB
+        el('line', { x1: f.A[0], y1: f.A[1], x2: f.A[0] + f.u[0] * f.r, y2: f.A[1] + f.u[1] * f.r, class: 'cx-radius' }, marks);
+        var half = add(f.A, mul(f.u, len(sub(f.B, f.A)) / 2));
+        el('line', { x1: half[0] + f.n[0] * 9, y1: half[1] + f.n[1] * 9, x2: half[0] - f.n[0] * 9, y2: half[1] - f.n[1] * 9, class: 'cx-half' }, marks);
+        label(marks, add(half, mul(f.n, 26)), '½AB', 'cx-note');
+        label(marks, add(add(f.A, mul(f.u, f.r / 2)), mul(f.n, -22)), 'r', 'cx-note cx-r');
+      }
+      var nArcs = i >= 3 ? 4 : i >= 2 ? 2 : 0;
+      for (var a = 0; a < nArcs; a++) el('path', { d: arcPath(f.arcs[a].c, f.r, f.arcs[a].t1, f.arcs[a].t2), class: 'cx-arc' }, ink);
+      if (i >= 4 && f.meet) {
+        point(ink, f.P, 'P', add(mul(f.u, 1.1), mul(f.n, 0.35))); point(ink, f.Q, 'Q', add(mul(f.u, 1.1), mul(f.n, -0.35)));
+      }
+      if (i >= 5 && f.meet) {
+        var e1 = add(f.P, mul(f.n, 40)), e2 = add(f.Q, mul(f.n, -40));
+        el('line', { x1: e1[0], y1: e1[1], x2: e2[0], y2: e2[1], class: 'cx-line' }, ink);
+      }
+      if (i >= 6 && f.meet) {
+        ['A', 'B'].forEach(function (k) {
+          [f.P, f.Q].forEach(function (X) { el('line', { x1: X[0], y1: X[1], x2: f[k][0], y2: f[k][1], class: 'cx-equal' }, marks); });
+        });
+        var s = 13, c = f.M, p1 = add(c, mul(f.u, s)), p2 = add(p1, mul(f.n, s)), p3 = add(c, mul(f.n, s));
+        el('polyline', { points: [p1, p2, p3].map(function (x) { return x.join(','); }).join(' '), class: 'cx-right' }, marks);
+        [mul(add(f.A, f.M), 0.5), mul(add(f.M, f.B), 0.5)].forEach(function (t) {
+          el('line', { x1: t[0] - f.n[0] * 7, y1: t[1] - f.n[1] * 7, x2: t[0] + f.n[0] * 7, y2: t[1] + f.n[1] * 7, class: 'cx-tick' }, marks);
+        });
+        point(ink, f.M, 'M', add(mul(f.u, 0.9), mul(f.n, -0.9)), 'cx-pt-m');
+      }
+      point(ink, f.A, 'A', mul(f.u, -1), null, 'A');
+      point(ink, f.B, 'B', f.u, null, 'B');
+      if (i === 1) drawCompass(layer.tools, f.A, add(f.A, mul(f.u, f.r)));
+    },
+    anim: function (f, i) {
+      if (i === 2) return { arcs: [0, 1] };
+      if (i === 3) return { arcs: [2, 3] };
+      if (i === 5 && f.meet) return { ruler: [add(f.P, mul(f.n, 40)), add(f.Q, mul(f.n, -40))] };
+      return null;
+    },
+  };
+
+  // Bisector of the angle xOy (Grade 7, lesson 13): an arc from O meets the sides at A
+  // and B; arcs of one radius from B and from A meet at t; Ot bisects the angle.
+  CX['angle-bisector'] = {
+    steps: 6,
+    warnFrom: 3,
+    start: { O: [150, 362], X: [540, 362], Y: [395, 112], k: 0.8 },
+    // the sides stay long enough to carry the arc, and the angle between 25° and 160°
+    limit: function (s, key, p) {
+      var a = sub(p, s.O), b = sub(s[key === 'X' ? 'Y' : 'X'], s.O);
+      var ang = Math.acos(Math.max(-1, Math.min(1, (a[0] * b[0] + a[1] * b[1]) / (len(a) * len(b))))) * 180 / Math.PI;
+      return len(a) >= 190 && ang >= 25 && ang <= 160;
+    },
+    figure: function (s) {
+      var O = s.O, ux = unit(sub(s.X, O)), uy = unit(sub(s.Y, O)), R = 165;
+      var A = add(O, mul(ux, R)), B = add(O, mul(uy, R)), AB = len(sub(B, A)), r = s.k * AB;
+      var M = mul(add(A, B), 0.5), d = unit(sub(M, O)), meet = r > AB / 2 + 0.5;
+      var h = meet ? Math.sqrt(r * r - AB * AB / 4) : 0, T = add(M, mul(d, h));
+      var wA = unit(sub(ux, mul(d, ux[0] * d[0] + ux[1] * d[1])));      // away from the bisector, on A's side
+      var aim = function (from, to) { return Math.atan2(to[1] - from[1], to[0] - from[0]); };
+      var ax = Math.atan2(ux[1], ux[0]), turn = Math.atan2(uy[1], uy[0]) - ax;
+      while (turn > Math.PI) turn -= 2 * Math.PI;
+      while (turn < -Math.PI) turn += 2 * Math.PI;
+      var sg = turn > 0 ? 1 : -1, towards = meet ? T : add(M, mul(d, r * 0.75));
+      // a ray is drawn from O to just inside the edge of the sheet
+      var edge = function (u) {
+        var t = 1e9;
+        if (u[0] > 1e-6) t = Math.min(t, (W - 26 - O[0]) / u[0]); else if (u[0] < -1e-6) t = Math.min(t, (26 - O[0]) / u[0]);
+        if (u[1] > 1e-6) t = Math.min(t, (H - 26 - O[1]) / u[1]); else if (u[1] < -1e-6) t = Math.min(t, (26 - O[1]) / u[1]);
+        return add(O, mul(u, Math.max(t, R + 40)));
+      };
+      return {
+        meet: meet, r: r, R: R, O: O, A: A, B: B, M: M, T: T, d: d, ux: ux, uy: uy, wA: wA, ax: ax, turn: turn,
+        X: s.X, Y: s.Y, Ex: edge(ux), Ey: edge(uy), Et: edge(d),
+        arcs: [
+          { c: O, r: R, t1: ax - sg * 0.2, t2: ax + turn + sg * 0.2 },
+          { c: B, r: r, t1: aim(B, towards) - sg * 0.42, t2: aim(B, towards) + sg * 0.42 },
+          { c: A, r: r, t1: aim(A, towards) + sg * 0.42, t2: aim(A, towards) - sg * 0.42 },
+        ],
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, wB = mul(f.wA, -1);
+      if (i >= 5 && f.meet) {                             // the two equal angles
+        var rho = 86, half = f.turn / 2, sw = f.turn > 0 ? 1 : 0;
+        [[f.ax, 'a'], [f.ax + half, 'b']].forEach(function (q) {
+          var p1 = onCircle(f.O, rho, q[0]), p2 = onCircle(f.O, rho, q[0] + half);
+          el('path', { d: 'M' + f.O.join(' ') + 'L' + p1.join(' ') + 'A' + rho + ' ' + rho + ' 0 0 ' + sw + ' ' + p2.join(' ') + 'Z', class: 'cx-sector cx-sector-' + q[1] }, marks);
+          el('path', { d: 'M' + p1.join(' ') + 'A' + rho + ' ' + rho + ' 0 0 ' + sw + ' ' + p2.join(' '), class: 'cx-sector-edge cx-sector-edge-' + q[1] }, marks);
+          var m1 = onCircle(f.O, rho - 7, q[0] + half / 2), m2 = onCircle(f.O, rho + 7, q[0] + half / 2);
+          el('line', { x1: m1[0], y1: m1[1], x2: m2[0], y2: m2[1], class: 'cx-tick' }, marks);
+        });
+        [f.A, f.B].forEach(function (P) { el('line', { x1: P[0], y1: P[1], x2: f.T[0], y2: f.T[1], class: 'cx-equal' }, marks); });
+      }
+      [[f.Ex, 'x', f.wA], [f.Ey, 'y', wB]].forEach(function (q) {
+        el('line', { x1: f.O[0], y1: f.O[1], x2: q[0][0], y2: q[0][1], class: 'cx-seg' }, ink);
+        label(ink, add(add(q[0], mul(unit(sub(f.O, q[0])), 14)), mul(q[2], 17)), q[1], 'cx-label');
+      });
+      for (var a = 0; a < Math.min(i, 3); a++) el('path', { d: arcPath(f.arcs[a].c, f.arcs[a].r, f.arcs[a].t1, f.arcs[a].t2), class: 'cx-arc' }, ink);
+      if (i >= 4 && f.meet) el('line', { x1: f.O[0], y1: f.O[1], x2: f.Et[0], y2: f.Et[1], class: 'cx-line' }, ink);
+      if (i >= 1) { point(ink, f.A, 'A', add(f.wA, mul(f.ux, 0.25))); point(ink, f.B, 'B', add(wB, mul(f.uy, 0.25))); }
+      if (i >= 3 && f.meet) {
+        el('circle', { cx: f.T[0], cy: f.T[1], r: 5, class: 'cx-pt cx-pt-m' }, ink);
+        label(ink, add(f.T, add(mul(f.wA, 24), mul(f.d, 20))), 't', 'cx-label');
+      }
+      point(ink, f.O, 'O', mul(f.d, -1));
+      // the handles that turn the sides
+      [['X', f.X], ['Y', f.Y]].forEach(function (q) {
+        el('circle', { cx: q[1][0], cy: q[1][1], r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: q[1][0], cy: q[1][1], r: 24, class: 'cx-grab', 'data-drag': q[0] }, ink);
+      });
+    },
+    anim: function (f, i) {
+      if (i >= 1 && i <= 3) return { arcs: [i - 1] };
+      if (i === 4 && f.meet) return { ruler: [f.O, f.Et] };
+      return null;
+    },
+  };
+
+  // the same opening kept (k = 1), for the constructions that carry a length with the compass
+  var keptK = function (k) { return Math.abs(k - 1) < 0.005; };
+  var snapK = function (v) { return Math.abs(v - 100) <= 2 ? 100 : v; };
+  // a filled angle from direction t0, turning by dt, with its edge and one tick
+  function sector(g, c, t0, dt, rho, kind) {
+    var p1 = onCircle(c, rho, t0), p2 = onCircle(c, rho, t0 + dt);
+    var arc = 'A' + rho + ' ' + rho + ' 0 ' + (Math.abs(dt) > Math.PI ? 1 : 0) + ' ' + (dt > 0 ? 1 : 0) + ' ' + p2.join(' ');
+    el('path', { d: 'M' + c.join(' ') + 'L' + p1.join(' ') + arc + 'Z', class: 'cx-sector cx-sector-' + kind }, g);
+    el('path', { d: 'M' + p1.join(' ') + arc, class: 'cx-sector-edge cx-sector-edge-' + kind }, g);
+    var m1 = onCircle(c, rho - 7, t0 + dt / 2), m2 = onCircle(c, rho + 7, t0 + dt / 2);
+    el('line', { x1: m1[0], y1: m1[1], x2: m2[0], y2: m2[1], class: 'cx-tick' }, g);
+  }
+  function tick(g, p, q) {
+    var m = mul(add(p, q), 0.5), u = unit(sub(q, p)), n = [u[1], -u[0]];
+    el('line', { x1: m[0] - n[0] * 8, y1: m[1] - n[1] * 8, x2: m[0] + n[0] * 8, y2: m[1] + n[1] * 8, class: 'cx-tick' }, g);
+  }
+
+  // A segment A'B' on the line xy as long as AB (Grade 7, lesson 12): open the compass on
+  // AB, mark A' on the line, and with the same opening cut the line at B'.
+  CX['copy-segment'] = {
+    steps: 5,
+    warnFrom: 3,
+    start: { A: [160, 212], B: [356, 178], P: [168, 350], k: 1 },
+    kOk: keptK, kSnap: snapK,
+    place: function (s, key, p) { return key === 'P' ? [Math.max(60, Math.min(430, p[0])), s.P[1]] : p; },
+    limit: function (s, key, p) {
+      if (key === 'P') return true;
+      var d = len(sub(p, s[key === 'A' ? 'B' : 'A']));
+      return d >= 90 && d <= 300 && p[1] >= 170 && p[1] <= 262;      // room for the compass above, the line xy below
+    },
+    figure: function (s) {
+      var A = s.A, B = s.B, AB = len(sub(B, A)), r = s.k * AB, u = unit(sub(B, A)), n = [u[1], -u[0]];
+      if (n[1] > 0) n = mul(n, -1);
+      var P = [Math.max(44, Math.min(s.P[0], 600 - r)), s.P[1]], Q = [P[0] + r, P[1]];
+      return { meet: keptK(s.k), r: r, A: A, B: B, u: u, n: n, P: P, Q: Q, arcs: [{ c: P, r: r, t1: -0.34, t2: 0.34 }] };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, y = f.P[1];
+      el('line', { x1: 30, y1: y, x2: W - 30, y2: y, class: 'cx-seg' }, ink);
+      label(ink, [40, y + 24], 'x', 'cx-label'); label(ink, [W - 40, y + 24], 'y', 'cx-label');
+      el('line', { x1: f.A[0], y1: f.A[1], x2: f.B[0], y2: f.B[1], class: 'cx-seg' }, ink);
+      if (i >= 3) el('path', { d: arcPath(f.P, f.r, -0.34, 0.34), class: 'cx-arc' }, ink);
+      if (i >= 4) {
+        el('line', { x1: f.P[0], y1: y, x2: f.Q[0], y2: y, class: 'cx-line' }, ink);
+        tick(marks, f.A, f.B); tick(marks, f.P, f.Q);
+        label(marks, [(f.P[0] + f.Q[0]) / 2, y - 30], f.meet ? 'A′B′ = AB' : 'A′B′ ≠ AB', 'cx-note cx-r');
+      }
+      point(ink, f.A, 'A', mul(f.u, -1), null, 'A');
+      point(ink, f.B, 'B', f.u, null, 'B');
+      if (i >= 2) point(ink, f.P, 'A′', [0, 1], null, 'P');
+      if (i >= 3) point(ink, f.Q, 'B′', [0.8, 0.9], 'cx-pt-m');
+      if (i === 1) drawCompass(layer.tools, f.A, f.B);
+    },
+    anim: function (f, i) { return i === 3 ? { arcs: [0] } : null; },
+  };
+
+  // An angle zAt equal to the angle xOy (Grade 7, lesson 13): an arc from O cuts the sides
+  // at M and N; the same arc from A cuts At at B; an arc from B of radius MN cuts it at C.
+  CX['copy-angle'] = {
+    steps: 8,
+    warnFrom: 5,
+    start: { O: [84, 318], Y: [216, 161], A: [372, 318], T: [600, 318], k: 1 },
+    kOk: keptK, kSnap: snapK,
+    // the angle stays between 25° and 110°; the ray At within 30° of the horizontal
+    limit: function (s, key, p) {
+      var v = sub(p, key === 'Y' ? s.O : s.A), ang = Math.atan2(-v[1], v[0]) * 180 / Math.PI;
+      return key === 'Y' ? len(v) >= 170 && ang >= 25 && ang <= 110 : len(v) >= 190 && Math.abs(ang) <= 30;
+    },
+    figure: function (s) {
+      var O = s.O, A = s.A, R = 132, ux = [1, 0], uy = unit(sub(s.Y, O)), ut = unit(sub(s.T, A));
+      var turn = Math.atan2(uy[1], uy[0]), sg = turn > 0 ? 1 : -1, at = Math.atan2(ut[1], ut[0]);
+      var M = add(O, mul(ux, R)), N = add(O, mul(uy, R)), MN = len(sub(N, M)), r = s.k * MN;
+      var beta = 2 * Math.asin(Math.min(1, r / (2 * R))), B = add(A, mul(ut, R)), C = onCircle(A, R, at + sg * beta);
+      var uz = unit(sub(C, A)), toC = Math.atan2(C[1] - B[1], C[0] - B[0]);
+      return {
+        meet: keptK(s.k), O: O, A: A, M: M, N: N, B: B, C: C, Y: s.Y, T: s.T, R: R, r: r,
+        ux: ux, uy: uy, ut: ut, uz: uz, turn: turn, sg: sg, at: at, beta: beta,
+        Ex: add(O, mul(ux, 214)), Ey: add(O, mul(uy, len(sub(s.Y, O)) + 18)),
+        Et: add(A, mul(ut, len(sub(s.T, A)) + 18)), Ez: add(A, mul(uz, 200)),
+        arcs: [
+          { c: O, r: R, t1: -sg * 0.18, t2: turn + sg * 0.18 },
+          { c: A, r: R, t1: at - sg * 0.18, t2: at + sg * (Math.max(Math.abs(turn), beta) + 0.3) },
+          { c: B, r: r, t1: toC + sg * 0.36, t2: toC - sg * 0.36 },
+        ],
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, sg = f.sg;
+      var out = function (u, side) { return [-side * sg * u[1], side * sg * u[0]]; };   // side 1: beyond the second side of the angle
+      if (i >= 7) {
+        sector(marks, f.O, 0, f.turn, 74, 'a');
+        sector(marks, f.A, f.at, sg * f.beta, 74, f.meet ? 'a' : 'b');
+        [[f.M, f.N], [f.B, f.C]].forEach(function (q) { el('line', { x1: q[0][0], y1: q[0][1], x2: q[1][0], y2: q[1][1], class: 'cx-equal' }, marks); });
+      }
+      [[f.Ex, 'x', out(f.ux, -1)], [f.Ey, 'y', out(f.uy, 1)]].forEach(function (q) {
+        el('line', { x1: f.O[0], y1: f.O[1], x2: q[0][0], y2: q[0][1], class: 'cx-seg' }, ink);
+        label(ink, add(add(q[0], mul(unit(sub(f.O, q[0])), 10)), mul(q[2], 28)), q[1], 'cx-label');
+      });
+      if (i >= 2) {
+        el('line', { x1: f.A[0], y1: f.A[1], x2: f.Et[0], y2: f.Et[1], class: 'cx-line' }, ink);
+        label(ink, add(add(f.Et, mul(f.ut, -8)), mul(out(f.ut, -1), 28)), 't', 'cx-label');
+      }
+      if (i >= 6) {
+        el('line', { x1: f.A[0], y1: f.A[1], x2: f.Ez[0], y2: f.Ez[1], class: 'cx-line' }, ink);
+        label(ink, add(add(f.Ez, mul(f.uz, -8)), mul(out(f.uz, 1), 20)), 'z', 'cx-label');
+      }
+      if (i >= 1) el('path', { d: arcPath(f.arcs[0].c, f.R, f.arcs[0].t1, f.arcs[0].t2), class: 'cx-arc' }, ink);
+      if (i >= 3) el('path', { d: arcPath(f.arcs[1].c, f.R, f.arcs[1].t1, f.arcs[1].t2), class: 'cx-arc' }, ink);
+      if (i >= 5) el('path', { d: arcPath(f.arcs[2].c, f.r, f.arcs[2].t1, f.arcs[2].t2), class: 'cx-arc' }, ink);
+      if (i === 4) el('line', { x1: f.M[0], y1: f.M[1], x2: f.N[0], y2: f.N[1], class: 'cx-radius' }, marks);
+      if (i >= 1) { point(ink, f.M, 'M', out(f.ux, -1)); point(ink, f.N, 'N', out(f.uy, 1)); }
+      if (i >= 3) point(ink, f.B, 'B', out(f.ut, -1));
+      if (i >= 5) point(ink, f.C, 'C', add(out(f.uz, 1), mul(f.uz, 0.5)), 'cx-pt-m');
+      point(ink, f.O, 'O', [-0.75, 0.66]);
+      if (i >= 2) point(ink, f.A, 'A', [-0.75, 0.66]);
+      // the handles: Oy turns the angle, At turns the copy
+      [['Y', f.Y, 0], ['T', f.T, 2]].forEach(function (q) {
+        if (i < q[2]) return;
+        el('circle', { cx: q[1][0], cy: q[1][1], r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: q[1][0], cy: q[1][1], r: 24, class: 'cx-grab', 'data-drag': q[0] }, ink);
+      });
+      if (i === 4) drawCompass(layer.tools, f.M, f.N);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { arcs: [0] };
+      if (i === 2) return { ruler: [f.A, f.Et] };
+      if (i === 3) return { arcs: [1] };
+      if (i === 5) return { arcs: [2] };
+      if (i === 6) return { ruler: [f.A, f.Ez] };
+      return null;
+    },
+  };
+
+  // The line d' through A perpendicular to d (Grade 7, lesson 14, with the compass instead of
+  // the set square): an arc from A cuts d at P and Q; arcs of one radius from P and from Q
+  // meet at B; AB is perpendicular to d. A may lie on d: then P and Q are on either side of it.
+  var PERP = { C: [320, 250], half: 110, reach: 270 };
+  function perpFrame(s) {
+    var u = unit(sub(s.D, PERP.C)), n = [u[1], -u[0]];
+    if (n[1] > 0) n = mul(n, -1);                        // n points to the top of the sheet
+    var v = sub(s.A, PERP.C);
+    return { u: u, n: n, along: v[0] * u[0] + v[1] * u[1], dist: v[0] * n[0] + v[1] * n[1] };
+  }
+  CX['perpendicular'] = {
+    steps: 6,
+    warnFrom: 3,
+    start: { A: [296, 96], D: [590, 250], k: 0.8 },
+    presets: {
+      off: function (s) { var f = perpFrame(s); s.A = add(add(PERP.C, mul(f.u, -24)), mul(f.n, 150)); },
+      on: function (s) { var f = perpFrame(s); s.A = add(PERP.C, mul(f.u, -24)); },
+    },
+    // A snaps onto d when it comes close; the handle D only turns the line
+    place: function (s, key, p) {
+      if (key === 'D') return add(PERP.C, mul(unit(sub(p, PERP.C)), PERP.reach));
+      var f = perpFrame({ A: p, D: s.D });
+      return Math.abs(f.dist) < 13 ? add(PERP.C, mul(f.u, f.along)) : p;
+    },
+    limit: function (s, key, p) {
+      var t = key === 'D' ? { A: s.A, D: p } : { A: p, D: s.D }, f = perpFrame(t);
+      return f.u[0] > 0 && Math.abs(Math.atan2(f.u[1], f.u[0])) <= 0.56 && Math.abs(f.along) <= 150 && Math.abs(f.dist) <= 190;
+    },
+    figure: function (s) {
+      var fr = perpFrame(s), u = fr.u, n = fr.n, on = Math.abs(fr.dist) < 0.5, c = PERP.half;
+      var H = add(PERP.C, mul(u, fr.along)), A = on ? H : s.A;
+      var side = on ? -1 : (fr.dist > 0 ? 1 : -1);          // A's side of d; B goes to the other side
+      var nA = mul(n, side), nB = mul(n, -side);
+      var P = add(H, mul(u, -c)), Q = add(H, mul(u, c)), R = on ? c : Math.hypot(c, fr.dist);
+      var r = s.k * 2 * c, meet = r > c + 0.5, h = meet ? Math.sqrt(r * r - c * c) : 0, B = add(H, mul(nB, h));
+      var aim = function (from, to) { return Math.atan2(to[1] - from[1], to[0] - from[0]); };
+      var fix = function (t, ref) { while (t - ref > Math.PI) t -= 2 * Math.PI; while (ref - t > Math.PI) t += 2 * Math.PI; return t; };
+      var tP = aim(A, P), tQ = fix(aim(A, Q), tP), sg = tQ > tP ? 1 : -1;
+      // the arc from A: one sweep through P and Q, or (A on d) a short mark at each
+      var first = on ? [{ c: A, r: R, t1: tP - 0.3, t2: tP + 0.3 }, { c: A, r: R, t1: tQ - 0.3, t2: tQ + 0.3 }]
+        : [{ c: A, r: R, t1: tP - sg * 0.16, t2: tQ + sg * 0.16 }];
+      var towards = meet ? B : add(H, mul(nB, r * 0.75));
+      var hi = Math.max(on ? 0 : Math.abs(fr.dist), 0) + 46, lo = h + 46;
+      return {
+        meet: meet, on: on, A: A, H: H, P: P, Q: Q, B: B, D: s.D, u: u, n: n, nA: nA, nB: nB, r: r, R: R,
+        d1: add(PERP.C, mul(u, -330)), d2: add(PERP.C, mul(u, 330)),
+        e1: add(H, mul(nA, hi)), e2: add(H, mul(nB, lo)),
+        nFirst: first.length,
+        arcs: first.concat([
+          { c: P, r: r, t1: aim(P, towards) - 0.4, t2: aim(P, towards) + 0.4 },
+          { c: Q, r: r, t1: aim(Q, towards) + 0.4, t2: aim(Q, towards) - 0.4 },
+        ]),
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, k = f.nFirst;
+      var arc = function (q) { el('path', { d: arcPath(q.c, q.r, q.t1, q.t2), class: 'cx-arc' }, ink); };
+      if (i >= 5 && f.meet) {
+        [f.P, f.Q].forEach(function (X) {
+          el('line', { x1: X[0], y1: X[1], x2: f.B[0], y2: f.B[1], class: 'cx-equal' }, marks);
+          if (!f.on) el('line', { x1: X[0], y1: X[1], x2: f.A[0], y2: f.A[1], class: 'cx-equal' }, marks);
+        });
+        var m = f.on ? f.nB : f.nA, s = 13, p1 = add(f.H, mul(f.u, s)), p2 = add(p1, mul(m, s)), p3 = add(f.H, mul(m, s));
+        el('polyline', { points: [p1, p2, p3].map(function (x) { return x.join(','); }).join(' '), class: 'cx-right' }, marks);
+        tick(marks, f.P, f.H); tick(marks, f.H, f.Q);
+      }
+      el('line', { x1: f.d1[0], y1: f.d1[1], x2: f.d2[0], y2: f.d2[1], class: 'cx-seg' }, ink);
+      label(ink, add(add(PERP.C, mul(f.u, -292)), mul(f.n, 20)), 'd', 'cx-label');
+      if (i >= 4 && f.meet) {
+        el('line', { x1: f.e1[0], y1: f.e1[1], x2: f.e2[0], y2: f.e2[1], class: 'cx-line' }, ink);
+        label(ink, add(add(f.e2, mul(f.nB, -12)), mul(f.u, 24)), 'd′', 'cx-label');
+      }
+      if (i >= 1) for (var a = 0; a < k; a++) arc(f.arcs[a]);
+      if (i >= 2) arc(f.arcs[k]);
+      if (i >= 3) arc(f.arcs[k + 1]);
+      if (i >= 1) {
+        var off = mul(f.nB, f.on ? -0.8 : 0.9);              // clear of the arc through P and Q
+        point(ink, f.P, 'P', add(mul(f.u, -0.9), off));
+        point(ink, f.Q, 'Q', add(mul(f.u, 0.9), off));
+      }
+      if (i >= 3 && f.meet) point(ink, f.B, 'B', add(f.u, mul(f.nB, 0.3)), 'cx-pt-m');
+      if (i >= 5 && f.meet && !f.on) point(ink, f.H, 'H', add(mul(f.u, -1), mul(f.nA, 0.9)), 'cx-pt-m');
+      point(ink, f.A, 'A', f.on ? add(mul(f.u, -0.45), mul(f.nA, 1)) : add(mul(f.u, -1), mul(f.nA, 0.3)), null, 'A');
+      el('circle', { cx: f.D[0], cy: f.D[1], r: 7, class: 'cx-handle' }, ink);
+      el('circle', { cx: f.D[0], cy: f.D[1], r: 24, class: 'cx-grab', 'data-drag': 'D' }, ink);
+    },
+    anim: function (f, i) {
+      var k = f.nFirst;
+      if (i === 1) return { arcs: k === 2 ? [0, 1] : [0] };
+      if (i === 2) return { arcs: [k] };
+      if (i === 3) return { arcs: [k + 1] };
+      if (i === 4 && f.meet) return { ruler: [f.e1, f.e2] };
+      return null;
+    },
+  };
+
+  // AB divided into n equal parts (Grade 9, lesson 15, Thales): n equal steps C, D, E ... on a
+  // ray Ax; the last point is joined to B; the parallels through the others cut AB at C', D' ...
+  // The parallels are drawn as Grade 7 lesson 14 does: the set square laid on EB, a ruler against
+  // its other side, and the set square slid along the ruler to each point.
+  var KM_COUNT = ['', '', 'ពីរ', 'បី', 'បួន', 'ប្រាំ', 'ប្រាំមួយ'];
+  var kmDigits = function (n) { return String(n).replace(/\d/g, function (d) { return '០១២៣៤៥៦៧៨៩'[d]; }); };
+  var joinKm = function (a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' និង ' + a[a.length - 1]; };
+  var stepName = function (j) { return 'CDEFGH'[j - 1]; };
+  function divideOk(A, B, X) {
+    var a = sub(B, A), b = sub(X, A), la = len(a), lb = len(b);
+    var ang = Math.acos(Math.max(-1, Math.min(1, (a[0] * b[0] + a[1] * b[1]) / (la * lb)))) * 180 / Math.PI;
+    return la >= 170 && lb >= 200 && ang >= 20 && ang <= 140;
+  }
+  CX['divide-segment'] = {
+    steps: 7,
+    start: { A: [96, 344], B: [540, 344], X: [398, 96], k: 3 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: function (s) { return 'ចែកជា ' + kmDigits(s.k) + ' ចំណែកប៉ុនគ្នា'; },
+    fill: function (s) {
+      var n = s.k, pts = [], inner = [], img = [], eq = ['A' + stepName(1) + '′'];
+      for (var j = 1; j <= n; j++) pts.push(stepName(j));
+      for (j = n - 1; j >= 1; j--) { inner.push(stepName(j)); img.push(stepName(j) + '′'); }
+      for (j = 1; j < n; j++) eq.push(stepName(j) + '′' + (j === n - 1 ? 'B' : stepName(j + 1) + '′'));
+      var steps = ['A' + stepName(1)];
+      for (j = 1; j < n; j++) steps.push(stepName(j) + stepName(j + 1));
+      return { n: KM_COUNT[n], pts: joinKm(pts), last: stepName(n), first: inner[0], firstImg: img[0],
+        more: n > 2 ? ' ធ្វើដូចគ្នាចំពោះចំណុច ' + joinKm(inner.slice(1)) + '៖ បានចំណុច ' + joinKm(img.slice(1)) + '។' : '',
+        eq: eq.join(' = '), steps: steps.join(' = ') };
+    },
+    limit: function (s, key, p) {
+      return divideOk(key === 'A' ? p : s.A, key === 'B' ? p : s.B, key === 'X' ? p : s.X);
+    },
+    figure: function (s) {
+      var A = s.A, B = s.B, n = s.k, u = unit(sub(s.X, A)), lx = len(sub(s.X, A)), v = unit(sub(B, A));
+      var st = Math.max(26, Math.min(84, (lx - 34) / n)), K = [A], Kp = [A], arcs = [], rulers = [];
+      var side = u[0] * v[1] - u[1] * v[0] > 0 ? 1 : -1;       // which side of Ax the point B is on
+      var nx = mul([-u[1], u[0]], -side), nb = mul([-v[1], v[0]], side);   // away from B; away from Ax
+      var ta = Math.atan2(u[1], u[0]);
+      for (var j = 1; j <= n; j++) {
+        K.push(add(A, mul(u, st * j)));
+        Kp.push(add(A, mul(sub(B, A), j / n)));
+        arcs.push({ c: K[j - 1], r: st, t1: ta - 0.24, t2: ta + 0.24 });
+      }
+      var w = unit(sub(B, K[n]));                             // the direction of EB and of every parallel
+      for (j = n - 1; j >= 1; j--) rulers.push([add(K[j], mul(w, -18)), add(Kp[j], mul(w, 18))]);
+      // the set square: its right angle slides on a line perpendicular to EB, behind the points of Ax
+      var dot = function (a, b) { return a[0] * b[0] + a[1] * b[1]; };
+      var d = [-w[1], w[0]], pd = dot(sub(A, K[n]), d) < 0 ? d : mul(d, -1), back = 1e9, reach = -1e9;
+      for (j = 1; j <= n; j++) back = Math.min(back, dot(K[j], w));
+      back -= 58;                                            // clear of the names C, D, E ...
+      for (j = 1; j < n; j++) reach = Math.max(reach, dot(Kp[j], w));
+      var lw = Math.max(210, Math.min(380, reach - back + 16)), lp = lw * 0.56, cor = [null], c0, lo = 1e9, hi = -1e9;
+      for (j = 1; j <= n; j++) cor.push(add(K[j], mul(w, back - dot(K[j], w))));
+      for (j = 1; j <= n; j++) {
+        c0 = dot(sub(cor[j], cor[n]), d);
+        lo = Math.min(lo, c0, c0 + dot(pd, d) * lp); hi = Math.max(hi, c0, c0 + dot(pd, d) * lp);
+      }
+      return { meet: true, n: n, A: A, B: B, X: s.X, u: u, v: v, w: w, nx: nx, nb: nb, K: K, Kp: Kp, st: st,
+        Ex: add(A, mul(u, lx + 18)), arcs: arcs, rulers: rulers,
+        sq: { cor: cor, pd: pd, lw: lw, lp: lp, r1: add(cor[n], mul(d, lo)), r2: add(cor[n], mul(d, hi)) } };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, n = f.n, j;
+      var seg = function (p, q, cls, to) { el('line', { x1: p[0], y1: p[1], x2: q[0], y2: q[1], class: cls }, to || ink); };
+      if (i >= 6) {
+        for (j = 1; j <= n; j++) { tick(marks, f.K[j - 1], f.K[j]); tick2(marks, f.Kp[j - 1], f.Kp[j]); }
+        for (j = 1; j <= n; j++) {                           // an arrow head on each parallel
+          var m = add(mul(add(f.K[j], f.Kp[j]), 0.5), mul(f.w, 5)), b = add(m, mul(f.w, -11)), t = [-f.w[1], f.w[0]];
+          el('polyline', { points: [add(b, mul(t, 6)), m, add(b, mul(t, -6))].map(function (x) { return x.join(','); }).join(' '), class: 'cx-par' }, marks);
+        }
+      }
+      seg(f.A, f.B, 'cx-seg');
+      if (i >= 1) {
+        seg(f.A, f.Ex, 'cx-line');
+        label(ink, add(add(f.Ex, mul(f.u, -6)), mul(f.nx, 28)), 'x', 'cx-label');
+      }
+      if (i >= 3) seg(f.K[n], f.B, 'cx-line');
+      if (i >= 5) f.rulers.forEach(function (q) { seg(q[0], q[1], 'cx-line cx-line-2'); });
+      if (i >= 2) {
+        f.arcs.forEach(function (q) { el('path', { d: arcPath(q.c, q.r, q.t1, q.t2), class: 'cx-arc' }, ink); });
+        for (j = 1; j <= n; j++) {                           // the name clear of the little arc
+          el('circle', { cx: f.K[j][0], cy: f.K[j][1], r: 5, class: 'cx-pt' }, ink);
+          label(ink, add(f.K[j], add(mul(f.nx, 27), mul(f.u, -10))), stepName(j), 'cx-label');
+        }
+      }
+      if (i >= 5) for (j = 1; j < n; j++) point(ink, f.Kp[j], stepName(j) + '′', f.nb, 'cx-pt-m');
+      point(ink, f.A, 'A', add(mul(f.v, -1), mul(f.nb, 0.35)), null, 'A');
+      point(ink, f.B, 'B', add(f.v, mul(f.nb, 0.35)), null, 'B');
+      if (i >= 1) {
+        el('circle', { cx: f.X[0], cy: f.X[1], r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: f.X[0], cy: f.X[1], r: 24, class: 'cx-grab', 'data-drag': 'X' }, ink);
+      }
+      // the ruler and the set square: laid on EB (step 5), left where the last parallel was drawn (step 6)
+      if (i === 4 || i === 5) {
+        drawRuler(layer.tools, f.sq.r1, f.sq.r2);
+        drawSetSquare(layer.tools, f.sq.cor[i === 4 ? n : 1], f.w, f.sq.pd, f.sq.lw, f.sq.lp);
+      }
+    },
+    anim: function (f, i) {
+      var q = f.sq, n = f.n, line = function (a, b, to) { el('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], class: 'cx-line cx-line-2' }, to); };
+      if (i === 1) return { ruler: [f.A, f.Ex] };
+      if (i === 2) return { arcs: f.arcs.map(function (a, j) { return j; }) };
+      if (i === 3) return { ruler: [f.K[n], f.B] };
+      if (i === 4) return { phases: [                         // the set square comes onto EB, then the ruler against it
+        { dur: 900, draw: function (t, drawn, tools) { drawSetSquare(tools, add(q.cor[n], mul(q.pd, 46 * (1 - t))), f.w, q.pd, q.lw, q.lp, 0.25 + 0.75 * t); } },
+        { dur: 900, draw: function (t, drawn, tools) {
+          var off = mul(f.w, -40 * (1 - t)), grp = el('g', { opacity: 0.25 + 0.75 * t }, tools);
+          drawRuler(grp, add(q.r1, off), add(q.r2, off));
+          drawSetSquare(tools, q.cor[n], f.w, q.pd, q.lw, q.lp);
+        } },
+      ] };
+      if (i === 5) {                                          // slide to each point, draw along the edge
+        var phases = [];
+        f.rulers.forEach(function (r, k) {
+          var j = n - 1 - k, from = q.cor[j + 1], to = q.cor[j];
+          var done = function (drawn) { for (var m = 0; m < k; m++) line(f.rulers[m][0], f.rulers[m][1], drawn); };
+          phases.push({ dur: 1000, draw: function (t, drawn, tools) {
+            done(drawn);
+            drawRuler(tools, q.r1, q.r2);
+            drawSetSquare(tools, add(from, mul(sub(to, from), t)), f.w, q.pd, q.lw, q.lp);
+          } });
+          phases.push({ dur: 1000, draw: function (t, drawn, tools) {
+            var e = add(r[0], mul(sub(r[1], r[0]), t));
+            done(drawn);
+            line(r[0], e, drawn);
+            drawRuler(tools, q.r1, q.r2);
+            drawSetSquare(tools, to, f.w, q.pd, q.lw, q.lp);
+            el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, tools);
+          } });
+        });
+        return { phases: phases };
+      }
+      return null;
+    },
+  };
+  function tick2(g, p, q) {
+    var m = mul(add(p, q), 0.5), u = unit(sub(q, p)), n = [u[1], -u[0]];
+    [-3, 3].forEach(function (o) {
+      var c = add(m, mul(u, o));
+      el('line', { x1: c[0] - n[0] * 8, y1: c[1] - n[1] * 8, x2: c[0] + n[0] * 8, y2: c[1] + n[1] * 8, class: 'cx-tick' }, g);
+    });
+  }
+  function tick3(g, p, q) {
+    var m = mul(add(p, q), 0.5), u = unit(sub(q, p)), n = [u[1], -u[0]];
+    [-5, 0, 5].forEach(function (o) {
+      var c = add(m, mul(u, o));
+      el('line', { x1: c[0] - n[0] * 8, y1: c[1] - n[1] * 8, x2: c[0] + n[0] * 8, y2: c[1] + n[1] * 8, class: 'cx-tick' }, g);
+    });
+  }
+
+  // The special angles on a ray Ox, with the compass and the ruler only (one page, a tab each).
+  // 60°: an arc from O cuts Ox at A, the same opening from A cuts that arc at B, and OAB is an
+  // equilateral triangle. 30°: the bisector of that angle (arcs of the same opening from B and
+  // from A meet at C). 90°: Ox is extended beyond O, an arc from O cuts the line at P and Q, and
+  // arcs of one radius from P and from Q meet at B, so OB is the mediator of PQ. 45°: the
+  // bisector of that right angle (the half circle from O cuts Oy at R; arcs from Q and from R).
+  function toEdge(p, u, least) {                           // from p along u to just inside the edge of the sheet
+    var t = 1e9;
+    if (u[0] > 1e-6) t = Math.min(t, (W - 26 - p[0]) / u[0]); else if (u[0] < -1e-6) t = Math.min(t, (26 - p[0]) / u[0]);
+    if (u[1] > 1e-6) t = Math.min(t, (H - 26 - p[1]) / u[1]); else if (u[1] < -1e-6) t = Math.min(t, (26 - p[1]) / u[1]);
+    return add(p, mul(u, Math.max(t, least || 0)));
+  }
+  var aimAt = function (from, to) { return Math.atan2(to[1] - from[1], to[0] - from[0]); };
+  function rayFrame(s) {
+    var u = unit(sub(s.X, s.O)), n = [u[1], -u[0]];        // n: towards the top of the sheet
+    return { O: s.O, X: s.X, u: u, n: n, ax: Math.atan2(u[1], u[0]), Ex: toEdge(s.O, u, 240),
+      // the direction that makes the angle t with Ox
+      dir: function (t) { return add(mul(u, Math.cos(t)), mul(n, Math.sin(t))); } };
+  }
+  // the handle X only turns the ray Ox: between lo and hi degrees above the horizontal
+  function rayLimit(lo, hi) {
+    return function (s, key, p) {
+      var v = sub(p, s.O), a = Math.atan2(-v[1], v[0]) * 180 / Math.PI;
+      return len(v) >= 240 && a >= lo && a <= hi;
+    };
+  }
+  function rayDraw(f, layer, t, name, cls) {               // the ray from O at the angle t, named at its end
+    var d = f.dir(t), e = toEdge(f.O, d, 220);
+    el('line', { x1: f.O[0], y1: f.O[1], x2: e[0], y2: e[1], class: cls || 'cx-line' }, layer);
+    label(layer, add(add(e, mul(d, -14)), mul(f.dir(t + Math.PI / 2), 20)), name, 'cx-label');
+    return e;
+  }
+  function rayGiven(f, ink) {
+    el('line', { x1: f.O[0], y1: f.O[1], x2: f.Ex[0], y2: f.Ex[1], class: 'cx-seg' }, ink);
+    label(ink, add(add(f.Ex, mul(f.u, -14)), mul(f.n, -22)), 'x', 'cx-label');
+  }
+  function rayHandle(f, ink) {
+    el('circle', { cx: f.X[0], cy: f.X[1], r: 7, class: 'cx-handle' }, ink);
+    el('circle', { cx: f.X[0], cy: f.X[1], r: 24, class: 'cx-grab', 'data-drag': 'X' }, ink);
+  }
+  var arcDraw = function (g, q) { el('path', { d: arcPath(q.c, q.r, q.t1, q.t2), class: 'cx-arc' }, g); };
+  var dash = function (g, p, q) { el('line', { x1: p[0], y1: p[1], x2: q[0], y2: q[1], class: 'cx-equal' }, g); };
+  var degrees = function (t) { return Math.round(t * 180 / Math.PI) + '°'; };
+
+  function sixty(s) {
+    var f = rayFrame(s), R = 180, r = s.k * R, th = 2 * Math.asin(Math.min(1, r / (2 * R)));
+    var O = f.O, A = add(O, mul(f.u, R)), B = add(O, mul(f.dir(th), R));
+    // C: the third corner of the equilateral triangle on AB, away from O
+    var C = add(mul(add(A, B), 0.5), mul(f.dir(th / 2), r * Math.sqrt(3) / 2));
+    f.meet = keptK(s.k); f.R = R; f.r = r; f.th = th; f.A = A; f.B = B; f.C = C;
+    f.arcs = [
+      { c: O, r: R, t1: f.ax + 0.12, t2: f.ax - Math.max(th, Math.PI / 3) - 0.24 },
+      { c: A, r: r, t1: aimAt(A, B) + 0.26, t2: aimAt(A, B) - 0.26 },
+      { c: B, r: r, t1: aimAt(B, C) - 0.26, t2: aimAt(B, C) + 0.26 },
+      { c: A, r: r, t1: aimAt(A, C) + 0.26, t2: aimAt(A, C) - 0.26 },
+    ];
+    return f;
+  }
+  // half: the 30° page, which goes on to bisect the angle AOB
+  function sixtyDef(half) {
+    var last = half ? 6 : 4, lineAt = half ? 5 : 3;
+    return {
+      steps: last + 1,
+      warnFrom: 2,
+      start: { O: [half ? 96 : 130, 372], X: [half ? 560 : 580, 372], k: 1 },
+      kOk: keptK, kSnap: snapK,
+      limit: rayLimit(-8, 28),
+      figure: sixty,
+      draw: function (f, i, g, layer) {
+        var ink = layer.ink, marks = layer.marks, th = half ? f.th / 2 : f.th;
+        if (i >= last) {
+          sector(marks, f.O, f.ax, -th, 74, 'a');
+          if (half) { sector(marks, f.O, f.ax - th, -th, 74, 'b'); dash(marks, f.O, f.B); dash(marks, f.A, f.C); dash(marks, f.B, f.C); }
+          else { dash(marks, f.A, f.B); tick(marks, f.O, f.A); tick(marks, f.O, f.B); (f.meet ? tick : tick2)(marks, f.A, f.B); }
+          label(marks, add(f.O, mul(f.dir(th / 2), 112)), degrees(th), 'cx-note cx-r');
+        }
+        rayGiven(f, ink);
+        if (i >= lineAt) rayDraw(f, ink, th, half ? 'z' : 'y');
+        for (var a = 0; a < Math.min(i, half ? 4 : 2); a++) arcDraw(ink, f.arcs[a]);
+        if (i >= 1) point(ink, f.A, 'A', add(mul(f.u, 0.8), mul(f.n, -0.8)));
+        if (i >= 2) point(ink, f.B, 'B', f.dir(f.th + Math.PI / 4), half ? null : 'cx-pt-m');
+        if (half && i >= 4) point(ink, f.C, 'C', f.dir(f.th / 2 - Math.PI / 2), 'cx-pt-m', null, 27);
+        point(ink, f.O, 'O', add(mul(f.u, -0.75), mul(f.n, -0.66)));
+        rayHandle(f, ink);
+      },
+      anim: function (f, i) {
+        if (i >= 1 && i < lineAt) return { arcs: [i - 1] };
+        if (i === lineAt) return { ruler: [f.O, toEdge(f.O, f.dir(half ? f.th / 2 : f.th), 220)] };
+        return null;
+      },
+    };
+  }
+  CX['angle-60'] = sixtyDef(false);
+  CX['angle-30'] = sixtyDef(true);
+
+  function ninety(s) {
+    var f = rayFrame(s), c = 110, r = s.k * 2 * c, meet = r > c + 0.5, h = meet ? Math.sqrt(r * r - c * c) : 0;
+    var O = f.O, P = add(O, mul(f.u, -c)), Q = add(O, mul(f.u, c)), B = add(O, mul(f.n, h)), Rp = add(O, mul(f.n, c));
+    var r2 = 1.15 * c, C = add(O, mul(f.dir(Math.PI / 4), c * Math.SQRT1_2 + Math.sqrt(r2 * r2 - c * c / 2)));
+    var towards = meet ? B : add(O, mul(f.n, r * 0.75));
+    f.meet = meet; f.c = c; f.r = r; f.P = P; f.Q = Q; f.B = B; f.Rp = Rp; f.C = C; f.L = add(O, mul(f.u, -c - 64));
+    f.arcs = [
+      { c: O, r: c, t1: f.ax - 0.3, t2: f.ax + 0.3 },                           // a mark at Q, a mark at P
+      { c: O, r: c, t1: f.ax + Math.PI + 0.3, t2: f.ax + Math.PI - 0.3 },
+      { c: O, r: c, t1: f.ax + 0.14, t2: f.ax - Math.PI - 0.14 },               // or the half circle through Q, R and P
+      { c: P, r: r, t1: aimAt(P, towards) + 0.3, t2: aimAt(P, towards) - 0.3 },
+      { c: Q, r: r, t1: aimAt(Q, towards) - 0.3, t2: aimAt(Q, towards) + 0.3 },
+      { c: Q, r: r2, t1: aimAt(Q, C) + 0.3, t2: aimAt(Q, C) - 0.3 },
+      { c: Rp, r: r2, t1: aimAt(Rp, C) - 0.3, t2: aimAt(Rp, C) + 0.3 },
+    ];
+    return f;
+  }
+  // half: the 45° page, which goes on to bisect the right angle xOy
+  function ninetyDef(half) {
+    var last = half ? 9 : 6, q = Math.PI / 2;
+    return {
+      steps: last + 1,
+      warnFrom: 4,
+      start: { O: [half ? 262 : 300, 378], X: [half ? 572 : 590, 378], k: half ? 0.95 : 0.8 },
+      limit: rayLimit(-6, 18),
+      figure: ninety,
+      draw: function (f, i, g, layer) {
+        var ink = layer.ink, marks = layer.marks, ok = f.meet, s = 15;
+        if (i >= last && ok) {
+          if (half) {
+            sector(marks, f.O, f.ax, -q / 2, 54, 'a'); sector(marks, f.O, f.ax - q / 2, -q / 2, 54, 'b');
+            dash(marks, f.Q, f.C); dash(marks, f.Rp, f.C);
+            label(marks, add(f.O, mul(f.dir(q / 4), 84)), '45°', 'cx-note cx-r');
+          } else {
+            var p1 = add(f.O, mul(f.u, s)), p2 = add(p1, mul(f.n, s)), p3 = add(f.O, mul(f.n, s));
+            el('polyline', { points: [p1, p2, p3].map(function (x) { return x.join(','); }).join(' '), class: 'cx-right' }, marks);
+            dash(marks, f.P, f.B); dash(marks, f.Q, f.B); tick(marks, f.P, f.O); tick(marks, f.O, f.Q);
+            label(marks, add(f.O, add(mul(f.u, 44), mul(f.n, 36))), '90°', 'cx-note cx-r');
+          }
+        }
+        rayGiven(f, ink);
+        if (i >= 1) {
+          el('line', { x1: f.O[0], y1: f.O[1], x2: f.L[0], y2: f.L[1], class: 'cx-ext' }, ink);
+          label(ink, add(add(f.L, mul(f.u, 12)), mul(f.n, -22)), 'x′', 'cx-label');
+        }
+        if (i >= 5 && ok) rayDraw(f, ink, q, 'y', half ? 'cx-line cx-line-2' : null);      // 45°: Oy is only on the way
+        if (half && i >= 8 && ok) rayDraw(f, ink, q / 2, 'z');
+        if (i >= 2) { if (half) arcDraw(ink, f.arcs[2]); else { arcDraw(ink, f.arcs[0]); arcDraw(ink, f.arcs[1]); } }
+        if (i >= 3) arcDraw(ink, f.arcs[3]);
+        if (i >= 4) arcDraw(ink, f.arcs[4]);
+        if (half && ok && i >= 6) arcDraw(ink, f.arcs[5]);
+        if (half && ok && i >= 7) arcDraw(ink, f.arcs[6]);
+        if (i >= 2) {
+          point(ink, f.P, 'P', add(mul(f.u, -1), mul(f.n, -0.85)));
+          point(ink, f.Q, 'Q', add(f.u, mul(f.n, -0.85)));
+        }
+        if (i >= 4 && ok) point(ink, f.B, 'B', f.u, half ? null : 'cx-pt-m', null, 24);
+        if (half && i >= 5 && ok) point(ink, f.Rp, 'R', add(mul(f.u, -1), mul(f.n, 0.8)), null, null, 24);
+        if (half && i >= 7 && ok) point(ink, f.C, 'C', f.dir(-q / 2), 'cx-pt-m', null, 27);
+        point(ink, f.O, 'O', mul(f.n, -1));
+        rayHandle(f, ink);
+      },
+      anim: function (f, i) {
+        if (i === 1) return { ruler: [f.O, f.L], cls: 'cx-ext' };
+        if (i === 2) return { arcs: half ? [2] : [0, 1] };
+        if (i === 3 || i === 4) return { arcs: [i] };
+        if (!f.meet) return null;
+        if (i === 5) return { ruler: [f.O, toEdge(f.O, f.n, 220)], cls: half ? 'cx-line cx-line-2' : null };
+        if (half && (i === 6 || i === 7)) return { arcs: [i - 1] };
+        if (half && i === 8) return { ruler: [f.O, toEdge(f.O, f.dir(q / 2), 220)] };
+        return null;
+      },
+    };
+  }
+  CX['angle-90'] = ninetyDef(false);
+  CX['angle-45'] = ninetyDef(true);
+
+  // The line d' through A parallel to d (Grade 7, lesson 14 §5.2), one page with two tabs.
+  // With the set square: one side of its right angle on d, a ruler against the other side, and
+  // the set square slid along the ruler until that side passes through A (two lines perpendicular
+  // to one line are parallel). The slider turns the ruler while the set square slides: the ruler
+  // that slips. With the compass: AP = PQ = QB = BA, one opening, so APQB is a rhombus.
+  var PAR = { C: [320, 285], reach: 270 };
+  var dotp = function (a, b) { return a[0] * b[0] + a[1] * b[1]; };
+  var turn = function (v, t) { var c = Math.cos(t), k = Math.sin(t); return [v[0] * c - v[1] * k, v[0] * k + v[1] * c]; };
+  function parFrame(s) {
+    var u = unit(sub(s.D, PAR.C)), n = [u[1], -u[0]], v = sub(s.A, PAR.C);    // n: towards the top of the sheet
+    return { A: s.A, D: s.D, u: u, n: n, along: dotp(v, u), dist: dotp(v, n) };
+  }
+  // A stays above d, where the set square and the arcs have room; the handle D only turns the line
+  function parLimit(s, key, p) {
+    var f = parFrame(key === 'D' ? { A: s.A, D: p } : { A: p, D: s.D });
+    return f.u[0] > 0 && Math.abs(Math.atan2(f.u[1], f.u[0])) <= 0.2 && f.along >= -140 && f.along <= 30 && f.dist >= 70 && f.dist <= 190;
+  }
+  function parPlace(s, key, p) { return key === 'D' ? add(PAR.C, mul(unit(sub(p, PAR.C)), PAR.reach)) : p; }
+  function parGiven(f, ink) {
+    var a = add(PAR.C, mul(f.u, -330)), b = add(PAR.C, mul(f.u, 330));
+    el('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], class: 'cx-seg' }, ink);
+    label(ink, add(add(PAR.C, mul(f.u, 236)), mul(f.n, 20)), 'd', 'cx-label');
+  }
+  function parHandles(f, ink) {
+    point(ink, f.A, 'A', add(f.n, mul(f.u, -0.4)), null, 'A');
+    el('circle', { cx: f.D[0], cy: f.D[1], r: 7, class: 'cx-handle' }, ink);
+    el('circle', { cx: f.D[0], cy: f.D[1], r: 24, class: 'cx-grab', 'data-drag': 'D' }, ink);
+  }
+  function arrowHead(g, m, w) {                            // the mark of parallel lines
+    var b = add(m, mul(w, -11)), t = [-w[1], w[0]];
+    el('polyline', { points: [add(b, mul(t, 6)), m, add(b, mul(t, -6))].map(function (x) { return x.join(','); }).join(' '), class: 'cx-par' }, g);
+  }
+  function rightMark(g, c, a, b) {
+    var k = 13, p1 = add(c, mul(a, k)), p2 = add(p1, mul(b, k)), p3 = add(c, mul(b, k));
+    el('polyline', { points: [p1, p2, p3].map(function (x) { return x.join(','); }).join(' '), class: 'cx-right' }, g);
+  }
+  CX['parallel'] = {
+    steps: 6,
+    warnFrom: 3,
+    start: { A: [270, 135], D: [590, 285], k: 0 },
+    kScale: 1,
+    kOk: function (k) { return k === 0; },
+    place: parPlace, limit: parLimit,
+    figure: function (s) {
+      var f = parFrame(s), u = f.u, n = f.n, lw = 290, lp = 136, phi = s.k * Math.PI / 180;
+      var c0 = add(PAR.C, mul(u, -216)), reach = dotp(sub(s.A, c0), turn(n, phi));
+      // the tools when the set square has gone the share t of its way along the ruler
+      f.at = function (t) {
+        var nt = turn(n, phi * t);
+        return { c: add(c0, mul(nt, reach * t)), w: turn(u, phi * t), p: mul(nt, -1), r1: add(c0, mul(nt, 218)), r2: add(c0, mul(nt, 30 - lp)) };
+      };
+      f.meet = s.k === 0; f.c0 = c0; f.lw = lw; f.lp = lp; f.end = f.at(1);
+      f.e1 = add(f.end.c, mul(f.end.w, 6)); f.e2 = add(f.end.c, mul(f.end.w, lw - 4));
+      return f;
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools, q = f.at(0);
+      if (i >= 5 && f.meet) {                              // both lines are perpendicular to the edge of the ruler
+        dash(marks, add(f.c0, mul(f.n, -34)), add(f.end.c, mul(f.n, 34)));
+        rightMark(marks, f.c0, f.u, f.n); rightMark(marks, f.end.c, f.u, f.n);
+        arrowHead(marks, add(f.c0, mul(f.u, 48)), f.u); arrowHead(marks, add(f.end.c, mul(f.u, 48)), f.u);
+      }
+      parGiven(f, ink);
+      if (i >= 4) {
+        el('line', { x1: f.e1[0], y1: f.e1[1], x2: f.e2[0], y2: f.e2[1], class: 'cx-line' }, ink);
+        label(ink, add(f.e2, mul(f.end.w, 22)), 'd′', 'cx-label');
+      }
+      parHandles(f, ink);
+      if (i === 3 || i === 4) q = f.end;
+      if (i >= 2 && i <= 4) drawRuler(tools, q.r1, q.r2);
+      if (i >= 1 && i <= 4) drawSetSquare(tools, q.c, q.w, q.p, f.lw, f.lp);
+    },
+    anim: function (f, i) {
+      var a0 = f.at(0), sq = function (tools, q) { drawSetSquare(tools, q.c, q.w, q.p, f.lw, f.lp); };
+      if (i === 1) return { phases: [{ dur: 1000, draw: function (t, drawn, tools) {
+        drawSetSquare(tools, add(a0.c, mul(f.n, -46 * (1 - t))), a0.w, a0.p, f.lw, f.lp, 0.25 + 0.75 * t);
+      } }] };
+      if (i === 2) return { phases: [{ dur: 1000, draw: function (t, drawn, tools) {
+        var off = mul(f.u, -40 * (1 - t)), grp = el('g', { opacity: 0.25 + 0.75 * t }, tools);
+        drawRuler(grp, add(a0.r1, off), add(a0.r2, off));
+        sq(tools, a0);
+      } }] };
+      if (i === 3) return { phases: [{ dur: 1700, draw: function (t, drawn, tools) {
+        var q = f.at(t);
+        drawRuler(tools, q.r1, q.r2);
+        sq(tools, q);
+      } }] };
+      if (i === 4) return { phases: [{ dur: 1300, draw: function (t, drawn, tools) {
+        var e = add(f.e1, mul(sub(f.e2, f.e1), t));
+        el('line', { x1: f.e1[0], y1: f.e1[1], x2: e[0], y2: e[1], class: 'cx-line' }, drawn);
+        drawRuler(tools, f.end.r1, f.end.r2);
+        sq(tools, f.end);
+        el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, tools);
+      } }] };
+      return null;
+    },
+  };
+  CX['parallel-compass'] = {
+    steps: 7,
+    warnFrom: 4,
+    start: { A: [250, 145], D: [590, 285], k: 1 },
+    kOk: keptK, kSnap: snapK,
+    place: parPlace, limit: parLimit,
+    figure: function (s) {
+      var f = parFrame(s), u = f.u, A = s.A, h = f.dist, r = Math.max(h + 35, 150), r2 = s.k * r;
+      var foot = add(PAR.C, mul(u, f.along)), P = add(foot, mul(u, -Math.sqrt(r * r - h * h))), Q = add(P, mul(u, r));
+      // B: on the arcs of radius r2 from Q and from A, on the side of AQ away from P
+      var M = mul(add(A, Q), 0.5), half = len(sub(Q, A)) / 2;
+      var B = add(M, mul(unit(sub(M, P)), Math.sqrt(Math.max(r2 * r2 - half * half, 0)))), w = unit(sub(B, A));
+      f.meet = keptK(s.k); f.P = P; f.Q = Q; f.B = B; f.w = w;
+      f.L1 = toEdge(A, mul(w, -1)); f.L2 = toEdge(A, w);
+      f.arcs = [
+        { c: A, r: r, t1: aimAt(A, P) + 0.24, t2: aimAt(A, P) - 0.24 },
+        { c: P, r: r, t1: aimAt(P, Q) - 0.22, t2: aimAt(P, Q) + 0.22 },
+        { c: Q, r: r2, t1: aimAt(Q, B) + 0.26, t2: aimAt(Q, B) - 0.26 },
+        { c: A, r: r2, t1: aimAt(A, B) - 0.26, t2: aimAt(A, B) + 0.26 },
+      ];
+      return f;
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, differ = f.meet ? tick : tick2;
+      if (i >= 6) {
+        dash(marks, f.A, f.P); dash(marks, f.Q, f.B);
+        tick(marks, f.A, f.P); tick(marks, f.P, f.Q); differ(marks, f.Q, f.B); differ(marks, f.A, f.B);
+        if (f.meet) { arrowHead(marks, add(f.Q, mul(f.u, 46)), f.u); arrowHead(marks, add(f.B, mul(f.w, 46)), f.w); }
+      }
+      parGiven(f, ink);
+      if (i >= 5) {
+        el('line', { x1: f.L1[0], y1: f.L1[1], x2: f.L2[0], y2: f.L2[1], class: 'cx-line' }, ink);
+        label(ink, add(add(f.L2, mul(f.w, -16)), mul(f.n, 20)), 'd′', 'cx-label');
+      }
+      for (var a = 0; a < Math.min(i, 4); a++) arcDraw(ink, f.arcs[a]);
+      if (i >= 1) point(ink, f.P, 'P', add(mul(f.u, -0.9), mul(f.n, -0.8)), null, null, 22);
+      if (i >= 2) point(ink, f.Q, 'Q', add(mul(f.u, 0.8), mul(f.n, -1)), null, null, 22);
+      if (i >= 4) point(ink, f.B, 'B', add(f.u, f.n), 'cx-pt-m', null, 24);
+      parHandles(f, ink);
+    },
+    anim: function (f, i) {
+      if (i >= 1 && i <= 4) return { arcs: [i - 1] };
+      if (i === 5) return { ruler: [f.L1, f.L2] };
+      return null;
+    },
+  };
+
+  // Triangles from given measures (Grade 7 lesson 15 §2.5, Grade 8 lesson 12 §1.2), one page with
+  // three tabs, drawn as the books do: a ruler with centimetres, a protractor, a compass.
+  // Three sides: AB, then arcs of radius AC from A and BC from B (the slider is BC: no triangle
+  // unless |AB - AC| < BC < AB + AC). Two sides and the angle between them: AB, the angle at A
+  // with the protractor, C on the ray at AC (the slider is the angle). A side and its two
+  // angles: AB, an angle at A and one at B, the rays meet at C (the slider is the angle at B).
+  var CM = 36, PR = 100;                                    // one centimetre and the protractor's radius, on the sheet
+  var cmText = function (v) { return (Math.round(v * 10) / 10) + ' cm'; };
+  var UP = [0, -1], DOWN = [0, 1], RIGHT = [1, 0], LEFT = [-1, 0];
+  var segLine = function (g, p, q, cls) { return el('line', { x1: p[0], y1: p[1], x2: q[0], y2: q[1], class: cls }, g); };
+  // a ruler with centimetre marks: its zero at p, laid along d, its body on the side nrm of the line
+  function drawCmRuler(g, p, d, cm, nrm, alpha) {
+    var grp = el('g', { opacity: alpha == null ? 1 : alpha }, g);
+    var a = add(p, mul(d, -16)), b = add(p, mul(d, cm * CM + 16)), off = mul(nrm, 4), w = mul(nrm, 38);
+    var pts = [add(a, off), add(b, off), add(add(b, off), w), add(add(a, off), w)];
+    el('polygon', { points: pts.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' '), class: 'cx-ruler' }, grp);
+    for (var h = 0; h <= cm * 2; h++) {
+      var t = add(add(p, mul(d, h * CM / 2)), off);
+      segLine(grp, t, add(t, mul(nrm, h % 2 ? 6 : 11)), 'cx-ruler-tick');
+      if (h % 2 === 0) label(grp, add(t, mul(nrm, 23)), String(h / 2), 'cx-ruler-num');
+    }
+  }
+  // a protractor on a horizontal line: its centre at c, its zero along u0, a mark at `mark` degrees
+  function prDir(u0, deg) { var t = deg * Math.PI / 180; return add(mul(u0, Math.cos(t)), mul(UP, Math.sin(t))); }
+  function drawProtractor(g, c, u0, mark, alpha) {
+    var grp = el('g', { opacity: alpha == null ? 1 : alpha }, g), a = add(c, mul(u0, PR)), b = add(c, mul(u0, -PR));
+    el('path', { d: 'M' + a.join(' ') + 'A' + PR + ' ' + PR + ' 0 0 ' + (u0[0] < 0 ? 1 : 0) + ' ' + b.join(' ') + 'Z', class: 'cx-pr' }, grp);
+    for (var deg = 0; deg <= 180; deg += 5) {
+      var d = prDir(u0, deg), rim = add(c, mul(d, PR));
+      segLine(grp, rim, add(rim, mul(d, deg % 30 === 0 ? -12 : deg % 10 === 0 ? -8 : -4)), 'cx-pr-tick');
+      if (deg % 30 === 0) label(grp, add(add(c, mul(d, PR - 25)), deg % 180 ? [0, 0] : [0, -9]), String(deg), 'cx-pr-num');   // 0 and 180 clear of the zero line
+    }
+    el('circle', { cx: c[0], cy: c[1], r: 3, class: 'cx-pr-c' }, grp);
+    if (mark != null) {
+      var m = prDir(u0, mark);
+      segLine(grp, add(c, mul(m, PR - 13)), add(c, mul(m, PR + 2)), 'cx-pr-mark');
+      label(grp, add(c, mul(m, PR + 30)), mark + '°', 'cx-note cx-r');
+    }
+  }
+  var markAt = function (c, u0, deg) { return add(c, mul(prDir(u0, deg), PR + 8)); };   // the pencil dot beside the rim
+  var dot = function (g, p, r) { el('circle', { cx: p[0], cy: p[1], r: r == null ? 3.4 : r, class: 'cx-mark' }, g); };
+  function given(g, text) { el('text', { x: 22, y: 30, class: 'cx-given', 'dominant-baseline': 'central' }, g).textContent = text; }
+  function wedge(g, c, t0, dt, rho, kind) {                // an angle, filled, without the tick of sector()
+    var p1 = onCircle(c, rho, t0), p2 = onCircle(c, rho, t0 + dt);
+    var arc = 'A' + rho + ' ' + rho + ' 0 0 ' + (dt > 0 ? 1 : 0) + ' ' + p2.join(' ');
+    el('path', { d: 'M' + c.join(' ') + 'L' + p1.join(' ') + arc + 'Z', class: 'cx-sector cx-sector-' + kind }, g);
+    el('path', { d: 'M' + p1.join(' ') + arc, class: 'cx-sector-edge cx-sector-edge-' + kind }, g);
+  }
+  function triFill(g, A, B, C) {
+    el('polygon', { points: [A, B, C].map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' '), class: 'cx-tri' }, g);
+  }
+  // the name of a side, beside its middle, away from the third corner
+  function sideNote(g, p, q, other, text) {
+    var m = mul(add(p, q), 0.5), u = unit(sub(q, p)), n = [-u[1], u[0]];
+    if (dotp(n, sub(other, m)) > 0) n = mul(n, -1);
+    label(g, add(m, mul(n, 16 + 16 * Math.abs(n[0]))), text, 'cx-note');   // further out beside a steep side: the words are wide
+  }
+  // the ruler comes under the line, then the pencil runs along it from p for `cm` centimetres
+  function cmSegmentPhases(p, d, cm, rulerCm, nrm, cls) {
+    var q = add(p, mul(d, cm * CM));
+    return [
+      { dur: 800, draw: function (t, drawn, tools) { drawCmRuler(tools, add(p, mul(nrm, 30 * (1 - t))), d, rulerCm, nrm, 0.25 + 0.75 * t); } },
+      { dur: 1100, draw: function (t, drawn, tools) {
+        var e = add(p, mul(sub(q, p), t));
+        segLine(drawn, p, e, cls);
+        drawCmRuler(tools, p, d, rulerCm, nrm);
+        el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, tools);
+      } },
+    ];
+  }
+  // the compass is opened to `cm` on the ruler (its zero at z), carried to the centre c, turned
+  // with the pencil lifted to where the arc starts, and then draws the arc
+  function compassPhases(z, cm, rulerCm, c, arc) {
+    var r = cm * CM, turnTo = arc.t1;
+    while (turnTo > Math.PI) turnTo -= 2 * Math.PI;
+    while (turnTo < -Math.PI) turnTo += 2 * Math.PI;
+    var ph = [{ dur: 1200, draw: function (t, drawn, tools) {
+      drawCmRuler(tools, z, RIGHT, rulerCm, DOWN);
+      drawCompass(tools, z, add(z, [Math.max(r * t, 8), 0]));
+    } }];
+    if (len(sub(c, z)) > 1) ph.push({ dur: 800, draw: function (t, drawn, tools) {
+      var o = add(z, mul(sub(c, z), t));
+      drawCmRuler(tools, z, RIGHT, rulerCm, DOWN, 1 - t);
+      drawCompass(tools, o, add(o, [r, 0]));
+    } });
+    ph.push({ dur: 700, draw: function (t, drawn, tools) { drawCompass(tools, c, onCircle(c, r, turnTo * t)); } });
+    ph.push({ dur: 1000, draw: function (t, drawn, tools) {
+      var th = arc.t1 + (arc.t2 - arc.t1) * t;
+      el('path', { d: arcPath(c, r, arc.t1, th), class: 'cx-arc' }, drawn);
+      drawCompass(tools, c, onCircle(c, r, th));
+    } });
+    return ph;
+  }
+  // the protractor comes down on c, then the pencil marks the angle beside its rim
+  function protractorPhases(c, u0, deg) {
+    var m = markAt(c, u0, deg);
+    return [
+      { dur: 900, draw: function (t, drawn, tools) { drawProtractor(tools, add(c, [0, -34 * (1 - t)]), u0, null, 0.25 + 0.75 * t); } },
+      { dur: 900, draw: function (t, drawn, tools) {
+        drawProtractor(tools, c, u0, deg);
+        dot(drawn, m, 3.4 * Math.min(1, t * 2));
+        el('circle', { cx: m[0], cy: m[1], r: 4.2, class: 'cx-c-pencil', opacity: t < 0.85 ? 1 : 0 }, tools);
+      } },
+    ];
+  }
+  var triEnds = function (ink, f) {                         // A and B, named clear of the ruler under AB
+    point(ink, f.A, 'A', f.ang > 100 ? [-0.8, 0.6] : [-0.85, -0.55], null, null, 22);   // and of a ray that leans to the left
+    point(ink, f.B, 'B', [0.85, -0.55], null, null, 22);
+  };
+
+  CX['triangle-sss'] = {
+    steps: 6,
+    warnFrom: 3,
+    start: { k: 3 },
+    kScale: 2,
+    kOk: function (k) { return k > 1 && k < 11; },
+    kText: function (s, words) { return 'BC = ' + cmText(s.k) + ' — ' + words; },
+    fill: function (s) { return { bc: String(s.k) }; },
+    figure: function (s) {
+      var A = [220, 350], ab = 6, ac = 5, bc = s.k, B = add(A, [ab * CM, 0]);
+      var meet = bc > Math.abs(ab - ac) && bc < ab + ac, x = (ac * ac + ab * ab - bc * bc) / (2 * ab);
+      var C = add(A, [x * CM, -Math.sqrt(Math.max(ac * ac - x * x, 0)) * CM]);
+      // where the arcs are drawn: through C, or (no triangle) where they come nearest to each other
+      var tA = meet ? aimAt(A, C) : bc >= ab + ac ? Math.PI : 0, tB = meet ? aimAt(B, C) : Math.PI;
+      var spread = function (r) { return Math.max(0.16, Math.min(1.1, 55 / r)); }, sA = spread(ac * CM), sB = spread(bc * CM);
+      return { meet: meet, A: A, B: B, C: C, ab: ab, ac: ac, bc: bc,
+        arcs: [{ c: A, r: ac * CM, t1: tA + sA, t2: tA - sA }, { c: B, r: bc * CM, t1: tB + sB, t2: tB - sB }] };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      given(ink, 'AB = ' + cmText(f.ab) + '    AC = ' + cmText(f.ac) + '    BC = ' + cmText(f.bc));
+      if (i < 1) return;
+      if (i >= 5 && f.meet) {
+        triFill(marks, f.A, f.B, f.C);
+        sideNote(marks, f.A, f.B, f.C, cmText(f.ab)); sideNote(marks, f.A, f.C, f.B, cmText(f.ac)); sideNote(marks, f.B, f.C, f.A, cmText(f.bc));
+      }
+      segLine(ink, f.A, f.B, 'cx-seg');
+      if (i >= 4 && f.meet) { segLine(ink, f.A, f.C, 'cx-line'); segLine(ink, f.B, f.C, 'cx-line'); }
+      [0, 1].forEach(function (j) {
+        var q = f.arcs[j], e;
+        if (i < j + 2) return;
+        arcDraw(ink, q);
+        if (i !== j + 2) return;                            // the opening, shown on the step that draws the arc
+        e = onCircle(q.c, q.r, (q.t1 + q.t2) / 2 + (f.meet ? (j ? -1 : 1) * Math.min(0.2, 30 / q.r) : 0));
+        segLine(marks, q.c, e, 'cx-radius');
+        if (f.meet) sideNote(marks, q.c, e, add(q.c, [j ? -40 : 40, 60]), cmText(j ? f.bc : f.ac));
+        else sideNote(marks, q.c, add(q.c, mul(sub(e, q.c), 0.7)), add(q.c, [0, -60]), cmText(j ? f.bc : f.ac));   // along AB: under it
+      });
+      triEnds(ink, f);
+      if (i >= 3 && f.meet) point(ink, f.C, 'C', UP, 'cx-pt-m', null, 24);
+      if (i === 1) drawCmRuler(tools, f.A, RIGHT, 11, DOWN);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { phases: cmSegmentPhases(f.A, RIGHT, f.ab, 11, DOWN, 'cx-seg') };
+      if (i === 2) return { phases: compassPhases(f.A, f.ac, 11, f.A, f.arcs[0]) };
+      if (i === 3) return { phases: compassPhases(f.A, f.bc, 11, f.B, f.arcs[1]) };
+      if (i === 4 && f.meet) return { rulers: [[f.A, f.C], [f.B, f.C]] };
+      return null;
+    },
+  };
+
+  CX['triangle-sas'] = {
+    steps: 7,
+    start: { k: 60 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: function (s) {
+      return '∠A = ' + s.k + '°  →  BC ≈ ' + cmText(Math.sqrt(16 + 36 - 48 * Math.cos(s.k * Math.PI / 180)));
+    },
+    fill: function (s) { return { a: String(s.k) }; },
+    figure: function (s) {
+      var A = [230, 372], ab = 4, ac = 6, B = add(A, [ab * CM, 0]), d = prDir(RIGHT, s.k);
+      return { meet: true, A: A, B: B, C: add(A, mul(d, ac * CM)), ab: ab, ac: ac, ang: s.k, d: d,
+        Ex: add(A, mul(d, (ac + 1.1) * CM)), M: markAt(A, RIGHT, s.k), nr: [d[1], -d[0]] };   // nr: the side of Ax away from B
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      given(ink, 'AB = ' + cmText(f.ab) + '    ∠A = ' + f.ang + '°    AC = ' + cmText(f.ac));
+      if (i < 1) return;
+      if (i >= 6) {
+        triFill(marks, f.A, f.B, f.C);
+        wedge(marks, f.A, 0, -f.ang * Math.PI / 180, 34, 'a');
+        label(marks, add(f.A, mul(prDir(RIGHT, f.ang / 2), 56)), f.ang + '°', 'cx-note cx-r');
+        sideNote(marks, f.A, f.B, f.C, cmText(f.ab)); sideNote(marks, f.A, f.C, f.B, cmText(f.ac));
+      }
+      segLine(ink, f.A, f.B, 'cx-seg');
+      if (i >= 3) {
+        segLine(ink, f.A, f.Ex, 'cx-line cx-line-2');
+        label(ink, add(add(f.Ex, mul(f.d, -6)), mul(f.nr, 20)), 'x', 'cx-label');
+      }
+      if (i >= 5) segLine(ink, f.B, f.C, 'cx-line');
+      if (i >= 6) segLine(ink, f.A, f.C, 'cx-line');
+      if (i >= 2) dot(ink, f.M);
+      triEnds(ink, f);
+      if (i >= 4) point(ink, f.C, 'C', mul(f.nr, -1), 'cx-pt-m', null, 24);
+      if (i === 1) drawCmRuler(tools, f.A, RIGHT, 5, DOWN);
+      if (i === 2) drawProtractor(tools, f.A, RIGHT, f.ang);
+      if (i === 4) drawCmRuler(tools, f.A, f.d, 7, f.nr);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { phases: cmSegmentPhases(f.A, RIGHT, f.ab, 5, DOWN, 'cx-seg') };
+      if (i === 2) return { phases: protractorPhases(f.A, RIGHT, f.ang) };
+      if (i === 3) return { ruler: [f.A, f.Ex], cls: 'cx-line cx-line-2' };
+      if (i === 4) return { phases: [
+        { dur: 800, draw: function (t, drawn, tools) { drawCmRuler(tools, add(f.A, mul(f.nr, 30 * (1 - t))), f.d, 7, f.nr, 0.25 + 0.75 * t); } },
+        { dur: 900, draw: function (t, drawn, tools) {
+          drawCmRuler(tools, f.A, f.d, 7, f.nr);
+          el('circle', { cx: f.C[0], cy: f.C[1], r: 5 * Math.min(1, t * 2), class: 'cx-pt cx-pt-m' }, drawn);
+          el('circle', { cx: f.C[0], cy: f.C[1], r: 4.2, class: 'cx-c-pencil', opacity: t < 0.85 ? 1 : 0 }, tools);
+        } },
+      ] };
+      if (i === 5) return { ruler: [f.B, f.C] };
+      return null;
+    },
+  };
+
+  CX['triangle-asa'] = {
+    steps: 7,
+    start: { k: 40 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: function (s) { return '∠B = ' + s.k + '°  →  ∠C = 180° − 60° − ' + s.k + '° = ' + (120 - s.k) + '°'; },
+    fill: function (s) { return { b: String(s.k) }; },
+    figure: function (s) {
+      var A = [200, 384], ab = 6, a = 60, b = s.k, B = add(A, [ab * CM, 0]), rad = Math.PI / 180;
+      var dA = prDir(RIGHT, a), dB = prDir(LEFT, b), ac = ab * Math.sin(b * rad) / Math.sin((a + b) * rad);
+      var C = add(A, mul(dA, ac * CM));
+      return { meet: true, A: A, B: B, C: C, ab: ab, a: a, b: b, dA: dA, dB: dB,
+        Ex: add(C, mul(dA, 46)), Ey: add(C, mul(dB, 46)), MA: markAt(A, RIGHT, a), MB: markAt(B, LEFT, b) };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools, rad = Math.PI / 180;
+      given(ink, 'AB = ' + cmText(f.ab) + '    ∠A = ' + f.a + '°    ∠B = ' + f.b + '°');
+      if (i < 1) return;
+      if (i >= 6) {
+        triFill(marks, f.A, f.B, f.C);
+        wedge(marks, f.A, 0, -f.a * rad, 34, 'a'); wedge(marks, f.B, Math.PI, f.b * rad, 34, 'b');
+        label(marks, add(f.A, mul(prDir(RIGHT, f.a / 2), 56)), f.a + '°', 'cx-note cx-r');
+        label(marks, add(f.B, mul(prDir(LEFT, f.b / 2), 60)), f.b + '°', 'cx-note cx-r');
+        sideNote(marks, f.A, f.B, f.C, cmText(f.ab));
+      }
+      segLine(ink, f.A, f.B, 'cx-seg');
+      if (i >= 3) {
+        segLine(ink, f.A, f.Ex, 'cx-line cx-line-2');
+        label(ink, add(f.Ex, mul([f.dA[1], -f.dA[0]], 18)), 'x', 'cx-label');
+      }
+      if (i >= 5) {
+        segLine(ink, f.B, f.Ey, 'cx-line cx-line-2');
+        label(ink, add(f.Ey, mul([-f.dB[1], f.dB[0]], 18)), 'y', 'cx-label');
+      }
+      if (i >= 6) { segLine(ink, f.A, f.C, 'cx-line'); segLine(ink, f.B, f.C, 'cx-line'); }
+      if (i >= 2) dot(ink, f.MA);
+      if (i >= 4) dot(ink, f.MB);
+      triEnds(ink, f);
+      if (i >= 5) point(ink, f.C, 'C', RIGHT, 'cx-pt-m', null, 26);
+      if (i === 1) drawCmRuler(tools, f.A, RIGHT, 7, DOWN);
+      if (i === 2) drawProtractor(tools, f.A, RIGHT, f.a);
+      if (i === 4) drawProtractor(tools, f.B, LEFT, f.b);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { phases: cmSegmentPhases(f.A, RIGHT, f.ab, 7, DOWN, 'cx-seg') };
+      if (i === 2) return { phases: protractorPhases(f.A, RIGHT, f.a) };
+      if (i === 3) return { ruler: [f.A, f.Ex], cls: 'cx-line cx-line-2' };
+      if (i === 4) return { phases: protractorPhases(f.B, LEFT, f.b) };
+      if (i === 5) return { ruler: [f.B, f.Ey], cls: 'cx-line cx-line-2' };
+      return null;
+    },
+  };
+
+  // The circumscribed and the inscribed circle of a triangle (Grade 8, lesson 12), one page with two
+  // tabs. Circumscribed: the mediators of AB and of BC meet at O, at the same distance from the
+  // three corners; the circle of centre O through A. Inscribed: the bisectors of the angles A and B
+  // meet at I, at the same distance from the three sides; that distance is found by the
+  // perpendicular ID from I to AB; the circle of centre I and radius ID. The corners are dragged.
+  function triangleOf(s) {
+    var A = s.A, B = s.B, C = s.C, a = len(sub(B, C)), b = len(sub(C, A)), c = len(sub(A, B));
+    var ang = function (x, y, z) { return Math.acos(Math.max(-1, Math.min(1, (y * y + z * z - x * x) / (2 * y * z)))); };
+    var d = 2 * (A[0] * (B[1] - C[1]) + B[0] * (C[1] - A[1]) + C[0] * (A[1] - B[1])) || 1e-9;
+    var qa = dotp(A, A), qb = dotp(B, B), qc = dotp(C, C);
+    var O = [(qa * (B[1] - C[1]) + qb * (C[1] - A[1]) + qc * (A[1] - B[1])) / d, (qa * (C[0] - B[0]) + qb * (A[0] - C[0]) + qc * (B[0] - A[0])) / d];
+    var I = mul(add(add(mul(A, a), mul(B, b)), mul(C, c)), 1 / (a + b + c));
+    return { A: A, B: B, C: C, a: a, b: b, c: c, O: O, R: len(sub(A, O)), I: I, r: Math.abs(d) / 2 / (a + b + c),
+      G: mul(add(add(A, B), C), 1 / 3), least: Math.min(a, b, c), angles: [ang(a, b, c), ang(b, c, a), ang(c, a, b)] };
+  }
+  function triDrawn(f, ink) {                              // the triangle, its corners named away from its middle
+    [[f.A, f.B], [f.B, f.C], [f.C, f.A]].forEach(function (q) { segLine(ink, q[0], q[1], 'cx-seg'); });
+  }
+  function triCorners(f, ink) {
+    ['A', 'B', 'C'].forEach(function (k) { point(ink, f[k], k, sub(f[k], f.G), null, k, 22); });
+  }
+  var footOn = function (P, A, B) { var u = unit(sub(B, A)); return add(A, mul(u, dotp(sub(P, A), u))); };
+  // the compass is opened from its centre to a point, then draws the whole circle
+  function circlePhases(c, through, cls) {
+    var r = len(sub(through, c)), t0 = aimAt(c, through);
+    return [
+      { dur: 1000, draw: function (t, drawn, tools) { drawCompass(tools, c, add(c, mul(sub(through, c), Math.max(t, 0.06)))); } },
+      { dur: 2400, draw: function (t, drawn, tools) {
+        var th = t0 + (2 * Math.PI - 0.002) * t;
+        el('path', { d: arcPath(c, r, t0, th), class: cls || 'cx-circle' }, drawn);
+        drawCompass(tools, c, onCircle(c, r, th));
+      } },
+    ];
+  }
+  // the mediator of PQ with the compass: two marks from P, two from Q, and the line through the
+  // crossings, drawn long enough to pass through O
+  function mediatorOf(P, Q, O) {
+    var M = mul(add(P, Q), 0.5), u = unit(sub(Q, P)), n = [u[1], -u[0]], half = len(sub(Q, P)) / 2, dO = dotp(sub(O, M), n);
+    var inside = function (X) { return X[0] > 12 && X[0] < W - 12 && X[1] > 12 && X[1] < H - 12; }, r, h, X1, X2;
+    // an opening whose crossings fall on the sheet and clear of O, so that O is not lost among the marks
+    [1.25, 1.5, 1.12, 1.75, 1.25].some(function (k) {
+      r = k * half; h = Math.sqrt(r * r - half * half); X1 = add(M, mul(n, h)); X2 = add(M, mul(n, -h));
+      return Math.abs(h - Math.abs(dO)) >= 26 && inside(X1) && inside(X2);
+    });
+    var mark = function (c, X, sg) { var t = aimAt(c, X); return { c: c, r: r, t1: t - sg * 0.2, t2: t + sg * 0.2 }; };
+    return { M: M, u: u, n: n, h: h, r: r, X1: X1, X2: X2, arcs: [mark(P, X1, 1), mark(P, X2, 1), mark(Q, X1, -1), mark(Q, X2, -1)],
+      e1: add(M, mul(n, Math.max(h + 24, dO + 34))), e2: add(M, mul(n, Math.min(-h - 24, dO - 34))) };
+  }
+  CX['circumcircle'] = {
+    steps: 7,
+    start: { A: [200, 330], B: [460, 330], C: [370, 130] },
+    presets: {
+      acute: function (s) { s.A = [200, 330]; s.B = [460, 330]; s.C = [370, 130]; },
+      right: function (s) { s.A = [200, 340]; s.B = [470, 340]; s.C = [200, 160]; },
+      obtuse: function (s) { s.A = [210, 220]; s.B = [430, 220]; s.C = [300, 160]; },
+    },
+    // the triangle stays a triangle, and its circle stays on the sheet
+    limit: function (s, key, p) {
+      var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+      return t.least >= 100 && Math.min.apply(null, t.angles) >= 0.38 &&
+        t.O[0] - t.R >= 6 && t.O[0] + t.R <= W - 6 && t.O[1] - t.R >= 6 && t.O[1] + t.R <= H - 6;
+    },
+    figure: function (s) {
+      var f = triangleOf(s);
+      f.meet = true; f.m1 = mediatorOf(f.A, f.B, f.O); f.m2 = mediatorOf(f.B, f.C, f.O); f.m3 = mediatorOf(f.C, f.A, f.O);
+      f.arcs = f.m1.arcs.concat(f.m2.arcs);
+      return f;
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      if (i >= 6) {
+        dash(marks, f.m3.e1, f.m3.e2);                      // the third mediator passes through O too
+        [f.A, f.B, f.C].forEach(function (P) { segLine(marks, f.O, P, 'cx-radius'); tick(marks, f.O, P); });
+        [f.m1, f.m2, f.m3].forEach(function (m) { rightMark(marks, m.M, m.u, dotp(sub(f.G, m.M), m.n) > 0 ? m.n : mul(m.n, -1)); });
+      }
+      if (i === 5) segLine(marks, f.O, f.A, 'cx-radius');
+      triDrawn(f, ink);
+      if (i >= 5) el('circle', { cx: f.O[0], cy: f.O[1], r: f.R, class: 'cx-circle' }, ink);
+      if (i >= 2) segLine(ink, f.m1.e1, f.m1.e2, 'cx-line cx-line-2');
+      if (i >= 4) segLine(ink, f.m2.e1, f.m2.e2, 'cx-line cx-line-2');
+      for (var a = 0; a < (i >= 3 ? 8 : i >= 1 ? 4 : 0); a++) arcDraw(ink, f.arcs[a]);
+      triCorners(f, ink);
+      if (i >= 4) point(ink, f.O, 'O', [-0.75, -0.66], 'cx-pt-m', null, 22);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { arcs: [0, 1, 2, 3] };
+      if (i === 2) return { ruler: [f.m1.e1, f.m1.e2], cls: 'cx-line cx-line-2' };
+      if (i === 3) return { arcs: [4, 5, 6, 7] };
+      if (i === 4) return { ruler: [f.m2.e1, f.m2.e2], cls: 'cx-line cx-line-2' };
+      if (i === 5) return { phases: circlePhases(f.O, f.A) };
+      return null;
+    },
+  };
+
+  // the bisector of the angle at V (its sides towards P and Q) with the compass, as far as past I
+  function bisectorOf(V, P, Q, I) {
+    var up = unit(sub(P, V)), uq = unit(sub(Q, V)), rho = Math.min(88, 0.42 * Math.min(len(sub(P, V)), len(sub(Q, V))));
+    var P1 = add(V, mul(up, rho)), Q1 = add(V, mul(uq, rho)), chord = len(sub(Q1, P1)), r2 = Math.max(0.8 * chord, 40);
+    var d = unit(sub(I, V)), T = add(mul(add(P1, Q1), 0.5), mul(d, Math.sqrt(r2 * r2 - chord * chord / 4)));
+    var t1 = aimAt(V, P), dt = aimAt(V, Q) - t1;
+    while (dt > Math.PI) dt -= 2 * Math.PI;
+    while (dt < -Math.PI) dt += 2 * Math.PI;
+    var sg = dt > 0 ? 1 : -1, mark = function (c, k) { var t = aimAt(c, T); return { c: c, r: r2, t1: t - k * 0.34, t2: t + k * 0.34 }; };
+    return { T: T, d: d, end: add(I, mul(d, 44)),
+      arcs: [{ c: V, r: rho, t1: t1 - sg * 0.14, t2: t1 + dt + sg * 0.14 }, mark(P1, 1), mark(Q1, -1)] };
+  }
+  CX['incircle'] = {
+    steps: 9,
+    start: { A: [130, 384], B: [530, 384], C: [350, 96] },
+    // room for the arcs at each corner, and for the two marks on AB either side of D
+    limit: function (s, key, p) {
+      var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+      var reach = Math.sqrt(28 * t.r + 196) + 14, D = footOn(t.I, t.A, t.B);
+      return t.least >= 170 && Math.min.apply(null, t.angles) >= 0.52 && t.r >= 46 &&
+        len(sub(D, t.A)) >= reach && len(sub(D, t.B)) >= reach && footOn(t.I, t.A, t.B)[1] <= H - 62;
+    },
+    figure: function (s) {
+      var f = triangleOf(s), u = unit(sub(f.B, f.A)), D = footOn(f.I, f.A, f.B), n = unit(sub(f.I, D));
+      var r3 = f.r + 14, hc = Math.sqrt(r3 * r3 - f.r * f.r), U = add(D, mul(u, -hc)), V = add(D, mul(u, hc));
+      var r4 = 1.28 * hc, Wp = add(D, mul(n, -Math.sqrt(r4 * r4 - hc * hc)));
+      var mark = function (c, r, X, sp) { var t = aimAt(c, X); return { c: c, r: r, t1: t - sp, t2: t + sp }; };
+      f.meet = true; f.bA = bisectorOf(f.A, f.B, f.C, f.I); f.bB = bisectorOf(f.B, f.C, f.A, f.I); f.bC = bisectorOf(f.C, f.A, f.B, f.I);
+      f.D = D; f.E = footOn(f.I, f.B, f.C); f.F = footOn(f.I, f.C, f.A); f.U = U; f.V = V; f.Wp = Wp; f.u = u; f.n = n;
+      f.arcs = f.bA.arcs.concat(f.bB.arcs, [mark(f.I, r3, U, 0.2), mark(f.I, r3, V, 0.2), mark(U, r4, Wp, 0.36), mark(V, r4, Wp, -0.36)]);
+      return f;
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      if (i >= 8) {
+        dash(marks, f.C, f.bC.end);                         // the third bisector passes through I too
+        [[f.D, f.A, f.B], [f.E, f.B, f.C], [f.F, f.C, f.A]].forEach(function (q) {
+          segLine(marks, f.I, q[0], 'cx-radius'); tick(marks, f.I, q[0]);
+          rightMark(marks, q[0], unit(sub(q[2], q[1])), unit(sub(f.I, q[0])));
+        });
+      }
+      if (i === 7) segLine(marks, f.I, f.D, 'cx-radius');
+      triDrawn(f, ink);
+      if (i >= 7) el('circle', { cx: f.I[0], cy: f.I[1], r: f.r, class: 'cx-circle' }, ink);
+      if (i >= 2) segLine(ink, f.A, f.bA.end, 'cx-line cx-line-2');
+      if (i >= 4) segLine(ink, f.B, f.bB.end, 'cx-line cx-line-2');
+      if (i >= 6 && i < 8) segLine(ink, f.I, f.Wp, 'cx-line cx-line-2');
+      for (var a = 0; a < (i >= 5 ? 10 : i >= 3 ? 6 : i >= 1 ? 3 : 0); a++) arcDraw(ink, f.arcs[a]);
+      triCorners(f, ink);
+      if (i >= 6) point(ink, f.D, 'D', add(mul(f.n, -1), mul(f.u, 0.9)), null, null, 22);
+      if (i >= 8) {
+        point(ink, f.E, 'E', sub(f.E, f.I), null, null, 22);
+        point(ink, f.F, 'F', sub(f.F, f.I), null, null, 22);
+      }
+      if (i >= 4) point(ink, f.I, 'I', [1, -0.1], 'cx-pt-m', null, 24);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { arcs: [0, 1, 2] };
+      if (i === 2) return { ruler: [f.A, f.bA.end], cls: 'cx-line cx-line-2' };
+      if (i === 3) return { arcs: [3, 4, 5] };
+      if (i === 4) return { ruler: [f.B, f.bB.end], cls: 'cx-line cx-line-2' };
+      if (i === 5) return { arcs: [6, 7, 8, 9] };
+      if (i === 6) return { ruler: [f.I, f.Wp], cls: 'cx-line cx-line-2' };
+      if (i === 7) return { phases: circlePhases(f.I, f.D) };
+      return null;
+    },
+  };
+
+  // A tangent to a circle (Grade 9, lesson 13), one page with two tabs. At a point A of the
+  // circle: the ray OA is drawn past A, and the perpendicular to it at A is built as for the right
+  // angle (marks P and Q either side of A, arcs from P and from Q meeting at B). From a point P
+  // outside: M is the middle of OP (its mediator); the circle of centre M through O cuts the
+  // given circle at A and B; the angles OAP and OBP stand on a half circle, so they are right.
+  var TAN = { O: [300, 240], R: 105, O2: [200, 250], R2: 100 };
+  CX['tangent-at'] = {
+    steps: 7,
+    start: { A: [386, 180] },
+    place: function (s, key, p) { return add(TAN.O, mul(unit(sub(p, TAN.O)), TAN.R)); },   // A stays on the circle
+    figure: function (s) {
+      var O = TAN.O, u = unit(sub(s.A, O)), A = add(O, mul(u, TAN.R)), n = [u[1], -u[0]], c = 60, r = 1.5 * c;
+      var P = add(A, mul(u, -c)), Q = add(A, mul(u, c)), B = add(A, mul(n, Math.sqrt(r * r - c * c)));
+      var reach = function (d) { return add(A, mul(d, Math.min(190, len(sub(toEdge(A, d), A))))); };
+      var ax = Math.atan2(u[1], u[0]);
+      return { meet: true, O: O, A: A, u: u, n: n, P: P, Q: Q, B: B, end: add(A, mul(u, c + 36)), T1: reach(mul(n, -1)), T2: reach(n),
+        arcs: [
+          { c: A, r: c, t1: ax + Math.PI - 0.3, t2: ax + Math.PI + 0.3 }, { c: A, r: c, t1: ax - 0.3, t2: ax + 0.3 },
+          { c: P, r: r, t1: aimAt(P, B) - 0.3, t2: aimAt(P, B) + 0.3 }, { c: Q, r: r, t1: aimAt(Q, B) + 0.3, t2: aimAt(Q, B) - 0.3 },
+        ] };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      if (i >= 6) {
+        segLine(marks, f.O, f.A, 'cx-radius');
+        rightMark(marks, f.A, mul(f.u, -1), f.n);
+        dash(marks, f.P, f.B); dash(marks, f.Q, f.B);
+      }
+      el('circle', { cx: f.O[0], cy: f.O[1], r: TAN.R, class: 'cx-ring' }, ink);
+      if (i >= 1) segLine(ink, f.O, f.end, 'cx-line cx-line-2');
+      if (i >= 5) segLine(ink, f.T1, f.T2, 'cx-line');
+      for (var a = 0; a < (i >= 4 ? 4 : i >= 3 ? 3 : i >= 2 ? 2 : 0); a++) arcDraw(ink, f.arcs[a]);
+      if (i >= 2) {
+        point(ink, f.P, 'P', add(mul(f.u, -0.8), mul(f.n, -0.8)), null, null, 23);
+        point(ink, f.Q, 'Q', add(mul(f.u, 0.8), mul(f.n, -0.8)), null, null, 23);
+      }
+      if (i >= 4) point(ink, f.B, 'B', add(f.n, mul(f.u, 0.9)), 'cx-pt-m', null, 23);
+      point(ink, f.O, 'O', add(mul(f.u, -0.8), mul(f.n, -0.6)), null, null, 21);
+      point(ink, f.A, 'A', add(mul(f.u, 0.5), mul(f.n, -0.9)), null, 'A', 21);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { ruler: [f.O, f.end], cls: 'cx-line cx-line-2' };
+      if (i === 2) return { arcs: [0, 1] };
+      if (i === 3 || i === 4) return { arcs: [i - 1] };
+      if (i === 5) return { ruler: [f.T1, f.T2] };
+      return null;
+    },
+  };
+  CX['tangent-from'] = {
+    steps: 7,
+    start: { P: [500, 220] },
+    // P stays outside the circle, and the circle on OP stays on the sheet
+    limit: function (s, key, p) {
+      var M = mul(add(TAN.O2, p), 0.5), h = len(sub(p, TAN.O2)) / 2;
+      return 2 * h >= TAN.R2 + 70 && M[0] - h >= 6 && M[0] + h <= W - 6 && M[1] - h >= 6 && M[1] + h <= H - 6;
+    },
+    figure: function (s) {
+      var O = TAN.O2, R = TAN.R2, P = s.P, d = len(sub(P, O)), e = unit(sub(P, O)), q = [e[1], -e[0]], M = mul(add(O, P), 0.5);
+      var along = R * R / d, off = R * Math.sqrt(1 - R * R / (d * d));           // the touching points, from O
+      var A = add(O, add(mul(e, along), mul(q, off))), B = add(O, add(mul(e, along), mul(q, -off)));
+      var med = mediatorOf(O, P, M), past = function (X) { return add(X, mul(unit(sub(X, P)), 46)); };
+      return { meet: true, O: O, P: P, M: M, A: A, B: B, e: e, q: q, half: d / 2, med: med, arcs: med.arcs, EA: past(A), EB: past(B) };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      if (i >= 6) {
+        [f.A, f.B].forEach(function (X) {
+          segLine(marks, f.O, X, 'cx-radius');
+          rightMark(marks, X, unit(sub(f.O, X)), unit(sub(f.P, X)));
+          tick(marks, f.P, X);
+        });
+      }
+      el('circle', { cx: f.O[0], cy: f.O[1], r: TAN.R2, class: 'cx-ring' }, ink);
+      if (i >= 4) el('circle', { cx: f.M[0], cy: f.M[1], r: f.half, class: 'cx-arc' }, ink);
+      if (i >= 1) segLine(ink, f.O, f.P, 'cx-line cx-line-2');
+      if (i >= 3) segLine(ink, f.med.e1, f.med.e2, 'cx-line cx-line-2');
+      if (i >= 5) { segLine(ink, f.P, f.EA, 'cx-line'); segLine(ink, f.P, f.EB, 'cx-line'); }
+      if (i >= 2) f.arcs.forEach(function (a) { arcDraw(ink, a); });
+      if (i >= 3) point(ink, f.M, 'M', add(mul(f.e, 0.75), mul(f.q, -0.7)), null, null, 22);
+      if (i >= 4) {
+        point(ink, f.A, 'A', add(mul(f.q, 1), mul(f.e, -0.5)), 'cx-pt-m', null, 23);
+        point(ink, f.B, 'B', add(mul(f.q, -1), mul(f.e, -0.5)), 'cx-pt-m', null, 23);
+      }
+      point(ink, f.O, 'O', mul(f.e, -1), null, null, 21);
+      point(ink, f.P, 'P', f.e, null, 'P', 21);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { ruler: [f.O, f.P], cls: 'cx-line cx-line-2' };
+      if (i === 2) return { arcs: [0, 1, 2, 3] };
+      if (i === 3) return { ruler: [f.med.e1, f.med.e2], cls: 'cx-line cx-line-2' };
+      if (i === 4) return { phases: circlePhases(f.M, f.O, 'cx-arc') };
+      if (i === 5) return { rulers: [[f.P, f.EA], [f.P, f.EB]] };
+      return null;
+    },
+  };
+
+  // The ellipse from its definition (Grade 12, conics): every point P with PF1 + PF2 = 2a. Two
+  // pins at the foci, a string of length 2a tied to them, a pencil that keeps the string taut and
+  // goes round. The string is 10 cm; the slider is the distance F1F2 (0: a circle). P is dragged
+  // along the curve, and the two lengths are written on the sheet with their sum.
+  var EL = { I: [320, 260], a: 5 };
+  function ellipseOf(s) {
+    var c = s.k / 2, a = EL.a, b = Math.sqrt(a * a - c * c), I = EL.I;
+    var at = function (t) { return [I[0] + a * CM * Math.cos(t), I[1] - b * CM * Math.sin(t)]; };
+    var t = Math.atan2(-(s.P[1] - I[1]) / b, (s.P[0] - I[0]) / a);
+    return { meet: true, a: a, b: b, c: c, I: I, at: at, t: t, P: at(t), F1: [I[0] - c * CM, I[1]], F2: [I[0] + c * CM, I[1]] };
+  }
+  var cm1 = function (px) { return (Math.round(px / CM * 10) / 10) + ' cm'; };
+  function ellipsePath(f, t1, t2) {
+    var n = Math.max(2, Math.ceil(Math.abs(t2 - t1) / 0.06)), d = [];
+    for (var j = 0; j <= n; j++) { var p = f.at(t1 + (t2 - t1) * j / n); d.push((j ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)); }
+    return d.join('');
+  }
+  function drawPin(g, p) {
+    el('circle', { cx: p[0], cy: p[1], r: 7, class: 'cx-pin' }, g);
+    el('circle', { cx: p[0] - 2, cy: p[1] - 2, r: 2, class: 'cx-pin-shine' }, g);
+  }
+  function drawPencil(g, p) {
+    var d = unit([0.42, -0.91]), n = [-d[1], d[0]], q = function (along, side) { return add(add(p, mul(d, along)), mul(n, side)); };
+    var pts = function (list) { return list.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' '); };
+    el('polygon', { points: pts([q(13, -4.5), q(66, -4.5), q(66, 4.5), q(13, 4.5)]), class: 'cx-pencil' }, g);
+    el('polygon', { points: pts([p, q(13, -4.5), q(13, 4.5)]), class: 'cx-pencil-tip' }, g);
+    el('circle', { cx: p[0], cy: p[1], r: 2.4, class: 'cx-c-needle' }, g);
+  }
+  // the string from pin to pencil to pin, with the two lengths and their sum written above
+  function tautString(g, f, P) {
+    el('path', { d: 'M' + f.F1.join(' ') + 'L' + P[0].toFixed(1) + ' ' + P[1].toFixed(1) + 'L' + f.F2.join(' '), class: 'cx-string' }, g);
+  }
+  function sumNote(g, f, P) {
+    var d1 = len(sub(P, f.F1)), d2 = len(sub(P, f.F2));
+    el('text', { x: 22, y: 58, class: 'cx-given cx-sum', 'dominant-baseline': 'central' }, g).textContent =
+      'PF₁ = ' + cm1(d1) + '    PF₂ = ' + cm1(d2) + '    PF₁ + PF₂ = ' + cm1(d1 + d2);
+  }
+  // the string hanging loose between the pins: a curve as long as the string
+  function slackString(g, f) {
+    var L = 2 * f.a * CM, A = f.F1, B = f.F2, mid = mul(add(A, B), 0.5);
+    if (f.c === 0) {
+      el('path', { d: 'M' + A.join(' ') + 'C' + (A[0] - L * 0.3) + ' ' + (A[1] + L * 0.42) + ' ' + (A[0] + L * 0.3) + ' ' + (A[1] + L * 0.42) + ' ' + A.join(' '), class: 'cx-string' }, g);
+      return;
+    }
+    var lengthFor = function (sag) {
+      var prev = A, sum = 0;
+      for (var j = 1; j <= 40; j++) {
+        var t = j / 40, x = (1 - t) * (1 - t) * A[0] + 2 * t * (1 - t) * mid[0] + t * t * B[0];
+        var y = (1 - t) * (1 - t) * A[1] + 2 * t * (1 - t) * (mid[1] + sag) + t * t * B[1];
+        sum += Math.hypot(x - prev[0], y - prev[1]); prev = [x, y];
+      }
+      return sum;
+    };
+    var lo = 0, hi = 500;
+    for (var k = 0; k < 30; k++) { var m = (lo + hi) / 2; if (lengthFor(m) < L) lo = m; else hi = m; }
+    el('path', { d: 'M' + A.join(' ') + 'Q' + mid[0] + ' ' + (mid[1] + lo).toFixed(1) + ' ' + B.join(' '), class: 'cx-string' }, g);
+  }
+  CX['ellipse'] = {
+    steps: 6,
+    start: { P: [EL.I[0] + 103, EL.I[1] - 118], k: 6 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: function (s, words) {
+      var b = Math.sqrt(EL.a * EL.a - s.k * s.k / 4);
+      return 'F₁F₂ = ' + s.k + ' cm  →  b = ' + (Math.round(b * 100) / 100) + ' cm' + (s.k === 0 ? ' — ' + words : '');
+    },
+    place: function (s, key, p) { return ellipseOf({ P: p, k: s.k }).P; },     // P stays on the curve
+    figure: ellipseOf,
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools, a = f.a * CM, b = f.b * CM;
+      var V1 = f.at(Math.PI), V2 = f.at(0), B1 = f.at(Math.PI / 2), B2 = f.at(-Math.PI / 2);
+      given(ink, 'F₁F₂ = 2c = ' + cm1(2 * f.c * CM) + '    ខ្សែ៖ 2a = ' + cm1(2 * a));
+      if (i >= 3) sumNote(marks, f, f.P);
+      if (i >= 5) {
+        dash(marks, V1, V2); dash(marks, B1, B2);
+        segLine(marks, f.P, f.F1, 'cx-radius'); segLine(marks, f.P, f.F2, 'cx-radius');
+        label(marks, add(f.I, [a * 0.8, -15]), 'a', 'cx-note cx-r');
+        label(marks, add(mul(add(f.I, B1), 0.5), [-14, 0]), 'b', 'cx-note cx-r');
+        if (f.c) label(marks, add(mul(add(f.I, f.F1), 0.5), [0, 16]), 'c', 'cx-note cx-r');
+      }
+      if (i >= 4) el('path', { d: ellipsePath(f, 0, 2 * Math.PI) + 'Z', class: 'cx-circle' }, ink);
+      if (i >= 5) {
+        point(ink, f.I, 'I', [-0.5, -1], null, null, 20);
+        point(ink, V1, 'V₁', LEFT, null, null, 24); point(ink, V2, 'V₂', RIGHT, null, null, 24);
+        point(ink, B1, 'B₁', [0.75, 1], null, null, 23); point(ink, B2, 'B₂', [0.75, -1], null, null, 23);   // inside: clear of the lines of text
+      }
+      if (f.c) { point(ink, f.F1, 'F₁', [-0.3, 1], null, null, 24); point(ink, f.F2, 'F₂', [0.3, 1], null, null, 24); }
+      else point(ink, f.F1, 'F₁ = F₂', [0, 1], null, null, 24);
+      if (i >= 1 && i <= 4) { drawPin(ink, f.F1); drawPin(ink, f.F2); }
+      if (i === 2) slackString(tools, f);
+      if (i === 3 || i === 4) { tautString(tools, f, f.P); drawPencil(tools, f.P); }
+      if (i >= 3) {
+        el('circle', { cx: f.P[0], cy: f.P[1], r: 5, class: 'cx-pt cx-pt-m' }, tools);
+        label(tools, i >= 5 ? add(f.P, mul(unit(sub(f.P, f.I)), 22)) : add(f.P, [-20, -13]), 'P', 'cx-label');   // beside the pencil
+        el('circle', { cx: f.P[0], cy: f.P[1], r: 24, class: 'cx-grab', 'data-drag': 'P' }, tools);
+      }
+    },
+    anim: function (f, i) {
+      var fade = function (draw) { return function (t, drawn, tools) { draw(el('g', { opacity: 0.2 + 0.8 * t }, tools), t); }; };
+      var hold = function (tools, t) { var P = f.at(t); tautString(tools, f, P); drawPencil(tools, P); sumNote(tools, f, P); return P; };
+      if (i === 1) return { phases: [{ dur: 900, draw: function (t, drawn, tools) {
+        [f.F1, f.F2].forEach(function (F) { drawPin(el('g', { opacity: t }, drawn), add(F, [0, -26 * (1 - t)])); });
+      } }] };
+      if (i === 2) return { phases: [{ dur: 1000, draw: fade(function (grp) { slackString(grp, f); }) }] };
+      if (i === 3) return { phases: [
+        { dur: 800, draw: fade(function (grp) { hold(grp, -Math.PI / 2); }) },                          // the pencil pulls the string tight
+        { dur: 1500, draw: function (t, drawn, tools) { hold(tools, -Math.PI / 2 + (f.t + Math.PI / 2) * t); } },
+      ] };
+      if (i === 4) return { phases: [{ dur: 5600, draw: function (t, drawn, tools) {
+        var now = f.t + 2 * Math.PI * t;
+        el('path', { d: ellipsePath(f, f.t, now), class: 'cx-circle' }, drawn);
+        hold(tools, now);
+      } }] };
+      return null;
+    },
+  };
+
+  // ------------------------------------------------ figures of the lessons ---
+  // A figure of a lesson, drawn step by step so that students see how it is made, is written as a
+  // list: scripted({ steps, start, limit, figure(state), base(f, ink), top(f, ink), script(f) }).
+  // script(f) gives, for each step, what that step adds:
+  //   ['seg', P, Q, cls]                a line drawn along the ruler
+  //   ['arc', {c, r, t1, t2}]           an arc drawn with the compass
+  //   ['perp', P, A, B, cls, ext]       the perpendicular from P to the line AB, along a set square slid on AB
+  //                                     (it runs on ext past the line AB when ext is given)
+  //   ['pt', P, name, dir, cls, dist]   a point and its name, once the step is drawn
+  //   ['mark', function (g) { ... }]    marks (ticks, right angles, equal angles), behind the ink
+  //   ['phases', [{ dur, draw(t, drawn, tools) }], inkFn]   a movement of its own; inkFn(g) is what stays when it is done
+  // The picture of step i is everything up to i; on arriving at a step its lines and arcs are drawn
+  // one after another, each with its tool. A new figure is a figure() and this list, nothing more.
+  // The perpendicular from P to AB as Grade 7 lesson 14 §5.1 draws it: one side of the right angle of
+  // the set square on AB, the set square slid along AB until its other side passes through P.
+  function perpPhases(P, A, B, cls, ext) {
+    var D = footOn(P, A, B), w = unit(sub(P, D)), far = len(sub(B, D)) > len(sub(A, D)) ? B : A, p = unit(sub(far, D));
+    var end = add(D, mul(w, -(ext || 0)));                  // the line may run on past the foot, as the book draws it
+    var lw = len(sub(P, D)) + 34 + (ext || 0), lp = Math.max(70, Math.min(0.62 * lw, len(sub(far, D)) + 30)), from = add(D, mul(p, 58));
+    var sq = function (g, c, alpha) { drawSetSquare(g, c, w, p, lw, lp, alpha); };
+    return [
+      { dur: 700, draw: function (t, drawn, tools) { sq(tools, from, 0.2 + 0.8 * t); } },
+      { dur: 900, draw: function (t, drawn, tools) { sq(tools, add(from, mul(sub(D, from), t))); } },
+      { dur: 800, draw: function (t, drawn, tools) {
+        var e = add(P, mul(sub(end, P), t));
+        segLine(drawn, P, e, cls);
+        sq(tools, D);
+        el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, tools);
+      } },
+    ];
+  }
+  function scripted(spec) {
+    var inkOf = function (g, it) {
+      if (it[0] === 'seg') segLine(g, it[1], it[2], it[3] || 'cx-line');
+      else if (it[0] === 'arc') arcDraw(g, it[1]);
+      else if (it[0] === 'perp') {
+        var foot = footOn(it[1], it[2], it[3]);
+        segLine(g, it[1], add(foot, mul(unit(sub(foot, it[1])), it[5] || 0)), it[4] || 'cx-perp');
+      }
+      else if (it[0] === 'circ') el('circle', { cx: it[1][0], cy: it[1][1], r: len(sub(it[2], it[1])), class: 'cx-circle' }, g);
+      else if (it[0] === 'phases' && it[2]) it[2](g);
+    };
+    var drawnWithTool = function (it) { return it[0] === 'seg' || it[0] === 'arc' || it[0] === 'perp' || it[0] === 'circ' || it[0] === 'phases'; };
+    return {
+      steps: spec.steps, start: spec.start, limit: spec.limit, place: spec.place, presets: spec.presets,
+      figure: function (s) { var f = spec.figure(s); f.meet = true; f.script = spec.script(f); return f; },
+      draw: function (f, i, g, layer) {
+        var k;
+        if (spec.base) spec.base(f, layer.ink, i);
+        for (k = 0; k <= i; k++) f.script[k].forEach(function (it) {
+          if (it[0] === 'mark') it[1](layer.marks); else if (it[0] !== 'pt') inkOf(layer.ink, it);
+        });
+        for (k = 0; k <= i; k++) f.script[k].forEach(function (it) {
+          if (it[0] === 'pt') point(layer.ink, it[1], it[2], it[3], it[4], null, it[5]);
+        });
+        if (spec.top) spec.top(f, layer.ink, i);
+      },
+      anim: function (f, i) {
+        var items = f.script[i].filter(drawnWithTool), phases = [];
+        items.forEach(function (it, n) {
+          var before = function (drawn) { for (var m = 0; m < n; m++) inkOf(drawn, items[m]); };
+          if (it[0] === 'seg') phases.push({ dur: 950, draw: function (t, drawn, tools) {
+            before(drawn);
+            drawRuler(tools, it[1], it[2]);
+            segLine(drawn, it[1], add(it[1], mul(sub(it[2], it[1]), t)), it[3] || 'cx-line');
+          } });
+          else if (it[0] === 'arc') phases.push({ dur: 900, draw: function (t, drawn, tools) {
+            var q = it[1], th = q.t1 + (q.t2 - q.t1) * t;
+            before(drawn);
+            el('path', { d: arcPath(q.c, q.r, q.t1, th), class: 'cx-arc' }, drawn);
+            drawCompass(tools, q.c, onCircle(q.c, q.r, th));
+          } });
+          else if (it[0] === 'phases') it[1].forEach(function (ph) {
+            phases.push({ dur: ph.dur, draw: function (t, drawn, tools) { before(drawn); ph.draw(t, drawn, tools); } });
+          });
+          else if (it[0] === 'circ') circlePhases(it[1], it[2], 'cx-circle').forEach(function (ph) {
+            phases.push({ dur: ph.dur, draw: function (t, drawn, tools) { before(drawn); ph.draw(t, drawn, tools); } });
+          });
+          else perpPhases(it[1], it[2], it[3], it[4] || 'cx-perp', it[5]).forEach(function (ph) {
+            phases.push({ dur: ph.dur, draw: function (t, drawn, tools) { before(drawn); ph.draw(t, drawn, tools); } });
+          });
+        });
+        return phases.length ? { phases: phases } : null;
+      },
+    };
+  }
+  // the two halves of the angle at V between VP and VQ, cut by VI: two arcs of one colour
+  function halfAngles(g, V, P, Q, I, kind) {
+    var turnTo = function (X, t0) { var d = aimAt(V, X) - t0; while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI; return d; };
+    var tP = aimAt(V, P), tI = aimAt(V, I);
+    wedge(g, V, tP, turnTo(I, tP), 34, kind);
+    wedge(g, V, tI, turnTo(Q, tI), 40, kind);
+  }
+  var rightAt = function (g, D, I, A, B) { rightMark(g, D, unit(sub(I, D)), unit(sub(len(sub(B, D)) > len(sub(A, D)) ? B : A, D))); };
+
+  // Grade 8, lesson 12, a worked example: the bisectors of the angles B and C of the triangle ABC
+  // meet at I; the perpendiculars from I to AB, BC and AC meet them at D, E and F. (Then ID = IE = IF,
+  // and AI bisects the angle A.)
+  CX['g8-l12-incentre'] = scripted({
+    steps: 9,
+    start: { A: [300, 86], B: [116, 394], C: [550, 394] },
+    limit: function (s, key, p) {
+      var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+      return t.least >= 190 && Math.min.apply(null, t.angles) >= 0.56 && t.r >= 52;
+    },
+    figure: function (s) {
+      var f = triangleOf(s);
+      f.bB = bisectorOf(f.B, f.C, f.A, f.I); f.bC = bisectorOf(f.C, f.A, f.B, f.I);
+      f.D = footOn(f.I, f.A, f.B); f.E = footOn(f.I, f.B, f.C); f.F = footOn(f.I, f.C, f.A);
+      f.past = add(f.I, mul(unit(sub(f.I, f.A)), 46));
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) { triCorners(f, ink); },
+    script: function (f) {
+      var arcs = function (b) { return b.arcs.map(function (a) { return ['arc', a]; }); }, aux = 'cx-line cx-line-2';
+      var foot = function (X, P, Q, name) {
+        return [['perp', f.I, P, Q], ['mark', function (g) { rightAt(g, X, f.I, P, Q); }], ['pt', X, name, sub(X, f.I), null, 22]];
+      };
+      return [
+        [],
+        arcs(f.bB),
+        [['seg', f.B, f.bB.end, aux], ['mark', function (g) { halfAngles(g, f.B, f.C, f.A, f.I, 'a'); }]],
+        arcs(f.bC),
+        [['seg', f.C, f.bC.end, aux], ['mark', function (g) { halfAngles(g, f.C, f.A, f.B, f.I, 'a'); }],
+          ['pt', f.I, 'I', [0.55, 0.85], 'cx-pt-m', 25]],
+        foot(f.D, f.A, f.B, 'D'), foot(f.E, f.B, f.C, 'E'), foot(f.F, f.C, f.A, 'F'),
+        [['seg', f.A, f.past, 'cx-line'], ['mark', function (g) {
+          [f.D, f.E, f.F].forEach(function (X) { tick(g, f.I, X); });
+          halfAngles(g, f.A, f.B, f.C, f.I, 'b');
+        }]],
+      ];
+    },
+  });
+
+  // Grade 8, lesson 17 §4.2: the excircles of a triangle. The external bisectors at B and C meet at J,
+  // which is also on the internal bisector of A; the perpendiculars from J to the three side lines
+  // are equal, so the circle of centre J touches them (the excircle opposite A). The external bisector
+  // at A meets those at K and L, the centres of the other two excircles.
+  CX['g8-l17-excircle'] = scripted({
+    steps: 16,
+    start: { A: [297, 127], B: [250, 211], C: [369, 211] },
+    limit: function (s, key, p) {
+      var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+      var ex = excentres(t), ok = Math.min.apply(null, t.angles) >= 0.6 && t.least >= 80;
+      ex.forEach(function (e) { if (e.c[0] - e.r < 8 || e.c[0] + e.r > W - 8 || e.c[1] - e.r < 8 || e.c[1] + e.r > H - 8) ok = false; });
+      return ok;
+    },
+    figure: function (s) {
+      var f = triangleOf(s), ex = excentres(f), far = function (V, X) { return add(X, mul(unit(sub(X, V)), 42)); };
+      f.J = ex[0].c; f.K = ex[1].c; f.L = ex[2].c;
+      f.Bx = add(f.B, mul(unit(sub(f.B, f.A)), 95)); f.Cx = add(f.C, mul(unit(sub(f.C, f.A)), 95)); f.Ax = add(f.A, mul(unit(sub(f.A, f.B)), 95));
+      f.bB = bisectorOf(f.B, f.C, f.Bx, f.J); f.bC = bisectorOf(f.C, f.B, f.Cx, f.J); f.bA = bisectorOf(f.A, f.C, f.Ax, f.K);
+      f.D = footOn(f.J, f.A, f.B); f.E = footOn(f.J, f.A, f.C); f.F = footOn(f.J, f.B, f.C);
+      f.Kf = footOn(f.K, f.A, f.C); f.Lf = footOn(f.L, f.A, f.B);
+      f.far = far;
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) { triCorners(f, ink); },
+    script: function (f) {
+      var arcs = function (b) { return b.arcs.map(function (a) { return ['arc', a]; }); }, aux = 'cx-line cx-line-2';
+      var outward = function (X) { return sub(X, f.G); };
+      return [
+        [],
+        [['seg', f.B, f.Bx, 'cx-line'], ['seg', f.C, f.Cx, 'cx-line']],
+        arcs(f.bB),
+        [['seg', f.B, f.far(f.B, f.J), aux], ['mark', function (g) { halfAngles(g, f.B, f.C, f.Bx, f.J, 'a'); }]],
+        arcs(f.bC),
+        [['seg', f.C, f.far(f.C, f.J), aux], ['mark', function (g) { halfAngles(g, f.C, f.B, f.Cx, f.J, 'a'); }],
+          ['pt', f.J, 'J', DOWN, 'cx-pt-m', 24]],
+        [['perp', f.J, f.B, f.C], ['mark', function (g) { rightAt(g, f.F, f.J, f.B, f.C); }], ['pt', f.F, 'F', sub(f.F, f.J), null, 20]],
+        [['perp', f.J, f.A, f.B], ['mark', function (g) { rightAt(g, f.D, f.J, f.A, f.B); }], ['pt', f.D, 'D', sub(f.D, f.J), null, 20],
+          ['perp', f.J, f.A, f.C], ['mark', function (g) { rightAt(g, f.E, f.J, f.A, f.C); tick(g, f.J, f.D); tick(g, f.J, f.E); tick(g, f.J, f.F); }],
+          ['pt', f.E, 'E', sub(f.E, f.J), null, 20]],
+        [['circ', f.J, f.F]],
+        [['seg', f.A, f.J, aux], ['mark', function (g) { halfAngles(g, f.A, f.B, f.C, f.J, 'b'); }]],
+        [['seg', f.A, f.Ax, 'cx-line']].concat(arcs(f.bA)),
+        [['seg', f.A, f.far(f.A, f.K), aux], ['seg', f.A, f.far(f.A, f.L), aux], ['mark', function (g) { halfAngles(g, f.A, f.C, f.Ax, f.K, 'a'); }]],
+        [['seg', f.C, f.far(f.C, f.K), aux], ['seg', f.B, f.far(f.B, f.L), aux],
+          ['pt', f.K, 'K', outward(f.K), 'cx-pt-m', 24], ['pt', f.L, 'L', outward(f.L), 'cx-pt-m', 24]],
+        [['perp', f.K, f.A, f.C], ['mark', function (g) { rightAt(g, f.Kf, f.K, f.A, f.C); }], ['circ', f.K, f.Kf]],
+        [['perp', f.L, f.A, f.B], ['mark', function (g) { rightAt(g, f.Lf, f.L, f.A, f.B); }], ['circ', f.L, f.Lf]],
+        [],
+      ];
+    },
+  });
+  // Grade 8, lesson 17 §1, the practice problem: the lines d (through A) and d' (through B) carry the
+  // medians from A and B. G = d ∩ d'; the midpoint M of AB (mediator); the median from C runs along MG
+  // and GC = 2·GM, found with the compass; then C is joined to A and B. G is dragged.
+  var MEDC = { A: [190, 392], B: [450, 392] };
+  CX['g8-l17-medians-construct'] = scripted({
+    steps: 9,
+    start: { G: [296, 272] },
+    place: function (s, key, p) { return [Math.max(140, Math.min(500, p[0])), Math.max(120, Math.min(330, p[1]))]; },
+    limit: function (s, key, p) {
+      var M = mul(add(MEDC.A, MEDC.B), 0.5), C = sub(mul(p, 3), mul(M, 2));
+      return C[0] > 40 && C[0] < W - 40 && C[1] > 30 && Math.abs(p[0] - M[0]) >= 12 && len(sub(p, M)) >= 90;
+    },
+    figure: function (s) {
+      var A = MEDC.A, B = MEDC.B, G = s.G, M = mul(add(A, B), 0.5), u = unit(sub(G, M)), r = len(sub(G, M));
+      var N = add(G, mul(u, r)), C = add(G, mul(u, 2 * r)), spot = function (c, X) { var t = aimAt(c, X); return { c: c, r: r, t1: t - 0.24, t2: t + 0.24 }; };
+      return { A: A, B: B, G: G, M: M, N: N, C: C, u: u, r: r, md: mediatorOf(A, B, G), a1: spot(G, N), a2: spot(N, C),
+        dEnd: add(A, mul(unit(sub(G, A)), len(sub(G, A)) + 70)), eEnd: add(B, mul(unit(sub(G, B)), len(sub(G, B)) + 70)) };
+    },
+    base: function (f, ink) {
+      segLine(ink, f.A, f.dEnd, 'cx-line'); segLine(ink, f.B, f.eEnd, 'cx-line');
+      label(ink, add(f.dEnd, [14, -6]), 'd', 'cx-label'); label(ink, add(f.eEnd, [-14, -6]), "d′", 'cx-label');
+    },
+    top: function (f, ink, i) {
+      point(ink, f.A, 'A', [-0.7, 0.8], null, null, 22); point(ink, f.B, 'B', [0.7, 0.8], null, null, 22);
+      if (i >= 1) el('circle', { cx: f.G[0], cy: f.G[1], r: 24, class: 'cx-grab', 'data-drag': 'G' }, ink);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [],
+        [['pt', f.G, 'G', [0.8, -0.7], 'cx-pt-m', 22]],
+        f.md.arcs.map(function (a) { return ['arc', a]; }),
+        [['seg', f.md.e1, f.md.e2, aux], ['pt', f.M, 'M', DOWN, null, 22], ['mark', function (g) { tick(g, f.A, f.M); tick(g, f.M, f.B); }]],
+        [['seg', f.M, add(f.G, mul(f.u, 2.7 * f.r)), 'cx-line']],
+        [['arc', f.a1], ['mark', function (g) { tick(g, f.M, f.G); }]],
+        [['arc', f.a2], ['mark', function (g) { tick(g, f.G, f.N); tick(g, f.N, f.C); }], ['pt', f.C, 'C', f.u, 'cx-pt-m', 22]],
+        [['seg', f.C, f.A, 'cx-seg'], ['seg', f.C, f.B, 'cx-seg']],
+        [],
+      ];
+    },
+  });
+
+  // Grade 8, lesson 17 §2/§3/exercise 13: the lines through A, B, C parallel to the opposite sides form
+  // a triangle A′B′C′ in which A, B, C are the midpoints; each is found with the compass as the fourth
+  // corner of a parallelogram. Then the altitudes of ABC (the mediators of A′B′C′) meet at H.
+  CX['g8-l17-big-triangle'] = scripted({
+    steps: 11,
+    start: { A: [330, 118], B: [240, 262], C: [420, 270] },
+    limit: function (s, key, p) {
+      var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+      var q = [add(t.B, sub(t.C, t.A)), add(t.A, sub(t.C, t.B)), add(t.A, sub(t.B, t.C))], ok = true;
+      q.forEach(function (X) { if (X[0] < 26 || X[0] > W - 26 || X[1] < 26 || X[1] > H - 26) ok = false; });
+      return ok && t.least >= 90 && Math.min.apply(null, t.angles) >= 0.55 && Math.max.apply(null, t.angles) <= 1.42;
+    },
+    figure: function (s) {
+      var f = triangleOf(s), A = f.A, B = f.B, C = f.C;
+      var line = function (p1, p2, p3, p4) {
+        var d = (p1[0] - p2[0]) * (p3[1] - p4[1]) - (p1[1] - p2[1]) * (p3[0] - p4[0]), a = p1[0] * p2[1] - p1[1] * p2[0], b = p3[0] * p4[1] - p3[1] * p4[0];
+        return [(a * (p3[0] - p4[0]) - (p1[0] - p2[0]) * b) / d, (a * (p3[1] - p4[1]) - (p1[1] - p2[1]) * b) / d];
+      }, spot = function (c, r, X) { var t = aimAt(c, X); return { c: c, r: r, t1: t - 0.2, t2: t + 0.2 }; };
+      f.Ap = add(B, sub(C, A)); f.Bp = add(A, sub(C, B)); f.Cp = add(A, sub(B, C));
+      f.Ha = footOn(A, B, C); f.Hb = footOn(B, A, C); f.Hc = footOn(C, A, B); f.H = line(A, f.Ha, B, f.Hb);
+      f.arcsA = [spot(B, f.b, f.Ap), spot(C, f.c, f.Ap)]; f.arcsB = [spot(A, f.a, f.Bp), spot(C, f.c, f.Bp)]; f.arcsC = [spot(A, f.a, f.Cp), spot(B, f.b, f.Cp)];
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) { triCorners(f, ink); },
+    script: function (f) {
+      var out = function (X) { return sub(X, f.G); };
+      var pr = function (P, Q) { return ['seg', P, Q, 'cx-line']; };
+      return [
+        [],
+        f.arcsA.map(function (a) { return ['arc', a]; }),
+        [pr(f.B, f.Ap), pr(f.C, f.Ap), ['pt', f.Ap, 'A′', out(f.Ap), null, 22]],
+        f.arcsB.map(function (a) { return ['arc', a]; }),
+        [pr(f.A, f.Bp), pr(f.C, f.Bp), ['pt', f.Bp, 'B′', out(f.Bp), null, 22]],
+        f.arcsC.map(function (a) { return ['arc', a]; }),
+        [pr(f.A, f.Cp), pr(f.B, f.Cp), ['pt', f.Cp, 'C′', out(f.Cp), null, 22],
+          ['mark', function (g) { tick(g, f.Bp, f.A); tick(g, f.A, f.Cp); }]],
+        [['perp', f.A, f.B, f.C], ['mark', function (g) {
+          rightAt(g, f.Ha, f.A, f.B, f.C); rightMark(g, f.A, unit(sub(f.Ha, f.A)), unit(sub(f.Cp, f.A)));
+        }]],
+        [['perp', f.B, f.A, f.C], ['mark', function (g) { rightAt(g, f.Hb, f.B, f.A, f.C); tick(g, f.Ap, f.C); tick(g, f.C, f.Bp); }]],
+        [['perp', f.C, f.A, f.B], ['mark', function (g) { rightAt(g, f.Hc, f.C, f.A, f.B); tick(g, f.Ap, f.B); tick(g, f.B, f.Cp); }],
+          ['pt', f.H, 'H', [0.9, 0.5], 'cx-pt-m', 22]],
+        [],
+      ];
+    },
+  });
+  // the centres and radii of the three excircles (opposite A, B, C)
+  function excentres(t) {
+    var a = t.a, b = t.b, c = t.c, s = (a + b + c) / 2, area = t.r * s;
+    return [[-a, b, c, area / (s - a)], [a, -b, c, area / (s - b)], [a, b, -c, area / (s - c)]].map(function (w) {
+      var k = w[0] + w[1] + w[2];
+      return { c: mul(add(add(mul(t.A, w[0]), mul(t.B, w[1])), mul(t.C, w[2])), 1 / k), r: w[3] };
+    });
+  }
+
+  // Grade 8, lesson 12, a worked example: M is a point of the bisector of the angle XOY; the
+  // perpendiculars from M meet OX at A and OY at B. (Then MA = MB.) The handle on OY turns that
+  // side; M slides along the bisector.
+  var G8B = { O: [90, 402], X: [596, 402], reach: 380 };     // reach: how far along OY its handle sits
+  CX['g8-l12-bisector-point'] = scripted({
+    steps: 6,
+    start: { Y: [334, 111], M: [362, 275] },
+    place: function (s, key, p) {
+      if (key === 'Y') return add(G8B.O, mul(unit(sub(p, G8B.O)), G8B.reach));
+      var d = unit(add(unit(sub(G8B.X, G8B.O)), unit(sub(s.Y, G8B.O))));      // M stays on the bisector
+      return add(G8B.O, mul(d, Math.max(150, Math.min(330, dotp(sub(p, G8B.O), d)))));
+    },
+    limit: function (s, key, p) {
+      if (key !== 'Y') return true;
+      var v = sub(p, G8B.O), a = Math.atan2(-v[1], v[0]) * 180 / Math.PI;
+      return a >= 34 && a <= 100;
+    },
+    figure: function (s) {
+      var O = G8B.O, X = G8B.X, Y = s.Y, d = unit(add(unit(sub(X, O)), unit(sub(Y, O)))), M = add(O, mul(d, len(sub(s.M, O))));
+      return { O: O, X: X, Y: Y, M: M, d: d, b: bisectorOf(O, X, Y, M), A: footOn(M, O, X), B: footOn(M, O, Y),
+        Ey: toEdge(O, unit(sub(Y, O)), 400) };                 // the side OY runs to the edge of the sheet
+    },
+    base: function (f, ink) {
+      segLine(ink, f.O, f.X, 'cx-seg'); segLine(ink, f.O, f.Ey, 'cx-seg');
+      label(ink, add(f.X, [-10, 22]), 'X', 'cx-label');
+      label(ink, add(add(f.Ey, mul(unit(sub(f.O, f.Ey)), 16)), mul([-f.d[1], f.d[0]], -24)), 'Y', 'cx-label');
+    },
+    top: function (f, ink, i) {
+      point(ink, f.O, 'O', [-0.8, 0.7], null, null, 22);
+      el('circle', { cx: f.Y[0], cy: f.Y[1], r: 7, class: 'cx-handle' }, ink);
+      el('circle', { cx: f.Y[0], cy: f.Y[1], r: 24, class: 'cx-grab', 'data-drag': 'Y' }, ink);
+      if (i >= 2) el('circle', { cx: f.M[0], cy: f.M[1], r: 24, class: 'cx-grab', 'data-drag': 'M' }, ink);
+    },
+    script: function (f) {
+      return [
+        [],
+        f.b.arcs.map(function (a) { return ['arc', a]; }),
+        [['seg', f.O, f.b.end, 'cx-line cx-line-2'], ['mark', function (g) { halfAngles(g, f.O, f.X, f.Y, f.M, 'a'); }],
+          ['pt', f.M, 'M', [0.85, 0.6], 'cx-pt-m', 23]],
+        [['perp', f.M, f.O, f.X], ['mark', function (g) { rightAt(g, f.A, f.M, f.O, f.X); }], ['pt', f.A, 'A', DOWN, null, 22]],
+        [['perp', f.M, f.O, f.Y], ['mark', function (g) { rightAt(g, f.B, f.M, f.O, f.Y); }], ['pt', f.B, 'B', sub(f.B, f.M), null, 22]],
+        [['mark', function (g) { tick(g, f.M, f.A); tick(g, f.M, f.B); }]],
+      ];
+    },
+  });
+
+  // ---- Grade 9, lesson 13 «រង្វង់ និងបន្ទាត់» ----
+  var G9C = { O: [320, 264], R: 150 };
+  var onRim = function (p) { return add(G9C.O, mul(unit(sub(p, G9C.O)), G9C.R)); };       // a handle kept on the circle
+  var angleOf = function (p) { return Math.atan2(p[1] - G9C.O[1], p[0] - G9C.O[0]) * 180 / Math.PI; };
+  var gap = function (a, b) { var d = Math.abs(a - b) % 360; return d > 180 ? 360 - d : d; };
+
+  // A chord AB of a circle, the perpendicular from the centre O to AB (set square) meets it at M: AM = MB.
+  // Then the converse: the mediator of AB passes through O. A and B slide round the circle.
+  CX['g9-l13-chord-perp'] = scripted({
+    steps: 6,
+    start: { A: [196, 130], B: [470, 150] },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var o = key === 'A' ? s.B : s.A, g = gap(angleOf(p), angleOf(o));
+      return g >= 44 && g <= 150;                        // a chord, not a diameter: then OM is a real segment
+    },
+    figure: function (s) {
+      var f = { O: G9C.O, R: G9C.R, A: onRim(s.A), B: onRim(s.B) };
+      f.M = footOn(f.O, f.A, f.B);
+      f.med = mediatorOf(f.A, f.B, f.O);
+      return f;
+    },
+    base: function (f, ink) {},
+    top: function (f, ink, i) {
+      point(ink, f.O, 'O', [-0.8, 0.7], null, null, 22);
+      if (i >= 1) {
+        el('circle', { cx: f.A[0], cy: f.A[1], r: 7, class: 'cx-handle' }, ink); el('circle', { cx: f.A[0], cy: f.A[1], r: 24, class: 'cx-grab', 'data-drag': 'A' }, ink);
+        el('circle', { cx: f.B[0], cy: f.B[1], r: 7, class: 'cx-handle' }, ink); el('circle', { cx: f.B[0], cy: f.B[1], r: 24, class: 'cx-grab', 'data-drag': 'B' }, ink);
+      }
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [['circ', f.O, f.A], ['pt', f.O, 'O', [-0.8, 0.7], null, 22]],
+        [['seg', f.A, f.B, 'cx-line'], ['pt', f.A, 'A', away(f.A), null, 22], ['pt', f.B, 'B', away(f.B), null, 22]],
+        [['perp', f.O, f.A, f.B], ['pt', f.M, 'M', sub(f.M, f.O), null, 20],
+         ['mark', function (g) { rightAt(g, f.M, f.O, f.A, f.B); }]],
+        [['mark', function (g) { tick(g, f.A, f.M); tick(g, f.M, f.B); }]],
+        f.med.arcs.map(function (a) { return ['arc', a]; }),
+        [['seg', f.med.e1, f.med.e2, 'cx-line cx-line-2']],
+      ];
+    },
+  });
+
+  // Find the centre of a circle that has none: three points A, B, C on it, the mediators of AB and BC meet at O.
+  CX['g9-l13-find-centre'] = scripted({
+    steps: 7,
+    start: { A: [190, 150], B: [320, 86], C: [470, 160] },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var t = { A: s.A, B: s.B, C: s.C }; t[key] = p;
+      var a = [angleOf(t.A), angleOf(t.B), angleOf(t.C)];
+      return gap(a[0], a[1]) >= 50 && gap(a[1], a[2]) >= 50 && gap(a[0], a[2]) >= 50;
+    },
+    figure: function (s) {
+      var f = { O: G9C.O, R: G9C.R, A: onRim(s.A), B: onRim(s.B), C: onRim(s.C) };
+      f.m1 = mediatorOf(f.A, f.B, f.O); f.m2 = mediatorOf(f.B, f.C, f.O);
+      return f;
+    },
+    base: function (f, ink) { el('circle', { cx: f.O[0], cy: f.O[1], r: f.R, class: 'cx-circle' }, ink); },
+    top: function (f, ink, i) {
+      ['A', 'B', 'C'].forEach(function (k) {
+        el('circle', { cx: f[k][0], cy: f[k][1], r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: f[k][0], cy: f[k][1], r: 24, class: 'cx-grab', 'data-drag': k }, ink);
+      });
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [['pt', f.A, 'A', away(f.A), null, 22], ['pt', f.B, 'B', away(f.B), null, 22], ['pt', f.C, 'C', away(f.C), null, 22]],
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.B, f.C, 'cx-line']],
+        f.m1.arcs.map(function (a) { return ['arc', a]; }),
+        [['seg', f.m1.e1, f.m1.e2, 'cx-line cx-line-2']],
+        f.m2.arcs.map(function (a) { return ['arc', a]; }),
+        [['seg', f.m2.e1, f.m2.e2, 'cx-line cx-line-3'], ['pt', f.O, 'O', [-0.8, 0.7], 'cx-pt-m', 22]],
+        [['seg', f.O, f.A, 'cx-seg'], ['seg', f.O, f.B, 'cx-seg'], ['seg', f.O, f.C, 'cx-seg'],
+         ['mark', function (g) { tick(g, f.O, f.A); tick(g, f.O, f.B); tick(g, f.O, f.C); }]],
+      ];
+    },
+  });
+
+  // Two circles: the centre O′ slides along a line through O. d = OO′ against r + r′ and r − r′ tells the position.
+  var G9T = { O: [140, 236], R: 90, r: 60, x0: 150, x1: 440 };
+  CX['g9-l13-two-circles'] = scripted({
+    steps: 5,
+    start: { P: [330, 236] },
+    place: function (s, key, p) {
+      var d = Math.max(G9T.x0 - G9T.O[0], Math.min(G9T.x1 - G9T.O[0], p[0] - G9T.O[0]));
+      [G9T.R + G9T.r, G9T.R - G9T.r].forEach(function (c) { if (Math.abs(d - c) < 9) d = c; });      // snaps onto the two «touching» positions
+      return [G9T.O[0] + d, G9T.O[1]];
+    },
+    limit: function () { return true; },
+    figure: function (s) {
+      var d = s.P[0] - G9T.O[0], R = G9T.R, r = G9T.r, f = { O: G9T.O, P: [G9T.O[0] + d, G9T.O[1]], d: d, R: R, r: r };
+      f.kind = d > R + r + 0.5 ? 0 : Math.abs(d - (R + r)) <= 0.5 ? 1 : d > R - r + 0.5 ? 2 : Math.abs(d - (R - r)) <= 0.5 ? 3 : 4;
+      return f;
+    },
+    base: function (f, ink) {},
+    top: function (f, ink, i) {
+      if (i >= 1) {
+        el('circle', { cx: f.P[0], cy: f.P[1], r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: f.P[0], cy: f.P[1], r: 26, class: 'cx-grab', 'data-drag': 'P' }, ink);
+      }
+    },
+    script: function (f) {
+      var words = ['d > r + r′ : គ្មានចំណុចរួម (នៅឆ្ងាយពីគ្នា)', 'd = r + r′ : ប៉ះគ្នាក្រៅ', 'r − r′ < d < r + r′ : កាត់គ្នាពីរចំណុច',
+        'd = r − r′ : ប៉ះគ្នាក្នុង', 'd < r − r′ : គ្មានចំណុចរួម (រង្វង់តូចនៅក្នុងរង្វង់ធំ)'];
+      var below = [0, 34];
+      return [
+        [['circ', f.O, [f.O[0] + f.R, f.O[1]]], ['pt', f.O, 'O', [-0.8, 0.7], null, 24]],
+        [['circ', f.P, [f.P[0] + f.r, f.P[1]]], ['pt', f.P, 'O′', [0, 1], null, 28]],
+        [['seg', f.O, f.P, 'cx-seg'],
+         ['mark', function (g) { label(g, [(f.O[0] + f.P[0]) / 2, f.O[1] - 16], 'd', 'cx-label'); }]],
+        [['mark', function (g) {
+          var y = f.O[1] + 140, x = function (v) { return f.O[0] + v; };
+          el('line', { x1: x(0), y1: y, x2: x(f.R + f.r + 40), y2: y, class: 'cx-seg' }, g);
+          [[f.R - f.r, 'r − r′'], [f.R + f.r, 'r + r′'], [f.d, 'd']].forEach(function (t) {
+            el('line', { x1: x(t[0]), y1: y - 8, x2: x(t[0]), y2: y + 8, class: 'cx-tick' }, g);
+            label(g, [x(t[0]), y + 26], t[1], 'cx-label');
+          });
+         
+        }]],
+        [['mark', function (g) { says(g, 0, words[f.kind]); }]],
+      ];
+    },
+  });
+
+  // ---- Grade 9, lesson 13, part 2: equal chords, the quadrilateral round a circle, two circles and their common tangents ----
+  var d2r = function (a) { return a * Math.PI / 180; };
+  var rimAt = function (c, r, deg) { return onCircle(c, r, d2r(deg)); };
+  var degOf = function (c, p) { return Math.atan2(p[1] - c[1], p[0] - c[0]) * 180 / Math.PI; };
+  var angN = function (a) { a = ((a % 360) + 360) % 360; return a > 180 ? a - 360 : a; };
+  var clampN = function (v, lo, hi) { return Math.max(lo, Math.min(hi, v)); };
+  var tickN = function (g, p, q, n) {
+    var m = mul(add(p, q), 0.5), u = unit(sub(q, p)), nv = [u[1], -u[0]], k;
+    for (k = 0; k < n; k++) {
+      var c = add(m, mul(u, (k - (n - 1) / 2) * 6));
+      el('line', { x1: c[0] - nv[0] * 8, y1: c[1] - nv[1] * 8, x2: c[0] + nv[0] * 8, y2: c[1] + nv[1] * 8, class: 'cx-tick' }, g);
+    }
+  };
+  var handleAt = function (ink, p, key, big) {
+    el('circle', { cx: p[0], cy: p[1], r: 7, class: 'cx-handle' }, ink);
+    el('circle', { cx: p[0], cy: p[1], r: big || 24, class: 'cx-grab', 'data-drag': key }, ink);
+  };
+  var tangentPts = function (c, r, P) {                      // the two points where the tangents from P touch the circle (c, r)
+    var u = unit(sub(P, c)), nv = [-u[1], u[0]], k = r / len(sub(P, c)), s = Math.sqrt(1 - k * k);
+    return [add(c, mul(add(mul(u, k), mul(nv, s)), r)), add(c, mul(sub(mul(u, k), mul(nv, s)), r))];
+  };
+
+  // Equal chords are at equal distances from the centre: the chord PR is copied with the compass onto the circle as QS.
+  CX['g9-l13-equal-chords'] = scripted({
+    steps: 6,
+    start: { Q: rimAt(G9C.O, G9C.R, 20) },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) { var a = angN(degOf(G9C.O, p)); return a >= -10 && a <= 80; },
+    figure: function (s) {
+      var O = G9C.O, f = { O: O, R: G9C.R, P: rimAt(O, G9C.R, 215), Rr: rimAt(O, G9C.R, 325), Q: onRim(s.Q) };
+      f.S = rimAt(O, G9C.R, degOf(O, f.Q) + 110);
+      f.C = footOn(O, f.P, f.Rr); f.D = footOn(O, f.Q, f.S);
+      return f;
+    },
+    top: function (f, ink, i) { if (i >= 3) handleAt(ink, f.Q, 'Q'); },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [['circ', f.O, f.P], ['pt', f.O, 'O', [-0.8, 0.7], null, 22]],
+        [['seg', f.P, f.Rr, 'cx-line'], ['pt', f.P, 'P', away(f.P), null, 22], ['pt', f.Rr, 'R', away(f.Rr), null, 22]],
+        [['perp', f.O, f.P, f.Rr], ['mark', function (g) { rightAt(g, f.C, f.O, f.P, f.Rr); }], ['pt', f.C, 'C', [0, -1], null, 18]],
+        [['arc', { c: f.Q, r: len(sub(f.P, f.Rr)), t1: aimAt(f.Q, f.S) - 0.3, t2: aimAt(f.Q, f.S) + 0.3 }],
+          ['pt', f.Q, 'Q', away(f.Q), null, 22], ['pt', f.S, 'S', away(f.S), null, 22]],
+        [['seg', f.Q, f.S, 'cx-line cx-line-2']],
+        [['perp', f.O, f.Q, f.S, 'cx-perp'], ['mark', function (g) {
+          rightAt(g, f.D, f.O, f.Q, f.S); tickN(g, f.P, f.Rr, 1); tickN(g, f.Q, f.S, 1); tickN(g, f.O, f.C, 2); tickN(g, f.O, f.D, 2);
+        }], ['pt', f.D, 'D', [0, 1], null, 18]],
+      ];
+    },
+  });
+
+  // The quadrilateral ABCD round a circle: four tangents, AP = AS, BP = BQ, CQ = CR, DR = DS, so AB + CD = AD + BC.
+  var G9Q = { O: [320, 236], R: 110, keys: ['P', 'Q', 'R', 'S'] };
+  var quadAngles = function (s) { return G9Q.keys.map(function (k) { return degOf(G9Q.O, s[k]); }); };
+  CX['g9-l13-quad-circle'] = scripted({
+    steps: 7,
+    start: { P: rimAt(G9Q.O, G9Q.R, 45), Q: rimAt(G9Q.O, G9Q.R, 140), R: rimAt(G9Q.O, G9Q.R, 225), S: rimAt(G9Q.O, G9Q.R, 320) },
+    place: function (s, key, p) { return add(G9Q.O, mul(unit(sub(p, G9Q.O)), G9Q.R)); },
+    limit: function (s, key, p) {
+      var t = {}; G9Q.keys.forEach(function (k) { t[k] = s[k]; }); t[key] = p;
+      var a = quadAngles(t);
+      return a.every(function (x, i) { var g = (((a[(i + 1) % 4] - x) % 360) + 360) % 360; return g >= 65 && g <= 115; });
+    },
+    figure: function (s) {
+      var O = G9Q.O, R = G9Q.R, f = { O: O, rad: R }, a = quadAngles(s);
+      f.P = add(O, mul(unit(sub(s.P, O)), R)); f.Q = add(O, mul(unit(sub(s.Q, O)), R));
+      f.T = add(O, mul(unit(sub(s.R, O)), R)); f.S = add(O, mul(unit(sub(s.S, O)), R));         // f.T is the point called R in the book
+      var vert = function (a1, a2) { var g = (((a2 - a1) % 360) + 360) % 360; return rimAt(O, R / Math.cos(d2r(g / 2)), a1 + g / 2); };
+      f.A = vert(a[3], a[0]); f.B = vert(a[0], a[1]); f.C = vert(a[1], a[2]); f.D = vert(a[2], a[3]);
+      return f;
+    },
+    top: function (f, ink, i) { if (i >= 1) [['P', f.P], ['Q', f.Q], ['R', f.T], ['S', f.S]].forEach(function (k) { handleAt(ink, k[1], k[0], 22); }); },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); }, tan = function (T, V1, V2) { return ['perp', V1, f.O, T, 'cx-perp', len(sub(V2, T))]; };
+      var rt = function (g, T, V1, V2) { rightAt(g, T, f.O, V1, V2); };
+      var named = [['P', f.P], ['Q', f.Q], ['R', f.T], ['S', f.S]];
+      return [
+        [['circ', f.O, f.P], ['pt', f.O, 'O', [-0.8, 0.7], null, 22]].concat(named.map(function (k) { return ['pt', k[1], k[0], away(k[1]), null, 20]; })),
+        named.map(function (k) { return ['seg', f.O, k[1], 'cx-seg']; }),
+        [tan(f.P, f.A, f.B), tan(f.Q, f.B, f.C), ['mark', function (g) { rt(g, f.P, f.A, f.B); rt(g, f.Q, f.B, f.C); }]],
+        [tan(f.T, f.C, f.D), tan(f.S, f.D, f.A), ['mark', function (g) { rt(g, f.T, f.C, f.D); rt(g, f.S, f.D, f.A); }]],
+        ['A', 'B', 'C', 'D'].map(function (k) { return ['pt', f[k], k, away(f[k]), null, 22]; }),
+        [['mark', function (g) {
+          tickN(g, f.A, f.P, 1); tickN(g, f.A, f.S, 1); tickN(g, f.B, f.P, 2); tickN(g, f.B, f.Q, 2);
+          tickN(g, f.C, f.Q, 3); tickN(g, f.C, f.T, 3); tickN(g, f.D, f.T, 4); tickN(g, f.D, f.S, 4);
+        }]],
+        [['mark', function (g) {
+          var hi = function (p, q, cls) { el('line', { x1: p[0], y1: p[1], x2: q[0], y2: q[1], class: cls, style: 'stroke-width:5' }, g); };
+          hi(f.A, f.B, 'cx-line cx-line-2'); hi(f.C, f.D, 'cx-line cx-line-2'); hi(f.B, f.C, 'cx-perp'); hi(f.D, f.A, 'cx-perp');
+        }]],
+      ];
+    },
+  });
+
+  // How many common tangents two circles have (4, 3, 2, 1, 0): O′ slides along the line of centres.
+  var G9K = { O: [150, 236], R: 80, r: 50, dmin: 10, dmax: 340 };
+  CX['g9-l13-common-tangents'] = scripted({
+    steps: 5,
+    start: { P: [G9K.O[0] + 270, G9K.O[1]] },
+    place: function (s, key, p) {
+      var d = clampN(p[0] - G9K.O[0], G9K.dmin, G9K.dmax);
+      [G9K.R + G9K.r, G9K.R - G9K.r].forEach(function (c) { if (Math.abs(d - c) < 9) d = c; });
+      return [G9K.O[0] + d, G9K.O[1]];
+    },
+    limit: function () { return true; },
+    figure: function (s) {
+      var O = G9K.O, R = G9K.R, r = G9K.r, d = s.P[0] - O[0], f = { O: O, P: [O[0] + d, O[1]], R: R, r: r, d: d };
+      var up = [0, 1], line = function (c1, c2, sgn, outer) {                 // the common tangents, as two end points each
+        var co = (outer ? R - r : R + r) / d, si = Math.sqrt(Math.max(0, 1 - co * co)), out = [];
+        [1, -1].forEach(function (k, n) {
+          if (n === 1 && si < 0.001) return;
+          var nv = [co, k * si], T1 = add(O, mul(nv, R)), T2 = outer ? add(f.P, mul(nv, r)) : sub(f.P, mul(nv, r));
+          var dir = len(sub(T2, T1)) > 1 ? unit(sub(T2, T1)) : [-nv[1], nv[0]];
+          out.push([sub(T1, mul(dir, 70)), add(T2, mul(dir, 70))]);
+        });
+        return out;
+      };
+      f.kind = d > R + r + 0.5 ? 4 : Math.abs(d - (R + r)) <= 0.5 ? 3 : d > R - r + 0.5 ? 2 : Math.abs(d - (R - r)) <= 0.5 ? 1 : 0;
+      f.outer = f.kind >= 1 ? line(0, 0, 1, true) : [];
+      f.inner = f.kind >= 3 ? line(0, 0, 1, false) : [];
+      if (f.kind === 3) f.inner = f.inner.slice(0, 1);
+      return f;
+    },
+    top: function (f, ink, i) { if (i >= 1) handleAt(ink, f.P, 'P', 26); },
+    script: function (f) {
+      var words = ['គ្មានបន្ទាត់ប៉ះរួមទេ (រង្វង់មួយនៅក្នុងរង្វង់មួយទៀត)', 'មានបន្ទាត់ប៉ះរួម ១ (រង្វង់ប៉ះគ្នាក្នុង)', 'មានបន្ទាត់ប៉ះរួម ២ (ខាងក្រៅទាំងពីរ)',
+        'មានបន្ទាត់ប៉ះរួម ៣ (ខាងក្រៅ ២ និងខាងក្នុង ១ ត្រង់ចំណុចប៉ះ)', 'មានបន្ទាត់ប៉ះរួម ៤ (ខាងក្រៅ ២ និងខាងក្នុង ២)'];
+      return [
+        [['circ', f.O, [f.O[0] + f.R, f.O[1]]], ['pt', f.O, 'O', [-0.8, 0.7], null, 24]],
+        [['circ', f.P, [f.P[0] + f.r, f.P[1]]], ['pt', f.P, 'O′', [0, 1], null, 28]],
+        f.outer.map(function (l) { return ['seg', l[0], l[1], 'cx-line']; }),
+        f.inner.map(function (l) { return ['seg', l[0], l[1], 'cx-line cx-line-2']; }),
+        [['mark', function (g) { says(g, 0, words[f.kind]); }]],
+      ];
+    },
+  });
+
+  // The common tangent of two circles by construction: the tangent from O′ to a circle of radius R − r (outer) or R + r (inner)
+  // about O, then moved back by r with the radius O′B parallel to OA.
+  var commonTangentFig = function (inner) {
+    var R = inner ? 70 : 90, r = 50, aux = inner ? R + r : R - r, O = [140, 246], d = 270, O2 = [O[0] + d, O[1]];
+    return scripted({
+      steps: 7,
+      start: {},
+      figure: function () {
+        var co = aux / d, si = Math.sqrt(1 - co * co), dir = [co, -si], f = { O: O, O2: O2, R: R, r: r, aux: aux, dir: dir };
+        f.T = add(O, mul(dir, aux)); f.A = add(O, mul(dir, R)); f.B = inner ? sub(O2, mul(dir, r)) : add(O2, mul(dir, r));
+        f.med = mediatorOf(O, O2, f.T); f.M = f.med.M;
+        var ab = unit(sub(f.B, f.A)); f.a1 = sub(f.A, mul(ab, 46)); f.b1 = add(f.B, mul(ab, 46));
+        return f;
+      },
+      script: function (f) {
+        var up = [0, -1];
+        return [
+          [['circ', f.O, [f.O[0] + f.R, f.O[1]]], ['circ', f.O2, [f.O2[0] + f.r, f.O2[1]]], ['pt', f.O, 'O', [-0.8, 0.7], null, 24], ['pt', f.O2, 'O′', [0.8, 0.7], null, 24],
+            ['seg', f.O, f.O2, 'cx-seg']],
+          [['arc', { c: f.O, r: f.aux, t1: 0, t2: Math.PI }], ['arc', { c: f.O, r: f.aux, t1: Math.PI, t2: 2 * Math.PI }]],
+          f.med.arcs.map(function (a) { return ['arc', a]; }).concat([['seg', f.med.e1, f.med.e2, 'cx-line cx-line-2'], ['pt', f.M, 'M', [0, 1], null, 22]]),
+          [['circ', f.M, f.O], ['pt', f.T, 'T', [0, -1], null, 20], ['mark', function (g) { rightAt(g, f.T, f.O, f.T, f.O2); }]],
+          [['seg', f.O2, f.T, 'cx-line cx-line-2'], ['seg', f.O, f.A, 'cx-seg'], ['pt', f.A, 'A', [-0.3, -1], null, 22]],
+          [['seg', f.O2, f.B, 'cx-seg'], ['pt', f.B, 'B', f.B[1] > f.O2[1] ? [0.4, 1] : [0.4, -1], null, 22],
+            ['mark', function (g) { tickN(g, f.O, f.A, 1); tickN(g, f.O2, f.B, 1); }]],
+          [['seg', f.a1, f.b1, 'cx-perp'], ['mark', function (g) { rightAt(g, f.A, f.O, f.A, f.B); rightAt(g, f.B, f.O2, f.A, f.B); }]],
+        ];
+      },
+    });
+  };
+  CX['g9-l13-outer-tangent'] = commonTangentFig(false);
+  CX['g9-l13-inner-tangent'] = commonTangentFig(true);
+
+  // Two concentric circles, a chord AB of the big one that touches the small one at T: OT ⟂ AB, so AT = TB.
+  var G9N = { O: [320, 236], R: 150, r: 120 };
+  CX['g9-l13-concentric'] = scripted({
+    steps: 5,
+    start: { T: rimAt(G9N.O, G9N.r, -90) },
+    place: function (s, key, p) { return add(G9N.O, mul(unit(sub(p, G9N.O)), G9N.r)); },
+    limit: function (s, key, p) { var a = degOf(G9N.O, p); return a >= -150 && a <= -30; },
+    figure: function (s) {
+      var O = G9N.O, f = { O: O, R: G9N.R, r: G9N.r }, u = unit(sub(s.T, O)), nv = [-u[1], u[0]], h = Math.sqrt(f.R * f.R - f.r * f.r);
+      f.T = add(O, mul(u, f.r)); f.A = add(f.T, mul(nv, h)); f.B = sub(f.T, mul(nv, h));
+      return f;
+    },
+    top: function (f, ink, i) { if (i >= 1) handleAt(ink, f.T, 'T', 24); },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [['circ', f.O, [f.O[0] + f.R, f.O[1]]], ['circ', f.O, [f.O[0] + f.r, f.O[1]]], ['pt', f.O, 'O', [0.8, 0.8], null, 22]],
+        [['seg', f.O, f.T, 'cx-seg'], ['pt', f.T, 'T', away(f.T), null, 20]],
+        [['perp', f.A, f.O, f.T, 'cx-perp', len(sub(f.B, f.T))], ['mark', function (g) { rightAt(g, f.T, f.O, f.A, f.B); }],
+          ['pt', f.A, 'A', away(f.A), null, 22], ['pt', f.B, 'B', away(f.B), null, 22]],
+        [['seg', f.O, f.A, 'cx-seg'], ['seg', f.O, f.B, 'cx-seg'], ['mark', function (g) { tickN(g, f.A, f.T, 1); tickN(g, f.T, f.B, 1); }]],
+        [['mark', function (g) { triFill(g, f.O, f.T, f.A); says(g, 0, 'AT² = OA² − OT² = 10² − 8² = 36 ដូច្នេះ AT = 6 ហើយ AB = 12'); }]],
+      ];
+    },
+  });
+
+  // Two circles touching outside at B: the common tangent at B, and from M on it the tangents MA and MC, so MA = MB = MC.
+  var G9X = { O: [165, 300], R: 90, r: 55 };
+  CX['g9-l13-touching-tangents'] = scripted({
+    steps: 6,
+    start: { M: [G9X.O[0] + G9X.R, 120] },
+    place: function (s, key, p) { return [G9X.O[0] + G9X.R, clampN(p[1], 50, 170)]; },
+    limit: function () { return true; },
+    figure: function (s) {
+      var O = G9X.O, B = [O[0] + G9X.R, O[1]], O2 = [B[0] + G9X.r, B[1]], M = s.M, f = { O: O, O2: O2, B: B, M: M, R: G9X.R, r: G9X.r };
+      var far = function (pts) { return len(sub(pts[0], B)) > len(sub(pts[1], B)) ? pts[0] : pts[1]; };
+      f.A = far(tangentPts(O, f.R, M)); f.C = far(tangentPts(O2, f.r, M)); f.down = [B[0], B[1] + 90];
+      return f;
+    },
+    top: function (f, ink, i) { if (i >= 1) handleAt(ink, f.M, 'M', 24); },
+    script: function (f) {
+      return [
+        [['circ', f.O, f.B], ['circ', f.O2, f.B], ['pt', f.O, 'O', [-0.8, 0.7], null, 22], ['pt', f.O2, 'O′', [0, 1], null, 26], ['pt', f.B, 'B', [-1, 0.9], null, 20]],
+        [['seg', f.M, f.down, 'cx-line cx-line-2'], ['pt', f.M, 'M', [0, -1], null, 20], ['mark', function (g) { rightAt(g, f.B, f.O, f.M, f.down); }]],
+        [['seg', f.M, f.A, 'cx-perp'], ['pt', f.A, 'A', sub(f.A, f.O), null, 20], ['mark', function (g) { rightAt(g, f.A, f.O, f.M, f.A); }]],
+        [['seg', f.M, f.C, 'cx-perp'], ['pt', f.C, 'C', sub(f.C, f.O2), null, 20], ['mark', function (g) { rightAt(g, f.C, f.O2, f.M, f.C); }]],
+        [['mark', function (g) { tickN(g, f.M, f.A, 1); tickN(g, f.M, f.B, 1); }]],
+        [['mark', function (g) { tickN(g, f.M, f.B, 2); tickN(g, f.M, f.C, 2); says(g, 0, 'MA = MB = MC ដូច្នេះ MA = MC'); }]],
+      ];
+    },
+  });
+
+  // The quadrilateral OAPB: the tangents PA and PB from P, ∠AOB + ∠APB = 180°. A slides round the circle.
+  var G9P = { O: [170, 236], R: 100 };
+  CX['g9-l13-tangent-quad'] = scripted({
+    steps: 4,
+    start: { A: rimAt(G9P.O, G9P.R, -70) },
+    place: function (s, key, p) { return rimAt(G9P.O, G9P.R, -clampN(-degOf(G9P.O, p), 30, 70)); },
+    limit: function () { return true; },
+    figure: function (s) {
+      var O = G9P.O, h = clampN(-degOf(O, s.A), 30, 70), f = { O: O, R: G9P.R, h: h };
+      f.A = rimAt(O, f.R, -h); f.B = rimAt(O, f.R, h); f.P = [O[0] + f.R / Math.cos(d2r(h)), O[1]];
+      return f;
+    },
+    top: function (f, ink, i) { if (i >= 1) handleAt(ink, f.A, 'A', 26); },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [['circ', f.O, f.A], ['pt', f.O, 'O', [-0.9, 0.2], null, 22]],
+        [['seg', f.O, f.A, 'cx-seg'], ['seg', f.O, f.B, 'cx-seg'], ['pt', f.A, 'A', away(f.A), null, 20], ['pt', f.B, 'B', away(f.B), null, 20],
+          ['mark', function (g) { el('path', { d: arcPath(f.O, 30, d2r(-f.h), d2r(f.h)), class: 'cx-arc' }, g); }]],
+        [['perp', f.P, f.O, f.A, 'cx-perp'], ['perp', f.P, f.O, f.B, 'cx-perp'], ['pt', f.P, 'P', [1, 0], null, 22],
+          ['mark', function (g) { rightAt(g, f.A, f.O, f.P, f.A); rightAt(g, f.B, f.O, f.P, f.B); }]],
+        [['mark', function (g) {
+          says(g, 0, '∠AOB = ' + Math.round(2 * f.h) + '°');
+          says(g, 1, '∠APB = 360° − 90° − 90° − ' + Math.round(2 * f.h) + '° = ' + Math.round(180 - 2 * f.h) + '°');
+          tickN(g, f.P, f.A, 1); tickN(g, f.P, f.B, 1);
+        }]],
+      ];
+    },
+  });
+
+  // ---- Grade 9, lesson 14 «លក្ខណៈមុំនៃរង្វង់» ----
+  var g14DegDiff = function (a, b) { return (((b - a) % 360) + 360) % 360; };
+  var g14Arc = function (c, r, a1, a2) {
+    var diff = g14DegDiff(a1, a2);
+    return arcPath(c, r, d2r(a1), d2r(a1 + diff));
+  };
+  var g14AngleArc = function (c, r, a, b) {
+    var d = g14DegDiff(a, b);
+    if (d <= 180) return arcPath(c, r, d2r(a), d2r(a + d));
+    return arcPath(c, r, d2r(b), d2r(b + 360 - d));
+  };
+  var g14LineIntersect = function (p1, p2, q1, q2) {
+    var x1 = p1[0], y1 = p1[1], x2 = p2[0], y2 = p2[1];
+    var x3 = q1[0], y3 = q1[1], x4 = q2[0], y4 = q2[1];
+    var denom = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+    if (Math.abs(denom) < 1e-6) return [(x1 + x2) / 2, (y1 + y2) / 2];
+    var t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / denom;
+    return [x1 + t * (x2 - x1), y1 + t * (y2 - y1)];
+  };
+  var g14SecantPts = function (E, dir, O, R) {
+    var u = unit(dir);
+    var v = sub(E, O);
+    var b = dotp(v, u);
+    var c = dotp(v, v) - R * R;
+    var disc = b * b - c;
+    if (disc <= 0) return null;
+    var sq = Math.sqrt(disc);
+    var t1 = -b - sq;
+    var t2 = -b + sq;
+    return [add(E, mul(u, t1)), add(E, mul(u, t2))];
+  };
+
+  // Picture 3 & Section 2.2: Inscribed angle ∠ABC and central angle ∠AOC on arc AC.
+  // B is draggable round the major arc AC (covering all 3 proof cases: O on side, O inside, O outside).
+  CX['g9-l14-inscribed-angle'] = scripted({
+    steps: 5,
+    start: { B: rimAt(G9C.O, G9C.R, -90) },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var a = (degOf(G9C.O, p) + 360) % 360;
+      return a > 155 || a < 25;
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var f = { O: O, R: R, A: rimAt(O, R, 140), C: rimAt(O, R, 40), B: onRim(s.B) };
+      f.D = sub(mul(O, 2), f.B);
+      f.degB = (degOf(O, f.B) + 360) % 360;
+      f.angO = 100;
+      f.angB = 50;
+      var dC = Math.abs(f.degB - 220), dA = Math.abs(f.degB - 320);
+      if (dC <= 4 || dA <= 4) {
+        f.caseText = 'ករណីទី ១ ៖ ផ្ចិត O ស្ថិតនៅលើជ្រុងមួយនៃមុំ ∠ABC';
+      } else if (f.degB > 220 && f.degB < 320) {
+        f.caseText = 'ករណីទី ២ ៖ ផ្ចិត O ស្ថិតនៅក្នុងមុំ ∠ABC';
+      } else {
+        f.caseText = 'ករណីទី ៣ ៖ ផ្ចិត O ស្ថិតនៅក្រៅមុំ ∠ABC';
+      }
+      return f;
+    },
+    top: function (f, ink, i) {
+      if (i >= 1) handleAt(ink, f.B, 'B');
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      var aB = degOf(f.B, f.A), cB = degOf(f.B, f.C);
+      return [
+        [
+          ['circ', f.O, f.A],
+          ['pt', f.O, 'O', [-0.8, 0.7], null, 22],
+          ['pt', f.A, 'A', away(f.A), null, 22],
+          ['pt', f.C, 'C', away(f.C), null, 22],
+        ],
+        [
+          ['seg', f.B, f.A, 'cx-line'],
+          ['seg', f.B, f.C, 'cx-line'],
+          ['pt', f.B, 'B', away(f.B), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.B, 28, aB, cB), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['seg', f.O, f.A, 'cx-seg'],
+          ['seg', f.O, f.C, 'cx-seg'],
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, f.R, 40, 140), fill: 'none', class: 'cx-perp', style: 'stroke-width:4' }, g);
+            el('path', { d: g14Arc(f.O, 26, 40, 140), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['seg', f.B, f.D, 'cx-line cx-line-2'],
+          ['pt', f.D, 'D', away(f.D), null, 20],
+        ],
+        [
+          ['mark', function (g) {
+            says(g, 0, 'មុំចារឹក ∠ABC = ' + Math.round(f.angB) + '° , មុំផ្ចិត ∠AOC = ' + Math.round(f.angO) + '°');
+            says(g, 1, '∠ABC = ½ ∠AOC = ½ ធ្នូ AC (' + Math.round(f.angB) + '° = ½ × ' + Math.round(f.angO) + '°)');
+            says(g, 2, f.caseText);
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Picture 4: Inscribed angles intercepting the same arc (∠APB = ∠AQB = ∠ARB = ½ ∠AOB).
+  // A and B fixed; P, Q, R are 3 draggable handles on the major arc AB.
+  var g14MajorAngle = function (p) {
+    var a = (degOf(G9C.O, p) + 360) % 360;
+    if (a <= 40) a += 360;
+    return a;
+  };
+  CX['g9-l14-same-arc'] = scripted({
+    steps: 5,
+    start: {
+      P: rimAt(G9C.O, G9C.R, 210),
+      Q: rimAt(G9C.O, G9C.R, 270),
+      R: rimAt(G9C.O, G9C.R, 330),
+    },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var a = g14MajorAngle(p);
+      var pP = g14MajorAngle(s.P), pQ = g14MajorAngle(s.Q), pR = g14MajorAngle(s.R);
+      if (key === 'P') return a >= 165 && a <= pQ - 14;
+      if (key === 'Q') return a >= pP + 14 && a <= pR - 14;
+      if (key === 'R') return a >= pQ + 14 && a <= 375;
+      return true;
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var f = {
+        O: O, R: R,
+        A: rimAt(O, R, 150),
+        B: rimAt(O, R, 30),
+        P: onRim(s.P),
+        Q: onRim(s.Q),
+        Rr: onRim(s.R),
+        angO: 120,
+        angP: 60,
+        angQ: 60,
+        angR: 60,
+      };
+      return f;
+    },
+    top: function (f, ink, i) {
+      if (i >= 1) handleAt(ink, f.P, 'P');
+      if (i >= 2) handleAt(ink, f.Q, 'Q');
+      if (i >= 3) handleAt(ink, f.Rr, 'R');
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [
+          ['circ', f.O, f.A],
+          ['pt', f.O, 'O', [0, 0.8], null, 22],
+          ['pt', f.A, 'A', away(f.A), null, 22],
+          ['pt', f.B, 'B', away(f.B), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, f.R, 30, 150), fill: 'none', class: 'cx-perp', style: 'stroke-width:4' }, g);
+          }],
+        ],
+        [
+          ['seg', f.P, f.A, 'cx-line'],
+          ['seg', f.P, f.B, 'cx-line'],
+          ['pt', f.P, 'P', away(f.P), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.P, 26, degOf(f.P, f.A), degOf(f.P, f.B)), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['seg', f.Q, f.A, 'cx-line cx-line-2'],
+          ['seg', f.Q, f.B, 'cx-line cx-line-2'],
+          ['pt', f.Q, 'Q', away(f.Q), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.Q, 26, degOf(f.Q, f.A), degOf(f.Q, f.B)), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['seg', f.Rr, f.A, 'cx-perp'],
+          ['seg', f.Rr, f.B, 'cx-perp'],
+          ['pt', f.Rr, 'R', away(f.Rr), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.Rr, 26, degOf(f.Rr, f.A), degOf(f.Rr, f.B)), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['seg', f.O, f.A, 'cx-seg'],
+          ['seg', f.O, f.B, 'cx-seg'],
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, 26, 30, 150), fill: 'none', class: 'cx-arc' }, g);
+            says(g, 0, '∠APB = ' + Math.round(f.angP) + '° , ∠AQB = ' + Math.round(f.angQ) + '° , ∠ARB = ' + Math.round(f.angR) + '°');
+            says(g, 1, '∠APB = ∠AQB = ∠ARB = ½ ∠AOB = ½ ធ្នូ AB (60° = ½ × 120°)');
+            says(g, 2, 'គ្រប់មុំចារឹកក្នុងរង្វង់ដែលស្កាត់ធ្នូតែមួយ មានរង្វាស់ស្មើគ្នា');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Picture 6: Inscribed angle in a semicircle is a right angle (∠ACB = 90°).
+  // Diameter AB through O; C is a draggable handle on the semicircle.
+  CX['g9-l14-semicircle'] = scripted({
+    steps: 5,
+    start: { C: rimAt(G9C.O, G9C.R, -70) },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var a = degOf(G9C.O, p);
+      return a >= -165 && a <= -15;
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var f = {
+        O: O, R: R,
+        A: [O[0] - R, O[1]],
+        B: [O[0] + R, O[1]],
+        C: onRim(s.C),
+      };
+      return f;
+    },
+    top: function (f, ink, i) {
+      if (i >= 2) handleAt(ink, f.C, 'C');
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [
+          ['circ', f.O, f.B],
+          ['pt', f.O, 'O', [0, 0.8], null, 22],
+        ],
+        [
+          ['seg', f.A, f.B, 'cx-line'],
+          ['pt', f.A, 'A', [-1, 0], null, 22],
+          ['pt', f.B, 'B', [1, 0], null, 22],
+        ],
+        [
+          ['seg', f.C, f.A, 'cx-line cx-line-2'],
+          ['seg', f.C, f.B, 'cx-line cx-line-2'],
+          ['pt', f.C, 'C', away(f.C), null, 22],
+        ],
+        [
+          ['seg', f.O, f.C, 'cx-seg'],
+          ['mark', function (g) {
+            rightAt(g, f.C, f.A, f.C, f.B);
+            tickN(g, f.O, f.A, 1);
+            tickN(g, f.O, f.B, 1);
+            tickN(g, f.O, f.C, 1);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            says(g, 0, 'មុំចារឹក ∠ACB = 90° (មុំចារឹកក្នុងកន្លះរង្វង់)');
+            says(g, 1, 'មុំផ្ចិត ∠AOB = 180° , ∠ACB = ½ ∠AOB = ½ × 180° = 90°');
+            says(g, 2, 'ច្រាសមកវិញ ៖ បើ ∠ACB = 90° នោះ AB ជាអង្កត់ផ្ចិត');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Pictures 1 & 2: Central angle ∠POR = arc PR, reflex angle, and equal arcs QS = PR.
+  // P and R are draggable handles on the circle (at least 20° apart and not a diameter).
+  CX['g9-l14-central-angle'] = scripted({
+    steps: 5,
+    start: {
+      P: rimAt(G9C.O, G9C.R, 220),
+      R: rimAt(G9C.O, G9C.R, 320),
+    },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var a = (degOf(G9C.O, p) + 360) % 360;
+      if (key === 'P') return a >= 180 && a <= 250;
+      if (key === 'R') return a >= 290 && a <= 360;
+      return true;
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var pDeg = (degOf(O, s.P) + 360) % 360;
+      var rDeg = (degOf(O, s.R) + 360) % 360;
+      var span = g14DegDiff(pDeg, rDeg);
+      var f = {
+        O: O, R: R,
+        P: onRim(s.P),
+        Rr: onRim(s.R),
+        pDeg: pDeg,
+        rDeg: rDeg,
+        span: span,
+        Q: rimAt(O, R, 40),
+        S: rimAt(O, R, 40 + span),
+        qDeg: 40,
+        sDeg: 40 + span,
+      };
+      return f;
+    },
+    top: function (f, ink, i) {
+      if (i >= 1) {
+        handleAt(ink, f.P, 'P');
+        handleAt(ink, f.Rr, 'R');
+      }
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      var chordLen = len(sub(f.Rr, f.P));
+      return [
+        [
+          ['circ', f.O, f.P],
+          ['pt', f.O, 'O', [0, 0.8], null, 22],
+          ['pt', f.P, 'P', away(f.P), null, 22],
+          ['pt', f.Rr, 'R', away(f.Rr), null, 22],
+        ],
+        [
+          ['seg', f.O, f.P, 'cx-line'],
+          ['seg', f.O, f.Rr, 'cx-line'],
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, 26, f.pDeg, f.rDeg), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, f.R, f.pDeg, f.rDeg), fill: 'none', class: 'cx-perp', style: 'stroke-width:4' }, g);
+          }],
+        ],
+        [
+          ['pt', f.Q, 'Q', away(f.Q), null, 22],
+          ['pt', f.S, 'S', away(f.S), null, 22],
+          ['arc', { c: f.Q, r: chordLen, t1: aimAt(f.Q, f.S) - 0.28, t2: aimAt(f.Q, f.S) + 0.28 }],
+          ['seg', f.P, f.Rr, 'cx-seg'],
+          ['seg', f.Q, f.S, 'cx-seg'],
+          ['mark', function (g) {
+            tickN(g, f.P, f.Rr, 1);
+            tickN(g, f.Q, f.S, 1);
+          }],
+        ],
+        [
+          ['seg', f.O, f.Q, 'cx-line cx-line-2'],
+          ['seg', f.O, f.S, 'cx-line cx-line-2'],
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, f.R, f.qDeg, f.sDeg), fill: 'none', class: 'cx-perp', style: 'stroke-width:4' }, g);
+            el('path', { d: g14Arc(f.O, 26, f.qDeg, f.sDeg), fill: 'none', class: 'cx-arc' }, g);
+            says(g, 0, 'ធ្នូ PR = ' + Math.round(f.span) + '° ⟹ មុំផ្ចិត ∠POR = ' + Math.round(f.span) + '° (មុំផត = ' + Math.round(360 - f.span) + '°)');
+            says(g, 1, 'ធ្នូ QS = ធ្នូ PR = ' + Math.round(f.span) + '° ⟹ ∠QOS = ∠POR = ' + Math.round(f.span) + '°');
+            says(g, 2, 'ធ្នូពីរប៉ុនគ្នា ស្កាត់ដោយមុំផ្ចិតពីរប៉ុនគ្នា (និងច្រាសមកវិញ)');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Picture 5 & Section 2.4: Central angle is twice inscribed angle (∠AOC = 2 × ∠ABC = 60°).
+  // A and C fixed (central angle 60°); B is draggable handle on major arc AC; D and E on same arc.
+  CX['g9-l14-central-vs-inscribed'] = scripted({
+    steps: 5,
+    start: { B: rimAt(G9C.O, G9C.R, 270) },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var a = (degOf(G9C.O, p) + 360) % 360;
+      return a >= 135 || a <= 45;
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var f = {
+        O: O, R: R,
+        A: rimAt(O, R, 120),
+        C: rimAt(O, R, 60),
+        B: onRim(s.B),
+        D: rimAt(O, R, 190),
+        E: rimAt(O, R, 350),
+        angO: 60,
+        angB: 30,
+      };
+      return f;
+    },
+    top: function (f, ink, i) {
+      if (i >= 2) handleAt(ink, f.B, 'B');
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [
+          ['circ', f.O, f.A],
+          ['pt', f.O, 'O', [0, 0.8], null, 22],
+          ['pt', f.A, 'A', away(f.A), null, 22],
+          ['pt', f.C, 'C', away(f.C), null, 22],
+        ],
+        [
+          ['seg', f.O, f.A, 'cx-seg'],
+          ['seg', f.O, f.C, 'cx-seg'],
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, f.R, 60, 120), fill: 'none', class: 'cx-perp', style: 'stroke-width:4' }, g);
+            el('path', { d: g14Arc(f.O, 28, 60, 120), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['seg', f.B, f.A, 'cx-line'],
+          ['seg', f.B, f.C, 'cx-line'],
+          ['pt', f.B, 'B', away(f.B), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.B, 26, degOf(f.B, f.A), degOf(f.B, f.C)), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['seg', f.D, f.A, 'cx-line cx-line-2'],
+          ['seg', f.D, f.C, 'cx-line cx-line-2'],
+          ['seg', f.E, f.A, 'cx-perp'],
+          ['seg', f.E, f.C, 'cx-perp'],
+          ['pt', f.D, 'D', away(f.D), null, 20],
+          ['pt', f.E, 'E', away(f.E), null, 20],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.D, 24, degOf(f.D, f.A), degOf(f.D, f.C)), fill: 'none', class: 'cx-arc' }, g);
+            el('path', { d: g14AngleArc(f.E, 24, degOf(f.E, f.A), degOf(f.E, f.C)), fill: 'none', class: 'cx-arc' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            says(g, 0, 'មុំផ្ចិត ∠AOC = 60° (ស្កាត់ធ្នូ AC)');
+            says(g, 1, '∠ABC = ∠ADC = ∠AEC = 30° = ½ ∠AOC');
+            says(g, 2, 'មុំផ្ចិតស្មើពីរដងនៃមុំចារឹកដែលស្កាត់ធ្នូតែមួយ (∠AOC = 2 × ∠ABC)');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Picture 7 & Section 3: Cyclic quadrilateral (ABCD in a circle: ∠A + ∠C = 180°, ∠B + ∠D = 180°, ∠DCE = ∠A).
+  CX['g9-l14-cyclic-quad'] = scripted({
+    steps: 5,
+    start: {
+      A: rimAt(G9C.O, G9C.R, 200),
+      B: rimAt(G9C.O, G9C.R, 290),
+      C: rimAt(G9C.O, G9C.R, 25),
+      D: rimAt(G9C.O, G9C.R, 120),
+    },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var t = { A: s.A, B: s.B, C: s.C, D: s.D };
+      t[key] = p;
+      var a = ['A', 'B', 'C', 'D'].map(function (k) { return (degOf(G9C.O, t[k]) + 360) % 360; });
+      return a.every(function (x, i) {
+        var g = (((a[(i + 1) % 4] - x) % 360) + 360) % 360;
+        return g >= 45 && g <= 140;
+      });
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var A = onRim(s.A), B = onRim(s.B), C = onRim(s.C), D = onRim(s.D);
+      var uBC = unit(sub(C, B));
+      var E = add(C, mul(uBC, 65));
+      var aA = (degOf(O, A) + 360) % 360;
+      var aB = (degOf(O, B) + 360) % 360;
+      var aC = (degOf(O, C) + 360) % 360;
+      var aD = (degOf(O, D) + 360) % 360;
+      var gap = function (deg1, deg2) { return (((deg2 - deg1) % 360) + 360) % 360; };
+      var arcBCD = gap(aB, aC) + gap(aC, aD);
+      var arcCDA = gap(aC, aD) + gap(aD, aA);
+      var degA = Math.round(arcBCD / 2);
+      var degC = 180 - degA;
+      var degB = Math.round(arcCDA / 2);
+      var degD = 180 - degB;
+      return {
+        O: O, R: R,
+        A: A, B: B, C: C, D: D, E: E,
+        degA: degA, degB: degB, degC: degC, degD: degD,
+      };
+    },
+    top: function (f, ink, i) {
+      if (i >= 1) {
+        handleAt(ink, f.A, 'A');
+        handleAt(ink, f.B, 'B');
+        handleAt(ink, f.C, 'C');
+        handleAt(ink, f.D, 'D');
+      }
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [
+          ['circ', f.O, f.A],
+          ['pt', f.O, 'O', [0, 0.8], null, 20],
+          ['pt', f.A, 'A', away(f.A), null, 22],
+          ['pt', f.B, 'B', away(f.B), null, 22],
+          ['pt', f.C, 'C', away(f.C), null, 22],
+          ['pt', f.D, 'D', away(f.D), null, 22],
+        ],
+        [
+          ['seg', f.A, f.B, 'cx-line'],
+          ['seg', f.B, f.C, 'cx-line'],
+          ['seg', f.C, f.D, 'cx-line'],
+          ['seg', f.D, f.A, 'cx-line'],
+        ],
+        [
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.A, 24, degOf(f.A, f.D), degOf(f.A, f.B)), fill: 'none', class: 'cx-arc', style: 'stroke: #2563eb; stroke-width: 2.5' }, g);
+            el('path', { d: g14AngleArc(f.C, 24, degOf(f.C, f.B), degOf(f.C, f.D)), fill: 'none', class: 'cx-arc', style: 'stroke: #2563eb; stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.B, 24, degOf(f.B, f.A), degOf(f.B, f.C)), fill: 'none', class: 'cx-arc', style: 'stroke: #d97706; stroke-width: 2.5' }, g);
+            el('path', { d: g14AngleArc(f.D, 24, degOf(f.D, f.C), degOf(f.D, f.A)), fill: 'none', class: 'cx-arc', style: 'stroke: #d97706; stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['seg', f.C, f.E, 'cx-perp'],
+          ['pt', f.E, 'E', [0.8, 0.6], null, 18],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.C, 32, degOf(f.C, f.D), degOf(f.C, f.E)), fill: 'none', class: 'cx-arc', style: 'stroke: #2563eb; stroke-width: 2.5' }, g);
+            says(g, 0, 'ចតុកោណចារឹកក្នុងរង្វង់ ABCD · ផលបូកមុំឈមស្មើ 180°');
+            says(g, 1, '∠A + ∠C = ' + f.degA + '° + ' + f.degC + '° = 180° (ពណ៌ខៀវ)');
+            says(g, 2, '∠B + ∠D = ' + f.degB + '° + ' + f.degD + '° = 180° (ពណ៌ទឹកក្រូច)');
+            says(g, 3, 'មុំក្រៅ ∠DCE = ∠A = ' + f.degA + '° (ស្មើនឹងមុំឈមក្នុង)');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Picture 8 & Section 4.1: Angle with vertex inside circle (∠AED = ½(arc AD + arc BC)).
+  // Four draggable handles A, B, C, D in cyclic order; chords AC and BD meet at E inside.
+  CX['g9-l14-angle-inside'] = scripted({
+    steps: 5,
+    start: {
+      A: rimAt(G9C.O, G9C.R, 215),
+      B: rimAt(G9C.O, G9C.R, 295),
+      C: rimAt(G9C.O, G9C.R, 35),
+      D: rimAt(G9C.O, G9C.R, 125),
+    },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var t = { A: s.A, B: s.B, C: s.C, D: s.D };
+      t[key] = p;
+      var a = ['A', 'B', 'C', 'D'].map(function (k) { return (degOf(G9C.O, t[k]) + 360) % 360; });
+      return a.every(function (x, i) {
+        var g = (((a[(i + 1) % 4] - x) % 360) + 360) % 360;
+        return g >= 45 && g <= 135;
+      });
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var A = onRim(s.A), B = onRim(s.B), C = onRim(s.C), D = onRim(s.D);
+      var E = g14LineIntersect(A, C, B, D);
+      var aA = (degOf(O, A) + 360) % 360;
+      var aB = (degOf(O, B) + 360) % 360;
+      var aC = (degOf(O, C) + 360) % 360;
+      var aD = (degOf(O, D) + 360) % 360;
+      var arcAD = g14DegDiff(aD, aA);
+      var arcBC = g14DegDiff(aB, aC);
+      var degAD = Math.round(arcAD);
+      var degBC = Math.round(arcBC);
+      var sum = degAD + degBC;
+      if (sum % 2 !== 0) { degAD = degAD + 1; sum = degAD + degBC; }
+      var degAED = sum / 2;
+      return {
+        O: O, R: R,
+        A: A, B: B, C: C, D: D, E: E,
+        aA: aA, aB: aB, aC: aC, aD: aD,
+        degAD: degAD, degBC: degBC, degAED: degAED,
+      };
+    },
+    top: function (f, ink, i) {
+      if (i >= 1) {
+        handleAt(ink, f.A, 'A');
+        handleAt(ink, f.B, 'B');
+        handleAt(ink, f.C, 'C');
+        handleAt(ink, f.D, 'D');
+      }
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [
+          ['circ', f.O, f.A],
+          ['pt', f.O, 'O', [0, 0.8], null, 20],
+          ['pt', f.A, 'A', away(f.A), null, 22],
+          ['pt', f.B, 'B', away(f.B), null, 22],
+          ['pt', f.C, 'C', away(f.C), null, 22],
+          ['pt', f.D, 'D', away(f.D), null, 22],
+        ],
+        [
+          ['seg', f.A, f.C, 'cx-line'],
+          ['seg', f.B, f.D, 'cx-line'],
+          ['pt', f.E, 'E', [0.8, -0.8], null, 20],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.E, 22, degOf(f.E, f.A), degOf(f.E, f.D)), fill: 'none', class: 'cx-arc', style: 'stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, f.R, f.aD, f.aA), fill: 'none', style: 'stroke: #2563eb; stroke-width: 4.5' }, g);
+            el('path', { d: g14Arc(f.O, f.R, f.aB, f.aC), fill: 'none', style: 'stroke: #d97706; stroke-width: 4.5' }, g);
+          }],
+        ],
+        [
+          ['seg', f.A, f.B, 'cx-perp'],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.B, 24, degOf(f.B, f.A), degOf(f.B, f.D)), fill: 'none', class: 'cx-arc', style: 'stroke: #2563eb; stroke-width: 2.5' }, g);
+            el('path', { d: g14AngleArc(f.A, 24, degOf(f.A, f.B), degOf(f.A, f.C)), fill: 'none', class: 'cx-arc', style: 'stroke: #d97706; stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            says(g, 0, 'មុំក្នុងរង្វង់ ∠AED = ½(ធ្នូ AD + ធ្នូ BC)');
+            says(g, 1, 'ធ្នូ AD = ' + f.degAD + '° (ខៀវ) · ធ្នូ BC = ' + f.degBC + '° (ទឹកក្រូច)');
+            says(g, 2, 'មុំក្រៅ △ABE៖ ∠AED = ∠ABD + ∠BAC');
+            says(g, 3, '∠AED = ½(' + f.degAD + '° + ' + f.degBC + '°) = ' + f.degAED + '°');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Picture 10 & Section 5: Tangent-chord angle (∠XPA = ∠PBA = ½ arc PA).
+  // Circle O, tangent XY at P, chord PA, B on major arc. A and B are draggable handles.
+  CX['g9-l14-tangent-chord'] = scripted({
+    steps: 5,
+    start: {
+      A: rimAt(G9C.O, G9C.R, 200),
+      B: rimAt(G9C.O, G9C.R, 310),
+    },
+    place: function (s, key, p) { return onRim(p); },
+    limit: function (s, key, p) {
+      var a = (degOf(G9C.O, p) + 360) % 360;
+      if (key === 'A') return a >= 160 && a <= 220;
+      if (key === 'B') return a >= 250 || a <= 60;
+      return true;
+    },
+    figure: function (s) {
+      var O = G9C.O, R = G9C.R;
+      var P = rimAt(O, R, 90);
+      var X = [130, P[1]];
+      var Y = [510, P[1]];
+      var A = onRim(s.A);
+      var B = onRim(s.B);
+      var aA = (degOf(O, A) + 360) % 360;
+      var arcPA = g14DegDiff(90, aA);
+      var degArc = Math.round(arcPA);
+      if (degArc % 2 !== 0) degArc += 1;
+      var degHalf = degArc / 2;
+      return {
+        O: O, R: R, P: P, X: X, Y: Y, A: A, B: B,
+        aA: aA,
+        degArc: degArc,
+        degHalf: degHalf,
+      };
+    },
+    top: function (f, ink, i) {
+      if (i >= 2) handleAt(ink, f.A, 'A');
+      if (i >= 3) handleAt(ink, f.B, 'B');
+    },
+    script: function (f) {
+      var away = function (Pt) { return sub(Pt, f.O); };
+      return [
+        [
+          ['circ', f.O, f.P],
+          ['seg', f.O, f.P, 'cx-seg'],
+          ['pt', f.O, 'O', [-0.8, -0.6], null, 20],
+          ['pt', f.P, 'P', [0, 0.9], null, 22],
+        ],
+        [
+          ['seg', f.X, f.Y, 'cx-perp'],
+          ['pt', f.X, 'X', [0, 0.9], null, 20],
+          ['pt', f.Y, 'Y', [0, 0.9], null, 20],
+        ],
+        [
+          ['seg', f.P, f.A, 'cx-line'],
+          ['pt', f.A, 'A', away(f.A), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.P, 28, 180, degOf(f.P, f.A)), fill: 'none', class: 'cx-arc', style: 'stroke: #2563eb; stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['seg', f.B, f.P, 'cx-line cx-line-2'],
+          ['seg', f.B, f.A, 'cx-line cx-line-2'],
+          ['pt', f.B, 'B', away(f.B), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.B, 26, degOf(f.B, f.P), degOf(f.B, f.A)), fill: 'none', class: 'cx-arc', style: 'stroke: #2563eb; stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            rightMark(g, f.P, [-1, 0], [0, -1]);
+            el('path', { d: g14Arc(f.O, f.R, 90, f.aA), fill: 'none', style: 'stroke: #2563eb; stroke-width: 4.5' }, g);
+            says(g, 0, 'មុំផ្គុំដោយបន្ទាត់ប៉ះនិងអង្កត់ធ្នូ៖ ∠XPA = ∠PBA');
+            says(g, 1, 'បន្ទាត់ប៉ះ PX ⊥ កាំ OP ត្រង់ចំណុចប៉ះ P (មុំកែង 90°)');
+            says(g, 2, 'ធ្នូ PA = ' + f.degArc + '° → ∠XPA = ½ ធ្នូ PA = ' + f.degHalf + '°');
+            says(g, 3, 'មុំចារឹក ∠PBA = ' + f.degHalf + '° (ស្មើនឹង ∠XPA ជានិច្ច)');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Picture 9 & Section 4.2: Angle with vertex outside circle (∠AED = ½(arc AD − arc BC)).
+  // Secants E-B-A and E-C-D from E outside the circle. E is a draggable handle.
+  CX['g9-l14-angle-outside'] = scripted({
+    steps: 5,
+    start: { E: [90, 230] },
+    place: function (s, key, p) {
+      return [clampN(p[0], 50, 155), clampN(p[1], 150, 310)];
+    },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var O = [350, 230], R = 135;
+      var E = s.E;
+      var vEO = sub(O, E);
+      var beta = Math.atan2(vEO[1], vEO[0]);
+      var d = len(vEO);
+      var alpha = Math.asin(R / d);
+      var u1 = [Math.cos(beta - 0.58 * alpha), Math.sin(beta - 0.58 * alpha)];
+      var u2 = [Math.cos(beta + 0.58 * alpha), Math.sin(beta + 0.58 * alpha)];
+      var pts1 = g14SecantPts(E, u1, O, R);
+      var pts2 = g14SecantPts(E, u2, O, R);
+      var B = pts1[0], A = pts1[1];
+      var C = pts2[0], D = pts2[1];
+      var aA = (degOf(O, A) + 360) % 360;
+      var aB = (degOf(O, B) + 360) % 360;
+      var aC = (degOf(O, C) + 360) % 360;
+      var aD = (degOf(O, D) + 360) % 360;
+      var arcAD = g14DegDiff(aA, aD);
+      var arcBC = g14DegDiff(aC, aB);
+      var degAD = Math.round(arcAD);
+      var degBC = Math.round(arcBC);
+      var diff = degAD - degBC;
+      if (diff % 2 !== 0) { degAD += 1; diff = degAD - degBC; }
+      var degE = diff / 2;
+      return {
+        O: O, R: R, E: E, A: A, B: B, C: C, D: D,
+        aA: aA, aB: aB, aC: aC, aD: aD,
+        degAD: degAD, degBC: degBC, degE: degE,
+      };
+    },
+    top: function (f, ink, i) {
+      if (i >= 1) handleAt(ink, f.E, 'E', 22);
+    },
+    script: function (f) {
+      var away = function (P) { return sub(P, f.O); };
+      return [
+        [
+          ['circ', f.O, f.B],
+          ['pt', f.O, 'O', [0, 0.8], null, 20],
+          ['pt', f.E, 'E', [-0.9, 0], null, 22],
+        ],
+        [
+          ['seg', f.E, f.A, 'cx-line'],
+          ['seg', f.E, f.D, 'cx-line'],
+          ['pt', f.B, 'B', away(f.B), null, 20],
+          ['pt', f.A, 'A', away(f.A), null, 22],
+          ['pt', f.C, 'C', away(f.C), null, 20],
+          ['pt', f.D, 'D', away(f.D), null, 22],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.E, 28, degOf(f.E, f.A), degOf(f.E, f.D)), fill: 'none', class: 'cx-arc', style: 'stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            el('path', { d: g14Arc(f.O, f.R, f.aA, f.aD), fill: 'none', style: 'stroke: #2563eb; stroke-width: 4.5' }, g);
+            el('path', { d: g14Arc(f.O, f.R, f.aC, f.aB), fill: 'none', style: 'stroke: #d97706; stroke-width: 4.5' }, g);
+          }],
+        ],
+        [
+          ['seg', f.A, f.C, 'cx-perp'],
+          ['mark', function (g) {
+            el('path', { d: g14AngleArc(f.C, 24, degOf(f.C, f.A), degOf(f.C, f.D)), fill: 'none', class: 'cx-arc', style: 'stroke: #2563eb; stroke-width: 2.5' }, g);
+            el('path', { d: g14AngleArc(f.A, 24, degOf(f.A, f.C), degOf(f.A, f.E)), fill: 'none', class: 'cx-arc', style: 'stroke: #d97706; stroke-width: 2.5' }, g);
+          }],
+        ],
+        [
+          ['mark', function (g) {
+            says(g, 0, 'មុំក្រៅរង្វង់ ∠AED = ½(ធ្នូ AD − ធ្នូ BC)');
+            says(g, 1, 'ធ្នូ AD = ' + f.degAD + '° (ខៀវ) · ធ្នូ BC = ' + f.degBC + '° (ទឹកក្រូច)');
+            says(g, 2, 'មុំក្រៅនៃ △ACE៖ ∠AED = ∠ACD − ∠CAE');
+            says(g, 3, '∠AED = ½(' + f.degAD + '° − ' + f.degBC + '°) = ' + f.degE + '°');
+          }],
+        ],
+      ];
+    },
+  });
+
+  // Grade 8, lesson 12, a worked example: OZ bisects the angle XOY; A on OX and B on OY with
+  // OA = OB; M on OZ, joined to A and to B. (The triangles OMA and OMB are congruent, so MA = MB.)
+  CX['g8-l12-bisector-triangles'] = scripted({
+    steps: 6,
+    start: { Y: [334, 111], M: [384, 265] },
+    place: CX['g8-l12-bisector-point'].place,
+    limit: CX['g8-l12-bisector-point'].limit,
+    figure: function (s) {
+      var O = G8B.O, X = G8B.X, uy = unit(sub(s.Y, O)), d = unit(add([1, 0], uy)), M = add(O, mul(d, len(sub(s.M, O)))), R = 215;
+      return { O: O, X: X, Y: s.Y, M: M, d: d, b: bisectorOf(O, X, s.Y, M), A: add(O, [R, 0]), B: add(O, mul(uy, R)),
+        Ey: toEdge(O, uy, 400), Ez: add(O, mul(d, 400)), arc: { c: O, r: R, t1: 0.12, t2: Math.atan2(uy[1], uy[0]) - 0.12 } };
+    },
+    base: function (f, ink) {
+      segLine(ink, f.O, f.X, 'cx-seg'); segLine(ink, f.O, f.Ey, 'cx-seg');
+      label(ink, add(f.X, [-10, 22]), 'X', 'cx-label');
+      label(ink, add(add(f.Ey, mul(unit(sub(f.O, f.Ey)), 16)), mul([-f.d[1], f.d[0]], -24)), 'Y', 'cx-label');
+    },
+    top: function (f, ink, i) {
+      point(ink, f.O, 'O', [-0.8, 0.7], null, null, 22);
+      el('circle', { cx: f.Y[0], cy: f.Y[1], r: 7, class: 'cx-handle' }, ink);
+      el('circle', { cx: f.Y[0], cy: f.Y[1], r: 24, class: 'cx-grab', 'data-drag': 'Y' }, ink);
+      if (i >= 2) label(ink, add(f.Ez, mul([-f.d[1], f.d[0]], 20)), 'Z', 'cx-label');
+      if (i >= 4) el('circle', { cx: f.M[0], cy: f.M[1], r: 24, class: 'cx-grab', 'data-drag': 'M' }, ink);
+    },
+    script: function (f) {
+      return [
+        [],
+        f.b.arcs.map(function (a) { return ['arc', a]; }),
+        [['seg', f.O, f.Ez, 'cx-line cx-line-2'], ['mark', function (g) { halfAngles(g, f.O, f.X, f.Y, f.M, 'a'); }]],
+        [['arc', f.arc], ['pt', f.A, 'A', [0.5, 1], null, 23], ['pt', f.B, 'B', [f.B[1] - f.O[1], f.O[0] - f.B[0]], null, 23]],
+        [['pt', f.M, 'M', [0.9, 0.5], 'cx-pt-m', 23], ['seg', f.M, f.A], ['seg', f.M, f.B]],
+        [['mark', function (g) {
+          triFill(g, f.O, f.M, f.A); triFill(g, f.O, f.M, f.B);
+          tick(g, f.O, f.A); tick(g, f.O, f.B); tick2(g, f.M, f.A); tick2(g, f.M, f.B);
+        }]],
+      ];
+    },
+  });
+
+
+  // Grade 7, lesson 15 §2.4: the sum of the angles of a triangle and the exterior angle. The corners are
+  // dragged; the angles are written with the numbers of the triangle on the sheet.
+  var turnBy = function (t0, t1) { var d = t1 - t0; while (d > Math.PI) d -= 2 * Math.PI; while (d <= -Math.PI) d += 2 * Math.PI; return d; };
+  var wedgeBetween = function (g, V, P, Q, rho, kind) { var t0 = aimAt(V, P); wedge(g, V, t0, turnBy(t0, aimAt(V, Q)), rho, kind); };
+  function wholeDegrees(f) {                        // the three angles in whole degrees that still add up to 180
+    var d = f.angles.map(function (x) { return x * 180 / Math.PI; }), r = d.map(Math.round), k;
+    var diff = r[0] + r[1] + r[2] - 180;
+    while (diff !== 0) {
+      k = 0; d.forEach(function (x, j) { if ((diff > 0 ? r[j] - x : x - r[j]) > (diff > 0 ? r[k] - d[k] : d[k] - r[k])) k = j; });
+      r[k] -= diff > 0 ? 1 : -1; diff += diff > 0 ? -1 : 1;
+    }
+    return r;
+  }
+  var triLimit = function (s, key, p) {
+    var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+    return t.least >= 190 && Math.min.apply(null, t.angles) >= 0.56 && t.r >= 52;
+  };
+  var triStart = { A: [340, 100], B: [116, 380], C: [560, 380] };
+
+  // Grade 8, lesson 13, Exercise 6.a: construct parallelogram ABCD
+  // given AB = 6 cm, AD = 4 cm and angle A = 60°
+  CX['g8-l13-parallelogram'] = {
+    steps: 7,
+    start: { ang: 60, ab: 6, ad: 4 },
+    place: function (s, key, p) {
+      if (key === 'D') {
+        var A = [140, 360];
+        var v = sub(p, A);
+        var a = Math.atan2(-v[1], v[0]) * 180 / Math.PI;
+        s.ang = Math.round(Math.max(35, Math.min(85, a)));
+        return p;
+      }
+      return p;
+    },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var A = [140, 360], ab = s.ab || 6, ad = s.ad || 4, ang = s.ang || 60;
+      var B = add(A, [ab * CM, 0]);
+      var d = prDir(RIGHT, ang);
+      var nr = [d[1], -d[0]];
+      var D = add(A, mul(d, ad * CM));
+      var C = add(D, [ab * CM, 0]);
+      var Ex = add(A, mul(d, (ad + 1.2) * CM));
+      var M = markAt(A, RIGHT, ang);
+      var rAB = ab * CM, rAD = ad * CM;
+      var tBC = -ang * Math.PI / 180;
+      return {
+        meet: true, A: A, B: B, C: C, D: D,
+        ab: ab, ad: ad, ang: ang, d: d, nr: nr, Ex: Ex, M: M,
+        arcD: { c: D, r: rAB, t1: 0.28, t2: -0.28 },
+        arcB: { c: B, r: rAD, t1: tBC + 0.28, t2: tBC - 0.28 },
+        rAB: rAB, rAD: rAD
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      var poly = function (g2, pts, attrs) {
+        var pStr = pts.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' ');
+        return el('polygon', Object.assign({ points: pStr }, attrs), g2);
+      };
+
+      given(ink, 'AB = ' + cmText(f.ab) + '    AD = ' + cmText(f.ad) + '    ∠A = ' + f.ang + '°');
+
+      if (i === 0) {
+        says(marks, 0, 'លំហាត់ ៦.ក ៖ សង់ប្រលេឡូក្រាម ABCD');
+        says(marks, 1, '• ជ្រុងបាត AB = ' + f.ab + ' cm');
+        says(marks, 2, '• ជ្រុងជាប់ AD = ' + f.ad + ' cm');
+        says(marks, 3, '• មុំរួម ∠A = ' + f.ang + '°');
+        says(marks, 5, 'ឧបករណ៍ ៖ បន្ទាត់ក្រិត · រ៉ាប់ទ័រ · ដែកឈាន · ខ្មៅដៃ');
+        return;
+      }
+
+      // Step 1: Draw base AB
+      if (i >= 1) {
+        segLine(ink, f.A, f.B, 'cx-seg');
+        point(ink, f.A, 'A', [-0.8, 0.8], null, null, 22);
+        point(ink, f.B, 'B', [0.8, 0.8], null, null, 22);
+        label(marks, [(f.A[0] + f.B[0]) / 2, f.A[1] + 22], cmText(f.ab), 'cx-note');
+      }
+      if (i === 1) {
+        drawCmRuler(tools, f.A, RIGHT, 7, DOWN);
+      }
+
+      // Step 2: Protractor at A, mark angle, draw ray Ax
+      if (i >= 2) {
+        dot(ink, f.M);
+        segLine(ink, f.A, f.Ex, 'cx-line cx-line-2');
+        label(ink, add(add(f.Ex, mul(f.d, -6)), mul(f.nr, 20)), 'x', 'cx-label');
+        wedge(marks, f.A, 0, -f.ang * Math.PI / 180, 36, 'a');
+        label(marks, add(f.A, mul(prDir(RIGHT, f.ang / 2), 58)), f.ang + '°', 'cx-note cx-r');
+      }
+      if (i === 2) {
+        drawProtractor(tools, f.A, RIGHT, f.ang);
+      }
+
+      // Step 3: Measure AD = 4 cm on ray Ax, mark point D
+      if (i >= 3) {
+        point(ink, f.D, 'D', [-0.9, -0.6], 'cx-pt-m', null, 24);
+        sideNote(marks, f.A, f.D, f.B, cmText(f.ad));
+      }
+      if (i === 3) {
+        drawCmRuler(tools, f.A, f.d, 5, f.nr);
+      }
+
+      // Step 4: Arc of radius 6 cm from D
+      if (i >= 4) {
+        arcDraw(ink, f.arcD);
+        if (i === 4) {
+          label(marks, [f.D[0] + 110, f.D[1] - 22], 'កាំ 6 cm (ស្មើ AB)', 'cx-note');
+        }
+      }
+
+      // Step 5: Arc of radius 4 cm from B intersecting at C
+      if (i >= 5) {
+        arcDraw(ink, f.arcB);
+        point(ink, f.C, 'C', [0.8, -0.8], 'cx-pt-m', null, 24);
+        if (i === 5) {
+          label(marks, [f.B[0] + 55, f.B[1] - 65], 'កាំ 4 cm (ស្មើ AD)', 'cx-note');
+        }
+      }
+
+      // Step 6: Connect DC and BC -> Complete Parallelogram ABCD!
+      if (i >= 6) {
+        segLine(ink, f.D, f.C, 'cx-line');
+        segLine(ink, f.B, f.C, 'cx-line');
+        poly(marks, [f.A, f.B, f.C, f.D], { fill: 'rgba(46, 122, 112, 0.14)', stroke: 'none' });
+
+        // Ticks on opposite sides
+        tick(marks, f.A, f.B); tick(marks, f.D, f.C);
+        tick2(marks, f.A, f.D); tick2(marks, f.B, f.C);
+
+        // Opposite angle marks
+        wedge(marks, f.C, Math.PI, -f.ang * Math.PI / 180, 36, 'a');
+        label(marks, add(f.C, mul(prDir(LEFT, -f.ang / 2), 58)), f.ang + '°', 'cx-note cx-r');
+
+        // Draggable handle at D
+        el('circle', { cx: f.D[0], cy: f.D[1], r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: f.D[0], cy: f.D[1], r: 24, class: 'cx-grab', 'data-drag': 'D' }, ink);
+
+        says(marks, 0, 'ប្រលេឡូក្រាម ABCD ពេញលេញ ៖');
+        says(marks, 1, '• ជ្រុងឈមប៉ុនគ្នា ៖ AB = CD = ' + f.ab + ' cm  ,  AD = BC = ' + f.ad + ' cm');
+        says(marks, 2, '• ជ្រុងឈមស្របគ្នា ៖ AB ∥ CD  ,  AD ∥ BC');
+        says(marks, 3, '• មុំឈមប៉ុនគ្នា ៖ ∠A = ∠C = ' + f.ang + '°  ,  ∠B = ∠D = ' + (180 - f.ang) + '°');
+      }
+    },
+    anim: function (f, i) {
+      if (i === 1) return { phases: cmSegmentPhases(f.A, RIGHT, f.ab, 7, DOWN, 'cx-seg') };
+      if (i === 2) return { phases: protractorPhases(f.A, RIGHT, f.ang) };
+      if (i === 3) return { phases: [
+        { dur: 800, draw: function (t, drawn, tools) {
+          drawCmRuler(tools, add(f.A, mul(f.nr, 30 * (1 - t))), f.d, 5, f.nr, 0.25 + 0.75 * t);
+        } },
+        { dur: 900, draw: function (t, drawn, tools) {
+          drawCmRuler(tools, f.A, f.d, 5, f.nr);
+          el('circle', { cx: f.D[0], cy: f.D[1], r: 5 * Math.min(1, t * 2), class: 'cx-pt cx-pt-m' }, drawn);
+          el('circle', { cx: f.D[0], cy: f.D[1], r: 4.2, class: 'cx-c-pencil', opacity: t < 0.85 ? 1 : 0 }, tools);
+        } },
+      ] };
+      if (i === 4) return { phases: [{ dur: 1000, draw: function (t, drawn, tools) {
+        var q = f.arcD, th = q.t1 + (q.t2 - q.t1) * t;
+        el('path', { d: arcPath(q.c, q.r, q.t1, th), class: 'cx-arc' }, drawn);
+        drawCompass(tools, q.c, onCircle(q.c, q.r, th));
+      } }] };
+      if (i === 5) return { phases: [{ dur: 1000, draw: function (t, drawn, tools) {
+        arcDraw(drawn, f.arcD);
+        var q = f.arcB, th = q.t1 + (q.t2 - q.t1) * t;
+        el('path', { d: arcPath(q.c, q.r, q.t1, th), class: 'cx-arc' }, drawn);
+        drawCompass(tools, q.c, onCircle(q.c, q.r, th));
+      } }] };
+      if (i === 6) return { phases: [
+        { dur: 900, draw: function (t, drawn, tools) {
+          drawRuler(tools, f.D, f.C);
+          segLine(drawn, f.D, add(f.D, mul(sub(f.C, f.D), t)), 'cx-line');
+        } },
+        { dur: 900, draw: function (t, drawn, tools) {
+          segLine(drawn, f.D, f.C, 'cx-line');
+          drawRuler(tools, f.B, f.C);
+          segLine(drawn, f.B, add(f.B, mul(sub(f.C, f.B), t)), 'cx-line');
+        } }
+      ] };
+      return null;
+    }
+  };
+
+  // Grade 8, lesson 13, Mid-segment theorem of a triangle (Diagram 605):
+  // DE joins the midpoints D of AB and E of AC; then DE || BC and DE = 1/2 BC.
+  CX['g8-l13-midsegment'] = {
+    steps: 7,
+    start: { A: [280, 100], B: [120, 370], C: [480, 370] },
+    place: function (s, key, p) {
+      if (key === 'A') {
+        s.A = [Math.max(160, Math.min(440, p[0])), Math.max(60, Math.min(190, p[1]))];
+      } else if (key === 'B') {
+        s.B = [Math.max(50, Math.min(s.C[0] - 160, p[0])), Math.max(280, Math.min(420, p[1]))];
+      } else if (key === 'C') {
+        s.C = [Math.max(s.B[0] + 160, Math.min(590, p[0])), Math.max(280, Math.min(420, p[1]))];
+      }
+      return p;
+    },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var A = s.A, B = s.B, C = s.C;
+      var D = mul(add(A, B), 0.5);
+      var E = mul(add(A, C), 0.5);
+      var vDE = sub(E, D);
+      var F = add(E, vDE);
+      var dBC = len(sub(C, B)), dDE = len(vDE);
+      var cmBC = (Math.round(dBC / CM * 10) / 10).toFixed(1);
+      var cmDE = (Math.round(dDE / CM * 10) / 10).toFixed(1);
+      return {
+        meet: true, A: A, B: B, C: C, D: D, E: E, F: F,
+        vDE: vDE, cmBC: cmBC, cmDE: cmDE
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      var poly = function (g2, pts, attrs) {
+        var pStr = pts.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' ');
+        return el('polygon', Object.assign({ points: pStr }, attrs), g2);
+      };
+
+      // Shaded triangle ABC
+      poly(ink, [f.A, f.B, f.C], { fill: 'rgba(45, 106, 168, 0.06)', stroke: '#2e7a70', 'stroke-width': '2.5' });
+
+      // Midpoint tick marks on AB and AC
+      tick(marks, f.A, f.D); tick(marks, f.D, f.B);
+      tick2(marks, f.A, f.E); tick2(marks, f.E, f.C);
+
+      if (i === 0) {
+        says(marks, 0, 'ទ្រឹស្ដីបទអង្កត់មធ្យមនៃត្រីកោណ ៖');
+        says(marks, 1, '• ត្រីកោណ ABC មាន D ជាចំណុចកណ្ដាលនៃ AB (AD = DB)');
+        says(marks, 2, '• E ជាចំណុចកណ្ដាលនៃ AC (AE = EC)');
+        says(marks, 4, 'គោលដៅ ៖ ស្រាយបញ្ជាក់ថា DE ∥ BC  និង  DE = ½ BC');
+      }
+
+      // Step 1: Draw DE
+      if (i >= 1) {
+        segLine(ink, f.D, f.E, 'cx-seg');
+      }
+      if (i === 1) {
+        says(marks, 0, 'អង្កត់ DE ភ្ជាប់ចំណុចកណ្ដាលនៃជ្រុងទាំងពីរ');
+        says(marks, 1, 'ហៅថា «អង្កត់មធ្យម» (ឬបាតមធ្យម) នៃត្រីកោណ ABC');
+      }
+
+      // Step 2: Extend DE to F such that EF = DE
+      if (i >= 2) {
+        segLine(ink, f.E, f.F, 'cx-line cx-line-2');
+        tick(marks, f.D, f.E); tick(marks, f.E, f.F);
+        point(ink, f.F, 'F', [1, -0.6], 'cx-pt-m', null, 22);
+      }
+      if (i === 2) {
+        says(marks, 0, 'បន្លាយអង្កត់ DE ឱ្យបានអង្កត់ EF = DE');
+        says(marks, 1, 'ដៅចំណុច F ⟹ E ជាចំណុចកណ្ដាលនៃ DF');
+      }
+
+      // Step 3: Draw AF, FC, DC
+      if (i >= 3) {
+        el('line', { x1: f.A[0], y1: f.A[1], x2: f.F[0], y2: f.F[1], class: 'cx-equal' }, ink);
+        segLine(ink, f.F, f.C, 'cx-line');
+        el('line', { x1: f.D[0], y1: f.D[1], x2: f.C[0], y2: f.C[1], class: 'cx-equal' }, ink);
+      }
+      if (i === 3) {
+        says(marks, 0, 'ភ្ជាប់អង្កត់ AF, FC និង DC');
+        says(marks, 1, 'បង្កើតបានចតុកោណ ADCF ដែលមានអង្កត់ទ្រូង AC និង DF');
+      }
+
+      // Step 4: Parallelogram ADCF
+      if (i === 4) {
+        poly(marks, [f.A, f.D, f.C, f.F], { fill: 'rgba(232, 114, 92, 0.16)', stroke: 'none' });
+        arrowHead(marks, mul(add(f.A, f.D), 0.5), unit(sub(f.A, f.D)));
+        arrowHead(marks, mul(add(f.F, f.C), 0.5), unit(sub(f.F, f.C)));
+        says(marks, 0, 'ចតុកោណ ADCF មានអង្កត់ទ្រូង AC និង DF កាត់គ្នាត្រង់ចំណុចកណ្ដាល E ៖');
+        says(marks, 1, '⟹ ADCF ជាប្រលេឡូក្រាម');
+        says(marks, 2, '⟹ CF ∥ AD  និង  CF = AD');
+      }
+
+      // Step 5: Parallelogram BDFC
+      if (i === 5) {
+        poly(marks, [f.B, f.D, f.F, f.C], { fill: 'rgba(46, 122, 112, 0.18)', stroke: 'none' });
+        arrowHead(marks, mul(add(f.D, f.B), 0.5), unit(sub(f.D, f.B)));
+        arrowHead(marks, mul(add(f.F, f.C), 0.5), unit(sub(f.F, f.C)));
+        says(marks, 0, 'ដោយ AD = DB នាំឱ្យ CF = DB និង CF ∥ DB ៖');
+        says(marks, 1, '⟹ ចតុកោណ BDFC មានជ្រុងឈមមួយគូស្របគ្នាផងនិងស្មើគ្នាផង');
+        says(marks, 2, '⟹ BDFC ជាប្រលេឡូក្រាម  ⟹  DF ∥ BC  និង  DF = BC');
+      }
+
+      // Step 6: Conclusion
+      if (i >= 6) {
+        poly(marks, [f.B, f.D, f.F, f.C], { fill: 'rgba(46, 122, 112, 0.12)', stroke: 'none' });
+        arrowHead(marks, mul(add(f.D, f.E), 0.5), unit(sub(f.E, f.D)));
+        arrowHead(marks, mul(add(f.B, f.C), 0.5), unit(sub(f.C, f.B)));
+        says(marks, 0, 'សន្និដ្ឋាននៃទ្រឹស្ដីបទ ៖');
+        says(marks, 1, '• ដោយ DF ∥ BC  នាំឱ្យ  DE ∥ BC');
+        says(marks, 2, '• ដោយ DE = ½ DF  នាំឱ្យ  DE = ½ BC  (ពិត)');
+        says(marks, 4, 'ប្រវែងជាក់ស្ដែង ៖  BC = ' + f.cmBC + ' cm  ⟹  DE = ' + f.cmDE + ' cm  (= ½ BC)');
+      }
+
+      // Vertices with draggable grab handles
+      point(ink, f.A, 'A', [0, -1], null, 'A', 22);
+      point(ink, f.B, 'B', [-1, 0.8], null, 'B', 22);
+      point(ink, f.C, 'C', [1, 0.8], null, 'C', 22);
+      point(ink, f.D, 'D', [-1, 0], 'cx-pt-m', null, 22);
+      point(ink, f.E, 'E', [0.8, -0.6], 'cx-pt-m', null, 22);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { ruler: [f.D, f.E], cls: 'cx-seg' };
+      if (i === 2) return { ruler: [f.E, f.F], cls: 'cx-line cx-line-2' };
+      if (i === 3) return { rulers: [[f.A, f.F], [f.F, f.C], [f.D, f.C]] };
+      return null;
+    }
+  };
+
+  // Grade 8, lesson 13, Flowchart of Quadrilaterals (Diagram 64):
+  // Interactive morphing & hierarchy from General Quadrilateral to Square.
+  CX['g8-l13-quad-family'] = {
+    steps: 7,
+    start: {
+      step0: { A: [350, 150], B: [530, 130], C: [510, 350], D: [340, 320] },
+      step1: { A: [380, 150], B: [500, 150], C: [550, 350], D: [330, 350] },
+      step3: { A: [370, 150], B: [530, 150], C: [480, 340], D: [320, 340] },
+      step4: { A: [340, 160], B: [520, 160], C: [520, 330], D: [340, 330] },
+      step5: { A: [430, 130], B: [535, 240], C: [430, 350], D: [325, 240] },
+      step6: { A: [355, 160], B: [505, 160], C: [505, 310], D: [355, 310] }
+    },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      return { meet: true, s: s };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      var poly = function (g2, pts, attrs) {
+        var pStr = pts.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' ');
+        return el('polygon', Object.assign({ points: pStr }, attrs), g2);
+      };
+
+      if (i === 0) {
+        // Step 0: General Quadrilateral
+        var A = f.s.step0.A, B = f.s.step0.B, C = f.s.step0.C, D = f.s.step0.D;
+        poly(ink, [A, B, C, D], { fill: 'rgba(45, 106, 168, 0.08)', stroke: '#2e7a70', 'stroke-width': '2.5' });
+        point(ink, A, 'A', [-0.8, -0.8], null, null, 20);
+        point(ink, B, 'B', [0.8, -0.8], null, null, 20);
+        point(ink, C, 'C', [0.8, 0.8], null, null, 20);
+        point(ink, D, 'D', [-0.8, 0.8], null, null, 20);
+
+        says(marks, 0, '១. ចតុកោណទូទៅ (Quadrilateral) ៖');
+        says(marks, 1, '• ជាពហុកោណដែលមាន ៤ ជ្រុង និង ៤ មុំ');
+        says(marks, 2, '• ផលបូកមុំក្នុងទាំងបួន ៖ ∠A + ∠B + ∠C + ∠D = 360°');
+        says(marks, 4, 'ការវិវត្តបន្ត ៖');
+        says(marks, 5, '• បន្ថែមជ្រុងឈម ១ គូស្របគ្នា ⟹ ចតុកោណព្នាយ');
+        says(marks, 6, '• បន្ថែមជ្រុងឈម ២ គូស្របគ្នា ⟹ ប្រលេឡូក្រាម');
+      } else if (i === 1) {
+        // Step 1: Trapezoid
+        var A1 = f.s.step1.A, B1 = f.s.step1.B, C1 = f.s.step1.C, D1 = f.s.step1.D;
+        poly(ink, [A1, B1, C1, D1], { fill: 'rgba(46, 122, 112, 0.12)', stroke: '#2e7a70', 'stroke-width': '2.5' });
+        point(ink, A1, 'A', [-0.8, -0.8], null, null, 20);
+        point(ink, B1, 'B', [0.8, -0.8], null, null, 20);
+        point(ink, C1, 'C', [0.8, 0.8], null, null, 20);
+        point(ink, D1, 'D', [-0.8, 0.8], null, null, 20);
+
+        // Parallel arrows on AB and DC
+        arrowHead(marks, mul(add(A1, B1), 0.5), unit(sub(B1, A1)));
+        arrowHead(marks, mul(add(D1, C1), 0.5), unit(sub(C1, D1)));
+
+        label(marks, [(A1[0] + B1[0]) / 2, A1[1] - 18], 'បាតតូច b', 'cx-note');
+        label(marks, [(D1[0] + C1[0]) / 2, D1[1] + 20], 'បាតធំ B', 'cx-note');
+
+        says(marks, 0, '២. ចតុកោណព្នាយ (Trapezoid) ៖');
+        says(marks, 1, '• មានជ្រុងឈមមួយគូស្របគ្នា ៖ AB ∥ CD');
+        says(marks, 2, '• AB ជាបាតតូច និង CD ជាបាតធំ');
+        says(marks, 3, '• មុំជាប់បាតបន្ថែមគ្នា ៖ ∠A + ∠D = 180°, ∠B + ∠C = 180°');
+        says(marks, 5, 'ផ្ទៃក្រឡា ៖  S = ½ (B + b) × h');
+      } else if (i === 2) {
+        // Step 2: Special Trapezoids (Isosceles & Right)
+        // Draw Isosceles Trapezoid
+        var tA = [330, 110], tB = [430, 110], tC = [460, 220], tD = [300, 220];
+        poly(ink, [tA, tB, tC, tD], { fill: 'rgba(46, 122, 112, 0.12)', stroke: '#2e7a70', 'stroke-width': '2.2' });
+        tick(marks, tA, tD); tick(marks, tB, tC);
+        label(marks, [380, 238], 'ចតុកោណព្នាយសមបាត', 'cx-label');
+
+        // Draw Right Trapezoid
+        var rA = [330, 270], rB = [440, 270], rC = [480, 380], rD = [330, 380];
+        poly(ink, [rA, rB, rC, rD], { fill: 'rgba(232, 114, 92, 0.12)', stroke: '#e8725c', 'stroke-width': '2.2' });
+        rightMark(marks, rD, [0, -1], [1, 0]);
+        rightMark(marks, rA, [1, 0], [0, 1]);
+        label(marks, [405, 398], 'ចតុកោណព្នាយកែង', 'cx-label');
+
+        says(marks, 0, '៣. ចតុកោណព្នាយពិសេស ៖');
+        says(marks, 1, 'ក. ចតុកោណព្នាយសមបាត ៖');
+        says(marks, 2, '• ជ្រុងទ្រេតប៉ុនគ្នា ៖ AD = BC');
+        says(marks, 3, '• មុំបាតប៉ុនគ្នា ៖ ∠D = ∠C , ∠A = ∠B');
+        says(marks, 4, '• អង្កត់ទ្រូងប៉ុនគ្នា ៖ AC = BD');
+        says(marks, 6, 'ខ. ចតុកោណព្នាយកែង ៖');
+        says(marks, 7, '• មានជ្រុងទ្រេតមួយកែងនឹងបាតទាំងពីរ');
+        says(marks, 8, '• មានមុំកែងពីរជាប់គ្នា (90°)');
+      } else if (i === 3) {
+        // Step 3: Parallelogram
+        var Ap = f.s.step3.A, Bp = f.s.step3.B, Cp = f.s.step3.C, Dp = f.s.step3.D;
+        poly(ink, [Ap, Bp, Cp, Dp], { fill: 'rgba(46, 122, 112, 0.14)', stroke: '#2e7a70', 'stroke-width': '2.5' });
+        point(ink, Ap, 'A', [-0.8, -0.8], null, null, 20);
+        point(ink, Bp, 'B', [0.8, -0.8], null, null, 20);
+        point(ink, Cp, 'C', [0.8, 0.8], null, null, 20);
+        point(ink, Dp, 'D', [-0.8, 0.8], null, null, 20);
+
+        arrowHead(marks, mul(add(Ap, Bp), 0.5), unit(sub(Bp, Ap)));
+        arrowHead(marks, mul(add(Dp, Cp), 0.5), unit(sub(Cp, Dp)));
+        arrowHead(marks, mul(add(Ap, Dp), 0.5), unit(sub(Dp, Ap)));
+        arrowHead(marks, mul(add(Bp, Cp), 0.5), unit(sub(Cp, Bp)));
+
+        tick(marks, Ap, Bp); tick(marks, Dp, Cp);
+        tick2(marks, Ap, Dp); tick2(marks, Bp, Cp);
+
+        says(marks, 0, '៤. ប្រលេឡូក្រាម (Parallelogram) ៖');
+        says(marks, 1, '• ជ្រុងឈមស្របគ្នា ២ គូ ៖ AB ∥ CD  និង  AD ∥ BC');
+        says(marks, 2, '• ជ្រុងឈមប៉ុនគ្នា ៖ AB = CD  និង  AD = BC');
+        says(marks, 3, '• មុំឈមប៉ុនគ្នា ៖ ∠A = ∠C  និង  ∠B = ∠D');
+        says(marks, 4, '• អង្កត់ទ្រូងកាត់គ្នាត្រង់ចំណុចកណ្ដាល');
+        says(marks, 6, 'ផ្ទៃក្រឡា ៖  S = b × h');
+      } else if (i === 4) {
+        // Step 4: Rectangle
+        var Ar = f.s.step4.A, Br = f.s.step4.B, Cr = f.s.step4.C, Dr = f.s.step4.D;
+        poly(ink, [Ar, Br, Cr, Dr], { fill: 'rgba(45, 106, 168, 0.12)', stroke: '#2d6aa8', 'stroke-width': '2.5' });
+        point(ink, Ar, 'A', [-0.8, -0.8], null, null, 20);
+        point(ink, Br, 'B', [0.8, -0.8], null, null, 20);
+        point(ink, Cr, 'C', [0.8, 0.8], null, null, 20);
+        point(ink, Dr, 'D', [-0.8, 0.8], null, null, 20);
+
+        rightMark(marks, Ar, [1, 0], [0, 1]);
+        rightMark(marks, Br, [0, 1], [-1, 0]);
+        rightMark(marks, Cr, [-1, 0], [0, -1]);
+        rightMark(marks, Dr, [0, -1], [1, 0]);
+
+        // Diagonals drawn dashed
+        el('line', { x1: Ar[0], y1: Ar[1], x2: Cr[0], y2: Cr[1], class: 'cx-equal' }, marks);
+        el('line', { x1: Br[0], y1: Br[1], x2: Dr[0], y2: Dr[1], class: 'cx-equal' }, marks);
+
+        says(marks, 0, '៥. ចតុកោណកែង (Rectangle) ៖');
+        says(marks, 1, '• ជាប្រលេឡូក្រាមដែលមានមុំកែងមួយ');
+        says(marks, 2, '• មុំទាំង ៤ ជាមុំកែង ៖ ∠A = ∠B = ∠C = ∠D = 90°');
+        says(marks, 3, '• អង្កត់ទ្រូងទាំងពីរប៉ុនគ្នា ៖ AC = BD');
+        says(marks, 5, 'ផ្ទៃក្រឡា ៖  S = a × b  (បណ្ដោយ × ទទឹង)');
+      } else if (i === 5) {
+        // Step 5: Rhombus
+        var As = f.s.step5.A, Bs = f.s.step5.B, Cs = f.s.step5.C, Ds = f.s.step5.D;
+        poly(ink, [As, Bs, Cs, Ds], { fill: 'rgba(232, 114, 92, 0.12)', stroke: '#e8725c', 'stroke-width': '2.5' });
+        point(ink, As, 'A', [0, -1], null, null, 20);
+        point(ink, Bs, 'B', [1, 0], null, null, 20);
+        point(ink, Cs, 'C', [0, 1], null, null, 20);
+        point(ink, Ds, 'D', [-1, 0], null, null, 20);
+
+        tick(marks, As, Bs); tick(marks, Bs, Cs);
+        tick(marks, Cs, Ds); tick(marks, Ds, As);
+
+        // Perpendicular diagonals
+        segLine(marks, As, Cs, 'cx-equal');
+        segLine(marks, Bs, Ds, 'cx-equal');
+        var O = [(As[0] + Cs[0]) / 2, (Bs[1] + Ds[1]) / 2];
+        rightMark(marks, O, [0, -1], [1, 0]);
+
+        says(marks, 0, '៦. ចតុកោណស្មើ (Rhombus) ៖');
+        says(marks, 1, '• ជាប្រលេឡូក្រាមដែលមានជ្រុងទាំង ៤ ស្មើគ្នា');
+        says(marks, 2, '• ជ្រុងទាំង ៤ ប៉ុនគ្នា ៖ AB = BC = CD = DA');
+        says(marks, 3, '• អង្កត់ទ្រូងទាំងពីរកែងគ្នា ៖ AC ⊥ BD');
+        says(marks, 4, '• អង្កត់ទ្រូងជាកន្លះបន្ទាត់ពុះមុំ');
+        says(marks, 6, 'ផ្ទៃក្រឡា ៖  S = ½ × d₁ × d₂');
+      } else if (i === 6) {
+        // Step 6: Square
+        var Aq = f.s.step6.A, Bq = f.s.step6.B, Cq = f.s.step6.C, Dq = f.s.step6.D;
+        poly(ink, [Aq, Bq, Cq, Dq], { fill: 'rgba(46, 122, 112, 0.18)', stroke: '#2e7a70', 'stroke-width': '2.6' });
+        point(ink, Aq, 'A', [-0.8, -0.8], null, null, 20);
+        point(ink, Bq, 'B', [0.8, -0.8], null, null, 20);
+        point(ink, Cq, 'C', [0.8, 0.8], null, null, 20);
+        point(ink, Dq, 'D', [-0.8, 0.8], null, null, 20);
+
+        // All 4 right marks
+        rightMark(marks, Aq, [1, 0], [0, 1]);
+        rightMark(marks, Bq, [0, 1], [-1, 0]);
+        rightMark(marks, Cq, [-1, 0], [0, -1]);
+        rightMark(marks, Dq, [0, -1], [1, 0]);
+
+        // All 4 sides equal
+        tick(marks, Aq, Bq); tick(marks, Bq, Cq);
+        tick(marks, Cq, Dq); tick(marks, Dq, Aq);
+
+        // Diagonals equal AND perpendicular
+        segLine(marks, Aq, Cq, 'cx-equal');
+        segLine(marks, Bq, Dq, 'cx-equal');
+        var Oq = [(Aq[0] + Cq[0]) / 2, (Aq[1] + Cq[1]) / 2];
+        rightMark(marks, Oq, [1, 1], [-1, 1]);
+
+        says(marks, 0, '៧. ការេ (Square) — កំពូលគ្រួសារចតុកោណ ៖');
+        says(marks, 1, '• ជាចតុកោណកែងផង និងជាចតុកោណស្មើផង');
+        says(marks, 2, '• ជ្រុងទាំង ៤ ប៉ុនគ្នា ៖ AB = BC = CD = DA');
+        says(marks, 3, '• មុំទាំង ៤ សុទ្ធតែកែង ៖ 90°');
+        says(marks, 4, '• អង្កត់ទ្រូងប៉ុនគ្នាផង និងកែងគ្នាផង (AC = BD, AC ⊥ BD)');
+        says(marks, 6, 'ផ្ទៃក្រឡា ៖  S = a²');
+      }
+    },
+    anim: function (f, i) {
+      return null;
+    }
+  };
+
+  // Grade 8, lesson 14, visual proof of the Pythagorean theorem:
+  // Four copies of a right-angled triangle with legs a, b and hypotenuse c
+  // fit inside a large square of side (a+b), enclosing an inner tilted square IJKL of side c.
+  CX['g8-l14-pythagoras'] = {
+    steps: 6,
+    start: { t: 0.36 },
+    place: function (s, key, p) {
+      if (key === 'I') {
+        var x0 = 380, S = 210;
+        var clampedX = Math.max(x0 + 35, Math.min(x0 + S - 35, p[0]));
+        var frac = (x0 + S - clampedX) / S;
+        s.t = Math.max(0.18, Math.min(0.65, frac));
+        return [x0 + S * (1 - s.t), 325];
+      }
+      return p;
+    },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var x0 = 380, y0 = 115, S = 210;
+      var t = s.t || 0.36;
+      var a = t * S, b = (1 - t) * S;
+      var c = Math.hypot(a, b);
+      var BL = [x0, y0 + S], BR = [x0 + S, y0 + S], TR = [x0 + S, y0], TL = [x0, y0];
+      var I = [x0 + b, y0 + S];
+      var J = [x0 + S, y0 + S - b];
+      var K = [x0 + a, y0];
+      var L = [x0, y0 + b];
+      return { x0: x0, y0: y0, S: S, a: a, b: b, c: c, t: t,
+        BL: BL, BR: BR, TR: TR, TL: TL,
+        I: I, J: J, K: K, L: L };
+    },
+    draw: function (f, i, svg, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      var poly = function (g, pts, attrs) {
+        var pStr = pts.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' ');
+        var a = Object.assign({ points: pStr }, attrs);
+        return el('polygon', a, g);
+      };
+
+      if (i === 0) {
+        // Step 0: Single right triangle with legs a, b, hypotenuse c on the right side
+        var O = [395, 305], P = [395 + f.b, 305], Q = [395 + f.b, 305 - f.a];
+        poly(ink, [O, P, Q], { fill: 'rgba(46, 122, 112, 0.22)', stroke: '#2e7a70', 'stroke-width': '2.5' });
+        rightMark(marks, P, [-1, 0], [0, -1]);
+        label(marks, [(O[0] + P[0]) / 2, O[1] + 24], 'b', 'cx-label');
+        label(marks, [P[0] + 18, (P[1] + Q[1]) / 2], 'a', 'cx-label');
+        label(marks, [(O[0] + Q[0]) / 2 - 14, (O[1] + Q[1]) / 2 - 12], 'c', 'cx-label');
+
+        says(marks, 0, 'ត្រីកោណកែងមួយមាន ៖');
+        says(marks, 1, '• ជ្រុងមុំកែងពីរមានរង្វាស់ a និង b');
+        says(marks, 2, '• អ៊ីប៉ូតេនុសមានរង្វាស់ c');
+        says(marks, 4, 'គោលដៅ ៖ ស្រាយបញ្ជាក់ថា c² = a² + b²');
+        return;
+      }
+
+      // Step 1+: Outer square (a+b) x (a+b)
+      poly(ink, [f.TL, f.TR, f.BR, f.BL], { fill: 'rgba(45, 106, 168, 0.05)', stroke: '#2e7a70', 'stroke-width': '2.5' });
+
+      says(marks, 0, 'ការេធំមួយមានរង្វាស់ជ្រុង (a + b)');
+      says(marks, 1, 'ផ្ទៃការេធំ = (a + b)²');
+      says(marks, 2, '             = a² + b² + 2ab');
+
+      if (i >= 2) {
+        // Step 2+: Mark points I, J, K, L and segment labels a, b
+        point(marks, f.I, 'I', [0, 1], 'cx-pt-m', 'I', 18);
+        point(marks, f.J, 'J', [1, 0], 'cx-pt-m', null, 18);
+        point(marks, f.K, 'K', [0, -1], 'cx-pt-m', null, 18);
+        point(marks, f.L, 'L', [-1, 0], 'cx-pt-m', null, 18);
+
+        label(marks, [(f.BL[0] + f.I[0]) / 2, f.BL[1] + 16], 'b', 'cx-note cx-r');
+        label(marks, [(f.I[0] + f.BR[0]) / 2, f.BR[1] + 16], 'a', 'cx-note cx-r');
+
+        label(marks, [f.BR[0] + 16, (f.BR[1] + f.J[1]) / 2], 'b', 'cx-note cx-r');
+        label(marks, [f.TR[0] + 16, (f.J[1] + f.TR[1]) / 2], 'a', 'cx-note cx-r');
+
+        label(marks, [(f.TR[0] + f.K[0]) / 2, f.TR[1] - 14], 'b', 'cx-note cx-r');
+        label(marks, [(f.K[0] + f.TL[0]) / 2, f.TL[1] - 14], 'a', 'cx-note cx-r');
+
+        label(marks, [f.TL[0] - 16, (f.TL[1] + f.L[1]) / 2], 'b', 'cx-note cx-r');
+        label(marks, [f.BL[0] - 16, (f.L[1] + f.BL[1]) / 2], 'a', 'cx-note cx-r');
+      }
+
+      if (i >= 3) {
+        // Step 3+: Draw the 4 right triangles in the corners
+        var triAttr = { fill: 'rgba(46, 122, 112, 0.25)', stroke: '#2e7a70', 'stroke-width': '2' };
+        poly(ink, [f.I, f.BR, f.J], triAttr);
+        poly(ink, [f.J, f.TR, f.K], triAttr);
+        poly(ink, [f.K, f.TL, f.L], triAttr);
+        poly(ink, [f.L, f.BL, f.I], triAttr);
+
+        rightMark(marks, f.BR, [-1, 0], [0, -1]);
+        rightMark(marks, f.TR, [0, 1], [-1, 0]);
+        rightMark(marks, f.TL, [1, 0], [0, 1]);
+        rightMark(marks, f.BL, [0, -1], [1, 0]);
+
+        says(marks, 4, 'ត្រីកោណកែង ៤ ប៉ុនគ្នានៅតាមជ្រុង ៖');
+        says(marks, 5, 'ផ្ទៃត្រីកោណទាំង ៤ = 4 × (½ab) = 2ab');
+      }
+
+      if (i >= 4) {
+        // Step 4+: Inner square IJKL
+        poly(ink, [f.I, f.J, f.K, f.L], { fill: 'rgba(201, 134, 43, 0.32)', stroke: '#c9862b', 'stroke-width': '2.5' });
+
+        label(marks, [(f.I[0] + f.J[0]) / 2 - 10, (f.I[1] + f.J[1]) / 2 - 10], 'c', 'cx-label');
+        label(marks, [(f.J[0] + f.K[0]) / 2 - 10, (f.J[1] + f.K[1]) / 2 + 10], 'c', 'cx-label');
+        label(marks, [(f.K[0] + f.L[0]) / 2 + 10, (f.K[1] + f.L[1]) / 2 + 10], 'c', 'cx-label');
+        label(marks, [(f.L[0] + f.I[0]) / 2 + 10, (f.L[1] + f.I[1]) / 2 - 10], 'c', 'cx-label');
+
+        label(marks, [(f.x0 + f.S / 2), (f.y0 + f.S / 2)], 'IJKL (c²)', 'cx-label');
+        says(marks, 7, 'ចតុកោណ IJKL ជាការេជ្រុង c ៖');
+        says(marks, 8, 'ផ្ទៃការេ IJKL = c²');
+      }
+
+      if (i >= 5) {
+        // Step 5: Full algebraic proof and dynamic live values
+        says(marks, 10, 'ផ្ទៃការេ IJKL = ផ្ទៃការេធំ − ផ្ទៃត្រីកោណទាំង ៤');
+        says(marks, 11, 'c² = (a² + b² + 2ab) − 2ab');
+        says(marks, 12, '⟹  c² = a² + b²  (ទ្រឹស្តីបទពីតាក័រ)');
+
+        var aN = Math.round(f.a / 21);
+        var bN = Math.round(f.b / 21);
+        var c2N = aN * aN + bN * bN;
+        var cN = Math.sqrt(c2N).toFixed(2);
+        says(marks, 14, 'សាកល្បង៖ a = ' + aN + ', b = ' + bN + ' ⟹ c² = ' + aN + '² + ' + bN + '² = ' + c2N + ' (c ≈ ' + cN + ')');
+      }
+    },
+    anim: function (f, i) {
+      return null;
+    }
+  };
+
+  // Grade 8, lesson 17, Medians and Centroid G (1. លក្ខណៈមេដ្យាននៃត្រីកោណ):
+  // Step-by-step interactive proof showing concurrency at centroid G,
+  // the reflection point D, auxiliary parallelogram BDCG, and 2:1 ratio.
+  CX['g8-l17-centroid'] = {
+    steps: 7,
+    start: { A: [280, 80], B: [100, 360], C: [500, 360] },
+    place: function (s, key, p) {
+      if (key === 'A') {
+        s.A = [Math.max(160, Math.min(440, p[0])), Math.max(60, Math.min(160, p[1]))];
+      } else if (key === 'B') {
+        s.B = [Math.max(50, Math.min(s.C[0] - 160, p[0])), Math.max(300, Math.min(400, p[1]))];
+      } else if (key === 'C') {
+        s.C = [Math.max(s.B[0] + 160, Math.min(590, p[0])), Math.max(300, Math.min(400, p[1]))];
+      }
+      return p;
+    },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var A = s.A, B = s.B, C = s.C;
+      var Cp = mul(add(A, B), 0.5);      // Midpoint of AB
+      var Bp = mul(add(A, C), 0.5);      // Midpoint of AC
+      var Ap = mul(add(B, C), 0.5);      // Midpoint of BC
+      var G = mul(add(add(A, B), C), 1 / 3); // Centroid G
+      // Point D: reflection of A across G, so G is midpoint of AD
+      var D = add(G, sub(G, A));
+
+      var dAA = len(sub(Ap, A));
+      var dAG = len(sub(G, A));
+      var dGA = len(sub(Ap, G));
+      var cmAA = (Math.round(dAA / CM * 10) / 10).toFixed(1);
+      var cmAG = (Math.round(dAG / CM * 10) / 10).toFixed(1);
+      var cmGA = (Math.round(dGA / CM * 10) / 10).toFixed(1);
+
+      return {
+        meet: true, A: A, B: B, C: C,
+        Cp: Cp, Bp: Bp, Ap: Ap, G: G, D: D,
+        cmAA: cmAA, cmAG: cmAG, cmGA: cmGA
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      var poly = function (g2, pts, attrs) {
+        var pStr = pts.map(function (x) { return x[0].toFixed(1) + ',' + x[1].toFixed(1); }).join(' ');
+        return el('polygon', Object.assign({ points: pStr }, attrs), g2);
+      };
+
+      // Shaded triangle ABC
+      poly(ink, [f.A, f.B, f.C], { fill: 'rgba(46, 122, 112, 0.06)', stroke: '#2e7a70', 'stroke-width': '2.5' });
+
+      // Midpoint tick marks on AB and AC
+      tick(marks, f.A, f.Cp); tick(marks, f.Cp, f.B);
+      tick2(marks, f.A, f.Bp); tick2(marks, f.Bp, f.C);
+
+      if (i === 0) {
+        says(marks, 0, 'លក្ខណៈមេដ្យាន និងទីប្រជុំទម្ងន់នៃត្រីកោណ ៖');
+        says(marks, 1, '• ត្រីកោណ ABC មាន C′ ជាចំណុចកណ្ដាលនៃ AB និង B′ ជាចំណុចកណ្ដាលនៃ AC');
+        says(marks, 2, '• មេដ្យាន BB′ និង CC′ ប្រសព្វគ្នាត្រង់ចំណុច G');
+        says(marks, 4, 'គោលដៅ ៖ បង្ហាញថាមេដ្យាន AA′ កាត់តាម G  ព្រមទាំង GA′ = ⅓ AA′ និង AG = ⅔ AA′');
+      }
+
+      // Step 1: Draw medians BB' and CC' intersecting at G
+      if (i >= 1) {
+        segLine(ink, f.B, f.Bp, 'cx-seg');
+        segLine(ink, f.C, f.Cp, 'cx-seg');
+        point(ink, f.G, 'G', [1.2, 0.2], 'cx-pt-m', null, 24);
+      }
+      if (i === 1) {
+        says(marks, 0, 'គូសមេដ្យាន BB′ និង CC′ កាត់គ្នាត្រង់ចំណុច G');
+        says(marks, 1, 'ចំណុចប្រសព្វ G នេះ ហៅថា «ទីប្រជុំទម្ងន់» (Centroid) នៃត្រីកោណ ABC');
+        says(marks, 3, 'ដើម្បីស្រាយបញ្ជាក់ យើងបង្កើតចំណុចឆ្លុះ D នៃកំពូល A ធៀបនឹង G');
+      }
+
+      // Step 2: Extend ray AG to D such that GD = AG
+      if (i >= 2) {
+        segLine(ink, f.A, f.D, 'cx-line cx-line-2');
+        point(ink, f.D, 'D', [0, 1.2], 'cx-pt-m', null, 24);
+        tick3(marks, f.A, f.G); tick3(marks, f.G, f.D);
+      }
+      if (i === 2) {
+        says(marks, 0, 'តាង D ជាចំណុចឆ្លុះនៃ A ធៀបនឹង G (បន្លាយកាំ AG ឱ្យបាន GD = AG)');
+        says(marks, 1, '⟹ G ជាចំណុចកណ្ដាលនៃអង្កត់ AD (AG = GD)');
+      }
+
+      // Step 3: Triangle ABD and CG || BD
+      if (i >= 3) {
+        segLine(ink, f.B, f.D, 'cx-seg');
+      }
+      if (i === 3) {
+        poly(marks, [f.A, f.B, f.D], { fill: 'rgba(232, 114, 92, 0.16)', stroke: 'none' });
+        arrowHead(marks, mul(add(f.Cp, f.G), 0.5), unit(sub(f.G, f.Cp)));
+        arrowHead(marks, mul(add(f.B, f.D), 0.5), unit(sub(f.D, f.B)));
+        says(marks, 0, 'ក្នុងត្រីកោណ ABD (ពណ៌ផ្កាឈូក) ៖');
+        says(marks, 1, '• C′ ជាចំណុចកណ្ដាលនៃ AB និង G ជាចំណុចកណ្ដាលនៃ AD');
+        says(marks, 2, 'តាមទ្រឹស្ដីបទចំណុចកណ្ដាល ⟹ C′G ∥ BD ឬ CG ∥ BD   (១)');
+      }
+
+      // Step 4: Triangle ACD and BG || CD
+      if (i >= 4) {
+        segLine(ink, f.C, f.D, 'cx-seg');
+      }
+      if (i === 4) {
+        poly(marks, [f.A, f.C, f.D], { fill: 'rgba(201, 134, 43, 0.16)', stroke: 'none' });
+        arrowHead(marks, mul(add(f.Bp, f.G), 0.5), unit(sub(f.G, f.Bp)));
+        arrowHead(marks, mul(add(f.C, f.D), 0.5), unit(sub(f.D, f.C)));
+        says(marks, 0, 'ក្នុងត្រីកោណ ACD (ពណ៌ទឹកក្រូច) ៖');
+        says(marks, 1, '• B′ ជាចំណុចកណ្ដាលនៃ AC និង G ជាចំណុចកណ្ដាលនៃ AD');
+        says(marks, 2, 'តាមទ្រឹស្ដីបទចំណុចកណ្ដាល ⟹ B′G ∥ CD ឬ BG ∥ CD   (២)');
+      }
+
+      // Step 5: Parallelogram BDCG and median AA'
+      if (i >= 5) {
+        poly(marks, [f.B, f.D, f.C, f.G], { fill: 'rgba(45, 106, 168, 0.14)', stroke: 'none' });
+        arrowHead(marks, mul(add(f.B, f.D), 0.5), unit(sub(f.D, f.B)));
+        arrowHead(marks, mul(add(f.G, f.C), 0.5), unit(sub(f.C, f.G)));
+        arrowHead(marks, mul(add(f.C, f.D), 0.5), unit(sub(f.D, f.C)));
+        arrowHead(marks, mul(add(f.G, f.B), 0.5), unit(sub(f.B, f.G)));
+        point(ink, f.Ap, "A'", [0, 1.2], 'cx-pt-m');
+        tick2(marks, f.B, f.Ap); tick2(marks, f.Ap, f.C);
+      }
+      if (i === 5) {
+        says(marks, 0, 'តាម (១) និង (២) ៖ CG ∥ BD និង BG ∥ CD ⟹ ចតុកោណ BDCG ជាប្រលេឡូក្រាម');
+        says(marks, 1, 'អង្កត់ទ្រូងទាំងពីរ BC និង GD កាត់គ្នាត្រង់ចំណុចកណ្ដាលរួម A′');
+        says(marks, 2, '⟹ A′ ជាចំណុចកណ្ដាលនៃ BC ដូច្នេះបន្ទាត់ AG កាត់តាម A′');
+        says(marks, 3, 'សន្និដ្ឋាន ៖ មេដ្យានទី ៣ AA′ កាត់តាម G ដែរ ⟹ មេដ្យានទាំង ៣ ប្រសព្វគ្នាត្រង់ G តែមួយ!');
+      }
+
+      // Step 6: Ratio calculations and live measurement demo
+      if (i >= 6) {
+        segLine(ink, f.A, f.Ap, 'cx-seg');
+        poly(marks, [f.B, f.D, f.C, f.G], { fill: 'rgba(45, 106, 168, 0.10)', stroke: 'none' });
+        says(marks, 0, 'ទាញរកសមាមាត្រនៃទីប្រជុំទម្ងន់ G ៖');
+        says(marks, 1, '• ក្នុងប្រលេឡូក្រាម BDCG ៖ A′ ជាចំណុចកណ្ដាលនៃ GD ⟹ GD = 2 GA′');
+        says(marks, 2, '• ដោយ AG = GD នាំឱ្យ AG = 2 GA′ ⟹ AA′ = AG + GA′ = 3 GA′');
+        says(marks, 3, '• នាំឱ្យ GA′ = ⅓ AA′  និង  AG = ⅔ AA′  (បានសម្រាយបញ្ជាក់សព្វគ្រប់!)');
+        says(marks, 5, 'រង្វាស់ជាក់ស្ដែង ៖ AA′ = ' + f.cmAA + ' cm  |  AG = ' + f.cmAG + ' cm  |  GA′ = ' + f.cmGA + ' cm');
+      }
+
+      // Draggable vertices
+      point(ink, f.A, 'A', [0, -1], null, 'A', 22);
+      point(ink, f.B, 'B', [-1, 0.8], null, 'B', 22);
+      point(ink, f.C, 'C', [1, 0.8], null, 'C', 22);
+      point(ink, f.Cp, "C'", [-1.2, -0.2], 'cx-pt-m', null, 22);
+      point(ink, f.Bp, "B'", [1.2, -0.2], 'cx-pt-m', null, 22);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { rulers: [[f.B, f.Bp], [f.C, f.Cp]] };
+      if (i === 2) return { ruler: [f.A, f.D], cls: 'cx-line cx-line-2' };
+      if (i === 3) return { ruler: [f.B, f.D], cls: 'cx-seg' };
+      if (i === 4) return { ruler: [f.C, f.D], cls: 'cx-seg' };
+      if (i === 6) return { ruler: [f.A, f.Ap], cls: 'cx-seg' };
+      return null;
+    }
+  };
+
+
+  // ===== The circle (Grade 7, lesson 17), one page with three tabs ====================================
+  // #parts: draw a circle and name its parts. #pi: a disc rolled once along a ruler: the circumference
+  // is a little more than three diameters. #area: a disc cut in n equal sectors that are laid head to
+  // foot make nearly a rectangle with sides pi*R and R.
+  var CO = [320, 232], CR = 150;
+  var angOf = function (p) { return Math.atan2(p[1] - CO[1], p[0] - CO[0]); };
+  CX['circle-parts'] = scripted({
+    steps: 6,
+    start: { C: [CO[0] + CR * Math.cos(-0.95), CO[1] + CR * Math.sin(-0.95)] },
+    place: function (s, key, p) {
+      var t = angOf(p);
+      if (Math.abs(t) < 0.3) t = t < 0 ? -0.3 : 0.3;
+      if (Math.PI - Math.abs(t) < 0.3) t = t < 0 ? -Math.PI + 0.3 : Math.PI - 0.3;
+      return onCircle(CO, CR, t);
+    },
+    figure: function (s) {
+      var C = s.C, tC = angOf(C);
+      return { O: CO, A: [CO[0] - CR, CO[1]], B: [CO[0] + CR, CO[1]], C: C, tC: tC };
+    },
+    top: function (f, ink, i) { if (i >= 2) el('circle', { cx: f.C[0], cy: f.C[1], r: 24, class: 'cx-grab', 'data-drag': 'C' }, ink); },
+    script: function (f) {
+      var mid = function (P, Q, n, d) { var m = mul(add(P, Q), 0.5), u = unit(sub(Q, P)); return add(m, mul([-u[1] * n, u[0] * n], d)); };
+      return [
+        [['pt', f.O, 'O', [-0.6, 0.9], 'cx-pt-m', 22], ['pt', f.A, 'A', [-1, 0.4], null, 22]],
+        [['arc', { c: f.O, r: CR, t1: Math.PI, t2: 3 * Math.PI - 0.003 }]],
+        [['seg', f.O, f.C, 'cx-line cx-line-2'], ['pt', f.C, 'C', sub(f.C, f.O), null, 22],
+          ['mark', function (g) { label(g, mid(f.O, f.C, -1, 18), 'កាំ OC', 'cx-note'); }]],
+        [['seg', f.A, f.B, 'cx-line'], ['pt', f.B, 'B', [1, 0.4], null, 22],
+          ['mark', function (g) { label(g, [CO[0] - 70, CO[1] + 24], 'អង្កត់ផ្ចិត AB', 'cx-note'); }]],
+        [['seg', f.B, f.C, 'cx-line cx-line-2'],
+          ['mark', function (g) { label(g, mid(f.B, f.C, -1, 30), 'អង្កត់ធ្នូ BC', 'cx-note'); }]],
+        [['mark', function (g) {
+          var t1 = Math.min(0, f.tC), t2 = Math.max(0, f.tC);
+          el('path', { d: arcPath(CO, CR, t1, t2), class: 'cx-trace' }, g);
+          label(g, add(CO, mul(unit([Math.cos((t1 + t2) / 2), Math.sin((t1 + t2) / 2)]), CR + 34)), 'ធ្នូ BC', 'cx-note');
+        }]],
+      ];
+    },
+  });
+
+  // #pi: the disc has diameter k cm; it rolls without slipping one turn along the ruler
+  var PIR = { x0: 92, y: 372 };
+  CX['circle-pi'] = {
+    steps: 5,
+    start: { k: 4 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: function (s) { return 'អង្កត់ផ្ចិត d = ' + s.k + ' cm  →  បរិមាត្រ p = ' + (Math.round(Math.PI * s.k * 100) / 100) + ' cm  →  p ÷ d = ' + (Math.round(Math.PI * 100) / 100); },
+    figure: function (s) {
+      var d = s.k * CM;
+      return { d: d, R: d / 2, p: Math.PI * d, x0: PIR.x0, y: PIR.y };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools, x1 = f.x0 + f.p;
+      drawCmRuler(ink, [f.x0, f.y], [1, 0], 14, [0, 1]);
+      var disc = function (g2, cx, turn) {
+        el('circle', { cx: cx, cy: f.y - f.R, r: f.R, class: 'cx-disc' }, g2);
+        var P = add([cx, f.y - f.R], mul([Math.sin(turn), Math.cos(turn)], f.R));
+        segLine(g2, [cx, f.y - f.R], P, 'cx-radius');
+        el('circle', { cx: P[0], cy: P[1], r: 5.5, class: 'cx-pt cx-pt-m' }, g2);
+        return P;
+      };
+      var cx0 = f.x0 + 0, cx1 = x1;
+      if (i === 0) { disc(tools, cx0, 0); label(marks, [f.x0 + f.R, f.y - 2 * f.R - 18], 'd = ' + (f.d / CM) + ' cm', 'cx-note'); }
+      else disc(tools, cx1, 0);
+      if (i >= 2) {
+        segLine(marks, [f.x0, f.y - 3], [x1, f.y - 3], 'cx-trace');
+        label(marks, [(f.x0 + x1) / 2, f.y - 2 * f.R - 20], 'បរិមាត្រ p = ' + (Math.round(f.p / CM * 100) / 100) + ' cm', 'cx-note');
+      }
+      if (i >= 3) {
+        for (var j = 0; j < 3; j++) {
+          var a = f.x0 + j * f.d, y = f.y - 2 * f.R - 62 + 0;
+          el('rect', { x: a + 1, y: 70, width: f.d - 2, height: 26, rx: 4, class: j % 2 ? 'cx-sector cx-sector-b' : 'cx-sector cx-sector-a' }, marks);
+          label(marks, [a + f.d / 2, 83], 'd', 'cx-note cx-r');
+        }
+        var rest = f.p - 3 * f.d;
+        el('rect', { x: f.x0 + 3 * f.d + 1, y: 70, width: rest - 2, height: 26, rx: 4, class: 'cx-sector cx-sector-c' }, marks);
+        label(marks, [f.x0 + 3 * f.d + rest / 2, 56], '0.14 d', 'cx-note');
+        label(marks, [f.x0 + 1.5 * f.d, 108], 'បីដងអង្កត់ផ្ចិត', 'cx-note');
+      }
+      if (i >= 4) given(marks, 'p ÷ d = ' + (Math.round(f.p / f.d * 100) / 100) + ' ...  =  π   ក្នុងរង្វង់ទាំងអស់');
+    },
+    anim: function (f, i) {
+      if (i !== 1) return null;
+      return { phases: [{ dur: 4200, draw: function (t, drawn, tools) {
+        var cx = f.x0 + f.p * t, turn = 2 * Math.PI * t;
+        segLine(drawn, [f.x0, f.y - 3], [cx, f.y - 3], 'cx-trace');
+        el('circle', { cx: cx, cy: f.y - f.R, r: f.R, class: 'cx-disc' }, tools);
+        var P = add([cx, f.y - f.R], mul([Math.sin(turn), Math.cos(turn)], f.R));
+        segLine(tools, [cx, f.y - f.R], P, 'cx-radius');
+        el('circle', { cx: P[0], cy: P[1], r: 5.5, class: 'cx-pt cx-pt-m' }, tools);
+      } }] };
+    },
+  };
+
+  // #area: the disc of radius R in n = 2^(k+1) sectors; they stand alternately point down and point up
+  var AR = { R: 92, O: [130, 190], x0: 250, y: 300 };
+  CX['circle-area'] = {
+    steps: 5,
+    start: { k: 3 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: function (s) {
+      var n = Math.pow(2, s.k + 1);
+      return n + ' ចំណែក → រាងចតុកោណកែងប្រហែលវិមាត្រ πR និង R' + (n >= 32 ? ' (ស្ទើរតែពិតប្រាកដ)' : '');
+    },
+    figure: function (s) {
+      var n = Math.pow(2, s.k + 1), th = 2 * Math.PI / n, R = AR.R, hw = R * Math.sin(th / 2), tops = [];
+      var secs = [];
+      for (var j = 0; j < n; j++) {
+        var up = j % 2 === 0, from = -Math.PI / 2 + j * th, centre = from + th / 2;
+        var apex = [AR.x0 + 20 + j * hw, up ? AR.y : AR.y - R * Math.cos(th / 2)];
+        var target = up ? -Math.PI / 2 : Math.PI / 2;
+        secs.push({ j: j, centre: centre, apex: apex, target: target, up: up });
+      }
+      return { n: n, th: th, R: R, hw: hw, secs: secs, width: n * hw + hw };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, O = AR.O;
+      var sector = function (g2, apex, centre, cls) {
+        var a1 = centre - f.th / 2, a2 = centre + f.th / 2, p1 = onCircle(apex, f.R, a1);
+        el('path', { d: 'M' + apex.join(' ') + 'L' + p1.map(function (x) { return x.toFixed(1); }).join(' ') + arcPath(apex, f.R, a1, a2).replace(/^M[^A]*/, '') + 'Z', class: cls + ' cx-sector-line' }, g2);
+      };
+      if (i <= 1) {
+        el('circle', { cx: O[0], cy: O[1], r: f.R, class: 'cx-disc' }, ink);
+        if (i === 1) f.secs.forEach(function (q) { sector(ink, O, q.centre, q.j % 2 ? 'cx-sector cx-sector-b' : 'cx-sector cx-sector-a'); });
+        point(ink, O, 'O', [-0.6, 0.9], 'cx-pt-m', null, 20);
+        segLine(marks, O, add(O, [f.R, 0]), 'cx-radius'); label(marks, add(O, [f.R / 2, 14]), 'R', 'cx-note cx-r');
+      }
+      if (i >= 2) {
+        f.secs.forEach(function (q) { sector(ink, q.apex, q.target, q.j % 2 ? 'cx-sector cx-sector-b' : 'cx-sector cx-sector-a'); });
+      }
+      if (i >= 3) {
+        var x1 = AR.x0 + 20, x2 = x1 + f.width;
+        segLine(marks, [x1, AR.y + 20], [x2, AR.y + 20], 'cx-trace');
+        label(marks, [(x1 + x2) / 2, AR.y + 40], 'πR  (កន្លះបរិមាត្រ = πR)', 'cx-note');
+        segLine(marks, [x2 + 16, AR.y], [x2 + 16, AR.y - f.R], 'cx-trace');
+        label(marks, [x2 + 30, AR.y - f.R / 2], 'R', 'cx-note cx-r');
+      }
+      if (i >= 4) given(marks, 'S = πR × R = πR²');
+    },
+    anim: function (f, i) {
+      if (i === 2) return { phases: [{ dur: 3200, draw: function (t, drawn, tools) {
+        f.secs.forEach(function (q) {
+          var d = ((q.target - q.centre + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI;
+          var c = q.centre + d * t, apex = add(AR.O, mul(sub(q.apex, AR.O), t));
+          var a1 = c - f.th / 2, a2 = c + f.th / 2, p1 = onCircle(apex, f.R, a1);
+          el('path', { d: 'M' + apex.join(' ') + 'L' + p1.map(function (x) { return x.toFixed(1); }).join(' ') + arcPath(apex, f.R, a1, a2).replace(/^M[^A]*/, '') + 'Z',
+            class: (q.j % 2 ? 'cx-sector cx-sector-b' : 'cx-sector cx-sector-a') + ' cx-sector-line' }, drawn);
+        });
+      } }] };
+      return null;
+    },
+  };
+
+  // a line of the working, below the one before it (the lines of the steps so far stay)
+  var says = function (g, n, text) { el('text', { x: 22, y: 30 + 24 * n, class: 'cx-given', 'dominant-baseline': 'central' }, g).textContent = text; };
+  CX['g7-l15-median'] = scripted({
+    steps: 6,
+    start: { A: [250, 100], B: [140, 320], C: [500, 320] },
+    limit: function (s, key, p) {
+      var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+      var A = key === 'A' ? p : s.A, B = key === 'B' ? p : s.B, C = key === 'C' ? p : s.C;
+      return p[0] >= 40 && p[0] <= W - 40 && p[1] >= 40 && p[1] <= H - 40 &&
+        t.least >= 150 && Math.min.apply(null, t.angles) >= 0.50 && Math.max.apply(null, t.angles) <= 1.8 &&
+        A[1] <= Math.min(B[1], C[1]) - 80;
+    },
+    figure: function (s) {
+      var f = triangleOf(s);
+      f.md = mediatorOf(f.B, f.C, f.A);
+      f.M = f.md.M;
+      f.p1 = add(f.M, mul(f.md.n, f.md.h + 24));
+      f.p2 = add(f.M, mul(f.md.n, -f.md.h - 24));
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) { triCorners(f, ink); },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [],
+        [['arc', f.md.arcs[0]], ['arc', f.md.arcs[1]]],
+        [['arc', f.md.arcs[2]], ['arc', f.md.arcs[3]], ['pt', f.md.X1, 'P', [1, 0], 'cx-pt-m', 20], ['pt', f.md.X2, 'Q', [1, 0], 'cx-pt-m', 20]],
+        [
+          ['seg', f.p1, f.p2, aux],
+          ['pt', f.M, 'M', DOWN, null, 22],
+          ['mark', function (g) { tick(g, f.B, f.M); tick(g, f.M, f.C); }]
+        ],
+        [['seg', f.A, f.M, 'cx-line']],
+        [
+          ['mark', function (g) {
+            says(g, 0, 'AM ជាមេដ្យាននៃត្រីកោណ ABC (MB = MC)');
+          }]
+        ],
+      ];
+    },
+  });
+
+  var deg = function (n) { return n + '°'; };
+  CX['g7-l15-angle-sum'] = scripted({
+    steps: 5,
+    start: triStart,
+    limit: triLimit,
+    figure: function (s) {
+      var f = triangleOf(s), u = unit(sub(f.C, f.B));
+      f.X = sub(f.A, mul(u, 210)); f.Y = add(f.A, mul(u, 210)); f.deg = wholeDegrees(f);
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) { triCorners(f, ink); },
+    script: function (f) {
+      var dir = function (P, Q) { return unit(add(unit(sub(P, f.A)), unit(sub(Q, f.A)))); };
+      var at = function (g, P, Q, text) { label(g, add(f.A, mul(dir(P, Q), 66)), text, 'cx-note'); };
+      return [
+        [],
+        [['seg', f.X, f.Y, 'cx-line cx-line-2'], ['pt', f.X, 'x', [-1, 0], null, 16], ['pt', f.Y, 'y', [1, 0], null, 16]],
+        [['mark', function (g) {
+          wedgeBetween(g, f.A, f.X, f.B, 36, 'a'); wedgeBetween(g, f.A, f.B, f.C, 42, 'c'); wedgeBetween(g, f.A, f.C, f.Y, 36, 'b');
+          at(g, f.X, f.B, 'A₁'); at(g, f.B, f.C, 'A'); at(g, f.C, f.Y, 'A₂');
+          says(g, 0, '∠A₁ + ∠A + ∠A₂ = 180°');
+        }]],
+        [['mark', function (g) {
+          wedgeBetween(g, f.B, f.C, f.A, 36, 'a'); wedgeBetween(g, f.C, f.A, f.B, 36, 'b');
+          says(g, 1, '∠A₁ = ∠B  ,  ∠A₂ = ∠C');
+        }]],
+        [['mark', function (g) {
+          says(g, 2, '∠A + ∠B + ∠C = ' + deg(f.deg[0]) + ' + ' + deg(f.deg[1]) + ' + ' + deg(f.deg[2]) + ' = 180°');
+        }]],
+      ];
+    },
+  });
+  CX['g7-l15-exterior-angle'] = scripted({
+    steps: 5,
+    start: triStart,
+    limit: triLimit,
+    figure: function (s) {
+      var f = triangleOf(s);
+      f.x = add(f.C, mul(unit(sub(f.C, f.B)), 70)); f.y = add(f.B, mul(unit(sub(f.B, f.A)), 54)); f.z = add(f.A, mul(unit(sub(f.A, f.C)), 70));
+      f.deg = wholeDegrees(f);
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) { triCorners(f, ink); },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [],
+        [['seg', f.C, f.x, aux], ['pt', f.x, 'x', sub(f.x, f.C), null, 16], ['seg', f.B, f.y, aux], ['pt', f.y, 'y', sub(f.y, f.B), null, 16],
+          ['seg', f.A, f.z, aux], ['pt', f.z, 'z', sub(f.z, f.A), null, 16]],
+        [['mark', function (g) {
+          wedgeBetween(g, f.A, f.B, f.C, 40, 'a'); wedgeBetween(g, f.A, f.z, f.B, 40, 'b');
+          says(g, 0, '∠A + ∠BAz = 180°');
+        }]],
+        [['mark', function (g) {
+          wedgeBetween(g, f.B, f.C, f.A, 36, 'c'); wedgeBetween(g, f.C, f.A, f.B, 36, 'c');
+          says(g, 1, '∠A + ∠B + ∠C = 180°');
+        }]],
+        [['mark', function (g) {
+          says(g, 2, '∠BAz = ∠B + ∠C :  ' + deg(180 - f.deg[0]) + ' = ' + deg(f.deg[1]) + ' + ' + deg(f.deg[2]));
+        }]],
+      ];
+    },
+  });
+
+  CX['g7-l15-right-isosceles'] = scripted({
+    steps: 5,
+    start: { A: [180, 360], C: [420, 360] },
+    limit: function (s, key, p) {
+      if (key === 'C') return p[0] >= s.A[0] + 140 && p[0] <= W - 60;
+      if (key === 'A') return p[0] >= 60 && p[0] <= s.C[0] - 140;
+      return true;
+    },
+    figure: function (s) {
+      var d = Math.max(140, Math.min(270, s.C[0] - s.A[0]));
+      var A = [s.A[0], 360];
+      var C = [A[0] + d, 360];
+      var B = [A[0], 360 - d];
+      var Ax = [C[0] + 45, 360];
+      var Ay = [A[0], B[1] - 45];
+      var arc = { c: A, r: d, t1: -Math.PI / 2 - 0.18, t2: 0.15 };
+      return { A: A, B: B, C: C, Ax: Ax, Ay: Ay, d: d, arc: arc };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.C, 'C', [0, 1], null, 'C', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      var uR = [1, 0], uU = [0, -1];
+      return [
+        [['seg', f.A, f.Ax, aux], ['pt', f.Ax, 'x', [1, 0], null, 16], ['pt', f.A, 'A', [-1, 1], null, 22], ['pt', f.C, 'C', [0, 1], null, 22],
+         ['mark', function (g) {
+           says(g, 0, '១. គូសកន្លះបន្ទាត់ដេក Ax និងកំណត់ចំណុច C');
+         }]],
+        [['seg', f.A, f.Ay, aux], ['pt', f.Ay, 'y', [0, -1], null, 16],
+         ['mark', function (g) {
+           rightMark(g, f.A, uR, uU);
+           says(g, 1, '២. សង់កន្លះបន្ទាត់កែង Ay ⊥ Ax (∠BAC = 90°)');
+         }]],
+        [['arc', f.arc], ['pt', f.B, 'B', [-1, 0], null, 22],
+         ['mark', function (g) {
+           tick(g, f.A, f.B); tick(g, f.A, f.C);
+           says(g, 2, '៣. គូសធ្នូកាំ AC ផ្ចិត A កាត់ Ay ត្រង់ B (AB = AC)');
+         }]],
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.A, f.C, 'cx-line'], ['seg', f.B, f.C, 'cx-line'],
+         ['mark', function (g) {
+           triFill(g, f.A, f.B, f.C);
+           says(g, 3, '៤. គូសអ៊ីប៉ូតេនុស BC បានត្រីកោណកែងសមបាត ABC');
+         }]],
+        [['mark', function (g) {
+          wedgeBetween(g, f.B, f.C, f.A, 36, 'a');
+          wedgeBetween(g, f.C, f.A, f.B, 36, 'a');
+          label(g, add(f.B, [24, 38]), '45°', 'cx-note');
+          label(g, add(f.C, [-44, -14]), '45°', 'cx-note');
+          says(g, 4, '៥. មុំបាតស្មើគ្នា៖ ∠B = ∠C = (180° - 90°) ÷ 2 = 45°');
+        }]],
+      ];
+    },
+  });
+
+  CX['g7-l15-equilateral'] = scripted({
+    steps: 5,
+    start: { B: [170, 360], C: [470, 360] },
+    limit: function (s, key, p) {
+      if (key === 'B') return p[0] >= 60 && p[0] <= s.C[0] - 160;
+      if (key === 'C') return p[0] >= s.B[0] + 160 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var a = Math.max(160, Math.min(360, s.C[0] - s.B[0]));
+      var B = [s.B[0], 360];
+      var C = [B[0] + a, 360];
+      var A = [B[0] + a / 2, 360 - a * Math.sqrt(3) / 2];
+      var arcB = { c: B, r: a, t1: -Math.PI / 3 - 0.22, t2: -Math.PI / 3 + 0.22 };
+      var arcC = { c: C, r: a, t1: -2 * Math.PI / 3 - 0.22, t2: -2 * Math.PI / 3 + 0.22 };
+      return { A: A, B: B, C: C, a: a, arcB: arcB, arcC: arcC };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.B, 'B', [-1, 1], null, 'B', 22);
+      point(ink, f.C, 'C', [1, 1], null, 'C', 22);
+    },
+    script: function (f) {
+      return [
+        [['seg', f.B, f.C, 'cx-line'], ['pt', f.B, 'B', [-1, 1], null, 22], ['pt', f.C, 'C', [1, 1], null, 22],
+         ['mark', function (g) {
+           says(g, 0, '១. គូសអង្កត់បាត BC មានប្រវែង a');
+         }]],
+        [['arc', f.arcB],
+         ['mark', function (g) {
+           says(g, 1, '២. បើកដែកឈានកាំ a ផ្ចិត B គូសធ្នូទីមួយ');
+         }]],
+        [['arc', f.arcC], ['pt', f.A, 'A', [0, -1], null, 22],
+         ['mark', function (g) {
+           says(g, 2, '៣. រក្សាកាំ a ផ្ចិត C គូសធ្នូទីពីរកាត់ត្រង់ A');
+         }]],
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.A, f.C, 'cx-line'],
+         ['mark', function (g) {
+           triFill(g, f.A, f.B, f.C);
+           tick(g, f.A, f.B); tick(g, f.B, f.C); tick(g, f.C, f.A);
+           says(g, 3, '៤. គូស AB និង AC បាន AB = BC = CA = a');
+         }]],
+        [['mark', function (g) {
+          wedgeBetween(g, f.A, f.B, f.C, 36, 'a');
+          wedgeBetween(g, f.B, f.C, f.A, 36, 'a');
+          wedgeBetween(g, f.C, f.A, f.B, 36, 'a');
+          label(g, add(f.A, [0, 48]), '60°', 'cx-note');
+          label(g, add(f.B, [44, -18]), '60°', 'cx-note');
+          label(g, add(f.C, [-44, -18]), '60°', 'cx-note');
+          says(g, 4, '៥. ជ្រុងទាំងបីស្មើគ្នា នាំឱ្យ ∠A = ∠B = ∠C = 180° ÷ 3 = 60°');
+        }]],
+      ];
+    },
+  });
+
+  // ===== Grade 7, lesson 15 Exercises: Interactive step-by-step constructions =====
+  // Exercise 3: Isosceles triangle ISO (OS = 32mm, IS = IO = 52mm, altitude IH)
+  CX['g7-l15-ex03'] = scripted({
+    steps: 5,
+    start: { O: [248, 360], S: [392, 360] },
+    limit: function (s, key, p) {
+      if (key === 'O') return p[0] >= 60 && p[0] <= s.S[0] - 80;
+      if (key === 'S') return p[0] >= s.O[0] + 80 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var d = Math.max(80, Math.min(220, s.S[0] - s.O[0]));
+      var O = [s.O[0], 360];
+      var S = [O[0] + d, 360];
+      var H = [O[0] + d / 2, 360];
+      var r = d * 1.625;
+      var h = Math.sqrt(Math.max(0, r * r - (d / 2) * (d / 2)));
+      var I = [H[0], 360 - h];
+      var angO = Math.atan2(h, d / 2);
+      var arcO = { c: O, r: r, t1: -angO - 0.16, t2: -angO + 0.16 };
+      var arcS = { c: S, r: r, t1: -(Math.PI - angO) - 0.16, t2: -(Math.PI - angO) + 0.16 };
+      return { O: O, S: S, H: H, I: I, d: d, r: r, h: h, arcO: arcO, arcS: arcS };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.O, 'O', [-1, 1], null, 'O', 22);
+      point(ink, f.S, 'S', [1, 1], null, 'S', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.O, f.S, 'cx-line'], ['pt', f.O, 'O', [-1, 1], null, 22], ['pt', f.S, 'S', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(f.H, [0, 24]), '32 mm', 'cx-note');
+           says(g, 0, '១. គូសអង្កត់បាត OS = 32 mm ដោយប្រើបន្ទាត់ក្រិត');
+         }]],
+        [['arc', f.arcO],
+         ['mark', function (g) {
+           says(g, 1, '២. បើកដែកឈានកាំ 52 mm ផ្ចិត O គូសធ្នូរង្វង់ទីមួយ');
+         }]],
+        [['arc', f.arcS], ['pt', f.I, 'I', [0, -1], null, 22],
+         ['mark', function (g) {
+           says(g, 2, '៣. រក្សាកាំ 52 mm ផ្ចិត S គូសធ្នូរង្វង់ទីពីរកាត់ត្រង់ I');
+         }]],
+        [['seg', f.I, f.O, 'cx-line'], ['seg', f.I, f.S, 'cx-line'],
+         ['mark', function (g) {
+           triFill(g, f.O, f.S, f.I);
+           tick(g, f.I, f.O); tick(g, f.I, f.S);
+           label(g, add(mul(add(f.I, f.O), 0.5), [-32, -6]), '52 mm', 'cx-note');
+           label(g, add(mul(add(f.I, f.S), 0.5), [32, -6]), '52 mm', 'cx-note');
+           says(g, 3, '៤. គូស IO និង IS បានត្រីកោណសមបាត ISO (IO = IS = 52 mm)');
+         }]],
+        [['seg', f.I, f.H, aux], ['pt', f.H, 'H', [0, 1], null, 20],
+         ['mark', function (g) {
+           rightMark(g, f.H, [1, 0], [0, -1]);
+           label(g, add(f.H, [48, -f.h / 2]), 'IH ≈ 49.5 mm', 'cx-note');
+           says(g, 4, '៥. កំណត់ចំណុចកណ្ដាល H (16 mm) គូសកម្ពស់ IH ⊥ OS (IH ≈ 49.5 mm)');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 4: Equilateral triangle OUI with median OM
+  CX['g7-l15-ex04'] = scripted({
+    steps: 5,
+    start: { I: [200, 360], U: [440, 360] },
+    limit: function (s, key, p) {
+      if (key === 'I') return p[0] >= 60 && p[0] <= s.U[0] - 120;
+      if (key === 'U') return p[0] >= s.I[0] + 120 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var a = Math.max(120, Math.min(320, s.U[0] - s.I[0]));
+      var I = [s.I[0], 360];
+      var U = [I[0] + a, 360];
+      var M = [I[0] + a / 2, 360];
+      var O = [M[0], 360 - a * Math.sqrt(3) / 2];
+      var arcI = { c: I, r: a, t1: -Math.PI / 3 - 0.2, t2: -Math.PI / 3 + 0.2 };
+      var arcU = { c: U, r: a, t1: -2 * Math.PI / 3 - 0.2, t2: -2 * Math.PI / 3 + 0.2 };
+      return { I: I, U: U, M: M, O: O, a: a, arcI: arcI, arcU: arcU };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.I, 'I', [-1, 1], null, 'I', 22);
+      point(ink, f.U, 'U', [1, 1], null, 'U', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.I, f.U, 'cx-line'], ['pt', f.I, 'I', [-1, 1], null, 22], ['pt', f.U, 'U', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(f.M, [0, 24]), '4 cm', 'cx-note');
+           says(g, 0, '១. គូសអង្កត់បាត IU = 4 cm ដោយប្រើបន្ទាត់ក្រិត');
+         }]],
+        [['arc', f.arcI],
+         ['mark', function (g) {
+           says(g, 1, '២. បើកដែកឈានកាំ 4 cm ផ្ចិត I គូសធ្នូរង្វង់ទីមួយ');
+         }]],
+        [['arc', f.arcU], ['pt', f.O, 'O', [0, -1], null, 22],
+         ['mark', function (g) {
+           says(g, 2, '៣. រក្សាកាំ 4 cm ផ្ចិត U គូសធ្នូរង្វង់ទីពីរកាត់ត្រង់កំពូល O');
+         }]],
+        [['seg', f.O, f.I, 'cx-line'], ['seg', f.O, f.U, 'cx-line'],
+         ['mark', function (g) {
+           triFill(g, f.I, f.U, f.O);
+           tick(g, f.O, f.I); tick(g, f.O, f.U); tick(g, f.I, f.U);
+           label(g, add(mul(add(f.O, f.I), 0.5), [-28, -6]), '4 cm', 'cx-note');
+           label(g, add(mul(add(f.O, f.U), 0.5), [28, -6]), '4 cm', 'cx-note');
+           says(g, 3, '៤. គូស OI និង OU បានត្រីកោណសម័ង្ស OUI (OI = OU = IU = 4 cm)');
+         }]],
+        [['seg', f.O, f.M, aux], ['pt', f.M, 'M', [0, 1], null, 20],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.I, f.M), 0.5), [0, -14]), '2 cm', 'cx-note');
+           label(g, add(mul(add(f.M, f.U), 0.5), [0, -14]), '2 cm', 'cx-note');
+           says(g, 4, '៥. កំណត់ចំណុចកណ្ដាល M (MI = MU = 2 cm) គូសមេដ្យាន OM ចេញពី O');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 5: Right triangle REC right at E (EC = 8cm, ER = 6cm, RC = 10cm)
+  CX['g7-l15-ex05'] = scripted({
+    steps: 5,
+    start: { E: [180, 360], C: [460, 360] },
+    limit: function (s, key, p) {
+      if (key === 'E') return p[0] >= 60 && p[0] <= s.C[0] - 120;
+      if (key === 'C') return p[0] >= s.E[0] + 120 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var d = Math.max(120, Math.min(300, s.C[0] - s.E[0]));
+      var E = [s.E[0], 360];
+      var C = [E[0] + d, 360];
+      var h = d * 0.75;
+      var R = [E[0], 360 - h];
+      var Ex = [E[0], R[1] - 35];
+      return { E: E, C: C, R: R, Ex: Ex, d: d, h: h };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.E, 'E', [-1, 1], null, 'E', 22);
+      point(ink, f.C, 'C', [1, 1], null, 'C', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.E, f.C, 'cx-line'], ['pt', f.E, 'E', [-1, 1], null, 22], ['pt', f.C, 'C', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.E, f.C), 0.5), [0, 24]), 'EC = 8 cm', 'cx-note');
+           says(g, 0, '១. គូសជ្រុងមុំកែងដេក EC = 8 cm ដោយបន្ទាត់ក្រិត');
+         }]],
+        [['seg', f.E, f.Ex, aux], ['pt', f.Ex, 'x', [0, -1], null, 16],
+         ['mark', function (g) {
+           rightMark(g, f.E, [1, 0], [0, -1]);
+           says(g, 1, '២. សង់កន្លះបន្ទាត់កែង Ex ⊥ EC (∠E = 90°) ដោយកែវកែង');
+         }]],
+        [['pt', f.R, 'R', [-1, 0], null, 22],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.E, f.R), 0.5), [-38, 0]), 'ER = 6 cm', 'cx-note');
+           says(g, 2, '៣. នៅលើកន្លះបន្ទាត់ Ex កំណត់ចំណុច R ដោយ ER = 6 cm');
+         }]],
+        [['seg', f.E, f.R, 'cx-line'], ['seg', f.R, f.C, 'cx-line'],
+         ['mark', function (g) {
+           triFill(g, f.E, f.C, f.R);
+           says(g, 3, '៤. គូសអ៊ីប៉ូតេនុស RC គេបានត្រីកោណកែង REC ត្រង់ E');
+         }]],
+        [['mark', function (g) {
+           label(g, add(mul(add(f.R, f.C), 0.5), [24, -18]), 'RC = 10 cm', 'cx-note');
+           says(g, 4, '៥. តាមពីតាករ៖ RC² = 6² + 8² = 100 ⟹ អ៊ីប៉ូតេនុស RC = 10 cm');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 6: Triangle LAC (CL = 11cm, AC = 8cm, LA = 6cm)
+  CX['g7-l15-ex06'] = scripted({
+    steps: 5,
+    start: { C: [140, 360], L: [500, 360] },
+    limit: function (s, key, p) {
+      if (key === 'C') return p[0] >= 60 && p[0] <= s.L[0] - 180;
+      if (key === 'L') return p[0] >= s.C[0] + 180 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var d = Math.max(180, Math.min(380, s.L[0] - s.C[0]));
+      var C = [s.C[0], 360];
+      var L = [C[0] + d, 360];
+      var rC = d * (8 / 11);
+      var rL = d * (6 / 11);
+      var cosC = 149 / 176;
+      var sinC = Math.sqrt(1 - cosC * cosC);
+      var A = [C[0] + rC * cosC, 360 - rC * sinC];
+      var angC = Math.atan2(rC * sinC, rC * cosC);
+      var arcC = { c: C, r: rC, t1: -angC - 0.16, t2: -angC + 0.16 };
+      var angL = Math.atan2(rC * sinC, d - rC * cosC);
+      var arcL = { c: L, r: rL, t1: -(Math.PI - angL) - 0.16, t2: -(Math.PI - angL) + 0.16 };
+      return { C: C, L: L, A: A, d: d, rC: rC, rL: rL, arcC: arcC, arcL: arcL };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.C, 'C', [-1, 1], null, 'C', 22);
+      point(ink, f.L, 'L', [1, 1], null, 'L', 22);
+    },
+    script: function (f) {
+      return [
+        [['seg', f.C, f.L, 'cx-line'], ['pt', f.C, 'C', [-1, 1], null, 22], ['pt', f.L, 'L', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.C, f.L), 0.5), [0, 24]), 'CL = 11 cm', 'cx-note');
+           says(g, 0, '១. គូសអង្កត់បាត CL = 11 cm ដោយប្រើបន្ទាត់ក្រិត');
+         }]],
+        [['arc', f.arcC],
+         ['mark', function (g) {
+           says(g, 1, '២. បើកដែកឈានកាំ 8 cm ផ្ចិត C គូសធ្នូរង្វង់ទីមួយ');
+         }]],
+        [['arc', f.arcL], ['pt', f.A, 'A', [0, -1], null, 22],
+         ['mark', function (g) {
+           says(g, 2, '៣. បើកដែកឈានកាំ 6 cm ផ្ចិត L គូសធ្នូរង្វង់ទីពីរកាត់ត្រង់ A');
+         }]],
+        [['seg', f.C, f.A, 'cx-line'], ['seg', f.L, f.A, 'cx-line'],
+         ['mark', function (g) {
+           triFill(g, f.C, f.L, f.A);
+           label(g, add(mul(add(f.C, f.A), 0.5), [-30, -6]), 'AC = 8 cm', 'cx-note');
+           label(g, add(mul(add(f.L, f.A), 0.5), [30, -6]), 'LA = 6 cm', 'cx-note');
+           says(g, 3, '៤. គូសអង្កត់ AC និង LA គេបានត្រីកោណ LAC តាមតម្រូវការ');
+         }]],
+        [['mark', function (g) {
+           says(g, 4, '៥. គណនាបរិមាត្រ៖ P = LA + AC + CL = 6 + 8 + 11 = 25 cm');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 10: Quadrilateral ABCD (BC = 7cm, ∠B = 70°, AB = 5cm, ∠C = 90°, CD = 10cm)
+  CX['g7-l15-ex10'] = scripted({
+    steps: 5,
+    start: { B: [160, 360], C: [342, 360] },
+    limit: function (s, key, p) {
+      if (key === 'B') return p[0] >= 60 && p[0] <= s.C[0] - 100;
+      if (key === 'C') return p[0] >= s.B[0] + 100 && p[0] <= 450;
+      return true;
+    },
+    figure: function (s) {
+      var d = Math.max(120, Math.min(220, s.C[0] - s.B[0]));
+      var B = [s.B[0], 360];
+      var C = [B[0] + d, 360];
+      var sc = d / 7;
+      var lenBA = 5 * sc;
+      var lenCD = 10 * sc;
+      var rad70 = 70 * Math.PI / 180;
+      var A = [B[0] + lenBA * Math.cos(rad70), 360 - lenBA * Math.sin(rad70)];
+      var Bx = [B[0] + (lenBA + 35) * Math.cos(rad70), 360 - (lenBA + 35) * Math.sin(rad70)];
+      var D = [C[0], 360 - lenCD];
+      var Cy = [C[0], D[1] - 30];
+      return { B: B, C: C, A: A, D: D, Bx: Bx, Cy: Cy, sc: sc };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.B, 'B', [-1, 1], null, 'B', 22);
+      point(ink, f.C, 'C', [1, 1], null, 'C', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.B, f.C, 'cx-line'], ['pt', f.B, 'B', [-1, 1], null, 22], ['pt', f.C, 'C', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.B, f.C), 0.5), [0, 24]), 'BC = 7 cm', 'cx-note');
+           says(g, 0, '១. គូសអង្កត់បាត BC = 7 cm ដោយប្រើបន្ទាត់ក្រិត');
+         }]],
+        [['seg', f.B, f.Bx, aux], ['pt', f.Bx, 'x', [-0.6, -0.8], null, 16], ['pt', f.A, 'A', [-1, 0], null, 22],
+         ['mark', function (g) {
+           wedgeBetween(g, f.C, f.B, f.Bx, 34, 'a');
+           label(g, add(f.B, [34, -20]), '70°', 'cx-note');
+           label(g, add(mul(add(f.B, f.A), 0.5), [-34, 0]), 'AB = 5 cm', 'cx-note');
+           says(g, 1, '២. ត្រង់ B សង់មុំ ∠CBx = 70° រួចកំណត់ A ដោយ BA = 5 cm');
+         }]],
+        [['seg', f.C, f.Cy, aux], ['pt', f.Cy, 'y', [0, -1], null, 16], ['pt', f.D, 'D', [1, 0], null, 22],
+         ['mark', function (g) {
+           rightMark(g, f.C, [-1, 0], [0, -1]);
+           label(g, add(mul(add(f.C, f.D), 0.5), [44, 0]), 'CD = 10 cm', 'cx-note');
+           says(g, 2, '៣. ត្រង់ C សង់កន្លះបន្ទាត់កែង Cy ⊥ BC រួចកំណត់ D ដោយ CD = 10 cm');
+         }]],
+        [['seg', f.A, f.D, 'cx-line'], ['seg', f.B, f.A, 'cx-line'], ['seg', f.C, f.D, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.B, f.C, f.D, f.A], { fill: 'rgba(45, 106, 168, 0.12)', stroke: 'none' });
+           says(g, 3, '៤. គូសភ្ជាប់អង្កត់ AD គេបានចតុកោណ ABCD តាមតម្រូវការ');
+         }]],
+        [['mark', function (g) {
+           says(g, 4, '៥. រូបរួចរាល់៖ ចតុកោណ ABCD ផ្ទៀងផ្ទាត់លក្ខខណ្ឌប្រធានគ្រប់ជ្រុង និងមុំ');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 11: Rectangle ABCD (AB = 5cm, AD = 7cm)
+  CX['g7-l15-ex11'] = scripted({
+    steps: 5,
+    start: { A: [240, 360], B: [400, 360] },
+    limit: function (s, key, p) {
+      if (key === 'A') return p[0] >= 60 && p[0] <= s.B[0] - 100;
+      if (key === 'B') return p[0] >= s.A[0] + 100 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var w = Math.max(100, Math.min(220, s.B[0] - s.A[0]));
+      var A = [s.A[0], 360];
+      var B = [A[0] + w, 360];
+      var h = w * 1.4;
+      var D = [A[0], 360 - h];
+      var C = [B[0], 360 - h];
+      var Ax = [A[0], D[1] - 30];
+      var By = [B[0], C[1] - 30];
+      return { A: A, B: B, C: C, D: D, Ax: Ax, By: By, w: w, h: h };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.A, 'A', [-1, 1], null, 'A', 22);
+      point(ink, f.B, 'B', [1, 1], null, 'B', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['pt', f.A, 'A', [-1, 1], null, 22], ['pt', f.B, 'B', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.A, f.B), 0.5), [0, 24]), 'AB = 5 cm', 'cx-note');
+           says(g, 0, '១. គូសអង្កត់ទទឹង AB = 5 cm ដោយប្រើបន្ទាត់ក្រិត');
+         }]],
+        [['seg', f.A, f.Ax, aux], ['pt', f.D, 'D', [-1, 0], null, 22],
+         ['mark', function (g) {
+           rightMark(g, f.A, [1, 0], [0, -1]);
+           label(g, add(mul(add(f.A, f.D), 0.5), [-34, 0]), 'AD = 7 cm', 'cx-note');
+           says(g, 1, '២. ត្រង់ A សង់ Ax ⊥ AB រួចកំណត់ D ដោយ AD = 7 cm');
+         }]],
+        [['seg', f.B, f.By, aux], ['pt', f.C, 'C', [1, 0], null, 22],
+         ['mark', function (g) {
+           rightMark(g, f.B, [-1, 0], [0, -1]);
+           label(g, add(mul(add(f.B, f.C), 0.5), [34, 0]), 'BC = 7 cm', 'cx-note');
+           says(g, 2, '៣. ត្រង់ B សង់ By ⊥ AB រួចកំណត់ C ដោយ BC = 7 cm');
+         }]],
+        [['seg', f.D, f.C, 'cx-line'], ['seg', f.A, f.D, 'cx-line'], ['seg', f.B, f.C, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.A, f.B, f.C, f.D], { fill: 'rgba(45, 106, 168, 0.12)', stroke: 'none' });
+           label(g, add(mul(add(f.D, f.C), 0.5), [0, -18]), 'CD = 5 cm', 'cx-note');
+           says(g, 3, '៤. គូសភ្ជាប់ DC គេបានចតុកោណកែង ABCD (CD = 5 cm)');
+         }]],
+        [['mark', function (g) {
+           rightMark(g, f.D, [1, 0], [0, 1]);
+           rightMark(g, f.C, [-1, 0], [0, 1]);
+           tick(g, f.A, f.B); tick(g, f.D, f.C);
+           tick2(g, f.A, f.D); tick2(g, f.B, f.C);
+           says(g, 4, '៥. រូបរួចរាល់៖ ចតុកោណកែង ABCD មានមុំកែង ៤ និងជ្រុងឈមស្មើគ្នាពីរៗ');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 12: Rectangle ABCD (AB = 64mm, ∠BAC = 50°)
+  CX['g7-l15-ex12'] = scripted({
+    steps: 5,
+    start: { A: [220, 360], B: [400, 360] },
+    limit: function (s, key, p) {
+      if (key === 'A') return p[0] >= 60 && p[0] <= s.B[0] - 100;
+      if (key === 'B') return p[0] >= s.A[0] + 100 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var w = Math.max(100, Math.min(220, s.B[0] - s.A[0]));
+      var A = [s.A[0], 360];
+      var B = [A[0] + w, 360];
+      var h = w * Math.tan(50 * Math.PI / 180);
+      var C = [B[0], 360 - h];
+      var D = [A[0], 360 - h];
+      var By = [B[0], C[1] - 35];
+      var Ax = [C[0] + 25, C[1] - 25 * Math.tan(50 * Math.PI / 180)];
+      return { A: A, B: B, C: C, D: D, By: By, Ax: Ax, w: w, h: h };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.A, 'A', [-1, 1], null, 'A', 22);
+      point(ink, f.B, 'B', [1, 1], null, 'B', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['pt', f.A, 'A', [-1, 1], null, 22], ['pt', f.B, 'B', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.A, f.B), 0.5), [0, 24]), 'AB = 64 mm', 'cx-note');
+           says(g, 0, '១. គូសអង្កត់បាត AB = 64 mm (6.4 cm) ដោយប្រើបន្ទាត់ក្រិត');
+         }]],
+        [['seg', f.B, f.By, aux], ['pt', f.By, 'd', [0, -1], null, 16],
+         ['mark', function (g) {
+           rightMark(g, f.B, [-1, 0], [0, -1]);
+           says(g, 1, '២. ត្រង់ B សង់បន្ទាត់កែង d ⊥ AB (∠B = 90°)');
+         }]],
+        [['seg', f.A, f.C, aux], ['pt', f.C, 'C', [1, -0.6], null, 22],
+         ['mark', function (g) {
+           wedgeBetween(g, f.B, f.A, f.C, 40, 'a');
+           label(g, add(f.A, [52, -18]), '50°', 'cx-note');
+           says(g, 2, '៣. ត្រង់ A សង់មុំ ∠BAC = 50° កាត់បន្ទាត់កែង d ត្រង់ចំណុច C');
+         }]],
+        [['seg', f.A, f.D, aux], ['seg', f.C, f.D, aux], ['pt', f.D, 'D', [-1, -0.6], null, 22],
+         ['mark', function (g) {
+           rightMark(g, f.A, [1, 0], [0, -1]);
+           rightMark(g, f.C, [-1, 0], [0, 1]);
+           says(g, 3, '៤. តាម A គូសស្របនឹង BC និងតាម C គូសស្របនឹង AB កាត់គ្នាត្រង់ D');
+         }]],
+        [['seg', f.A, f.D, 'cx-line'], ['seg', f.D, f.C, 'cx-line'], ['seg', f.B, f.C, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.A, f.B, f.C, f.D], { fill: 'rgba(45, 106, 168, 0.12)', stroke: 'none' });
+           rightMark(g, f.D, [1, 0], [0, 1]);
+           says(g, 4, '៥. រូបរួចរាល់៖ គេបានចតុកោណកែង ABCD ដែលមាន AB = 64 mm និង ∠BAC = 50°');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 13: Square ABCD (side = 3.5cm)
+  CX['g7-l15-ex13'] = scripted({
+    steps: 5,
+    start: { A: [224, 350], B: [416, 350] },
+    limit: function (s, key, p) {
+      if (key === 'A') return p[0] >= 60 && p[0] <= s.B[0] - 100;
+      if (key === 'B') return p[0] >= s.A[0] + 100 && p[0] <= W - 60;
+      return true;
+    },
+    figure: function (s) {
+      var a = Math.max(100, Math.min(220, s.B[0] - s.A[0]));
+      var A = [s.A[0], 350];
+      var B = [A[0] + a, 350];
+      var D = [A[0], 350 - a];
+      var C = [B[0], 350 - a];
+      var Ax = [A[0], D[1] - 30];
+      var arcA = { c: A, r: a, t1: -Math.PI / 2 - 0.2, t2: -Math.PI / 2 + 0.2 };
+      var arcD = { c: D, r: a, t1: -0.2, t2: 0.2 };
+      var arcB = { c: B, r: a, t1: -Math.PI / 2 - 0.2, t2: -Math.PI / 2 + 0.2 };
+      return { A: A, B: B, C: C, D: D, Ax: Ax, a: a, arcA: arcA, arcD: arcD, arcB: arcB };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.A, 'A', [-1, 1], null, 'A', 22);
+      point(ink, f.B, 'B', [1, 1], null, 'B', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['pt', f.A, 'A', [-1, 1], null, 22], ['pt', f.B, 'B', [1, 1], null, 22],
+         ['mark', function (g) {
+           label(g, add(mul(add(f.A, f.B), 0.5), [0, 24]), 'AB = 3.5 cm', 'cx-note');
+           says(g, 0, '១. គូសជ្រុងបាត AB = 3.5 cm ដោយប្រើបន្ទាត់ក្រិត');
+         }]],
+        [['seg', f.A, f.Ax, aux], ['arc', f.arcA], ['pt', f.D, 'D', [-1, 0], null, 22],
+         ['mark', function (g) {
+           rightMark(g, f.A, [1, 0], [0, -1]);
+           tick(g, f.A, f.B); tick(g, f.A, f.D);
+           says(g, 1, '២. សង់កន្លះបន្ទាត់កែង Ax ⊥ AB គូសធ្នូកាំ AB កាត់ត្រង់ D (AD = 3.5 cm)');
+         }]],
+        [['arc', f.arcD], ['arc', f.arcB], ['pt', f.C, 'C', [1, -0.6], null, 22],
+         ['mark', function (g) {
+           says(g, 2, '៣. បើកដែកឈានកាំ 3.5 cm យក B និង D ជាផ្ចិត គូសធ្នូកាត់គ្នាត្រង់ C');
+         }]],
+        [['seg', f.B, f.C, 'cx-line'], ['seg', f.D, f.C, 'cx-line'], ['seg', f.A, f.D, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.A, f.B, f.C, f.D], { fill: 'rgba(45, 106, 168, 0.12)', stroke: 'none' });
+           says(g, 3, '៤. គូសភ្ជាប់ BC និង DC គេបានការ៉េ ABCD');
+         }]],
+        [['mark', function (g) {
+           rightMark(g, f.B, [-1, 0], [0, -1]);
+           rightMark(g, f.C, [-1, 0], [0, 1]);
+           rightMark(g, f.D, [1, 0], [0, 1]);
+           tick(g, f.B, f.C); tick(g, f.D, f.C);
+           says(g, 4, '៥. រូបរួចរាល់៖ ការ៉េ ABCD មានជ្រុង ៤ ស្មើគ្នា (3.5 cm) និងមុំកែង ៤');
+         }]],
+      ];
+    },
+  });
+
+  // ===== Grade 7, lesson 19 Exercises: Interactive step-by-step constructions =====
+  // Exercise 2: Point reflection on grid A(-1, 2), B(1, 2), C(1, 1) about O(0, 0)
+  CX['g7-l19-ex02'] = scripted({
+    steps: 5,
+    start: { A: [272, 134], B: [368, 134], C: [368, 182] },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var O = [320, 230], u = 48;
+      var A = [272, 134], B = [368, 134], C = [368, 182];
+      var Ap = [O[0] + (O[0] - A[0]), O[1] + (O[1] - A[1])];
+      var Bp = [O[0] + (O[0] - B[0]), O[1] + (O[1] - B[1])];
+      var Cp = [O[0] + (O[0] - C[0]), O[1] + (O[1] - C[1])];
+      return { O: O, u: u, A: A, B: B, C: C, Ap: Ap, Bp: Bp, Cp: Cp };
+    },
+    base: function (f, ink) {
+      var u = f.u, ox = f.O[0], oy = f.O[1];
+      for (var gx = -4; gx <= 4; gx++) {
+        el('line', { x1: ox + gx * u, y1: oy - 3 * u, x2: ox + gx * u, y2: oy + 3 * u, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+      for (var gy = -3; gy <= 3; gy++) {
+        el('line', { x1: ox - 4 * u, y1: oy + gy * u, x2: ox + 4 * u, y2: oy + gy * u, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+    },
+    top: function (f, ink) {
+      point(ink, f.O, 'O', [0.8, 0.8], null, null, 18);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.B, f.C, 'cx-line'],
+         ['pt', f.A, 'A(-1, 2)', [-1, -0.8], null, 24], ['pt', f.B, 'B(1, 2)', [1, -0.8], null, 24], ['pt', f.C, 'C(1, 1)', [1, 0.2], null, 24],
+         ['mark', function (g) {
+           says(g, 0, '១. គេមានក្រឡាក្រដាស ផ្ចិត O(0,0) និងចំណុច A(-1, 2), B(1, 2), C(1, 1)');
+         }]],
+        [['seg', f.A, f.Ap, aux], ['pt', f.Ap, "A'(1, -2)", [1, 0.8], null, 24],
+         ['mark', function (g) {
+           tick(g, f.A, f.O); tick(g, f.O, f.Ap);
+           says(g, 1, '២. គូសបន្ទាត់ AO បន្លាយឱ្យបាន OA\' = OA គេបាន A\'(1, -2) ឆ្លុះ A');
+         }]],
+        [['seg', f.B, f.Bp, aux], ['pt', f.Bp, "B'(-1, -2)", [-1, 0.8], null, 24],
+         ['mark', function (g) {
+           tick2(g, f.B, f.O); tick2(g, f.O, f.Bp);
+           says(g, 2, '៣. គូសបន្ទាត់ BO បន្លាយឱ្យបាន OB\' = OB គេបាន B\'(-1, -2) ឆ្លុះ B');
+         }]],
+        [['seg', f.C, f.Cp, aux], ['pt', f.Cp, "C'(-1, -1)", [-1, -0.2], null, 24],
+         ['mark', function (g) {
+           says(g, 3, '៤. គូសបន្ទាត់ CO បន្លាយឱ្យបាន OC\' = OC គេបាន C\'(-1, -1) ឆ្លុះ C');
+         }]],
+        [['seg', f.Ap, f.Bp, 'cx-line'], ['seg', f.Bp, f.Cp, 'cx-line'],
+         ['mark', function (g) {
+           says(g, 4, '៥. ភ្ជាប់ A\'B\' និង B\'C\' គេបានរូបឆ្លុះធៀបនឹងផ្ចិត O (A\'B\' = AB, B\'C\' = BC)');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 3: Angle reflection on grid about O
+  CX['g7-l19-ex03'] = scripted({
+    steps: 5,
+    start: { A: [272, 134], B: [368, 134], C: [368, 182] },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var O = [320, 230], u = 48;
+      var A = [272, 134], B = [368, 134], C = [368, 182];
+      var Ap = [O[0] + (O[0] - A[0]), O[1] + (O[1] - A[1])];
+      var Bp = [O[0] + (O[0] - B[0]), O[1] + (O[1] - B[1])];
+      var Cp = [O[0] + (O[0] - C[0]), O[1] + (O[1] - C[1])];
+      return { O: O, u: u, A: A, B: B, C: C, Ap: Ap, Bp: Bp, Cp: Cp };
+    },
+    base: function (f, ink) {
+      var u = f.u, ox = f.O[0], oy = f.O[1];
+      for (var gx = -4; gx <= 4; gx++) {
+        el('line', { x1: ox + gx * u, y1: oy - 3 * u, x2: ox + gx * u, y2: oy + 3 * u, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+      for (var gy = -3; gy <= 3; gy++) {
+        el('line', { x1: ox - 4 * u, y1: oy + gy * u, x2: ox + 4 * u, y2: oy + gy * u, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+    },
+    top: function (f, ink) {
+      point(ink, f.O, 'O', [0.8, 0.8], null, null, 18);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.A, f.C, 'cx-line'],
+         ['pt', f.A, 'A', [-1, -0.8], null, 22], ['pt', f.B, 'B', [1, -0.8], null, 22], ['pt', f.C, 'C', [1, 0.4], null, 22],
+         ['mark', function (g) {
+           wedgeBetween(g, f.C, f.A, f.B, 32, 'a');
+           says(g, 0, '១. គេមានមុំ ∠BAC កំពូល A និងកន្លះបន្ទាត់ AB, AC ព្រមទាំងផ្ចិត O');
+         }]],
+        [['seg', f.A, f.Ap, aux], ['pt', f.Ap, "A'", [1, 0.8], null, 22],
+         ['mark', function (g) {
+           tick(g, f.A, f.O); tick(g, f.O, f.Ap);
+           says(g, 1, '២. សង់កំពូល A\' ឆ្លុះនឹង A ធៀបនឹង O (OA\' = OA)');
+         }]],
+        [['seg', f.B, f.Bp, aux], ['pt', f.Bp, "B'", [-1, 0.8], null, 22], ['seg', f.Ap, f.Bp, 'cx-line'],
+         ['mark', function (g) {
+           tick2(g, f.B, f.O); tick2(g, f.O, f.Bp);
+           says(g, 2, '៣. សង់ B\' ឆ្លុះនឹង B ធៀបនឹង O (OB\' = OB) រួចគូសកន្លះបន្ទាត់ A\'B\'');
+         }]],
+        [['seg', f.C, f.Cp, aux], ['pt', f.Cp, "C'", [-1, -0.4], null, 22], ['seg', f.Ap, f.Cp, 'cx-line'],
+         ['mark', function (g) {
+           says(g, 3, '៤. សង់ C\' ឆ្លុះនឹង C ធៀបនឹង O (OC\' = OC) រួចគូសកន្លះបន្ទាត់ A\'C\'');
+         }]],
+        [['mark', function (g) {
+           wedgeBetween(g, f.Cp, f.Ap, f.Bp, 32, 'a');
+           says(g, 4, '៥. មុំ ∠B\'A\'C\' ឆ្លុះនឹង ∠BAC ធៀប O ⟹ ∠B\'A\'C\' = ∠BAC (មុំប៉ុនគ្នា)');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 4: Triangle ABC with median AI, and points D, H symmetric to B, I about C
+  CX['g7-l19-ex04'] = scripted({
+    steps: 5,
+    start: { A: [270, 150], B: [160, 340] },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var C = [320, 340];
+      var B = [160, 340];
+      var I = [240, 340];
+      var H = [400, 340];
+      var D = [480, 340];
+      var A = [s.A[0], Math.max(100, Math.min(220, s.A[1]))];
+      return { A: A, B: B, C: C, I: I, H: H, D: D };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.A, 'A', [0, -1], null, 'A', 22);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.B, f.C, 'cx-line'], ['seg', f.A, f.B, 'cx-line'], ['seg', f.A, f.C, 'cx-line'], ['seg', f.A, f.I, aux],
+         ['pt', f.B, 'B', [0, 1], null, 22], ['pt', f.C, 'C', [0, 1], null, 22], ['pt', f.I, 'I', [0, 1], null, 20],
+         ['mark', function (g) {
+           triFill(g, f.A, f.B, f.C);
+           tick(g, f.B, f.I); tick(g, f.I, f.C);
+           label(g, add(mul(add(f.A, f.I), 0.5), [-24, 0]), '[AI]', 'cx-note');
+           says(g, 0, '១. គូសត្រីកោណ ABC និងមេដ្យាន AI (I ជាចំណុចកណ្ដាលនៃ BC)');
+         }]],
+        [['seg', f.C, f.D, 'cx-line'], ['pt', f.D, 'D', [0, 1], null, 22],
+         ['mark', function (g) {
+           tick2(g, f.B, f.C); tick2(g, f.C, f.D);
+           says(g, 1, '២. បន្លាយ BC ឱ្យបាន CD = CB (D ជាចំណុចឆ្លុះនៃ B ធៀបនឹង C)');
+         }]],
+        [['pt', f.H, 'H', [0, 1], null, 20],
+         ['mark', function (g) {
+           tick(g, f.C, f.H); tick(g, f.H, f.D);
+           says(g, 2, '៣. សង់ H លើបន្ទាត់ដោយ CH = CI (H ជាចំណុចឆ្លុះនៃ I ធៀបនឹង C)');
+         }]],
+        [['seg', f.A, f.D, 'cx-line'], ['seg', f.A, f.H, aux],
+         ['mark', function (g) {
+           poly(g, [f.A, f.C, f.D], { fill: 'rgba(56, 161, 105, 0.12)', stroke: 'none' });
+           label(g, add(mul(add(f.A, f.H), 0.5), [24, 0]), '[AH]', 'cx-note');
+           says(g, 3, '៤. គូសជ្រុង AD បង្កើតបានត្រីកោណ ADC រួចគូសអង្កត់ AH');
+         }]],
+        [['mark', function (g) {
+           says(g, 4, '៥. ដោយ CH = CI = ½ CD នាំឱ្យ H ជាចំណុចកណ្ដាលនៃ CD ⟹ AH ជាមេដ្យាននៃ ADC');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 5: Isosceles triangle ABC, point D symmetric to C across A
+  CX['g7-l19-ex05'] = scripted({
+    steps: 5,
+    start: { B: [435, 316] },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var A = [320, 220], R = 150;
+      var C = [190, 295];
+      var D = [450, 145];
+      var B = [435, 316];
+      var arcA = { c: A, r: R, t1: -Math.PI / 4, t2: 0 };
+      return { A: A, B: B, C: C, D: D, R: R, arcA: arcA };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.A, 'A', [-1, -0.6], null, null, 20);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.A, f.C, 'cx-line'], ['seg', f.B, f.C, 'cx-line'],
+         ['pt', f.B, 'B', [1, 0.8], null, 22], ['pt', f.C, 'C', [-1, 0.8], null, 22],
+         ['mark', function (g) {
+           triFill(g, f.A, f.B, f.C);
+           tick(g, f.A, f.B); tick(g, f.A, f.C);
+           says(g, 0, '១. សង់ត្រីកោណសមបាត ABC កំពូល A (AB = AC)');
+         }]],
+        [['seg', f.A, f.D, aux],
+         ['mark', function (g) {
+           says(g, 1, '២. គូសបន្ទាត់ CA រួចបន្លាយខាង A ឱ្យហួសពីកំពូល A');
+         }]],
+        [['arc', f.arcA], ['pt', f.D, 'D', [1, -0.6], null, 22],
+         ['mark', function (g) {
+           tick(g, f.A, f.D);
+           says(g, 2, '៣. គូសធ្នូកាំ AC ផ្ចិត A កាត់បន្ទាត់ត្រង់ D គេបាន AD = AC (D ឆ្លុះ C ធៀប A)');
+         }]],
+        [['seg', f.B, f.D, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.A, f.B, f.D], { fill: 'rgba(56, 161, 105, 0.12)', stroke: 'none' });
+           says(g, 3, '៤. គូសអង្កត់ BD គេបានត្រីកោណ ABD');
+         }]],
+        [['mark', function (g) {
+           rightMark(g, f.B, unit(sub(f.C, f.B)), unit(sub(f.D, f.B)));
+           says(g, 4, '៥. ដោយ AB = AC និង AD = AC ⟹ AB = AD នាំឱ្យ △ABD ជាត្រីកោណសមបាតកំពូល A');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 6: Line reflection of points A, B, C across line d on grid
+  CX['g7-l19-ex06'] = scripted({
+    steps: 5,
+    start: { A: [190, 174], B: [302, 286] },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var dY = 230, u = 56;
+      var A = [190, 174], B = [302, 286], C = [414, 230];
+      var Ap = [190, 286], Bp = [302, 174], Cp = [414, 230];
+      var Ha = [190, 230], Hb = [302, 230];
+      return { dY: dY, u: u, A: A, B: B, C: C, Ap: Ap, Bp: Bp, Cp: Cp, Ha: Ha, Hb: Hb };
+    },
+    base: function (f, ink) {
+      var u = f.u;
+      for (var x = 134; x <= 470; x += u) {
+        el('line', { x1: x, y1: 118, x2: x, y2: 342, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+      for (var y = 118; y <= 342; y += u) {
+        el('line', { x1: 134, y1: y, x2: 470, y2: y, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+      el('line', { x1: 100, y1: f.dY, x2: 504, y2: f.dY, class: 'cx-line', 'stroke-width': 2.5 }, ink);
+      label(ink, [516, f.dY - 10], 'd', 'cx-label');
+    },
+    top: function (f, ink) {},
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['pt', f.A, 'A', [0, -1], null, 22], ['pt', f.B, 'B', [0, 1], null, 22], ['pt', f.C, 'C', [0.8, -0.8], null, 22],
+         ['mark', function (g) {
+           says(g, 0, '១. គេមានបន្ទាត់ d និងចំណុច A (លើ d ១ ការ៉ូ), B (ក្រោម d ១ ការ៉ូ), C (លើ d)');
+         }]],
+        [['seg', f.A, f.Ap, aux], ['pt', f.Ap, "A'", [0, 1], null, 22],
+         ['mark', function (g) {
+           rightMark(g, f.Ha, [1, 0], [0, -1]);
+           tick(g, f.A, f.Ha); tick(g, f.Ha, f.Ap);
+           says(g, 1, '២. គូសពី A កែងនឹង d ចុះក្រោម ១ ការ៉ូ បានចំណុច A\' ឆ្លុះនឹង A ធៀបនឹង d');
+         }]],
+        [['seg', f.B, f.Bp, aux], ['pt', f.Bp, "B'", [0, -1], null, 22],
+         ['mark', function (g) {
+           rightMark(g, f.Hb, [1, 0], [0, 1]);
+           tick2(g, f.B, f.Hb); tick2(g, f.Hb, f.Bp);
+           says(g, 2, '៣. គូសពី B កែងនឹង d ឡើងលើ ១ ការ៉ូ បានចំណុច B\' ឆ្លុះនឹង B ធៀបនឹង d');
+         }]],
+        [['mark', function (g) {
+           label(g, add(f.C, [14, 18]), "C' ≡ C", 'cx-note');
+           says(g, 3, '៤. ដោយចំណុច C ឋិតនៅលើបន្ទាត់ d ស្រាប់ នាំឱ្យចំណុចឆ្លុះ C\' ត្រួតលើ C ផ្ទាល់');
+         }]],
+        [['mark', function (g) {
+           says(g, 4, '៥. រូបរួចរាល់៖ បន្ទាត់ d ជាមេដ្យាទ័រនៃ AA\' និង BB\' (ចម្ងាយស្មើគ្នាធៀប d)');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 7: Line reflection of triangle ABC across line d on grid
+  CX['g7-l19-ex07'] = scripted({
+    steps: 5,
+    start: { A: [180, 334], B: [284, 282], C: [388, 334] },
+    limit: function (s, key, p) { return true; },
+    figure: function (s) {
+      var dY = 230, u = 52;
+      var A = [180, 334], B = [284, 282], C = [388, 334];
+      var Ap = [180, 126], Bp = [284, 178], Cp = [388, 126];
+      return { dY: dY, u: u, A: A, B: B, C: C, Ap: Ap, Bp: Bp, Cp: Cp };
+    },
+    base: function (f, ink) {
+      var u = f.u;
+      for (var x = 128; x <= 440; x += u) {
+        el('line', { x1: x, y1: 100, x2: x, y2: 360, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+      for (var y = 126; y <= 334; y += u) {
+        el('line', { x1: 128, y1: y, x2: 440, y2: y, stroke: '#cbd5e1', 'stroke-width': 1 }, ink);
+      }
+      el('line', { x1: 100, y1: f.dY, x2: 470, y2: f.dY, class: 'cx-line', 'stroke-width': 2.5 }, ink);
+      label(ink, [482, f.dY - 10], 'd', 'cx-label');
+    },
+    top: function (f, ink) {},
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.B, f.C, 'cx-line'], ['seg', f.C, f.A, 'cx-line'],
+         ['pt', f.A, 'A', [0, 1], null, 22], ['pt', f.B, 'B', [0.8, -0.6], null, 22], ['pt', f.C, 'C', [0, 1], null, 22],
+         ['mark', function (g) {
+           triFill(g, f.A, f.B, f.C);
+           says(g, 0, '១. គេមានត្រីកោណ ABC នៅខាងក្រោមបន្ទាត់ d (A, C នៅក្រោម ២ ការ៉ូ, B នៅក្រោម ១ ការ៉ូ)');
+         }]],
+        [['seg', f.A, f.Ap, aux], ['pt', f.Ap, "A'", [0, -1], null, 22],
+         ['mark', function (g) {
+           says(g, 1, '២. គូសពី A កែងនឹង d ឡើងលើ ២ ការ៉ូ បានចំណុច A\' ឆ្លុះនឹង A ធៀបនឹង d');
+         }]],
+        [['seg', f.B, f.Bp, aux], ['seg', f.C, f.Cp, aux], ['pt', f.Bp, "B'", [0.8, 0.6], null, 22], ['pt', f.Cp, "C'", [0, -1], null, 22],
+         ['mark', function (g) {
+           says(g, 2, '៣. សង់ B\' (ឡើងលើ ១ ការ៉ូ) និង C\' (ឡើងលើ ២ ការ៉ូ) ឆ្លុះនឹង B និង C ធៀប d');
+         }]],
+        [['seg', f.Ap, f.Bp, 'cx-line'], ['seg', f.Bp, f.Cp, 'cx-line'], ['seg', f.Cp, f.Ap, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.Ap, f.Bp, f.Cp], { fill: 'rgba(56, 161, 105, 0.14)', stroke: 'none' });
+           says(g, 3, '៤. ភ្ជាប់ A\'B\', B\'C\' និង C\'A\' គេបានត្រីកោណ A\'B\'C\' ឆ្លុះនឹង △ABC');
+         }]],
+        [['mark', function (g) {
+           says(g, 4, '៥. ត្រីកោណទាំងពីរមានទំហំប៉ុនគ្នា (A\'B\'=AB, B\'C\'=BC, C\'A\'=CA) បត់តាម d ត្រួតស៊ីគ្នា');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 8: Axes of symmetry of equilateral triangle, rectangle, regular hexagon
+  CX['g7-l19-ex08'] = scripted({
+    steps: 5,
+    start: {},
+    limit: function () { return true; },
+    figure: function () {
+      var c1 = [125, 230], r1 = 70;
+      var triA = [c1[0], c1[1] - r1];
+      var triB = [c1[0] - r1 * Math.cos(Math.PI / 6), c1[1] + r1 * Math.sin(Math.PI / 6)];
+      var triC = [c1[0] + r1 * Math.cos(Math.PI / 6), c1[1] + r1 * Math.sin(Math.PI / 6)];
+
+      var c2 = [320, 230], rw = 150, rh = 100;
+      var rectA = [c2[0] - rw / 2, c2[1] - rh / 2];
+      var rectB = [c2[0] + rw / 2, c2[1] - rh / 2];
+      var rectC = [c2[0] + rw / 2, c2[1] + rh / 2];
+      var rectD = [c2[0] - rw / 2, c2[1] + rh / 2];
+
+      var c3 = [515, 230], r3 = 70;
+      var hexPts = [];
+      for (var k = 0; k < 6; k++) {
+        var th = k * Math.PI / 3;
+        hexPts.push([c3[0] + r3 * Math.cos(th), c3[1] + r3 * Math.sin(th)]);
+      }
+      return { c1: c1, triA: triA, triB: triB, triC: triC,
+               c2: c2, rw: rw, rh: rh, rectA: rectA, rectB: rectB, rectC: rectC, rectD: rectD,
+               c3: c3, r3: r3, hexPts: hexPts };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {},
+    script: function (f) {
+      var ax = 'cx-line cx-line-2';
+      return [
+        [['seg', f.triA, f.triB, 'cx-line'], ['seg', f.triB, f.triC, 'cx-line'], ['seg', f.triC, f.triA, 'cx-line'],
+         ['seg', f.rectA, f.rectB, 'cx-line'], ['seg', f.rectB, f.rectC, 'cx-line'], ['seg', f.rectC, f.rectD, 'cx-line'], ['seg', f.rectD, f.rectA, 'cx-line'],
+         ['seg', f.hexPts[0], f.hexPts[1], 'cx-line'], ['seg', f.hexPts[1], f.hexPts[2], 'cx-line'], ['seg', f.hexPts[2], f.hexPts[3], 'cx-line'],
+         ['seg', f.hexPts[3], f.hexPts[4], 'cx-line'], ['seg', f.hexPts[4], f.hexPts[5], 'cx-line'], ['seg', f.hexPts[5], f.hexPts[0], 'cx-line'],
+         ['mark', function (g) {
+           triFill(g, f.triA, f.triB, f.triC);
+           poly(g, [f.rectA, f.rectB, f.rectC, f.rectD], { fill: 'rgba(56, 161, 105, 0.12)', stroke: 'none' });
+           poly(g, f.hexPts, { fill: 'rgba(45, 106, 168, 0.12)', stroke: 'none' });
+           label(g, add(f.c1, [0, 110]), 'ក. ត្រីកោណសម័ង្ស', 'cx-note');
+           label(g, add(f.c2, [0, 110]), 'ខ. ចតុកោណកែង', 'cx-note');
+           label(g, add(f.c3, [0, 110]), 'គ. ឆកោណនិយ័ត', 'cx-note');
+           says(g, 0, '១. គេមានរូបធរណីមាត្រទាំងបី៖ ត្រីកោណសម័ង្ស, ចតុកោណកែង និងឆកោណនិយ័ត');
+         }]],
+        [['seg', [f.c1[0], f.c1[1] - 95], [f.c1[0], f.c1[1] + 55], ax],
+         ['seg', add(f.c1, mul(unit(sub(f.triB, f.c1)), 95)), add(f.c1, mul(unit(sub(f.c1, f.triB)), 55)), ax],
+         ['seg', add(f.c1, mul(unit(sub(f.triC, f.c1)), 95)), add(f.c1, mul(unit(sub(f.c1, f.triC)), 55)), ax],
+         ['mark', function (g) {
+           label(g, add(f.c1, [0, 130]), 'អ័ក្សឆ្លុះ = ៣', 'cx-label');
+           says(g, 1, '២. ត្រីកោណសម័ង្សមានអ័ក្សឆ្លុះ ៣ (មេដ្យាទ័រនៃជ្រុងទាំង ៣ កាត់តាមកំពូលឈម)');
+         }]],
+        [['seg', [f.c2[0], f.c2[1] - 75], [f.c2[0], f.c2[1] + 75], ax],
+         ['seg', [f.c2[0] - 100, f.c2[1]], [f.c2[0] + 100, f.c2[1]], ax],
+         ['mark', function (g) {
+           label(g, add(f.c2, [0, 130]), 'អ័ក្សឆ្លុះ = ២', 'cx-label');
+           says(g, 2, '៣. ចតុកោណកែងមានអ័ក្សឆ្លុះ ២ (មេដ្យាទ័រនៃជ្រុងឈមទាំងពីរគូ បញ្ឈរ និងផ្តេក)');
+         }]],
+        [['seg', [f.c3[0] - 90, f.c3[1]], [f.c3[0] + 90, f.c3[1]], ax],
+         ['seg', add(f.c3, mul(unit(sub(f.hexPts[1], f.c3)), 90)), add(f.c3, mul(unit(sub(f.hexPts[4], f.c3)), 90)), ax],
+         ['seg', add(f.c3, mul(unit(sub(f.hexPts[2], f.c3)), 90)), add(f.c3, mul(unit(sub(f.hexPts[5], f.c3)), 90)), ax],
+         ['seg', [f.c3[0], f.c3[1] - 80], [f.c3[0], f.c3[1] + 80], ax],
+         ['seg', add(f.c3, [-69, -40]), add(f.c3, [69, 40]), ax],
+         ['seg', add(f.c3, [-69, 40]), add(f.c3, [69, -40]), ax],
+         ['mark', function (g) {
+           label(g, add(f.c3, [0, 130]), 'អ័ក្សឆ្លុះ = ៦', 'cx-label');
+           says(g, 3, '៤. ឆកោណនិយ័តមានអ័ក្សឆ្លុះ ៦ (៣ កាត់តាមកំពូលឈមគ្នា និង ៣ ជាមេដ្យាទ័រជ្រុង)');
+         }]],
+        [['mark', function (g) {
+           says(g, 4, '៥. សន្និដ្ឋាន៖ ត្រីកោណសម័ង្សមាន ៣ អ័ក្ស, ចតុកោណកែងមាន ២ អ័ក្ស, ឆកោណនិយ័តមាន ៦ អ័ក្ស');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 10: Reflections of trapezoid ABCD about point O and line L
+  CX['g7-l19-ex10'] = scripted({
+    steps: 5,
+    start: {},
+    limit: function () { return true; },
+    figure: function () {
+      var O = [160, 230];
+      var A = [90, 170], B = [150, 140], C = [190, 185], D = [100, 220];
+      var Ap = [2 * O[0] - A[0], 2 * O[1] - A[1]];
+      var Bp = [2 * O[0] - B[0], 2 * O[1] - B[1]];
+      var Cp = [2 * O[0] - C[0], 2 * O[1] - C[1]];
+      var Dp = [2 * O[0] - D[0], 2 * O[1] - D[1]];
+
+      var Lx = 470;
+      var A2 = [435, 170], D2 = [385, 140], C2 = [350, 230], B2 = [425, 255];
+      var A2p = [2 * Lx - A2[0], A2[1]];
+      var D2p = [2 * Lx - D2[0], D2[1]];
+      var C2p = [2 * Lx - C2[0], C2[1]];
+      var B2p = [2 * Lx - B2[0], B2[1]];
+
+      return { O: O, A: A, B: B, C: C, D: D, Ap: Ap, Bp: Bp, Cp: Cp, Dp: Dp,
+               Lx: Lx, A2: A2, D2: D2, C2: C2, B2: B2, A2p: A2p, D2p: D2p, C2p: C2p, B2p: B2p };
+    },
+    base: function (f, ink) {
+      el('line', { x1: 315, y1: 50, x2: 315, y2: 410, stroke: '#e2e8f0', 'stroke-width': 1.5, 'stroke-dasharray': '4 4' }, ink);
+      el('line', { x1: f.Lx, y1: 80, x2: f.Lx, y2: 380, class: 'cx-line', 'stroke-width': 2.5 }, ink);
+      label(ink, [f.Lx + 14, 95], 'L', 'cx-label');
+    },
+    top: function (f, ink) {
+      point(ink, f.O, 'O', [0.8, 0.8], null, null, 18);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2';
+      return [
+        [['seg', f.A, f.B, 'cx-line'], ['seg', f.B, f.C, 'cx-line'], ['seg', f.C, f.D, 'cx-line'], ['seg', f.D, f.A, 'cx-line'],
+         ['pt', f.A, 'A', [-1, -0.6], null, 20], ['pt', f.B, 'B', [0, -1], null, 20], ['pt', f.C, 'C', [1, 0], null, 20], ['pt', f.D, 'D', [-1, 0.6], null, 20],
+         ['seg', f.A2, f.D2, 'cx-line'], ['seg', f.D2, f.C2, 'cx-line'], ['seg', f.C2, f.B2, 'cx-line'], ['seg', f.B2, f.A2, 'cx-line'],
+         ['pt', f.A2, 'A', [1, -0.6], null, 20], ['pt', f.D2, 'D', [0, -1], null, 20], ['pt', f.C2, 'C', [-1, 0], null, 20], ['pt', f.B2, 'B', [-0.6, 1], null, 20],
+         ['mark', function (g) {
+           poly(g, [f.A, f.B, f.C, f.D], { fill: 'rgba(45, 106, 168, 0.14)', stroke: 'none' });
+           poly(g, [f.A2, f.D2, f.C2, f.B2], { fill: 'rgba(45, 106, 168, 0.14)', stroke: 'none' });
+           label(g, [160, 395], 'ក. ឆ្លុះធៀបនឹងចំណុច O', 'cx-label');
+           label(g, [470, 395], 'ខ. ឆ្លុះធៀបនឹងបន្ទាត់ L', 'cx-label');
+           says(g, 0, '១. គេមានចតុកោណព្នាយ ABCD៖ ករណី ក ធៀបផ្ចិត O និងករណី ខ ធៀបបន្ទាត់ L');
+         }]],
+        [['seg', f.A, f.Ap, aux], ['seg', f.B, f.Bp, aux], ['seg', f.C, f.Cp, aux], ['seg', f.D, f.Dp, aux],
+         ['pt', f.Ap, "A'", [1, 0.6], null, 20], ['pt', f.Bp, "B'", [0, 1], null, 20], ['pt', f.Cp, "C'", [-1, 0], null, 20], ['pt', f.Dp, "D'", [1, -0.6], null, 20],
+         ['mark', function (g) {
+           says(g, 1, '២. ករណី ក៖ គូសពី A, B, C, D កាត់ O បន្លាយឱ្យបាន OA\'=OA, OB\'=OB...');
+         }]],
+        [['seg', f.Ap, f.Bp, 'cx-line'], ['seg', f.Bp, f.Cp, 'cx-line'], ['seg', f.Cp, f.Dp, 'cx-line'], ['seg', f.Dp, f.Ap, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.Ap, f.Bp, f.Cp, f.Dp], { fill: 'rgba(56, 161, 105, 0.14)', stroke: 'none' });
+           says(g, 2, '៣. ភ្ជាប់ A\'B\'C\'D\' គេបានចតុកោណព្នាយឆ្លុះនឹង ABCD ធៀបនឹងចំណុច O');
+         }]],
+        [['seg', f.A2, f.A2p, aux], ['seg', f.D2, f.D2p, aux], ['seg', f.C2, f.C2p, aux], ['seg', f.B2, f.B2p, aux],
+         ['pt', f.A2p, "A'", [1, -0.6], null, 20], ['pt', f.D2p, "D'", [0, -1], null, 20], ['pt', f.C2p, "C'", [1, 0], null, 20], ['pt', f.B2p, "B'", [0.6, 1], null, 20],
+         ['mark', function (g) {
+           says(g, 3, '៤. ករណី ខ៖ គូសពី A, B, C, D កែងនឹង L បន្លាយស្មើចម្ងាយទៅម្ខាងទៀតនៃ L');
+         }]],
+        [['seg', f.A2p, f.D2p, 'cx-line'], ['seg', f.D2p, f.C2p, 'cx-line'], ['seg', f.C2p, f.B2p, 'cx-line'], ['seg', f.B2p, f.A2p, 'cx-line'],
+         ['mark', function (g) {
+           poly(g, [f.A2p, f.D2p, f.C2p, f.B2p], { fill: 'rgba(56, 161, 105, 0.14)', stroke: 'none' });
+           says(g, 4, '៥. ភ្ជាប់ A\'B\'C\'D\' គេបានចតុកោណព្នាយឆ្លុះនឹង ABCD ធៀបនឹងបន្ទាត់ L');
+         }]],
+      ];
+    },
+  });
+
+  // Exercise 11: Two equal circles and their two axes of symmetry
+  CX['g7-l19-ex11'] = scripted({
+    steps: 5,
+    start: { O1: [210, 230], O2: [430, 230] },
+    limit: function (s, key, p) {
+      if (key === 'O1') return p[0] >= 140 && p[0] <= s.O2[0] - 140;
+      if (key === 'O2') return p[0] >= s.O1[0] + 140 && p[0] <= 500;
+      return true;
+    },
+    figure: function (s) {
+      var O1 = [s.O1[0], 230], O2 = [s.O2[0], 230], R = 85;
+      var M = [mul(add(O1, O2), 0.5)[0], 230];
+      var d1_left = [50, 230], d1_right = [590, 230];
+      var d2_top = [M[0], 60], d2_bot = [M[0], 400];
+      return { O1: O1, O2: O2, R: R, M: M, d1_left: d1_left, d1_right: d1_right, d2_top: d2_top, d2_bot: d2_bot };
+    },
+    base: function (f, ink) {},
+    top: function (f, ink) {
+      point(ink, f.O1, 'O₁', [-1, 1], null, 'O1', 22);
+      point(ink, f.O2, 'O₂', [1, 1], null, 'O2', 22);
+    },
+    script: function (f) {
+      var ax = 'cx-line cx-line-2';
+      return [
+        [['circ', f.O1, add(f.O1, [f.R, 0])], ['circ', f.O2, add(f.O2, [f.R, 0])],
+         ['mark', function (g) {
+           el('circle', { cx: f.O1[0], cy: f.O1[1], r: f.R, fill: 'rgba(45, 106, 168, 0.10)', stroke: 'none' }, g);
+           el('circle', { cx: f.O2[0], cy: f.O2[1], r: f.R, fill: 'rgba(56, 161, 105, 0.10)', stroke: 'none' }, g);
+           says(g, 0, '១. គូសរង្វង់ពីរមានកាំ R ប៉ុនគ្នា ដែលមានផ្ចិត O₁ និង O₂');
+         }]],
+        [['seg', f.O1, f.O2, 'cx-line'], ['pt', f.M, 'M', [0.8, 1], null, 20],
+         ['mark', function (g) {
+           tick(g, f.O1, f.M); tick(g, f.M, f.O2);
+           says(g, 1, '២. គូសអង្កត់តភ្ជាប់ផ្ចិត [O₁O₂] និងកំណត់ចំណុចកណ្ដាល M (MO₁ = MO₂)');
+         }]],
+        [['seg', f.d1_left, f.d1_right, ax],
+         ['mark', function (g) {
+           label(g, add(f.d1_right, [-25, -14]), 'd₁ (បន្ទាត់ផ្ចិត)', 'cx-label');
+           says(g, 2, '៣. គូសបន្ទាត់ d₁ កាត់តាម O₁ និង O₂៖ ជាអ័ក្សឆ្លុះទីមួយ (រង្វង់ឆ្លុះលើខ្លួនឯង)');
+         }]],
+        [['seg', f.d2_top, f.d2_bot, ax],
+         ['mark', function (g) {
+           rightMark(g, f.M, [1, 0], [0, -1]);
+           label(g, add(f.d2_top, [45, 14]), 'd₂ (មេដ្យាទ័រ)', 'cx-label');
+           says(g, 3, '៤. គូសបន្ទាត់ d₂ ⊥ [O₁O₂] ត្រង់ M (មេដ្យាទ័រ)៖ ជាអ័ក្សឆ្លុះទីពីរ (ឆ្លុះរង្វង់ O₁ ទៅ O₂)');
+         }]],
+        [['mark', function (g) {
+           says(g, 4, '៥. សន្និដ្ឋាន៖ រង្វង់ពីរមានកាំប៉ុនគ្នា តែងតែមានអ័ក្សឆ្លុះចំនួន ២ (បន្ទាត់ផ្ចិត d₁ និងមេដ្យាទ័រ d₂)');
+         }]],
+      ];
+    },
+  });
+
+  // Grade 7, Lesson 12, Practice (ប្រតិបត្តិ): Compare segments AB, BC, CD and AC using compass
+  CX['g7-l12-compare-segments'] = scripted({
+    steps: 6,
+    start: {},
+    limit: function () { return true; },
+    figure: function () {
+      var y = 240;
+      var A = [80, y], B = [190, y], C = [350, y], D = [540, y];
+      var rAB = 110, rBC = 160, rCD = 190;
+      var B1 = [B[0] + rAB, y];
+      var C1 = [C[0] + rBC, y];
+      var A1 = [A[0] + rCD, y];
+
+      var arcAB = { c: A, r: rAB, t1: -0.42, t2: 0.42 };
+      var arcB1 = { c: B, r: rAB, t1: -0.42, t2: 0.42 };
+      var arcBC = { c: B, r: rBC, t1: -0.40, t2: 0.40 };
+      var arcC1 = { c: C, r: rBC, t1: -0.40, t2: 0.40 };
+      var arcCD = { c: C, r: rCD, t1: -0.38, t2: 0.38 };
+      var arcA1 = { c: A, r: rCD, t1: -0.38, t2: 0.38 };
+
+      return {
+        y: y, A: A, B: B, C: C, D: D,
+        rAB: rAB, rBC: rBC, rCD: rCD,
+        B1: B1, C1: C1, A1: A1,
+        arcAB: arcAB, arcB1: arcB1,
+        arcBC: arcBC, arcC1: arcC1,
+        arcCD: arcCD, arcA1: arcA1
+      };
+    },
+    base: function (f, ink) {
+      el('line', { x1: 30, y1: f.y, x2: 610, y2: f.y, class: 'cx-seg' }, ink);
+      label(ink, [40, f.y - 14], 'x', 'cx-label');
+      label(ink, [600, f.y - 14], 'y', 'cx-label');
+    },
+    top: function (f, ink) {
+      point(ink, f.A, 'A', [0, 1.4], null, null, 22);
+      point(ink, f.B, 'B', [0, 1.4], null, null, 22);
+      point(ink, f.C, 'C', [0, 1.4], null, null, 22);
+      point(ink, f.D, 'D', [0, 1.4], null, null, 22);
+    },
+    script: function (f) {
+      function dimBar(g, x1, x2, y, text, color) {
+        el('line', { x1: x1, y1: y, x2: x2, y2: y, stroke: color, 'stroke-width': 2.2 }, g);
+        el('line', { x1: x1, y1: y - 5, x2: x1, y2: y + 5, stroke: color, 'stroke-width': 2.2 }, g);
+        el('line', { x1: x2, y1: y - 5, x2: x2, y2: y + 5, stroke: color, 'stroke-width': 2.2 }, g);
+        if (text) {
+          var ty = y > f.y ? y + 16 : y - 8;
+          var t = el('text', { x: (x1 + x2) / 2, y: ty, 'text-anchor': 'middle', class: 'cx-note', fill: color, 'font-weight': 'bold' }, g);
+          t.textContent = text;
+        }
+      }
+
+      return [
+        [['mark', function (g) {
+          dimBar(g, f.A[0], f.B[0], 295, 'AB', '#2d6aa8');
+          dimBar(g, f.B[0], f.C[0], 295, 'BC', '#2e7a70');
+          dimBar(g, f.C[0], f.D[0], 295, 'CD', '#c9862b');
+          says(g, 0, '១. គេមានបន្ទាត់ xy និងចំណុច ៤៖ A, B, C, D (រៀបតាមលំដាប់)');
+          says(g, 1, '• គោលបំណង៖ ប្រៀបធៀបអង្កត់ដោយប្រើដែកឈាន (មិនប្រើបន្ទាត់ក្រិត)');
+        }]],
+        [['arc', f.arcAB],
+         ['mark', function (g) {
+           dimBar(g, f.A[0], f.B[0], 295, 'AB (កាំដែកឈាន)', '#2d6aa8');
+           says(g, 0, '១. គេមានចំណុច A, B, C, D លើបន្ទាត់ xy');
+           says(g, 1, '២. ក. ដាក់ម្ជុលដែកឈានត្រង់ A ខ្មៅដៃត្រង់ B វាស់ប្រវែង AB (កាំ r = AB)');
+         }]],
+        [['arc', f.arcB1],
+         ['pt', f.B1, "B₁", [0, -1.2], 'cx-pt-m', 20],
+         ['mark', function (g) {
+           dimBar(g, f.B[0], f.B1[0], 295, 'BB₁ = AB', '#2d6aa8');
+           dimBar(g, f.B[0], f.C[0], 335, 'BC', '#2e7a70');
+           el('rect', { x: 260, y: 70, width: 330, height: 42, rx: 6, fill: '#ebf8ff', stroke: '#3182ce', 'stroke-width': 1.5 }, g);
+           var res = el('text', { x: 425, y: 96, 'text-anchor': 'middle', class: 'cx-note', fill: '#2b6cb0', 'font-size': '16px', 'font-weight': 'bold' }, g);
+           res.textContent = 'ក. ធ្នូធ្លាក់មុន C ⟹ AB < BC (AB ខ្លីជាង BC)';
+           says(g, 0, '២. ក. លើកដែកឈានកាំ AB មកដាក់ត្រង់ B រួចគូសធ្នូកាត់លើ [BC]');
+           says(g, 1, '   ⟹ ចំណុចកាត់ B₁ ស្ថិតនៅចន្លោះ B និង C (មុន C) នាំឱ្យ AB < BC');
+         }]],
+        [['arc', f.arcC1],
+         ['pt', f.C1, "C₁", [0, -1.2], 'cx-pt-m', 20],
+         ['mark', function (g) {
+           dimBar(g, f.C[0], f.C1[0], 295, 'CC₁ = BC', '#2e7a70');
+           dimBar(g, f.C[0], f.D[0], 335, 'CD', '#c9862b');
+           el('rect', { x: 260, y: 70, width: 330, height: 42, rx: 6, fill: '#f0fff4', stroke: '#38a169', 'stroke-width': 1.5 }, g);
+           var res = el('text', { x: 425, y: 96, 'text-anchor': 'middle', class: 'cx-note', fill: '#276749', 'font-size': '16px', 'font-weight': 'bold' }, g);
+           res.textContent = 'ខ. ធ្នូធ្លាក់មុន D ⟹ BC < CD  ឬ  CD > BC';
+           says(g, 0, '៣. ខ. វាស់ [BC] រួចលើកម្ជុលមកដាក់ត្រង់ C គូសធ្នូកាត់លើ [CD]');
+           says(g, 1, '   ⟹ ចំណុចកាត់ C₁ ស្ថិតនៅចន្លោះ C និង D (មុន D) នាំឱ្យ CD > BC');
+         }]],
+        [['arc', f.arcCD],
+         ['mark', function (g) {
+           dimBar(g, f.C[0], f.D[0], 295, 'CD (កាំដែកឈាន)', '#c9862b');
+           says(g, 0, 'លទ្ធផលមុន ៖ ក. AB < BC    |    ខ. CD > BC');
+           says(g, 1, '៤. គ. ដាក់ដែកឈានវាស់អង្កត់ CD (ម្ជុលត្រង់ C ខ្មៅដៃត្រង់ D ទទួលបានកាំ CD)');
+         }]],
+        [['arc', f.arcA1],
+         ['pt', f.A1, "A₁", [0, -1.2], 'cx-pt-m', 20],
+         ['mark', function (g) {
+           dimBar(g, f.A[0], f.A1[0], 180, 'AA₁ = CD', '#c9862b');
+           dimBar(g, f.A[0], f.C[0], 140, 'AC = AB + BC', '#2e7a70');
+           el('rect', { x: 50, y: 360, width: 540, height: 75, rx: 8, fill: '#f7fafc', stroke: '#cbd5e0', 'stroke-width': 1.5 }, g);
+           var t1 = el('text', { x: 320, y: 386, 'text-anchor': 'middle', class: 'cx-note', fill: '#1a202c', 'font-size': '16px', 'font-weight': 'bold' }, g);
+           t1.textContent = 'សន្និដ្ឋានចម្លើយទាំងបី (ក, ខ, គ) ៖';
+           var t2 = el('text', { x: 320, y: 418, 'text-anchor': 'middle', class: 'cx-note', fill: '#2b6cb0', 'font-size': '15px' }, g);
+           t2.textContent = 'ក. AB < BC      |      ខ. CD > BC      |      គ. AC > CD';
+           says(g, 0, '៥. គ. លើកដែកឈានកាំ CD មកដាក់ត្រង់ A រួចគូសធ្នូកាត់លើ [AC]');
+           says(g, 1, '   ⟹ ចំណុចកាត់ A₁ ធ្លាក់មុន C (A₁ ស្ថិតនៅចន្លោះ A និង C) នាំឱ្យ AC > CD');
+         }]],
+      ];
+    },
+  });
+
+  var lineMeet = function (p1, p2, p3, p4) {                // where the line p1p2 meets the line p3p4
+    var d = (p1[0] - p2[0]) * (p3[1] - p4[1]) - (p1[1] - p2[1]) * (p3[0] - p4[0]);
+    var a = p1[0] * p2[1] - p1[1] * p2[0], b = p3[0] * p4[1] - p3[1] * p4[0];
+    return [(a * (p3[0] - p4[0]) - (p1[0] - p2[0]) * b) / d, (a * (p3[1] - p4[1]) - (p1[1] - p2[1]) * b) / d];
+  };
+  var pencilAt = function (tools, e) { el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, tools); };
+
+  // §4 ក: through A, which is not on d, there is exactly one line perpendicular to d. The set square has one
+  // side of its right angle on d and slides along d until its other side passes through A; a tilted line
+  // through A (dashed) shows that no other line does. d turns with its handle, A is dragged.
+  CX['g7-l14-perpendicular'] = scripted({
+    steps: 4,
+    start: { A: [270, 135], D: [590, 285] },
+    limit: parLimit, place: parPlace,
+    figure: function (s) {
+      var f = parFrame(s);
+      f.p1 = add(PAR.C, mul(f.u, -330)); f.p2 = add(PAR.C, mul(f.u, 330));
+      f.H = footOn(f.A, f.p1, f.p2);
+      var tilt = turn(unit(sub(f.H, f.A)), 0.5);
+      f.X = lineMeet(f.A, add(f.A, tilt), f.p1, f.p2);
+      f.Xend = add(f.X, mul(unit(sub(f.X, f.A)), 34));
+      f.hEnd = add(f.H, mul(f.n, -36));
+      return f;
+    },
+    base: function (f, ink) { parGiven(f, ink); },
+    top: function (f, ink) { parHandles(f, ink); },
+    script: function (f) {
+      return [
+        [],
+        [['perp', f.A, f.p1, f.p2, 'cx-line', 36], ['mark', function (g) { label(g, add(f.hEnd, add(mul(f.u, 16), mul(f.n, -8))), 'h', 'cx-label'); }]],
+        [['mark', function (g) { rightMark(g, f.H, f.n, f.u); }], ['pt', f.H, 'H', add(f.u, mul(f.n, -0.9)), null, 20]],
+        [['seg', f.A, f.Xend, 'cx-line cx-line-2'], ['mark', function (g) {
+          label(g, add(add(f.X, mul(f.n, 24)), mul(unit(sub(f.X, f.H)), 40)), '≠ 90°', 'cx-note');
+        }]],
+      ];
+    },
+  });
+
+  // §5.2 1: two lines perpendicular to xy are parallel. The set square sits with one side on xy, the pencil runs
+  // along its other side (d); the set square slides along xy and the pencil runs along that side again (d′).
+  // Run on along the hypotenuse the same way gives L and L′, also parallel. The small circle on xy is how far it slides.
+  var TP = { y: 340, x1: 150, lw: 190, lp: 150, from: 40, to: 600, xmin: 220, xmax: 450 };
+  CX['g7-l14-two-perpendiculars'] = {
+    steps: 8,
+    start: { E: [340, 340] },
+    place: function (s, key, p) { return [Math.max(TP.xmin, Math.min(TP.xmax, p[0])), TP.y]; },
+    limit: function () { return true; },
+    figure: function (s) {
+      var f = { E: s.E, c1: [TP.x1, TP.y], c2: [s.E[0], TP.y], meet: true };
+      var hv = unit([TP.lp, TP.lw]), hyp = function (c) { return [toEdge([c[0], c[1] - TP.lw], mul(hv, -1), 0), toEdge([c[0] + TP.lp, c[1]], hv, 0)]; };
+      f.hv = hv; f.n = [hv[1], -hv[0]]; f.L1 = hyp(f.c1); f.L2 = hyp(f.c2);
+      f.at = function (k) { return [f.c1[0] + (f.c2[0] - f.c1[0]) * k, TP.y]; };
+      return f;
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      var side = function (c) { return [[c[0], c[1]], [c[0], c[1] - TP.lw]]; };
+      var sq = function (c) { drawSetSquare(tools, c, UP, RIGHT, TP.lw, TP.lp); };
+      segLine(ink, [TP.from, TP.y], [TP.to, TP.y], 'cx-seg');
+      label(ink, [TP.from + 6, TP.y + 24], 'x', 'cx-label'); label(ink, [TP.to - 6, TP.y + 24], 'y', 'cx-label');
+      if (i >= 2) { segLine(ink, side(f.c1)[0], side(f.c1)[1], 'cx-line'); label(ink, [f.c1[0] - 16, TP.y - 70], 'd', 'cx-label'); rightMark(marks, f.c1, UP, RIGHT); }
+      if (i >= 4) { segLine(ink, side(f.c2)[0], side(f.c2)[1], 'cx-line'); label(ink, [f.c2[0] - 16, TP.y - 70], 'd′', 'cx-label'); rightMark(marks, f.c2, UP, RIGHT); }
+      if (i >= 5) [f.c1, f.c2].forEach(function (c) { arrowHead(marks, [c[0], TP.y - 110], UP); });
+      if (i >= 6) {
+        [[f.L1, 'L'], [f.L2, 'L′']].forEach(function (q) {
+          segLine(ink, q[0][0], q[0][1], 'cx-line cx-line-2');
+          label(ink, add(add(q[0][0], mul(f.hv, 24)), mul(f.n, 16)), q[1], 'cx-label');
+        });
+      }
+      if (i >= 7) [f.L1, f.L2].forEach(function (q) { arrowHead(marks, mul(add(q[0], q[1]), 0.5), mul(f.hv, -1)); });
+      if (i >= 3) {
+        el('circle', { cx: f.c2[0], cy: TP.y, r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: f.c2[0], cy: TP.y, r: 24, class: 'cx-grab', 'data-drag': 'E' }, ink);
+      }
+      if (i === 1 || i === 2) sq(f.c1);
+      if (i === 3 || i === 4) sq(f.c2);
+      if (i === 6) sq(f.c1);
+    },
+    anim: function (f, i) {
+      var sq = function (tools, c, alpha) { drawSetSquare(tools, c, UP, RIGHT, TP.lw, TP.lp, alpha); };
+      var upright = function (c, dur) {
+        return { dur: dur, draw: function (t, drawn, tools) {
+          var e = [c[0], c[1] - TP.lw * t];
+          segLine(drawn, c, e, 'cx-line'); sq(tools, c); pencilAt(tools, e);
+        } };
+      };
+      if (i === 1) return { phases: [{ dur: 1000, draw: function (t, drawn, tools) { sq(tools, add(f.c1, [0, -46 * (1 - t)]), 0.25 + 0.75 * t); } }] };
+      if (i === 2) return { phases: [upright(f.c1, 1200)] };
+      if (i === 3) return { phases: [{ dur: 1700, draw: function (t, drawn, tools) { sq(tools, f.at(ease(t))); } }] };
+      if (i === 4) return { phases: [upright(f.c2, 1200)] };
+      if (i === 6) {
+        var along = function (q, c) {
+          return { dur: 1500, draw: function (t, drawn, tools) {
+            var e = add(q[0], mul(sub(q[1], q[0]), t));
+            segLine(drawn, q[0], e, 'cx-line cx-line-2'); sq(tools, c); pencilAt(tools, e);
+          } };
+        };
+        return { phases: [
+          along(f.L2, f.c2),
+          { dur: 1400, draw: function (t, drawn, tools) { segLine(drawn, f.L2[0], f.L2[1], 'cx-line cx-line-2'); sq(tools, f.at(1 - ease(t))); } },
+          { dur: 1500, draw: function (t, drawn, tools) {
+            segLine(drawn, f.L2[0], f.L2[1], 'cx-line cx-line-2');
+            var e = add(f.L1[0], mul(sub(f.L1[1], f.L1[0]), t));
+            segLine(drawn, f.L1[0], e, 'cx-line cx-line-2'); sq(tools, f.c1); pencilAt(tools, e);
+          } },
+        ] };
+      }
+      return null;
+    },
+  };
+
+  // §5.2 worked example: h through A perpendicular to d, B a point outside d and h, k through B perpendicular to h.
+  // h ⟂ d and h ⟂ k, so d ∥ k. A and B are dragged (B stays to the right of h).
+  var PD = { y: 340, from: 40, to: 600 };
+  CX['g7-l14-perpendicular-parallel'] = scripted({
+    steps: 5,
+    start: { A: [190, 120], B: [440, 190] },
+    limit: function (s, key, p) {
+      var A = key === 'A' ? p : s.A, B = key === 'B' ? p : s.B;
+      return A[0] >= 90 && A[0] <= 300 && A[1] >= 70 && A[1] <= 230 && B[0] >= A[0] + 110 && B[0] <= 570 && B[1] >= 70 && B[1] <= 250 && Math.abs(B[1] - A[1]) >= 45;
+    },
+    figure: function (s) {
+      var f = { A: s.A, B: s.B, p1: [PD.from, PD.y], p2: [PD.to, PD.y] };
+      f.D = [s.A[0], PD.y]; f.K = [s.A[0], s.B[1]];
+      return f;
+    },
+    base: function (f, ink) {
+      segLine(ink, f.p1, f.p2, 'cx-seg');
+      label(ink, [PD.to - 14, PD.y + 22], 'd', 'cx-label');
+    },
+    top: function (f, ink, i) {
+      point(ink, f.A, 'A', [-1, -0.5], null, 'A', 22);
+      if (i >= 2) point(ink, f.B, 'B', [1, -0.7], null, 'B', 22);
+    },
+    script: function (f) {
+      return [
+        [],
+        [['perp', f.A, f.p1, f.p2, 'cx-line', 36], ['mark', function (g) {
+          rightMark(g, f.D, UP, RIGHT); label(g, [f.D[0] + 16, f.D[1] + 52], 'h', 'cx-label');
+        }]],
+        [],
+        [['perp', f.B, f.A, f.D, 'cx-line cx-line-2', 40], ['mark', function (g) {
+          rightMark(g, f.K, RIGHT, unit(sub(f.A, f.K))); label(g, [f.K[0] - 56, f.K[1] - 14], 'k', 'cx-label');
+        }]],
+        [['mark', function (g) {
+          arrowHead(g, [520, PD.y], RIGHT); arrowHead(g, mul(add(f.K, f.B), 0.5), RIGHT);
+          says(g, 0, 'h ⟂ d  និង  h ⟂ k'); says(g, 1, 'ដូច្នេះ  d ∥ k');
+        }]],
+      ];
+    },
+  });
+
+  // §6 worked example: the altitudes from B and C of the acute triangle ABC meet at H, and the altitude from A
+  // goes through H too (H is the orthocentre). AB ⟂ CH and AC ⟂ BH, so the angles BAC and BHC have their sides
+  // perpendicular in pairs: one is acute, one obtuse, and they add up to 180°.
+  CX['g7-l14-orthocentre'] = scripted({
+    steps: 5,
+    start: { A: [330, 96], B: [130, 380], C: [540, 380] },
+    limit: function (s, key, p) {
+      var t = triangleOf({ A: key === 'A' ? p : s.A, B: key === 'B' ? p : s.B, C: key === 'C' ? p : s.C });
+      var q = key === 'A' ? p : s.A;                       // A stays clear of the working written at the top left
+      return (q[1] >= 100 || q[0] >= 340) && t.least >= 170 && Math.min.apply(null, t.angles) >= 0.62 && Math.max.apply(null, t.angles) <= 1.38;
+    },
+    figure: function (s) {
+      var f = triangleOf(s);
+      f.D = footOn(f.A, f.B, f.C); f.E = footOn(f.B, f.A, f.C); f.F = footOn(f.C, f.A, f.B);
+      f.H = lineMeet(f.B, f.E, f.C, f.F);
+      f.deg = Math.round(f.angles[0] * 180 / Math.PI);
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) { triCorners(f, ink); },
+    script: function (f) {
+      var out = function (X) { return sub(X, f.H); };
+      return [
+        [],
+        [['perp', f.B, f.A, f.C], ['mark', function (g) { rightAt(g, f.E, f.B, f.A, f.C); }], ['pt', f.E, 'E', out(f.E), null, 22]],
+        [['perp', f.C, f.A, f.B], ['mark', function (g) { rightAt(g, f.F, f.C, f.A, f.B); }], ['pt', f.F, 'F', out(f.F), null, 22],
+          ['pt', f.H, 'H', [0.9, 0.5], 'cx-pt-m', 24]],
+        [['perp', f.A, f.B, f.C, 'cx-line cx-line-2'], ['mark', function (g) { rightAt(g, f.D, f.A, f.B, f.C); }], ['pt', f.D, 'D', out(f.D), null, 22]],
+        [['mark', function (g) {
+          wedgeBetween(g, f.A, f.B, f.C, 40, 'a'); wedgeBetween(g, f.H, f.B, f.C, 34, 'b');
+          says(g, 0, '∠BAC = ' + deg(f.deg) + '  ,  ∠BHC = ' + deg(180 - f.deg));
+          says(g, 1, '∠BAC + ∠BHC = ' + deg(f.deg) + ' + ' + deg(180 - f.deg) + ' = 180°');
+        }]],
+      ];
+    },
+  });
+
+  // ===== Grade 7, lesson 17 §4: the sector of a disc ====================================================
+  // The slider is the central angle α (5° to 360°); the handle on A sets the radius R (3 to 12.5 cm, by halves).
+  // 360° goes with the whole circle (2πR, πR²) and α with the share α/360 of it: arc AB = 2πR × α/360,
+  // area S = πR² × α/360, perimeter p = AB + R + R. π = 3.14 as in the book's worked examples.
+  var SEC = { O: [300, 205], cm: 12.5, rmin: 3, rmax: 12.5 };
+  var round2 = function (x) { return Math.round(x * 100) / 100; };
+  function sectorOf(s) {
+    var O = SEC.O, R = (s.P[0] - O[0]) / SEC.cm, a = s.k, rad = a * Math.PI / 180, px = R * SEC.cm, share = a / 360;
+    var f = { O: O, R: R, px: px, a: a, rad: rad, share: share, meet: true };
+    f.A = [O[0] + px, O[1]];
+    f.B = a >= 360 ? f.A : [O[0] + px * Math.cos(rad), O[1] - px * Math.sin(rad)];
+    f.arc = round2(2 * 3.14 * R * share); f.area = round2(3.14 * R * R * share); f.per = round2(f.arc + 2 * R);
+    return f;
+  }
+  // the sector up to the share t of its angle (with its two radii when closed, else only the arc)
+  function sectorPath(f, t, closed) {
+    var rad = f.rad * t, O = f.O, px = f.px, pt = function (th) { return (O[0] + px * Math.cos(th)).toFixed(1) + ' ' + (O[1] - px * Math.sin(th)).toFixed(1); };
+    var start = (closed ? 'M' + O.join(' ') + 'L' : 'M') + f.A.join(' ');
+    if (rad < 1e-4) return '';
+    if (rad >= 2 * Math.PI - 1e-3) return start + 'A' + px + ' ' + px + ' 0 1 0 ' + pt(Math.PI) + 'A' + px + ' ' + px + ' 0 1 0 ' + f.A.join(' ') + (closed ? 'Z' : '');
+    return start + 'A' + px + ' ' + px + ' 0 ' + (rad > Math.PI ? 1 : 0) + ' 0 ' + pt(rad) + (closed ? 'Z' : '');
+  }
+  var secCase = function (R, a) { return function (s) { s.P = [SEC.O[0] + R * SEC.cm, SEC.O[1]]; s.k = a; }; };
+  CX['sector'] = {
+    steps: 5,
+    start: { P: [SEC.O[0] + 12 * SEC.cm, SEC.O[1]], k: 144 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: function (s) {
+      var f = sectorOf(s), share = Math.round(f.share * 1000) / 10;
+      var words = s.k === 90 ? '  (មួយភាគបួននៃថាស)' : s.k === 180 ? '  (កន្លះថាស)' : s.k === 360 ? '  (ថាសទាំងមូល)' : '';
+      return 'α = ' + s.k + '°  →  α/360 = ' + s.k + '/360 = ' + share + '% នៃថាស' + words;
+    },
+    place: function (s, key, p) {
+      var R = Math.max(SEC.rmin, Math.min(SEC.rmax, Math.round((p[0] - SEC.O[0]) / SEC.cm * 2) / 2));
+      return [SEC.O[0] + R * SEC.cm, SEC.O[1]];
+    },
+    limit: function () { return true; },
+    presets: { a30: secCase(5, 30), a45: secCase(12, 45), a144: secCase(12, 144), a60: secCase(6, 60) },
+    figure: sectorOf,
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, O = f.O, R = String(round2(f.R)), a = String(f.a);
+      var text = function (x, y, s, cls) { el('text', { x: x, y: y, class: cls || 'cx-given', 'dominant-baseline': 'central' }, marks).textContent = s; };
+      el('circle', { cx: O[0], cy: O[1], r: f.px, class: 'cx-circle cx-circle-faint' }, marks);
+      el('path', { d: sectorPath(f, 1, true), class: i === 2 ? 'cx-sector cx-sector-b' : 'cx-sector cx-sector-a' }, marks);
+      if (i === 1 || i === 3) el('path', { d: sectorPath(f, 1, false), class: 'cx-trace' }, marks);
+      segLine(ink, O, f.A, i === 3 ? 'cx-trace' : 'cx-seg'); segLine(ink, O, f.B, i === 3 ? 'cx-trace' : 'cx-seg');
+      if (f.a < 360) el('path', { d: arcPath(O, 24, 0, -f.rad), class: 'cx-arc' }, ink);
+      point(ink, O, 'O', [-0.9, 0.9], null, null, 20);
+      if (f.a < 360) point(ink, f.B, 'B', [Math.cos(f.rad) + 0.2, -Math.sin(f.rad) - 0.2], null, null, 22);
+      label(ink, add(f.A, [24, 16]), 'A', 'cx-label');
+      el('circle', { cx: f.A[0], cy: f.A[1], r: 7, class: 'cx-handle' }, ink);
+      el('circle', { cx: f.A[0], cy: f.A[1], r: 24, class: 'cx-grab', 'data-drag': 'P' }, ink);
+      label(marks, [(O[0] + f.A[0]) / 2, O[1] + 20], 'R = ' + R + ' cm', 'cx-note');
+      text(22, 30, 'មុំផ្ចិត α = ' + a + '°');
+      if (i >= 1) text(22, 392, 'AB = 2πR × α/360 = 2 × 3.14 × ' + R + ' × ' + a + '/360 = ' + f.arc + ' cm');
+      if (i >= 2) text(22, 416, 'S = πR² × α/360 = 3.14 × ' + R + '² × ' + a + '/360 = ' + f.area + ' cm²');
+      if (i >= 3) text(22, 440, 'p = AB + R + R = ' + f.arc + ' + ' + R + ' + ' + R + ' = ' + f.per + ' cm');
+      if (i >= 4) {
+        el('rect', { x: 440, y: 46, width: 180, height: 18, rx: 3, class: 'cx-sector-edge cx-sector-edge-a' }, marks);
+        el('rect', { x: 440, y: 46, width: 180 * f.share, height: 18, rx: 3, class: 'cx-sector cx-sector-a' }, marks);
+        label(marks, [530, 30], 'α/360 = ' + a + '/360 = ' + Math.round(f.share * 1000) / 10 + '%', 'cx-note');
+      }
+    },
+    anim: function (f, i) {
+      var pen = function (tools, t) {
+        var th = f.rad * t;
+        el('circle', { cx: f.O[0] + f.px * Math.cos(th), cy: f.O[1] - f.px * Math.sin(th), r: 4.2, class: 'cx-c-pencil' }, tools);
+      };
+      if (i === 1) return { phases: [{ dur: 1700, draw: function (t, drawn, tools) {
+        var k = ease(t); el('path', { d: sectorPath(f, k, false), class: 'cx-trace' }, drawn); pen(tools, k);
+      } }] };
+      if (i === 2) return { phases: [{ dur: 1700, draw: function (t, drawn, tools) {
+        el('path', { d: sectorPath(f, ease(t), true), class: 'cx-sector cx-sector-b' }, drawn);
+      } }] };
+      if (i === 3) return { phases: [
+        { dur: 800, draw: function (t, drawn, tools) {
+          var e = add(f.O, mul(sub(f.A, f.O), t)); segLine(drawn, f.O, e, 'cx-trace'); el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, tools);
+        } },
+        { dur: 1500, draw: function (t, drawn, tools) {
+          var k = ease(t); segLine(drawn, f.O, f.A, 'cx-trace'); el('path', { d: sectorPath(f, k, false), class: 'cx-trace' }, drawn); pen(tools, k);
+        } },
+        { dur: 800, draw: function (t, drawn, tools) {
+          var e = add(f.B, mul(sub(f.O, f.B), t));
+          segLine(drawn, f.O, f.A, 'cx-trace'); el('path', { d: sectorPath(f, 1, false), class: 'cx-trace' }, drawn);
+          segLine(drawn, f.B, e, 'cx-trace'); el('circle', { cx: e[0], cy: e[1], r: 4.2, class: 'cx-c-pencil' }, tools);
+        } },
+      ] };
+      return null;
+    },
+  };
+
+  // ===== Grade 7, lesson 19: reflection about a point and about a line ======================================
+  var ptSym = function (P, O) { return sub(mul(O, 2), P); };
+  var inSheet = function (P, m) { return P[0] >= m && P[0] <= W - m && P[1] >= m && P[1] <= H - m; };
+  var mirrorIn = function (P, A, B) { return sub(mul(footOn(P, A, B), 2), P); };
+  var tagged = function (it) { it.img = true; return it; };         // belongs to the mirror image: hidden while it is folded
+  var foldNext = false;                                           // set when a fold is about to run: the step before it is drawn without the image
+  var withoutImage = function (f, run) {
+    var saved = f.script;
+    f.script = saved.map(function (st) { return st.filter(function (it) { return !it.img; }); });
+    run(); f.script = saved;
+  };
+
+  // §1.2: the point M′ symmetric to M about O (O is the middle of MM′): with the ruler marked in centimetres,
+  // and with the compass and a ruler. M and O are dragged.
+  var rpStart = { M: [160, 150], O: [320, 235] };
+  var rpLimit = function (s, key, p) {
+    var M = key === 'M' ? p : s.M, O = key === 'O' ? p : s.O, d = len(sub(M, O));
+    return d >= 80 && d <= 200 && inSheet(M, 30) && inSheet(O, 30) && inSheet(ptSym(M, O), 30);
+  };
+  var rpFigure = function (s) {
+    var f = { M: s.M, O: s.O, Mp: ptSym(s.M, s.O) };
+    f.u = unit(sub(s.O, s.M)); f.len = len(sub(s.M, s.O)); f.far = add(f.Mp, mul(f.u, 36));
+    return f;
+  };
+  var rpTop = function (f, ink) {
+    point(ink, f.M, 'M', mul(f.u, -1), null, 'M', 22);
+    point(ink, f.O, 'O', [f.u[1], -f.u[0]], 'cx-pt-m', 'O', 22);
+  };
+  var rpEnd = function (g, f) {
+    tick(g, f.M, f.O); tick(g, f.O, f.Mp);
+    says(g, 0, 'OM′ = OM'); says(g, 1, 'O ជាចំណុចកណ្ដាលនៃអង្កត់ MM′');
+  };
+  CX['reflect-ruler'] = scripted({
+    steps: 4, start: rpStart, limit: rpLimit, figure: rpFigure, top: rpTop,
+    script: function (f) {
+      var cm = Math.ceil(f.len / CM) + 1, d1 = mul(f.u, -1), d2 = f.u, nn = [-f.u[1], f.u[0]];
+      var measure = [
+        { dur: 900, draw: function (t, drawn, tools) { drawCmRuler(tools, f.O, d1, cm, nn, 0.25 + 0.75 * t); } },
+        { dur: 1000, draw: function (t, drawn, tools) { drawCmRuler(tools, f.O, d1, cm, nn, 1 - t); drawCmRuler(tools, f.O, d2, cm, nn, t); } },
+        { dur: 900, draw: function (t, drawn, tools) {
+          drawCmRuler(tools, f.O, d2, cm, nn); dot(drawn, f.Mp, 1 + 3.4 * t); pencilAt(tools, f.Mp);
+        } },
+      ];
+      return [
+        [],
+        [['seg', f.M, f.far, 'cx-line']],
+        [['phases', measure], ['pt', f.Mp, 'M′', add(mul(f.u, 0.4), [-f.u[1], f.u[0]]), 'cx-pt-m', 24]],
+        [['mark', function (g) { rpEnd(g, f); }]],
+      ];
+    },
+  });
+  CX['reflect-compass'] = scripted({
+    steps: 4, start: rpStart, limit: rpLimit, figure: rpFigure, top: rpTop,
+    script: function (f) {
+      var t0 = aimAt(f.O, f.M);
+      return [
+        [],
+        [['seg', f.M, f.far, 'cx-line']],
+        [['arc', { c: f.O, r: f.len, t1: t0, t2: t0 + Math.PI }], ['pt', f.Mp, 'M′', add(mul(f.u, 0.4), [-f.u[1], f.u[0]]), 'cx-pt-m', 24]],
+        [['mark', function (g) { rpEnd(g, f); }]],
+      ];
+    },
+  });
+
+  // §3.2: the point A′ symmetric to A about the line d: the perpendicular from A to d (set square) meets d at O,
+  // the compass (centre O, radius OA) cuts it again at A′; d is the mediator of AA′. Last, the paper is folded
+  // along d and A′ lands on A. d turns with its handle, A is dragged.
+  CX['reflect-line'] = (function () {
+    var def = scripted({
+      steps: 5,
+      start: { A: [270, 165], D: [590, 285] },
+      place: parPlace,
+      limit: function (s, key, p) {
+        var f = parFrame(key === 'D' ? { A: s.A, D: p } : { A: p, D: s.D });
+        return f.u[0] > 0 && Math.abs(Math.atan2(f.u[1], f.u[0])) <= 0.2 && f.along >= -140 && f.along <= 30 && f.dist >= 60 && f.dist <= 125;
+      },
+      figure: function (s) {
+        var f = parFrame(s);
+        f.p1 = add(PAR.C, mul(f.u, -330)); f.p2 = add(PAR.C, mul(f.u, 330));
+        f.O = footOn(f.A, f.p1, f.p2); f.Ap = sub(mul(f.O, 2), f.A);
+        return f;
+      },
+      base: function (f, ink) { parGiven(f, ink); },
+      top: function (f, ink) { parHandles(f, ink); },
+      script: function (f) {
+        var t = aimAt(f.O, f.Ap);
+        return [
+          [],
+          [['perp', f.A, f.p1, f.p2, 'cx-line', f.dist + 28], ['mark', function (g) { rightMark(g, f.O, f.n, f.u); }],
+            ['pt', f.O, 'O', add(f.u, mul(f.n, -0.9)), null, 20]],
+          [['arc', { c: f.O, r: f.dist, t1: t - 0.55, t2: t + 0.55 }], tagged(['pt', f.Ap, 'A′', mul(f.n, -1), 'cx-pt-m', 22])],
+          [tagged(['mark', function (g) {
+            tick(g, f.A, f.O); tick(g, f.O, f.Ap);
+            says(g, 0, 'd ⟂ AA′  ,  OA = OA′'); says(g, 1, 'd ជាមេដ្យាទ័រនៃអង្កត់ AA′');
+          }])],
+          [],
+        ];
+      },
+    });
+    var baseAnim = def.anim, baseDraw = def.draw;
+    var foldPoint = function (f, P, k) {
+      var v = sub(P, PAR.C);
+      return add(add(PAR.C, mul(f.u, dotp(v, f.u))), mul(f.n, dotp(v, f.n) * Math.cos(Math.PI * k)));
+    };
+    var halfSheet = function (f, k) {
+      var c1 = add(PAR.C, mul(f.u, -330)), c2 = add(PAR.C, mul(f.u, 330));
+      return [c1, c2, add(c2, mul(f.n, -200)), add(c1, mul(f.n, -200))].map(function (P) {
+        return foldPoint(f, P, k).map(function (x) { return x.toFixed(1); }).join(',');
+      }).join(' ');
+    };
+    def.anim = function (f, i) {
+      if (i !== 4) return baseAnim(f, i);
+      foldNext = true;
+      return { phases: [{ dur: 2600, draw: function (k, drawn, tools) {
+        var P = foldPoint(f, f.Ap, k);
+        el('polygon', { points: halfSheet(f, k), class: 'cx-sector cx-sector-c' }, tools);
+        el('circle', { cx: P[0], cy: P[1], r: 5, class: 'cx-pt cx-pt-m' }, tools);
+        label(tools, add(P, mul(f.n, k < 0.5 ? -22 : 22)), 'A′', 'cx-label');
+      } }] };
+    };
+    def.draw = function (f, i, g, layer) {
+      if (i === 3 && foldNext) { foldNext = false; withoutImage(f, function () { baseDraw(f, i, g, layer); }); return; }
+      if (i < 4) return baseDraw(f, i, g, layer);
+      withoutImage(f, function () { baseDraw(f, i, g, layer); });
+      el('circle', { cx: f.A[0], cy: f.A[1], r: 12, class: 'cx-ghost' }, layer.ink);
+      label(layer.ink, add(f.A, [-34, 6]), 'A′', 'cx-label');
+      says(layer.marks, 0, 'ពត់ក្រដាសតាម d៖ A′ ត្រួតលើ A');
+    };
+    return def;
+  })();
+
+  // §2: the figure symmetric to the triangle ABC about the point O: each vertex is carried through O (OA′ = OA ...),
+  // so A′B′C′ is the same triangle, turned half a turn, with A′B′ ∥ AB. The corners and O are dragged; O on C is the
+  // book's worked example (the triangle EFC symmetric to ABC about C).
+  function rfpOk(s, key, p) {
+    var P = { A: s.A, B: s.B, C: s.C, O: s.O }; P[key] = p;
+    var tr = triangleOf(P);
+    if (!(tr.least >= 70 && Math.min.apply(null, tr.angles) >= 0.45 && inSheet(P.O, 26))) return false;
+    return ['A', 'B', 'C'].every(function (k) { return inSheet(P[k], 26) && inSheet(ptSym(P[k], P.O), 26) && !(P[k][0] < 330 && P[k][1] < 112); });
+  }
+  CX['reflect-fig-point'] = scripted({
+    steps: 6,
+    start: { A: [170, 132], B: [95, 225], C: [235, 225], O: [320, 245] },
+    limit: rfpOk,
+    figure: function (s) {
+      var f = triangleOf(s);
+      f.O = s.O; f.Ap = ptSym(f.A, f.O); f.Bp = ptSym(f.B, f.O); f.Cp = ptSym(f.C, f.O);
+      return f;
+    },
+    base: function (f, ink) { triDrawn(f, ink); },
+    top: function (f, ink) {
+      triCorners(f, ink);
+      point(ink, f.O, 'O', [0.2, 1], 'cx-pt-m', 'O', 24);
+    },
+    script: function (f) {
+      var aux = 'cx-line cx-line-2', img = 'cx-line';
+      var carry = function (P, Pp, name) {
+        return [['seg', P, Pp, aux], ['mark', function (g) { tick(g, P, f.O); tick(g, f.O, Pp); }],
+          ['pt', Pp, name, sub(Pp, f.O), null, 22]];
+      };
+      return [
+        [],
+        carry(f.A, f.Ap, 'A′'), carry(f.B, f.Bp, 'B′'), carry(f.C, f.Cp, 'C′'),
+        [['seg', f.Ap, f.Bp, img], ['seg', f.Bp, f.Cp, img], ['seg', f.Cp, f.Ap, img]],
+        [['mark', function (g) {
+          tick(g, f.A, f.B); tick(g, f.Ap, f.Bp);
+          arrowHead(g, mul(add(f.A, f.B), 0.5), unit(sub(f.B, f.A))); arrowHead(g, mul(add(f.Ap, f.Bp), 0.5), unit(sub(f.B, f.A)));
+          wedgeBetween(g, f.A, f.B, f.C, 34, 'a'); wedgeBetween(g, f.Ap, f.Bp, f.Cp, 34, 'a');
+          says(g, 0, 'A′B′ ∥ AB  ,  A′B′ = AB'); says(g, 1, '∠A′ = ∠A'); says(g, 2, 'ត្រីកោណ A′B′C′ ប៉ុនត្រីកោណ ABC');
+        }]],
+      ];
+    },
+  });
+
+  // §4: the figure symmetric to the triangle ABC about the line d: from each vertex the perpendicular to d (set
+  // square) and the same distance on the other side (compass). A′B′C′ is the same triangle, flipped over. Last,
+  // the paper is folded along d and A′B′C′ lands on ABC. d turns with its handle, the corners are dragged.
+  function rflParts(s, key, p) {
+    var P = { A: s.A, B: s.B, C: s.C, D: s.D }; P[key] = p;
+    var u = unit(sub(P.D, PAR.C)), n = [u[1], -u[0]];
+    return { P: P, u: u, n: n, dist: function (X) { return dotp(sub(X, PAR.C), n); } };
+  }
+  function rflLimit(s, key, p) {
+    var q = rflParts(s, key, p), P = q.P, tr = triangleOf(P);
+    if (!(q.u[0] > 0 && Math.abs(Math.atan2(q.u[1], q.u[0])) <= 0.2)) return false;
+    if (!(tr.least >= 70 && Math.min.apply(null, tr.angles) >= 0.45)) return false;
+    var p1 = add(PAR.C, mul(q.u, -330)), p2 = add(PAR.C, mul(q.u, 330));
+    return ['A', 'B', 'C'].every(function (k) {
+      var d = q.dist(P[k]);
+      return d >= 45 && d <= 125 && inSheet(P[k], 26) && inSheet(mirrorIn(P[k], p1, p2), 26);
+    });
+  }
+  CX['reflect-fig-line'] = (function () {
+    var def = scripted({
+      steps: 7,
+      start: { A: [180, 135], B: [270, 195], C: [380, 155], D: [590, 285] },
+      place: parPlace, limit: rflLimit,
+      figure: function (s) {
+        var f = triangleOf(s), u = unit(sub(s.D, PAR.C));
+        f.u = u; f.n = [u[1], -u[0]]; f.D = s.D;
+        f.p1 = add(PAR.C, mul(u, -330)); f.p2 = add(PAR.C, mul(u, 330));
+        ['A', 'B', 'C'].forEach(function (k) {
+          f[k + 'f'] = footOn(f[k], f.p1, f.p2); f[k + 'p'] = sub(mul(f[k + 'f'], 2), f[k]); f[k + 'd'] = len(sub(f[k], f[k + 'f']));
+        });
+        return f;
+      },
+      base: function (f, ink) { parGiven(f, ink); triDrawn(f, ink); },
+      top: function (f, ink) {
+        triCorners(f, ink);
+        el('circle', { cx: f.D[0], cy: f.D[1], r: 7, class: 'cx-handle' }, ink);
+        el('circle', { cx: f.D[0], cy: f.D[1], r: 24, class: 'cx-grab', 'data-drag': 'D' }, ink);
+      },
+      script: function (f) {
+        var aux = 'cx-line cx-line-2', img = 'cx-line';
+        var vertex = function (k) {
+          var F = f[k + 'f'], Pp = f[k + 'p'], a = aimAt(F, Pp);
+          return [['perp', f[k], f.p1, f.p2, aux, f[k + 'd'] + 20], ['mark', function (g) { rightMark(g, F, f.n, f.u); }],
+            ['arc', { c: F, r: f[k + 'd'], t1: a - 0.5, t2: a + 0.5 }], tagged(['pt', Pp, k + '′', mul(f.n, -1), 'cx-pt-m', 22])];
+        };
+        return [
+          [],
+          vertex('A'), vertex('B'), vertex('C'),
+          [tagged(['seg', f.Ap, f.Bp, img]), tagged(['seg', f.Bp, f.Cp, img]), tagged(['seg', f.Cp, f.Ap, img])],
+          [tagged(['mark', function (g) {
+            tick(g, f.A, f.B); tick(g, f.Ap, f.Bp);
+            wedgeBetween(g, f.A, f.B, f.C, 34, 'a'); wedgeBetween(g, f.Ap, f.Bp, f.Cp, 34, 'a');
+            says(g, 0, 'A′B′ = AB  ,  ∠A′ = ∠A'); says(g, 1, 'ត្រីកោណ A′B′C′ ប៉ុនត្រីកោណ ABC');
+          }])],
+          [],
+        ];
+      },
+    });
+    var baseAnim = def.anim, baseDraw = def.draw;
+    var foldPoint = function (f, P, k) {
+      var v = sub(P, PAR.C);
+      return add(add(PAR.C, mul(f.u, dotp(v, f.u))), mul(f.n, dotp(v, f.n) * Math.cos(Math.PI * k)));
+    };
+    var pts = function (list) { return list.map(function (x) { return x.map(function (v) { return v.toFixed(1); }).join(','); }).join(' '); };
+    def.anim = function (f, i) {
+      if (i !== 6) return baseAnim(f, i);
+      foldNext = true;
+      return { phases: [{ dur: 2800, draw: function (k, drawn, tools) {
+        var c1 = add(PAR.C, mul(f.u, -330)), c2 = add(PAR.C, mul(f.u, 330));
+        el('polygon', { points: pts([c1, c2, add(c2, mul(f.n, -200)), add(c1, mul(f.n, -200))].map(function (P) { return foldPoint(f, P, k); })), class: 'cx-sector cx-sector-c' }, tools);
+        el('polygon', { points: pts([f.Ap, f.Bp, f.Cp].map(function (P) { return foldPoint(f, P, k); })), class: 'cx-sector cx-sector-b' }, tools);
+        [['A′', f.Ap], ['B′', f.Bp], ['C′', f.Cp]].forEach(function (q) {
+          var P = foldPoint(f, q[1], k);
+          el('circle', { cx: P[0], cy: P[1], r: 4.5, class: 'cx-pt cx-pt-m' }, tools);
+        });
+      } }] };
+    };
+    def.draw = function (f, i, g, layer) {
+      if (i === 5 && foldNext) { foldNext = false; withoutImage(f, function () { baseDraw(f, i, g, layer); }); return; }
+      if (i < 6) return baseDraw(f, i, g, layer);
+      withoutImage(f, function () { baseDraw(f, i, g, layer); });
+      el('polygon', { points: pts([f.A, f.B, f.C]), class: 'cx-ghost-fill' }, layer.marks);
+      says(layer.marks, 0, 'ពត់ក្រដាសតាម d៖ ត្រីកោណ A′B′C′ ត្រួតលើត្រីកោណ ABC');
+    };
+    return def;
+  })();
+
+  // ===== The protractor (Grade 7, lesson 13 §2.1), one page with two tabs =============================
+  // #measure: the protractor goes on the vertex O, is turned until Ox lies on its 0, and Oy cuts the scale
+  // where the measure is. #a150: the ray yx, the protractor with its 0 on yx, a pencil mark at the number,
+  // the ray yz through the mark. In both the slider is the angle (5° to 175°), the book's own 50° and 150°
+  // to begin with. The protractor has two scales; the numbers are read on the one that starts from 0 on the
+  // first ray, so the 0 on the right is lit.
+  var PT = { V: [320, 400], R: 190, L: 246 };               // the vertex, the radius of the protractor, the length of the rays
+  var ptDir = function (a) { return prDir(RIGHT, a); };
+  var ptAt = function (a, r) { return add(PT.V, mul(ptDir(a), r)); };
+  var angleKind = function (a) { return a < 90 ? 'មុំស្រួច' : a === 90 ? 'មុំកែង' : 'មុំទាល'; };
+  var angleWords = function (a) { return a < 90 ? 'មុំស្រួច  (0° < ∠ < 90°)' : a === 90 ? 'មុំកែង  (∠ = 90°)' : 'មុំទាល  (90° < ∠ < 180°)'; };
+  var DEG = Math.PI / 180;
+  // the protractor, centre c, turned by `turn` degrees (clockwise): the outer scale from 0 on the right, the
+  // inner one from 0 on the left; `lit` lists degrees to mark on the outer scale
+  function drawProt(g, c, turn, alpha, lit) {
+    var R = PT.R, d, u, rim, low;
+    var grp = el('g', { opacity: alpha == null ? 1 : alpha, transform: turn ? 'rotate(' + turn.toFixed(2) + ' ' + c[0] + ' ' + c[1] + ')' : null }, g);
+    var half = function (r) { return 'M' + (c[0] + r) + ' ' + c[1] + 'A' + r + ' ' + r + ' 0 0 0 ' + (c[0] - r) + ' ' + c[1]; };
+    el('path', { d: half(R) + 'Z', class: 'cx-pr' }, grp);
+    el('path', { d: half(R - 42), class: 'cx-pr-line' }, grp);
+    el('path', { d: half(16), class: 'cx-pr-line' }, grp);
+    for (d = 0; d <= 180; d++) {
+      u = ptDir(d); rim = add(c, mul(u, R));
+      segLine(grp, rim, add(rim, mul(u, d % 10 === 0 ? -14 : d % 5 === 0 ? -10 : -6)), d % 5 ? 'cx-pr-tick cx-pr-t1' : 'cx-pr-tick');
+      if (d % 30 === 0) {
+        low = d % 180 ? [0, 0] : [0, -9];                     // 0 and 180 clear of the line they lie on
+        label(grp, add(add(c, mul(u, R - 28)), low), String(d), 'cx-pr-num');
+        label(grp, add(add(c, mul(u, R - 56)), low), String(180 - d), 'cx-pr-num cx-pr-num2');
+      }
+    }
+    el('circle', { cx: c[0], cy: c[1], r: 3.2, class: 'cx-pr-c' }, grp);
+    (lit || []).forEach(function (a) { segLine(grp, add(c, mul(ptDir(a), R - 16)), add(c, mul(ptDir(a), R + 4)), 'cx-pr-mark'); });
+  }
+  // the protractor comes down on the vertex, a little askew, and is then turned to lie on the first ray
+  var protDown = function (V) { return { dur: 900, draw: function (t, drawn, tools) { drawProt(tools, add(V, [0, -40 * (1 - t)]), 22, 0.25 + 0.75 * t); } }; };
+  var protTurn = function (V) { return { dur: 900, draw: function (t, drawn, tools) { drawProt(tools, V, 22 * (1 - t), 1, t === 1 ? [0] : null); } }; };
+  var protKText = function (name, extra) {
+    return function (s) { return '∠' + name + ' = ' + s.k + '°  →  ' + angleKind(s.k) + (extra ? extra(s.k) : ''); };
+  };
+
+  CX['protractor-measure'] = {
+    steps: 5,
+    start: { k: 50 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: protKText('xOy'),
+    fill: function (s) { return { a: String(s.k) }; },
+    figure: function (s) { return { meet: true, a: s.k, V: PT.V, X: ptAt(0, PT.L), Y: ptAt(s.k, PT.L) }; },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools, V = f.V, t = f.a * DEG;
+      if (i === 4) { given(ink, '∠xOy = ' + f.a + '°'); says(ink, 1, angleWords(f.a)); }
+      else given(ink, 'ចូររង្វាស់ ∠xOy');
+      segLine(ink, V, f.X, 'cx-seg');
+      segLine(ink, V, f.Y, 'cx-line');
+      if (i < 3) {
+        el('path', { d: arcPath(V, 46, 0, -t), class: 'cx-arc' }, ink);
+        label(marks, ptAt(f.a / 2, 74), '?', 'cx-note cx-r');
+      } else wedge(marks, V, 0, -t, 58, 'a');
+      point(ink, V, 'O', [-0.6, 0.9], 'cx-pt-m', null, 22);
+      point(ink, f.X, 'x', [0.85, -0.55], null, null, 22);
+      point(ink, f.Y, 'y', ptDir(f.a), null, null, 22);
+      if (i === 1) drawProt(tools, V, 22);
+      if (i >= 2) drawProt(tools, V, 0, 1, i === 2 ? [0] : [0, f.a]);
+      if (i === 2) label(marks, add(V, [PT.R + 24, -14]), '0°', 'cx-note cx-r');
+      if (i === 3) label(marks, add(ptAt(f.a, PT.R + 20), mul(ptDir(f.a + 90), 22)), f.a + '°', 'cx-note cx-r');   // beside the ray, clear of its end
+      if (i === 4) label(marks, ptAt(f.a / 2, 84), f.a + '°', 'cx-note cx-r');
+    },
+    anim: function (f, i) {
+      if (i === 1) return { phases: [protDown(f.V)] };
+      if (i === 2) return { phases: [protTurn(f.V)] };
+      if (i === 3) return { phases: [{ dur: 1300, draw: function (t, drawn, tools) {   // the lit stroke runs from 0 up to the reading
+        var a = f.a * t;
+        if (a > 0.5) wedge(drawn, f.V, 0, -a * DEG, 58, 'a');
+        drawProt(tools, f.V, 0, 1, [0, a]);
+      } }] };
+      return null;
+    },
+  };
+
+  CX['protractor-150'] = {
+    steps: 6,
+    start: { k: 150 },
+    kScale: 1,
+    kOk: function () { return true; },
+    kText: protKText('xyz', function (a) { return '  ·  មុំជាប់គ្នា ' + (180 - a) + '°'; }),
+    fill: function (s) { return { a: String(s.k), b: String(180 - s.k) }; },
+    figure: function (s) {
+      return { meet: true, a: s.k, V: PT.V, X: ptAt(0, PT.L), Z: ptAt(s.k, PT.L), M: ptAt(s.k, PT.R + 8) };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools, V = f.V, t = f.a * DEG;
+      given(ink, (i === 5 ? '' : 'សង់ ') + '∠xyz = ' + f.a + '°');
+      if (i === 5) says(ink, 1, 'មុំជាប់គ្នា៖ 180° − ' + f.a + '° = ' + (180 - f.a) + '°');
+      if (i >= 1) segLine(ink, V, f.X, 'cx-seg');
+      if (i >= 4) segLine(ink, V, f.Z, 'cx-line');
+      if (i >= 3) dot(ink, f.M);
+      if (i === 5) {
+        segLine(ink, V, ptAt(180, PT.L), 'cx-ext');             // yx carried on the other side of y
+        wedge(marks, V, 0, -t, 52, 'a');
+        label(marks, ptAt(f.a / 2, 80), f.a + '°', 'cx-note cx-r');
+        wedge(marks, V, -t, -(Math.PI - t), 36, 'b');
+        label(marks, ptAt((f.a + 180) / 2, 62), (180 - f.a) + '°', 'cx-note');
+      }
+      point(ink, V, 'y', [-0.6, 0.9], 'cx-pt-m', null, 22);
+      if (i >= 1) point(ink, f.X, 'x', [0.85, -0.55], null, null, 22);
+      if (i >= 4) point(ink, f.Z, 'z', ptDir(f.a), null, null, 22);
+      if (i === 2) { drawProt(tools, V, 0, 1, [0]); label(marks, add(V, [PT.R + 24, -14]), '0°', 'cx-note cx-r'); }
+      if (i === 3) { drawProt(tools, V, 0, 1, [0, f.a]); label(marks, ptAt(f.a, PT.R + 34), f.a + '°', 'cx-note cx-r'); }
+    },
+    anim: function (f, i) {
+      if (i === 1) return { ruler: [f.V, f.X], cls: 'cx-seg' };
+      if (i === 2) return { phases: [protDown(f.V), protTurn(f.V)] };
+      if (i === 3) return { phases: [{ dur: 900, draw: function (t, drawn, tools) {   // the pencil presses the paper at the number
+        drawProt(tools, f.V, 0, 1, [0, f.a]);
+        dot(drawn, f.M, 3.4 * Math.min(1, t * 2));
+        el('circle', { cx: f.M[0], cy: f.M[1], r: 4.2, class: 'cx-c-pencil', opacity: t < 0.85 ? 1 : 0 }, tools);
+      } }] };
+      if (i === 4) return { ruler: [f.V, f.Z], cls: 'cx-line' };
+      return null;
+    },
+  };
+
+  function label(g, at, text, cls) {
+    var t = el('text', { x: at[0], y: at[1], class: cls || 'cx-label', 'text-anchor': 'middle', 'dominant-baseline': 'central' }, g);
+    t.textContent = text;
+    return t;
+  }
+  // a point with its name pushed out along dir (by dist, 20 if not given)
+  function point(g, p, name, dir, cls, drag, dist) {
+    el('circle', { cx: p[0], cy: p[1], r: 5, class: 'cx-pt ' + (cls || '') }, g);
+    var d = unit(dir || [0, -1]);
+    label(g, add(p, mul(d, dist || 20)), name, 'cx-label');
+    if (drag) el('circle', { cx: p[0], cy: p[1], r: 22, class: 'cx-grab', 'data-drag': drag }, g);
+  }
+
+
+  // ---------------------------------------------------- Quadrilaterals & Solids & Pie Chart ---
+  // CX['rectangle']: Constructing rectangle ABCD given AB = a (6 cm) and AD = b (slider)
+  CX['rectangle'] = {
+    steps: 6,
+    start: { k: 4 },
+    kScale: 1,
+    kOk: function (k) { return k >= 2 && k <= 6; },
+    kText: function (s) {
+      return 'AB = 6 cm, AD = ' + cmText(s.k) + '  (S = ' + (6 * s.k) + ' cm², P = ' + (2 * (6 + s.k)) + ' cm)';
+    },
+    fill: function (s) { return { b: String(s.k) }; },
+    presets: {
+      b3: function (s) { s.k = 3; },
+      b4: function (s) { s.k = 4; },
+      b5: function (s) { s.k = 5; }
+    },
+    figure: function (s) {
+      var A = [160, 360], a = 6, b = s.k;
+      var B = add(A, [a * CM, 0]);
+      var D = add(A, [0, -b * CM]);
+      var C = add(B, [0, -b * CM]);
+      return {
+        meet: true, a: a, b: b, A: A, B: B, C: C, D: D,
+        arcD: { c: D, r: a * CM, t1: -0.35, t2: 0.35 },
+        arcB: { c: B, r: b * CM, t1: -Math.PI / 2 - 0.35, t2: -Math.PI / 2 + 0.35 }
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      given(ink, 'AB = 6 cm    AD = ' + cmText(f.b));
+      if (i < 1) return;
+      segLine(ink, f.A, f.B, 'cx-seg');
+      if (i >= 2) {
+        segLine(ink, f.A, add(f.D, [0, -25]), 'cx-line cx-line-2');
+        label(ink, add(f.D, [0, -38]), 'x', 'cx-label');
+        el('path', { d: 'M' + (f.A[0] + 16) + ' ' + f.A[1] + 'v-16h-16', class: 'cx-right' }, ink);
+        dot(ink, f.D);
+        point(ink, f.D, 'D', [-1, 0], 'cx-pt-m', null, 22);
+        sideNote(marks, f.A, f.D, f.B, cmText(f.b));
+      }
+      if (i >= 3) {
+        el('path', { d: arcPath(f.D, f.a * CM, f.arcD.t1, f.arcD.t2), class: 'cx-arc' }, ink);
+        if (i === 3) segLine(marks, f.D, f.C, 'cx-radius');
+      }
+      if (i >= 4) {
+        el('path', { d: arcPath(f.B, f.b * CM, f.arcB.t1, f.arcB.t2), class: 'cx-arc' }, ink);
+        dot(ink, f.C);
+        point(ink, f.C, 'C', [0.8, -0.6], 'cx-pt-m', null, 24);
+      }
+      if (i >= 5) {
+        segLine(ink, f.D, f.C, 'cx-seg');
+        segLine(ink, f.B, f.C, 'cx-seg');
+        el('polygon', { points: [f.A, f.B, f.C, f.D].map(function (p) { return p.join(','); }).join(' '), class: 'cx-tri', opacity: 0.25 }, marks);
+        el('path', { d: 'M' + (f.B[0] - 16) + ' ' + f.B[1] + 'v-16h16', class: 'cx-right' }, ink);
+        el('path', { d: 'M' + (f.C[0] - 16) + ' ' + f.C[1] + 'v16h16', class: 'cx-right' }, ink);
+        el('path', { d: 'M' + (f.D[0] + 16) + ' ' + f.D[1] + 'v16h-16', class: 'cx-right' }, ink);
+        sideNote(marks, f.A, f.B, f.D, cmText(f.a));
+        sideNote(marks, f.D, f.C, f.A, cmText(f.a));
+        sideNote(marks, f.B, f.C, f.A, cmText(f.b));
+      }
+      point(ink, f.A, 'A', [-0.85, 0.65], null, null, 22);
+      point(ink, f.B, 'B', [0.85, 0.65], null, null, 22);
+
+      if (i === 1) drawCmRuler(tools, f.A, RIGHT, 8, DOWN);
+      if (i === 2) drawSetSquare(tools, f.A, UP, RIGHT, 160, 100);
+      if (i === 3) drawCompass(tools, f.D, f.C);
+      if (i === 4) drawCompass(tools, f.B, f.C);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { phases: cmSegmentPhases(f.A, RIGHT, f.a, 8, DOWN, 'cx-seg') };
+      if (i === 2) return { phases: [
+        { dur: 700, draw: function (t, drawn, tools) { drawSetSquare(tools, f.A, UP, RIGHT, 160, 100, 0.3 + 0.7 * t); } },
+        { dur: 900, draw: function (t, drawn, tools) {
+          drawSetSquare(tools, f.A, UP, RIGHT, 160, 100);
+          segLine(drawn, f.A, add(f.A, mul(UP, (f.b * CM + 25) * t)), 'cx-line cx-line-2');
+          el('circle', { cx: f.D[0], cy: f.D[1], r: 4 * Math.min(1, t * 2), class: 'cx-mark' }, drawn);
+        } }
+      ] };
+      if (i === 3) return { phases: compassPhases(f.A, f.a, 8, f.D, f.arcD) };
+      if (i === 4) return { phases: compassPhases(f.A, f.b, 8, f.B, f.arcB) };
+      if (i === 5) return { rulers: [[f.D, f.C], [f.B, f.C]] };
+      return null;
+    }
+  };
+
+  // CX['square']: Constructing square ABCD given side a (slider)
+  CX['square'] = {
+    steps: 6,
+    start: { k: 5 },
+    kScale: 1,
+    kOk: function (k) { return k >= 3 && k <= 7; },
+    kText: function (s) {
+      return 'ជ្រុង a = ' + cmText(s.k) + '  (S = ' + (s.k * s.k) + ' cm², P = ' + (4 * s.k) + ' cm)';
+    },
+    fill: function (s) { return { a: String(s.k) }; },
+    presets: {
+      a4: function (s) { s.k = 4; },
+      a5: function (s) { s.k = 5; },
+      a6: function (s) { s.k = 6; }
+    },
+    figure: function (s) {
+      var A = [180, 370], a = s.k;
+      var B = add(A, [a * CM, 0]);
+      var D = add(A, [0, -a * CM]);
+      var C = add(B, [0, -a * CM]);
+      return {
+        meet: true, a: a, A: A, B: B, C: C, D: D,
+        arcA: { c: A, r: a * CM, t1: -Math.PI / 2 - 0.35, t2: -Math.PI / 2 + 0.35 },
+        arcD: { c: D, r: a * CM, t1: -0.35, t2: 0.35 },
+        arcB: { c: B, r: a * CM, t1: -Math.PI / 2 - 0.35, t2: -Math.PI / 2 + 0.35 }
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      given(ink, 'ជ្រុង a = ' + cmText(f.a));
+      if (i < 1) return;
+      segLine(ink, f.A, f.B, 'cx-seg');
+      if (i >= 2) {
+        segLine(ink, f.A, add(f.D, [0, -25]), 'cx-line cx-line-2');
+        el('path', { d: 'M' + (f.A[0] + 16) + ' ' + f.A[1] + 'v-16h-16', class: 'cx-right' }, ink);
+        el('path', { d: arcPath(f.A, f.a * CM, f.arcA.t1, f.arcA.t2), class: 'cx-arc' }, ink);
+        dot(ink, f.D);
+        point(ink, f.D, 'D', [-1, 0], 'cx-pt-m', null, 22);
+      }
+      if (i >= 3) {
+        el('path', { d: arcPath(f.D, f.a * CM, f.arcD.t1, f.arcD.t2), class: 'cx-arc' }, ink);
+        if (i === 3) segLine(marks, f.D, f.C, 'cx-radius');
+      }
+      if (i >= 4) {
+        el('path', { d: arcPath(f.B, f.a * CM, f.arcB.t1, f.arcB.t2), class: 'cx-arc' }, ink);
+        dot(ink, f.C);
+        point(ink, f.C, 'C', [0.8, -0.6], 'cx-pt-m', null, 24);
+      }
+      if (i >= 5) {
+        segLine(ink, f.D, f.C, 'cx-seg');
+        segLine(ink, f.B, f.C, 'cx-seg');
+        el('polygon', { points: [f.A, f.B, f.C, f.D].map(function (p) { return p.join(','); }).join(' '), class: 'cx-tri', opacity: 0.25 }, marks);
+        el('path', { d: 'M' + (f.B[0] - 16) + ' ' + f.B[1] + 'v-16h16', class: 'cx-right' }, ink);
+        el('path', { d: 'M' + (f.C[0] - 16) + ' ' + f.C[1] + 'v16h16', class: 'cx-right' }, ink);
+        el('path', { d: 'M' + (f.D[0] + 16) + ' ' + f.D[1] + 'v16h-16', class: 'cx-right' }, ink);
+        var midAB = mul(add(f.A, f.B), 0.5), midBC = mul(add(f.B, f.C), 0.5), midCD = mul(add(f.C, f.D), 0.5), midDA = mul(add(f.D, f.A), 0.5);
+        segLine(marks, add(midAB, [0, -8]), add(midAB, [0, 8]), 'cx-tick');
+        segLine(marks, add(midCD, [0, -8]), add(midCD, [0, 8]), 'cx-tick');
+        segLine(marks, add(midBC, [-8, 0]), add(midBC, [8, 0]), 'cx-tick');
+        segLine(marks, add(midDA, [-8, 0]), add(midDA, [8, 0]), 'cx-tick');
+        sideNote(marks, f.A, f.B, f.D, cmText(f.a));
+      }
+      point(ink, f.A, 'A', [-0.85, 0.65], null, null, 22);
+      point(ink, f.B, 'B', [0.85, 0.65], null, null, 22);
+
+      if (i === 1) drawCmRuler(tools, f.A, RIGHT, 8, DOWN);
+      if (i === 2) drawCompass(tools, f.A, f.D);
+      if (i === 3) drawCompass(tools, f.D, f.C);
+      if (i === 4) drawCompass(tools, f.B, f.C);
+    },
+    anim: function (f, i) {
+      if (i === 1) return { phases: cmSegmentPhases(f.A, RIGHT, f.a, 8, DOWN, 'cx-seg') };
+      if (i === 2) return { phases: compassPhases(f.A, f.a, 8, f.A, f.arcA) };
+      if (i === 3) return { phases: compassPhases(f.A, f.a, 8, f.D, f.arcD) };
+      if (i === 4) return { phases: compassPhases(f.A, f.a, 8, f.B, f.arcB) };
+      if (i === 5) return { rulers: [[f.D, f.C], [f.B, f.C]] };
+      return null;
+    }
+  };
+
+  // CX['cube-net']: 2D net and 3D folding of a cube
+  CX['cube-net'] = {
+    steps: 6,
+    start: { k: 0 },
+    kScale: 1,
+    kText: function (s) {
+      if (s.k === 0) return 'ប្លង់លាត 2D រាបស្មើ (0°) — មុខ ៦ ជាការ៉េ a × a';
+      if (s.k === 90) return 'គូប 3D ពេញលេញ (90°) — St = 6a² = 150 cm², V = a³ = 125 cm³';
+      return 'កម្រិតបត់ ' + s.k + '° (កំពុងបត់ផ្គុំទៅជារូបរាង 3D)';
+    },
+    presets: {
+      flat: function (s) { s.k = 0; },
+      half: function (s) { s.k = 45; },
+      solid: function (s) { s.k = 90; }
+    },
+    figure: function (s) {
+      var cx = 310, cy = 230, S = 64;
+      var t = Math.max(0, Math.min(90, s.k)) / 90;
+      var theta = t * Math.PI / 2;
+      var c30 = Math.cos(30 * Math.PI / 180), s30 = Math.sin(30 * Math.PI / 180);
+
+      function proj(x, y, z) {
+        var px = cx + (1 - t) * x + t * (x - y) * c30;
+        var py = cy + (1 - t) * y + t * ((x + y) * s30 - z);
+        return [px, py];
+      }
+
+      // Bottom face F0: [-S/2, -S/2] to [S/2, S/2] at Z = 0
+      var b0 = proj(-S/2, -S/2, 0), b1 = proj(S/2, -S/2, 0), b2 = proj(S/2, S/2, 0), b3 = proj(-S/2, S/2, 0);
+
+      // Right face F5: X = S/2 + u cos(theta), Z = u sin(theta) for u in [0, S]
+      var r0 = b1, r3 = b2;
+      var r1 = proj(S/2 + S * Math.cos(theta), -S/2, S * Math.sin(theta));
+      var r2 = proj(S/2 + S * Math.cos(theta), S/2, S * Math.sin(theta));
+
+      // Left face F4: X = -S/2 - u cos(theta), Z = u sin(theta)
+      var l0 = b0, l3 = b3;
+      var l1 = proj(-S/2 - S * Math.cos(theta), -S/2, S * Math.sin(theta));
+      var l2 = proj(-S/2 - S * Math.cos(theta), S/2, S * Math.sin(theta));
+
+      // Front face F1: Y = S/2 + u cos(theta), Z = u sin(theta)
+      var f0 = b3, f1 = b2;
+      var f3 = proj(-S/2, S/2 + S * Math.cos(theta), S * Math.sin(theta));
+      var f2 = proj(S/2, S/2 + S * Math.cos(theta), S * Math.sin(theta));
+
+      // Back face F2: Y = -S/2 - u cos(theta), Z = u sin(theta)
+      var k0 = b0, k1 = b1;
+      var k3 = proj(-S/2, -S/2 - S * Math.cos(theta), S * Math.sin(theta));
+      var k2 = proj(S/2, -S/2 - S * Math.cos(theta), S * Math.sin(theta));
+
+      // Top face F3: attaches to outer edge of Back face
+      var hy = -S/2 - S * Math.cos(theta), hz = S * Math.sin(theta);
+      var ty = hy - S * Math.cos(2 * theta), tz = hz + S * Math.sin(2 * theta);
+      var top0 = k3, top1 = k2;
+      var top3 = proj(-S/2, ty, tz), top2 = proj(S/2, ty, tz);
+
+      return {
+        meet: true, t: t, deg: s.k, S: S, cx: cx, cy: cy,
+        f0: [b0, b1, b2, b3],
+        f1: [f0, f1, f2, f3],
+        f2: [k0, k1, k2, k3],
+        f3: [top0, top1, top2, top3],
+        f4: [l0, l1, l2, l3],
+        f5: [r0, r1, r2, r3]
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      given(ink, 'គូប៖ ទ្រនុង a = 5 cm    ' + (f.t === 0 ? '(ប្លង់លាត 2D)' : f.t === 1 ? '(គូប 3D)' : '(កម្រិតបត់ ' + f.deg + '°)'));
+
+      var drawPoly = function (pts, cls) {
+        return el('polygon', { points: pts.map(function (p) { return p.join(','); }).join(' '), class: cls }, ink);
+      };
+
+      // Draw faces in back-to-front depth order
+      if (i >= 1) {
+        // Back face F2
+        drawPoly(f.f2, 'cx-face cx-face-back');
+        // Left & Right faces
+        drawPoly(f.f4, 'cx-face cx-face-side');
+        drawPoly(f.f5, 'cx-face cx-face-side');
+        // Bottom face F0
+        drawPoly(f.f0, 'cx-face cx-face-base');
+        // Front face F1
+        drawPoly(f.f1, 'cx-face cx-face-front');
+        // Top face F3
+        if (i >= 2) drawPoly(f.f3, 'cx-face cx-face-top');
+      }
+
+      // Flaps in 2D net (when step >= 3 and t is small)
+      if (i >= 3 && f.t < 0.25) {
+        var op = Math.max(0, 1 - f.t * 4);
+        var flap = function (p1, p2, outDir, w) {
+          var d = unit(sub(p2, p1)), n = outDir;
+          var q1 = add(add(p1, mul(d, w)), mul(n, w));
+          var q2 = add(add(p2, mul(d, -w)), mul(n, w));
+          el('polygon', { points: [p1, q1, q2, p2].map(function (p) { return p.join(','); }).join(' '), class: 'cx-flap', opacity: op }, marks);
+        };
+        // Flaps on F1 (front) and F3 (top) and F4 (left)
+        flap(f.f1[2], f.f1[3], [0, 1], 14);
+        flap(f.f5[1], f.f5[2], [1, 0], 14);
+        flap(f.f4[1], f.f4[2], [-1, 0], 14);
+      }
+
+      // Labels on faces
+      if (f.t < 0.3) {
+        var mid = function (pts) { return mul(add(add(pts[0], pts[1]), add(pts[2], pts[3])), 0.25); };
+        label(marks, mid(f.f0), 'បាតក្រោម', 'cx-note');
+        label(marks, mid(f.f1), 'មុខមុខ', 'cx-note');
+        label(marks, mid(f.f2), 'មុខក្រោយ', 'cx-note');
+        if (i >= 2) label(marks, mid(f.f3), 'បាតលើ', 'cx-note');
+        label(marks, mid(f.f4), 'មុខឆ្វេង', 'cx-note');
+        label(marks, mid(f.f5), 'មុខស្ដាំ', 'cx-note');
+      } else if (f.t > 0.8) {
+        // 3D formula badge
+        var card = el('g', {}, marks);
+        el('rect', { x: 420, y: 30, width: 200, height: 95, rx: 8, class: 'cx-table-bg' }, card);
+        label(card, [520, 52], 'រូបមន្តគូប (Cube)', 'cx-th');
+        label(card, [520, 78], 'St = 6a² = 150 cm²', 'cx-note cx-r');
+        label(card, [520, 104], 'V = a³ = 125 cm³', 'cx-note');
+      }
+
+      // Fold lines (dashed)
+      if (f.t < 0.85) {
+        segLine(marks, f.f0[0], f.f0[1], 'cx-fold');
+        segLine(marks, f.f0[1], f.f0[2], 'cx-fold');
+        segLine(marks, f.f0[2], f.f0[3], 'cx-fold');
+        segLine(marks, f.f0[3], f.f0[0], 'cx-fold');
+        if (i >= 2) segLine(marks, f.f2[2], f.f2[3], 'cx-fold');
+      }
+    }
+  };
+
+  // CX['cuboid-net']: 2D net and 3D folding of a cuboid (rectangular prism)
+  CX['cuboid-net'] = {
+    steps: 6,
+    start: { k: 0 },
+    kScale: 1,
+    kText: function (s) {
+      if (s.k === 0) return 'ប្លង់លាត 2D រាបស្មើ (0°) — មុខ ៦ ជាចតុកោណកែង ៣ គូ';
+      if (s.k === 90) return 'ប្រលេពីប៉ែតកែង 3D (90°) — St = 126 cm², V = 75 cm³';
+      return 'កម្រិតបត់ ' + s.k + '° (កំពុងបត់ផ្គុំទៅជារូបរាង 3D)';
+    },
+    presets: {
+      flat: function (s) { s.k = 0; },
+      half: function (s) { s.k = 45; },
+      solid: function (s) { s.k = 90; }
+    },
+    figure: function (s) {
+      var cx = 310, cy = 230, a = 90, b = 55, c = 45;
+      var t = Math.max(0, Math.min(90, s.k)) / 90;
+      var theta = t * Math.PI / 2;
+      var c30 = Math.cos(30 * Math.PI / 180), s30 = Math.sin(30 * Math.PI / 180);
+
+      function proj(x, y, z) {
+        var px = cx + (1 - t) * x + t * (x - y) * c30;
+        var py = cy + (1 - t) * y + t * ((x + y) * s30 - z);
+        return [px, py];
+      }
+
+      // Bottom face F0: a x b
+      var b0 = proj(-a/2, -b/2, 0), b1 = proj(a/2, -b/2, 0), b2 = proj(a/2, b/2, 0), b3 = proj(-a/2, b/2, 0);
+
+      // Right face F5: width c
+      var r0 = b1, r3 = b2;
+      var r1 = proj(a/2 + c * Math.cos(theta), -b/2, c * Math.sin(theta));
+      var r2 = proj(a/2 + c * Math.cos(theta), b/2, c * Math.sin(theta));
+
+      // Left face F4: width c
+      var l0 = b0, l3 = b3;
+      var l1 = proj(-a/2 - c * Math.cos(theta), -b/2, c * Math.sin(theta));
+      var l2 = proj(-a/2 - c * Math.cos(theta), b/2, c * Math.sin(theta));
+
+      // Front face F1: height c
+      var f0 = b3, f1 = b2;
+      var f3 = proj(-a/2, b/2 + c * Math.cos(theta), c * Math.sin(theta));
+      var f2 = proj(a/2, b/2 + c * Math.cos(theta), c * Math.sin(theta));
+
+      // Back face F2: height c
+      var k0 = b0, k1 = b1;
+      var k3 = proj(-a/2, -b/2 - c * Math.cos(theta), c * Math.sin(theta));
+      var k2 = proj(a/2, -b/2 - c * Math.cos(theta), c * Math.sin(theta));
+
+      // Top face F3: a x b attached to Back face
+      var hy = -b/2 - c * Math.cos(theta), hz = c * Math.sin(theta);
+      var ty = hy - b * mathCos(2 * theta), tz = hz + b * mathSin(2 * theta);
+      var top0 = k3, top1 = k2;
+      var top3 = proj(-a/2, ty, tz), top2 = proj(a/2, ty, tz);
+
+      return {
+        meet: true, t: t, deg: s.k, a: a, b: b, c: c,
+        f0: [b0, b1, b2, b3],
+        f1: [f0, f1, f2, f3],
+        f2: [k0, k1, k2, k3],
+        f3: [top0, top1, top2, top3],
+        f4: [l0, l1, l2, l3],
+        f5: [r0, r1, r2, r3]
+      };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      given(ink, 'ប្រលេពីប៉ែតកែង៖ a = 6 cm, b = 3.5 cm, c = 3 cm');
+
+      var drawPoly = function (pts, cls) {
+        return el('polygon', { points: pts.map(function (p) { return p.join(','); }).join(' '), class: cls }, ink);
+      };
+
+      if (i >= 1) {
+        drawPoly(f.f2, 'cx-face cx-face-back');
+        drawPoly(f.f4, 'cx-face cx-face-side');
+        drawPoly(f.f5, 'cx-face cx-face-side');
+        drawPoly(f.f0, 'cx-face cx-face-base');
+        drawPoly(f.f1, 'cx-face cx-face-front');
+        if (i >= 2) drawPoly(f.f3, 'cx-face cx-face-top');
+      }
+
+      if (f.t < 0.3) {
+        var mid = function (pts) { return mul(add(add(pts[0], pts[1]), add(pts[2], pts[3])), 0.25); };
+        label(marks, mid(f.f0), 'បាត (a×b)', 'cx-note');
+        label(marks, mid(f.f1), 'មុខ (a×c)', 'cx-note');
+        label(marks, mid(f.f2), 'ក្រោយ (a×c)', 'cx-note');
+        if (i >= 2) label(marks, mid(f.f3), 'បាតលើ (a×b)', 'cx-note');
+        label(marks, mid(f.f4), 'ឆ្វេង', 'cx-note');
+        label(marks, mid(f.f5), 'ស្ដាំ', 'cx-note');
+      } else if (f.t > 0.8) {
+        var card = el('g', {}, marks);
+        el('rect', { x: 410, y: 30, width: 215, height: 105, rx: 8, class: 'cx-table-bg' }, card);
+        label(card, [517, 50], 'ប្រលេពីប៉ែតកែង (Cuboid)', 'cx-th');
+        label(card, [517, 72], 'Sl = 2(a+b)c = 57 cm²', 'cx-note');
+        label(card, [517, 94], 'St = Sl + 2ab = 99 cm²', 'cx-note cx-r');
+        label(card, [517, 116], 'V = abc = 63 cm³', 'cx-note');
+      }
+    }
+  };
+
+  function mathCos(x) { return Math.cos(x); }
+  function mathSin(x) { return Math.sin(x); }
+
+  // CX['cylinder-net']: 2D net and 3D rolling of a cylinder
+  CX['cylinder-net'] = {
+    steps: 6,
+    start: { k: 0 },
+    kScale: 1,
+    kText: function (s) {
+      if (s.k === 0) return 'ប្លង់លាត 2D រាបស្មើ (0%) — ផ្ទៃខាងចតុកោណកែង 2πR × h + បាតរង្វង់ ២';
+      if (s.k === 100) return 'ស៊ីឡាំង 3D (100%) — St = 2πRh + 2πR² ≈ 102.8 cm², V = πR²h ≈ 70.7 cm³';
+      return 'កម្រិតរមូរ ' + s.k + '% (កំពុងរមូរផ្គុំជាស៊ីឡាំង 3D)';
+    },
+    presets: {
+      flat: function (s) { s.k = 0; },
+      half: function (s) { s.k = 50; },
+      solid: function (s) { s.k = 100; }
+    },
+    figure: function (s) {
+      var cx = 310, cy = 230, R = 32, h = 95, L = 200;
+      var t = Math.max(0, Math.min(100, s.k)) / 100;
+      return { meet: true, t: t, R: R, h: h, L: L, cx: cx, cy: cy };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks;
+      given(ink, 'ស៊ីឡាំង៖ កាំបាត R = 2.5 cm, កម្ពស់ h = 4 cm (យក π ≈ 3.14)');
+
+      var t = f.t, cx = f.cx, cy = f.cy, R = f.R, h = f.h, L = f.L;
+      var curW = (1 - t) * L + t * (2 * R);
+      var rx = R, ry = (1 - t) * R + t * (R * 0.35);
+
+      if (i < 1) return;
+
+      if (t < 0.95) {
+        // Lateral rectangle
+        el('rect', {
+          x: cx - curW / 2, y: cy - h / 2, width: curW, height: h,
+          class: 'cx-face cx-face-front', rx: t * 12
+        }, ink);
+        // Dimensions in 2D
+        if (t === 0) {
+          sideNote(marks, [cx - L / 2, cy - h / 2], [cx + L / 2, cy - h / 2], [cx, cy - h], 'L = 2πR ≈ 15.7 cm');
+          sideNote(marks, [cx + L / 2, cy - h / 2], [cx + L / 2, cy + h / 2], [cx + L, cy], 'h = 4 cm');
+        }
+      }
+
+      // Bases (circles/ellipses)
+      if (i >= 3) {
+        var topY = (1 - t) * (cy - h / 2 - R) + t * (cy - h / 2);
+        var botY = (1 - t) * (cy + h / 2 + R) + t * (cy + h / 2);
+
+        // In 3D: bottom base back arc dashed, front solid
+        if (t > 0.6) {
+          el('ellipse', { cx: cx, cy: botY, rx: rx, ry: ry, class: 'cx-face cx-face-base' }, ink);
+          // 3D cylinder sides
+          el('rect', { x: cx - rx, y: cy - h / 2, width: 2 * rx, height: h, class: 'cx-face cx-face-front' }, ink);
+          el('ellipse', { cx: cx, cy: botY, rx: rx, ry: ry, class: 'cx-face cx-face-front' }, ink);
+          el('ellipse', { cx: cx, cy: topY, rx: rx, ry: ry, class: 'cx-face cx-face-top' }, ink);
+        } else {
+          el('ellipse', { cx: cx, cy: topY, rx: rx, ry: ry, class: 'cx-face cx-face-top' }, ink);
+          el('ellipse', { cx: cx, cy: botY, rx: rx, ry: ry, class: 'cx-face cx-face-base' }, ink);
+        }
+
+        if (t === 0) {
+          label(marks, [cx, topY], 'បាតលើ (កាំ R)', 'cx-note');
+          label(marks, [cx, botY], 'បាតក្រោម (កាំ R)', 'cx-note');
+          segLine(marks, [cx, topY], [cx + R, topY], 'cx-radius');
+          segLine(marks, [cx, botY], [cx + R, botY], 'cx-radius');
+        }
+      }
+
+      if (t > 0.8) {
+        var card = el('g', {}, marks);
+        el('rect', { x: 420, y: 30, width: 205, height: 105, rx: 8, class: 'cx-table-bg' }, card);
+        label(card, [522, 50], 'ស៊ីឡាំង (Cylinder)', 'cx-th');
+        label(card, [522, 72], 'Sl = 2πRh ≈ 62.8 cm²', 'cx-note');
+        label(card, [522, 94], 'St = Sl + 2πR² ≈ 102.1 cm²', 'cx-note cx-r');
+        label(card, [522, 116], 'V = πR²h ≈ 78.5 cm³', 'cx-note');
+      }
+    }
+  };
+
+  // CX['pie-chart']: Constructing a pie chart step-by-step with protractor
+  CX['pie-chart'] = {
+    steps: 6,
+    start: { k: 180, preset: 'farm' },
+    kScale: 1,
+    kText: function (s) {
+      return 'មុំចម្រៀកទី ១ = ' + s.k + '°  (ស្មើនឹង ' + Math.round(s.k / 360 * 1000) / 10 + '% នៃទិន្នន័យសរុប)';
+    },
+    presets: {
+      farm: function (s) { s.preset = 'farm'; s.k = 180; },
+      crops: function (s) { s.preset = 'crops'; s.k = 120; },
+      sports: function (s) { s.preset = 'sports'; s.k = 144; }
+    },
+    figure: function (s) {
+      var O = [235, 240], R = 135;
+      var data;
+      if (s.preset === 'crops') {
+        data = [
+          { name: 'ស្រូវ', pct: '33.3%', deg: s.k, cls: 'cx-pie-s1' },
+          { name: 'ពោត', pct: '30.6%', deg: 110, cls: 'cx-pie-s3' },
+          { name: 'សណ្ដែក', pct: '22.2%', deg: 80, cls: 'cx-pie-s2' },
+          { name: 'ល្ង', pct: '13.9%', deg: 50, cls: 'cx-pie-s4' }
+        ];
+      } else if (s.preset === 'sports') {
+        data = [
+          { name: 'បាល់ទាត់', pct: '40%', deg: s.k, cls: 'cx-pie-s1' },
+          { name: 'បាល់ទះ', pct: '30%', deg: 108, cls: 'cx-pie-s2' },
+          { name: 'រត់ប្រណាំង', pct: '20%', deg: 72, cls: 'cx-pie-s3' },
+          { name: 'ហែលទឹក', pct: '10%', deg: 36, cls: 'cx-pie-s5' }
+        ];
+      } else {
+        data = [
+          { name: 'មាន់', pct: '50%', deg: s.k, cls: 'cx-pie-s1' },
+          { name: 'ទា', pct: '33.3%', deg: Math.round((360 - s.k) * 2 / 3), cls: 'cx-pie-s2' },
+          { name: 'ក្ងាន', pct: '16.7%', deg: Math.round((360 - s.k) / 3), cls: 'cx-pie-s3' }
+        ];
+      }
+      return { meet: true, O: O, R: R, data: data, k: s.k };
+    },
+    draw: function (f, i, g, layer) {
+      var ink = layer.ink, marks = layer.marks, tools = layer.tools;
+      var O = f.O, R = f.R, data = f.data;
+      given(ink, 'ក្រាបផ្លិត៖ ផលបូកមុំផ្ចិត = 360°');
+
+      // Table on the right side
+      var card = el('g', {}, marks);
+      el('rect', { x: 410, y: 35, width: 215, height: 45 + data.length * 36 + 32, rx: 8, class: 'cx-table-bg' }, card);
+      label(card, [517, 56], 'តារាងបម្លែងមុំផ្ចិត', 'cx-th');
+      el('line', { x1: 420, y1: 72, x2: 615, y2: 72, stroke: '#cbd5e1', 'stroke-width': 1 }, card);
+
+      var currAngle = 0;
+      data.forEach(function (row, idx) {
+        var y = 92 + idx * 36;
+        el('rect', { x: 422, y: y - 8, width: 14, height: 14, rx: 3, class: row.cls }, card);
+        label(card, [465, y], row.name, 'cx-td');
+        label(card, [530, y], row.pct, 'cx-td');
+        label(card, [585, y], row.deg + '°', 'cx-td');
+      });
+      var sumY = 92 + data.length * 36;
+      el('line', { x1: 420, y1: sumY - 14, x2: 615, y2: sumY - 14, stroke: '#cbd5e1', 'stroke-width': 1 }, card);
+      label(card, [465, sumY], 'សរុប', 'cx-th');
+      label(card, [530, sumY], '100%', 'cx-th');
+      label(card, [585, sumY], '360°', 'cx-th');
+
+      // Step 1: Center O
+      dot(ink, O, 4);
+      point(ink, O, 'O', [-1, -1], 'cx-pt-m', null, 20);
+
+      // Step 2: Circle
+      if (i >= 1) {
+        el('circle', { cx: O[0], cy: O[1], r: R, fill: 'none', stroke: '#132238', 'stroke-width': 2.4 }, ink);
+      }
+
+      // Step 3: Reference radius OA (0 deg, to the right)
+      if (i >= 2) {
+        var A = add(O, [R, 0]);
+        segLine(ink, O, A, 'cx-seg');
+        point(ink, A, 'A', [1, 0], null, null, 18);
+      }
+
+      // Draw sectors step-by-step
+      var startDeg = 0;
+      for (var sIdx = 0; sIdx < data.length; sIdx++) {
+        var sec = data[sIdx];
+        var endDeg = startDeg + sec.deg;
+        var showSec = (sIdx === 0 && i >= 3) || (sIdx === 1 && i >= 4) || (sIdx >= 2 && i >= 5);
+
+        if (showSec) {
+          // Draw sector
+          var t1 = -startDeg * Math.PI / 180, t2 = -endDeg * Math.PI / 180;
+          var p1 = onCircle(O, R, t1), p2 = onCircle(O, R, t2);
+          var large = sec.deg > 180 ? 1 : 0;
+          var pathD = 'M' + O.join(' ') + 'L' + p1.join(' ') + 'A' + R + ' ' + R + ' 0 ' + large + ' 0 ' + p2.join(' ') + 'Z';
+          el('path', { d: pathD, class: sec.cls }, ink);
+          segLine(ink, O, p2, 'cx-seg');
+
+          // Centroid label for sector
+          var midDeg = (startDeg + endDeg) / 2;
+          var labelDist = R * 0.65;
+          var lblPos = onCircle(O, labelDist, -midDeg * Math.PI / 180);
+          label(marks, lblPos, sec.name + ' ' + sec.pct, 'cx-pie-label');
+        }
+
+        // Show Protractor at appropriate steps
+        if (sIdx === 0 && i === 3) {
+          drawProt(tools, O, 0, 0.95, [0, sec.deg]);
+        } else if (sIdx === 1 && i === 4) {
+          drawProt(tools, O, -startDeg, 0.95, [0, sec.deg]);
+        }
+
+        startDeg = endDeg;
+      }
+
+      // Compass at step 1
+      if (i === 1) drawCompass(tools, O, add(O, [R, 0]));
+      // Ruler at step 2
+      if (i === 2) drawCmRuler(tools, O, RIGHT, 5, DOWN);
+    }
+  };
+
+  // ---------------------------------------------------------- player ---
+  function Player(root) {
+    var def = CX[root.getAttribute('data-cx')];
+    if (!def) return;
+    var stage = root.querySelector('.cx-stage');
+    var items = Array.prototype.slice.call(root.querySelectorAll('.cx-steps li'));
+    var now = root.querySelector('.cx-now');
+    var warn = root.querySelector('.cx-warn');
+    var slider = root.querySelector('.cx-k');
+    var kOut = root.querySelector('.cx-k-out');
+    var btn = function (sel) { return root.querySelector(sel); };
+    var fresh = function () {
+      var s = {};
+      for (var key in def.start) s[key] = Array.isArray(def.start[key]) ? def.start[key].slice() : def.start[key];
+      return s;
+    };
+    var state = fresh();
+    var step = 0, playing = false, timer = null, raf = null, kScale = def.kScale || 100;
+    // the words of the captions that depend on the state (how many parts, which letters)
+    function refill() {
+      if (!def.fill) return;
+      var words = def.fill(state);
+      Array.prototype.forEach.call(root.querySelectorAll('[data-fill]'), function (e) {
+        var w = words[e.getAttribute('data-fill')];
+        if (w != null) e.textContent = w;
+      });
+    }
+    refill();
+
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'cx-svg', role: 'img', 'aria-label': root.getAttribute('data-label') || '' });
+    stage.innerHTML = '';
+    stage.appendChild(svg);
+    var paper = el('g', {}, svg), marks = el('g', {}, svg), ink = el('g', {}, svg), tools = el('g', {}, svg);
+    // squared paper
+    for (var x = 20; x < W; x += 20) el('line', { x1: x, y1: 0, x2: x, y2: H, class: 'cx-grid' + (x % 100 === 0 ? ' b' : '') }, paper);
+    for (var y = 20; y < H; y += 20) el('line', { x1: 0, y1: y, x2: W, y2: y, class: 'cx-grid' + (y % 100 === 0 ? ' b' : '') }, paper);
+
+    function clear(g) { while (g.firstChild) g.removeChild(g.firstChild); }
+    function render(i, upTo) {
+      clear(marks); clear(ink); clear(tools);
+      var f = def.figure(state);
+      def.draw(f, i, svg, { ink: ink, marks: marks, tools: tools });
+      warn.hidden = f.meet || i < (def.warnFrom || 2);
+      return f;
+    }
+    function caption() {
+      items.forEach(function (li, j) {
+        li.classList.toggle('on', j === step);
+        li.classList.toggle('done', j < step);
+        li.setAttribute('aria-current', j === step ? 'step' : 'false');
+      });
+      now.innerHTML = '<b>' + km(step + 1) + '/' + km(def.steps) + '</b> ' + items[step].innerHTML;
+      btn('.cx-prev').disabled = step === 0;
+      btn('.cx-next').disabled = step === def.steps - 1;
+    }
+    function stopAnim() { if (raf) cancelAnimationFrame(raf); raf = null; }
+    // go to step i; animate the new shapes when moving forward one step
+    function go(i, animate) {
+      stopAnim();
+      step = Math.max(0, Math.min(def.steps - 1, i));
+      caption();
+      var f = def.figure(state);
+      var a = animate && !reduce && def.anim ? def.anim(f, step) : null;
+      if (!a) { render(step); return Promise.resolve(); }
+      render(step - 1);
+      clear(marks); clear(tools);                         // the previous step's hints go
+      if (a.phases) {
+        return new Promise(function (done) {
+          var ph = 0, t0 = null, drawn = el('g', {}, ink);
+          function frame(ts) {
+            if (t0 == null) t0 = ts;
+            var cur = a.phases[ph], t = Math.min(1, (ts - t0) / cur.dur);
+            clear(tools); clear(drawn);
+            cur.draw(ease(t), drawn, tools);
+            if (t < 1) { raf = requestAnimationFrame(frame); return; }
+            if (++ph < a.phases.length) { t0 = null; raf = requestAnimationFrame(frame); return; }
+            raf = null;
+            setTimeout(function () { if (!raf) render(step); done(); }, 350);
+          }
+          raf = requestAnimationFrame(frame);
+        });
+      }
+      return new Promise(function (done) {
+        var lines = a.rulers || (a.ruler ? [a.ruler] : null);
+        var t0 = null, dur = a.arcs ? (a.arcs.length > 3 ? 750 : 1100) : 1000, part = 0;
+        var parts = a.arcs ? a.arcs.slice() : lines.map(function (q, j) { return j; });
+        var drawn = el('g', {}, ink);
+        function frame(ts) {
+          if (t0 == null) t0 = ts;
+          var t = Math.min(1, (ts - t0) / dur);
+          clear(tools); clear(drawn);
+          if (a.arcs) {
+            for (var j = 0; j < part; j++) { var q = f.arcs[parts[j]]; el('path', { d: arcPath(q.c, q.r || f.r, q.t1, q.t2), class: 'cx-arc' }, drawn); }
+            var arc = f.arcs[parts[part]], th = arc.t1 + (arc.t2 - arc.t1) * ease(t);
+            var rr = arc.r || f.r;
+            el('path', { d: arcPath(arc.c, rr, arc.t1, th), class: 'cx-arc' }, drawn);
+            drawCompass(tools, arc.c, onCircle(arc.c, rr, th));
+          } else {
+            for (var jj = 0; jj < part; jj++) el('line', { x1: lines[jj][0][0], y1: lines[jj][0][1], x2: lines[jj][1][0], y2: lines[jj][1][1], class: a.cls || 'cx-line' }, drawn);
+            var p = lines[part][0], q2 = lines[part][1], e = add(p, mul(sub(q2, p), ease(t)));
+            drawRuler(tools, p, q2);
+            el('line', { x1: p[0], y1: p[1], x2: e[0], y2: e[1], class: a.cls || 'cx-line' }, drawn);
+          }
+          if (t < 1) { raf = requestAnimationFrame(frame); return; }
+          if (++part < parts.length) { t0 = null; raf = requestAnimationFrame(frame); return; }
+          raf = null;
+          setTimeout(function () { if (!raf) render(step); done(); }, a.arcs ? 250 : 450);
+        }
+        raf = requestAnimationFrame(frame);
+      });
+    }
+    var ease = function (t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
+    var km = function (n) { return String(n).replace(/\d/g, function (d) { return '០១២៣៤៥៦៧៨៩'[d]; }); };
+
+    function stopPlay() {
+      playing = false; clearTimeout(timer);
+      btn('.cx-play').classList.remove('on');
+      btn('.cx-play span').textContent = btn('.cx-play').getAttribute('data-play');
+    }
+    function play() {
+      if (playing) { stopPlay(); return; }
+      playing = true;
+      btn('.cx-play').classList.add('on');
+      btn('.cx-play span').textContent = btn('.cx-play').getAttribute('data-pause');
+      var next = function () {
+        if (!playing) return;
+        if (step >= def.steps - 1) { stopPlay(); return; }
+        go(step + 1, true).then(function () {
+          if (!playing) return;
+          if (step >= def.steps - 1) stopPlay(); else timer = setTimeout(next, 1500);
+        });
+      };
+      if (step >= def.steps - 1) go(0, false).then(function () { timer = setTimeout(next, 900); });
+      else next();
+    }
+
+    btn('.cx-prev').addEventListener('click', function () { stopPlay(); go(step - 1, false); });
+    btn('.cx-next').addEventListener('click', function () { stopPlay(); go(step + 1, true); });
+    btn('.cx-play').addEventListener('click', play);
+    btn('.cx-reset').addEventListener('click', function () {
+      stopPlay();
+      state = fresh();
+      if (slider) { slider.value = Math.round(state.k * kScale); showK(); }
+      go(0, false);
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-preset]'), function (b) {
+      b.addEventListener('click', function () {
+        var set = def.presets && def.presets[b.getAttribute('data-preset')];
+        if (!set) return;
+        stopPlay(); stopAnim();
+        set(state);
+        if (slider) { slider.value = Math.round(state.k * kScale); showK(); }
+        render(step);
+      });
+    });
+    items.forEach(function (li, j) {
+      li.tabIndex = 0;
+      li.addEventListener('click', function () { stopPlay(); go(j, j === step + 1); });
+      li.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); li.click(); } });
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.target.closest('input')) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); btn('.cx-next').click(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); btn('.cx-prev').click(); }
+    });
+
+    // the compass opening, as a share of AB
+    function showK() {
+      if (!slider) return;
+      if (def.kSnap) slider.value = def.kSnap(+slider.value);
+      state.k = slider.value / kScale;
+      var ok = def.kOk ? def.kOk(state.k) : state.k > 0.5;
+      var words = ok ? root.getAttribute('data-k-ok') : root.getAttribute('data-k-short');
+      kOut.textContent = def.kText ? def.kText(state, words) : words;
+      kOut.classList.toggle('bad', !ok);
+      refill();
+    }
+    if (slider) {
+      slider.value = Math.round(state.k * kScale);
+      showK();
+      slider.addEventListener('input', function () { stopPlay(); stopAnim(); showK(); caption(); render(step); });
+    }
+
+    // drag A or B (mouse, finger or pen)
+    var dragging = null;
+    function toSvg(e) {
+      var pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+      var p = pt.matrixTransform(svg.getScreenCTM().inverse());
+      return [Math.max(30, Math.min(W - 30, p.x)), Math.max(30, Math.min(H - 30, p.y))];
+    }
+    svg.addEventListener('pointerdown', function (e) {
+      var g = e.target.getAttribute && e.target.getAttribute('data-drag');
+      if (!g) return;
+      e.preventDefault();
+      stopPlay(); stopAnim();
+      dragging = g;
+      svg.setPointerCapture(e.pointerId);
+      root.classList.add('dragging');
+    });
+    svg.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var p = toSvg(e);
+      if (def.place) p = def.place(state, dragging, p);
+      if (def.limit && !def.limit(state, dragging, p)) return;
+      state[dragging] = p;
+      render(step);
+    });
+    var end = function () { dragging = null; root.classList.remove('dragging'); };
+    svg.addEventListener('pointerup', end);
+    svg.addEventListener('pointercancel', end);
+
+    go(0, false);
+  }
+
+  // the tools and the small helpers, for the drawing board (static/js/board.js)
+  window.KMGeo = { el: el, arcPath: arcPath, drawCompass: drawCompass, drawRuler: drawRuler, drawSetSquare: drawSetSquare,
+    add: add, sub: sub, mul: mul, len: len, unit: unit };
+
+  window.Player = Player;
+  window.initConstruct = function (root) {
+    var targets = root ? (root.matches && root.matches('.cx[data-cx]') ? [root] : root.querySelectorAll('.cx[data-cx]')) : document.querySelectorAll('.cx[data-cx]');
+    targets.forEach(Player);
+  };
+
+  document.querySelectorAll('.cx[data-cx]').forEach(Player);
+
+  // Reached from a picture of a lesson (?from=g8/L12.html#fig-...), the page offers the way back to
+  // that picture: the button .cx-back, which the page holds hidden (its words are in the page).
+  (function () {
+    var back = document.querySelector('.cx-back'), m = /[?&]from=([^&#]*)/.exec(location.search);
+    var from = m ? decodeURIComponent(m[1]) : '';
+    if (!back) return;
+    if (/^g[789]\/L\d\d\.html#fig-[a-z0-9-]+$/.test(from)) back.href = '../lesson/' + from;
+    if (!back.getAttribute('href')) return;
+    var first = document.querySelector('.cx-section .wrap');
+    if (first && back.parentElement !== first) first.insertBefore(back, first.firstChild);
+    back.hidden = false;
+  })();
+
+  // Several constructions on one page (the special angles): a row of tabs shows one at a time.
+  // The address keeps the choice (#a30), so a link can open the page on one of them.
+  document.querySelectorAll('.cx-tabs').forEach(function (bar) {
+    var tabs = Array.prototype.slice.call(bar.querySelectorAll('[role="tab"]'));
+    var pane = function (t) { return document.getElementById(t.getAttribute('aria-controls')); };
+    function show(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab, p = pane(t), playing = p.querySelector('.cx-play.on');
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (!on && playing) playing.click();               // a hidden construction stops playing
+        p.hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (t, j) {
+      t.addEventListener('click', function () {
+        show(t);
+        if (history.replaceState) history.replaceState(null, '', '#' + t.getAttribute('aria-controls'));
+      });
+      t.addEventListener('keydown', function (e) {
+        var to = e.key === 'ArrowRight' ? j + 1 : e.key === 'ArrowLeft' ? j - 1 : null;
+        if (to == null) return;
+        e.preventDefault();
+        tabs[(to + tabs.length) % tabs.length].click();
+        tabs[(to + tabs.length) % tabs.length].focus();
+      });
+    });
+    var fromHash = function () {
+      var want = tabs.filter(function (t) { return '#' + t.getAttribute('aria-controls') === location.hash; })[0];
+      if (want) show(want);
+    };
+    show(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0]);
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+  });
+})();

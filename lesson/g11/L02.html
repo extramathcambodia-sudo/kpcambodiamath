@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២ : ស៊ីតនព្វន្ត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២ «ស៊ីតនព្វន្ត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២ : ស៊ីតនព្វន្ត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២ «ស៊ីតនព្វន្ត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g11">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li aria-current="page">មេរៀនទី ២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២</span>
+      <div><span class="ls-kicker">ថ្នាក់វិទ្យាសាស្ត្រ · ជំពូកទី ១ ស៊ីតនិងអនុមានរួមគណិតវិទ្យា · មេរៀនទី ២ · គណិតវិទ្យាថ្នាក់ទី ១១</span><h1>ស៊ីតនព្វន្ត</h1><div class="ls-chips"><span class="chip chip-soon">ថ្នាក់វិទ្យាសាស្ត្រ</span><span class="chip chip-soon">ទំព័រ ៨–១៣</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. និយមន័យស៊ីតនព្វន្ត</a></li><li class="sub"><a href="#u2">២. តួទី <span class="mi">\(n\)</span> នៃស៊ីតនព្វន្ត</a></li><li class="sub"><a href="#u3">៣. ផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនព្វន្ត</a></li><li class="sub"><a href="#u4">៤. ទំព័រសៀវភៅដើម</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-11.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white"><header class="bx-h"><b>វត្ថុបំណង</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>កំណត់និយមន័យនិងផលសងរួមនៃស៊ីតនព្វន្ត</p></li>
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីតនព្វន្ត</p></li>
+<li><p>ផលបូកតួស្មើចម្ងាយពីតួចុង</p></li>
+<li><p>គណនាផលបូកតួនៃស៊ីតនព្វន្ត ។</p></li>
+</ol>
+</div></section>
+<h3 id="u1">និយមន័យស៊ីតនព្វន្ត</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\(1, 2, 3, 4, 5, \ldots\)</span> ។ គេបាន <div class="md">\[\begin{aligned}
+a_1 &amp;= 1,\ a_2 = 2 = 1 + 1 = a_1 + 1,\ a_3 = 3 = 2 + 1\\
+&amp;= a_2 + 1,
+\end{aligned}\]</div> <div class="md">\[\begin{gathered}
+\begin{aligned}
+a_4 &amp;= 4 = 3 + 1 = a_3 + 1,\ a_5 = 5 = 4 + 1\\
+&amp;= a_4 + 1,\\ \ldots,\ a_{n+1} = a_n + 1 \text{ ។}
+\end{aligned}
+\end{gathered}\]</div> គេសង្កេតឃើញថា តួនីមួយៗនៃស៊ីត (ក្រៅពីតួទី <span class="mi">\(1\)</span>) ស្មើនឹងតួមុនបន្ទាប់បូកនឹងចំនួនថេរ (ស្មើនឹង <span class="mi">\(1\)</span>) ។ ចំនួន <span class="mi">\(1\)</span> ហៅថាផលសងរួមនៃស៊ីត ។ ស៊ីត <span class="mi">\(1, 2, 3, 4, 5, \ldots\)</span> ហៅថា <strong>ស៊ីតនព្វន្ត</strong>ដែលមានផលសងស្មើ <span class="mi">\(1\)</span> ។</p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>ស៊ីតនព្វន្ត គឺជាស៊ីតនៃចំនួនពិតដែលមានតួនីមួយៗ (ក្រៅពីតួទី <span class="mi">\(1\)</span>) ស្មើនឹងតួមុនបន្ទាប់បូកចំនួនថេរ <span class="mi">\(d\)</span> មួយ ហៅថាផលសងរួម ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ផលសងរួមនៃស៊ីតនព្វន្តតាងដោយ <span class="mi">\(d\)</span> កំណត់ដោយ <div class="md">\[d = a_2 - a_1 = a_3 - a_2 = \ldots = a_{n+1} - a_n \text{ ។}\]</div></p>
+</div></section>
+<h3 id="u2">តួទី <span class="mi">\(n\)</span> នៃស៊ីតនព្វន្ត</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\(1, 2, 3, 4, 5, \ldots\)</span> គឺជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> ៖ <span class="mi">\(a_1 = 1\)</span> និងផលសងរួម <span class="mi">\(d = 1\)</span> ។ គេបាន <div class="md">\[\begin{aligned}
+a_1 &amp;= 1,\ a_2 = 2 = 1 + 1 = a_1 + d,\ a_3 = 3 = 2 + 1\\
+&amp;= a_1 + 2d,
+\end{aligned}\]</div> <div class="md">\[\begin{aligned}
+a_4 &amp;= 4 = 3 + 1 = a_1 + 3d,\ a_5 = 5 = 4 + 1\\
+&amp;= a_1 + 4d,\ \ldots
+\end{aligned}\]</div> គេសង្កេតឃើញ តួនីមួយៗនៃស៊ីត (ក្រៅពីតួទី <span class="mi">\(1\)</span>) ស្មើនឹងតួទី <span class="mi">\(1\)</span> បូក <span class="mi">\(d, 2d, 3d, \ldots\)</span> រៀងគ្នា ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\((a_n)\)</span> ជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> <span class="mi">\(a_1\)</span> និងផលសងរួម <span class="mi">\(d\)</span> ។ តួទី <span class="mi">\(n\)</span> នៃស៊ីតនព្វន្តកំណត់ដោយ <div class="md">\[a_n = a_1 + (n - 1) \times d \text{ ។}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>គេមានស៊ីតនព្វន្ត <span class="mi">\(2, 8, 14, 20, \ldots\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>គណនាតួទី <span class="mi">\(20\)</span></p></li>
+<li><p>តើចំនួន <span class="mi">\(236\)</span> ជាតួទីប៉ុន្មាននៃស៊ីត?</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាងតួទីមួយ <span class="mi">\(a_1 = 2\)</span> តួទីពីរ <span class="mi">\(a_2 = 8\)</span> ។ គេបានផលសងរួម <span class="mi">\(d = a_2 - a_1 = 8 - 2 = 6\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>ដោយ <span class="mi">\(a_n = a_1 + (n - 1)d\)</span> គេបានតួទី <span class="mi">\(20\)</span> នៃស៊ីតនព្វន្ត <div class="md">\[a_{20} = 2 + (20 - 1) \times 6 = 116\]</div> ដូច្នេះតួទី <span class="mi">\(20\)</span> នៃស៊ីតគឺ <span class="mi">\(116\)</span> ។</p></li>
+<li><p>តាង <span class="mi">\(a_n = 236\)</span> គេបាន <span class="mi">\(a_n = 2 + (n - 1) \times 6\)</span> <div class="md">\[\begin{gathered}
+\begin{aligned}
+236 &amp;= 2 + (n - 1) \times 6 \iff 236 = 6n - 4\\ \iff 6n\\
+&amp;= 240 \Rightarrow n = 40
+\end{aligned}
+\end{gathered}\]</div> ដូច្នេះចំនួន <span class="mi">\(236\)</span> ជាតួទី <span class="mi">\(40\)</span> នៃស៊ីត ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>តំណាងក្រុមហ៊ុនធានារ៉ាប់រងមួយទទួលប្រាក់បៀវត្សក្នុងឆ្នាំទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(30\)</span> លានរៀល និងក្នុងឆ្នាំទី <span class="mi">\(7\)</span> គឺ <span class="mi">\(60\)</span> លានរៀល ។ ឧបមាថា តួលេខនៃប្រាក់បៀវត្សប្រចាំឆ្នាំរបស់គាត់បង្កើតបានជាស៊ីតនព្វន្ត ។ កំណត់ប្រាក់បៀវត្សរបស់គាត់ក្នុងឆ្នាំទី <span class="mi">\(10\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>គេមានប្រាក់បៀវត្សក្នុងឆ្នាំទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(a_1 = 30\)</span> លានរៀល និងប្រាក់បៀវត្សក្នុងឆ្នាំទី <span class="mi">\(7\)</span> <span class="mi">\(a_7 = 60\)</span> លានរៀល នោះគឺ <span class="mi">\(a_7 = a_1 + (7 - 1)d\)</span> <div class="md">\[\begin{gathered}
+60 = 30 + (7 - 1)d\\
+\text{គេបាន } d = 5 \text{ លានរៀល}
+\end{gathered}\]</div> ដូច្នេះប្រាក់បៀវត្សក្នុងឆ្នាំទី <span class="mi">\(10\)</span> គឺ <div class="md">\[\begin{gathered}
+a_{10} = a_7 + (10 - 7)d,\\
+a_{10} = 60 + 3 \times 5 = 75 \text{ លានរៀល ។}
+\end{gathered}\]</div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>គេឱ្យស៊ីតនព្វន្តមួយដែល <span class="mi">\(a_1 = 2\)</span> និង <span class="mi">\(a_2 = 9\)</span> ។ កំណត់តួទី <span class="mi">\(5\)</span> និងគណនា <span class="mi">\(a_6\)</span> ។</p></li>
+<li><p>សៀវភៅមួយក្បាលមាន <span class="mi">\(100\)</span> ទំព័រចុះលេខទំព័រពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(100\)</span> ។ រកចំនួនទំព័រដែលមានលេខខាងចុង <span class="mi">\(5\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols1">
+<li><p><span class="mi">\(a_5 = 30\)</span>, <span class="mi">\(a_6 = 37\)</span></p></li>
+<li><p>មាន <span class="mi">\(10\)</span> ទំព័រ ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u3">ផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនព្វន្ត</h3>
+<p>គេមានស៊ីតនព្វន្ត <span class="mi">\(a_1, a_2, a_3, a_4, a_5, a_6\)</span> ។ <span class="mi">\(a_1\)</span> និង <span class="mi">\(a_6\)</span> ហៅថា <strong>តួចុង</strong> ។ <span class="mi">\(a_2\)</span> និង <span class="mi">\(a_5\)</span> ហើយ <span class="mi">\(a_3\)</span> និង <span class="mi">\(a_4\)</span> ហៅថា <strong>តួនៅស្មើចម្ងាយពីតួចុង</strong> ។</p>
+<p>តាមរូបមន្តតួទី <span class="mi">\(n\)</span> នៃស៊ីតនព្វន្ត ៖ <span class="mi">\(a_n = a_1 + (n - 1)d\)</span> គេបាន <div class="md">\[\begin{aligned}
+a_1 + a_6 &amp;= a_1 + a_1 + 5d = 2a_1 + 5d &amp;\quad{} (1)\\
+a_2 + a_5 &amp;= a_1 + d + a_1 + 4d = 2a_1 + 5d &amp;\quad{} (2)\\
+a_3 + a_4 &amp;= a_1 + 2d + a_1 + 3d = 2a_1 + 5d &amp;\quad{} (3)
+\end{aligned}\]</div> គេបាន <span class="mi">\(a_1 + a_6 = a_2 + a_5 = a_3 + a_4\)</span> ។</p>
+<p>ជាទូទៅ បើគេមានស៊ីតនព្វន្ត <span class="mi">\(a_1, a_2, a_3, \ldots, a_{n-2}, a_{n-1}, a_n\)</span> គេបានផលបូកតួចុងស្មើនឹងផលបូកតួស្មើចម្ងាយពីតួចុង <div class="md">\[a_1 + a_n = a_2 + a_{n-1} = a_3 + a_{n-2} = \ldots\]</div> គេប្រើលក្ខណៈនេះដើម្បីគណនាផលបូកតួនៃស៊ីតនព្វន្ត <div class="md">\[\begin{aligned}
+S_n &amp;= a_1 + a_2 + a_3 + \ldots + a_{n-1} + a_n\\
+S_n &amp;= a_n + a_{n-1} + \ldots + a_2 + a_1
+\end{aligned}\]</div> បូកអង្គនិងអង្គ គេបាន <div class="md">\[\begin{aligned}
+2S_n &amp;= (a_1 + a_n) + (a_2 + a_{n-1}) + \ldots\\
+&amp;\quad{} + (a_{n-1} + a_2) + (a_1 + a_n)\\
+&amp;= \underbrace{(a_1 + a_n) + (a_1 + a_n) + \ldots + (a_1 + a_n)}_{n \text{ តួ}}
+\end{aligned}\]</div> <div class="md">\[\begin{gathered}
+2S_n = (a_1 + a_n)n \quad{} \text{នោះ}\\
+S_n = \frac{n}{2}(a_1 + a_n) \text{ ។}
+\end{gathered}\]</div></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនព្វន្ត ដែលមាន <span class="mi">\(a_1\)</span> ជាតួទី <span class="mi">\(1\)</span> និង <span class="mi">\(a_n\)</span> ជាតួទី <span class="mi">\(n\)</span> កំណត់ដោយ <div class="md">\[\begin{gathered}
+S_n = \frac{n}{2}(a_1 + a_n) \quad{} \text{ឬ}\\
+S_n = \frac{n\left(2a_1 + (n - 1)d\right)}{2} \text{ ។}
+\end{gathered}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>គេមានស៊ីតនព្វន្ត <span class="mi">\(51, 47, 43, \ldots\)</span> ។ កំណត់តម្លៃ <span class="mi">\(n\)</span> ដែលគេឱ្យផលបូក <span class="mi">\(n\)</span> តួដំបូង <span class="mi">\(S_n\)</span> មានតម្លៃអតិបរមា និងកំណត់តម្លៃនៃ <span class="mi">\(S_n\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាង <span class="mi">\(a_n\)</span> ជាតួទូទៅនៃស៊ីតនព្វន្ត ។ ដោយផលសងរួម <span class="mi">\(d = -4\)</span> និង <span class="mi">\(a_1 = 51\)</span> ។ គេបាន <div class="md">\[a_n = a_1 + (n - 1)d = 51 + (n - 1)(-4) = 55 - 4n\]</div> នាំឱ្យ <span class="mi">\(a_n &gt; 0\)</span> ចំពោះ <span class="mi">\(n = 1, 2, \ldots, 13\)</span> និង <span class="mi">\(a_n &lt; 0\)</span> ចំពោះ <span class="mi">\(n = 14, 15, \ldots\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(S_n\)</span> អតិបរមានៅពេលដែល <span class="mi">\(n = 13\)</span> និង <div class="md">\[S_{13} = \frac{51 + (55 - 4 \times 13)}{2} \times 13 = 351 \text{ ។}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>គេរៀបឥដ្ឋទីធ្លាមុខផ្ទះមួយដែលមានរាងជាចតុកោណព្នាយ (មើលរូប) ។ ទីធ្លានោះមានឥដ្ឋ <span class="mi">\(18\)</span> ជួរ ។ ជួរទី <span class="mi">\(1\)</span> មានឥដ្ឋ <span class="mi">\(14\)</span> ដុំ ហើយជួរបន្តបន្ទាប់មានចំនួនឥដ្ឋលើសជួរមុន <span class="mi">\(1\)</span> ដុំ រហូតដល់ជួរទី <span class="mi">\(18\)</span> មាន <span class="mi">\(31\)</span> ដុំ ។ តើគេត្រូវចំណាយឥដ្ឋប៉ុន្មានដុំដើម្បីរៀបឱ្យពេញទីធ្លានោះ?</p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22142.04%22 height=%2276.06%22 viewBox=%220 0 142.04 76.06%22%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 2.85 -3.46 C 3.65 -3.73 4.23 -4.42 4.23 -5.20 C 4.23 -6 3.35 -6.56 2.42 -6.56 C 1.42 -6.56 0.67 -5.96 0.67 -5.21 C 0.67 -4.89 0.89 -4.70 1.18 -4.70 C 1.48 -4.70 1.68 -4.92 1.68 -5.20 C 1.68 -5.70 1.21 -5.70 1.07 -5.70 C 1.37 -6.18 2.03 -6.31 2.37 -6.31 C 2.78 -6.31 3.32 -6.09 3.32 -5.20 C 3.32 -5.09 3.31 -4.51 3.04 -4.07 C 2.75 -3.60 2.42 -3.57 2.17 -3.57 C 2.09 -3.56 1.85 -3.54 1.79 -3.54 C 1.71 -3.53 1.64 -3.53 1.64 -3.42 C 1.64 -3.31 1.71 -3.31 1.87 -3.31 L 2.31 -3.31 C 3.12 -3.31 3.48 -2.64 3.48 -1.68 C 3.48 -0.34 2.81 -0.06 2.37 -0.06 C 1.95 -0.06 1.20 -0.21 0.85 -0.81 C 1.20 -0.76 1.51 -0.96 1.51 -1.34 C 1.51 -1.70 1.25 -1.90 0.96 -1.90 C 0.73 -1.90 0.40 -1.76 0.40 -1.32 C 0.40 -0.43 1.32 0.21 2.40 0.21 C 3.60 0.21 4.5 -0.67 4.5 -1.68 C 4.5 -2.48 3.87 -3.26 2.85 -3.46 Z M 2.85 -3.46 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 2.89 -6.29 C 2.89 -6.53 2.89 -6.56 2.67 -6.56 C 2.06 -5.92 1.18 -5.92 0.87 -5.92 L 0.87 -5.62 C 1.07 -5.62 1.65 -5.62 2.17 -5.87 L 2.17 -0.78 C 2.17 -0.42 2.14 -0.31 1.25 -0.31 L 0.93 -0.31 L 0.93 0 C 1.28 -0.03 2.14 -0.03 2.53 -0.03 C 2.92 -0.03 3.78 -0.03 4.12 0 L 4.12 -0.31 L 3.81 -0.31 C 2.92 -0.31 2.89 -0.40 2.89 -0.78 Z M 2.89 -6.29 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-2%22%3E%3Cpath d=%22M 2.89 -1.62 L 2.89 -0.76 C 2.89 -0.40 2.87 -0.31 2.14 -0.31 L 1.93 -0.31 L 1.93 0 C 2.34 -0.03 2.85 -0.03 3.26 -0.03 C 3.68 -0.03 4.20 -0.03 4.60 0 L 4.60 -0.31 L 4.40 -0.31 C 3.67 -0.31 3.65 -0.40 3.65 -0.76 L 3.65 -1.62 L 4.64 -1.62 L 4.64 -1.92 L 3.65 -1.92 L 3.65 -6.40 C 3.65 -6.60 3.65 -6.67 3.5 -6.67 C 3.40 -6.67 3.37 -6.67 3.29 -6.54 L 0.28 -1.92 L 0.28 -1.62 Z M 2.95 -1.92 L 0.54 -1.92 L 2.95 -5.59 Z M 2.95 -1.92 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 0.85 -6.82 C 0.85 -7.21 1.06 -7.40 1.48 -7.40 C 1.89 -7.40 2.10 -7.21 2.10 -6.82 C 2.10 -6.54 1.98 -6.39 1.73 -6.35 C 1.92 -6.12 2.28 -6.01 2.82 -6.01 C 4.12 -6.01 4.78 -6.39 4.78 -7.15 C 4.78 -7.73 4.21 -8.07 3.07 -8.17 C 3.07 -8.49 3.28 -8.65 3.71 -8.65 C 4.92 -8.65 5.53 -8.15 5.53 -7.15 C 5.53 -5.90 4.62 -5.28 2.82 -5.28 C 2.19 -5.28 1.70 -5.41 1.35 -5.67 C 1.02 -5.92 0.85 -6.31 0.85 -6.82 Z M 4.81 -5.04 L 5.53 -5.04 L 5.53 0 L 4.81 0 L 3.35 -1.40 L 1.92 0 L 1.20 0 L 1.20 -3.79 C 0.97 -3.79 0.85 -3.97 0.85 -4.32 C 0.85 -4.92 1.11 -5.23 1.64 -5.23 C 1.82 -5.23 1.92 -5.07 1.92 -4.76 L 1.92 -0.98 L 3.35 -2.39 L 4.81 -0.98 Z M 4.81 -5.04 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M -1.73 0.48 C -1.37 0.48 -1.20 0.64 -1.20 0.96 L -1.20 3.12 L -1.92 3.12 L -1.92 1.43 C -2.17 1.43 -2.31 1.28 -2.31 0.96 C -2.31 0.64 -2.11 0.48 -1.73 0.48 Z M -1.73 0.48 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-2%22%3E%3Cpath d=%22M -3.71 -9.25 C -3.71 -9.13 -3.69 -9.04 -3.64 -8.98 C -3.57 -8.92 -3.48 -8.89 -3.35 -8.89 C -3.24 -8.89 -3.15 -8.92 -3.09 -8.98 C -3.03 -9.04 -3 -9.13 -3 -9.25 C -3 -9.37 -3.03 -9.46 -3.09 -9.51 C -3.15 -9.57 -3.24 -9.60 -3.35 -9.60 C -3.48 -9.60 -3.57 -9.57 -3.64 -9.51 C -3.69 -9.46 -3.71 -9.37 -3.71 -9.25 Z M -2.28 -9.25 C -2.28 -8.88 -2.36 -8.61 -2.54 -8.43 C -2.73 -8.25 -3.00 -8.17 -3.35 -8.17 C -3.72 -8.17 -3.99 -8.25 -4.17 -8.43 C -4.35 -8.61 -4.45 -8.88 -4.45 -9.25 C -4.45 -9.61 -4.35 -9.88 -4.17 -10.06 C -3.99 -10.23 -3.72 -10.32 -3.35 -10.32 C -3.00 -10.32 -2.73 -10.23 -2.54 -10.06 C -2.36 -9.88 -2.28 -9.61 -2.28 -9.25 Z M -2.28 -9.25 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 39.99%25, 0%25)%22 fill-opacity=%221%22 d=%22M 3.34 24.12 L 137.75 24.12 L 112.55 51.00 L 28.54 51.00 Z M 3.34 24.12 %22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 3.22 -3.40 L 132.83 -3.40 %22 transform=%22matrix(0.98, 0, 0, -0.98, 3.34, 24.12)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 6.46 -6.80 L 129.60 -6.80 %22 transform=%22matrix(0.98, 0, 0, -0.98, 3.34, 24.12)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 9.69 -10.20 L 126.37 -10.20 %22 transform=%22matrix(0.98, 0, 0, -0.98, 3.34, 24.12)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 12.92 -13.60 L 123.13 -13.60 %22 transform=%22matrix(0.98, 0, 0, -0.98, 3.34, 24.12)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 16.15 -17.00 L 119.90 -17.00 %22 transform=%22matrix(0.98, 0, 0, -0.98, 3.34, 24.12)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 19.38 -20.40 L 116.67 -20.40 %22 transform=%22matrix(0.98, 0, 0, -0.98, 3.34, 24.12)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 22.62 -23.80 L 113.44 -23.80 %22 transform=%22matrix(0.98, 0, 0, -0.98, 3.34, 24.12)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2260.82%22 y=%2217.52%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2265.74%22 y=%2217.52%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2273.54%22 y=%2217.52%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2280.04%22 y=%2217.52%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2280.27%22 y=%2216.56%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2260.82%22 y=%2265.77%22/%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%2265.74%22 y=%2265.77%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2273.54%22 y=%2265.77%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2280.04%22 y=%2265.77%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2280.27%22 y=%2264.81%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ចំនួនឥដ្ឋតាមជួរដែលរៀបទីធ្លាមុខផ្ទះនេះបង្កើតបានជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(a_1 = 14\)</span>, <span class="mi">\(a_{18} = 31\)</span> និងមាន <span class="mi">\(18\)</span> ជួរ ។ តាមរូបមន្តផលបូកតួនៃស៊ីតនព្វន្ត គេបាន <div class="md">\[S_{18} = \frac{(a_1 + a_{18}) \times 18}{2} = \frac{(14 + 31) \times 18}{2} = 405\]</div> ការរៀបចំទីធ្លាមុខផ្ទះ គេត្រូវចំណាយឥដ្ឋអស់ <span class="mi">\(405\)</span> ដុំ ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ៣</b></header><div class="bx-b">
+<p>គេមានការងាររដូវក្តៅ <span class="mi">\(2\)</span> សម្រាប់រយៈពេល <span class="mi">\(3\)</span> ខែឬ <span class="mi">\(12\)</span> សប្តាហ៍ ។ ការងារ <span class="mi">\(A\)</span> ទទួលបានប្រាក់បៀវត្ស <span class="mi">\(400\,000\)</span> រៀលក្នុងមួយខែ ហើយដំឡើង <span class="mi">\(100\,000\)</span> រៀលរៀងរាល់ខែ ។ ការងារ <span class="mi">\(B\)</span> ទទួលប្រាក់បៀវត្ស <span class="mi">\(100\,000\)</span> រៀលក្នុងមួយសប្តាហ៍ហើយដំឡើង <span class="mi">\(5\,000\)</span> រៀលរៀងរាល់សប្តាហ៍ ។ តើគេគួរជ្រើសរើសយកការងារណាមួយប្រសើរជាង?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ចំពោះការងារ <span class="mi">\(A\)</span> ប្រាក់បៀវត្សសរុបសម្រាប់រយៈពេល <span class="mi">\(3\)</span> ខែគឺ <div class="md">\[S_3 = 400\,000 + 500\,000 + 600\,000 = 1\,500\,000 \text{ រៀល}\]</div> ការងារ <span class="mi">\(B\)</span> ប្រាក់បៀវត្សគឺ <span class="mi">\(100\,000, 105\,000, 110\,000, \ldots, a_{12}\)</span> ។ នេះជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(a_1 = 100\,000\)</span> និងផលសងរួម <span class="mi">\(d = 5\,000\)</span> ។ តាមរូបមន្ត ប្រាក់បៀវត្សនៅសប្តាហ៍ទី <span class="mi">\(12\)</span> គឺ <div class="md">\[\begin{aligned}
+a_{12} &amp;= a_1 + (12 - 1)d = 100\,000 + 11 \times 5\,000\\
+&amp;= 155\,000 \text{ ។}
+\end{aligned}\]</div> ចំពោះការងារ <span class="mi">\(B\)</span> ប្រាក់បៀវត្សសរុបរយៈពេល <span class="mi">\(3\)</span> ខែ ឬ <span class="mi">\(12\)</span> សប្តាហ៍គឺ <div class="md">\[\begin{aligned}
+S_B &amp;= 100\,000 + 105\,000 + 110\,000 + \ldots + 155\,000\\
+&amp;= \frac{(100\,000 + 155\,000) \times 12}{2}\\
+&amp;= 255\,000 \times 6 = 1\,530\,000 \text{ រៀល ។}
+\end{aligned}\]</div> ប្រាក់បានពីការងារ <span class="mi">\(B\)</span> ច្រើនជាងបានពីការងារ <span class="mi">\(A\)</span> ដូច្នេះគេរើសយកការងារ <span class="mi">\(B\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><ol class="list olka cols1">
+<li><p>គណនាផលបូក <span class="mi">\((-6) + (-1) + 4 + 9 + \ldots + 64\)</span> ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(25\)</span> តួដំបូងនៃស៊ីតនព្វន្ត <span class="mi">\(2, 7, 12, 17, \ldots\)</span></p></li>
+</ol></li>
+<li><p>គេមានការងាររដូវក្តៅ <span class="mi">\(2\)</span> សម្រាប់រយៈពេល <span class="mi">\(3\)</span> ខែឬ <span class="mi">\(12\)</span> សប្តាហ៍ ។ ការងារ <span class="mi">\(A\)</span> ទទួលបានប្រាក់បៀវត្ស <span class="mi">\(325\,000\)</span> រៀលក្នុងមួយខែ ហើយដំឡើង <span class="mi">\(100\,000\)</span> រៀលរៀងរាល់ខែ ។ ការងារ <span class="mi">\(B\)</span> ទទួលបានប្រាក់បៀវត្ស <span class="mi">\(80\,000\)</span> រៀលក្នុងមួយសប្តាហ៍ ហើយដំឡើង <span class="mi">\(3\,000\)</span> រៀលរៀងរាល់សប្តាហ៍ ។ តើគេគួរជ្រើសរើសយកការងារណាមួយប្រសើរជាង?</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olnum cols1">
+<li><p>ក. <span class="mi">\(S_{15} = 435\)</span> ខ. <span class="mi">\(S_{25} = 1550\)</span> ។</p></li>
+<li><p>គេរើសយកការងារ <span class="mi">\(A\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u4">ទំព័រសៀវភៅដើម</h3><details class="ans sol-all"><summary>បើកមើលទំព័រសៀវភៅពុម្ព</summary><div class="pdf-note">មេរៀននេះបង្ហាញជាទំព័រពីសៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី ១១ (ថ្នាក់វិទ្យាសាស្ត្រ) ទំព័រ ៨–១៣។</div><figure class="bk-page" id="p8"><img src="pages/sc1-p008.webp" alt="ទំព័រ ៨" loading="lazy" width="1100"><figcaption>ទំព័រ ៨</figcaption></figure><figure class="bk-page" id="p9"><img src="pages/sc1-p009.webp" alt="ទំព័រ ៩" loading="lazy" width="1100"><figcaption>ទំព័រ ៩</figcaption></figure><figure class="bk-page" id="p10"><img src="pages/sc1-p010.webp" alt="ទំព័រ ១០" loading="lazy" width="1100"><figcaption>ទំព័រ ១០</figcaption></figure><figure class="bk-page" id="p11"><img src="pages/sc1-p011.webp" alt="ទំព័រ ១១" loading="lazy" width="1100"><figcaption>ទំព័រ ១១</figcaption></figure><figure class="bk-page" id="p12"><img src="pages/sc1-p012.webp" alt="ទំព័រ ១២" loading="lazy" width="1100"><figcaption>ទំព័រ ១២</figcaption></figure><figure class="bk-page" id="p13"><img src="pages/sc1-p013.webp" alt="ទំព័រ ១៣" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣</figcaption></figure></details><h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>សរសេររូបមន្តតួទី <span class="mi">\(n\)</span> នៃស៊ីតនព្វន្តខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(4, 15, 26, 37, \ldots\)</span></p></li>
+<li><p><span class="mi">\(5, 1, -3, -7, -11, \ldots\)</span></p></li>
+<li><p><span class="mi">\(-2, -9, -16, -23, \ldots\)</span></p></li>
+<li><p><span class="mi">\(7, 12, 17, 22, 27, \ldots\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>សរសេរប្រាំតួដំបូងនៃស៊ីតនព្វន្តដែលកំណត់ដោយតួ</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(a_1 = 3\)</span>, <span class="mi">\(a_2 = 10\)</span></p></li>
+<li><p><span class="mi">\(a_n = -7 + 3n\)</span></p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេមានស៊ីតនព្វន្ត <span class="mi">\(-8, -3, 2, 7, \ldots\)</span> ។</p>
+<ol class="list olka cols2">
+<li><p>គណនា <span class="mi">\(a_{17}\)</span> និង <span class="mi">\(a_{43}\)</span></p></li>
+<li><p>តើតួទីប៉ុន្មាននៃស៊ីតស្មើនឹង <span class="mi">\(322\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>កំណត់ចំនួនតួនៃស៊ីតនព្វន្តខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(18, 13, 8, \ldots, -102\)</span></p></li>
+<li><p><span class="mi">\(-9, -4, 1, \ldots, 171\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ក្នុងចំណោមស៊ីតខាងក្រោម តើស៊ីតណាជាស៊ីតនព្វន្ត?</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(a_n = 13 + 6(n - 1)\)</span></p></li>
+<li><p><span class="mi">\(a_1 = 3\)</span>, <span class="mi">\(a_{n+1} = a_n - \dfrac{1}{4}\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\((a_n)\)</span> ជាស៊ីតនព្វន្ត បើគេដឹងថា</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(a_{35} = 9\)</span>, <span class="mi">\(a_{45} = 17\)</span> ។ គណនា <span class="mi">\(a_{40}\)</span> ។</p></li>
+<li><p><span class="mi">\(a_7 = \dfrac{7}{2}\)</span>, <span class="mi">\(a_{13} = \dfrac{13}{2}\)</span> ។ គណនា <span class="mi">\(a_1\)</span> ។</p></li>
+<li><p><span class="mi">\(a_2 = -12\)</span>, <span class="mi">\(S_{12} = 18\)</span> ។ គណនា <span class="mi">\(a_1\)</span>, <span class="mi">\(d\)</span> និង <span class="mi">\(U_6\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីតនព្វន្ត <span class="mi">\(2, 7, 12, \ldots\)</span> និងស៊ីតនព្វន្ត <span class="mi">\(2, 5, 8, \ldots\)</span> ។ តើក្នុងចំណោម <span class="mi">\(121\)</span> តួនៃស៊ីតទាំងពីរនេះមានប៉ុន្មានតួដែលមានតម្លៃស្មើៗគ្នា?</p>
+</div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>បង្ហាញថាស៊ីត <span class="mi">\((a_n)\)</span> ដែលមានតួទី <span class="mi">\(n\)</span> កំណត់ដោយ <span class="mi">\(a_n = \dfrac{2n+3}{4}\)</span> ជាស៊ីតនព្វន្តកើន ។</p>
+</div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គេឱ្យប្រាំចំនួនជាស៊ីតនព្វន្ត ។ គណនាចំនួនទាំងនោះបើគេដឹងថាផលបូកវាស្មើនឹង <span class="mi">\(125\)</span> ហើយផលបូកពីរតួដំបូងស្មើនឹង <span class="mi">\(38\)</span> ។</p>
+</div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>បើផលបូក <span class="mi">\(9\)</span> តួដំបូងនៃស៊ីតស្មើនឹង <span class="mi">\(162\)</span> ហើយផលបូក <span class="mi">\(12\)</span> តួដំបូងនៃស៊ីតនព្វន្តស្មើនឹង <span class="mi">\(288\)</span> ។ គណនាផលបូក <span class="mi">\(30\)</span> តួដំបូងនៃស៊ីតនព្វន្ត ។</p>
+</div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>បីចំនួនតគ្នាជាស៊ីតនព្វន្តដោយដឹងថាផលបូកនៃបីចំនួននេះស្មើនឹង <span class="mi">\(36\)</span> និងផលគុណវាស្មើនឹង <span class="mi">\(1428\)</span> ។</p>
+</div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គណនាផលបូកស៊ីតនព្វន្តខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2 + 4 + 6 + \ldots + 146\)</span></p></li>
+<li><p><span class="mi">\(100 + 95 + 90 + 85 + \ldots - 20\)</span></p></li>
+<li><p><span class="mi">\(-193 - 189 - 185 - \ldots - 21 - 17\)</span></p></li>
+<li><p><span class="mi">\(5\frac{1}{4} + 4\frac{1}{2} + 3\frac{3}{4} + \ldots - 3\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>អ្នកជិះកង់ម្នាក់ធ្វើដំណើរតាមផ្លូវ <span class="mi">\(A\)</span> បានចម្ងាយ <span class="mi">\(15\)</span> គីឡូម៉ែត្រក្នុង <span class="mi">\(1\)</span> ថ្ងៃ ។ ប្រាំបីថ្ងៃក្រោយមក ទើបអ្នកជិះកង់ទីពីរចាប់ផ្តើមធ្វើដំណើរតាមផ្លូវ <span class="mi">\(A\)</span> ដូចគ្នាដោយថ្ងៃទីមួយ គាត់ជិះកង់បានចម្ងាយ <span class="mi">\(14\)</span> គីឡូម៉ែត្រក្នុង <span class="mi">\(1\)</span> ថ្ងៃ ហើយថ្ងៃបន្តបន្ទាប់មកទៀតគាត់ត្រូវជិះកើនបានចម្ងាយ <span class="mi">\(2\)</span> គីឡូម៉ែត្រក្នុង <span class="mi">\(1\)</span> ថ្ងៃជារៀងរាល់ថ្ងៃដើម្បីឱ្យទាន់អ្នកជិះកង់ទីមួយ <span class="mi">\(A\)</span> ។ តើអ្នកជិះកង់ទីពីរត្រូវចំណាយរយៈពេលអស់ប៉ុន្មានថ្ងៃ ដើម្បីជិះទៅកាន់អ្នកជិះកង់ទីមួយ?</p>
+</div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>សាលាប្រជុំមួយមានរាងចតុកោណព្នាយ ហើយតាមជ្រុងទ្រេតនៃសាលាប្រជុំនោះ គេរៀបកៅអីជា <span class="mi">\(15\)</span> ជួរដែលជួរមុខគេបង្អស់រៀបបាន <span class="mi">\(25\)</span> កៅអី ហើយជួរទី <span class="mi">\(2\)</span> រៀបបាន <span class="mi">\(27\)</span> កៅអី ជួរទី <span class="mi">\(3\)</span> រៀបបាន <span class="mi">\(29\)</span> កៅអី ។ គេរៀបកៅអីតាមលំនាំខាងលើរហូតដល់ជួរខាងក្រោយ ។ គណនាកៅអីសម្រាប់អង្គុយទាំងអស់ដែលមានក្នុងសាលប្រជុំ ។</p>
+</div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ២ ស៊ីតនព្វន្ត (វិទ្យាសាស្ត្រ)</b> — ២០ សំណួរ · ៣៥ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=bk_g11_L02">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L01.html"><small>← មេរៀនមុន</small><b>ស៊ីតចំនួនពិត</b></a><a class="next" href="L03.html"><small>មេរៀនបន្ទាប់ →</small><b>ស៊ីតធរណីមាត្រ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(3, 7, 11, 15, \\ldots\\)<\/span> ជាស៊ីតនព្វន្តមានផលសងរួម ៖", "options": ["<span class=\"mi\">\\(d = 4\\)<\/span>", "<span class=\"mi\">\\(d = 3\\)<\/span>", "<span class=\"mi\">\\(d = 7\\)<\/span>", "<span class=\"mi\">\\(d = -4\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(d = 7 - 3 = 4\\)<\/span> ។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបមន្តតួទូទៅនៃស៊ីតនព្វន្តគឺ ៖", "options": ["<span class=\"mi\">\\(a_n = a_1 d^{n-1}\\)<\/span>", "<span class=\"mi\">\\(a_n = a_1 - (n - 1)d\\)<\/span>", "<span class=\"mi\">\\(a_n = a_1 + (n - 1)d\\)<\/span>", "<span class=\"mi\">\\(a_n = a_1 + nd\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តួទី <span class=\"mi\">\\(n\\)<\/span> ៖ <span class=\"mi\">\\(a_n = a_1 + (n - 1)d\\)<\/span> ។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីតនព្វន្តមាន <span class=\"mi\">\\(a_1 = 5\\)<\/span> និង <span class=\"mi\">\\(d = 3\\)<\/span> ។ តួទី <span class=\"mi\">\\(10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(32\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(35\\)<\/span>", "<span class=\"mi\">\\(29\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_{10} = 5 + 9 \\times 3 = 32\\)<\/span> ។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីតនព្វន្តមាន <span class=\"mi\">\\(a_1 = 20\\)<\/span> និង <span class=\"mi\">\\(d = -4\\)<\/span> ។ តួទី <span class=\"mi\">\\(6\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(-4\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(-24\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_6 = 20 + 5(-4) = 0\\)<\/span> ។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីតណាខាងក្រោមជាស៊ីតនព្វន្ត?", "options": ["<span class=\"mi\">\\(1, 1, 2, 3, \\ldots\\)<\/span>", "<span class=\"mi\">\\(1, 4, 9, 16, \\ldots\\)<\/span>", "<span class=\"mi\">\\(1, 2, 4, 8, \\ldots\\)<\/span>", "<span class=\"mi\">\\(2, 5, 8, 11, \\ldots\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលសងតួតគ្នាថេរ <span class=\"mi\">\\(= 3\\)<\/span> ។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បីចំនួន <span class=\"mi\">\\(a, b, c\\)<\/span> ជាតួតគ្នានៃស៊ីតនព្វន្ត លុះត្រាតែ ៖", "options": ["<span class=\"mi\">\\(2b = ac\\)<\/span>", "<span class=\"mi\">\\(b = a + c\\)<\/span>", "<span class=\"mi\">\\(2b = a + c\\)<\/span>", "<span class=\"mi\">\\(b^2 = ac\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(b - a = c - b \\Leftrightarrow 2b = a + c\\)<\/span> ។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រក <span class=\"mi\">\\(x\\)<\/span> ដើម្បីឱ្យ <span class=\"mi\">\\(3, x, 11\\)<\/span> ជាស៊ីតនព្វន្ត ៖", "options": ["<span class=\"mi\">\\(x = \\sqrt{33}\\)<\/span>", "<span class=\"mi\">\\(x = 6\\)<\/span>", "<span class=\"mi\">\\(x = 7\\)<\/span>", "<span class=\"mi\">\\(x = 8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(2x = 3 + 11 = 14 \\Rightarrow x = 7\\)<\/span> ។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(n\\)<\/span> តួដំបូងនៃស៊ីតនព្វន្តគឺ ៖", "options": ["<span class=\"mi\">\\(S_n = n(a_1 + a_n)\\)<\/span>", "<span class=\"mi\">\\(S_n = \\dfrac{a_1 + a_n}{2}\\)<\/span>", "<span class=\"mi\">\\(S_n = \\dfrac{n(a_1 + a_n)}{2}\\)<\/span>", "<span class=\"mi\">\\(S_n = \\dfrac{a_1(1 - q^n)}{1 - q}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(S_n = \\dfrac{(a_1 + a_n)n}{2}\\)<\/span> ។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(1 + 2 + 3 + \\ldots + 100\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(5000\\)<\/span>", "<span class=\"mi\">\\(10100\\)<\/span>", "<span class=\"mi\">\\(4950\\)<\/span>", "<span class=\"mi\">\\(5050\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{100 \\times 101}{2} = 5050\\)<\/span> ។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(1 + 3 + 5 + \\ldots + 19\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(81\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(90\\)<\/span>", "<span class=\"mi\">\\(110\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "មាន <span class=\"mi\">\\(10\\)<\/span> តួ ៖ <span class=\"mi\">\\(S = \\dfrac{10(1 + 19)}{2} = 100\\)<\/span> ។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតនព្វន្តមាន <span class=\"mi\">\\(a_3 = 10\\)<\/span> និង <span class=\"mi\">\\(a_7 = 22\\)<\/span> ។ ផលសងរួម <span class=\"mi\">\\(d\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_7 - a_3 = 4d = 12 \\Rightarrow d = 3\\)<\/span> ។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតនព្វន្តមាន <span class=\"mi\">\\(a_3 = 10\\)<\/span> និង <span class=\"mi\">\\(a_7 = 22\\)<\/span> ។ តួទី <span class=\"mi\">\\(1\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(d = 3\\)<\/span>, <span class=\"mi\">\\(a_1 = a_3 - 2d = 10 - 6 = 4\\)<\/span> ។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតនព្វន្ត <span class=\"mi\">\\(2, 6, 10, \\ldots\\)<\/span> ។ តើ <span class=\"mi\">\\(98\\)<\/span> ជាតួទីប៉ុន្មាន?", "options": ["តួទី <span class=\"mi\">\\(24\\)<\/span>", "តួទី <span class=\"mi\">\\(49\\)<\/span>", "តួទី <span class=\"mi\">\\(26\\)<\/span>", "តួទី <span class=\"mi\">\\(25\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(2 + (n - 1)4 = 98 \\Rightarrow n = 25\\)<\/span> ។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(10\\)<\/span> តួដំបូងនៃស៊ីតនព្វន្តដែល <span class=\"mi\">\\(a_1 = 3\\)<\/span>, <span class=\"mi\">\\(d = 2\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(120\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(130\\)<\/span>", "<span class=\"mi\">\\(110\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(S_{10} = \\dfrac{10}{2}[2(3) + 9(2)] = 5 \\times 24 = 120\\)<\/span> ។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេដឹងថា <span class=\"mi\">\\(S_n = n^2 + 2n\\)<\/span> ។ តួទី <span class=\"mi\">\\(n\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a_n = 2n + 2\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = n + 2\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n - 1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_n = S_n - S_{n-1} = n^2 + 2n - (n - 1)^2 - 2(n - 1) = 2n + 1\\)<\/span> ។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលបូកតួពីទី <span class=\"mi\">\\(1\\)<\/span> ដល់ទី <span class=\"mi\">\\(n\\)<\/span> នៃស៊ីតនព្វន្តអាចសរសេរ ៖", "options": ["<span class=\"mi\">\\(S_n = \\dfrac{n}{2}[2a_1 + nd]\\)<\/span>", "<span class=\"mi\">\\(S_n = \\dfrac{n}{2}[a_1 + (n - 1)d]\\)<\/span>", "<span class=\"mi\">\\(S_n = \\dfrac{n}{2}[2a_1 + (n - 1)d]\\)<\/span>", "<span class=\"mi\">\\(S_n = n[2a_1 + (n - 1)d]\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ជំនួស <span class=\"mi\">\\(a_n = a_1 + (n - 1)d\\)<\/span> ក្នុង <span class=\"mi\">\\(S_n = \\dfrac{n(a_1 + a_n)}{2}\\)<\/span> ។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មធ្យមនព្វន្តនៃ <span class=\"mi\">\\(8\\)<\/span> និង <span class=\"mi\">\\(20\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{160}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{8 + 20}{2} = 14\\)<\/span> ។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនគត់វិជ្ជមានពី <span class=\"mi\">\\(1\\)<\/span> ដល់ <span class=\"mi\">\\(100\\)<\/span> ដែលចែកដាច់នឹង <span class=\"mi\">\\(3\\)<\/span> មានចំនួន ៖", "options": ["<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(34\\)<\/span>", "<span class=\"mi\">\\(33\\)<\/span>", "<span class=\"mi\">\\(32\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(3, 6, \\ldots, 99\\)<\/span> ៖ <span class=\"mi\">\\(3n = 99 \\Rightarrow n = 33\\)<\/span> ។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលបូកចំនួនគត់ពី <span class=\"mi\">\\(1\\)<\/span> ដល់ <span class=\"mi\">\\(100\\)<\/span> ដែលចែកដាច់នឹង <span class=\"mi\">\\(3\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(1716\\)<\/span>", "<span class=\"mi\">\\(1650\\)<\/span>", "<span class=\"mi\">\\(1683\\)<\/span>", "<span class=\"mi\">\\(1584\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(S = \\dfrac{33(3 + 99)}{2} = 33 \\times 51 = 1683\\)<\/span> ។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\((a_n)\\)<\/span> ជាស៊ីតនព្វន្ត នោះ <span class=\"mi\">\\(a_2 + a_8\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2a_4\\)<\/span>", "<span class=\"mi\">\\(a_{10}\\)<\/span>", "<span class=\"mi\">\\(a_4 + a_6\\)<\/span>", "<span class=\"mi\">\\(a_3 + a_8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តួដែលមានផលបូកលេខរៀងស្មើគ្នា (<span class=\"mi\">\\(2 + 8 = 4 + 6\\)<\/span>) មានផលបូកស្មើគ្នា ។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

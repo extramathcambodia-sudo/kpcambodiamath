@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២០ : ប្រូបាប — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២០ «ប្រូបាប» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២០ : ប្រូបាប — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២០ «ប្រូបាប» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ២០</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២០</span>
+      <div><span class="ls-kicker">មេរៀនទី ២០ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>ប្រូបាប</h1><div class="ls-chips"><span class="chip chip-soon">ស្ថិតិ-ប្រូបាប</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. វិញ្ញាសាចៃដន្យ</a></li><li class="sub"><a href="#u2">២. លទ្ធផលដែលអាចកើតមាន និងលំហសំណាក</a></li><li class="sub"><a href="#u3">៣. ព្រឹត្តិការណ៍</a></li><li class="sub"><a href="#u4">៤. សញ្ញាណប្រូបាប និងរូបមន្តគណនា</a></li><li class="sub"><a href="#u5">៥. ការគណនាប្រូបាបជាប្រភាគ ទសភាគ និងភាគរយ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិ និងការវិវត្តនៃទ្រឹស្ដីប្រូបាប</b></header><div class="bx-b">
+<p>«<strong>ប្រូបាប</strong>» (Probability) គឺជាផ្នែកមួយដ៏សំខាន់នៃគណិតវិទ្យាទំនើប ដែលសិក្សាអំពីរង្វាស់នៃភាពមិនប្រាកដប្រជា និងឱកាសនៃការកើតឡើងនៃព្រឹត្តិការណ៍នានា។ ទ្រឹស្ដីប្រូបាបបានចាប់បដិសន្ធិឡើងជាផ្លូវការនៅពាក់កណ្ដាលសតវត្សទី ១៧ (ឆ្នាំ ១៦៥៤) តាមរយៈការឆ្លើយឆ្លងសំបុត្ររវាងគណិតវិទូបារាំងពីររូបដ៏ល្បីល្បាញ គឺលោក <strong>ប្លែស ប៉ាស្កាល់</strong> (Blaise Pascal) និងលោក <strong>ព្យែរ ដឺ ហ្វែរម៉ា</strong> (Pierre de Fermat) អំពីល្បែងគ្រាប់ឡុកឡាក់។ ក្រោយមក គណិតវិទូជាច្រើនដូចជា Bernoulli, Laplace និង Kolmogorov បានបន្តអភិវឌ្ឍទ្រឹស្ដីនេះឱ្យក្លាយជាវិទ្យាសាស្ត្រដ៏រឹងមាំ។</p>
+<p>ក្នុងយុគសម័យបច្ចុប្បន្ន ប្រូបាបដើរតួនាទីយ៉ាងសំខាន់ក្នុងការព្យាករណ៍អាកាសធាតុ ការគ្រប់គ្រងហានិភ័យហិរញ្ញវត្ថុ ទីផ្សារភាគហ៊ុន ការធានារ៉ាប់រង ការស្រាវជ្រាវវេជ្ជសាស្ត្រ ព្រមទាំងបច្ចេកវិទ្យាបញ្ញាសិប្បនិម្មិត (AI)។ លើសពីនេះ ការយល់ដឹងពីប្រូបាបជួយឱ្យយើងចេះគិតពិចារណាដោយហេតុផល វាយតម្លៃឱកាស និងធ្វើការសម្រេចចិត្តដ៏ត្រឹមត្រូវក្នុងជីវភាពរស់នៅប្រចាំថ្ងៃ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃប្រូបាប</b></header><div class="bx-b">
+<p>នៅក្នុងការសិក្សាប្រូបាបថ្នាក់ទី ៧ យើងត្រូវស្វែងយល់នូវចំណុចគ្រឹះសំខាន់ៗ ៖</p>
+<ul>
+<li><p><strong>វិញ្ញាសាចៃដន្យ (Random Experiment) ៖</strong> សកម្មភាពដែលគេដឹងលទ្ធផលអាចកើតមានទាំងអស់ តែមិនអាចដឹងមុននូវលទ្ធផលជាក់ស្ដែង។</p></li>
+<li><p><strong>លទ្ធផល និងលំហសំណាក (<span class="mi">\(S\)</span>) ៖</strong> សំណុំនៃគ្រប់លទ្ធផលដែលអាចកើតមានទាំងអស់។ ចំនួនករណីអាចតាងដោយ <span class="mi">\(n(S)\)</span>។</p></li>
+<li><p><strong>ព្រឹត្តិការណ៍ (<span class="mi">\(A\)</span>) ៖</strong> សំណុំរងនៃលំហសំណាក (<span class="mi">\(A \subseteq S\)</span>)។ ចំនួនករណីស្របតាងដោយ <span class="mi">\(n(A)\)</span>។</p></li>
+<li><p><strong>ប្រូបាប (<span class="mi">\(P(A)\)</span>) ៖</strong> រង្វាស់ឱកាសកើតឡើងនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> កំណត់ដោយ <span class="mi">\(P(A) = \frac{n(A)}{n(S)}\)</span> ដោយ <span class="mi">\(0 \le P(A) \le 1\)</span>។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">វិញ្ញាសាចៃដន្យ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>វិញ្ញាសាចៃដន្យ ៖ សញ្ញាណ និងឧទាហរណ៍</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> វិញ្ញាសាចៃដន្យ (Random Experiment) គឺជាសកម្មភាព ឬការពិសោធន៍ដែលគេមិនអាចដឹងលទ្ធផលជាមុនបានឡើយ។</p></li>
+<li><p><strong>លក្ខណៈ ៖</strong> គេដឹងគ្រប់ករណីដែលអាចកើតឡើង តែមិនអាចទស្សន៍ទាយលទ្ធផលជាក់ស្ដែងបានត្រឹមត្រូវ <span class="mi">\(100\%\)</span> ឡើយ។</p></li>
+<li><p><strong>ឧទាហរណ៍ ៖</strong> ការបោះកាក់ (ចេញរូប ឬលេខ), ការបោះគ្រាប់ឡុកឡាក់ (<span class="mi">\(1\)</span> ដល់ <span class="mi">\(6\)</span>), ការចាប់បាល់ពីក្នុងថង់។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ចូរបញ្ជាក់ថាតើសកម្មភាពខាងក្រោមណាខ្លះជាវិញ្ញាសាចៃដន្យ ៖<br/>
+ក. បោះកាក់មួយឡើងលើ រួចកត់ត្រាមុខកាក់ដែលផ្ងារ។ ខ. ដាំទឹកបរិសុទ្ធឱ្យពុះនៅសម្ពាធធម្មតា។<br/>
+គ. ចាប់យកសន្លឹកឆ្នោតមួយសន្លឹកចេញពីប្រអប់ឆ្នោតផ្សងសំណាង។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. <span class="kfbox">ជាវិញ្ញាសាចៃដន្យ</span> ព្រោះមិនអាចដឹងមុនថាកាក់នឹងចេញខាងរូប ឬលេខឡើយ។<br/>
+ ខ. <span class="kfbox">មិនមែនជាវិញ្ញាសាចៃដន្យ</span> ព្រោះទឹកបរិសុទ្ធពុះនៅសីតុណ្ហភាព <span class="mi">\(100^\circ\text{C}\)</span> ជាក់លាក់។<br/>
+ គ. <span class="kfbox">ជាវិញ្ញាសាចៃដន្យ</span> ព្រោះមិនអាចដឹងមុនថានឹងចាប់បានលេខរង្វាន់អ្វីឡើយ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>វិញ្ញាសាចៃដន្យ</b></header><div class="bx-b">
+<p>១. ក្នុងចំណោម «ការបោះឡុកឡាក់» និង «ការទម្លាក់ដុំថ្មពីលើចុះក្រោម» តើមួយណាជាវិញ្ញាសាចៃដន្យ?<br/>
+២. ចូរបង្ហាញឧទាហរណ៍ចំនួនពីរនៃវិញ្ញាសាចៃដន្យក្នុងជីវភាពរស់នៅប្រចាំថ្ងៃ។</p>
+</div></section>
+<h3 id="u2">លទ្ធផលដែលអាចកើតមាន និងលំហសំណាក</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>លទ្ធផល និងលំហសំណាក <span class="mi">\(S\)</span></b></header><div class="bx-b">
+<ul>
+<li><p><strong>លទ្ធផល (Outcome) ៖</strong> ករណីនីមួយៗដែលអាចកើតមានឡើងនៅក្នុងវិញ្ញាសាមួយ។</p></li>
+<li><p><strong>លំហសំណាក (Sample Space, <span class="mi">\(S\)</span>) ៖</strong> សំណុំនៃគ្រប់លទ្ធផលដែលអាចកើតមានទាំងអស់។</p></li>
+<li><p><strong>ចំនួនករណីអាច (<span class="mi">\(n(S)\)</span>) ៖</strong> ចំនួនធាតុទាំងអស់នៃលំហសំណាក <span class="mi">\(S\)</span>។</p></li>
+<li><p><strong>ឧទាហរណ៍ ៖</strong> បោះកាក់មួយ ៖ <span class="mi">\(S = \{\)</span> រូប <span class="mi">\(, \)</span> លេខ <span class="mi">\(\} \implies n(S) = 2\)</span> ; បោះឡុកឡាក់ ៖ <span class="mi">\(S = \{1, 2, 3, 4, 5, 6\} \implies n(S) = 6\)</span>។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានថង់មួយផ្ទុកបាល់ ៣ គ្រាប់ ៖ ក្រហម (<span class="mi">\(R\)</span>), បៃតង (<span class="mi">\(G\)</span>), លឿង (<span class="mi">\(Y\)</span>)។ គេចាប់បាល់មួយដោយចៃដន្យ។<br/>
+ក. សរសេរលំហសំណាក <span class="mi">\(S\)</span> និងរកចំនួនករណីអាច <span class="mi">\(n(S)\)</span>។<br/>
+ខ. បើគេចាប់បាល់មួយរួចដាក់ចូលវិញ ហើយចាប់ម្ដងទៀត តើមានលទ្ធផលប៉ុន្មានករណីដែលអាចកើតមាន?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. លំហសំណាក ៖ <span class="mi">\(S = \{R, G, Y\} \implies\)</span> <span class="kfbox"><span class="mi">\(n(S) = 3\)</span> ករណី</span>។<br/>
+ ខ. លើកទី១ មាន <span class="mi">\(3\)</span> លទ្ធផល លើកទី២ មាន <span class="mi">\(3\)</span> លទ្ធផល <span class="mi">\(\implies n(S) = 3 \times 3 = 9\)</span> ករណី។ ដូចនេះ <span class="kfbox"><span class="mi">\(n(S) = 9\)</span> ករណី</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>លទ្ធផល និងលំហសំណាក</b></header><div class="bx-b">
+<p>១. គេបង្វិលថាសមួយដែលមានលេខ <span class="mi">\(1, 2, 3, 4, 5\)</span>។ សរសេរលំហសំណាក <span class="mi">\(S\)</span> និងរក <span class="mi">\(n(S)\)</span>។<br/>
+២. ក្នុងប្រអប់មួយមានប័ណ្ណអក្សរនៃពាក្យ «<span class="mi">\(MATH\)</span>»។ គេចាប់យកប័ណ្ណមួយដោយចៃដន្យ។ រកចំនួនករណីអាច។</p>
+</div></section>
+<h3 id="u3">ព្រឹត្តិការណ៍</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ព្រឹត្តិការណ៍ និងប្រភេទព្រឹត្តិការណ៍</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ព្រឹត្តិការណ៍ (Event, <span class="mi">\(A\)</span>) គឺជាសំណុំនៃលទ្ធផលស្របតាមលក្ខខណ្ឌកំណត់ (<span class="mi">\(A \subseteq S\)</span>)។ ចំនួនករណីស្របតាងដោយ <span class="mi">\(n(A)\)</span>។</p></li>
+<li><p><strong>ព្រឹត្តិការណ៍ជាក់លាក់ ៖</strong> ព្រឹត្តិការណ៍ដែលកើតឡើងពិតប្រាកដជានិច្ច (<span class="mi">\(A = S \implies n(A) = n(S)\)</span>)។</p></li>
+<li><p><strong>ព្រឹត្តិការណ៍មិនអាចកើតមាន ៖</strong> ព្រឹត្តិការណ៍ដែលមិនអាចកើតមានដាច់ខាត (<span class="mi">\(A = \emptyset \implies n(A) = 0\)</span>)។</p></li>
+<li><p><strong>ព្រឹត្តិការណ៍ផ្ទុយ (<span class="mi">\(\overline{A}\)</span>) ៖</strong> ជាព្រឹត្តិការណ៍ដែល «មិនកើត <span class="mi">\(A\)</span>» ដោយ <span class="mi">\(n(\overline{A}) = n(S) - n(A)\)</span>។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយម្ដង។ គេកំណត់ព្រឹត្តិការណ៍ ៖<br/>
+<span class="mi">\(A\)</span> ៖ «បោះបានលេខគូ», <span class="mi">\(B\)</span> ៖ «បោះបានលេខធំជាង ៦», <span class="mi">\(C\)</span> ៖ «បោះបានលេខតូចជាង ៧»។<br/>
+ក. សរសេរលទ្ធផលនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងរក <span class="mi">\(n(A)\)</span>។ ខ. បញ្ជាក់ប្រភេទនៃព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ លំហសំណាក ៖ <span class="mi">\(S = \{1, 2, 3, 4, 5, 6\} \implies n(S) = 6\)</span>។<br/>
+ ព្រឹត្តិការណ៍ <span class="mi">\(A = \{2, 4, 6\} \implies\)</span> <span class="kfbox"><span class="mi">\(n(A) = 3\)</span> ករណី</span><br/>
+ ព្រឹត្តិការណ៍ <span class="mi">\(B = \emptyset\)</span> ជា<span class="kfbox">ព្រឹត្តិការណ៍មិនអាចកើតមាន</span> ព្រោះឡុកឡាក់គ្មានលេខធំជាង ៦ ឡើយ។<br/>
+ ព្រឹត្តិការណ៍ <span class="mi">\(C = \{1, 2, 3, 4, 5, 6\} = S\)</span> ជា<span class="kfbox">ព្រឹត្តិការណ៍ជាក់លាក់</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ព្រឹត្តិការណ៍</b></header><div class="bx-b">
+<p>១. គេបោះគ្រាប់ឡុកឡាក់មួយ។ កំណត់ចំនួនករណីស្របនៃព្រឹត្តិការណ៍ ៖<br/>
+ក. <span class="mi">\(A\)</span> ៖ «បោះបានលេខសេស» ខ. <span class="mi">\(B\)</span> ៖ «បោះបានលេខជាពហុគុណនៃ ៣»<br/>
+២. បើ <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍ «បោះបានលេខ ២» តើព្រឹត្តិការណ៍ផ្ទុយ <span class="mi">\(\overline{A}\)</span> មានប៉ុន្មានករណី?</p>
+</div></section>
+<h3 id="u4">សញ្ញាណប្រូបាប និងរូបមន្តគណនា</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>រូបមន្តប្រូបាប និងលក្ខណៈគ្រឹះ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>រូបមន្តប្រូបាប ៖</strong> បើគ្រប់លទ្ធផលមានឱកាសកើតឡើងស្មើគ្នា ប្រូបាបនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> គឺ ៖</p>
+<p><strong><span class="mi">\(P(A) = \dfrac{n(A)}{n(S)} = \dfrac{\text{ចំនួនករណីស្រប}}{\text{ចំនួនករណីអាច}}\)</span></strong></p></li>
+<li><p><strong>លក្ខណៈសំខាន់ៗ ៖</strong></p>
+<ul>
+<li><p><span class="mi">\(0 \le P(A) \le 1\)</span> ជានិច្ច  ព្រឹត្តិការណ៍មិនអាចកើតមាន ៖ <span class="mi">\(P(\emptyset) = 0\)</span></p></li>
+<li><p>ព្រឹត្តិការណ៍ជាក់លាក់ ៖ <span class="mi">\(P(S) = 1\)</span>  ព្រឹត្តិការណ៍ផ្ទុយ ៖ <span class="mi">\(P(\overline{A}) = 1 - P(A)\)</span></p></li>
+</ul></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ម្ដង។ គណនាប្រូបាបនៃព្រឹត្តិការណ៍ខាងក្រោម ៖<br/>
+ក. <span class="mi">\(A\)</span> ៖ «បោះបានលេខ ៥» ខ. <span class="mi">\(B\)</span> ៖ «បោះបានលេខគូ» និងព្រឹត្តិការណ៍ផ្ទុយ <span class="mi">\(\overline{B}\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ លំហសំណាក ៖ <span class="mi">\(S = \{1, 2, 3, 4, 5, 6\} \implies n(S) = 6\)</span>។<br/>
+ ក. <span class="mi">\(A = \{5\} \implies n(A) = 1 \implies\)</span> <span class="mi">\(\boxed{P(A) = \dfrac{1}{6}}\)</span><br/>
+ ខ. <span class="mi">\(B = \{2, 4, 6\} \implies n(B) = 3 \implies\)</span> <span class="mi">\(\boxed{P(B) = \dfrac{3}{6} = \dfrac{1}{2}}\)</span><br/>
+ប្រូបាបព្រឹត្តិការណ៍ផ្ទុយ ៖ <span class="mi">\(P(\overline{B}) = 1 - P(B) = 1 - \dfrac{1}{2} = \dfrac{1}{2}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{P(\overline{B}) = \dfrac{1}{2}}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការគណនាប្រូបាប</b></header><div class="bx-b">
+<p>១. គេបោះកាក់មួយ។ គណនាប្រូបាបដែលបោះបានខាងរូប។<br/>
+២. ក្នុងប្រអប់មានឃ្លីក្រហម ៤ និងឃ្លីខៀវ ៦។ ចាប់យកឃ្លីមួយដោយចៃដន្យ។ គណនាប្រូបាបបានឃ្លីក្រហម។</p>
+</div></section>
+<h3 id="u5">ការគណនាប្រូបាបជាប្រភាគ ទសភាគ និងភាគរយ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ទម្រង់នៃប្រូបាប និងការទស្សន៍ទាយ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ទម្រង់ទាំងបីនៃប្រូបាប ៖</strong> ជាប្រភាគសម្រួល (ឧ. <span class="mi">\(\frac{1}{4}\)</span>), ជាទសភាគ (ឧ. <span class="mi">\(0.25\)</span>), ជាភាគរយ (ឧ. <span class="mi">\(25\%\)</span>)។</p></li>
+<li><p><strong>ចំនួនដងរំពឹងទុក (Expected Frequency) ៖</strong> បើធ្វើវិញ្ញាសា <span class="mi">\(N\)</span> ដង ចំនួនដងរំពឹងទុកនៃ <span class="mi">\(A\)</span> គឺ ៖ <span class="mi">\(E = N \times P(A)\)</span>។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងថ្នាក់មានសិស្ស ២០ នាក់ (ស្រី ១២ នាក់)។ គ្រូហៅសិស្សម្នាក់ដោយចៃដន្យ។<br/>
+ក. គណនាប្រូបាបសិស្សនោះជាស្រី (ជាប្រភាគ ទសភាគ ភាគរយ)។ ខ. គណនាប្រូបាបជាប្រុស។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ សិស្សសរុប ៖ <span class="mi">\(n(S) = 20\)</span>, សិស្សស្រី ៖ <span class="mi">\(n(G) = 12\)</span>។<br/>
+ប្រូបាបជាស្រី ៖ <span class="mi">\(P(G) = \dfrac{12}{20} = \dfrac{3}{5} = 0.6 = 60\%\)</span>។ ដូចនេះ <span class="mi">\(\boxed{P(G) = \dfrac{3}{5} = 0.6 = 60\%}\)</span><br/>
+ សិស្សប្រុស ៖ <span class="mi">\(n(B) = 20 - 12 = 8 \implies P(B) = \dfrac{8}{20} = \dfrac{2}{5} = 0.4 = 40\%\)</span>។ ដូចនេះ <span class="mi">\(\boxed{P(B) = 40\%}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ទម្រង់ប្រូបាប និងការទស្សន៍ទាយ</b></header><div class="bx-b">
+<p>១. ព្យាករណ៍ថាឱកាសភ្លៀងធ្លាក់គឺ <span class="mi">\(70\%\)</span>។ រកប្រូបាបដែលគ្មានភ្លៀងធ្លាក់ (ជាភាគរយ និងទសភាគ)។<br/>
+២. គេបោះកាក់មួយ <span class="mi">\(200\)</span> ដង។ តើគេរំពឹងថានឹងបានខាងរូបប្រហែលប៉ុន្មានដង?</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ក្នុងចំណោមសកម្មភាពខាងក្រោម ចូរកំណត់សកម្មភាពដែលជាវិញ្ញាសាចៃដន្យ ៖</p>
+<ol class="list olka cols2">
+<li><p>បោះកាក់មួយដើម្បីសម្រេចចិត្ត</p></li>
+<li><p>វាស់មាឌទឹក ១ លីត្រ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បោះកាក់ ៖ ជាវិញ្ញាសាចៃដន្យ (មិនអាចដឹងមុនពីលទ្ធផល)។</p></li>
+<li><p>វាស់មាឌទឹក ១ លីត្រ ៖ មិនមែនជាវិញ្ញាសាចៃដន្យទេ (លទ្ធផលជាក់លាក់)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរគ្រប់លទ្ធផលដែលអាចកើតមាន</p></li>
+<li><p>រកចំនួនករណីអាច <span class="mi">\(n(S)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បោះគ្រាប់ឡុកឡាក់មួយ ៖</p>
+<ul>
+<li><p>លទ្ធផលអាចកើតមាន ៖ <span class="mi">\(\{1, 2, 3, 4, 5, 6\}\)</span></p></li>
+<li><p>ចំនួនករណីអាច ៖ <span class="mi">\(n(S) = 6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេបោះកាក់មួយម្ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរលំហសំណាក <span class="mi">\(S\)</span></p></li>
+<li><p>រកចំនួនករណីអាច <span class="mi">\(n(S)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បោះកាក់មួយ ៖</p>
+<ul>
+<li><p><span class="mi">\(S = \{\)</span> រូប <span class="mi">\(, \)</span> លេខ <span class="mi">\(\}\)</span> (ឬ <span class="mi">\(\{H, T\}\)</span>)</p></li>
+<li><p><span class="mi">\(n(S) = 2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានឃ្លី ៤ ពណ៌ ៖ ស, ខ្មៅ, ក្រហម, បៃតង។ គេចាប់យកឃ្លីមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរលំហសំណាក <span class="mi">\(S\)</span></p></li>
+<li><p>រកចំនួនករណីអាច <span class="mi">\(n(S)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចាប់ឃ្លីមួយ ៖</p>
+<ul>
+<li><p><span class="mi">\(S = \{\)</span> ស <span class="mi">\(, \)</span> ខ្មៅ <span class="mi">\(, \)</span> ក្រហម <span class="mi">\(, \)</span> បៃតង <span class="mi">\(\}\)</span></p></li>
+<li><p><span class="mi">\(n(S) = 4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេមានថាសបង្វិលមួយចែកជា ៦ ចម្រៀកស្មើគ្នា ចុះលេខពី ១ ដល់ ៦ ៖</p>
+<ol class="list olka cols2">
+<li><p>កំណត់វិញ្ញាសា និងលទ្ធផល</p></li>
+<li><p>រកចំនួនករណីអាច <span class="mi">\(n(S)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>វិញ្ញាសា ៖ បង្វិលថាស; លទ្ធផល ៖ <span class="mi">\(\{1, 2, 3, 4, 5, 6\}\)</span></p></li>
+<li><p><span class="mi">\(n(S) = 6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ក្នុងប្រអប់មួយមានប័ណ្ណអក្សរនៃពាក្យ «<span class="mi">\(KHMER\)</span>»។ គេចាប់យកប័ណ្ណមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរលំហសំណាក <span class="mi">\(S\)</span></p></li>
+<li><p>រកចំនួនករណីអាច <span class="mi">\(n(S)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពាក្យ «KHMER» ៖</p>
+<ul>
+<li><p><span class="mi">\(S = \{K, H, M, E, R\}\)</span></p></li>
+<li><p><span class="mi">\(n(S) = 5\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេបោះកាក់មួយ។ កំណត់ប្រភេទនៃព្រឹត្តិការណ៍ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A\)</span> ៖ «បោះបានខាងរូប ឬខាងលេខ»</p></li>
+<li><p><span class="mi">\(B\)</span> ៖ «បោះបានទាំងរូបទាំងលេខព្រមគ្នា»</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រភេទព្រឹត្តិការណ៍ ៖</p>
+<ul>
+<li><p><span class="mi">\(A\)</span> ៖ ជា ព្រឹត្តិការណ៍ជាក់ប្រាកដ (<span class="mi">\(P(A) = 1\)</span>)។</p></li>
+<li><p><span class="mi">\(B\)</span> ៖ ជា ព្រឹត្តិការណ៍មិនអាចកើតមាន (<span class="mi">\(P(B) = 0\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយ។ កំណត់ប្រភេទនៃព្រឹត្តិការណ៍ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A\)</span> ៖ «បោះបានលេខ ៧»</p></li>
+<li><p><span class="mi">\(B\)</span> ៖ «បោះបានលេខតូចជាង ៧»</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(A\)</span> ៖ ព្រឹត្តិការណ៍មិនអាចកើតមាន (<span class="mi">\(P(A) = 0\)</span>)។</p></li>
+<li><p><span class="mi">\(B\)</span> ៖ ព្រឹត្តិការណ៍ជាក់ប្រាកដ (<span class="mi">\(P(B) = 1\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(S = \{1, 2, 3, 4, 5, 6, 7, 8\}\)</span> ជាលំហសំណាក និង <span class="mi">\(A = \{2, 4, 6, 8\}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនករណីស្រប <span class="mi">\(n(A)\)</span></p></li>
+<li><p>សរសេរព្រឹត្តិការណ៍ផ្ទុយ <span class="mi">\(\overline{A}\)</span> និងរក <span class="mi">\(n(\overline{A})\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(n(A) = 4\)</span></p></li>
+<li><p><span class="mi">\(\overline{A} = \{1, 3, 5, 7\} \Rightarrow n(\overline{A}) = 4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គ្រួសារមួយមានកូនពីរនាក់។ តាង <span class="mi">\(B\)</span> ជាកូនប្រុស និង <span class="mi">\(G\)</span> ជាកូនស្រី ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរលំហសំណាក <span class="mi">\(S\)</span></p></li>
+<li><p>រកចំនួនករណីអាច <span class="mi">\(n(S)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S = \{BB, BG, GB, GG\}\)</span></p></li>
+<li><p><span class="mi">\(n(S) = 4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយម្ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបបោះបានលេខ ៣</p></li>
+<li><p>គណនាប្រូបាបបោះបានលេខគូ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> លេខ ៣ <span class="mi">\() = \frac{1}{6}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> លេខគូ <span class="mi">\() = \frac{3}{6} = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយម្ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបបោះបានលេខសេស</p></li>
+<li><p>គណនាប្រូបាបបោះបានលេខធំជាង ៤</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> លេខសេស <span class="mi">\() = \frac{3}{6} = \frac{1}{2}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> លេខ <span class="mi">\( &gt; 4) = \frac{2}{6} = \frac{1}{3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយម្ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបបោះបានលេខបឋម</p></li>
+<li><p>គណនាប្រូបាបបោះបានលេខជាពហុគុណនៃ ៣</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> លេខបឋម <span class="mi">\() = \frac{3}{6} = \frac{1}{2}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ពហុគុណនៃ ៣ <span class="mi">\() = \frac{2}{6} = \frac{1}{3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គេបោះកាក់មួយម្ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបបោះបានខាងរូប</p></li>
+<li><p>គណនាប្រូបាបបោះបានខាងលេខ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> រូប <span class="mi">\() = \frac{1}{2}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> លេខ <span class="mi">\() = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គេបោះកាក់ពីរព្រមគ្នា ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចេញរូបទាំងពីរ</p></li>
+<li><p>គណនាប្រូបាបចេញរូបមួយ និងលេខមួយ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បោះកាក់ពីរ (<span class="mi">\(n(S) = 4\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> រូបទាំងពីរ <span class="mi">\() = \frac{1}{4}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> រូប ១ លេខ ១ <span class="mi">\() = \frac{2}{4} = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>គេបោះកាក់ពីរព្រមគ្នា ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចេញលេខយ៉ាងតិចមួយ</p></li>
+<li><p>គណនាប្រូបាបចេញលេខទាំងពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> លេខយ៉ាងតិចមួយ <span class="mi">\() = \frac{3}{4}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> លេខទាំងពីរ <span class="mi">\() = \frac{1}{4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានឃ្លីក្រហម ៥ គ្រាប់ និងឃ្លីខៀវ ៥ គ្រាប់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានឃ្លីក្រហម</p></li>
+<li><p>គណនាប្រូបាបចាប់បានឃ្លីខៀវ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(n(S) = 10\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ក្រហម <span class="mi">\() = \frac{5}{10} = \frac{1}{2}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ខៀវ <span class="mi">\() = \frac{5}{10} = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានឃ្លីក្រហម ៦ គ្រាប់, ខៀវ ៤ គ្រាប់ និងលឿង ៥ គ្រាប់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនករណីអាចសរុប <span class="mi">\(n(S)\)</span></p></li>
+<li><p>គណនាប្រូបាបចាប់បានឃ្លីពណ៌ក្រហម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(n(S) = 6 + 4 + 5 = 15\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ក្រហម <span class="mi">\() = \frac{6}{15} = \frac{2}{5}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>យោងតាមទិន្នន័យក្នុងលំហាត់ទី ១៨ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានឃ្លីពណ៌ខៀវ</p></li>
+<li><p>គណនាប្រូបាបចាប់បានឃ្លីពណ៌លឿង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ខៀវ <span class="mi">\() = \frac{4}{15}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> លឿង <span class="mi">\() = \frac{5}{15} = \frac{1}{3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>យោងតាមទិន្នន័យក្នុងលំហាត់ទី ១៨ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានឃ្លី<strong>មិនមែន</strong>ពណ៌ក្រហម</p></li>
+<li><p>គណនាប្រូបាបចាប់បានឃ្លីពណ៌ស</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> មិនមែនក្រហម <span class="mi">\() = 1 - \frac{6}{15} = \frac{3}{5}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ស <span class="mi">\() = \frac{0}{15} = 0\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ក្នុងប្រអប់មួយមានប័ណ្ណចុះលេខពី ១ ដល់ ១០។ គេចាប់យកប័ណ្ណមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានលេខសេស</p></li>
+<li><p>គណនាប្រូបាបចាប់បានលេខគូ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប័ណ្ណ ១ ដល់ ១០ (<span class="mi">\(n(S) = 10\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> សេស <span class="mi">\() = \frac{5}{10} = \frac{1}{2}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> គូ <span class="mi">\() = \frac{5}{10} = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ក្នុងប្រអប់មួយមានប័ណ្ណចុះលេខពី ១ ដល់ ១៥។ គេចាប់យកប័ណ្ណមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានលេខជាពហុគុណនៃ ៣</p></li>
+<li><p>គណនាប្រូបាបចាប់បានលេខជាពហុគុណនៃ ៥</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប័ណ្ណ ១ ដល់ ១៥ (<span class="mi">\(n(S) = 15\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ពហុគុណ ៣ <span class="mi">\() = \frac{5}{15} = \frac{1}{3}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ពហុគុណ ៥ <span class="mi">\() = \frac{3}{15} = \frac{1}{5}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ក្នុងប្រអប់មួយមានប័ណ្ណចុះលេខពី ១ ដល់ ២០។ គេចាប់យកប័ណ្ណមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានលេខបឋម</p></li>
+<li><p>គណនាប្រូបាបចាប់បានលេខធំជាង ១៥</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប័ណ្ណ ១ ដល់ ២០ (<span class="mi">\(n(S) = 20\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> បឋម <span class="mi">\() = \frac{8}{20} = \frac{2}{5}\)</span></p></li>
+<li><p><span class="mi">\(P(&gt; 15) = \frac{5}{20} = \frac{1}{4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គេមានប័ណ្ណអក្សរនៃពាក្យ «<span class="mi">\(EDUCATION\)</span>» (មាន ៩ អក្សរ) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានស្រៈ (E, U, A, I, O)</p></li>
+<li><p>គណនាប្រូបាបចាប់បានព្យញ្ជនៈ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>«EDUCATION» (<span class="mi">\(n(S) = 9\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ស្រៈ <span class="mi">\() = \frac{5}{9}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ព្យញ្ជនៈ <span class="mi">\() = \frac{4}{9}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គេមានប័ណ្ណអក្សរនៃពាក្យ «<span class="mi">\(ANGKOR\)</span>» (មាន ៦ អក្សរ) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានអក្សរ <span class="mi">\(A\)</span></p></li>
+<li><p>គណនាប្រូបាបចាប់បានព្យញ្ជនៈ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>«ANGKOR» (<span class="mi">\(n(S) = 6\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P(A) = \frac{1}{6}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ព្យញ្ជនៈ <span class="mi">\() = \frac{4}{6} = \frac{2}{3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ថាសបង្វិលមួយចែកជា ៨ ចម្រៀកស្មើគ្នា ចុះលេខពី ១ ដល់ ៨ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបព្រួញចង្អុលលេខ ៧</p></li>
+<li><p>គណនាប្រូបាបព្រួញចង្អុលលេខតូចជាង ៥</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ថាស ៨ ចម្រៀក (<span class="mi">\(n(S) = 8\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> លេខ ៧ <span class="mi">\() = \frac{1}{8}\)</span></p></li>
+<li><p><span class="mi">\(P(&lt; 5) = \frac{4}{8} = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ថាសបង្វិលមួយមាន ៤ ពណ៌ ៖ ក្រហម, ខៀវ, បៃតង, លឿង (ទំហំស្មើគ្នា) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបព្រួញចង្អុលពណ៌ក្រហម</p></li>
+<li><p>គណនាប្រូបាបព្រួញចង្អុលពណ៌<strong>មិនមែន</strong>លឿង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ក្រហម <span class="mi">\() = \frac{1}{4}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> មិនមែនលឿង <span class="mi">\() = 1 - \frac{1}{4} = \frac{3}{4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>បើប្រូបាបដែលកីឡាករម្នាក់បាញ់ធ្នូចំផ្ទាំងស៊ីបគឺ <span class="mi">\(0.75\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រូបាបដែលកីឡាករបាញ់ខុសផ្ទាំងស៊ីប</p></li>
+<li><p>សរសេរប្រូបាបទាំងពីរជាភាគរយ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ខុស <span class="mi">\() = 1 - 0.75 = 0.25\)</span></p></li>
+<li><p>ចំ ៖ <span class="mi">\(75\%\)</span>; ខុស ៖ <span class="mi">\(25\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ក្នុងប្រអប់មួយមានបាល់ពណ៌ក្រហម ៨ គ្រាប់ និងពណ៌បៃតង <span class="mi">\(x\)</span> គ្រាប់ ដោយ <span class="mi">\(P(\)</span> ក្រហម <span class="mi">\() = \frac{2}{5}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនបាល់សរុបក្នុងប្រអប់</p></li>
+<li><p>រកចំនួនបាល់ពណ៌បៃតង <span class="mi">\(x\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\frac{8}{N} = \frac{2}{5} \Rightarrow N = 20\)</span> (បាល់សរុប)</p></li>
+<li><p><span class="mi">\(x = 20 - 8 = 12\)</span> (បៃតង)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>បើគេបោះគ្រាប់ឡុកឡាក់មួយចំនួន ២ ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនករណីអាចសរុប <span class="mi">\(n(S)\)</span></p></li>
+<li><p>រកចំនួនករណីដែលបោះបានផលបូកលេខស្មើនឹង ៧</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បោះគ្រាប់ឡុកឡាក់ ២ ដង ៖</p>
+<ul>
+<li><p><span class="mi">\(n(S) = 6 \times 6 = 36\)</span></p></li>
+<li><p>ផលបូកស្មើ ៧ មាន <span class="mi">\(6\)</span> ករណី ៖ <span class="mi">\((1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>សរសេរប្រូបាបខាងក្រោមជាចំនួនទសភាគ និងជាភាគរយ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(P = \frac{1}{5}\)</span></p></li>
+<li><p><span class="mi">\(P = \frac{3}{8}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកជាទសភាគ និងភាគរយ ៖</p>
+<ul>
+<li><p><span class="mi">\(P = \frac{1}{5} = 0.2 = 20\%\)</span></p></li>
+<li><p><span class="mi">\(P = \frac{3}{8} = 0.375 = 37.5\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>សរសេរប្រូបាបខាងក្រោមជាប្រភាគសម្រួលរួច ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(P = 0.45\)</span></p></li>
+<li><p><span class="mi">\(P = 72\%\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកជាប្រភាគសម្រួល ៖</p>
+<ul>
+<li><p><span class="mi">\(P = 0.45 = \frac{45}{100} = \frac{9}{20}\)</span></p></li>
+<li><p><span class="mi">\(P = 72\% = \frac{72}{100} = \frac{18}{25}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>ក្នុងថ្នាក់រៀនមួយមានសិស្ស ៤០ នាក់ ក្នុងនោះស្រី ២៤ នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបជ្រើសរើសបានសិស្សស្រី (ជាភាគរយ)</p></li>
+<li><p>គណនាប្រូបាបជ្រើសរើសបានសិស្សប្រុស (ជាភាគរយ)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សិស្ស ៤០ នាក់ ស្រី ២៤ នាក់ ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ស្រី <span class="mi">\() = \frac{24}{40} = 60\%\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ប្រុស <span class="mi">\() = \frac{16}{40} = 40\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>ក្នុងកន្ត្រកមួយមានផ្លែក្រូច ៨ ផ្លែ, ប៉ោម ៦ ផ្លែ និងស្វាយ ១០ ផ្លែ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានផ្លែក្រូច (ជាទសភាគ)</p></li>
+<li><p>គណនាប្រូបាបចាប់បានផ្លែស្វាយ (ជាទសភាគ)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរុប ២៤ ផ្លែ ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ក្រូច <span class="mi">\() = \frac{8}{24} \approx 0.333\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ស្វាយ <span class="mi">\() = \frac{10}{24} \approx 0.417\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>យោងតាមទិន្នន័យកន្ត្រកផ្លែឈើក្នុងលំហាត់ទី ៣៤ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានផ្លែប៉ោម (ជាភាគរយ)</p></li>
+<li><p>គណនាប្រូបាបចាប់បានផ្លែឈើ<strong>មិនមែន</strong>ប៉ោម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ប៉ោម <span class="mi">\() = \frac{6}{24} = 25\%\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> មិនមែនប៉ោម <span class="mi">\() = 100\% - 25\% = 75\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>គេបោះកាក់មួយចំនួន <span class="mi">\(300\)</span> ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំនួនដងរំពឹងទុកដែលបោះបានខាងរូប</p></li>
+<li><p>បើជាក់ស្ដែងបោះបានខាងរូប <span class="mi">\(142\)</span> ដង រកចំនួនដងដែលចេញខាងលេខ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បោះ ៣០០ ដង ៖</p>
+<ul>
+<li><p>រំពឹងចេញរូប ៖ <span class="mi">\(300 \times \frac{1}{2} = 150\)</span> ដង</p></li>
+<li><p>ចេញលេខជាក់ស្ដែង ៖ <span class="mi">\(300 - 142 = 158\)</span> ដង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយចំនួន <span class="mi">\(120\)</span> ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំនួនដងរំពឹងទុកដែលចេញលេខ ២</p></li>
+<li><p>គណនាចំនួនដងរំពឹងទុកដែលចេញលេខគូ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បោះ ១២០ ដង ៖</p>
+<ul>
+<li><p>ចេញលេខ ២ ៖ <span class="mi">\(120 \times \frac{1}{6} = 20\)</span> ដង</p></li>
+<li><p>ចេញលេខគូ ៖ <span class="mi">\(120 \times \frac{1}{2} = 60\)</span> ដង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ប្រអប់មួយមានអំពូលភ្លើង ១០០ គ្រាប់ ក្នុងនោះមានអំពូលខូច ៥ គ្រាប់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់ប៉ះអំពូលខូច</p></li>
+<li><p>គណនាប្រូបាបចាប់ប៉ះអំពូលល្អ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ខូច <span class="mi">\() = \frac{5}{100} = 0.05\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ល្អ <span class="mi">\() = 1 - 0.05 = 0.95\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ក្នុងពិធីចាប់ឆ្នោតមួយមានសន្លឹកឆ្នោត ៥០០ សន្លឹក ដែលមានរង្វាន់ ២៥ សន្លឹក ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានសន្លឹកមានរង្វាន់</p></li>
+<li><p>គណនាប្រូបាបចាប់បានសន្លឹកគ្មានរង្វាន់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> រង្វាន់ <span class="mi">\() = \frac{25}{500} = 0.05 = 5\%\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> គ្មាន <span class="mi">\() = 1 - 0.05 = 0.95 = 95\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនមួយផលិតម៉ាស៊ីនគិតលេខដោយមានអត្រាខូច <span class="mi">\(2\%\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រូបាបដែលទិញបានម៉ាស៊ីនល្អ</p></li>
+<li><p>ក្នុងចំណោមម៉ាស៊ីន <span class="mi">\(500\)</span> គ្រឿង រំពឹងថានឹងមានម៉ាស៊ីនខូចប៉ុន្មានគ្រឿង?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ល្អ <span class="mi">\() = 100\% - 2\% = 98\%\)</span></p></li>
+<li><p>ម៉ាស៊ីនខូច ៖ <span class="mi">\(500 \times 0.02 = 10\)</span> គ្រឿង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ព្យាករណ៍ឧតុនិយមប្រកាសថា ឱកាសភ្លៀងធ្លាក់នៅរាជធានីភ្នំពេញគឺ <span class="mi">\(65\%\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រូបាបដែលគ្មានភ្លៀងធ្លាក់គិតជាភាគរយ</p></li>
+<li><p>សរសេរប្រូបាបគ្មានភ្លៀងធ្លាក់ជាប្រភាគសម្រួល</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> គ្មានភ្លៀង <span class="mi">\() = 100\% - 65\% = 35\%\)</span></p></li>
+<li><p>ជាប្រភាគ ៖ <span class="mi">\(\frac{35}{100} = \frac{7}{20}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>បុគ្គលិកម្នាក់ជិះម៉ូតូទៅធ្វើការ។ ប្រូបាបដែលគាត់ជួបភ្លើងក្រហមនៅស្ដុបគឺ <span class="mi">\(0.35\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រូបាបដែលគាត់មិនជួបភ្លើងក្រហម</p></li>
+<li><p>បើគាត់ធ្វើដំណើរ ១០០ ថ្ងៃ រំពឹងថានឹងជួបភ្លើងក្រហមប៉ុន្មានថ្ងៃ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P = 1 - 0.35 = 0.65\)</span></p></li>
+<li><p>រំពឹងជួប ៖ <span class="mi">\(100 \times 0.35 = 35\)</span> ថ្ងៃ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានបាល់ក្រហម ៤, បៃតង ៦, លឿង ២។ គេចាប់បាល់មួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបចាប់បានបាល់ក្រហម ឬបៃតង</p></li>
+<li><p>គណនាប្រូបាបចាប់បានបាល់<strong>មិនមែន</strong>លឿង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរុប ១២ គ្រាប់ ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ក្រហម ឬ បៃតង <span class="mi">\() = \frac{10}{12} = \frac{5}{6}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> មិនមែនលឿង <span class="mi">\() = 1 - \frac{2}{12} = \frac{5}{6}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេមានបៀមួយហ៊ូ (៥២ សន្លឹក)។ គេដកបៀមួយសន្លឹកដោយចៃដន្យ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបដកបានសន្លឹកអាត់ (Ace)</p></li>
+<li><p>គណនាប្រូបាបដកបានសន្លឹកពណ៌ក្រហម (បេះដូង ឬការ៉ូ)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បៀ ៥២ សន្លឹក ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> អាត់ <span class="mi">\() = \frac{4}{52} = \frac{1}{13}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ក្រហម <span class="mi">\() = \frac{26}{52} = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>យោងតាមបៀ ៥២ សន្លឹកក្នុងលំហាត់ទី ៤៤ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបដកបានសន្លឹកកូដ (King, Queen, Jack)</p></li>
+<li><p>គណនាប្រូបាបដកបានសន្លឹកប៊ិច (Spade)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> កូដ J,Q,K <span class="mi">\() = \frac{12}{52} = \frac{3}{13}\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ប៊ិច <span class="mi">\() = \frac{13}{52} = \frac{1}{4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>សិស្សម្នាក់ឆ្លើយសំណួរពហុជ្រើសរើស (MCQ) ដែលមាន ៤ ជម្រើសដោយគ្រាន់តែស្មាន ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបដែលសិស្សនោះឆ្លើយត្រូវ</p></li>
+<li><p>គណនាប្រូបាបដែលសិស្សនោះឆ្លើយខុស</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>MCQ ៤ ជម្រើស ៖</p>
+<ul>
+<li><p><span class="mi">\(P(\)</span> ត្រូវ <span class="mi">\() = \frac{1}{4} = 25\%\)</span></p></li>
+<li><p><span class="mi">\(P(\)</span> ខុស <span class="mi">\() = \frac{3}{4} = 75\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>កាក់មួយមិនស្មើដៃ (Biased coin) មានប្រូបាបចេញខាងរូប <span class="mi">\(P(\)</span> រូប <span class="mi">\() = 0.6\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រូបាបចេញខាងលេខ <span class="mi">\(P(\)</span> លេខ <span class="mi">\()\)</span></p></li>
+<li><p>បើបោះកាក់នេះ <span class="mi">\(50\)</span> ដង រំពឹងថានឹងចេញខាងលេខប៉ុន្មានដង?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> លេខ <span class="mi">\() = 1 - 0.6 = 0.4\)</span></p></li>
+<li><p>រំពឹងចេញលេខ ៖ <span class="mi">\(50 \times 0.4 = 20\)</span> ដង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>គ្រូពេទ្យម្នាក់ធ្វើរោគវិនិច្ឆ័យដោយមានអត្រាត្រឹមត្រូវ <span class="mi">\(95\%\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រូបាបដែលការធ្វើរោគវិនិច្ឆ័យអាចមានកំហុស</p></li>
+<li><p>ក្នុងចំណោមអ្នកជំងឺ <span class="mi">\(200\)</span> នាក់ រំពឹងថានឹងធ្វើរោគវិនិច្ឆ័យត្រូវប៉ុន្មាននាក់?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> កំហុស <span class="mi">\() = 100\% - 95\% = 5\%\)</span></p></li>
+<li><p>រំពឹងត្រូវ ៖ <span class="mi">\(200 \times 0.95 = 190\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ធុងមួយមានបាល់ពណ៌ក្រហម និងសសរុប ៥០ គ្រាប់។ ប្រូបាបចាប់បានបាល់ក្រហមគឺ <span class="mi">\(0.28\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំនួនបាល់ពណ៌ក្រហមក្នុងធុង</p></li>
+<li><p>គណនាចំនួនបាល់ពណ៌សក្នុងធុង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បាល់ក្រហម ៖ <span class="mi">\(50 \times 0.28 = 14\)</span> គ្រាប់</p></li>
+<li><p>បាល់ស ៖ <span class="mi">\(50 - 14 = 36\)</span> គ្រាប់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គេបង្វិលថាសព្រួញមួយដែលមាន ៣ ពណ៌ ៖ ផ្ទៃក្រហមស្មើនឹង <span class="mi">\(\frac{1}{2}\)</span> នៃថាស, ផ្ទៃខៀវស្មើនឹង <span class="mi">\(\frac{1}{3}\)</span> នៃថាស និងនៅសល់ជាផ្ទៃលឿង ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រូបាបដែលព្រួញចង្អុលចំផ្ទៃពណ៌លឿង</p></li>
+<li><p>បើបង្វិល ៦០ ដង រំពឹងថាព្រួញចង្អុលចំផ្ទៃពណ៌ខៀវប៉ុន្មានដង?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P(\)</span> លឿង <span class="mi">\() = 1 - \left(\frac{1}{2} + \frac{1}{3}\right) = \frac{1}{6}\)</span></p></li>
+<li><p>រំពឹងចេញខៀវ ៖ <span class="mi">\(60 \times \frac{1}{3} = 20\)</span> ដង</p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ២០ ប្រូបាប</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c20">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L19.html"><small>← មេរៀនមុន</small><b>ភាពឆ្លុះ</b></a><a class="next" href="L21.html"><small>មេរៀនបន្ទាប់ →</small><b>ក្រាបសសរ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សកម្មភាពដែលគេដឹងលទ្ធផលអាចកើតមានទាំងអស់ តែមិនអាចដឹងមុននូវលទ្ធផលជាក់ស្ដែង ហៅថា ៖", "options": ["វិញ្ញាសាចៃដន្យ", "ព្រឹត្តិការណ៍ជាក់លាក់", "បំប្លែងកិល", "ស្ថិតិពិពណ៌នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមសកម្មភាពខាងក្រោម តើមួយណាជាវិញ្ញាសាចៃដន្យ?", "options": ["ការទម្លាក់កែវកញ្ចក់ពីលើតុ", "ការបោះគ្រាប់ឡុកឡាក់មួយ", "ការវាស់ប្រវែងបន្ទាត់ <span class=\"mi\">\\(10\\text{ cm}\\)<\/span>", "ការដុតទៀនឱ្យរលាយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "នៅពេលបោះកាក់មួយ លទ្ធផលដែលអាចកើតមានគឺ ៖", "options": ["១ ករណី", "២ ករណី (រូប, លេខ)", "៣ ករណី", "៤ ករណី"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "នៅពេលបោះគ្រាប់ឡុកឡាក់មួយ លទ្ធផលដែលអាចកើតមានមានចំនួន ៖", "options": ["៤ ករណី", "៥ ករណី", "៦ ករណី", "៨ ករណី"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សំណុំនៃគ្រប់លទ្ធផលដែលអាចកើតមានទាំងអស់នៃវិញ្ញាសា ហៅថា ៖", "options": ["ព្រឹត្តិការណ៍", "លំហសំណាក", "ករណីស្រប", "ប្រូបាប"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "និមិត្តសញ្ញាជាទូទៅសម្រាប់តាងលំហសំណាកគឺ ៖", "options": ["<span class=\"mi\">\\(A\\)<\/span>", "<span class=\"mi\">\\(P\\)<\/span>", "<span class=\"mi\">\\(S\\)<\/span> (ឬ <span class=\"mi\">\\(\\Omega\\)<\/span>)", "<span class=\"mi\">\\(E\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើបោះកាក់មួយ លំហសំណាក <span class=\"mi\">\\(S\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\{1, 2\\}\\)<\/span>", "<span class=\"mi\">\\(\\{\\)<\/span> រូប <span class=\"mi\">\\(, \\)<\/span> លេខ <span class=\"mi\">\\(\\}\\)<\/span>", "<span class=\"mi\">\\(\\{\\)<\/span> រូប <span class=\"mi\">\\(\\}\\)<\/span>", "<span class=\"mi\">\\(\\{\\)<\/span> លេខ <span class=\"mi\">\\(\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើបោះគ្រាប់ឡុកឡាក់មួយ លំហសំណាក <span class=\"mi\">\\(S\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\{1, 2, 3, 4, 5, 6\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 3, 5\\}\\)<\/span>", "<span class=\"mi\">\\(\\{2, 4, 6\\}\\)<\/span>", "<span class=\"mi\">\\(\\{0, 1, 2, 3, 4, 5, 6\\}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងថង់មួយមានឃ្លី ៥ ពណ៌ខុសៗគ្នា។ ចំនួនករណីអាចនៃការចាប់ឃ្លីមួយគឺ ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើបោះកាក់ពីរព្រមគ្នា ចំនួនករណីអាចទាំងអស់គឺ ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សំណុំរងនៃលំហសំណាកដែលស្របតាមលក្ខខណ្ឌកំណត់ ហៅថា ៖", "options": ["វិញ្ញាសា", "ព្រឹត្តិការណ៍", "ផលធៀប", "មេដ្យាន"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បោះគ្រាប់ឡុកឡាក់មួយ។ ព្រឹត្តិការណ៍ «បោះបានលេខគូ» មានចំនួនករណីស្របស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បោះគ្រាប់ឡុកឡាក់មួយ។ ព្រឹត្តិការណ៍ «បោះបានលេខបឋម» គឺ ៖", "options": ["<span class=\"mi\">\\(\\{1, 2, 3\\}\\)<\/span>", "<span class=\"mi\">\\(\\{2, 3, 5\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 3, 5\\}\\)<\/span>", "<span class=\"mi\">\\(\\{2, 4, 6\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ព្រឹត្តិការណ៍ដែលកើតឡើងពិតប្រាកដជានិច្ច ហៅថា ៖", "options": ["ព្រឹត្តិការណ៍មិនអាចកើត", "ព្រឹត្តិការណ៍ជាក់លាក់", "ព្រឹត្តិការណ៍ចៃដន្យ", "ព្រឹត្តិការណ៍ទោល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ព្រឹត្តិការណ៍ដែលមិនអាចកើតមានឡើងបានដាច់ខាត ហៅថា ៖", "options": ["ព្រឹត្តិការណ៍មិនអាចកើតមាន", "ព្រឹត្តិការណ៍ជាក់លាក់", "ព្រឹត្តិការណ៍ផ្ទុយ", "ព្រឹត្តិការណ៍សមភាព"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមព្រឹត្តិការណ៍ខាងក្រោម តើមួយណាជាព្រឹត្តិការណ៍មិនអាចកើតមាន?", "options": ["បោះគ្រាប់ឡុកឡាក់បានលេខ ៦", "បោះគ្រាប់ឡុកឡាក់បានលេខ ៨", "បោះកាក់បានខាងរូប", "បោះគ្រាប់ឡុកឡាក់បានលេខសេស"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមព្រឹត្តិការណ៍ខាងក្រោម តើមួយណាជាព្រឹត្តិការណ៍ជាក់លាក់?", "options": ["បោះគ្រាប់ឡុកឡាក់បានលេខតូចជាង ៧", "បោះគ្រាប់ឡុកឡាក់បានលេខ ៣", "បោះកាក់បានខាងលេខ", "ថ្ងៃស្អែកនឹងមានភ្លៀងធ្លាក់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ព្រឹត្តិការណ៍ «មិនកើត <span class=\"mi\">\\(A\\)<\/span>» ហៅថា ៖", "options": ["ព្រឹត្តិការណ៍ជាក់លាក់", "ព្រឹត្តិការណ៍ផ្ទុយនៃ <span class=\"mi\">\\(A\\)<\/span>", "ព្រឹត្តិការណ៍ទោល", "ព្រឹត្តិការណ៍មិនអាចកើត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A\\)<\/span> ជាព្រឹត្តិការណ៍ «បោះបានលេខគូ» នោះព្រឹត្តិការណ៍ផ្ទុយ <span class=\"mi\">\\(\\overline{A}\\)<\/span> គឺ ៖", "options": ["បោះបានលេខ ៦", "បោះបានលេខសេស", "បោះបានលេខធំជាង ៤", "បោះបានលេខ ០"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើលំហសំណាកមាន <span class=\"mi\">\\(n(S) = 10\\)<\/span> ហើយ <span class=\"mi\">\\(n(A) = 4\\)<\/span> នោះ <span class=\"mi\">\\(n(\\overline{A})\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាប្រូបាបនៃព្រឹត្តិការណ៍ <span class=\"mi\">\\(A\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(P(A) = \\frac{n(S)}{n(A)}\\)<\/span>", "<span class=\"mi\">\\(P(A) = \\frac{n(A)}{n(S)}\\)<\/span>", "<span class=\"mi\">\\(P(A) = n(A) \\times n(S)\\)<\/span>", "<span class=\"mi\">\\(P(A) = n(A) - n(S)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃប្រូបាប <span class=\"mi\">\\(P(A)\\)<\/span> នៃព្រឹត្តិការណ៍ណាមួយ ស្ថិតនៅចន្លោះ ៖", "options": ["<span class=\"mi\">\\(-1 \\le P(A) \\le 1\\)<\/span>", "<span class=\"mi\">\\(0 \\le P(A) \\le 1\\)<\/span>", "<span class=\"mi\">\\(1 \\le P(A) \\le 10\\)<\/span>", "<span class=\"mi\">\\(0 \\le P(A) \\le 100\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ប្រូបាបនៃព្រឹត្តិការណ៍មិនអាចកើតមានស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ប្រូបាបនៃព្រឹត្តិការណ៍ជាក់លាក់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ទំនាក់ទំនងរវាងប្រូបាបនៃព្រឹត្តិការណ៍ <span class=\"mi\">\\(A\\)<\/span> និងព្រឹត្តិការណ៍ផ្ទុយ <span class=\"mi\">\\(\\overline{A}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(P(A) + P(\\overline{A}) = 0\\)<\/span>", "<span class=\"mi\">\\(P(A) + P(\\overline{A}) = 1\\)<\/span>", "<span class=\"mi\">\\(P(A) \\times P(\\overline{A}) = 1\\)<\/span>", "<span class=\"mi\">\\(P(A) - P(\\overline{A}) = 1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើបោះកាក់មួយ ប្រូបាបដែលបោះបានខាងរូបគឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{4}\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើបោះគ្រាប់ឡុកឡាក់មួយ ប្រូបាបដែលបោះបានលេខ ៤ គឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{4}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើបោះគ្រាប់ឡុកឡាក់មួយ ប្រូបាបដែលបោះបានលេខគូគឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{2}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{6} = \\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{4}{6}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(P(A) = 0.35\\)<\/span> នោះប្រូបាបនៃព្រឹត្តិការណ៍ផ្ទុយ <span class=\"mi\">\\(P(\\overline{A})\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(0.35\\)<\/span>", "<span class=\"mi\">\\(0.65\\)<\/span>", "<span class=\"mi\">\\(0.75\\)<\/span>", "<span class=\"mi\">\\(1.35\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងថង់មួយមានឃ្លីស ៣ គ្រាប់ និងឃ្លីខ្មៅ ៧ គ្រាប់។ ប្រូបាបចាប់បានឃ្លីសគឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{3}{7}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{7}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃប្រូបាបណាខាងក្រោមនេះដែល<strong>មិនអាច<\/strong>កើតមាន?", "options": ["<span class=\"mi\">\\(0.8\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{4}\\)<\/span>", "<span class=\"mi\">\\(1.25\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃប្រូបាបណាខាងក្រោមនេះដែល<strong>មិនអាច<\/strong>កើតមាន?", "options": ["<span class=\"mi\">\\(-0.2\\)<\/span>", "<span class=\"mi\">\\(0.05\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(\\frac{2}{3}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រូបាប <span class=\"mi\">\\(\\frac{1}{4}\\)<\/span> សរសេរជាភាគរយស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រូបាប <span class=\"mi\">\\(0.6\\)<\/span> សរសេរជាភាគរយស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\%\\)<\/span>", "<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(66\\%\\)<\/span>", "<span class=\"mi\">\\(0.06\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រូបាប <span class=\"mi\">\\(80\\%\\)<\/span> សរសេរជាប្រភាគសម្រួលរួចស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\frac{8}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{4}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{2}{5}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បោះគ្រាប់ឡុកឡាក់មួយ។ ប្រូបាបដែលបោះបានលេខធំជាង ៤ គឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{2}{6} = \\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{6} = \\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{4}{6}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បោះគ្រាប់ឡុកឡាក់មួយ។ ប្រូបាបដែលបោះបានលេខជាពហុគុណនៃ ២ គឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{2}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{5}{6}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងប្រអប់មានបាល់ក្រហម ៥, ខៀវ ៣, ស ២។ ប្រូបាបចាប់បានបាល់ខៀវគឺ ៖", "options": ["<span class=\"mi\">\\(0.2\\)<\/span>", "<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>", "<span class=\"mi\">\\(0.8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងប្រអប់សំណួរទី ៣៨ ប្រូបាបចាប់បានបាល់<strong>មិនមែន<\/strong>ក្រហមគឺ ៖", "options": ["<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>", "<span class=\"mi\">\\(0.7\\)<\/span>", "<span class=\"mi\">\\(0.2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បង្វិលថាស ៨ ចម្រៀកស្មើគ្នា ចុះលេខពី ១ ដល់ ៨។ ប្រូបាបព្រួញចង្អុលលេខសេសគឺ ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(75\\%\\)<\/span>", "<span class=\"mi\">\\(100\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ឱកាសភ្លៀងធ្លាក់នៅថ្ងៃស្អែកគឺ <span class=\"mi\">\\(40\\%\\)<\/span>។ ប្រូបាបដែលថ្ងៃស្អែកគ្មានភ្លៀងធ្លាក់គឺ ៖", "options": ["<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(100\\%\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេបោះកាក់មួយចំនួន <span class=\"mi\">\\(100\\)<\/span> ដង។ ចំនួនដងរំពឹងទុកដែលបោះបានខាងរូបគឺ ៖", "options": ["២៥ ដង", "៥០ ដង", "៧៥ ដង", "១០០ ដង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេបោះគ្រាប់ឡុកឡាក់មួយចំនួន <span class=\"mi\">\\(60\\)<\/span> ដង។ ចំនួនដងរំពឹងទុកដែលចេញលេខ ៦ គឺ ៖", "options": ["៦ ដង", "១០ ដង", "១២ ដង", "២០ ដង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងថ្នាក់រៀនមានសិស្ស ៣០ នាក់ ស្រី ១៨ នាក់។ ប្រូបាបហៅចំសិស្សប្រុសគឺ ៖", "options": ["<span class=\"mi\">\\(0.4\\)<\/span>", "<span class=\"mi\">\\(0.6\\)<\/span>", "<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ពាក្យ «<span class=\"mi\">\\(CAMBODIA\\)<\/span>» មាន ៨ អក្សរ។ បើជ្រើសរើសអក្សរមួយ ប្រូបាបបានស្រៈគឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{8}\\)<\/span>", "<span class=\"mi\">\\(\\frac{4}{8} = \\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{5}{8}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងប្រអប់មានស្ករគ្រាប់រសជាតិក្រូច ៦ និងរសជាតិស្ត្រប៊ែរី ៤។ ប្រូបាបបានរសជាតិក្រូចគឺ ៖", "options": ["<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(70\\%\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ធុងមួយមានប័ណ្ណលេខពី ១ ដល់ ២០។ ប្រូបាបចាប់បានលេខចែកដាច់នឹង ៥ គឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(P(A) = 0\\)<\/span> នោះ <span class=\"mi\">\\(A\\)<\/span> គឺជា ៖", "options": ["ព្រឹត្តិការណ៍ជាក់លាក់", "ព្រឹត្តិការណ៍មិនអាចកើតមាន", "ព្រឹត្តិការណ៍ចៃដន្យ", "ព្រឹត្តិការណ៍ទោល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(P(A) = 1\\)<\/span> នោះ <span class=\"mi\">\\(A\\)<\/span> គឺជា ៖", "options": ["ព្រឹត្តិការណ៍ជាក់លាក់", "ព្រឹត្តិការណ៍មិនអាចកើតមាន", "ព្រឹត្តិការណ៍ផ្ទុយ", "ព្រឹត្តិការណ៍មិនប្រាកដ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គណិតវិទូពីររូបដែលជាបិតាបង្កើតទ្រឹស្ដីប្រូបាបដំបូងគេក្នុងឆ្នាំ ១៦៥៤ គឺ ៖", "options": ["Euclid និង Pythagoras", "Newton និង Leibniz", "Pascal និង Fermat", "Descartes និង Euler"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៦ : បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៦ «បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៦ : បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៦ «បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g8">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li aria-current="page">មេរៀនទី ១៦</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៦</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៦ · គណិតវិទ្យាថ្នាក់ទី ៨</span><h1>បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៤ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. មេដ្យាន និងទីប្រជុំទម្ងន់</a></li><li class="sub"><a href="#u2">២. បន្ទាត់មេដ្យាទ័រ និងផ្ចិតរង្វង់ចារឹកក្រៅ</a></li><li class="sub"><a href="#u3">៣. កម្ពស់ និងអរតូសង់</a></li><li class="sub"><a href="#u4">៤. កន្លះបន្ទាត់ពុះមុំ និងផ្ចិតរង្វង់ចារឹកក្នុង</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-8.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃចំណុចប្រសព្វពិសេសទាំងបួន និងបន្ទាត់អឺលែរ</b></header><div class="bx-b">
+<p>ធរណីមាត្រនៃត្រីកោណបង្កប់នូវលក្ខណៈស៊ីមេទ្រី និងភាពស្រស់បំព្រងយ៉ាងអស្ចារ្យ ៖</p>
+<ul>
+<li><p><strong>ចំណុចប្រសព្វបុរាណ ៖</strong> តាំងពីសម័យក្រិកបុរាណ គណិតវិទូបានស្គាល់ចំណុចប្រសព្វសំខាន់ៗចំនួន ៤ គឺ ៖ <strong>ទីប្រជុំទម្ងន់ (<span class="mi">\(G\)</span>)</strong>, <strong>អរតូសង់ (<span class="mi">\(H\)</span>)</strong>, <strong>ផ្ចិតរង្វង់ចារឹកក្រៅ (<span class="mi">\(O\)</span>)</strong>, និង <strong>ផ្ចិតរង្វង់ចារឹកក្នុង (<span class="mi">\(I\)</span>)</strong>។</p></li>
+<li><p><strong>អាកស៊ីម៉ែត (Archimedes) ៖</strong> បានប្រើប្រាស់គោលការណ៍ថ្លឹងលំនឹងដងថ្លឹង (Law of the Lever) ដើម្បីរកឃើញទីប្រជុំទម្ងន់នៃត្រីកោណ ដែលជាចំណុចរក្សាលំនឹងទំនាញនៃផ្ទៃត្រីកោណទាំងមូល។</p></li>
+<li><p><strong>លីអូណាដ អឺលែរ (Leonhard Euler, 1707–1783) ៖</strong> នៅឆ្នាំ ១៧៦៥ គណិតវិទូស្វីសដ៏ល្បីល្បាញ បានរកឃើញរបកគំហើញដ៏អស្ចារ្យមួយ ៖ ក្នុងគ្រប់ត្រីកោណ (មិនមែនត្រីកោណសម័ង្ស) ចំណុចទាំងបី <span class="mi">\(H\)</span> (អរតូសង់), <span class="mi">\(G\)</span> (ទីប្រជុំទម្ងន់), និង <span class="mi">\(O\)</span> (ផ្ចិតរង្វង់ចារឹកក្រៅ) តែងតែរត់នៅលើបន្ទាត់ត្រង់តែមួយជានិច្ច ហៅថា <strong>បន្ទាត់អឺលែរ (Euler Line)</strong> ដែលក្នុងនោះ <span class="mi">\(G\)</span> ស្ថិតនៅចន្លោះ <span class="mi">\(H\)</span> និង <span class="mi">\(O\)</span> ដោយផ្ទៀងផ្ទាត់ <span class="mi">\(HG = 2GO\)</span>។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">មេដ្យាន និងទីប្រជុំទម្ងន់</h3>
+<h4>និយមន័យ និងលក្ខណៈ</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>មេដ្យាន និងទីប្រជុំទម្ងន់</b></header><div class="bx-b">
+<ul>
+<li><p><strong>មេដ្យាន (Median) ៖</strong> គឺជាអង្កត់ដែលភ្ជាប់ពីកំពូលមួយនៃត្រីកោណទៅកាន់ចំណុចកណ្តាលនៃជ្រុងឈម។</p></li>
+<li><p><strong>ទីប្រជុំទម្ងន់ (Centroid, តាងដោយ <span class="mi">\(G\)</span>) ៖</strong> គឺជាចំណុចប្រសព្វនៃមេដ្យានទាំងបីនៃត្រីកោណ។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>លក្ខណៈនៃទីប្រជុំទម្ងន់</b></header><div class="bx-b">
+<p>មេដ្យានទាំងបីនៃត្រីកោណប្រសព្វគ្នាត្រង់ចំណុចតែមួយ <span class="mi">\(G\)</span> ដែលស្ថិតនៅចម្ងាយ «ពីរភាគបី» នៃមេដ្យាននីមួយៗគិតពីកំពូល ៖ <div class="md">\[AG = \frac{2}{3}AA', \quad{} BG = \frac{2}{3}BB', \quad{} CG = \frac{2}{3}CC'\]</div> និងចម្ងាយពីទីប្រជុំទម្ងន់ទៅជើងមេដ្យានស្មើនឹង «មួយភាគបី» ៖ <div class="md">\[GA' = \frac{1}{3}AA', \quad{} GB' = \frac{1}{3}BB', \quad{} GC' = \frac{1}{3}CC' \implies AG = 2GA'\]</div></p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-green"><header class="bx-h"><b>កូអរដោនេនៃទីប្រជុំទម្ងន់</b></header><div class="bx-b">
+<p>ក្នុងប្លង់កូអរដោនេ បើកំពូលទាំងបីនៃត្រីកោណមាន <span class="mi">\(A(x_A, y_A), B(x_B, y_B), C(x_C, y_C)\)</span> នោះកូអរដោនេនៃទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> គឺ ៖ <div class="md">\[x_G = \frac{x_A + x_B + x_C}{3}, \quad{} y_G = \frac{y_A + y_B + y_C}{3}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានមេដ្យាន <span class="mi">\(AD = 12\text{ cm}\)</span> និងទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ គណនាប្រវែង <span class="mi">\(AG\)</span> និង <span class="mi">\(GD\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាមលក្ខណៈទីប្រជុំទម្ងន់ ៖ <div class="md">\[AG = \frac{2}{3}AD = \frac{2}{3}(12) = 8\text{ cm}\]</div> <div class="md">\[GD = \frac{1}{3}AD = \frac{1}{3}(12) = 4\text{ cm}\]</div></p>
+</div></section>
+<h3 id="u2">បន្ទាត់មេដ្យាទ័រ និងផ្ចិតរង្វង់ចារឹកក្រៅ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>បន្ទាត់មេដ្យាទ័រ</b></header><div class="bx-b">
+<p>បន្ទាត់មេដ្យាទ័រ (Perpendicular Bisector) នៃជ្រុងត្រីកោណ គឺជាបន្ទាត់ដែលកាត់តាមចំណុចកណ្តាលនៃជ្រុងនោះ ហើយកែងនឹងជ្រុងនោះ។</p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>ផ្ចិតរង្វង់ចារឹកក្រៅត្រីកោណ</b></header><div class="bx-b">
+<p>បន្ទាត់មេដ្យាទ័រទាំងបីនៃជ្រុងត្រីកោណ ប្រសព្វគ្នាត្រង់ចំណុចតែមួយ <span class="mi">\(O\)</span> ដែលស្ថិតនៅស្មើចម្ងាយពីកំពូលទាំងបីនៃត្រីកោណ ៖ <div class="md">\[OA = OB = OC = R\]</div> ចំណុច <span class="mi">\(O\)</span> នេះ គឺជា <strong>ផ្ចិតនៃរង្វង់ចារឹកក្រៅត្រីកោណ</strong> (កាំ <span class="mi">\(R\)</span>)។</p>
+<ul>
+<li><p>ចំពោះត្រីកោណស្រួច ៖ <span class="mi">\(O\)</span> ស្ថិតនៅខាងក្នុងត្រីកោណ។</p></li>
+<li><p>ចំពោះត្រីកោណកែង ៖ <span class="mi">\(O\)</span> ស្ថិតនៅចំកណ្តាលអុីប៉ូតេនុស (<span class="mi">\(R = \frac{\text{អុីប៉ូតេនុស}}{2}\)</span>)!</p></li>
+<li><p>ចំពោះត្រីកោណទាល ៖ <span class="mi">\(O\)</span> ស្ថិតនៅខាងក្រៅត្រីកោណ។</p></li>
+</ul>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<h3 id="u3">កម្ពស់ និងអរតូសង់</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>កម្ពស់ និងអរតូសង់</b></header><div class="bx-b">
+<ul>
+<li><p><strong>កម្ពស់ (Altitude) ៖</strong> គឺជាអង្កត់គូសចេញពីកំពូលនៃត្រីកោណកែងនឹងបន្ទាត់ទ្រទ្រង់ជ្រុងឈម។</p></li>
+<li><p><strong>អរតូសង់ (Orthocenter, តាងដោយ <span class="mi">\(H\)</span>) ៖</strong> គឺជាចំណុចប្រសព្វនៃបន្ទាត់កម្ពស់ទាំងបីនៃត្រីកោណ។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>ទីតាំងនៃអរតូសង់ <span class="mi">\(H\)</span></b></header><div class="bx-b">
+<ol class="list oldef cols1">
+<li><p>ចំពោះត្រីកោណស្រួច ៖ <span class="mi">\(H\)</span> ស្ថិតនៅខាងក្នុងត្រីកោណ។</p></li>
+<li><p>ចំពោះត្រីកោណកែង ៖ <span class="mi">\(H\)</span> ត្រួតស៊ីគ្នាលើកំពូលមុំកែង!</p></li>
+<li><p>ចំពោះត្រីកោណទាល ៖ <span class="mi">\(H\)</span> ស្ថិតនៅខាងក្រៅត្រីកោណ។</p></li>
+</ol>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<h3 id="u4">កន្លះបន្ទាត់ពុះមុំ និងផ្ចិតរង្វង់ចារឹកក្នុង</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>កន្លះបន្ទាត់ពុះមុំ</b></header><div class="bx-b">
+<p>កន្លះបន្ទាត់ពុះមុំ គឺជាកន្លះបន្ទាត់ដែលចែកមុំក្នុងនៃត្រីកោណជាពីរមុំប៉ុនគ្នា។</p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>ផ្ចិតរង្វង់ចារឹកក្នុងត្រីកោណ</b></header><div class="bx-b">
+<p>កន្លះបន្ទាត់ពុះមុំក្នុងទាំងបីនៃត្រីកោណ ប្រសព្វគ្នាត្រង់ចំណុចតែមួយ <span class="mi">\(I\)</span> ដែលស្ថិតនៅស្មើចម្ងាយពីជ្រុងទាំងបីនៃត្រីកោណ ៖ <div class="md">\[d(I, AB) = d(I, BC) = d(I, CA) = r\]</div> ចំណុច <span class="mi">\(I\)</span> នេះ គឺជា <strong>ផ្ចិតនៃរង្វង់ចារឹកក្នុងត្រីកោណ</strong> (កាំ <span class="mi">\(r\)</span>)។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-green"><header class="bx-h"><b>ចំណុចពិសេសក្នុងត្រីកោណសមបាត និងសម័ង្ស</b></header><div class="bx-b">
+<ul>
+<li><p>ក្នុង <strong>ត្រីកោណសមបាត</strong> កំពូល <span class="mi">\(A\)</span> ៖ បន្ទាត់ទាំង ៤ (មេដ្យាន កម្ពស់ មេដ្យាទ័រ បន្ទាត់ពុះ) គូសចេញពីកំពូល <span class="mi">\(A\)</span> ត្រួតស៊ីគ្នាលើបន្ទាត់តែមួយ។ ដូច្នេះចំណុច <span class="mi">\(G, O, H, I\)</span> ទាំងអស់រត់នៅលើបន្ទាត់កម្ពស់នោះ។</p></li>
+<li><p>ក្នុង <strong>ត្រីកោណសម័ង្ស</strong> ៖ ចំណុចពិសេសទាំងបួនត្រួតស៊ីគ្នាត្រង់ចំណុចតែមួយ ៖ <div class="md">\[G \equiv O \equiv H \equiv I\]</div></p></li>
+</ul>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>រកកូអរដោនេនៃទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> នៃ <span class="mi">\(\Delta ABC\)</span> ក្នុងករណីនីមួយៗ ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A(0, 0), B(6, 0), C(0, 6)\)</span></p></li>
+<li><p><span class="mi">\(A(-5, 0), B(0, 4), C(2, 0)\)</span></p></li>
+<li><p><span class="mi">\(A(-6, 6), B(-4, 0), C(-2, 6)\)</span></p></li>
+<li><p><span class="mi">\(A(-3, 3), B(0, 0), C(3, 3)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កូអរដោនេ <span class="mi">\(G\left(\frac{x_A+x_B+x_C}{3}, \frac{y_A+y_B+y_C}{3}\right)\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(G\left(\frac{0+6+0}{3}, \frac{0+0+6}{3}\right) = (2, 2)\)</span></p></li>
+<li><p>b. <span class="mi">\(G\left(\frac{-5+0+2}{3}, \frac{0+4+0}{3}\right) = (-1, \frac{4}{3})\)</span></p></li>
+<li><p>c. <span class="mi">\(G\left(\frac{-6-4-2}{3}, \frac{6+0+6}{3}\right) = (-4, 4)\)</span></p></li>
+<li><p>d. <span class="mi">\(G\left(\frac{-3+0+3}{3}, \frac{3+0+3}{3}\right) = (0, 2)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>រកកូអរដោនេនៃទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> នៃត្រីកោណដែលមានកំពូល ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(C(-7, -6), B(-8, 0), A(0, 0)\)</span></p></li>
+<li><p><span class="mi">\(S(2, -6), R(-10, -6), Q(1, 0)\)</span></p></li>
+<li><p><span class="mi">\(T(0, 0), U(1, 3), V(-2, 0)\)</span></p></li>
+<li><p><span class="mi">\(Y(3, 4), X(-5, 0), W(0, 0)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(G\left(\frac{-7-8+0}{3}, \frac{-6+0+0}{3}\right) = (-5, -2)\)</span></p></li>
+<li><p>b. <span class="mi">\(G\left(\frac{2-10+1}{3}, \frac{-6-6+0}{3}\right) = \left(-\frac{7}{3}, -4\right)\)</span></p></li>
+<li><p>c. <span class="mi">\(G\left(\frac{0+1-2}{3}, \frac{0+3+0}{3}\right) = \left(-\frac{1}{3}, 1\right)\)</span></p></li>
+<li><p>d. <span class="mi">\(G\left(\frac{3-5+0}{3}, \frac{4+0+0}{3}\right) = \left(-\frac{2}{3}, \frac{4}{3}\right)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានមេដ្យាន <span class="mi">\(AM\)</span> និងទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បើ <span class="mi">\(AM = 15\text{ cm}\)</span> គណនា <span class="mi">\(AG\)</span> និង <span class="mi">\(GM\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(AG = 10\text{ cm}\)</span> គណនា <span class="mi">\(GM\)</span> និង <span class="mi">\(AM\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(GM = 3.5\text{ cm}\)</span> គណនា <span class="mi">\(AG\)</span> និង <span class="mi">\(AM\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(AG = \frac{2}{3}(15) = 10\text{ cm}\)</span>, <span class="mi">\(GM = \frac{1}{3}(15) = 5\text{ cm}\)</span></p></li>
+<li><p>b. <span class="mi">\(GM = \frac{1}{2}AG = 5\text{ cm}\)</span>, <span class="mi">\(AM = 10 + 5 = 15\text{ cm}\)</span></p></li>
+<li><p>c. <span class="mi">\(AG = 2(3.5) = 7\text{ cm}\)</span>, <span class="mi">\(AM = 3(3.5) = 10.5\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta MNP\)</span> មានមេដ្យាន <span class="mi">\(NE\)</span> និងទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>រក <span class="mi">\(x\)</span> បើ <span class="mi">\(GE = x + 2\)</span> និង <span class="mi">\(NG = 3x - 1\)</span>។</p></li>
+<li><p>គណនាប្រវែងមេដ្យាន <span class="mi">\(NE\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(NG = 2GE \iff 3x - 1 = 2(x + 2) \iff 3x - 1 = 2x + 4 \implies x = 5\)</span></p></li>
+<li><p>b. <span class="mi">\(GE = 5 + 2 = 7\)</span>, <span class="mi">\(NG = 14 \implies NE = 21\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានមេដ្យាន <span class="mi">\(BD\)</span> និងទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ រក <span class="mi">\(x\)</span> បើ <span class="mi">\(GD = 2x - 3\)</span> និង <span class="mi">\(BD = 5x\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(BD = 3GD \iff 5x = 3(2x - 3) \iff 5x = 6x - 9 \implies x = 9\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ មេដ្យាន <span class="mi">\(CD\)</span> មាន <span class="mi">\(CG = 4x - 6\)</span> និង <span class="mi">\(GD = x + 1\)</span>។ គណនាតម្លៃ <span class="mi">\(x\)</span> និងប្រវែង <span class="mi">\(CD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(CG = 2GD \iff 4x - 6 = 2(x + 1) \iff 4x - 6 = 2x + 2 \implies 2x = 8 \implies x = 4\)</span>។ <span class="mi">\(GD = 5 \implies CD = 3(5) = 15\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតកំពូល <span class="mi">\(A\)</span>។ កម្ពស់ <span class="mi">\(AH\)</span> និងមេដ្យាន <span class="mi">\(BM\)</span> កាត់គ្នាត្រង់ <span class="mi">\(P\)</span>។ បង្ហាញថា បន្ទាត់ <span class="mi">\(CP\)</span> កាត់អង្កត់ <span class="mi">\(AB\)</span> ត្រង់ចំណុចកណ្តាលរបស់វា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សមបាត <span class="mi">\(\implies AH\)</span> ជាកម្ពស់ផង និងជាមេដ្យានផង។ ប្រសព្វនៃមេដ្យាន <span class="mi">\(AH\)</span> និង <span class="mi">\(BM\)</span> គឺជាទីប្រជុំទម្ងន់ <span class="mi">\(P\)</span>។ បន្ទាត់ <span class="mi">\(CP\)</span> កាត់តាមទីប្រជុំទម្ងន់ នាំឱ្យ <span class="mi">\(CP\)</span> ជាមេដ្យានទី ៣ <span class="mi">\(\implies CP\)</span> កាត់ <span class="mi">\(AB\)</span> ត្រង់ចំណុចកណ្តាល។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេឱ្យប្រលេឡូក្រាម <span class="mi">\(ABCD\)</span>។ <span class="mi">\(I\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(AB\)</span> និង <span class="mi">\(J\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(BC\)</span>។ បង្ហាញថា បន្ទាត់ <span class="mi">\(AJ\)</span> និង <span class="mi">\(CI\)</span> កាត់គ្នាលើអង្កត់ទ្រូង <span class="mi">\(BD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុង <span class="mi">\(\Delta ABC\)</span> ៖ <span class="mi">\(AJ\)</span> និង <span class="mi">\(CI\)</span> ជាមេដ្យាន <span class="mi">\(\implies\)</span> ប្រសព្វរបស់វាជាទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> នៃ <span class="mi">\(\Delta ABC\)</span>។ មេដ្យានទីបីគូសពី <span class="mi">\(B\)</span> កាត់តាមចំណុចកណ្តាល <span class="mi">\(O\)</span> នៃ <span class="mi">\(AC\)</span> ដែល <span class="mi">\(BO\)</span> ស្ថិតនៅលើអង្កត់ទ្រូង <span class="mi">\(BD\)</span>។ ដូចនេះ <span class="mi">\(AJ\)</span> និង <span class="mi">\(CI\)</span> ជួបគ្នាលើ <span class="mi">\(BD\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គូសប្រលេឡូក្រាម <span class="mi">\(ABCD\)</span> រួចដៅចំណុច <span class="mi">\(E\)</span> ឆ្លុះនៃ <span class="mi">\(D\)</span> ធៀបនឹង <span class="mi">\(B\)</span> (<span class="mi">\(B\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(DE\)</span>)។ បង្ហាញថា <span class="mi">\(B\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta AEC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុង <span class="mi">\(\Delta AEC\)</span> ៖ <span class="mi">\(O\)</span> ជាកណ្តាល <span class="mi">\(AC \implies EO\)</span> ជាមេដ្យាន។ ដោយ <span class="mi">\(B\)</span> ជាកណ្តាល <span class="mi">\(DE\)</span> និង <span class="mi">\(OB = \frac{1}{2}BD \implies EB = 2BO \implies EB = \frac{2}{3}EO\)</span>។ ដូចនេះ <span class="mi">\(B\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta AEC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គេឱ្យប្រលេឡូក្រាម <span class="mi">\(ABCD\)</span>។ <span class="mi">\(I\)</span> ជាចំណុចកណ្តាល <span class="mi">\(AB\)</span> និង <span class="mi">\(J\)</span> ជាចំណុចកណ្តាល <span class="mi">\(BC\)</span>។ អង្កត់ទ្រូង <span class="mi">\(AC\)</span> កាត់ <span class="mi">\(DI\)</span> ត្រង់ <span class="mi">\(P\)</span> និងកាត់ <span class="mi">\(DJ\)</span> ត្រង់ <span class="mi">\(Q\)</span>។ បង្ហាញថា <span class="mi">\(AP = PQ = QC = \frac{1}{3}AC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(P\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta ABD \implies AP = \frac{2}{3}AO = \frac{1}{3}AC\)</span>។ <span class="mi">\(Q\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta CBD \implies CQ = \frac{2}{3}CO = \frac{1}{3}AC\)</span>។ <span class="mi">\(\implies PQ = AC - AP - CQ = \frac{1}{3}AC\)</span>។ ដូចនេះ <span class="mi">\(AP = PQ = QC = \frac{1}{3}AC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span>។ រង្វង់ចារឹកក្នុងត្រីកោណនេះមានផ្ចិត <span class="mi">\(I\)</span> និងប៉ះជ្រុង <span class="mi">\(AB, AC\)</span> ត្រង់ <span class="mi">\(P, Q\)</span>។ បង្ហាញថា ចតុកោណ <span class="mi">\(APIQ\)</span> ជាការេ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(IP \bot AB, IQ \bot AC\)</span> និង <span class="mi">\(\angle A = 90^\circ \implies APIQ\)</span> ជាចតុកោណកែង។ ម៉្យាងទៀត <span class="mi">\(IP = IQ = r\)</span> (កាំរង្វង់) នាំឱ្យ <span class="mi">\(APIQ\)</span> ជាការេ។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ក្នុងប្រលេឡូក្រាម <span class="mi">\(ABCD\)</span> បន្ទាត់កាត់តាម <span class="mi">\(A\)</span> កែងនឹង <span class="mi">\(BC\)</span> និងបន្ទាត់កាត់តាម <span class="mi">\(B\)</span> កែងនឹង <span class="mi">\(AC\)</span> កាត់គ្នាត្រង់ <span class="mi">\(E\)</span>។ បង្ហាញថា <span class="mi">\(E\)</span> ជាអរតូសង់នៃ <span class="mi">\(\Delta ABC\)</span> រួចបញ្ជាក់ថា <span class="mi">\(CE \bot AB\)</span> និង <span class="mi">\(CE \bot CD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុង <span class="mi">\(\Delta ABC\)</span> ៖ <span class="mi">\(AE \bot BC\)</span> និង <span class="mi">\(BE \bot AC \implies E\)</span> ជាអរតូសង់។ កម្ពស់ទីបីគូសពី <span class="mi">\(C\)</span> ត្រូវកាត់តាម <span class="mi">\(E \implies CE \bot AB\)</span>។ ដោយ <span class="mi">\(AB \parallel CD \implies CE \bot CD\)</span> នាំឱ្យ <span class="mi">\(\Delta CDE\)</span> កែងត្រង់ <span class="mi">\(C\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(AB = 6\text{ cm}, AC = 8\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>កំណត់ទីតាំងផ្ចិត និងគណនាកាំ <span class="mi">\(R\)</span> នៃរង្វង់ចារឹកក្រៅត្រីកោណ។</p></li>
+<li><p>គណនាកាំ <span class="mi">\(r\)</span> នៃរង្វង់ចារឹកក្នុងត្រីកោណ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. អុីប៉ូតេនុស <span class="mi">\(BC = \sqrt{6^2 + 8^2} = 10\text{ cm}\)</span>។ ផ្ចិត <span class="mi">\(O\)</span> ជាចំណុចកណ្តាល <span class="mi">\(BC\)</span>, កាំ <span class="mi">\(R = \frac{BC}{2} = 5\text{ cm}\)</span>។</p></li>
+<li><p>b. <span class="mi">\(r = \frac{6 + 8 - 10}{2} = 2\text{ cm}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សម័ង្សជ្រុង <span class="mi">\(a = 12\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាប្រវែងកម្ពស់ <span class="mi">\(h\)</span> នៃត្រីកោណ។</p></li>
+<li><p>គណនាកាំរង្វង់ចារឹកក្រៅ <span class="mi">\(R\)</span> និងកាំរង្វង់ចារឹកក្នុង <span class="mi">\(r\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(h = \frac{a\sqrt{3}}{2} = \frac{12\sqrt{3}}{2} = 6\sqrt{3}\text{ cm}\)</span></p></li>
+<li><p>b. <span class="mi">\(R = \frac{2}{3}h = 4\sqrt{3}\text{ cm}\)</span>, <span class="mi">\(r = \frac{1}{3}h = 2\sqrt{3}\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានមេដ្យាន <span class="mi">\(AM, BN, CP\)</span> កាត់គ្នាត្រង់ <span class="mi">\(G\)</span>។ បង្ហាញថា ៖ <div class="md">\[S_{\Delta GAB} = S_{\Delta GBC} = S_{\Delta GCA} = \frac{1}{3} S_{\Delta ABC}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចម្ងាយពី <span class="mi">\(G\)</span> ទៅជ្រុងនីមួយៗស្មើ <span class="mi">\(\frac{1}{3}\)</span> នៃកម្ពស់ត្រីកោណធំ ៖ <span class="mi">\(S_{\Delta GAB} = \frac{1}{2}AB \times \frac{h_c}{3} = \frac{1}{3}S_{\Delta ABC}\)</span>។ ដូចគ្នា ៖ <span class="mi">\(S_{\Delta GAB} = S_{\Delta GBC} = S_{\Delta GCA} = \frac{1}{3}S_{\Delta ABC}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>តាមទិន្នន័យលំហាត់ទី ១៥ បង្ហាញថា ៦ ត្រីកោណតូចៗដែលខណ្ឌដោយមេដ្យានទាំងបីមានផ្ទៃក្រឡាស្មើគ្នាទាំងអស់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណទាំង ៣ ក្នុងលំហាត់ ១៥ ត្រូវពុះជាពីរដោយមេដ្យាននីមួយៗដែលមានបាតស្មើគ្នា និងកម្ពស់រួម <span class="mi">\(\implies\)</span> ត្រីកោណតូចៗទាំង ៦ មានផ្ទៃស្មើ <span class="mi">\(\frac{1}{6}S\)</span> ទាំងអស់។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានកំពូល <span class="mi">\(A(2, 5), B(-4, 1), C(8, -3)\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាកូអរដោនេនៃចំណុចកណ្តាល <span class="mi">\(M, N, P\)</span> នៃជ្រុងទាំងបី។</p></li>
+<li><p>គណនាកូអរដោនេនៃទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> នៃ <span class="mi">\(\Delta ABC\)</span>។</p></li>
+<li><p>ផ្ទៀងផ្ទាត់ថាកូអរដោនេទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta MNP\)</span> គឺដូចគ្នានឹង <span class="mi">\(G\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(M(2, -1), N(5, 1), P(-1, 3)\)</span></p></li>
+<li><p>b. <span class="mi">\(G\left(\frac{2-4+8}{3}, \frac{5+1-3}{3}\right) = (2, 1)\)</span></p></li>
+<li><p>c. <span class="mi">\(G_{\Delta MNP}\left(\frac{2+5-1}{3}, \frac{-1+1+3}{3}\right) = (2, 1) = G\)</span> (ត្រួតស៊ីគ្នា)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានកម្ពស់ <span class="mi">\(BD\)</span> និង <span class="mi">\(CE\)</span> កាត់គ្នាត្រង់ <span class="mi">\(H\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(AH \bot BC\)</span>។</p></li>
+<li><p>បង្ហាញថា <span class="mi">\(\angle ADE = \angle ABC\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(H\)</span> ជាអរតូសង់ <span class="mi">\(\implies AH\)</span> ជាកម្ពស់ទីបី <span class="mi">\(\implies AH \bot BC\)</span>។</p></li>
+<li><p>b. ចតុកោណ <span class="mi">\(BCDE\)</span> ចារឹកក្នុងរង្វង់ <span class="mi">\(\implies \angle ADE = \angle ABC\)</span> (មុំក្រៅស្មើនឹងមុំឈមក្នុង)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> ស្រួចមានអរតូសង់ <span class="mi">\(H\)</span>។ ហៅ <span class="mi">\(A'\)</span> ជាចំណុចឆ្លុះនៃ <span class="mi">\(H\)</span> ធៀបនឹងជ្រុង <span class="mi">\(BC\)</span>។ បង្ហាញថា <span class="mi">\(A'\)</span> ស្ថិតនៅលើរង្វង់ចារឹកក្រៅ <span class="mi">\(\Delta ABC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\angle BHC = 180^\circ - \angle A\)</span>។ ឆ្លុះធៀប <span class="mi">\(BC \implies \angle BA'C = \angle BHC = 180^\circ - \angle A\)</span>។ <span class="mi">\(\angle BA'C + \angle A = 180^\circ \implies A'\)</span> ស្ថិតនៅលើរង្វង់ចារឹកក្រៅ <span class="mi">\(\Delta ABC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មាន <span class="mi">\(O\)</span> ជាផ្ចិតរង្វង់ចារឹកក្រៅ។ បង្ហាញថា <span class="mi">\(\angle BOC = 2\angle A\)</span> (ករណី <span class="mi">\(\angle A\)</span> ជាមុំស្រួច)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មុំផ្ចិតស្មើពីរដងនៃមុំចារឹកក្នុងស្កាត់ធ្នូជាមួយគ្នា ៖ <span class="mi">\(\angle BOC = 2\angle BAC = 2\angle A\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មាន <span class="mi">\(I\)</span> ជាផ្ចិតរង្វង់ចារឹកក្នុង។ បង្ហាញថា <span class="mi">\(\angle BIC = 90^\circ + \frac{\angle A}{2}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\angle BIC = 180^\circ - \frac{\angle B + \angle C}{2} = 180^\circ - \frac{180^\circ - \angle A}{2} = 90^\circ + \frac{\angle A}{2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មាន <span class="mi">\(I_a\)</span> ជាផ្ចិតរង្វង់ចារឹកក្នុងមុំក្រៅឈមនឹងកំពូល <span class="mi">\(A\)</span>។ បង្ហាញថា <span class="mi">\(\angle BI_a C = 90^\circ - \frac{\angle A}{2}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\angle BI_a C = 180^\circ - \frac{180^\circ - \angle B + 180^\circ - \angle C}{2} = 90^\circ - \frac{\angle A}{2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span>។ កន្លះបន្ទាត់ពុះក្នុង <span class="mi">\(AD\)</span> កាត់ <span class="mi">\(BC\)</span> ត្រង់ <span class="mi">\(D\)</span>។ ដឹងថា <span class="mi">\(AB = 8\text{ cm}, AC = 12\text{ cm}, BC = 15\text{ cm}\)</span>។ គណនាប្រវែង <span class="mi">\(BD\)</span> និង <span class="mi">\(CD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\frac{BD}{CD} = \frac{AB}{AC} = \frac{8}{12} = \frac{2}{3}\)</span>។ <span class="mi">\(BD = \frac{2}{5}(15) = 6\text{ cm}\)</span> និង <span class="mi">\(CD = \frac{3}{5}(15) = 9\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(AB = 9\text{ cm}, AC = 12\text{ cm}\)</span>។ កន្លះបន្ទាត់ពុះ <span class="mi">\(AD\)</span> កាត់ <span class="mi">\(BC\)</span> ត្រង់ <span class="mi">\(D\)</span>។ គណនាប្រវែង <span class="mi">\(BD, CD\)</span> និងប្រវែង <span class="mi">\(AD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(BC = 15\text{ cm}\)</span>។ <span class="mi">\(\frac{BD}{CD} = \frac{9}{12} = \frac{3}{4} \implies BD = \frac{45}{7}\text{ cm}, CD = \frac{60}{7}\text{ cm}\)</span>។ <span class="mi">\(AD = \frac{2bc \cos(\angle A/2)}{b+c} = \frac{2(9)(12)\frac{\sqrt{2}}{2}}{21} = \frac{36\sqrt{2}}{7}\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ ចំណុច <span class="mi">\(M\)</span> ណាមួយក្នុងប្លង់។ បង្ហាញសមភាពវ៉ិចទ័រ ៖ <div class="md">\[\vec{MA} + \vec{MB} + \vec{MC} = 3\vec{MG}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\vec{MA} + \vec{MB} + \vec{MC} = (\vec{MG}+\vec{GA}) + (\vec{MG}+\vec{GB}) + (\vec{MG}+\vec{GC}) = 3\vec{MG} + (\vec{GA}+\vec{GB}+\vec{GC}) = 3\vec{MG}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(AB = AC = 13\text{ cm}\)</span> និងបាត <span class="mi">\(BC = 10\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាប្រវែងកម្ពស់ <span class="mi">\(AH\)</span>។</p></li>
+<li><p>គណនាចម្ងាយពីទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> ទៅកាន់កំពូលទាំងបី។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(BH = 5\text{ cm} \implies AH = \sqrt{13^2 - 5^2} = 12\text{ cm}\)</span></p></li>
+<li><p>b. <span class="mi">\(AG = \frac{2}{3}(12) = 8\text{ cm}\)</span>, <span class="mi">\(GH = 4\text{ cm}\)</span>។ <span class="mi">\(GB = GC = \sqrt{4^2 + 5^2} = \sqrt{41}\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>តាមទិន្នន័យលំហាត់ទី ២៦ គណនាកាំ <span class="mi">\(R\)</span> នៃរង្វង់ចារឹកក្រៅ និងកាំ <span class="mi">\(r\)</span> នៃរង្វង់ចារឹកក្នុង <span class="mi">\(\Delta ABC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(S = \frac{1}{2}(10)(12) = 60\text{ cm}^2\)</span>។ <span class="mi">\(p = \frac{13+13+10}{2} = 18\text{ cm}\)</span>។ <span class="mi">\(r = \frac{S}{p} = \frac{60}{18} = \frac{10}{3}\text{ cm}\)</span>។ <span class="mi">\(R = \frac{abc}{4S} = \frac{13 \times 13 \times 10}{4(60)} = \frac{169}{24}\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> និងចំណុចកណ្តាល <span class="mi">\(M, N, P\)</span> នៃជ្រុង <span class="mi">\(BC, CA, AB\)</span> រៀងគ្នា។ បង្ហាញថា ៖ <div class="md">\[\vec{AM} + \vec{BN} + \vec{CP} = \vec{0}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\vec{AM} = \frac{1}{2}(\vec{AB} + \vec{AC})\)</span>។ បូកទាំងបី ៖ <span class="mi">\(\vec{AM} + \vec{BN} + \vec{CP} = \frac{1}{2}(\vec{AB}+\vec{BC}+\vec{CA} + \vec{AC}+\vec{BA}+\vec{CB}) = \vec{0}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានមេដ្យាន <span class="mi">\(m_a, m_b, m_c\)</span>។ បង្ហាញថា ៖ <div class="md">\[\frac{3}{4}(a + b + c) &lt; m_a + m_b + m_c &lt; a + b + c\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បូកវិសមភាពត្រីកោណនៃមេដ្យាន ៖ <span class="mi">\(m_a &lt; \frac{b+c}{2} \dots \implies m_a+m_b+m_c &lt; a+b+c\)</span>។</p></li>
+<li><p>ក្នុង <span class="mi">\(\Delta GBC\)</span> ៖ <span class="mi">\(GB + GC &gt; BC \iff \frac{2}{3}(m_b + m_c) &gt; a \dots \implies m_a+m_b+m_c &gt; \frac{3}{4}(a+b+c)\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ តាម <span class="mi">\(G\)</span> គូសបន្ទាត់ស្របនឹង <span class="mi">\(BC\)</span> កាត់ <span class="mi">\(AB\)</span> ត្រង់ <span class="mi">\(D\)</span> និងកាត់ <span class="mi">\(AC\)</span> ត្រង់ <span class="mi">\(E\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាផលធៀប <span class="mi">\(\frac{AD}{AB}\)</span> និង <span class="mi">\(\frac{DE}{BC}\)</span>។</p></li>
+<li><p>គណនាផលធៀបផ្ទៃ <span class="mi">\(\frac{S_{\Delta ADE}}{S_{\Delta ABC}}\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\frac{AD}{AB} = \frac{AG}{AA'} = \frac{2}{3}\)</span> និង <span class="mi">\(\frac{DE}{BC} = \frac{2}{3}\)</span></p></li>
+<li><p>b. <span class="mi">\(\frac{S_{\Delta ADE}}{S_{\Delta ABC}} = \left(\frac{2}{3}\right)^2 = \frac{4}{9}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span>។ មេដ្យាន <span class="mi">\(BM\)</span> និង <span class="mi">\(CN\)</span> កាត់គ្នាត្រង់ <span class="mi">\(G\)</span>។ បង្ហាញថា <span class="mi">\(4(BM^2 + CN^2) = 5BC^2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(BM^2 = c^2 + \frac{b^2}{4}\)</span>, <span class="mi">\(CN^2 = b^2 + \frac{c^2}{4}\)</span>។ <span class="mi">\(BM^2 + CN^2 = \frac{5}{4}(b^2 + c^2) = \frac{5}{4}BC^2 \iff 4(BM^2 + CN^2) = 5BC^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានអរតូសង់ <span class="mi">\(H\)</span> និងផ្ចិតរង្វង់ចារឹកក្រៅ <span class="mi">\(O\)</span>។ <span class="mi">\(M\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(BC\)</span>។ បង្ហាញថា <span class="mi">\(AH = 2OM\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គូសអង្កត់ផ្ចិត <span class="mi">\(AD'\)</span> នៃរង្វង់ចារឹកក្រៅ <span class="mi">\(\implies BH \parallel CD'\)</span> និង <span class="mi">\(CH \parallel BD' \implies BD'CH\)</span> ជាប្រលេឡូក្រាម <span class="mi">\(\implies M\)</span> កណ្តាល <span class="mi">\(HD'\)</span> <span class="mi">\(\implies OM\)</span> ជាបាតមធ្យមនៃ <span class="mi">\(\Delta AHD' \implies AH = 2OM\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>តាមទិន្នន័យលំហាត់ទី ៣២ បង្ហាញថា ទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> ស្ថិតនៅលើអង្កត់ <span class="mi">\(OH\)</span> និងចែក <span class="mi">\(OH\)</span> តាមផលធៀប <span class="mi">\(HG = 2GO\)</span> (បន្ទាត់អឺលែរ)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta AGH \sim \Delta MGO\)</span> (<span class="mi">\(AH \parallel OM\)</span>) ផលធៀប <span class="mi">\(\frac{AH}{OM} = 2 \implies \frac{HG}{GO} = 2\)</span> និង <span class="mi">\(H, G, O\)</span> កូលីនេអ៊ែរគ្នា។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span>។ បង្ហាញថា ផ្ចិតរង្វង់ចារឹកក្រៅ <span class="mi">\(O\)</span>, ទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>, អរតូសង់ <span class="mi">\(H\)</span>, និងផ្ចិតរង្វង់ចារឹកក្នុង <span class="mi">\(I\)</span> រត់នៅលើបន្ទាត់តែមួយ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុងត្រីកោណសមបាត កម្ពស់គូសពីកំពូលជាមេដ្យាន មេដ្យាទ័រ និងបន្ទាត់ពុះ នាំឱ្យចំណុចពិសេសទាំង ៤ ត្រូវស្ថិតនៅលើបន្ទាត់នេះទាំងអស់។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មួយ។ បង្ហាញថា បើបន្ទាត់ពុះមួយជាកម្ពស់ផង នោះត្រីកោណនោះជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់ពុះជាកម្ពស់ <span class="mi">\(\implies\)</span> ពីរត្រីកោណកែងប៉ុនគ្នា (ម.ជ.ម) <span class="mi">\(\implies\)</span> ជ្រុងពីរស្មើគ្នា <span class="mi">\(\implies\)</span> សមបាត។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មួយ។ បង្ហាញថា បើមេដ្យានមួយជាកម្ពស់ផង នោះត្រីកោណនោះជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មេដ្យានជាកម្ពស់ <span class="mi">\(\implies\)</span> ពីរត្រីកោណកែងប៉ុនគ្នា (ជ.ម.ជ) <span class="mi">\(\implies\)</span> ជ្រុងពីរស្មើគ្នា <span class="mi">\(\implies\)</span> សមបាត។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មួយ។ បង្ហាញថា បើមេដ្យានមួយជាបន្ទាត់ពុះផង នោះត្រីកោណនោះជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មេដ្យានជាបន្ទាត់ពុះ តាមទ្រឹស្ដីបទបន្ទាត់ពុះ <span class="mi">\(\frac{AB}{AC} = \frac{DB}{DC} = 1 \implies AB = AC\)</span> (សមបាត)។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានកម្ពស់ពីរ <span class="mi">\(BD\)</span> និង <span class="mi">\(CE\)</span> ស្មើគ្នា។ បង្ហាញថា <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta BDC \cong \Delta CEB\)</span> (អ.ជ) <span class="mi">\(\implies \angle B = \angle C \implies\)</span> សមបាត។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានមេដ្យានពីរ <span class="mi">\(BM\)</span> និង <span class="mi">\(CN\)</span> ស្មើគ្នា។ បង្ហាញថា <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(GB = GC \implies \Delta GBC\)</span> សមបាត <span class="mi">\(\implies \Delta BNC \cong \Delta CMB \implies \angle B = \angle C \implies\)</span> សមបាត។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានបន្ទាត់ពុះមុំពីរស្មើគ្នា (ទ្រឹស្ដីបទស្តៃន័រ-ឡេមូស - Steiner-Lehmus Theorem)។ បង្ហាញថា <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្ដីបទស្តៃន័រ-ឡេមូស បើបន្ទាត់ពុះក្នុងពីរស្មើគ្នា នោះត្រីកោណនោះត្រូវតែជាត្រីកោណសមបាត (ស្រាយតាមវិធីទាញរកទំនាស់)។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានជ្រុង <span class="mi">\(a = 7, b = 8, c = 9\)</span>។ គណនាកាំ <span class="mi">\(r\)</span> នៃរង្វង់ចារឹកក្នុង និងកាំ <span class="mi">\(R\)</span> នៃរង្វង់ចារឹកក្រៅ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(p = 12, S = 12\sqrt{5}\)</span> ៖ <span class="mi">\(r = \frac{S}{p} = \sqrt{5}\text{ cm}\)</span>។ <span class="mi">\(R = \frac{abc}{4S} = \frac{7 \times 8 \times 9}{4(12\sqrt{5})} = \frac{21\sqrt{5}}{10}\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span>។ ចំណុច <span class="mi">\(P\)</span> នៅលើប្លង់។ ស្វែងរកទីតាំងនៃចំណុច <span class="mi">\(P\)</span> ដើម្បីឱ្យផលបូកចម្ងាយ <span class="mi">\(PA^2 + PB^2 + PC^2\)</span> មានតម្លៃតូចបំផុត (បង្ហាញថា <span class="mi">\(P \equiv G\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(PA^2 + PB^2 + PC^2 = 3PG^2 + GA^2 + GB^2 + GC^2 \ge GA^2 + GB^2 + GC^2\)</span>។ តូចបំផុតកាលណា <span class="mi">\(PG = 0 \iff P \equiv G\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> និងទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ បន្ទាត់មួយកាត់តាម <span class="mi">\(G\)</span> កាត់ <span class="mi">\(AB\)</span> ត្រង់ <span class="mi">\(M\)</span> និងកាត់ <span class="mi">\(AC\)</span> ត្រង់ <span class="mi">\(N\)</span>។ បង្ហាញថា ៖ <div class="md">\[\frac{AB}{AM} + \frac{AC}{AN} = 3\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើផលធៀបផ្ទៃត្រីកោណកាត់តាម <span class="mi">\(G\)</span> បូកចូលគ្នាបាន <span class="mi">\(\frac{AB}{AM} + \frac{AC}{AN} = 3\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានកម្ពស់ទាំងបី <span class="mi">\(h_a, h_b, h_c\)</span> និងកាំរង្វង់ចារឹកក្នុង <span class="mi">\(r\)</span>។ បង្ហាញថា ៖ <div class="md">\[\frac{1}{h_a} + \frac{1}{h_b} + \frac{1}{h_c} = \frac{1}{r}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(S = \frac{1}{2}a h_a \implies \frac{1}{h_a} = \frac{a}{2S}\)</span>។ <span class="mi">\(\frac{1}{h_a} + \frac{1}{h_b} + \frac{1}{h_c} = \frac{a+b+c}{2S} = \frac{2p}{2S} = \frac{p}{S} = \frac{1}{r}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណកែង <span class="mi">\(ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span>។ បង្ហាញថា <span class="mi">\(r = \frac{AB + AC - BC}{2}\)</span> និង <span class="mi">\(2(R + r) = AB + AC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(r = \frac{b+c-a}{2}\)</span> និង <span class="mi">\(R = \frac{a}{2} \implies 2(R+r) = a + (b+c-a) = b+c = AB+AC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សម័ង្សចារឹកក្នុងរង្វង់ <span class="mi">\(\mathcal{C}(O, R)\)</span>។ គណនាផ្ទៃក្រឡារវាងរង្វង់ និងត្រីកោណសម័ង្សជាអនុគមន៍នៃ <span class="mi">\(R\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(S_{\text{រង្វង់}} = \pi R^2\)</span>។ ជ្រុងសម័ង្ស <span class="mi">\(a = R\sqrt{3} \implies S_{\Delta} = \frac{3\sqrt{3}}{4}R^2\)</span>។ <span class="mi">\(S = R^2\left(\pi - \frac{3\sqrt{3}}{4}\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>គេឱ្យការេ <span class="mi">\(ABCD\)</span>។ ចំណុច <span class="mi">\(M\)</span> ជាចំណុចកណ្តាល <span class="mi">\(CD\)</span>។ <span class="mi">\(AM\)</span> កាត់អង្កត់ទ្រូង <span class="mi">\(BD\)</span> ត្រង់ <span class="mi">\(K\)</span>។ បង្ហាញថា <span class="mi">\(K\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta ACD\)</span> និងរកផលធៀប <span class="mi">\(\frac{DK}{DB}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(M\)</span> កណ្តាល <span class="mi">\(CD\)</span> និង <span class="mi">\(O\)</span> កណ្តាល <span class="mi">\(AC \implies K\)</span> ជាប្រសព្វមេដ្យាន <span class="mi">\(\implies K\)</span> ជាទីប្រជុំទម្ងន់ <span class="mi">\(\Delta ACD\)</span> <span class="mi">\(\implies DK = \frac{2}{3}DO = \frac{1}{3}BD \implies \frac{DK}{DB} = \frac{1}{3}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span>។ លើជ្រុង <span class="mi">\(BC, CA, AB\)</span> យកចំណុច <span class="mi">\(A', B', C'\)</span> ដែល <span class="mi">\(\frac{BA'}{BC} = \frac{CB'}{CA} = \frac{AC'}{AB} = \frac{1}{3}\)</span>។ បង្ហាញថា <span class="mi">\(\Delta ABC\)</span> និង <span class="mi">\(\Delta A'B'C'\)</span> មានទីប្រជុំទម្ងន់រួមគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\vec{GA'} + \vec{GB'} + \vec{GC'} = \vec{0}\)</span> តាមសមាមាត្រ <span class="mi">\(\frac{1}{3}\)</span> នាំឱ្យ <span class="mi">\(G\)</span> ក៏ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta A'B'C'\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> ស្រួច។ <span class="mi">\(H\)</span> ជាអរតូសង់។ បង្ហាញថា ផលបូក <span class="mi">\(\angle BHC + \angle A = 180^\circ\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណ <span class="mi">\(AEHF\)</span> មាន <span class="mi">\(\angle AEH = \angle AFH = 90^\circ \implies \angle EHF = 180^\circ - \angle A\)</span>។ ដោយ <span class="mi">\(\angle BHC = \angle EHF\)</span> (ទល់កំពូល) <span class="mi">\(\implies \angle BHC + \angle A = 180^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> ស្រួច។ កម្ពស់ទាំងបីកាត់រង្វង់ចារឹកក្រៅត្រង់ <span class="mi">\(A_1, B_1, C_1\)</span>។ បង្ហាញថា <span class="mi">\(H\)</span> ជាផ្ចិតនៃរង្វង់ចារឹកក្នុងត្រីកោណអរតូសង់ (Orthic Triangle) <span class="mi">\(\Delta A_1 B_1 C_1\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\angle A_1 B_1 H = \angle A_1 C_1 H = \dots\)</span> បង្ហាញថា <span class="mi">\(HA_1, HB_1, HC_1\)</span> ជាបន្ទាត់ពុះមុំនៃ <span class="mi">\(\Delta A_1 B_1 C_1 \implies H\)</span> ជាផ្ចិតរង្វង់ចារឹកក្នុង។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៦ បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g08_c16">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L15.html"><small>← មេរៀនមុន</small><b>រង្វង់</b></a><a class="next" href="L17.html"><small>មេរៀនបន្ទាប់ →</small><b>រូបធរណីមាត្រដែលមានវិមាត្របី</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មេដ្យាននៃត្រីកោណ គឺជាអង្កត់ដែល ៖", "options": ["គូសចេញពីកំពូលកែងនឹងជ្រុងឈម", "ភ្ជាប់ពីកំពូលទៅចំណុចកណ្តាលជ្រុងឈម", "ចែកមុំកំពូលជាពីរស្មើគ្នា", "កាត់តាមចំណុចកណ្តាលហើយកែង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុចប្រសព្វនៃមេដ្យានទាំងបីនៃត្រីកោណ ហៅថា ៖", "options": ["អរតូសង់ (<span class=\"mi\">\\(H\\)<\/span>)", "ទីប្រជុំទម្ងន់ (<span class=\"mi\">\\(G\\)<\/span>)", "ផ្ចិតរង្វង់ចារឹកក្រៅ", "ផ្ចិតរង្វង់ចារឹកក្នុង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ទីប្រជុំទម្ងន់ <span class=\"mi\">\\(G\\)<\/span> នៃត្រីកោណស្ថិតនៅចម្ងាយ ៖", "options": ["<span class=\"mi\">\\(\\frac{3}{4}\\)<\/span> នៃមេដ្យានពីកំពូល", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span> នៃមេដ្យានពីកំពូល", "<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span> នៃមេដ្យានពីកំពូល", "<span class=\"mi\">\\(\\frac{2}{3}\\)<\/span> នៃមេដ្យានពីកំពូល"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើមេដ្យាន <span class=\"mi\">\\(AM = 9\\text{ cm}\\)<\/span> និង <span class=\"mi\">\\(G\\)<\/span> ជាទីប្រជុំទម្ងន់ នោះ <span class=\"mi\">\\(AG\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរទី ៤ ប្រវែង <span class=\"mi\">\\(GM\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4.5\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុចប្រសព្វនៃបន្ទាត់មេដ្យាទ័រទាំងបីនៃជ្រុងត្រីកោណ ហៅថា ៖", "options": ["ផ្ចិតរង្វង់ចារឹកក្រៅ (<span class=\"mi\">\\(O\\)<\/span>)", "ទីប្រជុំទម្ងន់ (<span class=\"mi\">\\(G\\)<\/span>)", "អរតូសង់ (<span class=\"mi\">\\(H\\)<\/span>)", "ផ្ចិតរង្វង់ចារឹកក្នុង (<span class=\"mi\">\\(I\\)<\/span>)"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផ្ចិតរង្វង់ចារឹកក្រៅត្រីកោណ ស្ថិតនៅ ៖", "options": ["ចំកណ្តាលមេដ្យាន", "ស្មើចម្ងាយពីជ្រុងទាំងបី", "ស្មើចម្ងាយពីកំពូលទាំងបី", "លើកម្ពស់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុចប្រសព្វនៃកម្ពស់ទាំងបីនៃត្រីកោណ ហៅថា ៖", "options": ["ផ្ចិតរង្វង់ចារឹកក្រៅ", "ទីប្រជុំទម្ងន់ (<span class=\"mi\">\\(G\\)<\/span>)", "អរតូសង់ (<span class=\"mi\">\\(H\\)<\/span>)", "ផ្ចិតរង្វង់ចារឹកក្នុង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុចប្រសព្វនៃកន្លះបន្ទាត់ពុះមុំក្នុងទាំងបីនៃត្រីកោណ ហៅថា ៖", "options": ["ផ្ចិតរង្វង់ចារឹកក្នុង (<span class=\"mi\">\\(I\\)<\/span>)", "អរតូសង់ (<span class=\"mi\">\\(H\\)<\/span>)", "ទីប្រជុំទម្ងន់ (<span class=\"mi\">\\(G\\)<\/span>)", "ផ្ចិតរង្វង់ចារឹកក្រៅ (<span class=\"mi\">\\(O\\)<\/span>)"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផ្ចិតរង្វង់ចារឹកក្នុងត្រីកោណ ស្ថិតនៅ ៖", "options": ["ក្រៅត្រីកោណជានិច្ច", "ស្មើចម្ងាយពីកំពូលទាំងបី", "ស្មើចម្ងាយពីជ្រុងទាំងបី", "លើអុីប៉ូតេនុស"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែង ផ្ចិតនៃរង្វង់ចារឹកក្រៅស្ថិតនៅ ៖", "options": ["ខាងក្រៅត្រីកោណ", "កំពូលមុំកែង", "ចំកណ្តាលអុីប៉ូតេនុស", "កណ្តាលជ្រុងកែង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែង អរតូសង់ <span class=\"mi\">\\(H\\)<\/span> ស្ថិតនៅ ៖", "options": ["ចំកំពូលនៃមុំកែង", "ចំកណ្តាលអុីប៉ូតេនុស", "ខាងក្រៅត្រីកោណ", "ចំទីប្រជុំទម្ងន់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណទាល អរតូសង់ <span class=\"mi\">\\(H\\)<\/span> ស្ថិតនៅ ៖", "options": ["លើកំពូលមុំទាល", "ខាងក្នុងត្រីកោណ", "លើជ្រុងវែង", "ខាងក្រៅត្រីកោណ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណទាល ផ្ចិតរង្វង់ចារឹកក្រៅ <span class=\"mi\">\\(O\\)<\/span> ស្ថិតនៅ ៖", "options": ["លើជ្រុងមួយ", "ខាងក្នុងត្រីកោណ", "ខាងក្រៅត្រីកោណ", "កំពូលមួយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណសម័ង្ស ចំណុចទាំងបួន <span class=\"mi\">\\(G, O, H, I\\)<\/span> ៖", "options": ["បង្កើតបានជាការេមួយ", "ស្ថិតនៅដាច់ពីគ្នាទាំងស្រុង", "ត្រួតស៊ីគ្នាត្រង់ចំណុចតែមួយ", "រត់លើរង្វង់មួយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ដែលកាត់តាម <span class=\"mi\">\\(H, G, O\\)<\/span> ក្នុងត្រីកោណទូទៅ ហៅថា ៖", "options": ["បន្ទាត់ថាលេស", "បន្ទាត់អឺលែរ (Euler Line)", "បន្ទាត់ពីតាករ", "បន្ទាត់ប៉ាស្កាល់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "លើបន្ទាត់អឺលែរ ទំនាក់ទំនងរវាង <span class=\"mi\">\\(HG\\)<\/span> និង <span class=\"mi\">\\(GO\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(HG = 2GO\\)<\/span>", "<span class=\"mi\">\\(HG = GO\\)<\/span>", "<span class=\"mi\">\\(GO = 2HG\\)<\/span>", "<span class=\"mi\">\\(HG = 3GO\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើកំពូលទាំងបីនៃត្រីកោណគឺ <span class=\"mi\">\\((0,0), (6,0), (0,6)\\)<\/span> នោះទីប្រជុំទម្ងន់ <span class=\"mi\">\\(G\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\((2, 3)\\)<\/span>", "<span class=\"mi\">\\((3, 3)\\)<\/span>", "<span class=\"mi\">\\((1, 1)\\)<\/span>", "<span class=\"mi\">\\((2, 2)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើកំពូលទាំងបីគឺ <span class=\"mi\">\\(A(-3, 0), B(3, 0), C(0, 6)\\)<\/span> នោះទីប្រជុំទម្ងន់ <span class=\"mi\">\\(G\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\((0, 2)\\)<\/span>", "<span class=\"mi\">\\((0, 3)\\)<\/span>", "<span class=\"mi\">\\((0, 1)\\)<\/span>", "<span class=\"mi\">\\((1, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើមេដ្យាន <span class=\"mi\">\\(BE\\)<\/span> មាន <span class=\"mi\">\\(GE = 4\\text{ cm}\\)<\/span> នោះប្រវែង <span class=\"mi\">\\(BG\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(8\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(12\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរទី ២០ ប្រវែងមេដ្យានទាំងមូល <span class=\"mi\">\\(BE\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(12\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(8\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(16\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ទីប្រជុំទម្ងន់ <span class=\"mi\">\\(G\\)<\/span> ចែកត្រីកោណជា ៣ ត្រីកោណតូចៗ ៖", "options": ["មានផ្ទៃក្រឡាស្មើគ្នា", "ប៉ុនគ្នាជានិច្ច", "ជាត្រីកោណកែង", "មានបរិមាត្រស្មើគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "មេដ្យានទាំងបីចែកត្រីកោណជា ៦ ត្រីកោណតូចៗ ៖", "options": ["ជាត្រីកោណសមបាត", "ប៉ុនគ្នាទាំងអស់", "មានផ្ទៃក្រឡាស្មើគ្នាទាំងអស់", "គ្មានទំនាក់ទំនង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សមបាតត្រង់ <span class=\"mi\">\\(A\\)<\/span> កម្ពស់ <span class=\"mi\">\\(AH\\)<\/span> ក៏ជា ៖", "options": ["គ្រាន់តែមេដ្យាន", "មេដ្យាន មេដ្យាទ័រ និងកន្លះបន្ទាត់ពុះ", "គ្រាន់តែបន្ទាត់ពុះ", "អង្កត់ទ្រូង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែងដែលមានជ្រុង <span class=\"mi\">\\(6, 8, 10\\)<\/span> កាំរង្វង់ចារឹកក្រៅ <span class=\"mi\">\\(R\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែងដែលមានជ្រុង <span class=\"mi\">\\(6, 8, 10\\)<\/span> កាំរង្វង់ចារឹកក្នុង <span class=\"mi\">\\(r\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(1\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចម្ងាយរវាងផ្ចិតរង្វង់ចារឹកក្រៅ <span class=\"mi\">\\(O\\)<\/span> និងកំពូលទាំងបីនៃត្រីកោណ ៖", "options": ["ខុសគ្នាជានិច្ច", "ស្មើគ្នាជានិច្ច", "ស្មើពាក់កណ្តាលកម្ពស់", "ស្មើជ្រុងតូច"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំណុចប្រសព្វនៃកន្លះបន្ទាត់ពុះក្រៅពីរ និងកន្លះបន្ទាត់ពុះក្នុងមួយ ហៅថា ៖", "options": ["ផ្ចិតរង្វង់ចារឹកក្រៅ", "ទីប្រជុំទម្ងន់", "អរតូសង់", "ផ្ចិតរង្វង់ចារឹកក្នុងមុំក្រៅ (Excenter)"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ត្រីកោណមួយមានរង្វង់ចារឹកក្នុងមុំក្រៅ (Excircle) ចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(G\\)<\/span> ជាទីប្រជុំទម្ងន់នៃ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> នោះផលបូកវ៉ិចទ័រ <span class=\"mi\">\\(\\vec{GA} + \\vec{GB} + \\vec{GC}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\vec{0}\\)<\/span>", "<span class=\"mi\">\\(3\\vec{GA}\\)<\/span>", "<span class=\"mi\">\\(\\vec{AB}\\)<\/span>", "<span class=\"mi\">\\(2\\vec{GC}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សម័ង្សជ្រុង <span class=\"mi\">\\(a\\)<\/span> កម្ពស់ <span class=\"mi\">\\(h\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\frac{a\\sqrt{3}}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{a\\sqrt{3}}{2}\\)<\/span>", "<span class=\"mi\">\\(a\\sqrt{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{a}{2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សម័ង្សជ្រុង <span class=\"mi\">\\(a\\)<\/span> កាំរង្វង់ចារឹកក្រៅ <span class=\"mi\">\\(R\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\frac{a\\sqrt{3}}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{a\\sqrt{3}}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{a\\sqrt{3}}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{2a}{3}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សម័ង្សជ្រុង <span class=\"mi\">\\(a\\)<\/span> កាំរង្វង់ចារឹកក្នុង <span class=\"mi\">\\(r\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\frac{a\\sqrt{2}}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{a\\sqrt{3}}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{a}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{a\\sqrt{3}}{6}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សម័ង្ស ផលធៀប <span class=\"mi\">\\(\\frac{R}{r}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\frac{3}{2}\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{3}\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(AD\\)<\/span> ជាមេដ្យាននៃ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> នោះ <span class=\"mi\">\\(\\Delta ABD\\)<\/span> និង <span class=\"mi\">\\(\\Delta ACD\\)<\/span> ៖", "options": ["ជាត្រីកោណកែង", "ប៉ុនគ្នាជានិច្ច", "មានផ្ទៃក្រឡាស្មើគ្នា", "មានបរិមាត្រស្មើគ្នា"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(x_G = \\frac{1 + 4 + x}{3} = 3\\)<\/span> នោះ <span class=\"mi\">\\(x\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> បើ <span class=\"mi\">\\(H\\)<\/span> ត្រួតស៊ីគ្នាលើ <span class=\"mi\">\\(A\\)<\/span> នោះមុំ <span class=\"mi\">\\(\\angle A\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំណុចកណ្តាលនៃជ្រុងទាំងបីនៃត្រីកោណមួយ បង្កើតបានជាត្រីកោណមេដ្យាន ដែលមានទីប្រជុំទម្ងន់ ៖", "options": ["ចំផ្ចិតរង្វង់ចារឹកក្រៅ", "នៅក្រៅត្រីកោណ", "ចំអរតូសង់", "ត្រួតស៊ីគ្នាលើទីប្រជុំទម្ងន់នៃត្រីកោណដើម"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផ្ទៃក្រឡានៃត្រីកោណមេដ្យានស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span> នៃផ្ទៃត្រីកោណដើម", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span> នៃផ្ទៃត្រីកោណដើម", "<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span> នៃផ្ទៃត្រីកោណដើម", "<span class=\"mi\">\\(\\frac{1}{8}\\)<\/span> នៃផ្ទៃត្រីកោណដើម"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បរិមាត្រនៃត្រីកោណមេដ្យានស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span> នៃបរិមាត្រដើម", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span> នៃបរិមាត្រត្រីកោណដើម", "ស្មើបរិមាត្រដើម", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span> នៃបរិមាត្រត្រីកោណដើម"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> បន្ទាត់ពុះក្នុង <span class=\"mi\">\\(AD\\)<\/span> ចែកជ្រុងឈមតាមផលធៀប ៖", "options": ["<span class=\"mi\">\\(\\frac{DB}{DC} = \\frac{AC}{AB}\\)<\/span>", "<span class=\"mi\">\\(\\frac{DB}{DC} = \\frac{AB}{AC}\\)<\/span>", "<span class=\"mi\">\\(DB = DC\\)<\/span>", "<span class=\"mi\">\\(\\frac{DB}{DC} = \\frac{AB^2}{AC^2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> មាន <span class=\"mi\">\\(AB = 6, AC = 9, BC = 10\\)<\/span>។ ប្រវែង <span class=\"mi\">\\(DB\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរទី ៤២ ប្រវែង <span class=\"mi\">\\(DC\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចំណុចប្រសព្វនៃបន្ទាត់ពុះមុំទាំងបី ស្ថិតនៅខាងក្នុងត្រីកោណ ៖", "options": ["ជានិច្ចគ្រប់ប្រភេទត្រីកោណ", "តែក្នុងត្រីកោណស្រួច", "តែក្នុងត្រីកោណសម័ង្ស", "អាចនៅក្រៅបាន"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ទីប្រជុំទម្ងន់ <span class=\"mi\">\\(G\\)<\/span> ស្ថិតនៅខាងក្នុងត្រីកោណ ៖", "options": ["តែក្នុងត្រីកោណស្រួច", "ជានិច្ចគ្រប់ប្រភេទត្រីកោណ", "អាចនៅក្រៅបាន", "លើជ្រុងមួយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចំណុចពិសេសណាខ្លះដែលអាចស្ថិតនៅខាងក្រៅត្រីកោណ?", "options": ["គ្មានចំណុចណាអាចនៅក្រៅបានឡើយ", "ទីប្រជុំទម្ងន់ (<span class=\"mi\">\\(G\\)<\/span>) និង ផ្ចិតរង្វង់ចារឹកក្នុង (<span class=\"mi\">\\(I\\)<\/span>)", "ទីប្រជុំទម្ងន់ (<span class=\"mi\">\\(G\\)<\/span>) តែមួយគត់", "អរតូសង់ (<span class=\"mi\">\\(H\\)<\/span>) និង ផ្ចិតរង្វង់ចារឹកក្រៅ (<span class=\"mi\">\\(O\\)<\/span>)"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើត្រីកោណមួយមាន <span class=\"mi\">\\(H \\equiv G\\)<\/span> នោះត្រីកោណនោះជា ៖", "options": ["ត្រីកោណសមបាតធម្មតា", "ត្រីកោណកែង", "ត្រីកោណសម័ង្ស", "ត្រីកោណទាល"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើត្រីកោណមួយមាន <span class=\"mi\">\\(O \\equiv I\\)<\/span> នោះត្រីកោណនោះជា ៖", "options": ["ត្រីកោណស្មើត", "ត្រីកោណកែង", "ត្រីកោណសមបាត", "ត្រីកោណសម័ង្ស"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រង្វង់ ៩ ចំណុច (Euler’s Nine-Point Circle) កាត់តាម ៖", "options": ["ជើងកម្ពស់ ៣, ចំណុចកណ្តាលជ្រុង ៣, និងចំណុចកណ្តាលនៃអង្កត់ភ្ជាប់ <span class=\"mi\">\\(H\\)<\/span> ទៅកំពូលទាំង ៣", "កំពូលទាំង ៣ និងផ្ចិត ៦ ទៀត", "ជ្រុងទាំង ៩ នៃពហុកោណ", "ចំណុចកណ្តាលមេដ្យាន ៩"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កាំនៃរង្វង់ ៩ ចំណុចស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2R\\)<\/span>", "ស្មើកាំ <span class=\"mi\">\\(R\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}R\\)<\/span> (ពាក់កណ្តាលកាំរង្វង់ចារឹកក្រៅ)", "ស្មើកាំរង្វង់ចារឹកក្នុង <span class=\"mi\">\\(r\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៩ : វិសមីការនិងប្រព័ន្ធវិសមីការ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៩ «វិសមីការនិងប្រព័ន្ធវិសមីការ» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៩ : វិសមីការនិងប្រព័ន្ធវិសមីការ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៩ «វិសមីការនិងប្រព័ន្ធវិសមីការ» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ៩</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៩</span>
+      <div><span class="ls-kicker">ជំពូកទី ៣ សមីការនិងវិសមីការ · មេរៀនទី ៩ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>វិសមីការនិងប្រព័ន្ធវិសមីការ</h1><div class="ls-chips"><span class="chip chip-soon">សមីការនិងវិសមីការ</span><span class="chip chip-soon">៤ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណ និងលក្ខណៈនៃវិសមីការ</a></li><li class="sub"><a href="#u2">២. សញ្ញានៃទ្វេធាដឺក្រេទីមួយ <span class="mi">\(ax + b\)</span></a></li><li class="sub"><a href="#u3">៣. សញ្ញានៃត្រីធាដឺក្រេទីពីរ <span class="mi">\(ax^2 + bx + c\)</span></a></li><li class="sub"><a href="#u4">៤. វិសមីការសនិទាន និងវិសមីការតម្លៃដាច់ខាត</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃវិសមីការ និងអ្នកប្រាជ្ញ Cauchy-Schwarz</b></header><div class="bx-b">
+<p>គំនិតនៃវិសមីការ (Inequalities) បានកើតឡើងស្របគ្នាជាមួយនឹងការវិវត្តនៃសមីការ ដើម្បីដោះស្រាយបញ្ហាដែនកំណត់ ការប៉ាន់ប្រមាណកំហុស និងការបង្កើនប្រសិទ្ធភាពធនធាន។ និមិត្តសញ្ញាធំជាង (<span class="mi">\(&gt;\)</span>) និងតូចជាង (<span class="mi">\(&lt;\)</span>) ត្រូវបានណែនាំជាលើកដំបូងដោយគណិតវិទូជនជាតិអង់គ្លេស ថូម៉ាស ហារីយ៉ូត (Thomas Harriot, ១៥៦០–១៦២១) ក្នុងសៀវភៅដែលបោះពុម្ពក្រោយមរណភាពរបស់លោកក្នុងឆ្នាំ ១៦៣១។</p>
+<p>នៅសតវត្សទី ១៩ វិសមីការបានក្លាយជាឧបករណ៍គ្រឹះមិនអាចខ្វះបានក្នុងការវិភាគគណិតវិទ្យាទំនើប។ គណិតវិទូបារាំង អូហ្គីស្ទីន-ល្វី កូស៊ី (Augustin-Louis Cauchy, ១៧៨៩–១៨៥៧), គណិតវិទូអាល្លឺម៉ង់ Hermann Schwarz និងគណិតវិទូរុស្ស៊ី Viktor Bunyakovsky បានបង្កើតឡើងនូវ <strong>«វិសមីការកូស៊ី-ស្វាស (Cauchy-Schwarz Inequality)»</strong> ដ៏ល្បីល្បាញ ៖ <div class="md">\[\left(\sum_{i=1}^n a_i b_i\right)^2 \le \left(\sum_{i=1}^n a_i^2\right) \left(\sum_{i=1}^n b_i^2\right)\]</div> ដែលជាវិសមីការគ្រឹះបំផុតក្នុងពិភពធរណីមាត្រ ពីជគណិតលីនេអ៊ែរ រូបវិទ្យាកង់ទិច និងទ្រឹស្ដីប្រូបាប៊ីលីតេ។</p>
+<p>ក្នុងប្រវត្តិសាស្ត្រខ្មែរ វិស្វករធារាសាស្ត្រនាសម័យអង្គរត្រូវធានាឱ្យបាននូវវិសមីការជាក់ស្ដែង ៖ កម្ពស់ទឹកក្នុងបារាយណ៍ត្រូវស្ថិតក្នុងចន្លោះសុវត្ថិភាព <span class="mi">\(h_{\min} \le h \le h_{\max}\)</span> ដើម្បីកុំឱ្យស្ងួតហួតហែងនៅរដូវប្រាំង និងកុំឱ្យបាក់ទំនប់ដោយសម្ពាធទឹកជន់នារដូវវស្សា។</p>
+</div></section>
+<h3 id="u1">សញ្ញាណ និងលក្ខណៈនៃវិសមីការ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យវិសមីការ</b></header><div class="bx-b">
+<p>វិសមីការ គឺជាប្រយោគគណិតវិទ្យាដែលបង្ហាញពីទំនាក់ទំនងមិនស្មើគ្នារវាងកន្សោមពីរ ដោយប្រើប្រាស់សញ្ញា <span class="mi">\(&lt;, \le, &gt;, \ge\)</span>។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>លក្ខណៈគ្រឹះនៃវិសមីការ</b></header><div class="bx-b">
+<p>ចំពោះគ្រប់ចំនួនពិត <span class="mi">\(a, b, c\)</span> ៖</p>
+<ul>
+<li><p>លក្ខណៈបូក ៖ បើ <span class="mi">\(a &lt; b\)</span> នោះ <span class="mi">\(a + c &lt; b + c\)</span>។</p></li>
+<li><p>លក្ខណៈគុណនឹងចំនួនវិជ្ជមាន ៖ បើ <span class="mi">\(a &lt; b\)</span> និង <span class="mi">\(c &gt; 0\)</span> នោះ <span class="mi">\(ac &lt; bc\)</span>។</p></li>
+<li><p>លក្ខណៈគុណនឹងចំនួនអវិជ្ជមាន ៖ បើ <span class="mi">\(a &lt; b\)</span> និង <span class="mi">\(c &lt; 0\)</span> នោះ <span class="mi">\(ac &gt; bc\)</span> (<strong>ត្រូវត្រឡប់ទិសដៅវិសមីការ</strong>)។</p></li>
+<li><p>លក្ខណៈឆ្លង ៖ បើ <span class="mi">\(a &lt; b\)</span> និង <span class="mi">\(b &lt; c\)</span> នោះ <span class="mi">\(a &lt; c\)</span>។</p></li>
+</ul>
+</div></section>
+<h3 id="u2">សញ្ញានៃទ្វេធាដឺក្រេទីមួយ <span class="mi">\(ax + b\)</span></h3>
+<p>ទ្វេធា <span class="mi">\(P(x) = ax + b\)</span> (<span class="mi">\(a \neq 0\)</span>) មានឫស <span class="mi">\(x_0 = -\dfrac{b}{a}\)</span>។ តារាងសញ្ញានៃទ្វេធា ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(x\)</span></th>
+<th><span class="mi">\(-\infty\)</span></th>
+<th></th>
+<th><span class="mi">\(-\dfrac{b}{a}\)</span></th>
+<th></th>
+<th><span class="mi">\(+\infty\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\(ax + b\)</span></td>
+<td></td>
+<td>សញ្ញាផ្ទុយ <span class="mi">\(a\)</span></td>
+<td><span class="mi">\(0\)</span></td>
+<td>សញ្ញាដូច <span class="mi">\(a\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="u3">សញ្ញានៃត្រីធាដឺក្រេទីពីរ <span class="mi">\(ax^2 + bx + c\)</span></h3>
+<p>ចំពោះត្រីធា <span class="mi">\(f(x) = ax^2 + bx + c\)</span> (<span class="mi">\(a \neq 0\)</span>) ដែលមានឌីសគ្រីមីណង់ <span class="mi">\(\Delta = b^2 - 4ac\)</span> ៖</p>
+<ul>
+<li><p>បើ <span class="mi">\(\Delta &lt; 0\)</span> ៖ <span class="mi">\(f(x)\)</span> មានសញ្ញាដូច <span class="mi">\(a\)</span> ជានិច្ច ចំពោះគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(\Delta = 0\)</span> ៖ <span class="mi">\(f(x)\)</span> មានសញ្ញាដូច <span class="mi">\(a\)</span> គ្រប់ <span class="mi">\(x \neq -\dfrac{b}{2a}\)</span> ហើយស្មើ <span class="mi">\(0\)</span> ត្រង់ <span class="mi">\(x = -\dfrac{b}{2a}\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(\Delta &gt; 0\)</span> ៖ <span class="mi">\(f(x)\)</span> មានឫសពីរ <span class="mi">\(x_1 &lt; x_2\)</span>។ តារាងសញ្ញា ៖</p></li>
+</ul>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><span class="mi">\(x\)</span></th>
+<th><span class="mi">\(-\infty\)</span></th>
+<th></th>
+<th><span class="mi">\(x_1\)</span></th>
+<th></th>
+<th><span class="mi">\(x_2\)</span></th>
+<th></th>
+<th><span class="mi">\(+\infty\)</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\(ax^2+bx+c\)</span></td>
+<td></td>
+<td>សញ្ញាដូច <span class="mi">\(a\)</span></td>
+<td><span class="mi">\(0\)</span></td>
+<td><strong>សញ្ញាផ្ទុយ <span class="mi">\(a\)</span></strong></td>
+<td><span class="mi">\(0\)</span></td>
+<td>សញ្ញាដូច <span class="mi">\(a\)</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>វិធានចងចាំ ៖</strong> «<em>ក្នុងចន្លោះឫសសញ្ញាផ្ទុយ <span class="mi">\(a\)</span>, ក្រៅចន្លោះឫសសញ្ញាដូច <span class="mi">\(a\)</span></em>»។</p>
+<h3 id="u4">វិសមីការសនិទាន និងវិសមីការតម្លៃដាច់ខាត</h3>
+<ul>
+<li><p><strong>វិសមីការសនិទាន ៖</strong> <span class="mi">\(\dfrac{P(x)}{Q(x)} \ge 0\)</span> ដោះស្រាយដោយសង់តារាងសញ្ញារួមនៃកត្តាទាំងអស់ (ដោយដាក់លក្ខខណ្ឌភាគបែង <span class="mi">\(Q(x) \neq 0\)</span>)។</p></li>
+<li><p><strong>វិសមីការតម្លៃដាច់ខាត ៖</strong></p>
+<ul>
+<li><p><span class="mi">\(|A| \le B \iff -B \le A \le B\)</span> (លក្ខខណ្ឌ <span class="mi">\(B \ge 0\)</span>)</p></li>
+<li><p><span class="mi">\(|A| \ge B \iff A \ge B \quad{} \)</span> ឬ <span class="mi">\( \quad{} A \le -B\)</span></p></li>
+<li><p><span class="mi">\(|A| \le |B| \iff A^2 \le B^2 \iff (A-B)(A+B) \le 0\)</span></p></li>
+</ul></li>
+</ul>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ដោះស្រាយវិសមីការដឺក្រេទីមួយមានមួយអញ្ញាត ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2x - 5 &gt; 3\)</span></p></li>
+<li><p><span class="mi">\(3x + 4 \le 19\)</span></p></li>
+<li><p><span class="mi">\(-2x + 7 \ge 1\)</span></p></li>
+<li><p><span class="mi">\(5 - 4x &lt; 17\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការដឺក្រេទីមួយមានមួយអញ្ញាត ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(2x - 5 &gt; 3\)</span><br/>
+<span class="mi">\(\iff 2x &gt; 3 + 5 \iff 2x &gt; 8 \iff x &gt; \dfrac{8}{2} = 4\)</span><br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(S = (4, +\infty)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(3x + 4 \le 19\)</span><br/>
+<span class="mi">\(\iff 3x \le 19 - 4 \iff 3x \le 15 \iff x \le \dfrac{15}{3} = 5\)</span><br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(S = (-\infty, 5]\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(-2x + 7 \ge 1\)</span><br/>
+<span class="mi">\(\iff -2x \ge 1 - 7 \iff -2x \ge -6\)</span><br/>
+ចែកអង្គទាំងសងខាងនឹង <span class="mi">\(-2 &lt; 0\)</span> (ប្តូរសញ្ញាវិសមភាព) ៖<br/>
+<span class="mi">\(\iff x \le \dfrac{-6}{-2} = 3\)</span><br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(S = (-\infty, 3]\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(5 - 4x &lt; 17\)</span><br/>
+<span class="mi">\(\iff -4x &lt; 17 - 5 \iff -4x &lt; 12\)</span><br/>
+ចែកអង្គទាំងសងខាងនឹង <span class="mi">\(-4 &lt; 0\)</span> (ប្តូរសញ្ញាវិសមភាព) ៖<br/>
+<span class="mi">\(\iff x &gt; \dfrac{12}{-4} = -3\)</span><br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(S = (-3, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ និងតាងចម្លើយលើបន្ទាត់ចំនួន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3(x - 2) \le 2(x + 1) + 4\)</span></p></li>
+<li><p><span class="mi">\(4(2x - 1) - 3(x + 2) &gt; 5\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x - 1}{2} - \dfrac{x + 2}{3} \ge 1\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x + 1}{4} - \dfrac{3x - 1}{2} &lt; \dfrac{1}{2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ និងតាងចម្លើយលើបន្ទាត់ចំនួន ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(3(x - 2) \le 2(x + 1) + 4\)</span><br/>
+<span class="mi">\(\iff 3x - 6 \le 2x + 2 + 4 \iff 3x - 6 \le 2x + 6\)</span><br/>
+<span class="mi">\(\iff 3x - 2x \le 6 + 6 \iff x \le 12\)</span><br/>
+ចម្លើយជាចន្លោះ ៖ <span class="mi">\(x \in (-\infty, 12]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(4(2x - 1) - 3(x + 2) &gt; 5\)</span><br/>
+<span class="mi">\(\iff 8x - 4 - 3x - 6 &gt; 5 \iff 5x - 10 &gt; 5\)</span><br/>
+<span class="mi">\(\iff 5x &gt; 15 \iff x &gt; 3\)</span><br/>
+ចម្លើយជាចន្លោះ ៖ <span class="mi">\(x \in (3, +\infty)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\dfrac{x - 1}{2} - \dfrac{x + 2}{3} \ge 1\)</span><br/>
+តម្រូវភាគបែងរួម <span class="mi">\(6\)</span> ៖<br/>
+<span class="mi">\(\iff \dfrac{3(x - 1) - 2(x + 2)}{6} \ge \dfrac{6}{6}\)</span><br/>
+<span class="mi">\(\iff 3x - 3 - 2x - 4 \ge 6 \iff x - 7 \ge 6 \iff x \ge 13\)</span><br/>
+ចម្លើយជាចន្លោះ ៖ <span class="mi">\(x \in [13, +\infty)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\dfrac{2x + 1}{4} - \dfrac{3x - 1}{2} &lt; \dfrac{1}{2}\)</span><br/>
+តម្រូវភាគបែងរួម <span class="mi">\(4\)</span> ៖<br/>
+<span class="mi">\(\iff (2x + 1) - 2(3x - 1) &lt; 2\)</span><br/>
+<span class="mi">\(\iff 2x + 1 - 6x + 2 &lt; 2 \iff -4x + 3 &lt; 2\)</span><br/>
+<span class="mi">\(\iff -4x &lt; -1 \iff x &gt; \dfrac{1}{4}\)</span><br/>
+ចម្លើយជាចន្លោះ ៖ <span class="mi">\(x \in \left(\dfrac{1}{4}, +\infty\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{2x-3}{5} \ge \dfrac{x+1}{2} - 1\)</span></p></li>
+<li><p><span class="mi">\(x - \dfrac{3x-1}{4} \le 2 + \dfrac{x}{3}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\dfrac{2x-3}{5} \ge \dfrac{x+1}{2} - 1\)</span><br/>
+គុណអង្គទាំងសងខាងនឹង <span class="mi">\(10\)</span> ៖<br/>
+<span class="mi">\(2(2x - 3) \ge 5(x + 1) - 10\)</span><br/>
+<span class="mi">\(\iff 4x - 6 \ge 5x + 5 - 10 \iff 4x - 6 \ge 5x - 5\)</span><br/>
+<span class="mi">\(\iff 4x - 5x \ge -5 + 6 \iff -x \ge 1 \iff x \le -1\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -1]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(x - \dfrac{3x-1}{4} \le 2 + \dfrac{x}{3}\)</span><br/>
+គុណអង្គទាំងសងខាងនឹង <span class="mi">\(12\)</span> ៖<br/>
+<span class="mi">\(12x - 3(3x - 1) \le 24 + 4x\)</span><br/>
+<span class="mi">\(\iff 12x - 9x + 3 \le 24 + 4x \iff 3x + 3 \le 24 + 4x\)</span><br/>
+<span class="mi">\(\iff 3x - 4x \le 24 - 3 \iff -x \le 21 \iff x \ge -21\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in [-21, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការដឺក្រេទីមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} 2x - 3 &gt; 1 \\ 3x + 1 \le 16 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 4x + 1 \ge 9 \\ 2x - 5 &lt; 7 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 3x - 2 \le 4x + 1 \\ 2x + 5 &gt; x - 1 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 5x - 2 &gt; 3x + 4 \\ 2x + 7 \ge 4x - 1 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការដឺក្រេទីមួយ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} 2x - 3 &gt; 1 \iff 2x &gt; 4 \iff x &gt; 2 \\ 3x + 1 \le 16 \iff 3x \le 15 \iff x \le 5 \end{cases}\)</span><br/>
+ប្រពន្ធ័មានចម្លើយ ៖ <span class="mi">\(2 &lt; x \le 5\)</span> ពោលគឺ <span class="mi">\(x \in (2, 5]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} 4x + 1 \ge 9 \iff 4x \ge 8 \iff x \ge 2 \\ 2x - 5 &lt; 7 \iff 2x &lt; 12 \iff x &lt; 6 \end{cases}\)</span><br/>
+ប្រពន្ធ័មានចម្លើយ ៖ <span class="mi">\(2 \le x &lt; 6\)</span> ពោលគឺ <span class="mi">\(x \in [2, 6)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\begin{cases} 3x - 2 \le 4x + 1 \iff -x \le 3 \iff x \ge -3 \\ 2x + 5 &gt; x - 1 \iff x &gt; -6 \end{cases}\)</span><br/>
+ប្រសព្វចន្លោះ <span class="mi">\(x \ge -3\)</span> និង <span class="mi">\(x &gt; -6\)</span> គឺ <span class="mi">\(x \ge -3\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in [-3, +\infty)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\begin{cases} 5x - 2 &gt; 3x + 4 \iff x &gt; 3 \\ 2x + 7 \ge 4x - 1 \iff x \le 4 \end{cases}\)</span><br/>
+ប្រពន្ធ័មានចម្លើយ ៖ <span class="mi">\(3 &lt; x \le 4\)</span> ពោលគឺ <span class="mi">\(x \in (3, 4]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} \dfrac{x+1}{2} &gt; 1 \\ \dfrac{2x-1}{3} \le 3 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 2(x-1) &lt; 3x + 1 \\ 4x - 3 \ge 2x + 5 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} \dfrac{x+1}{2} &gt; 1 \iff x &gt; 1 \\ \dfrac{2x-1}{3} \le 3 \iff x \le 5 \end{cases}\)</span><br/>
+ប្រសព្វចម្លើយ ៖ <span class="mi">\(1 &lt; x \le 5\)</span> ពោលគឺ <span class="mi">\(x \in (1, 5]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} 2(x-1) &lt; 3x + 1 \iff x &gt; -3 \\ 4x - 3 \ge 2x + 5 \iff x \ge 4 \end{cases}\)</span><br/>
+ប្រសព្វចន្លោះ <span class="mi">\(x &gt; -3\)</span> និង <span class="mi">\(x \ge 4\)</span> គឺ <span class="mi">\(x \ge 4\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in [4, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការទ្វេ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(-3 &lt; 2x - 1 \le 5\)</span></p></li>
+<li><p><span class="mi">\(1 \le \dfrac{3x + 2}{4} &lt; 5\)</span></p></li>
+<li><p><span class="mi">\(-2 \le 5 - 3x \le 8\)</span></p></li>
+<li><p><span class="mi">\(4 &lt; 2 - x &lt; 9\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការទ្វេ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(-3 &lt; 2x - 1 \le 5\)</span><br/>
+បូក <span class="mi">\(1\)</span> គ្រប់អង្គ ៖ <span class="mi">\(-2 &lt; 2x \le 6\)</span><br/>
+ចែកនឹង <span class="mi">\(2\)</span> ៖ <span class="mi">\(-1 &lt; x \le 3 \implies x \in (-1, 3]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(1 \le \dfrac{3x + 2}{4} &lt; 5\)</span><br/>
+គុណនឹង <span class="mi">\(4\)</span> ៖ <span class="mi">\(4 \le 3x + 2 &lt; 20\)</span><br/>
+ដក <span class="mi">\(2\)</span> ៖ <span class="mi">\(2 \le 3x &lt; 18\)</span><br/>
+ចែកនឹង <span class="mi">\(3\)</span> ៖ <span class="mi">\(\dfrac{2}{3} \le x &lt; 6 \implies x \in \left[\dfrac{2}{3}, 6\right)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(-2 \le 5 - 3x \le 8\)</span><br/>
+ដក <span class="mi">\(5\)</span> ៖ <span class="mi">\(-7 \le -3x \le 3\)</span><br/>
+ចែកនឹង <span class="mi">\(-3 &lt; 0\)</span> (ប្តូរសញ្ញា) ៖<br/>
+<span class="mi">\(\dfrac{-7}{-3} \ge x \ge \dfrac{3}{-3} \iff -1 \le x \le \dfrac{7}{3}\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in \left[-1, \dfrac{7}{3}\right]\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(4 &lt; 2 - x &lt; 9\)</span><br/>
+ដក <span class="mi">\(2\)</span> ៖ <span class="mi">\(2 &lt; -x &lt; 7\)</span><br/>
+គុណនឹង <span class="mi">\(-1 &lt; 0\)</span> ៖ <span class="mi">\(-7 &lt; x &lt; -2 \implies x \in (-7, -2)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>សិក្សាសញ្ញានៃទ្វេធាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(f(x) = 2x - 6\)</span></p></li>
+<li><p><span class="mi">\(g(x) = -3x + 12\)</span></p></li>
+<li><p><span class="mi">\(h(x) = 5x + 10\)</span></p></li>
+<li><p><span class="mi">\(k(x) = -4x - 8\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សិក្សាសញ្ញានៃទ្វេធាដឺក្រេទីមួយ <span class="mi">\(P(x) = ax + b\)</span> ៖<br/>
+ទ្វេធាមានសញ្ញាដូច <span class="mi">\(a\)</span> កាលណា <span class="mi">\(x &gt; -\dfrac{b}{a}\)</span> និងផ្ទុយសញ្ញា <span class="mi">\(a\)</span> កាលណា <span class="mi">\(x &lt; -\dfrac{b}{a}\)</span>។<br/>
+<strong>ក.</strong>  <span class="mi">\(f(x) = 2x - 6\)</span> ៖<br/>
+ឫស <span class="mi">\(2x - 6 = 0 \iff x = 3\)</span>។ មេគុណ <span class="mi">\(a = 2 &gt; 0\)</span>។<br/>
+- បើ <span class="mi">\(x &lt; 3\)</span> នោះ <span class="mi">\(f(x) &lt; 0\)</span><br/>
+- បើ <span class="mi">\(x = 3\)</span> នោះ <span class="mi">\(f(x) = 0\)</span><br/>
+- បើ <span class="mi">\(x &gt; 3\)</span> នោះ <span class="mi">\(f(x) &gt; 0\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(g(x) = -3x + 12\)</span> ៖<br/>
+ឫស <span class="mi">\(-3x + 12 = 0 \iff x = 4\)</span>។ មេគុណ <span class="mi">\(a = -3 &lt; 0\)</span>។<br/>
+- បើ <span class="mi">\(x &lt; 4\)</span> នោះ <span class="mi">\(g(x) &gt; 0\)</span><br/>
+- បើ <span class="mi">\(x = 4\)</span> នោះ <span class="mi">\(g(x) = 0\)</span><br/>
+- បើ <span class="mi">\(x &gt; 4\)</span> នោះ <span class="mi">\(g(x) &lt; 0\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(h(x) = 5x + 10\)</span> ៖<br/>
+ឫស <span class="mi">\(5x + 10 = 0 \iff x = -2\)</span>។ មេគុណ <span class="mi">\(a = 5 &gt; 0\)</span>។<br/>
+- បើ <span class="mi">\(x &lt; -2\)</span> នោះ <span class="mi">\(h(x) &lt; 0\)</span><br/>
+- បើ <span class="mi">\(x = -2\)</span> នោះ <span class="mi">\(h(x) = 0\)</span><br/>
+- បើ <span class="mi">\(x &gt; -2\)</span> នោះ <span class="mi">\(h(x) &gt; 0\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(k(x) = -4x - 8\)</span> ៖<br/>
+ឫស <span class="mi">\(-4x - 8 = 0 \iff x = -2\)</span>។ មេគុណ <span class="mi">\(a = -4 &lt; 0\)</span>។<br/>
+- បើ <span class="mi">\(x &lt; -2\)</span> នោះ <span class="mi">\(k(x) &gt; 0\)</span><br/>
+- បើ <span class="mi">\(x = -2\)</span> នោះ <span class="mi">\(k(x) = 0\)</span><br/>
+- បើ <span class="mi">\(x &gt; -2\)</span> នោះ <span class="mi">\(k(x) &lt; 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>សិក្សាសញ្ញានៃកន្សោមផលគុណ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(P(x) = (x - 2)(x + 3)\)</span></p></li>
+<li><p><span class="mi">\(Q(x) = (2x - 1)(3 - x)\)</span></p></li>
+<li><p><span class="mi">\(R(x) = x(x - 4)(2x + 6)\)</span></p></li>
+<li><p><span class="mi">\(S(x) = (1 - x)(2x + 4)(x - 5)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សិក្សាសញ្ញានៃកន្សោមផលគុណ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(P(x) = (x - 2)(x + 3)\)</span> ៖<br/>
+ឫសគឺ <span class="mi">\(x = -3, x = 2\)</span>។ មេគុណនាំមុខ <span class="mi">\(a = 1 &gt; 0\)</span>។<br/>
+- <span class="mi">\(P(x) &gt; 0\)</span> ចំពោះ <span class="mi">\(x \in (-\infty, -3) \cup (2, +\infty)\)</span><br/>
+- <span class="mi">\(P(x) = 0\)</span> ចំពោះ <span class="mi">\(x \in \{-3, 2\}\)</span><br/>
+- <span class="mi">\(P(x) &lt; 0\)</span> ចំពោះ <span class="mi">\(x \in (-3, 2)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(Q(x) = (2x - 1)(3 - x)\)</span> ៖<br/>
+ឫសគឺ <span class="mi">\(x = \dfrac{1}{2}, x = 3\)</span>។ មេគុណនាំមុខ <span class="mi">\(2(-1) = -2 &lt; 0\)</span>។<br/>
+- <span class="mi">\(Q(x) &gt; 0\)</span> ចំពោះ <span class="mi">\(x \in \left(\dfrac{1}{2}, 3\right)\)</span><br/>
+- <span class="mi">\(Q(x) = 0\)</span> ចំពោះ <span class="mi">\(x \in \left\{\dfrac{1}{2}, 3\right\}\)</span><br/>
+- <span class="mi">\(Q(x) &lt; 0\)</span> ចំពោះ <span class="mi">\(x \in \left(-\infty, \dfrac{1}{2}\right) \cup (3, +\infty)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(R(x) = x(x - 4)(2x + 6) = 2x(x - 4)(x + 3)\)</span> ៖<br/>
+ឫសគឺ <span class="mi">\(x = -3, x = 0, x = 4\)</span> (តម្រៀបតាមលំដាប់កើន)។<br/>
+មេគុណនាំមុខ <span class="mi">\(2 &gt; 0\)</span> ៖<br/>
+- <span class="mi">\(R(x) &lt; 0\)</span> លើ <span class="mi">\((-\infty, -3) \cup (0, 4)\)</span><br/>
+- <span class="mi">\(R(x) = 0\)</span> ត្រង់ <span class="mi">\(x \in \{-3, 0, 4\}\)</span><br/>
+- <span class="mi">\(R(x) &gt; 0\)</span> លើ <span class="mi">\((-3, 0) \cup (4, +\infty)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(S(x) = (1 - x)(2x + 4)(x - 5) = -2(x - 1)(x + 2)(x - 5)\)</span> ៖<br/>
+ឫសគឺ <span class="mi">\(x = -2, x = 1, x = 5\)</span>។ មេគុណនាំមុខ <span class="mi">\(-2 &lt; 0\)</span> ៖<br/>
+- <span class="mi">\(S(x) &gt; 0\)</span> លើ <span class="mi">\((-\infty, -2) \cup (1, 5)\)</span><br/>
+- <span class="mi">\(S(x) = 0\)</span> ត្រង់ <span class="mi">\(x \in \{-2, 1, 5\}\)</span><br/>
+- <span class="mi">\(S(x) &lt; 0\)</span> លើ <span class="mi">\((-2, 1) \cup (5, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការតាមតារាងសញ្ញា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((x - 1)(x - 4) &gt; 0\)</span></p></li>
+<li><p><span class="mi">\((2x + 3)(x - 2) \le 0\)</span></p></li>
+<li><p><span class="mi">\((3 - x)(x + 5) \ge 0\)</span></p></li>
+<li><p><span class="mi">\(x(2x - 7) &lt; 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការតាមតារាងសញ្ញា ៖<br/>
+<strong>ក.</strong>  <span class="mi">\((x - 1)(x - 4) &gt; 0\)</span> ៖<br/>
+ឫស <span class="mi">\(x = 1, x = 4\)</span>។<br/>
+</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>ដូចនេះ <span class="mi">\(x \in (-\infty, 1) \cup (4, +\infty)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\((2x + 3)(x - 2) \le 0\)</span> ៖<br/>
+ឫស <span class="mi">\(x = -\dfrac{3}{2}, x = 2\)</span>។<br/>
+</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>ដូចនេះ <span class="mi">\(x \in \left[-\dfrac{3}{2}, 2\right]\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\((3 - x)(x + 5) \ge 0\)</span> ៖<br/>
+ឫស <span class="mi">\(x = -5, x = 3\)</span>។ មេគុណ <span class="mi">\(a = -1 &lt; 0\)</span> ៖<br/>
+</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>ដូចនេះ <span class="mi">\(x \in [-5, 3]\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(x(2x - 7) &lt; 0\)</span> ៖<br/>
+ឫស <span class="mi">\(x = 0, x = \dfrac{7}{2}\)</span>។<br/>
+</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>ដូចនេះ <span class="mi">\(x \in \left(0, \dfrac{7}{2}\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>សិក្សាសញ្ញានៃត្រីធាដឺក្រេទីពីរ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(f(x) = x^2 - 5x + 6\)</span></p></li>
+<li><p><span class="mi">\(g(x) = -x^2 + 4x - 3\)</span></p></li>
+<li><p><span class="mi">\(h(x) = x^2 - 4x + 4\)</span></p></li>
+<li><p><span class="mi">\(k(x) = 2x^2 + x + 3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សិក្សាសញ្ញានៃត្រីធាដឺក្រេទីពីរ <span class="mi">\(f(x) = ax^2 + bx + c\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(f(x) = x^2 - 5x + 6\)</span> ៖<br/>
+<span class="mi">\(\Delta = (-5)^2 - 4(1)(6) = 25 - 24 = 1 &gt; 0\)</span><br/>
+សមីការមានឫសពីរ ៖ <span class="mi">\(x_1 = 2, x_2 = 3\)</span>។ មេគុណ <span class="mi">\(a = 1 &gt; 0\)</span> ៖<br/>
+- <span class="mi">\(f(x) &gt; 0\)</span> លើ <span class="mi">\((-\infty, 2) \cup (3, +\infty)\)</span><br/>
+- <span class="mi">\(f(x) = 0\)</span> ត្រង់ <span class="mi">\(x \in \{2, 3\}\)</span><br/>
+- <span class="mi">\(f(x) &lt; 0\)</span> លើ <span class="mi">\((2, 3)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(g(x) = -x^2 + 4x - 3\)</span> ៖<br/>
+<span class="mi">\(\Delta' = 2^2 - (-1)(-3) = 4 - 3 = 1 &gt; 0\)</span><br/>
+សមីការមានឫសពីរ ៖ <span class="mi">\(x_1 = 1, x_2 = 3\)</span>។ មេគុណ <span class="mi">\(a = -1 &lt; 0\)</span> ៖<br/>
+- <span class="mi">\(g(x) &gt; 0\)</span> លើចន្លោះឫស <span class="mi">\((1, 3)\)</span><br/>
+- <span class="mi">\(g(x) = 0\)</span> ត្រង់ <span class="mi">\(x \in \{1, 3\}\)</span><br/>
+- <span class="mi">\(g(x) &lt; 0\)</span> លើ <span class="mi">\((-\infty, 1) \cup (3, +\infty)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(h(x) = x^2 - 4x + 4 = (x - 2)^2\)</span> ៖<br/>
+<span class="mi">\(\Delta' = (-2)^2 - (1)(4) = 0\)</span>។<br/>
+- <span class="mi">\(h(x) = 0\)</span> ត្រង់ <span class="mi">\(x = 2\)</span><br/>
+- <span class="mi">\(h(x) &gt; 0\)</span> ចំពោះគ្រប់ <span class="mi">\(x \ne 2\)</span> (<span class="mi">\(x \in \mathbb{R} \setminus \{2\}\)</span>)។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(k(x) = 2x^2 + x + 3\)</span> ៖<br/>
+<span class="mi">\(\Delta = 1^2 - 4(2)(3) = 1 - 24 = -23 &lt; 0\)</span>។<br/>
+ដោយ <span class="mi">\(a = 2 &gt; 0\)</span> និង <span class="mi">\(\Delta &lt; 0\)</span> នោះ <span class="mi">\(k(x)\)</span> មានសញ្ញាដូច <span class="mi">\(a\)</span> ជានិច្ច ៖<br/>
+<span class="mi">\(k(x) &gt; 0\)</span> ចំពោះគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការដឺក្រេទីពីរ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 - 7x + 10 \le 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 3x - 4 &gt; 0\)</span></p></li>
+<li><p><span class="mi">\(2x^2 - 5x + 2 &lt; 0\)</span></p></li>
+<li><p><span class="mi">\(3x^2 - 4x + 1 \ge 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការដឺក្រេទីពីរ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(x^2 - 7x + 10 \le 0\)</span><br/>
+រកឫស ៖ <span class="mi">\((x - 2)(x - 5) = 0 \iff x = 2 \)</span> ឬ <span class="mi">\( x = 5\)</span>។<br/>
+ដោយ <span class="mi">\(a = 1 &gt; 0\)</span> ត្រីធាមានសញ្ញាអវិជ្ជមាននៅចន្លោះឫស ៖<br/>
+ដូចនេះ <span class="mi">\(x \in [2, 5]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(x^2 - 3x - 4 &gt; 0\)</span><br/>
+រកឫស ៖ <span class="mi">\((x + 1)(x - 4) = 0 \iff x = -1 \)</span> ឬ <span class="mi">\( x = 4\)</span>។<br/>
+ដោយ <span class="mi">\(a = 1 &gt; 0\)</span> ត្រីធាមានសញ្ញាវិជ្ជមាននៅក្រៅឫស ៖<br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -1) \cup (4, +\infty)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(2x^2 - 5x + 2 &lt; 0\)</span><br/>
+រកឫស ៖ <span class="mi">\((2x - 1)(x - 2) = 0 \iff x = \dfrac{1}{2} \)</span> ឬ <span class="mi">\( x = 2\)</span>។<br/>
+ដោយ <span class="mi">\(a = 2 &gt; 0\)</span> វិសមីការតម្រូវឱ្យយកសញ្ញាអវិជ្ជមាន (ចន្លោះឫស) ៖<br/>
+ដូចនេះ <span class="mi">\(x \in \left(\dfrac{1}{2}, 2\right)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(3x^2 - 4x + 1 \ge 0\)</span><br/>
+រកឫស ៖ <span class="mi">\((3x - 1)(x - 1) = 0 \iff x = \dfrac{1}{3} \)</span> ឬ <span class="mi">\( x = 1\)</span>។<br/>
+ដោយ <span class="mi">\(a = 3 &gt; 0\)</span> សញ្ញាវិជ្ជមាននៅក្រៅឫស ៖<br/>
+ដូចនេះ <span class="mi">\(x \in \left(-\infty, \dfrac{1}{3}\right] \cup [1, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការដឺក្រេទីពីរ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(-x^2 + 6x - 8 \ge 0\)</span></p></li>
+<li><p><span class="mi">\(-2x^2 + 3x + 5 &lt; 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 6x + 9 &gt; 0\)</span></p></li>
+<li><p><span class="mi">\(4x^2 - 12x + 9 \le 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការដឺក្រេទីពីរ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(-x^2 + 6x - 8 \ge 0\)</span><br/>
+គុណនឹង <span class="mi">\(-1\)</span> ៖ <span class="mi">\(x^2 - 6x + 8 \le 0 \iff (x - 2)(x - 4) \le 0\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in [2, 4]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(-2x^2 + 3x + 5 &lt; 0\)</span><br/>
+គុណនឹង <span class="mi">\(-1\)</span> ៖ <span class="mi">\(2x^2 - 3x - 5 &gt; 0\)</span><br/>
+<span class="mi">\(\iff (2x - 5)(x + 1) &gt; 0\)</span><br/>
+ឫសគឺ <span class="mi">\(x = -1, x = \dfrac{5}{2}\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -1) \cup \left(\dfrac{5}{2}, +\infty\right)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(x^2 - 6x + 9 &gt; 0 \iff (x - 3)^2 &gt; 0\)</span><br/>
+កន្សោមការ៉េតែងតែ <span class="mi">\(\ge 0\)</span> ហើយស្មើ <span class="mi">\(0\)</span> ត្រង់ <span class="mi">\(x = 3\)</span>។<br/>
+ដូចនេះ វិសមីការផ្ទៀងផ្ទាត់ចំពោះគ្រប់ <span class="mi">\(x \ne 3\)</span> ៖<br/>
+<span class="mi">\(x \in (-\infty, 3) \cup (3, +\infty)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(4x^2 - 12x + 9 \le 0 \iff (2x - 3)^2 \le 0\)</span><br/>
+ដោយ <span class="mi">\((2x - 3)^2 \ge 0\)</span> ជានិច្ច នោះវិសមីការក្លាយជាសមភាព ៖<br/>
+<span class="mi">\(2x - 3 = 0 \iff x = \dfrac{3}{2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 + 4x + 5 &gt; 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 2x + 4 \le 0\)</span></p></li>
+<li><p><span class="mi">\(-x^2 + 2x - 3 &lt; 0\)</span></p></li>
+<li><p><span class="mi">\(2x^2 - 3x + 5 \ge 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(x^2 + 4x + 5 &gt; 0\)</span><br/>
+<span class="mi">\(\Delta' = 2^2 - 1(5) = 4 - 5 = -1 &lt; 0\)</span> និង <span class="mi">\(a = 1 &gt; 0\)</span>។<br/>
+ត្រីធាមានសញ្ញាវិជ្ជមានចំពោះគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> ៖<br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(S = \mathbb{R}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(x^2 - 2x + 4 \le 0\)</span><br/>
+<span class="mi">\(\Delta' = (-1)^2 - 1(4) = 1 - 4 = -3 &lt; 0\)</span> និង <span class="mi">\(a = 1 &gt; 0\)</span>។<br/>
+នាំឱ្យ <span class="mi">\(x^2 - 2x + 4 &gt; 0\)</span> ចំពោះគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span>។<br/>
+ដូចនេះ គ្មានតម្លៃ <span class="mi">\(x\)</span> ណាធ្វើឱ្យកន្សោម <span class="mi">\(\le 0\)</span> ទេ ៖ <span class="mi">\(S = \emptyset\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(-x^2 + 2x - 3 &lt; 0 \iff x^2 - 2x + 3 &gt; 0\)</span><br/>
+<span class="mi">\(\Delta' = 1 - 3 = -2 &lt; 0\)</span> និង <span class="mi">\(a = 1 &gt; 0\)</span>។<br/>
+ដូចនេះ វិសមីការផ្ទៀងផ្ទាត់គ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> ៖ <span class="mi">\(S = \mathbb{R}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(2x^2 - 3x + 5 \ge 0\)</span><br/>
+<span class="mi">\(\Delta = (-3)^2 - 4(2)(5) = 9 - 40 = -31 &lt; 0\)</span> និង <span class="mi">\(a = 2 &gt; 0\)</span>។<br/>
+ដូចនេះ វិសមីការផ្ទៀងផ្ទាត់គ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> ៖ <span class="mi">\(S = \mathbb{R}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 \ge 16\)</span></p></li>
+<li><p><span class="mi">\(x^2 &lt; 7\)</span></p></li>
+<li><p><span class="mi">\(4x^2 - 9 \le 0\)</span></p></li>
+<li><p><span class="mi">\(3x^2 - 5x &gt; 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(x^2 \ge 16 \iff x^2 - 16 \ge 0 \iff (x - 4)(x + 4) \ge 0\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -4] \cup [4, +\infty)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(x^2 &lt; 7 \iff x^2 - 7 &lt; 0 \iff (x - \sqrt{7})(x + \sqrt{7}) &lt; 0\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (-\sqrt{7}, \sqrt{7})\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(4x^2 - 9 \le 0 \iff (2x - 3)(2x + 3) \le 0\)</span><br/>
+ឫសគឺ <span class="mi">\(x = -\dfrac{3}{2}, x = \dfrac{3}{2}\)</span> ៖<br/>
+ដូចនេះ <span class="mi">\(x \in \left[-\dfrac{3}{2}, \dfrac{3}{2}\right]\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(3x^2 - 5x &gt; 0 \iff x(3x - 5) &gt; 0\)</span><br/>
+ឫសគឺ <span class="mi">\(x = 0, x = \dfrac{5}{3}\)</span> ៖<br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, 0) \cup \left(\dfrac{5}{3}, +\infty\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការសនិទាន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{x - 2}{x + 3} &gt; 0\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x + 1}{x - 4} \le 0\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3 - x}{x + 2} \ge 0\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{5x - 2}{2 - x} &lt; 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការសនិទាន ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\dfrac{x - 2}{x + 3} &gt; 0\)</span><br/>
+លក្ខខណ្ឌភាគបែង ៖ <span class="mi">\(x + 3 \ne 0 \iff x \ne -3\)</span>។<br/>
+សញ្ញានៃប្រភាគដូចគ្នានឹងសញ្ញានៃផលគុណ <span class="mi">\((x - 2)(x + 3) &gt; 0\)</span> ៖<br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -3) \cup (2, +\infty)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\dfrac{2x + 1}{x - 4} \le 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne 4\)</span>។<br/>
+ភាគយកស្មើ <span class="mi">\(0\)</span> ត្រង់ <span class="mi">\(x = -\dfrac{1}{2}\)</span>។<br/>
+សញ្ញាអវិជ្ជមាននៅចន្លោះឫស ៖<br/>
+ដូចនេះ <span class="mi">\(x \in \left[-\dfrac{1}{2}, 4\right)\)</span> (ចំណាំ ៖ <span class="mi">\(x = 4\)</span> មិនយកទេព្រោះជាភាគបែង)។<br/>
+<strong>គ.</strong>  <span class="mi">\(\dfrac{3 - x}{x + 2} \ge 0 \iff \dfrac{x - 3}{x + 2} \le 0\)</span> (គុណនឹង <span class="mi">\(-1\)</span>)<br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne -2\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in (-2, 3]\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\dfrac{5x - 2}{2 - x} &lt; 0 \iff \dfrac{5x - 2}{x - 2} &gt; 0\)</span> (គុណនឹង <span class="mi">\(-1\)</span>)<br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne 2\)</span>។ ឫសភាគយកគឺ <span class="mi">\(x = \dfrac{2}{5}\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in \left(-\infty, \dfrac{2}{5}\right) \cup (2, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការសនិទាន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{x^2 - 4}{x + 1} \le 0\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x^2 - 5x + 6}{x - 1} &gt; 0\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x + 3}{x^2 - 9} \ge 0\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x^2 - x - 1}{x^2 - 4} &lt; 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការសនិទាន ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(f(x) = \dfrac{x^2 - 4}{x + 1} \le 0 \iff \dfrac{(x - 2)(x + 2)}{x + 1} \le 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne -1\)</span>។ ឫសភាគយកគឺ <span class="mi">\(x = -2, x = 2\)</span>។<br/>
+</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>ដូចនេះ <span class="mi">\(x \in (-\infty, -2] \cup (-1, 2]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\dfrac{x^2 - 5x + 6}{x - 1} &gt; 0 \iff \dfrac{(x - 2)(x - 3)}{x - 1} &gt; 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne 1\)</span>។ ឫសភាគយកគឺ <span class="mi">\(x = 2, x = 3\)</span>។<br/>
+តម្រៀបឫស ៖ <span class="mi">\(1, 2, 3\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in (1, 2) \cup (3, +\infty)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\dfrac{x + 3}{x^2 - 9} \ge 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x^2 - 9 \ne 0 \iff x \ne \pm 3\)</span>។<br/>
+បំបែកភាគបែង ៖ <span class="mi">\(\dfrac{x + 3}{(x + 3)(x - 3)} \ge 0\)</span><br/>
+សម្រួលតួ <span class="mi">\((x + 3)\)</span> ដោយសារ <span class="mi">\(x \ne -3\)</span> ៖<br/>
+<span class="mi">\(\iff \dfrac{1}{x - 3} \ge 0 \iff x - 3 &gt; 0 \iff x &gt; 3\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in (3, +\infty)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(g(x) = \dfrac{2x^2 - x - 1}{x^2 - 4} &lt; 0 \iff \dfrac{(2x + 1)(x - 1)}{(x - 2)(x + 2)} &lt; 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne \pm 2\)</span>។ ឫសទាំង ៤ តាមលំដាប់ ៖ <span class="mi">\(-2, -\dfrac{1}{2}, 1, 2\)</span>។<br/>
+</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>ដូចនេះ <span class="mi">\(x \in \left(-2, -\dfrac{1}{2}\right) \cup (1, 2)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការសនិទាន (បោះអង្គមកម្ខាងរួចតម្រូវភាគបែង) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{x + 1}{x - 2} \ge 2\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x - 1}{x + 3} &lt; 1\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{x} \le 1\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2}{x - 1} &gt; \dfrac{3}{x + 2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការសនិទាន ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\dfrac{x + 1}{x - 2} \ge 2 \iff \dfrac{x + 1}{x - 2} - 2 \ge 0\)</span><br/>
+<span class="mi">\(\iff \dfrac{x + 1 - 2(x - 2)}{x - 2} \ge 0 \iff \dfrac{-x + 5}{x - 2} \ge 0\)</span><br/>
+<span class="mi">\(\iff \dfrac{x - 5}{x - 2} \le 0\)</span> (លក្ខខណ្ឌ <span class="mi">\(x \ne 2\)</span>)។<br/>
+ដូចនេះ <span class="mi">\(x \in (2, 5]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\dfrac{2x - 1}{x + 3} &lt; 1 \iff \dfrac{2x - 1}{x + 3} - 1 &lt; 0\)</span><br/>
+<span class="mi">\(\iff \dfrac{2x - 1 - (x + 3)}{x + 3} &lt; 0 \iff \dfrac{x - 4}{x + 3} &lt; 0\)</span><br/>
+(លក្ខខណ្ឌ <span class="mi">\(x \ne -3\)</span>)។<br/>
+ដូចនេះ <span class="mi">\(x \in (-3, 4)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\dfrac{1}{x} \le 1 \iff \dfrac{1}{x} - 1 \le 0 \iff \dfrac{1 - x}{x} \le 0 \iff \dfrac{x - 1}{x} \ge 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne 0\)</span>។ ឫសភាគយក <span class="mi">\(x = 1\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, 0) \cup [1, +\infty)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\dfrac{2}{x - 1} &gt; \dfrac{3}{x + 2} \iff \dfrac{2}{x - 1} - \dfrac{3}{x + 2} &gt; 0\)</span><br/>
+<span class="mi">\(\iff \dfrac{2(x + 2) - 3(x - 1)}{(x - 1)(x + 2)} &gt; 0 \iff \dfrac{2x + 4 - 3x + 3}{(x - 1)(x + 2)} &gt; 0\)</span><br/>
+<span class="mi">\(\iff \dfrac{-x + 7}{(x - 1)(x + 2)} &gt; 0 \iff \dfrac{x - 7}{(x - 1)(x + 2)} &lt; 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne 1, x \ne -2\)</span>។ ឫសភាគយក <span class="mi">\(x = 7\)</span>។<br/>
+ឫសទាំង ៣ តាមលំដាប់ ៖ <span class="mi">\(-2, 1, 7\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -2) \cup (1, 7)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{x^2 - 3x + 2}{x^2 + 3x + 2} \ge 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{x^2 - 3x + 2}{x^2 + 3x + 2} \ge 0\)</span><br/>
+ដាក់ជាផលគុណកត្តា ៖<br/>
+ភាគយក ៖ <span class="mi">\(x^2 - 3x + 2 = (x - 1)(x - 2)\)</span><br/>
+ភាគបែង ៖ <span class="mi">\(x^2 + 3x + 2 = (x + 1)(x + 2)\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne -1\)</span> និង <span class="mi">\(x \ne -2\)</span>។<br/>
+វិសមីការក្លាយជា ៖ <span class="mi">\(f(x) = \dfrac{(x - 1)(x - 2)}{(x + 1)(x + 2)} \ge 0\)</span><br/>
+ឫសភាគយកគឺ <span class="mi">\(1, 2\)</span> និងឫសភាគបែងគឺ <span class="mi">\(-2, -1\)</span>។<br/>
+តារាងសញ្ញា ៖</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>តាមតារាងសញ្ញា វិសមីការ <span class="mi">\(f(x) \ge 0\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(x \in (-\infty, -2) \cup (-1, 1] \cup [2, +\infty)\)</span>។<br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(x \in (-\infty, -2) \cup (-1, 1] \cup [2, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{x^2 + 2x - 3}{x^2 - 4x + 4} \le 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{x^2 + 2x - 3}{x^2 - 4x + 4} \le 0\)</span><br/>
+ដាក់ជាផលគុណកត្តា ៖<br/>
+<span class="mi">\(f(x) = \dfrac{(x - 1)(x + 3)}{(x - 2)^2} \le 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x - 2 \ne 0 \iff x \ne 2\)</span>។<br/>
+ឫសភាគយកគឺ <span class="mi">\(-3, 1\)</span> និងឫសភាគបែងគឺ <span class="mi">\(2\)</span>។<br/>
+តារាងសញ្ញា ៖</p>
+
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22218.97%22 height=%22103.05%22 viewBox=%220 0 218.97 103.05%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpiODJhN2ZkNy1lNmNlLTQ1YTYtODEzZi03NWE1YmUxODJiZDYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaOSB1q4Hpus4Mrrl5KW5HUQAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDphZmVlOTA0NC00MTM1LTQ2ZTItODBjNC1lMzZiZTQ3YjI0MjBscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNopj7OSOyPpWi06KJOxc9mKAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggIMBTC8f4wV7%2BG0u7imHZjPs75q21CP1ftOokR7W/ZxCkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaE1yoWhGKnDGWDVqcGknMF4AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAyxlEyqjFGWLI4DjR%2BxFL3PRjnlhznh6P5CGIsL5dbZmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj0Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmI4MmE3ZmQ3LWU2Y2UtNDVhNi04MTNmLTc1YTViZTE4MmJkNi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmM4YmE1NzBlLTliZTYtNDRjYi1iMmM5LTg1NGFkYmFlOGEwYXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAgwFMLx/jBXv4bS7uKYdmM%2BzvmrbUI/V%2B06iRHtb9nEKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggh7ciCKEHL5n556dIW5MSmDH/WiBt2ifi/3ZfqkJrcyWiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggvX11QuWZhpGd6kqCtlvMUvYmbiKQGpni92zKn9YLU0h0Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQM0qmZpokEQN%2BvHM3ws9gsbStPf9ThBv3z%2BBimGhpv5rM3iZI2R0lbpZV0lb6b6n2QPQgI2VeyJ2zxjLf3qekZk=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 3.29 -2.98 C 3.35 -3.23 3.57 -4.14 4.28 -4.14 C 4.32 -4.14 4.56 -4.14 4.76 -4.01 C 4.5 -3.96 4.29 -3.71 4.29 -3.48 C 4.29 -3.32 4.40 -3.14 4.67 -3.14 C 4.89 -3.14 5.20 -3.31 5.20 -3.71 C 5.20 -4.21 4.62 -4.35 4.28 -4.35 C 3.71 -4.35 3.37 -3.84 3.25 -3.60 C 3 -4.26 2.46 -4.35 2.18 -4.35 C 1.15 -4.35 0.59 -3.09 0.59 -2.84 C 0.59 -2.75 0.68 -2.75 0.71 -2.75 C 0.79 -2.75 0.81 -2.76 0.84 -2.85 C 1.17 -3.90 1.82 -4.14 2.15 -4.14 C 2.34 -4.14 2.70 -4.06 2.70 -3.48 C 2.70 -3.18 2.53 -2.51 2.15 -1.14 C 2 -0.51 1.65 -0.10 1.21 -0.10 C 1.17 -0.10 0.93 -0.10 0.73 -0.23 C 0.98 -0.28 1.18 -0.5 1.18 -0.76 C 1.18 -1.03 0.98 -1.10 0.82 -1.10 C 0.53 -1.10 0.28 -0.85 0.28 -0.54 C 0.28 -0.09 0.78 0.10 1.21 0.10 C 1.85 0.10 2.21 -0.57 2.25 -0.64 C 2.37 -0.28 2.71 0.10 3.31 0.10 C 4.32 0.10 4.89 -1.17 4.89 -1.40 C 4.89 -1.51 4.81 -1.51 4.78 -1.51 C 4.68 -1.51 4.67 -1.46 4.65 -1.40 C 4.32 -0.34 3.65 -0.10 3.34 -0.10 C 2.95 -0.10 2.79 -0.42 2.79 -0.76 C 2.79 -0.98 2.85 -1.18 2.96 -1.62 Z M 3.29 -2.98 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 3.62 -3.95 L 4.46 -3.95 C 4.67 -3.95 4.76 -3.95 4.76 -4.14 C 4.76 -4.25 4.67 -4.25 4.5 -4.25 L 3.68 -4.25 L 3.89 -5.37 C 3.93 -5.59 4.06 -6.29 4.12 -6.40 C 4.21 -6.59 4.39 -6.75 4.59 -6.75 C 4.62 -6.75 4.89 -6.75 5.07 -6.56 C 4.64 -6.53 4.54 -6.18 4.54 -6.03 C 4.54 -5.81 4.71 -5.68 4.90 -5.68 C 5.17 -5.68 5.45 -5.90 5.45 -6.28 C 5.45 -6.73 5 -6.96 4.59 -6.96 C 4.25 -6.96 3.64 -6.78 3.34 -5.81 C 3.28 -5.59 3.25 -5.5 3.01 -4.25 L 2.32 -4.25 C 2.14 -4.25 2.03 -4.25 2.03 -4.06 C 2.03 -3.95 2.12 -3.95 2.31 -3.95 L 2.96 -3.95 L 2.21 -0.04 C 2.04 0.90 1.87 1.81 1.35 1.81 C 1.32 1.81 1.07 1.81 0.89 1.62 C 1.34 1.59 1.43 1.25 1.43 1.09 C 1.43 0.87 1.25 0.75 1.06 0.75 C 0.81 0.75 0.51 0.96 0.51 1.34 C 0.51 1.78 0.95 2.03 1.35 2.03 C 1.90 2.03 2.29 1.43 2.48 1.06 C 2.79 0.43 3.01 -0.75 3.03 -0.81 Z M 3.62 -3.95 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 4.03 -2.26 L 6.79 -2.26 C 6.93 -2.26 7.12 -2.26 7.12 -2.46 C 7.12 -2.67 6.93 -2.67 6.79 -2.67 L 4.03 -2.67 L 4.03 -5.43 C 4.03 -5.56 4.03 -5.75 3.84 -5.75 C 3.64 -5.75 3.64 -5.56 3.64 -5.43 L 3.64 -2.67 L 0.87 -2.67 C 0.73 -2.67 0.54 -2.67 0.54 -2.46 C 0.54 -2.26 0.73 -2.26 0.87 -2.26 L 3.64 -2.26 L 3.64 0.5 C 3.64 0.62 3.64 0.81 3.84 0.81 C 4.03 0.81 4.03 0.62 4.03 0.5 Z M 4.03 -2.26 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M 2.85 -3.46 C 3.67 -3.75 4.25 -4.43 4.25 -5.21 C 4.25 -6.03 3.37 -6.57 2.42 -6.57 C 1.43 -6.57 0.68 -5.98 0.68 -5.23 C 0.68 -4.90 0.90 -4.71 1.18 -4.71 C 1.48 -4.71 1.68 -4.93 1.68 -5.21 C 1.68 -5.71 1.21 -5.71 1.07 -5.71 C 1.37 -6.20 2.03 -6.32 2.39 -6.32 C 2.79 -6.32 3.34 -6.10 3.34 -5.21 C 3.34 -5.10 3.31 -4.53 3.06 -4.09 C 2.76 -3.62 2.42 -3.59 2.18 -3.57 C 2.10 -3.57 1.85 -3.56 1.79 -3.56 C 1.71 -3.54 1.65 -3.53 1.65 -3.43 C 1.65 -3.32 1.71 -3.32 1.89 -3.32 L 2.32 -3.32 C 3.12 -3.32 3.5 -2.65 3.5 -1.68 C 3.5 -0.34 2.81 -0.06 2.37 -0.06 C 1.95 -0.06 1.21 -0.23 0.87 -0.81 C 1.21 -0.76 1.51 -0.98 1.51 -1.35 C 1.51 -1.70 1.25 -1.90 0.96 -1.90 C 0.73 -1.90 0.42 -1.76 0.42 -1.32 C 0.42 -0.43 1.32 0.21 2.40 0.21 C 3.60 0.21 4.51 -0.68 4.51 -1.68 C 4.51 -2.5 3.89 -3.26 2.85 -3.46 Z M 2.85 -3.46 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-2%22%3E%3Cpath d=%22M 2.90 -6.31 C 2.90 -6.56 2.90 -6.57 2.67 -6.57 C 2.06 -5.93 1.18 -5.93 0.87 -5.93 L 0.87 -5.64 C 1.07 -5.64 1.65 -5.64 2.17 -5.89 L 2.17 -0.78 C 2.17 -0.42 2.14 -0.31 1.25 -0.31 L 0.93 -0.31 L 0.93 0 C 1.28 -0.03 2.14 -0.03 2.53 -0.03 C 2.93 -0.03 3.79 -0.03 4.14 0 L 4.14 -0.31 L 3.82 -0.31 C 2.93 -0.31 2.90 -0.42 2.90 -0.78 Z M 2.90 -6.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-3%22%3E%3Cpath d=%22M 3.26 2.37 C 3.26 2.34 3.26 2.32 3.09 2.15 C 1.85 0.90 1.54 -0.95 1.54 -2.46 C 1.54 -4.18 1.92 -5.90 3.14 -7.14 C 3.26 -7.26 3.26 -7.28 3.26 -7.31 C 3.26 -7.37 3.23 -7.40 3.17 -7.40 C 3.07 -7.40 2.18 -6.73 1.59 -5.48 C 1.09 -4.39 0.98 -3.29 0.98 -2.46 C 0.98 -1.70 1.09 -0.5 1.62 0.60 C 2.21 1.82 3.07 2.46 3.17 2.46 C 3.23 2.46 3.26 2.43 3.26 2.37 Z M 3.26 2.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-4%22%3E%3Cpath d=%22M 1.25 -0.76 L 2.29 -1.78 C 3.84 -3.14 4.43 -3.67 4.43 -4.65 C 4.43 -5.78 3.54 -6.57 2.34 -6.57 C 1.21 -6.57 0.5 -5.67 0.5 -4.79 C 0.5 -4.23 0.98 -4.23 1.01 -4.23 C 1.18 -4.23 1.53 -4.35 1.53 -4.76 C 1.53 -5.01 1.35 -5.26 1 -5.26 C 0.92 -5.26 0.90 -5.26 0.87 -5.26 C 1.10 -5.90 1.64 -6.26 2.21 -6.26 C 3.10 -6.26 3.53 -5.46 3.53 -4.65 C 3.53 -3.87 3.04 -3.09 2.5 -2.48 L 0.60 -0.35 C 0.5 -0.25 0.5 -0.23 0.5 0 L 4.15 0 L 4.43 -1.71 L 4.18 -1.71 C 4.14 -1.42 4.06 -0.98 3.96 -0.84 C 3.90 -0.76 3.25 -0.76 3.03 -0.76 Z M 1.25 -0.76 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-5%22%3E%3Cpath d=%22M 2.85 -2.46 C 2.85 -3.23 2.75 -4.43 2.20 -5.54 C 1.60 -6.76 0.76 -7.40 0.65 -7.40 C 0.60 -7.40 0.56 -7.35 0.56 -7.31 C 0.56 -7.28 0.56 -7.26 0.75 -7.07 C 1.71 -6.10 2.28 -4.53 2.28 -2.46 C 2.28 -0.78 1.92 0.95 0.68 2.20 C 0.56 2.32 0.56 2.34 0.56 2.37 C 0.56 2.42 0.60 2.46 0.65 2.46 C 0.76 2.46 1.65 1.79 2.23 0.54 C 2.73 -0.54 2.85 -1.64 2.85 -2.46 Z M 2.85 -2.46 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-6%22%3E%3Cpath d=%22M 4.54 -3.15 C 4.54 -3.95 4.5 -4.73 4.14 -5.46 C 3.68 -6.42 2.89 -6.57 2.46 -6.57 C 1.87 -6.57 1.15 -6.31 0.75 -5.40 C 0.43 -4.71 0.39 -3.95 0.39 -3.15 C 0.39 -2.42 0.42 -1.53 0.82 -0.78 C 1.25 0.01 1.96 0.21 2.45 0.21 C 2.98 0.21 3.75 0.01 4.17 -0.92 C 4.5 -1.60 4.54 -2.37 4.54 -3.15 Z M 2.45 0 C 2.07 0 1.48 -0.25 1.31 -1.18 C 1.20 -1.78 1.20 -2.70 1.20 -3.28 C 1.20 -3.90 1.20 -4.56 1.28 -5.09 C 1.46 -6.26 2.21 -6.35 2.45 -6.35 C 2.78 -6.35 3.43 -6.18 3.62 -5.20 C 3.71 -4.65 3.71 -3.90 3.71 -3.28 C 3.71 -2.53 3.71 -1.85 3.60 -1.23 C 3.46 -0.29 2.90 0 2.45 0 Z M 2.45 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-0%22%3E%3Cpath d=%22M 6.5 -2.26 C 6.67 -2.26 6.85 -2.26 6.85 -2.46 C 6.85 -2.67 6.67 -2.67 6.5 -2.67 L 1.17 -2.67 C 1 -2.67 0.81 -2.67 0.81 -2.46 C 0.81 -2.26 1 -2.26 1.17 -2.26 Z M 6.5 -2.26 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-1%22%3E%3Cpath d=%22M 5.01 -2.67 C 4.48 -3.34 4.35 -3.5 4.06 -3.75 C 3.5 -4.18 2.95 -4.35 2.45 -4.35 C 1.29 -4.35 0.54 -3.28 0.54 -2.12 C 0.54 -0.98 1.28 0.10 2.40 0.10 C 3.54 0.10 4.35 -0.79 4.84 -1.57 C 5.37 -0.90 5.5 -0.76 5.81 -0.51 C 6.35 -0.06 6.90 0.10 7.42 0.10 C 8.57 0.10 9.32 -0.98 9.32 -2.14 C 9.32 -3.26 8.59 -4.35 7.45 -4.35 C 6.31 -4.35 5.5 -3.46 5.01 -2.67 Z M 5.26 -2.34 C 5.67 -3.04 6.40 -4.04 7.53 -4.04 C 8.57 -4.04 9.10 -3.01 9.10 -2.14 C 9.10 -1.17 8.43 -0.35 7.57 -0.35 C 7 -0.35 6.56 -0.78 6.34 -0.98 C 6.10 -1.25 5.87 -1.56 5.26 -2.34 Z M 4.59 -1.92 C 4.18 -1.20 3.45 -0.20 2.34 -0.20 C 1.29 -0.20 0.76 -1.23 0.76 -2.12 C 0.76 -3.09 1.42 -3.89 2.29 -3.89 C 2.85 -3.89 3.31 -3.46 3.51 -3.26 C 3.76 -3 3.98 -2.70 4.59 -1.92 Z M 4.59 -1.92 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-0%22%3E%3Cpath d=%22M 3.48 -1.25 L 3.25 -1.25 C 3.23 -1.10 3.15 -0.70 3.07 -0.62 C 3.01 -0.59 2.48 -0.59 2.39 -0.59 L 1.12 -0.59 C 1.84 -1.23 2.07 -1.42 2.5 -1.75 C 3.01 -2.15 3.48 -2.57 3.48 -3.23 C 3.48 -4.07 2.75 -4.57 1.87 -4.57 C 1.01 -4.57 0.43 -3.98 0.43 -3.34 C 0.43 -3 0.73 -2.96 0.79 -2.96 C 0.96 -2.96 1.17 -3.07 1.17 -3.32 C 1.17 -3.45 1.12 -3.68 0.76 -3.68 C 0.96 -4.18 1.43 -4.34 1.76 -4.34 C 2.45 -4.34 2.81 -3.79 2.81 -3.23 C 2.81 -2.64 2.39 -2.15 2.17 -1.90 L 0.5 -0.26 C 0.43 -0.20 0.43 -0.18 0.43 0 L 3.28 0 Z M 3.48 -1.25 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(86.69%25, 91.59%25, 91.39%25)%22 fill-opacity=%221%22 d=%22M 103.85 77.58 L 103.85 98.65 L 136.15 98.65 L 136.15 77.58 Z M 103.85 77.58 %22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2228.00%22 y=%2215.11%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2218.99%22 y=%2234.71%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2227.34%22 y=%2234.71%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2237.71%22 y=%2234.71%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2218.99%22 y=%2252.97%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2227.34%22 y=%2252.97%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2237.72%22 y=%2252.97%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%2213.25%22 y=%2271.24%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2217.09%22 y=%2271.24%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2225.12%22 y=%2271.24%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%2235.19%22 y=%2271.24%22/%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%2240.12%22 y=%2271.24%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-0%22 x=%2243.96%22 y=%2267.66%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2221.21%22 y=%2290.58%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%2227.11%22 y=%2290.58%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2230.95%22 y=%2290.58%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%2236.59%22 y=%2290.58%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -19.84 L 212.59 -19.84 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -38.26 L 212.59 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -56.69 L 212.59 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -75.11 L 212.59 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -96.37 L 212.59 -96.37 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 0.00 L 0.00 -96.37 L 212.59 -96.37 L 212.59 0.00 Z M 0.00 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 53.85 0.00 L 53.85 -96.37 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2262.77%22 y=%2215.45%22/%3E%3Cuse xlink:href=%22%23glyph-2-1%22 x=%2270.44%22 y=%2215.45%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2297.54%22 y=%2215.75%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22105.22%22 y=%2215.75%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%22133.68%22 y=%2216.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22165.99%22 y=%2216.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22191.98%22 y=%2215.45%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-1%22 x=%22199.66%22 y=%2215.45%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2283.86%22 y=%2234.41%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 100.63 -19.84 L 100.63 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22101.38%22 y=%2235.12%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22116.16%22 y=%2234.41%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 133.22 -19.84 L 133.22 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22148.46%22 y=%2234.41%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 165.82 -19.84 L 165.82 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22180.76%22 y=%2234.41%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2283.86%22 y=%2252.67%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 100.63 -38.26 L 100.63 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22116.16%22 y=%2252.67%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 133.22 -38.26 L 133.22 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22133.68%22 y=%2253.38%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22148.46%22 y=%2252.67%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 165.82 -38.26 L 165.82 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22180.76%22 y=%2252.67%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2283.86%22 y=%2270.92%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 100.63 -56.69 L 100.63 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22116.16%22 y=%2270.92%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 133.22 -56.69 L 133.22 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22148.46%22 y=%2270.92%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 165.82 -56.69 L 165.82 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22165.98%22 y=%2271.64%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22180.76%22 y=%2270.92%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2283.86%22 y=%2290.58%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 100.63 -75.11 L 100.63 -96.37 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22101.38%22 y=%2291.30%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22116.16%22 y=%2290.58%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 133.22 -75.11 L 133.22 -96.37 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22133.68%22 y=%2291.30%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22148.46%22 y=%2290.58%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%221.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 165.82 -75.31 L 165.82 -96.17 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.59%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 100%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 165.82 -75.31 L 165.82 -96.17 %22 transform=%22matrix(0.99, 0, 0, -0.99, 4.14, 3.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22180.76%22 y=%2290.58%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+
+<p>តាមតារាងសញ្ញា វិសមីការ <span class="mi">\(f(x) \le 0\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(x \in [-3, 1]\)</span> (ចំណាំ ៖ <span class="mi">\(x = 2\)</span> មិនយកព្រោះជាភាគបែង)។<br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(x \in [-3, 1]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការដែលមានតម្លៃដាច់ខាតរាង <span class="mi">\(|A| \le B\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|x - 3| \le 4\)</span></p></li>
+<li><p><span class="mi">\(|2x + 1| &lt; 5\)</span></p></li>
+<li><p><span class="mi">\(|3x - 2| \le 7\)</span></p></li>
+<li><p><span class="mi">\(|5 - 2x| &lt; 3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>វិសមីការដែលមានតម្លៃដាច់ខាតរាង <span class="mi">\(|A| \le B\)</span> ៖<br/>
+រូបមន្ត ៖ <span class="mi">\(|A| \le B \iff -B \le A \le B\)</span> (លក្ខខណ្ឌ <span class="mi">\(B \ge 0\)</span>)។<br/>
+<strong>ក.</strong>  <span class="mi">\(|x - 3| \le 4\)</span><br/>
+<span class="mi">\(\iff -4 \le x - 3 \le 4 \iff -1 \le x \le 7\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in [-1, 7]\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(|2x + 1| &lt; 5\)</span><br/>
+<span class="mi">\(\iff -5 &lt; 2x + 1 &lt; 5 \iff -6 &lt; 2x &lt; 4 \iff -3 &lt; x &lt; 2\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (-3, 2)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(|3x - 2| \le 7\)</span><br/>
+<span class="mi">\(\iff -7 \le 3x - 2 \le 7 \iff -5 \le 3x \le 9 \iff -\dfrac{5}{3} \le x \le 3\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in \left[-\dfrac{5}{3}, 3\right]\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(|5 - 2x| &lt; 3\)</span><br/>
+<span class="mi">\(\iff -3 &lt; 5 - 2x &lt; 3 \iff -8 &lt; -2x &lt; -2\)</span><br/>
+ចែកនឹង <span class="mi">\(-2 &lt; 0\)</span> ៖ <span class="mi">\(4 &gt; x &gt; 1 \iff 1 &lt; x &lt; 4\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (1, 4)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការដែលមានតម្លៃដាច់ខាតរាង <span class="mi">\(|A| \ge B\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|x + 2| \ge 3\)</span></p></li>
+<li><p><span class="mi">\(|2x - 5| &gt; 7\)</span></p></li>
+<li><p><span class="mi">\(|4 - 3x| \ge 5\)</span></p></li>
+<li><p><span class="mi">\(|3x + 1| &gt; 10\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>វិសមីការតម្លៃដាច់ខាតរាង <span class="mi">\(|A| \ge B\)</span> ៖<br/>
+រូបមន្ត ៖ <span class="mi">\(|A| \ge B \iff A \le -B \)</span> ឬ <span class="mi">\( A \ge B\)</span>។<br/>
+<strong>ក.</strong>  <span class="mi">\(|x + 2| \ge 3\)</span><br/>
+<span class="mi">\(\iff x + 2 \le -3 \)</span> ឬ <span class="mi">\( x + 2 \ge 3\)</span><br/>
+<span class="mi">\(\iff x \le -5 \)</span> ឬ <span class="mi">\( x \ge 1\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -5] \cup [1, +\infty)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(|2x - 5| &gt; 7\)</span><br/>
+<span class="mi">\(\iff 2x - 5 &lt; -7 \)</span> ឬ <span class="mi">\( 2x - 5 &gt; 7\)</span><br/>
+<span class="mi">\(\iff 2x &lt; -2 \)</span> ឬ <span class="mi">\( 2x &gt; 12 \iff x &lt; -1 \)</span> ឬ <span class="mi">\( x &gt; 6\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -1) \cup (6, +\infty)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(|4 - 3x| \ge 5\)</span><br/>
+<span class="mi">\(\iff 4 - 3x \le -5 \)</span> ឬ <span class="mi">\( 4 - 3x \ge 5\)</span><br/>
+<span class="mi">\(\iff -3x \le -9 \iff x \ge 3\)</span> ឬ <span class="mi">\(-3x \ge 1 \iff x \le -\dfrac{1}{3}\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in \left(-\infty, -\dfrac{1}{3}\right] \cup [3, +\infty)\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(|3x + 1| &gt; 10\)</span><br/>
+<span class="mi">\(\iff 3x + 1 &lt; -10 \)</span> ឬ <span class="mi">\( 3x + 1 &gt; 10\)</span><br/>
+<span class="mi">\(\iff 3x &lt; -11 \iff x &lt; -\dfrac{11}{3}\)</span> ឬ <span class="mi">\(3x &gt; 9 \iff x &gt; 3\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in \left(-\infty, -\dfrac{11}{3}\right) \cup (3, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការតម្លៃដាច់ខាតរាង <span class="mi">\(|A| &lt; |B|\)</span> (លើកជាការ៉េអង្គសងខាង) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|x - 1| \le |x + 3|\)</span></p></li>
+<li><p><span class="mi">\(|2x + 1| &gt; |x - 4|\)</span></p></li>
+<li><p><span class="mi">\(|3x - 2| \le |2x + 3|\)</span></p></li>
+<li><p><span class="mi">\(|x + 5| &gt; |2x - 1|\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការតម្លៃដាច់ខាតរាង <span class="mi">\(|A| &lt; |B|\)</span> ៖<br/>
+រូបមន្ត ៖ <span class="mi">\(|A| &lt; |B| \iff A^2 &lt; B^2 \iff (A - B)(A + B) &lt; 0\)</span>។<br/>
+<strong>ក.</strong>  <span class="mi">\(|x - 1| \le |x + 3|\)</span><br/>
+<span class="mi">\(\iff (x - 1)^2 \le (x + 3)^2 \iff x^2 - 2x + 1 \le x^2 + 6x + 9\)</span><br/>
+<span class="mi">\(\iff -8x \le 8 \iff x \ge -1\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in [-1, +\infty)\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(|2x + 1| &gt; |x - 4|\)</span><br/>
+<span class="mi">\(\iff (2x + 1)^2 - (x - 4)^2 &gt; 0\)</span><br/>
+<span class="mi">\(\iff [(2x + 1) - (x - 4)][(2x + 1) + (x - 4)] &gt; 0\)</span><br/>
+<span class="mi">\(\iff (x + 5)(3x - 3) &gt; 0 \iff 3(x + 5)(x - 1) &gt; 0\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -5) \cup (1, +\infty)\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(|3x - 2| \le |2x + 3|\)</span><br/>
+<span class="mi">\(\iff [(3x - 2) - (2x + 3)][(3x - 2) + (2x + 3)] \le 0\)</span><br/>
+<span class="mi">\(\iff (x - 5)(5x + 1) \le 0\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in \left[-\dfrac{1}{5}, 5\right]\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(|x + 5| &gt; |2x - 1|\)</span><br/>
+<span class="mi">\(\iff [(x + 5) - (2x - 1)][(x + 5) + (2x - 1)] &gt; 0\)</span><br/>
+<span class="mi">\(\iff (-x + 6)(3x + 4) &gt; 0 \iff (x - 6)(3x + 4) &lt; 0\)</span><br/>
+ដូចនេះ <span class="mi">\(x \in \left(-\dfrac{4}{3}, 6\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|x^2 - 5x| &lt; 6\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|x^2 - 5x| &lt; 6\)</span><br/>
+<span class="mi">\(\iff -6 &lt; x^2 - 5x &lt; 6 \iff \begin{cases} x^2 - 5x &gt; -6 \\ x^2 - 5x &lt; 6 \end{cases}\)</span><br/>
+1. <span class="mi">\(x^2 - 5x + 6 &gt; 0 \iff (x - 2)(x - 3) &gt; 0\)</span><br/>
+<span class="mi">\(\implies x \in (-\infty, 2) \cup (3, +\infty)\)</span><br/>
+2. <span class="mi">\(x^2 - 5x - 6 &lt; 0 \iff (x + 1)(x - 6) &lt; 0\)</span><br/>
+<span class="mi">\(\implies x \in (-1, 6)\)</span><br/>
+ប្រសព្វចម្លើយទាំងពីរ ៖<br/>
+<span class="mi">\(x \in (-1, 2) \cup (3, 6)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|x^2 - 4| \le 3x\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|x^2 - 4| \le 3x\)</span><br/>
+លក្ខខណ្ឌចាំបាច់ ៖ <span class="mi">\(3x \ge 0 \iff x \ge 0\)</span>។<br/>
+នៅពេល <span class="mi">\(x \ge 0\)</span> វិសមីការសមមូលនឹង ៖<br/>
+<span class="mi">\(-3x \le x^2 - 4 \le 3x \iff \begin{cases} x^2 + 3x - 4 \ge 0 \\ x^2 - 3x - 4 \le 0 \end{cases}\)</span><br/>
+1. <span class="mi">\(x^2 + 3x - 4 \ge 0 \iff (x - 1)(x + 4) \ge 0\)</span><br/>
+<span class="mi">\(\implies x \in (-\infty, -4] \cup [1, +\infty)\)</span><br/>
+2. <span class="mi">\(x^2 - 3x - 4 \le 0 \iff (x + 1)(x - 4) \le 0\)</span><br/>
+<span class="mi">\(\implies x \in [-1, 4]\)</span><br/>
+ប្រសព្វលក្ខខណ្ឌទាំងពីរ និង <span class="mi">\(x \ge 0\)</span> ៖<br/>
+<span class="mi">\(x \in [1, 4]\)</span>។<br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(x \in [1, 4]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{|x - 2|}{x + 1} \le 1\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{|x - 2|}{x + 1} \le 1\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x + 1 \ne 0 \iff x \ne -1\)</span>។<br/>
+យើងចែកជាពីរករណី ៖<br/>
+- ករណីទី ១ ៖ <span class="mi">\(x + 1 &lt; 0 \iff x &lt; -1\)</span><br/>
+ដោយ <span class="mi">\(|x - 2| \ge 0\)</span> និង <span class="mi">\(x + 1 &lt; 0\)</span> នោះ <span class="mi">\(\dfrac{|x - 2|}{x + 1} \le 0 &lt; 1\)</span> ជានិច្ច។<br/>
+ដូចនេះ គ្រប់ <span class="mi">\(x \in (-\infty, -1)\)</span> សុទ្ធតែជាចម្លើយ។<br/>
+- ករណីទី ២ ៖ <span class="mi">\(x + 1 &gt; 0 \iff x &gt; -1\)</span><br/>
+គុណអង្គទាំងពីរនឹង <span class="mi">\(x + 1 &gt; 0\)</span> ៖<br/>
+<span class="mi">\(|x - 2| \le x + 1 \iff -(x + 1) \le x - 2 \le x + 1\)</span><br/>
+<span class="mi">\(\bullet\ -x - 1 \le x - 2 \iff 2x \ge 1 \iff x \ge \dfrac{1}{2}\)</span><br/>
+<span class="mi">\(\bullet\ x - 2 \le x + 1 \iff -2 \le 1\)</span> (ពិតជានិច្ច)<br/>
+នាំឱ្យ <span class="mi">\(x \ge \dfrac{1}{2}\)</span> (ផ្ទៀងផ្ទាត់ <span class="mi">\(x &gt; -1\)</span>)។<br/>
+រួមចម្លើយករណីទាំងពីរ ៖<br/>
+<span class="mi">\(x \in (-\infty, -1) \cup \left[\dfrac{1}{2}, +\infty\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការ ៖ <div class="md">\[\begin{cases} x^2 - 4x + 3 \le 0 \\ x^2 - 6x + 8 &gt; 0 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការ ៖<br/>
+<span class="mi">\(\begin{cases} x^2 - 4x + 3 \le 0 \quad{} (1) \\ x^2 - 6x + 8 &gt; 0 \quad{} (2) \end{cases}\)</span><br/>
+ដោះស្រាយ <span class="mi">\((1)\)</span> ៖<br/>
+<span class="mi">\(x^2 - 4x + 3 \le 0 \iff (x - 1)(x - 3) \le 0 \iff 1 \le x \le 3\)</span><br/>
+ដោះស្រាយ <span class="mi">\((2)\)</span> ៖<br/>
+<span class="mi">\(x^2 - 6x + 8 &gt; 0 \iff (x - 2)(x - 4) &gt; 0 \iff x &lt; 2 \)</span> ឬ <span class="mi">\( x &gt; 4\)</span><br/>
+យកប្រសព្វនៃចន្លើយទាំងពីរ ៖<br/>
+<span class="mi">\([1, 3] \cap ((-\infty, 2) \cup (4, +\infty)) = [1, 2)\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in [1, 2)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការ ៖ <div class="md">\[\begin{cases} 2x^2 - 7x + 3 \le 0 \\ x^2 - 4 &gt; 0 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធវិសមីការ ៖<br/>
+<span class="mi">\(\begin{cases} 2x^2 - 7x + 3 \le 0 \quad{} (1) \\ x^2 - 4 &gt; 0 \quad{} (2) \end{cases}\)</span><br/>
+ដោះស្រាយ <span class="mi">\((1)\)</span> ៖<br/>
+<span class="mi">\(2x^2 - 7x + 3 \le 0 \iff (2x - 1)(x - 3) \le 0 \iff \dfrac{1}{2} \le x \le 3\)</span><br/>
+ដោះស្រាយ <span class="mi">\((2)\)</span> ៖<br/>
+<span class="mi">\(x^2 - 4 &gt; 0 \iff (x - 2)(x + 2) &gt; 0 \iff x &lt; -2 \)</span> ឬ <span class="mi">\( x &gt; 2\)</span><br/>
+យកប្រសព្វនៃចម្លើយទាំងពីរ ៖<br/>
+<span class="mi">\(\left[\dfrac{1}{2}, 3\right] \cap ((-\infty, -2) \cup (2, +\infty)) = (2, 3]\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x \in (2, 3]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>រកដែនកំណត់នៃអនុគមន៍ ៖ <span class="mi">\(f(x) = \sqrt{x^2 - 5x + 6}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកដែនកំណត់នៃអនុគមន៍ ៖ <span class="mi">\(f(x) = \sqrt{x^2 - 5x + 6}\)</span><br/>
+អនុគមន៍មានន័យលុះត្រាតែកន្សោមក្រោមរ៉ាឌីកាល់មិនអវិជ្ជមាន ៖<br/>
+<span class="mi">\(x^2 - 5x + 6 \ge 0 \iff (x - 2)(x - 3) \ge 0\)</span><br/>
+សមីការ <span class="mi">\((x-2)(x-3) = 0\)</span> មានឫស <span class="mi">\(x = 2, x = 3\)</span>។<br/>
+តារាងសញ្ញា ៖</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>តាមតារាងសញ្ញា កន្សោមមិនអវិជ្ជមានលើ ៖<br/>
+<span class="mi">\(x \in (-\infty, 2] \cup [3, +\infty)\)</span>។<br/>
+ដូចនេះ ដែនកំណត់គឺ <span class="mi">\(D_f = (-\infty, 2] \cup [3, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>រកដែនកំណត់នៃអនុគមន៍ ៖ <span class="mi">\(g(x) = \sqrt{\dfrac{x-1}{3-x}}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកដែនកំណត់នៃអនុគមន៍ ៖ <span class="mi">\(g(x) = \sqrt{\dfrac{x-1}{3-x}}\)</span><br/>
+អនុគមន៍មានន័យលុះត្រាតែ <span class="mi">\(f(x) = \dfrac{x - 1}{3 - x} \ge 0\)</span>។<br/>
+លក្ខខណ្ឌភាគបែង ៖ <span class="mi">\(3 - x \ne 0 \iff x \ne 3\)</span>។<br/>
+ឫសភាគយកគឺ <span class="mi">\(x = 1\)</span> និងឫសភាគបែងគឺ <span class="mi">\(x = 3\)</span>។<br/>
+តារាងសញ្ញា ៖</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>តាមតារាងសញ្ញា វិសមីការ <span class="mi">\(f(x) \ge 0\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(x \in [1, 3)\)</span> (<span class="mi">\(x = 3\)</span> មិនយកព្រោះជាភាគបែង)។<br/>
+ដូចនេះ ដែនកំណត់គឺ <span class="mi">\(D_g = [1, 3)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>រកដែនកំណត់នៃអនុគមន៍ ៖ <span class="mi">\(h(x) = \sqrt{x^2 - 9} + \dfrac{1}{\sqrt{16 - x^2}}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកដែនកំណត់នៃអនុគមន៍ ៖ <span class="mi">\(h(x) = \sqrt{x^2 - 9} + \dfrac{1}{\sqrt{16 - x^2}}\)</span><br/>
+អនុគមន៍មានន័យកាលណាប្រព័ន្ធលក្ខខណ្ឌត្រូវបានផ្ទៀងផ្ទាត់ ៖<br/>
+<span class="mi">\(\begin{cases} x^2 - 9 \ge 0 \quad{} (1) \\ 16 - x^2 &gt; 0 \quad{} (2) \end{cases}\)</span><br/>
+- ពី <span class="mi">\((1)\)</span> ៖ <span class="mi">\((x - 3)(x + 3) \ge 0 \iff x \in (-\infty, -3] \cup [3, +\infty)\)</span><br/>
+- ពី <span class="mi">\((2)\)</span> ៖ <span class="mi">\(x^2 &lt; 16 \iff -4 &lt; x &lt; 4\)</span><br/>
+ប្រសព្វចន្លោះទាំងពីរ ៖<br/>
+<span class="mi">\(D_h = (-4, -3] \cup [3, 4)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យត្រីធា <span class="mi">\(f(x) = x^2 - 2(m-1)x + 4\)</span> វិជ្ជមានជានិច្ចចំពោះគ្រប់ចំនួនពិត <span class="mi">\(x\)</span> (<span class="mi">\(f(x) &gt; 0, \forall x \in \mathbb{R}\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ <span class="mi">\(m\)</span> ដើម្បីឱ្យ <span class="mi">\(f(x) = x^2 - 2(m-1)x + 4 &gt; 0, \forall x \in \mathbb{R}\)</span> ៖<br/>
+ត្រីធាដឺក្រេទីពីរ <span class="mi">\(f(x) = ax^2 + bx + c\)</span> វិជ្ជមានជានិច្ចគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(\begin{cases} a &gt; 0 \\ \Delta' &lt; 0 \end{cases}\)</span><br/>
+ដោយ <span class="mi">\(a = 1 &gt; 0\)</span> ផ្ទៀងផ្ទាត់ជានិច្ច នោះយើងត្រូវឱ្យ <span class="mi">\(\Delta' &lt; 0\)</span> ៖<br/>
+<span class="mi">\(\Delta' = (m - 1)^2 - 1(4) = m^2 - 2m + 1 - 4 = m^2 - 2m - 3\)</span><br/>
+<span class="mi">\(\Delta' &lt; 0 \iff (m + 1)(m - 3) &lt; 0\)</span><br/>
+<span class="mi">\(\iff -1 &lt; m &lt; 3\)</span>។<br/>
+ដូចនេះ តម្លៃ <span class="mi">\(m\)</span> ដែលត្រូវរកគឺ <span class="mi">\(m \in (-1, 3)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យសមីការ <span class="mi">\(x^2 - 2mx + m + 6 = 0\)</span> មានឫសពីរជាចំនួនពិតផ្សេងគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ <span class="mi">\(m\)</span> ដើម្បីឱ្យសមីការ <span class="mi">\(x^2 - 2mx + m + 6 = 0\)</span> មានឫសពីរជាចំនួនពិតផ្សេងគ្នា ៖<br/>
+សមីការដឺក្រេទីពីរមាន <span class="mi">\(a = 1 \ne 0\)</span>។<br/>
+សមីការមានឫសពីរផ្សេងគ្នា លុះត្រាតែ <span class="mi">\(\Delta' &gt; 0\)</span> ៖<br/>
+<span class="mi">\(\Delta' = (-m)^2 - 1(m + 6) = m^2 - m - 6\)</span><br/>
+<span class="mi">\(\Delta' &gt; 0 \iff (m - 3)(m + 2) &gt; 0\)</span><br/>
+<span class="mi">\(\iff m &lt; -2 \)</span> ឬ <span class="mi">\( m &gt; 3\)</span>។<br/>
+ដូចនេះ <span class="mi">\(m \in (-\infty, -2) \cup (3, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យវិសមីការ <span class="mi">\(mx^2 - 4x + m \le 0\)</span> ផ្ទៀងផ្ទាត់គ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ <span class="mi">\(m\)</span> ដើម្បីឱ្យ <span class="mi">\(mx^2 - 4x + m \le 0, \forall x \in \mathbb{R}\)</span> ៖<br/>
+- ករណី <span class="mi">\(m = 0\)</span> ៖ វិសមីការទៅជា <span class="mi">\(-4x \le 0 \iff x \ge 0\)</span> (មិនផ្ទៀងផ្ទាត់គ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> ទេ)។<br/>
+- ករណី <span class="mi">\(m \ne 0\)</span> ៖ វិសមីការផ្ទៀងផ្ទាត់គ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(\begin{cases} m &lt; 0 \\ \Delta' \le 0 \end{cases}\)</span><br/>
+<span class="mi">\(\Delta' = (-2)^2 - m \cdot m = 4 - m^2 \le 0 \iff m^2 \ge 4\)</span><br/>
+<span class="mi">\(\iff m \le -2 \)</span> ឬ <span class="mi">\( m \ge 2\)</span>។<br/>
+ដោយសារ <span class="mi">\(m &lt; 0\)</span> យើងបាន <span class="mi">\(m \le -2\)</span>។<br/>
+ដូចនេះ តម្លៃ <span class="mi">\(m\)</span> គឺ <span class="mi">\(m \in (-\infty, -2]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យត្រីធា <span class="mi">\(f(x) = (m-1)x^2 + 2(m-1)x + 1\)</span> មិនអវិជ្ជមានជានិច្ចគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ <span class="mi">\(m\)</span> ដើម្បីឱ្យត្រីធា <span class="mi">\(f(x) = (m-1)x^2 + 2(m-1)x + 1 \ge 0, \forall x \in \mathbb{R}\)</span> ៖<br/>
+- ករណីទី ១ ៖ <span class="mi">\(m - 1 = 0 \iff m = 1\)</span><br/>
+សមីការទៅជា <span class="mi">\(f(x) = 0x^2 + 0x + 1 = 1 \ge 0\)</span> ពិតចំពោះគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span>។<br/>
+ដូចនេះ <span class="mi">\(m = 1\)</span> យកបាន។<br/>
+- ករណីទី ២ ៖ <span class="mi">\(m - 1 \ne 0 \iff m \ne 1\)</span><br/>
+ដើម្បីឱ្យ <span class="mi">\(f(x) \ge 0, \forall x \in \mathbb{R}\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(\begin{cases} m - 1 &gt; 0 \\ \Delta' \le 0 \end{cases}\)</span><br/>
+<span class="mi">\(\Delta' = (m - 1)^2 - (m - 1)(1) = (m - 1)(m - 1 - 1) = (m - 1)(m - 2)\)</span><br/>
+<span class="mi">\(\Delta' \le 0 \iff 1 \le m \le 2\)</span>។<br/>
+រួមជាមួយ <span class="mi">\(m - 1 &gt; 0 \iff m &gt; 1\)</span> យើងបាន <span class="mi">\(1 &lt; m \le 2\)</span>។<br/>
+រួមករណីទាំងពីរ ៖ <span class="mi">\(1 \le m \le 2\)</span>។<br/>
+ដូចនេះ <span class="mi">\(m \in [1, 2]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់ <span class="mi">\(x\)</span> ដែលផ្ទៀងផ្ទាត់វិសមីការ ៖ <span class="mi">\(\dfrac{x^2 - 3x - 10}{x - 1} \le 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកគ្រប់ចំនួនគត់ <span class="mi">\(x\)</span> ដែលផ្ទៀងផ្ទាត់វិសមីការ ៖ <span class="mi">\(\dfrac{x^2 - 3x - 10}{x - 1} \le 0\)</span><br/>
+ដាក់ភាគយកជាផលគុណកត្តា ៖<br/>
+<span class="mi">\(\dfrac{(x - 5)(x + 2)}{x - 1} \le 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x \ne 1\)</span>។<br/>
+តាង <span class="mi">\(f(x) = \dfrac{(x - 5)(x + 2)}{x - 1}\)</span>។<br/>
+ឫសភាគយកគឺ <span class="mi">\(-2, 5\)</span> និងឫសភាគបែងគឺ <span class="mi">\(1\)</span>។<br/>
+តារាងសញ្ញា ៖</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>តាមតារាងសញ្ញា កន្សោមអវិជ្ជមានលើ ៖<br/>
+<span class="mi">\(x \in (-\infty, -2] \cup (1, 5]\)</span>។<br/>
+- ចំពោះចន្លោះ <span class="mi">\((1, 5]\)</span> ចំនួនគត់ <span class="mi">\(x\)</span> គឺ ៖ <span class="mi">\(x \in \{2, 3, 4, 5\}\)</span>។<br/>
+- ចំពោះចន្លោះ <span class="mi">\((-\infty, -2]\)</span> ចំនួនគត់ <span class="mi">\(x\)</span> គឺគ្រប់ <span class="mi">\(x \le -2\)</span> (<span class="mi">\(x \in \{\dots, -4, -3, -2\}\)</span>)។<br/>
+ប្រសិនបើសំណួរកំណត់យកចំនួនគត់វិជ្ជមាន នោះចម្លើយគឺ <span class="mi">\(x \in \{2, 3, 4, 5\}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\((x^2 - x - 2)(x^2 - 9) \le 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\((x^2 - x - 2)(x^2 - 9) \le 0\)</span><br/>
+ដាក់ជាផលគុណកត្តាដឺក្រេទីមួយ ៖<br/>
+<span class="mi">\(x^2 - x - 2 = (x - 2)(x + 1)\)</span><br/>
+<span class="mi">\(x^2 - 9 = (x - 3)(x + 3)\)</span><br/>
+វិសមីការក្លាយជា ៖<br/>
+<span class="mi">\(P(x) = (x + 3)(x + 1)(x - 2)(x - 3) \le 0\)</span><br/>
+ឫសនៃ <span class="mi">\(P(x)\)</span> តាមលំដាប់ ៖ <span class="mi">\(-3, -1, 2, 3\)</span>។<br/>
+តារាងសញ្ញា ៖</p>
+
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22241.65%22 height=%22121.18%22 viewBox=%220 0 241.65 121.18%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToyZWMyN2FjOC01ZTlmLTRmMDUtOGFjMS1hNGQzYzE3OWU5YjcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaNUHr%2BxqSd4R6%2B73GBgOBbMAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDozMjM3YmNjMC05MThlLTQwZTgtYjgxMC02NWQ5NzMwMGZkY2FscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoKDlEVttpBSIcWeBARr%2B9qgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggKdSNVilB0dakB/J77uahvQSeSvvVSd0ue5Do92b1Q5CkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaMjyhUU40%2B0gh7stPfBAnMEAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCB8zGYNuQ1duf9%2B6WfRBYXThNtrjLhK2XpdGYRIczpvZWRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj0Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjJlYzI3YWM4LTVlOWYtNGYwNS04YWMxLWE0ZDNjMTc5ZTliNy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmQxMTVkOTAzLTQxNzQtNGJiMy1hMTZlLTdmNGNlYjc4MTQxYXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAp1I1WKUHR1qQH8nvu5qG9BJ5K%2B9VJ3S57kOj3ZvVDkKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggDmcQphfaZtZmr%2BeFJQQOWFuhcAkYs12D0OhtrizVe4SiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggnMSBlOLUsY4%2B6iAPCEqur5M9fVdYUNjSHEiNlMA7z8p0Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQCZx7t9%2Bs00bV41589U5c95EZshBmG3Pt1aS76bhnYA1iEMEsiw8DL/XqXUURixrz7NSrIdFZ/n24mNn84tiXxg=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 3.29 -2.98 C 3.35 -3.25 3.59 -4.15 4.28 -4.15 C 4.32 -4.15 4.56 -4.15 4.78 -4.03 C 4.5 -3.96 4.29 -3.73 4.29 -3.48 C 4.29 -3.32 4.40 -3.14 4.67 -3.14 C 4.89 -3.14 5.21 -3.32 5.21 -3.71 C 5.21 -4.23 4.62 -4.37 4.29 -4.37 C 3.71 -4.37 3.37 -3.84 3.25 -3.62 C 3 -4.26 2.46 -4.37 2.18 -4.37 C 1.15 -4.37 0.59 -3.09 0.59 -2.84 C 0.59 -2.75 0.68 -2.75 0.71 -2.75 C 0.79 -2.75 0.82 -2.76 0.84 -2.85 C 1.17 -3.90 1.82 -4.15 2.17 -4.15 C 2.35 -4.15 2.70 -4.06 2.70 -3.48 C 2.70 -3.18 2.53 -2.51 2.17 -1.14 C 2 -0.53 1.65 -0.10 1.21 -0.10 C 1.17 -0.10 0.93 -0.10 0.73 -0.23 C 0.98 -0.28 1.20 -0.5 1.20 -0.76 C 1.20 -1.03 0.98 -1.12 0.82 -1.12 C 0.53 -1.12 0.28 -0.85 0.28 -0.54 C 0.28 -0.09 0.78 0.10 1.21 0.10 C 1.87 0.10 2.21 -0.57 2.25 -0.64 C 2.37 -0.28 2.73 0.10 3.32 0.10 C 4.34 0.10 4.90 -1.17 4.90 -1.42 C 4.90 -1.51 4.81 -1.51 4.78 -1.51 C 4.70 -1.51 4.67 -1.46 4.65 -1.40 C 4.32 -0.34 3.65 -0.10 3.34 -0.10 C 2.95 -0.10 2.79 -0.42 2.79 -0.76 C 2.79 -0.98 2.85 -1.20 2.96 -1.62 Z M 3.29 -2.98 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 3 -3.12 L 4.67 -3.12 C 6.07 -3.12 7.45 -4.15 7.45 -5.26 C 7.45 -6.01 6.81 -6.75 5.51 -6.75 L 2.29 -6.75 C 2.10 -6.75 2 -6.75 2 -6.56 C 2 -6.45 2.09 -6.45 2.29 -6.45 C 2.42 -6.45 2.59 -6.43 2.71 -6.42 C 2.87 -6.40 2.93 -6.37 2.93 -6.26 C 2.93 -6.23 2.92 -6.20 2.89 -6.07 L 1.57 -0.76 C 1.46 -0.39 1.45 -0.31 0.67 -0.31 C 0.5 -0.31 0.39 -0.31 0.39 -0.12 C 0.39 0 0.51 0 0.54 0 C 0.82 0 1.51 -0.03 1.79 -0.03 C 2 -0.03 2.21 -0.01 2.43 -0.01 C 2.65 -0.01 2.87 0 3.07 0 C 3.14 0 3.28 0 3.28 -0.20 C 3.28 -0.31 3.18 -0.31 3 -0.31 C 2.62 -0.31 2.35 -0.31 2.35 -0.48 C 2.35 -0.54 2.37 -0.59 2.39 -0.65 Z M 3.70 -6.07 C 3.79 -6.42 3.81 -6.45 4.25 -6.45 L 5.18 -6.45 C 6.01 -6.45 6.53 -6.18 6.53 -5.5 C 6.53 -5.10 6.34 -4.26 5.95 -3.90 C 5.45 -3.46 4.85 -3.37 4.43 -3.37 L 3.03 -3.37 Z M 3.70 -6.07 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 4.04 -2.28 L 6.81 -2.28 C 6.93 -2.28 7.12 -2.28 7.12 -2.46 C 7.12 -2.67 6.93 -2.67 6.81 -2.67 L 4.04 -2.67 L 4.04 -5.43 C 4.04 -5.57 4.04 -5.76 3.84 -5.76 C 3.65 -5.76 3.65 -5.57 3.65 -5.43 L 3.65 -2.67 L 0.87 -2.67 C 0.73 -2.67 0.54 -2.67 0.54 -2.46 C 0.54 -2.28 0.73 -2.28 0.87 -2.28 L 3.65 -2.28 L 3.65 0.5 C 3.65 0.64 3.65 0.82 3.84 0.82 C 4.04 0.82 4.04 0.64 4.04 0.5 Z M 4.04 -2.28 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M 2.87 -3.48 C 3.67 -3.75 4.25 -4.43 4.25 -5.21 C 4.25 -6.03 3.37 -6.59 2.43 -6.59 C 1.43 -6.59 0.68 -6 0.68 -5.23 C 0.68 -4.92 0.90 -4.73 1.18 -4.73 C 1.5 -4.73 1.68 -4.93 1.68 -5.23 C 1.68 -5.73 1.21 -5.73 1.07 -5.73 C 1.39 -6.21 2.03 -6.34 2.39 -6.34 C 2.79 -6.34 3.34 -6.12 3.34 -5.23 C 3.34 -5.10 3.32 -4.54 3.06 -4.10 C 2.76 -3.62 2.43 -3.59 2.18 -3.59 C 2.10 -3.57 1.87 -3.56 1.79 -3.56 C 1.71 -3.54 1.65 -3.54 1.65 -3.43 C 1.65 -3.32 1.71 -3.32 1.89 -3.32 L 2.32 -3.32 C 3.14 -3.32 3.5 -2.65 3.5 -1.68 C 3.5 -0.34 2.81 -0.06 2.39 -0.06 C 1.95 -0.06 1.21 -0.23 0.87 -0.81 C 1.21 -0.76 1.51 -0.98 1.51 -1.35 C 1.51 -1.71 1.25 -1.90 0.96 -1.90 C 0.73 -1.90 0.42 -1.76 0.42 -1.32 C 0.42 -0.43 1.32 0.21 2.40 0.21 C 3.62 0.21 4.51 -0.68 4.51 -1.68 C 4.51 -2.5 3.89 -3.28 2.87 -3.48 Z M 2.87 -3.48 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-2%22%3E%3Cpath d=%22M 2.90 -6.32 C 2.90 -6.56 2.90 -6.59 2.68 -6.59 C 2.06 -5.95 1.20 -5.95 0.87 -5.95 L 0.87 -5.64 C 1.07 -5.64 1.65 -5.64 2.17 -5.90 L 2.17 -0.78 C 2.17 -0.42 2.14 -0.31 1.25 -0.31 L 0.93 -0.31 L 0.93 0 C 1.28 -0.03 2.14 -0.03 2.54 -0.03 C 2.93 -0.03 3.79 -0.03 4.14 0 L 4.14 -0.31 L 3.82 -0.31 C 2.93 -0.31 2.90 -0.42 2.90 -0.78 Z M 2.90 -6.32 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-3%22%3E%3Cpath d=%22M 1.25 -0.76 L 2.29 -1.78 C 3.84 -3.14 4.43 -3.67 4.43 -4.67 C 4.43 -5.79 3.54 -6.59 2.34 -6.59 C 1.21 -6.59 0.5 -5.67 0.5 -4.79 C 0.5 -4.25 0.98 -4.25 1.01 -4.25 C 1.18 -4.25 1.53 -4.35 1.53 -4.76 C 1.53 -5.03 1.35 -5.28 1.01 -5.28 C 0.93 -5.28 0.90 -5.28 0.87 -5.26 C 1.10 -5.92 1.64 -6.28 2.21 -6.28 C 3.10 -6.28 3.54 -5.48 3.54 -4.67 C 3.54 -3.87 3.04 -3.09 2.5 -2.48 L 0.60 -0.35 C 0.5 -0.25 0.5 -0.23 0.5 0 L 4.15 0 L 4.43 -1.71 L 4.18 -1.71 C 4.14 -1.42 4.07 -0.98 3.96 -0.84 C 3.90 -0.76 3.25 -0.76 3.03 -0.76 Z M 1.25 -0.76 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-4%22%3E%3Cpath d=%22M 3.28 2.37 C 3.28 2.34 3.28 2.32 3.10 2.15 C 1.87 0.90 1.54 -0.95 1.54 -2.46 C 1.54 -4.18 1.92 -5.92 3.14 -7.15 C 3.28 -7.26 3.28 -7.29 3.28 -7.31 C 3.28 -7.39 3.23 -7.42 3.17 -7.42 C 3.07 -7.42 2.18 -6.75 1.60 -5.48 C 1.09 -4.40 0.98 -3.29 0.98 -2.46 C 0.98 -1.70 1.09 -0.5 1.62 0.60 C 2.21 1.82 3.07 2.46 3.17 2.46 C 3.23 2.46 3.28 2.43 3.28 2.37 Z M 3.28 2.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-5%22%3E%3Cpath d=%22M 2.85 -2.46 C 2.85 -3.25 2.75 -4.43 2.20 -5.56 C 1.60 -6.78 0.76 -7.42 0.65 -7.42 C 0.60 -7.42 0.56 -7.37 0.56 -7.31 C 0.56 -7.29 0.56 -7.26 0.75 -7.09 C 1.71 -6.10 2.28 -4.54 2.28 -2.46 C 2.28 -0.78 1.92 0.95 0.68 2.20 C 0.56 2.32 0.56 2.34 0.56 2.37 C 0.56 2.43 0.60 2.46 0.65 2.46 C 0.76 2.46 1.65 1.79 2.23 0.54 C 2.73 -0.54 2.85 -1.64 2.85 -2.46 Z M 2.85 -2.46 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-6%22%3E%3Cpath d=%22M 4.54 -3.17 C 4.54 -3.95 4.5 -4.75 4.15 -5.48 C 3.70 -6.42 2.89 -6.59 2.46 -6.59 C 1.87 -6.59 1.15 -6.32 0.75 -5.40 C 0.43 -4.73 0.39 -3.95 0.39 -3.17 C 0.39 -2.42 0.42 -1.53 0.82 -0.78 C 1.25 0.01 1.98 0.21 2.46 0.21 C 3 0.21 3.75 0.01 4.18 -0.93 C 4.5 -1.60 4.54 -2.39 4.54 -3.17 Z M 2.46 0 C 2.07 0 1.5 -0.25 1.31 -1.20 C 1.20 -1.79 1.20 -2.70 1.20 -3.28 C 1.20 -3.92 1.20 -4.56 1.28 -5.10 C 1.46 -6.28 2.21 -6.37 2.46 -6.37 C 2.79 -6.37 3.43 -6.18 3.62 -5.21 C 3.73 -4.65 3.73 -3.90 3.73 -3.28 C 3.73 -2.54 3.73 -1.87 3.62 -1.23 C 3.46 -0.29 2.90 0 2.46 0 Z M 2.46 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-0%22%3E%3Cpath d=%22M 6.51 -2.28 C 6.68 -2.28 6.85 -2.28 6.85 -2.46 C 6.85 -2.67 6.68 -2.67 6.51 -2.67 L 1.17 -2.67 C 1 -2.67 0.82 -2.67 0.82 -2.46 C 0.82 -2.28 1 -2.28 1.17 -2.28 Z M 6.51 -2.28 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-1%22%3E%3Cpath d=%22M 5.03 -2.68 C 4.48 -3.35 4.37 -3.5 4.06 -3.75 C 3.51 -4.18 2.95 -4.37 2.45 -4.37 C 1.29 -4.37 0.54 -3.28 0.54 -2.12 C 0.54 -0.98 1.28 0.10 2.40 0.10 C 3.54 0.10 4.37 -0.79 4.85 -1.57 C 5.39 -0.90 5.51 -0.76 5.81 -0.51 C 6.37 -0.06 6.92 0.10 7.42 0.10 C 8.57 0.10 9.34 -0.98 9.34 -2.14 C 9.34 -3.28 8.60 -4.37 7.46 -4.37 C 6.32 -4.37 5.51 -3.46 5.03 -2.68 Z M 5.28 -2.34 C 5.68 -3.06 6.42 -4.06 7.53 -4.06 C 8.57 -4.06 9.12 -3.03 9.12 -2.14 C 9.12 -1.17 8.45 -0.35 7.59 -0.35 C 7.01 -0.35 6.56 -0.78 6.35 -0.98 C 6.10 -1.25 5.89 -1.56 5.28 -2.34 Z M 4.59 -1.92 C 4.18 -1.20 3.46 -0.20 2.34 -0.20 C 1.29 -0.20 0.76 -1.23 0.76 -2.12 C 0.76 -3.09 1.42 -3.89 2.29 -3.89 C 2.87 -3.89 3.31 -3.48 3.51 -3.28 C 3.76 -3 4 -2.70 4.59 -1.92 Z M 4.59 -1.92 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(86.69%25, 91.59%25, 91.39%25)%22 fill-opacity=%221%22 d=%22M 99.53 96.08 L 99.53 117.19 L 130.50 117.19 L 130.50 96.08 Z M 99.53 96.08 %22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(86.69%25, 91.59%25, 91.39%25)%22 fill-opacity=%221%22 d=%22M 161.48 96.08 L 161.48 117.19 L 192.45 117.19 L 192.45 96.08 Z M 161.48 96.08 %22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2226.31%22 y=%2215.15%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2217.35%22 y=%2234.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2225.65%22 y=%2234.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2235.97%22 y=%2234.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2217.35%22 y=%2253.10%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2225.65%22 y=%2253.10%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2235.97%22 y=%2253.10%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2217.35%22 y=%2271.40%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2225.65%22 y=%2271.40%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%2235.98%22 y=%2271.40%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2217.35%22 y=%2289.70%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2225.65%22 y=%2289.70%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2235.98%22 y=%2289.70%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2218.60%22 y=%22109.11%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%2226.33%22 y=%22109.11%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2230.18%22 y=%22109.11%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%2235.83%22 y=%22109.11%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -19.84 L 235.28 -19.84 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -38.26 L 235.28 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -56.69 L 235.28 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -75.11 L 235.28 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -93.54 L 235.28 -93.54 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -114.80 L 235.28 -114.80 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 0.00 L -0.00 -114.80 L 235.28 -114.80 L 235.28 0.00 Z M -0.00 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 51.02 0.00 L 51.02 -114.80 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2259.76%22 y=%2215.49%22/%3E%3Cuse xlink:href=%22%23glyph-2-1%22 x=%2267.45%22 y=%2215.49%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2293.21%22 y=%2215.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22100.91%22 y=%2215.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22124.18%22 y=%2215.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%22131.88%22 y=%2215.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22159.00%22 y=%2216.21%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22189.97%22 y=%2216.21%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22214.62%22 y=%2215.49%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-1%22 x=%22222.32%22 y=%2215.49%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2280.20%22 y=%2234.50%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 96.37 -19.84 L 96.37 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%2297.06%22 y=%2235.21%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22111.17%22 y=%2234.50%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 127.56 -19.84 L 127.56 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22142.14%22 y=%2234.50%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 158.74 -19.84 L 158.74 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22173.11%22 y=%2234.50%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 189.92 -19.84 L 189.92 -38.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22204.09%22 y=%2234.50%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2280.20%22 y=%2252.80%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 96.37 -38.26 L 96.37 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22111.17%22 y=%2252.80%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 127.56 -38.26 L 127.56 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22128.03%22 y=%2253.51%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22142.14%22 y=%2252.80%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 158.74 -38.26 L 158.74 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22173.11%22 y=%2252.80%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 189.92 -38.26 L 189.92 -56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22204.09%22 y=%2252.80%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2280.20%22 y=%2271.10%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 96.37 -56.69 L 96.37 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22111.17%22 y=%2271.10%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 127.56 -56.69 L 127.56 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22142.14%22 y=%2271.10%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 158.74 -56.69 L 158.74 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22159.00%22 y=%2271.82%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22173.11%22 y=%2271.10%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 189.92 -56.69 L 189.92 -75.11 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22204.09%22 y=%2271.10%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2280.20%22 y=%2289.40%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 96.37 -75.11 L 96.37 -93.54 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22111.17%22 y=%2289.40%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 127.56 -75.11 L 127.56 -93.54 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22142.14%22 y=%2289.40%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 158.74 -75.11 L 158.74 -93.54 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22173.11%22 y=%2289.40%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 189.92 -75.11 L 189.92 -93.54 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22189.97%22 y=%2290.12%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22204.09%22 y=%2289.40%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2280.20%22 y=%22109.11%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 96.37 -93.54 L 96.37 -114.80 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%2297.06%22 y=%22109.83%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22111.17%22 y=%22109.11%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 127.56 -93.54 L 127.56 -114.80 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22128.03%22 y=%22109.83%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22142.14%22 y=%22109.11%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 158.74 -93.54 L 158.74 -114.80 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22159.00%22 y=%22109.83%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22173.11%22 y=%22109.11%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%220.39 1.99%22 stroke-miterlimit=%2210%22 d=%22M 189.92 -93.54 L 189.92 -114.80 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.80, 3.16)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22189.97%22 y=%22109.83%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22204.09%22 y=%22109.11%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+
+<p>តាមតារាងសញ្ញា វិសមីការ <span class="mi">\(P(x) \le 0\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(x \in [-3, -1] \cup [2, 3]\)</span>។<br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(x \in [-3, -1] \cup [2, 3]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{(x-1)^2 (x+2)}{(x-3)^3} \ge 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\dfrac{(x-1)^2 (x+2)}{(x-3)^3} \ge 0\)</span><br/>
+លក្ខខណ្ឌ ៖ <span class="mi">\(x - 3 \ne 0 \iff x \ne 3\)</span>។<br/>
+តាង <span class="mi">\(f(x) = \dfrac{(x-1)^2 (x+2)}{(x-3)^3}\)</span>។<br/>
+ឫសភាគយកគឺ <span class="mi">\(x = -2, x = 1\)</span> និងឫសភាគបែងគឺ <span class="mi">\(x = 3\)</span>។<br/>
+តារាងសញ្ញា ៖</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p>តាមតារាងសញ្ញា វិសមីការ <span class="mi">\(f(x) \ge 0\)</span> លុះត្រាតែ ៖<br/>
+<span class="mi">\(x \in (-\infty, -2] \cup \{1\} \cup (3, +\infty)\)</span>។<br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(x \in (-\infty, -2] \cup \{1\} \cup (3, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\sqrt{x + 2} \le x\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\sqrt{x + 2} \le x\)</span><br/>
+រូបមន្ត ៖ <span class="mi">\(\sqrt{A} \le B \iff \begin{cases} A \ge 0 \\ B \ge 0 \\ A \le B^2 \end{cases}\)</span><br/>
+អនុវត្ត ៖<br/>
+<span class="mi">\(\begin{cases} x + 2 \ge 0 \iff x \ge -2 \\ x \ge 0 \\ x + 2 \le x^2 \iff x^2 - x - 2 \ge 0 \end{cases}\)</span><br/>
+ដោះស្រាយ <span class="mi">\(x^2 - x - 2 \ge 0\)</span> ៖<br/>
+<span class="mi">\((x - 2)(x + 1) \ge 0 \iff x \le -1 \)</span> ឬ <span class="mi">\( x \ge 2\)</span>។<br/>
+យកប្រសព្វជាមួយលក្ខខណ្ឌ <span class="mi">\(x \ge 0\)</span> ៖<br/>
+<span class="mi">\(x \ge 2\)</span>។<br/>
+ដូចនេះ សំណុំចម្លើយគឺ <span class="mi">\(x \in [2, +\infty)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\sqrt{2x - 1} &gt; x - 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\sqrt{2x - 1} &gt; x - 2\)</span><br/>
+លក្ខខណ្ឌរ៉ាឌីកាល់ ៖ <span class="mi">\(2x - 1 \ge 0 \iff x \ge \dfrac{1}{2}\)</span>។<br/>
+យើងពិនិត្យពីរករណីនៃអង្គខាងស្តាំ ៖<br/>
+- ករណីទី ១ ៖ <span class="mi">\(x - 2 &lt; 0 \iff x &lt; 2\)</span><br/>
+ជាមួយ <span class="mi">\(x \ge \dfrac{1}{2}\)</span> យើងបាន <span class="mi">\(\dfrac{1}{2} \le x &lt; 2\)</span>។<br/>
+នៅពេលនោះ អង្គខាងឆ្វេង <span class="mi">\(\ge 0\)</span> ហើយអង្គខាងស្តាំ <span class="mi">\(&lt; 0\)</span> នាំឱ្យវិសមីការផ្ទៀងផ្ទាត់ជានិច្ច ៖<br/>
+ចម្លើយករណីទី ១ គឺ <span class="mi">\(x \in \left[\dfrac{1}{2}, 2\right)\)</span>។<br/>
+- ករណីទី ២ ៖ <span class="mi">\(x - 2 \ge 0 \iff x \ge 2\)</span><br/>
+លើកជាការ៉េអង្គទាំងពីរ ៖<br/>
+<span class="mi">\(2x - 1 &gt; (x - 2)^2 \iff 2x - 1 &gt; x^2 - 4x + 4\)</span><br/>
+<span class="mi">\(\iff x^2 - 6x + 5 &lt; 0 \iff (x - 1)(x - 5) &lt; 0\)</span><br/>
+<span class="mi">\(\iff 1 &lt; x &lt; 5\)</span>។<br/>
+ប្រសព្វជាមួយ <span class="mi">\(x \ge 2\)</span> នាំឱ្យ <span class="mi">\(2 \le x &lt; 5\)</span> ៖<br/>
+ចម្លើយករណីទី ២ គឺ <span class="mi">\(x \in [2, 5)\)</span>។<br/>
+រួមចម្លើយទាំងពីរករណី ៖<br/>
+<span class="mi">\(x \in \left[\dfrac{1}{2}, 2\right) \cup [2, 5) = \left[\dfrac{1}{2}, 5\right)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\sqrt{x^2 - 3x - 4} \ge x - 1\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(\sqrt{x^2 - 3x - 4} \ge x - 1\)</span><br/>
+លក្ខខណ្ឌរ៉ាឌីកាល់ ៖ <span class="mi">\(x^2 - 3x - 4 \ge 0 \iff (x + 1)(x - 4) \ge 0\)</span><br/>
+<span class="mi">\(\iff x \le -1 \)</span> ឬ <span class="mi">\( x \ge 4\)</span>។<br/>
+- ករណីទី ១ ៖ <span class="mi">\(x - 1 &lt; 0 \iff x &lt; 1\)</span><br/>
+ប្រសព្វជាមួយលក្ខខណ្ឌរ៉ាឌីកាល់ ៖ <span class="mi">\(x \le -1\)</span>។<br/>
+ដោយ <span class="mi">\(\sqrt{x^2 - 3x - 4} \ge 0\)</span> ហើយ <span class="mi">\(x - 1 &lt; 0\)</span> នោះវិសមីការតែងតែពិត ៖<br/>
+ដូចនេះ <span class="mi">\(x \in (-\infty, -1]\)</span> ជាចម្លើយ។<br/>
+- ករណីទី ២ ៖ <span class="mi">\(x - 1 \ge 0 \iff x \ge 1\)</span><br/>
+ប្រសព្វជាមួយលក្ខខណ្ឌរ៉ាឌីកាល់ ៖ <span class="mi">\(x \ge 4\)</span>។<br/>
+លើកជាការ៉េអង្គទាំងពីរ ៖<br/>
+<span class="mi">\(x^2 - 3x - 4 \ge (x - 1)^2 = x^2 - 2x + 1\)</span><br/>
+<span class="mi">\(\iff -3x - 4 \ge -2x + 1 \iff -x \ge 5 \iff x \le -5\)</span>។<br/>
+ប្រសព្វរវាង <span class="mi">\(x \le -5\)</span> និង <span class="mi">\(x \ge 4\)</span> គឺគ្មានតម្លៃ <span class="mi">\(x\)</span> ផ្ទៀងផ្ទាត់ (<span class="mi">\(\emptyset\)</span>)។<br/>
+ដូចនេះ សំណុំចម្លើយរួមគឺ <span class="mi">\(x \in (-\infty, -1]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|2x - 1| + |x + 2| \le 5\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|2x - 1| + |x + 2| \le 5\)</span><br/>
+ឫសនៃកន្សោមក្នុងតម្លៃដាច់ខាត ៖ <span class="mi">\(x = \dfrac{1}{2}\)</span> និង <span class="mi">\(x = -2\)</span>។<br/>
+យើងបែងចែកជា ៣ ចន្លោះ ៖<br/>
+1. ចន្លោះ <span class="mi">\(x &lt; -2\)</span> ៖<br/>
+<span class="mi">\(|2x - 1| = -(2x - 1) = -2x + 1\)</span> និង <span class="mi">\(|x + 2| = -(x + 2) = -x - 2\)</span><br/>
+វិសមីការទៅជា ៖ <span class="mi">\((-2x + 1) + (-x - 2) \le 5\)</span><br/>
+<span class="mi">\(\iff -3x - 1 \le 5 \iff -3x \le 6 \iff x \ge -2\)</span><br/>
+គ្មានចម្លើយលើចន្លោះ <span class="mi">\(x &lt; -2\)</span> ទេ។<br/>
+2. ចន្លោះ <span class="mi">\(-2 \le x \le \dfrac{1}{2}\)</span> ៖<br/>
+<span class="mi">\(|2x - 1| = 1 - 2x\)</span> និង <span class="mi">\(|x + 2| = x + 2\)</span><br/>
+វិសមីការទៅជា ៖ <span class="mi">\((1 - 2x) + (x + 2) \le 5 \iff -x + 3 \le 5\)</span><br/>
+<span class="mi">\(\iff -x \le 2 \iff x \ge -2\)</span> (ផ្ទៀងផ្ទាត់គ្រប់តម្លៃក្នុងចន្លោះនេះ)<br/>
+នាំឱ្យបានចន្លោះចម្លើយ ៖ <span class="mi">\(\left[-2, \dfrac{1}{2}\right]\)</span>។<br/>
+3. ចន្លោះ <span class="mi">\(x &gt; \dfrac{1}{2}\)</span> ៖<br/>
+<span class="mi">\(|2x - 1| = 2x - 1\)</span> និង <span class="mi">\(|x + 2| = x + 2\)</span><br/>
+វិសមីការទៅជា ៖ <span class="mi">\((2x - 1) + (x + 2) \le 5 \iff 3x + 1 \le 5\)</span><br/>
+<span class="mi">\(\iff 3x \le 4 \iff x \le \dfrac{4}{3}\)</span><br/>
+ប្រសព្វជាមួយ <span class="mi">\(x &gt; \dfrac{1}{2}\)</span> នាំឱ្យបាន <span class="mi">\(x \in \left(\dfrac{1}{2}, \dfrac{4}{3}\right]\)</span>។<br/>
+រួមចម្លើយ ៖ <span class="mi">\(x \in \left[-2, \dfrac{1}{2}\right] \cup \left(\dfrac{1}{2}, \dfrac{4}{3}\right] = \left[-2, \dfrac{4}{3}\right]\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|x - 1| - |x + 3| &gt; 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការ ៖ <span class="mi">\(|x - 1| - |x + 3| &gt; 2\)</span><br/>
+ឫសនៃកន្សោមតម្លៃដាច់ខាត ៖ <span class="mi">\(x = 1, x = -3\)</span>។<br/>
+បែងចែកជា ៣ ចន្លោះ ៖<br/>
+1. ចន្លោះ <span class="mi">\(x &lt; -3\)</span> ៖<br/>
+<span class="mi">\(|x - 1| = 1 - x\)</span> និង <span class="mi">\(|x + 3| = -x - 3\)</span><br/>
+វិសមីការ ៖ <span class="mi">\((1 - x) - (-x - 3) &gt; 2 \iff 1 - x + x + 3 &gt; 2 \iff 4 &gt; 2\)</span> (ពិតជានិច្ច)<br/>
+ដូចនេះ គ្រប់ <span class="mi">\(x \in (-\infty, -3)\)</span> ជាចម្លើយ។<br/>
+2. ចន្លោះ <span class="mi">\(-3 \le x \le 1\)</span> ៖<br/>
+<span class="mi">\(|x - 1| = 1 - x\)</span> និង <span class="mi">\(|x + 3| = x + 3\)</span><br/>
+វិសមីការ ៖ <span class="mi">\((1 - x) - (x + 3) &gt; 2 \iff -2x - 2 &gt; 2\)</span><br/>
+<span class="mi">\(\iff -2x &gt; 4 \iff x &lt; -2\)</span><br/>
+ប្រសព្វជាមួយ <span class="mi">\([-3, 1]\)</span> ទទួលបាន <span class="mi">\(x \in [-3, -2)\)</span>។<br/>
+3. ចន្លោះ <span class="mi">\(x &gt; 1\)</span> ៖<br/>
+<span class="mi">\(|x - 1| = x - 1\)</span> និង <span class="mi">\(|x + 3| = x + 3\)</span><br/>
+វិសមីការ ៖ <span class="mi">\((x - 1) - (x + 3) &gt; 2 \iff -4 &gt; 2\)</span> (មិនពិត)។<br/>
+រួមចម្លើយ ៖ <span class="mi">\((-\infty, -3) \cup [-3, -2) = (-\infty, -2)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>បង្ហាញថាចំពោះគ្រប់ចំនួនពិតវិជ្ជមាន <span class="mi">\(a, b &gt; 0\)</span> យើងតែងមាន <span class="mi">\(\dfrac{a+b}{2} \ge \sqrt{ab}\)</span> (វិសមីការ AM-GM)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(\dfrac{a+b}{2} \ge \sqrt{ab}\)</span> ចំពោះគ្រប់ <span class="mi">\(a, b &gt; 0\)</span> (វិសមីការ AM-GM) ៖<br/>
+ដោយសារ <span class="mi">\(a &gt; 0\)</span> និង <span class="mi">\(b &gt; 0\)</span> យើងអាចសរសេរ <span class="mi">\(a = (\sqrt{a})^2\)</span> និង <span class="mi">\(b = (\sqrt{b})^2\)</span>។<br/>
+ពិនិត្យកន្សោមការ៉េនៃផលដក ៖<br/>
+<span class="mi">\((\sqrt{a} - \sqrt{b})^2 \ge 0\)</span> (ពិតជានិច្ចចំពោះគ្រប់ចំនួនពិត <span class="mi">\(\sqrt{a}, \sqrt{b}\)</span>)<br/>
+<span class="mi">\(\iff (\sqrt{a})^2 - 2\sqrt{a}\sqrt{b} + (\sqrt{b})^2 \ge 0\)</span><br/>
+<span class="mi">\(\iff a - 2\sqrt{ab} + b \ge 0\)</span><br/>
+<span class="mi">\(\iff a + b \ge 2\sqrt{ab}\)</span><br/>
+ចែកអង្គទាំងពីរនឹង <span class="mi">\(2\)</span> ៖<br/>
+<span class="mi">\(\dfrac{a + b}{2} \ge \sqrt{ab}\)</span> (ពិត)។<br/>
+សមភាពកើតមានកាលណា <span class="mi">\(\sqrt{a} - \sqrt{b} = 0 \iff a = b\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(a, b, c &gt; 0\)</span>។ បង្ហាញថា <span class="mi">\((a + b)(b + c)(c + a) \ge 8abc\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(a, b, c &gt; 0\)</span>។ បង្ហាញថា <span class="mi">\((a + b)(b + c)(c + a) \ge 8abc\)</span> ៖<br/>
+អនុវត្តវិសមីការ AM-GM ចំពោះគូនីមួយៗនៃចំនួនវិជ្ជមាន ៖<br/>
+<span class="mi">\(\bullet\ a + b \ge 2\sqrt{ab}\)</span> (សមភាពពេល <span class="mi">\(a = b\)</span>)<br/>
+<span class="mi">\(\bullet\ b + c \ge 2\sqrt{bc}\)</span> (សមភាពពេល <span class="mi">\(b = c\)</span>)<br/>
+<span class="mi">\(\bullet\ c + a \ge 2\sqrt{ca}\)</span> (សមភាពពេល <span class="mi">\(c = a\)</span>)<br/>
+ដោយសារអង្គទាំងសងខាងនៃវិសមភាពទាំងបីសុទ្ធតែវិជ្ជមាន យើងគុណវិសមភាពទាំងបីបញ្ចូលគ្នា ៖<br/>
+<span class="mi">\((a + b)(b + c)(c + a) \ge (2\sqrt{ab})(2\sqrt{bc})(2\sqrt{ca})\)</span><br/>
+<span class="mi">\(\iff (a + b)(b + c)(c + a) \ge 8\sqrt{ab \cdot bc \cdot ca}\)</span><br/>
+<span class="mi">\(\iff (a + b)(b + c)(c + a) \ge 8\sqrt{a^2 b^2 c^2} = 8abc\)</span> (ពិត)។<br/>
+សមភាពកើតមានកាលណា <span class="mi">\(a = b = c\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(x, y &gt; 0\)</span> ដែលផ្ទៀងផ្ទាត់ <span class="mi">\(x + y = 1\)</span>។ រកតម្លៃតូចបំផុតនៃកន្សោម <span class="mi">\(S = \dfrac{1}{x} + \dfrac{1}{y}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកតម្លៃតូចបំផុតនៃ <span class="mi">\(S = \dfrac{1}{x} + \dfrac{1}{y}\)</span> ដោយ <span class="mi">\(x, y &gt; 0\)</span> និង <span class="mi">\(x + y = 1\)</span> ៖<br/>
+តម្រូវភាគបែង ៖ <span class="mi">\(S = \dfrac{x + y}{xy} = \dfrac{1}{xy}\)</span> (ព្រោះ <span class="mi">\(x + y = 1\)</span>)។<br/>
+តាមវិសមីការ AM-GM សម្រាប់ <span class="mi">\(x, y &gt; 0\)</span> ៖<br/>
+<span class="mi">\(\sqrt{xy} \le \dfrac{x + y}{2} = \dfrac{1}{2} \implies xy \le \left(\dfrac{1}{2}\right)^2 = \dfrac{1}{4}\)</span><br/>
+ដោយសារ <span class="mi">\(xy &gt; 0\)</span> យើងច្រាសវិសមភាព ៖<br/>
+<span class="mi">\(S = \dfrac{1}{xy} \ge \dfrac{1}{\frac{1}{4}} = 4\)</span>។<br/>
+សមភាពកើតមានកាលណា <span class="mi">\(x = y = \dfrac{1}{2}\)</span> (ផ្ទៀងផ្ទាត់ <span class="mi">\(x + y = 1\)</span>)។<br/>
+ដូចនេះ តម្លៃតូចបំផុតនៃ <span class="mi">\(S\)</span> គឺ <span class="mi">\(S_{\min} = 4\)</span> ត្រង់ <span class="mi">\(x = y = \dfrac{1}{2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ជម្រើសកញ្ចប់សេវាទូរស័ព្ទ ៖</strong> ក្រុមហ៊ុនមួយផ្តល់ជម្រើសពីរ ៖ គម្រោង A (សេវាថេរ <span class="mi">\(12\$\)</span> បូក <span class="mi">\(0.05\$/\)</span> នាទី ) និង គម្រោង B (គ្មានសេវាថេរ តែគិត <span class="mi">\(0.15\$/\)</span> នាទី )។</p>
+<ol class="list olka cols1">
+<li><p>សរសេរវិសមីការកំណត់ចំនួននាទីហៅចេញ <span class="mi">\(x\)</span> ក្នុងមួយខែ ដែលធ្វើឱ្យគម្រោង A អស់តិចជាង B។</p></li>
+<li><p>ដោះស្រាយវិសមីការ និងផ្តល់អនុសាសន៍ដល់អ្នកប្រើប្រាស់។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ជម្រើសកញ្ចប់សេវាទូរស័ព្ទ ៖</strong><br/>
+តាង <span class="mi">\(x\)</span> ជាចំនួននាទីហៅចេញក្នុងមួយខែ (<span class="mi">\(x \ge 0\)</span>)។<br/>
+ថ្លៃចំណាយគម្រោង A ៖ <span class="mi">\(C_A(x) = 12 + 0.05x\)</span><br/>
+ថ្លៃចំណាយគម្រោង B ៖ <span class="mi">\(C_B(x) = 0.15x\)</span><br/>
+<strong>ក.</strong>  វិសមីការកំណត់ចំនួននាទីដើម្បីឱ្យគម្រោង A អស់តិចជាង B ៖<br/>
+<span class="mi">\(C_A(x) &lt; C_B(x) \iff 12 + 0.05x &lt; 0.15x\)</span><br/>
+<strong>ខ.</strong>  ដោះស្រាយវិសមីការ ៖<br/>
+<span class="mi">\(12 &lt; 0.15x - 0.05x \iff 0.10x &gt; 12 \iff x &gt; \dfrac{12}{0.10} = 120\)</span> នាទី។<br/>
+<strong>អនុសាសន៍ ៖</strong></p>
+<ul>
+<li><p>ប្រសិនបើអ្នកប្រើប្រាស់ហៅចេញច្រើនជាង <span class="mi">\(120\)</span> នាទី (លើសពី ២ ម៉ោង) ក្នុងមួយខែ នោះគួរជ្រើសរើស <strong>គម្រោង A</strong> ព្រោះចំណេញជាង។</p></li>
+<li><p>ប្រសិនបើហៅចេញតិចជាង <span class="mi">\(120\)</span> នាទី គួរជ្រើសរើស <strong>គម្រោង B</strong>។</p></li>
+<li><p>ប្រសិនបើហៅចេញចំ <span class="mi">\(120\)</span> នាទី គម្រោងទាំងពីរអស់ប្រាក់ស្មើគ្នា (<span class="mi">\(18\$\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - សមត្ថភាពផ្ទុកទម្ងន់សុវត្ថិភាពនៃជណ្តើរយន្ត ៖</strong> ជណ្តើរយន្តដឹកទំនិញមួយមានកម្រិតផ្ទុកទម្ងន់សុវត្ថិភាពអតិបរមា <span class="mi">\(800\text{ kg}\)</span>។ បុគ្គលិកម្នាក់មានទម្ងន់ <span class="mi">\(75\text{ kg}\)</span> ត្រូវរុញកេសទំនិញដែលមានទម្ងន់ <span class="mi">\(35\text{ kg}\)</span> ក្នុងមួយកេស។</p>
+<ol class="list olka cols2">
+<li><p>សរសេរវិសមីការតំណាងឱ្យទម្ងន់សរុប។</p></li>
+<li><p>រកចំនួនកេសអតិបរមាដឹកបានក្នុងមួយជើង។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - សមត្ថភាពផ្ទុកទម្ងន់សុវត្ថិភាពនៃជណ្តើរយន្ត ៖</strong><br/>
+តាង <span class="mi">\(n\)</span> ជាចំនួនកេសទំនិញដែលអាចដឹកបាន (<span class="mi">\(n \in \mathbb{N}\)</span>)។<br/>
+ទម្ងន់មនុស្ស ៖ <span class="mi">\(75\text{ kg}\)</span><br/>
+ទម្ងន់កេសទំនិញ <span class="mi">\(n\)</span> កេស ៖ <span class="mi">\(35n\text{ kg}\)</span><br/>
+ទម្ងន់ផ្ទុកអតិបរមា ៖ <span class="mi">\(800\text{ kg}\)</span><br/>
+<strong>ក.</strong>  វិសមីការតំណាងឱ្យទម្ងន់សរុបប្រកបដោយសុវត្ថិភាព ៖<br/>
+<span class="mi">\(75 + 35n \le 800\)</span><br/>
+<strong>ខ.</strong>  រកចំនួនកេសអតិបរមា ៖<br/>
+<span class="mi">\(35n \le 800 - 75 \iff 35n \le 725\)</span><br/>
+<span class="mi">\(\iff n \le \dfrac{725}{35} = \dfrac{145}{7} \approx 20.71\)</span><br/>
+ដោយសារ <span class="mi">\(n\)</span> ជាចំនួនគត់វិជ្ជមាន នោះតម្លៃអតិបរមានៃ <span class="mi">\(n\)</span> គឺ <span class="mi">\(n_{\max} = 20\)</span>។<br/>
+ដូចនេះ ជណ្តើរយន្តអាចដឹកកេសទំនិញបានច្រើនបំផុត <span class="mi">\(20\)</span> កេស ក្នុងមួយជើង។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការគ្រប់គ្រងប្រាក់ចំណេញសហគ្រាស ៖</strong> អាជីវកម្មមួយចំណាយថ្លៃដើមថេរ <span class="mi">\(1800\$\)</span> និងថ្លៃដើមផលិត <span class="mi">\(4\$\)</span> ក្នុងមួយឯកតា។ ផលិតផលត្រូវលក់ក្នុងតម្លៃ <span class="mi">\(10\$\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>សរសេរវិសមីការឱ្យបានចំណេញសុទ្ធយ៉ាងតិច <span class="mi">\(1200\$\)</span>។</p></li>
+<li><p>រកចំនួនឯកតាអប្បបរមាដែលត្រូវលក់ក្នុងមួយខែ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការគ្រប់គ្រងប្រាក់ចំណេញសហគ្រាស ៖</strong><br/>
+តាង <span class="mi">\(x\)</span> ជាចំនួនឯកតាផលិតផលដែលត្រូវផលិត និងលក់ (<span class="mi">\(x \in \mathbb{N}\)</span>)។<br/>
+ចំណូលសរុប ៖ <span class="mi">\(R(x) = 10x\)</span><br/>
+ថ្លៃដើមសរុប ៖ <span class="mi">\(C(x) = 1800 + 4x\)</span><br/>
+ប្រាក់ចំណេញសុទ្ធ ៖ <span class="mi">\(P(x) = R(x) - C(x) = 10x - (1800 + 4x) = 6x - 1800\)</span><br/>
+<strong>ក.</strong>  វិសមីការដើម្បីទទួលបានចំណេញយ៉ាងតិច <span class="mi">\(1200\$\)</span> ៖<br/>
+<span class="mi">\(6x - 1800 \ge 1200\)</span><br/>
+<strong>ខ.</strong>  ដោះស្រាយវិសមីការរកចំនួនឯកតាអប្បបរមា ៖<br/>
+<span class="mi">\(6x \ge 1200 + 1800 \iff 6x \ge 3000\)</span><br/>
+<span class="mi">\(\iff x \ge \dfrac{3000}{6} = 500\)</span> ឯកតា។<br/>
+ដូចនេះ សហគ្រាសត្រូវផលិត និងលក់ឱ្យបានយ៉ាងតិច <span class="mi">\(500\)</span> ឯកតា ក្នុងមួយខែ។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - សីតុណ្ហភាពសុវត្ថិភាពក្នុងការរក្សាទុកឱសថ ៖</strong> ឱសថមួយប្រភេទត្រូវរក្សាទុកនៅសីតុណ្ហភាព <span class="mi">\(C\)</span> ចន្លោះ <span class="mi">\(2^\circ\text{C}\)</span> ដល់ <span class="mi">\(8^\circ\text{C}\)</span> (<span class="mi">\(2 \le C \le 8\)</span>) ដោយ <span class="mi">\(C = \frac{5}{9}(F - 32)\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>បំប្លែងជាវិសមីការទ្វេនៃអង្សាហ្វារិនហៃ <span class="mi">\(F\)</span>។</p></li>
+<li><p>កំណត់ដែនសីតុណ្ហភាពគិតជា <span class="mi">\(F\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - សីតុណ្ហភាពសុវត្ថិភាពក្នុងការរក្សាទុកឱសថ ៖</strong><br/>
+លក្ខខណ្ឌសីតុណ្ហភាពគិតជាអង្សាសេ ៖ <span class="mi">\(2 \le C \le 8\)</span><br/>
+ដោយ <span class="mi">\(C = \dfrac{5}{9}(F - 32)\)</span><br/>
+<strong>ក.</strong>  បំប្លែងជាវិសមីការទ្វេនៃ <span class="mi">\(F\)</span> ៖<br/>
+<span class="mi">\(2 \le \dfrac{5}{9}(F - 32) \le 8\)</span><br/>
+<strong>ខ.</strong>  កំណត់ដែនសីតុណ្ហភាពជាអង្សាហ្វារិនហៃ (<span class="mi">\(F\)</span>) ៖<br/>
+គុណគ្រប់អង្គនឹង <span class="mi">\(\dfrac{9}{5} = 1.8\)</span> ៖<br/>
+<span class="mi">\(2 \times \dfrac{9}{5} \le F - 32 \le 8 \times \dfrac{9}{5}\)</span><br/>
+<span class="mi">\(\iff 3.6 \le F - 32 \le 14.4\)</span><br/>
+បូក <span class="mi">\(32\)</span> គ្រប់អង្គ ៖<br/>
+<span class="mi">\(3.6 + 32 \le F \le 14.4 + 32 \iff 35.6 \le F \le 46.4\)</span>។<br/>
+ដូចនេះ ដែនសីតុណ្ហភាពសុវត្ថិភាពគឺពី <span class="mi">\(35.6^\circ\text{F}\)</span> ដល់ <span class="mi">\(46.4^\circ\text{F}\)</span> (<span class="mi">\(F \in [35.6^\circ\text{F}, 46.4^\circ\text{F}]\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ល្បឿនសុវត្ថិភាពលើផ្លូវល្បឿនលឿន ៖</strong> ផ្លាកសញ្ញាកំណត់ល្បឿនអប្បបរមា <span class="mi">\(60\text{ km/h}\)</span> និងអតិបរមា <span class="mi">\(120\text{ km/h}\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>សរសេរវិសមីការតំណាងឱ្យល្បឿន <span class="mi">\(v\)</span>។</p></li>
+<li><p>រកចន្លោះរយៈពេលធ្វើដំណើរលើចម្ងាយ <span class="mi">\(180\text{ km}\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ល្បឿនសុវត្ថិភាពលើផ្លូវល្បឿនលឿន ៖</strong><br/>
+ចម្ងាយផ្លូវ ៖ <span class="mi">\(d = 180\text{ km}\)</span><br/>
+<strong>ក.</strong>  វិសមីការតំណាងឱ្យល្បឿនអនុញ្ញាត <span class="mi">\(v\)</span> (<span class="mi">\(\text{km/h}\)</span>) ៖<br/>
+<span class="mi">\(60 \le v \le 120\)</span><br/>
+<strong>ខ.</strong>  រកចន្លោះរយៈពេលធ្វើដំណើរ <span class="mi">\(t\)</span> (ម៉ោង) ៖<br/>
+រូបមន្ត ៖ <span class="mi">\(t = \dfrac{d}{v} = \dfrac{180}{v}\)</span><br/>
+ដោយសារ <span class="mi">\(60 \le v \le 120\)</span> និង <span class="mi">\(v &gt; 0\)</span> យើងច្រាសវិសមភាព ៖<br/>
+<span class="mi">\(\dfrac{180}{120} \le \dfrac{180}{v} \le \dfrac{180}{60}\)</span><br/>
+<span class="mi">\(\iff 1.5 \le t \le 3\)</span> ម៉ោង។<br/>
+បំប្លែង <span class="mi">\(1.5\)</span> ម៉ោង <span class="mi">\( = 1\)</span> ម៉ោង <span class="mi">\( 30\)</span> នាទី ។<br/>
+ដូចនេះ រយៈពេលធ្វើដំណើរប្រកបដោយសុវត្ថិភាព និងស្របច្បាប់ គឺស្ថិតនៅចន្លោះពី <span class="mi">\(1\)</span> ម៉ោង <span class="mi">\( 30\)</span> នាទី  ដល់ <span class="mi">\(3\)</span> ម៉ោង ។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ៣ សមីការ និងវិសមីការ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c03">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L08.html"><small>← មេរៀនមុន</small><b>ប្រព័ន្ធសមីការ</b></a><a class="next" href="L10.html"><small>មេរៀនបន្ទាប់ →</small><b>កូអរដោនេនៃចំណុច</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -9 \\geq 2\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; 11/2\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\geq -5.5\\)<\/span>", "<span class=\"mi\">\\(x \\geq 11/2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x +7 \\leq -7\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -7\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\leq 7.0\\)<\/span>", "<span class=\"mi\">\\(x \\leq -7\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(3x +2 &lt; -4\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; 2.0\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -2\\)<\/span>", "<span class=\"mi\">\\(x &lt; -2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x +0 &gt; -3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -3/4\\)<\/span>", "<span class=\"mi\">\\(x &gt; 0.75\\)<\/span>", "<span class=\"mi\">\\(x &lt; -3/4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -8 \\leq -5\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; 3/4\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\leq 3/4\\)<\/span>", "<span class=\"mi\">\\(x \\leq -0.75\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x +1 &lt; -10\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; -11/4\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -11/4\\)<\/span>", "<span class=\"mi\">\\(x &lt; 2.75\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x +6 \\leq 6\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\leq 0\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; 0\\)<\/span>", "<span class=\"mi\">\\(x \\leq -0.0\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x +1 \\geq 3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\geq 1\\)<\/span>", "<span class=\"mi\">\\(x &gt; 1\\)<\/span>", "<span class=\"mi\">\\(x \\geq -1.0\\)<\/span>", "គ្មានចម្លើយ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(3x +7 &lt; -7\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -14/3\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; -14/3\\)<\/span>", "<span class=\"mi\">\\(x &lt; 4.666666666666667\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(3x +8 &lt; -1\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; -3\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; 3.0\\)<\/span>", "<span class=\"mi\">\\(x &gt; -3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +0 &gt; -8\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -8/5\\)<\/span>", "<span class=\"mi\">\\(x &gt; 1.6\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; -8/5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -3 &gt; -5\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -1\\)<\/span>", "<span class=\"mi\">\\(x &gt; 1.0\\)<\/span>", "<span class=\"mi\">\\(x &lt; -1\\)<\/span>", "គ្មានចម្លើយ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -6 &lt; -7\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -1/4\\)<\/span>", "<span class=\"mi\">\\(x &lt; -1/4\\)<\/span>", "<span class=\"mi\">\\(x &lt; 0.25\\)<\/span>", "គ្មានចម្លើយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -4 \\leq -10\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -6/4\\)<\/span>", "<span class=\"mi\">\\(x \\leq 1.5\\)<\/span>", "<span class=\"mi\">\\(x \\leq -6/4\\)<\/span>", "គ្មានចម្លើយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +4 \\geq 3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\geq -1/5\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\geq 0.2\\)<\/span>", "<span class=\"mi\">\\(x &gt; -1/5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(3x -2 &gt; 10\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; 4\\)<\/span>", "<span class=\"mi\">\\(x &gt; 4\\)<\/span>", "<span class=\"mi\">\\(x &gt; -4.0\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x +4 \\geq 10\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\geq -1.5\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; 6/4\\)<\/span>", "<span class=\"mi\">\\(x \\geq 6/4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x +4 \\leq -4\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\leq 2.0\\)<\/span>", "<span class=\"mi\">\\(x &gt; -2\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\leq -2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x -2 &lt; -10\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; -8/5\\)<\/span>", "<span class=\"mi\">\\(x &lt; 1.6\\)<\/span>", "<span class=\"mi\">\\(x &gt; -8/5\\)<\/span>", "គ្មានចម្លើយ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +6 &lt; -9\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; -3\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -3\\)<\/span>", "<span class=\"mi\">\\(x &lt; 3.0\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -9 &gt; -1\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; 4\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -4.0\\)<\/span>", "<span class=\"mi\">\\(x &lt; 4\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x +10 \\leq -9\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\leq 4.75\\)<\/span>", "<span class=\"mi\">\\(x \\leq -19/4\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -19/4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -9 &gt; 7\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -8.0\\)<\/span>", "<span class=\"mi\">\\(x &lt; 8\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; 8\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x +5 &lt; 10\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; 5/2\\)<\/span>", "<span class=\"mi\">\\(x &lt; -2.5\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; 5/2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -9 \\geq 5\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; 7\\)<\/span>", "<span class=\"mi\">\\(x \\geq -7.0\\)<\/span>", "<span class=\"mi\">\\(x \\geq 7\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -6 \\leq 3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; 9/4\\)<\/span>", "<span class=\"mi\">\\(x \\leq -2.25\\)<\/span>", "<span class=\"mi\">\\(x \\leq 9/4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x -5 \\leq 1\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\leq 6/5\\)<\/span>", "<span class=\"mi\">\\(x \\leq -1.2\\)<\/span>", "<span class=\"mi\">\\(x &gt; 6/5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +4 &gt; -2\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; -6/5\\)<\/span>", "<span class=\"mi\">\\(x &gt; 1.2\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -6/5\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x +5 \\geq -9\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\geq 3.5\\)<\/span>", "<span class=\"mi\">\\(x &gt; -14/4\\)<\/span>", "<span class=\"mi\">\\(x \\geq -14/4\\)<\/span>", "គ្មានចម្លើយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +9 &lt; -9\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; 3.6\\)<\/span>", "<span class=\"mi\">\\(x &gt; -18/5\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; -18/5\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -10 \\geq 4\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; 7\\)<\/span>", "<span class=\"mi\">\\(x \\geq -7.0\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\geq 7\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +10 \\leq -8\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -18/5\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\leq 3.6\\)<\/span>", "<span class=\"mi\">\\(x \\leq -18/5\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -6 &gt; 4\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -2.5\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; 10/4\\)<\/span>", "<span class=\"mi\">\\(x &gt; 10/4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x -8 &gt; -8\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -0.0\\)<\/span>", "<span class=\"mi\">\\(x &gt; 0\\)<\/span>", "<span class=\"mi\">\\(x &lt; 0\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x +5 &gt; -5\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; -5\\)<\/span>", "<span class=\"mi\">\\(x &gt; -5\\)<\/span>", "<span class=\"mi\">\\(x &gt; 5.0\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x +5 \\geq 2\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\geq 1.5\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\geq -3/2\\)<\/span>", "<span class=\"mi\">\\(x &gt; -3/2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -1 \\leq -2\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\leq -1/4\\)<\/span>", "<span class=\"mi\">\\(x &gt; -1/4\\)<\/span>", "<span class=\"mi\">\\(x \\leq 0.25\\)<\/span>", "គ្មានចម្លើយ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +8 &gt; 7\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; 0.2\\)<\/span>", "<span class=\"mi\">\\(x &gt; -1/5\\)<\/span>", "<span class=\"mi\">\\(x &lt; -1/5\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(3x +8 \\leq -10\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x \\leq -6\\)<\/span>", "<span class=\"mi\">\\(x \\leq 6.0\\)<\/span>", "<span class=\"mi\">\\(x &gt; -6\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(5x +5 &lt; -6\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; 2.2\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -11/5\\)<\/span>", "<span class=\"mi\">\\(x &lt; -11/5\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -6 \\geq 4\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\geq 5\\)<\/span>", "<span class=\"mi\">\\(x \\geq -5.0\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; 5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -4 \\leq 8\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\leq -3.0\\)<\/span>", "<span class=\"mi\">\\(x &gt; 3\\)<\/span>", "<span class=\"mi\">\\(x \\leq 3\\)<\/span>", "គ្មានចម្លើយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(2x -2 &lt; 3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; 5/2\\)<\/span>", "<span class=\"mi\">\\(x &lt; 5/2\\)<\/span>", "<span class=\"mi\">\\(x &lt; -2.5\\)<\/span>", "គ្មានចម្លើយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -3 &lt; 8\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; 11/4\\)<\/span>", "គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; -2.75\\)<\/span>", "<span class=\"mi\">\\(x &gt; 11/4\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -4 \\geq -5\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &gt; -1/4\\)<\/span>", "<span class=\"mi\">\\(x \\geq 0.25\\)<\/span>", "<span class=\"mi\">\\(x \\geq -1/4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(3x +4 &lt; -3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; -7/3\\)<\/span>", "<span class=\"mi\">\\(x &lt; 2.33\\)<\/span>", "<span class=\"mi\">\\(x &gt; -7/3\\)<\/span>", "គ្មានចម្លើយ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x +5 \\leq 3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &gt; -2/4\\)<\/span>", "<span class=\"mi\">\\(x \\leq -2/4\\)<\/span>", "<span class=\"mi\">\\(x \\leq 0.5\\)<\/span>", "គ្មានចម្លើយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -8 \\geq -7\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x \\geq 1/4\\)<\/span>", "<span class=\"mi\">\\(x &gt; 1/4\\)<\/span>", "<span class=\"mi\">\\(x \\geq -0.25\\)<\/span>", "គ្មានចម្លើយ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(4x -7 &lt; -8\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["<span class=\"mi\">\\(x &lt; 0.25\\)<\/span>", "<span class=\"mi\">\\(x &gt; -1/4\\)<\/span>", "<span class=\"mi\">\\(x &lt; -1/4\\)<\/span>", "គ្មានចម្លើយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើវិសមីការ <span class=\"mi\">\\(3x +8 &lt; -3\\)<\/span> មានចម្លើយដូចម្តេច?", "options": ["គ្មានចម្លើយ", "<span class=\"mi\">\\(x &lt; -11/3\\)<\/span>", "<span class=\"mi\">\\(x &gt; -11/3\\)<\/span>", "<span class=\"mi\">\\(x &lt; 3.67\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

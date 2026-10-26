@@ -1,0 +1,14 @@
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/math_data.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

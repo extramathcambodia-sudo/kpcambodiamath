@@ -1,0 +1,2814 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៧ : លំហាត់ និងដំណោះស្រាយ លីមីត — គណិតវិទ្យាថ្នាក់ទី ១២ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៧ «លំហាត់ និងដំណោះស្រាយ លីមីត» គណិតវិទ្យាថ្នាក់ទី ១២៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៧ : លំហាត់ និងដំណោះស្រាយ លីមីត — គណិតវិទ្យាថ្នាក់ទី ១២ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៧ «លំហាត់ និងដំណោះស្រាយ លីមីត» គណិតវិទ្យាថ្នាក់ទី ១២៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g12">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li><li aria-current="page">មេរៀនទី ៧</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៧</span>
+      <div><span class="ls-kicker">ជំពូកទី ២ លីមីត · មេរៀនទី ៧ · គណិតវិទ្យាថ្នាក់ទី ១២</span><h1>លំហាត់ និងដំណោះស្រាយ លីមីត</h1><div class="ls-chips"><span class="chip chip-soon">លីមីត</span><span class="chip chip-soon">០ ផ្នែក</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"></ol>
+        <a class="ls-fx" href="../../grade-12.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោយប្រើនិយមន័យចូរបង្ហាញថា៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to -2}\frac{x^2-1}{x+1}=-3\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to a}(mx+b) = ma+b\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\sqrt[3]{x} = 0\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2} \sqrt{x} =\sqrt{2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2^-}\sqrt{(x-2)(x-3)}= 0\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{x^2-1}{x}=\frac{3}{2}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោយប្រើនិយមន័យចូរបង្ហាញថា៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to -2}\frac{x^2-1}{x+1}=-3\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+|f(x)-L| &lt; \varepsilon
+&amp;\Leftrightarrow \left|\frac{x^2-1}{x+1}-(-3)\right| &lt; \varepsilon\\
+&amp;\Leftrightarrow \left|\frac{(x+2)(x+1)}{x+1}\right| &lt; \varepsilon\\
+&amp;\Leftrightarrow |x+2| &lt; \varepsilon = \alpha
+\end{aligned}\)</span><br/>
+យក <span class="mi">\(\alpha = \varepsilon &gt; 0\)</span> នោះ <span class="mi">\(\forall |x+2| &lt; \alpha\)</span> នាំឱ្យ <span class="mi">\(|f(x)-L| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to a}(mx+b) = ma+b\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+|f(x)-L| &lt; \varepsilon
+&amp;\Leftrightarrow |(mx+b)-(ma+b)| &lt; \varepsilon\\
+&amp;\Leftrightarrow |m(x-a)| &lt; \varepsilon\\
+&amp;\Leftrightarrow |m||x-a| &lt; \varepsilon\\
+&amp;\Leftrightarrow |x-a| &lt; \frac{\varepsilon}{|m|} \quad{} (m\neq 0)
+\end{aligned}\)</span><br/>
+យក <span class="mi">\(\alpha = \frac{\varepsilon}{|m|} &gt; 0\)</span> នោះ <span class="mi">\(\forall |x-a| &lt; \alpha\)</span> នាំឱ្យ <span class="mi">\(|f(x)-L| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\sqrt[3]{x} = 0\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+|f(x)-L| &lt; \varepsilon
+&amp;\Leftrightarrow |\sqrt[3]{x}-0| &lt; \varepsilon\\
+&amp;\Leftrightarrow |\sqrt[3]{x}| &lt; \varepsilon\\
+&amp;\Leftrightarrow |x| &lt; \varepsilon^3
+\end{aligned}\)</span><br/>
+យក <span class="mi">\(\alpha = \varepsilon^3 &gt; 0\)</span> នោះ <span class="mi">\(\forall |x| &lt; \alpha\)</span> នាំឱ្យ <span class="mi">\(|f(x)-L| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2} \sqrt{x} =\sqrt{2}\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+|f(x)-L| &lt; \varepsilon
+&amp;\Leftrightarrow |\sqrt{x}-\sqrt{2}| &lt; \varepsilon\\
+&amp;\Leftrightarrow \frac{|x-2|}{\sqrt{x}+\sqrt{2}} &lt; \varepsilon
+\end{aligned}\)</span><br/>
+យក <span class="mi">\(1 &lt; x &lt; 3\)</span> នោះ <span class="mi">\(\sqrt{x}+\sqrt{2} &gt; 1+\sqrt{2} &gt; 2\)</span>៖<br/>
+<span class="mi">\(\frac{|x-2|}{\sqrt{x}+\sqrt{2}} &lt; \frac{|x-2|}{2} &lt; \varepsilon \Leftrightarrow |x-2| &lt; 2\varepsilon\)</span><br/>
+យក <span class="mi">\(\alpha = \min(1, 2\varepsilon) &gt; 0\)</span> នោះ <span class="mi">\(\forall |x-2| &lt; \alpha\)</span> នាំឱ្យ <span class="mi">\(|f(x)-L| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+</ol>
+<p><span> ដំណោះស្រាយ (ត)</span></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 2^-}\sqrt{(x-2)(x-3)}= 0\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+|f(x)-0| &lt; \varepsilon
+&amp;\Leftrightarrow |\sqrt{(x-2)(x-3)}| &lt; \varepsilon\\
+&amp;\Leftrightarrow |x-2||x-3| &lt; \varepsilon^2 \quad{} (*)
+\end{aligned}\)</span><br/>
+ដោយ <span class="mi">\(x \to 2^-\)</span> យក <span class="mi">\(1 &lt; x &lt; 2\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+1 &lt; x &lt; 2 &amp;\Leftrightarrow -2 &lt; x-3 &lt; -1\\
+&amp;\Leftrightarrow 1 &lt; |x-3| &lt; 2 \quad{} (**)
+\end{aligned}\)</span><br/>
+តាម <span class="mi">\((*)\)</span> និង <span class="mi">\((**)\)</span> យើងបាន៖<br/>
+<span class="mi">\(|x-2||x-3| &lt; 2|x-2| &lt; \varepsilon^2 \Leftrightarrow |x-2| &lt; \frac{\varepsilon^2}{2}\)</span><br/>
+យក <span class="mi">\(\alpha = \frac{\varepsilon^2}{2} &gt; 0\)</span> នោះ <span class="mi">\(\forall |x-2| &lt; \alpha\)</span> នាំឱ្យ <span class="mi">\(|f(x)-L| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{x^2-1}{x}=\frac{3}{2}\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\left|\frac{x^2-1}{x}-\frac{3}{2}\right|
+&amp;= \left|\frac{2x^2-3x-2}{2x}\right|\\
+&amp;= \frac{|x-2||2x+1|}{|2x|} &lt; \varepsilon \quad{} (*)
+\end{aligned}\)</span><br/>
+យក <span class="mi">\(1 &lt; x &lt; 3\)</span>៖<br/>
+<span class="mi">\(\bullet\)</span> <span class="mi">\(2 &lt; 2x &lt; 6 \Rightarrow |2x| &gt; 2 \Rightarrow \frac{1}{|2x|} &lt; \frac{1}{2}\)</span><br/>
+<span class="mi">\(\bullet\)</span> <span class="mi">\(3 &lt; 2x+1 &lt; 7 \Rightarrow |2x+1| &lt; 7\)</span><br/>
+តាម <span class="mi">\((*)\)</span> នាំឱ្យ៖<br/>
+<span class="mi">\(\frac{|x-2||2x+1|}{|2x|} &lt; \frac{7|x-2|}{2} &lt; \varepsilon \Leftrightarrow |x-2| &lt; \frac{2\varepsilon}{7}\)</span><br/>
+យក <span class="mi">\(\alpha = \min\left(1, \frac{2\varepsilon}{7}\right) &gt; 0\)</span> នោះនាំឱ្យ <span class="mi">\(|f(x)-L| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោយប្រើនិយមន័យចូរបង្ហាញថា៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim\limits_{x\to 2^-}\frac{3x-1}{x-2} =-\infty\)</span></p></li>
+<li><p><span class="mi">\(\lim\limits_{x\to 2^+}\frac{4x+1}{x-2} = +\infty\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to - \infty}\frac{x^2-2}{x^2+2} = 1\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to + \infty}\frac{3x+1}{x} = 3\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to - \infty}(x^2-x-1) =+\infty\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to + \infty}\frac{x^2+3}{2-x} =-\infty\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោយប្រើនិយមន័យចូរបង្ហាញថា៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim\limits_{x\to 2^-}\frac{3x-1}{x-2} =-\infty\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall M &gt; 0, f(x) &lt; -M\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\frac{3x-1}{x-2} &lt; -M
+&amp;\Leftrightarrow 3+\frac{5}{x-2} &lt; -M\\
+&amp;\Leftrightarrow \frac{5}{x-2} &lt; -(M+3)\\
+&amp;\Leftrightarrow \frac{5}{2-x} &gt; M+3 \quad{} (x &lt; 2)\\
+&amp;\Leftrightarrow 2-x &lt; \frac{5}{M+3}
+\end{aligned}\)</span><br/>
+យក <span class="mi">\(\alpha = \frac{5}{M+3} &gt; 0\)</span> នោះ <span class="mi">\(\forall 0 &lt; 2-x &lt; \alpha\)</span> នាំឱ្យ <span class="mi">\(f(x) &lt; -M\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim\limits_{x\to 2^+}\frac{4x+1}{x-2} = +\infty\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall M &gt; 0, f(x) &gt; M\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\frac{4x+1}{x-2} &gt; M
+&amp;\Leftrightarrow 4+\frac{9}{x-2} &gt; M\\
+&amp;\Leftarrow \frac{9}{x-2} &gt; M \quad{} (x &gt; 2)\\
+&amp;\Leftrightarrow x-2 &lt; \frac{9}{M}
+\end{aligned}\)</span><br/>
+យក <span class="mi">\(\alpha = \frac{9}{M} &gt; 0\)</span> នោះ <span class="mi">\(\forall 0 &lt; x-2 &lt; \alpha\)</span> នាំឱ្យ <span class="mi">\(f(x) &gt; M\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to - \infty}\frac{x^2-2}{x^2+2} = 1\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+|f(x)-1| &lt; \varepsilon
+&amp;\Leftrightarrow \left|\frac{x^2-2}{x^2+2}-1\right| &lt; \varepsilon\\
+&amp;\Leftrightarrow \frac{4}{x^2+2} &lt; \frac{4}{x^2} &lt; \varepsilon\\
+&amp;\Leftrightarrow x^2 &gt; \frac{4}{\varepsilon} \Leftrightarrow |x| &gt; \frac{2}{\sqrt{\varepsilon}}
+\end{aligned}\)</span><br/>
+ដោយ <span class="mi">\(x \to -\infty \Rightarrow |x| = -x &gt; \frac{2}{\sqrt{\varepsilon}} \Leftrightarrow x &lt; -\frac{2}{\sqrt{\varepsilon}}\)</span><br/>
+យក <span class="mi">\(N = \frac{2}{\sqrt{\varepsilon}} &gt; 0\)</span> នោះ <span class="mi">\(\forall x &lt; -N\)</span> នាំឱ្យ <span class="mi">\(|f(x)-1| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to + \infty}\frac{3x+1}{x} = 3\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall \varepsilon &gt; 0, |f(x)-L| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\begin{aligned}
+|f(x)-3| &lt; \varepsilon
+&amp;\Leftrightarrow \left|\frac{3x+1}{x}-3\right| &lt; \varepsilon\\
+&amp;\Leftrightarrow \frac{1}{|x|} &lt; \varepsilon \Leftrightarrow |x| &gt; \frac{1}{\varepsilon}
+\end{aligned}\)</span><br/>
+ដោយ <span class="mi">\(x \to +\infty \Rightarrow |x| = x &gt; \frac{1}{\varepsilon}\)</span><br/>
+យក <span class="mi">\(N = \frac{1}{\varepsilon} &gt; 0\)</span> នោះ <span class="mi">\(\forall x &gt; N\)</span> នាំឱ្យ <span class="mi">\(|f(x)-3| &lt; \varepsilon\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to - \infty}(x^2-x-1) =+\infty\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall M &gt; 0, f(x) &gt; M\)</span><br/>
+<span class="mi">\(\begin{aligned}
+x^2-x-1 &gt; M
+&amp;\Leftrightarrow \left(x-\frac{1}{2}\right)^2 - \frac{5}{4} &gt; M\\
+&amp;\Leftrightarrow \left(x-\frac{1}{2}\right)^2 &gt; M+\frac{5}{4}\\
+&amp;\Leftrightarrow \left|x-\frac{1}{2}\right| &gt; \sqrt{M+\frac{5}{4}}
+\end{aligned}\)</span><br/>
+ដោយ <span class="mi">\(x \to -\infty \Rightarrow \left|x-\frac{1}{2}\right| = \frac{1}{2}-x &gt; \sqrt{M+\frac{5}{4}}\)</span><br/>
+<span class="mi">\(\Rightarrow x &lt; \frac{1}{2}-\sqrt{M+\frac{5}{4}} &lt; -\sqrt{M}\)</span><br/>
+យក <span class="mi">\(N = \sqrt{M+\frac{5}{4}} &gt; 0\)</span> នោះ <span class="mi">\(\forall x &lt; -N\)</span> នាំឱ្យ <span class="mi">\(f(x) &gt; M\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to + \infty}\frac{x^2+3}{2-x} =-\infty\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\forall M &gt; 0, f(x) &lt; -M\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\frac{x^2+3}{2-x} &lt; -M
+&amp;\Leftrightarrow -(x+2) + \frac{7}{2-x} &lt; -M
+\end{aligned}\)</span><br/>
+ចំពោះ <span class="mi">\(x &gt; 3\)</span> នោះ <span class="mi">\(\frac{7}{2-x} &lt; 0\)</span> នាំឱ្យ៖<br/>
+<span class="mi">\(-(x+2) &lt; -M \Leftrightarrow x &gt; M-2\)</span><br/>
+យក <span class="mi">\(N = M+2 &gt; 0\)</span> នោះ <span class="mi">\(\forall x &gt; N\)</span> នាំឱ្យ <span class="mi">\(f(x) &lt; -M\)</span> ។<br/>
+ដូចនេះ</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>គណនាតម្លៃ <span class="mi">\(\alpha &gt; 0\)</span> ទៅតាមតម្លៃ <span class="mi">\(\varepsilon\)</span> នីមួយៗដែលគេឱ្យដូចខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 2}(x^2+x-6) = 0 \quad{} (\varepsilon = 10^{-7})\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -3}(x^2+x-6) = 0 \quad{} (\varepsilon = 10^{-9})\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -1}(3-4x) = 7 \quad{} (\varepsilon = 2\times 10^{-2})\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 3}x^2 = 9 \quad{} (\varepsilon = 5\times 10^{-3})\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -2}\frac{x^2-4}{x+2} = -4 \quad{} (\varepsilon = 10^{-2})\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -2}(2+5x) = -8 \quad{} (\varepsilon = 2\times 10^{-2})\)</span></p></li>
+</ol>
+</div></section>
+<p>គណនាតម្លៃ <span class="mi">\(\alpha &gt; 0\)</span> ទៅតាមតម្លៃ <span class="mi">\(\varepsilon\)</span> នីមួយៗដែលគេឱ្យ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 2}(x^2+x-6) = 0 \quad{} (\varepsilon = 10^{-7})\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(|(x^2+x-6)-0| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\Leftrightarrow |x+3||x-2| &lt; \varepsilon \quad{} (*)\)</span><br/>
+ដោយ <span class="mi">\(x \to 2\)</span> យក <span class="mi">\(1 &lt; x &lt; 3 \Rightarrow |x+3| &lt; 6 \quad{} (**)\)</span><br/>
+តាម <span class="mi">\((*)\)</span> និង <span class="mi">\((**)\)</span> យើងបាន៖<br/>
+<span class="mi">\(6|x-2| &lt; \varepsilon \Leftrightarrow |x-2| &lt; \frac{\varepsilon}{6} = \alpha\)</span><br/>
+តែ <span class="mi">\(\varepsilon = 10^{-7} \Rightarrow \alpha = \frac{10^{-7}}{6}\)</span><br/>
+ដូចនេះ <span class="kfbox">បើ <span class="mi">\(\varepsilon = 10^{-7}\)</span> នោះ <span class="mi">\(\alpha = \frac{10^{-7}}{6}\)</span></span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -3}(x^2+x-6) = 0 \quad{} (\varepsilon = 10^{-9})\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(|(x^2+x-6)-0| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\Leftrightarrow |x+3||x-2| &lt; \varepsilon \quad{} (*)\)</span><br/>
+ដោយ <span class="mi">\(x \to -3\)</span> យក <span class="mi">\(-4 &lt; x &lt; -2 \Rightarrow |x-2| &lt; 6 \quad{} (**)\)</span><br/>
+តាម <span class="mi">\((*)\)</span> និង <span class="mi">\((**)\)</span> យើងបាន៖<br/>
+<span class="mi">\(6|x+3| &lt; \varepsilon \Leftrightarrow |x+3| &lt; \frac{\varepsilon}{6} = \alpha\)</span><br/>
+តែ <span class="mi">\(\varepsilon = 10^{-9} \Rightarrow \alpha = \frac{10^{-9}}{6}\)</span><br/>
+ដូចនេះ <span class="kfbox">បើ <span class="mi">\(\varepsilon = 10^{-9}\)</span> នោះ <span class="mi">\(\alpha = \frac{10^{-9}}{6}\)</span></span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -1}(3-4x) = 7 \quad{} (\varepsilon = 2\times 10^{-2})\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(|(3-4x)-7| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\Leftrightarrow |-4(x+1)| &lt; \varepsilon \Leftrightarrow |x+1| &lt; \frac{\varepsilon}{4} = \alpha\)</span><br/>
+តែ <span class="mi">\(\varepsilon = 2\times 10^{-2} \Rightarrow \alpha = \frac{2\times 10^{-2}}{4} = \frac{10^{-2}}{2}\)</span><br/>
+ដូចនេះ <span class="kfbox">បើ <span class="mi">\(\varepsilon = 2\times 10^{-2}\)</span> នោះ <span class="mi">\(\alpha = \frac{10^{-2}}{2}\)</span></span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 3}x^2 = 9 \quad{} (\varepsilon = 5\times 10^{-3})\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(|x^2-9| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\Leftrightarrow |x+3||x-3| &lt; \varepsilon \quad{} (*)\)</span><br/>
+ដោយ <span class="mi">\(x \to 3\)</span> យក <span class="mi">\(2 &lt; x &lt; 4 \Rightarrow |x+3| &lt; 7 \quad{} (**)\)</span><br/>
+តាម <span class="mi">\((*)\)</span> និង <span class="mi">\((**)\)</span> យើងបាន៖<br/>
+<span class="mi">\(7|x-3| &lt; \varepsilon \Leftrightarrow |x-3| &lt; \frac{\varepsilon}{7} = \alpha\)</span><br/>
+តែ <span class="mi">\(\varepsilon = 5\times 10^{-3} \Rightarrow \alpha = \frac{5\times 10^{-3}}{7}\)</span><br/>
+ដូចនេះ <span class="kfbox">បើ <span class="mi">\(\varepsilon = 5\times 10^{-3}\)</span> នោះ <span class="mi">\(\alpha = \frac{5\times 10^{-3}}{7}\)</span></span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -2}\frac{x^2-4}{x+2} = -4 \quad{} (\varepsilon = 10^{-2})\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(\left|\frac{x^2-4}{x+2}-(-4)\right| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\Leftrightarrow \left|\frac{(x+2)^2}{x+2}\right| = |x+2| &lt; \varepsilon = \alpha\)</span><br/>
+តែ <span class="mi">\(\varepsilon = 10^{-2} \Rightarrow \alpha = 10^{-2}\)</span><br/>
+ដូចនេះ <span class="kfbox">បើ <span class="mi">\(\varepsilon = 10^{-2}\)</span> នោះ <span class="mi">\(\alpha = 10^{-2}\)</span></span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -2}(2+5x) = -8 \quad{} (\varepsilon = 2\times 10^{-2})\)</span><br/>
+តាមនិយមន័យ៖ <span class="mi">\(|(2+5x)-(-8)| &lt; \varepsilon\)</span><br/>
+<span class="mi">\(\Leftrightarrow |5(x+2)| &lt; \varepsilon \Leftrightarrow |x+2| &lt; \frac{\varepsilon}{5} = \alpha\)</span><br/>
+តែ <span class="mi">\(\varepsilon = 2\times 10^{-2} \Rightarrow \alpha = \frac{2\times 10^{-2}}{5}\)</span><br/>
+ដូចនេះ <span class="kfbox">បើ <span class="mi">\(\varepsilon = 2\times 10^{-2}\)</span> នោះ <span class="mi">\(\alpha = \frac{2\times 10^{-2}}{5}\)</span></span></p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ចូររកតម្លៃធំបំផុតនៃ <span class="mi">\(\alpha &gt; 0\)</span> ដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(0&lt;|x+2|&lt;\alpha\)</span> ដែល <span class="mi">\(0&lt;|3x+6|&lt;0.000009\)</span></p></li>
+<li><p><span class="mi">\(0&lt;|x+3|&lt;\alpha\)</span> ដែល <span class="mi">\(0&lt;\left|\frac{4x^2+24x+36}{x+3}\right|&lt;0.000000044\)</span></p></li>
+</ol>
+</div></section>
+<p>ចូររកតម្លៃធំបំផុតនៃ <span class="mi">\(\alpha &gt; 0\)</span> ដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(0&lt;|x+2|&lt;\alpha\)</span> ដែល <span class="mi">\(0&lt;|3x+6|&lt;0.000009\)</span><br/>
+<span class="mi">\(\begin{aligned}
+0&lt;|3x+6|&lt;0.000009
+&amp;\Leftrightarrow 0&lt;|3(x+2)|&lt;0.000009\\
+&amp;\Leftrightarrow 0&lt;|x+2|&lt;\frac{0.000009}{3}\\
+&amp;\Leftrightarrow 0&lt;|x+2|&lt;0.000003
+\end{aligned}\)</span><br/>
+ដូចនេះ តម្លៃធំបំផុតនៃ</p></li>
+<li><p><span class="mi">\(0&lt;|x+3|&lt;\alpha\)</span> ដែល <span class="mi">\(0&lt;\left|\frac{4x^2+24x+36}{x+3}\right|&lt;0.000000044\)</span><br/>
+<span class="mi">\(\begin{aligned}
+0&lt;\left|\frac{4x^2+24x+36}{x+3}\right|
+&amp;= \left|\frac{4(x+3)^2}{x+3}\right|\\
+&amp;= |4(x+3)| &lt; 0.000000044\\
+&amp;\Leftrightarrow |x+3| &lt; \frac{0.000000044}{4}\\
+&amp;\Leftrightarrow |x+3| &lt; 0.000000011
+\end{aligned}\)</span><br/>
+ដូចនេះ តម្លៃធំបំផុតនៃ</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>គណនាលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}2020\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2020}{2021}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -2}(3x+4)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}(x^2-x)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}(5x^4-3x^3-x+2)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 1}(x^2+x)(3x-4)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{2x^2-1}{x-4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin x}{x+1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{3}}(\sin x +\cos x )\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{3}}\frac{\tan x +2}{\sin x+1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{6}}\frac{\tan (2x) +\cot 3x}{\sin x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 1}(\ln x +\ln 4x)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 3}e^{x+1}\cdot x\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 3}\frac{xe^{\frac{x}{3}}}{x+1}\)</span></p></li>
+</ol>
+</div></section>
+<p>គណនាលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}2020\)</span><br/>
+តាមរូបមន្ត <span class="mi">\(\lim_{x \to a} k = k\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2020}{2021}\)</span><br/>
+តាមរូបមន្ត <span class="mi">\(\lim_{x \to a} k = k\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to -2}(3x+4)\)</span><br/>
+យើងបាន៖<br/>
+<span class="mi">\(\lim_{x \to -2}(3x+4) = 3(-2)+4 = -2\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}(x^2-x)\)</span><br/>
+យើងបាន៖<br/>
+<span class="mi">\(\lim_{x \to 2}(x^2-x) = 2^2-2 = 2\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}(5x^4-3x^3-x+2)\)</span><br/>
+យើងបាន៖<br/>
+<span class="mi">\(\begin{aligned}[t]
+\lim_{x \to 2}(5x^4-3x^3-x+2)
+&amp;= 5(2)^4 - 3(2)^3 - 2 + 2\\
+&amp;= 80 - 24 = 56
+\end{aligned}\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1}(x^2+x)(3x-4)\)</span><br/>
+យើងបាន៖<br/>
+<span class="mi">\(\begin{aligned}[t]
+\lim_{x \to 1}(x^2+x)(3x-4)
+&amp;= (1^2+1)(3(1)-4)\\
+&amp;= 2(-1) = -2
+\end{aligned}\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{2x^2-1}{x-4}\)</span><br/>
+យើងបាន៖<br/>
+<span class="mi">\(\lim_{x \to 2}\frac{2x^2-1}{x-4} = \frac{2(2)^2-1}{2-4} = -\frac{7}{2}\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin x}{x+1}\)</span><br/>
+យើងបាន៖ <span class="mi">\(\lim_{x \to 0}\frac{\sin x}{x+1} = \frac{\sin 0}{0+1} = 0\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{3}}(\sin x +\cos x)\)</span><br/>
+យើងបាន៖ <span class="mi">\(\lim_{x \to \frac{\pi}{3}}(\sin x +\cos x) = \frac{\sqrt{3}}{2} + \frac{1}{2} = \frac{\sqrt{3}+1}{2}\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{3}}\frac{\tan x +2}{\sin x+1}\)</span><br/>
+យើងបាន៖ <span class="mi">\(\lim_{x \to \frac{\pi}{3}}\frac{\tan x +2}{\sin x+1} = \frac{\sqrt{3}+2}{\frac{\sqrt{3}}{2}+1} = 2\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{6}}\frac{\tan 2x +\cot 3x}{\sin x}\)</span><br/>
+យើងបាន៖ <span class="mi">\(\lim_{x \to \frac{\pi}{6}}\frac{\tan 2x +\cot 3x}{\sin x} = \frac{\sqrt{3}+0}{\frac{1}{2}} = 2\sqrt{3}\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1}(\ln x +\ln 4x)\)</span><br/>
+យើងបាន៖ <span class="mi">\(\lim_{x \to 1}(\ln x +\ln 4x) = 0 + \ln 4 = \ln 4\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 3} x e^{x+1}\)</span><br/>
+យើងបាន៖ <span class="mi">\(\lim_{x \to 3} x e^{x+1} = 3 e^{3+1} = 3e^4\)</span><br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(\lim_{x \to 3}\frac{xe^{\frac{x}{3}}}{x+1}\)</span><br/>
+យើងបាន៖ <span class="mi">\(\lim_{x \to 3}\frac{xe^{\frac{x}{3}}}{x+1} = \frac{3e^{\frac{3}{3}}}{3+1} = \frac{3e}{4}\)</span><br/>
+ដូចនេះ</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>គណនាលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{x^2-6x+8}{x^2-16}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to-3} \frac{x^2+x-6}{9- x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 5} \frac{x^2-7x+10}{x^2-25}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2} \frac{x^2-8x+12}{x^2-4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to-3} \frac{x^2-2x-15}{x^2+10x+21}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{x^2+x-20}{2x^2-3x-20}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to - \frac{3}{2}} \frac{2x^2+9x+9}{6x^2+7x-3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{2x^2-3x-20}{x^2+x-20}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -\frac{5}{2} } \frac{25-4x^2}{2x^2+9x+10}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 3} \frac{9-x^2}{x^2-7x+12}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{16-x^2}{3x^2-10x-8}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 8} \frac{(x+1)(x^2-64)}{x^2-3x-40}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 5} \frac{x^2-2x-15}{-x^2+7x-10}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 6} \frac{2x^2-16x+24}{36-x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{4}{3}} \frac{-6x^2+17x-12}{-3x^2-8x+16}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{x^2-1}{x^2+2x-3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -1} \frac{x^2+3x+2}{x^2-2x-3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 3} \frac{x^2-9}{x^2-x-6}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{x^2+3x-4}{2x^2-5x+3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2} \frac{\frac{1}{x^2}-\frac{1}{4}}{x-2}\)</span></p></li>
+</ol>
+</div></section>
+<p>គណនាលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{x^2-6x+8}{x^2-16}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to 4} \frac{x^2-6x+8}{x^2-16}
+            &amp;=\lim_{x \to 4} \frac{(x-4)(x-2)}{(x-4)(x+4)}\\
+            &amp;=\lim_{x \to 4} \frac{x-2}{x+4} = \frac{1}{4}
+        \end{aligned}\)</span><br/>
+<br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to-3} \frac{x^2+x-6}{9- x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to-3} \frac{x^2+x-6}{9- x^2}
+            &amp;=\lim_{x \to-3} \frac{(x+3)(x-2)}{(3+x)(3-x)}\\
+            &amp;=\lim_{x \to-3} \frac{x-2}{3-x} = -\frac{5}{6}
+        \end{aligned}\)</span><br/>
+<br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 5} \frac{x^2-7x+10}{x^2-25}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to 5} \frac{x^2-7x+10}{x^2-25}
+            &amp;=\lim_{x \to 5} \frac{(x-5)(x-2)}{(x-5)(x+5)}\\
+            &amp;=\lim_{x \to 5} \frac{x-2}{x+5} = \frac{3}{10}
+        \end{aligned}\)</span><br/>
+<br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2} \frac{x^2-8x+12}{x^2-4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 2} \frac{x^2-8x+12}{x^2-4}
+            &amp;=\lim_{x \to 2} \frac{(x-6)(x-2)}{(x-2)(x+2)}\\
+            &amp;=\lim_{x \to 2} \frac{x-6}{x+2} = -1
+        \end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to-3} \frac{x^2-2x-15}{x^2+10x+21}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to-3} \frac{x^2-2x-15}{x^2+10x+21}
+            &amp;=\lim_{x \to-3} \frac{(x+3)(x-5)}{(x+3)(x+7)}\\
+            &amp;=\lim_{x \to-3} \frac{x-5}{x+7} = -2
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{x^2+x-20}{2x^2-3x-20}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to 4} \frac{x^2+x-20}{2x^2-3x-20}
+            &amp;=\lim_{x \to 4} \frac{(x-4)(x+5)}{(x-4)(2x+5)}\\
+            &amp;=\lim_{x \to 4} \frac{x+5}{2x+5} = \frac{9}{13}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to - \frac{3}{2}} \frac{2x^2+9x+9}{6x^2+7x-3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to - \frac{3}{2}} \frac{2x^2+9x+9}{6x^2+7x-3}
+            &amp;=\lim_{x \to - \frac{3}{2}} \frac{(x+3)(2x+3)}{(3x-1)(2x+3)}\\
+            &amp;=\lim_{x \to - \frac{3}{2}} \frac{x+3}{3x-1} = - \frac{3}{11}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{2x^2-3x-20}{x^2+x-20}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 4} \frac{2x^2-3x-20}{x^2+x-20}
+            &amp;=\lim_{x \to 4} \frac{(x-4)(2x+5)}{(x-4)(x+5)}\\
+            &amp;=\lim_{x \to 4} \frac{2x+5}{x+5} = \frac{13}{9}
+        \end{aligned}\)</span><br/>
+<span class="kfbox"> <span class="mi">\(\lim_{x \to 4} \frac{2x^2-3x-20}{x^2+x-20}=  \frac{13}{9}\)</span></span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -\frac{5}{2} } \frac{25-4x^2}{2x^2+9x+10}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to -\frac{5}{2} } \frac{25-4x^2}{2x^2+9x+10}
+            &amp;=\lim_{x \to -\frac{5}{2} } \frac{(5-2x)(5+2x)}{(x+2)(2x+5)}\\
+            &amp;=\lim_{x \to -\frac{5}{2} } \frac{5-2x}{x+2} = -20
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 3} \frac{9-x^2}{x^2-7x+12}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 3} \frac{9-x^2}{x^2-7x+12}
+            &amp;=\lim_{x \to 3} \frac{(3-x)(3+x)}{(x-3)(x-4)}\\
+            &amp;= \lim_{x \to 3}\frac{-(3+x)}{x-4} = 6
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{16-x^2}{3x^2-10x-8}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 4} \frac{16-x^2}{3x^2-10x-8}
+            &amp;=\lim_{x \to 4} \frac{(4-x)(4+x)}{(x-4)(3x+2)}\\
+            &amp;=\lim_{x \to 4} \frac{-(4+x)}{3x+2} = -\frac{4}{7}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 8} \frac{(x+1)(x^2-64)}{x^2-3x-40}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 8} \frac{(x+1)(x^2-64)}{x^2-3x-40}
+            &amp;=\lim_{x \to 8} \frac{(x+1)(x-8)(x+8)}{(x-8)(x+5)}\\
+            &amp;=\lim_{x \to 8} \frac{(x+1)(x+8)}{x+5} = \frac{144}{13}
+        \end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 5} \frac{x^2-2x-15}{-x^2+7x-10}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 5} \frac{x^2-2x-15}{-x^2+7x-10}
+            &amp;=\lim_{x \to 5} \frac{(x-5)(x+3)}{(x-5)(-x+2)}\\
+            &amp;=\lim_{x \to 5} \frac{x+3}{-x+2} = -\frac{8}{3}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 6} \frac{2x^2-16x+24}{36-x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 6} \frac{2x^2-16x+24}{36-x^2}
+            &amp;=\lim_{x \to 6} \frac{2(x-6)(x-2)}{(6-x)(6+x)}\\
+            &amp;=\lim_{x \to 6} \frac{2(x-2)}{-x-6} = -\frac{2}{3}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{4}{3}} \frac{-6x^2+17x-12}{-3x^2-8x+16}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to \frac{4}{3}} \frac{-6x^2+17x-12}{-3x^2-8x+16}
+            &amp;=\lim_{x \to \frac{4}{3}} \frac{(3x-4)(3-2x)}{(3x-4)(-x-4)}\\
+            &amp;=\lim_{x \to \frac{4}{3}} \frac{3-2x}{-x-4} = -\frac{1}{16}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{x^2-1}{x^2+2x-3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 1} \frac{x^2-1}{x^2+2x-3}
+            &amp;= \lim_{x \to 1} \frac{(x-1)(x+1)}{(x-1)(x+3)}\\
+            &amp;= \lim_{x \to 1} \frac{x+1}{x+3} = \frac{1}{2}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -1} \frac{x^2+3x+2}{x^2-2x-3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to -1} \frac{x^2+3x+2}{x^2-2x-3}
+            &amp;=\lim_{x \to -1} \frac{(x+1)(x+2)}{(x-3)(x+1)}\\
+            &amp;=\lim_{x \to -1} \frac{x+2}{x-3} = -\frac{1}{4}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 3} \frac{x^2-9}{x^2-x-6}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to 3} \frac{x^2-9}{x^2-x-6}
+            &amp;= \lim_{x \to 3} \frac{(x-3)(x+3)}{(x-3)(x+2)}\\
+            &amp;= \lim_{x \to 3} \frac{x+3}{x+2} = \frac{6}{5}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{x^2+3x-4}{2x^2-5x+3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 1} \frac{x^2+3x-4}{2x^2-5x+3}
+            &amp;= \lim_{x \to 1} \frac{(x-1)(x+4)}{(x-1)(2x-3)}\\
+            &amp;= \lim_{x \to 1} \frac{x+4}{2x-3} = -5
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2} \frac{\frac{1}{x^2}-\frac{1}{4}}{x-2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to 2} \frac{\frac{1}{x^2}-\frac{1}{4}}{x-2}
+            &amp;= \lim_{x \to 2} \frac{4-x^2}{4x^2(x-2)}\\
+            &amp;= \lim_{x \to 2} \frac{-(x-2)(x+2)}{4x^2(x-2)}\\
+            &amp;= \lim_{x \to 2} \frac{-(x+2)}{4x^2} = -\frac{1}{4}
+        \end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{x^3-8}{x-2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  3} \frac{x^3-27}{x-3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -4} \frac{x^3+64}{x+4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  1} \frac{x^3-3x^2+3x-1}{x^3-x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -5} \frac{x^2+7x+10}{x^3+5x^2-x-5}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  a} \frac{x^n-a^n}{x-a} , n \geq 1\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{x^3-8}{x-2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to  2} \frac{x^3-8}{x-2}
+            &amp;=\lim_{x \to  2} \frac{(x-2)(x^2+2x+4)}{x-2}\\
+            &amp;=\lim_{x \to  2} (x^2+2x+4) = 12
+        \end{aligned}\)</span><br/>
+<span class="kfbox"><span class="mi">\(\lim_{x \to  2} \frac{x^3-8}{x-2} = 12\)</span> </span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  3} \frac{x^3-27}{x-3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to  3} \frac{x^3-27}{x-3}
+            &amp;=\lim_{x \to  3} \frac{(x-3)(x^2+3x+9)}{x-3}\\
+            &amp;=\lim_{x \to  3} (x^2+3x+9) = 27
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -4} \frac{x^3+64}{x+4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to  -4} \frac{x^3+64}{x+4}
+            &amp;=\lim_{x \to  -4} \frac{(x+4)(x^2-4x+16)}{x+4}\\
+            &amp;=\lim_{x \to  -4} (x^2-4x+16) = 48
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  1} \frac{x^3-3x^2+3x-1}{x^3-x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន} \lim_{x \to  1} \frac{x^3-3x^2+3x-1}{x^3-x}
+            &amp;=\lim_{x \to  1}\frac{(x-1)(x^2-2x+1)}{(x-1)(x^2+x)}\\
+            &amp;=\lim_{x \to  1}\frac{(x-1)^2}{x(x+1)} = 0
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -5} \frac{x^2+7x+10}{x^3+5x^2-x-5}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to  -5} \frac{x^2+7x+10}{x^3+5x^2-x-5}
+            &amp;=\lim_{x \to  -5} \frac{(x+5)(x+2)}{(x+5)(x^2-1)}\\
+            &amp;=\lim_{x \to  -5} \frac{x+2}{x^2-1} = -\frac{1}{8}
+        \end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to a} \frac{x^n - a^n}{x - a}\)</span> (<span class="mi">\(n \ge 1\)</span>), រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+            \text{យើងបាន}\lim_{x \to  a} \frac{x^n-a^n}{x-a}
+            &amp;=\lim_{x \to  a} \frac{(x-a)(x^{n-1}+\cdots+a^{n-1})}{x-a}\\
+            &amp;=\lim_{x \to  a} (x^{n-1}+x^{n-2}a+\cdots+a^{n-1})\\
+            &amp;=\underbrace{a^{n-1}+a^{n-1}+\cdots+a^{n-1}}_{n\text{ តួ}} = na^{n-1}
+        \end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖<br/></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x^3+8}{x^2+2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x^3+3x^2+2x}{x^2-x-6}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  \frac{1}{2}}\frac{8x^3-1}{6x^2-5x+1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  1}\frac{(x-1)(x^3+x-2)}{x^3-x^2-x+1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  2}\frac{x^3-4x^2+x+6}{x^3-4x^2-11x+30}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -5}\frac{x^3+6x^2+3x-10}{2x^3+15x^2+22x-15}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -3}\frac{x^3+3x^2-4x-12}{3x^3+11x^2+5x-3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  \frac{1}{2}}\frac{2x^3+3x^2-1}{2x^3-x^2-18x+9}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  1}\frac{x^3+3x^2-9x+5}{x^3-5x^2+7x-3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x^3+7x^2+16x+12}{2x^3+9x^2+12x+4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x+2}{x^3+7x^2+16x+12}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  3}\frac{x^3-2x^2-15x+36}{-x^3+11x^2-39x+45}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x^3+8}{x^2+2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;=\lim_{x \to  -2}\frac{(x+2)(x^2-2x+4)}{x(x+2)}\\
+&amp;=\lim_{x \to  -2}\frac{x^2-2x+4}{x} = \frac{12}{-2} = -6
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x^3+3x^2+2x}{x^2-x-6}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;=\lim_{x \to  -2}\frac{(x+2)(x^2+x)}{(x+2)(x-3)}\\
+&amp;=\lim_{x \to  -2}\frac{x^2+x}{x-3} = \frac{2}{-5} = -\frac{2}{5}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{1}{2}} \frac{8x^3 - 1}{6x^2 - 5x + 1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;=\lim_{x \to \frac{1}{2}} \frac{(2x - 1)(4x^2 + 2x + 1)}{(2x - 1)(3x - 1)}\\
+&amp;=\lim_{x \to \frac{1}{2}} \frac{4x^2 + 2x + 1}{3x - 1} = \frac{3}{\frac{1}{2}} = 6
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  1}\frac{(x-1)(x^3+x-2)}{x^3-x^2-x+1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;=\lim_{x \to  1}\frac{(x-1)^2(x^2+x+2)}{(x-1)^2(x+1)}\\
+&amp;=\lim_{x \to  1}\frac{x^2+x+2}{x+1} = \frac{4}{2} = 2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  2}\frac{x^3-4x^2+x+6}{x^3-4x^2-11x+30}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;=\lim_{x \to  2}\frac{(x-2)(x^2-2x-3)}{(x-2)(x^2-2x-15)}\\
+&amp;=\lim_{x \to  2}\frac{x^2-2x-3}{x^2-2x-15} = \frac{-3}{-15} = \frac{1}{5}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -5}\frac{x^3+6x^2+3x-10}{2x^3+15x^2+22x-15}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;=\lim_{x \to  -5}\frac{(x+5)(x^2+x-2)}{(x+5)(2x^2+5x-3)}\\
+&amp;=\lim_{x \to  -5}\frac{x^2+x-2}{2x^2+5x-3} = \frac{18}{22} = \frac{9}{11}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  -3}\frac{x^3+3x^2-4x-12}{3x^3+11x^2+5x-3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  -3}\frac{(x+3)(x^2-4)}{(x+3)(3x^2+2x-1)}\\
+&amp;= \lim_{x \to  -3}\frac{x^2-4}{3x^2+2x-1} = \frac{5}{20} = \frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  \frac{1}{2}}\frac{2x^3+3x^2-1}{2x^3-x^2-18x+9}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  \frac{1}{2}}\frac{(2x-1)(x^2+2x+1)}{(2x-1)(x^2-9)}\\
+&amp;= \lim_{x \to  \frac{1}{2}}\frac{x^2+2x+1}{x^2-9} = -\frac{9}{35}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  1}\frac{x^3+3x^2-9x+5}{x^3-5x^2+7x-3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  1}\frac{(x+5)(x-1)^2}{(x-3)(x-1)^2}\\
+&amp;= \lim_{x \to  1}\frac{x+5}{x-3} = \frac{6}{-2} = -3
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x^3+7x^2+16x+12}{2x^3+9x^2+12x+4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  -2}\frac{(x+3)(x+2)^2}{(2x+1)(x+2)^2}\\
+&amp;= \lim_{x \to  -2}\frac{x+3}{2x+1} = \frac{1}{-3} = -\frac{1}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -2}\frac{x+2}{x^3+7x^2+16x+12}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  -2}\frac{x+2}{(x+2)(x^2+5x+6)}\\
+&amp;= \lim_{x \to  -2}\frac{1}{(x+2)(x+3)}
+\end{aligned}\)</span><br/>
+<span class="mi">\(\bullet\)</span> បើ <span class="mi">\(x \to -2^{-}\)</span> នោះ <span class="mi">\(\lim_{x \to -2^{-}} = -\infty\)</span><br/>
+<span class="mi">\(\bullet\)</span> បើ <span class="mi">\(x \to -2^{+}\)</span> នោះ <span class="mi">\(\lim_{x \to -2^{+}} = +\infty\)</span><br/>
+លីមីតឆ្វេង <span class="mi">\(-\infty\)</span> ខុសពីលីមីតស្ដាំ <span class="mi">\(+\infty\)</span> ដូចនេះ <span class="kfbox">គ្មានលីមីតត្រង់ <span class="mi">\(x=-2\)</span></span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  3}\frac{x^3-2x^2-15x+36}{-x^3+11x^2-39x+45}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;=\lim_{x \to  3}\frac{(x+4)(x-3)^2}{(-x+5)(x-3)^2}\\
+&amp;=\lim_{x \to  3}\frac{x+4}{-x+5} = \frac{7}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖<br/></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  4} \frac{\sqrt{x}-2}{x-4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{\sqrt{2x}-2}{x-2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -1} \frac{1+x}{\sqrt{x^2+3}-2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  0} \frac{\sqrt{x+2}-\sqrt{2}}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  0} \frac{2-\sqrt{x+4}}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{\sqrt{7+x}-3}{x-2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  1} \frac{\sqrt{x+3} -\sqrt{3x+1}}{\sqrt{x}-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{\sqrt{2x}-2}{3\sqrt{x+2}-6}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -1} \frac{\sqrt{x+2}-1}{1-\sqrt{2x+3}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  \tfrac{1}{2}} \frac{\sqrt{2x+1}-\sqrt{2}}{2-\sqrt{8x}}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  4} \frac{\sqrt{x}-2}{x-4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  4} \frac{(\sqrt{x}-2)(\sqrt{x}+2)}{(x-4)(\sqrt{x}+2)}\\
+&amp;= \lim_{x \to  4} \frac{x-4}{(x-4)(\sqrt{x}+2)}\\
+&amp;= \lim_{x \to  4} \frac{1}{\sqrt{x}+2} = \frac{1}{2+2} = \frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{\sqrt{2x}-2}{x-2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  2} \frac{2x-4}{(x-2)(\sqrt{2x}+2)}\\
+&amp;= \lim_{x \to  2} \frac{2(x-2)}{(x-2)(\sqrt{2x}+2)}\\
+&amp;= \lim_{x \to  2} \frac{2}{\sqrt{2x}+2} = \frac{2}{2+2} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -1} \frac{1+x}{\sqrt{x^2+3}-2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  -1} \frac{(1+x)(\sqrt{x^2+3}+2)}{x^2+3-4}\\
+&amp;= \lim_{x \to  -1} \frac{(1+x)(\sqrt{x^2+3}+2)}{(x-1)(x+1)}\\
+&amp;= \lim_{x \to  -1} \frac{\sqrt{x^2+3}+2}{x-1} = \frac{2+2}{-1-1} = -2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  0} \frac{\sqrt{x+2}-\sqrt{2}}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  0} \frac{x+2-2}{x(\sqrt{x+2}+\sqrt{2})}\\
+&amp;= \lim_{x \to  0} \frac{x}{x(\sqrt{x+2}+\sqrt{2})}\\
+&amp;= \lim_{x \to  0} \frac{1}{\sqrt{x+2}+\sqrt{2}} = \frac{1}{2\sqrt{2}} = \frac{\sqrt{2}}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  0} \frac{2-\sqrt{x+4}}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  0} \frac{4-(x+4)}{x(2+\sqrt{x+4})}\\
+&amp;= \lim_{x \to  0} \frac{-x}{x(2+\sqrt{x+4})}\\
+&amp;= \lim_{x \to  0} \frac{-1}{2+\sqrt{x+4}} = \frac{-1}{2+2} = -\frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{\sqrt{7+x}-3}{x-2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  2} \frac{7+x-9}{(x-2)(\sqrt{7+x}+3)}\\
+&amp;= \lim_{x \to  2} \frac{x-2}{(x-2)(\sqrt{7+x}+3)}\\
+&amp;= \lim_{x \to  2} \frac{1}{\sqrt{7+x}+3} = \frac{1}{3+3} = \frac{1}{6}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  1} \frac{\sqrt{x+3} -\sqrt{3x+1}}{\sqrt{x}-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  1} \frac{[(x+3)-(3x+1)](\sqrt{x}+1)}{(x-1)(\sqrt{x+3}+\sqrt{3x+1})}\\
+&amp;= \lim_{x \to  1} \frac{-2(x-1)(\sqrt{x}+1)}{(x-1)(\sqrt{x+3}+\sqrt{3x+1})}\\
+&amp;= \lim_{x \to  1} \frac{-2(\sqrt{x}+1)}{\sqrt{x+3}+\sqrt{3x+1}} = \frac{-2(2)}{2+2} = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  2} \frac{\sqrt{2x}-2}{3\sqrt{x+2}-6}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  2} \frac{(2x-4)(\sqrt{x+2}+2)}{3(x-2)(\sqrt{2x}+2)}\\
+&amp;= \lim_{x \to  2} \frac{2(x-2)(\sqrt{x+2}+2)}{3(x-2)(\sqrt{2x}+2)}\\
+&amp;= \frac{2(\sqrt{4}+2)}{3(\sqrt{4}+2)} = \frac{2}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  -1} \frac{\sqrt{x+2}-1}{1-\sqrt{2x+3}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to  -1} \frac{(x+1)(1+\sqrt{2x+3})}{-2(x+1)(\sqrt{x+2}+1)}\\
+&amp;= \lim_{x \to  -1} \frac{1+\sqrt{2x+3}}{-2(\sqrt{x+2}+1)} = \frac{1+1}{-2(1+1)} = -\frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to  \tfrac{1}{2}} \frac{\sqrt{2x+1}-\sqrt{2}}{2-\sqrt{8x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to \tfrac{1}{2}}\frac{(2x-1)(2+\sqrt{8x})}{-4(2x-1)(\sqrt{2x+1}+\sqrt{2})}\\
+&amp;= \lim_{x \to \tfrac{1}{2}}\frac{2+\sqrt{8x}}{-4(\sqrt{2x+1}+\sqrt{2})}\\
+&amp;= \frac{2+2}{-4(\sqrt{2}+\sqrt{2})} = \frac{4}{-8\sqrt{2}} = -\frac{\sqrt{2}}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 1} \frac{\sqrt[3]{x-2} +\sqrt[3]{1-x+x^2}}{x^2-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 64} \frac{\sqrt{x}-8}{\sqrt[3]{x}-4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 1} \frac{\sqrt[3]{7+x^3} -\sqrt{3+x^2}}{x-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 1} \frac{\sqrt[3]{x^3+7x} - \sqrt[3]{10x-2}}{(x-1)^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{\sqrt[3]{x^2+1} + \sqrt[3]{x^2-1}}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 4} \frac{\sqrt[3]{x+4} + \sqrt[3]{8-x^2}}{x-4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to -2} \frac{\sqrt[3]{x^2-2x} + \sqrt[3]{x-6}}{x+2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{\sqrt[3]{x+1} - 1}{x(x+2)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 1} \frac{\sqrt[5]{x^2+x-1} - 1}{1+\sqrt[3]{1-2x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{\sqrt[5]{(x+1)^3} - 1}{x}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{\sqrt[3]{x-2} +\sqrt[3]{1-x+x^2}}{x^2-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+យើងអាចបំបែកជាពីរលីមីត៖<br/>
+<span class="mi">\(L = \underbrace{\lim_{x \to 1} \frac{\sqrt[3]{x-2} + 1}{x^2-1}}_{A} + \underbrace{\lim_{x \to 1} \frac{\sqrt[3]{1-x+x^2}-1}{x^2-1}}_{B}\)</span><br/>
+<span class="mi">\(\bullet\)</span> គណនា <span class="mi">\(A\)</span>៖ គុណកន្សោមឆ្លាស់ <span class="mi">\(K_1\)</span> នៃភាគយក<br/>
+<span class="mi">\(\begin{aligned}[t]
+A &amp;= \lim_{x \to 1} \frac{x-1}{(x-1)(x+1)K_1} = \frac{1}{(2)(3)} = \frac{1}{6}
+\end{aligned}\)</span><br/>
+<span class="mi">\(\bullet\)</span> គណនា <span class="mi">\(B\)</span>៖ គុណកន្សោមឆ្លាស់ <span class="mi">\(K_2\)</span> នៃភាគយក<br/>
+<span class="mi">\(\begin{aligned}[t]
+B &amp;= \lim_{x \to 1} \frac{x(x-1)}{(x-1)(x+1)K_2} = \frac{1}{(2)(3)} = \frac{1}{6}
+\end{aligned}\)</span><br/>
+<span class="mi">\(L = A + B = \frac{1}{6} + \frac{1}{6} = \frac{1}{3}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 64} \frac{\sqrt{x}-8}{\sqrt[3]{x}-4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+គុណកន្សោមឆ្លាស់ភាគយក និងភាគបែង៖<br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to 64} \frac{(x-64)(\sqrt[3]{x^2}+4\sqrt[3]{x}+16)}{(x-64)(\sqrt{x}+8)}\\
+&amp;= \lim_{x \to 64} \frac{\sqrt[3]{x^2}+4\sqrt[3]{x}+16}{\sqrt{x}+8}\\
+&amp;= \frac{16+16+16}{8+8} = \frac{48}{16} = 3
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{\sqrt[3]{7+x^3} -\sqrt{3+x^2}}{x-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+យើងអាចបំបែកជាពីរលីមីត៖<br/>
+<span class="mi">\(L = \underbrace{\lim_{x \to 1} \frac{\sqrt[3]{7+x^3}-2}{x-1}}_{A} - \underbrace{\lim_{x \to 1} \frac{\sqrt{3+x^2}-2}{x-1}}_{B}\)</span><br/>
+<span class="mi">\(\bullet\)</span> គណនា <span class="mi">\(A\)</span>៖ គុណកន្សោមឆ្លាស់ <span class="mi">\(K\)</span> នៃភាគយក<br/>
+<span class="mi">\(\begin{aligned}[t]
+A &amp;= \lim_{x \to 1} \frac{x^3-1}{(x-1)K} = \lim_{x \to 1} \frac{(x-1)(x^2+x+1)}{(x-1)K} = \frac{3}{12} = \frac{1}{4}
+\end{aligned}\)</span><br/>
+<span class="mi">\(\bullet\)</span> គណនា <span class="mi">\(B\)</span>៖ គុណកន្សោមឆ្លាស់ភាគយក<br/>
+<span class="mi">\(\begin{aligned}[t]
+B &amp;= \lim_{x \to 1} \frac{x^2-1}{(x-1)(\sqrt{3+x^2}+2)} = \lim_{x \to 1} \frac{x+1}{\sqrt{3+x^2}+2} = \frac{2}{4} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+<span class="mi">\(L = A - B = \frac{1}{4} - \frac{1}{2} = -\frac{1}{4}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{\sqrt[3]{x^3+7x} - \sqrt[3]{10x-2}}{(x-1)^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+គុណកន្សោមឆ្លាស់ <span class="mi">\(K\)</span> នៃភាគយក យើងបាន៖<br/>
+<span class="mi">\(\begin{aligned}[t]
+L &amp;= \lim_{x \to 1} \frac{x^3-3x+2}{(x-1)^2 K} = \lim_{x \to 1} \frac{(x-1)^2(x+2)}{(x-1)^2 K}\\
+&amp;= \lim_{x \to 1} \frac{x+2}{K} = \frac{1+2}{4+4+4} = \frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0} \frac{\sqrt[3]{x^2+1} + \sqrt[3]{x^2-1}}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(K = \sqrt[3]{(x^2+1)^2} - \sqrt[3]{(x^2+1)(x^2-1)} + \sqrt[3]{(x^2-1)^2}\)</span><br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(x^2+1) + (x^2-1)}{x^2 K}\\
+&amp;= \lim_{x \to 0} \frac{2x^2}{x^2 K} = \lim_{x \to 0} \frac{2}{K} = \frac{2}{1-(-1)+1} = \frac{2}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 4} \frac{\sqrt[3]{x+4} + \sqrt[3]{8-x^2}}{x-4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(K = \sqrt[3]{(x+4)^2} - \sqrt[3]{(x+4)(8-x^2)} + \sqrt[3]{(8-x^2)^2}\)</span><br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to 4} \frac{(x+4) + (8-x^2)}{(x-4)K}\\
+&amp;= \lim_{x \to 4} \frac{-(x-4)(x+3)}{(x-4)K}\\
+&amp;= \lim_{x \to 4} \frac{-(x+3)}{K} = \frac{-(4+3)}{4-(-4)+4} = -\frac{7}{12}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -2} \frac{\sqrt[3]{x^2-2x} + \sqrt[3]{x-6}}{x+2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(K = \sqrt[3]{(x^2-2x)^2} - \sqrt[3]{(x^2-2x)(x-6)} + \sqrt[3]{(x-6)^2}\)</span><br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to -2} \frac{(x^2-2x) + (x-6)}{(x+2)K}\\
+&amp;= \lim_{x \to -2} \frac{(x-3)(x+2)}{(x+2)K}\\
+&amp;= \lim_{x \to -2} \frac{x-3}{K} = \frac{-2-3}{4-(-4)+4} = -\frac{5}{12}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} \frac{\sqrt[3]{x+1} - 1}{x(x+2)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(K = \sqrt[3]{(x+1)^2} + \sqrt[3]{x+1} + 1\)</span><br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(x+1)-1}{x(x+2)K}\\
+&amp;= \lim_{x \to 0} \frac{x}{x(x+2)K}\\
+&amp;= \lim_{x \to 0} \frac{1}{(x+2)K} = \frac{1}{(0+2)(1+1+1)} = \frac{1}{6}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1} \frac{\sqrt[5]{x^2+x-1} - 1}{1+\sqrt[3]{1-2x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(K_5 = \sum_{k=0}^4 \sqrt[5]{(x^2+x-1)^k}\)</span>,<br/>
+<span class="mi">\(K_3 = 1 - \sqrt[3]{1-2x} + \sqrt[3]{(1-2x)^2}\)</span><br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to 1} \frac{(x^2+x-1-1) K_3}{(1+1-2x) K_5}\\
+&amp;= \lim_{x \to 1} \frac{(x-1)(x+2) K_3}{-2(x-1) K_5}\\
+&amp;= \lim_{x \to 1} \frac{(x+2) K_3}{-2 K_5} = \frac{(3)(3)}{-2(5)} = -\frac{9}{10}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} \frac{\sqrt[5]{(x+1)^3} - 1}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(K = \sum_{k=0}^4 \sqrt[5]{(x+1)^{3k}}\)</span><br/>
+<span class="mi">\(\begin{aligned}[t]
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(x+1)^3 - 1}{x K}\\
+&amp;= \lim_{x \to 0} \frac{x(x^2+3x+3)}{x K}\\
+&amp;= \lim_{x \to 0} \frac{x^2+3x+3}{K} = \frac{3}{1+1+1+1+1} = \frac{3}{5}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{(x-1)(2x+3)(2-x)}{(x^2+1)(2x+1)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -\infty} \frac{(2x^2-5x)(3x^5-2)}{-8x^7-x^5}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{x^2-7x^3}{4x^4+7x^2-5}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -\infty} \frac{(2x^3+4x)(-3x^2-1)}{7x^6-4x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{(x^2+4)(-2-3x^3)}{(x^2-2)(4x^2+2020)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -\infty} \frac{(2x-1)(3x-4)(1-x)}{(x-4)(2020-3x)}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{(x-1)(2x+3)(2-x)}{(x^2+1)(2x+1)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{x^3(1-\frac{1}{x})(2+\frac{3}{x})(\frac{2}{x}-1)}{x^3(1+\frac{1}{x^2})(2+\frac{1}{x})}\\
+&amp;= \frac{(1-0)(2+0)(0-1)}{(1+0)(2+0)} = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\infty} \frac{(2x^2-5x)(3x^5-2)}{-8x^7-x^5}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -\infty} \frac{x^7(2-\frac{5}{x})(3-\frac{2}{x^5})}{-x^7(8+\frac{1}{x^2})}\\
+&amp;= \frac{(2-0)(3-0)}{-(8+0)} = -\frac{3}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{x^2-7x^3}{4x^4+7x^2-5}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{x^3(\frac{1}{x}-7)}{x^4(4+\frac{7}{x^2}-\frac{5}{x^4})}\\
+&amp;= \lim_{x \to +\infty} \frac{\frac{1}{x}-7}{x(4+\frac{7}{x^2}-\frac{5}{x^4})}\\
+&amp;= \frac{0-7}{+\infty(4+0-0)} = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\infty}\frac{(2x^3+4x)(-3x^2-1)}{7x^6-4x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -\infty} \frac{x^5(2+\frac{4}{x^2})(-3-\frac{1}{x^2})}{x^6(7-\frac{4}{x^5})}\\
+&amp;= \lim_{x \to -\infty} \frac{(2+\frac{4}{x^2})(-3-\frac{1}{x^2})}{x(7-\frac{4}{x^5})}\\
+&amp;= \frac{(2-0)(-3-0)}{(-\infty)(7-0)} = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{(x^2+4)(-2-3x^3)}{(x^2-2)(4x^2+2020)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{x^5(1+\frac{4}{x^2})(-3-\frac{2}{x^3})}{x^4(1-\frac{2}{x^2})(4+\frac{2020}{x^2})}\\
+&amp;= \lim_{x \to +\infty} \frac{x(1+\frac{4}{x^2})(-3-\frac{2}{x^3})}{(1-\frac{2}{x^2})(4+\frac{2020}{x^2})}\\
+&amp;= \frac{(+\infty)(1+0)(-3-0)}{(1-0)(4+0)} = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\infty} \frac{(2x-1)(3x-4)(1-x)}{(x-4)(2020-3x)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -\infty} \frac{x^3(2-\frac{1}{x})(3-\frac{4}{x})(\frac{1}{x}-1)}{x^2(1-\frac{4}{x})(\frac{2020}{x}-3)}\\
+&amp;= \lim_{x \to -\infty} \frac{x(2-\frac{1}{x})(3-\frac{4}{x})(\frac{1}{x}-1)}{(1-\frac{4}{x})(\frac{2020}{x}-3)}\\
+&amp;= \frac{(-\infty)(2-0)(3-0)(0-1)}{(1-0)(0-3)} = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖<br/></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{(x-3)(x^2+4)(2-3x)}{(2x-1)(1-3x^3)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  -\infty} \frac{\frac{2}{3}x^{20} -x^5}{7x^{20}-3x^{15}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{3-x^6+2x^{13}}{x^3-7x^2+\frac{x^{13}}{4}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{2x^2+5-3x^{2020}}{5x+27x^{2020}-8}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to  +\infty} \frac{(x-3)(x^2+4)(2-3x)}{(2x-1)(1-3x^3)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{x^4(1-\frac{3}{x})(1+\frac{4}{x^2})(\frac{2}{x}-3)}{x^4(2-\frac{1}{x})(\frac{1}{x^3}-3)}\\
+&amp;= \frac{(1-0)(1+0)(0-3)}{(2-0)(0-3)} = \frac{-3}{-6} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\infty} \frac{\frac{2}{3}x^{20} -x^5}{7x^{20}-3x^{15}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -\infty} \frac{x^{20}(\frac{2}{3} -\frac{1}{x^{15}})}{x^{20}(7-\frac{3}{x^5})}\\
+&amp;= \frac{\frac{2}{3} - 0}{7 - 0} = \frac{2}{21}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{3-x^6+2x^{13}}{x^3-7x^2+\frac{x^{13}}{4}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{x^{13}(\frac{3}{x^{13}}- \frac{1}{x^7}+2)}{x^{13}(\frac{1}{x^{10}} -\frac{7}{x^{11}}+\frac{1}{4})}\\
+&amp;= \frac{0 - 0 + 2}{0 - 0 + \frac{1}{4}} = \frac{2}{\frac{1}{4}} = 8
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{2x^2+5-3x^{2020}}{5x+27x^{2020}-8}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{x^{2020}(\frac{2}{x^{1998}} +\frac{5}{x^{2020}} -3)}{x^{2020}(\frac{5}{x^{1999} } + 27-\frac{8}{x^{2020}})}\\
+&amp;= \frac{0+0-3}{0+27-0} = -\frac{3}{27} = -\frac{1}{9}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖<br/></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to + \infty}\left(1+x-x^5\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to - \infty}\left(3x^3-x^2+9\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  \infty}\left(\sqrt{x^2+x}-x^2\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to +\infty}\left(\sqrt{2x^2+1}-\sqrt{x+x^2}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to +\infty}\left(\sqrt{x^2+x}-\sqrt[3]{x^2-x}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+}\left(\frac{1}{\sqrt{x}}-\frac{x+1}{\sqrt{x}}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 1}\left(\frac{2}{x^2-1}-\frac{1}{x-1}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to -2}\left(\frac{1}{x+2}-\frac{12}{x^3+8}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to +\infty }\left(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty }\left(\sqrt[3]{x^3+6x^2}-\sqrt[3]{x^3-6x^2}\right)\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to +\infty}\left(1+x-x^5\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} x^5\left(\frac{1}{x^5}+\frac{1}{x^4}-1\right)\\
+&amp;= +\infty(0+0-1) = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\infty}\left(3x^3-x^2+9\right)\)</span> (រាង <span class="mi">\(-\infty-\infty\)</span> មិនមែនរាងមិនកំណត់)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -\infty} x^3\left(3-\frac{1}{x}+\frac{9}{x^3}\right)\\
+&amp;= -\infty(3-0+0) = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \infty}\left(\sqrt{x^2+x}-x^2\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to \infty}\left(\sqrt{x^2\left(1+\frac{1}{x}\right)}-x^2\right)\\
+&amp;= \lim_{x \to \infty}\left(|x|\sqrt{1+\frac{1}{x}}-x^2\right)\\
+&amp;= \lim_{x \to \infty}\left[x^2\left(\frac{1}{|x|}\sqrt{1+\frac{1}{x}}-1\right)\right]\\
+&amp;= +\infty(0-1) = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty}\left(\sqrt{2x^2+1}-\sqrt{x+x^2}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{(2x^2+1)-(x+x^2)}{\sqrt{2x^2+1}+\sqrt{x+x^2}}\\
+&amp;= \lim_{x \to +\infty} \frac{x^2-x+1}{\sqrt{x^2(2+\frac{1}{x^2})}+\sqrt{x^2(1+\frac{1}{x})}}\\
+&amp;= \lim_{x \to +\infty} \frac{x^2(1-\frac{1}{x}+\frac{1}{x^2})}{x\left(\sqrt{2+\frac{1}{x^2}}+\sqrt{1+\frac{1}{x}}\right)}\\
+&amp;= \lim_{x \to +\infty} \frac{x(1-\frac{1}{x}+\frac{1}{x^2})}{\sqrt{2+\frac{1}{x^2}}+\sqrt{1+\frac{1}{x}}}\\
+&amp;= \frac{+\infty(1-0+0)}{\sqrt{2}+1} = +\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty}\left(\sqrt{x^2+x}-\sqrt[3]{x^2-x}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \left[\sqrt{x^2\left(1+\frac{1}{x}\right)}-\sqrt[3]{x^3\left(\frac{1}{x}-\frac{1}{x^2}\right)}\right]\\
+&amp;= \lim_{x \to +\infty} \left(x\sqrt{1+\frac{1}{x}}-x\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}\right)\\
+&amp;= \lim_{x \to +\infty} x\left(\sqrt{1+\frac{1}{x}}-\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}\right)\\
+&amp;= +\infty(1-0) = +\infty
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0^+}\left(\frac{1}{\sqrt{x}}-\frac{x+1}{\sqrt{x}}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន}&amp;= \lim_{x \to 0^+}\frac{1-(x+1)}{\sqrt{x}}\\
+&amp;= \lim_{x \to 0^+}\frac{-x}{\sqrt{x}} = \lim_{x \to 0^+}(-\sqrt{x}) = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1}\left(\frac{2}{x^2-1}-\frac{1}{x-1}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 1}\left(\frac{2}{x^2-1}-\frac{x+1}{x^2-1}\right)\\
+&amp;= \lim_{x \to 1}\frac{2-(x+1)}{x^2-1}\\
+&amp;= \lim_{x \to 1}\frac{-(x-1)}{(x-1)(x+1)}\\
+&amp;= \lim_{x \to 1}\frac{-1}{x+1} = -\frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -2}\left(\frac{1}{x+2}-\frac{12}{x^3+8}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -2}\left[\frac{x^2-2x+4-12}{(x+2)(x^2-2x+4)}\right]\\
+&amp;= \lim_{x \to -2}\frac{x^2-2x-8}{(x+2)(x^2-2x+4)}\\
+&amp;= \lim_{x \to -2}\frac{(x+2)(x-4)}{(x+2)(x^2-2x+4)}\\
+&amp;= \lim_{x \to -2}\frac{x-4}{x^2-2x+4}\\
+&amp;= \frac{-2-4}{4+4+4} = -\frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty}\left(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to +\infty} \frac{(x+\sqrt{x+\sqrt{x}})-x}{\sqrt{x+\sqrt{x+\sqrt{x}}}+\sqrt{x}}\\
+&amp;= \lim_{x \to +\infty} \frac{\sqrt{x+\sqrt{x}}}{\sqrt{x+\sqrt{x+\sqrt{x}}}+\sqrt{x}}\\
+&amp;= \lim_{x \to +\infty} \frac{\sqrt{x}\sqrt{1+\frac{1}{\sqrt{x}}}}{\sqrt{x}\left(\sqrt{1+\sqrt{\frac{1}{x}+\frac{1}{x\sqrt{x}}}}+1\right)}\\
+&amp;= \lim_{x \to +\infty} \frac{\sqrt{1+\frac{1}{\sqrt{x}}}}{\sqrt{1+\sqrt{\frac{1}{x}+\frac{1}{x\sqrt{x}}}}+1}\\
+&amp;= \frac{\sqrt{1+0}}{\sqrt{1+0}+1} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \infty}\left(\sqrt[3]{x^3+6x^2}-\sqrt[3]{x^3-6x^2}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(+\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to \infty} \frac{(x^3+6x^2)-(x^3-6x^2)}{K}\\
+&amp;= \lim_{x \to \infty} \frac{12x^2}{x^2\left[\sqrt[3]{(1+\frac{6}{x})^2} + \sqrt[3]{1-\frac{36}{x^2}} + \sqrt[3]{(1-\frac{6}{x})^2}\right]}\\
+&amp;= \frac{12}{1+1+1} = 4
+\end{aligned}\)</span><br/>
+(ដែល <span class="mi">\(K = a^2+ab+b^2\)</span> ជាកន្សោមឆ្លាស់)<br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to  \tfrac{\pi}{6}} (\sin x -1 )^2\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  \pi } \tan x\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  7\pi } \cos \frac{x}{3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  \frac{13\pi}{4} } (\cot x-\tan x )\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  0 } \frac{\sin x+\cos^2x }{x^2+1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  \frac{\pi}{4} } \frac{\cos x -\tan x }{\sin^2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  \frac{\pi}{3} } \frac{\tan x -\sin x }{\cos x -1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  \frac{\pi}{6} } \frac{\sin^2x+\cot^2x}{2\sin x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  0 } \frac{\cos x +\tan x }{\tan ^2x +3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to  \frac{\pi}{4} } \frac{\cos x+\sin x }{\cos^22x}\)</span></p></li>
+</ol>
+</div></section>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to \tfrac{\pi}{6}} (\sin x - 1)^2\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \left(\sin \tfrac{\pi}{6}-1\right)^2 = \left(\tfrac{1}{2}-1\right)^2 = \frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \pi} \tan x\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \tan \pi = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 7\pi} \cos \frac{x}{3}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \cos \frac{7\pi}{3} = \cos\left(2\pi+\frac{\pi}{3}\right) = \cos\frac{\pi}{3} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{13\pi}{4}} (\cot x - \tan x)\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \cot\frac{13\pi}{4} - \tan\frac{13\pi}{4} = \cot\frac{\pi}{4} - \tan\frac{\pi}{4} = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} \frac{\sin x+\cos^2 x}{x^2+1}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \frac{\sin 0 + \cos^2 0}{0^2+1} = \frac{0+1}{1} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{4}} \frac{\cos x - \tan x}{\sin^2 x}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \frac{\cos \frac{\pi}{4} - \tan \frac{\pi}{4}}{\sin^2 \frac{\pi}{4}} = \frac{\frac{\sqrt{2}}{2}-1}{\frac{1}{2}} = \sqrt{2}-2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{3}} \frac{\tan x - \sin x}{\cos x - 1}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \frac{\tan \frac{\pi}{3} - \sin \frac{\pi}{3}}{\cos \frac{\pi}{3}-1} = \frac{\sqrt{3}-\frac{\sqrt{3}}{2}}{\frac{1}{2}-1} = -\sqrt{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{6}} \frac{\sin^2 x + \cot^2 x}{2\sin x}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \frac{\sin^2 \frac{\pi}{6} + \cot^2 \frac{\pi}{6}}{2\sin \frac{\pi}{6}} = \frac{\frac{1}{4}+3}{1} = \frac{13}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} \frac{\cos x + \tan x}{\tan^2 x + 3}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \frac{\cos 0 + \tan 0}{\tan^2 0 + 3} = \frac{1+0}{0+3} = \frac{1}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{4}} \frac{\cos x + \sin x}{\cos^2 2x}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \frac{\cos \frac{\pi}{4} + \sin \frac{\pi}{4}}{\cos^2 \frac{\pi}{2}} = \frac{\sqrt{2}}{0^+} = +\infty
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to  \tfrac{\pi}{4}} \frac{2\sin\left(x-\tfrac{\pi}{4}\right)}{\tfrac{\pi}{4}-x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{-2\sin5x}{\sqrt{5}-\sqrt{x+5}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1-\cos^23x}{-2x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to { - \frac{\pi }{2}}}\frac{\sin^2x-1}{1+\sin x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\cos x-1}{\sin^2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{3\sin 3 x}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{5\sin 5x }{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin 3x }{-x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{2+x}-\sqrt{2-x} }{\sin x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{-2x }{\sin 3x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \tfrac{\pi}{3}}\frac{\sin x-\sqrt{3}\cos x }{\pi -3x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{6x }{\sin (-3x)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \tfrac{\pi}{6}}\frac{2(\pi -6x) }{\sin x -\tfrac{1}{\sqrt{3}}\cos x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{-2x\sin x }{1-\cos^2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to -\tfrac{\pi}{2}}\frac{1+\sin x  }{\sin^4 x-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \tfrac{\pi}{4}}\frac{1-\tan^3x  }{\tan^2x-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin 6x +\sin 9x  }{2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{x+2\sin 3x  }{x+3\sin 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{2019\sin x }{2018x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin 2018x }{\sin 2019x}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to \tfrac{\pi}{4}} \frac{2\sin\left(x-\tfrac{\pi}{4}\right)}{\tfrac{\pi}{4}-x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to \tfrac{\pi}{4}} \frac{2\sin\left(x-\tfrac{\pi}{4}\right)}{-\left(x-\tfrac{\pi}{4}\right)} = -2 \times 1 = -2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{-2\sin 5x}{\sqrt{5}-\sqrt{x+5}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{-2\sin 5x(\sqrt{5}+\sqrt{x+5})}{5-(x+5)}\\
+&amp;= \lim_{x \to 0} \left[2(\sqrt{5}+\sqrt{x+5}) \cdot \frac{\sin 5x}{5x} \times 5\right]\\
+&amp;= 2(2\sqrt{5}) \times 1 \times 5 = 20\sqrt{5}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos^2 3x}{-2x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\sin^2 3x}{-2x^2} = -\frac{9}{2}\lim_{x \to 0}\left(\frac{\sin 3x}{3x}\right)^2\\
+&amp;= -\frac{9}{2} \times 1 = -\frac{9}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\frac{\pi}{2}}\frac{\sin^2 x-1}{1+\sin x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -\frac{\pi}{2}} \frac{(\sin x-1)(\sin x+1)}{\sin x+1}\\
+&amp;= \lim_{x \to -\frac{\pi}{2}}(\sin x-1) = -1-1 = -2
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos x-1}{\sin^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{-(1-\cos x)}{(1-\cos x)(1+\cos x)}\\
+&amp;= \lim_{x \to 0} \frac{-1}{1+\cos x} = \frac{-1}{1+1} = -\frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{3\sin 3x}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= 3\lim_{x \to 0}\frac{\sin 3x}{3x} \times 3 = 3 \times 1 \times 3 = 9
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{5\sin 5x}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= 5\lim_{x \to 0}\frac{\sin 5x}{5x} \times 5 = 5 \times 1 \times 5 = 25
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin 3x}{-x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= -\lim_{x \to 0}\frac{\sin 3x}{3x} \times 3 = -1 \times 3 = -3
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{2+x}-\sqrt{2-x}}{\sin x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\frac{(2+x)-(2-x)}{\sin x(\sqrt{2+x}+\sqrt{2-x})}\\
+&amp;= \lim_{x \to 0}\left[2 \cdot \frac{x}{\sin x} \cdot \frac{1}{\sqrt{2+x}+\sqrt{2-x}}\right]\\
+&amp;= 2 \times 1 \times \frac{1}{2\sqrt{2}} = \frac{\sqrt{2}}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{-2x}{\sin 3x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= -2\lim_{x \to 0}\frac{3x}{\sin 3x} \times \frac{1}{3} = -2 \times 1 \times \frac{1}{3} = -\frac{2}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \tfrac{\pi}{3}}\frac{\sin x-\sqrt{3}\cos x}{\pi-3x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to \frac{\pi}{3}} \frac{2(\frac{1}{2}\sin x - \frac{\sqrt{3}}{2}\cos x)}{-3(x-\frac{\pi}{3})}\\
+&amp;= \lim_{x \to \frac{\pi}{3}} \frac{2\sin(x-\frac{\pi}{3})}{-3(x-\frac{\pi}{3})} = -\frac{2}{3} \times 1 = -\frac{2}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{6x}{\sin(-3x)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\frac{-3x}{\sin(-3x)} \times (-2) = 1 \times (-2) = -2
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to \tfrac{\pi}{6}}\frac{2(\pi-6x)}{\sin x-\tfrac{1}{\sqrt{3}}\cos x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to \frac{\pi}{6}} \frac{-12(x-\frac{\pi}{6})}{\frac{2}{\sqrt{3}}\sin(x-\frac{\pi}{6})}\\
+&amp;= -6\sqrt{3}\lim_{x \to \frac{\pi}{6}} \frac{x-\frac{\pi}{6}}{\sin(x-\frac{\pi}{6})} = -6\sqrt{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{-2x\sin x}{1-\cos^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\frac{-2x\sin x}{\sin^2 x} = -2\lim_{x \to 0}\frac{x}{\sin x} = -2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\tfrac{\pi}{2}}\frac{1+\sin x}{\sin^4 x-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to -\frac{\pi}{2}} \frac{1+\sin x}{(\sin x-1)(\sin x+1)(\sin^2 x+1)}\\
+&amp;= \lim_{x \to -\frac{\pi}{2}} \frac{1}{(\sin x-1)(\sin^2 x+1)}\\
+&amp;= \frac{1}{(-2)(2)} = -\frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \tfrac{\pi}{4}}\frac{1-\tan^3 x}{\tan^2 x-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to \frac{\pi}{4}} \frac{(1-\tan x)(1+\tan x+\tan^2 x)}{(\tan x-1)(\tan x+1)}\\
+&amp;= \lim_{x \to \frac{\pi}{4}} \frac{-(1+\tan x+\tan^2 x)}{\tan x+1} = -\frac{3}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin 6x+\sin 9x}{2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\frac{\sin 6x}{2x} + \lim_{x \to 0}\frac{\sin 9x}{2x}\\
+&amp;= 1 \times 3 + 1 \times \frac{9}{2} = \frac{15}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{x+2\sin 3x}{x+3\sin 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{1+2\frac{\sin 3x}{x}}{1+3\frac{\sin 2x}{x}}\\
+&amp;= \frac{1+2(3)}{1+3(2)} = \frac{7}{7} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2019\sin x}{2018x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \frac{2019}{2018}\lim_{x \to 0}\frac{\sin x}{x}\\
+&amp;= \frac{2019}{2018} \times 1 = \frac{2019}{2018}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin 2018x}{\sin 2019x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\frac{\frac{\sin 2018x}{2018x}\cdot 2018}{\frac{\sin 2019x}{2019x}\cdot 2019} = \frac{1 \cdot 2018}{1 \cdot 2019} = \frac{2018}{2019}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\cos x-\cos ^2x}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\cos 3x-\cos^23x}{6x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1-\cos 4x}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin x -\sin 3x}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin 2x -3x}{\sin 3x -2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin x -2x}{x-2\sin x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{x+\sin x}{2x-3\sin 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1-\cos^2x}{2x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1-\cos 5x}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin (3x+1989\pi)}{\sin (4x+1987\pi)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1-\cos x}{\sin^2 x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\left(\frac{2}{\sin^2x}-\frac{1}{1-\cos x}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin x +1 -\cos x}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{x\sin x-2\sin 4x}{\tan x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \frac{\pi}{6}}\frac{2\sin^2x-3\sin x+1}{4\sin^2 x-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1-\cos nx}{1-\cos mx}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{3x+\sin 2x}{3x-\sin 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{(1+x^2)-\cos x}{\tan^2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin(a+x)-\sin(a-x)}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\tan x -\sin x}{x}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos x-\cos^2 x}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\frac{\cos x(1-\cos x)}{x}\\
+&amp;= \lim_{x \to 0}\cos x \times \lim_{x \to 0}\frac{1-\cos x}{x}\\
+&amp;= 1 \times 0 = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos 3x-\cos^2 3x}{6x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\cos 3x(1-\cos 3x)}{6x} \\
+&amp;= \lim_{x \to 0}\left[\frac{\cos 3x}{2} \cdot \frac{1-\cos 3x}{3x}\right]\\
+&amp;= \frac{1}{2} \times 0 = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos 4x}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\sin^2 2x}{x^2} = 8\lim_{x \to 0} \left(\frac{\sin 2x}{2x}\right)^2\\
+&amp;= 8 \times 1^2 = 8
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin x - \sin 3x}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\left(\frac{\sin x}{x} - \frac{\sin 3x}{x}\right)\\
+&amp;= \lim_{x \to 0}\frac{\sin x}{x} - 3\lim_{x \to 0}\frac{\sin 3x}{3x}\\
+&amp;= 1 - 3(1) = -2
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin 2x - 3x}{\sin 3x - 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\frac{\sin 2x}{2x} - 3}{3\frac{\sin 3x}{3x} - 2}\\
+&amp;= \frac{2(1) - 3}{3(1) - 2} = \frac{-1}{1} = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin x - 2x}{x - 2\sin x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\frac{\sin x}{x} - 2}{1 - 2\frac{\sin x}{x}}\\
+&amp;= \frac{1 - 2}{1 - 2(1)} = \frac{-1}{-1} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{x+\sin x}{2x-3\sin 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{1 + \frac{\sin x}{x}}{2 - 6\frac{\sin 2x}{2x}}\\
+&amp;= \frac{1 + 1}{2 - 6(1)} = -\frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos^2 x}{2x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\sin^2 x}{2x^2} = \frac{1}{2}\lim_{x \to 0}\left(\frac{\sin x}{x}\right)^2\\
+&amp;= \frac{1}{2} \times 1 = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos 5x}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\sin^2\frac{5x}{2}}{x^2} = 2\left(\frac{25}{4}\right)\lim_{x \to 0}\left(\frac{\sin\frac{5x}{2}}{\frac{5x}{2}}\right)^2\\
+&amp;= \frac{25}{2} \times 1 = \frac{25}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin(3x+1989\pi)}{\sin(4x+1987\pi)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\sin(3x+\pi)}{\sin(4x+\pi)} = \lim_{x \to 0}\frac{-\sin 3x}{-\sin 4x}\\
+&amp;= \lim_{x \to 0}\left[\frac{\sin 3x}{3x} \cdot \frac{4x}{\sin 4x} \cdot \frac{3}{4}\right] = \frac{3}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos x}{\sin^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{1-\cos x}{1-\cos^2 x} = \lim_{x \to 0}\frac{1}{1+\cos x}\\
+&amp;= \frac{1}{1+1} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\left(\frac{2}{\sin^2 x}-\frac{1}{1-\cos x}\right)\)</span> (រាងមិនកំណត់ <span class="mi">\(\infty-\infty\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\left[\frac{2}{1-\cos^2 x} - \frac{1+\cos x}{1-\cos^2 x}\right]\\
+&amp;= \lim_{x \to 0}\frac{1-\cos x}{(1-\cos x)(1+\cos x)}\\
+&amp;= \lim_{x \to 0}\frac{1}{1+\cos x} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin x + 1 - \cos x}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\left(\frac{\sin x}{x} + \frac{1-\cos x}{x}\right)\\
+&amp;= \lim_{x \to 0}\frac{\sin x}{x} + \lim_{x \to 0}\frac{1-\cos x}{x}\\
+&amp;= 1 + 0 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{x\sin x - 2\sin 4x}{\tan x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\sin x - 8\frac{\sin 4x}{4x}}{\frac{\tan x}{x}}\\
+&amp;= \frac{0 - 8(1)}{1} = -8
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to \frac{\pi}{6}}\frac{2\sin^2 x - 3\sin x + 1}{4\sin^2 x - 1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to \frac{\pi}{6}} \frac{(\sin x - 1)(2\sin x - 1)}{(2\sin x - 1)(2\sin x + 1)}\\
+&amp;= \lim_{x \to \frac{\pi}{6}} \frac{\sin x - 1}{2\sin x + 1} = \frac{\frac{1}{2} - 1}{2(\frac{1}{2}) + 1} = -\frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos nx}{1-\cos mx}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\sin^2\frac{nx}{2}}{2\sin^2\frac{mx}{2}} = \lim_{x \to 0}\frac{\frac{\sin^2\frac{nx}{2}}{(\frac{nx}{2})^2}\cdot n^2}{\frac{\sin^2\frac{mx}{2}}{(\frac{mx}{2})^2}\cdot m^2}\\
+&amp;= \frac{1 \cdot n^2}{1 \cdot m^2} = \frac{n^2}{m^2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{3x+\sin 2x}{3x-\sin 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{3 + 2\frac{\sin 2x}{2x}}{3 - 2\frac{\sin 2x}{2x}}\\
+&amp;= \frac{3 + 2(1)}{3 - 2(1)} = 5
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{(1+x^2)-\cos x}{\tan^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{1 + \frac{1-\cos x}{x^2}}{\left(\frac{\tan x}{x}\right)^2}\\
+&amp;= \frac{1 + \frac{1}{2}}{1^2} = \frac{3}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin(a+x)-\sin(a-x)}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\cos a \sin x}{x}\\
+&amp;= 2\cos a \lim_{x \to 0} \frac{\sin x}{x} = 2\cos a
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\tan x - \sin x}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \left[\frac{\tan x}{x}(1-\cos x)\right]\\
+&amp;= 1 \times (1 - 1) = 0
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1+\sin x -\cos x}{1-\sin x -\cos x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\tan x -\sin x}{ x^3 }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{x(a-b)}{ \sin ax-\sin bx}\)</span> <span class="mi">\(; a, b \ne 0\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin(\sin(\sin x))}{ x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1+\sin x-\cos x}{ 1+\sin nx-\cos nx}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{(1-\cos x)\sin x}{ \tan ^3 x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{ \sin 3x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{x+4}-2}{ \sin 5x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{x+9}-3}{ \sin 7x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{2\sin 2x}{ \sqrt{x+2}-\sqrt{2}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{2}-\sqrt{1+\cos x}}{ \sin^2x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{1+x\sin x-\cos 2x}{ \sin ^2x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin ^2x}{ \sqrt{1+x\sin x}-\cos x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{2x-\sin x}{ \sqrt{1-\cos x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{3x+1}-\sqrt{2x+1}}{ \sin x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{1+x\sin x}-\sqrt{\cos 2x}}{ \cot^2\left(\frac{\pi}{2}-x\right) }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\left(\sqrt[3]{x-1}+\sqrt[3]{x+1}\right)\sin x}{ 1-\cos \pi x  }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sqrt{1+\sin x}-\sqrt{1-\sin x}}{ \tan x }\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin^2x}{ 1-\sqrt{\cos x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0}\frac{\sin 2 x}{ \sqrt{x+1}-1 }\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1+\sin x-\cos x}{1-\sin x-\cos x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\sin^2\frac{x}{2} + 2\sin\frac{x}{2}\cos\frac{x}{2}}{2\sin^2\frac{x}{2} - 2\sin\frac{x}{2}\cos\frac{x}{2}}\\
+&amp;= \lim_{x \to 0} \frac{\sin\frac{x}{2} + \cos\frac{x}{2}}{\sin\frac{x}{2} - \cos\frac{x}{2}} = \frac{0+1}{0-1} = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\tan x-\sin x}{x^3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\tan x(1-\cos x)}{x^3}\\
+&amp;= \lim_{x \to 0} \left[\frac{\tan x}{x} \cdot \frac{2\sin^2\frac{x}{2}}{(\frac{x}{2})^2} \times \frac{1}{4}\right]\\
+&amp;= 1 \times 2 \times \frac{1}{4} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{x(a-b)}{\sin ax-\sin bx}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{a-b}{\frac{\sin ax}{x} - \frac{\sin bx}{x}}\\
+&amp;= \lim_{x \to 0} \frac{a-b}{a\frac{\sin ax}{ax} - b\frac{\sin bx}{bx}}\\
+&amp;= \frac{a-b}{a(1) - b(1)} = \frac{a-b}{a-b} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin(\sin(\sin x))}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0}\left[\frac{\sin(\sin(\sin x))}{\sin(\sin x)} \cdot \frac{\sin(\sin x)}{\sin x} \cdot \frac{\sin x}{x}\right]\\
+&amp;= 1 \times 1 \times 1 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1+\sin x-\cos x}{1+\sin nx-\cos nx}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\frac{1-\cos x}{x} + \frac{\sin x}{x}}{\frac{1-\cos nx}{x} + \frac{\sin nx}{x}}\\
+&amp;= \frac{0 + 1}{0 + n(1)} = \frac{1}{n}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{(1-\cos x)\sin x}{\tan^3 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(1-\cos x)\cos^3 x}{\sin^2 x}\\
+&amp;= \lim_{x \to 0} \frac{(1-\cos x)\cos^3 x}{(1-\cos x)(1+\cos x)}\\
+&amp;= \lim_{x \to 0} \frac{\cos^3 x}{1+\cos x} = \frac{1}{1+1} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{\sin 3x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(1+x)-(1-x)}{\sin 3x(\sqrt{1+x}+\sqrt{1-x})}\\
+&amp;= \lim_{x \to 0} \left[\frac{3x}{\sin 3x} \cdot \frac{2}{3(\sqrt{1+x}+\sqrt{1-x})}\right]\\
+&amp;= 1 \times \frac{2}{3(1+1)} = \frac{1}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{x+4}-2}{\sin 5x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(x+4)-4}{\sin 5x(\sqrt{x+4}+2)}\\
+&amp;= \lim_{x \to 0} \left[\frac{5x}{\sin 5x} \cdot \frac{1}{5(\sqrt{x+4}+2)}\right]\\
+&amp;= 1 \times \frac{1}{5(2+2)} = \frac{1}{20}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{x+9}-3}{\sin 7x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(x+9)-9}{\sin 7x(\sqrt{x+9}+3)}\\
+&amp;= \lim_{x \to 0} \left[\frac{7x}{\sin 7x} \cdot \frac{1}{7(\sqrt{x+9}+3)}\right]\\
+&amp;= 1 \times \frac{1}{7(3+3)} = \frac{1}{42}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2\sin 2x}{\sqrt{x+2}-\sqrt{2}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\sin 2x(\sqrt{x+2}+\sqrt{2})}{(x+2)-2}\\
+&amp;= 4\lim_{x \to 0} \left[\frac{\sin 2x}{2x}(\sqrt{x+2}+\sqrt{2})\right]\\
+&amp;= 4(1)(\sqrt{2}+\sqrt{2}) = 8\sqrt{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{2}-\sqrt{1+\cos x}}{\sin^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2-(1+\cos x)}{\sin^2 x(\sqrt{2}+\sqrt{1+\cos x})}\\
+&amp;= \lim_{x \to 0} \frac{1-\cos x}{(1-\cos x)(1+\cos x)(\sqrt{2}+\sqrt{1+\cos x})}\\
+&amp;= \lim_{x \to 0} \frac{1}{(1+\cos x)(\sqrt{2}+\sqrt{1+\cos x})}\\
+&amp;= \frac{1}{2(2\sqrt{2})} = \frac{\sqrt{2}}{8}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1+x\sin x-\cos 2x}{\sin^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2\sin^2 x + x\sin x}{\sin^2 x}\\
+&amp;= \lim_{x \to 0} \left(2 + \frac{x}{\sin x}\right) = 2 + 1 = 3
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin^2 x}{\sqrt{1+x\sin x}-\cos x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\sin^2 x(\sqrt{1+x\sin x}+\cos x)}{1+x\sin x-\cos^2 x}\\
+&amp;= \lim_{x \to 0} \frac{\sin^2 x(\sqrt{1+x\sin x}+\cos x)}{\sin^2 x + x\sin x}\\
+&amp;= \lim_{x \to 0} \frac{\sqrt{1+x\sin x}+\cos x}{1 + \frac{x}{\sin x}} = \frac{1+1}{1+1} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2x-\sin x}{\sqrt{1-\cos x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{2(x-\sin\frac{x}{2}\cos\frac{x}{2})}{\sqrt{2}|\sin\frac{x}{2}|}\\
+&amp;= \lim_{x \to 0} \frac{\sqrt{2}(x-\sin\frac{x}{2}\cos\frac{x}{2})}{|\sin\frac{x}{2}|}
+\end{aligned}\)</span><br/>
+<span class="mi">\(\bullet\)</span> ករណី <span class="mi">\(x \to 0^+\)</span> នោះ <span class="mi">\(|\sin\frac{x}{2}| = \sin\frac{x}{2}\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\lim_{x \to 0^+} &amp;= \sqrt{2}\lim_{x \to 0^+}\left(\frac{x}{\sin\frac{x}{2}} - \cos\frac{x}{2}\right)\\
+&amp;= \sqrt{2}(2 - 1) = \sqrt{2}
+\end{aligned}\)</span><br/>
+<span class="mi">\(\bullet\)</span> ករណី <span class="mi">\(x \to 0^-\)</span> នោះ <span class="mi">\(|\sin\frac{x}{2}| = -\sin\frac{x}{2}\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\lim_{x \to 0^-} &amp;= -\sqrt{2}\lim_{x \to 0^-}\left(\frac{x}{\sin\frac{x}{2}} - \cos\frac{x}{2}\right)\\
+&amp;= -\sqrt{2}(2 - 1) = -\sqrt{2}
+\end{aligned}\)</span><br/>
+លីមីតឆ្វេង <span class="mi">\(-\sqrt{2}\)</span> ខុសពីលីមីតស្ដាំ <span class="mi">\(\sqrt{2}\)</span> នាំឱ្យ <span class="kfbox"><span class="mi">\(\lim_{x \to 0}\frac{2x-\sin x}{\sqrt{1-\cos x}}\)</span> គ្មាន</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{3x+1}-\sqrt{2x+1}}{\sin x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(3x+1)-(2x+1)}{\sin x(\sqrt{3x+1}+\sqrt{2x+1})}\\
+&amp;= \lim_{x \to 0}\left[\frac{x}{\sin x} \cdot \frac{1}{\sqrt{3x+1}+\sqrt{2x+1}}\right]\\
+&amp;= 1 \times \frac{1}{1+1} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{1+x\sin x}-\sqrt{\cos 2x}}{\cot^2\left(\frac{\pi}{2}-x\right)}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+ដោយ <span class="mi">\(\cot^2(\frac{\pi}{2}-x) = \tan^2 x = \frac{\sin^2 x}{\cos^2 x}\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{1+x\sin x-\cos 2x}{\tan^2 x(\sqrt{1+x\sin x}+\sqrt{\cos 2x})}\\
+&amp;= \lim_{x \to 0} \frac{(2\sin^2 x+x\sin x)\cos^2 x}{\sin^2 x(\sqrt{1+x\sin x}+\sqrt{\cos 2x})}\\
+&amp;= \lim_{x \to 0} \frac{(2+\frac{x}{\sin x})\cos^2 x}{\sqrt{1+x\sin x}+\sqrt{\cos 2x}} = \frac{(2+1)1}{1+1} = \frac{3}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{(\sqrt[3]{x-1}+\sqrt[3]{x+1})\sin x}{1-\cos\pi x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(K = \sqrt[3]{(x-1)^2}-\sqrt[3]{x^2-1}+\sqrt[3]{(x+1)^2}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(x-1+x+1)\sin x}{2\sin^2\frac{\pi x}{2} \cdot K}\\
+&amp;= \lim_{x \to 0} \frac{x\sin x}{\sin^2\frac{\pi x}{2} \cdot K}\\
+&amp;= \lim_{x \to 0} \frac{\frac{\sin x}{x}}{\frac{\sin^2\frac{\pi x}{2}}{(\frac{\pi x}{2})^2} \cdot \frac{\pi^2}{4} \cdot K}\\
+&amp;= \frac{1}{1 \times \frac{\pi^2}{4}(1+1+1)} = \frac{4}{3\pi^2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{1+\sin x}-\sqrt{1-\sin x}}{\tan x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{(1+\sin x)-(1-\sin x)}{\tan x(\sqrt{1+\sin x}+\sqrt{1-\sin x})}\\
+&amp;= \lim_{x \to 0} \frac{2\sin x \cos x}{\sin x(\sqrt{1+\sin x}+\sqrt{1-\sin x})}\\
+&amp;= \lim_{x \to 0} \frac{2\cos x}{\sqrt{1+\sin x}+\sqrt{1-\sin x}}\\
+&amp;= \frac{2(1)}{1+1} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin^2 x}{1-\sqrt{\cos x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\sin^2 x(1+\sqrt{\cos x})}{1-\cos x}\\
+&amp;= \lim_{x \to 0} \frac{(1-\cos^2 x)(1+\sqrt{\cos x})}{1-\cos x}\\
+&amp;= \lim_{x \to 0}(1+\cos x)(1+\sqrt{\cos x})\\
+&amp;= (1+1)(1+1) = 4
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin 2x}{\sqrt{x+1}-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន} &amp;= \lim_{x \to 0} \frac{\sin 2x(\sqrt{x+1}+1)}{(x+1)-1}\\
+&amp;= 2\lim_{x \to 0} \left[\frac{\sin 2x}{2x}(\sqrt{x+1}+1)\right]\\
+&amp;= 2(1)(1+1) = 4
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{1+\tan x}-\sqrt{1+\sin x}}{x^3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin x}{\sqrt[3]{x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0^+}\frac{1-\cos \sqrt{x}}{\sin x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos ax-\cos bx}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{1+\sin^2 x}-\cos x}{\sin^2 x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos x\cos 2x}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos x\sqrt{\cos x}}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2x+\sin 2019x-\tan 2020x}{9x-\sin 2021x+\tan 2022x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{(1-\cos x)^2}{\tan^3 x-\sin^3 x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos 4x}{2x\tan 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2\sin^2 x-2(1-\cos x)}{5x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos 3x-\cos x}{\sin 5x+\sin 3x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos 2x}{x^2(1+\sqrt{\cos x})}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos x-\sqrt{\cos 2x}}{\sin^2 x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\tan x}{\sqrt[3]{(1-\cos x)^2}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos(1-\cos x)}{x^4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2x-3\arcsin x}{\arcsin x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{x^3-8+\tan \pi x}{x-2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{x^2-4+\sin \pi x}{x-2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 1}\frac{\sqrt[3]{x}-1+\tan \pi x}{x-1}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{1+\tan x}-\sqrt{1+\sin x}}{x^3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{(1+\tan x)-(1+\sin x)}{x^3(\sqrt{1+\tan x}+\sqrt{1+\sin x})}\\
+&amp;= \lim_{x \to 0}\frac{\tan x(1-\cos x)}{x^3(\sqrt{1+\tan x}+\sqrt{1+\sin x})}\\
+&amp;= \lim_{x \to 0}\left[\frac{\tan x}{x}\cdot\frac{2\sin^2\frac{x}{2}}{x^2}\cdot\frac{1}{\sqrt{1+\tan x}+\sqrt{1+\sin x}}\right]\\
+&amp;= 1\cdot\left(2\cdot\frac{1}{4}\right)\cdot\frac{1}{1+1} = \frac{1}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sin x}{\sqrt[3]{x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\left(\frac{\sin x}{x}\cdot\sqrt[3]{x^2}\right)\\
+&amp;= 1\times 0 = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0^+}\frac{1-\cos \sqrt{x}}{\sin x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0^+}\frac{2\sin^2\frac{\sqrt{x}}{2}}{\sin x}\\
+&amp;= \lim_{x \to 0^+}\left[\frac{\sin^2\frac{\sqrt{x}}{2}}{\left(\frac{\sqrt{x}}{2}\right)^2}\cdot\frac{x}{\sin x}\cdot\frac{2}{4}\right]\\
+&amp;= 1\times 1\times\frac{1}{2} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos ax-\cos bx}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\left[\frac{1-\cos bx}{x^2}-\frac{1-\cos ax}{x^2}\right]\\
+&amp;= \lim_{x \to 0}\left[\frac{2\sin^2\frac{bx}{2}}{x^2}-\frac{2\sin^2\frac{ax}{2}}{x^2}\right]\\
+&amp;= 2\left(\frac{b}{2}\right)^2-2\left(\frac{a}{2}\right)^2 = \frac{b^2-a^2}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\sqrt{1+\sin^2 x}-\cos x}{\sin^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{(1+\sin^2 x)-\cos^2 x}{\sin^2 x(\sqrt{1+\sin^2 x}+\cos x)}\\
+&amp;= \lim_{x \to 0}\frac{\sin^2 x+(1-\cos^2 x)}{\sin^2 x(\sqrt{1+\sin^2 x}+\cos x)}\\
+&amp;= \lim_{x \to 0}\frac{2\sin^2 x}{\sin^2 x(\sqrt{1+\sin^2 x}+\cos x)}\\
+&amp;= \lim_{x \to 0}\frac{2}{\sqrt{1+\sin^2 x}+\cos x} = \frac{2}{1+1} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos x\cos 2x}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\left[\frac{1-\cos 2x}{x^2}+\cos 2x\cdot\frac{1-\cos x}{x^2}\right]\\
+&amp;= \lim_{x \to 0}\left[\frac{2\sin^2 x}{x^2}+\cos 2x\cdot\frac{2\sin^2\frac{x}{2}}{x^2}\right]\\
+&amp;= 2(1)^2+1\cdot 2\left(\frac{1}{2}\right)^2 = 2+\frac{1}{2} = \frac{5}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos x\sqrt{\cos x}}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{1-\cos^3 x}{x^2(1+\cos x\sqrt{\cos x})}\\
+&amp;= \lim_{x \to 0}\frac{(1-\cos x)(1+\cos x+\cos^2 x)}{x^2(1+\cos x\sqrt{\cos x})}\\
+&amp;= \lim_{x \to 0}\left[\frac{2\sin^2\frac{x}{2}}{x^2}\cdot\frac{1+\cos x+\cos^2 x}{1+\cos x\sqrt{\cos x}}\right]\\
+&amp;= \left(2\cdot\frac{1}{4}\right)\cdot\frac{1+1+1}{1+1} = \frac{1}{2}\cdot\frac{3}{2} = \frac{3}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2x+\sin 2019x-\tan 2020x}{9x-\sin 2021x+\tan 2022x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{2+\frac{\sin 2019x}{x}-\frac{\tan 2020x}{x}}{9-\frac{\sin 2021x}{x}+\frac{\tan 2022x}{x}}\\
+&amp;= \frac{2+2019-2020}{9-2021+2022} = \frac{1}{10}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{(1-\cos x)^2}{\tan^3 x-\sin^3 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{(1-\cos x)^2}{\tan^3 x(1-\cos^3 x)}\\
+&amp;= \lim_{x \to 0}\frac{1-\cos x}{\tan^3 x(1+\cos x+\cos^2 x)}\\
+&amp;= \lim_{x \to 0}\left[\frac{1-\cos x}{x^2}\cdot\frac{x^3}{\tan^3 x}\cdot\frac{1}{x(1+\cos x+\cos^2 x)}\right]\\
+&amp;= \frac{1}{2}\cdot 1\cdot\lim_{x \to 0}\frac{1}{3x}
+\end{aligned}\)</span><br/>
+ដោយ <span class="mi">\(\lim_{x\to 0^+}\frac{1}{3x}=+\infty\)</span> និង <span class="mi">\(\lim_{x\to 0^-}\frac{1}{3x}=-\infty\)</span><br/>
+<span class="kfbox"><span class="mi">\(\lim_{x \to 0^{\pm}}\frac{(1-\cos x)^2}{\tan^3 x-\sin^3 x} = \pm\infty\)</span> (គ្មានលីមីត)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos 4x}{2x\tan 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{2\sin^2 2x}{2x\cdot\frac{\sin 2x}{\cos 2x}}\\
+&amp;= \lim_{x \to 0}\left[\frac{\sin 2x}{2x}\cdot 2\cos 2x\right]\\
+&amp;= 1\times 2(1) = 2
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2\sin^2 x-2(1-\cos x)}{5x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\left[\frac{2\sin^2 x}{5x^2}-\frac{2(1-\cos x)}{5x^2}\right]\\
+&amp;= \lim_{x \to 0}\left[\frac{2}{5}\left(\frac{\sin x}{x}\right)^2-\frac{4\sin^2\frac{x}{2}}{5x^2}\right]\\
+&amp;= \frac{2}{5}(1)-\frac{4}{5}\cdot\frac{1}{4} = \frac{2}{5}-\frac{1}{5} = \frac{1}{5}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos 3x-\cos x}{\sin 5x+\sin 3x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{-2\sin 2x\sin x}{2\sin 4x\cos x}\\
+&amp;= -\lim_{x \to 0}\left[\frac{\sin 2x}{2x}\cdot\frac{4x}{\sin 4x}\cdot\frac{2}{4}\cdot\frac{\sin x}{\cos x}\right]\\
+&amp;= -1\cdot 1\cdot\frac{1}{2}\cdot\frac{0}{1} = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos 2x}{x^2(1+\sqrt{\cos x})}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{2\sin^2 x}{x^2(1+\sqrt{\cos x})}\\
+&amp;= 2\lim_{x \to 0}\left(\frac{\sin x}{x}\right)^2\cdot\lim_{x \to 0}\frac{1}{1+\sqrt{\cos x}}\\
+&amp;= 2(1)^2\cdot\frac{1}{1+1} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\cos x-\sqrt{\cos 2x}}{\sin^2 x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{\cos^2 x-\cos 2x}{\sin^2 x(\cos x+\sqrt{\cos 2x})}\\
+&amp;= \lim_{x \to 0}\frac{\cos^2 x-(\cos^2 x-\sin^2 x)}{\sin^2 x(\cos x+\sqrt{\cos 2x})}\\
+&amp;= \lim_{x \to 0}\frac{\sin^2 x}{\sin^2 x(\cos x+\sqrt{\cos 2x})}\\
+&amp;= \lim_{x \to 0}\frac{1}{\cos x+\sqrt{\cos 2x}} = \frac{1}{1+1} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{\tan x}{\sqrt[3]{(1-\cos x)^2}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\sqrt[3]{\frac{\tan^3 x}{(1-\cos x)^2}}\\
+&amp;= \lim_{x \to 0}\sqrt[3]{\frac{\frac{\sin^3 x}{\cos^3 x}}{\left(2\sin^2\frac{x}{2}\right)^2}} = \lim_{x \to 0}\sqrt[3]{\frac{8\sin^3\frac{x}{2}\cos^3\frac{x}{2}}{4\cos^3 x\sin^4\frac{x}{2}}}\\
+&amp;= \lim_{x \to 0}\sqrt[3]{\frac{2\cos^3\frac{x}{2}}{\cos^3 x\sin\frac{x}{2}}}
+\end{aligned}\)</span><br/>
+ដោយ <span class="mi">\(\sin\frac{x}{2}\to 0^+\)</span> កាលណា <span class="mi">\(x\to 0^+\)</span> និង <span class="mi">\(\sin\frac{x}{2}\to 0^-\)</span> កាលណា <span class="mi">\(x\to 0^-\)</span><br/>
+<span class="kfbox"><span class="mi">\(\lim_{x \to 0^{\pm}}\frac{\tan x}{\sqrt[3]{(1-\cos x)^2}} = \pm\infty\)</span> (គ្មានលីមីត)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{1-\cos(1-\cos x)}{x^4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0}\frac{2\sin^2\left(\frac{1-\cos x}{2}\right)}{x^4} = \lim_{x \to 0}\frac{2\sin^2\left(\sin^2\frac{x}{2}\right)}{x^4}\\
+&amp;= 2\lim_{x \to 0}\left[\frac{\sin^2\left(\sin^2\frac{x}{2}\right)}{\left(\sin^2\frac{x}{2}\right)^2}\cdot\frac{\sin^4\frac{x}{2}}{\left(\frac{x}{2}\right)^4}\cdot\frac{1}{16}\right]\\
+&amp;= 2\times 1\times 1\times\frac{1}{16} = \frac{1}{8}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to 0}\frac{2x-3\arcsin x}{\arcsin x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(k = \arcsin x \Rightarrow x = \sin k\)</span>។<br/>
+បើ <span class="mi">\(x \to 0\)</span> នោះ <span class="mi">\(k \to 0\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{k \to 0}\frac{2\sin k-3k}{k}\\
+&amp;= \lim_{k \to 0}\left(2\frac{\sin k}{k}-3\right)\\
+&amp;= 2(1)-3 = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{x^3-8+\tan \pi x}{x-2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 2}\left[\frac{(x-2)(x^2+2x+4)}{x-2}+\frac{\tan \pi x}{x-2}\right]\\
+&amp;= \lim_{x \to 2}(x^2+2x+4)+\lim_{x \to 2}\frac{\tan \pi x}{x-2}\\
+&amp;= 12+\lim_{x \to 2}\frac{\tan \pi x}{x-2}
+\end{aligned}\)</span><br/>
+តាង <span class="mi">\(k = x-2 \Rightarrow x = k+2\)</span>។ បើ <span class="mi">\(x \to 2 \Rightarrow k \to 0\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\lim_{x \to 2}\frac{\tan \pi x}{x-2} &amp;= \lim_{k \to 0}\frac{\tan \pi(k+2)}{k}\\
+&amp;= \lim_{k \to 0}\frac{\tan(\pi k+2\pi)}{k} = \lim_{k \to 0}\frac{\tan \pi k}{k} = \pi
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 2}\frac{x^2-4+\sin \pi x}{x-2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 2}\left[\frac{(x-2)(x+2)}{x-2}+\frac{\sin \pi x}{x-2}\right]\\
+&amp;= \lim_{x \to 2}(x+2)+\lim_{x \to 2}\frac{\sin \pi x}{x-2}\\
+&amp;= 4+\lim_{x \to 2}\frac{\sin \pi x}{x-2}
+\end{aligned}\)</span><br/>
+តាង <span class="mi">\(k = x-2 \Rightarrow x = k+2\)</span>។ បើ <span class="mi">\(x \to 2 \Rightarrow k \to 0\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\lim_{x \to 2}\frac{\sin \pi x}{x-2} &amp;= \lim_{k \to 0}\frac{\sin \pi(k+2)}{k}\\
+&amp;= \lim_{k \to 0}\frac{\sin(\pi k+2\pi)}{k} = \lim_{k \to 0}\frac{\sin \pi k}{k} = \pi
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 1}\frac{\sqrt[3]{x}-1+\tan \pi x}{x-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 1}\left[\frac{\sqrt[3]{x}-1}{x-1}+\frac{\tan \pi x}{x-1}\right]\\
+&amp;= \lim_{x \to 1}\frac{1}{\sqrt[3]{x^2}+\sqrt[3]{x}+1}+\lim_{x \to 1}\frac{\tan \pi x}{x-1}\\
+&amp;= \frac{1}{3}+\lim_{x \to 1}\frac{\tan \pi x}{x-1}
+\end{aligned}\)</span><br/>
+តាង <span class="mi">\(k = x-1 \Rightarrow x = k+1\)</span>។ បើ <span class="mi">\(x \to 1 \Rightarrow k \to 0\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\lim_{x \to 1}\frac{\tan \pi x}{x-1} &amp;= \lim_{k \to 0}\frac{\tan \pi(k+1)}{k}\\
+&amp;= \lim_{k \to 0}\frac{\tan(\pi k+\pi)}{k} = \lim_{k \to 0}\frac{\tan \pi k}{k} = \pi
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to +\infty} e^{-x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to -\infty} e^{2-3x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} (e^x+2x^2-6)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} (e^x-e^{-x})\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{xe^x+2}{x^2-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} \frac{e^x+x+1}{2e^x+9}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{2e^x-x}{1+e^x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{e^{2x}-3e^x+2}{2e^{2x}+5e^x-7}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{1+e^x-xe^{2x}}{x^2e^x+e^{2x}}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to +\infty} e^{-x}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } \lim_{x \to +\infty} e^{-x} = e^{-(+\infty)} = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to -\infty} e^{2-3x}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } \lim_{x \to -\infty} e^{2-3x} = e^{2-3(-\infty)} = +\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} (e^x+2x^2-6)\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } \lim_{x \to 0} (e^x+2x^2-6) = e^0+2(0)^2-6 = -5
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} (e^x-e^{-x})\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } \lim_{x \to +\infty} (e^x-e^{-x}) = e^{+\infty}-e^{-\infty} = +\infty
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{xe^x+2}{x^2-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to +\infty} \frac{xe^x\left(1+\frac{2}{xe^x}\right)}{x^2\left(1-\frac{1}{x^2}\right)}\\
+&amp;= \lim_{x \to +\infty} \left[\frac{e^x}{x}\cdot\frac{1+\frac{2}{xe^x}}{1-\frac{1}{x^2}}\right]\\
+&amp;= +\infty\cdot\frac{1+0}{1-0} = +\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to 0} \frac{e^x+x+1}{2e^x+9}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } \lim_{x \to 0} \frac{e^x+x+1}{2e^x+9} &amp;= \frac{e^0+0+1}{2e^0+9}\\
+&amp;= \frac{1+0+1}{2+9} = \frac{2}{11}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{2e^x-x}{1+e^x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to +\infty} \frac{e^x\left(2-\frac{x}{e^x}\right)}{e^x\left(e^{-x}+1\right)}\\
+&amp;= \lim_{x \to +\infty} \frac{2-\frac{x}{e^x}}{e^{-x}+1} = \frac{2-0}{0+1} = 2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{e^{2x}-3e^x+2}{2e^{2x}+5e^x-7}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to +\infty} \frac{e^{2x}\left(1-3e^{-x}+2e^{-2x}\right)}{e^{2x}\left(2+5e^{-x}-7e^{-2x}\right)}\\
+&amp;= \frac{1-0+0}{2+0-0} = \frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to +\infty} \frac{e^x\left(1-e^{-2x}\right)}{e^x\left(1+e^{-2x}\right)}\\
+&amp;= \frac{1-0}{1+0} = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x \to +\infty} \frac{1+e^x-xe^{2x}}{x^2e^x+e^{2x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to +\infty} \frac{xe^{2x}\left(\frac{1}{xe^{2x}}+\frac{1}{xe^x}-1\right)}{xe^{2x}\left(\frac{x}{e^x}+\frac{1}{x}\right)}\\
+&amp;= \lim_{x \to +\infty} \frac{\frac{1}{xe^{2x}}+\frac{1}{xe^x}-1}{\frac{x}{e^x}+\frac{1}{x}} = \frac{-1}{0^+} = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{ax}-e^{bx}}{\sin ax-\sin bx} , a \ne b\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x+\sin x-1}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{2x}-1}{e^{3x}-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{\sin x}+2\sin x-1}{\sin x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ \left(e^{-3x+2}-e^2 \right)\sin \pi x}{4x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ \sin x+ e^x-1}{x^2+x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 1} \frac{ 1-x}{e^x-e}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 5^x-4^x}{x^2-x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2-(e^x+e^{-x})}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{\sin x}- e^{\sin 3x}}{\sin 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{ax}-e^{bx}}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{\sin^22x}-\cos(\sin3x)}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{x^{2}}-\cos x}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{x+1}-e}{\sin \pi x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \pi} \frac{ \sin 2x}{e^{x+\pi }-e^{2\pi}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x+\sin x-1}{1-\sqrt{x+1}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ \left(e^x-1 \right)(1-\cos 2x) \sin 7x}{x^4}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ x^2}{e^{x^{2}}-4^{x^{2}}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{2x}-e^{-2x}}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x+e^{-x}-2}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2e^{2x}-3e^x+1}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x-e^{-x}}{\sin 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2e^x+3e^{2x}-5}{e^{3x}-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{-x^{2}}-\cos 2x}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{-2\sin x}-e^{\tan 3x}}{x^3+x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ xe^{-2x^{2}}+\sin x - \tan x -x }{x^3}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{3\sin^2x}-\cos x \cos 3x}{-e^{2x^2}+\cos 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 4^x+2^x-2}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 7^{x^2}-\cos 2x}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2^{\sin x}-3^{\tan x}}{x}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{ax}-e^{bx}}{\sin ax-\sin bx} , a \ne b\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{\frac{e^{ax}-1}{ax}\cdot a - \frac{e^{bx}-1}{bx}\cdot b}{\frac{\sin ax}{ax}\cdot a - \frac{\sin bx}{bx}\cdot b} \\
+&amp;= \frac{a - b}{a - b} = 1 \quad{} (\text{ដោយ } a \ne b)
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x+\sin x-1}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left(\frac{e^x - 1}{x} + \frac{\sin x}{x}\right) \\
+&amp;= 1 + 1 = 2
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{2x}-1}{e^{3x}-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{\frac{e^{2x} - 1}{2x} \cdot 2}{\frac{e^{3x} - 1}{3x} \cdot 3} \\
+&amp;= \frac{1 \cdot 2}{1 \cdot 3} = \frac{2}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{\sin x}+2\sin x-1}{\sin x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left(\frac{e^{\sin x} - 1}{\sin x} + \frac{2\sin x}{\sin x}\right) \\
+&amp;= \lim_{ x \to 0} \frac{e^{\sin x} - 1}{\sin x} + 2 \\
+&amp;= 1 + 2 = 3
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ \left(e^{-3x+2}-e^2 \right)\sin \pi x}{4x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{e^2\left(e^{-3x}-1\right)}{-3x}\cdot\left(-\frac{3}{4}\right)\cdot\frac{\sin \pi x}{\pi x}\cdot\pi\right] \\
+&amp;= e^2\cdot 1\cdot\left(-\frac{3}{4}\right)\cdot 1\cdot\pi \\
+&amp;= -\frac{3\pi e^2}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ \sin x+ e^x-1}{x^2+x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left(\frac{e^x - 1}{x} + \frac{\sin x}{x}\right)\cdot\frac{1}{x+1} \\
+&amp;= (1 + 1)\cdot\frac{1}{0 + 1} = 2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 1} \frac{ 1-x}{e^x-e}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(u = x-1 \Rightarrow x = u+1\)</span>។<br/>
+បើ <span class="mi">\(x \to 1 \Rightarrow u \to 0\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ u \to 0} \frac{-(u)}{e\left(e^u-1\right)} \\
+&amp;= -\frac{1}{e}\lim_{ u \to 0} \frac{u}{e^u-1} = -\frac{1}{e}\cdot 1 = -\frac{1}{e}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 5^x-4^x}{x^2-x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{5^x-1}{x} - \frac{4^x-1}{x}\right]\cdot\frac{1}{x-1} \\
+&amp;= (\ln 5 - \ln 4)\cdot\frac{1}{0-1} \\
+&amp;= -(\ln 5 - \ln 4) = -\ln\frac{5}{4}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2-(e^x+e^{-x})}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{2e^x - e^{2x} - 1}{x^2 e^x} = \lim_{ x \to 0} \frac{-(e^x-1)^2}{x^2 e^x} \\
+&amp;= -\lim_{ x \to 0} \left(\frac{e^x-1}{x}\right)^2\cdot\frac{1}{e^x} \\
+&amp;= -(1)^2\cdot 1 = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{\sin x}- e^{\sin 3x}}{\sin 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{\frac{e^{\sin x}-1}{\sin x}\cdot\frac{\sin x}{x} - \frac{e^{\sin 3x}-1}{\sin 3x}\cdot\frac{\sin 3x}{3x}\cdot 3}{\frac{\sin 2x}{2x}\cdot 2} \\
+&amp;= \frac{1\cdot 1 - 1\cdot 1\cdot 3}{1\cdot 2} = \frac{-2}{2} = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{ax}-e^{bx}}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{e^{ax}-1}{ax}\cdot a - \frac{e^{bx}-1}{bx}\cdot b\right] \\
+&amp;= 1\cdot a - 1\cdot b = a - b
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{\sin^22x}-\cos(\sin3x)}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{e^{\sin^2 2x}-1}{x^2} + \frac{1-\cos(\sin 3x)}{x^2}\right] \\
+&amp;= \lim_{ x \to 0} \left[\frac{e^{\sin^2 2x}-1}{x^2} + \frac{2\sin^2\left(\frac{\sin 3x}{2}\right)}{x^2}\right]
+\end{aligned}\)</span><br/>
+ដោយ៖<br/>
+<span class="mi">\(\bullet \lim_{x \to 0}\frac{e^{\sin^2 2x}-1}{x^2} = \lim_{x \to 0}\frac{e^{\sin^2 2x}-1}{\sin^2 2x}\cdot\frac{\sin^2 2x}{(2x)^2}\cdot 4 = 4\)</span><br/>
+<span class="mi">\(\bullet \lim_{x \to 0}\frac{2\sin^2\left(\frac{\sin 3x}{2}\right)}{x^2} = 2\lim_{x \to 0}\frac{\sin^2\left(\frac{\sin 3x}{2}\right)}{\left(\frac{\sin 3x}{2}\right)^2}\cdot\frac{\sin^2 3x}{(3x)^2}\cdot\frac{9}{4} = \frac{9}{2}\)</span><br/>
+ នាំឱ្យ <span class="mi">\( = 4 + \frac{9}{2} = \frac{17}{2}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{x^2}-\cos x}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{e^{x^2}-1}{x^2} + \frac{2\sin^2\frac{x}{2}}{x^2}\right] \\
+&amp;= \lim_{ x \to 0} \frac{e^{x^2}-1}{x^2} + 2\lim_{ x \to 0} \left(\frac{\sin\frac{x}{2}}{\frac{x}{2}}\right)^2\cdot\frac{1}{4} \\
+&amp;= 1 + 2\cdot\frac{1}{4} = \frac{3}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{x+1}-e}{\sin \pi x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= e\lim_{ x \to 0} \left[\frac{e^x-1}{x}\cdot\frac{\pi x}{\sin\pi x}\cdot\frac{1}{\pi}\right] \\
+&amp;= e\cdot 1\cdot 1\cdot\frac{1}{\pi} = \frac{e}{\pi}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to \pi} \frac{ \sin 2x}{e^{x+\pi }-e^{2\pi}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+តាង <span class="mi">\(u = x-\pi \Rightarrow x = u+\pi\)</span>។<br/>
+បើ <span class="mi">\(x \to \pi \Rightarrow u \to 0\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ u \to 0} \frac{\sin 2(u+\pi)}{e^{u+2\pi}-e^{2\pi}} = \lim_{ u \to 0} \frac{\sin 2u}{e^{2\pi}(e^u-1)} \\
+&amp;= \frac{1}{e^{2\pi}}\lim_{ u \to 0} \left[\frac{\sin 2u}{2u}\cdot\frac{u}{e^u-1}\cdot 2\right] \\
+&amp;= \frac{1}{e^{2\pi}}\cdot 1\cdot 1\cdot 2 = \frac{2}{e^{2\pi}}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x+\sin x-1}{1-\sqrt{x+1}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{(e^x-1+\sin x)(1+\sqrt{x+1})}{(1-\sqrt{x+1})(1+\sqrt{x+1})} \\
+&amp;= \lim_{ x \to 0} \frac{(e^x-1+\sin x)(1+\sqrt{x+1})}{-x} \\
+&amp;= -\lim_{ x \to 0} \left(\frac{e^x-1}{x} + \frac{\sin x}{x}\right)(1+\sqrt{x+1}) \\
+&amp;= -(1+1)(1+1) = -4
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ \left(e^x-1 \right)(1-\cos 2x) \sin 7x}{x^4}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{(e^x-1)\cdot 2\sin^2 x \cdot \sin 7x}{x^4} \\
+&amp;= \lim_{ x \to 0} \left[\frac{e^x-1}{x}\cdot 2\left(\frac{\sin x}{x}\right)^2\cdot\frac{\sin 7x}{7x}\cdot 7\right] \\
+&amp;= 1\times 2(1)^2\times 1\times 7 = 14
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ x^2}{e^{x^2}-4^{x^2}}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{x^2}{(e^{x^2}-1)-(4^{x^2}-1)} \\
+&amp;= \lim_{ x \to 0} \frac{1}{\frac{e^{x^2}-1}{x^2} - \frac{4^{x^2}-1}{x^2}} \\
+&amp;= \frac{1}{1-\ln 4}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{2x}-e^{-2x}}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{e^{2x}-1}{x} - \frac{e^{-2x}-1}{x}\right] \\
+&amp;= \lim_{ x \to 0} \frac{e^{2x}-1}{2x}\cdot 2 - \lim_{ x \to 0} \frac{e^{-2x}-1}{-2x}\cdot(-2) \\
+&amp;= 1(2) - (-2) = 4
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x+e^{-x}-2}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{e^{2x}-2e^x+1}{x^2 e^x} = \lim_{ x \to 0} \frac{(e^x-1)^2}{x^2 e^x} \\
+&amp;= \lim_{ x \to 0} \left(\frac{e^x-1}{x}\right)^2\cdot\frac{1}{e^x} \\
+&amp;= 1^2\cdot 1 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2e^{2x}-3e^x+1}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{(e^x-1)(2e^x-1)}{x} \\
+&amp;= \lim_{ x \to 0} \frac{e^x-1}{x}\cdot(2e^x-1) \\
+&amp;= 1(2-1) = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^x-e^{-x}}{\sin 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{e^{2x}-1}{e^x\sin 2x} \\
+&amp;= \lim_{ x \to 0} \left[\frac{e^{2x}-1}{2x}\cdot\frac{2x}{\sin 2x}\cdot\frac{1}{e^x}\right] \\
+&amp;= 1\times 1\times 1 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2e^x+3e^{2x}-5}{e^{3x}-1}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{2(e^x-1)+3(e^{2x}-1)}{e^{3x}-1} \\
+&amp;= \lim_{ x \to 0} \frac{\frac{2(e^x-1)}{x} + \frac{3(e^{2x}-1)}{2x}\cdot 2}{\frac{e^{3x}-1}{3x}\cdot 3} \\
+&amp;= \frac{2(1)+3(1)(2)}{1(3)} = \frac{8}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{-x^2}-\cos 2x}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{e^{-x^2}-1}{x^2} + \frac{1-\cos 2x}{x^2}\right] \\
+&amp;= \lim_{ x \to 0} \left[\frac{e^{-x^2}-1}{-x^2}(-1) + \frac{2\sin^2 x}{x^2}\right] \\
+&amp;= -(1) + 2(1)^2 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{-2\sin x}-e^{\tan 3x}}{x^3+x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{(e^{-2\sin x}-1)-(e^{\tan 3x}-1)}{x(x^2+1)} \\
+&amp;= \lim_{ x \to 0} \frac{1}{x^2+1}\left[\frac{e^{-2\sin x}-1}{x} - \frac{e^{\tan 3x}-1}{x}\right] \\
+&amp;= 1\cdot\left[\lim_{ x \to 0}\frac{e^{-2\sin x}-1}{-2\sin x}\cdot\frac{\sin x}{x}(-2)\right. \\
+&amp;\quad{} \left. - \lim_{ x \to 0}\frac{e^{\tan 3x}-1}{\tan 3x}\cdot\frac{\tan 3x}{3x}\cdot 3\right] \\
+&amp;= 1\cdot[1\cdot 1(-2) - 1\cdot 1\cdot 3] = -5
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ xe^{-2x^2}+\sin x - \tan x -x }{x^3}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{x(e^{-2x^2}-1) - \tan x(1-\cos x)}{x^3} \\
+&amp;= \lim_{ x \to 0} \left[\frac{e^{-2x^2}-1}{x^2} - \frac{\tan x}{x}\cdot\frac{2\sin^2\frac{x}{2}}{x^2}\right] \\
+&amp;= \lim_{ x \to 0} \left[\frac{e^{-2x^2}-1}{-2x^2}(-2) - \frac{\tan x}{x}\left(\frac{\sin\frac{x}{2}}{\frac{x}{2}}\right)^2\cdot\frac{1}{2}\right] \\
+&amp;= 1(-2) - 1(1)^2\cdot\frac{1}{2} = -\frac{5}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ e^{3\sin^2x}-\cos x \cos 3x}{-e^{2x^2}+\cos 2x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+ភាគយក៖<br/>
+<span class="mi">\(\begin{aligned}
+N &amp;= (e^{3\sin^2 x}-1) + (1-\cos x\cos 3x) \\
+&amp;= (e^{3\sin^2 x}-1) + \left[1 - \tfrac{1}{2}(\cos 4x+\cos 2x)\right] \\
+&amp;= (e^{3\sin^2 x}-1) + \sin^2 2x + \sin^2 x
+\end{aligned}\)</span><br/>
+ភាគបែង៖<br/>
+<span class="mi">\(\begin{aligned}
+D &amp;= -(e^{2x^2}-1) - (1-\cos 2x) \\
+&amp;= -(e^{2x^2}-1) - 2\sin^2 x
+\end{aligned}\)</span><br/>
+ចែកភាគយក និងភាគបែងនឹង <span class="mi">\(x^2\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \frac{\frac{e^{3\sin^2 x}-1}{x^2} + \frac{\sin^2 2x}{x^2} + \frac{\sin^2 x}{x^2}}{-\frac{e^{2x^2}-1}{x^2} - \frac{2\sin^2 x}{x^2}} \\
+&amp;= \frac{3+4+1}{-2-2} = \frac{8}{-4} = -2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 4^x+2^x-2}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{4^x-1}{x} + \frac{2^x-1}{x}\right] \\
+&amp;= \ln 4 + \ln 2 = \ln 8
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 7^{x^2}-\cos 2x}{x^2}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{7^{x^2}-1}{x^2} + \frac{1-\cos 2x}{x^2}\right] \\
+&amp;= \lim_{ x \to 0} \left[\frac{7^{x^2}-1}{x^2} + \frac{2\sin^2 x}{x^2}\right] \\
+&amp;= \ln 7 + 2(1)^2 = \ln 7 + 2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \frac{ 2^{\sin x}-3^{\tan x}}{x}\)</span> (រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[\frac{2^{\sin x}-1}{x} - \frac{3^{\tan x}-1}{x}\right] \\
+&amp;= \lim_{ x \to 0} \left[\frac{2^{\sin x}-1}{\sin x}\cdot\frac{\sin x}{x} - \frac{3^{\tan x}-1}{\tan x}\cdot\frac{\tan x}{x}\right] \\
+&amp;= \ln 2\cdot 1 - \ln 3\cdot 1 = \ln\frac{2}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \left(\frac{x+1}{x}\right) ^{x+5}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+ } \left(1+2x\right) ^{\cot x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(1+\sin x\right) ^{\frac{1}{x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(1+\frac{3}{x}\right) ^{ x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(\frac{x-2}{x+3}\right) ^{ x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(1+\frac{1}{x}\right) ^{ \frac{x+1}{x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(\frac{3x-4}{3x+2}\right) ^{ \frac{x+1}{3}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(1+\frac{2}{x}\right) ^{ x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(\cos x\right) ^{ \frac{1}{\sin x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \sqrt[\sin x]{1+x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(x+2^x\right) ^{ \frac{1}{x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+} \left(1+\tan ^2\sqrt{x}\right) ^{ \frac{1}{2x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(\frac{ x^2-x+1}{x^2+x+1}\right) ^{ \frac{1}{\sin x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(\frac{ \sin x}{x}\right) ^{ \frac{\tan x}{x-\sin x}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(2-\cos x\right) ^{ \frac{1}{x^2}}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \left(\frac{x+1}{x}\right) ^{x+5}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to +\infty } \left(1 + \frac{1}{x}\right)^{x+5} \\
+&amp;= \lim_{ x \to +\infty } \left[\left(1 + \frac{1}{x}\right)^x\right]^{\frac{x+5}{x}} \\
+&amp;= \lim_{ x \to +\infty } \left[\left(1 + \frac{1}{x}\right)^x\right]^{1 + \frac{5}{x}} \\
+&amp;= e^{1+0} = e
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+ } \left(1+2x\right) ^{\cot x}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0^+ } \left[(1+2x)^{\frac{1}{2x}}\right]^{2x\cot x} \\
+&amp;= \lim_{ x \to 0^+ } \left[(1+2x)^{\frac{1}{2x}}\right]^{2\cos x\cdot\frac{x}{\sin x}} \\
+&amp;= e^{2\lim_{ x \to 0^+} \cos x\cdot\lim_{ x \to 0^+} \frac{x}{\sin x}} \\
+&amp;= e^{2\times 1} = e^2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(1+\sin x\right) ^{\frac{1}{x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[(1+\sin x)^{\frac{1}{\sin x}}\right]^{\frac{\sin x}{x}} \\
+&amp;= e^{\lim_{ x \to 0} \frac{\sin x}{x}} \\
+&amp;= e^1 = e
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(1+\frac{3}{x}\right) ^{ x}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to \infty } \left[\left(1+\frac{3}{x}\right)^{\frac{x}{3}}\right]^{\frac{3}{x}\cdot x} \\
+&amp;= \lim_{ x \to \infty } \left[\left(1+\frac{3}{x}\right)^{\frac{x}{3}}\right]^3 \\
+&amp;= e^3
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(\frac{x-2}{x+3}\right) ^{ x}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to \infty } \left(1 - \frac{5}{x+3}\right)^x \\
+&amp;= \lim_{ x \to \infty } \left[\left(1 - \frac{5}{x+3}\right)^{-\frac{x+3}{5}}\right]^{-\frac{5x}{x+3}} \\
+&amp;= e^{\lim_{ x \to \infty } \frac{-5x}{x+3}} = e^{-5}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(1+\frac{1}{x}\right) ^{ \frac{x+1}{x}}\)</span> (រាង <span class="mi">\(1^{1}\)</span> មិនមែនរាងមិនកំណត់)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to \infty } \left[\left(1+\frac{1}{x}\right)^x\right]^{\frac{x+1}{x^2}} \\
+&amp;= e^{\lim_{ x \to \infty } \frac{x+1}{x^2}} \\
+&amp;= e^0 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(\frac{3x-4}{3x+2}\right) ^{ \frac{x+1}{3}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to \infty } \left(1 - \frac{6}{3x+2}\right)^{\frac{x+1}{3}} \\
+&amp;= \lim_{ x \to \infty } \left[\left(1 - \frac{6}{3x+2}\right)^{-\frac{3x+2}{6}}\right]^{-\frac{6}{3x+2}\cdot\frac{x+1}{3}} \\
+&amp;= e^{\lim_{ x \to \infty } \frac{-2(x+1)}{3x+2}} = e^{-\frac{2}{3}}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to \infty } \left(1+\frac{2}{x}\right) ^{ x}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to \infty } \left[\left(1+\frac{2}{x}\right)^{\frac{x}{2}}\right]^2 \\
+&amp;= e^2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(\cos x\right) ^{ \frac{1}{\sin x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} [1 - (1-\cos x)]^{\frac{1}{\sin x}} \\
+&amp;= \lim_{ x \to 0} \left\{[1-(1-\cos x)]^{-\frac{1}{1-\cos x}}\right\}^{-\frac{1-\cos x}{\sin x}} \\
+&amp;= e^{-\lim_{ x \to 0} \frac{2\sin^2\frac{x}{2}}{2\sin\frac{x}{2}\cos\frac{x}{2}}} \\
+&amp;= e^{-\lim_{ x \to 0} \tan\frac{x}{2}} = e^0 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \sqrt[\sin x]{1+x}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[(1+x)^{\frac{1}{x}}\right]^{\frac{x}{\sin x}} \\
+&amp;= e^{\lim_{ x \to 0} \frac{x}{\sin x}} \\
+&amp;= e^1 = e
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(x+2^x\right) ^{ \frac{1}{x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} [1 + (x+2^x-1)]^{\frac{1}{x}} \\
+&amp;= \lim_{ x \to 0} \left\{[1+(x+2^x-1)]^{\frac{1}{x+2^x-1}}\right\}^{\frac{x+2^x-1}{x}} \\
+&amp;= e^{\lim_{ x \to 0} \left(1 + \frac{2^x-1}{x}\right)} \\
+&amp;= e^{1+\ln 2} = e\cdot e^{\ln 2} = 2e
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+} \left(1+\tan ^2\sqrt{x}\right) ^{ \frac{1}{2x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0^+} \left[\left(1+\tan^2\sqrt{x}\right)^{\frac{1}{\tan^2\sqrt{x}}}\right]^{\frac{\tan^2\sqrt{x}}{2x}} \\
+&amp;= e^{\lim_{ x \to 0^+} \frac{\tan^2\sqrt{x}}{2(\sqrt{x})^2}} \\
+&amp;= e^{1\times\frac{1}{2}} = e^{\frac{1}{2}} = \sqrt{e}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(\frac{ x^2-x+1}{x^2+x+1}\right) ^{ \frac{1}{\sin x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left(1 - \frac{2x}{x^2+x+1}\right)^{\frac{1}{\sin x}} \\
+&amp;= \lim_{ x \to 0} \left[\left(1 - \frac{2x}{x^2+x+1}\right)^{-\frac{x^2+x+1}{2x}}\right]^{-\frac{2x}{(x^2+x+1)\sin x}} \\
+&amp;= e^{-\lim_{ x \to 0} \frac{x}{\sin x}\cdot\frac{2}{x^2+x+1}} \\
+&amp;= e^{-1\cdot 2} = e^{-2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(\frac{ \sin x}{x}\right) ^{ \frac{\tan x}{x-\sin x}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[1 - \left(\frac{x-\sin x}{x}\right)\right]^{\frac{\tan x}{x-\sin x}} \\
+&amp;= \lim_{ x \to 0} \left\{\left[1 - \left(\frac{x-\sin x}{x}\right)\right]^{-\frac{x}{x-\sin x}}\right\}^{-\frac{\tan x}{x}} \\
+&amp;= e^{-\lim_{ x \to 0} \frac{\tan x}{x}} \\
+&amp;= e^{-1}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0} \left(2-\cos x\right) ^{ \frac{1}{x^2}}\)</span> (រាងមិនកំណត់ <span class="mi">\(1^{\infty}\)</span>)<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{ x \to 0} \left[1 + (1-\cos x)\right]^{\frac{1}{x^2}} \\
+&amp;= \lim_{ x \to 0} \left(1 + 2\sin^2\frac{x}{2}\right)^{\frac{1}{x^2}} \\
+&amp;= \lim_{ x \to 0} \left[\left(1 + 2\sin^2\frac{x}{2}\right)^{\frac{1}{2\sin^2\frac{x}{2}}}\right]^{2\sin^2\frac{x}{2}\cdot\frac{1}{x^2}} \\
+&amp;= e^{2\lim_{ x \to 0} \left(\frac{\sin\frac{x}{2}}{\frac{x}{2}}\right)^2\cdot\frac{1}{4}} \\
+&amp;= e^{2\times 1\times\frac{1}{4}} = e^{\frac{1}{2}} = \sqrt{e}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \frac{\ln x}{x^2-x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to -\infty } \ln (e^x+1)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+ } \ln \left(\frac{x}{x+1}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+ } \frac{\ln^2 x+2\ln x+3}{\ln x +2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to + \infty} \ln \left(\frac{x^2+x-2}{x^2+1}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \frac{3x\ln x}{x+2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \frac{\ln x^{2020}-2020}{x^{2020}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\sin 3x-\sin x}{\ln(x+1)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{x-\ln (1+3x)}{x+\sin 3x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 1 } \frac{x^2-1+\ln x}{e^x-e}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (1+2x^2)}{1-\cos 2x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (\cos 2x)}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (x^2-x+1)}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (1+x)+\ln (1+2x)}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (1+2\sin^2x)}{3\tan ^2x}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \frac{\ln x}{x^2-x}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to  + \infty } \frac{\ln x}{x(x - 1)} \\
+&amp;= \lim_{x \to  + \infty }\left[ \frac{\ln x}{x} \cdot \frac{1}{x - 1} \right]\\
+&amp;=\lim_{x \to  + \infty }\frac{\ln x}{x}\times \lim_{x \to  + \infty }\frac{1}{x-1}\\
+&amp;= 0 \times 0 = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to -\infty } \ln (e^x+1)\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \ln (e^{-\infty}+1)\\
+&amp;=\ln (0+1)\\
+&amp;= \ln 1 = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+ } \ln \left(\frac{x}{x+1}\right)\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0^+ } \ln \left[ \frac{x}{x\left( 1 + \frac{1}{x} \right)} \right] \\
+&amp;= \lim_{x \to 0^+ } \ln \frac{1}{1 + \frac{1}{x}} \\
+&amp;= \ln 0^+ = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0^+ } \frac{\ln^2 x+2\ln x+3}{\ln x +2}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0^+ } \frac{\ln x\left( \ln x + 2 +\frac{3}{\ln x} \right)}{\ln x\left( 1 + \frac{2}{\ln x} \right)} \\
+&amp;= \lim_{x \to 0^+ } \frac{\ln x + 2 + \frac{3}{\ln x}}{1 + \frac{2}{\ln x}} \\
+&amp;= \frac{-\infty  + 2 + 0}{1 + 0} = -\infty
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to + \infty} \ln \left(\frac{x^2+x-2}{x^2+1}\right)\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to + \infty } \ln \left[ \frac{x^2\left( 1 + \frac{1}{x} - \frac{2}{x^2} \right)}{x^2\left( 1 + \frac{1}{x^2} \right)} \right] \\
+&amp;= \lim_{x \to + \infty } \ln \frac{1 + \frac{1}{x} - \frac{2}{x^2}}{1 + \frac{1}{x^2}} \\
+&amp;= \ln \frac{1 + 0 - 0}{1 + 0} = \ln 1 = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \frac{3x\ln x}{x+2}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to + \infty } \frac{3x\ln x}{x\left( 1 + \frac{2}{x} \right)} \\
+&amp;= \lim_{x \to + \infty } \frac{3\ln x}{1 + \frac{2}{x}} \\
+&amp;= \frac{3(+\infty)}{1 + 0} = +\infty
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to +\infty } \frac{\ln x^{2020}-2020}{x^{2020}}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{\infty}{\infty}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to + \infty } \frac{2020(\ln x - 1)}{x^{2020}} \\
+&amp;= 2020\lim_{x \to + \infty } \left( \frac{\ln x}{x^{2020}} - \frac{1}{x^{2020}} \right) \\
+&amp;= 2020(0 - 0) = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\sin 3x-\sin x}{\ln(x+1)}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0} \frac{\frac{\sin 3x - \sin x}{x}}{\frac{\ln(1+x)}{x}} \\
+&amp;= \lim_{x \to 0} \frac{3\cdot\frac{\sin 3x}{3x} - \frac{\sin x}{x}}{\frac{\ln(1+x)}{x}} \\
+&amp;= \frac{3(1) - 1}{1} = 2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{x-\ln (1+3x)}{x+\sin 3x}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0} \frac{\frac{x - \ln(1+3x)}{x}}{\frac{x + \sin 3x}{x}} \\
+&amp;= \lim_{x \to 0} \frac{1 - 3\cdot\frac{\ln(1+3x)}{3x}}{1 + 3\cdot\frac{\sin 3x}{3x}} \\
+&amp;= \frac{1 - 3(1)}{1 + 3(1)} = -\frac{1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{ x \to 1 } \frac{x^2-1+\ln x}{e^x-e}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+តាង <span class="mi">\(u = x-1 \Rightarrow x = u +1\)</span><br/>
+បើ <span class="mi">\(x\to 1 \Rightarrow u \to 0\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{u \to 0} \frac{(1+u)^2 - 1 + \ln(1+u)}{e^{u+1} - e} \\
+&amp;= \lim_{u \to 0} \frac{2u + u^2 + \ln(1+u)}{e(e^u - 1)} \\
+&amp;= \frac{1}{e}\lim_{u \to 0} \frac{2 + u + \frac{\ln(1+u)}{u}}{\frac{e^u - 1}{u}} \\
+&amp;= \frac{1}{e}\left( \frac{2 + 0 + 1}{1} \right) = \frac{3}{e}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (1+2x^2)}{1-\cos 2x}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0} \frac{\ln(1+2x^2)}{2\sin^2 x} \\
+&amp;= \lim_{x \to 0} \left[\frac{\ln(1+2x^2)}{2x^2} \times \frac{x^2}{\sin^2 x}\right] \\
+&amp;= 1 \times 1 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (\cos 2x)}{x^2}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0} \frac{\ln(1 - 2\sin^2 x)}{x^2} \\
+&amp;= \lim_{x \to 0} \left[\frac{\ln(1 - 2\sin^2 x)}{-2\sin^2 x} \times \frac{-2\sin^2 x}{x^2}\right] \\
+&amp;= 1 \times (-2 \times 1) = -2
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (x^2-x+1)}{x}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0} \frac{\ln[1 + x(x - 1)]}{x} \\
+&amp;= \lim_{x \to 0} \left[\frac{\ln[1 + x(x - 1)]}{x(x - 1)} \times (x - 1)\right] \\
+&amp;= 1 \times (0 - 1) = -1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (1+x)+\ln (1+2x)}{x}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0} \left[ \frac{\ln(1+x)}{x} + 2\cdot\frac{\ln(1+2x)}{2x} \right] \\
+&amp;= 1 + 2(1) = 3
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{ x \to 0 } \frac{\ln (1+2\sin^2x)}{3\tan ^2x}\)</span> , រាងមិនកំណត់ <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x \to 0} \left[\frac{\ln(1 + 2\sin^2 x)}{2\sin^2 x} \times \frac{2\cos^2 x}{3}\right] \\
+&amp;= 1 \times \frac{2(1)}{3} = \frac{2}{3}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x\to 2} \frac{\sqrt{2+\sqrt{\cdots+\sqrt{2+x}}}-2}{x-2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to 0} \frac{1-(1+x)\cdots (1+nx)}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to 1} \frac{x+x^2+\cdots +x^n-n}{x+x^2+\cdots +x^m-m}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to a} \frac{x^n-a^n-na^{n-1}x+na^n}{(x-a)^2}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to 1} \frac{x^n-nx+n-1}{x-1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to 1} \frac{nx^{n+1}-(n+1)x^n+1}{x^{m+1}-x^m-x+1}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to +\infty} \frac{x^{100}+(x+1)^{100}+\cdots +(x+100)^{100}}{x^{100}+100^{100}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty} \left(\frac{1}{2}+ \frac{1}{4} +\cdots + \frac{1}{2^n}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty} \frac{1}{\sqrt{n}}\sum_{k=1}^n\frac{1}{\sqrt{2k+1}+\sqrt{2k-1}}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty} \sum_{k=1}^n \frac{1}{(3k-2)(3k+1)(3k+4)}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty} \prod_{k=0}^n (1+x^{2^k}) , |x| &lt; 1\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to 0} \frac{e^x+e^{2x}+\cdots + e^{nx}-n}{x}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to 0} \frac{(e^x-1)\cdots (e^{nx}-1)}{x^n}\)</span></p></li>
+<li><p><span class="mi">\(\lim_{x\to 1} \left(\frac{n}{1-x^n}-\frac{1}{1-x}\right)\)</span></p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty} \frac{n^2-1}{1+2+3+\cdots+n}\)</span></p></li>
+</ol>
+</div></section>
+<p>ដោះស្រាយលីមីតខាងក្រោម៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x\to 2}\frac{\sqrt{2+\sqrt{\cdots+\sqrt{2+x}}}-2}{x-2}\)</span> (<span class="mi">\(n\)</span> ឫសការេ)<br/>
+គុណកន្សោមឆ្លាស់នៃភាគយក៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 2}\frac{(\sqrt{2+\cdots+\sqrt{2+x}})^2 - 2^2}{(x-2)(\sqrt{2+\cdots+\sqrt{2+x}}+2)} \\
+&amp;= \lim_{x\to 2}\frac{\sqrt{2+\cdots+\sqrt{2+x}}-2}{(x-2)(\sqrt{2+\cdots+\sqrt{2+x}}+2)}
+\end{aligned}\)</span><br/>
+បន្តគុណកន្សោមឆ្លាស់ <span class="mi">\(n\)</span> ដង យើងទទួលបាន៖<br/>
+<span class="mi">\(\begin{aligned}
+&amp;= \lim_{x\to 2}\frac{x-2}{(x-2)\underbrace{(\sqrt{2+\cdots}+2)\cdots(\sqrt{2+x}+2)}_{n \text{ កត្តា}}} \\
+&amp;= \frac{1}{\underbrace{4\cdot 4\cdots 4}_{n \text{ កត្តា}}} = \frac{1}{4^n}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x\to 0}\frac{1-(1+x)(1+2x)\cdots(1+nx)}{x}\)</span> , រាង <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+តាមរូបមន្តពន្លាត យើងមាន៖<br/>
+<span class="mi">\((1+x)(1+2x)\cdots(1+nx)\)</span><br/>
+<span class="mi">\(= 1 + (1+2+\cdots+n)x + x^2 P(x)\)</span><br/>
+<span class="mi">\(= 1 + \frac{n(n+1)}{2}x + x^2 P(x)\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 0}\frac{1-\left[1+\frac{n(n+1)}{2}x+x^2 P(x)\right]}{x} \\
+&amp;= \lim_{x\to 0}\left[-\frac{n(n+1)}{2} - x P(x)\right] \\
+&amp;= -\frac{n(n+1)}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x\to 1}\frac{x+x^2+\cdots+x^n-n}{x+x^2+\cdots+x^m-m}\)</span> , រាង <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+យើងមាន <span class="mi">\(n = \underbrace{1+1+\cdots+1}_{n \text{ តួ}}\)</span> នាំឱ្យ៖<br/>
+<span class="mi">\(x+x^2+\cdots+x^n-n = \sum_{k=1}^n (x^k-1)\)</span><br/>
+<span class="mi">\(= (x-1)\sum_{k=1}^n (x^{k-1}+\cdots+1)\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 1}\frac{(x-1)\sum_{k=1}^n (x^{k-1}+\cdots+1)}{(x-1)\sum_{j=1}^m (x^{j-1}+\cdots+1)} \\
+&amp;= \frac{1+2+\cdots+n}{1+2+\cdots+m} \\
+&amp;= \frac{\frac{n(n+1)}{2}}{\frac{m(m+1)}{2}} = \frac{n(n+1)}{m(m+1)}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x\to a}\frac{x^n-a^n-na^{n-1}x+na^n}{(x-a)^2}\)</span> , រាង <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+ភាគយកអាចសរសេរជា៖<br/>
+<span class="mi">\(x^n-a^n-na^{n-1}(x-a)\)</span><br/>
+<span class="mi">\(= (x-a)(x^{n-1}+\cdots+a^{n-1}) - na^{n-1}(x-a)\)</span><br/>
+<span class="mi">\(= (x-a)\left[(x^{n-1}-a^{n-1})+\cdots+a^{n-2}(x-a)\right]\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to a}\left[\frac{x^{n-1}-a^{n-1}}{x-a} + \cdots + a^{n-2}\right] \\
+&amp;= (n-1)a^{n-2} + \cdots + a^{n-2} \\
+&amp;= a^{n-2}[1+2+\cdots+(n-1)] \\
+&amp;= \frac{n(n-1)a^{n-2}}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x\to 1}\frac{x^n-nx+n-1}{x-1}\)</span> , រាង <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 1}\frac{(x^n-1)-n(x-1)}{x-1} \\
+&amp;= \lim_{x\to 1}\frac{(x-1)(x^{n-1}+\cdots+1)-n(x-1)}{x-1} \\
+&amp;= \lim_{x\to 1}\left[(x^{n-1}+\cdots+1)-n\right] \\
+&amp;= \underbrace{1+1+\cdots+1}_{n \text{ តួ}} - n \\
+&amp;= n - n = 0
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x\to 1}\frac{nx^{n+1}-(n+1)x^n+1}{x^{m+1}-x^m-x+1}\)</span> , រាង <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+ភាគបែង៖<br/>
+<span class="mi">\(x^{m+1}-x^m-x+1 = (x-1)(x^m-1)\)</span><br/>
+ភាគយក៖<br/>
+<span class="mi">\(nx^n(x-1) - (x^n-1)\)</span><br/>
+<span class="mi">\(= (x-1)[nx^n-(x^{n-1}+\cdots+1)]\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 1}\frac{nx^n-(x^{n-1}+\cdots+1)}{x^m-1} \\
+&amp;= \lim_{x\to 1}\frac{\frac{nx^n-(x^{n-1}+\cdots+1)}{x-1}}{\frac{x^m-1}{x-1}} \\
+&amp;= \frac{1+2+\cdots+n}{m} = \frac{\frac{n(n+1)}{2}}{m} = \frac{n(n+1)}{2m}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x\to +\infty}\frac{x^{100}+(x+1)^{100}+\cdots+(x+100)^{100}}{x^{100}+100^{100}}\)</span><br/>
+ដាក់ <span class="mi">\(x^{100}\)</span> ជាកត្តារួម៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to +\infty}\frac{x^{100}\left[1+\left(1+\frac{1}{x}\right)^{100}+\cdots+\left(1+\frac{100}{x}\right)^{100}\right]}{x^{100}\left[1+\left(\frac{100}{x}\right)^{100}\right]} \\
+&amp;= \frac{1+\overbrace{1+1+\cdots+1}^{100 \text{ តួ}}}{1+0} \\
+&amp;= 1 + 100 = 101
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty}\left(\frac{1}{2}+\frac{1}{4}+\cdots+\frac{1}{2^n}\right)\)</span><br/>
+ជាផលបូកស្វ៊ីតធរណីមាត្រ <span class="mi">\(a=\frac{1}{2}, q=\frac{1}{2}\)</span>៖<br/>
+<span class="mi">\(S_n = \frac{1}{2}\cdot\frac{1-\left(\frac{1}{2}\right)^n}{1-\frac{1}{2}} = 1 - \frac{1}{2^n}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{n\to +\infty}\left(1-\frac{1}{2^n}\right) \\
+&amp;= 1 - 0 = 1
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty}\frac{1}{\sqrt{n}}\sum_{k=1}^n\frac{1}{\sqrt{2k+1}+\sqrt{2k-1}}\)</span><br/>
+គុណកន្សោមឆ្លាស់តួទី <span class="mi">\(k\)</span>៖<br/>
+<span class="mi">\(\frac{1}{\sqrt{2k+1}+\sqrt{2k-1}} = \frac{\sqrt{2k+1}-\sqrt{2k-1}}{2}\)</span><br/>
+ផលបូកកាត់បន្តបន្ទាប់គ្នា៖<br/>
+<span class="mi">\(\sum_{k=1}^n\frac{\sqrt{2k+1}-\sqrt{2k-1}}{2} = \frac{\sqrt{2n+1}-1}{2}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{n\to +\infty}\frac{\sqrt{2n+1}-1}{2\sqrt{n}} \\
+&amp;= \lim_{n\to +\infty}\frac{\sqrt{2+\frac{1}{n}}-\frac{1}{\sqrt{n}}}{2} = \frac{\sqrt{2}}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty}\sum_{k=1}^n\frac{1}{(3k-2)(3k+1)(3k+4)}\)</span><br/>
+បំបែកជាផលដកពីរប្រភាគ៖<br/>
+<span class="mi">\(\frac{1}{(3k-2)(3k+1)(3k+4)}\)</span><br/>
+<span class="mi">\(= \frac{1}{6}\left[\frac{1}{(3k-2)(3k+1)}-\frac{1}{(3k+1)(3k+4)}\right]\)</span><br/>
+ផលបូកកាត់បន្តបន្ទាប់គ្នា៖<br/>
+<span class="mi">\(S_n = \frac{1}{6}\left[\frac{1}{1\cdot 4} - \frac{1}{(3n+1)(3n+4)}\right]\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{n\to +\infty}\frac{1}{6}\left[\frac{1}{4} - \frac{1}{(3n+1)(3n+4)}\right] \\
+&amp;= \frac{1}{6}\left(\frac{1}{4}-0\right) = \frac{1}{24}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty}\prod_{k=0}^n\left(1+x^{2^k}\right)\)</span> , <span class="mi">\(|x|&lt;1\)</span><br/>
+គុណនិងចែកនឹង <span class="mi">\(1-x\)</span>៖<br/>
+<span class="mi">\(P_n = \frac{(1-x)(1+x)(1+x^2)\cdots(1+x^{2^n})}{1-x}\)</span><br/>
+<span class="mi">\(= \frac{1-x^{2^{n+1}}}{1-x}\)</span><br/>
+ដោយ <span class="mi">\(|x|&lt;1 \Rightarrow \lim_{n\to +\infty}x^{2^{n+1}} = 0\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{n\to +\infty}\frac{1-x^{2^{n+1}}}{1-x} \\
+&amp;= \frac{1-0}{1-x} = \frac{1}{1-x}
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<p><strong>ដំណោះស្រាយ (ត)</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\lim_{x\to 0}\frac{e^x+e^{2x}+\cdots+e^{nx}-n}{x}\)</span> , រាង <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+បំបែក <span class="mi">\(n = \underbrace{1+1+\cdots+1}_{n \text{ តួ}}\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 0}\sum_{k=1}^n \frac{e^{kx}-1}{x} \\
+&amp;= \lim_{x\to 0}\sum_{k=1}^n k\cdot\frac{e^{kx}-1}{kx} \\
+&amp;= \sum_{k=1}^n k\cdot 1 = 1+2+\cdots+n \\
+&amp;= \frac{n(n+1)}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x\to 0}\frac{(e^x-1)(e^{2x}-1)\cdots(e^{nx}-1)}{x^n}\)</span> , រាង <span class="mi">\(\tfrac{0}{0}\)</span><br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 0}\prod_{k=1}^n \frac{e^{kx}-1}{x} \\
+&amp;= \lim_{x\to 0}\prod_{k=1}^n\left(k\cdot\frac{e^{kx}-1}{kx}\right) \\
+&amp;= \prod_{k=1}^n (k\cdot 1) = 1\cdot 2\cdots n = n!
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{x\to 1}\left(\frac{n}{1-x^n}-\frac{1}{1-x}\right)\)</span> , រាង <span class="mi">\(\infty-\infty\)</span><br/>
+តម្រូវភាគបែងរួម៖<br/>
+<span class="mi">\(\frac{n-(1+x+\cdots+x^{n-1})}{1-x^n}\)</span><br/>
+<span class="mi">\(= \frac{(1-x)+(1-x^2)+\cdots+(1-x^{n-1})}{1-x^n}\)</span><br/>
+សម្រួលនឹង <span class="mi">\(1-x\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{x\to 1}\frac{1+(1+x)+\cdots+(1+x+\cdots+x^{n-2})}{1+x+\cdots+x^{n-1}} \\
+&amp;= \frac{1+2+\cdots+(n-1)}{n} \\
+&amp;= \frac{\frac{n(n-1)}{2}}{n} = \frac{n-1}{2}
+\end{aligned}\)</span><br/>
+</p></li>
+<li><p><span class="mi">\(\lim_{n\to +\infty}\frac{n^2-1}{1+2+3+\cdots+n}\)</span> , រាង <span class="mi">\(\tfrac{\infty}{\infty}\)</span><br/>
+យើងមាន <span class="mi">\(1+2+3+\cdots+n = \frac{n(n+1)}{2}\)</span>៖<br/>
+<span class="mi">\(\begin{aligned}
+\text{យើងបាន } &amp;= \lim_{n\to +\infty}\frac{2(n^2-1)}{n(n+1)} \\
+&amp;= \lim_{n\to +\infty}\frac{2n^2\left(1-\frac{1}{n^2}\right)}{n^2\left(1+\frac{1}{n}\right)} \\
+&amp;= \frac{2(1-0)}{1+0} = 2
+\end{aligned}\)</span><br/>
+</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<p>សិក្សាភាពជាប់ ឬរកប៉ារ៉ាម៉ែត្រ ដើម្បីឱ្យអនុគមន៍ខាងក្រោមជាប់ត្រង់ចំណុចដែលគេឲ្យ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(f(x)=\begin{cases}\dfrac{x^2-x-2}{x-2} &amp; \text{បើ } x\ne 2\\ 3 &amp; \text{បើ } x=2\end{cases}\)</span> ត្រង់ <span class="mi">\(x=2\)</span></p></li>
+<li><p><span class="mi">\(f(x)=\begin{cases}\dfrac{|x|}{x} &amp; \text{បើ } x\ne 0\\ 1 &amp; \text{បើ } x=0\end{cases}\)</span> ត្រង់ <span class="mi">\(x=0\)</span></p></li>
+<li><p><span class="mi">\(f(x)=\begin{cases}\dfrac{x^3-8}{x-2} &amp; \text{បើ } x\ne 2\\ k &amp; \text{បើ } x=2\end{cases}\)</span> ; រក <span class="mi">\(k\)</span></p></li>
+<li><p><span class="mi">\(f(x)=\begin{cases}ax+1 &amp; \text{បើ } x\le 2\\ x^2-1 &amp; \text{បើ } x&gt;2\end{cases}\)</span> ; រក <span class="mi">\(a\)</span></p></li>
+</ol>
+</div></section>
+<ol class="list olka cols1">
+<li><p>គេមាន <span class="mi">\(f(2)=3\)</span> ។<br/>
+<span class="mi">\(\lim\limits_{x\to 2}\dfrac{x^2-x-2}{x-2}=\lim\limits_{x\to 2}\dfrac{(x-2)(x+1)}{x-2}=\lim\limits_{x\to 2}(x+1)=3\)</span> ។<br/>
+ដោយ <span class="mi">\(\lim\limits_{x\to 2}f(x)=f(2)=3\)</span><br/>
+ដូចនេះ <span class="kfbox"><span class="mi">\(f\)</span> ជាប់ត្រង់ <span class="mi">\(x=2\)</span></span></p></li>
+<li><p>គេមាន <span class="mi">\(f(0)=1\)</span> ។<br/>
+<span class="mi">\(\lim\limits_{x\to 0^+}\dfrac{|x|}{x}=\lim\limits_{x\to 0^+}\dfrac{x}{x}=1\)</span> និង <span class="mi">\(\lim\limits_{x\to 0^-}\dfrac{|x|}{x}=\lim\limits_{x\to 0^-}\dfrac{-x}{x}=-1\)</span> ។<br/>
+ដោយលីមីតឆ្វេងខុសពីលីមីតស្ដាំ <span class="mi">\(\lim\limits_{x\to 0}f(x)\)</span> គ្មាន ។<br/>
+ដូចនេះ <span class="kfbox"><span class="mi">\(f\)</span> ដាច់ត្រង់ <span class="mi">\(x=0\)</span></span> (តែ <span class="mi">\(f\)</span> ជាប់ខាងស្ដាំត្រង់ <span class="mi">\(0\)</span>)</p></li>
+<li><p><span class="mi">\(\lim\limits_{x\to 2}\dfrac{x^3-8}{x-2}=\lim\limits_{x\to 2}\dfrac{(x-2)(x^2+2x+4)}{x-2}=\lim\limits_{x\to 2}(x^2+2x+4)=12\)</span> ។<br/>
+<span class="mi">\(f\)</span> ជាប់ត្រង់ <span class="mi">\(2\)</span> លុះត្រាតែ <span class="mi">\(f(2)=\lim\limits_{x\to 2}f(x)\)</span> ។<br/>
+ដូចនេះ</p></li>
+<li><p><span class="mi">\(f(2)=2a+1\)</span> និង <span class="mi">\(\lim\limits_{x\to 2^-}f(x)=\lim\limits_{x\to 2^-}(ax+1)=2a+1\)</span> ។<br/>
+<span class="mi">\(\lim\limits_{x\to 2^+}f(x)=\lim\limits_{x\to 2^+}(x^2-1)=3\)</span> ។<br/>
+<span class="mi">\(f\)</span> ជាប់ត្រង់ <span class="mi">\(2\)</span> លុះត្រាតែ <span class="mi">\(2a+1=3\)</span> ។<br/>
+ដូចនេះ</p></li>
+</ol>
+<section class="bx bx-try"><header class="bx-h"><b>លំហាត់</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>បង្ហាញថាសមីការ <span class="mi">\(x^5+x-1=0\)</span> មានឫសតែមួយគត់ក្នុងចន្លោះ <span class="mi">\(]0, 1[\)</span> ។</p></li>
+<li><p>បង្ហាញថាសមីការ <span class="mi">\(\ln x+x=0\)</span> មានឫសតែមួយគត់ក្នុងចន្លោះ <span class="mi">\(\left]\dfrac{1}{e}, 1\right[\)</span> ។</p></li>
+<li><p>រកអាស៊ីមតូតនៃខ្សែកោងតាងអនុគមន៍ <span class="mi">\(f(x)=\dfrac{x^2+x+1}{x+1}\)</span> ។</p></li>
+<li><p>រកអាស៊ីមតូតនៃខ្សែកោងតាងអនុគមន៍ <span class="mi">\(g(x)=\dfrac{3x-1}{x+2}\)</span> ។</p></li>
+</ol>
+</div></section>
+<ol class="list olka cols1">
+<li><p>តាង <span class="mi">\(f(x)=x^5+x-1\)</span> ជាអនុគមន៍ពហុធា ដូចនេះជាប់លើ <span class="mi">\([0, 1]\)</span> ។<br/>
+<span class="mi">\(f(0)=-1&lt;0\)</span> និង <span class="mi">\(f(1)=1&gt;0\)</span> នាំឱ្យ <span class="mi">\(f(0)\cdot f(1)&lt;0\)</span> ។<br/>
+<span class="mi">\(f'(x)=5x^4+1&gt;0\)</span> នាំឱ្យ <span class="mi">\(f\)</span> កើនដាច់ខាត ។<br/>
+ដូចនេះ <span class="kfbox">សមីការមានឫសតែមួយគត់ក្នុង <span class="mi">\(]0, 1[\)</span></span></p></li>
+<li><p>តាង <span class="mi">\(f(x)=\ln x+x\)</span> ជាប់លើ <span class="mi">\(]0,+\infty[\)</span> ដូចនេះជាប់លើ <span class="mi">\(\left[\frac{1}{e},1\right]\)</span> ។<br/>
+<span class="mi">\(f\left(\frac{1}{e}\right)=-1+\frac{1}{e}&lt;0\)</span> (ព្រោះ <span class="mi">\(\frac{1}{e}&lt;1\)</span>) និង <span class="mi">\(f(1)=0+1=1&gt;0\)</span> ។<br/>
+<span class="mi">\(f'(x)=\frac{1}{x}+1&gt;0\)</span> នាំឱ្យ <span class="mi">\(f\)</span> កើនដាច់ខាត ។<br/>
+ដូចនេះ <span class="kfbox">សមីការមានឫសតែមួយគត់ក្នុង <span class="mi">\(\left]\frac{1}{e}, 1\right[\)</span></span></p></li>
+<li><p>ដែនកំណត់ <span class="mi">\(D=\mathbb{R}\setminus\{-1\}\)</span> ។ ចែកពហុធាបាន <span class="mi">\(f(x)=x+\dfrac{1}{x+1}\)</span> ។<br/>
+<span class="mi">\(\bullet\)</span> <span class="mi">\(\lim\limits_{x\to -1^+}f(x)=+\infty\)</span> និង <span class="mi">\(\lim\limits_{x\to -1^-}f(x)=-\infty\)</span> នាំឱ្យ <span class="mi">\(x=-1\)</span> ជាអាស៊ីមតូតឈរ ។<br/>
+<span class="mi">\(\bullet\)</span> <span class="mi">\(\lim\limits_{x\to\pm\infty}\left[f(x)-x\right]=\lim\limits_{x\to\pm\infty}\dfrac{1}{x+1}=0\)</span> នាំឱ្យ <span class="mi">\(y=x\)</span> ជាអាស៊ីមតូតទ្រេត ។<br/>
+ដូចនេះ <span class="kfbox"><span class="mi">\(x=-1\)</span> និង <span class="mi">\(y=x\)</span></span></p></li>
+<li><p>ដែនកំណត់ <span class="mi">\(D=\mathbb{R}\setminus\{-2\}\)</span> ។ គេសរសេរ <span class="mi">\(g(x)=3-\dfrac{7}{x+2}\)</span> ។<br/>
+<span class="mi">\(\bullet\)</span> <span class="mi">\(\lim\limits_{x\to\pm\infty}g(x)=3\)</span> នាំឱ្យ <span class="mi">\(y=3\)</span> ជាអាស៊ីមតូតដេក ។<br/>
+<span class="mi">\(\bullet\)</span> <span class="mi">\(\lim\limits_{x\to -2^+}g(x)=-\infty\)</span> និង <span class="mi">\(\lim\limits_{x\to -2^-}g(x)=+\infty\)</span> នាំឱ្យ <span class="mi">\(x=-2\)</span> ជាអាស៊ីមតូតឈរ ។<br/>
+ដូចនេះ <span class="kfbox"><span class="mi">\(x=-2\)</span> និង <span class="mi">\(y=3\)</span></span></p></li>
+</ol>
+
+<nav class="ls-pager"><a class="prev" href="L06.html"><small>← មេរៀនមុន</small><b>វិធីសាស្ត្រគណនាលីមីត</b></a><a class="next" href="L08.html"><small>មេរៀនបន្ទាប់ →</small><b>លំហាត់ប្រតិបត្តិ លីមីត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>វិញ្ញាសាត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាបឋមភូមិ ទី១៩ — KPCambodianmathematics</title>
+<meta name="description" content="វិញ្ញាសាត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាបឋមភូមិ ទី១៩ និងអត្រាកំណែលម្អិត">
+<meta name="theme-color" content="#102a43">
+<link rel="icon" href="../static/img/logo.png" type="image/png">
+<link rel="stylesheet" href="../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../static/css/site.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../static/katex/katex.min.css">
+<link rel="stylesheet" href="../static/css/lesson.css">
+<style>
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+</style>
+<style>
+.ex-q{position:relative;padding-left:2.1em}
+.ex-badge{position:absolute;left:0;top:.2em;display:grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.85em}
+.ex-ch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 16px;margin:4px 0 12px 2.1em}
+@media(max-width:640px){.ex-ch{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ex-pts{font-weight:500;color:var(--ink-3);font-size:.85em}
+.ex-roman{color:#d6336c}
+.ls-paper h3{margin-top:26px}
+.ans-sect{margin-top:22px;color:#c2255c}
+.ex-head{text-align:center;margin-bottom:18px}
+.ex-head b{display:block;font-size:20px}
+.ex-ans{margin-top:34px;border-top:2px dashed #e99bba;padding-top:10px}
+.ex-ans>summary{cursor:pointer;font-weight:700;font-size:18px;color:#c2255c;list-style:none;padding:10px 0}
+.ex-ans>summary::-webkit-details-marker{display:none}
+.ex-ans>summary::before{content:'▸ '}.ex-ans[open]>summary::before{content:'▾ '}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-toc a.on{font-weight:700}
+@media print{.site-header,.site-footer,.ls-side,.ls-pager,.no-print{display:none!important}.ex-ans{display:none}}
+</style>
+<style>
+.brand img{border-radius:50%;object-fit:cover}
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+@media(max-width:520px){.brand-text b{font-size:15px}.brand-text small{display:none}.brand img{width:32px;height:32px}}
+.ls-paper .tbl{overflow-x:auto}
+.test-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.chapter small{display:block;color:var(--ink-3);font-size:13.5px}
+.chapter b{display:block}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../KPCambodianmathematics.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../static/img/logo.png" alt="" width="38" height="38">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ ថ្នាក់ទី ៧–១០</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">ថ្នាក់រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-grades"><a href="../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន · តេស្ត · លំហាត់</span></span></a><a href="../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន · តេស្ត · លំហាត់</span></span></a><a href="../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន · តេស្ត · លំហាត់</span></span></a><a href="../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន · តេស្ត · លំហាត់</span></span></a></div></li>
+        <li class="nav-item current"><a class="nav-link" href="../KPCambodianmathematics.html#tests">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item"><a class="nav-link" href="../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html">Exam Studio</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-primary btn-sm" href="../KPCambodianmathematics.html#tests">ធ្វើតេស្ត</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../KPCambodianmathematics.html">ទំព័រដើម</a></li><li><a href="../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="index.html">វិញ្ញាសាត្រៀមប្រឡង</a></li><li aria-current="page">វិញ្ញាសាត្រៀម ទី១៩</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២៤</span>
+      <div><span class="ls-kicker">កម្រងទី២ · វិញ្ញាសាត្រៀមប្រឡង</span><h1>វិញ្ញាសាត្រៀមប្រឡងសញ្ញាបត្រមធ្យមសិក្សាបឋមភូមិ ទី១៩</h1>
+      <div class="ls-chips"><span class="chip chip-soon">វិញ្ញាសា គណិតវិទ្យា</span><span class="chip chip-soon">០៦ កក្កដា ២០២៦</span><span class="chip chip-soon">ពិន្ទុសរុប ១០០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side"><div class="ls-side-box"><div class="ls-side-t">វិញ្ញាសាទាំងអស់</div><ol class="ls-toc"><li><b>កម្រងទី១ ៖ វិញ្ញាសាប្រឡងឆ្នាំចាស់ៗ</b></li><li class="sub"><a href="exam25.html">ឆ្នាំ២០២៥</a></li><li class="sub"><a href="exam24.html">ឆ្នាំ២០២៤</a></li><li class="sub"><a href="exam23.html">ឆ្នាំ២០២៣</a></li><li class="sub"><a href="exam22.html">ឆ្នាំ២០២២</a></li><li class="sub"><a href="exam21.html">ឆ្នាំ២០២១</a></li><li><b>កម្រងទី២ ៖ វិញ្ញាសាត្រៀមប្រឡង</b></li><li class="sub"><a href="pre-exam1.html">វិញ្ញាសាត្រៀម ទី១</a></li><li class="sub"><a href="pre-exam2.html">វិញ្ញាសាត្រៀម ទី២</a></li><li class="sub"><a href="pre-exam3.html">វិញ្ញាសាត្រៀម ទី៣</a></li><li class="sub"><a href="pre-exam4.html">វិញ្ញាសាត្រៀម ទី៤</a></li><li class="sub"><a href="pre-exam5.html">វិញ្ញាសាត្រៀម ទី៥</a></li><li class="sub"><a href="pre-exam6.html">វិញ្ញាសាត្រៀម ទី៦</a></li><li class="sub"><a href="pre-exam7.html">វិញ្ញាសាត្រៀម ទី៧</a></li><li class="sub"><a href="pre-exam8.html">វិញ្ញាសាត្រៀម ទី៨</a></li><li class="sub"><a href="pre-exam9.html">វិញ្ញាសាត្រៀម ទី៩</a></li><li class="sub"><a href="pre-exam10.html">វិញ្ញាសាត្រៀម ទី១០</a></li><li class="sub"><a href="pre-exam11.html">វិញ្ញាសាត្រៀម ទី១១</a></li><li class="sub"><a href="pre-exam12.html">វិញ្ញាសាត្រៀម ទី១២</a></li><li class="sub"><a href="pre-exam13.html">វិញ្ញាសាត្រៀម ទី១៣</a></li><li class="sub"><a href="pre-exam14.html">វិញ្ញាសាត្រៀម ទី១៤</a></li><li class="sub"><a href="pre-exam15.html">វិញ្ញាសាត្រៀម ទី១៥</a></li><li class="sub"><a href="pre-exam16.html">វិញ្ញាសាត្រៀម ទី១៦</a></li><li class="sub"><a href="pre-exam17.html">វិញ្ញាសាត្រៀម ទី១៧</a></li><li class="sub"><a href="pre-exam18.html">វិញ្ញាសាត្រៀម ទី១៨</a></li><li class="sub"><a class="on" href="pre-exam19.html">វិញ្ញាសាត្រៀម ទី១៩</a></li><li class="sub"><a href="pre-exam20.html">វិញ្ញាសាត្រៀម ទី២០</a></li><li><b>កម្រងទី៣ ៖ វិញ្ញាសាព្យាករណ៍សម្រាប់ឆ្នាំ២០២៦</b></li><li class="sub"><a href="re-exam1.html">វិញ្ញាសាព្យាករណ៍ ទី១</a></li><li class="sub"><a href="re-exam2.html">វិញ្ញាសាព្យាករណ៍ ទី២</a></li><li class="sub"><a href="re-exam3.html">វិញ្ញាសាព្យាករណ៍ ទី៣</a></li><li class="sub"><a href="re-exam4.html">វិញ្ញាសាព្យាករណ៍ ទី៤</a></li><li class="sub"><a href="re-exam5.html">វិញ្ញាសាព្យាករណ៍ ទី៥</a></li></ol></div></aside>
+    <article class="ls-paper">
+<p class="no-print"><button class="btn btn-ghost btn-sm" type="button" onclick="window.print()">បោះពុម្ពវិញ្ញាសា</button></p>
+<div class="ex-head"><b>វិញ្ញាសា គណិតវិទ្យា</b>សម័យប្រឡង ០៦ កក្កដា ២០២៦</div>
+<h3 id="x1"><span class="ex-roman">I.</span> <span class="ex-pts">(១០ ពិន្ទុ)</span></h3><p>ចូរគូសសញ្ញា ✓ ក្នុងប្រអប់នៅខាងមុខចម្លើយដែលត្រឹមត្រូវមានតែមួយគត់៖</p>
+<p class="ex-q"><span class="ex-badge">១</span> សមីការ <span class="mi">\(\sqrt{2}x - 1 = \sqrt{2}\)</span> មានឫស</p>
+<div class="ex-ch"><span>☐ <strong>ក.</strong> <span class="mi">\(x = 1 + \dfrac{\sqrt{2}}{2}\)</span></span><span>☐ <strong>ខ.</strong> <span class="mi">\(x = 2 + \sqrt{2}\)</span></span><span>☐ <strong>គ.</strong> <span class="mi">\(x = 2 - \sqrt{2}\)</span></span><span>☐ <strong>ឃ.</strong> <span class="mi">\(x = \dfrac{1 + \sqrt{2}}{2}\)</span></span></div>
+<p class="ex-q"><span class="ex-badge">២</span> ត្រីកោណ <span class="mi">\(ABC\)</span> ជាត្រីកោណកែងត្រង់កំពូល <span class="mi">\(A\)</span> ។ <span class="mi">\([AH]\)</span> កែងនឹង <span class="mi">\([BC]\)</span> ត្រង់ <span class="mi">\(H\)</span> ដែល <span class="mi">\(BH = 4.5\,\mathrm{cm}\)</span></p>
+<p>និង <span class="mi">\(HC = 2\,\mathrm{cm}\)</span> ។ រកប្រវែង <span class="mi">\(AH\)</span></p>
+<div class="ex-ch"><span>☐ <strong>ក.</strong> <span class="mi">\(AH = 9\,\mathrm{cm}\)</span></span><span>☐ <strong>ខ.</strong> <span class="mi">\(AH = 6.5\,\mathrm{cm}\)</span></span><span>☐ <strong>គ.</strong> <span class="mi">\(AH = \pm 3\,\mathrm{cm}\)</span></span><span>☐ <strong>ឃ.</strong> <span class="mi">\(AH = 3\,\mathrm{cm}\)</span></span></div>
+<h3 id="x2"><span class="ex-roman">II.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3>
+<p class="ex-q"><span class="ex-badge">១</span> ដោះស្រាយប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} x+y=3 \\ 2x+3y=11 \end{cases}\)</span></p>
+<p class="ex-q"><span class="ex-badge">២</span> ដោះស្រាយវិសមីការ <span class="mi">\((2x+1)^2 &gt; 4x^2 + x\)</span> រួចបកស្រាយចម្លើយលើអ័ក្សនៃចំនួនពិត ។</p>
+<h3 id="x3"><span class="ex-roman">III.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3><p>នៅក្នុងគ្រួសារមួយ ឪពុកមានអាយុច្រើនជាងកូនច្បងចំនួន <span class="mi">\(25\)</span> ឆ្នាំ ហើយកូនច្បងមានអាយុច្រើនជាងកូនប្អូន</p>
+<p>ចំនួន <span class="mi">\(5\)</span> ឆ្នាំ ។ រកអាយុម្នាក់ៗ បើដឹងថាផលបូកនៃអាយុអ្នកទាំងបីស្មើនឹង <span class="mi">\(65\)</span> ឆ្នាំ ។</p>
+<h3 id="x4"><span class="ex-roman">IV.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3><p>សិស្សប្រុស <span class="mi">\(3\)</span> នាក់ និងស្រី <span class="mi">\(3\)</span> នាក់ បានឈរឈ្មោះបោះឆ្នោត ដើម្បីជ្រើសរើសធ្វើជាប្រធានថ្នាក់ និងបន្ទាប់មក</p>
+<p>ជ្រើសរើសអនុប្រធានថ្នាក់ម្នាក់ទៀត ។ រកប្រូបាបនៃព្រឹត្តិការណ៍៖</p>
+<p class="ex-q"><span class="ex-badge">១</span> ជ្រើសរើសបានប្រធានថ្នាក់ជាសិស្សប្រុស ។</p>
+<p class="ex-q"><span class="ex-badge">២</span> ជ្រើសរើសបានប្រធានថ្នាក់ជាសិស្សស្រី ។</p>
+<p class="ex-q"><span class="ex-badge">៣</span> ជ្រើសរើសបានប្រធានថ្នាក់ជាសិស្សស្រី និងអនុប្រធានថ្នាក់ជាសិស្សប្រុស ។</p>
+<h3 id="x5"><span class="ex-roman">V.</span> <span class="ex-pts">(១៥ ពិន្ទុ)</span></h3><p>នៅក្នុងតម្រុយអរតូណរមេ <span class="mi">\((xOy)\)</span> គេមានបន្ទាត់ <span class="mi">\((L_1): y = x - 2\)</span> និងមានចំណុច <span class="mi">\(A(1,2)\)</span> ។</p>
+<p class="ex-q"><span class="ex-badge">១</span> រកសមីការបន្ទាត់ <span class="mi">\((L_2)\)</span> ដែលកាត់តាមចំណុច <span class="mi">\(A(1,2)\)</span> ហើយកែងនឹងបន្ទាត់ <span class="mi">\((L_1)\)</span> ។</p>
+<p class="ex-q"><span class="ex-badge">២</span> រកកូអរដោនេចំណុចប្រសព្វរវាងបន្ទាត់ <span class="mi">\((L_1)\)</span> និង <span class="mi">\((L_2)\)</span> ហើយផ្ទៀងផ្ទាត់លទ្ធផលតាមក្រាប ។</p>
+<h3 id="x6"><span class="ex-roman">VI.</span> <span class="ex-pts">(៣០ ពិន្ទុ)</span></h3><p>រង្វង់ផ្ចិត <span class="mi">\(O\)</span> មានអង្កត់ផ្ចិត <span class="mi">\([BC]\)</span> ដែល <span class="mi">\(BC=4\,\mathrm{cm}\)</span> ។ <span class="mi">\(A\)</span> ជាចំណុចមួយនៅលើរង្វង់ <span class="mi">\((O)\)</span> ដែល <span class="mi">\(\angle ABC=30^\circ\)</span> ។</p>
+<p>បន្ទាត់កាត់តាម <span class="mi">\(A\)</span> មួយជួបជាមួយអង្កត់ <span class="mi">\([BC]\)</span> ត្រង់ <span class="mi">\(D\)</span> និងកាត់រង្វង់ <span class="mi">\((O)\)</span> ម្តងទៀតត្រង់ <span class="mi">\(E\)</span> ។</p>
+<p class="ex-q"><span class="ex-badge">១</span> កំណត់ប្រភេទត្រីកោណ <span class="mi">\(ABC\)</span> និងត្រីកោណ <span class="mi">\(AOC\)</span> ។</p>
+<p class="ex-q"><span class="ex-badge">២</span> គណនា <span class="mi">\(AB\)</span>, <span class="mi">\(AC\)</span>, <span class="mi">\(\angle AEB\)</span> ។</p>
+<p class="ex-q"><span class="ex-badge">៣</span> ប្រៀបធៀបត្រីកោណ <span class="mi">\(ACD\)</span> និងត្រីកោណ <span class="mi">\(BED\)</span> ។ រួចស្រាយបញ្ជាក់ថា <span class="mi">\(DA \times DE = DB \times DC\)</span> ។</p>
+
+<details class="ex-ans"><summary>មើលអត្រាកំណែ (ចម្លើយលម្អិត)</summary>
+<p>អត្រាកំណែ<br/>
+</p>
+<h4 class="ans-sect">លំហាត់ I <span class="ex-pts">(១០ ពិន្ទុ)</span></h4>
+<p class="ex-q"><span class="ex-badge">១</span> ដោះស្រាយសមីការ <div class="md">\[\begin{aligned}
+\sqrt{2}x - 1 &amp;= \sqrt{2} \\
+\sqrt{2}x &amp;= \sqrt{2} + 1 \\
+x &amp;= \frac{\sqrt{2}+1}{\sqrt{2}} \\
+&amp;= \frac{2+\sqrt{2}}{2}
+= 1+\frac{\sqrt{2}}{2}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> ជ្រើសរើស ក. <span class="mi">\(\displaystyle  x = 1+\frac{\sqrt{2}}{2}\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">២</span> គណនាប្រវែង <span class="mi">\(AH\)</span></p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="../lesson/fig/6cec3df2960bad3f.svg"/></div></p>
+<p>ក្នុងត្រីកោណកែង <span class="mi">\(ABC\)</span> ដែល <span class="mi">\(AH \perp BC\)</span> គេមាន <div class="md">\[\begin{aligned}
+AH^2 &amp;= BH \times HC \\
+&amp;= 4.5 \times 2 = 9 \\
+AH &amp;= 3\,\mathrm{cm}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> ជ្រើសរើស ឃ. <span class="mi">\(\displaystyle  AH = 3\,\mathrm{cm}\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ II <span class="ex-pts">(១៥ ពិន្ទុ)</span></h4>
+<p class="ex-q"><span class="ex-badge">១</span> ដោះស្រាយប្រព័ន្ធសមីការ <div class="md">\[\begin{cases}
+x+y=3 \quad{} &amp;(1)\\
+2x+3y=11 \quad{} &amp;(2)
+\end{cases}\]</div> តាមសមីការ (1) គេបាន <span class="mi">\(x = 3-y\)</span> ។ ជំនួសចូល (2) <div class="md">\[\begin{aligned}
+2(3-y)+3y &amp;= 11 \\
+6-2y+3y &amp;= 11 \\
+y &amp;= 5
+\end{aligned}\]</div> នាំឱ្យ <div class="md">\[x = 3-5 = -2\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle (x,y)=(-2,5)\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">២</span> ដោះស្រាយវិសមីការ <div class="md">\[\begin{aligned}
+(2x+1)^2 &amp;&gt; 4x^2+x \\
+4x^2+4x+1 &amp;&gt; 4x^2+x \\
+3x+1 &amp;&gt; 0 \\
+3x &amp;&gt; -1 \\
+x &amp;&gt; -\frac{1}{3}
+\end{aligned}\]</div></p>
+<p>បកស្រាយចម្លើយលើអ័ក្សចំនួនពិត<br/>
+<div class="center"><img alt="" class="fig" loading="lazy" src="../lesson/fig/539db66f226efd83.svg"/></div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle x &gt; -\frac{1}{3}\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ III <span class="ex-pts">(១៥ ពិន្ទុ) រកអាយុអ្នកទាំងបី</span></h4>
+<p>តាង <span class="mi">\(x\)</span> ជាអាយុកូនប្អូន <span class="mi">\((x&gt;0)\)</span><br/>
+<span class="mi">\(x+5\)</span> ជាអាយុកូនច្បង<br/>
+<span class="mi">\(x+30\)</span> ជាអាយុឪពុក</p>
+<p>ដោយ ផលបូកនៃអាយុអ្នកទាំងបីស្មើនឹង <span class="mi">\(65\)</span> ឆ្នាំ<br/>
+គេបានសមីការ <div class="md">\[\begin{aligned}
+x+(x+5)+(x+30) &amp;= 65 \\
+3x+35 &amp;= 65 \\
+3x &amp;= 30 \\
+x &amp;= 10
+\end{aligned}\]</div></p>
+<p>ផ្ទៀងផ្ទាត់ចម្លើយ <div class="md">\[\begin{aligned}
+x+(x+5)+(x+30) &amp;= 65 \\
+10+(10+5)+(10+30) &amp;= 65 \\
+10+15+40 &amp;= 65 \\
+65 &amp;= 65\quad{} \text{ពិត}
+\end{aligned}\]</div></p>
+<p>អាយុកូនប្អូន <span class="mi">\(10\)</span> ឆ្នាំ<br/>
+អាយុកូនច្បង <span class="mi">\(10+5=15\)</span> ឆ្នាំ<br/>
+អាយុឪពុក <span class="mi">\(10+30=40\)</span> ឆ្នាំ</p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"> ឪពុក <span class="mi">\(\displaystyle 40\)</span> ឆ្នាំ <span class="mi">\(\displaystyle ,\quad{} \)</span> កូនច្បង <span class="mi">\(\displaystyle 15\)</span> ឆ្នាំ <span class="mi">\(\displaystyle ,\quad{} \)</span> កូនប្អូន <span class="mi">\(\displaystyle 10\)</span> ឆ្នាំ </span></p>
+<h4 class="ans-sect">លំហាត់ IV <span class="ex-pts">(១៥ ពិន្ទុ)</span></h4>
+<p>សិស្សសរុបមាន <span class="mi">\(3+3=6\)</span> នាក់។ ជ្រើសរើសប្រធានម្នាក់ និងអនុប្រធានម្នាក់ផ្សេងទៀត។</p>
+<p>ចំនួនករណីអាចគឺ <div class="md">\[n(S)=6\times5=30\]</div></p>
+<p class="ex-q"><span class="ex-badge">១</span> រកប្រូបាបដែលជ្រើសរើសបានប្រធានថ្នាក់ជាសិស្សប្រុស</p>
+<p>ជ្រើសប្រធានប្រុសបាន <span class="mi">\(3\)</span> របៀប ហើយជ្រើសអនុប្រធានពីអ្នកនៅសល់បាន <span class="mi">\(5\)</span> របៀប។ <div class="md">\[\begin{aligned}
+P(\text{ប្រធានប្រុស})&amp;=\frac{3\times5}{30}\\
+&amp;=\frac{15}{30}=\frac{1}{2}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle P(\)</span> ប្រធានប្រុស <span class="mi">\(\displaystyle )=\frac{1}{2}\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">២</span> រកប្រូបាបដែលជ្រើសរើសបានប្រធានថ្នាក់ជាសិស្សស្រី</p>
+<p>ជ្រើសប្រធានស្រីបាន <span class="mi">\(3\)</span> របៀប ហើយជ្រើសអនុប្រធានពីអ្នកនៅសល់បាន <span class="mi">\(5\)</span> របៀប។ <div class="md">\[\begin{aligned}
+P(\text{ប្រធានស្រី})&amp;=\frac{3\times5}{30}\\
+&amp;=\frac{15}{30}=\frac{1}{2}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle P(\)</span> ប្រធានស្រី <span class="mi">\(\displaystyle )=\frac{1}{2}\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">៣</span> រកប្រូបាបដែលជ្រើសរើសបានប្រធានថ្នាក់ជាសិស្សស្រី និងអនុប្រធានថ្នាក់ជាសិស្សប្រុស</p>
+<p>ជ្រើសប្រធានស្រីបាន <span class="mi">\(3\)</span> របៀប ហើយជ្រើសអនុប្រធានប្រុសបាន <span class="mi">\(3\)</span> របៀប។ <div class="md">\[\begin{aligned}
+P(\text{ប្រធានស្រី, អនុប្រធានប្រុស})&amp;=\frac{3\times3}{30}\\
+&amp;=\frac{9}{30}=\frac{3}{10}
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle P(\)</span> ប្រធានស្រី, អនុប្រធានប្រុស <span class="mi">\(\displaystyle )=\frac{3}{10}\)</span></span></p>
+<h4 class="ans-sect">លំហាត់ V <span class="ex-pts">(១៥ ពិន្ទុ)</span></h4>
+<p>គេមានបន្ទាត់ <span class="mi">\((L_1): y=x-2\)</span> និងចំណុច <span class="mi">\(A(1,2)\)</span>។</p>
+<p class="ex-q"><span class="ex-badge">១</span> រកសមីការបន្ទាត់ <span class="mi">\((L_2)\)</span> ដែលកាត់តាមចំណុច <span class="mi">\(A(1,2)\)</span> ហើយកែងនឹងបន្ទាត់ <span class="mi">\((L_1)\)</span></p>
+<p>បន្ទាត់ <span class="mi">\((L_1)\)</span> មានមេគុណប្រាប់ទិស <span class="mi">\(a_1=1\)</span>។ ដោយ <span class="mi">\((L_2)\perp(L_1)\)</span> នោះ <span class="mi">\(a_2=-1\)</span>។</p>
+<p>បន្ទាត់ <span class="mi">\((L_2)\)</span> កាត់តាម <span class="mi">\(A(1,2)\)</span> <div class="md">\[\begin{aligned}
+\text{សមីការ}\qquad{} &amp; y-y_A=a_2(x-x_A)\\
+\text{នោះ}\qquad{}
+y-2 &amp;= -1(x-1) \\
+y &amp;= -x+1+2 \\
+y &amp;= -x+3
+\end{aligned}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle (L_2):\ y=-x+3\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">២</span> រកចំណុចប្រសព្វរវាង <span class="mi">\((L_1)\)</span> និង <span class="mi">\((L_2)\)</span></p>
+<p>នៅចំណុចប្រសព្វ គេមាន <div class="md">\[\begin{aligned}
+x-2 &amp;= -x+3 \\
+2x &amp;= 5 \\
+x &amp;= \frac{5}{2}
+\end{aligned}\]</div> ជំនួសចូល <span class="mi">\(y=x-2\)</span> <div class="md">\[y=\frac{5}{2}-2=\frac{1}{2}\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle I\left(\frac{5}{2},\frac{1}{2}\right)\)</span></span></p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="../lesson/fig/2dfb281b4a6ec6da.svg"/></div></p>
+<h4 class="ans-sect">លំហាត់ VI <span class="ex-pts">(៣០ ពិន្ទុ)</span></h4>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="../lesson/fig/4bb84dfc74b32aab.svg"/></div></p>
+<p class="ex-q"><span class="ex-badge">១</span> កំណត់ប្រភេទត្រីកោណ <span class="mi">\(ABC\)</span> និង <span class="mi">\(AOC\)</span></p>
+<p>ដោយ <span class="mi">\(BC\)</span> ជាអង្កត់ផ្ចិតនៃរង្វង់ ហើយ <span class="mi">\(A\)</span> ស្ថិតលើរង្វង់ នោះ <div class="md">\[\angle BAC=90^\circ\]</div> ដូចនេះ <span class="mi">\(\triangle ABC\)</span> ជាត្រីកោណកែងត្រង់ <span class="mi">\(A\)</span>។</p>
+<p>ម្យ៉ាងទៀត <span class="mi">\(\angle ABC=30^\circ\)</span> នោះ <div class="md">\[\angle ACB=60^\circ\]</div> ដោយ <span class="mi">\(OA=OC=R=2\,\mathrm{cm}\)</span> នោះ <span class="mi">\(\triangle AOC\)</span> ជាត្រីកោណសមបាត ហើយ <div class="md">\[\angle ACO=\angle ACB=60^\circ\]</div> នាំឱ្យ <span class="mi">\(\angle OAC=60^\circ\)</span> និង <span class="mi">\(\angle AOC=60^\circ\)</span>។ ដូចនេះ <span class="mi">\(\triangle AOC\)</span> ជាត្រីកោណសម័ង្ស។</p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle \begin{gathered}
+\triangle ABC\text{ ជាត្រីកោណកែងត្រង់ }A \\
+\triangle AOC\text{ ជាត្រីកោណសម័ង្ស}
+\end{gathered}\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">២</span> គណនា <span class="mi">\(AB\)</span>, <span class="mi">\(AC\)</span>, <span class="mi">\(\angle AEB\)</span></p>
+<p>ក្នុងត្រីកោណកែង <span class="mi">\(ABC\)</span> មាន <span class="mi">\(BC=4\,\mathrm{cm}\)</span> និង <span class="mi">\(\angle B=30^\circ\)</span>។</p>
+<p>ជ្រុងឈមនឹងមុំ <span class="mi">\(30^\circ\)</span> គឺ <span class="mi">\(AC\)</span> ដូចនេះ <div class="md">\[AC=\frac{BC}{2}=2\,\mathrm{cm}\]</div> តាមទ្រឹស្តីបទពីតាគ័រ <div class="md">\[\begin{aligned}
+AB^2 &amp;= BC^2-AC^2 \\
+&amp;= 4^2-2^2=16-4=12 \\
+AB &amp;= 2\sqrt{3}\,\mathrm{cm}
+\end{aligned}\]</div> មុំ <span class="mi">\(\angle AEB\)</span> និង <span class="mi">\(\angle ACB\)</span> ជាមុំចារឹកស្កាត់ធ្នូ <span class="mi">\(AB\)</span> ដូចគ្នា ដូចនេះ <div class="md">\[\angle AEB=\angle ACB=60^\circ\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle AB=2\sqrt{3}\,\mathrm{cm},\quad{} AC=2\,\mathrm{cm},\quad{} \angle AEB=60^\circ\)</span></span></p>
+<p class="ex-q"><span class="ex-badge">៣</span> ប្រៀបធៀបត្រីកោណ <span class="mi">\(ACD\)</span> និង <span class="mi">\(BED\)</span></p>
+<p>គេមាន <div class="md">\[\angle ADC=\angle BDE\]</div> ព្រោះជាមុំទល់កំពូល។</p>
+<p>ម្យ៉ាងទៀត <div class="md">\[\angle ACD=\angle ACB
+\quad{}\text{និង}\quad{}
+\angle BED=\angle BEA\]</div> ហើយ <span class="mi">\(\angle ACB=\angle BEA\)</span> ព្រោះជាមុំចារឹកស្កាត់ធ្នូ <span class="mi">\(AB\)</span> ដូចគ្នា។</p>
+<p>ដូចនេះ <div class="md">\[\angle ACD=\angle BED\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle \triangle ACD \sim \triangle BED \quad{} \)</span> (ករណីទី១ ម.ម) </span></p>
+<p>តាមផលធៀបដំណូច <div class="md">\[\begin{array}{c|c}
+\triangle ACD &amp; \\[-1pt]
+\sim &amp; \displaystyle\Rightarrow \frac{AD}{BD}=\frac{CD}{DE}\\[-1pt]
+\triangle BED &amp;
+\end{array}\]</div> នាំឱ្យ <div class="md">\[AD \times DE = BD \times CD\]</div></p>
+<p><strong>ដូចនេះ ៖</strong> <span class="kfbox"><span class="mi">\(\displaystyle DA \times DE = DB \times DC\)</span></span></p>
+</details>
+<nav class="ls-pager"><a class="prev" href="pre-exam18.html"><small>← វិញ្ញាសាមុន</small><b>វិញ្ញាសាត្រៀម ទី១៨</b></a><a class="next" href="pre-exam20.html"><small>វិញ្ញាសាបន្ទាប់ →</small><b>វិញ្ញាសាត្រៀម ទី២០</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../KPCambodianmathematics.html"><img src="../static/img/logo.png" alt="" width="38" height="38"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១០។ ដំណើរការបានដោយមិនចាំបាច់មានអ៊ីនធឺណិត។</p>
+      </div>
+      <div class="footer-col"><h4>ថ្នាក់រៀន</h4><ul><li><a href="../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../grade-10.html">ថ្នាក់ទី ១០</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត</h4><ul><li><a href="../KPCambodianmathematics.html#tests">តេស្តតាមមេរៀន</a></li><li><a href="../KPCambodianmathematics.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../index.html">Exam Studio (គ្រូ)</a></li></ul></div>
+      <div class="footer-col"><h4>ឧបករណ៍</h4><ul><li><a href="../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li><li><a href="../lesson-g7-l01.html">មេរៀនគំរូ (KhmerMath)</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១០</p>
+    </div>
+  </div>
+</footer>
+<script src="../static/js/site.js" defer></script>
+<script src="../static/katex/katex.min.js" defer></script>
+<script src="../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../static/js/lesson.js" defer></script>
+</body>
+</html>

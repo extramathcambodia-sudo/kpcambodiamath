@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៤ : បន្ទាត់ស្រប និងបន្ទាត់កែង — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៤ «បន្ទាត់ស្រប និងបន្ទាត់កែង» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៤ : បន្ទាត់ស្រប និងបន្ទាត់កែង — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៤ «បន្ទាត់ស្រប និងបន្ទាត់កែង» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ១៤</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៤</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៤ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>បន្ទាត់ស្រប និងបន្ទាត់កែង</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. បន្ទាត់កែង និងការសង់បន្ទាត់កែង</a></li><li class="sub"><a href="#u2">២. មេដ្យាទ័រនៃអង្កត់</a></li><li class="sub"><a href="#u3">៣. បន្ទាត់ស្រប និងស្វ័យសច្ចអឺគ្លីដ</a></li><li class="sub"><a href="#u4">៤. មុំបង្កើតដោយបន្ទាត់ពីរ និងខ្នាត់កាត់មួយ</a></li><li class="sub"><a href="#u5">៥. លក្ខណៈ និងលក្ខខណ្ឌនៃបន្ទាត់ស្រប</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃបន្ទាត់ស្រប និងស្វ័យសច្ចអឺគ្លីដ</b></header><div class="bx-b">
+<p>សញ្ញាណនៃ «<strong>បន្ទាត់ស្រប</strong>» និង «<strong>បន្ទាត់កែង</strong>» គឺជាសសរទ្រូងដ៏រឹងមាំនៃធរណីមាត្រប្លង់ ដែលត្រូវបានកត់ត្រា និងរៀបចំជាប្រព័ន្ធដំបូងបង្អស់ដោយគណិតវិទូក្រិកបុរាណលោក <strong>អឺគ្លីដ</strong> (Euclid of Alexandria, ប្រហែល ៣០០ ឆ្នាំមុន គ.ស.) នៅក្នុងស្នាដៃអមតៈ «<strong>ធាតុគ្រឹះ</strong>» (Elements)។ នៅក្នុងសៀវភៅនេះ អឺគ្លីដបានលើកឡើងនូវស្វ័យសច្ចដ៏ល្បីល្បាញមួយគឺ «<strong>ស្វ័យសច្ចទី ៥</strong>» ឬស្វ័យសច្ចបន្ទាត់ស្រប ដែលចែងថា ៖ <em>«តាមចំណុចមួយនៅក្រៅបន្ទាត់មួយ គេអាចគូសបានបន្ទាត់តែមួយគត់ដែលស្របនឹងបន្ទាត់នោះ»</em> (ដែលក្រោយមកត្រូវបានពន្យល់យ៉ាងច្បាស់ដោយលោក John Playfair ក្នុងឆ្នាំ ១៧៩៥)។</p>
+<p>អស់រយៈពេលជាង ២០០០ ឆ្នាំ ស្វ័យសច្ចនេះបានជំរុញឱ្យគណិតវិទូល្បីៗជាច្រើនជំនាន់ ដូចជា Ibn al-Haytham, Omar Khayyam, Nasir al-Din al-Tusi, Saccheri និងក្រោយមក Gauss, Bolyai និង Lobachevsky ធ្វើការស្រាវជ្រាវយ៉ាងស៊ីជម្រៅ រហូតបង្កើតបានជា «ធរណីមាត្រមិនមែនអឺគ្លីដ» (Non-Euclidean Geometry)។ នៅក្នុងជីវភាពជាក់ស្ដែង បន្ទាត់ស្រប និងបន្ទាត់កែង ត្រូវបានអនុវត្តយ៉ាងទូលំទូលាយក្នុងការស្ថាបនាស្ថាបត្យកម្មដ៏អស្ចារ្យដូចជា ប្រាសាទអង្គរវត្ត ប្រព័ន្ធផ្លូវរថភ្លើង ប្លង់ស្ថាបត្យកម្មទីក្រុង ការវាស់វែងដីធ្លី និងវិស្វកម្មសំណង់ទំនើប។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃបន្ទាត់ស្រប និងបន្ទាត់កែង</b></header><div class="bx-b">
+<p>នៅក្នុងធរណីមាត្រប្លង់ ទំនាក់ទំនងទីតាំងរវាងបន្ទាត់ពីរមានលក្ខណៈគ្រឹះ ៖</p>
+<ul>
+<li><p><strong>បន្ទាត់កែង (<span class="mi">\(d_1 \perp d_2\)</span>) ៖</strong> បន្ទាត់ពីរដែលប្រសព្វគ្នាក្នុងប្លង់តែមួយ ហើយបង្កើតបានជាមុំកែងមួយ (<span class="mi">\(90^\circ\)</span>) នាំឱ្យមុំទាំងបួនសុទ្ធតែជាមុំកែង។</p></li>
+<li><p><strong>បន្ទាត់ស្រប (<span class="mi">\(d_1 \parallel d_2\)</span>) ៖</strong> បន្ទាត់ពីរក្នុងប្លង់តែមួយដែលគ្មានចំណុចរួមទាល់តែសោះ (<span class="mi">\(d_1 \cap d_2 = \emptyset\)</span>) ឬត្រួតស៊ីគ្នា។</p></li>
+<li><p><strong>ខ្នាត់កាត់ (Transversal) ៖</strong> បន្ទាត់មួយដែលកាត់បន្ទាត់ពីរផ្សេងទៀតត្រង់ចំណុចពីរផ្សេងគ្នា បង្កើតបានជាមុំចំនួនប្រាំបី ដែលមានទំនាក់ទំនងធរណីមាត្រពិសេស។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">បន្ទាត់កែង និងការសង់បន្ទាត់កែង</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>បន្ទាត់កែង និងលក្ខណៈ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>បន្ទាត់កែង (Perpendicular Lines) ៖</strong> បន្ទាត់ពីរក្នុងប្លង់មួយកែងគ្នាកាលណាវាកាត់គ្នា ហើយបង្កើតបានជាមុំកែងមួយ (<span class="mi">\(90^\circ\)</span>)។</p></li>
+<li><p>កាលណាបន្ទាត់ <span class="mi">\(d\)</span> កែងនឹង <span class="mi">\(d'\)</span> នោះគេបានមុំទាំងបួនដែលបង្កើតឡើងសុទ្ធតែជាមុំកែង។</p></li>
+<li><p><strong>និមិត្តសញ្ញា ៖</strong> <span class="mi">\(d \perp d'\)</span> (អានថា <span class="mi">\(d\)</span> កែងនឹង <span class="mi">\(d'\)</span>)។</p></li>
+<li><p><strong>ទ្រឹស្ដីបទគ្រឹះ ៖</strong> តាមចំណុចមួយ (នៅលើបន្ទាត់ ឬក្រៅបន្ទាត់) គេអាចគូសបានបន្ទាត់តែមួយគត់ដែលកែងនឹងបន្ទាត់ដែលឱ្យ។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\((d)\)</span> និងចំណុច <span class="mi">\(A\)</span> មួយមិនស្ថិតនៅលើបន្ទាត់ <span class="mi">\((d)\)</span>។<br/>
+ក. ចូរពណ៌នាពីរបៀបសង់បន្ទាត់ <span class="mi">\((d')\)</span> កាត់តាម <span class="mi">\(A\)</span> ហើយកែងនឹង <span class="mi">\((d)\)</span> ដោយប្រើបន្ទាត់កែង (Eker)។<br/>
+ខ. ប្រសិនបើបន្ទាត់ទាំងពីរកាត់គ្នាត្រង់ <span class="mi">\(H\)</span> ហើយបង្កើតបានមុំ <span class="mi">\(\angle AHd = 90^\circ\)</span> តើមុំបីទៀតមានរង្វាស់ប៉ុន្មាន?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ របៀបសង់ ៖ ដាក់ជ្រុងមុំកែងមួយនៃបន្ទាត់កែងឱ្យត្រួតស៊ីគ្នានឹងបន្ទាត់ <span class="mi">\((d)\)</span> រួចរុញបន្ទាត់កែងរហូតដល់ជ្រុងមុំកែងមួយទៀតប៉ះចំណុច <span class="mi">\(A\)</span>។ គូសបន្ទាត់តាមជ្រុងនោះ កាត់តាម <span class="mi">\(A\)</span> គេបានបន្ទាត់ <span class="mi">\((d') \perp (d)\)</span>។<br/>
+ ដោយមុំទាំងបួនបង្កើតឡើងដោយបន្ទាត់កែងពីរកាត់គ្នា នោះមុំជាប់បន្ថែម និងមុំទល់កំពូលសុទ្ធតែស្មើ <span class="mi">\(90^\circ\)</span>។ ដូចនេះ <span class="kfbox">មុំទាំង ៣ ទៀតសុទ្ធតែមានរង្វាស់ស្មើនឹង <span class="mi">\(90^\circ\)</span></span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បន្ទាត់កែង និងការសង់</b></header><div class="bx-b">
+<p>១. តាមចំណុច <span class="mi">\(M\)</span> នៅលើបន្ទាត់ <span class="mi">\(\Delta\)</span> តើគេអាចគូសបន្ទាត់កែងនឹង <span class="mi">\(\Delta\)</span> បានប៉ុន្មាន? ចុះបើ <span class="mi">\(M\)</span> នៅក្រៅ <span class="mi">\(\Delta\)</span>?<br/>
+២. បន្ទាត់ <span class="mi">\(xx'\)</span> និង <span class="mi">\(yy'\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span> ដោយ <span class="mi">\(\angle xOy = 90^\circ\)</span>។ ចូរគណនារង្វាស់មុំ <span class="mi">\(\angle xOy', \angle x'Oy', \angle x'Oy\)</span>។</p>
+</div></section>
+<h3 id="u2">មេដ្យាទ័រនៃអង្កត់</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>មេដ្យាទ័រនៃអង្កត់ និងលក្ខណៈ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> មេដ្យាទ័រនៃអង្កត់មួយ គឺជាបន្ទាត់ដែលកាត់តាមចំណុចកណ្ដាលនៃអង្កត់នោះ ហើយកែងនឹងអង្កត់នោះ។</p></li>
+<li><p><strong>លក្ខណៈគ្រឹះ ៖</strong></p>
+<ul>
+<li><p>គ្រប់ចំណុចនៅលើមេដ្យាទ័រនៃអង្កត់មួយ មានចម្ងាយស្មើគ្នាពីចុងសងខាងនៃអង្កត់ ៖ <div class="md">\[M \in (\Delta) \iff MA = MB\]</div></p></li>
+<li><p>ច្រាសមកវិញ បើចំណុច <span class="mi">\(M\)</span> ស្មើចម្ងាយពី <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> (<span class="mi">\(MA = MB\)</span>) នោះ <span class="mi">\(M\)</span> ស្ថិតនៅលើមេដ្យាទ័រនៃ <span class="mi">\([AB]\)</span>។</p></li>
+</ul></li>
+</ul>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22141.88%22 height=%2291.41%22 viewBox=%220 0 141.88 91.41%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo4Y2QyZGI2ZC0yMTlhLTRhMjUtOTZhYy1iNTI0ZWNiOGM5MTYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaKyq21qotl9xlm4RBHdFc9cAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpiZGI2MzJlOS02NzFjLTRhOWUtODk4Yy1iNWY4YjUwMjFjYzlscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoW7N9d/mDl8I2vrk0dwdimwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg3Ypm0KIf0yH2xGqKgjPDvQdT1usWOiHfrQzJU3vVz1CkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaFMGdLQ49pL4HqO5tKqRIB0AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCD5NT1m9bbRlpHTeTCfb1ZtSGLNmpCvAcdcXrql13X6TGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjyZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjhjZDJkYjZkLTIxOWEtNGEyNS05NmFjLWI1MjRlY2I4YzkxNi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjRjMGI5ZTY3LWM5OTUtNDAyNS05MGU5LWQ3NzNmYjI2ODg2YnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDdimbQoh/TIfbEaoqCM8O9B1PW6xY6Id%2BtDMlTe9XPUKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggVKvZ8PBtrko9z/TKa0RDfcQu5JkyXDnc/EiC1nHYRcuiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggfTCNyYcl5WoYB%2BDDbZ8VOSrUPnGcjyKMkzuVrc2bix90Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQKdNKY7MDR6RekAruJJE5nBA%2B619XYrp8RTflGvjGPD7WlRn2gUf0yOpuxFYTqpAwdFEktFQvfdP76DaU/xGU1I=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 1.76 -1.14 C 1.37 -0.46 0.98 -0.34 0.56 -0.31 C 0.43 -0.29 0.34 -0.29 0.34 -0.10 C 0.34 -0.04 0.39 0 0.46 0 C 0.75 0 1.04 -0.03 1.32 -0.03 C 1.65 -0.03 2 0 2.31 0 C 2.37 0 2.5 0 2.5 -0.18 C 2.5 -0.29 2.42 -0.31 2.34 -0.31 C 2.12 -0.32 1.87 -0.40 1.87 -0.65 C 1.87 -0.76 1.93 -0.87 2.01 -1.01 L 2.78 -2.28 L 5.26 -2.28 C 5.28 -2.07 5.42 -0.73 5.42 -0.64 C 5.42 -0.34 4.90 -0.31 4.70 -0.31 C 4.56 -0.31 4.46 -0.31 4.46 -0.10 C 4.46 0 4.59 0 4.60 0 C 5.01 0 5.43 -0.03 5.84 -0.03 C 6.09 -0.03 6.71 0 6.96 0 C 7.03 0 7.14 0 7.14 -0.20 C 7.14 -0.31 7.04 -0.31 6.92 -0.31 C 6.29 -0.31 6.29 -0.37 6.26 -0.65 L 5.67 -6.85 C 5.64 -7.04 5.64 -7.09 5.48 -7.09 C 5.31 -7.09 5.28 -7.03 5.21 -6.92 Z M 2.96 -2.59 L 4.90 -5.85 L 5.23 -2.59 Z M 2.96 -2.59 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 1.57 -0.76 C 1.48 -0.39 1.46 -0.31 0.68 -0.31 C 0.51 -0.31 0.42 -0.31 0.42 -0.10 C 0.42 0 0.5 0 0.68 0 L 4.21 0 C 5.78 0 6.95 -1.17 6.95 -2.14 C 6.95 -2.85 6.37 -3.42 5.42 -3.53 C 6.45 -3.71 7.48 -4.45 7.48 -5.40 C 7.48 -6.12 6.82 -6.76 5.64 -6.76 L 2.31 -6.76 C 2.12 -6.76 2.03 -6.76 2.03 -6.56 C 2.03 -6.45 2.12 -6.45 2.31 -6.45 C 2.32 -6.45 2.51 -6.45 2.68 -6.43 C 2.85 -6.42 2.95 -6.40 2.95 -6.28 C 2.95 -6.23 2.93 -6.21 2.90 -6.09 Z M 3.07 -3.62 L 3.68 -6.07 C 3.78 -6.42 3.79 -6.45 4.23 -6.45 L 5.51 -6.45 C 6.37 -6.45 6.59 -5.87 6.59 -5.43 C 6.59 -4.56 5.73 -3.62 4.53 -3.62 Z M 2.64 -0.31 C 2.5 -0.31 2.48 -0.31 2.42 -0.31 C 2.31 -0.32 2.28 -0.34 2.28 -0.42 C 2.28 -0.45 2.28 -0.46 2.34 -0.64 L 3.01 -3.40 L 4.89 -3.40 C 5.84 -3.40 6.03 -2.67 6.03 -2.25 C 6.03 -1.26 5.15 -0.31 3.98 -0.31 Z M 2.64 -0.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-2%22%3E%3Cpath d=%22M 3.70 -6 C 3.79 -6.35 3.82 -6.45 4.60 -6.45 C 4.84 -6.45 4.92 -6.45 4.92 -6.64 C 4.92 -6.76 4.81 -6.76 4.78 -6.76 C 4.48 -6.76 3.75 -6.73 3.46 -6.73 C 3.17 -6.73 2.45 -6.76 2.15 -6.76 C 2.07 -6.76 1.95 -6.76 1.95 -6.56 C 1.95 -6.45 2.04 -6.45 2.23 -6.45 C 2.64 -6.45 2.90 -6.45 2.90 -6.26 C 2.90 -6.21 2.90 -6.20 2.89 -6.10 L 1.56 -0.76 C 1.46 -0.40 1.43 -0.31 0.65 -0.31 C 0.42 -0.31 0.34 -0.31 0.34 -0.10 C 0.34 0 0.45 0 0.48 0 C 0.76 0 1.5 -0.03 1.78 -0.03 C 2.07 -0.03 2.81 0 3.10 0 C 3.18 0 3.31 0 3.31 -0.18 C 3.31 -0.31 3.23 -0.31 3.01 -0.31 C 2.82 -0.31 2.78 -0.31 2.57 -0.32 C 2.37 -0.34 2.34 -0.39 2.34 -0.5 C 2.34 -0.57 2.35 -0.65 2.37 -0.71 Z M 3.70 -6 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-3%22%3E%3Cpath d=%22M 9.17 -6 C 9.26 -6.35 9.28 -6.45 10.03 -6.45 C 10.25 -6.45 10.34 -6.45 10.34 -6.65 C 10.34 -6.76 10.25 -6.76 10.07 -6.76 L 8.76 -6.76 C 8.51 -6.76 8.5 -6.76 8.37 -6.57 L 4.76 -0.93 L 4 -6.53 C 3.96 -6.76 3.93 -6.76 3.68 -6.76 L 2.32 -6.76 C 2.14 -6.76 2.03 -6.76 2.03 -6.57 C 2.03 -6.45 2.12 -6.45 2.31 -6.45 C 2.45 -6.45 2.62 -6.45 2.75 -6.43 C 2.90 -6.42 2.96 -6.39 2.96 -6.28 C 2.96 -6.23 2.95 -6.21 2.92 -6.09 L 1.67 -1.04 C 1.56 -0.65 1.39 -0.34 0.59 -0.31 C 0.54 -0.31 0.42 -0.29 0.42 -0.12 C 0.42 -0.03 0.46 0 0.56 0 C 0.87 0 1.21 -0.03 1.54 -0.03 C 1.87 -0.03 2.23 0 2.56 0 C 2.60 0 2.75 0 2.75 -0.20 C 2.75 -0.31 2.64 -0.31 2.56 -0.31 C 2 -0.31 1.89 -0.51 1.89 -0.75 C 1.89 -0.81 1.90 -0.85 1.93 -0.96 L 3.28 -6.37 L 4.14 -0.23 C 4.15 -0.10 4.17 0 4.29 0 C 4.39 0 4.45 -0.10 4.5 -0.17 L 8.51 -6.45 L 7.10 -0.76 C 7 -0.39 6.98 -0.31 6.20 -0.31 C 6.03 -0.31 5.92 -0.31 5.92 -0.12 C 5.92 0 6.04 0 6.07 0 C 6.34 0 7.03 -0.03 7.29 -0.03 C 7.70 -0.03 8.14 0 8.54 0 C 8.59 0 8.73 0 8.73 -0.20 C 8.73 -0.31 8.64 -0.31 8.45 -0.31 C 8.07 -0.31 7.81 -0.31 7.81 -0.48 C 7.81 -0.53 7.81 -0.54 7.85 -0.71 Z M 9.17 -6 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 3.28 2.37 C 3.28 2.34 3.28 2.32 3.10 2.15 C 1.87 0.90 1.56 -0.95 1.56 -2.48 C 1.56 -4.20 1.93 -5.92 3.15 -7.15 C 3.28 -7.28 3.28 -7.29 3.28 -7.32 C 3.28 -7.40 3.23 -7.43 3.18 -7.43 C 3.07 -7.43 2.18 -6.75 1.60 -5.5 C 1.09 -4.40 0.98 -3.31 0.98 -2.48 C 0.98 -1.70 1.09 -0.5 1.64 0.60 C 2.23 1.82 3.07 2.48 3.18 2.48 C 3.23 2.48 3.28 2.45 3.28 2.37 Z M 3.28 2.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M 4.37 -6.92 C 4.31 -7.04 4.29 -7.09 4.12 -7.09 C 3.95 -7.09 3.93 -7.04 3.85 -6.92 L 0.51 -0.20 C 0.46 -0.10 0.46 -0.09 0.46 -0.07 C 0.46 0 0.53 0 0.68 0 L 7.56 0 C 7.71 0 7.78 0 7.78 -0.07 C 7.78 -0.09 7.78 -0.10 7.73 -0.20 Z M 3.79 -6.10 L 6.46 -0.75 L 1.12 -0.75 Z M 3.79 -6.10 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-2%22%3E%3Cpath d=%22M 2.85 -2.48 C 2.85 -3.25 2.75 -4.45 2.20 -5.56 C 1.60 -6.78 0.76 -7.43 0.65 -7.43 C 0.60 -7.43 0.56 -7.39 0.56 -7.32 C 0.56 -7.29 0.56 -7.28 0.75 -7.10 C 1.71 -6.12 2.28 -4.54 2.28 -2.48 C 2.28 -0.78 1.92 0.95 0.68 2.20 C 0.56 2.32 0.56 2.34 0.56 2.37 C 0.56 2.43 0.60 2.48 0.65 2.48 C 0.76 2.48 1.65 1.79 2.23 0.54 C 2.75 -0.54 2.85 -1.64 2.85 -2.48 Z M 2.85 -2.48 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -53.15 0.00 L 53.15 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cg fill=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%226.66%22 y=%2263.37%22/%3E%3C/g%3E%3Cg fill=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22127.09%22 y=%2263.37%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -52.03 0.00 C -52.03 0.61 -52.53 1.12 -53.15 1.12 C -53.76 1.12 -54.27 0.61 -54.27 0.00 C -54.27 -0.61 -53.76 -1.12 -53.15 -1.12 C -52.53 -1.12 -52.03 -0.61 -52.03 0.00 Z M -52.03 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 54.27 0.00 C 54.27 0.61 53.76 1.12 53.15 1.12 C 52.52 1.12 52.03 0.61 52.03 0.00 C 52.03 -0.61 52.52 -1.12 53.15 -1.12 C 53.76 -1.12 54.27 -0.61 54.27 0.00 Z M 54.27 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 50%25, 50%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 50%25, 50%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 1.12 0.00 C 1.12 0.61 0.61 1.12 0.00 1.12 C -0.61 1.12 -1.11 0.61 -1.11 0.00 C -1.11 -0.61 -0.61 -1.12 0.00 -1.12 C 0.61 -1.12 1.12 -0.61 1.12 0.00 Z M 1.12 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cg fill=%22rgb(0%25, 50%25, 50%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%2274.08%22 y=%2270.25%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(92.54%25, 0%25, 54.89%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -27.63 L 0.00 40.39 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cg fill=%22rgb(92.54%25, 0%25, 54.89%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2262.61%22 y=%2213.69%22/%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2266.45%22 y=%2213.69%22/%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2274.70%22 y=%2213.69%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 50%25, 50%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 5.31 L 5.31 5.31 L 5.31 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -27.63 -3.19 L -27.63 3.19 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -25.51 -3.19 L -25.51 3.19 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 25.51 -3.19 L 25.51 3.19 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 27.63 -3.19 L 27.63 3.19 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 0%25, 100%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 1.12 31.88 C 1.12 32.51 0.61 33.01 0.00 33.01 C -0.61 33.01 -1.11 32.51 -1.11 31.88 C -1.11 31.27 -0.61 30.76 0.00 30.76 C 0.61 30.76 1.12 31.27 1.12 31.88 Z M 1.12 31.88 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 100%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%2274.08%22 y=%2231.69%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 50%25, 50%25)%22 stroke-opacity=%221%22 stroke-dasharray=%222.98 2.98%22 stroke-miterlimit=%2210%22 d=%22M 0.00 31.88 L -53.15 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 50%25, 50%25)%22 stroke-opacity=%221%22 stroke-dasharray=%222.98 2.98%22 stroke-miterlimit=%2210%22 d=%22M 0.00 31.88 L 53.15 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 70.59, 59.99)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%2223.64%22 y=%2239.60%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2234.32%22 y=%2239.60%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%2299.43%22 y=%2239.60%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22110.11%22 y=%2239.60%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ <span class="mi">\([AB] = 8\text{ cm}\)</span> និងបន្ទាត់ <span class="mi">\((\Delta)\)</span> ជាមេដ្យាទ័រនៃ <span class="mi">\([AB]\)</span> កាត់ <span class="mi">\([AB]\)</span> ត្រង់ <span class="mi">\(I\)</span>។ ចំណុច <span class="mi">\(M\)</span> ស្ថិតនៅលើ <span class="mi">\((\Delta)\)</span> ដោយ <span class="mi">\(MA = 5\text{ cm}\)</span>។<br/>
+ក. គណនាប្រវែង <span class="mi">\(IA\)</span> និង <span class="mi">\(IB\)</span>។<br/>
+ខ. រកប្រវែង <span class="mi">\(MB\)</span> និងបញ្ជាក់ពីមូលហេតុ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ដោយ <span class="mi">\((\Delta)\)</span> ជាមេដ្យាទ័រនៃ <span class="mi">\([AB]\)</span> កាត់ <span class="mi">\([AB]\)</span> ត្រង់ <span class="mi">\(I\)</span> នោះ <span class="mi">\(I\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([AB]\)</span> ៖<br/>
+នាំឱ្យ <span class="mi">\(IA = IB = \frac{AB}{2} = \frac{8}{2} = 4\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{IA = IB = 4\text{ cm}}\)</span><br/>
+ ដោយ <span class="mi">\(M\)</span> ស្ថិតនៅលើមេដ្យាទ័រ <span class="mi">\((\Delta)\)</span> នៃ <span class="mi">\([AB]\)</span> តាមលក្ខណៈមេដ្យាទ័រ នាំឱ្យ <span class="mi">\(M\)</span> មានចម្ងាយស្មើគ្នាពីចុង <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ <span class="mi">\(MB = MA = 5\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{MB = 5\text{ cm}}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>មេដ្យាទ័រនៃអង្កត់</b></header><div class="bx-b">
+<p>១. ចូរប្រាប់លក្ខខណ្ឌពីរយ៉ាងដើម្បីឱ្យបន្ទាត់មួយជាមេដ្យាទ័រនៃអង្កត់មួយ។<br/>
+២. គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> មាន <span class="mi">\(AB = AC = 7\text{ cm}\)</span>។ តើកំពូល <span class="mi">\(A\)</span> ស្ថិតនៅលើមេដ្យាទ័រនៃជ្រុង <span class="mi">\([BC]\)</span> ដែរឬទេ? ព្រោះអ្វី?</p>
+</div></section>
+<h3 id="u3">បន្ទាត់ស្រប និងស្វ័យសច្ចអឺគ្លីដ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>បន្ទាត់ស្រប និងស្វ័យសច្ចអឺគ្លីដ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>បន្ទាត់ស្រប (Parallel Lines) ៖</strong> បន្ទាត់ពីរក្នុងប្លង់តែមួយជាបន្ទាត់ស្របគ្នា កាលណាវាមិនប្រសព្វគ្នា (គ្មានចំណុចរួម) ឬត្រួតស៊ីគ្នា (<span class="mi">\(d_1 \parallel d_2\)</span>)។</p></li>
+<li><p><strong>ស្វ័យសច្ចអឺគ្លីដ (Playfair’s Axiom) ៖</strong> តាមចំណុចមួយនៅក្រៅបន្ទាត់មួយ គេអាចគូសបានបន្ទាត់តែមួយគត់ដែលស្របនឹងបន្ទាត់នោះ។</p></li>
+<li><p><strong>លក្ខណៈសំខាន់ៗ ៖</strong></p>
+<ul>
+<li><p>ភាពឆ្លង ៖ <span class="mi">\(d_1 \parallel d_2\)</span> និង <span class="mi">\(d_2 \parallel d_3 \implies d_1 \parallel d_3\)</span> ; បើកាត់បន្ទាត់មួយ ត្រូវតែកាត់បន្ទាត់មួយទៀត។</p></li>
+<li><p>បើ <span class="mi">\(d \perp d_1\)</span> និង <span class="mi">\(d_1 \parallel d_2 \implies d \perp d_2\)</span> ; បើ <span class="mi">\(d_1 \perp d\)</span> និង <span class="mi">\(d_2 \perp d \implies d_1 \parallel d_2\)</span>។</p></li>
+</ul></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់បី <span class="mi">\(a, b, c\)</span> ក្នុងប្លង់តែមួយ។<br/>
+ក. បើ <span class="mi">\(a \parallel b\)</span> និង <span class="mi">\(b \parallel c\)</span> តើ <span class="mi">\(a\)</span> និង <span class="mi">\(c\)</span> មានទំនាក់ទំនងយ៉ាងដូចម្ដេច?<br/>
+ខ. បើ <span class="mi">\(a \perp c\)</span> និង <span class="mi">\(b \perp c\)</span> តើ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ស្របគ្នាឬទេ?<br/>
+គ. បើ <span class="mi">\(a \parallel b\)</span> ហើយបន្ទាត់ <span class="mi">\(d \perp a\)</span> តើ <span class="mi">\(d\)</span> កែងនឹង <span class="mi">\(b\)</span> ដែរឬទេ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. តាមភាពឆ្លង បើ <span class="mi">\(a \parallel b\)</span> និង <span class="mi">\(b \parallel c\)</span> នោះ <span class="mi">\(\boxed{a \parallel c}\)</span>។  ខ. បើ <span class="mi">\(a \perp c\)</span> និង <span class="mi">\(b \perp c\)</span> នោះ <span class="mi">\(\boxed{a \parallel b}\)</span>។<br/>
+ គ. បន្ទាត់កែងនឹងបន្ទាត់មួយក្នុងចំណោមបន្ទាត់ស្របពីរ ត្រូវកែងនឹងមួយទៀត នាំឱ្យ <span class="mi">\(\boxed{d \perp b}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>លក្ខណៈបន្ទាត់ស្រប</b></header><div class="bx-b">
+<p>១. បន្ទាត់ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> ស្របគ្នា។ បន្ទាត់ <span class="mi">\(p\)</span> កាត់ <span class="mi">\(m\)</span> ត្រង់ <span class="mi">\(A\)</span>។ តើ <span class="mi">\(p\)</span> អាចស្របនឹង <span class="mi">\(n\)</span> បានដែរឬទេ? ព្រោះអ្វី?<br/>
+២. គេឱ្យបន្ទាត់បួន <span class="mi">\(d_1, d_2, d_3, d_4\)</span> ដោយ <span class="mi">\(d_1 \parallel d_2, d_2 \parallel d_3\)</span> និង <span class="mi">\(d_3 \perp d_4\)</span>។ តើ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_4\)</span> មានទំនាក់ទំនងបែបណា?</p>
+</div></section>
+<h3 id="u4">មុំបង្កើតដោយបន្ទាត់ពីរ និងខ្នាត់កាត់មួយ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>មុំផ្គុំដោយបន្ទាត់ពីរ និងខ្នាត់កាត់</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(d_1, d_2\)</span> កាត់ដោយខ្នាត់មួយ <span class="mi">\((\Delta)\)</span> ត្រង់ <span class="mi">\(A, B\)</span> បង្កើតបានមុំ ៨ ៖</p>
+<ul>
+<li><p><strong>មុំឆ្លាស់ក្នុង ៖</strong> នៅខាងក្នុង និងសងខាងខ្នាត់កាត់ ៖ <span class="mi">\((\widehat{A}_3, \widehat{B}_1)\)</span> និង <span class="mi">\((\widehat{A}_4, \widehat{B}_2)\)</span>។</p></li>
+<li><p><strong>មុំឆ្លាស់ក្រៅ ៖</strong> នៅខាងក្រៅ និងសងខាងខ្នាត់កាត់ ៖ <span class="mi">\((\widehat{A}_1, \widehat{B}_3)\)</span> និង <span class="mi">\((\widehat{A}_2, \widehat{B}_4)\)</span>។</p></li>
+<li><p><strong>មុំស្រប (ត្រូវគ្នា) ៖</strong> មួយក្នុង មួយក្រៅ នៅម្ខាងនៃខ្នាត់ ៖ <span class="mi">\((\widehat{A}_1, \widehat{B}_1), (\widehat{A}_2, \widehat{B}_2), (\widehat{A}_3, \widehat{B}_3), (\widehat{A}_4, \widehat{B}_4)\)</span>។</p></li>
+<li><p><strong>មុំក្នុងរួមខាង ៖</strong> នៅខាងក្នុង និងនៅម្ខាងនៃខ្នាត់កាត់ ៖ <span class="mi">\((\widehat{A}_4, \widehat{B}_1)\)</span> និង <span class="mi">\((\widehat{A}_3, \widehat{B}_2)\)</span>។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ផ្អែកតាមរូបភាពខាងលើ ចូរប្រាប់ឈ្មោះ ៖<br/>
+ក. គូមុំឆ្លាស់ក្នុងទាំងអស់។ ខ. គូមុំស្រប (មុំត្រូវគ្នា) ទាំងអស់។ គ. គូមុំក្នុងរួមខាងទាំងអស់។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. គូមុំឆ្លាស់ក្នុង ៖ <span class="kfbox"><span class="mi">\((\widehat{A}_3, \widehat{B}_1)\)</span> និង <span class="mi">\((\widehat{A}_4, \widehat{B}_2)\)</span></span>។<br/>
+ ខ. គូមុំស្រប (ត្រូវគ្នា) ៖ <span class="mi">\(\boxed{(\widehat{A}_1, \widehat{B}_1), (\widehat{A}_2, \widehat{B}_2), (\widehat{A}_3, \widehat{B}_3), (\widehat{A}_4, \widehat{B}_4)}\)</span>។<br/>
+ គ. គូមុំក្នុងរួមខាង ៖ <span class="kfbox"><span class="mi">\((\widehat{A}_4, \widehat{B}_1)\)</span> និង <span class="mi">\((\widehat{A}_3, \widehat{B}_2)\)</span></span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>មុំផ្គុំដោយបន្ទាត់ពីរ និងខ្នាត់មួយ</b></header><div class="bx-b">
+<p>១. តាមរូបខាងលើ ចូរប្រាប់គូមុំឆ្លាស់ក្រៅទាំងអស់។<br/>
+២. ចូរប្រាប់គូមុំក្រៅរួមខាងទាំងអស់ ព្រមទាំងគូមុំទល់កំពូលត្រង់កំពូល <span class="mi">\(A\)</span>។</p>
+</div></section>
+<h3 id="u5">លក្ខណៈ និងលក្ខខណ្ឌនៃបន្ទាត់ស្រប</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ទ្រឹស្ដីបទបន្ទាត់ស្រប និងខ្នាត់កាត់</b></header><div class="bx-b">
+<ul>
+<li><p><strong>លក្ខណៈ (បើ <span class="mi">\(d_1 \parallel d_2\)</span>) ៖</strong> កាលណាបន្ទាត់ស្របពីរកាត់ដោយខ្នាត់មួយ នោះ ៖</p>
+<ul>
+<li><p>គូមុំឆ្លាស់ក្នុង <strong>ប៉ុនគ្នា</strong> ; គូមុំឆ្លាស់ក្រៅ <strong>ប៉ុនគ្នា</strong> ; គូមុំស្រប (ត្រូវគ្នា) <strong>ប៉ុនគ្នា</strong></p></li>
+<li><p>គូមុំក្នុងរួមខាង <strong>បន្ថែមគ្នា</strong> (<span class="mi">\(180^\circ\)</span>) ; គូមុំក្រៅរួមខាង <strong>បន្ថែមគ្នា</strong> (<span class="mi">\(180^\circ\)</span>)</p></li>
+</ul></li>
+<li><p><strong>លក្ខខណ្ឌបញ្ជាក់បន្ទាត់ស្រប (លក្ខណៈច្រាស) ៖</strong> បន្ទាត់ពីរជាបន្ទាត់ស្របគ្នាកាលណាវាមានគូមុំឆ្លាស់ក្នុងប៉ុនគ្នា ឬគូមុំឆ្លាស់ក្រៅប៉ុនគ្នា ឬគូមុំស្របប៉ុនគ្នា ឬគូមុំក្នុងរួមខាងបន្ថែមគ្នា (<span class="mi">\(180^\circ\)</span>)។</p></li>
+<li><p><strong>មុំមានជ្រុងស្របរៀងគ្នា (ឬកែងរៀងគ្នា) ៖</strong> ប៉ុនគ្នាកាលណាស្រួចទាំងពីរ ឬទាលទាំងពីរ ; បន្ថែមគ្នាកាលណាមួយស្រួច មួយទាល។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\(d_1 \parallel d_2\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(t\)</span> ដោយមុំស្របមួយគូមាន <span class="mi">\(\widehat{A}_1 = 70^\circ\)</span>។<br/>
+គណនារង្វាស់មុំ ៖ <span class="mi">\(\widehat{B}_1\)</span> (មុំស្រប), <span class="mi">\(\widehat{B}_2\)</span> (មុំក្នុងរួមខាង), និង <span class="mi">\(\widehat{B}_3\)</span> (មុំឆ្លាស់ក្រៅ)។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ដោយ <span class="mi">\(d_1 \parallel d_2\)</span> នាំឱ្យ ៖<br/>
+- មុំស្រប ៖ <span class="mi">\(\widehat{B}_1 = \widehat{A}_1 = \boxed{70^\circ}\)</span> ; មុំឆ្លាស់ក្រៅ ៖ <span class="mi">\(\widehat{B}_3 = \widehat{A}_1 = \boxed{70^\circ}\)</span><br/>
+- មុំក្នុងរួមខាង ៖ <span class="mi">\(\widehat{B}_2 = 180^\circ - \widehat{A}_1 = 180^\circ - 70^\circ = \boxed{110^\circ}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>លក្ខខណ្ឌបន្ទាត់ស្រប</b></header><div class="bx-b">
+<p>១. គេឱ្យបន្ទាត់ពីរ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(c\)</span>។ ដឹងថាមុំក្នុងរួមខាងមួយគូមានរង្វាស់ <span class="mi">\(115^\circ\)</span> និង <span class="mi">\(65^\circ\)</span>។ តើ <span class="mi">\(a \parallel b\)</span> ដែរឬទេ? ព្រោះអ្វី?<br/>
+២. មុំពីរមានជ្រុងត្រូវគ្នាស្របរៀងគ្នា ដោយមុំមួយជាមុំស្រួច <span class="mi">\(50^\circ\)</span> ហើយមុំមួយទៀតជាមុំទាល។ គណនារង្វាស់មុំទាលនោះ។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ចូរពន្យល់ពីអត្ថន័យ និងលើកឧទាហរណ៍ជាក់ស្ដែងនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p>បន្ទាត់កែង</p></li>
+<li><p>បន្ទាត់ស្រប</p></li>
+<li><p>ខ្នាត់កាត់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បន្ទាត់កែង ៖ ជាបន្ទាត់ពីរកាត់គ្នាក្នុងប្លង់បង្កើតបានមុំ <span class="mi">\(90^\circ\)</span> (ឧ. ជ្រុងក្ដារខៀន)។</p></li>
+<li><p>បន្ទាត់ស្រប ៖ ជាបន្ទាត់ពីរក្នុងប្លង់ដែលមិនប្រសព្វគ្នា (ឧ. ផ្លូវរថភ្លើង)។</p></li>
+<li><p>ខ្នាត់កាត់ ៖ ជាបន្ទាត់កាត់បន្ទាត់ពីរឬច្រើនត្រង់ចំណុចផ្សេងគ្នា (ឧ. ធ្នឹមរបង)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ក្នុងបន្ទប់រៀនរបស់អ្នក ចូរចង្អុលបង្ហាញវត្ថុដែលតំណាងឱ្យ ៖</p>
+<ol class="list olka cols2">
+<li><p>គូបន្ទាត់ស្របគ្នាចំនួន ២ គូ</p></li>
+<li><p>គូបន្ទាត់កែងគ្នាចំនួន ២ គូ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ឧទាហរណ៍ជាក់ស្ដែង ៖</p>
+<ul>
+<li><p>២ គូបន្ទាត់ស្រប ៖ គែមលើ-ក្រោមនៃក្ដារខៀន, គែមសងខាងនៃមាត់ទ្វារ។</p></li>
+<li><p>២ គូបន្ទាត់កែង ៖ គែមឈរនិងគែមផ្ដេកនៃក្ដារខៀន, ជើងតុនិងផ្ទៃរាបនៃតុ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_2\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span> ដោយបង្កើតបានមុំមួយស្មើ <span class="mi">\(90^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ ៣ ផ្សេងទៀត</p></li>
+<li><p>តើបន្ទាត់ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_2\)</span> កែងគ្នាឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំទល់កំពូលនឹងមុំ <span class="mi">\(90^\circ\)</span> គឺ <span class="mi">\(90^\circ\)</span>។ មុំជាប់បន្ថែម ៖ <span class="mi">\(180^\circ - 90^\circ = 90^\circ\)</span>។ មុំ ៣ ទៀតសុទ្ធតែមានរង្វាស់ <span class="mi">\(90^\circ\)</span>។</p></li>
+<li><p>ខ. បន្ទាត់ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_2\)</span> កែងគ្នា (<span class="mi">\(d_1 \perp d_2\)</span>) ព្រោះវាប្រសព្វគ្នាកំណត់បានមុំកែង <span class="mi">\(90^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A\)</span> និងបន្ទាត់ <span class="mi">\(\Delta\)</span> ក្នុងប្លង់ ៖</p>
+<ol class="list olka cols2">
+<li><p>បើ <span class="mi">\(A \in \Delta\)</span> តើមានបន្ទាត់កែងប៉ុន្មានកាត់តាម <span class="mi">\(A\)</span>?</p></li>
+<li><p>បើ <span class="mi">\(A \notin \Delta\)</span> តើមានបន្ទាត់កែងប៉ុន្មានកាត់តាម <span class="mi">\(A\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បើ <span class="mi">\(A \in \Delta\)</span> ៖ មានបន្ទាត់កែងតែមួយគត់កាត់តាម <span class="mi">\(A\)</span> និងកែងនឹង <span class="mi">\(\Delta\)</span>។</p></li>
+<li><p>ខ. បើ <span class="mi">\(A \notin \Delta\)</span> ៖ មានបន្ទាត់កែងតែមួយគត់កាត់តាម <span class="mi">\(A\)</span> និងកែងនឹង <span class="mi">\(\Delta\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ចូររៀបរាប់ពីជំហានក្នុងការសង់បន្ទាត់កែងដោយប្រើបន្ទាត់កែង (Eker) ៖</p>
+<ol class="list olka cols2">
+<li><p>កាត់តាមចំណុចនៅលើបន្ទាត់</p></li>
+<li><p>កាត់តាមចំណុចនៅក្រៅបន្ទាត់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជំហានសង់ដោយអេកែ (Eker) ៖</p>
+<ul>
+<li><p><span class="mi">\(A \in \Delta\)</span> ៖ ដាក់គែមមុំកែងមួយនៃអេកែឱ្យត្រូវនឹង <span class="mi">\(\Delta\)</span> ដោយកំពូលមុំកែងចំ <span class="mi">\(A\)</span> រួចគូសបន្ទាត់តាមគែមមួយទៀត។</p></li>
+<li><p><span class="mi">\(A \notin \Delta\)</span> ៖ ដាក់គែមមុំកែងមួយតាម <span class="mi">\(\Delta\)</span> រំកិលឱ្យគែមម្ខាងទៀតចំ <span class="mi">\(A\)</span> រួចគូសបន្ទាត់កាត់តាម <span class="mi">\(A\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរគូជ្រុងកែងគ្នានិមិត្តសញ្ញា</p></li>
+<li><p>គណនាផលបូករង្វាស់មុំ <span class="mi">\(\angle B + \angle C\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. គូជ្រុងកែងគ្នា ៖ <span class="mi">\(AB \perp AC\)</span></p></li>
+<li><p>ខ. <span class="mi">\(\angle B + \angle C = 180^\circ - 90^\circ = 90^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ក្នុងចតុកោណកែង <span class="mi">\(ABCD\)</span> ចូរប្រាប់ឈ្មោះ ៖</p>
+<ol class="list olka cols2">
+<li><p>គូជ្រុងដែលស្របគ្នាទាំងអស់</p></li>
+<li><p>គូជ្រុងដែលកែងគ្នាទាំងអស់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុងចតុកោណកែង <span class="mi">\(ABCD\)</span> ៖</p>
+<ul>
+<li><p>គូជ្រុងស្របគ្នា ៖ <span class="mi">\(AB \parallel CD\)</span> និង <span class="mi">\(AD \parallel BC\)</span></p></li>
+<li><p>គូជ្រុងកែងគ្នា ៖ <span class="mi">\(AB \perp BC\)</span>, <span class="mi">\(BC \perp CD\)</span>, <span class="mi">\(CD \perp DA\)</span>, <span class="mi">\(DA \perp AB\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\(a, b, c\)</span> ក្នុងប្លង់តែមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>បើ <span class="mi">\(a \perp b\)</span> និង <span class="mi">\(b \perp c\)</span> រកទំនាក់ទំនង <span class="mi">\(a\)</span> និង <span class="mi">\(c\)</span></p></li>
+<li><p>បើ <span class="mi">\(a \parallel b\)</span> និង <span class="mi">\(b \perp c\)</span> រកទំនាក់ទំនង <span class="mi">\(a\)</span> និង <span class="mi">\(c\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បើ <span class="mi">\(a \perp b\)</span> និង <span class="mi">\(b \perp c\)</span> នោះ <span class="mi">\(a \parallel c\)</span> (បន្ទាត់ពីរកែងនឹងបន្ទាត់ទីបី ស្របគ្នា)។</p></li>
+<li><p>ខ. បើ <span class="mi">\(a \parallel b\)</span> និង <span class="mi">\(b \perp c\)</span> នោះ <span class="mi">\(a \perp c\)</span> (បន្ទាត់កែងនឹងបន្ទាត់ស្របមួយ ត្រូវកែងនឹងបន្ទាត់មួយទៀត)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(m\)</span> កាត់បន្ទាត់ <span class="mi">\(n\)</span> ត្រង់ <span class="mi">\(P\)</span> បង្កើតបានមុំមួយស្មើ <span class="mi">\(45^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> កែងគ្នាដែរឬទេ? ព្រោះអ្វី?</p></li>
+<li><p>គណនារង្វាស់មុំ ៣ ផ្សេងទៀត</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> មិនកែងគ្នាទេ ព្រោះមុំប្រសព្វស្មើ <span class="mi">\(45^\circ \neq 90^\circ\)</span>។</p></li>
+<li><p>ខ. មុំទល់កំពូលគឺ <span class="mi">\(45^\circ\)</span>; មុំជាប់បន្ថែមពីរទៀតគឺ <span class="mi">\(180^\circ - 45^\circ = 135^\circ\)</span>។ ដូចនេះមុំ ៣ ទៀតគឺ <span class="mi">\(135^\circ, 45^\circ, 135^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គេឱ្យមុំកែង <span class="mi">\(\angle xOy = 90^\circ\)</span> និងកន្លះបន្ទាត់ <span class="mi">\([Oz)\)</span> ក្នុងមុំនោះ ៖</p>
+<ol class="list olka cols2">
+<li><p>បើ <span class="mi">\(\angle xOz = 35^\circ\)</span> គណនា <span class="mi">\(\angle zOy\)</span></p></li>
+<li><p>បើ <span class="mi">\(\angle xOz = \angle zOy\)</span> គណនា <span class="mi">\(\angle xOz\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(\angle zOy = 90^\circ - \angle xOz = 90^\circ - 35^\circ = 55^\circ\)</span></p></li>
+<li><p>ខ. <span class="mi">\(\angle xOz = \angle zOy \Rightarrow \angle xOz = \frac{90^\circ}{2} = 45^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ចូរពោលនិយមន័យ និងលក្ខណៈគ្រឹះនៃមេដ្យាទ័រ ៖</p>
+<ol class="list olka cols2">
+<li><p>និយមន័យនៃមេដ្យាទ័រនៃអង្កត់</p></li>
+<li><p>លក្ខណៈស្មើចម្ងាយពីចុងសងខាង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មេដ្យាទ័រនៃអង្កត់មួយ គឺជាបន្ទាត់ដែលកាត់តាមចំណុចកណ្ដាលនៃអង្កត់នោះ និងកែងនឹងអង្កត់នោះ។</p></li>
+<li><p>ខ. គ្រប់ចំណុចនៅលើមេដ្យាទ័រ មានចម្ងាយស្មើគ្នាពីចុងទាំងសងខាងនៃអង្កត់នោះ (<span class="mi">\(MA = MB\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>អង្កត់ <span class="mi">\([AB] = 12\text{ cm}\)</span> មាន <span class="mi">\(\Delta\)</span> ជាមេដ្យាទ័រកាត់ត្រង់ <span class="mi">\(I\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែង <span class="mi">\(IA\)</span> និង <span class="mi">\(IB\)</span></p></li>
+<li><p>បញ្ជាក់ពីតម្លៃនៃមុំដែល <span class="mi">\(\Delta\)</span> បង្កើតជាមួយ <span class="mi">\([AB]\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(I\)</span> ជាចំណុចកណ្ដាល <span class="mi">\(\Rightarrow IA = IB = \frac{AB}{2} = \frac{12}{2} = 6\text{ cm}\)</span></p></li>
+<li><p>ខ. មុំដែល <span class="mi">\(\Delta\)</span> បង្កើតជាមួយ <span class="mi">\([AB]\)</span> មានរង្វាស់ <span class="mi">\(90^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(d\)</span> ជាមេដ្យាទ័រនៃអង្កត់ <span class="mi">\([MN]\)</span>។ ចំណុច <span class="mi">\(P \in d\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បើ <span class="mi">\(PM = 7.5\text{ cm}\)</span> គណនា <span class="mi">\(PN\)</span></p></li>
+<li><p>បើ <span class="mi">\(PN = 10\text{ cm}\)</span> គណនា <span class="mi">\(PM\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(P\)</span> នៅលើមេដ្យាទ័រ ៖</p>
+<ul>
+<li><p>ក. <span class="mi">\(PN = PM = 7.5\text{ cm}\)</span></p></li>
+<li><p>ខ. <span class="mi">\(PM = PN = 10\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ចំណុច <span class="mi">\(K\)</span> មួយផ្ទៀងផ្ទាត់ <span class="mi">\(KA = KB\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើ <span class="mi">\(K\)</span> ស្ថិតនៅលើបន្ទាត់ណាធៀបនឹង <span class="mi">\([AB]\)</span>?</p></li>
+<li><p>បើ <span class="mi">\(AB = 6\text{ cm}\)</span> និង <span class="mi">\(KA = 5\text{ cm}\)</span> រកប្រភេទ <span class="mi">\(\triangle KAB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ចំណុច <span class="mi">\(K\)</span> ស្ថិតនៅលើមេដ្យាទ័រនៃអង្កត់ <span class="mi">\([AB]\)</span>។</p></li>
+<li><p>ខ. ដោយ <span class="mi">\(KA = KB = 5\text{ cm} \neq AB = 6\text{ cm}\)</span> នាំឱ្យ <span class="mi">\(\triangle KAB\)</span> ជាត្រីកោណសមបាតត្រង់កំពូល <span class="mi">\(K\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណសមបាត <span class="mi">\(SAB\)</span> ដែល <span class="mi">\(SA = SB = 8\text{ cm}\)</span> និង <span class="mi">\(AB = 6\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថាកំពូល <span class="mi">\(S\)</span> ស្ថិតនៅលើមេដ្យាទ័រនៃ <span class="mi">\([AB]\)</span></p></li>
+<li><p>ហៅ <span class="mi">\(H\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([AB]\)</span>។ បង្ហាញថា <span class="mi">\(SH \perp AB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ដោយ <span class="mi">\(SA = SB = 8\text{ cm}\)</span> នាំឱ្យ <span class="mi">\(S\)</span> ស្មើចម្ងាយពីចុង <span class="mi">\(A, B\)</span> ដូចនេះ <span class="mi">\(S\)</span> ស្ថិតនៅលើមេដ្យាទ័រនៃ <span class="mi">\([AB]\)</span>។</p></li>
+<li><p>ខ. <span class="mi">\(H\)</span> ជាចំណុចកណ្ដាល និង <span class="mi">\(S\)</span> នៅលើមេដ្យាទ័រ នាំឱ្យបន្ទាត់ <span class="mi">\(SH\)</span> ជាមេដ្យាទ័រនៃ <span class="mi">\([AB]\)</span> ហេតុនេះ <span class="mi">\(SH \perp AB\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>អង្កត់ <span class="mi">\([CD] = 10\text{ cm}\)</span> មាន <span class="mi">\(xy\)</span> ជាមេដ្យាទ័រកាត់ត្រង់ <span class="mi">\(H\)</span>។ ចំណុច <span class="mi">\(E\)</span> លើ <span class="mi">\(xy\)</span> មាន <span class="mi">\(ED = 13\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែង <span class="mi">\(EC\)</span></p></li>
+<li><p>គណនាបរិមាត្រនៃត្រីកោណ <span class="mi">\(ECD\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(E\)</span> លើមេដ្យាទ័រនៃ <span class="mi">\([CD] \Rightarrow EC = ED = 13\text{ cm}\)</span></p></li>
+<li><p>ខ. បរិមាត្រ <span class="mi">\(\triangle ECD\)</span> ៖<br/>
+<span class="mi">\(P = EC + ED + CD = 13 + 13 + 10 = 36\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ចូររៀបរាប់ពីជំហានក្នុងការសង់មេដ្យាទ័រដោយប្រើដែកឈាន និងបន្ទាត់ត្រង់ ៖</p>
+<ol class="list olka cols2">
+<li><p>ជំហានគូសធ្នូរង្វង់ពីចុងទាំងសងខាង</p></li>
+<li><p>ជំហានភ្ជាប់ចំណុចប្រសព្វទាំងពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជំហានសង់មេដ្យាទ័រ ៖</p>
+<ul>
+<li><p>ក. បើកដែកឈានកាំ <span class="mi">\(R &gt; \frac{AB}{2}\)</span> រួចគូសធ្នូរង្វង់ពី <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ទាំងសងខាងអង្កត់។</p></li>
+<li><p>ខ. ធ្នូរង្វង់កាត់គ្នាត្រង់ពីរចំណុច <span class="mi">\(P\)</span> និង <span class="mi">\(Q\)</span>។ គូសបន្ទាត់កាត់តាម <span class="mi">\(P\)</span> និង <span class="mi">\(Q\)</span> នោះ <span class="mi">\(PQ\)</span> ជាមេដ្យាទ័រ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ <span class="mi">\([EF] = 8\text{ cm}\)</span> និងចំណុចកណ្ដាល <span class="mi">\(M\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើចំណុច <span class="mi">\(M\)</span> ស្ថិតនៅលើមេដ្យាទ័រនៃ <span class="mi">\([EF]\)</span> ទេ?</p></li>
+<li><p>បើគូសបន្ទាត់ <span class="mi">\(d \perp EF\)</span> ត្រង់ <span class="mi">\(E\)</span> តើ <span class="mi">\(d\)</span> ជាមេដ្យាទ័រទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បាទ/ចាស <span class="mi">\(M\)</span> ស្ថិតនៅលើមេដ្យាទ័រនៃ <span class="mi">\([EF]\)</span> ព្រោះមេដ្យាទ័រកាត់តាមចំណុចកណ្ដាល <span class="mi">\(M\)</span>។</p></li>
+<li><p>ខ. ទេ <span class="mi">\(d\)</span> មិនមែនជាមេដ្យាទ័រទេ ព្រោះ <span class="mi">\(d\)</span> កែងត្រង់ <span class="mi">\(E\)</span> មិនមែនកាត់តាមចំណុចកណ្ដាល <span class="mi">\(M\)</span> ឡើយ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ <span class="mi">\([AB]\)</span> និងបន្ទាត់ពីរ <span class="mi">\(\Delta_1, \Delta_2\)</span> កែងនឹង <span class="mi">\([AB]\)</span> ត្រង់ចំណុចកណ្ដាល <span class="mi">\(I\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើ <span class="mi">\(\Delta_1\)</span> និង <span class="mi">\(\Delta_2\)</span> អាចជាបន្ទាត់ពីរផ្សេងគ្នាបានទេ?</p></li>
+<li><p>ទាញសន្និដ្ឋានអំពីចំនួនមេដ្យាទ័រនៃអង្កត់មួយ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មិនអាចជាបន្ទាត់ពីរផ្សេងគ្នាទេ ព្រោះតាមចំណុច <span class="mi">\(I\)</span> មានបន្ទាត់កែងតែមួយគត់ទៅនឹង <span class="mi">\([AB]\)</span>។</p></li>
+<li><p>ខ. អង្កត់មួយមានមេដ្យាទ័រតែមួយគត់។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ចតុកោណស្មើ <span class="mi">\(ABCD\)</span> មានអង្កត់ទ្រូង <span class="mi">\([AC]\)</span> និង <span class="mi">\([BD]\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថា <span class="mi">\(BA = BC\)</span> និង <span class="mi">\(DA = DC\)</span></p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\([BD]\)</span> ជាមេដ្យាទ័រនៃ <span class="mi">\([AC]\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ចតុកោណស្មើមានជ្រុងទាំងបួនស្មើគ្នា <span class="mi">\(\Rightarrow BA = BC\)</span> និង <span class="mi">\(DA = DC\)</span>។</p></li>
+<li><p>ខ. <span class="mi">\(B\)</span> និង <span class="mi">\(D\)</span> ស្មើចម្ងាយពី <span class="mi">\(A, C\)</span> នាំឱ្យ <span class="mi">\(B, D\)</span> នៅលើមេដ្យាទ័រនៃ <span class="mi">\([AC]\)</span> ហេតុនេះ <span class="mi">\(BD\)</span> ជាមេដ្យាទ័រនៃ <span class="mi">\([AC]\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ចូរពោលស្វ័យសច្ចអឺគ្លីដ (Playfair’s Axiom) ៖</p>
+<ol class="list olka cols2">
+<li><p>អត្ថន័យស្វ័យសច្ចអំពីបន្ទាត់ស្រប</p></li>
+<li><p>ការអនុវត្តស្វ័យសច្ចក្នុងការគូសបន្ទាត់ស្រប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. តាមចំណុចមួយនៅក្រៅបន្ទាត់មួយ មានបន្ទាត់តែមួយគត់ដែលស្របនឹងបន្ទាត់នោះ។</p></li>
+<li><p>ខ. អនុវត្តក្នុងការគូសបន្ទាត់ស្របដោយប្រើបន្ទាត់កែងពីរបន្តបន្ទាប់ ឬសង់មុំឆ្លាស់ក្នុងស្មើគ្នា។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\(d_1 \parallel d_2\)</span> និង <span class="mi">\(d_2 \parallel d_3\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(d_1 \parallel d_3\)</span></p></li>
+<li><p>បើបន្ថែមបន្ទាត់ <span class="mi">\(d_4 \parallel d_3\)</span> តើ <span class="mi">\(d_1 \parallel d_4\)</span> ដែរឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. តាមលក្ខណៈឆ្លង ៖ បន្ទាត់ពីរស្របនឹងបន្ទាត់ទីបីតែមួយ ស្របគ្នា ដូចនេះ <span class="mi">\(d_1 \parallel d_3\)</span>។</p></li>
+<li><p>ខ. បាទ/ចាស ដោយ <span class="mi">\(d_1 \parallel d_3\)</span> និង <span class="mi">\(d_4 \parallel d_3\)</span> នាំឱ្យ <span class="mi">\(d_1 \parallel d_4\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\(a \parallel b\)</span> និងបន្ទាត់ <span class="mi">\(c \perp a\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(c \perp b\)</span></p></li>
+<li><p>តើមុំទាំងបួនដែល <span class="mi">\(c\)</span> បង្កើតជាមួយ <span class="mi">\(b\)</span> មានរង្វាស់ប៉ុន្មាន?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បន្ទាត់កែងនឹងបន្ទាត់ស្របមួយ ត្រូវកែងនឹងបន្ទាត់មួយទៀត នាំឱ្យ <span class="mi">\(c \perp b\)</span>។</p></li>
+<li><p>ខ. មុំទាំងបួនសុទ្ធតែជាមុំកែង មានរង្វាស់ <span class="mi">\(90^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\(u \perp w\)</span> និង <span class="mi">\(v \perp w\)</span> ក្នុងប្លង់តែមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(u \parallel v\)</span></p></li>
+<li><p>បើបន្ទាត់ <span class="mi">\(t \perp u\)</span> តើ <span class="mi">\(t\)</span> មានទំនាក់ទំនងយ៉ាងណាជាមួយ <span class="mi">\(v\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បន្ទាត់ពីរកែងនឹងបន្ទាត់ទីបីតែមួយ ស្របគ្នា ដូចនេះ <span class="mi">\(u \parallel v\)</span>។</p></li>
+<li><p>ខ. បើ <span class="mi">\(t \perp u\)</span> ហើយ <span class="mi">\(u \parallel v\)</span> នាំឱ្យ <span class="mi">\(t \perp v\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(m \parallel n\)</span>។ បន្ទាត់ <span class="mi">\(d\)</span> កាត់ <span class="mi">\(m\)</span> ត្រង់ <span class="mi">\(A\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថា <span class="mi">\(d\)</span> មិនអាចស្របនឹង <span class="mi">\(n\)</span> បានឡើយ</p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(d\)</span> ត្រូវតែកាត់ <span class="mi">\(n\)</span> ត្រង់ចំណុច <span class="mi">\(B\)</span> មួយ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បើ <span class="mi">\(d \parallel n\)</span> នោះតាម <span class="mi">\(A\)</span> មានបន្ទាត់ពីរ <span class="mi">\(m\)</span> និង <span class="mi">\(d\)</span> ស្របនឹង <span class="mi">\(n\)</span> ដែលផ្ទុយពីស្វ័យសច្ចអឺគ្លីដ។ ដូចនេះ <span class="mi">\(d\)</span> មិនអាចស្របនឹង <span class="mi">\(n\)</span> បានទេ។</p></li>
+<li><p>ខ. ដោយ <span class="mi">\(d\)</span> មិនស្របនឹង <span class="mi">\(n\)</span> ក្នុងប្លង់តែមួយ នោះ <span class="mi">\(d\)</span> ត្រូវតែកាត់ <span class="mi">\(n\)</span> ត្រង់ចំណុច <span class="mi">\(B\)</span> មួយ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់បី <span class="mi">\(d_1, d_2, d_3\)</span> ដោយ <span class="mi">\(d_1 \parallel d_2\)</span> ហើយ <span class="mi">\(d_2\)</span> កាត់ <span class="mi">\(d_3\)</span> ត្រង់ <span class="mi">\(M\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_3\)</span> អាចស្របគ្នាបានទេ?</p></li>
+<li><p>បញ្ជាក់ពីចំនួនចំណុចប្រសព្វរវាង <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មិនអាចទេ (បើ <span class="mi">\(d_1 \parallel d_3\)</span> នោះ <span class="mi">\(d_2 \parallel d_3\)</span> ផ្ទុយពីបម្រាប់)។</p></li>
+<li><p>ខ. <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_3\)</span> ប្រសព្វគ្នាត្រង់ ១ ចំណុចគត់។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>បន្ទាត់បួន <span class="mi">\(a, b, c, d\)</span> ផ្ទៀងផ្ទាត់ <span class="mi">\(a \parallel b, b \perp c\)</span> និង <span class="mi">\(c \parallel d\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកទំនាក់ទំនងរវាង <span class="mi">\(a\)</span> និង <span class="mi">\(c\)</span></p></li>
+<li><p>រកទំនាក់ទំនងរវាង <span class="mi">\(a\)</span> និង <span class="mi">\(d\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(a \parallel b\)</span> និង <span class="mi">\(b \perp c \Rightarrow a \perp c\)</span></p></li>
+<li><p>ខ. <span class="mi">\(a \perp c\)</span> និង <span class="mi">\(c \parallel d \Rightarrow a \perp d\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ក្នុងប្លង់មួយ មានបន្ទាត់បី <span class="mi">\(d_1, d_2, d_3\)</span> សុទ្ធតែកែងនឹងបន្ទាត់ <span class="mi">\(\Delta\)</span> តែមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថា <span class="mi">\(d_1 \parallel d_2\)</span> និង <span class="mi">\(d_2 \parallel d_3\)</span></p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(d_1 \parallel d_3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បន្ទាត់កែងនឹង <span class="mi">\(\Delta\)</span> តែមួយ នាំឱ្យ <span class="mi">\(d_1 \parallel d_2\)</span> និង <span class="mi">\(d_2 \parallel d_3\)</span>។</p></li>
+<li><p>ខ. តាមលក្ខណៈឆ្លង <span class="mi">\(d_1 \parallel d_2\)</span> និង <span class="mi">\(d_2 \parallel d_3 \Rightarrow d_1 \parallel d_3\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span>។ បន្ទាត់ <span class="mi">\(d\)</span> កាត់តាម <span class="mi">\(B\)</span> ហើយស្របនឹង <span class="mi">\(AC\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថា <span class="mi">\(d \perp AB\)</span></p></li>
+<li><p>គណនារង្វាស់មុំដែល <span class="mi">\(d\)</span> បង្កើតជាមួយ <span class="mi">\(AB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(\triangle ABC\)</span> កែងត្រង់ <span class="mi">\(A \Rightarrow AC \perp AB\)</span>។ ដោយ <span class="mi">\(d \parallel AC\)</span> នាំឱ្យ <span class="mi">\(d \perp AB\)</span>។</p></li>
+<li><p>ខ. មុំដែល <span class="mi">\(d\)</span> បង្កើតជាមួយ <span class="mi">\(AB\)</span> មានរង្វាស់ <span class="mi">\(90^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(d_1 \parallel d_2\)</span>។ ចំណុច <span class="mi">\(A \in d_1\)</span> និង <span class="mi">\(B \in d_2\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គូស <span class="mi">\(AH \perp d_2\)</span> ត្រង់ <span class="mi">\(H\)</span> និង <span class="mi">\(BK \perp d_1\)</span> ត្រង់ <span class="mi">\(K\)</span>។ បង្ហាញថា <span class="mi">\(AH \parallel BK\)</span></p></li>
+<li><p>តើចតុកោណ <span class="mi">\(AHBK\)</span> ជាចតុកោណអ្វី?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(AH \perp d_2\)</span> និង <span class="mi">\(BK \perp d_1\)</span>។ ដោយ <span class="mi">\(d_1 \parallel d_2\)</span> នាំឱ្យ <span class="mi">\(AH \perp d_1\)</span> និង <span class="mi">\(BK \perp d_2\)</span>។ បន្ទាត់ទាំងពីរកែងនឹងបន្ទាត់តែមួយ នាំឱ្យ <span class="mi">\(AH \parallel BK\)</span>។</p></li>
+<li><p>ខ. ចតុកោណ <span class="mi">\(AHBK\)</span> មានជ្រុងឈមស្របគ្នា និងមានមុំកែង ដូច្នេះវាជា ចតុកោណកែង។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(d_1 \parallel d_2\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(t\)</span>។ មុំឆ្លាស់ក្នុងមួយមានរង្វាស់ <span class="mi">\(48^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំឆ្លាស់ក្នុងមួយទៀត</p></li>
+<li><p>គណនារង្វាស់មុំ ៦ ផ្សេងទៀត</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំឆ្លាស់ក្នុងស្មើគ្នា នាំឱ្យមុំឆ្លាស់ក្នុងមួយទៀតស្មើ <span class="mi">\(48^\circ\)</span>។</p></li>
+<li><p>ខ. មុំជាប់បន្ថែម ៖ <span class="mi">\(180^\circ - 48^\circ = 132^\circ\)</span>។ ក្នុងចំណោមមុំទាំង ៨ មាន ៤ មុំស្មើ <span class="mi">\(48^\circ\)</span> និង ៤ មុំស្មើ <span class="mi">\(132^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(a \parallel b\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(c\)</span>។ មុំក្នុងរួមខាងមួយគូមានរង្វាស់ <span class="mi">\(x\)</span> និង <span class="mi">\(2x\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>គណនារង្វាស់មុំទាំងពីរនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំក្នុងរួមខាងបន្ថែមគ្នា ៖<br/>
+<span class="mi">\(x + 2x = 180^\circ \Rightarrow 3x = 180^\circ \Rightarrow x = 60^\circ\)</span></p></li>
+<li><p>ខ. រង្វាស់មុំទាំងពីរ ៖ <span class="mi">\(60^\circ\)</span> និង <span class="mi">\(2(60^\circ) = 120^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(m \parallel n\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(p\)</span>។ មុំឆ្លាស់ក្រៅមួយស្មើ <span class="mi">\(135^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំឆ្លាស់ក្រៅមួយទៀត និងមុំស្រប</p></li>
+<li><p>គណនាមុំក្នុងរួមខាងដែលត្រូវនឹងវា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំឆ្លាស់ក្រៅមួយទៀតស្មើ <span class="mi">\(135^\circ\)</span>។ មុំស្របស្មើនឹងវាគឺ <span class="mi">\(135^\circ\)</span>។</p></li>
+<li><p>ខ. មុំក្នុងរួមខាងបន្ថែមគ្នា ៖ <span class="mi">\(180^\circ - 135^\circ = 45^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(d_1 \parallel d_2\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(t\)</span>។ មុំស្របមួយគូមានរង្វាស់ <span class="mi">\((3x - 15)^\circ\)</span> និង <span class="mi">\((2x + 10)^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>គណនារង្វាស់មុំស្របនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំស្របស្មើគ្នា ៖<br/>
+<span class="mi">\(3x - 15 = 2x + 10 \Rightarrow x = 25^\circ\)</span></p></li>
+<li><p>ខ. រង្វាស់មុំស្រប ៖ <span class="mi">\(2(25^\circ) + 10^\circ = 60^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(u \parallel v\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(w\)</span>។ មុំឆ្លាស់ក្នុងមួយគូមានរង្វាស់ <span class="mi">\((5x - 20)^\circ\)</span> និង <span class="mi">\((3x + 16)^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>គណនារង្វាស់មុំឆ្លាស់ក្នុងនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំឆ្លាស់ក្នុងស្មើគ្នា ៖<br/>
+<span class="mi">\(5x - 20 = 3x + 16 \Rightarrow 2x = 36 \Rightarrow x = 18^\circ\)</span></p></li>
+<li><p>ខ. រង្វាស់មុំ ៖ <span class="mi">\(3(18^\circ) + 16^\circ = 70^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(a \parallel b\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(c\)</span>។ មុំក្នុងរួមខាងមួយគូមានរង្វាស់ <span class="mi">\((4x + 10)^\circ\)</span> និង <span class="mi">\((x + 20)^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>គណនារង្វាស់មុំនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំក្នុងរួមខាងបន្ថែមគ្នា ៖<br/>
+<span class="mi">\((4x + 10) + (x + 20) = 180 \Rightarrow 5x + 30 = 180 \Rightarrow 5x = 150 \Rightarrow x = 30^\circ\)</span></p></li>
+<li><p>ខ. មុំទីមួយ ៖ <span class="mi">\(4(30^\circ) + 10^\circ = 130^\circ\)</span><br/>
+មុំទីពីរ ៖ <span class="mi">\(30^\circ + 20^\circ = 50^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(d_1 \parallel d_2\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(t\)</span>។ ផលដករវាងមុំក្នុងរួមខាងពីរគឺ <span class="mi">\(40^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>កំណត់ប្រព័ន្ធសមីការតាងមុំទាំងពីរ</p></li>
+<li><p>គណនារង្វាស់មុំទាំងពីរនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ប្រព័ន្ធសមីការ ៖ <span class="mi">\(\begin{cases} x + y = 180^\circ \\ x - y = 40^\circ \end{cases}\)</span></p></li>
+<li><p>ខ. បូកអង្គនិងអង្គ ៖ <span class="mi">\(2x = 220^\circ \Rightarrow x = 110^\circ\)</span><br/>
+<span class="mi">\(y = 180^\circ - 110^\circ = 70^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរស្របគ្នាកាត់ដោយខ្នាត់មួយ។ មុំក្នុងរួមខាងមួយធំជាងមុំមួយទៀត ៣ ដង ៖</p>
+<ol class="list olka cols2">
+<li><p>រកសមីការកំណត់រង្វាស់មុំ</p></li>
+<li><p>គណនារង្វាស់មុំទាំងពីរនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. តាងមុំតូចដោយ <span class="mi">\(x\)</span> មុំធំគឺ <span class="mi">\(3x\)</span> ៖ <span class="mi">\(x + 3x = 180^\circ \Rightarrow 4x = 180^\circ\)</span></p></li>
+<li><p>ខ. <span class="mi">\(x = 45^\circ\)</span> និងមុំធំគឺ <span class="mi">\(3 \times 45^\circ = 135^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(AB \parallel CD\)</span> និងខ្នាត់ <span class="mi">\(EF\)</span> កាត់ <span class="mi">\(AB\)</span> ត្រង់ <span class="mi">\(M\)</span> និង <span class="mi">\(CD\)</span> ត្រង់ <span class="mi">\(N\)</span> ដោយ <span class="mi">\(\angle AMN = 62^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle MND\)</span> និង <span class="mi">\(\angle BMN\)</span></p></li>
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle CNF\)</span> និង <span class="mi">\(\angle DNF\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(\angle MND = \angle AMN = 62^\circ\)</span> (មុំឆ្លាស់ក្នុង)<br/>
+<span class="mi">\(\angle BMN = 180^\circ - 62^\circ = 118^\circ\)</span> (មុំជាប់បន្ថែម)</p></li>
+<li><p>ខ. <span class="mi">\(\angle CNF = \angle MND = 62^\circ\)</span> (មុំទល់កំពូល)<br/>
+<span class="mi">\(\angle DNF = 180^\circ - 62^\circ = 118^\circ\)</span> (មុំជាប់បន្ថែម)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរស្របគ្នាកាត់ដោយខ្នាត់មួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថាកន្លះបន្ទាត់ពុះនៃមុំឆ្លាស់ក្នុងមួយគូស្របគ្នា</p></li>
+<li><p>បង្ហាញថាកន្លះបន្ទាត់ពុះនៃមុំក្នុងរួមខាងមួយគូកែងគ្នា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំឆ្លាស់ក្នុងស្មើគ្នា <span class="mi">\(\alpha = \alpha'\)</span> <span class="mi">\(\Rightarrow\)</span> ពុះមុំបែងចែកជា <span class="mi">\(\frac{\alpha}{2} = \frac{\alpha'}{2}\)</span> ដែលជាមុំឆ្លាស់ក្នុងស្មើគ្នា នាំឱ្យពុះមុំស្របគ្នា។</p></li>
+<li><p>ខ. មុំក្នុងរួមខាងមានផលបូក <span class="mi">\(180^\circ\)</span> <span class="mi">\(\Rightarrow\)</span> ផលបូកពាក់កណ្ដាលមុំគឺ <span class="mi">\(\frac{180^\circ}{2} = 90^\circ\)</span> នាំឱ្យពុះមុំទាំងពីរកែងគ្នា (<span class="mi">\(90^\circ\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_2\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(t\)</span>។ ដឹងថាមុំឆ្លាស់ក្នុងមួយគូមានរង្វាស់ <span class="mi">\(75^\circ\)</span> ដូចគ្នា ៖</p>
+<ol class="list olka cols2">
+<li><p>តើ <span class="mi">\(d_1 \parallel d_2\)</span> ដែរឬទេ? ព្រោះអ្វី?</p></li>
+<li><p>គណនារង្វាស់មុំក្នុងរួមខាងដែលត្រូវគ្នា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. បាទ/ចាស <span class="mi">\(d_1 \parallel d_2\)</span> ព្រោះមុំឆ្លាស់ក្នុងស្មើគ្នា (<span class="mi">\(75^\circ = 75^\circ\)</span>)។</p></li>
+<li><p>ខ. មុំក្នុងរួមខាងបន្ថែមគ្នា ៖ <span class="mi">\(180^\circ - 75^\circ = 105^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(c\)</span>។ មុំក្នុងរួមខាងមួយគូមានរង្វាស់ <span class="mi">\(105^\circ\)</span> និង <span class="mi">\(75^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បញ្ជាក់ថា <span class="mi">\(a \parallel b\)</span></p></li>
+<li><p>រករង្វាស់មុំឆ្លាស់ក្រៅមួយគូ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ផលបូកមុំក្នុងរួមខាង ៖ <span class="mi">\(105^\circ + 75^\circ = 180^\circ\)</span> (បន្ថែមគ្នា) នាំឱ្យ <span class="mi">\(a \parallel b\)</span>។</p></li>
+<li><p>ខ. មុំឆ្លាស់ក្រៅមួយគូមានរង្វាស់ស្មើគ្នា គឺ <span class="mi">\(105^\circ\)</span> និង <span class="mi">\(105^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> កាត់ដោយខ្នាត់ <span class="mi">\(p\)</span>។ មុំស្របមួយគូមានរង្វាស់ <span class="mi">\(80^\circ\)</span> និង <span class="mi">\(85^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> ស្របគ្នាដែរឬទេ? ព្រោះអ្វី?</p></li>
+<li><p>តើត្រូវកែសម្រួលមុំមួយយ៉ាងណាដើម្បីឱ្យ <span class="mi">\(m \parallel n\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ទេ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> មិនស្របគ្នាទេ ព្រោះមុំស្របមិនស្មើគ្នា (<span class="mi">\(80^\circ \neq 85^\circ\)</span>)។</p></li>
+<li><p>ខ. ត្រូវកែសម្រួលឱ្យមុំទាំងពីរស្មើគ្នា (ដូចជាទាំងពីរស្មើ <span class="mi">\(80^\circ\)</span> ឬ <span class="mi">\(85^\circ\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> មាន <span class="mi">\(\angle B = 60^\circ\)</span>។ តាមកំពូល <span class="mi">\(A\)</span> គេគូសបន្ទាត់ <span class="mi">\(Ax\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បើ <span class="mi">\(\angle xAB = 60^\circ\)</span> (ឆ្លាស់ក្នុងនឹង <span class="mi">\(\angle B\)</span>) បង្ហាញថា <span class="mi">\(Ax \parallel BC\)</span></p></li>
+<li><p>បើ <span class="mi">\(\angle C = 50^\circ\)</span> គណនា <span class="mi">\(\angle BAC\)</span> និង <span class="mi">\(\angle xAC\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ដោយ <span class="mi">\(\angle xAB = \angle B = 60^\circ\)</span> ជាមុំឆ្លាស់ក្នុងស្មើគ្នា នាំឱ្យ <span class="mi">\(Ax \parallel BC\)</span>។</p></li>
+<li><p>ខ. <span class="mi">\(\angle BAC = 180^\circ - (60^\circ + 50^\circ) = 70^\circ\)</span>។<br/>
+<span class="mi">\(\angle xAC = \angle C = 50^\circ\)</span> (មុំឆ្លាស់ក្នុង)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>មុំពីរ <span class="mi">\(\angle xOy\)</span> និង <span class="mi">\(\angle x'O'y'\)</span> មានជ្រុងត្រូវគ្នាស្របរៀងគ្នា (<span class="mi">\(Ox \parallel O'x'\)</span> និង <span class="mi">\(Oy \parallel O'y'\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>បើមុំទាំងពីរជាមុំស្រួច ហើយ <span class="mi">\(\angle xOy = 55^\circ\)</span> គណនា <span class="mi">\(\angle x'O'y'\)</span></p></li>
+<li><p>បើមុំមួយស្រួច <span class="mi">\(55^\circ\)</span> ហើយមុំមួយទៀតជាមុំទាល គណនាមុំទាលនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំទាំងពីរជាមុំស្រួចមានជ្រុងស្របរៀងគ្នា នាំឱ្យស្មើគ្នា ៖ <span class="mi">\(\angle x'O'y' = 55^\circ\)</span>។</p></li>
+<li><p>ខ. មុំមួយស្រួច និងមួយទាលបន្ថែមគ្នា ៖ <span class="mi">\(180^\circ - 55^\circ = 125^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>មុំពីរមានជ្រុងត្រូវគ្នាស្របរៀងគ្នា ៖</p>
+<ol class="list olka cols2">
+<li><p>បើមុំមួយជាមុំស្រួច <span class="mi">\(46^\circ\)</span> ហើយមុំមួយទៀតជាមុំទាល គណនាមុំទាល</p></li>
+<li><p>បើមុំទាំងពីរជាមុំទាល ហើយមុំមួយស្មើ <span class="mi">\(130^\circ\)</span> គណនាមុំមួយទៀត</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំស្រួច និងមុំទាលបន្ថែមគ្នា ៖ <span class="mi">\(180^\circ - 46^\circ = 134^\circ\)</span>។</p></li>
+<li><p>ខ. មុំទាំងពីរជាមុំទាល នាំឱ្យស្មើគ្នា ៖ <span class="mi">\(130^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>មុំពីរមានជ្រុងត្រូវគ្នាកែងរៀងគ្នា (<span class="mi">\(Ox \perp O'x'\)</span> និង <span class="mi">\(Oy \perp O'y'\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>បើមុំទាំងពីរជាមុំស្រួច ហើយមុំមួយស្មើ <span class="mi">\(68^\circ\)</span> គណនាមុំមួយទៀត</p></li>
+<li><p>បើមុំមួយស្រួច <span class="mi">\(68^\circ\)</span> ហើយមុំមួយទៀតជាមុំទាល គណនាមុំទាលនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំទាំងពីរជាមុំស្រួចមានជ្រុងកែងរៀងគ្នា នាំឱ្យស្មើគ្នា ៖ <span class="mi">\(68^\circ\)</span>។</p></li>
+<li><p>ខ. មុំមួយស្រួច និងមួយទាលបន្ថែមគ្នា ៖ <span class="mi">\(180^\circ - 68^\circ = 112^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>មុំពីរមានជ្រុងត្រូវគ្នាកែងរៀងគ្នា ដោយមុំទាំងពីរជាមុំស្រួច ៖</p>
+<ol class="list olka cols2">
+<li><p>បើមុំទីមួយគឺ <span class="mi">\(3x - 10^\circ\)</span> និងមុំទីពីរគឺ <span class="mi">\(2x + 15^\circ\)</span> រក <span class="mi">\(x\)</span></p></li>
+<li><p>គណនារង្វាស់ពិតប្រាកដនៃមុំទាំងពីរនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំទាំងពីរជាមុំស្រួច នាំឱ្យស្មើគ្នា ៖<br/>
+<span class="mi">\(3x - 10 = 2x + 15 \Rightarrow x = 25^\circ\)</span></p></li>
+<li><p>ខ. រង្វាស់មុំ ៖ <span class="mi">\(2(25^\circ) + 15^\circ = 65^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ចតុកោណព្នាយ <span class="mi">\(ABCD\)</span> មានបាត <span class="mi">\(AB \parallel CD\)</span> ដោយ <span class="mi">\(\angle A = 110^\circ, \angle B = 125^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle D\)</span> (មុំក្នុងរួមខាងជាមួយ <span class="mi">\(\angle A\)</span>)</p></li>
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle C\)</span> (មុំក្នុងរួមខាងជាមួយ <span class="mi">\(\angle B\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ដោយ <span class="mi">\(AB \parallel CD\)</span> នាំឱ្យ <span class="mi">\(\angle D = 180^\circ - 110^\circ = 70^\circ\)</span>។</p></li>
+<li><p>ខ. <span class="mi">\(\angle C = 180^\circ - 125^\circ = 55^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ស្របពីរ <span class="mi">\(d_1 \parallel d_2\)</span> និងចំណុច <span class="mi">\(P\)</span> ស្ថិតនៅចន្លោះបន្ទាត់ទាំងពីរ ៖</p>
+<ol class="list olka cols2">
+<li><p>បើ <span class="mi">\(\angle A = 35^\circ\)</span> លើ <span class="mi">\(d_1\)</span> និង <span class="mi">\(\angle B = 45^\circ\)</span> លើ <span class="mi">\(d_2\)</span> គណនា <span class="mi">\(\angle APB\)</span></p></li>
+<li><p>បើ <span class="mi">\(\angle APB = 90^\circ\)</span> និង <span class="mi">\(\angle A = 40^\circ\)</span> គណនារង្វាស់ <span class="mi">\(\angle B\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. គូសបន្ទាត់កាត់តាម <span class="mi">\(P\)</span> ស្របនឹង <span class="mi">\(d_1, d_2\)</span> នាំឱ្យ <span class="mi">\(\angle APB = 35^\circ + 45^\circ = 80^\circ\)</span>។</p></li>
+<li><p>ខ. <span class="mi">\(\angle APB = \angle A + \angle B \Rightarrow 90^\circ = 40^\circ + \angle B \Rightarrow \angle B = 50^\circ\)</span>។</p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៤ បន្ទាត់ស្រប និងបន្ទាត់កែង</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c14">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L13.html"><small>← មេរៀនមុន</small><b>មុំ</b></a><a class="next" href="L15.html"><small>មេរៀនបន្ទាប់ →</small><b>រូបធរណីមាត្រដែលមានវិមាត្រពីរ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរក្នុងប្លង់កែងគ្នាកាលណាវាកាត់គ្នាបង្កើតបានជា ៖", "options": ["មុំស្រួច", "មុំកែង", "មុំទាល", "មុំរាប"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "និមិត្តសញ្ញាសម្គាល់បន្ទាត់កែងក្នុងធរណីមាត្រគឺ ៖", "options": ["<span class=\"mi\">\\(\\parallel\\)<\/span>", "<span class=\"mi\">\\(\\perp\\)<\/span>", "<span class=\"mi\">\\(\\equiv\\)<\/span>", "<span class=\"mi\">\\(\\approx\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរក្នុងប្លង់តែមួយដែលគ្មានចំណុចរួមទាល់តែសោះ ហៅថា ៖", "options": ["បន្ទាត់កែង", "បន្ទាត់ស្រប", "បន្ទាត់កាត់", "បន្ទាត់ត្រួត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "និមិត្តសញ្ញាសម្គាល់បន្ទាត់ស្របក្នុងធរណីមាត្រគឺ ៖", "options": ["<span class=\"mi\">\\(\\perp\\)<\/span>", "<span class=\"mi\">\\(\\parallel\\)<\/span>", "<span class=\"mi\">\\(\\cap\\)<\/span>", "<span class=\"mi\">\\(\\cup\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តាមចំណុចមួយនៅក្រៅបន្ទាត់មួយ គេអាចគូសបន្ទាត់កែងនឹងបន្ទាត់នោះបានចំនួន ៖", "options": ["១ គត់", "២", "៣", "រាប់មិនអស់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(d_1 \\perp d_2\\)<\/span> នោះមុំទាំងបួនដែលបង្កើតឡើងសុទ្ធតែមានរង្វាស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឧបករណ៍ធរណីមាត្រដែលប្រើសម្រាប់សង់បន្ទាត់កែងបានងាយស្រួលគឺ ៖", "options": ["បន្ទាត់ត្រង់", "បន្ទាត់កែង (Eker)", "កែវពង្រីក", "ម៉ែត្រខ្សែ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរ <span class=\"mi\">\\(d_1\\)<\/span> និង <span class=\"mi\">\\(d_2\\)<\/span> កាត់គ្នាត្រង់ចំណុច <span class=\"mi\">\\(O\\)<\/span> គេកំណត់សរសេរ ៖", "options": ["<span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span>", "<span class=\"mi\">\\(d_1 \\cap d_2 = \\{O\\}\\)<\/span>", "<span class=\"mi\">\\(d_1 \\cup d_2 = \\{O\\}\\)<\/span>", "<span class=\"mi\">\\(d_1 \\perp d_2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើបន្ទាត់ពីរស្របគ្នា នោះចំនួនចំណុចប្រសព្វរវាងបន្ទាត់ទាំងពីរគឺ ៖", "options": ["០", "១", "២", "រាប់មិនអស់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "វត្ថុជាក់ស្ដែងក្នុងជីវភាពដែលបង្ហាញពីសញ្ញាណនៃបន្ទាត់ស្របគឺ ៖", "options": ["ផ្លូវបំបែកបួន", "ផ្លូវដែករថភ្លើង", "ទ្រនិចនាឡិកា", "មែកឈើ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មេដ្យាទ័រនៃអង្កត់មួយ គឺជាបន្ទាត់ដែលកាត់តាមចំណុចកណ្ដាលនៃអង្កត់ ហើយ ៖", "options": ["ស្របនឹងអង្កត់", "កែងនឹងអង្កត់", "បង្កើតមុំ <span class=\"mi\">\\(45^\\circ\\)<\/span>", "ត្រួតស៊ីគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta\\)<\/span> ជាមេដ្យាទ័រនៃអង្កត់ <span class=\"mi\">\\([AB]\\)<\/span> ហើយកាត់ <span class=\"mi\">\\([AB]\\)<\/span> ត្រង់ <span class=\"mi\">\\(I\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(IA &gt; IB\\)<\/span>", "<span class=\"mi\">\\(IA &lt; IB\\)<\/span>", "<span class=\"mi\">\\(IA = IB\\)<\/span>", "<span class=\"mi\">\\(IA = 2IB\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គ្រប់ចំណុច <span class=\"mi\">\\(M\\)<\/span> ស្ថិតនៅលើមេដ្យាទ័រនៃអង្កត់ <span class=\"mi\">\\([AB]\\)<\/span> តែងតែមាន ៖", "options": ["<span class=\"mi\">\\(MA = MB\\)<\/span>", "<span class=\"mi\">\\(MA &gt; MB\\)<\/span>", "<span class=\"mi\">\\(MA &lt; MB\\)<\/span>", "<span class=\"mi\">\\(MA = 2MB\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើចំណុច <span class=\"mi\">\\(M\\)<\/span> ផ្ទៀងផ្ទាត់ <span class=\"mi\">\\(MA = MB\\)<\/span> នោះចំណុច <span class=\"mi\">\\(M\\)<\/span> ស្ថិតនៅលើ ៖", "options": ["រង្វង់ផ្ចិត <span class=\"mi\">\\(A\\)<\/span>", "មេដ្យាទ័រ <span class=\"mi\">\\([AB]\\)<\/span>", "អង្កត់ <span class=\"mi\">\\([AB]\\)<\/span>", "កន្លះបន្ទាត់ពុះ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "អង្កត់ <span class=\"mi\">\\([AB] = 12\\text{ cm}\\)<\/span> មាន <span class=\"mi\">\\(\\Delta\\)<\/span> ជាមេដ្យាទ័រកាត់ត្រង់ <span class=\"mi\">\\(I\\)<\/span>។ ប្រវែង <span class=\"mi\">\\(IA\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(12\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(24\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំណុច <span class=\"mi\">\\(M\\)<\/span> នៅលើមេដ្យាទ័រនៃ <span class=\"mi\">\\([AB]\\)<\/span> ដោយ <span class=\"mi\">\\(MA = 7\\text{ cm}\\)<\/span> នាំឱ្យប្រវែង <span class=\"mi\">\\(MB\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(7\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(14\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(49\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណសមបាត <span class=\"mi\">\\(ABC\\)<\/span> (<span class=\"mi\">\\(AB = AC\\)<\/span>) កំពូល <span class=\"mi\">\\(A\\)<\/span> ស្ថិតនៅលើ ៖", "options": ["មេដ្យាទ័រ <span class=\"mi\">\\([BC]\\)<\/span>", "អង្កត់ <span class=\"mi\">\\([BC]\\)<\/span>", "រង្វង់ចារឹក", "គ្មានទីតាំង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនមេដ្យាទ័រនៃអង្កត់មួយមានចំនួន ៖", "options": ["១ គត់", "២", "៣", "រាប់មិនអស់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ដើម្បីសង់មេដ្យាទ័រនៃអង្កត់មួយដោយដែកឈាន គេត្រូវកំណត់កាំឱ្យ ៖", "options": ["<span class=\"mi\">\\(&lt; \\frac{AB}{2}\\)<\/span>", "<span class=\"mi\">\\(&gt; \\frac{AB}{2}\\)<\/span>", "<span class=\"mi\">\\(= \\frac{AB}{4}\\)<\/span>", "តាមចិត្ត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មេដ្យាទ័រនៃអង្កត់មួយ គឺជាអ័ក្សឆ្លុះនៃអង្កត់នោះ ដែលចែកអង្កត់ជា ៖", "options": ["២ ផ្នែកស្មើ", "៣ ផ្នែកស្មើ", "៤ ផ្នែកស្មើ", "មិនស្មើគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមចំណុចមួយនៅក្រៅបន្ទាត់មួយ គេអាចគូសបន្ទាត់ស្របនឹងបន្ទាត់នោះបានចំនួន ៖", "options": ["១ គត់", "២", "៣", "រាប់មិនអស់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ស្វ័យសច្ចបន្ទាត់ស្របត្រូវបានចងក្រងដំបូងដោយគណិតវិទូ ៖", "options": ["ប៉ីតាក័រ", "អឺគ្លីដ", "ថាឡែស", "អាlockSecondsង់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span> និង <span class=\"mi\">\\(d_2 \\parallel d_3\\)<\/span> នោះទំនាក់ទំនងរវាង <span class=\"mi\">\\(d_1\\)<\/span> និង <span class=\"mi\">\\(d_3\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(d_1 \\perp d_3\\)<\/span>", "<span class=\"mi\">\\(d_1 \\parallel d_3\\)<\/span>", "<span class=\"mi\">\\(d_1 \\cap d_3 \\neq \\emptyset\\)<\/span>", "ត្រួតស៊ីគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span> ហើយបន្ទាត់ <span class=\"mi\">\\(d \\perp d_1\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(d \\parallel d_2\\)<\/span>", "<span class=\"mi\">\\(d \\perp d_2\\)<\/span>", "<span class=\"mi\">\\(d \\cap d_2 = \\emptyset\\)<\/span>", "គ្មានទាក់ទង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើបន្ទាត់ពីរ <span class=\"mi\">\\(d_1 \\perp d\\)<\/span> និង <span class=\"mi\">\\(d_2 \\perp d\\)<\/span> នោះគេទាញបាន ៖", "options": ["<span class=\"mi\">\\(d_1 \\perp d_2\\)<\/span>", "<span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span>", "<span class=\"mi\">\\(d_1 \\equiv d\\)<\/span>", "<span class=\"mi\">\\(d_2 \\equiv d\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a \\parallel b\\)<\/span> ហើយបន្ទាត់ <span class=\"mi\">\\(c\\)<\/span> កាត់ <span class=\"mi\">\\(a\\)<\/span> ត្រង់ <span class=\"mi\">\\(A\\)<\/span> នោះបន្ទាត់ <span class=\"mi\">\\(c\\)<\/span> ៖", "options": ["ស្របនឹង <span class=\"mi\">\\(b\\)<\/span>", "ត្រូវតែកាត់ <span class=\"mi\">\\(b\\)<\/span>", "កែងនឹង <span class=\"mi\">\\(b\\)<\/span>", "ត្រួតស៊ីនឹង <span class=\"mi\">\\(b\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span> និង <span class=\"mi\">\\(d_3 \\parallel d_4\\)<\/span> ដោយ <span class=\"mi\">\\(d_1 \\perp d_3\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(d_2 \\parallel d_4\\)<\/span>", "<span class=\"mi\">\\(d_2 \\perp d_4\\)<\/span>", "<span class=\"mi\">\\(d_2 \\equiv d_4\\)<\/span>", "គ្មាន"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចម្ងាយរវាងបន្ទាត់ស្របពីរ ៖", "options": ["ប្រែប្រួលជានិច្ច", "ថេរគ្រប់កន្លែង", "ស្មើ ០", "ថយចុះជាលំដាប់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរកែងនឹងបន្ទាត់ទីបីក្នុងប្លង់តែមួយ ៖", "options": ["កែងគ្នា", "ស្របគ្នា", "កាត់គ្នា", "ត្រួតស៊ីគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរស្របនឹងបន្ទាត់ទីបីក្នុងប្លង់តែមួយ ៖", "options": ["កែងគ្នា", "ស្របគ្នា", "កាត់គ្នា", "គ្មានទាក់ទង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរត្រូវកាត់ដោយខ្នាត់មួយបង្កើតបានមុំចំនួន ៖", "options": ["៤", "៦", "៨", "១០"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំពីរស្ថិតនៅខាងក្នុង និងនៅសងខាងនៃខ្នាត់កាត់ ហៅថា ៖", "options": ["មុំឆ្លាស់ក្នុង", "មុំឆ្លាស់ក្រៅ", "មុំស្រប", "មុំក្នុងរួមខាង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំពីរស្ថិតនៅខាងក្រៅ និងនៅសងខាងនៃខ្នាត់កាត់ ហៅថា ៖", "options": ["មុំឆ្លាស់ក្នុង", "មុំឆ្លាស់ក្រៅ", "មុំស្រប", "មុំក្នុងរួមខាង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំពីរមួយនៅខាងក្នុង មួយនៅខាងក្រៅ ហើយនៅម្ខាងនៃខ្នាត់កាត់ ហៅថា ៖", "options": ["មុំឆ្លាស់ក្នុង", "មុំឆ្លាស់ក្រៅ", "មុំស្រប (ត្រូវគ្នា)", "មុំក្នុងរួមខាង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំពីរស្ថិតនៅខាងក្នុង និងនៅម្ខាងនៃខ្នាត់កាត់ ហៅថា ៖", "options": ["មុំឆ្លាស់ក្នុង", "មុំស្រប", "មុំក្នុងរួមខាង", "មុំក្រៅរួមខាង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំនួនគូមុំឆ្លាស់ក្នុងដែលបង្កើតឡើងដោយបន្ទាត់ពីរ និងខ្នាត់មួយគឺ ៖", "options": ["១ គូ", "២ គូ", "៣ គូ", "៤ គូ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំនួនគូមុំស្រប (ត្រូវគ្នា) ដែលបង្កើតឡើងដោយបន្ទាត់ពីរ និងខ្នាត់មួយគឺ ៖", "options": ["២ គូ", "៣ គូ", "៤ គូ", "៨ គូ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំនួនគូមុំក្នុងរួមខាងដែលបង្កើតឡើងដោយបន្ទាត់ពីរ និងខ្នាត់មួយគឺ ៖", "options": ["១ គូ", "២ គូ", "៤ គូ", "៨ គូ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមមុំទាំង ៨ ដែលបង្កើតដោយខ្នាត់កាត់ មានមុំក្នុងចំនួន ៖", "options": ["២", "៤", "៦", "៨"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមមុំទាំង ៨ ដែលបង្កើតដោយខ្នាត់កាត់ មានមុំក្រៅចំនួន ៖", "options": ["២", "៤", "៦", "៨"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើបន្ទាត់ពីរស្របគ្នាកាត់ដោយខ្នាត់មួយ នោះរាល់គូមុំឆ្លាស់ក្នុង ៖", "options": ["បន្ថែមគ្នា", "ប៉ុនគ្នា", "បំពេញគ្នា", "ខុសគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើបន្ទាត់ពីរស្របគ្នាកាត់ដោយខ្នាត់មួយ នោះរាល់គូមុំស្រប (ត្រូវគ្នា) ៖", "options": ["បន្ថែមគ្នា", "ប៉ុនគ្នា", "បំពេញគ្នា", "ខុសគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើបន្ទាត់ពីរស្របគ្នាកាត់ដោយខ្នាត់មួយ នោះរាល់គូមុំក្នុងរួមខាង ៖", "options": ["ប៉ុនគ្នា", "បន្ថែមគ្នា (<span class=\"mi\">\\(180^\\circ\\)<\/span>)", "បំពេញគ្នា", "ខុសគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span> ហើយមុំឆ្លាស់ក្នុងមួយស្មើ <span class=\"mi\">\\(55^\\circ\\)<\/span> នោះមុំឆ្លាស់ក្នុងមួយទៀតស្មើ ៖", "options": ["<span class=\"mi\">\\(35^\\circ\\)<\/span>", "<span class=\"mi\">\\(55^\\circ\\)<\/span>", "<span class=\"mi\">\\(125^\\circ\\)<\/span>", "<span class=\"mi\">\\(145^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span> ហើយមុំក្នុងរួមខាងមួយស្មើ <span class=\"mi\">\\(70^\\circ\\)<\/span> នោះមុំក្នុងរួមខាងមួយទៀតស្មើ ៖", "options": ["<span class=\"mi\">\\(20^\\circ\\)<\/span>", "<span class=\"mi\">\\(70^\\circ\\)<\/span>", "<span class=\"mi\">\\(110^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(d_1 \\parallel d_2\\)<\/span> ហើយមុំស្របមួយស្មើ <span class=\"mi\">\\(120^\\circ\\)<\/span> នោះមុំស្របមួយទៀតស្មើ ៖", "options": ["<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរ <span class=\"mi\">\\(a\\)<\/span> និង <span class=\"mi\">\\(b\\)<\/span> កាត់ដោយខ្នាត់មួយ។ បើមុំឆ្លាស់ក្នុងមួយគូស្មើគ្នា នោះ <span class=\"mi\">\\(a\\)<\/span> និង <span class=\"mi\">\\(b\\)<\/span> ៖", "options": ["កែងគ្នា", "ស្របគ្នា", "កាត់គ្នា", "ត្រួតស៊ី"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរ <span class=\"mi\">\\(a\\)<\/span> និង <span class=\"mi\">\\(b\\)<\/span> កាត់ដោយខ្នាត់មួយ។ បើមុំក្នុងរួមខាងមួយគូមានផលបូក <span class=\"mi\">\\(180^\\circ\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(a \\perp b\\)<\/span>", "<span class=\"mi\">\\(a \\parallel b\\)<\/span>", "<span class=\"mi\">\\(a \\cap b \\neq \\emptyset\\)<\/span>", "ត្រួតស៊ី"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំពីរមានជ្រុងត្រូវគ្នាស្របរៀងគ្នា ដោយមុំទាំងពីរជាមុំស្រួច នោះមុំទាំងពីរ ៖", "options": ["បន្ថែមគ្នា", "ប៉ុនគ្នា", "បំពេញគ្នា", "ស្មើ <span class=\"mi\">\\(90^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំពីរមានជ្រុងត្រូវគ្នាកែងរៀងគ្នា ដោយមួយស្រួច មួយទាល នោះមុំទាំងពីរ ៖", "options": ["ប៉ុនគ្នា", "បន្ថែមគ្នា (<span class=\"mi\">\\(180^\\circ\\)<\/span>)", "បំពេញគ្នា", "ស្មើ <span class=\"mi\">\\(45^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២ : តួចែក និងពហុគុណ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២ «តួចែក និងពហុគុណ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២ : តួចែក និងពហុគុណ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២ «តួចែក និងពហុគុណ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២</span>
+      <div><span class="ls-kicker">មេរៀនទី ២ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>តួចែក និងពហុគុណ</h1><div class="ls-chips"><span class="chip chip-soon">នព្វន្ត</span><span class="chip chip-soon">៦ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. លក្ខណៈចែកដាច់នៃចំនួនគត់</a></li><li class="sub"><a href="#u2">២. តួចែកនៃចំនួនគត់ធម្មជាតិ</a></li><li class="sub"><a href="#u3">៣. ចំនួនបឋម និងចំនួនមិនបឋម</a></li><li class="sub"><a href="#u4">៤. ការបំបែកមួយចំនួនជាផលគុណកត្តាបឋម</a></li><li class="sub"><a href="#u5">៥. តួចែករួមធំបំផុត (PGCD ឬ GCD)</a></li><li class="sub"><a href="#u6">៦. ពហុគុណរួមតូចបំផុត (PPCM ឬ LCM)</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃទ្រឹស្ដីតួចែក និងចំនួនបឋម</b></header><div class="bx-b">
+<p><strong>ទ្រឹស្ដីចំនួន (Number Theory)</strong> គឺជាផ្នែកមួយដ៏ចំណាស់ និងបរិសុទ្ធបំផុតនៃគណិតវិទ្យា ដែលត្រូវបានគេប្រសិទ្ធនាមថា <strong>"មហាក្សត្រីនៃគណិតវិទ្យា" (Queen of Mathematics)</strong>៖</p>
+<ul>
+<li><p><strong>Pythagoras (៥៧០–៤៩៥ មុន គ.ស.)៖</strong> គណិតវិទូក្រិកបុរាណ និងសាលារបស់គាត់បានចាប់ផ្ដើមចាត់ថ្នាក់ចំនួនជាចំនួនគូ ចំនួនសេស និងបានរកឃើញ <strong>"ចំនួនល្អឥតខ្ចោះ" (Perfect Numbers)</strong> ដូចជាលេខ <span class="mi">\(6\)</span> (<span class="mi">\(1+2+3=6\)</span>) និងលេខ <span class="mi">\(28\)</span> (<span class="mi">\(1+2+4+7+14=28\)</span>) ដែលស្មើនឹងផលបូកនៃតួចែកពិតរបស់វា។</p></li>
+<li><p><strong>Euclid នៃអាឡិចសង់ទ្រី (ប្រហែល ៣០០ មុន គ.ស.)៖</strong> នៅក្នុងសៀវភៅដ៏ល្បីល្បាញ <strong>"Elements"</strong> (ក្បាលទី ៧ ដល់ ៩) អឺគ្លីដបានបង្កើត <strong>ទ្រឹស្ដីបទគ្រឹះនៃនព្វន្ត (Fundamental Theorem of Arithmetic)</strong> ដែលបញ្ជាក់ថា <em>"គ្រប់ចំនួនគត់ធំជាង <span class="mi">\(1\)</span> អាចបំបែកជាផលគុណកត្តាបឋមបានតែមួយគត់"</em>។ គាត់ក៏បានបង្កើត <strong>ក្បួនដោះស្រាយអឺគ្លីដ (Euclidean Algorithm)</strong> ដើម្បីរកតួចែករួមធំបំផុត (GCD) ដែលនៅតែជាក្បួនគណនាលឿនបំផុតរហូតដល់សព្វថ្ងៃ។</p></li>
+<li><p><strong>Eratosthenes (២៧៦–១៩៤ មុន គ.ស.)៖</strong> ប្រធានបណ្ណាល័យអាឡិចសង់ទ្រី បានបង្កើតវិធីសាស្ត្រចម្រោះរកចំនួនបឋមដ៏ល្បី ហៅថា <strong>"រនាមអេរ៉ាតូស្ទែន" (Sieve of Eratosthenes)</strong>។</p></li>
+<li><p><strong>សារសំខាន់ក្នុងយុគសម័យឌីជីថល៖</strong> ចំនួនបឋមដ៏ធំៗដែលមានរាប់លានខ្ទង់ គឺជាឆ្អឹងខ្នងនៃប្រព័ន្ធសម្ងាត់ឌីជីថលទំនើប (<strong>RSA Cryptography</strong>) ដែលការពារសុវត្ថិភាពទិន្នន័យអ៊ីនធឺណិត ប្រតិបត្តិការធនាគារអេឡិចត្រូនិក និងបច្ចេកវិទ្យា Blockchain នាពេលបច្ចុប្បន្ន។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">លក្ខណៈចែកដាច់នៃចំនួនគត់</h3>
+<p>ដើម្បីដឹងថាចំនួនមួយចែកដាច់នឹងចំនួនមួយទៀតឬទេ ដោយមិនបាច់ធ្វើប្រមាណវិធីចែកវែងឆ្ងាយ គេអាចប្រើ <strong>ក្បួនលក្ខណៈចែកដាច់ (Divisibility Rules)</strong>។</p>
+<h4>ភាពចែកដាច់នឹង ២ និង ៥</h4>
+<section class="bx bx-rule"><header class="bx-h"><b>ភាពចែកដាច់នឹង <span class="mi">\(2\)</span> និង <span class="mi">\(5\)</span></b></header><div class="bx-b">
+<ul>
+<li><p>មួយចំនួនចែកដាច់នឹង <strong><span class="mi">\(2\)</span></strong> កាលណាវាជា <strong>ចំនួនគត់គូ</strong> (មានលេខខ្ទង់រាយខាងចុងជា <span class="mi">\(0, 2, 4, 6, 8\)</span>)។</p></li>
+<li><p>មួយចំនួនចែកដាច់នឹង <strong><span class="mi">\(5\)</span></strong> កាលណាវាមានលេខខ្ទង់រាយខាងចុងជាលេខ <strong><span class="mi">\(0\)</span></strong> ឬ <strong><span class="mi">\(5\)</span></strong>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោយមិនបាច់ធ្វើប្រមាណវិធីចែក តើក្នុងចំណោមចំនួន <span class="mi">\(256,\; 1005,\; 2024,\; 4012,\; 4050\)</span> ចំនួនណាខ្លះ៖</p>
+<ol class="list olka cols1">
+<li><p>ចែកដាច់នឹង <span class="mi">\(2\)</span>?</p></li>
+<li><p>ចែកដាច់នឹង <span class="mi">\(5\)</span>?</p></li>
+<li><p>ចែកដាច់ទាំងនឹង <span class="mi">\(2\)</span> ផង និងនឹង <span class="mi">\(5\)</span> ផង?</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>គន្លឹះដោះស្រាយ៖</strong> ពិនិត្យត្រឹមតែខ្ទង់រាយចុងក្រោយបង្អស់នៃចំនួននីមួយៗ។ ចំនួនដែលចែកដាច់ទាំងនឹង <span class="mi">\(2\)</span> និង <span class="mi">\(5\)</span> គឺជាចំនួនដែលមានខ្ទង់រាយជាលេខ <span class="mi">\(0\)</span> (ចែកដាច់នឹង <span class="mi">\(10\)</span>)។</p>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><strong>ចំនួនចែកដាច់នឹង <span class="mi">\(2\)</span> ៖</strong> <span class="mi">\(256\)</span> (ខ្ទង់រាយ <span class="mi">\(6\)</span>), <span class="mi">\(2024\)</span> (ខ្ទង់រាយ <span class="mi">\(4\)</span>), <span class="mi">\(4012\)</span> (ខ្ទង់រាយ <span class="mi">\(2\)</span>), <span class="mi">\(4050\)</span> (ខ្ទង់រាយ <span class="mi">\(0\)</span>)។</p></li>
+<li><p><strong>ចំនួនចែកដាច់នឹង <span class="mi">\(5\)</span> ៖</strong> <span class="mi">\(1005\)</span> (ខ្ទង់រាយ <span class="mi">\(5\)</span>), <span class="mi">\(4050\)</span> (ខ្ទង់រាយ <span class="mi">\(0\)</span>)។</p></li>
+<li><p><strong>ចំនួនចែកដាច់ទាំងនឹង <span class="mi">\(2\)</span> ផង និង <span class="mi">\(5\)</span> ផង ៖</strong> <span class="mi">\(4050\)</span> (ព្រោះមានខ្ទង់រាយជា <span class="mi">\(0\)</span>)។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ភាពចែកដាច់នឹង ២ និង ៥</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>ដោយមិនប្រើប្រមាណវិធីចែក តើចំនួនណាខ្លះចែកដាច់នឹង <span class="mi">\(2\)</span> ?</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(202\)</span></p></li>
+<li><p><span class="mi">\(101\)</span></p></li>
+<li><p><span class="mi">\(256\)</span></p></li>
+<li><p><span class="mi">\(2021\)</span></p></li>
+<li><p><span class="mi">\(2019\)</span></p></li>
+<li><p><span class="mi">\(2024\)</span></p></li>
+<li><p><span class="mi">\(19~898\)</span></p></li>
+<li><p><span class="mi">\(198~745\)</span></p></li>
+</ol></li>
+<li><p>ដោយមិនប្រើប្រមាណវិធីចែក តើចំនួនណាខ្លះចែកដាច់នឹង <span class="mi">\(5\)</span> ?</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(65\)</span></p></li>
+<li><p><span class="mi">\(2020\)</span></p></li>
+<li><p><span class="mi">\(4012\)</span></p></li>
+<li><p><span class="mi">\(4050\)</span></p></li>
+<li><p><span class="mi">\(1900\)</span></p></li>
+<li><p><span class="mi">\(1005\)</span></p></li>
+<li><p><span class="mi">\(885\)</span></p></li>
+<li><p><span class="mi">\(2114\)</span></p></li>
+</ol></li>
+</ol>
+</div></section>
+<h4>ភាពចែកដាច់នឹង ៣ និង ៩</h4>
+<section class="bx bx-rule"><header class="bx-h"><b>ភាពចែកដាច់នឹង <span class="mi">\(3\)</span> និង <span class="mi">\(9\)</span></b></header><div class="bx-b">
+<ul>
+<li><p>មួយចំនួនចែកដាច់នឹង <strong><span class="mi">\(3\)</span></strong> កាលណាវាមាន <strong>ផលបូកលេខតាមខ្ទង់</strong> ទាំងអស់ចែកដាច់នឹង <span class="mi">\(3\)</span>។</p></li>
+<li><p>មួយចំនួនចែកដាច់នឹង <strong><span class="mi">\(9\)</span></strong> កាលណាវាមាន <strong>ផលបូកលេខតាមខ្ទង់</strong> ទាំងអស់ចែកដាច់នឹង <span class="mi">\(9\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ពិនិត្យចំនួន <span class="mi">\(2019\)</span> និង <span class="mi">\(3455\)</span>៖</p>
+<ol class="list olka cols1">
+<li><p>តើចំនួន <span class="mi">\(2019\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ឬទេ? ចែកដាច់នឹង <span class="mi">\(9\)</span> ឬទេ?</p></li>
+<li><p>តើចំនួន <span class="mi">\(3455\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ឬទេ?</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>ចំពោះចំនួន <span class="mi">\(2019\)</span> មានផលបូកលេខតាមខ្ទង់៖ <div class="md">\[2 + 0 + 1 + 9 = 12\]</div> ដោយសារ <span class="mi">\(12\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> (<span class="mi">\(12 \div 3 = 4\)</span>) នោះចំនួន <span class="mi">\(2019\)</span> <strong>ចែកដាច់នឹង <span class="mi">\(3\)</span></strong>។<br/>
+ប៉ុន្តែ <span class="mi">\(12\)</span> ចែកមិនដាច់នឹង <span class="mi">\(9\)</span> ទេ ដូចនេះ <span class="mi">\(2019\)</span> <strong>ចែកមិនដាច់នឹង <span class="mi">\(9\)</span> ឡើយ</strong>។</p></li>
+<li><p>ចំពោះចំនួន <span class="mi">\(3455\)</span> មានផលបូកលេខតាមខ្ទង់៖ <div class="md">\[3 + 4 + 5 + 5 = 17\]</div> ដោយសារ <span class="mi">\(17\)</span> ចែកមិនដាច់នឹង <span class="mi">\(3\)</span> ទេ ដូចនេះចំនួន <span class="mi">\(3455\)</span> <strong>ចែកមិនដាច់នឹង <span class="mi">\(3\)</span> ឡើយ</strong>។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ភាពចែកដាច់នឹង ៣ និង ៩</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>ដោយមិនប្រើប្រមាណវិធីចែក តើចំនួនណាខ្លះចែកដាច់នឹង <span class="mi">\(3\)</span> ?</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(2022\)</span></p></li>
+<li><p><span class="mi">\(1011\)</span></p></li>
+<li><p><span class="mi">\(256\)</span></p></li>
+<li><p><span class="mi">\(2021\)</span></p></li>
+<li><p><span class="mi">\(2019\)</span></p></li>
+<li><p><span class="mi">\(2024\)</span></p></li>
+<li><p><span class="mi">\(9993\)</span></p></li>
+<li><p><span class="mi">\(100~002\)</span></p></li>
+</ol></li>
+<li><p>ដោយមិនប្រើប្រមាណវិធីចែក តើចំនួនណាខ្លះចែកដាច់នឹង <span class="mi">\(9\)</span> ?</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(65\)</span></p></li>
+<li><p><span class="mi">\(2020\)</span></p></li>
+<li><p><span class="mi">\(4012\)</span></p></li>
+<li><p><span class="mi">\(4050\)</span></p></li>
+<li><p><span class="mi">\(1900\)</span></p></li>
+<li><p><span class="mi">\(1005\)</span></p></li>
+<li><p><span class="mi">\(885\)</span></p></li>
+<li><p><span class="mi">\(2114\)</span></p></li>
+</ol></li>
+</ol>
+</div></section>
+<h4>ភាពចែកដាច់នឹង ៤ និង ៨</h4>
+<section class="bx bx-rule"><header class="bx-h"><b>ភាពចែកដាច់នឹង <span class="mi">\(4\)</span> និង <span class="mi">\(8\)</span></b></header><div class="bx-b">
+<ul>
+<li><p>មួយចំនួនចែកដាច់នឹង <strong><span class="mi">\(4\)</span></strong> កាលណាវាមាន <strong>លេខខាងចុងពីរខ្ទង់</strong> បង្កើតបានជាចំនួនដែលចែកដាច់នឹង <span class="mi">\(4\)</span> (ឬពីរខ្ទង់ចុងក្រោយជា <span class="mi">\(00\)</span>)។</p></li>
+<li><p>មួយចំនួនចែកដាច់នឹង <strong><span class="mi">\(8\)</span></strong> កាលណាវាមាន <strong>លេខខាងចុងបីខ្ទង់</strong> បង្កើតបានជាចំនួនដែលចែកដាច់នឹង <span class="mi">\(8\)</span> (ឬបីខ្ទង់ចុងក្រោយជា <span class="mi">\(000\)</span>)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ពិនិត្យមើលចំនួន <span class="mi">\(234~672\)</span> និង <span class="mi">\(99~608\)</span>៖</p>
+<ol class="list olka cols1">
+<li><p>តើ <span class="mi">\(234~672\)</span> ចែកដាច់នឹង <span class="mi">\(4\)</span> ដែរឬទេ?</p></li>
+<li><p>តើ <span class="mi">\(99~608\)</span> ចែកដាច់នឹង <span class="mi">\(8\)</span> ដែរឬទេ?</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>ចំនួន <span class="mi">\(234~672\)</span> មានពីរខ្ទង់ចុងក្រោយគឺ <span class="mi">\(72\)</span>។ ដោយសារ <span class="mi">\(72 \div 4 = 18\)</span> (ចែកដាច់) ដូច្នេះ <span class="mi">\(234~672\)</span> <strong>ចែកដាច់នឹង <span class="mi">\(4\)</span></strong>។</p></li>
+<li><p>ចំនួន <span class="mi">\(99~608\)</span> មានបីខ្ទង់ចុងក្រោយគឺ <span class="mi">\(608\)</span>។ ដោយសារ <span class="mi">\(608 \div 8 = 76\)</span> (ចែកដាច់) ដូច្នេះ <span class="mi">\(99~608\)</span> <strong>ចែកដាច់នឹង <span class="mi">\(8\)</span></strong>។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ភាពចែកដាច់នឹង ៤ និង ៨</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>ដោយមិនប្រើប្រមាណវិធីចែក តើចំនួនណាខ្លះចែកដាច់នឹង <span class="mi">\(4\)</span> ?</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(2024\)</span></p></li>
+<li><p><span class="mi">\(1012\)</span></p></li>
+<li><p><span class="mi">\(256\)</span></p></li>
+<li><p><span class="mi">\(2000\)</span></p></li>
+<li><p><span class="mi">\(2008\)</span></p></li>
+<li><p><span class="mi">\(12~384\)</span></p></li>
+<li><p><span class="mi">\(234~672\)</span></p></li>
+<li><p><span class="mi">\(125~554\)</span></p></li>
+</ol></li>
+<li><p>ដោយមិនប្រើប្រមាណវិធីចែក តើចំនួនណាខ្លះចែកដាច់នឹង <span class="mi">\(8\)</span> ?</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(1008\)</span></p></li>
+<li><p><span class="mi">\(9864\)</span></p></li>
+<li><p><span class="mi">\(99~608\)</span></p></li>
+<li><p><span class="mi">\(2168\)</span></p></li>
+<li><p><span class="mi">\(12~649\)</span></p></li>
+<li><p><span class="mi">\(980~045\)</span></p></li>
+<li><p><span class="mi">\(88~123\)</span></p></li>
+<li><p><span class="mi">\(1000\)</span></p></li>
+</ol></li>
+</ol>
+</div></section>
+<h4>លក្ខណៈចែកដាច់នៃផលបូក និងផលដក</h4>
+<section class="bx bx-rule"><header class="bx-h"><b>លក្ខណៈចែកដាច់នៃផលបូក និងផលដក</b></header><div class="bx-b">
+<p>បើតួនីមួយៗនៃផលបូក ឬផលដក ចែកដាច់នឹងចំនួន <span class="mi">\(d\)</span> តែមួយដូចគ្នា នោះ <strong>ផលបូក ឬផលដករបស់វា ក៏ចែកដាច់នឹងចំនួន <span class="mi">\(d\)</span> នោះដែរ</strong>៖</p>
+<ul>
+<li><p>បើ <span class="mi">\(a\)</span> ចែកដាច់នឹង <span class="mi">\(d\)</span> និង <span class="mi">\(b\)</span> ចែកដាច់នឹង <span class="mi">\(d\)</span> នោះ <span class="mi">\((a + b)\)</span> ចែកដាច់នឹង <span class="mi">\(d\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(a\)</span> ចែកដាច់នឹង <span class="mi">\(d\)</span> និង <span class="mi">\(b\)</span> ចែកដាច់នឹង <span class="mi">\(d\)</span> (<span class="mi">\(a \ge b\)</span>) នោះ <span class="mi">\((a - b)\)</span> ចែកដាច់នឹង <span class="mi">\(d\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>លក្ខណៈចែកដាច់នៃផលបូក និងផលដក</b></header><div class="bx-b">
+<p>តើកន្សោមខាងក្រោមចែកដាច់នឹងចំនួន <span class="mi">\(2\)</span> ឬ <span class="mi">\(5\)</span> ឬ <span class="mi">\(3\)</span> ឬ <span class="mi">\(4\)</span> ដែរឬទេ ?</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(1000 + 5002\)</span></p></li>
+<li><p><span class="mi">\(16~002 + 80~001\)</span></p></li>
+<li><p><span class="mi">\(1880 - 2025\)</span></p></li>
+<li><p><span class="mi">\(5024 - 3012\)</span></p></li>
+<li><p><span class="mi">\(2003 + 5001\)</span></p></li>
+<li><p><span class="mi">\(9008 + 31~114\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u2">តួចែកនៃចំនួនគត់ធម្មជាតិ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>តួចែកនៃចំនួនគត់ធម្មជាតិ</b></header><div class="bx-b">
+<p>ចំនួនគត់ធម្មជាតិ <span class="mi">\(d\)</span> ជា <strong>តួចែក</strong> នៃចំនួនគត់ធម្មជាតិ <span class="mi">\(a\)</span> កាលណា <span class="mi">\(a\)</span> ចែកដាច់នឹង <span class="mi">\(d\)</span> (ពោលគឺមានចំនួនគត់ <span class="mi">\(k\)</span> ដែល <span class="mi">\(a = d \times k\)</span>)។<br/>
+សំណុំនៃតួចែកទាំងអស់នៃចំនួន <span class="mi">\(a\)</span> ត្រូវបានតាងដោយ <span class="mi">\(D(a)\)</span>។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រកតួចែកទាំងអស់នៃចំនួន <span class="mi">\(24\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>គន្លឹះដោះស្រាយ៖</strong> សរសេរ <span class="mi">\(24\)</span> ជាផលគុណនៃពីរចំនួនគត់ធម្មជាតិតាមគ្រប់លទ្ធភាព៖ <div class="md">\[24 = 1 \times 24 = 2 \times 12 = 3 \times 8 = 4 \times 6\]</div> <strong>ដំណោះស្រាយលម្អិត៖</strong> តួចែកទាំងអស់នៃ <span class="mi">\(24\)</span> គឺ៖ <span class="mi">\(1, 2, 3, 4, 6, 8, 12, 24\)</span>។<br/>
+គេសរសេរ៖ <span class="mi">\(D(24) = \{1, 2, 3, 4, 6, 8, 12, 24\}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បំពេញចន្លោះកត្តានៃតួចែក</b></header><div class="bx-b">
+<p>ចូរបំពេញចន្លោះខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(24 = 6 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(36 = 9 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(100 = 25 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(24 = 12 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(60 = 12 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(96 = 8 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(2000 = 8 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(88 = 2 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(108 = 2 \times \ldots\ldots\)</span></p></li>
+<li><p><span class="mi">\(72 = 6 \times \ldots\ldots\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ស្វែងរកតួចែក</b></header><div class="bx-b">
+<p>ចូររកតួចែកទាំងអស់នៃចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(4\)</span></p></li>
+<li><p><span class="mi">\(7\)</span></p></li>
+<li><p><span class="mi">\(1\)</span></p></li>
+<li><p><span class="mi">\(11\)</span></p></li>
+<li><p><span class="mi">\(8\)</span></p></li>
+<li><p><span class="mi">\(12\)</span></p></li>
+<li><p><span class="mi">\(15\)</span></p></li>
+<li><p><span class="mi">\(100\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u3">ចំនួនបឋម និងចំនួនមិនបឋម</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំនួនបឋម និងចំនួនមិនបឋម</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ចំនួនបឋម (Prime Number) ៖</strong> ជាចំនួនគត់ធម្មជាតិដែលមាន <strong>តួចែកតែពីរគត់</strong> គឺ <span class="mi">\(1\)</span> និង ខ្លួនឯង។<br/>
+<em>ឧទាហរណ៍៖</em> <span class="mi">\(2, 3, 5, 7, 11, 13, 17, 19, 23, \ldots\)</span></p></li>
+<li><p><strong>ចំនួនមិនបឋម (Composite Number) ៖</strong> ជាចំនួនគត់ធម្មជាតិដែលមាន <strong>តួចែកច្រើនជាងពីរ</strong>។<br/>
+<em>ឧទាហរណ៍៖</em> <span class="mi">\(4, 6, 8, 9, 10, 12, 14, 15, \ldots\)</span></p></li>
+</ul>
+</div></section>
+<section class="bx bx-white"><div class="bx-b">
+<ul>
+<li><p>ចំនួន <strong><span class="mi">\(1\)</span></strong> មានតួចែកតែមួយគត់ (គឺខ្លួនវា) ដូច្នេះ <strong><span class="mi">\(1\)</span> មិនមែនជាចំនួនបឋម ហើយក៏មិនមែនជាចំនួនមិនបឋមឡើយ</strong>។</p></li>
+<li><p>ចំនួន <strong><span class="mi">\(2\)</span></strong> គឺជា <strong>ចំនួនគត់គូតែមួយគត់</strong> ដែលជាចំនួនបឋម។ គ្រប់ចំនួនបឋមដទៃទៀតសុទ្ធសឹងជាចំនួនសេស។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ពិនិត្យមើលចំនួន <span class="mi">\(5, 6, 7, 8, 21\)</span>។ តើចំនួនណាខ្លះជាចំនួនបឋម និងចំនួនណាខ្លះជាចំនួនមិនបឋម?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p><span class="mi">\(D(5) = \{1, 5\} \implies\)</span> មានតួចែក <span class="mi">\(2\)</span> ដូច្នេះ <span class="mi">\(5\)</span> ជា <strong>ចំនួនបឋម</strong></p></li>
+<li><p><span class="mi">\(D(6) = \{1, 2, 3, 6\} \implies\)</span> មានតួចែក <span class="mi">\(4\)</span> ដូច្នេះ <span class="mi">\(6\)</span> ជា <strong>ចំនួនមិនបឋម</strong></p></li>
+<li><p><span class="mi">\(D(7) = \{1, 7\} \implies\)</span> មានតួចែក <span class="mi">\(2\)</span> ដូច្នេះ <span class="mi">\(7\)</span> ជា <strong>ចំនួនបឋម</strong></p></li>
+<li><p><span class="mi">\(D(8) = \{1, 2, 4, 8\} \implies\)</span> មានតួចែក <span class="mi">\(4\)</span> ដូច្នេះ <span class="mi">\(8\)</span> ជា <strong>ចំនួនមិនបឋម</strong></p></li>
+<li><p><span class="mi">\(D(21) = \{1, 3, 7, 21\} \implies\)</span> មានតួចែក <span class="mi">\(4\)</span> ដូច្នេះ <span class="mi">\(21\)</span> ជា <strong>ចំនួនមិនបឋម</strong></p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>កំណត់ចំនួនបឋម</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>ចូររកតួចែកនៃចំនួនគត់ <span class="mi">\(5, 6, 7, 8, 21\)</span>។ តើចំនួនណាខ្លះជាចំនួនបឋម និងចំនួនណាខ្លះជាចំនួនមិនបឋម ?</p></li>
+<li><p>ចូរសរសេរចំនួនបឋមទាំងអស់ដែលតូចជាង <span class="mi">\(15\)</span>។</p></li>
+<li><p>ចូរសរសេរចំនួនបឋមដែលមានលេខពីរខ្ទង់ហើយតូចជាង <span class="mi">\(30\)</span>។</p></li>
+</ol>
+</div></section>
+<h3 id="u4">ការបំបែកមួយចំនួនជាផលគុណកត្តាបឋម</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>ការបំបែកជាផលគុណកត្តាបឋម (Prime Factorization)</b></header><div class="bx-b">
+<p>ការបំបែកចំនួនមិនបឋមមួយជា <strong>ផលគុណកត្តាបឋម</strong> គឺជាការសរសេរចំនួននោះជាផលគុណនៃបណ្ដាចំនួនបឋម។<br/>
+គេអាចប្រើវិធីពីរយ៉ាង៖</p>
+<ol class="list oldef cols1">
+<li><p><strong>វិធីគូរមែកធាង (Factor Tree)</strong></p></li>
+<li><p><strong>វិធីចែកជាបន្តបន្ទាប់ដោយចំនួនបឋម (Repeated Division)</strong></p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>បំបែកចំនួន <span class="mi">\(60\)</span> និង <span class="mi">\(180\)</span> ជាផលគុណកត្តាបឋម រួចសរសេរជាទម្រង់ស្វ័យគុណ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p>ធ្វើវិធីចែកជាបន្តបន្ទាប់ចំពោះ <span class="mi">\(60\)</span>៖ <div class="md">\[\begin{array}{r|l}
+      60 &amp; 2 \\
+      30 &amp; 2 \\
+      15 &amp; 3 \\
+       5 &amp; 5 \\
+       1 &amp; 
+    \end{array}
+    \implies 60 = 2 \times 2 \times 3 \times 5 = 2^2 \times 3 \times 5\]</div></p></li>
+<li><p>ធ្វើវិធីចែកជាបន្តបន្ទាប់ចំពោះ <span class="mi">\(180\)</span>៖ <div class="md">\[\begin{array}{r|l}
+      180 &amp; 2 \\
+       90 &amp; 2 \\
+       45 &amp; 3 \\
+       15 &amp; 3 \\
+        5 &amp; 5 \\
+        1 &amp; 
+    \end{array}
+    \implies 180 = 2 \times 2 \times 3 \times 3 \times 5 = 2^2 \times 3^2 \times 5\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការបំបែកជាផលគុណកត្តាបឋម</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>តើផលគុណកត្តាខាងក្រោមណាខ្លះជាផលគុណកត្តាបឋម និងណាខ្លះមិនមែន ?</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2\times 3 \times 1\)</span></p></li>
+<li><p><span class="mi">\(2\times 5 \times 3\)</span></p></li>
+<li><p><span class="mi">\(4\times 7 \times 2\)</span></p></li>
+<li><p><span class="mi">\(2\times 3 \times 9\)</span></p></li>
+<li><p><span class="mi">\(2\times 3^2\)</span></p></li>
+<li><p><span class="mi">\(4\times 5^2\)</span></p></li>
+</ol></li>
+<li><p>បំបែកចំនួនខាងក្រោមជាផលគុណកត្តាបឋម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(35\)</span></p></li>
+<li><p><span class="mi">\(45\)</span></p></li>
+<li><p><span class="mi">\(40\)</span></p></li>
+<li><p><span class="mi">\(54\)</span></p></li>
+<li><p><span class="mi">\(66\)</span></p></li>
+<li><p><span class="mi">\(273\)</span></p></li>
+</ol></li>
+<li><p>គេឱ្យចំនួន <span class="mi">\(x = 180\)</span> និង <span class="mi">\(y = 360\)</span>៖</p>
+<ol class="list olka cols1">
+<li><p>បំបែកចំនួន <span class="mi">\(x = 180\)</span> និង <span class="mi">\(y = 360\)</span> ជាផលគុណកត្តាបឋម​។</p></li>
+<li><p>បំបែក <span class="mi">\(x + y\)</span> ជាផលគុណកត្តាបឋម។</p></li>
+</ol></li>
+</ol>
+</div></section>
+<h3 id="u5">តួចែករួមធំបំផុត (PGCD ឬ GCD)</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>តួចែករួមធំបំផុត</b></header><div class="bx-b">
+<p><strong>តួចែករួមធំបំផុត (Greatest Common Divisor - GCD ឬ PGCD)</strong> នៃពីរ ឬច្រើនចំនួន គឺជាចំនួនគត់ធម្មជាតិធំជាងគេបង្អស់ដែលជាតួចែករួមនៃចំនួនទាំងនោះ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធីរកតួចែករួមធំបំផុត</b></header><div class="bx-b">
+<p>ដើម្បីរកតួចែករួមធំបំផុតនៃពីរ ឬច្រើនចំនួន៖</p>
+<ol class="list oldef cols1">
+<li><p>បំបែកចំនួននីមួយៗជាផលគុណកត្តាបឋម។</p></li>
+<li><p>ជ្រើសរើសយកតែ <strong>កត្តាបឋមរួម</strong> ទាំងឡាយណាដែលមាន <strong>និទស្សន្តតូចជាងគេ</strong> រួចគុណបញ្ចូលគ្នា។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-white"><div class="bx-b">
+<p>ពីរចំនួន <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ហៅថាជា <strong>ចំនួនបឋមរវាងគ្នា</strong> កាលណា <span class="mi">\(PGCD(a, b) = 1\)</span> (ពោលគឺគ្មានតួចែករួមណាផ្សេងក្រៅពី <span class="mi">\(1\)</span> ឡើយ)។<br/>
+<em>ឧទាហរណ៍៖</em> <span class="mi">\(PGCD(8, 9) = 1 \implies 8\)</span> និង <span class="mi">\(9\)</span> ជាចំនួនបឋមរវាងគ្នា។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រកតួចែករួមធំបំផុតនៃ <span class="mi">\(60\)</span>, <span class="mi">\(180\)</span> និង <span class="mi">\(210\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p>បំបែកចំនួននីមួយៗជាផលគុណកត្តាបឋម៖ <div class="md">\[\begin{aligned}
+      60 &amp;= 2^2 \times 3 \times 5 \\
+      180 &amp;= 2^2 \times 3^2 \times 5 \\
+      210 &amp;= 2 \times 3 \times 5 \times 7
+    
+\end{aligned}\]</div></p></li>
+<li><p>កត្តាបឋមរួមគឺ៖ <span class="mi">\(2, 3, 5\)</span></p></li>
+<li><p>ជ្រើសរើសនិទស្សន្តតូចជាងគេ៖</p>
+<ul>
+<li><p>ចំពោះកត្តា <span class="mi">\(2\)</span> ៖ និទស្សន្តតូចជាងគេគឺ <span class="mi">\(1 \implies 2^1 = 2\)</span></p></li>
+<li><p>ចំពោះកត្តា <span class="mi">\(3\)</span> ៖ និទស្សន្តតូចជាងគេគឺ <span class="mi">\(1 \implies 3^1 = 3\)</span></p></li>
+<li><p>ចំពោះកត្តា <span class="mi">\(5\)</span> ៖ និទស្សន្តតូចជាងគេគឺ <span class="mi">\(1 \implies 5^1 = 5\)</span></p></li>
+</ul></li>
+<li><p>គុណកត្តារួមបញ្ចូលគ្នា៖ <div class="md">\[PGCD(60, 180, 210) = 2 \times 3 \times 5 = 30\]</div></p></li>
+</ul>
+<p>ដូចនេះ <span class="kfbox"><strong><span class="mi">\(PGCD(60, 180, 210) = 30\)</span></strong></span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនា PGCD</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>ចូររកតួចែករួមធំបំផុតនៃចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(30\)</span> និង <span class="mi">\(36\)</span></p></li>
+<li><p><span class="mi">\(10,\; 15\)</span> និង <span class="mi">\(75\)</span></p></li>
+<li><p><span class="mi">\(50,\; 25\)</span> និង <span class="mi">\(100\)</span></p></li>
+<li><p><span class="mi">\(120,\; 64\)</span> និង <span class="mi">\(54\)</span></p></li>
+<li><p><span class="mi">\(11\)</span> និង <span class="mi">\(13\)</span></p></li>
+<li><p><span class="mi">\(17,\; 31\)</span> និង <span class="mi">\(8\)</span></p></li>
+</ol></li>
+<li><p>រក <span class="mi">\(PGCD\)</span> នៃចំនួនខាងក្រោម ព្រមទាំងបញ្ជាក់គូនៃចំនួនដែលជាចំនួនបឋមរវាងគ្នា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(14\)</span> និង <span class="mi">\(28\)</span></p></li>
+<li><p><span class="mi">\(56\)</span> និង <span class="mi">\(49\)</span></p></li>
+<li><p><span class="mi">\(19\)</span> និង <span class="mi">\(18\)</span></p></li>
+<li><p><span class="mi">\(27\)</span> និង <span class="mi">\(16\)</span></p></li>
+</ol></li>
+</ol>
+</div></section>
+<h3 id="u6">ពហុគុណរួមតូចបំផុត (PPCM ឬ LCM)</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ពហុគុណរួមតូចបំផុត</b></header><div class="bx-b">
+<p><strong>ពហុគុណរួមតូចបំផុត (Least Common Multiple - LCM ឬ PPCM)</strong> នៃពីរ ឬច្រើនចំនួនមិនសូន្យ គឺជាចំនួនគត់ធម្មជាតិតូចជាងគេបំផុត (ក្រៅពីសូន្យ) ដែលជាពហុគុណរួមនៃចំនួនទាំងនោះ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធីរកពហុគុណរួមតូចបំផុត</b></header><div class="bx-b">
+<p>ដើម្បីរកពហុគុណរួមតូចបំផុតនៃពីរ ឬច្រើនចំនួន៖</p>
+<ol class="list oldef cols1">
+<li><p>បំបែកចំនួននីមួយៗជាផលគុណកត្តាបឋម។</p></li>
+<li><p>ជ្រើសរើសយក <strong>គ្រប់កត្តាទាំងអស់</strong> (ទាំងកត្តារួម និងកត្តាមិនរួម) ដោយយក <strong>និទស្សន្តធំជាងគេ</strong> រួចគុណបញ្ចូលគ្នា។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-white"><div class="bx-b">
+<p>ចំពោះពីរចំនួនគត់ធម្មជាតិ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> គេបាន៖ <div class="md">\[a \times b = PGCD(a, b) \times PPCM(a, b)\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រកពហុគុណរួមតូចបំផុតនៃ <span class="mi">\(6\)</span> និង <span class="mi">\(8\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p>បំបែកជាផលគុណកត្តាបឋម៖ <div class="md">\[\begin{aligned}
+      6 &amp;= 2 \times 3 \\
+      8 &amp;= 2^3
+    
+\end{aligned}\]</div></p></li>
+<li><p>ជ្រើសរើសគ្រប់កត្តាដោយយកនិទស្សន្តធំជាងគេ៖</p>
+<ul>
+<li><p>កត្តា <span class="mi">\(2\)</span> ៖ និទស្សន្តធំជាងគេគឺ <span class="mi">\(3 \implies 2^3 = 8\)</span></p></li>
+<li><p>កត្តា <span class="mi">\(3\)</span> ៖ និទស្សន្តធំជាងគេគឺ <span class="mi">\(1 \implies 3^1 = 3\)</span></p></li>
+</ul></li>
+<li><p>គុណបញ្ចូលគ្នា៖ <div class="md">\[PPCM(6, 8) = 2^3 \times 3 = 8 \times 3 = 24\]</div></p></li>
+</ul>
+<p>ដូចនេះ <span class="kfbox"><strong><span class="mi">\(PPCM(6, 8) = 24\)</span></strong></span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនា PPCM</b></header><div class="bx-b">
+<p>រកពហុគុណរួមតូចបំផុត <span class="mi">\((PPCM)\)</span> នៃចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(30\)</span> និង <span class="mi">\(42\)</span></p></li>
+<li><p><span class="mi">\(24\)</span> និង <span class="mi">\(12\)</span></p></li>
+<li><p><span class="mi">\(4\)</span> និង <span class="mi">\(6\)</span></p></li>
+<li><p><span class="mi">\(5,\; 8\)</span> និង <span class="mi">\(12\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ចូរសរសេរពាក្យ <strong>«ត្រូវ»</strong> ឬ <strong>«ខុស»</strong> ចំពោះសំណើខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(45\)</span> ចែកដាច់នឹង <span class="mi">\(5\)</span></p></li>
+<li><p><span class="mi">\(70\)</span> ចែកដាច់នឹង <span class="mi">\(5\)</span></p></li>
+<li><p><span class="mi">\(402\)</span> ចែកដាច់នឹង <span class="mi">\(2\)</span></p></li>
+<li><p><span class="mi">\(126\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span></p></li>
+<li><p><span class="mi">\(256\)</span> ចែកដាច់នឹង <span class="mi">\(9\)</span></p></li>
+<li><p><span class="mi">\(296\)</span> ចែកដាច់នឹង <span class="mi">\(4\)</span></p></li>
+<li><p><span class="mi">\(2008\)</span> ចែកដាច់នឹង <span class="mi">\(8\)</span></p></li>
+<li><p><span class="mi">\(3999\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ផង និង <span class="mi">\(9\)</span> ផង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ «ត្រូវ» ឬ «ខុស» ចំពោះសំណើ ៖</p>
+<ul>
+<li><p><span class="mi">\(45\)</span> ចែកដាច់នឹង <span class="mi">\(5\)</span> ៖ <strong>ត្រូវ</strong> (ខ្ទង់រាយជាលេខ <span class="mi">\(5\)</span>)</p></li>
+<li><p><span class="mi">\(70\)</span> ចែកដាច់នឹង <span class="mi">\(5\)</span> ៖ <strong>ត្រូវ</strong> (ខ្ទង់រាយជាលេខ <span class="mi">\(0\)</span>)</p></li>
+<li><p><span class="mi">\(402\)</span> ចែកដាច់នឹង <span class="mi">\(2\)</span> ៖ <strong>ត្រូវ</strong> (ខ្ទង់រាយជាលេខគូ <span class="mi">\(2\)</span>)</p></li>
+<li><p><span class="mi">\(126\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ៖ <strong>ត្រូវ</strong> (<span class="mi">\(1+2+6=9\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span>)</p></li>
+<li><p><span class="mi">\(256\)</span> ចែកដាច់នឹង <span class="mi">\(9\)</span> ៖ <strong>ខុស</strong> (<span class="mi">\(2+5+6=13\)</span> មិនដាច់នឹង <span class="mi">\(9\)</span>)</p></li>
+<li><p><span class="mi">\(296\)</span> ចែកដាច់នឹង <span class="mi">\(4\)</span> ៖ <strong>ត្រូវ</strong> (<span class="mi">\(96 \div 4 = 24\)</span>)</p></li>
+<li><p><span class="mi">\(2008\)</span> ចែកដាច់នឹង <span class="mi">\(8\)</span> ៖ <strong>ត្រូវ</strong> (<span class="mi">\(008 \div 8 = 1\)</span>)</p></li>
+<li><p><span class="mi">\(3999\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ផង និង <span class="mi">\(9\)</span> ផង ៖ <strong>ខុស</strong> (ផលបូក <span class="mi">\(30\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> តែមិនចែកដាច់នឹង <span class="mi">\(9\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ក្នុងចំណោមចំនួន <span class="mi">\(124, 250, 315, 428, 510, 605, 732, 900\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p>រកចំនួនដែលចែកដាច់នឹង <span class="mi">\(2\)</span></p></li>
+<li><p>រកចំនួនដែលចែកដាច់នឹង <span class="mi">\(5\)</span></p></li>
+<li><p>រកចំនួនដែលចែកដាច់នឹងទាំង <span class="mi">\(2\)</span> និង <span class="mi">\(5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុងចំណោមចំនួន <span class="mi">\(124, 250, 315, 428, 510, 605, 732, 900\)</span> ៖</p>
+<ul>
+<li><p>ចែកដាច់នឹង <span class="mi">\(2\)</span> ៖ <span class="mi">\(\boxed{124, 250, 428, 510, 732, 900}\)</span></p></li>
+<li><p>ចែកដាច់នឹង <span class="mi">\(5\)</span> ៖ <span class="mi">\(\boxed{250, 315, 510, 605, 900}\)</span></p></li>
+<li><p>ចែកដាច់ទាំង <span class="mi">\(2\)</span> និង <span class="mi">\(5\)</span> ៖ <span class="mi">\(\boxed{250, 510, 900}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ក្នុងចំណោមចំនួន <span class="mi">\(111, 234, 405, 523, 612, 789, 891, 1002\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p>រកចំនួនដែលចែកដាច់នឹង <span class="mi">\(3\)</span></p></li>
+<li><p>រកចំនួនដែលចែកដាច់នឹង <span class="mi">\(9\)</span></p></li>
+<li><p>រកចំនួនដែលចែកដាច់នឹង <span class="mi">\(3\)</span> តែមិនចែកដាច់នឹង <span class="mi">\(9\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុងចំណោមចំនួន <span class="mi">\(111, 234, 405, 523, 612, 789, 891, 1002\)</span> ៖</p>
+<ul>
+<li><p>ចែកដាច់នឹង <span class="mi">\(3\)</span> ៖ <span class="mi">\(\boxed{111, 234, 405, 612, 789, 891, 1002}\)</span></p></li>
+<li><p>ចែកដាច់នឹង <span class="mi">\(9\)</span> ៖ <span class="mi">\(\boxed{234, 405, 612, 891}\)</span></p></li>
+<li><p>ចែកដាច់នឹង <span class="mi">\(3\)</span> តែមិនចែកដាច់នឹង <span class="mi">\(9\)</span> ៖ <span class="mi">\(\boxed{111, 789, 1002}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ក្នុងចំណោមចំនួន <span class="mi">\(216, 340, 512, 628, 1024, 2018, 3048, 5100\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p>រកចំនួនដែលចែកដាច់នឹង <span class="mi">\(4\)</span></p></li>
+<li><p>រកចំនួនដែលចែកដាច់នឹង <span class="mi">\(8\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុងចំណោមចំនួន <span class="mi">\(216, 340, 512, 628, 1024, 2018, 3048, 5100\)</span> ៖</p>
+<ul>
+<li><p>ចែកដាច់នឹង <span class="mi">\(4\)</span> ៖ <span class="mi">\(\boxed{216, 340, 512, 628, 1024, 3048, 5100}\)</span></p></li>
+<li><p>ចែកដាច់នឹង <span class="mi">\(8\)</span> ៖ <span class="mi">\(\boxed{216, 512, 1024, 3048}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>រកលេខជំនួសដោយសញ្ញាផ្កាយ <span class="mi">\(*\)</span> ដើម្បីឱ្យ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\overline{34*}\)</span> ចែកដាច់នឹង <span class="mi">\(2\)</span></p></li>
+<li><p><span class="mi">\(\overline{5*2}\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span></p></li>
+<li><p><span class="mi">\(\overline{78*}\)</span> ចែកដាច់នឹង <span class="mi">\(5\)</span></p></li>
+<li><p><span class="mi">\(\overline{1*8}\)</span> ចែកដាច់នឹង <span class="mi">\(9\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកលេខជំនួសដោយសញ្ញាផ្កាយ <span class="mi">\(*\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(\overline{34*}\)</span> ចែកដាច់នឹង <span class="mi">\(2 \implies * \in \{0, 2, 4, 6, 8\}\)</span></p></li>
+<li><p><span class="mi">\(\overline{5*2}\)</span> ចែកដាច់នឹង <span class="mi">\(3 \implies 7+*\)</span> ចែកដាច់នឹង <span class="mi">\(3 \implies * \in \{2, 5, 8\}\)</span></p></li>
+<li><p><span class="mi">\(\overline{78*}\)</span> ចែកដាច់នឹង <span class="mi">\(5 \implies * \in \{0, 5\}\)</span></p></li>
+<li><p><span class="mi">\(\overline{1*8}\)</span> ចែកដាច់នឹង <span class="mi">\(9 \implies 9+*\)</span> ចែកដាច់នឹង <span class="mi">\(9 \implies * \in \{0, 9\}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>បង្ហាញថាកន្សោមខាងក្រោមចែកដាច់នឹងចំនួនដែលបានកំណត់ដោយមិនបាច់គណនាផលបូក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(40 + 65\)</span> ចែកដាច់នឹង <span class="mi">\(5\)</span></p></li>
+<li><p><span class="mi">\(27 + 54 + 81\)</span> ចែកដាច់នឹង <span class="mi">\(9\)</span></p></li>
+<li><p><span class="mi">\(1000 - 324\)</span> ចែកដាច់នឹង <span class="mi">\(4\)</span></p></li>
+<li><p><span class="mi">\(888 + 440\)</span> ចែកដាច់នឹង <span class="mi">\(8\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថាកន្សោមចែកដាច់នឹងចំនួនកំណត់ ៖</p>
+<ul>
+<li><p><span class="mi">\(40 + 65\)</span> ៖ <span class="mi">\(40\)</span> និង <span class="mi">\(65\)</span> ចែកដាច់នឹង <span class="mi">\(5 \implies\)</span> ផលបូកចែកដាច់នឹង <span class="mi">\(5\)</span>។</p></li>
+<li><p><span class="mi">\(27 + 54 + 81\)</span> ៖ គ្រប់តួចែកដាច់នឹង <span class="mi">\(9 \implies\)</span> ផលបូកចែកដាច់នឹង <span class="mi">\(9\)</span>។</p></li>
+<li><p><span class="mi">\(1000 - 324\)</span> ៖ <span class="mi">\(1000\)</span> និង <span class="mi">\(324\)</span> ចែកដាច់នឹង <span class="mi">\(4 \implies\)</span> ផលដកចែកដាច់នឹង <span class="mi">\(4\)</span>។</p></li>
+<li><p><span class="mi">\(888 + 440\)</span> ៖ <span class="mi">\(888\)</span> និង <span class="mi">\(440\)</span> ចែកដាច់នឹង <span class="mi">\(8 \implies\)</span> ផលបូកចែកដាច់នឹង <span class="mi">\(8\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>រកតួចែកទាំងអស់នៃចំនួននីមួយៗខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(12\)</span></p></li>
+<li><p><span class="mi">\(18\)</span></p></li>
+<li><p><span class="mi">\(24\)</span></p></li>
+<li><p><span class="mi">\(30\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកតួចែកទាំងអស់នៃចំនួន ៖</p>
+<ul>
+<li><p><span class="mi">\(D(12) = \{1, 2, 3, 4, 6, 12\}\)</span></p></li>
+<li><p><span class="mi">\(D(18) = \{1, 2, 3, 6, 9, 18\}\)</span></p></li>
+<li><p><span class="mi">\(D(24) = \{1, 2, 3, 4, 6, 8, 12, 24\}\)</span></p></li>
+<li><p><span class="mi">\(D(30) = \{1, 2, 3, 5, 6, 10, 15, 30\}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>រកតួចែកទាំងអស់នៃចំនួននីមួយៗខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(36\)</span></p></li>
+<li><p><span class="mi">\(40\)</span></p></li>
+<li><p><span class="mi">\(48\)</span></p></li>
+<li><p><span class="mi">\(60\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកតួចែកទាំងអស់នៃចំនួន ៖</p>
+<ul>
+<li><p><span class="mi">\(D(36) = \{1, 2, 3, 4, 6, 9, 12, 18, 36\}\)</span></p></li>
+<li><p><span class="mi">\(D(40) = \{1, 2, 4, 5, 8, 10, 20, 40\}\)</span></p></li>
+<li><p><span class="mi">\(D(48) = \{1, 2, 3, 4, 6, 8, 12, 16, 24, 48\}\)</span></p></li>
+<li><p><span class="mi">\(D(60) = \{1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60\}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>សរសេរគ្រប់ចំនួនបឋមដែល ៖</p>
+<ol class="list olka cols1">
+<li><p>តូចជាង <span class="mi">\(20\)</span></p></li>
+<li><p>ស្ថិតនៅចន្លោះ <span class="mi">\(20\)</span> និង <span class="mi">\(40\)</span></p></li>
+<li><p>ស្ថិតនៅចន្លោះ <span class="mi">\(40\)</span> និង <span class="mi">\(60\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរគ្រប់ចំនួនបឋម ៖</p>
+<ul>
+<li><p>តូចជាង <span class="mi">\(20\)</span> ៖ <span class="mi">\(\boxed{2, 3, 5, 7, 11, 13, 17, 19}\)</span></p></li>
+<li><p>ចន្លោះ <span class="mi">\(20\)</span> និង <span class="mi">\(40\)</span> ៖ <span class="mi">\(\boxed{23, 29, 31, 37}\)</span></p></li>
+<li><p>ចន្លោះ <span class="mi">\(40\)</span> និង <span class="mi">\(60\)</span> ៖ <span class="mi">\(\boxed{41, 43, 47, 53, 59}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ពិនិត្យមើលថាតើចំនួនខាងក្រោមជាចំនួនបឋម ឬមិនបឋម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(47\)</span></p></li>
+<li><p><span class="mi">\(51\)</span></p></li>
+<li><p><span class="mi">\(67\)</span></p></li>
+<li><p><span class="mi">\(91\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យចំនួនបឋម ឬមិនបឋម ៖</p>
+<ul>
+<li><p><span class="mi">\(47\)</span> ៖ ជា <strong>ចំនួនបឋម</strong> (មានតួចែក <span class="mi">\(1\)</span> និង <span class="mi">\(47\)</span>)</p></li>
+<li><p><span class="mi">\(51\)</span> ៖ ជា <strong>ចំនួនមិនបឋម</strong> (<span class="mi">\(51 = 3 \times 17\)</span>)</p></li>
+<li><p><span class="mi">\(67\)</span> ៖ ជា <strong>ចំនួនបឋម</strong></p></li>
+<li><p><span class="mi">\(91\)</span> ៖ ជា <strong>ចំនួនមិនបឋម</strong> (<span class="mi">\(91 = 7 \times 13\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>បំបែកចំនួនខាងក្រោមជាផលគុណកត្តាបឋមតាមវិធីមែកធាង (Factor Tree) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(28\)</span></p></li>
+<li><p><span class="mi">\(42\)</span></p></li>
+<li><p><span class="mi">\(56\)</span></p></li>
+<li><p><span class="mi">\(84\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកជាផលគុណកត្តាបឋមតាមវិធីមែកធាង ៖</p>
+<ul>
+<li><p><span class="mi">\(28 = 4 \times 7 = \mathbf{2^2 \times 7}\)</span></p></li>
+<li><p><span class="mi">\(42 = 6 \times 7 = \mathbf{2 \times 3 \times 7}\)</span></p></li>
+<li><p><span class="mi">\(56 = 8 \times 7 = \mathbf{2^3 \times 7}\)</span></p></li>
+<li><p><span class="mi">\(84 = 4 \times 21 = \mathbf{2^2 \times 3 \times 7}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>បំបែកចំនួនខាងក្រោមជាផលគុណកត្តាបឋមតាមវិធីចែកជាបន្តបន្ទាប់ (Repeated Division) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(72\)</span></p></li>
+<li><p><span class="mi">\(90\)</span></p></li>
+<li><p><span class="mi">\(120\)</span></p></li>
+<li><p><span class="mi">\(144\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកជាផលគុណកត្តាបឋមតាមវិធីចែកបន្តបន្ទាប់ ៖</p>
+<ul>
+<li><p><span class="mi">\(72 = 2 \times 36 = 2 \times 2 \times 18 = 2^3 \times 3^2 = \mathbf{2^3 \times 3^2}\)</span></p></li>
+<li><p><span class="mi">\(90 = 2 \times 45 = 2 \times 3 \times 15 = \mathbf{2 \times 3^2 \times 5}\)</span></p></li>
+<li><p><span class="mi">\(120 = 2 \times 60 = 2^2 \times 30 = \mathbf{2^3 \times 3 \times 5}\)</span></p></li>
+<li><p><span class="mi">\(144 = 2 \times 72 = 2^2 \times 36 = \mathbf{2^4 \times 3^2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>សរសេរការបំបែកជាផលគុណកត្តាបឋមនៃចំនួនខាងក្រោមជាទម្រង់ស្វ័យគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(200\)</span></p></li>
+<li><p><span class="mi">\(360\)</span></p></li>
+<li><p><span class="mi">\(504\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរការបំបែកជាផលគុណកត្តាបឋមជាស្វ័យគុណ ៖</p>
+<ul>
+<li><p><span class="mi">\(200 = 8 \times 25 = \mathbf{2^3 \times 5^2}\)</span></p></li>
+<li><p><span class="mi">\(360 = 36 \times 10 = \mathbf{2^3 \times 3^2 \times 5}\)</span></p></li>
+<li><p><span class="mi">\(504 = 8 \times 63 = \mathbf{2^3 \times 3^2 \times 7}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គេឱ្យចំនួន <span class="mi">\(A = 2^3 \times 3^2 \times 5\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាតម្លៃនៃ <span class="mi">\(A\)</span>។</p></li>
+<li><p>រកចំនួនតួចែកទាំងអស់នៃចំនួន <span class="mi">\(A\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យចំនួន <span class="mi">\(A = 2^3 \times 3^2 \times 5\)</span> ៖</p>
+<ul>
+<li><p>គណនាតម្លៃនៃ <span class="mi">\(A\)</span> ៖ <span class="mi">\(A = 8 \times 9 \times 5 = \mathbf{360}\)</span></p></li>
+<li><p>ចំនួនតួចែកទាំងអស់នៃ <span class="mi">\(A\)</span> ៖ <span class="mi">\((3+1)(2+1)(1+1) = 4 \times 3 \times 2 = \mathbf{24}\)</span> តួ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>រក <span class="mi">\(PGCD\)</span> តាមវិធីរកតួចែករួមនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(12\)</span> និង <span class="mi">\(16\)</span></p></li>
+<li><p><span class="mi">\(20\)</span> និង <span class="mi">\(30\)</span></p></li>
+<li><p><span class="mi">\(18\)</span> និង <span class="mi">\(27\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(PGCD\)</span> តាមវិធីរកតួចែករួម ៖</p>
+<ul>
+<li><p><span class="mi">\(D(12) \cap D(16) = \{1, 2, 4\} \implies PGCD(12, 16) = \mathbf{4}\)</span></p></li>
+<li><p><span class="mi">\(D(20) \cap D(30) = \{1, 2, 5, 10\} \implies PGCD(20, 30) = \mathbf{10}\)</span></p></li>
+<li><p><span class="mi">\(D(18) \cap D(27) = \{1, 3, 9\} \implies PGCD(18, 27) = \mathbf{9}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>រក <span class="mi">\(PGCD\)</span> តាមវិធីបំបែកជាផលគុណកត្តាបឋមនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(45\)</span> និង <span class="mi">\(60\)</span></p></li>
+<li><p><span class="mi">\(54\)</span> និង <span class="mi">\(90\)</span></p></li>
+<li><p><span class="mi">\(84\)</span> និង <span class="mi">\(126\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(PGCD\)</span> តាមវិធីបំបែកជាកត្តាបឋម ៖</p>
+<ul>
+<li><p><span class="mi">\(45 = 3^2 \times 5, \; 60 = 2^2 \times 3 \times 5 \implies PGCD = 3 \times 5 = \mathbf{15}\)</span></p></li>
+<li><p><span class="mi">\(54 = 2 \times 3^3, \; 90 = 2 \times 3^2 \times 5 \implies PGCD = 2 \times 3^2 = \mathbf{18}\)</span></p></li>
+<li><p><span class="mi">\(84 = 2^2 \times 3 \times 7, \; 126 = 2 \times 3^2 \times 7 \implies PGCD = 2 \times 3 \times 7 = \mathbf{42}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>រក <span class="mi">\(PGCD\)</span> នៃបីចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(24, 36\)</span> និង <span class="mi">\(48\)</span></p></li>
+<li><p><span class="mi">\(30, 45\)</span> និង <span class="mi">\(75\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(PGCD\)</span> នៃបីចំនួន ៖</p>
+<ul>
+<li><p><span class="mi">\(24 = 2^3 \times 3, \; 36 = 2^2 \times 3^2, \; 48 = 2^4 \times 3\)</span><br/>
+<span class="mi">\(\implies PGCD = 2^2 \times 3 = \mathbf{12}\)</span></p></li>
+<li><p><span class="mi">\(30 = 2 \times 3 \times 5, \; 45 = 3^2 \times 5, \; 75 = 3 \times 5^2\)</span><br/>
+<span class="mi">\(\implies PGCD = 3 \times 5 = \mathbf{15}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>បង្ហាញថាគូនៃចំនួនខាងក្រោមជាចំនួនបឋមរវាងគ្នា ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(8\)</span> និង <span class="mi">\(15\)</span></p></li>
+<li><p><span class="mi">\(14\)</span> និង <span class="mi">\(25\)</span></p></li>
+<li><p><span class="mi">\(21\)</span> និង <span class="mi">\(22\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថាជាចំនួនបឋមរវាងគ្នា (<span class="mi">\(PGCD = 1\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(8 = 2^3, \; 15 = 3 \times 5 \implies PGCD(8, 15) = 1\)</span></p></li>
+<li><p><span class="mi">\(14 = 2 \times 7, \; 25 = 5^2 \implies PGCD(14, 25) = 1\)</span></p></li>
+<li><p><span class="mi">\(21 = 3 \times 7, \; 22 = 2 \times 11 \implies PGCD(21, 22) = 1\)</span></p></li>
+</ul>
+<p>ដូចនេះ គូនីមួយៗសុទ្ធតែជាចំនួនបឋមរវាងគ្នា។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>រក <span class="mi">\(PPCM\)</span> តាមវិធីរកពហុគុណរួមនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(6\)</span> និង <span class="mi">\(8\)</span></p></li>
+<li><p><span class="mi">\(9\)</span> និង <span class="mi">\(12\)</span></p></li>
+<li><p><span class="mi">\(10\)</span> និង <span class="mi">\(15\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(PPCM\)</span> តាមវិធីរកពហុគុណរួម ៖</p>
+<ul>
+<li><p><span class="mi">\(M(6) \cap M(8) = \{24, 48, \dots\} \implies PPCM(6, 8) = \mathbf{24}\)</span></p></li>
+<li><p><span class="mi">\(M(9) \cap M(12) = \{36, 72, \dots\} \implies PPCM(9, 12) = \mathbf{36}\)</span></p></li>
+<li><p><span class="mi">\(M(10) \cap M(15) = \{30, 60, \dots\} \implies PPCM(10, 15) = \mathbf{30}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>រក <span class="mi">\(PPCM\)</span> តាមវិធីបំបែកជាផលគុណកត្តាបឋមនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(24\)</span> និង <span class="mi">\(32\)</span></p></li>
+<li><p><span class="mi">\(36\)</span> និង <span class="mi">\(48\)</span></p></li>
+<li><p><span class="mi">\(40\)</span> និង <span class="mi">\(50\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(PPCM\)</span> តាមវិធីបំបែកជាកត្តាបឋម ៖</p>
+<ul>
+<li><p><span class="mi">\(24 = 2^3 \times 3, \; 32 = 2^5 \implies PPCM = 2^5 \times 3 = \mathbf{96}\)</span></p></li>
+<li><p><span class="mi">\(36 = 2^2 \times 3^2, \; 48 = 2^4 \times 3 \implies PPCM = 2^4 \times 3^2 = \mathbf{144}\)</span></p></li>
+<li><p><span class="mi">\(40 = 2^3 \times 5, \; 50 = 2 \times 5^2 \implies PPCM = 2^3 \times 5^2 = \mathbf{200}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>រក <span class="mi">\(PPCM\)</span> នៃបីចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(6, 8\)</span> និង <span class="mi">\(12\)</span></p></li>
+<li><p><span class="mi">\(12, 15\)</span> និង <span class="mi">\(18\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(PPCM\)</span> នៃបីចំនួន ៖</p>
+<ul>
+<li><p><span class="mi">\(6 = 2 \times 3, \; 8 = 2^3, \; 12 = 2^2 \times 3 \implies PPCM = 2^3 \times 3 = \mathbf{24}\)</span></p></li>
+<li><p><span class="mi">\(12 = 2^2 \times 3, \; 15 = 3 \times 5, \; 18 = 2 \times 3^2\)</span><br/>
+<span class="mi">\(\implies PPCM = 2^2 \times 3^2 \times 5 = \mathbf{180}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>រក <span class="mi">\(PGCD\)</span> និង <span class="mi">\(PPCM\)</span> នៃគូនៃចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(16\)</span> និង <span class="mi">\(24\)</span></p></li>
+<li><p><span class="mi">\(35\)</span> និង <span class="mi">\(49\)</span></p></li>
+<li><p><span class="mi">\(48\)</span> និង <span class="mi">\(72\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(PGCD\)</span> និង <span class="mi">\(PPCM\)</span> នៃគូនៃចំនួន ៖</p>
+<ul>
+<li><p><span class="mi">\(16 = 2^4, \; 24 = 2^3 \times 3\)</span> ៖<br/>
+<span class="mi">\(PGCD = 2^3 = \mathbf{8}, \quad{} PPCM = 2^4 \times 3 = \mathbf{48}\)</span></p></li>
+<li><p><span class="mi">\(35 = 5 \times 7, \; 49 = 7^2\)</span> ៖<br/>
+<span class="mi">\(PGCD = \mathbf{7}, \quad{} PPCM = 5 \times 7^2 = \mathbf{245}\)</span></p></li>
+<li><p><span class="mi">\(48 = 2^4 \times 3, \; 72 = 2^3 \times 3^2\)</span> ៖<br/>
+<span class="mi">\(PGCD = 2^3 \times 3 = \mathbf{24}, \quad{} PPCM = 2^4 \times 3^2 = \mathbf{144}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ផ្ទៀងផ្ទាត់សមភាព <span class="mi">\(a \times b = PGCD(a, b) \times PPCM(a, b)\)</span> ចំពោះ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(a = 18, \; b = 24\)</span></p></li>
+<li><p><span class="mi">\(a = 25, \; b = 40\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៀងផ្ទាត់សមភាព <span class="mi">\(a \times b = PGCD \times PPCM\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(a = 18, \; b = 24\)</span> ៖<br/>
+<span class="mi">\(a \times b = 18 \times 24 = 432\)</span><br/>
+<span class="mi">\(PGCD = 6, \; PPCM = 72 \implies 6 \times 72 = 432\)</span> (ពិត)</p></li>
+<li><p><span class="mi">\(a = 25, \; b = 40\)</span> ៖<br/>
+<span class="mi">\(a \times b = 25 \times 40 = 1000\)</span><br/>
+<span class="mi">\(PGCD = 5, \; PPCM = 200 \implies 5 \times 200 = 1000\)</span> (ពិត)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គេមាន <span class="mi">\(PGCD(a, b) = 12\)</span> និង <span class="mi">\(PPCM(a, b) = 72\)</span>។ រកផលគុណ <span class="mi">\(a \times b\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេមាន <span class="mi">\(PGCD(a, b) = 12\)</span> និង <span class="mi">\(PPCM(a, b) = 72\)</span> ៖ <div class="md">\[\begin{aligned}
+  a \times b &amp;= PGCD(a, b) \times PPCM(a, b) \\
+  &amp;= 12 \times 72 = \mathbf{864}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គេមានពីរចំនួន <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ដែល <span class="mi">\(a \times b = 1200\)</span> និង <span class="mi">\(PPCM(a, b) = 120\)</span>។ រក <span class="mi">\(PGCD(a, b)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេមាន <span class="mi">\(a \times b = 1200\)</span> និង <span class="mi">\(PPCM(a, b) = 120\)</span> ៖ <div class="md">\[\begin{aligned}
+  PGCD(a, b) &amp;= \frac{a \times b}{PPCM(a, b)} \\
+  &amp;= \frac{1200}{120} = \mathbf{10}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គេមាន <span class="mi">\(PGCD(x, 15) = 5\)</span> និង <span class="mi">\(PPCM(x, 15) = 60\)</span>។ រកតម្លៃនៃ <span class="mi">\(x\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេមាន <span class="mi">\(PGCD(x, 15) = 5\)</span> និង <span class="mi">\(PPCM(x, 15) = 60\)</span> ៖ <div class="md">\[\begin{aligned}
+  x \times 15 &amp;= PGCD(x, 15) \times PPCM(x, 15) \\
+  x \times 15 &amp;= 5 \times 60 = 300 \\
+  \implies x &amp;= \frac{300}{15} = \mathbf{20}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>រកតួចែករួមទាំងអស់នៃ <span class="mi">\(36\)</span> និង <span class="mi">\(48\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកតួចែករួមទាំងអស់នៃ <span class="mi">\(36\)</span> និង <span class="mi">\(48\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(D(36) = \{1, 2, 3, 4, 6, 9, 12, 18, 36\}\)</span></p></li>
+<li><p><span class="mi">\(D(48) = \{1, 2, 3, 4, 6, 8, 12, 16, 24, 48\}\)</span></p></li>
+</ul>
+<p>តួចែករួមទាំងអស់គឺ <span class="mi">\(\boxed{\{1, 2, 3, 4, 6, 12\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>រកពហុគុណរួមតូចជាង <span class="mi">\(100\)</span> នៃ <span class="mi">\(4\)</span> និង <span class="mi">\(6\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកពហុគុណរួមតូចជាង <span class="mi">\(100\)</span> នៃ <span class="mi">\(4\)</span> និង <span class="mi">\(6\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(PPCM(4, 6) = 12\)</span></p></li>
+<li><p>ពហុគុណនៃ <span class="mi">\(12\)</span> តូចជាង <span class="mi">\(100\)</span> រួមមាន ៖<br/>
+<span class="mi">\(\boxed{12, 24, 36, 48, 60, 72, 84, 96}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>តើចំនួន <span class="mi">\(1001\)</span> ចែកដាច់នឹងចំនួនបឋមណាខ្លះ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យភាពចែកដាច់នៃ <span class="mi">\(1001\)</span> ៖ <div class="md">\[\begin{aligned}
+  1001 &amp;= 7 \times 143 = 7 \times 11 \times 13
+\end{aligned}\]</div> ដូចនេះ <span class="mi">\(1001\)</span> ចែកដាច់នឹងចំនួនបឋម <span class="mi">\(\boxed{7, 11, 13}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>បំបែកចំនួន <span class="mi">\(2024\)</span> និង <span class="mi">\(2025\)</span> ជាផលគុណកត្តាបឋម។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកជាផលគុណកត្តាបឋម ៖</p>
+<ul>
+<li><p><span class="mi">\(2024 = 8 \times 253 = \mathbf{2^3 \times 11 \times 23}\)</span></p></li>
+<li><p><span class="mi">\(2025 = 81 \times 25 = \mathbf{3^4 \times 5^2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គេចង់កាត់ក្រដាសកាតុងមួយផ្ទាំងរាងចតុកោណកែងដែលមានបណ្ដោយ <span class="mi">\(60\,\text{cm}\)</span> និងទទឹង <span class="mi">\(45\,\text{cm}\)</span> ទៅជាការ៉េតូចៗស្មើៗគ្នាដោយមិនឱ្យសល់ក្រដាសឡើយ។</p>
+<ol class="list olka cols1">
+<li><p>តើប្រវែងជ្រុងនៃការ៉េធំបំផុតអាចស្មើប៉ុន្មានសង់ទីម៉ែត្រ?</p></li>
+<li><p>តើគេទទួលបានការ៉េទាំងអស់ចំនួនប៉ុន្មាន?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កាត់ក្រដាស <span class="mi">\(60\,\text{cm} \times 45\,\text{cm}\)</span> ជាការ៉េស្មើៗគ្នាធំបំផុត ៖</p>
+<ul>
+<li><p>ប្រវែងជ្រុងការ៉េធំបំផុតគឺ <span class="mi">\(PGCD(60, 45)\)</span> ៖<br/>
+<span class="mi">\(60 = 2^2 \times 3 \times 5, \; 45 = 3^2 \times 5 \implies PGCD = \mathbf{15\,\text{cm}}\)</span></p></li>
+<li><p>ចំនួនការ៉េទទួលបាន ៖<br/>
+<span class="mi">\(\dfrac{60 \times 45}{15 \times 15} = 4 \times 3 = \mathbf{12}\)</span> ការ៉េ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>ជាងសំណង់ម្នាក់ចង់ក្រាលឥដ្ឋការ៉ូការ៉េលើបាតបន្ទប់រាងចតុកោណកែងទំហំ <span class="mi">\(480\,\text{cm} \times 360\,\text{cm}\)</span> ដោយមិនឱ្យកាត់ការ៉ូឡើយ។</p>
+<ol class="list olka cols1">
+<li><p>រកប្រវែងជ្រុងនៃការ៉ូធំបំផុតដែលអាចប្រើបាន។</p></li>
+<li><p>គណនាចំនួនការ៉ូសរុបដែលត្រូវប្រើ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្រាលឥដ្ឋការ៉ូបាតបន្ទប់ <span class="mi">\(480\,\text{cm} \times 360\,\text{cm}\)</span> ៖</p>
+<ul>
+<li><p>ប្រវែងជ្រុងការ៉ូធំបំផុតគឺ <span class="mi">\(PGCD(480, 360)\)</span> ៖<br/>
+<span class="mi">\(PGCD(480, 360) = 120\,\text{cm} = \mathbf{1.2\,\text{m}}\)</span></p></li>
+<li><p>ចំនួនការ៉ូសរុបដែលត្រូវប្រើ ៖<br/>
+<span class="mi">\(\dfrac{480}{120} \times \dfrac{360}{120} = 4 \times 3 = \mathbf{12}\)</span> ការ៉ូ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>សិស្សសាលាមួយក្រុមមានប្រុស <span class="mi">\(48\)</span> នាក់ និងស្រី <span class="mi">\(36\)</span> នាក់។ លោកគ្រូចង់បែងចែកសិស្សទាំងអស់ជាក្រុមតូចៗ ដោយក្នុងក្រុមនីមួយៗមានចំនួនសិស្សប្រុសស្មើៗគ្នា និងសិស្សស្រីស្មើៗគ្នា។</p>
+<ol class="list olka cols1">
+<li><p>តើលោកគ្រូអាចបង្កើតក្រុមបានច្រើនបំផុតប៉ុន្មានក្រុម?</p></li>
+<li><p>ក្នុងក្រុមនីមួយៗមានសិស្សប្រុសប៉ុន្មាននាក់ និងសិស្សស្រីប៉ុន្មាននាក់?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកសិស្សប្រុស <span class="mi">\(48\)</span> នាក់ និងស្រី <span class="mi">\(36\)</span> នាក់ ជាក្រុមស្មើៗគ្នា ៖</p>
+<ul>
+<li><p>ចំនួនក្រុមច្រើនបំផុតគឺ <span class="mi">\(PGCD(48, 36) = \mathbf{12}\)</span> ក្រុម។</p></li>
+<li><p>ក្នុងក្រុមនីមួយៗមាន ៖<br/>
+– ប្រុស ៖ <span class="mi">\(48 \div 12 = \mathbf{4}\)</span> នាក់<br/>
+– ស្រី ៖ <span class="mi">\(36 \div 12 = \mathbf{3}\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>នៅចំណតរថយន្តមួយ រថយន្តខ្សែទី១ ចេញដំណើររៀងរាល់ <span class="mi">\(15\)</span> នាទីម្ដង ហើយរថយន្តខ្សែទី២ ចេញដំណើររៀងរាល់ <span class="mi">\(20\)</span> នាទីម្ដង។ ប្រសិនបើរថយន្តទាំងពីរខ្សែចេញដំណើរព្រមគ្នានៅម៉ោង <span class="mi">\(6:00\)</span> ព្រឹក ៖</p>
+<ol class="list olka cols1">
+<li><p>តើរយៈពេលប៉ុន្មាននាទីក្រោយមកទៀតទើបរថយន្តទាំងពីរចេញដំណើរព្រមគ្នាម្ដងទៀត?</p></li>
+<li><p>តើនៅម៉ោងប៉ុន្មានដែលការចេញដំណើរព្រមគ្នានោះកើតឡើង?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រថយន្តខ្សែទី១ (<span class="mi">\(15\)</span> នាទី) និងខ្សែទី២ (<span class="mi">\(20\)</span> នាទី) ៖</p>
+<ul>
+<li><p>រយៈពេលចេញព្រមគ្នាម្ដងទៀតគឺ <span class="mi">\(PPCM(15, 20) = \mathbf{60}\)</span> នាទី (<span class="mi">\(1\)</span> ម៉ោង)។</p></li>
+<li><p>ម៉ោងដែលចេញព្រមគ្នាម្ដងទៀត ៖<br/>
+<span class="mi">\(6:00 + 1\,\text{h} = \mathbf{7:00}\)</span> ព្រឹក។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ភ្លើងសញ្ញាចរាចរណ៍នៅផ្លូវបំបែកបីប្ដូរពណ៌បៃតងរៀងរាល់ <span class="mi">\(30\)</span> វិនាទី, <span class="mi">\(45\)</span> វិនាទី និង <span class="mi">\(60\)</span> វិនាទីម្ដង។ បើភ្លើងទាំងបីប្ដូរពណ៌បៃតងព្រមគ្នានៅម៉ោង <span class="mi">\(7:00\)</span> ព្រឹក តើនៅម៉ោងប៉ុន្មានដែលភ្លើងទាំងបីនឹងប្ដូរពណ៌បៃតងព្រមគ្នាម្ដងទៀត?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ភ្លើងសញ្ញាចរាចរណ៍ <span class="mi">\(30\)</span> វិនាទី, <span class="mi">\(45\)</span> វិនាទី, <span class="mi">\(60\)</span> វិនាទី ៖</p>
+<ul>
+<li><p>រយៈពេលប្ដូរពណ៌ព្រមគ្នាម្ដងទៀតគឺ <span class="mi">\(PPCM(30, 45, 60)\)</span> ៖<br/>
+<span class="mi">\(PPCM(30, 45, 60) = 180\)</span> វិនាទី <span class="mi">\(= 3\)</span> នាទី។</p></li>
+<li><p>ម៉ោងដែលប្ដូរព្រមគ្នាម្ដងទៀត ៖<br/>
+<span class="mi">\(7:00 + 3\,\text{mn} = \mathbf{7:03}\)</span> ព្រឹក។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>កណ្ដឹងសាលាបីបន្លឺឡើងរៀងរាល់ <span class="mi">\(25\)</span> នាទី, <span class="mi">\(30\)</span> នាទី និង <span class="mi">\(40\)</span> នាទីម្ដង។ ប្រសិនបើកណ្ដឹងទាំងបីបន្លឺព្រមគ្នានៅម៉ោង <span class="mi">\(8:00\)</span> ព្រឹក តើរយៈពេលប៉ុន្មានម៉ោងក្រោយមកទៀតទើបវាបន្លឺព្រមគ្នាម្ដងទៀត?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កណ្ដឹងសាលា <span class="mi">\(25\)</span> នាទី, <span class="mi">\(30\)</span> នាទី, <span class="mi">\(40\)</span> នាទី ៖</p>
+<ul>
+<li><p>រយៈពេលបន្លឺព្រមគ្នាម្ដងទៀតគឺ <span class="mi">\(PPCM(25, 30, 40)\)</span> ៖<br/>
+<span class="mi">\(25 = 5^2, \; 30 = 2 \times 3 \times 5, \; 40 = 2^3 \times 5\)</span><br/>
+<span class="mi">\(PPCM = 2^3 \times 3 \times 5^2 = 600\)</span> នាទី <span class="mi">\(= \mathbf{10}\)</span> ម៉ោង។</p></li>
+<li><p>ដូចនេះ រយៈពេល <span class="kfbox"><span class="mi">\(10\)</span> ម៉ោង</span> ក្រោយមកទៀតទើបបន្លឺព្រមគ្នា (ត្រូវនឹងម៉ោង <span class="mi">\(18:00\)</span> ឬ <span class="mi">\(6:00\)</span> ល្ងាច)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>រកចំនួនគត់ធម្មជាតិតូចបំផុតដែលចែកនឹង <span class="mi">\(6\)</span> ក៏ដោយ ចែកនឹង <span class="mi">\(8\)</span> ក៏ដោយ និងចែកនឹង <span class="mi">\(9\)</span> ក៏ដោយ សុទ្ធតែនៅសល់សំណល់ <span class="mi">\(2\)</span> ដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនតូចបំផុតដែលចែកនឹង <span class="mi">\(6, 8, 9\)</span> សល់សំណល់ <span class="mi">\(2\)</span> ដូចគ្នា ៖</p>
+<ul>
+<li><p>តាងចំនួននោះដោយ <span class="mi">\(N\)</span>។ នាំឱ្យ <span class="mi">\(N - 2\)</span> ចែកដាច់នឹង <span class="mi">\(6, 8, 9\)</span>។</p></li>
+<li><p><span class="mi">\(N\)</span> តូចបំផុត <span class="mi">\(\implies N - 2 = PPCM(6, 8, 9) = 72\)</span>។</p></li>
+<li><p>ដូចនេះ <span class="mi">\(N = 72 + 2 = \mathbf{74}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>រកចំនួនគត់ធម្មជាតិតូចបំផុតដែលចែកនឹង <span class="mi">\(5\)</span> សល់ <span class="mi">\(4\)</span>, ចែកនឹង <span class="mi">\(6\)</span> សល់ <span class="mi">\(5\)</span>, និងចែកនឹង <span class="mi">\(7\)</span> សល់ <span class="mi">\(6\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនតូចបំផុតដែលចែកនឹង <span class="mi">\(5\)</span> សល់ <span class="mi">\(4\)</span>, ចែកនឹង <span class="mi">\(6\)</span> សល់ <span class="mi">\(5\)</span>, ចែកនឹង <span class="mi">\(7\)</span> សល់ <span class="mi">\(6\)</span> ៖</p>
+<ul>
+<li><p>តាងចំនួននោះដោយ <span class="mi">\(N\)</span>។ យើងឃើញថា <span class="mi">\(N + 1\)</span> ចែកដាច់នឹង <span class="mi">\(5, 6, 7\)</span>។</p></li>
+<li><p><span class="mi">\(N\)</span> តូចបំផុត <span class="mi">\(\implies N + 1 = PPCM(5, 6, 7) = 5 \times 6 \times 7 = 210\)</span>។</p></li>
+<li><p>ដូចនេះ <span class="mi">\(N = 210 - 1 = \mathbf{209}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>គេមានកន្សោម <span class="mi">\(A = n^2 + n\)</span> ចំពោះគ្រប់ចំនួនគត់ធម្មជាតិ <span class="mi">\(n\)</span>។ បង្ហាញថា <span class="mi">\(A\)</span> តែងតែជាចំនួនគត់គូ (ចែកដាច់នឹង <span class="mi">\(2\)</span>) ជានិច្ច។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(A = n^2 + n\)</span> ជាចំនួនគូជានិច្ច ៖ <div class="md">\[\begin{aligned}
+  A &amp;= n(n + 1)
+\end{aligned}\]</div> ដោយសារ <span class="mi">\(n\)</span> និង <span class="mi">\(n + 1\)</span> ជាពីរចំនួនគត់ធម្មជាតិតគ្នា នោះក្នុងចំណោមពីរចំនួននេះ ត្រូវតែមានចំនួនមួយជាចំនួនគូជានិច្ច។<br/>
+ផលគុណនៃចំនួនគត់ណាមួយជាមួយចំនួនគូ តែងតែជាចំនួនគូ។<br/>
+ដូចនេះ <span class="mi">\(A = n(n+1)\)</span> តែងតែជាចំនួនគត់គូ (ចែកដាច់នឹង <span class="mi">\(2\)</span>) ជានិច្ច។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>បង្ហាញថាផលគុណនៃបីចំនួនគត់ធម្មជាតិតគ្នាតែងតែចែកដាច់នឹង <span class="mi">\(6\)</span> ជានិច្ច។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថាផលគុណបីចំនួនគត់តគ្នាចែកដាច់នឹង <span class="mi">\(6\)</span> ជានិច្ច ៖ តាងផលគុណដោយ <span class="mi">\(P = n(n+1)(n+2)\)</span>។</p>
+<ul>
+<li><p>ក្នុងចំណោមបីចំនួនតគ្នា មានយ៉ាងតិចចំនួនមួយជាចំនួនគូ <span class="mi">\(\implies P\)</span> ចែកដាច់នឹង <span class="mi">\(2\)</span>។</p></li>
+<li><p>ក្នុងចំណោមបីចំនួនតគ្នា មានមួយចែកដាច់នឹង <span class="mi">\(3\)</span> <span class="mi">\(\implies P\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span>។</p></li>
+<li><p>ដោយសារ <span class="mi">\(PGCD(2, 3) = 1\)</span> នោះ <span class="mi">\(P\)</span> ចែកដាច់នឹង <span class="mi">\(2 \times 3 = 6\)</span> ជានិច្ច។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់ធម្មជាតិ <span class="mi">\(n\)</span> ដើម្បីឱ្យកន្សោម <span class="mi">\(\dfrac{n + 6}{n}\)</span> ជាចំនួនគត់ធម្មជាតិ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួន <span class="mi">\(n \in \mathbb{N}\)</span> ដើម្បីឱ្យ <span class="mi">\(\dfrac{n + 6}{n} \in \mathbb{N}\)</span> ៖ <div class="md">\[\begin{aligned}
+  \frac{n + 6}{n} &amp;= 1 + \frac{6}{n} \quad{} (n \neq 0)
+\end{aligned}\]</div> ដើម្បីឱ្យកន្សោមនេះជាចំនួនគត់ធម្មជាតិ លុះត្រាតែ <span class="mi">\(n\)</span> ជាតួចែកនៃ <span class="mi">\(6\)</span>។<br/>
+ដូចនេះ <span class="mi">\(\boxed{n \in \{1, 2, 3, 6\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់ធម្មជាតិ <span class="mi">\(n\)</span> ដើម្បីឱ្យកន្សោម <span class="mi">\(\dfrac{2n + 15}{n + 1}\)</span> ជាចំនួនគត់ធម្មជាតិ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួន <span class="mi">\(n \in \mathbb{N}\)</span> ដើម្បីឱ្យ <span class="mi">\(\dfrac{2n + 15}{n + 1} \in \mathbb{N}\)</span> ៖ <div class="md">\[\begin{aligned}
+  \frac{2n + 15}{n + 1} &amp;= \frac{2(n + 1) + 13}{n + 1} = 2 + \frac{13}{n + 1}
+\end{aligned}\]</div> កន្សោមជាចំនួនគត់ លុះត្រាតែ <span class="mi">\(n + 1\)</span> ជាតួចែកនៃ <span class="mi">\(13\)</span>។<br/>
+ព្រោះ <span class="mi">\(13\)</span> ជាចំនួនបឋម <span class="mi">\(\implies n + 1 \in \{1, 13\}\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(n + 1 = 1 \implies n = 0\)</span></p></li>
+<li><p><span class="mi">\(n + 1 = 13 \implies n = 12\)</span></p></li>
+</ul>
+<p>ដូចនេះ <span class="mi">\(\boxed{n \in \{0, 12\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>រកគ្រប់គូនៃចំនួនគត់ធម្មជាតិ <span class="mi">\((a, b)\)</span> ដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌ ៖ <span class="mi">\(PGCD(a, b) = 6\)</span> និង <span class="mi">\(a + b = 36\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\((a, b)\)</span> ដែល <span class="mi">\(PGCD(a, b) = 6\)</span> និង <span class="mi">\(a + b = 36\)</span> ៖ តាង <span class="mi">\(a = 6a', \; b = 6b'\)</span> ដែល <span class="mi">\(PGCD(a', b') = 1\)</span>។ <div class="md">\[\begin{aligned}
+  6a' + 6b' &amp;= 36 \implies a' + b' = 6
+\end{aligned}\]</div> គូ <span class="mi">\((a', b')\)</span> បឋមរវាងគ្នាដែលមានផលបូក <span class="mi">\(6\)</span> គឺ <span class="mi">\((1, 5)\)</span> និង <span class="mi">\((5, 1)\)</span>។<br/>
+ដូចនេះ <span class="mi">\(\boxed{(a, b) \in \{(6, 30), (30, 6)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>រកគ្រប់គូនៃចំនួនគត់ធម្មជាតិ <span class="mi">\((a, b)\)</span> ដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌ ៖ <span class="mi">\(PGCD(a, b) = 5\)</span> និង <span class="mi">\(a \times b = 150\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\((a, b)\)</span> ដែល <span class="mi">\(PGCD(a, b) = 5\)</span> និង <span class="mi">\(a \times b = 150\)</span> ៖ តាង <span class="mi">\(a = 5a', \; b = 5b'\)</span> ដែល <span class="mi">\(PGCD(a', b') = 1\)</span>។ <div class="md">\[\begin{aligned}
+  5a' \times 5b' &amp;= 150 \implies 25a'b' = 150 \implies a'b' = 6
+\end{aligned}\]</div> គូ <span class="mi">\((a', b')\)</span> បឋមរវាងគ្នាដែលមានផលគុណ <span class="mi">\(6\)</span> គឺ <span class="mi">\((1, 6), (2, 3), (3, 2), (6, 1)\)</span>។<br/>
+ដូចនេះ <span class="mi">\(\boxed{(a, b) \in \{(5, 30), (10, 15), (15, 10), (30, 5)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>រកចំនួនគត់ធម្មជាតិតូចបំផុតដែលមានតួចែកចំនួន ១២ តួ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនតូចបំផុតដែលមានតួចែកចំនួន <span class="mi">\(12\)</span> តួ ៖ តាមរូបមន្តចំនួនតួចែក <span class="mi">\((a_1 + 1)(a_2 + 1)\dots = 12\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(12 = 12 \implies N = 2^{11} = 2048\)</span></p></li>
+<li><p><span class="mi">\(12 = 6 \times 2 \implies N = 2^5 \times 3^1 = 96\)</span></p></li>
+<li><p><span class="mi">\(12 = 4 \times 3 \implies N = 2^3 \times 3^2 = 72\)</span></p></li>
+<li><p><span class="mi">\(12 = 3 \times 2 \times 2 \implies N = 2^2 \times 3^1 \times 5^1 = 60\)</span></p></li>
+</ul>
+<p>តម្លៃតូចបំផុតគឺ <span class="mi">\(\boxed{60}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គេឱ្យចំនួន <span class="mi">\(N = 2^x \times 3^y\)</span> ដែល <span class="mi">\(x, y \in \mathbb{N}^*\)</span>។ បើចំនួន <span class="mi">\(N\)</span> មានតួចែកសរុបចំនួន <span class="mi">\(8\)</span> តួ ហើយ <span class="mi">\(N\)</span> ចែកដាច់នឹង <span class="mi">\(6\)</span> រកតម្លៃនៃ <span class="mi">\(N\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(N = 2^x \times 3^y\)</span> មានតួចែក <span class="mi">\(8\)</span> តួ ហើយ <span class="mi">\(N\)</span> ចែកដាច់នឹង <span class="mi">\(6\)</span> ៖</p>
+<ul>
+<li><p>ចំនួនតួចែក ៖ <span class="mi">\((x + 1)(y + 1) = 8\)</span></p></li>
+<li><p>ព្រោះ <span class="mi">\(x, y \ge 1 \implies (x+1, y+1) \in \{(2, 4), (4, 2)\}\)</span><br/>
+<span class="mi">\(\implies (x, y) \in \{(1, 3), (3, 1)\}\)</span></p></li>
+<li><p>បើ <span class="mi">\((x, y) = (1, 3) \implies N = 2^1 \times 3^3 = \mathbf{54}\)</span></p></li>
+<li><p>បើ <span class="mi">\((x, y) = (3, 1) \implies N = 2^3 \times 3^1 = \mathbf{24}\)</span></p></li>
+</ul>
+<p>ដូចនេះ <span class="kfbox"><span class="mi">\(N = 24\)</span> ឬ <span class="mi">\(N = 54\)</span></span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>បង្ហាញថាបើ <span class="mi">\(p\)</span> ជាចំនួនបឋមធំជាង <span class="mi">\(3\)</span> នោះ <span class="mi">\(p^2 - 1\)</span> តែងតែចែកដាច់នឹង <span class="mi">\(24\)</span> ជានិច្ច។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថាបើ <span class="mi">\(p &gt; 3\)</span> ជាចំនួនបឋម នោះ <span class="mi">\(p^2 - 1\)</span> ចែកដាច់នឹង <span class="mi">\(24\)</span> ៖ <div class="md">\[\begin{aligned}
+  p^2 - 1 &amp;= (p - 1)(p + 1)
+\end{aligned}\]</div></p>
+<ul>
+<li><p><span class="mi">\(p\)</span> ជាចំនួនសេស <span class="mi">\(\implies p - 1\)</span> និង <span class="mi">\(p + 1\)</span> ជាពីរចំនួនគូជាប់គ្នា នាំឱ្យផលគុណចែកដាច់នឹង <span class="mi">\(2 \times 4 = 8\)</span>។</p></li>
+<li><p>ក្នុងចំណោម <span class="mi">\(p-1, p, p+1\)</span> មានមួយចែកដាច់នឹង <span class="mi">\(3\)</span> តែ <span class="mi">\(p\)</span> ជាចំនួនបឋមធំជាង <span class="mi">\(3\)</span> នាំឱ្យ <span class="mi">\((p-1)(p+1)\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span>។</p></li>
+<li><p>ដោយសារ <span class="mi">\(PGCD(8, 3) = 1\)</span> នោះ <span class="mi">\(p^2 - 1\)</span> ចែកដាច់នឹង <span class="mi">\(8 \times 3 = 24\)</span> ជានិច្ច។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>រកចំនួនបឋម <span class="mi">\(p\)</span> ទាំងអស់ដែលធ្វើឱ្យ <span class="mi">\(p + 10\)</span> និង <span class="mi">\(p + 14\)</span> សុទ្ធតែជាចំនួនបឋម។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនបឋម <span class="mi">\(p\)</span> ដែលធ្វើឱ្យ <span class="mi">\(p + 10\)</span> និង <span class="mi">\(p + 14\)</span> ជាចំនួនបឋម ៖</p>
+<ul>
+<li><p>បើ <span class="mi">\(p = 2 \implies p + 10 = 12\)</span> (មិនបឋម)</p></li>
+<li><p>បើ <span class="mi">\(p = 3 \implies p + 10 = 13\)</span> (បឋម), <span class="mi">\(p + 14 = 17\)</span> (បឋម) <span class="mi">\(\implies p = 3\)</span> ផ្ទៀងផ្ទាត់។</p></li>
+<li><p>បើ <span class="mi">\(p &gt; 3 \implies p = 3k + 1\)</span> ឬ <span class="mi">\(p = 3k + 2\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(p = 3k + 1 \implies p + 14 = 3k + 15 = 3(k+5) &gt; 3\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> (មិនបឋម)</p></li>
+<li><p><span class="mi">\(p = 3k + 2 \implies p + 10 = 3k + 12 = 3(k+4) &gt; 3\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> (មិនបឋម)</p></li>
+</ul></li>
+</ul>
+<p>ដូចនេះ ចំនួនបឋមដែលត្រូវរកគឺ <span class="mi">\(\boxed{p = 3}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>បង្ហាញថាកន្សោម <span class="mi">\(B = 5^{2n+1} + 2^{2n+1}\)</span> ចែកដាច់នឹង <span class="mi">\(7\)</span> ចំពោះគ្រប់ចំនួនគត់ធម្មជាតិ <span class="mi">\(n\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(B = 5^{2n+1} + 2^{2n+1}\)</span> ចែកដាច់នឹង <span class="mi">\(7\)</span> ចំពោះគ្រប់ <span class="mi">\(n \in \mathbb{N}\)</span> ៖ តាមរូបមន្តឯកសណ្ឋាន ចំពោះស្វ័យគុណសេស <span class="mi">\(m = 2n + 1\)</span> ៖ <div class="md">\[\begin{aligned}
+  a^m + b^m &amp;= (a + b)(a^{m-1} - a^{m-2}b + \dots + b^{m-1})
+\end{aligned}\]</div> ជំនួស <span class="mi">\(a = 5, \; b = 2\)</span> ៖ <div class="md">\[\begin{aligned}
+  5^{2n+1} + 2^{2n+1} &amp;= (5 + 2) \cdot Q = 7 \cdot Q \quad{} (Q \in \mathbb{N})
+\end{aligned}\]</div> ដោយសារកន្សោមមានកត្តា <span class="mi">\(7\)</span> នោះ <span class="mi">\(B\)</span> តែងតែចែកដាច់នឹង <span class="mi">\(7\)</span> ជានិច្ច។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គេសរសេរចំនួន <span class="mi">\(A = 1234567891011\dots 99100\)</span> (ដោយយកចំនួនគត់ពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(100\)</span> មកតម្រៀបជាប់គ្នា)។</p>
+<ol class="list olka cols1">
+<li><p>តើចំនួន <span class="mi">\(A\)</span> មានប៉ុន្មានខ្ទង់?</p></li>
+<li><p>តើចំនួន <span class="mi">\(A\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ឬទេ? ចែកដាច់នឹង <span class="mi">\(9\)</span> ឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេសរសេរចំនួន <span class="mi">\(A = 1234567891011\dots 99100\)</span> ៖</p>
+<ul>
+<li><p>ចំនួនខ្ទង់នៃចំនួន <span class="mi">\(A\)</span> ៖<br/>
+– ពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(9\)</span> មាន ៖ <span class="mi">\(9 \times 1 = 9\)</span> ខ្ទង់<br/>
+– ពី <span class="mi">\(10\)</span> ដល់ <span class="mi">\(99\)</span> មាន ៖ <span class="mi">\(90 \times 2 = 180\)</span> ខ្ទង់<br/>
+– ចំនួន <span class="mi">\(100\)</span> មាន ៖ <span class="mi">\(3\)</span> ខ្ទង់<br/>
+<span class="mi">\(\implies\)</span> សរុបមាន <span class="mi">\(9 + 180 + 3 = \mathbf{192}\)</span> ខ្ទង់។</p></li>
+<li><p>ភាពចែកដាច់នឹង <span class="mi">\(3\)</span> និង <span class="mi">\(9\)</span> ៖<br/>
+ផលបូកលេខខ្ទង់នៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(S = 450 + 450 + 1 = 901\)</span>។<br/>
+ដោយសារ <span class="mi">\(901\)</span> មានផលបូកលេខខ្ទង់ <span class="mi">\(9+0+1 = 10\)</span> មិនចែកដាច់នឹង <span class="mi">\(3\)</span> និងមិនចែកដាច់នឹង <span class="mi">\(9\)</span> ទេ<br/>
+<span class="mi">\(\implies A\)</span> <strong>មិនចែកដាច់នឹង <span class="mi">\(3\)</span> ឡើយ ហើយក៏មិនចែកដាច់នឹង <span class="mi">\(9\)</span> ដែរ</strong>។</p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ២ តួចែក និងពហុគុណ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c02">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L01.html"><small>← មេរៀនមុន</small><b>ចំនួនគត់</b></a><a class="next" href="L03.html"><small>មេរៀនបន្ទាប់ →</small><b>ចំនួនគត់រ៉ឺឡាទីប</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនណាខាងក្រោមនេះចែកដាច់នឹង <span class=\"mi\">\\(5\\)<\/span>?", "options": ["<span class=\"mi\">\\(2024\\)<\/span>", "<span class=\"mi\">\\(3056\\)<\/span>", "<span class=\"mi\">\\(4095\\)<\/span>", "<span class=\"mi\">\\(5121\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនណាខាងក្រោមនេះចែកដាច់នឹង <span class=\"mi\">\\(3\\)<\/span>?", "options": ["<span class=\"mi\">\\(124\\)<\/span>", "<span class=\"mi\">\\(341\\)<\/span>", "<span class=\"mi\">\\(513\\)<\/span>", "<span class=\"mi\">\\(725\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនណាខាងក្រោមនេះចែកដាច់នឹង <span class=\"mi\">\\(4\\)<\/span>?", "options": ["<span class=\"mi\">\\(1034\\)<\/span>", "<span class=\"mi\">\\(2048\\)<\/span>", "<span class=\"mi\">\\(3050\\)<\/span>", "<span class=\"mi\">\\(4062\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនណាខាងក្រោមនេះជា <strong>ចំនួនបឋម<\/strong>?", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(29\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនគត់គូតែមួយគត់ដែលជាចំនួនបឋមគឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើលេខ <span class=\"mi\">\\(1\\)<\/span> ជាចំនួនប្រភេទណា?", "options": ["ចំនួនបឋម", "ចំនួនមិនបឋម", "មិនមែនចំនួនបឋម ហើយក៏មិនមែនចំនួនមិនបឋម", "ចំនួនគត់អវិជ្ជមាន"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ការបំបែកចំនួន <span class=\"mi\">\\(36\\)<\/span> ជាផលគុណកត្តាបឋមគឺ ៖", "options": ["<span class=\"mi\">\\(4 \\times 9\\)<\/span>", "<span class=\"mi\">\\(2 \\times 18\\)<\/span>", "<span class=\"mi\">\\(2^2 \\times 3^2\\)<\/span>", "<span class=\"mi\">\\(3 \\times 12\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តួចែករួមធំបំផុត <span class=\"mi\">\\(PGCD(18, 24)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ពហុគុណរួមតូចបំផុត <span class=\"mi\">\\(PPCM(6, 9)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(27\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(54\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(PGCD(a, b) = 1\\)<\/span> នោះគេហៅ <span class=\"mi\">\\(a\\)<\/span> និង <span class=\"mi\">\\(b\\)<\/span> ថាជា ៖", "options": ["ចំនួនគូ", "ចំនួនបឋមរវាងគ្នា", "ចំនួនទល់មុខគ្នា", "ចំនួនមិនបឋម"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(PGCD(a, b) = 4\\)<\/span> និង <span class=\"mi\">\\(PPCM(a, b) = 24\\)<\/span> នោះផលគុណ <span class=\"mi\">\\(a \\times b\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(28\\)<\/span>", "<span class=\"mi\">\\(48\\)<\/span>", "<span class=\"mi\">\\(96\\)<\/span>", "<span class=\"mi\">\\(120\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនតួចែកទាំងអស់នៃចំនួន <span class=\"mi\">\\(12\\)<\/span> មានចំនួន ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span> តួចែក", "<span class=\"mi\">\\(5\\)<\/span> តួចែក", "<span class=\"mi\">\\(6\\)<\/span> តួចែក", "<span class=\"mi\">\\(8\\)<\/span> តួចែក"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនណាខាងក្រោមនេះចែកដាច់នឹង <span class=\"mi\">\\(9\\)<\/span>?", "options": ["<span class=\"mi\">\\(1234\\)<\/span>", "<span class=\"mi\">\\(4356\\)<\/span>", "<span class=\"mi\">\\(5678\\)<\/span>", "<span class=\"mi\">\\(9111\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនណាខាងក្រោមនេះចែកដាច់នឹង <span class=\"mi\">\\(8\\)<\/span>?", "options": ["<span class=\"mi\">\\(1124\\)<\/span>", "<span class=\"mi\">\\(2148\\)<\/span>", "<span class=\"mi\">\\(3120\\)<\/span>", "<span class=\"mi\">\\(4110\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនណាខាងក្រោមនេះចែកដាច់នឹង <span class=\"mi\">\\(2\\)<\/span> ផង និង <span class=\"mi\">\\(5\\)<\/span> ផង?", "options": ["<span class=\"mi\">\\(2025\\)<\/span>", "<span class=\"mi\">\\(3042\\)<\/span>", "<span class=\"mi\">\\(4500\\)<\/span>", "<span class=\"mi\">\\(5055\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនណាខាងក្រោមនេះចែកដាច់នឹងទាំង <span class=\"mi\">\\(2, 3\\)<\/span> និង <span class=\"mi\">\\(5\\)<\/span>?", "options": ["<span class=\"mi\">\\(120\\)<\/span>", "<span class=\"mi\">\\(125\\)<\/span>", "<span class=\"mi\">\\(130\\)<\/span>", "<span class=\"mi\">\\(135\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើចំនួន <span class=\"mi\">\\(\\overline{5x2}\\)<\/span> ចែកដាច់នឹង <span class=\"mi\">\\(3\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(x\\)<\/span> អាចជា ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើចំនួន <span class=\"mi\">\\(\\overline{43y}\\)<\/span> ចែកដាច់នឹង <span class=\"mi\">\\(5\\)<\/span> និងជាចំនួនគូ នោះតម្លៃនៃ <span class=\"mi\">\\(y\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សំណុំតួចែកទាំងអស់នៃចំនួន <span class=\"mi\">\\(8\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\{1, 2, 4\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 2, 4, 8\\}\\)<\/span>", "<span class=\"mi\">\\(\\{2, 4, 8\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 8\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សំណុំតួចែកទាំងអស់នៃចំនួន <span class=\"mi\">\\(15\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\{1, 3, 5, 15\\}\\)<\/span>", "<span class=\"mi\">\\(\\{3, 5, 15\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 15\\}\\)<\/span>", "<span class=\"mi\">\\(\\{3, 5\\}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំនួនបឋមដែលតូចជាង <span class=\"mi\">\\(10\\)<\/span> មានចំនួន ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមចំនួន <span class=\"mi\">\\(21, 27, 31, 35\\)<\/span> ចំនួនបឋមគឺ ៖", "options": ["<span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(27\\)<\/span>", "<span class=\"mi\">\\(31\\)<\/span>", "<span class=\"mi\">\\(35\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលបូកនៃពីរចំនួនបឋមតូចជាងគេបំផុតគឺ ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ការបំបែកជាផលគុណកត្តាបឋមនៃ <span class=\"mi\">\\(60\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2^2 \\times 3 \\times 5\\)<\/span>", "<span class=\"mi\">\\(2 \\times 3 \\times 10\\)<\/span>", "<span class=\"mi\">\\(4 \\times 15\\)<\/span>", "<span class=\"mi\">\\(6 \\times 10\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ការបំបែកជាផលគុណកត្តាបឋមនៃ <span class=\"mi\">\\(72\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(8 \\times 9\\)<\/span>", "<span class=\"mi\">\\(2^3 \\times 3^2\\)<\/span>", "<span class=\"mi\">\\(2^2 \\times 3^3\\)<\/span>", "<span class=\"mi\">\\(2 \\times 36\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ការបំបែកជាផលគុណកត្តាបឋមនៃ <span class=\"mi\">\\(100\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(10^2\\)<\/span>", "<span class=\"mi\">\\(4 \\times 25\\)<\/span>", "<span class=\"mi\">\\(2^2 \\times 5^2\\)<\/span>", "<span class=\"mi\">\\(2 \\times 50\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(PGCD(12, 18)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(PGCD(15, 25)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(PGCD(8, 9)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(72\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូនៃចំនួនណាខាងក្រោមនេះជាចំនួនបឋមរវាងគ្នា?", "options": ["<span class=\"mi\">\\(14\\)<\/span> និង <span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span> និង <span class=\"mi\">\\(28\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span> និង <span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span> និង <span class=\"mi\">\\(25\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(PPCM(4, 6)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(PPCM(10, 15)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(60\\)<\/span>", "<span class=\"mi\">\\(150\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(PPCM(8, 12)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>", "<span class=\"mi\">\\(48\\)<\/span>", "<span class=\"mi\">\\(96\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a = 2^2 \\times 3\\)<\/span> និង <span class=\"mi\">\\(b = 2 \\times 3^2\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(PGCD(a, b)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a = 2^2 \\times 3\\)<\/span> និង <span class=\"mi\">\\(b = 2 \\times 3^2\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(PPCM(a, b)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(72\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a\\)<\/span> ចែកដាច់នឹង <span class=\"mi\">\\(b\\)<\/span> (<span class=\"mi\">\\(a, b \\in \\mathbb{N}^*\\)<\/span>) នោះ <span class=\"mi\">\\(PGCD(a, b)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(a\\)<\/span>", "<span class=\"mi\">\\(b\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(a \\times b\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a\\)<\/span> ចែកដាច់នឹង <span class=\"mi\">\\(b\\)<\/span> (<span class=\"mi\">\\(a, b \\in \\mathbb{N}^*\\)<\/span>) នោះ <span class=\"mi\">\\(PPCM(a, b)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(a\\)<\/span>", "<span class=\"mi\">\\(b\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(a \\times b\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ពហុគុណរួមតូចបំផុតនៃពីរចំនួនបឋមរវាងគ្នា <span class=\"mi\">\\(a\\)<\/span> និង <span class=\"mi\">\\(b\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(a + b\\)<\/span>", "<span class=\"mi\">\\(a \\times b\\)<\/span>", "<span class=\"mi\">\\(a - b\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមចំនួន <span class=\"mi\">\\(13, 17, 19, 21\\)<\/span> ចំនួនដែលមិនមែនជាចំនួនបឋមគឺ ៖", "options": ["<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(17\\)<\/span>", "<span class=\"mi\">\\(19\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំនួនបឋមដែលមានលេខពីរខ្ទង់ធំជាងគេគឺ ៖", "options": ["<span class=\"mi\">\\(91\\)<\/span>", "<span class=\"mi\">\\(93\\)<\/span>", "<span class=\"mi\">\\(97\\)<\/span>", "<span class=\"mi\">\\(99\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចំនួនតួចែកទាំងអស់នៃចំនួនបឋមមួយមានចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span> តួចែក", "<span class=\"mi\">\\(2\\)<\/span> តួចែក", "<span class=\"mi\">\\(3\\)<\/span> តួចែក", "ច្រើនរាប់មិនអស់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចំនួនតួចែកទាំងអស់នៃចំនួន <span class=\"mi\">\\(16\\)<\/span> (<span class=\"mi\">\\(16 = 2^4\\)<\/span>) មានចំនួន ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span> តួចែក", "<span class=\"mi\">\\(4\\)<\/span> តួចែក", "<span class=\"mi\">\\(5\\)<\/span> តួចែក", "<span class=\"mi\">\\(6\\)<\/span> តួចែក"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a \\times b = 180\\)<\/span> និង <span class=\"mi\">\\(PGCD(a, b) = 6\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(PPCM(a, b)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(60\\)<\/span>", "<span class=\"mi\">\\(1080\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(PPCM(x, 12) = 60\\)<\/span> និង <span class=\"mi\">\\(PGCD(x, 12) = 6\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(24\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(48\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចង្កៀងបំភ្លឺពីរព្រិចភ្លើងរៀងរាល់ <span class=\"mi\">\\(4\\)<\/span> វិនាទី និង <span class=\"mi\">\\(6\\)<\/span> វិនាទីម្ដង។ បើវាព្រិចភ្លើងព្រមគ្នាលើកដំបូង តើរយៈពេលប៉ុន្មានវិនាទីក្រោយមកទៀតទើបវាព្រិចព្រមគ្នាម្ដងទៀត?", "options": ["<span class=\"mi\">\\(10\\)<\/span> វិនាទី", "<span class=\"mi\">\\(12\\)<\/span> វិនាទី", "<span class=\"mi\">\\(16\\)<\/span> វិនាទី", "<span class=\"mi\">\\(24\\)<\/span> វិនាទី"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេចង់កាត់ក្រដាសរាងចតុកោណកែងទំហំ <span class=\"mi\">\\(18\\,\\text{cm} \\times 24\\,\\text{cm}\\)<\/span> ជាការ៉េស្មើៗគ្នាដោយគ្មានសល់។ តើប្រវែងជ្រុងនៃការ៉េធំបំផុតអាចមានប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(3\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(4\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(6\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(8\\,\\text{cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើផលបូក <span class=\"mi\">\\(24 + x\\)<\/span> ចែកដាច់នឹង <span class=\"mi\">\\(6\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(x\\)<\/span> អាចជា ៖", "options": ["<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចំនួនដែលចែកដាច់នឹង <span class=\"mi\">\\(6\\)<\/span> គឺជាចំនួនដែល ៖", "options": ["ចែកដាច់នឹង <span class=\"mi\">\\(2\\)<\/span> ផង និង <span class=\"mi\">\\(3\\)<\/span> ផង", "ចែកដាច់នឹង <span class=\"mi\">\\(2\\)<\/span> តែមិនចែកដាច់នឹង <span class=\"mi\">\\(3\\)<\/span>", "ចែកដាច់នឹង <span class=\"mi\">\\(4\\)<\/span>", "មានខ្ទង់រាយជាលេខ <span class=\"mi\">\\(6\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលបូកនៃគ្រប់តួចែកទាំងអស់នៃចំនួន <span class=\"mi\">\\(6\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចំនួនគត់ <span class=\"mi\">\\(N\\)<\/span> មួយចែកនឹង <span class=\"mi\">\\(3\\)<\/span> សល់ <span class=\"mi\">\\(1\\)<\/span> និងចែកនឹង <span class=\"mi\">\\(5\\)<\/span> សល់ <span class=\"mi\">\\(1\\)<\/span>។ តម្លៃតូចបំផុតនៃ <span class=\"mi\">\\(N &gt; 1\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(31\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

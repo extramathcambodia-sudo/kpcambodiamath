@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KhmerMath Starter Kit & Architecture Demo</title>
+<link rel="stylesheet" href="static/fonts/kantumruy-pro.css">
+<style>
+  :root {
+    --primary: #1971c2;
+    --primary-hover: #1864ab;
+    --primary-light: #e7f5ff;
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --text: #212529;
+    --text-muted: #6c757d;
+    --border: #dee2e6;
+    --radius: 14px;
+    --font: 'Kantumruy Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 32px 16px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  header.hero {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  p.lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .demo-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .demo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    border-color: #a5d8ff;
+  }
+  .card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--primary);
+  }
+  .card-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .card-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .guide-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .guide-box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .guide-box ol, .guide-box ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .guide-box li { margin-bottom: 8px; }
+  pre {
+    background: #212529;
+    color: #f8f9fa;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="hero">
+    <div class="hero-badge">Local Starter & Architecture Demo</div>
+    <h1>គម្រោងគំរូ KhmerMath Local Starter</h1>
+    <p class="lead">កញ្ចប់ឯកសារគំរូសម្រាប់បើកមើលលើកុំព្យូទ័រផ្ទាល់ (Localhost) និងជាគ្រោងឆ្អឹងសម្រាប់បញ្ជា AI ឱ្យបន្តបង្កើតប្រព័ន្ធផ្ទាល់ខ្លួន។</p>
+  </header>
+
+  <div class="demo-grid">
+    <!-- Lesson Demo -->
+    <a href="lesson-g7-l01.html" class="demo-card">
+      <div>
+        <div class="card-icon">📘</div>
+        <div class="card-title">១. មេរៀនគំរូ ថ្នាក់ទី ៧</div>
+        <div class="card-desc">បង្ហាញពីរបៀបរៀបចំមេរៀនគណិតវិទ្យា ការប្រើប្រាស់ KaTeX បង្ហាញរូបមន្ត និងប្រអប់សំណួរសាកល្បងសមត្ថភាព (Interactive Quiz) ក្នុងទំព័រ។</div>
+      </div>
+      <span class="card-btn">បើកមើលមេរៀន ▶</span>
+    </a>
+
+    <!-- Geometry Demo -->
+    <a href="geometry-angle-bisector.html" class="demo-card">
+      <div>
+        <div class="card-icon">📐</div>
+        <div class="card-title">២. សំណង់ធរណីមាត្រ (SVG)</div>
+        <div class="card-desc">គំរូសំណង់ធរណីមាត្រ «សង់កន្លះបន្ទាត់ពុះមុំ» ដោយប្រើបន្ទាត់ និងដែកឈាន (Animation មួយជំហានម្តងៗ លើ SVG)។</div>
+      </div>
+      <span class="card-btn">បើកមើលសំណង់ធរណីមាត្រ ▶</span>
+    </a>
+
+    <!-- Exam Demo -->
+    <a href="exam-demo.html" class="demo-card">
+      <div>
+        <div class="card-icon">📝</div>
+        <div class="card-title">៣. វិញ្ញាសាប្រឡងគំរូ (Exam Player)</div>
+        <div class="card-desc">ប្រព័ន្ធប្រឡងគំរូទាញសំណួរពី JSON មាននាឡិកាកំណត់ពេល (Timer) ជ្រើសរើសចម្លើយ ផ្ទៀងផ្ទាត់ និងកែពិន្ទុភ្លាមៗជាមួយអត្រាកំណែ។</div>
+      </div>
+      <span class="card-btn">បើកមើលការប្រឡង ▶</span>
+    </a>
+  </div>
+
+  <div class="guide-box">
+    <h2>💡 របៀបបើក និងណែនាំ AI ឱ្យបន្តបង្កើតប្រព័ន្ធ</h2>
+    <ol>
+      <li><strong>របៀបបើកមើលលើកុំព្យូទ័រ៖</strong>
+        <ul>
+          <li>អាចចុច Double-click លើ File <code>index.html</code> នេះដើម្បីបើកមើលតាម Chrome/Firefox/Safari បានភ្លាមៗ។</li>
+          <li>ឬបើក Terminal ក្នុង Folder នេះ រួចវាយ៖ <code>python3 -m http.server 8000</code> រួចបើក <code>http://localhost:8000</code>។</li>
+        </ul>
+      </li>
+      <li><strong>របៀបសួរ AI (ChatGPT / Claude / Gemini) ឱ្យបន្ថែមមុខងារ៖</strong>
+        <p>អ្នកអាចចម្លងកូដក្នុង File គំរូទាំងបីនេះ ផ្ញើទៅកាន់ AI ហើយប្រើ Prompt ដូចខាងក្រោម៖</p>
+        <pre><code>"I have a local math exam and lesson system. 
+Here is my sample code in exam-demo.html and static/data/sample_bank.json.
+Please help me write a Python/Node.js backend or generate 10 new math questions for Grade 8 with step-by-step solutions."</code></pre>
+      </li>
+      <li><strong>របៀបសួរ AI បង្កើតសំណង់ធរណីមាត្រថ្មី៖</strong>
+        <pre><code>"Here is my geometry construction template in geometry-angle-bisector.html. 
+Please help me create a new step-by-step SVG construction for Perpendicular Bisector with ruler and compass steps."</code></pre>
+      </li>
+    </ol>
+  </div>
+</div>
+
+</body>
+</html>

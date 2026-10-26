@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៣៨ : ម៉ាទ្រីស — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៣៨ «ម៉ាទ្រីស» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៣៨ : ម៉ាទ្រីស — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៣៨ «ម៉ាទ្រីស» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g11">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li aria-current="page">មេរៀនទី ៣៨</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៣៨</span>
+      <div><span class="ls-kicker">ថ្នាក់វិទ្យាសាស្ត្រសង្គម · ជំពូកទី ៤ ម៉ាទ្រីសនិងដេទែរមីណង់ · មេរៀនទី ៣៨ · គណិតវិទ្យាថ្នាក់ទី ១១</span><h1>ម៉ាទ្រីស</h1><div class="ls-chips"><span class="chip chip-soon">ថ្នាក់វិទ្យាសាស្ត្រសង្គម</span><span class="chip chip-soon">ទំព័រ ១២៥–១៤៣</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណនៃម៉ាទ្រីស</a></li><li class="sub"><a href="#u2">២. ប្រមាណវិធីលើម៉ាទ្រីស</a></li><li class="sub"><a href="#u3">៣. ម៉ាទ្រីសច្រាស</a></li><li class="sub"><a href="#u4">៤. ទំព័រសៀវភៅដើម</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-11.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<p>អ្នកដែលនាំឱ្យមានបញ្ញត្តិម៉ាទ្រីសមុនគេ គឺ Arthur Cayley ។ តាមពិតរបស់ដេទែរមីណង់បានកើតឡើងមុនម៉ាទ្រីស ហើយមានប្រភពនៅក្នុងចម្លើយទូទៅនៃប្រព័ន្ធសមីការលីនេអ៊ែរ ។ ដើមកំណើតនៃដេទែរមីណង់ត្រូវបានសរសេរដោយ Leibniz នៅឆ្នាំ <span class="mi">\(1678\)</span> ស្របពេលដែលនៅក្នុងប្រទេសជប៉ុន Takakazu Seki បានសម្រេចស្នាដៃដ៏ធំធេងលើនេះក្នុងឆ្នាំ <span class="mi">\(1680\)</span> ។ នៅក្នុងសតវត្សទី <span class="mi">\(19\)</span> Cayley, James Sylvester and Ferdinand Frobenius បានសិក្សាទ្រឹស្តីម៉ាទ្រីស និងដេទែរមីណង់យ៉ាងស៊ីជម្រៅ ។ ដោយមានការរីកចម្រើនក្នុងពីជគណិតលីនេអ៊ែរ ម៉ាទ្រីសត្រូវបានគេយកទៅដោះស្រាយក្នុងការបំប្លែងលីនេអ៊ែរ ឬអនុគមន៍លីនេអ៊ែរ ហើយក៏ក្លាយជាបញ្ញត្តិសំខាន់ក្នុងទ្រឹស្តីពីជគណិតលីនេអ៊ែរ ។</p>
+<section class="bx bx-green"><header class="bx-h"><b>ជំពូកទី ៤ ៖ ម៉ាទ្រីសនិងដេទែរមីណង់</b></header><div class="bx-b">
+<p>ជំពូកនេះមានមេរៀន ៖ <strong>១. ម៉ាទ្រីស</strong> <strong>២. ដេទែរមីណង់</strong> ។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>វត្ថុបំណង</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>កំណត់ម៉ាទ្រីស</p></li>
+<li><p>ធ្វើប្រមាណវិធីលើម៉ាទ្រីស</p></li>
+<li><p>គណនាម៉ាទ្រីសច្រាសលំដាប់ <span class="mi">\(2\)</span> ។</p></li>
+</ol>
+</div></section>
+<h3 id="u1">សញ្ញាណនៃម៉ាទ្រីស</h3>
+<h4>និយមន័យ</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ទូតាំងសៀវភៅមួយមានពីរថ្នាក់ដែលថ្នាក់លើ <span class="mi">\(1\)</span> គេតម្រៀបសៀវភៅបីប្រភេទគឺសៀវភៅគណិតវិទ្យា <span class="mi">\(13\)</span> ក្បាល រូបវិទ្យា <span class="mi">\(5\)</span> ក្បាលនិងគីមីវិទ្យា <span class="mi">\(7\)</span> ក្បាល ។ នៅថ្នាក់ក្រោម <span class="mi">\(2\)</span> មានសៀវភៅគណិតវិទ្យា <span class="mi">\(8\)</span> ក្បាល រូបវិទ្យា <span class="mi">\(10\)</span> ក្បាល និងគីមីវិទ្យា <span class="mi">\(4\)</span> ក្បាល ។ <div class="md">\[\begin{array}{|l|c|c|c|}\hline
+ &amp; \text{គណិតវិទ្យា} &amp; \text{រូបវិទ្យា} &amp; \text{គីមីវិទ្យា}\\ \hline
+\text{ថ្នាក់លើ} &amp; 13 &amp; 5 &amp; 7\\ \hline
+\text{ថ្នាក់ក្រោម} &amp; 8 &amp; 10 &amp; 4\\ \hline
+\end{array}\]</div> គេអាចបង្ហាញព័ត៌មាននេះដោយសរសេរចំនួននីមួយៗតាមលំដាប់លំដោយដាក់ក្នុងតង្កៀបជារាងចតុកោណកែង <span class="mi">\(\begin{bmatrix} 13 &amp; 5 &amp; 7\\ 8 &amp; 10 &amp; 4 \end{bmatrix}\)</span> ។</p>
+<p>ការតាងចំនួនដើម្បីបង្ហាញទិន្នន័យបែបនេះហៅថា <strong>ម៉ាទ្រីស</strong> ។ ចំនួននីមួយៗដែលសរសេរនៅក្នុងតង្កៀបហៅថា <strong>ធាតុនៃម៉ាទ្រីស</strong> ។ បើម៉ាទ្រីសមានជួរដេកពីរនិងជួរឈរបី នោះគេថាម៉ាទ្រីសមានលំដាប់ <span class="mi">\(2 \times 3\)</span> ឬមានវិមាត្រ <span class="mi">\(2 \times 3\)</span> ដែល <span class="mi">\(2\)</span> ជា<strong>ចំនួនជួរដេក</strong>ត្រូវសរសេរមុននិង <span class="mi">\(3\)</span> ជា<strong>ចំនួនជួរឈរ</strong>ត្រូវសរសេរក្រោយ ។ គេនិយាយថាម៉ាទ្រីសលំដាប់ <span class="mi">\(2 \times 3\)</span> (អានថា <span class="mi">\(2\)</span> ខ្វែង <span class="mi">\(3\)</span>) ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ម៉ាទ្រីសគឺជាការរៀបចំនួនជារាងចតុកោណកែងដាក់ក្នុងតង្កៀប ។ គេកំណត់តាងម៉ាទ្រីសដោយអក្សរធំ ដូចជា <span class="mi">\(A, B, C, \ldots\)</span> និងធាតុនៃម៉ាទ្រីសតាងដោយអក្សរតូច ។ ម៉ាទ្រីស <span class="mi">\(A\)</span> មានលំដាប់ <span class="mi">\(m \times n\)</span> កំណត់សរសេរដូចខាងក្រោម ៖ <div class="md">\[A_{m \times n} = \begin{bmatrix} a_{11} &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1n}\\ a_{21} &amp; a_{22} &amp; a_{23} &amp; \cdots &amp; a_{2n}\\ a_{31} &amp; a_{32} &amp; a_{33} &amp; \cdots &amp; a_{3n}\\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots\\ a_{m1} &amp; a_{m2} &amp; a_{m3} &amp; \cdots &amp; a_{mn} \end{bmatrix}\]</div></p>
+</div></section>
+<p>មានន័យថា ម៉ាទ្រីស <span class="mi">\(A\)</span> មាន <span class="mi">\(m\)</span> ជួរដេកនិងមាន <span class="mi">\(n\)</span> ជួរឈរ ។ <span class="mi">\(a_{11}\)</span> សម្គាល់ធាតុនៃម៉ាទ្រីស <span class="mi">\(A\)</span> ស្ថិតនៅជួរដេកទី <span class="mi">\(1\)</span> និងជួរឈរទី <span class="mi">\(1\)</span> ។ <span class="mi">\(a_{12}\)</span> សម្គាល់ធាតុនៃម៉ាទ្រីស <span class="mi">\(A\)</span> ស្ថិតនៅជួរដេកទី <span class="mi">\(1\)</span> និងជួរឈរទី <span class="mi">\(2\)</span> ។ <span class="mi">\(a_{13}\)</span> សម្គាល់ធាតុនៃម៉ាទ្រីស <span class="mi">\(A\)</span> ស្ថិតនៅជួរដេកទី <span class="mi">\(1\)</span> និងជួរឈរទី <span class="mi">\(3\)</span> …។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 3 &amp; -1 &amp; 2 &amp; 4\\ 1 &amp; 0 &amp; 5 &amp; -6\\ -1 &amp; 2 &amp; -3 &amp; 7 \end{bmatrix}\)</span> មាន <span class="mi">\(3\)</span> ជួរដេក និង <span class="mi">\(4\)</span> ជួរឈរ គេថាម៉ាទ្រីស <span class="mi">\(A\)</span> មានលំដាប់ <span class="mi">\(3 \times 4\)</span> ។</p>
+<p><span class="mi">\(B = \begin{bmatrix} -4 &amp; 5 &amp; 1 &amp; -2 &amp; 5 \end{bmatrix}\)</span> មាន <span class="mi">\(1\)</span> ជួរដេក និង <span class="mi">\(5\)</span> ជួរឈរ គេថាម៉ាទ្រីស <span class="mi">\(B\)</span> មានលំដាប់ <span class="mi">\(1 \times 5\)</span> ហៅថា <strong>ម៉ាទ្រីសជួរដេក</strong> ។</p>
+<p><span class="mi">\(C = \begin{bmatrix} 2\\ 3\\ -8 \end{bmatrix}\)</span> មាន <span class="mi">\(3\)</span> ជួរដេកនិង <span class="mi">\(1\)</span> ជួរឈរ គេថាម៉ាទ្រីស <span class="mi">\(C\)</span> មានលំដាប់ <span class="mi">\(3 \times 1\)</span> ហៅថា<strong>ម៉ាទ្រីសជួរឈរ</strong> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>អ្នកគ្រប់គ្រងសាលារៀនបានកត់ត្រាចំនួនសិស្សប្រុសនិងសិស្សស្រីដែលបានរៀនភាសាអង់គ្លេសតាម <span class="mi">\(4\)</span> កម្រិតផ្សេងគ្នា ។ កម្រិត <span class="mi">\(1\)</span> មានសិស្សប្រុស <span class="mi">\(105\)</span> នាក់ ស្រី <span class="mi">\(63\)</span> នាក់ កម្រិត <span class="mi">\(2\)</span> មានប្រុស <span class="mi">\(132\)</span> នាក់ ស្រី <span class="mi">\(89\)</span> នាក់ កម្រិត <span class="mi">\(3\)</span> មានប្រុស <span class="mi">\(98\)</span> នាក់ ស្រី <span class="mi">\(102\)</span> នាក់ កម្រិត <span class="mi">\(4\)</span> មានប្រុស <span class="mi">\(92\)</span> នាក់ ស្រី <span class="mi">\(90\)</span> នាក់ ។ បង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសនិងប្រាប់លំដាប់ម៉ាទ្រីស ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>គេអាចបង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសបាន <span class="mi">\(2\)</span> របៀបគឺ (ជួរដេក ៖ សិស្សប្រុស សិស្សស្រី ; ជួរឈរ ៖ កម្រិត <span class="mi">\(1\)</span>–<span class="mi">\(4\)</span>) <div class="md">\[\begin{gathered}
+\begin{bmatrix} 105 &amp; 132 &amp; 98 &amp; 92\\ 63 &amp; 89 &amp; 102 &amp; 90 \end{bmatrix} \ \text{មានលំដាប់ } 2 \times 4\\
+\begin{bmatrix} 105 &amp; 63\\ 132 &amp; 89\\ 98 &amp; 102\\ 92 &amp; 90 \end{bmatrix} \ \text{មានលំដាប់ } 4 \times 2
+\end{gathered}\]</div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ក្នុងការធ្វើតេស្តគណិតវិទ្យាមានសិស្ស <span class="mi">\(10\)</span> នាក់បានពិន្ទុល្អ <span class="mi">\(20\)</span> នាក់បានពិន្ទុមធ្យម និង <span class="mi">\(12\)</span> បានពិន្ទុខ្សោយ ។ បង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសនិងប្រាប់លំដាប់នៃម៉ាទ្រីសនេះ ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(\begin{bmatrix} 10 &amp; 20 &amp; 12 \end{bmatrix}\)</span> លំដាប់ <span class="mi">\(1 \times 3\)</span>,  <span class="mi">\(\begin{bmatrix} 10\\ 20\\ 12 \end{bmatrix}\)</span> លំដាប់ <span class="mi">\(3 \times 1\)</span> ។</p></details>
+</div></section>
+<h4>ប្រភេទនៃម៉ាទ្រីស</h4>
+<p><strong>ម៉ាទ្រីសសូន្យ</strong> ៖ ម៉ាទ្រីសដែលមានធាតុទាំងអស់ស្មើនឹងសូន្យ នោះហៅថា ម៉ាទ្រីសសូន្យតាងដោយ <span class="mi">\(O\)</span> ។ <div class="md">\[\begin{gathered}
+O = \begin{bmatrix} 0 &amp; 0\\ 0 &amp; 0 \end{bmatrix} \ (2 \times 2),\\
+O = \begin{bmatrix} 0 &amp; 0 \end{bmatrix} \ (1 \times 2),\\
+O = \begin{bmatrix} 0\\ 0\\ 0 \end{bmatrix} \ (3 \times 1),\\
+O = \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} \ (3 \times 5)
+\end{gathered}\]</div></p>
+<p><strong>ម៉ាទ្រីសការេ</strong> ៖</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 1 &amp; -3\\ 5 &amp; 7 \end{bmatrix}\)</span> មាន <span class="mi">\(2\)</span> ជួរដេក និង <span class="mi">\(2\)</span> ជួរឈរ គេថាម៉ាទ្រីស <span class="mi">\(A\)</span> ជា<strong>ម៉ាទ្រីសការេ</strong>លំដាប់ <span class="mi">\(2\)</span> ។ <span class="mi">\(B = \begin{bmatrix} 5 &amp; 10 &amp; -9\\ -7 &amp; 0 &amp; 2\\ 3 &amp; -8 &amp; 13 \end{bmatrix}\)</span> មាន <span class="mi">\(3\)</span> ជួរដេកនិង <span class="mi">\(3\)</span> ជួរឈរ គេថាម៉ាទ្រីស <span class="mi">\(B\)</span> ជាម៉ាទ្រីសការេលំដាប់ <span class="mi">\(3\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ម៉ាទ្រីសការេ ជាម៉ាទ្រីសមានចំនួនជួរដេកស្មើនឹងចំនួនជួរឈរ ដោយ <div class="md">\[A_{n \times n} = \begin{bmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{bmatrix}\]</div> ហៅថាម៉ាទ្រីសការេលំដាប់ <span class="mi">\(n\)</span> ដែល <span class="mi">\(a_{11}, a_{22}, a_{33}, \ldots, a_{nn}\)</span> ជាធាតុនៅលើអង្កត់ទ្រូងពិសេស ។</p>
+</div></section>
+<p><strong>ម៉ាទ្រីសឯកតា</strong> ៖ ម៉ាទ្រីសការេដែលធាតុនៅលើអង្កត់ទ្រូងពិសេស <span class="mi">\(a_{11} = a_{22} = a_{33} = \ldots = a_{nn} = 1\)</span> ហើយធាតុផ្សេងទៀតស្មើនឹងសូន្យ ហៅថាម៉ាទ្រីសឯកតាតាងដោយ <span class="mi">\(I\)</span> ដែល <div class="md">\[I = \begin{bmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{bmatrix}, \quad{} I = \begin{bmatrix} 1 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}, \quad{} I = \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix} \text{ ។}\]</div></p>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>សរសេរម៉ាទ្រីសការេ <span class="mi">\(4 \times 4\)</span> ។</p></li>
+<li><p>ម៉ាទ្រីសសូន្យ <span class="mi">\(2 \times 3\)</span> និងម៉ាទ្រីសសូន្យ <span class="mi">\(1 \times 2\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olnum cols1">
+<li><p>ឧទាហរណ៍ <span class="mi">\(\begin{bmatrix} 1 &amp; 5 &amp; 3 &amp; 4\\ 2 &amp; 3 &amp; 7 &amp; 3\\ 5 &amp; 6 &amp; 8 &amp; 2\\ 3 &amp; 4 &amp; 2 &amp; 1 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 \end{bmatrix}\)</span>,  <span class="mi">\(\begin{bmatrix} 0 &amp; 0 \end{bmatrix}\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u2">ប្រមាណវិធីលើម៉ាទ្រីស</h3>
+<h4>ម៉ាទ្រីសស្មើគ្នា</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 3 &amp; 23 &amp; 0\\ 12 &amp; -5 &amp; 6 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} b_{11} &amp; b_{12} &amp; b_{13}\\ b_{21} &amp; b_{22} &amp; b_{23} \end{bmatrix}\)</span> មានលំដាប់ <span class="mi">\(2 \times 3\)</span> ដូចគ្នា ។ បើ <span class="mi">\(b_{11} = 3\)</span>, <span class="mi">\(b_{12} = 23\)</span>, <span class="mi">\(b_{13} = 0\)</span>, <span class="mi">\(b_{21} = 12\)</span>, <span class="mi">\(b_{22} = -5\)</span>, <span class="mi">\(b_{23} = 6\)</span> នោះគេថាម៉ាទ្រីស <span class="mi">\(A\)</span> ស្មើនឹង <span class="mi">\(B\)</span> ។ គេសរសេរ <span class="mi">\(A = B\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ម៉ាទ្រីសពីរស្មើគ្នា កាលណាម៉ាទ្រីសទាំងពីរមានលំដាប់ដូចគ្នានិងមានធាតុត្រូវគ្នាស្មើរៀងគ្នា ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(a, b, c, n\)</span> និង <span class="mi">\(m\)</span> ដើម្បីឱ្យម៉ាទ្រីស <span class="mi">\(M = N\)</span> <div class="md">\[M = \begin{bmatrix} c &amp; 23 &amp; 0 &amp; 9\\ 12 &amp; -5 &amp; n &amp; 4\\ a &amp; 18 &amp; 2 &amp; 32 \end{bmatrix}, \qquad{} N = \begin{bmatrix} 2 &amp; 23 &amp; m &amp; 9\\ 12 &amp; b &amp; 6 &amp; 4\\ 15 &amp; 18 &amp; 2 &amp; 32 \end{bmatrix} \text{ ។}\]</div></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ម៉ាទ្រីស <span class="mi">\(M = N\)</span> កាលណា <span class="mi">\(c = 2\)</span>, <span class="mi">\(m = 0\)</span>, <span class="mi">\(b = -5\)</span>, <span class="mi">\(n = 6\)</span> និង <span class="mi">\(a = 15\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ៣</b></header><div class="bx-b">
+<p>តើគូនីមួយៗនៃម៉ាទ្រីសខាងក្រោមនេះអាចស្មើគ្នាឬទេ? បើស្មើគ្នាតើស្មើក្នុងករណីណា? ហើយបើមិនស្មើគ្នាព្រោះអ្វី?</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\begin{bmatrix} a &amp; 0\\ 12 &amp; d \end{bmatrix}\)</span> និង <span class="mi">\(\begin{bmatrix} 5 &amp; b\\ 12 &amp; -3 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 3 &amp; -5 &amp; 6\\ 14 &amp; 8 &amp; -2 \end{bmatrix}\)</span> និង <span class="mi">\(\begin{bmatrix} 3 &amp; -5 &amp; 6\\ 41 &amp; 8 &amp; -2 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 2 &amp; -1 &amp; 4 \end{bmatrix}\)</span> និង <span class="mi">\(\begin{bmatrix} 2\\ -1\\ 4 \end{bmatrix}\)</span> ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\begin{bmatrix} a &amp; 0\\ 12 &amp; d \end{bmatrix} = \begin{bmatrix} 5 &amp; b\\ 12 &amp; -3 \end{bmatrix}\)</span> បើ <span class="mi">\(a = 5\)</span>, <span class="mi">\(b = 0\)</span>, <span class="mi">\(d = -3\)</span> ។</p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 3 &amp; -5 &amp; 6\\ 14 &amp; 8 &amp; -2 \end{bmatrix} \ne \begin{bmatrix} 3 &amp; -5 &amp; 6\\ 41 &amp; 8 &amp; -2 \end{bmatrix}\)</span> ព្រោះធាតុនៅជួរដេកទី <span class="mi">\(2\)</span> និងជួរឈរទី <span class="mi">\(1\)</span> នៃម៉ាទ្រីសទាំងពីរខុសគ្នា ។</p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 2 &amp; -1 &amp; 4 \end{bmatrix} \ne \begin{bmatrix} 2\\ -1\\ 4 \end{bmatrix}\)</span> ព្រោះមានលំដាប់ខុសគ្នា ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>រកតម្លៃ <span class="mi">\(a, b, c\)</span> និង <span class="mi">\(d\)</span> បើ <span class="mi">\(\begin{bmatrix} a &amp; 2b\\ c &amp; 6 \end{bmatrix} = \begin{bmatrix} -2d &amp; d\\ 4 &amp; 3a \end{bmatrix}\)</span> ។</p></li>
+<li><p>រកតម្លៃអថេរចំពោះសមភាពនីមួយៗខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{bmatrix} -2 &amp; 3\\ a &amp; 4 \end{bmatrix} = \begin{bmatrix} b &amp; 3\\ 5 &amp; c \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} a &amp; 5 &amp; 2\\ 3 &amp; 9 &amp; 2 \end{bmatrix} = \begin{bmatrix} 0 &amp; c &amp; -1\\ d &amp; 9 &amp; 2 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} a\\ c\\ b \end{bmatrix} = \begin{bmatrix} 30\\ 60\\ 50 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} x &amp; y\\ 9 &amp; -2\\ 3 &amp; 4 \end{bmatrix} = \begin{bmatrix} 5 &amp; -8\\ c &amp; -2\\ 3 &amp; d \end{bmatrix}\)</span> ។</p></li>
+</ol></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olnum cols1">
+<li><p><span class="mi">\(a = 2\)</span>, <span class="mi">\(b = -\dfrac{1}{2}\)</span>, <span class="mi">\(c = 4\)</span>, <span class="mi">\(d = -1\)</span> ។</p></li>
+<li><p>ក. <span class="mi">\(a = 5\)</span>, <span class="mi">\(b = -2\)</span>, <span class="mi">\(c = 4\)</span> ខ. គ្មានចម្លើយ (ព្រោះ <span class="mi">\(2 \ne -1\)</span>) ; បើមិនគិតធាតុនោះ <span class="mi">\(a = 0\)</span>, <span class="mi">\(c = 5\)</span>, <span class="mi">\(d = 3\)</span> គ. <span class="mi">\(a = 30\)</span>, <span class="mi">\(b = 50\)</span>, <span class="mi">\(c = 60\)</span> ឃ. <span class="mi">\(x = 5\)</span>, <span class="mi">\(y = -8\)</span>, <span class="mi">\(c = 9\)</span>, <span class="mi">\(d = 4\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h4>វិធីបូកនិងវិធីដកនៃម៉ាទ្រីស</h4>
+<p><strong>វិធីបូកនៃម៉ាទ្រីស</strong></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>តារាងនីមួយៗបង្ហាញពីចំនួនផលិតផល <span class="mi">\(3\)</span> ប្រភេទ <span class="mi">\(M, N\)</span> និង <span class="mi">\(S\)</span> ដែលផលិតដោយម៉ាស៊ីនពីរនៅខែកុម្ភៈនិងខែមីនា ។ <div class="md">\[\begin{array}{|l|c|c|c|}\hline
+\text{ខែកុម្ភៈ} &amp; M &amp; N &amp; S\\ \hline
+\text{ម៉ាស៊ីនទី } 1 &amp; 30 &amp; 20 &amp; 25\\ \hline
+\text{ម៉ាស៊ីនទី } 2 &amp; 35 &amp; 25 &amp; 23\\ \hline
+\end{array}
+\qquad{}
+\begin{array}{|l|c|c|c|}\hline
+\text{ខែមីនា} &amp; M &amp; N &amp; S\\ \hline
+\text{ម៉ាស៊ីនទី } 1 &amp; 35 &amp; 28 &amp; 20\\ \hline
+\text{ម៉ាស៊ីនទី } 2 &amp; 40 &amp; 21 &amp; 30\\ \hline
+\end{array}\]</div> គេបានម៉ាទ្រីសតំណាងផលិតផលនៅខែកុម្ភៈនិងខែមីនា <span class="mi">\(A = \begin{bmatrix} 30 &amp; 20 &amp; 25\\ 35 &amp; 25 &amp; 23 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 35 &amp; 28 &amp; 20\\ 40 &amp; 21 &amp; 30 \end{bmatrix}\)</span> ។</p>
+<p>ចំនួនផលិតផលសរុបទាំងពីរខែចំពោះ ម៉ាស៊ីនទី <span class="mi">\(1\)</span> ៖ <span class="mi">\(M = 30 + 35 = 65\)</span>, <span class="mi">\(N = 20 + 28 = 48\)</span>, <span class="mi">\(S = 25 + 20 = 45\)</span> ; ម៉ាស៊ីនទី <span class="mi">\(2\)</span> ៖ <span class="mi">\(M = 35 + 40 = 75\)</span>, <span class="mi">\(N = 25 + 21 = 46\)</span>, <span class="mi">\(S = 23 + 30 = 53\)</span> ។</p>
+<p>ម៉ាទ្រីសតំណាងផលិតផលសរុបទាំងពីរខែគឺ <div class="md">\[C = \begin{bmatrix} 30 + 35 &amp; 20 + 28 &amp; 25 + 20\\ 35 + 40 &amp; 25 + 21 &amp; 23 + 30 \end{bmatrix} = \begin{bmatrix} 65 &amp; 48 &amp; 45\\ 75 &amp; 46 &amp; 53 \end{bmatrix} \text{ ។}\]</div> គេឃើញថាម៉ាទ្រីស <span class="mi">\(C\)</span> ជាផលបូកនៃម៉ាទ្រីស <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។ គេសរសេរ <span class="mi">\(A + B = C\)</span> ហើយម៉ាទ្រីស <span class="mi">\(A, B\)</span> និង <span class="mi">\(C\)</span> មានលំដាប់ដូចគ្នា ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ម៉ាទ្រីសពីរអាចបូកគ្នាបានលុះត្រាតែម៉ាទ្រីសទាំងពីរនោះមានលំដាប់ដូចគ្នា ហើយគេបូកធាតុត្រូវគ្នារៀងគ្នា ។</p>
+</div></section>
+<p><strong>លក្ខណៈនៃវិធីបូកម៉ាទ្រីស</strong></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 2 &amp; -3 &amp; 4\\ 1 &amp; 0 &amp; -1 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 3 &amp; 9 &amp; 0\\ 4 &amp; -1 &amp; 8 \end{bmatrix}\)</span>, <span class="mi">\(C = \begin{bmatrix} 4 &amp; 2\\ 1 &amp; 3 \end{bmatrix}\)</span>, <span class="mi">\(D = \begin{bmatrix} 1 &amp; 6\\ 7 &amp; 12 \end{bmatrix}\)</span> និង <span class="mi">\(E = \begin{bmatrix} 1 &amp; -2\\ -2 &amp; 3 \end{bmatrix}\)</span> ។ គេបាន <div class="md">\[A + B = \begin{bmatrix} 5 &amp; 6 &amp; 4\\ 5 &amp; -1 &amp; 7 \end{bmatrix} = B + A\]</div> ដូច្នេះ <span class="mi">\(A + B = B + A\)</span> (វិធីបូកម៉ាទ្រីសមានលក្ខណៈត្រឡប់) ។ <div class="md">\[\begin{gathered}
+(C + D) + E = \begin{bmatrix} 5 &amp; 8\\ 8 &amp; 15 \end{bmatrix} + \begin{bmatrix} 1 &amp; -2\\ -2 &amp; 3 \end{bmatrix} = \begin{bmatrix} 6 &amp; 6\\ 6 &amp; 18 \end{bmatrix},\\
+C + (D + E) = \begin{bmatrix} 4 &amp; 2\\ 1 &amp; 3 \end{bmatrix} + \begin{bmatrix} 2 &amp; 4\\ 5 &amp; 15 \end{bmatrix} = \begin{bmatrix} 6 &amp; 6\\ 6 &amp; 18 \end{bmatrix}
+\end{gathered}\]</div> ដូច្នេះ <span class="mi">\((C + D) + E = C + (D + E)\)</span> (វិធីបូកម៉ាទ្រីសមានលក្ខណៈផ្តុំ) ។ <div class="md">\[A + O = \begin{bmatrix} 2 &amp; -3 &amp; 4\\ 1 &amp; 0 &amp; -1 \end{bmatrix} + \begin{bmatrix} 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 \end{bmatrix} = \begin{bmatrix} 2 &amp; -3 &amp; 4\\ 1 &amp; 0 &amp; -1 \end{bmatrix} = O + A\]</div> ដូច្នេះ <span class="mi">\(A + O = O + A = A\)</span> (ម៉ាទ្រីសសូន្យជាម៉ាទ្រីសណឺតចំពោះវិធីបូក) ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>លក្ខណៈ</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A + B = B + A\)</span> (លក្ខណៈត្រលប់)</p></li>
+<li><p><span class="mi">\((C + D) + E = C + (D + E)\)</span> (លក្ខណៈផ្តុំ)</p></li>
+<li><p><span class="mi">\(A + O = O + A = A\)</span> (លក្ខណៈណឺត) ។</p></li>
+</ol>
+</div></section>
+<p><strong>វិធីដកនៃម៉ាទ្រីស</strong></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ៣</b></header><div class="bx-b">
+<p>តារាងនេះបង្ហាញពីផលិតផល <span class="mi">\(3\)</span> ប្រភេទដែលត្រូវនាំចូលនិងលក់ចេញរបស់សាខា <span class="mi">\(2\)</span> ក្នុងក្រុមហ៊ុនមួយ ។ <div class="md">\[\begin{array}{|l|c|c|c|}\hline
+\text{នាំចូល} &amp; \text{ម៉ាញ៉េ} &amp; \text{ទូរទស្សន៍} &amp; \text{ទូរទឹកកក}\\ \hline
+\text{សាខាទី } 1 &amp; 1000 &amp; 500 &amp; 100\\ \hline
+\text{សាខាទី } 2 &amp; 600 &amp; 300 &amp; 200\\ \hline
+\end{array}\]</div> <div class="md">\[\begin{array}{|l|c|c|c|}\hline
+\text{លក់ចេញ} &amp; \text{ម៉ាញ៉េ} &amp; \text{ទូរទស្សន៍} &amp; \text{ទូរទឹកកក}\\ \hline
+\text{សាខាទី } 1 &amp; 850 &amp; 450 &amp; 80\\ \hline
+\text{សាខាទី } 2 &amp; 480 &amp; 280 &amp; 150\\ \hline
+\end{array}\]</div> ម៉ាទ្រីសតំណាងផលិតផលនាំចូលគឺ <span class="mi">\(A = \begin{bmatrix} 1000 &amp; 500 &amp; 100\\ 600 &amp; 300 &amp; 200 \end{bmatrix}\)</span> ។ ម៉ាទ្រីសតំណាងផលិតផលលក់ចេញគឺ <span class="mi">\(B = \begin{bmatrix} 850 &amp; 450 &amp; 80\\ 480 &amp; 280 &amp; 150 \end{bmatrix}\)</span> ។</p>
+<p>ផលិតផលដែលនៅសល់ក្រោយពីបានលក់ចេញគឺ ៖ សាខាទី <span class="mi">\(1\)</span> ៖ ម៉ាញ៉េ <span class="mi">\(1000 - 850 = 150\)</span>, ទូរទស្សន៍ <span class="mi">\(500 - 450 = 50\)</span>, ទូរទឹកកក <span class="mi">\(100 - 80 = 20\)</span> ; សាខាទី <span class="mi">\(2\)</span> ៖ ម៉ាញ៉េ <span class="mi">\(600 - 480 = 120\)</span>, ទូរទស្សន៍ <span class="mi">\(300 - 280 = 20\)</span>, ទូរទឹកកក <span class="mi">\(200 - 150 = 50\)</span> ។</p>
+<p>ម៉ាទ្រីសតំណាងផលិតផលដែលនៅសល់ក្នុងសាខាទាំងពីរគឺ <div class="md">\[\begin{aligned}
+C &amp;= \begin{bmatrix} 1000 - 850 &amp; 500 - 450 &amp; 100 - 80\\ 600 - 480 &amp; 300 - 280 &amp; 200 - 150 \end{bmatrix}\\
+&amp;= \begin{bmatrix} 150 &amp; 50 &amp; 20\\ 120 &amp; 20 &amp; 50 \end{bmatrix}
+\end{aligned}\]</div> គេសរសេរ <span class="mi">\(A - B = C\)</span> ដែលម៉ាទ្រីស <span class="mi">\(A\)</span>, <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> មានលំដាប់ដូចគ្នា ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ម៉ាទ្រីសពីរដកគ្នាបាន លុះត្រាតែម៉ាទ្រីសទាំងពីរមានលំដាប់ដូចគ្នា ហើយគេដកធាតុត្រូវគ្នារៀងគ្នា ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ៤</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 4 &amp; 2 &amp; 6\\ 1 &amp; 3 &amp; 7 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 3 &amp; 9 &amp; 0\\ 4 &amp; -1 &amp; -8 \end{bmatrix}\)</span> និង <span class="mi">\(C = \begin{bmatrix} -1 &amp; 0\\ 5 &amp; 2 \end{bmatrix}\)</span> ។ គណនាប្រមាណវិធីលើម៉ាទ្រីសខាងក្រោមបើអាច ក. <span class="mi">\(A - B\)</span> ខ. <span class="mi">\(B - C\)</span> គ. គណនាម៉ាទ្រីស <span class="mi">\(X\)</span> បើ <span class="mi">\(A + X = B\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A - B = \begin{bmatrix} 4 &amp; 2 &amp; 6\\ 1 &amp; 3 &amp; 7 \end{bmatrix} - \begin{bmatrix} 3 &amp; 9 &amp; 0\\ 4 &amp; -1 &amp; -8 \end{bmatrix} = \begin{bmatrix} 1 &amp; -7 &amp; 6\\ -3 &amp; 4 &amp; 15 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(B - C\)</span> មិនអាចធ្វើបាន ព្រោះ <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> មានលំដាប់ខុសគ្នា</p></li>
+<li><p><span class="mi">\(A + X = B\)</span>, <span class="mi">\(A + X - A = B - A\)</span> ឬ <span class="mi">\(X + O = B - A\)</span> ។ គេបាន <span class="mi">\(X = B - A = \begin{bmatrix} -1 &amp; 7 &amp; -6\\ 3 &amp; -4 &amp; -15 \end{bmatrix}\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} -1 &amp; 4\\ 2 &amp; 3\\ 9 &amp; 5 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 2 &amp; 1\\ -3 &amp; 7\\ 10 &amp; 6 \end{bmatrix}\)</span>, <span class="mi">\(C = \begin{bmatrix} 3 &amp; -2\\ 7 &amp; -4 \end{bmatrix}\)</span>, <span class="mi">\(D = \begin{bmatrix} 1 &amp; 5\\ -13 &amp; 4 \end{bmatrix}\)</span> ។ គណនា ក. <span class="mi">\(A + B\)</span>  ខ. <span class="mi">\(B - A\)</span>  គ. <span class="mi">\(B + D\)</span>  ឃ. <span class="mi">\(C + D\)</span>  ង. <span class="mi">\(A - B\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(\begin{bmatrix} 1 &amp; 5\\ -1 &amp; 10\\ 19 &amp; 11 \end{bmatrix}\)</span> ខ. <span class="mi">\(\begin{bmatrix} 3 &amp; -3\\ -5 &amp; 4\\ 1 &amp; 1 \end{bmatrix}\)</span> គ. មិនអាចគណនាបាន ឃ. <span class="mi">\(\begin{bmatrix} 4 &amp; 3\\ -6 &amp; 0 \end{bmatrix}\)</span> ង. <span class="mi">\(\begin{bmatrix} -3 &amp; 3\\ 5 &amp; -4\\ -1 &amp; -1 \end{bmatrix}\)</span> ។</p></details>
+</div></section>
+<h4>ផលគុណមួយចំនួនពិតនឹងម៉ាទ្រីស</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 2 &amp; 3\\ 1 &amp; -5 \end{bmatrix}\)</span> ។ គេបាន <div class="md">\[\begin{aligned}
+A + A &amp;= 2A = \begin{bmatrix} 2 &amp; 3\\ 1 &amp; -5 \end{bmatrix} + \begin{bmatrix} 2 &amp; 3\\ 1 &amp; -5 \end{bmatrix} = \begin{bmatrix} 4 &amp; 6\\ 2 &amp; -10 \end{bmatrix}\\
+&amp;= \begin{bmatrix} 2 \times 2 &amp; 2 \times 3\\ 2 \times 1 &amp; 2(-5) \end{bmatrix} \text{ ។}
+\end{aligned}\]</div> ដូចគ្នាដែលគេបាន <span class="mi">\(3A = A + A + A = \begin{bmatrix} 6 &amp; 9\\ 3 &amp; -15 \end{bmatrix} = \begin{bmatrix} 3 \times 2 &amp; 3 \times 3\\ 3 \times 1 &amp; 3(-5) \end{bmatrix}\)</span> ។</p>
+<p>បើ <span class="mi">\(k\)</span> ជាចំនួនពិតនោះ <span class="mi">\(kA = k\begin{bmatrix} 2 &amp; 3\\ 1 &amp; -5 \end{bmatrix} = \begin{bmatrix} 2k &amp; 3k\\ k &amp; -5k \end{bmatrix}\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើគេមានចំនួនពិត <span class="mi">\(k\)</span> និងម៉ាទ្រីស <span class="mi">\(A\)</span> នោះម៉ាទ្រីស <span class="mi">\(Ak\)</span> បានដោយគុណធាតុនីមួយៗនៃម៉ាទ្រីស <span class="mi">\(A\)</span> នឹងចំនួនពិត <span class="mi">\(k\)</span> ។ បើ <span class="mi">\(A = \begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix}\)</span> នោះ <div class="md">\[kA = Ak = k\begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix} = \begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix}k = \begin{bmatrix} ka &amp; kb\\ kc &amp; kd \end{bmatrix} \text{ ។}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 4 &amp; 1\\ 2 &amp; -3 \end{bmatrix}\)</span> និង <span class="mi">\(B = \begin{bmatrix} 2 &amp; -1\\ 1 &amp; 4 \end{bmatrix}\)</span>, <span class="mi">\(k\)</span> និង <span class="mi">\(h\)</span> ជាចំនួនពិត ។ គេបាន</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(k(A + B) = k\left\{\begin{bmatrix} 4 &amp; 1\\ 2 &amp; -3 \end{bmatrix} + \begin{bmatrix} 2 &amp; -1\\ 1 &amp; 4 \end{bmatrix}\right\} = k\begin{bmatrix} 6 &amp; 0\\ 3 &amp; 1 \end{bmatrix} = \begin{bmatrix} 6k &amp; 0\\ 3k &amp; k \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(kA + kB = \begin{bmatrix} 4k &amp; k\\ 2k &amp; -3k \end{bmatrix} + \begin{bmatrix} 2k &amp; -k\\ k &amp; 4k \end{bmatrix} = \begin{bmatrix} 6k &amp; 0\\ 3k &amp; k \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\((kh)A = kh\begin{bmatrix} 4 &amp; 1\\ 2 &amp; -3 \end{bmatrix} = \begin{bmatrix} 4kh &amp; kh\\ 2kh &amp; -3kh \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(k(hA) = k\begin{bmatrix} 4h &amp; h\\ 2h &amp; -3h \end{bmatrix} = \begin{bmatrix} 4kh &amp; kh\\ 2kh &amp; -3kh \end{bmatrix}\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេបាន 1. <span class="mi">\(k(A + B) = kA + kB\)</span> 2. <span class="mi">\((kh)A = k(hA)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ៥</b></header><div class="bx-b">
+<p>ម៉ាទ្រីស <span class="mi">\(A\)</span> បង្ហាញពីប្រាក់កម្រៃប្រចាំថ្ងៃរបស់កម្មករនិងកម្មករជំនាញធ្វើការនៅការដ្ឋានទី <span class="mi">\(1\)</span> និងការដ្ឋានទី <span class="mi">\(2\)</span> ពីថ្ងៃច័ន្ទដល់ថ្ងៃសុក្រ ។ ម៉ាទ្រីស <span class="mi">\(B\)</span> ជាប្រាក់កម្រៃប្រចាំថ្ងៃរបស់ពួកគេសម្រាប់ថ្ងៃសៅរ៍និងថ្ងៃអាទិត្យ (គិតជារៀល) ។ (ជួរឈរ ៖ កម្មករ, កម្មករជំនាញ ; ជួរដេក ៖ ការដ្ឋានទី <span class="mi">\(1\)</span>, ទី <span class="mi">\(2\)</span>) <div class="md">\[A = \begin{bmatrix} 7000 &amp; 13000\\ 8000 &amp; 14000 \end{bmatrix}, \qquad{} B = \begin{bmatrix} 8000 &amp; 14000\\ 9000 &amp; 15500 \end{bmatrix}\]</div> គណនាម៉ាទ្រីស <span class="mi">\(5A + 2B\)</span> ។ តើម៉ាទ្រីស <span class="mi">\(5A + 2B\)</span> បង្ហាញពីព័ត៌មានអ្វី?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{aligned}
+5A + 2B &amp;= \begin{bmatrix} 35000 &amp; 65000\\ 40000 &amp; 70000 \end{bmatrix} + \begin{bmatrix} 16000 &amp; 28000\\ 18000 &amp; 31000 \end{bmatrix}\\
+&amp;= \begin{bmatrix} 51000 &amp; 93000\\ 58000 &amp; 101000 \end{bmatrix} \text{ ។}
+\end{aligned}\]</div> ម៉ាទ្រីសនេះបង្ហាញពីប្រាក់កម្រៃក្នុង <span class="mi">\(1\)</span> អាទិត្យរបស់កម្មករ និងកម្មករជំនាញធ្វើការនៅការដ្ឋានទី <span class="mi">\(1\)</span> និងការដ្ឋានទី <span class="mi">\(2\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 3 &amp; 21\\ 16 &amp; -4\\ 3 &amp; 8 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 9 &amp; -24\\ -9 &amp; 14\\ -7 &amp; 9 \end{bmatrix}\)</span>, <span class="mi">\(C = \begin{bmatrix} 4 &amp; 9\\ 3 &amp; 10 \end{bmatrix}\)</span> និង <span class="mi">\(D = \begin{bmatrix} 5 &amp; 5\\ -13 &amp; 5 \end{bmatrix}\)</span> ។ រកម៉ាទ្រីសខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(3A + B\)</span></p></li>
+<li><p><span class="mi">\(B - A + C\)</span></p></li>
+<li><p><span class="mi">\(2C + 5C - 4D\)</span></p></li>
+<li><p><span class="mi">\(-A + 3(B - A)\)</span></p></li>
+<li><p><span class="mi">\(2(3C) - 7D\)</span></p></li>
+<li><p><span class="mi">\(-A + 2(D + C)\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(\begin{bmatrix} 18 &amp; 39\\ 39 &amp; 2\\ 2 &amp; 33 \end{bmatrix}\)</span> ខ. មិនអាចគណនាបាន ព្រោះមានលំដាប់ខុសគ្នា គ. <span class="mi">\(\begin{bmatrix} 8 &amp; 43\\ 73 &amp; 50 \end{bmatrix}\)</span> ឃ. <span class="mi">\(\begin{bmatrix} 15 &amp; -156\\ -91 &amp; 58\\ -33 &amp; -5 \end{bmatrix}\)</span> ង. <span class="mi">\(\begin{bmatrix} -11 &amp; 19\\ 109 &amp; 25 \end{bmatrix}\)</span> ច. មិនអាចគណនាបាន ។</p></details>
+</div></section>
+<h4>វិធីគុណនៃពីរម៉ាទ្រីស</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>សុខត្រូវការទិញសៀវភៅ <span class="mi">\(18\)</span> ក្បាល ប៊ិក <span class="mi">\(12\)</span> ដើម និងខ្មៅដៃ <span class="mi">\(11\)</span> ដើម ។ សៅត្រូវការទិញសៀវភៅ <span class="mi">\(16\)</span> ក្បាល ប៊ិក <span class="mi">\(20\)</span> ដើម និងខ្មៅដៃ <span class="mi">\(10\)</span> ដើម ។ គេដឹងថាតូបទី <span class="mi">\(1\)</span> លក់សៀវភៅមួយក្បាលថ្លៃ <span class="mi">\(7\)</span> រយរៀល ប៊ិកមួយដើមថ្លៃ <span class="mi">\(4\)</span> រយរៀល និងខ្មៅដៃមួយដើមថ្លៃ <span class="mi">\(2\)</span> រយរៀល រីឯតូបទី <span class="mi">\(2\)</span> លក់សៀវភៅមួយថ្លៃ <span class="mi">\(6\)</span> រយរៀល ប៊ិកមួយដើមថ្លៃ <span class="mi">\(5\)</span> រយរៀលនិងខ្មៅដៃមួយដើមថ្លៃ <span class="mi">\(2\)</span> រយរៀល ។ គេចង់ដឹងថ្លៃទិញរបស់ម្នាក់ៗក្នុងករណីដែលគេទិញនៅតូបទី <span class="mi">\(1\)</span> ឬនៅតូបទី <span class="mi">\(2\)</span> ។</p>
+<p>ថ្លៃទិញរបស់សុខ ៖ នៅតូបទី <span class="mi">\(1 = 18(7) + 12(4) + 11(2) = 196\)</span>,  នៅតូបទី <span class="mi">\(2 = 18(6) + 12(5) + 11(2) = 190\)</span> ។</p>
+<p>ថ្លៃទិញរបស់សៅ ៖ នៅតូបទី <span class="mi">\(1 = 16(7) + 20(4) + 10(2) = 212\)</span>,  នៅតូបទី <span class="mi">\(2 = 16(6) + 20(5) + 10(2) = 216\)</span> ។</p>
+<p>ដើម្បីងាយសិក្សា គេអាចបកស្រាយទិន្នន័យនេះជាម៉ាទ្រីស ៖ ម៉ាទ្រីសទំនិញ (ជួរដេក ៖ សុខ, សៅ ; ជួរឈរ ៖ សៀវភៅ ប៊ិក ខ្មៅដៃ) និងម៉ាទ្រីសតម្លៃឯកតា (ជួរដេក ៖ ស ប ខ ; ជួរឈរ ៖ តូបទី <span class="mi">\(1\)</span>, តូបទី <span class="mi">\(2\)</span>) ។ ដោយថ្លៃទិញជាផលគុណនៃបរិមាណទំនិញ និងតម្លៃទំនិញក្នុង <span class="mi">\(1\)</span> ឯកតា នោះម៉ាទ្រីសថ្លៃទិញជាផលគុណនៃម៉ាទ្រីសទំនិញនិងម៉ាទ្រីសតម្លៃក្នុង <span class="mi">\(1\)</span> ឯកតា ។ គេសរសេរ ៖ <div class="md">\[\begin{aligned}
+&amp;\begin{bmatrix} 18 &amp; 12 &amp; 11\\ 16 &amp; 20 &amp; 10 \end{bmatrix} \times \begin{bmatrix} 7 &amp; 6\\ 4 &amp; 5\\ 2 &amp; 2 \end{bmatrix}\\
+&amp;= \begin{bmatrix} 18(7) + 12(4) + 11(2) &amp; 18(6) + 12(5) + 11(2)\\ 16(7) + 20(4) + 10(2) &amp; 16(6) + 20(5) + 10(2) \end{bmatrix}
+\end{aligned}\]</div> បើគេតាង <span class="mi">\(A\)</span> ជាម៉ាទ្រីសទំនិញ <span class="mi">\(B\)</span> ជាម៉ាទ្រីសតម្លៃក្នុង <span class="mi">\(1\)</span> ឯកតា និង <span class="mi">\(P\)</span> ជាម៉ាទ្រីសថ្លៃទំនិញនោះគេបាន <span class="mi">\(A \times B = P\)</span> ។</p>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>សង្កេត</b></header><div class="bx-b">
+<p><span class="mi">\(18(7) + 12(4) + 11(2)\)</span> ជាធាតុទី <span class="mi">\(1\)</span> នៃម៉ាទ្រីសផលគុណ ទីតាំងឋិតនៅត្រង់ជួរដេកទី <span class="mi">\(1\)</span> និងជួរឈរទី <span class="mi">\(1\)</span> ។ ធាតុនេះជាផលបូករបស់ផលគុណតួនៃជួរដេកទី <span class="mi">\(1\)</span> (នៃម៉ាទ្រីសទី <span class="mi">\(1\)</span>) និងជួរឈរទី <span class="mi">\(1\)</span> (នៃម៉ាទ្រីសទី <span class="mi">\(2\)</span>) ។ តាមលំនាំនេះ គេមានវិធានក្នុងការគណនាផលគុណនៃពីរម៉ាទ្រីស ៖ ធាតុនៅជួរដេកទី <span class="mi">\(i\)</span> និងជួរឈរទី <span class="mi">\(j\)</span> នៃផលគុណ គឺជាផលបូកនៃផលគុណធាតុនៃជួរដេកទី <span class="mi">\(i\)</span> នៃម៉ាទ្រីសទី <span class="mi">\(1\)</span> និងធាតុនៃជួរឈរទី <span class="mi">\(j\)</span> នៃម៉ាទ្រីសទី <span class="mi">\(2\)</span> ។</p>
+</div></section>
+<p>ដូច្នេះ បើម៉ាទ្រីស <span class="mi">\(A\)</span> មានលំដាប់ <span class="mi">\(2 \times 3\)</span>, <span class="mi">\(B\)</span> មានលំដាប់ <span class="mi">\(3 \times 2\)</span> នោះលំដាប់នៃផលគុណម៉ាទ្រីសគឺ <span class="mi">\(2 \times 2\)</span> ៖ <div class="md">\[\begin{gathered}
+\underset{2 \times 3}{A} \times \underset{3 \times 2}{B} = \underset{2 \times 2}{P}\\
+(\text{ចំនួនជួរឈររបស់ } A = \text{ចំនួនជួរដេករបស់ } B)
+\end{gathered}\]</div></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេអាចគុណម៉ាទ្រីសនឹងម៉ាទ្រីសបាន កាលណាចំនួនជួរឈរនៃម៉ាទ្រីសទី <span class="mi">\(1\)</span> ស្មើនឹងចំនួនជួរដេកនៃម៉ាទ្រីសទី <span class="mi">\(2\)</span> ៖ <span class="mi">\(\underset{m \times n}{A} \times \underset{n \times c}{B} = \underset{m \times c}{P}\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ៦</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} -1 &amp; 2\\ 3 &amp; -6 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 2 &amp; 1\\ -3 &amp; 7 \end{bmatrix}\)</span>, <span class="mi">\(C = \begin{bmatrix} 3 &amp; -2 &amp; 1\\ 2 &amp; 4 &amp; -6 \end{bmatrix}\)</span>, <span class="mi">\(D = \begin{bmatrix} 4 &amp; 2\\ 2 &amp; 1 \end{bmatrix}\)</span> និងម៉ាទ្រីស <span class="mi">\(I = \begin{bmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{bmatrix}\)</span> ។ គណនាម៉ាទ្រីស ក. <span class="mi">\(AB\)</span>, <span class="mi">\(BA\)</span>  ខ. <span class="mi">\((AB)C\)</span>, <span class="mi">\(A(BC)\)</span>  គ. <span class="mi">\((A + B)C\)</span>, <span class="mi">\(AC + BC\)</span>  ឃ. <span class="mi">\(AI\)</span>, <span class="mi">\(IA\)</span> រួចប្រៀបធៀបគូនីមួយៗ ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(AB = \begin{bmatrix} -1 &amp; 2\\ 3 &amp; -6 \end{bmatrix}\begin{bmatrix} 2 &amp; 1\\ -3 &amp; 7 \end{bmatrix} = \begin{bmatrix} -8 &amp; 13\\ 24 &amp; -39 \end{bmatrix}\)</span>,  <span class="mi">\(BA = \begin{bmatrix} 2 &amp; 1\\ -3 &amp; 7 \end{bmatrix}\begin{bmatrix} -1 &amp; 2\\ 3 &amp; -6 \end{bmatrix} = \begin{bmatrix} 1 &amp; -2\\ 24 &amp; -48 \end{bmatrix}\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(AB \ne BA\)</span> (វិធីគុណម៉ាទ្រីសគ្មានលក្ខណៈត្រឡប់ទេ) ។</p></li>
+<li><p><span class="mi">\((AB)C = \begin{bmatrix} -8 &amp; 13\\ 24 &amp; -39 \end{bmatrix}\begin{bmatrix} 3 &amp; -2 &amp; 1\\ 2 &amp; 4 &amp; -6 \end{bmatrix} = \begin{bmatrix} 2 &amp; 68 &amp; -86\\ -6 &amp; -204 &amp; 258 \end{bmatrix}\)</span></p>
+<p><span class="mi">\(A(BC) = \begin{bmatrix} -1 &amp; 2\\ 3 &amp; -6 \end{bmatrix}\begin{bmatrix} 8 &amp; 0 &amp; -4\\ 5 &amp; 34 &amp; -45 \end{bmatrix} = \begin{bmatrix} 2 &amp; 68 &amp; -86\\ -6 &amp; -204 &amp; 258 \end{bmatrix}\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\((AB)C = A(BC)\)</span> (វិធីគុណម៉ាទ្រីសមានលក្ខណៈផ្តុំ) ។</p></li>
+<li><p><span class="mi">\((A + B)C = \begin{bmatrix} 1 &amp; 3\\ 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 3 &amp; -2 &amp; 1\\ 2 &amp; 4 &amp; -6 \end{bmatrix} = \begin{bmatrix} 9 &amp; 10 &amp; -17\\ 2 &amp; 4 &amp; -6 \end{bmatrix}\)</span></p>
+<p><span class="mi">\(AC + BC = \begin{bmatrix} 1 &amp; 10 &amp; -13\\ -3 &amp; -30 &amp; 39 \end{bmatrix} + \begin{bmatrix} 8 &amp; 0 &amp; -4\\ 5 &amp; 34 &amp; -45 \end{bmatrix} = \begin{bmatrix} 9 &amp; 10 &amp; -17\\ 2 &amp; 4 &amp; -6 \end{bmatrix}\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\((A + B)C = AC + BC\)</span> (វិធីគុណម៉ាទ្រីសមានលក្ខណៈបំបែកចំពោះវិធីបូក) ។</p></li>
+<li><p><span class="mi">\(AI = \begin{bmatrix} -1 &amp; 2\\ 3 &amp; -6 \end{bmatrix}\begin{bmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} -1 &amp; 2\\ 3 &amp; -6 \end{bmatrix} = A\)</span>,  <span class="mi">\(IA = A\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(AI = IA = A\)</span> (ម៉ាទ្រីសឯកតាជាម៉ាទ្រីសណឺតចំពោះវិធីគុណម៉ាទ្រីស) ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ៧</b></header><div class="bx-b">
+<p>សុខមានរថយន្តធំ <span class="mi">\(7\)</span> មធ្យម <span class="mi">\(2\)</span> និងតូច <span class="mi">\(4\)</span> សៅមានរថយន្តធំ <span class="mi">\(5\)</span> មធ្យម <span class="mi">\(6\)</span> និងតូច <span class="mi">\(3\)</span> ។ រថយន្តរបស់អ្នកទាំងពីរបម្រើសេវាដឹកនាំភ្ញៀវទេសចរ ម្តងទៅប្រទេសថៃនិងម្តងទៀតទៅប្រទេសវៀតណាម ។ គេកំណត់តម្លៃដឹកទៅប្រទេសថៃ គឺក្នុងមួយលើក រថយន្តធំ <span class="mi">\(900\$\)</span> មធ្យម <span class="mi">\(700\$\)</span> និងតូច <span class="mi">\(500\$\)</span> រីឯប្រទេសវៀតណាម រថយន្តធំ <span class="mi">\(600\$\)</span> មធ្យម <span class="mi">\(500\$\)</span> និងតូច <span class="mi">\(400\$\)</span> ។ រកម៉ាទ្រីសដែលទាក់ទងទៅនឹងថ្លៃដឹកភ្ញៀវក្នុងមួយលើកសម្រាប់ប្រទេសនីមួយៗរបស់សុខនិងសៅ ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ម៉ាទ្រីសដែលទាក់ទងទៅនឹងចំនួនរថយន្តតាមប្រភេទរថយន្ត និងម្ចាស់រថយន្ត (ជួរដេក ៖ សុខ, សៅ ; ជួរឈរ ៖ ធំ មធ្យម តូច) គឺ <span class="mi">\(\begin{bmatrix} 7 &amp; 2 &amp; 4\\ 5 &amp; 6 &amp; 3 \end{bmatrix}\)</span> ។</p>
+<p>គេបាន ម៉ាទ្រីសចំនួនរថយន្តតាមប្រភេទ <span class="mi">\(\times\)</span> ម៉ាទ្រីសតម្លៃដឹកតាមប្រភេទ <span class="mi">\(=\)</span> ម៉ាទ្រីសថ្លៃដឹក ៖ <div class="md">\[\begin{aligned}
+\begin{bmatrix} 7 &amp; 2 &amp; 4\\ 5 &amp; 6 &amp; 3 \end{bmatrix} \times \begin{bmatrix} 900 &amp; 600\\ 700 &amp; 500\\ 500 &amp; 400 \end{bmatrix} &amp;\\
+&amp;= \begin{bmatrix} 9700 &amp; 6800\\ 10200 &amp; 7200 \end{bmatrix} \ (\text{ជួរឈរ ៖ ថៃ, វៀតណាម})
+\end{aligned}\]</div> គេអាចគណនាបានមួយបែបទៀត <span class="mi">\(\begin{bmatrix} 900 &amp; 700 &amp; 500\\ 600 &amp; 500 &amp; 400 \end{bmatrix} \times \begin{bmatrix} 7 &amp; 5\\ 2 &amp; 6\\ 4 &amp; 3 \end{bmatrix} = \begin{bmatrix} 9700 &amp; 10200\\ 6800 &amp; 7200 \end{bmatrix}\)</span> ។</p>
+<p>ម៉ាទ្រីសដែលបានគណនាទាំងពីរបែបនេះអាចឱ្យដឹងថា ថ្លៃដឹករបស់សុខសម្រាប់ប្រទេសថៃ <span class="mi">\(9700\$\)</span> និងប្រទេសវៀតណាម <span class="mi">\(6800\$\)</span> ចំណែកឯថ្លៃដឹករបស់សៅប្រទេសថៃ <span class="mi">\(10200\$\)</span> និងប្រទេសវៀតណាម <span class="mi">\(7200\$\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>សិស្សបីនាក់មានឈ្មោះ <span class="mi">\(A, B\)</span> និង <span class="mi">\(C\)</span> ដោះស្រាយលំហាត់ <span class="mi">\(8\)</span> ។ សិស្ស <span class="mi">\(A\)</span> ឆ្លើយត្រឹមត្រូវល្អបាន <span class="mi">\(4\)</span> សំណួរ ត្រូវខ្លះបាន <span class="mi">\(1\)</span> សំណួរ និងខុស <span class="mi">\(3\)</span> សំណួរ <span class="mi">\(B\)</span> សិស្សឆ្លើយត្រឹមត្រូវល្អបាន <span class="mi">\(5\)</span> សំណួរ ត្រូវខ្លះបាន <span class="mi">\(2\)</span> សំណួរ និងខុស <span class="mi">\(1\)</span> សំណួរ រីឯសិស្ស <span class="mi">\(C\)</span> ឆ្លើយត្រឹមត្រូវល្អបាន <span class="mi">\(2\)</span> សំណួរ ត្រូវខ្លះបាន <span class="mi">\(4\)</span> សំណួរ និងខុស <span class="mi">\(2\)</span> សំណួរ ។ គេសន្មតថា ចម្លើយត្រឹមត្រូវបានពិន្ទុ <span class="mi">\(3\)</span> ត្រូវខ្លះបានពិន្ទុ <span class="mi">\(1\)</span> និងខុសបានពិន្ទុ <span class="mi">\(0\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញចំនួនចម្លើយរបស់សិស្សម្នាក់ៗ ជាម៉ាទ្រីសនិងពិន្ទុរបស់ចម្លើយជាម៉ាទ្រីស ។</p></li>
+<li><p>រកម៉ាទ្រីសពិន្ទុសរុបរបស់សិស្សម្នាក់ៗ ។</p></li>
+</ol></li>
+<li><p>គេឱ្យម៉ាទ្រីស <span class="mi">\(C = \begin{bmatrix} 1 &amp; a\\ b &amp; 6 \end{bmatrix}\)</span> និង <span class="mi">\(D = \begin{bmatrix} 2 &amp; -3\\ 0 &amp; 8 \end{bmatrix}\)</span> ។ ក. គណនា <span class="mi">\(4C - 3D\)</span> ខ. រកតម្លៃ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> បើ <span class="mi">\(DC = 8C\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olnum cols1">
+<li><p>ក. <span class="mi">\(\begin{bmatrix} 4 &amp; 1 &amp; 3\\ 5 &amp; 2 &amp; 1\\ 2 &amp; 4 &amp; 2 \end{bmatrix}\)</span> (ជួរដេក <span class="mi">\(A, B, C\)</span>), ពិន្ទុ <span class="mi">\(\begin{bmatrix} 3\\ 1\\ 0 \end{bmatrix}\)</span> ខ. <span class="mi">\(\begin{bmatrix} 4 &amp; 1 &amp; 3\\ 5 &amp; 2 &amp; 1\\ 2 &amp; 4 &amp; 2 \end{bmatrix}\begin{bmatrix} 3\\ 1\\ 0 \end{bmatrix} = \begin{bmatrix} 13\\ 17\\ 10 \end{bmatrix}\)</span> ។</p></li>
+<li><p>ក. <span class="mi">\(4C - 3D = \begin{bmatrix} -2 &amp; 4a + 9\\ 4b &amp; 0 \end{bmatrix}\)</span> ខ. <span class="mi">\(a = -3\)</span>, <span class="mi">\(b = -2\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u3">ម៉ាទ្រីសច្រាស</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>គេមានម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 3 &amp; 4\\ 1 &amp; 2 \end{bmatrix}\)</span> និង <span class="mi">\(B = \begin{bmatrix} 1 &amp; -2\\ -\frac{1}{2} &amp; \frac{3}{2} \end{bmatrix}\)</span> ជាម៉ាទ្រីសការេលំដាប់ <span class="mi">\(2\)</span> ។ គណនា <span class="mi">\(AB\)</span> និង <span class="mi">\(BA\)</span> ។ <div class="md">\[\begin{gathered}
+AB = \begin{bmatrix} 3 &amp; 4\\ 1 &amp; 2 \end{bmatrix}\begin{bmatrix} 1 &amp; -2\\ -\frac{1}{2} &amp; \frac{3}{2} \end{bmatrix} = \begin{bmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{bmatrix} = I\\
+\text{និង}\\
+BA = \begin{bmatrix} 1 &amp; -2\\ -\frac{1}{2} &amp; \frac{3}{2} \end{bmatrix}\begin{bmatrix} 3 &amp; 4\\ 1 &amp; 2 \end{bmatrix} = \begin{bmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{bmatrix} = I \text{ ។}
+\end{gathered}\]</div> គេសង្កេតឃើញថា <span class="mi">\(AB = BA = I\)</span> ។ <span class="mi">\(B\)</span> ហៅថាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស <span class="mi">\(A\)</span> ។ គេកំណត់សរសេរ ៖ <span class="mi">\(A^{-1}\)</span> ជាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស <span class="mi">\(A\)</span> ។ ដូច្នេះ <span class="mi">\(A^{-1} = \begin{bmatrix} 1 &amp; -2\\ -\frac{1}{2} &amp; \frac{3}{2} \end{bmatrix} = \dfrac{1}{2}\begin{bmatrix} 2 &amp; -4\\ -1 &amp; 3 \end{bmatrix}\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>គេមានម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix}\)</span> និង <span class="mi">\(M = \begin{bmatrix} d &amp; -b\\ -c &amp; a \end{bmatrix}\)</span> ដែល <span class="mi">\(ad - bc \ne 0\)</span> ។ ក. គណនា <span class="mi">\(AM\)</span> និង <span class="mi">\(MA\)</span> ។ ខ. រកម៉ាទ្រីស <span class="mi">\(B\)</span> បើ <span class="mi">\(AB = BA = I\)</span> ដែល <span class="mi">\(I\)</span> ជាម៉ាទ្រីសឯកតាលំដាប់ <span class="mi">\(2\)</span> ។</p>
+<p><strong>ដំណោះស្រាយ</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(AM = \begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix}\begin{bmatrix} d &amp; -b\\ -c &amp; a \end{bmatrix} = \begin{bmatrix} ad - bc &amp; 0\\ 0 &amp; ad - bc \end{bmatrix} = (ad - bc)\begin{bmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{bmatrix} = (ad - bc)I\)</span></p>
+<p><span class="mi">\(MA = \begin{bmatrix} d &amp; -b\\ -c &amp; a \end{bmatrix}\begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix} = \begin{bmatrix} ad - bc &amp; 0\\ 0 &amp; ad - bc \end{bmatrix} = (ad - bc)I\)</span></p></li>
+<li><p>បើ <span class="mi">\(AM = (ad - bc)I\)</span> នោះ <span class="mi">\(I = \dfrac{1}{ad - bc}AM\)</span>  <span class="mi">\((ad - bc \ne 0)\)</span> ។ ដោយ <span class="mi">\(AB = I\)</span>, <span class="mi">\(AB = \dfrac{1}{ad - bc}AM\)</span> ៖ <span class="mi">\(B = \dfrac{1}{ad - bc}M = \dfrac{1}{ad - bc}\begin{bmatrix} d &amp; -b\\ -c &amp; a \end{bmatrix}\)</span> ។</p>
+<p>បើ <span class="mi">\(MA = (ad - bc)I\)</span>, <span class="mi">\(I = \dfrac{1}{ad - bc}MA\)</span> ។ ដោយ <span class="mi">\(BA = I\)</span>, <span class="mi">\(BA = \dfrac{1}{ad - bc}MA\)</span> ៖ <span class="mi">\(B = \dfrac{1}{ad - bc}M\)</span> ។</p>
+<p>ដូច្នេះ បើ <span class="mi">\(AB = BA = I\)</span> នោះ <span class="mi">\(B = \dfrac{1}{ad - bc}\begin{bmatrix} d &amp; -b\\ -c &amp; a \end{bmatrix}\)</span> ។ គេថា <span class="mi">\(\dfrac{1}{ad - bc}\begin{bmatrix} d &amp; -b\\ -c &amp; a \end{bmatrix}\)</span> ជាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix}\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<ul>
+<li><p>បើម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} a &amp; b\\ c &amp; d \end{bmatrix}\)</span> ដែល <span class="mi">\(ad - bc \ne 0\)</span> នោះម៉ាទ្រីសច្រាសនៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(A^{-1} = \dfrac{1}{ad - bc}\begin{bmatrix} d &amp; -b\\ -c &amp; a \end{bmatrix}\)</span> ។</p></li>
+<li><p>បើ <span class="mi">\(ad - bc = 0\)</span> នោះ <span class="mi">\(A\)</span> គ្មានម៉ាទ្រីសច្រាសទេ ។</p></li>
+<li><p>បើ <span class="mi">\(A^{-1}\)</span> ជាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស <span class="mi">\(A\)</span> នោះគេបាន <span class="mi">\(AA^{-1} = A^{-1}A = I\)</span> ។</p></li>
+</ul>
+</div></section>
+<h3 id="u4">ទំព័រសៀវភៅដើម</h3><details class="ans sol-all"><summary>បើកមើលទំព័រសៀវភៅពុម្ព</summary><div class="pdf-note">មេរៀននេះបង្ហាញជាទំព័រពីសៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី ១១ (ថ្នាក់វិទ្យាសាស្ត្រសង្គម) ទំព័រ ១២៥–១៤៣។</div><figure class="bk-page" id="p125"><img src="pages/ss-p125.webp" alt="ទំព័រ ១២៥" loading="lazy" width="1100"><figcaption>ទំព័រ ១២៥</figcaption></figure><figure class="bk-page" id="p126"><img src="pages/ss-p126.webp" alt="ទំព័រ ១២៦" loading="lazy" width="1100"><figcaption>ទំព័រ ១២៦</figcaption></figure><figure class="bk-page" id="p127"><img src="pages/ss-p127.webp" alt="ទំព័រ ១២៧" loading="lazy" width="1100"><figcaption>ទំព័រ ១២៧</figcaption></figure><figure class="bk-page" id="p128"><img src="pages/ss-p128.webp" alt="ទំព័រ ១២៨" loading="lazy" width="1100"><figcaption>ទំព័រ ១២៨</figcaption></figure><figure class="bk-page" id="p129"><img src="pages/ss-p129.webp" alt="ទំព័រ ១២៩" loading="lazy" width="1100"><figcaption>ទំព័រ ១២៩</figcaption></figure><figure class="bk-page" id="p130"><img src="pages/ss-p130.webp" alt="ទំព័រ ១៣០" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣០</figcaption></figure><figure class="bk-page" id="p131"><img src="pages/ss-p131.webp" alt="ទំព័រ ១៣១" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣១</figcaption></figure><figure class="bk-page" id="p132"><img src="pages/ss-p132.webp" alt="ទំព័រ ១៣២" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣២</figcaption></figure><figure class="bk-page" id="p133"><img src="pages/ss-p133.webp" alt="ទំព័រ ១៣៣" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣៣</figcaption></figure><figure class="bk-page" id="p134"><img src="pages/ss-p134.webp" alt="ទំព័រ ១៣៤" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣៤</figcaption></figure><figure class="bk-page" id="p135"><img src="pages/ss-p135.webp" alt="ទំព័រ ១៣៥" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣៥</figcaption></figure><figure class="bk-page" id="p136"><img src="pages/ss-p136.webp" alt="ទំព័រ ១៣៦" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣៦</figcaption></figure><figure class="bk-page" id="p137"><img src="pages/ss-p137.webp" alt="ទំព័រ ១៣៧" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣៧</figcaption></figure><figure class="bk-page" id="p138"><img src="pages/ss-p138.webp" alt="ទំព័រ ១៣៨" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣៨</figcaption></figure><figure class="bk-page" id="p139"><img src="pages/ss-p139.webp" alt="ទំព័រ ១៣៩" loading="lazy" width="1100"><figcaption>ទំព័រ ១៣៩</figcaption></figure><figure class="bk-page" id="p140"><img src="pages/ss-p140.webp" alt="ទំព័រ ១៤០" loading="lazy" width="1100"><figcaption>ទំព័រ ១៤០</figcaption></figure><figure class="bk-page" id="p141"><img src="pages/ss-p141.webp" alt="ទំព័រ ១៤១" loading="lazy" width="1100"><figcaption>ទំព័រ ១៤១</figcaption></figure><figure class="bk-page" id="p142"><img src="pages/ss-p142.webp" alt="ទំព័រ ១៤២" loading="lazy" width="1100"><figcaption>ទំព័រ ១៤២</figcaption></figure><figure class="bk-page" id="p143"><img src="pages/ss-p143.webp" alt="ទំព័រ ១៤៣" loading="lazy" width="1100"><figcaption>ទំព័រ ១៤៣</figcaption></figure></details><h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ទិន្នន័យក្នុងហាងលក់ភេសជ្ជៈមួយបង្ហាញថា នៅថ្ងៃសុក្រគេលក់កាហ្វេបាន <span class="mi">\(160\)</span> កែវ តែក្រូចឆ្មារ <span class="mi">\(125\)</span> កែវ និងតែបៃតង <span class="mi">\(210\)</span> កែវ ។ នៅថ្ងៃសៅរ៍ គេលក់កាហ្វេបាន <span class="mi">\(145\)</span> កែវ តែក្រូចឆ្មារ <span class="mi">\(130\)</span> កែវ និងតែបៃតង <span class="mi">\(275\)</span> កែវ និងថ្ងៃអាទិត្យលក់កាហ្វេបាន <span class="mi">\(120\)</span> កែវ តែក្រូចឆ្មារ <span class="mi">\(155\)</span> កែវ និងតែបៃតង <span class="mi">\(325\)</span> កែវ ។ ចូរបង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសនិងប្រាប់លំដាប់នៃម៉ាទ្រីសនេះ ។</p>
+</div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គណនាម៉ាទ្រីសខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{bmatrix} 6 &amp; -2\\ 5 &amp; -1\\ 4 &amp; 6 \end{bmatrix} + \begin{bmatrix} 1 &amp; 0\\ -3 &amp; 7\\ 2 &amp; -5 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 1 &amp; 8 &amp; 9\\ 13 &amp; 21 &amp; 4 \end{bmatrix} + \begin{bmatrix} 3 &amp; 0\\ -8 &amp; 9\\ 5 &amp; 10 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 3 &amp; 2\\ 4 &amp; 1 \end{bmatrix} + \begin{bmatrix} 1 &amp; -3\\ 7 &amp; 5 \end{bmatrix} - \begin{bmatrix} 2 &amp; -4\\ 8 &amp; 2 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} -2 &amp; 3 &amp; 1\\ 3 &amp; 2 &amp; 5 \end{bmatrix} - 3\begin{bmatrix} 1 &amp; 6 &amp; -3\\ 5 &amp; 2 &amp; 1 \end{bmatrix}\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 3 &amp; 21\\ 16 &amp; -4\\ 3 &amp; 8 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 9 &amp; 12\\ -9 &amp; 14\\ -7 &amp; 9 \end{bmatrix}\)</span>, <span class="mi">\(C = \begin{bmatrix} 4 &amp; -9\\ 3 &amp; 10 \end{bmatrix}\)</span> និង <span class="mi">\(D = \begin{bmatrix} 5 &amp; 1\\ -13 &amp; 5 \end{bmatrix}\)</span> ។ គណនា ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(3A + B\)</span></p></li>
+<li><p><span class="mi">\(B - A + C\)</span></p></li>
+<li><p><span class="mi">\(2C + 5C - 4D\)</span></p></li>
+<li><p><span class="mi">\(-A + 3(B - A)\)</span></p></li>
+<li><p><span class="mi">\(2(3C) - 7D\)</span></p></li>
+<li><p><span class="mi">\(-A + 2(D + C)\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គណនា ក. <span class="mi">\(\begin{bmatrix} 12 &amp; 4 &amp; -2\\ 2 &amp; -3 &amp; 1 \end{bmatrix}\begin{bmatrix} 2 &amp; -1\\ 7 &amp; 4\\ 6 &amp; 5 \end{bmatrix}\)</span> ខ. <span class="mi">\(\begin{bmatrix} 3 &amp; -2 &amp; 4 \end{bmatrix}\begin{bmatrix} 29\\ 5\\ 6 \end{bmatrix} + \begin{bmatrix} 15 \end{bmatrix}\)</span> ។</p>
+</div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\begin{bmatrix} 0 &amp; 1\\ -2 &amp; 0 \end{bmatrix}\begin{bmatrix} b &amp; -7\\ a &amp; 0 \end{bmatrix} = \begin{bmatrix} 1 &amp; 2\\ 0 &amp; -1 \end{bmatrix} + \begin{bmatrix} 0 &amp; -2\\ 6 &amp; 3c \end{bmatrix}\)</span> ។ រកតម្លៃ <span class="mi">\(a, b\)</span> និង <span class="mi">\(c\)</span> ។</p>
+</div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គេដឹងថាតម្លៃសំបុត្រចូលទស្សនាពិព័រណ៍មួយសន្លឹកសម្រាប់កូនក្មេង <span class="mi">\(2000\)</span> ៛ មនុស្សចាស់ <span class="mi">\(5000\)</span> ៛ និងជនបរទេស <span class="mi">\(10000\)</span> ៛ ។ ចំនួនសំបុត្រដែលបានលក់នៅចុងសប្តាហ៍កន្លងទៅនេះមានសង្ខេបក្នុងតារាងខាងក្រោម ៖ <div class="md">\[\begin{array}{|l|c|c|c|}\hline
+   &amp; \text{កូនក្មេង} &amp; \text{មនុស្សចាស់} &amp; \text{ជនបរទេស}\\ \hline
+  \text{ថ្ងៃសៅរ៍} &amp; 205 &amp; 160 &amp; 70\\ \hline
+  \text{ថ្ងៃអាទិត្យ} &amp; 310 &amp; 200 &amp; 65\\ \hline
+  \end{array}\]</div></p>
+<ol class="list olka cols1">
+<li><p>តាងតម្លៃសំបុត្រជាម៉ាទ្រីសជួរឈរ <span class="mi">\(C\)</span> ។</p></li>
+<li><p>តាងព័ត៌មានក្នុងតារាងខាងលើជាម៉ាទ្រីស <span class="mi">\(N\)</span> ។</p></li>
+<li><p>គណនាផលគុណ <span class="mi">\(NC\)</span> ។ តើធាតុរបស់ម៉ាទ្រីស <span class="mi">\(NC\)</span> តាងឱ្យអ្វី?</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេមានម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 4 &amp; 2\\ 0 &amp; 3 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} \frac{1}{4} &amp; k\\ 0 &amp; \frac{1}{3} \end{bmatrix}\)</span>, <span class="mi">\(C = \begin{bmatrix} 12 &amp; 4\\ -9 &amp; m \end{bmatrix}\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>គណនា <span class="mi">\(A^2\)</span> និង <span class="mi">\(A^{-1}\)</span> ដែលជាម៉ាទ្រីសច្រាសនៃ <span class="mi">\(A\)</span></p></li>
+<li><p>រកតម្លៃ <span class="mi">\(k\)</span> ដើម្បីឱ្យ <span class="mi">\(AB\)</span> ជាម៉ាទ្រីសឯកតា</p></li>
+<li><p>រកតម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យដេទែរមីណង់ <span class="mi">\(A\)</span> ស្មើនឹងដេទែរមីណង់ <span class="mi">\(C\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេឱ្យម៉ាទ្រីស <span class="mi">\(A = \begin{bmatrix} 2 &amp; 1\\ -5 &amp; -4 \end{bmatrix}\)</span>, <span class="mi">\(B = \begin{bmatrix} 3 &amp; -1\\ -1 &amp; 1 \end{bmatrix}\)</span> ។ គណនា</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(AB\)</span> និង <span class="mi">\((AB)^{-1}\)</span></p></li>
+<li><p><span class="mi">\(A^{-1}\)</span>, <span class="mi">\(B^{-1}\)</span>, <span class="mi">\(B^{-1}A^{-1}\)</span></p></li>
+<li><p>តើអ្នកសង្កេតឃើញយ៉ាងណាចំពោះ <span class="mi">\((AB)^{-1}\)</span> និង <span class="mi">\(B^{-1}A^{-1}\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>រកម៉ាទ្រីស <span class="mi">\(X\)</span> ដែល ក. <span class="mi">\(\begin{bmatrix} 5 &amp; -2\\ -3 &amp; 2 \end{bmatrix}X = \begin{bmatrix} -11\\ 9 \end{bmatrix}\)</span> ខ. <span class="mi">\(\begin{bmatrix} 1 &amp; 1\\ 1 &amp; 1 \end{bmatrix}X = 2\begin{bmatrix} 3 &amp; 1\\ -1 &amp; -1 \end{bmatrix}\)</span> ។</p>
+</div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(p\)</span>, <span class="mi">\(q\)</span>, <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ដែលផ្ទៀងផ្ទាត់</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\begin{bmatrix} 10 &amp; 3\\ -3 &amp; -1 \end{bmatrix}\begin{bmatrix} p\\ q \end{bmatrix} = \begin{bmatrix} 4\\ -1 \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} 4 &amp; -3\\ 2 &amp; -1 \end{bmatrix}\begin{bmatrix} a\\ -1 \end{bmatrix} = \begin{bmatrix} 15\\ b \end{bmatrix}\)</span></p></li>
+<li><p><span class="mi">\(\begin{bmatrix} -1 &amp; a\\ b &amp; 1 \end{bmatrix}\begin{bmatrix} 2 &amp; -1\\ -1 &amp; 2 \end{bmatrix} = \begin{bmatrix} 1 &amp; 5\\ 3 &amp; 0 \end{bmatrix}\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ក្នុងសមីការ <span class="mi">\(M\begin{bmatrix} 1 &amp; 0\\ 2 &amp; 3 \end{bmatrix} = \begin{bmatrix} -1 &amp; -2\\ 0 &amp; -1\\ 2 &amp; 3 \end{bmatrix}\)</span> ចូរប្រាប់លំដាប់នៃម៉ាទ្រីស <span class="mi">\(M\)</span> និងរកម៉ាទ្រីស <span class="mi">\(M\)</span> ។</p>
+</div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៣៨ ម៉ាទ្រីស (វិទ្យាសាស្ត្រសង្គម)</b> — ២០ សំណួរ · ៣៥ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=bk_g11_L38">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L37.html"><small>← មេរៀនមុន</small><b>សមីការនិងវិសមីការត្រីកោណមាត្រ</b></a><a class="next" href="L39.html"><small>មេរៀនបន្ទាប់ →</small><b>ដេទែរមីណង់</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ម៉ាទ្រីស <span class=\"mi\">\\(\\begin{bmatrix} 1 & 2 & 3\\\\ 4 & 5 & 6 \\end{bmatrix}\\)<\/span> មានលំដាប់ ៖", "options": ["<span class=\"mi\">\\(3 \\times 2\\)<\/span>", "<span class=\"mi\">\\(6 \\times 1\\)<\/span>", "<span class=\"mi\">\\(2 \\times 2\\)<\/span>", "<span class=\"mi\">\\(2 \\times 3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(2\\)<\/span> ជួរដេក និង <span class=\"mi\">\\(3\\)<\/span> ជួរឈរ ។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ធាតុ <span class=\"mi\">\\(a_{21}\\)<\/span> នៃម៉ាទ្រីស <span class=\"mi\">\\(A = \\begin{bmatrix} 1 & 2 & 3\\\\ 4 & 5 & 6 \\end{bmatrix}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ជួរដេកទី ២ ជួរឈរទី ១ ។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ម៉ាទ្រីសការេលំដាប់ <span class=\"mi\">\\(n\\)<\/span> មានជួរដេកនិងជួរឈរ ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span> ជួរដេក និង <span class=\"mi\">\\(n\\)<\/span> ជួរឈរ", "<span class=\"mi\">\\(n^2\\)<\/span> ជួរដេក", "<span class=\"mi\">\\(n\\)<\/span> ជួរដេក និង <span class=\"mi\">\\(1\\)<\/span> ជួរឈរ", "<span class=\"mi\">\\(n\\)<\/span> ជួរដេក និង <span class=\"mi\">\\(n\\)<\/span> ជួរឈរ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "និយមន័យម៉ាទ្រីសការេ ។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ម៉ាទ្រីសឯកតាលំដាប់ ២ គឺ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} 1 & 0\\\\ 0 & 1 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 0 & 0\\\\ 0 & 0 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 0 & 1\\\\ 1 & 0 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 1\\\\ 1 & 1 \\end{bmatrix}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ធាតុអង្កត់ទ្រូងមេស្មើ <span class=\"mi\">\\(1\\)<\/span> ធាតុផ្សេងស្មើ <span class=\"mi\">\\(0\\)<\/span> ។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 2\\\\ 3 & 4 \\end{bmatrix} + \\begin{bmatrix} 5 & 6\\\\ 7 & 8 \\end{bmatrix}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} 4 & 4\\\\ 4 & 4 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 6 & 10\\\\ 8 & 12 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 6 & 8\\\\ 10 & 12 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 5 & 12\\\\ 21 & 32 \\end{bmatrix}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "បូកធាតុត្រូវគ្នា ។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(3\\begin{bmatrix} 2 & -1\\\\ 0 & 4 \\end{bmatrix}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} 6 & -3\\\\ 3 & 12 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 6 & -1\\\\ 0 & 4 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 6 & -3\\\\ 0 & 12 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 5 & 2\\\\ 3 & 7 \\end{bmatrix}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "គុណធាតុនីមួយៗនឹង <span class=\"mi\">\\(3\\)<\/span> ។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ម៉ាទ្រីសពីរអាចបូកគ្នាបាន លុះត្រាតែ ៖", "options": ["វាមានលំដាប់ដូចគ្នា", "ចំនួនជួរឈរទី ១ ស្មើចំនួនជួរដេកទី ២", "វាជាម៉ាទ្រីសការេ", "ដេទែរមីណង់ខុសពីសូន្យ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ការបូកធ្វើលើធាតុត្រូវគ្នា ។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(AB\\)<\/span> កំណត់បាន លុះត្រាតែ ៖", "options": ["<span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> ជាម៉ាទ្រីសការេ", "<span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> មានលំដាប់ដូចគ្នា", "ចំនួនជួរឈររបស់ <span class=\"mi\">\\(A\\)<\/span> ស្មើចំនួនជួរដេករបស់ <span class=\"mi\">\\(B\\)<\/span>", "ចំនួនជួរដេករបស់ <span class=\"mi\">\\(A\\)<\/span> ស្មើចំនួនជួរឈររបស់ <span class=\"mi\">\\(B\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\((m \\times n)(n \\times p)\\)<\/span> ។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A\\)<\/span> មានលំដាប់ <span class=\"mi\">\\(2 \\times 3\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> មានលំដាប់ <span class=\"mi\">\\(3 \\times 4\\)<\/span> នោះ <span class=\"mi\">\\(AB\\)<\/span> មានលំដាប់ ៖", "options": ["មិនកំណត់", "<span class=\"mi\">\\(2 \\times 4\\)<\/span>", "<span class=\"mi\">\\(3 \\times 3\\)<\/span>", "<span class=\"mi\">\\(4 \\times 2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\((2 \\times 3)(3 \\times 4) = 2 \\times 4\\)<\/span> ។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 2\\\\ 3 & 4 \\end{bmatrix}\\begin{bmatrix} 1\\\\ 1 \\end{bmatrix}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} 3\\\\ 7 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 3 & 7 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 4\\\\ 6 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 2\\\\ 3 & 4 \\end{bmatrix}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1 + 2 = 3\\)<\/span>, <span class=\"mi\">\\(3 + 4 = 7\\)<\/span> ។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 2\\\\ 0 & 1 \\end{bmatrix}\\begin{bmatrix} 2 & 0\\\\ 1 & 3 \\end{bmatrix}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} 4 & 6\\\\ 1 & 3 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 2 & 4\\\\ 1 & 5 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 2 & 0\\\\ 0 & 3 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 4 & 3\\\\ 1 & 6 \\end{bmatrix}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ជួរដេក × ជួរឈរ ៖ <span class=\"mi\">\\(2 + 2 = 4\\)<\/span>, <span class=\"mi\">\\(0 + 6 = 6\\)<\/span>, <span class=\"mi\">\\(0 + 1 = 1\\)<\/span>, <span class=\"mi\">\\(0 + 3 = 3\\)<\/span> ។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សម្រាប់ម៉ាទ្រីសការេ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> ជាទូទៅ ៖", "options": ["<span class=\"mi\">\\(AB = BA\\)<\/span> ជានិច្ច", "<span class=\"mi\">\\(AB \\ne BA\\)<\/span>", "<span class=\"mi\">\\(AB = 0\\)<\/span>", "<span class=\"mi\">\\(AB = A + B\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលគុណម៉ាទ្រីសមិនប្ដូរលំដាប់បាន ។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(I\\)<\/span> ជាម៉ាទ្រីសឯកតា នោះ <span class=\"mi\">\\(AI\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(I\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(2A\\)<\/span>", "<span class=\"mi\">\\(A\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(AI = IA = A\\)<\/span> ។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\begin{bmatrix} x & 3\\\\ 2 & y \\end{bmatrix} = \\begin{bmatrix} 5 & 3\\\\ 2 & -1 \\end{bmatrix}\\)<\/span> នាំឱ្យ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>, <span class=\"mi\">\\(y = 2\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>, <span class=\"mi\">\\(y = 1\\)<\/span>", "<span class=\"mi\">\\(x = -1\\)<\/span>, <span class=\"mi\">\\(y = 5\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>, <span class=\"mi\">\\(y = -1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ធាតុត្រូវគ្នាស្មើគ្នា ។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ម៉ាទ្រីសច្រាសនៃ <span class=\"mi\">\\(A = \\begin{bmatrix} a & b\\\\ c & d \\end{bmatrix}\\)<\/span> (<span class=\"mi\">\\(ad - bc \\ne 0\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{ad - bc}\\begin{bmatrix} d & -b\\\\ -c & a \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} d & b\\\\ c & a \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{ad + bc}\\begin{bmatrix} d & -b\\\\ -c & a \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{ad - bc}\\begin{bmatrix} a & -b\\\\ -c & d \\end{bmatrix}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "រូបមន្តម៉ាទ្រីសច្រាសលំដាប់ ២ ។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ម៉ាទ្រីសច្រាសនៃ <span class=\"mi\">\\(\\begin{bmatrix} 2 & 1\\\\ 5 & 3 \\end{bmatrix}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} 3 & 1\\\\ 5 & 2 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 2 & -5\\\\ -1 & 3 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 3 & -1\\\\ -5 & 2 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} -3 & 1\\\\ 5 & -2 \\end{bmatrix}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(ad - bc = 6 - 5 = 1\\)<\/span> ។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ម៉ាទ្រីស <span class=\"mi\">\\(\\begin{bmatrix} 2 & 4\\\\ 1 & 2 \\end{bmatrix}\\)<\/span> ៖", "options": ["ជាម៉ាទ្រីសឯកតា", "មានម៉ាទ្រីសច្រាស <span class=\"mi\">\\(\\begin{bmatrix} 2 & -4\\\\ -1 & 2 \\end{bmatrix}\\)<\/span>", "គ្មានម៉ាទ្រីសច្រាស", "ជាម៉ាទ្រីសសូន្យ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(ad - bc = 4 - 4 = 0\\)<\/span> ។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(AX = B\\)<\/span> ហើយ <span class=\"mi\">\\(A\\)<\/span> មានម៉ាទ្រីសច្រាស នោះ <span class=\"mi\">\\(X\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(BA^{-1}\\)<\/span>", "<span class=\"mi\">\\(A^{-1}B\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{B}{A}\\)<\/span>", "<span class=\"mi\">\\(B - A\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "គុណខាងឆ្វេងនឹង <span class=\"mi\">\\(A^{-1}\\)<\/span> ។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(A - B\\)<\/span> ដែល <span class=\"mi\">\\(A = \\begin{bmatrix} 4 & 2\\\\ 1 & 3 \\end{bmatrix}\\)<\/span>, <span class=\"mi\">\\(B = \\begin{bmatrix} 1 & 2\\\\ 3 & 0 \\end{bmatrix}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} -3 & 0\\\\ 2 & -3 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 5 & 4\\\\ 4 & 3 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 3 & 0\\\\ 2 & 3 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 3 & 0\\\\ -2 & 3 \\end{bmatrix}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ដកធាតុត្រូវគ្នា ។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(A^2\\)<\/span> ដែល <span class=\"mi\">\\(A = \\begin{bmatrix} 1 & 1\\\\ 0 & 1 \\end{bmatrix}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\begin{bmatrix} 1 & 0\\\\ 0 & 1 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 1\\\\ 0 & 1 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 2 & 2\\\\ 0 & 2 \\end{bmatrix}\\)<\/span>", "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 2\\\\ 0 & 1 \\end{bmatrix}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\begin{bmatrix} 1 & 1\\\\ 0 & 1 \\end{bmatrix}\\begin{bmatrix} 1 & 1\\\\ 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 1 & 2\\\\ 0 & 1 \\end{bmatrix}\\)<\/span> ។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

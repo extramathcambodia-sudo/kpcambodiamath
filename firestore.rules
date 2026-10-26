@@ -1,0 +1,76 @@
+rules_version = '2';
+// KPCambodianmathematics — Cloud Firestore security rules
+// Teachers sign in with e-mail/password and own their classes.
+// Students sign in anonymously, then prove who they are with class code + PIN (links/{uid}).
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function signed() { return request.auth != null; }
+    function cls(cid) { return get(/databases/$(db)/documents/classes/$(cid)).data; }
+    function isAdmin() { return signed() && exists(/databases/$(db)/documents/admins/$(request.auth.uid)); }
+    function isOwner(cid) { return signed() && (cls(cid).owner == request.auth.uid || isAdmin()); }
+    function linkPath(cid) { return /databases/$(db)/documents/classes/$(cid)/links/$(request.auth.uid); }
+    function linked(cid) { return signed() && exists(linkPath(cid)); }
+    function mySid(cid) { return get(linkPath(cid)).data.sid; }
+
+    match /teachers/{uid} {
+      allow read: if (signed() && request.auth.uid == uid) || isAdmin();
+      allow write: if signed() && request.auth.uid == uid;
+    }
+    // school admins: create admins/{uid} by hand in the Firebase console
+    match /admins/{uid} {
+      allow read: if signed() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /classes/{cid} {
+      // the class code is the secret students need to join
+      allow read: if signed();
+      allow create: if signed() && request.resource.data.owner == request.auth.uid;
+      allow update: if (signed() && resource.data.owner == request.auth.uid && request.resource.data.owner == request.auth.uid)
+        || (isAdmin() && request.resource.data.owner == resource.data.owner);
+      allow delete: if (signed() && resource.data.owner == request.auth.uid) || isAdmin();
+
+      match /students/{sid} {
+        allow read: if signed();
+        allow write: if isOwner(cid);
+      }
+      match /pins/{sid} {
+        allow read, write: if isOwner(cid);
+      }
+      // a student links this anonymous login to a student number by giving the right PIN
+      match /links/{uid} {
+        allow read: if isOwner(cid) || (signed() && request.auth.uid == uid);
+        allow create, update: if signed() && request.auth.uid == uid
+          && request.resource.data.pin == get(/databases/$(db)/documents/classes/$(cid)/pins/$(request.resource.data.sid)).data.pin;
+        allow delete: if isOwner(cid) || (signed() && request.auth.uid == uid);
+      }
+      match /assessments/{aid} {
+        allow read: if isOwner(cid) || linked(cid);
+        allow write: if isOwner(cid);
+      }
+      match /scores/{key} {
+        allow read: if isOwner(cid) || (linked(cid) && resource.data.sid == mySid(cid));
+        allow write: if isOwner(cid);
+        // one online submission per student per open exam; the teacher's page computes the score
+        allow create: if linked(cid)
+          && request.resource.data.sid == mySid(cid)
+          && key == request.resource.data.aid + '_' + request.resource.data.sid
+          && get(/databases/$(db)/documents/classes/$(cid)/assessments/$(request.resource.data.aid)).data.open == true
+          && request.resource.data.score == null
+          && request.resource.data.source == 'online';
+      }
+    }
+
+    // exam papers without answers (students may read them) ...
+    match /papers/{pid} {
+      allow read: if signed();
+      allow create: if signed() && request.resource.data.owner == request.auth.uid;
+      allow update, delete: if signed() && resource.data.owner == request.auth.uid;
+    }
+    // ... and their answer keys (teacher only)
+    match /keys/{pid} {
+      allow read, update, delete: if (signed() && resource.data.owner == request.auth.uid) || isAdmin();
+      allow create: if signed() && request.resource.data.owner == request.auth.uid;
+    }
+  }
+}

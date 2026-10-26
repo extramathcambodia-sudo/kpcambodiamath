@@ -1,0 +1,508 @@
+% ថ្នាក់ទី ១១ (វិទ្យាសាស្ត្រ) · ជំពូកទី ៤ · មេរៀនទី ១ · សៀវភៅទំព័រ ១៦១–១៧៩
+\chapter{ម៉ាទ្រីស}
+
+អ្នកដែលនាំឱ្យមានបញ្ញត្តិម៉ាទ្រីសមុនគេ គឺ Arthur Cayley ។ តាមពិតរបស់ដេទែរមីណង់បានកើតឡើងមុនម៉ាទ្រីស ហើយមានប្រភពនៅក្នុងចម្លើយទូទៅនៃប្រព័ន្ធសមីការលីនេអ៊ែរ ។ ដើមកំណើតនៃដេទែរមីណង់ត្រូវបានសរសេរដោយ Leibniz នៅឆ្នាំ $1678$ ស្របពេលដែលនៅក្នុងប្រទេសជប៉ុន Takakazu Seki បានសម្រេចស្នាដៃដ៏ធំធេងលើនេះក្នុងឆ្នាំ $1680$ ។ នៅក្នុងសតវត្សទី $19$ Cayley, James Sylvester and Ferdinand Frobenius បានសិក្សាទ្រឹស្តីម៉ាទ្រីស និងដេទែរមីណង់យ៉ាងស៊ីជម្រៅ ។ ដោយមានការរីកចម្រើនក្នុងពីជគណិតលីនេអ៊ែរ ម៉ាទ្រីសត្រូវបានគេយកទៅដោះស្រាយក្នុងការបំប្លែងលីនេអ៊ែរ ឬអនុគមន៍លីនេអ៊ែរ ហើយក៏ក្លាយជាបញ្ញត្តិសំខាន់ក្នុងទ្រឹស្តីពីជគណិតលីនេអ៊ែរ ។
+
+\begin{objBox}[វត្ថុបំណង]
+\begin{enumerate}[1]
+  \item កំណត់ម៉ាទ្រីស
+  \item ធ្វើប្រមាណវិធីលើម៉ាទ្រីស
+  \item គណនាម៉ាទ្រីសច្រាសលំដាប់ $2$ ។
+\end{enumerate}
+\end{objBox}
+
+\section{សញ្ញាណនៃម៉ាទ្រីស}
+
+\subsection{និយមន័យ}
+
+\begin{example}[ឧទាហរណ៍]
+ទូតាំងសៀវភៅមួយមានពីរថ្នាក់ដែលថ្នាក់លើ $1$ គេតម្រៀបសៀវភៅបីប្រភេទគឺសៀវភៅគណិតវិទ្យា $13$ ក្បាល រូបវិទ្យា $5$ ក្បាលនិងគីមីវិទ្យា $7$ ក្បាល ។ នៅថ្នាក់ក្រោម $2$ មានសៀវភៅគណិតវិទ្យា $8$ ក្បាល រូបវិទ្យា $10$ ក្បាល និងគីមីវិទ្យា $4$ ក្បាល ។
+\[
+\begin{array}{|l|c|c|c|}\hline
+ & \text{គណិតវិទ្យា} & \text{រូបវិទ្យា} & \text{គីមីវិទ្យា}\\ \hline
+\text{ថ្នាក់លើ} & 13 & 5 & 7\\ \hline
+\text{ថ្នាក់ក្រោម} & 8 & 10 & 4\\ \hline
+\end{array}
+\]
+គេអាចបង្ហាញព័ត៌មាននេះដោយសរសេរចំនួននីមួយៗតាមលំដាប់លំដោយដាក់ក្នុងតង្កៀបជារាងចតុកោណកែង $\begin{bmatrix} 13 & 5 & 7\\ 8 & 10 & 4 \end{bmatrix}$ ។
+
+ការតាងចំនួនដើម្បីបង្ហាញទិន្នន័យបែបនេះហៅថា \textbf{ម៉ាទ្រីស} ។ ចំនួននីមួយៗដែលសរសេរនៅក្នុងតង្កៀបហៅថា \textbf{ធាតុនៃម៉ាទ្រីស} ។ បើម៉ាទ្រីសមានជួរដេកពីរនិងជួរឈរបី នោះគេថាម៉ាទ្រីសមានលំដាប់ $2 \times 3$ ឬមានវិមាត្រ $2 \times 3$ ដែល $2$ ជា\textbf{ចំនួនជួរដេក}ត្រូវសរសេរមុននិង $3$ ជា\textbf{ចំនួនជួរឈរ}ត្រូវសរសេរក្រោយ ។ គេនិយាយថាម៉ាទ្រីសលំដាប់ $2 \times 3$ (អានថា $2$ ខ្វែង $3$) ។
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+ម៉ាទ្រីសគឺជាការរៀបចំនួនជារាងចតុកោណកែងដាក់ក្នុងតង្កៀប ។ គេកំណត់តាងម៉ាទ្រីសដោយអក្សរធំ ដូចជា $A, B, C, \ldots$ និងធាតុនៃម៉ាទ្រីសតាងដោយអក្សរតូច ។ ម៉ាទ្រីស $A$ មានលំដាប់ $m \times n$ កំណត់សរសេរដូចខាងក្រោម ៖
+\[ A_{m \times n} = \begin{bmatrix} a_{11} & a_{12} & a_{13} & \cdots & a_{1n}\\ a_{21} & a_{22} & a_{23} & \cdots & a_{2n}\\ a_{31} & a_{32} & a_{33} & \cdots & a_{3n}\\ \vdots & \vdots & \vdots & & \vdots\\ a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} \end{bmatrix} \]
+\end{formulaBox}
+មានន័យថា ម៉ាទ្រីស $A$ មាន $m$ ជួរដេកនិងមាន $n$ ជួរឈរ ។ $a_{11}$ សម្គាល់ធាតុនៃម៉ាទ្រីស $A$ ស្ថិតនៅជួរដេកទី $1$ និងជួរឈរទី $1$ ។ $a_{12}$ សម្គាល់ធាតុនៃម៉ាទ្រីស $A$ ស្ថិតនៅជួរដេកទី $1$ និងជួរឈរទី $2$ ។ $a_{13}$ សម្គាល់ធាតុនៃម៉ាទ្រីស $A$ ស្ថិតនៅជួរដេកទី $1$ និងជួរឈរទី $3$ \ldots ។
+
+\begin{example}[ឧទាហរណ៍]
+គេមានម៉ាទ្រីស $A = \begin{bmatrix} 3 & -1 & 2 & 4\\ 1 & 0 & 5 & -6\\ -1 & 2 & -3 & 7 \end{bmatrix}$ មាន $3$ ជួរដេក និង $4$ ជួរឈរ គេថាម៉ាទ្រីស $A$ មានលំដាប់ $3 \times 4$ ។
+
+$B = \begin{bmatrix} -4 & 5 & 1 & -2 & 5 \end{bmatrix}$ មាន $1$ ជួរដេក និង $5$ ជួរឈរ គេថាម៉ាទ្រីស $B$ មានលំដាប់ $1 \times 5$ ហៅថា \textbf{ម៉ាទ្រីសជួរដេក} ។
+
+$C = \begin{bmatrix} 2\\ 3\\ -8 \end{bmatrix}$ មាន $3$ ជួរដេកនិង $1$ ជួរឈរ គេថាម៉ាទ្រីស $C$ មានលំដាប់ $3 \times 1$ ហៅថា\textbf{ម៉ាទ្រីសជួរឈរ} ។
+\end{example}
+
+\begin{example}[លំហាត់គំរូ ១]
+អ្នកគ្រប់គ្រងសាលារៀនបានកត់ត្រាចំនួនសិស្សប្រុសនិងសិស្សស្រីដែលបានរៀនភាសាអង់គ្លេសតាម $4$ កម្រិតផ្សេងគ្នា ។ កម្រិត $1$ មានសិស្សប្រុស $105$ នាក់ ស្រី $63$ នាក់ កម្រិត $2$ មានប្រុស $132$ នាក់ ស្រី $89$ នាក់ កម្រិត $3$ មានប្រុស $98$ នាក់ ស្រី $102$ នាក់ កម្រិត $4$ មានប្រុស $92$ នាក់ ស្រី $90$ នាក់ ។ បង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសនិងប្រាប់លំដាប់ម៉ាទ្រីស ។
+\end{example}
+\ans
+គេអាចបង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសបាន $2$ របៀបគឺ (ជួរដេក ៖ សិស្សប្រុស សិស្សស្រី ; ជួរឈរ ៖ កម្រិត $1$–$4$)
+\[
+\begin{gathered}
+\begin{bmatrix} 105 & 132 & 98 & 92\\ 63 & 89 & 102 & 90 \end{bmatrix} \ \text{មានលំដាប់ } 2 \times 4\\
+\begin{bmatrix} 105 & 63\\ 132 & 89\\ 98 & 102\\ 92 & 90 \end{bmatrix} \ \text{មានលំដាប់ } 4 \times 2
+\end{gathered}
+\]
+
+\begin{pro}
+ក្នុងការធ្វើតេស្តគណិតវិទ្យាមានសិស្ស $10$ នាក់បានពិន្ទុល្អ $20$ នាក់បានពិន្ទុមធ្យម និង $12$ បានពិន្ទុខ្សោយ ។ បង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសនិងប្រាប់លំដាប់នៃម៉ាទ្រីសនេះ ។
+\ans
+$\begin{bmatrix} 10 & 20 & 12 \end{bmatrix}$ លំដាប់ $1 \times 3$, \ $\begin{bmatrix} 10\\ 20\\ 12 \end{bmatrix}$ លំដាប់ $3 \times 1$ ។
+\end{pro}
+
+\subsection{ប្រភេទនៃម៉ាទ្រីស}
+
+\textbf{ម៉ាទ្រីសសូន្យ} ៖ ម៉ាទ្រីសដែលមានធាតុទាំងអស់ស្មើនឹងសូន្យ នោះហៅថា ម៉ាទ្រីសសូន្យតាងដោយ $O$ ។
+\[
+\begin{gathered}
+O = \begin{bmatrix} 0 & 0\\ 0 & 0 \end{bmatrix} \ (2 \times 2),\\
+O = \begin{bmatrix} 0 & 0 \end{bmatrix} \ (1 \times 2),\\
+O = \begin{bmatrix} 0\\ 0\\ 0 \end{bmatrix} \ (3 \times 1),\\
+O = \begin{bmatrix} 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 \end{bmatrix} \ (3 \times 5)
+\end{gathered}
+\]
+
+\textbf{ម៉ាទ្រីសការេ} ៖
+\begin{example}[ឧទាហរណ៍]
+គេមានម៉ាទ្រីស $A = \begin{bmatrix} 1 & -3\\ 5 & 7 \end{bmatrix}$ មាន $2$ ជួរដេក និង $2$ ជួរឈរ គេថាម៉ាទ្រីស $A$ ជា\textbf{ម៉ាទ្រីសការេ}លំដាប់ $2$ ។ $B = \begin{bmatrix} 5 & 10 & -9\\ -7 & 0 & 2\\ 3 & -8 & 13 \end{bmatrix}$ មាន $3$ ជួរដេកនិង $3$ ជួរឈរ គេថាម៉ាទ្រីស $B$ ជាម៉ាទ្រីសការេលំដាប់ $3$ ។
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+ម៉ាទ្រីសការេ ជាម៉ាទ្រីសមានចំនួនជួរដេកស្មើនឹងចំនួនជួរឈរ ដោយ
+\[ A_{n \times n} = \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n}\\ a_{21} & a_{22} & \cdots & a_{2n}\\ \vdots & \vdots & \ddots & \vdots\\ a_{n1} & a_{n2} & \cdots & a_{nn} \end{bmatrix} \]
+ហៅថាម៉ាទ្រីសការេលំដាប់ $n$ ដែល $a_{11}, a_{22}, a_{33}, \ldots, a_{nn}$ ជាធាតុនៅលើអង្កត់ទ្រូងពិសេស ។
+\end{formulaBox}
+
+\textbf{ម៉ាទ្រីសឯកតា} ៖ ម៉ាទ្រីសការេដែលធាតុនៅលើអង្កត់ទ្រូងពិសេស $a_{11} = a_{22} = a_{33} = \ldots = a_{nn} = 1$ ហើយធាតុផ្សេងទៀតស្មើនឹងសូន្យ ហៅថាម៉ាទ្រីសឯកតាតាងដោយ $I$ ដែល
+\[ I = \begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix}, \quad I = \begin{bmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & 1 \end{bmatrix}, \quad I = \begin{bmatrix} 1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1 \end{bmatrix} \text{ ។} \]
+
+\begin{pro}
+\begin{enumerate}[1]
+  \item សរសេរម៉ាទ្រីសការេ $4 \times 4$ ។
+  \item ម៉ាទ្រីសសូន្យ $2 \times 3$ និងម៉ាទ្រីសសូន្យ $1 \times 2$ ។
+\end{enumerate}
+\ans
+\begin{enumerate}[1]
+  \item ឧទាហរណ៍ $\begin{bmatrix} 1 & 5 & 3 & 4\\ 2 & 3 & 7 & 3\\ 5 & 6 & 8 & 2\\ 3 & 4 & 2 & 1 \end{bmatrix}$
+  \item $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0 \end{bmatrix}$, \ $\begin{bmatrix} 0 & 0 \end{bmatrix}$ ។
+\end{enumerate}
+\end{pro}
+
+\section{ប្រមាណវិធីលើម៉ាទ្រីស}
+
+\subsection{ម៉ាទ្រីសស្មើគ្នា}
+
+\begin{example}[ឧទាហរណ៍]
+គេមានម៉ាទ្រីស $A = \begin{bmatrix} 3 & 23 & 0\\ 12 & -5 & 6 \end{bmatrix}$, $B = \begin{bmatrix} b_{11} & b_{12} & b_{13}\\ b_{21} & b_{22} & b_{23} \end{bmatrix}$ មានលំដាប់ $2 \times 3$ ដូចគ្នា ។ បើ $b_{11} = 3$, $b_{12} = 23$, $b_{13} = 0$, $b_{21} = 12$, $b_{22} = -5$, $b_{23} = 6$ នោះគេថាម៉ាទ្រីស $A$ ស្មើនឹង $B$ ។ គេសរសេរ $A = B$ ។
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+ម៉ាទ្រីសពីរស្មើគ្នា កាលណាម៉ាទ្រីសទាំងពីរមានលំដាប់ដូចគ្នានិងមានធាតុត្រូវគ្នាស្មើរៀងគ្នា ។
+\end{formulaBox}
+
+\begin{example}[លំហាត់គំរូ ២]
+រកតម្លៃ $a, b, c, n$ និង $m$ ដើម្បីឱ្យម៉ាទ្រីស $M = N$
+\[ M = \begin{bmatrix} c & 23 & 0 & 9\\ 12 & -5 & n & 4\\ a & 18 & 2 & 32 \end{bmatrix}, \qquad N = \begin{bmatrix} 2 & 23 & m & 9\\ 12 & b & 6 & 4\\ 15 & 18 & 2 & 32 \end{bmatrix} \text{ ។} \]
+\end{example}
+\ans
+ម៉ាទ្រីស $M = N$ កាលណា $c = 2$, $m = 0$, $b = -5$, $n = 6$ និង $a = 15$ ។
+
+\begin{example}[លំហាត់គំរូ ៣]
+តើគូនីមួយៗនៃម៉ាទ្រីសខាងក្រោមនេះអាចស្មើគ្នាឬទេ? បើស្មើគ្នាតើស្មើក្នុងករណីណា? ហើយបើមិនស្មើគ្នាព្រោះអ្វី?
+\begin{tasks}(3)
+  \task $\begin{bmatrix} a & 0\\ 12 & d \end{bmatrix}$ និង $\begin{bmatrix} 5 & b\\ 12 & -3 \end{bmatrix}$
+  \task $\begin{bmatrix} 3 & -5 & 6\\ 14 & 8 & -2 \end{bmatrix}$ និង $\begin{bmatrix} 3 & -5 & 6\\ 41 & 8 & -2 \end{bmatrix}$
+  \task $\begin{bmatrix} 2 & -1 & 4 \end{bmatrix}$ និង $\begin{bmatrix} 2\\ -1\\ 4 \end{bmatrix}$ ។
+\end{tasks}
+\end{example}
+\ans
+\begin{enumerate}[a]
+  \item $\begin{bmatrix} a & 0\\ 12 & d \end{bmatrix} = \begin{bmatrix} 5 & b\\ 12 & -3 \end{bmatrix}$ បើ $a = 5$, $b = 0$, $d = -3$ ។
+  \item $\begin{bmatrix} 3 & -5 & 6\\ 14 & 8 & -2 \end{bmatrix} \ne \begin{bmatrix} 3 & -5 & 6\\ 41 & 8 & -2 \end{bmatrix}$ ព្រោះធាតុនៅជួរដេកទី $2$ និងជួរឈរទី $1$ នៃម៉ាទ្រីសទាំងពីរខុសគ្នា ។
+  \item $\begin{bmatrix} 2 & -1 & 4 \end{bmatrix} \ne \begin{bmatrix} 2\\ -1\\ 4 \end{bmatrix}$ ព្រោះមានលំដាប់ខុសគ្នា ។
+\end{enumerate}
+
+\begin{pro}
+\begin{enumerate}[1]
+  \item រកតម្លៃ $a, b, c$ និង $d$ បើ $\begin{bmatrix} a & 2b\\ c & 6 \end{bmatrix} = \begin{bmatrix} -2d & d\\ 4 & 3a \end{bmatrix}$ ។
+  \item រកតម្លៃអថេរចំពោះសមភាពនីមួយៗខាងក្រោម ៖
+  \begin{tasks}(2)
+    \task $\begin{bmatrix} -2 & 3\\ a & 4 \end{bmatrix} = \begin{bmatrix} b & 3\\ 5 & c \end{bmatrix}$
+    \task $\begin{bmatrix} a & 5 & 2\\ 3 & 9 & 2 \end{bmatrix} = \begin{bmatrix} 0 & c & -1\\ d & 9 & 2 \end{bmatrix}$
+    \task $\begin{bmatrix} a\\ c\\ b \end{bmatrix} = \begin{bmatrix} 30\\ 60\\ 50 \end{bmatrix}$
+    \task $\begin{bmatrix} x & y\\ 9 & -2\\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 5 & -8\\ c & -2\\ 3 & d \end{bmatrix}$ ។
+  \end{tasks}
+\end{enumerate}
+\ans
+\begin{enumerate}[1]
+  \item $a = 2$, $b = -\dfrac{1}{2}$, $c = 4$, $d = -1$ ។
+  \item ក. $a = 5$, $b = -2$, $c = 4$ \quad ខ. គ្មានចម្លើយ (ព្រោះ $2 \ne -1$) ; បើមិនគិតធាតុនោះ $a = 0$, $c = 5$, $d = 3$ \quad គ. $a = 30$, $b = 50$, $c = 60$ \quad ឃ. $x = 5$, $y = -8$, $c = 9$, $d = 4$ ។
+\end{enumerate}
+\end{pro}
+
+\subsection{វិធីបូកនិងវិធីដកនៃម៉ាទ្រីស}
+
+\textbf{វិធីបូកនៃម៉ាទ្រីស}
+
+\begin{example}[ឧទាហរណ៍ ១]
+តារាងនីមួយៗបង្ហាញពីចំនួនផលិតផល $3$ ប្រភេទ $M, N$ និង $S$ ដែលផលិតដោយម៉ាស៊ីនពីរនៅខែកុម្ភៈនិងខែមីនា ។
+\[
+\begin{array}{|l|c|c|c|}\hline
+\text{ខែកុម្ភៈ} & M & N & S\\ \hline
+\text{ម៉ាស៊ីនទី } 1 & 30 & 20 & 25\\ \hline
+\text{ម៉ាស៊ីនទី } 2 & 35 & 25 & 23\\ \hline
+\end{array}
+\qquad
+\begin{array}{|l|c|c|c|}\hline
+\text{ខែមីនា} & M & N & S\\ \hline
+\text{ម៉ាស៊ីនទី } 1 & 35 & 28 & 20\\ \hline
+\text{ម៉ាស៊ីនទី } 2 & 40 & 21 & 30\\ \hline
+\end{array}
+\]
+គេបានម៉ាទ្រីសតំណាងផលិតផលនៅខែកុម្ភៈនិងខែមីនា $A = \begin{bmatrix} 30 & 20 & 25\\ 35 & 25 & 23 \end{bmatrix}$, $B = \begin{bmatrix} 35 & 28 & 20\\ 40 & 21 & 30 \end{bmatrix}$ ។
+
+ចំនួនផលិតផលសរុបទាំងពីរខែចំពោះ ម៉ាស៊ីនទី $1$ ៖ $M = 30 + 35 = 65$, $N = 20 + 28 = 48$, $S = 25 + 20 = 45$ ; ម៉ាស៊ីនទី $2$ ៖ $M = 35 + 40 = 75$, $N = 25 + 21 = 46$, $S = 23 + 30 = 53$ ។
+
+ម៉ាទ្រីសតំណាងផលិតផលសរុបទាំងពីរខែគឺ
+\[ C = \begin{bmatrix} 30 + 35 & 20 + 28 & 25 + 20\\ 35 + 40 & 25 + 21 & 23 + 30 \end{bmatrix} = \begin{bmatrix} 65 & 48 & 45\\ 75 & 46 & 53 \end{bmatrix} \text{ ។} \]
+គេឃើញថាម៉ាទ្រីស $C$ ជាផលបូកនៃម៉ាទ្រីស $A$ និង $B$ ។ គេសរសេរ $A + B = C$ ហើយម៉ាទ្រីស $A, B$ និង $C$ មានលំដាប់ដូចគ្នា ។
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+ម៉ាទ្រីសពីរអាចបូកគ្នាបានលុះត្រាតែម៉ាទ្រីសទាំងពីរនោះមានលំដាប់ដូចគ្នា ហើយគេបូកធាតុត្រូវគ្នារៀងគ្នា ។
+\end{formulaBox}
+
+\textbf{លក្ខណៈនៃវិធីបូកម៉ាទ្រីស}
+
+\begin{example}[ឧទាហរណ៍ ២]
+គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} 2 & -3 & 4\\ 1 & 0 & -1 \end{bmatrix}$, $B = \begin{bmatrix} 3 & 9 & 0\\ 4 & -1 & 8 \end{bmatrix}$, $C = \begin{bmatrix} 4 & 2\\ 1 & 3 \end{bmatrix}$, $D = \begin{bmatrix} 1 & 6\\ 7 & 12 \end{bmatrix}$ និង $E = \begin{bmatrix} 1 & -2\\ -2 & 3 \end{bmatrix}$ ។ គេបាន
+\[ A + B = \begin{bmatrix} 5 & 6 & 4\\ 5 & -1 & 7 \end{bmatrix} = B + A \]
+ដូច្នេះ $A + B = B + A$ (វិធីបូកម៉ាទ្រីសមានលក្ខណៈត្រឡប់) ។
+\[
+\begin{gathered}
+(C + D) + E = \begin{bmatrix} 5 & 8\\ 8 & 15 \end{bmatrix} + \begin{bmatrix} 1 & -2\\ -2 & 3 \end{bmatrix} = \begin{bmatrix} 6 & 6\\ 6 & 18 \end{bmatrix},\\
+C + (D + E) = \begin{bmatrix} 4 & 2\\ 1 & 3 \end{bmatrix} + \begin{bmatrix} 2 & 4\\ 5 & 15 \end{bmatrix} = \begin{bmatrix} 6 & 6\\ 6 & 18 \end{bmatrix}
+\end{gathered}
+\]
+ដូច្នេះ $(C + D) + E = C + (D + E)$ (វិធីបូកម៉ាទ្រីសមានលក្ខណៈផ្តុំ) ។
+\[ A + O = \begin{bmatrix} 2 & -3 & 4\\ 1 & 0 & -1 \end{bmatrix} + \begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 2 & -3 & 4\\ 1 & 0 & -1 \end{bmatrix} = O + A \]
+ដូច្នេះ $A + O = O + A = A$ (ម៉ាទ្រីសសូន្យជាម៉ាទ្រីសណឺតចំពោះវិធីបូក) ។
+\end{example}
+
+\begin{formulaBox}[លក្ខណៈ]
+\begin{enumerate}[a]
+  \item $A + B = B + A$ (លក្ខណៈត្រលប់)
+  \item $(C + D) + E = C + (D + E)$ (លក្ខណៈផ្តុំ)
+  \item $A + O = O + A = A$ (លក្ខណៈណឺត) ។
+\end{enumerate}
+\end{formulaBox}
+
+\textbf{វិធីដកនៃម៉ាទ្រីស}
+
+\begin{example}[ឧទាហរណ៍ ៣]
+តារាងនេះបង្ហាញពីផលិតផល $3$ ប្រភេទដែលត្រូវនាំចូលនិងលក់ចេញរបស់សាខា $2$ ក្នុងក្រុមហ៊ុនមួយ ។
+\[
+\begin{array}{|l|c|c|c|}\hline
+\text{នាំចូល} & \text{ម៉ាញ៉េ} & \text{ទូរទស្សន៍} & \text{ទូរទឹកកក}\\ \hline
+\text{សាខាទី } 1 & 1000 & 500 & 100\\ \hline
+\text{សាខាទី } 2 & 600 & 300 & 200\\ \hline
+\end{array}
+\]
+\[
+\begin{array}{|l|c|c|c|}\hline
+\text{លក់ចេញ} & \text{ម៉ាញ៉េ} & \text{ទូរទស្សន៍} & \text{ទូរទឹកកក}\\ \hline
+\text{សាខាទី } 1 & 850 & 450 & 80\\ \hline
+\text{សាខាទី } 2 & 480 & 280 & 150\\ \hline
+\end{array}
+\]
+ម៉ាទ្រីសតំណាងផលិតផលនាំចូលគឺ $A = \begin{bmatrix} 1000 & 500 & 100\\ 600 & 300 & 200 \end{bmatrix}$ ។ ម៉ាទ្រីសតំណាងផលិតផលលក់ចេញគឺ $B = \begin{bmatrix} 850 & 450 & 80\\ 480 & 280 & 150 \end{bmatrix}$ ។
+
+ផលិតផលដែលនៅសល់ក្រោយពីបានលក់ចេញគឺ ៖ សាខាទី $1$ ៖ ម៉ាញ៉េ $1000 - 850 = 150$, ទូរទស្សន៍ $500 - 450 = 50$, ទូរទឹកកក $100 - 80 = 20$ ; សាខាទី $2$ ៖ ម៉ាញ៉េ $600 - 480 = 120$, ទូរទស្សន៍ $300 - 280 = 20$, ទូរទឹកកក $200 - 150 = 50$ ។
+
+ម៉ាទ្រីសតំណាងផលិតផលដែលនៅសល់ក្នុងសាខាទាំងពីរគឺ
+\[
+\begin{aligned}
+C &= \begin{bmatrix} 1000 - 850 & 500 - 450 & 100 - 80\\ 600 - 480 & 300 - 280 & 200 - 150 \end{bmatrix}\\
+&= \begin{bmatrix} 150 & 50 & 20\\ 120 & 20 & 50 \end{bmatrix}
+\end{aligned}
+\]
+គេសរសេរ $A - B = C$ ដែលម៉ាទ្រីស $A$, $B$ និង $C$ មានលំដាប់ដូចគ្នា ។
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+ម៉ាទ្រីសពីរដកគ្នាបាន លុះត្រាតែម៉ាទ្រីសទាំងពីរមានលំដាប់ដូចគ្នា ហើយគេដកធាតុត្រូវគ្នារៀងគ្នា ។
+\end{formulaBox}
+
+\begin{example}[លំហាត់គំរូ ៤]
+គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} 4 & 2 & 6\\ 1 & 3 & 7 \end{bmatrix}$, $B = \begin{bmatrix} 3 & 9 & 0\\ 4 & -1 & -8 \end{bmatrix}$ និង $C = \begin{bmatrix} -1 & 0\\ 5 & 2 \end{bmatrix}$ ។ គណនាប្រមាណវិធីលើម៉ាទ្រីសខាងក្រោមបើអាច \quad ក. $A - B$ \quad ខ. $B - C$ \quad គ. គណនាម៉ាទ្រីស $X$ បើ $A + X = B$ ។
+\end{example}
+\ans
+\begin{enumerate}[a]
+  \item $A - B = \begin{bmatrix} 4 & 2 & 6\\ 1 & 3 & 7 \end{bmatrix} - \begin{bmatrix} 3 & 9 & 0\\ 4 & -1 & -8 \end{bmatrix} = \begin{bmatrix} 1 & -7 & 6\\ -3 & 4 & 15 \end{bmatrix}$
+  \item $B - C$ មិនអាចធ្វើបាន ព្រោះ $B$ និង $C$ មានលំដាប់ខុសគ្នា
+  \item $A + X = B$, $A + X - A = B - A$ ឬ $X + O = B - A$ ។ គេបាន $X = B - A = \begin{bmatrix} -1 & 7 & -6\\ 3 & -4 & -15 \end{bmatrix}$ ។
+\end{enumerate}
+
+\begin{pro}
+គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} -1 & 4\\ 2 & 3\\ 9 & 5 \end{bmatrix}$, $B = \begin{bmatrix} 2 & 1\\ -3 & 7\\ 10 & 6 \end{bmatrix}$, $C = \begin{bmatrix} 3 & -2\\ 7 & -4 \end{bmatrix}$, $D = \begin{bmatrix} 1 & 5\\ -13 & 4 \end{bmatrix}$ ។ គណនា ក. $A + B$ \ ខ. $B - A$ \ គ. $B + D$ \ ឃ. $C + D$ \ ង. $A - B$ ។
+\ans
+ក. $\begin{bmatrix} 1 & 5\\ -1 & 10\\ 19 & 11 \end{bmatrix}$ \quad ខ. $\begin{bmatrix} 3 & -3\\ -5 & 4\\ 1 & 1 \end{bmatrix}$ \quad គ. មិនអាចគណនាបាន \quad ឃ. $\begin{bmatrix} 4 & 3\\ -6 & 0 \end{bmatrix}$ \quad ង. $\begin{bmatrix} -3 & 3\\ 5 & -4\\ -1 & -1 \end{bmatrix}$ ។
+\end{pro}
+
+\subsection{ផលគុណមួយចំនួនពិតនឹងម៉ាទ្រីស}
+
+\begin{example}[ឧទាហរណ៍ ១]
+គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} 2 & 3\\ 1 & -5 \end{bmatrix}$ ។ គេបាន
+\[
+\begin{aligned}
+A + A &= 2A = \begin{bmatrix} 2 & 3\\ 1 & -5 \end{bmatrix} + \begin{bmatrix} 2 & 3\\ 1 & -5 \end{bmatrix} = \begin{bmatrix} 4 & 6\\ 2 & -10 \end{bmatrix}\\
+&= \begin{bmatrix} 2 \times 2 & 2 \times 3\\ 2 \times 1 & 2(-5) \end{bmatrix} \text{ ។}
+\end{aligned}
+\]
+ដូចគ្នាដែលគេបាន $3A = A + A + A = \begin{bmatrix} 6 & 9\\ 3 & -15 \end{bmatrix} = \begin{bmatrix} 3 \times 2 & 3 \times 3\\ 3 \times 1 & 3(-5) \end{bmatrix}$ ។
+
+បើ $k$ ជាចំនួនពិតនោះ $kA = k\begin{bmatrix} 2 & 3\\ 1 & -5 \end{bmatrix} = \begin{bmatrix} 2k & 3k\\ k & -5k \end{bmatrix}$ ។
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+បើគេមានចំនួនពិត $k$ និងម៉ាទ្រីស $A$ នោះម៉ាទ្រីស $Ak$ បានដោយគុណធាតុនីមួយៗនៃម៉ាទ្រីស $A$ នឹងចំនួនពិត $k$ ។ បើ $A = \begin{bmatrix} a & b\\ c & d \end{bmatrix}$ នោះ
+\[ kA = Ak = k\begin{bmatrix} a & b\\ c & d \end{bmatrix} = \begin{bmatrix} a & b\\ c & d \end{bmatrix}k = \begin{bmatrix} ka & kb\\ kc & kd \end{bmatrix} \text{ ។} \]
+\end{formulaBox}
+
+\begin{example}[ឧទាហរណ៍ ២]
+គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} 4 & 1\\ 2 & -3 \end{bmatrix}$ និង $B = \begin{bmatrix} 2 & -1\\ 1 & 4 \end{bmatrix}$, $k$ និង $h$ ជាចំនួនពិត ។ គេបាន
+\begin{enumerate}[a]
+  \item $k(A + B) = k\left\{\begin{bmatrix} 4 & 1\\ 2 & -3 \end{bmatrix} + \begin{bmatrix} 2 & -1\\ 1 & 4 \end{bmatrix}\right\} = k\begin{bmatrix} 6 & 0\\ 3 & 1 \end{bmatrix} = \begin{bmatrix} 6k & 0\\ 3k & k \end{bmatrix}$
+  \item $kA + kB = \begin{bmatrix} 4k & k\\ 2k & -3k \end{bmatrix} + \begin{bmatrix} 2k & -k\\ k & 4k \end{bmatrix} = \begin{bmatrix} 6k & 0\\ 3k & k \end{bmatrix}$
+  \item $(kh)A = kh\begin{bmatrix} 4 & 1\\ 2 & -3 \end{bmatrix} = \begin{bmatrix} 4kh & kh\\ 2kh & -3kh \end{bmatrix}$
+  \item $k(hA) = k\begin{bmatrix} 4h & h\\ 2h & -3h \end{bmatrix} = \begin{bmatrix} 4kh & kh\\ 2kh & -3kh \end{bmatrix}$ ។
+\end{enumerate}
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+គេបាន \quad 1. $k(A + B) = kA + kB$ \qquad 2. $(kh)A = k(hA)$ ។
+\end{formulaBox}
+
+\begin{example}[លំហាត់គំរូ ៥]
+ម៉ាទ្រីស $A$ បង្ហាញពីប្រាក់កម្រៃប្រចាំថ្ងៃរបស់កម្មករនិងកម្មករជំនាញធ្វើការនៅការដ្ឋានទី $1$ និងការដ្ឋានទី $2$ ពីថ្ងៃច័ន្ទដល់ថ្ងៃសុក្រ ។ ម៉ាទ្រីស $B$ ជាប្រាក់កម្រៃប្រចាំថ្ងៃរបស់ពួកគេសម្រាប់ថ្ងៃសៅរ៍និងថ្ងៃអាទិត្យ (គិតជារៀល) ។ (ជួរឈរ ៖ កម្មករ, កម្មករជំនាញ ; ជួរដេក ៖ ការដ្ឋានទី $1$, ទី $2$)
+\[ A = \begin{bmatrix} 7000 & 13000\\ 8000 & 14000 \end{bmatrix}, \qquad B = \begin{bmatrix} 8000 & 14000\\ 9000 & 15500 \end{bmatrix} \]
+គណនាម៉ាទ្រីស $5A + 2B$ ។ តើម៉ាទ្រីស $5A + 2B$ បង្ហាញពីព័ត៌មានអ្វី?
+\end{example}
+\ans
+\[
+\begin{aligned}
+5A + 2B &= \begin{bmatrix} 35000 & 65000\\ 40000 & 70000 \end{bmatrix} + \begin{bmatrix} 16000 & 28000\\ 18000 & 31000 \end{bmatrix}\\
+&= \begin{bmatrix} 51000 & 93000\\ 58000 & 101000 \end{bmatrix} \text{ ។}
+\end{aligned}
+\]
+ម៉ាទ្រីសនេះបង្ហាញពីប្រាក់កម្រៃក្នុង $1$ អាទិត្យរបស់កម្មករ និងកម្មករជំនាញធ្វើការនៅការដ្ឋានទី $1$ និងការដ្ឋានទី $2$ ។
+
+\begin{pro}
+គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} 3 & 21\\ 16 & -4\\ 3 & 8 \end{bmatrix}$, $B = \begin{bmatrix} 9 & -24\\ -9 & 14\\ -7 & 9 \end{bmatrix}$, $C = \begin{bmatrix} 4 & 9\\ 3 & 10 \end{bmatrix}$ និង $D = \begin{bmatrix} 5 & 5\\ -13 & 5 \end{bmatrix}$ ។ រកម៉ាទ្រីសខាងក្រោម ៖
+\begin{tasks}(3)
+  \task $3A + B$
+  \task $B - A + C$
+  \task $2C + 5C - 4D$
+  \task $-A + 3(B - A)$
+  \task $2(3C) - 7D$
+  \task $-A + 2(D + C)$ ។
+\end{tasks}
+\ans
+ក. $\begin{bmatrix} 18 & 39\\ 39 & 2\\ 2 & 33 \end{bmatrix}$ \quad ខ. មិនអាចគណនាបាន ព្រោះមានលំដាប់ខុសគ្នា \quad គ. $\begin{bmatrix} 8 & 43\\ 73 & 50 \end{bmatrix}$ \quad ឃ. $\begin{bmatrix} 15 & -156\\ -91 & 58\\ -33 & -5 \end{bmatrix}$ \quad ង. $\begin{bmatrix} -11 & 19\\ 109 & 25 \end{bmatrix}$ \quad ច. មិនអាចគណនាបាន ។
+\end{pro}
+
+\subsection{វិធីគុណនៃពីរម៉ាទ្រីស}
+
+\begin{example}[ឧទាហរណ៍ ១]
+សុខត្រូវការទិញសៀវភៅ $18$ ក្បាល ប៊ិក $12$ ដើម និងខ្មៅដៃ $11$ ដើម ។ សៅត្រូវការទិញសៀវភៅ $16$ ក្បាល ប៊ិក $20$ ដើម និងខ្មៅដៃ $10$ ដើម ។ គេដឹងថាតូបទី $1$ លក់សៀវភៅមួយក្បាលថ្លៃ $7$ រយរៀល ប៊ិកមួយដើមថ្លៃ $4$ រយរៀល និងខ្មៅដៃមួយដើមថ្លៃ $2$ រយរៀល រីឯតូបទី $2$ លក់សៀវភៅមួយថ្លៃ $6$ រយរៀល ប៊ិកមួយដើមថ្លៃ $5$ រយរៀលនិងខ្មៅដៃមួយដើមថ្លៃ $2$ រយរៀល ។ គេចង់ដឹងថ្លៃទិញរបស់ម្នាក់ៗក្នុងករណីដែលគេទិញនៅតូបទី $1$ ឬនៅតូបទី $2$ ។
+
+ថ្លៃទិញរបស់សុខ ៖ នៅតូបទី $1 = 18(7) + 12(4) + 11(2) = 196$, \ នៅតូបទី $2 = 18(6) + 12(5) + 11(2) = 190$ ។
+
+ថ្លៃទិញរបស់សៅ ៖ នៅតូបទី $1 = 16(7) + 20(4) + 10(2) = 212$, \ នៅតូបទី $2 = 16(6) + 20(5) + 10(2) = 216$ ។
+
+ដើម្បីងាយសិក្សា គេអាចបកស្រាយទិន្នន័យនេះជាម៉ាទ្រីស ៖ ម៉ាទ្រីសទំនិញ (ជួរដេក ៖ សុខ, សៅ ; ជួរឈរ ៖ សៀវភៅ ប៊ិក ខ្មៅដៃ) និងម៉ាទ្រីសតម្លៃឯកតា (ជួរដេក ៖ ស ប ខ ; ជួរឈរ ៖ តូបទី $1$, តូបទី $2$) ។ ដោយថ្លៃទិញជាផលគុណនៃបរិមាណទំនិញ និងតម្លៃទំនិញក្នុង $1$ ឯកតា នោះម៉ាទ្រីសថ្លៃទិញជាផលគុណនៃម៉ាទ្រីសទំនិញនិងម៉ាទ្រីសតម្លៃក្នុង $1$ ឯកតា ។ គេសរសេរ ៖
+\[
+\begin{aligned}
+&\begin{bmatrix} 18 & 12 & 11\\ 16 & 20 & 10 \end{bmatrix} \times \begin{bmatrix} 7 & 6\\ 4 & 5\\ 2 & 2 \end{bmatrix}\\
+&= \begin{bmatrix} 18(7) + 12(4) + 11(2) & 18(6) + 12(5) + 11(2)\\ 16(7) + 20(4) + 10(2) & 16(6) + 20(5) + 10(2) \end{bmatrix}
+\end{aligned}
+\]
+បើគេតាង $A$ ជាម៉ាទ្រីសទំនិញ $B$ ជាម៉ាទ្រីសតម្លៃក្នុង $1$ ឯកតា និង $P$ ជាម៉ាទ្រីសថ្លៃទំនិញនោះគេបាន $A \times B = P$ ។
+\end{example}
+
+\begin{note}[សង្កេត]
+$18(7) + 12(4) + 11(2)$ ជាធាតុទី $1$ នៃម៉ាទ្រីសផលគុណ ទីតាំងឋិតនៅត្រង់ជួរដេកទី $1$ និងជួរឈរទី $1$ ។ ធាតុនេះជាផលបូករបស់ផលគុណតួនៃជួរដេកទី $1$ (នៃម៉ាទ្រីសទី $1$) និងជួរឈរទី $1$ (នៃម៉ាទ្រីសទី $2$) ។ តាមលំនាំនេះ គេមានវិធានក្នុងការគណនាផលគុណនៃពីរម៉ាទ្រីស ៖ ធាតុនៅជួរដេកទី $i$ និងជួរឈរទី $j$ នៃផលគុណ គឺជាផលបូកនៃផលគុណធាតុនៃជួរដេកទី $i$ នៃម៉ាទ្រីសទី $1$ និងធាតុនៃជួរឈរទី $j$ នៃម៉ាទ្រីសទី $2$ ។
+\end{note}
+
+ដូច្នេះ បើម៉ាទ្រីស $A$ មានលំដាប់ $2 \times 3$, $B$ មានលំដាប់ $3 \times 2$ នោះលំដាប់នៃផលគុណម៉ាទ្រីសគឺ $2 \times 2$ ៖
+\[
+\begin{gathered}
+\underset{2 \times 3}{A} \times \underset{3 \times 2}{B} = \underset{2 \times 2}{P}\\
+(\text{ចំនួនជួរឈររបស់ } A = \text{ចំនួនជួរដេករបស់ } B)
+\end{gathered}
+\]
+
+\begin{formulaBox}[ជាទូទៅ]
+គេអាចគុណម៉ាទ្រីសនឹងម៉ាទ្រីសបាន កាលណាចំនួនជួរឈរនៃម៉ាទ្រីសទី $1$ ស្មើនឹងចំនួនជួរដេកនៃម៉ាទ្រីសទី $2$ ៖ $\underset{m \times n}{A} \times \underset{n \times c}{B} = \underset{m \times c}{P}$ ។
+\end{formulaBox}
+
+\begin{example}[លំហាត់គំរូ ៦]
+គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} -1 & 2\\ 3 & -6 \end{bmatrix}$, $B = \begin{bmatrix} 2 & 1\\ -3 & 7 \end{bmatrix}$, $C = \begin{bmatrix} 3 & -2 & 1\\ 2 & 4 & -6 \end{bmatrix}$, $D = \begin{bmatrix} 4 & 2\\ 2 & 1 \end{bmatrix}$ និងម៉ាទ្រីស $I = \begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix}$ ។ គណនាម៉ាទ្រីស ក. $AB$, $BA$ \ ខ. $(AB)C$, $A(BC)$ \ គ. $(A + B)C$, $AC + BC$ \ ឃ. $AI$, $IA$ រួចប្រៀបធៀបគូនីមួយៗ ។
+\end{example}
+\ans
+\begin{enumerate}[a]
+  \item $AB = \begin{bmatrix} -1 & 2\\ 3 & -6 \end{bmatrix}\begin{bmatrix} 2 & 1\\ -3 & 7 \end{bmatrix} = \begin{bmatrix} -8 & 13\\ 24 & -39 \end{bmatrix}$, \ $BA = \begin{bmatrix} 2 & 1\\ -3 & 7 \end{bmatrix}\begin{bmatrix} -1 & 2\\ 3 & -6 \end{bmatrix} = \begin{bmatrix} 1 & -2\\ 24 & -48 \end{bmatrix}$ ។
+
+  ដូច្នេះ $AB \ne BA$ (វិធីគុណម៉ាទ្រីសគ្មានលក្ខណៈត្រឡប់ទេ) ។
+  \item $(AB)C = \begin{bmatrix} -8 & 13\\ 24 & -39 \end{bmatrix}\begin{bmatrix} 3 & -2 & 1\\ 2 & 4 & -6 \end{bmatrix} = \begin{bmatrix} 2 & 68 & -86\\ -6 & -204 & 258 \end{bmatrix}$
+
+  $A(BC) = \begin{bmatrix} -1 & 2\\ 3 & -6 \end{bmatrix}\begin{bmatrix} 8 & 0 & -4\\ 5 & 34 & -45 \end{bmatrix} = \begin{bmatrix} 2 & 68 & -86\\ -6 & -204 & 258 \end{bmatrix}$ ។
+
+  ដូច្នេះ $(AB)C = A(BC)$ (វិធីគុណម៉ាទ្រីសមានលក្ខណៈផ្តុំ) ។
+  \item $(A + B)C = \begin{bmatrix} 1 & 3\\ 0 & 1 \end{bmatrix}\begin{bmatrix} 3 & -2 & 1\\ 2 & 4 & -6 \end{bmatrix} = \begin{bmatrix} 9 & 10 & -17\\ 2 & 4 & -6 \end{bmatrix}$
+
+  $AC + BC = \begin{bmatrix} 1 & 10 & -13\\ -3 & -30 & 39 \end{bmatrix} + \begin{bmatrix} 8 & 0 & -4\\ 5 & 34 & -45 \end{bmatrix} = \begin{bmatrix} 9 & 10 & -17\\ 2 & 4 & -6 \end{bmatrix}$ ។
+
+  ដូច្នេះ $(A + B)C = AC + BC$ (វិធីគុណម៉ាទ្រីសមានលក្ខណៈបំបែកចំពោះវិធីបូក) ។
+  \item $AI = \begin{bmatrix} -1 & 2\\ 3 & -6 \end{bmatrix}\begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix} = \begin{bmatrix} -1 & 2\\ 3 & -6 \end{bmatrix} = A$, \ $IA = A$ ។
+
+  ដូច្នេះ $AI = IA = A$ (ម៉ាទ្រីសឯកតាជាម៉ាទ្រីសណឺតចំពោះវិធីគុណម៉ាទ្រីស) ។
+\end{enumerate}
+
+\begin{example}[លំហាត់គំរូ ៧]
+សុខមានរថយន្តធំ $7$ មធ្យម $2$ និងតូច $4$ សៅមានរថយន្តធំ $5$ មធ្យម $6$ និងតូច $3$ ។ រថយន្តរបស់អ្នកទាំងពីរបម្រើសេវាដឹកនាំភ្ញៀវទេសចរ ម្តងទៅប្រទេសថៃនិងម្តងទៀតទៅប្រទេសវៀតណាម ។ គេកំណត់តម្លៃដឹកទៅប្រទេសថៃ គឺក្នុងមួយលើក រថយន្តធំ $900\$$ មធ្យម $700\$$ និងតូច $500\$$ រីឯប្រទេសវៀតណាម រថយន្តធំ $600\$$ មធ្យម $500\$$ និងតូច $400\$$ ។ រកម៉ាទ្រីសដែលទាក់ទងទៅនឹងថ្លៃដឹកភ្ញៀវក្នុងមួយលើកសម្រាប់ប្រទេសនីមួយៗរបស់សុខនិងសៅ ។
+\end{example}
+\ans
+ម៉ាទ្រីសដែលទាក់ទងទៅនឹងចំនួនរថយន្តតាមប្រភេទរថយន្ត និងម្ចាស់រថយន្ត (ជួរដេក ៖ សុខ, សៅ ; ជួរឈរ ៖ ធំ មធ្យម តូច) គឺ $\begin{bmatrix} 7 & 2 & 4\\ 5 & 6 & 3 \end{bmatrix}$ ។
+
+គេបាន ម៉ាទ្រីសចំនួនរថយន្តតាមប្រភេទ $\times$ ម៉ាទ្រីសតម្លៃដឹកតាមប្រភេទ $=$ ម៉ាទ្រីសថ្លៃដឹក ៖
+\[
+\begin{aligned}
+\begin{bmatrix} 7 & 2 & 4\\ 5 & 6 & 3 \end{bmatrix} \times \begin{bmatrix} 900 & 600\\ 700 & 500\\ 500 & 400 \end{bmatrix} &\\
+&= \begin{bmatrix} 9700 & 6800\\ 10200 & 7200 \end{bmatrix} \ (\text{ជួរឈរ ៖ ថៃ, វៀតណាម})
+\end{aligned}
+\]
+គេអាចគណនាបានមួយបែបទៀត $\begin{bmatrix} 900 & 700 & 500\\ 600 & 500 & 400 \end{bmatrix} \times \begin{bmatrix} 7 & 5\\ 2 & 6\\ 4 & 3 \end{bmatrix} = \begin{bmatrix} 9700 & 10200\\ 6800 & 7200 \end{bmatrix}$ ។
+
+ម៉ាទ្រីសដែលបានគណនាទាំងពីរបែបនេះអាចឱ្យដឹងថា ថ្លៃដឹករបស់សុខសម្រាប់ប្រទេសថៃ $9700\$$ និងប្រទេសវៀតណាម $6800\$$ ចំណែកឯថ្លៃដឹករបស់សៅប្រទេសថៃ $10200\$$ និងប្រទេសវៀតណាម $7200\$$ ។
+
+\begin{pro}
+\begin{enumerate}[1]
+  \item សិស្សបីនាក់មានឈ្មោះ $A, B$ និង $C$ ដោះស្រាយលំហាត់ $8$ ។ សិស្ស $A$ ឆ្លើយត្រឹមត្រូវល្អបាន $4$ សំណួរ ត្រូវខ្លះបាន $1$ សំណួរ និងខុស $3$ សំណួរ $B$ សិស្សឆ្លើយត្រឹមត្រូវល្អបាន $5$ សំណួរ ត្រូវខ្លះបាន $2$ សំណួរ និងខុស $1$ សំណួរ រីឯសិស្ស $C$ ឆ្លើយត្រឹមត្រូវល្អបាន $2$ សំណួរ ត្រូវខ្លះបាន $4$ សំណួរ និងខុស $2$ សំណួរ ។ គេសន្មតថា ចម្លើយត្រឹមត្រូវបានពិន្ទុ $3$ ត្រូវខ្លះបានពិន្ទុ $1$ និងខុសបានពិន្ទុ $0$ ។
+  \begin{enumerate}[a]
+    \item បង្ហាញចំនួនចម្លើយរបស់សិស្សម្នាក់ៗ ជាម៉ាទ្រីសនិងពិន្ទុរបស់ចម្លើយជាម៉ាទ្រីស ។
+    \item រកម៉ាទ្រីសពិន្ទុសរុបរបស់សិស្សម្នាក់ៗ ។
+  \end{enumerate}
+  \item គេឱ្យម៉ាទ្រីស $C = \begin{bmatrix} 1 & a\\ b & 6 \end{bmatrix}$ និង $D = \begin{bmatrix} 2 & -3\\ 0 & 8 \end{bmatrix}$ ។ \quad ក. គណនា $4C - 3D$ \quad ខ. រកតម្លៃ $a$ និង $b$ បើ $DC = 8C$ ។
+\end{enumerate}
+\ans
+\begin{enumerate}[1]
+  \item ក. $\begin{bmatrix} 4 & 1 & 3\\ 5 & 2 & 1\\ 2 & 4 & 2 \end{bmatrix}$ (ជួរដេក $A, B, C$), ពិន្ទុ $\begin{bmatrix} 3\\ 1\\ 0 \end{bmatrix}$ \quad ខ. $\begin{bmatrix} 4 & 1 & 3\\ 5 & 2 & 1\\ 2 & 4 & 2 \end{bmatrix}\begin{bmatrix} 3\\ 1\\ 0 \end{bmatrix} = \begin{bmatrix} 13\\ 17\\ 10 \end{bmatrix}$ ។
+  \item ក. $4C - 3D = \begin{bmatrix} -2 & 4a + 9\\ 4b & 0 \end{bmatrix}$ \quad ខ. $a = -3$, $b = -2$ ។
+\end{enumerate}
+\end{pro}
+
+\section{ម៉ាទ្រីសច្រាស}
+
+\begin{example}[ឧទាហរណ៍ ១]
+គេមានម៉ាទ្រីស $A = \begin{bmatrix} 3 & 4\\ 1 & 2 \end{bmatrix}$ និង $B = \begin{bmatrix} 1 & -2\\ -\frac{1}{2} & \frac{3}{2} \end{bmatrix}$ ជាម៉ាទ្រីសការេលំដាប់ $2$ ។ គណនា $AB$ និង $BA$ ។
+\[
+\begin{gathered}
+AB = \begin{bmatrix} 3 & 4\\ 1 & 2 \end{bmatrix}\begin{bmatrix} 1 & -2\\ -\frac{1}{2} & \frac{3}{2} \end{bmatrix} = \begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix} = I\\
+\text{និង}\\
+BA = \begin{bmatrix} 1 & -2\\ -\frac{1}{2} & \frac{3}{2} \end{bmatrix}\begin{bmatrix} 3 & 4\\ 1 & 2 \end{bmatrix} = \begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix} = I \text{ ។}
+\end{gathered}
+\]
+គេសង្កេតឃើញថា $AB = BA = I$ ។ $B$ ហៅថាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស $A$ ។ គេកំណត់សរសេរ ៖ $A^{-1}$ ជាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស $A$ ។ ដូច្នេះ $A^{-1} = \begin{bmatrix} 1 & -2\\ -\frac{1}{2} & \frac{3}{2} \end{bmatrix} = \dfrac{1}{2}\begin{bmatrix} 2 & -4\\ -1 & 3 \end{bmatrix}$ ។
+\end{example}
+
+\begin{example}[ឧទាហរណ៍ ២]
+គេមានម៉ាទ្រីស $A = \begin{bmatrix} a & b\\ c & d \end{bmatrix}$ និង $M = \begin{bmatrix} d & -b\\ -c & a \end{bmatrix}$ ដែល $ad - bc \ne 0$ ។ \quad ក. គណនា $AM$ និង $MA$ ។ \quad ខ. រកម៉ាទ្រីស $B$ បើ $AB = BA = I$ ដែល $I$ ជាម៉ាទ្រីសឯកតាលំដាប់ $2$ ។
+
+\textbf{ដំណោះស្រាយ}
+\begin{enumerate}[a]
+  \item $AM = \begin{bmatrix} a & b\\ c & d \end{bmatrix}\begin{bmatrix} d & -b\\ -c & a \end{bmatrix} = \begin{bmatrix} ad - bc & 0\\ 0 & ad - bc \end{bmatrix} = (ad - bc)\begin{bmatrix} 1 & 0\\ 0 & 1 \end{bmatrix} = (ad - bc)I$
+
+  $MA = \begin{bmatrix} d & -b\\ -c & a \end{bmatrix}\begin{bmatrix} a & b\\ c & d \end{bmatrix} = \begin{bmatrix} ad - bc & 0\\ 0 & ad - bc \end{bmatrix} = (ad - bc)I$
+  \item បើ $AM = (ad - bc)I$ នោះ $I = \dfrac{1}{ad - bc}AM$ \ $(ad - bc \ne 0)$ ។ ដោយ $AB = I$, $AB = \dfrac{1}{ad - bc}AM$ ៖ $B = \dfrac{1}{ad - bc}M = \dfrac{1}{ad - bc}\begin{bmatrix} d & -b\\ -c & a \end{bmatrix}$ ។
+
+  បើ $MA = (ad - bc)I$, $I = \dfrac{1}{ad - bc}MA$ ។ ដោយ $BA = I$, $BA = \dfrac{1}{ad - bc}MA$ ៖ $B = \dfrac{1}{ad - bc}M$ ។
+
+  ដូច្នេះ បើ $AB = BA = I$ នោះ $B = \dfrac{1}{ad - bc}\begin{bmatrix} d & -b\\ -c & a \end{bmatrix}$ ។ គេថា $\dfrac{1}{ad - bc}\begin{bmatrix} d & -b\\ -c & a \end{bmatrix}$ ជាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស $A = \begin{bmatrix} a & b\\ c & d \end{bmatrix}$ ។
+\end{enumerate}
+\end{example}
+
+\begin{formulaBox}[ជាទូទៅ]
+\begin{itemize}
+  \item បើម៉ាទ្រីស $A = \begin{bmatrix} a & b\\ c & d \end{bmatrix}$ ដែល $ad - bc \ne 0$ នោះម៉ាទ្រីសច្រាសនៃ $A$ គឺ $A^{-1} = \dfrac{1}{ad - bc}\begin{bmatrix} d & -b\\ -c & a \end{bmatrix}$ ។
+  \item បើ $ad - bc = 0$ នោះ $A$ គ្មានម៉ាទ្រីសច្រាសទេ ។
+  \item បើ $A^{-1}$ ជាម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស $A$ នោះគេបាន $AA^{-1} = A^{-1}A = I$ ។
+\end{itemize}
+\end{formulaBox}
+
+\section*{លំហាត់អនុវត្តន៍}
+\begin{enumerate}[1]
+  \item ទិន្នន័យក្នុងហាងលក់ភេសជ្ជៈមួយបង្ហាញថា នៅថ្ងៃសុក្រគេលក់កាហ្វេបាន $160$ កែវ តែក្រូចឆ្មារ $125$ កែវ និងតែបៃតង $210$ កែវ ។ នៅថ្ងៃសៅរ៍ គេលក់កាហ្វេបាន $145$ កែវ តែក្រូចឆ្មារ $130$ កែវ និងតែបៃតង $275$ កែវ និងថ្ងៃអាទិត្យលក់កាហ្វេបាន $120$ កែវ តែក្រូចឆ្មារ $155$ កែវ និងតែបៃតង $325$ កែវ ។ ចូរបង្ហាញព័ត៌មាននេះជាម៉ាទ្រីសនិងប្រាប់លំដាប់នៃម៉ាទ្រីសនេះ ។
+  \item គណនាម៉ាទ្រីសខាងក្រោម ៖
+  \begin{tasks}(2)
+    \task $\begin{bmatrix} 6 & -2\\ 5 & -1\\ 4 & 6 \end{bmatrix} + \begin{bmatrix} 1 & 0\\ -3 & 7\\ 2 & -5 \end{bmatrix}$
+    \task $\begin{bmatrix} 1 & 8 & 9\\ 13 & 21 & 4 \end{bmatrix} + \begin{bmatrix} 3 & 0\\ -8 & 9\\ 5 & 10 \end{bmatrix}$
+    \task $\begin{bmatrix} 3 & 2\\ 4 & 1 \end{bmatrix} + \begin{bmatrix} 1 & -3\\ 7 & 5 \end{bmatrix} - \begin{bmatrix} 2 & -4\\ 8 & 2 \end{bmatrix}$
+    \task $\begin{bmatrix} -2 & 3 & 1\\ 3 & 2 & 5 \end{bmatrix} - 3\begin{bmatrix} 1 & 6 & -3\\ 5 & 2 & 1 \end{bmatrix}$ ។
+  \end{tasks}
+  \item គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} 3 & 21\\ 16 & -4\\ 3 & 8 \end{bmatrix}$, $B = \begin{bmatrix} 9 & 12\\ -9 & 14\\ -7 & 9 \end{bmatrix}$, $C = \begin{bmatrix} 4 & -9\\ 3 & 10 \end{bmatrix}$ និង $D = \begin{bmatrix} 5 & 1\\ -13 & 5 \end{bmatrix}$ ។ គណនា ៖
+  \begin{tasks}(3)
+    \task $3A + B$
+    \task $B - A + C$
+    \task $2C + 5C - 4D$
+    \task $-A + 3(B - A)$
+    \task $2(3C) - 7D$
+    \task $-A + 2(D + C)$ ។
+  \end{tasks}
+  \item គណនា \quad ក. $\begin{bmatrix} 12 & 4 & -2\\ 2 & -3 & 1 \end{bmatrix}\begin{bmatrix} 2 & -1\\ 7 & 4\\ 6 & 5 \end{bmatrix}$ \qquad ខ. $\begin{bmatrix} 3 & -2 & 4 \end{bmatrix}\begin{bmatrix} 29\\ 5\\ 6 \end{bmatrix} + \begin{bmatrix} 15 \end{bmatrix}$ ។
+  \item គេឱ្យ $\begin{bmatrix} 0 & 1\\ -2 & 0 \end{bmatrix}\begin{bmatrix} b & -7\\ a & 0 \end{bmatrix} = \begin{bmatrix} 1 & 2\\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 0 & -2\\ 6 & 3c \end{bmatrix}$ ។ រកតម្លៃ $a, b$ និង $c$ ។
+  \item គេដឹងថាតម្លៃសំបុត្រចូលទស្សនាពិព័រណ៍មួយសន្លឹកសម្រាប់កូនក្មេង $2000$ ៛ មនុស្សចាស់ $5000$ ៛ និងជនបរទេស $10000$ ៛ ។ ចំនួនសំបុត្រដែលបានលក់នៅចុងសប្តាហ៍កន្លងទៅនេះមានសង្ខេបក្នុងតារាងខាងក្រោម ៖
+  \[
+  \begin{array}{|l|c|c|c|}\hline
+   & \text{កូនក្មេង} & \text{មនុស្សចាស់} & \text{ជនបរទេស}\\ \hline
+  \text{ថ្ងៃសៅរ៍} & 205 & 160 & 70\\ \hline
+  \text{ថ្ងៃអាទិត្យ} & 310 & 200 & 65\\ \hline
+  \end{array}
+  \]
+  \begin{enumerate}[a]
+    \item តាងតម្លៃសំបុត្រជាម៉ាទ្រីសជួរឈរ $C$ ។
+    \item តាងព័ត៌មានក្នុងតារាងខាងលើជាម៉ាទ្រីស $N$ ។
+    \item គណនាផលគុណ $NC$ ។ តើធាតុរបស់ម៉ាទ្រីស $NC$ តាងឱ្យអ្វី?
+  \end{enumerate}
+  \item គេមានម៉ាទ្រីស $A = \begin{bmatrix} 4 & 2\\ 0 & 3 \end{bmatrix}$, $B = \begin{bmatrix} \frac{1}{4} & k\\ 0 & \frac{1}{3} \end{bmatrix}$, $C = \begin{bmatrix} 12 & 4\\ -9 & m \end{bmatrix}$ ។
+  \begin{enumerate}[a]
+    \item គណនា $A^2$ និង $A^{-1}$ ដែលជាម៉ាទ្រីសច្រាសនៃ $A$
+    \item រកតម្លៃ $k$ ដើម្បីឱ្យ $AB$ ជាម៉ាទ្រីសឯកតា
+    \item រកតម្លៃ $m$ ដើម្បីឱ្យដេទែរមីណង់ $A$ ស្មើនឹងដេទែរមីណង់ $C$ ។
+  \end{enumerate}
+  \item គេឱ្យម៉ាទ្រីស $A = \begin{bmatrix} 2 & 1\\ -5 & -4 \end{bmatrix}$, $B = \begin{bmatrix} 3 & -1\\ -1 & 1 \end{bmatrix}$ ។ គណនា
+  \begin{enumerate}[a]
+    \item $AB$ និង $(AB)^{-1}$
+    \item $A^{-1}$, $B^{-1}$, $B^{-1}A^{-1}$
+    \item តើអ្នកសង្កេតឃើញយ៉ាងណាចំពោះ $(AB)^{-1}$ និង $B^{-1}A^{-1}$ ។
+  \end{enumerate}
+  \item រកម៉ាទ្រីស $X$ ដែល \quad ក. $\begin{bmatrix} 5 & -2\\ -3 & 2 \end{bmatrix}X = \begin{bmatrix} -11\\ 9 \end{bmatrix}$ \qquad ខ. $\begin{bmatrix} 1 & 1\\ 1 & 1 \end{bmatrix}X = 2\begin{bmatrix} 3 & 1\\ -1 & -1 \end{bmatrix}$ ។
+  \item រកតម្លៃ $p$, $q$, $a$ និង $b$ ដែលផ្ទៀងផ្ទាត់
+  \begin{tasks}(3)
+    \task $\begin{bmatrix} 10 & 3\\ -3 & -1 \end{bmatrix}\begin{bmatrix} p\\ q \end{bmatrix} = \begin{bmatrix} 4\\ -1 \end{bmatrix}$
+    \task $\begin{bmatrix} 4 & -3\\ 2 & -1 \end{bmatrix}\begin{bmatrix} a\\ -1 \end{bmatrix} = \begin{bmatrix} 15\\ b \end{bmatrix}$
+    \task $\begin{bmatrix} -1 & a\\ b & 1 \end{bmatrix}\begin{bmatrix} 2 & -1\\ -1 & 2 \end{bmatrix} = \begin{bmatrix} 1 & 5\\ 3 & 0 \end{bmatrix}$ ។
+  \end{tasks}
+  \item ក្នុងសមីការ $M\begin{bmatrix} 1 & 0\\ 2 & 3 \end{bmatrix} = \begin{bmatrix} -1 & -2\\ 0 & -1\\ 2 & 3 \end{bmatrix}$ ចូរប្រាប់លំដាប់នៃម៉ាទ្រីស $M$ និងរកម៉ាទ្រីស $M$ ។
+\end{enumerate}

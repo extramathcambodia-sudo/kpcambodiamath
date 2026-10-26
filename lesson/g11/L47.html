@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៤៧ : រង្វាស់នៃគម្លាត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៤៧ «រង្វាស់នៃគម្លាត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៤៧ : រង្វាស់នៃគម្លាត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៤៧ «រង្វាស់នៃគម្លាត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g11">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li aria-current="page">មេរៀនទី ៤៧</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៤៧</span>
+      <div><span class="ls-kicker">ថ្នាក់វិទ្យាសាស្ត្រសង្គម · ជំពូកទី ៧ ស្ថិតិ · មេរៀនទី ៤៧ · គណិតវិទ្យាថ្នាក់ទី ១១</span><h1>រង្វាស់នៃគម្លាត</h1><div class="ls-chips"><span class="chip chip-soon">ថ្នាក់វិទ្យាសាស្ត្រសង្គម</span><span class="chip chip-soon">ទំព័រ ២៧៦–២៨៨</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. រ៉ង់</a></li><li class="sub"><a href="#u2">២. វ៉ារ្យង់និងគម្លាតស្តង់ដានៃស្ថិតិសកល</a></li><li class="sub"><a href="#u3">៣. វ៉ារ្យង់និងគម្លាតស្តង់ដានៃស្ថិតិគំរូ</a></li><li class="sub"><a href="#u4">៤. វ៉ារ្យង់និងគម្លាតស្តង់ដាសម្រាប់ទិន្នន័យផ្ដុំជាតារាងប្រេកង់</a></li><li class="sub"><a href="#u5">៥. មេរៀនសង្ខេប ជំពូកទី ៧</a></li><li class="sub"><a href="#u6">៦. លំហាត់ជំពូកទី ៧</a></li><li class="sub"><a href="#u7">៧. ទំព័រសៀវភៅដើម</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-11.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white"><header class="bx-h"><b>វត្ថុបំណង</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>គណនារ៉ង់និងចន្លោះអាំងទែរកាទីល</p></li>
+<li><p>គណនាវ៉ារ្យង់ និងគម្លាតស្តង់ដាស្ថិតិសកល និងគំរូ ។</p></li>
+</ol>
+</div></section>
+<h3 id="u1">រ៉ង់</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>ទិន្នន័យខាងក្រោម ជាពិន្ទុសិស្ស <span class="mi">\(5\)</span> នាក់ ដែលគេបានជ្រើសរើសចេញពីថ្នាក់រៀនពីរ គឺថ្នាក់ <span class="mi">\(A\)</span> និងថ្នាក់ <span class="mi">\(B\)</span> ។<br/>
+ថ្នាក់ <span class="mi">\(A\)</span> ៖ <span class="mi">\(3, 4, 5, 6, 7\)</span><br/>
+ថ្នាក់ <span class="mi">\(B\)</span> ៖ <span class="mi">\(1, 3, 5, 7, 9\)</span> ។</p>
+</div></section>
+<p>បើគេគណនាគម្លាតរវាងពិន្ទុដែលខ្ពស់ជាងគេ និងពិន្ទុដែលទាបជាងគេ នោះគេបាន ៖ គម្លាតពិន្ទុថ្នាក់ <span class="mi">\(A\)</span> ៖ <span class="mi">\(7 - 3 = 4\)</span> ។ គម្លាតពិន្ទុថ្នាក់ <span class="mi">\(B\)</span> ៖ <span class="mi">\(9 - 1 = 8\)</span> ។</p>
+<p>គេសង្កេតឃើញថាពិន្ទុថ្នាក់ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> មានមធ្យមស្មើនឹង <span class="mi">\(5\)</span> ដូចគ្នា ។ ប៉ុន្តែពិន្ទុថ្នាក់ <span class="mi">\(B\)</span> មានគម្លាតធំជាងគម្លាតពិន្ទុថ្នាក់ <span class="mi">\(A\)</span> ។ គេថាពិន្ទុថ្នាក់ <span class="mi">\(B\)</span> មានពង្រាយខ្លាំងជាង ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p><strong>រ៉ង់</strong> គឺជាផលដករវាងតម្លៃទិន្នន័យដែលខ្ពស់ជាងគេ និងតម្លៃទិន្នន័យដែលទាបជាងគេ ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>សង្កេតទិន្នន័យដែលជាពិន្ទុសិស្សមាន <span class="mi">\(6, 9, 11, 15, 25, 26, 27, 27, 29, 30, 30, 30, 31, 31, 35, 85, 100\)</span> ។</p>
+</div></section>
+<p>ទិន្នន័យនេះពង្រាយខ្សោយព្រោះយើងឃើញថាពិន្ទុមួយចំនួននៅកៀកៗគ្នា ។ ប៉ុន្តែបើគេពិនិត្យតាមរ៉ង់នោះ <span class="mi">\(100 - 6 = 94\)</span> រ៉ង់មានតម្លៃធំបញ្ជាក់ថាពិន្ទុមានពង្រាយខ្លាំង ក្នុងករណីនេះផ្ទុយនឹងពិន្ទុពិតរបស់សិស្សដែលបានទទួល ។ ដូច្នេះ រ៉ង់មិនអាចយកជាការបាន ។</p>
+<p>ក្នុងករណីដែលរ៉ង់មានតម្លៃធំពេក ហើយទិន្នន័យពិតមួយចំនួននៅកៀកគ្នា គេត្រូវបង្កើតគម្លាតមួយទៀតដោយកាត់ចោល <span class="mi">\(25\%\)</span> នៃពិន្ទុទាប និង <span class="mi">\(25\%\)</span> នៃពិន្ទុខ្ពស់ ហើយគេសិក្សាតែរ៉ង់ <span class="mi">\(50\%\)</span> នៃពិន្ទុដែលស្ថិតនៅកណ្ដាល ។</p>
+<ul>
+<li><p><span class="mi">\(25\%\)</span> នៃពិន្ទុទាបគឺ <span class="mi">\(6, 9, 11, 15\)</span></p></li>
+<li><p><span class="mi">\(25\%\)</span> នៃពិន្ទុខ្ពស់គឺ <span class="mi">\(31, 35, 85, 100\)</span></p></li>
+<li><p><span class="mi">\(50\%\)</span> នៃពិន្ទុកណ្ដាលគឺ <span class="mi">\(25, 26, 27, 27, 29, 30, 30, 30, 31\)</span> ។</p></li>
+</ul>
+<p><span class="mi">\(Q_1 = \dfrac{15 + 25}{2} = 20\)</span> និង <span class="mi">\(Q_3 = \dfrac{31 + 31}{2} = 31\)</span> ។ គណនារ៉ង់នៃពិន្ទុកណ្ដាលនេះ គេបាន រ៉ង់ <span class="mi">\(31 - 20 = 11\)</span> ហៅថា<strong>ចន្លោះអាំងទែរកាទីល</strong> តាងដោយ <span class="mi">\(I\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ចន្លោះអាំងទែរកាទីល</b></header><div class="bx-b">
+<p><div class="md">\[I = Q_3 - Q_1\]</div></p>
+</div></section>
+<p>ធ្វើរបៀបនេះ គេនឹងបានតម្លៃមួយដែលផ្ដល់ផលល្អក្នុងការវិភាគទិន្នន័យ ទោះបីទិន្នន័យនោះមានពង្រាយខ្លាំង ឬពង្រាយខ្សោយក៏ដោយ ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គេបានសម្ភាសន៍សមាជិកក្រុមភ្លេងមួយក្រុម ដើម្បីចង់ដឹងថា តើសមាជិកម្នាក់ៗអាចប្រើឧបករណ៍ភ្លេងបានចំនួនប៉ុន្មាន? លទ្ធផលនៃការសម្ភាសន៍ត្រូវបានគេរៀបដាក់ក្នុងតារាងបំណែងចែកប្រេកង់ខាងក្រោម ៖ <div class="md">\[\begin{array}{|l|ccccc|}\hline
+\text{ចំនួនឧបករណ៍ភ្លេង } x &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\\ \hline
+\text{ចំនួនសមាជិក } f &amp; 11 &amp; 10 &amp; 5 &amp; 3 &amp; 1\\ \hline
+\end{array}\]</div> គណនារ៉ង់ និងចន្លោះអាំងទែរកាទីល ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>រ៉ង់ <span class="mi">\(= 5 - 1 = 4\)</span> ។ ទិន្នន័យមានបំណែងចែកប្រេកង់ ការគណនាកាទីលត្រូវបង្កើតតារាងប្រេកង់កើន ៖ <div class="md">\[\begin{array}{|c|c|c|}\hline
+x &amp; f &amp; f^{\uparrow}\\ \hline
+1 &amp; 11 &amp; 11\\
+2 &amp; 10 &amp; 21\\
+3 &amp; 5 &amp; 26\\
+4 &amp; 3 &amp; 29\\
+5 &amp; 1 &amp; 30\\ \hline
+\end{array}\]</div> <span class="mi">\(Q_1 =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{1}{4}(n + 1) =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{1}{4}(30 + 1) =\)</span> តម្លៃតួទី <span class="mi">\(7.75\)</span> (<span class="mi">\(n = 30\)</span>) <span class="mi">\(\Rightarrow Q_1 = 1\)</span> ។<br/>
+<span class="mi">\(Q_3 =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{3}{4}(n + 1) =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{3}{4}(30 + 1) =\)</span> តម្លៃតួទី <span class="mi">\(23.25 \Rightarrow Q_3 = 3\)</span> ។<br/>
+ដូច្នេះ <span class="mi">\(I = 3 - 1 = 2\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គណនារ៉ង់និងចន្លោះអាំងទែរកាទីលនៃសំណុំទិន្នន័យខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(4, 2, 8, 3, 9, 11, 12, 18, 7, 3\)</span></p></li>
+<li><p><span class="mi">\(\begin{array}{|c|cccccc|}\hline x &amp; 3 &amp; 8 &amp; 9 &amp; 7 &amp; 5 &amp; 10\\ \hline f &amp; 5 &amp; 7 &amp; 3 &amp; 9 &amp; 4 &amp; 2\\ \hline\end{array}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. រៀប ៖ <span class="mi">\(2, 3, 3, 4, 7, 8, 9, 11, 12, 18\)</span> ។ រ៉ង់ <span class="mi">\(= 18 - 2 = 16\)</span> ។ <span class="mi">\(Q_1 =\)</span> តួទី <span class="mi">\(2.75\)</span> ៖ <span class="mi">\(3\)</span>, <span class="mi">\(Q_3 =\)</span> តួទី <span class="mi">\(8.25\)</span> ៖ <span class="mi">\(\dfrac{11 + 12}{2} = 11.5\)</span> ។ <span class="mi">\(I = 11.5 - 3 = 8.5\)</span> ។ ខ. រ៉ង់ <span class="mi">\(= 10 - 3 = 7\)</span>, <span class="mi">\(n = 30\)</span> ៖ <span class="mi">\(Q_1 =\)</span> តួទី <span class="mi">\(7.75\)</span> ៖ <span class="mi">\(5\)</span>, <span class="mi">\(Q_3 =\)</span> តួទី <span class="mi">\(23.25\)</span> ៖ <span class="mi">\(8\)</span> ។ <span class="mi">\(I = 3\)</span> ។</p></details>
+</div></section>
+<h3 id="u2">វ៉ារ្យង់និងគម្លាតស្តង់ដានៃស្ថិតិសកល</h3>
+<p>ឥឡូវនេះ យើងពិនិត្យមើលពង្រាយនៃចំនួនដែលនៅសងខាងតម្លៃមធ្យម សម្រាប់ទិន្នន័យខាងក្រោម ៖ គេមានសំណុំទិន្នន័យ <span class="mi">\(-193, -93, 7, 107, 207\)</span> ដែលមានមធ្យមស្មើនឹង <span class="mi">\(7\)</span> ។</p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22280.92%22 height=%2272.43%22 viewBox=%220 0 280.92 72.43%22%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 6.51 -2.28 C 6.68 -2.28 6.85 -2.28 6.85 -2.46 C 6.85 -2.67 6.68 -2.67 6.51 -2.67 L 1.17 -2.67 C 1 -2.67 0.82 -2.67 0.82 -2.46 C 0.82 -2.28 1 -2.28 1.17 -2.28 Z M 6.51 -2.28 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 2.90 -6.32 C 2.90 -6.56 2.90 -6.59 2.68 -6.59 C 2.06 -5.95 1.20 -5.95 0.87 -5.95 L 0.87 -5.64 C 1.07 -5.64 1.65 -5.64 2.17 -5.90 L 2.17 -0.78 C 2.17 -0.42 2.14 -0.31 1.25 -0.31 L 0.93 -0.31 L 0.93 0 C 1.28 -0.03 2.14 -0.03 2.54 -0.03 C 2.93 -0.03 3.79 -0.03 4.14 0 L 4.14 -0.31 L 3.82 -0.31 C 2.93 -0.31 2.90 -0.42 2.90 -0.78 Z M 2.90 -6.32 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M 3.62 -3.14 L 3.62 -2.82 C 3.62 -0.51 2.59 -0.06 2.03 -0.06 C 1.85 -0.06 1.32 -0.07 1.06 -0.42 C 1.5 -0.42 1.57 -0.70 1.57 -0.87 C 1.57 -1.17 1.32 -1.32 1.12 -1.32 C 0.95 -1.32 0.65 -1.23 0.65 -0.84 C 0.65 -0.18 1.20 0.21 2.03 0.21 C 3.31 0.21 4.51 -1.12 4.51 -3.25 C 4.51 -5.92 3.37 -6.59 2.5 -6.59 C 1.95 -6.59 1.46 -6.40 1.04 -5.96 C 0.64 -5.51 0.42 -5.10 0.42 -4.35 C 0.42 -3.12 1.28 -2.15 2.39 -2.15 C 3 -2.15 3.40 -2.57 3.62 -3.14 Z M 2.40 -2.39 C 2.25 -2.39 1.79 -2.39 1.48 -3 C 1.31 -3.37 1.31 -3.87 1.31 -4.35 C 1.31 -4.89 1.31 -5.34 1.51 -5.71 C 1.78 -6.21 2.15 -6.34 2.5 -6.34 C 2.95 -6.34 3.28 -6 3.45 -5.56 C 3.57 -5.23 3.60 -4.62 3.60 -4.15 C 3.60 -3.34 3.28 -2.39 2.40 -2.39 Z M 2.40 -2.39 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-2%22%3E%3Cpath d=%22M 2.87 -3.48 C 3.67 -3.75 4.25 -4.43 4.25 -5.21 C 4.25 -6.03 3.37 -6.59 2.43 -6.59 C 1.43 -6.59 0.68 -6 0.68 -5.23 C 0.68 -4.92 0.90 -4.73 1.18 -4.73 C 1.5 -4.73 1.68 -4.93 1.68 -5.23 C 1.68 -5.73 1.21 -5.73 1.07 -5.73 C 1.39 -6.21 2.03 -6.34 2.39 -6.34 C 2.79 -6.34 3.34 -6.12 3.34 -5.23 C 3.34 -5.10 3.32 -4.54 3.06 -4.10 C 2.76 -3.62 2.43 -3.59 2.18 -3.59 C 2.10 -3.57 1.87 -3.56 1.79 -3.56 C 1.71 -3.54 1.65 -3.54 1.65 -3.43 C 1.65 -3.32 1.71 -3.32 1.89 -3.32 L 2.32 -3.32 C 3.14 -3.32 3.5 -2.65 3.5 -1.68 C 3.5 -0.34 2.81 -0.06 2.39 -0.06 C 1.95 -0.06 1.21 -0.23 0.87 -0.81 C 1.21 -0.76 1.51 -0.98 1.51 -1.35 C 1.51 -1.71 1.25 -1.90 0.96 -1.90 C 0.73 -1.90 0.42 -1.76 0.42 -1.32 C 0.42 -0.43 1.32 0.21 2.40 0.21 C 3.62 0.21 4.51 -0.68 4.51 -1.68 C 4.51 -2.5 3.89 -3.28 2.87 -3.48 Z M 2.87 -3.48 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-3%22%3E%3Cpath d=%22M 4.70 -6.01 C 4.79 -6.14 4.79 -6.15 4.79 -6.37 L 2.39 -6.37 C 1.18 -6.37 1.17 -6.5 1.12 -6.68 L 0.87 -6.68 L 0.54 -4.65 L 0.79 -4.65 C 0.82 -4.81 0.92 -5.43 1.04 -5.54 C 1.12 -5.60 1.89 -5.60 2.01 -5.60 L 4.06 -5.60 C 3.95 -5.45 3.17 -4.37 2.95 -4.04 C 2.06 -2.70 1.73 -1.32 1.73 -0.32 C 1.73 -0.23 1.73 0.21 2.20 0.21 C 2.65 0.21 2.65 -0.23 2.65 -0.32 L 2.65 -0.82 C 2.65 -1.37 2.68 -1.92 2.76 -2.45 C 2.79 -2.68 2.93 -3.53 3.37 -4.14 Z M 4.70 -6.01 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-4%22%3E%3Cpath d=%22M 4.54 -3.17 C 4.54 -3.95 4.5 -4.75 4.15 -5.48 C 3.70 -6.42 2.89 -6.59 2.46 -6.59 C 1.87 -6.59 1.15 -6.32 0.75 -5.40 C 0.43 -4.73 0.39 -3.95 0.39 -3.17 C 0.39 -2.42 0.42 -1.53 0.82 -0.78 C 1.25 0.01 1.98 0.21 2.46 0.21 C 3 0.21 3.75 0.01 4.18 -0.93 C 4.5 -1.60 4.54 -2.39 4.54 -3.17 Z M 2.46 0 C 2.07 0 1.5 -0.25 1.31 -1.20 C 1.20 -1.79 1.20 -2.70 1.20 -3.28 C 1.20 -3.92 1.20 -4.56 1.28 -5.10 C 1.46 -6.28 2.21 -6.37 2.46 -6.37 C 2.79 -6.37 3.43 -6.18 3.62 -5.21 C 3.73 -4.65 3.73 -3.90 3.73 -3.28 C 3.73 -2.54 3.73 -1.87 3.62 -1.23 C 3.46 -0.29 2.90 0 2.46 0 Z M 2.46 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-5%22%3E%3Cpath d=%22M 1.25 -0.76 L 2.29 -1.78 C 3.84 -3.14 4.43 -3.67 4.43 -4.67 C 4.43 -5.79 3.54 -6.59 2.34 -6.59 C 1.21 -6.59 0.5 -5.67 0.5 -4.79 C 0.5 -4.25 0.98 -4.25 1.01 -4.25 C 1.18 -4.25 1.53 -4.35 1.53 -4.76 C 1.53 -5.03 1.35 -5.28 1.01 -5.28 C 0.93 -5.28 0.90 -5.28 0.87 -5.26 C 1.10 -5.92 1.64 -6.28 2.21 -6.28 C 3.10 -6.28 3.54 -5.48 3.54 -4.67 C 3.54 -3.87 3.04 -3.09 2.5 -2.48 L 0.60 -0.35 C 0.5 -0.25 0.5 -0.23 0.5 0 L 4.15 0 L 4.43 -1.71 L 4.18 -1.71 C 4.14 -1.42 4.07 -0.98 3.96 -0.84 C 3.90 -0.76 3.25 -0.76 3.03 -0.76 Z M 1.25 -0.76 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -120.37 0.00 L 129.10 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -120.37 -2.26 L -120.37 2.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%227.31%22 y=%2264.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2215.00%22 y=%2264.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2219.94%22 y=%2264.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2224.88%22 y=%2264.78%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -58.00 -2.26 L -58.00 2.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2271.67%22 y=%2264.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2279.35%22 y=%2264.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2284.30%22 y=%2264.78%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 4.36 -2.26 L 4.36 2.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22139.86%22 y=%2264.78%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 66.73 -2.26 L 66.73 2.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22196.81%22 y=%2264.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22201.75%22 y=%2264.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22206.69%22 y=%2264.78%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 129.10 -2.26 L 129.10 2.26 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%22258.69%22 y=%2264.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22263.63%22 y=%2264.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22268.57%22 y=%2264.78%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -57.60 17.00 L -0.00 17.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -2.07 2.39 C -1.69 0.95 -0.85 0.27 -0.00 0.00 C -0.85 -0.27 -1.69 -0.95 -2.07 -2.38 %22 transform=%22matrix(-0.99, 0, 0, 0.99, 80.65, 36.63)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2297.97%22 y=%2232.32%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22105.66%22 y=%2232.32%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22110.60%22 y=%2232.32%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22115.54%22 y=%2232.32%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 8.73 17.00 L 66.33 17.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -2.07 2.38 C -1.69 0.95 -0.85 0.27 0.00 -0.00 C -0.85 -0.27 -1.69 -0.95 -2.07 -2.39 %22 transform=%22matrix(0.99, 0, 0, -0.99, 204.02, 36.63)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22168.03%22 y=%2233.14%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22172.97%22 y=%2233.14%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22177.91%22 y=%2233.14%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -119.97 36.85 L -0.00 36.85 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -2.07 2.39 C -1.69 0.95 -0.84 0.28 -0.00 0.00 C -0.84 -0.27 -1.69 -0.95 -2.07 -2.38 %22 transform=%22matrix(-0.99, 0, 0, 0.99, 18.77, 16.94)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2267.03%22 y=%2212.63%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%2274.72%22 y=%2212.63%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%2279.66%22 y=%2212.63%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%2284.60%22 y=%2212.63%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 8.73 36.85 L 128.71 36.85 %22 transform=%22matrix(0.99, 0, 0, -0.99, 138.00, 53.51)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -2.07 2.38 C -1.69 0.95 -0.85 0.27 -0.00 -0.00 C -0.85 -0.28 -1.69 -0.95 -2.07 -2.39 %22 transform=%22matrix(0.99, 0, 0, -0.99, 265.91, 16.94)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%22198.97%22 y=%2213.45%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22203.91%22 y=%2213.45%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22208.86%22 y=%2213.45%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+<p>យើងឃើញថាគម្លាតពីមធ្យមមាន <span class="mi">\(-200, -100, 0, 100\)</span> និង <span class="mi">\(200\)</span> ។ បើគេបូកគម្លាតទាំងអស់នេះ នោះផលបូកស្មើនឹងសូន្យ ។ លទ្ធផលស្មើនឹងសូន្យ ពុំអាចបញ្ជាក់ពីពង្រាយឡើយនៅពេលដែលគេចង់ប្រៀបធៀបរង្វាស់ពង្រាយនៃសំណុំទិន្នន័យមួយ ទៅនឹងរង្វាស់ពង្រាយនៃសំណុំទិន្នន័យមួយទៀត ។ ហេតុនេះ គេត្រូវពិនិត្យមើលការេនៃគម្លាតទាំង <span class="mi">\(5\)</span> ខាងលើ គេបាន <span class="mi">\((-200)^2, (-100)^2, 0^2, (100)^2\)</span> និង <span class="mi">\((200)^2\)</span> ឬស្មើនឹង <span class="mi">\(40\,000\)</span>, <span class="mi">\(10\,000\)</span>, <span class="mi">\(0\)</span>, <span class="mi">\(10\,000\)</span> និង <span class="mi">\(40\,000\)</span> ។</p>
+<p>បើគេយកផលបូកការេនៃគម្លាតដែលស្មើនឹង <span class="mi">\(100\,000\)</span> ទៅចែកនឹងចំនួនគម្លាត <span class="mi">\(5\)</span> នោះគេបានតម្លៃមួយហៅថា <strong>វ៉ារ្យង់ស្ថិតិសកល</strong> តម្លៃនោះគឺ <span class="mi">\(\dfrac{100\,000}{5} = 20\,000\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>វ៉ារ្យង់ស្ថិតិសកលមានរូបមន្ត <div class="md">\[\sigma^2 = \frac{\sum(X_i - \mu)^2}{N}\]</div> ដែល <span class="mi">\(\sigma^2\)</span> តាងវ៉ារ្យង់ស្ថិតិសកល (<span class="mi">\(\sigma\)</span> អានថា “sigma” ស៊ិចម៉ា), <span class="mi">\(\mu\)</span> តាងមធ្យមស្ថិតិសកល អានថា “mu” មុយ, <span class="mi">\(N\)</span> តាងចំនួនទិន្នន័យទាំងអស់ក្នុងស្ថិតិសកល, <span class="mi">\(X_i\)</span> តួនីមួយៗនៃទិន្នន័យក្នុងស្ថិតិសកល ។</p>
+</div></section>
+<p><strong>រូបមន្តកាត់សម្រាប់វ៉ារ្យង់ស្ថិតិសកល ៖</strong> <div class="md">\[\begin{aligned}
+\sigma^2 &amp;= \frac{\sum(X_i - \mu)^2}{N} = \frac{\sum(X_i^2 - 2\mu X_i + \mu^2)}{N}\\
+&amp;= \frac{\sum X_i^2 - 2\mu\sum X_i + \sum\mu^2}{N}\\
+&amp;= \frac{\sum X_i^2}{N} - 2\mu\frac{\sum X_i}{N} + \frac{\sum\mu^2}{N}
+\end{aligned}\]</div> ដោយ <span class="mi">\(\dfrac{\sum X_i}{N} = \mu\)</span> ហើយ <span class="mi">\(\sum\mu^2 = N\mu^2 = N\left(\dfrac{\sum X_i}{N}\right)^2\)</span> យើងបាន ៖ <div class="md">\[\begin{aligned}
+\sigma^2 &amp;= \frac{\sum X_i^2}{N} - 2\left(\frac{\sum X_i}{N}\right)^2 + \left(\frac{\sum X_i}{N}\right)^2\\
+&amp;= \frac{\sum X_i^2}{N} - \left(\frac{\sum X_i}{N}\right)^2
+\end{aligned}\]</div> ដូច្នេះ <div class="md">\[\sigma^2 = \frac{N\sum X_i^2 - \left(\sum X_i\right)^2}{N^2}\]</div> ឫសការេនៃវ៉ារ្យង់ស្ថិតិសកលហៅថា <strong>គម្លាតស្តង់ដាស្ថិតិសកល</strong> ។ ដូច្នេះ <div class="md">\[\begin{gathered}
+\sigma = \sqrt{\frac{\sum(X_i - \mu)^2}{N}} \quad{} \text{ឬ}\\
+\sigma = \frac{1}{N}\sqrt{N\sum X_i^2 - \left(\sum X_i\right)^2}
+\end{gathered}\]</div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>គេមានទិន្នន័យ <span class="mi">\(7, 4, 6, 9, 12, 4, 10, 11, 15, 17, 15\)</span> ។ គេសន្មតថាទិន្នន័យនេះជាស្ថិតិសកល ។ គណនាវ៉ារ្យង់ និងគម្លាតស្តង់ដា ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាមរូបមន្តវ៉ារ្យង់ស្ថិតិសកល <span class="mi">\(\sigma^2 = \dfrac{\sum(X_i - \mu)^2}{N}\)</span> ។ មធ្យមស្ថិតិសកល <div class="md">\[\begin{aligned}
+\mu &amp;= \frac{\sum X_i}{N}\\
+&amp;= \frac{7 + 4 + 6 + 9 + 12 + 4 + 10 + 11 + 15 + 17 + 15}{11}\\
+&amp;= \frac{110}{11} = 10
+\end{aligned}\]</div> <div class="md">\[\begin{array}{|c|c|c|}\hline
+X_i &amp; X_i - \mu &amp; (X_i - \mu)^2\\ \hline
+7 &amp; 7 - 10 = -3 &amp; 9\\
+4 &amp; 4 - 10 = -6 &amp; 36\\
+6 &amp; 6 - 10 = -4 &amp; 16\\
+9 &amp; 9 - 10 = -1 &amp; 1\\
+12 &amp; 12 - 10 = 2 &amp; 4\\
+4 &amp; 4 - 10 = -6 &amp; 36\\
+10 &amp; 10 - 10 = 0 &amp; 0\\
+11 &amp; 11 - 10 = 1 &amp; 1\\
+15 &amp; 15 - 10 = 5 &amp; 25\\
+17 &amp; 17 - 10 = 7 &amp; 49\\
+15 &amp; 15 - 10 = 5 &amp; 25\\ \hline
+ &amp; &amp; \sum(X_i - \mu)^2 = 202\\ \hline
+\end{array}\]</div> ដូច្នេះ វ៉ារ្យង់ <span class="mi">\(\sigma^2 = \dfrac{202}{11} \approx 18.36\)</span> ។ គម្លាតស្តង់ដាស្ថិតិសកល <span class="mi">\(\sigma = \sqrt{18.36} \approx 4.28\)</span> ។</p>
+<p><strong>ប្រើប្រាស់រូបមន្តកាត់ ៖</strong> <span class="mi">\(\sum X_i = 7 + 4 + \dots + 15 = 110\)</span>, <span class="mi">\(\sum X_i^2 = 7^2 + 4^2 + \dots + 15^2 = 1302\)</span>, <span class="mi">\(N = 11\)</span> ។ <div class="md">\[\begin{gathered}
+\sigma^2 = \frac{11\times 1302 - 110^2}{11^2} \approx 18.36,\\
+\sigma = \sqrt{18.36} \approx 4.28
+\end{gathered}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>ប្រាក់ចំណូលប្រចាំសប្ដាហ៍របស់នាយករង <span class="mi">\(5\)</span> នាក់ក្នុងក្រុមហ៊ុនមួយមាន <span class="mi">\(\$50\)</span>, <span class="mi">\(\$60\)</span>, <span class="mi">\(\$55\)</span>, <span class="mi">\(\$52\)</span> និង <span class="mi">\(\$58\)</span> (គេសន្មតថាទិន្នន័យជាស្ថិតិសកល) ។</p>
+<ol class="list olka cols1">
+<li><p>គណនាវ៉ារ្យង់ស្ថិតិសកល</p></li>
+<li><p>គណនាគម្លាតស្តង់ដាស្ថិតិសកល ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>រូបមន្តវ៉ារ្យង់ស្ថិតិសកល <span class="mi">\(\sigma^2 = \dfrac{\sum(X_i - \mu)^2}{N}\)</span> ។ ក្នុងរូបមន្តនេះ យើងមិនស្គាល់មធ្យមស្ថិតិសកល <span class="mi">\(\mu\)</span> ទេ ។ គណនា <span class="mi">\(\mu\)</span> ៖ <span class="mi">\(\mu = \dfrac{\sum X_i}{N} = \dfrac{50 + 60 + 55 + 52 + 58}{5} = \dfrac{275}{5} = 55\)</span> ។ <div class="md">\[\begin{array}{|c|c|c|}\hline
+  X_i &amp; X_i - \mu &amp; (X_i - \mu)^2\\ \hline
+  50 &amp; 50 - 55 = -5 &amp; 25\\
+  60 &amp; 60 - 55 = 5 &amp; 25\\
+  55 &amp; 55 - 55 = 0 &amp; 0\\
+  52 &amp; 52 - 55 = -3 &amp; 9\\
+  58 &amp; 58 - 55 = 3 &amp; 9\\ \hline
+   &amp; &amp; \sum(X_i - \mu)^2 = 68\\ \hline
+  \end{array}\]</div> ដូច្នេះ <span class="mi">\(\sigma^2 = \dfrac{68}{5} = 13.6\)</span> ។</p></li>
+<li><p>គម្លាតស្តង់ដាស្ថិតិសកលជាឫសការេនៃវ៉ារ្យង់ស្ថិតិសកល <span class="mi">\(\sigma = \sqrt{\sigma^2} = \sqrt{13.6} \approx 3.69\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ម៉ាសនៃឡាំងឥវ៉ាន់មួយចំនួន ដែលគេផ្ញើទៅប្រទេសថៃមានទម្ងន់ <span class="mi">\(98\)</span> kg, <span class="mi">\(95\)</span> kg, <span class="mi">\(110\)</span> kg, <span class="mi">\(106\)</span> kg, <span class="mi">\(103\)</span> kg, <span class="mi">\(112\)</span> kg, <span class="mi">\(119\)</span> kg, <span class="mi">\(102\)</span> kg, <span class="mi">\(92\)</span> kg, <span class="mi">\(105\)</span> kg, <span class="mi">\(91\)</span> kg និង <span class="mi">\(90\)</span> kg ។ គណនាវ៉ារ្យង់ និងគម្លាតស្តង់ដាស្ថិតិសកល ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(\mu \approx 101.92\)</span>, <span class="mi">\(\sigma^2 \approx 75.74\)</span>, <span class="mi">\(\sigma \approx 8.7\)</span> ។</p></details>
+</div></section>
+<h3 id="u3">វ៉ារ្យង់និងគម្លាតស្តង់ដានៃស្ថិតិគំរូ</h3>
+<p>វ៉ារ្យង់ស្ថិតិគំរូនិងវ៉ារ្យង់ស្ថិតិសកលមានការខុសគ្នាបន្តិច ។ វ៉ារ្យង់គំរូ តាងដោយ <div class="md">\[s^2 = \frac{\sum(X_i - \bar{X})^2}{n - 1}\]</div> ដែល <span class="mi">\(s^2\)</span> តាងវ៉ារ្យង់ស្ថិតិគំរូ, <span class="mi">\(\bar{X}\)</span> តាងមធ្យមស្ថិតិគំរូ <span class="mi">\(\bar{X} = \dfrac{\sum X_i}{n}\)</span>, <span class="mi">\(n\)</span> តាងចំនួនទិន្នន័យក្នុងស្ថិតិគំរូ, <span class="mi">\(X_i\)</span> តាងតួនីមួយៗនៃទិន្នន័យក្នុងស្ថិតិគំរូ ។</p>
+<p><strong>រូបមន្តកាត់សម្រាប់វ៉ារ្យង់គំរូ ៖</strong> <div class="md">\[\begin{aligned}
+s^2 &amp;= \frac{\sum(X_i - \bar{X})^2}{n - 1}\\
+&amp;= \frac{\sum(X_i^2 - 2\bar{X}X_i + \bar{X}^2)}{n - 1}\\
+&amp;= \frac{\sum X_i^2 - 2\bar{X}\sum X_i + \sum\bar{X}^2}{n - 1}\\
+&amp;= \frac{\sum X_i^2 - 2\cdot\frac{\sum X_i}{n}\cdot\sum X_i + \left(\frac{\sum X_i}{n}\right)^2\cdot n}{n - 1}
+\end{aligned}\]</div> (ដោយ <span class="mi">\(\bar{X} = \dfrac{\sum X_i}{n}\)</span> មធ្យមស្ថិតិគំរូ និង <span class="mi">\(\sum\bar{X}^2 = n\bar{X}^2\)</span>) <div class="md">\[\Rightarrow s^2 = \frac{n\sum X_i^2 - 2\left(\sum X_i\right)^2 + \left(\sum X_i\right)^2}{n(n - 1)}\]</div> ដូច្នេះ <div class="md">\[s^2 = \frac{n\sum X_i^2 - \left(\sum X_i\right)^2}{n(n - 1)}\]</div></p>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<p>កាលណាចំនួនទិន្នន័យក្នុងគំរូកាន់តែធំទៅៗ ពេលនោះរូបមន្តវ៉ារ្យង់គំរូកាន់តែដូចវ៉ារ្យង់សកលស្ថិតិ ។ មានន័យថា កាលណា <span class="mi">\(n\)</span> កាន់តែធំនោះ <span class="mi">\(s^2 \to \sigma^2\)</span> ។ គេអាចយកវ៉ារ្យង់ស្ថិតិគំរូ ដើម្បីធ្វើការប៉ាន់ស្មានវ៉ារ្យង់ស្ថិតិសកល ។ ដូច្នេះហើយបានជាភាគបែងនៃវ៉ារ្យង់ស្ថិតិគំរូ <span class="mi">\(n(n - 1)\)</span> ព្រោះចៀសវាងកុំឱ្យមានល្អៀងធំពេក ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>ក្នុងរោងចក្រធ្វើនំមួយ មានម៉ាស៊ីនសម្រាប់ខ្ចប់នំពីរគឺ ម៉ាស៊ីន <span class="mi">\(A\)</span> និងម៉ាស៊ីន <span class="mi">\(B\)</span> ។ គេជ្រើសរើសយកគំរូនំចំនួន <span class="mi">\(10\)</span> កញ្ចប់ចេញពីលទ្ធផលនៃម៉ាស៊ីននីមួយៗ ហើយម៉ាសនំថ្លឹងបង្គត់គិតជាក្រាម ។ <div class="md">\[\begin{array}{|c|c|}\hline
+\text{ម៉ាស៊ីន } A &amp; \text{ម៉ាស៊ីន } B\\ \hline
+196 &amp; 192\\
+198 &amp; 194\\
+198 &amp; 195\\
+199 &amp; 198\\
+200 &amp; 200\\
+200 &amp; 201\\
+201 &amp; 203\\
+201 &amp; 204\\
+202 &amp; 206\\
+205 &amp; 207\\ \hline
+\end{array}\]</div></p>
+<ol class="list olka cols1">
+<li><p>គណនាគម្លាតស្តង់ដានៃម៉ាសកញ្ចប់នំ ដែលយកចេញពីលទ្ធផលការងារម៉ាស៊ីននីមួយៗ</p></li>
+<li><p>បកស្រាយចម្លើយសំណួរខាងលើ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>គម្លាតស្តង់ដានៃម៉ាស៊ីន <span class="mi">\(A\)</span> និងម៉ាស៊ីន <span class="mi">\(B\)</span> តាមរូបមន្ត <span class="mi">\(s^2 = \dfrac{\sum(X_i - \bar{X})^2}{n - 1}\)</span> ។ <div class="md">\[\begin{aligned}
+  \bar{X}_A &amp;= \frac{196 + 198 + \dots + 202 + 205}{10} = \frac{2000}{10} = 200 \text{ g}\\
+  \bar{X}_B &amp;= \frac{192 + 194 + \dots + 206 + 207}{10} = \frac{2000}{10} = 200 \text{ g}
+  \end{aligned}\]</div> <div class="md">\[\begin{array}{|c|c|c|}\hline
+  X_i\,(A) &amp; X_i - \bar{X}_A &amp; (X_i - \bar{X}_A)^2\\ \hline
+  196 &amp; -4 &amp; 16\\
+  198 &amp; -2 &amp; 4\\
+  198 &amp; -2 &amp; 4\\
+  199 &amp; -1 &amp; 1\\
+  200 &amp; 0 &amp; 0\\
+  200 &amp; 0 &amp; 0\\
+  201 &amp; 1 &amp; 1\\
+  201 &amp; 1 &amp; 1\\
+  202 &amp; 2 &amp; 4\\
+  205 &amp; 5 &amp; 25\\
+  \hline
+   &amp; &amp; 56\\ \hline
+  \end{array}\]</div> <div class="md">\[\begin{array}{|c|c|c|}\hline
+  X_i\,(B) &amp; X_i - \bar{X}_B &amp; (X_i - \bar{X}_B)^2\\ \hline
+  192 &amp; -8 &amp; 64\\
+  194 &amp; -6 &amp; 36\\
+  195 &amp; -5 &amp; 25\\
+  198 &amp; -2 &amp; 4\\
+  200 &amp; 0 &amp; 0\\
+  201 &amp; 1 &amp; 1\\
+  203 &amp; 3 &amp; 9\\
+  204 &amp; 4 &amp; 16\\
+  206 &amp; 6 &amp; 36\\
+  207 &amp; 7 &amp; 49\\
+  \hline
+   &amp; &amp; 240\\ \hline
+  \end{array}\]</div> គម្លាតស្តង់ដាសម្រាប់ម៉ាស៊ីន <span class="mi">\(A\)</span> ៖ <span class="mi">\(s_A = \sqrt{\dfrac{\sum(X_i - \bar{X}_A)^2}{n - 1}} = \sqrt{\dfrac{56}{9}} = \sqrt{6.22} \approx 2.49\)</span> ។<br/>
+គម្លាតស្តង់ដាសម្រាប់ម៉ាស៊ីន <span class="mi">\(B\)</span> ៖ <span class="mi">\(s_B = \sqrt{\dfrac{\sum(X_i - \bar{X}_B)^2}{n - 1}} = \sqrt{\dfrac{240}{9}} = \sqrt{26.67} \approx 5.16\)</span> ។</p></li>
+<li><p>ដោយម៉ាស៊ីន <span class="mi">\(A\)</span> មានគម្លាតស្តង់ដាតូចជាងគម្លាតស្តង់ដាម៉ាស៊ីន <span class="mi">\(B\)</span> នាំឱ្យម៉ាស៊ីន <span class="mi">\(A\)</span> ធ្វើការបានល្អជាងម៉ាស៊ីន <span class="mi">\(B\)</span> ។</p></li>
+</ol>
+<p><strong>វិធីផ្សេងដោយប្រើរូបមន្តកាត់ ៖</strong> ម៉ាស៊ីន <span class="mi">\(A\)</span> ៖ <span class="mi">\(\sum x_i = 2000\)</span>, <span class="mi">\(\sum x_i^2 = 400\,056\)</span> ៖ <span class="mi">\(s_A = \sqrt{\dfrac{10\times 400\,056 - 2000^2}{10\times 9}} \approx 2.494\)</span> ។ ម៉ាស៊ីន <span class="mi">\(B\)</span> ៖ <span class="mi">\(\sum x_i = 2000\)</span>, <span class="mi">\(\sum x_i^2 = 400\,240\)</span> ៖ <span class="mi">\(s_B = \sqrt{\dfrac{10\times 400\,240 - 2000^2}{10\times 9}} \approx 5.164\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>អាយុកាលអគារអ្នកជំងឺតាមផ្នែកនីមួយៗក្នុងមន្ទីរពេទ្យមួយមាន <span class="mi">\(38\)</span>, <span class="mi">\(26\)</span>, <span class="mi">\(13\)</span> និង <span class="mi">\(22\)</span> ឆ្នាំ ។ គណនាវ៉ារ្យង់និងគម្លាតស្តង់ដា បើគេឧបមាថាទិន្នន័យជាស្ថិតិគំរូ ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(\bar{X} = 24.75\)</span>, <span class="mi">\(s^2 \approx 107.58\)</span>, <span class="mi">\(s \approx 10.37\)</span> ។</p></details>
+</div></section>
+<h3 id="u4">វ៉ារ្យង់និងគម្លាតស្តង់ដាសម្រាប់ទិន្នន័យផ្ដុំជាតារាងប្រេកង់</h3>
+<p>បើទិន្នន័យ <span class="mi">\(X_1, X_2, X_3, \dots, X_n\)</span> កើតឡើងដោយមានប្រេកង់ <span class="mi">\(f_1, f_2, f_3, \dots, f_n\)</span> នោះវ៉ារ្យង់នៃស្ថិតិសកលមានរូបមន្ត</p>
+<section class="bx bx-rule"><header class="bx-h"><b>រូបមន្ត</b></header><div class="bx-b">
+<p><div class="md">\[\begin{aligned}
+\sigma^2 = \frac{\sum f_i(X_i - \mu)^2}{\sum f_i} \quad{} \text{ឬ} \quad{} \sigma^2 &amp;\\
+&amp;= \frac{N\cdot\sum f_iX_m^2 - \left(\sum f_iX_m\right)^2}{N^2}
+\end{aligned}\]</div> ដែល <span class="mi">\(X_m\)</span> ជាផ្ចិតនៃថ្នាក់ <span class="mi">\(X_m = \dfrac{X_L + X_M}{2}\)</span> និង <span class="mi">\(N = \sum f_i\)</span> ។ <span class="mi">\(\sigma\)</span> ឫសការេនៃវ៉ារ្យង់ហៅថា គម្លាតស្តង់ដា គេបាន <div class="md">\[\begin{gathered}
+\sigma = \sqrt{\frac{\sum f_i(X_i - \mu)^2}{\sum f_i}}\\
+\text{ឬ} \quad{} \sigma = \sqrt{\frac{N\cdot\sum f_iX_m^2 - \left(\sum f_iX_m\right)^2}{N^2}}
+\end{gathered}\]</div></p>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<p>ចំពោះទិន្នន័យផ្ដុំជាតារាងប្រេកង់ វ៉ារ្យង់ស្ថិតិសកល និងស្ថិតិគំរូ មានរូបមន្តស្រដៀងគ្នាកំណត់ដោយ <span class="mi">\(s^2 = \dfrac{n\cdot\sum f_iX_m^2 - \left(\sum f_iX_m\right)^2}{n(n - 1)}\)</span> ដែល <span class="mi">\(n = \sum f_i\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>តារាងខាងក្រោម ជាបំណែងចែកការប្រាក់ដែលអ្នកវិនិយោគចំនួន <span class="mi">\(460\)</span> នាក់ឱ្យក្នុងមួយឆ្នាំ ។ <div class="md">\[\begin{array}{|c|c|}\hline
+\text{ការប្រាក់ (គិតជាដុល្លារ)} &amp; \text{ចំនួនអ្នកវិនិយោគ } f_i\\ \hline
+25 - 30 &amp; 17\\
+30 - 40 &amp; 55\\
+40 - 60 &amp; 142\\
+60 - 80 &amp; 153\\
+80 - 110 &amp; 93\\ \hline
+\end{array}\]</div> គណនាគម្លាតស្តង់ដា ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ចំពោះទិន្នន័យដែលផ្ដុំជាថ្នាក់ ចំណុចកណ្ដាលនៃថ្នាក់តំណាងឱ្យថ្នាក់នីមួយៗ ។ ឧបមាថាទិន្នន័យជាទិន្នន័យគំរូ ។ គម្លាតស្តង់ដាគំរូ <span class="mi">\(s = \sqrt{\dfrac{n\cdot\sum f_iX_m^2 - \left(\sum f_iX_m\right)^2}{n(n - 1)}}\)</span>, <span class="mi">\(n = \sum f_i\)</span> ។ <div class="md">\[\begin{array}{|c|c|c|c|c|c|}\hline
+\text{ការប្រាក់} &amp; f_i &amp; X_m &amp; f_iX_m &amp; X_m^2 &amp; f_iX_m^2\\ \hline
+25 - 30 &amp; 17 &amp; 27.5 &amp; 467.5 &amp; 756.25 &amp; 12\,856.25\\
+30 - 40 &amp; 55 &amp; 35 &amp; 1925 &amp; 1225 &amp; 67\,375\\
+40 - 60 &amp; 142 &amp; 50 &amp; 7100 &amp; 2500 &amp; 355\,000\\
+60 - 80 &amp; 153 &amp; 70 &amp; 10\,710 &amp; 4900 &amp; 749\,700\\
+80 - 110 &amp; 93 &amp; 95 &amp; 8835 &amp; 9025 &amp; 839\,325\\ \hline
+ &amp; 460 &amp; &amp; 29\,037.5 &amp; &amp; 2\,024\,256.25\\ \hline
+\end{array}\]</div> <div class="md">\[\begin{aligned}
+s &amp;\\
+&amp;= \sqrt{\frac{460\times 2\,024\,256.25 - 29\,037.5^2}{460\times 459}} \approx 20.41316
+\end{aligned}\]</div> ដូច្នេះ <span class="mi">\(s \approx 20.41\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេមានបំណែងចែកប្រេកង់ខាងក្រោម ។ គណនាមធ្យម និងគម្លាតស្តង់ដាស្ថិតិគំរូ ។ <div class="md">\[\begin{array}{|c|c|}\hline
+\text{ថ្នាក់} &amp; f_i\\ \hline
+5 - 10 &amp; 15\\
+10 - 15 &amp; 72\\
+15 - 20 &amp; 15\\
+20 - 25 &amp; 90\\
+25 - 30 &amp; 35\\
+30 - 35 &amp; 8\\ \hline
+\end{array}\]</div></p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(\bar{X} \approx 19.24\)</span>, <span class="mi">\(s \approx 6.58\)</span> ។</p></details>
+</div></section>
+<h3 id="u5">មេរៀនសង្ខេប ជំពូកទី ៧</h3>
+<section class="bx bx-green"><header class="bx-h"><b>មេរៀនសង្ខេប</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>បើទិន្នន័យដែលបានរៀបតាមលំដាប់មានចំនួនតួស្មើនឹង <span class="mi">\(n\)</span> នោះគេបាន ៖ កាទីលទី <span class="mi">\(1\)</span> <span class="mi">\(Q_1 =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{1}{4}(n + 1)\)</span>, កាទីលទី <span class="mi">\(2\)</span> <span class="mi">\(Q_2 =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{2}{4}(n + 1) =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{1}{2}(n + 1)\)</span>, កាទីលទី <span class="mi">\(3\)</span> <span class="mi">\(Q_3 =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{3}{4}(n + 1)\)</span> ។</p></li>
+<li><p>បើគេតាង <span class="mi">\(D_i\)</span> ជាទីតាំងនៃភាគដប់ នោះគេបាន <span class="mi">\(D_1, D_2, D_3, \dots, D_9\)</span> ៖ <span class="mi">\(D_1 =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{1}{10}(n + 1)\)</span>, <span class="mi">\(\dots\)</span>, <span class="mi">\(D_9 =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{9}{10}(n + 1)\)</span> ។</p></li>
+<li><p>បើគេតាង <span class="mi">\(L_P\)</span> ជាតម្លៃតួទីតាំងភាគរយ នោះគេបាន <span class="mi">\(L_1, L_2, \dots, L_{99}\)</span> ។ រូបមន្តភាគរយ <span class="mi">\(L_P =\)</span> តម្លៃតួទី <span class="mi">\(\dfrac{P}{100}(n + 1)\)</span> ដែល <span class="mi">\(P\)</span> ជាភាគរយដែលគេត្រូវរក ។</p></li>
+<li><p>រង្វាស់ទីតាំងនៃទិន្នន័យផ្ដុំជាថ្នាក់ ៖ <span class="mi">\(Q_1 = L + \dfrac{\frac{1}{4}n - f^{\uparrow}}{f}\times(i)\)</span>, <span class="mi">\(Q_3 = L + \dfrac{\frac{3}{4}n - f^{\uparrow}}{f}\times(i)\)</span>, <span class="mi">\(L_P = L + \dfrac{\frac{P}{100}n - f^{\uparrow}}{f}\times(i)\)</span> ។</p></li>
+<li><p>រ៉ង់ គឺជាផលដករវាងតម្លៃទិន្នន័យដែលខ្ពស់ជាងគេនិងតម្លៃទិន្នន័យដែលទាបជាងគេ ។</p>
+<ul>
+<li><p>ចន្លោះអាំងទែរកាទីល <span class="mi">\(I = Q_3 - Q_1\)</span></p></li>
+<li><p>វ៉ារ្យង់ស្ថិតិសកលមានរូបមន្ត <span class="mi">\(\sigma^2 = \dfrac{\sum(X - \mu)^2}{N}\)</span></p></li>
+<li><p>គម្លាតស្តង់ដាស្ថិតិសកល <span class="mi">\(\sigma = \sqrt{\sigma^2}\)</span></p></li>
+<li><p>វ៉ារ្យង់គំរូ តាងដោយ <span class="mi">\(s^2 = \dfrac{\sum(X_i - \bar{X})^2}{n - 1} = \dfrac{n\sum X_i^2 - \left(\sum X_i\right)^2}{n(n - 1)}\)</span></p></li>
+<li><p>គម្លាតស្តង់ដាស្ថិតិគំរូ <span class="mi">\(s = \sqrt{s^2}\)</span> ។</p></li>
+</ul></li>
+<li><p>ចំពោះទិន្នន័យផ្ដុំជាថ្នាក់</p>
+<ul>
+<li><p>ឫសការេនៃវ៉ារ្យង់ស្ថិតិសកលហៅថា គម្លាតស្តង់ដា ៖ <span class="mi">\(\sigma = \sqrt{\dfrac{\sum f_i(X_i - \mu)^2}{\sum f_i}} = \sqrt{\dfrac{N\cdot\sum f_iX_m^2 - \left(\sum f_iX_m\right)^2}{N^2}}\)</span> ដែល <span class="mi">\(N = \sum f_i\)</span></p></li>
+<li><p>ឫសការេនៃវ៉ារ្យង់ស្ថិតិគំរូហៅថា គម្លាតស្តង់ដា ៖ <span class="mi">\(s = \sqrt{\dfrac{\sum f_i(X_i - \bar{X})^2}{n - 1}} = \sqrt{\dfrac{n\cdot\sum f_iX_m^2 - \left(\sum f_iX_m\right)^2}{n(n - 1)}}\)</span> ដែល <span class="mi">\(n = \sum f_i\)</span> ។</p></li>
+</ul></li>
+</ol>
+</div></section>
+<h3 id="u6">លំហាត់ជំពូកទី ៧</h3>
+<ol class="list olnum cols1">
+<li><p>គេមានសំណុំទិន្នន័យខាងក្រោម ។ គណនាកាទីលទាំងបី ភាគដប់ និង <span class="mi">\(L_{35}\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(4, 8, 3, 6, 7, 10, 11, 18, 15, 19, 20\)</span></p></li>
+<li><p><span class="mi">\(\begin{array}{|c|cccccccc|}\hline x &amp; 7 &amp; 8 &amp; 9 &amp; 11 &amp; 13 &amp; 15 &amp; 19 &amp; 20\\ \hline f &amp; 2 &amp; 5 &amp; 4 &amp; 12 &amp; 11 &amp; 9 &amp; 7 &amp; 3\\ \hline\end{array}\)</span></p></li>
+</ol></li>
+<li><p>អ្នកទេសចរជនជាតិជប៉ុន ដែលធ្វើដំណើរតាមយន្តហោះមកព្រះរាជាណាចក្រកម្ពុជាមានអាយុ <span class="mi">\(32, 21, 60, 47, 54, 17, 72, 55, 33\)</span> និង <span class="mi">\(41\)</span> ឆ្នាំ ។</p>
+<ol class="list olka cols1">
+<li><p>គណនារ៉ង់</p></li>
+<li><p>គណនាចន្លោះអាំងទែរកាទីល</p></li>
+<li><p>គណនាគម្លាតស្តង់ដា ។</p></li>
+</ol></li>
+<li><p>ប្រាក់ចំណូលប្រចាំសប្ដាហ៍របស់នាយករង <span class="mi">\(5\)</span> នាក់ក្នុងក្រុមហ៊ុនមួយនោះមាន <span class="mi">\(\$30\)</span>, <span class="mi">\(\$35\)</span>, <span class="mi">\(\$50\)</span>, <span class="mi">\(\$42\)</span> និង <span class="mi">\(\$40\)</span> ដោយគិតថាទិន្នន័យជាស្ថិតិសកល ។ ក. គណនាវ៉ារ្យង់ ខ. គណនាគម្លាតស្តង់ដា ។</p></li>
+<li><p>ពិន្ទុនៃការធ្វើតេស្តសិស្សចំនួន <span class="mi">\(60\)</span> នាក់លើមុខវិជ្ជាគណិតវិទ្យា បានបង្ហាញដូចតារាងខាងក្រោម ៖ <div class="md">\[\begin{array}{|c|c|}\hline
+  \text{ពិន្ទុ} &amp; \text{ចំនួនសិស្ស } f\\ \hline
+  100 - 105 &amp; 8\\
+  105 - 110 &amp; 13\\
+  110 - 115 &amp; 25\\
+  115 - 120 &amp; 11\\
+  120 - 125 &amp; 4\\ \hline
+  \end{array}\]</div></p>
+<ol class="list olka cols1">
+<li><p>គណនារ៉ង់</p></li>
+<li><p>គណនា <span class="mi">\(Q_1\)</span> និង <span class="mi">\(Q_2\)</span></p></li>
+<li><p>គណនាភាគដប់និង <span class="mi">\(L_{36}\)</span></p></li>
+<li><p>គណនាវ៉ារ្យង់និងគម្លាតស្តង់ដាស្ថិតិគំរូ ។</p></li>
+</ol></li>
+<li><p>តារាងខាងក្រោម ជាបំណែងចែកប្រេកង់រយៈពេលសម្រាប់ដោះស្រាយចំណោទរបស់សិស្ស <span class="mi">\(38\)</span> នាក់ងាយមួយ ។ <div class="md">\[\begin{array}{|c|c|}\hline
+  \text{រយៈពេល (គិតជាវិនាទី)} &amp; \text{ចំនួនសិស្ស } f\\ \hline
+  5 - 10 &amp; 8\\
+  10 - 20 &amp; 13\\
+  20 - 25 &amp; 24\\
+  25 - 40 &amp; 11\\
+  40 - 45 &amp; 4\\ \hline
+  \end{array}\]</div></p>
+<ol class="list olka cols1">
+<li><p>គណនាម៉ូត</p></li>
+<li><p>គណនាមធ្យម</p></li>
+<li><p>គណនាគម្លាតស្តង់ដាស្ថិតិគំរូ ។</p></li>
+</ol></li>
+<li><p>គេមានបំណែងចែកប្រេកង់ខាងក្រោម ៖ <div class="md">\[\begin{array}{|c|ccccccccccc|}\hline
+  x_i &amp; 20 &amp; 21 &amp; 22 &amp; 23 &amp; 24 &amp; 25 &amp; 26 &amp; 27 &amp; 29 &amp; 30 &amp; 31\\ \hline
+  f_i &amp; 20 &amp; 30 &amp; 33 &amp; 31 &amp; 20 &amp; 18 &amp; 12 &amp; 10 &amp; 5 &amp; 3 &amp; 2\\ \hline
+  \end{array}\]</div> ក. គណនាម៉ូត ខ. គណនាគម្លាតស្តង់ដាស្ថិតិគំរូ ។</p></li>
+</ol>
+<h3 id="u7">ទំព័រសៀវភៅដើម</h3><details class="ans sol-all"><summary>បើកមើលទំព័រសៀវភៅពុម្ព</summary><div class="pdf-note">មេរៀននេះបង្ហាញជាទំព័រពីសៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី ១១ (ថ្នាក់វិទ្យាសាស្ត្រសង្គម) ទំព័រ ២៧៦–២៨៨។</div><figure class="bk-page" id="p276"><img src="pages/ss-p276.webp" alt="ទំព័រ ២៧៦" loading="lazy" width="1100"><figcaption>ទំព័រ ២៧៦</figcaption></figure><figure class="bk-page" id="p277"><img src="pages/ss-p277.webp" alt="ទំព័រ ២៧៧" loading="lazy" width="1100"><figcaption>ទំព័រ ២៧៧</figcaption></figure><figure class="bk-page" id="p278"><img src="pages/ss-p278.webp" alt="ទំព័រ ២៧៨" loading="lazy" width="1100"><figcaption>ទំព័រ ២៧៨</figcaption></figure><figure class="bk-page" id="p279"><img src="pages/ss-p279.webp" alt="ទំព័រ ២៧៩" loading="lazy" width="1100"><figcaption>ទំព័រ ២៧៩</figcaption></figure><figure class="bk-page" id="p280"><img src="pages/ss-p280.webp" alt="ទំព័រ ២៨០" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨០</figcaption></figure><figure class="bk-page" id="p281"><img src="pages/ss-p281.webp" alt="ទំព័រ ២៨១" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨១</figcaption></figure><figure class="bk-page" id="p282"><img src="pages/ss-p282.webp" alt="ទំព័រ ២៨២" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨២</figcaption></figure><figure class="bk-page" id="p283"><img src="pages/ss-p283.webp" alt="ទំព័រ ២៨៣" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨៣</figcaption></figure><figure class="bk-page" id="p284"><img src="pages/ss-p284.webp" alt="ទំព័រ ២៨៤" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨៤</figcaption></figure><figure class="bk-page" id="p285"><img src="pages/ss-p285.webp" alt="ទំព័រ ២៨៥" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨៥</figcaption></figure><figure class="bk-page" id="p286"><img src="pages/ss-p286.webp" alt="ទំព័រ ២៨៦" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨៦</figcaption></figure><figure class="bk-page" id="p287"><img src="pages/ss-p287.webp" alt="ទំព័រ ២៨៧" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨៧</figcaption></figure><figure class="bk-page" id="p288"><img src="pages/ss-p288.webp" alt="ទំព័រ ២៨៨" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨៨</figcaption></figure></details><h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>គណនារ៉ង់និងចន្លោះអាំងទែរកាទីលនៃសំណុំទិន្នន័យខាងក្រោម ៖ ក. <span class="mi">\(5, 16, 9, 8, 6, 10, 12, 10, 8, 6\)</span> ខ. <span class="mi">\(\begin{array}{|c|ccccccc|}\hline x &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9\\ \hline f &amp; 5 &amp; 2 &amp; 7 &amp; 9 &amp; 4 &amp; 10 &amp; 5\\ \hline\end{array}\)</span></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. រៀប ៖ <span class="mi">\(5, 6, 6, 8, 8, 9, 10, 10, 12, 16\)</span> ។ រ៉ង់ <span class="mi">\(= 16 - 5 = 11\)</span> ។ <span class="mi">\(Q_1 =\)</span> តួទី <span class="mi">\(2.75\)</span> ៖ <span class="mi">\(6\)</span>, <span class="mi">\(Q_3 =\)</span> តួទី <span class="mi">\(8.25\)</span> ៖ <span class="mi">\(\dfrac{10 + 12}{2} = 11\)</span> ៖ <span class="mi">\(I = 5\)</span> ។ ខ. <span class="mi">\(n = 42\)</span>, រ៉ង់ <span class="mi">\(= 9 - 3 = 6\)</span> ។ <span class="mi">\(f^{\uparrow}\)</span> ៖ <span class="mi">\(5, 7, 14, 23, 27, 37, 42\)</span> ។ <span class="mi">\(Q_1 =\)</span> តួទី <span class="mi">\(10.75\)</span> ៖ <span class="mi">\(5\)</span>, <span class="mi">\(Q_3 =\)</span> តួទី <span class="mi">\(32.25\)</span> ៖ <span class="mi">\(8\)</span> ៖ <span class="mi">\(I = 3\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ប្រាក់ចំណូលប្រចាំសប្ដាហ៍ (គិតជាដុល្លារ) របស់អ្នកនឹងនាំថ្នាក់កណ្ដាលក្នុងក្រុមហ៊ុនមួយមាន <span class="mi">\(52, 56, 58, 65, 68, 65, 75, 70\)</span> ។ ដោយសន្មតថាទិន្នន័យទាំងនេះជាស្ថិតិសកល ។ ក. គណនារ៉ង់ ខ. គណនាវ៉ារ្យង់សកលស្ថិតិ និងគម្លាតស្តង់ដាស្ថិតិសកល ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. រ៉ង់ <span class="mi">\(= 75 - 52 = 23\)</span> ។ ខ. <span class="mi">\(\mu = \dfrac{509}{8} = 63.625\)</span>, <span class="mi">\(\sigma^2 \approx 52.23\)</span>, <span class="mi">\(\sigma \approx 7.23\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ពូសែនិងពូសុខជាឈ្មួញទិញជ្រូកដូចគ្នា ។ ឈ្មួញទាំងពីរទិញជ្រូកបានម្នាក់ <span class="mi">\(10\)</span> ក្បាល ដែលជ្រូកនីមួយៗមានម៉ាស ៖ <div class="md">\[\begin{array}{|c|c|}\hline
+  \text{ម៉ាសជ្រូកពូសែ (kg)} &amp; \text{ម៉ាសជ្រូកពូសុខ (kg)}\\ \hline
+  70 &amp; 63\\
+  92 &amp; 63\\
+  102 &amp; 65\\
+  98 &amp; 71\\
+  105 &amp; 72\\
+  35 &amp; 74\\
+  39 &amp; 40\\
+  39 &amp; 58\\
+  40 &amp; 80\\
+  60 &amp; 94\\ \hline
+  \end{array}\]</div> ក. គណនាវ៉ារ្យង់ (ស្ថិតិសកល) ។ ខ. តើឈ្មួញណាមួយទិញជ្រូកបានម៉ាសស្មើសាច់ជាង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. មធ្យមទាំងពីរស្មើ <span class="mi">\(68\)</span> kg ។ ពូសែ ៖ <span class="mi">\(\sigma^2 = 762.4\)</span> (<span class="mi">\(\sigma \approx 27.61\)</span>) ។ ពូសុខ ៖ <span class="mi">\(\sigma^2 = 182.4\)</span> (<span class="mi">\(\sigma \approx 13.51\)</span>) ។ ខ. ពូសុខទិញជ្រូកបានម៉ាសស្មើសាច់ជាង ព្រោះវ៉ារ្យង់តូចជាង ។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គេមានទិន្នន័យ <span class="mi">\(a, b, 8, 5, 7\)</span> (ស្ថិតិសកល) ដែលមានតម្លៃមធ្យមស្មើនឹង <span class="mi">\(6\)</span> និងវ៉ារ្យង់ស្មើនឹង <span class="mi">\(2\)</span> ។ គណនាតម្លៃ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> បើ <span class="mi">\(a &gt; b\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\dfrac{a + b + 20}{5} = 6 \Rightarrow a + b = 10\)</span> ។ <span class="mi">\(\dfrac{(a - 6)^2 + (b - 6)^2 + 4 + 1 + 1}{5} = 2 \Rightarrow (a - 6)^2 + (b - 6)^2 = 4\)</span> ។ ដោយ <span class="mi">\(b - 6 = -(a - 6)\)</span> គេបាន <span class="mi">\(2(a - 6)^2 = 4\)</span> ។ ដូច្នេះ <span class="mi">\(a = 6 + \sqrt{2}\)</span>, <span class="mi">\(b = 6 - \sqrt{2}\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>បំណែងចែកប្រេកង់ខាងក្រោម ជាបំណែងចែកម៉ាស (kg) ជ្រូកចំនួន <span class="mi">\(40\)</span> ក្បាលក្នុងកសិដ្ឋានមួយ ៖ <div class="md">\[\begin{array}{|l|ccccc|}\hline
+  \text{ម៉ាស (kg)} &amp; 20 - 30 &amp; 30 - 40 &amp; 40 - 50 &amp; 50 - 60 &amp; 60 - 70\\ \hline
+  \text{ចំនួនជ្រូក } f_i &amp; 5 &amp; 8 &amp; 10 &amp; 11 &amp; 6\\ \hline
+  \end{array}\]</div> ក. គណនារ៉ង់ ខ. គណនាមធ្យម គ. គណនាគម្លាតស្តង់ដា ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. រ៉ង់ <span class="mi">\(= 70 - 20 = 50\)</span> kg ។ ខ. <span class="mi">\(\mu = \dfrac{\sum f_iX_m}{N} = \dfrac{1850}{40} = 46.25\)</span> kg ។ គ. <span class="mi">\(\sum f_iX_m^2 = 91\,800\)</span> ៖ <span class="mi">\(\sigma = \sqrt{\dfrac{40\times 91\,800 - 1850^2}{40^2}} \approx 12.49\)</span> kg (បើគិតជាស្ថិតិគំរូ <span class="mi">\(s \approx 12.65\)</span> kg) ។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៤៧ រង្វាស់នៃគម្លាត (វិទ្យាសាស្ត្រសង្គម)</b> — ២០ សំណួរ · ៣៥ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=bk_g11_L47">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L46.html"><small>← មេរៀនមុន</small><b>រង្វាស់ទីតាំងនៃទិន្នន័យ</b></a><a class="next" href="L48.html"><small>មេរៀនបន្ទាប់ →</small><b>រូបធរណីមាត្រក្នុងលំហ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រ៉ង់នៃទិន្នន័យ ជាផលដករវាង ៖", "options": ["<span class=\"mi\">\\(Q_3\\)<\/span> និង <span class=\"mi\">\\(Q_1\\)<\/span>", "ម៉ូត និងមេដ្យាន", "តម្លៃធំបំផុត និងតម្លៃតូចបំផុត", "មធ្យម និងមេដ្យាន"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "និយមន័យរ៉ង់ ។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រ៉ង់នៃ <span class=\"mi\">\\(3, 7, 1, 9, 5\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(9 - 1\\)<\/span> ។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចន្លោះអាំងទែរកាទីលគឺ ៖", "options": ["<span class=\"mi\">\\(Q_3 + Q_1\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{Q_3 - Q_1}{2}\\)<\/span>", "<span class=\"mi\">\\(Q_2 - Q_1\\)<\/span>", "<span class=\"mi\">\\(Q_3 - Q_1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "និយមន័យ ។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "វ៉ារ្យង់ស្ថិតិសកលកំណត់ដោយ ៖", "options": ["<span class=\"mi\">\\(\\sigma^2 = \\sum(X - \\mu)^2\\)<\/span>", "<span class=\"mi\">\\(\\sigma^2 = \\dfrac{\\sum(X - \\mu)^2}{N - 1}\\)<\/span>", "<span class=\"mi\">\\(\\sigma^2 = \\dfrac{\\sum(X - \\mu)^2}{N}\\)<\/span>", "<span class=\"mi\">\\(\\sigma^2 = \\dfrac{\\sum(X - \\mu)}{N}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "រូបមន្តវ៉ារ្យង់សកល ។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "វ៉ារ្យង់គំរូកំណត់ដោយ ៖", "options": ["<span class=\"mi\">\\(s^2 = \\dfrac{\\sum(X - \\bar{X})^2}{n}\\)<\/span>", "<span class=\"mi\">\\(s^2 = \\dfrac{\\sum(X - \\bar{X})}{n - 1}\\)<\/span>", "<span class=\"mi\">\\(s^2 = \\dfrac{\\sum(X - \\bar{X})^2}{n - 1}\\)<\/span>", "<span class=\"mi\">\\(s^2 = \\sqrt{\\sum(X - \\bar{X})^2}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចែកនឹង <span class=\"mi\">\\(n - 1\\)<\/span> ។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គម្លាតស្តង់ដាជា ៖", "options": ["ផលសងរវាងតម្លៃធំនិងតូច", "ឫសការេនៃវ៉ារ្យង់", "ការេនៃវ៉ារ្យង់", "ពាក់កណ្ដាលនៃវ៉ារ្យង់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\sigma = \\sqrt{\\sigma^2}\\)<\/span> ។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មធ្យមនៃ <span class=\"mi\">\\(2, 4, 6, 8, 10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{30}{5}\\)<\/span> ។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "វ៉ារ្យង់សកលនៃ <span class=\"mi\">\\(2, 4, 6, 8, 10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2\\sqrt{2}\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(40\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{16 + 4 + 0 + 4 + 16}{5} = 8\\)<\/span> ។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គម្លាតស្តង់ដាសកលនៃ <span class=\"mi\">\\(2, 4, 6, 8, 10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\sqrt{10}\\)<\/span>", "<span class=\"mi\">\\(2\\sqrt{2}\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\sqrt{8}\\)<\/span> ។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "វ៉ារ្យង់គំរូនៃ <span class=\"mi\">\\(2, 4, 6, 8, 10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(40\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{10}\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{40}{5 - 1}\\)<\/span> ។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិន្នន័យ <span class=\"mi\">\\(5, 5, 5, 5\\)<\/span> មានគម្លាតស្តង់ដា ៖", "options": ["<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តម្លៃទាំងអស់ស្មើមធ្យម ។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើបូកចំនួន <span class=\"mi\">\\(3\\)<\/span> ទៅគ្រប់ទិន្នន័យ នោះគម្លាតស្តង់ដា ៖", "options": ["មិនប្រែប្រួល", "កើន <span class=\"mi\">\\(9\\)<\/span>", "កើន <span class=\"mi\">\\(3\\)<\/span>", "គុណនឹង <span class=\"mi\">\\(3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "គម្លាតពីមធ្យមមិនប្រែប្រួល ។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើគុណគ្រប់ទិន្នន័យនឹង <span class=\"mi\">\\(2\\)<\/span> នោះវ៉ារ្យង់ ៖", "options": ["មិនប្រែប្រួល", "គុណនឹង <span class=\"mi\">\\(4\\)<\/span>", "កើន <span class=\"mi\">\\(2\\)<\/span>", "គុណនឹង <span class=\"mi\">\\(2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\operatorname{Var}(2X) = 4\\operatorname{Var}(X)\\)<\/span> ។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាលឿននៃវ៉ារ្យង់សកល ៖", "options": ["<span class=\"mi\">\\(\\sigma^2 = \\dfrac{\\sum X^2}{N} + \\mu^2\\)<\/span>", "<span class=\"mi\">\\(\\sigma^2 = \\dfrac{\\sum X^2}{N} - \\mu^2\\)<\/span>", "<span class=\"mi\">\\(\\sigma^2 = \\dfrac{(\\sum X)^2}{N}\\)<\/span>", "<span class=\"mi\">\\(\\sigma^2 = \\sum X^2 - \\mu^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ពន្លាត <span class=\"mi\">\\(\\sum(X - \\mu)^2\\)<\/span> ។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិន្នន័យ <span class=\"mi\">\\(1, 2, 3\\)<\/span> មានវ៉ារ្យង់សកល ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{2}{3}\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\mu = 2\\)<\/span> ៖ <span class=\"mi\">\\(\\dfrac{1 + 0 + 1}{3}\\)<\/span> ។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំពោះទិន្នន័យផ្ដុំជាថ្នាក់ គេប្រើ <span class=\"mi\">\\(X_m\\)<\/span> តាង ៖", "options": ["ចំណុចកណ្ដាលនៃថ្នាក់", "ម៉ូត", "ព្រំដែនក្រោម", "ប្រេកង់ថ្នាក់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តម្លៃតំណាងនៃថ្នាក់ ។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ថ្នាក់ <span class=\"mi\">\\(20 - 30\\)<\/span> មានចំណុចកណ្ដាល ៖", "options": ["<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{20 + 30}{2}\\)<\/span> ។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិន្នន័យពីរក្រុមមានមធ្យមស្មើគ្នា ។ ក្រុមដែលមានគម្លាតស្តង់ដាធំជាង ៖", "options": ["មានទិន្នន័យរាយប៉ាយខ្លាំងជាង", "មានទិន្នន័យប្រមូលផ្ដុំជាង", "មានមេដ្យានធំជាង", "មានចំនួនទិន្នន័យច្រើនជាង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "គម្លាតស្តង់ដាវាស់ភាពរាយប៉ាយ ។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិន្នន័យ <span class=\"mi\">\\(5, 6, 6, 8, 8, 9, 10, 10, 12, 16\\)<\/span> មានរ៉ង់ ៖", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(16 - 5\\)<\/span> ។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មធ្យមនៃទិន្នន័យផ្ដុំជាថ្នាក់ គណនាដោយ ៖", "options": ["<span class=\"mi\">\\(\\bar{X} = \\dfrac{\\sum f_i}{\\sum X_m}\\)<\/span>", "<span class=\"mi\">\\(\\bar{X} = \\dfrac{\\sum f_i X_m}{\\sum f_i}\\)<\/span>", "<span class=\"mi\">\\(\\bar{X} = \\sum f_i X_m\\)<\/span>", "<span class=\"mi\">\\(\\bar{X} = \\dfrac{\\sum X_m}{\\sum f_i}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "មធ្យមថ្លឹង ។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

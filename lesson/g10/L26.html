@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២៦ : ការបំប្លែងចាំង — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២៦ «ការបំប្លែងចាំង» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២៦ : ការបំប្លែងចាំង — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២៦ «ការបំប្លែងចាំង» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ២៦</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២៦</span>
+      <div><span class="ls-kicker">ជំពូកទី ៩ ការបំប្លែងរូបក្នុងប្លង់ · មេរៀនទី ២៦ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>ការបំប្លែងចាំង</h1><div class="ls-chips"><span class="chip chip-soon">ការបំប្លែងរូបក្នុងប្លង់</span><span class="chip chip-soon">៣ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. ការបំប្លែងចាំងចំណុច</a></li><li class="sub"><a href="#u2">២. ការបំប្លែងចាំងរូប</a></li><li class="sub"><a href="#u3">៣. ការបកស្រាយនៃការបំប្លែងចាំងក្នុងតម្រុយកូអរដោនេ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃការបំប្លែងចាំង និងទស្សនវិស័យធរណីមាត្រ</b></header><div class="bx-b">
+<p>ទ្រឹស្តីនៃការបំប្លែងចាំងត្រូវបានប្រើប្រាស់ជាទូទៅនៅក្នុងសិល្បៈគំនូរ តាំងពីសម័យក្រុមហ៊ុនអភិវឌ្ឍន៍សិល្បៈ (Renaissance) នៅអឺរ៉ុប ដើម្បីបង្កើតគំនូរដែលមានលក្ខណៈត្រីមាត្រ (3D) និងចំណុចរួម (Perspective)។ គណិតវិទូក្រិកបុរាណ ដូចជា អឺគ្លីត (Euclid) ក៏បានលើកឡើងពីលក្ខណៈនៃរូបដូចគ្នា (Similar Figures) ដែលជាមូលដ្ឋានគ្រឹះនៃការបំប្លែងចាំងនៅក្នុងសៀវភៅ Elements របស់គាត់ផងដែរ។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ?</b></header><div class="bx-b">
+<p>រំលឹកចំណេះដឹងពីថ្នាក់ទី៩៖<br/>
+១. សញ្ញាណនៃប្រភាគ និងផលធៀប<br/>
+២. ទ្រឹស្តីបទតាលែសក្នុងត្រីកោណ<br/>
+៣. លក្ខណៈនៃត្រីកោណដូចគ្នា</p>
+</div></section>
+<h3 id="u1">ការបំប្លែងចាំងចំណុច</h3>
+<p>គេមានចំណុចនឹង <span class="mi">\(P\)</span> និងចំណុច <span class="mi">\(A\)</span> មួយ ។ គេធ្វើការផ្លាស់ទីចំណុច <span class="mi">\(A\)</span> ទៅចំណុច <span class="mi">\(A'\)</span> ដែល <span class="mi">\(\frac{PA'}{PA} = \frac{6}{1}\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេថា <span class="mi">\(A'\)</span> ជារូបភាពនៃ <span class="mi">\(A\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(P\)</span> និងផលធៀប <span class="mi">\(6 : 1\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>រូបភាពនៃចំណុច <span class="mi">\(A\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(P\)</span> ផលធៀប <span class="mi">\(c\)</span> គឺចំណុច <span class="mi">\(A'\)</span> ដែល <span class="mi">\(\overrightarrow{PA'} = c\overrightarrow{PA}\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(A \xrightarrow{h} A'\)</span> ឬ <span class="mi">\(A' = h(A)\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>ក.</strong>  គេមានចំណុចនឹង <span class="mi">\(P\)</span> និងចំណុច <span class="mi">\(A\)</span> មួយ ។ គេបំប្លែងទំហំចំណុច <span class="mi">\(A\)</span> ទៅចំណុច <span class="mi">\(A'\)</span> ដែល <span class="mi">\(\overrightarrow{PA'} = 5\overrightarrow{PA}\)</span> ។ គូសរូបបំប្លែងទំហំនេះ រួចរកផលធៀបរវាង <span class="mi">\(PA'\)</span> និង <span class="mi">\(PA\)</span> ។<br/>
+<strong>ខ.</strong>  បើ <span class="mi">\(PA = 2\)</span> រក <span class="mi">\(PA'\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  ផលធៀបរវាង <span class="mi">\(PA'\)</span> និង <span class="mi">\(PA\)</span> គឺ <span class="mi">\(5 : 1\)</span> <strong>ខ.</strong>  <span class="mi">\(PA' = 10\)</span> ។</p></details>
+</div></section>
+<h3 id="u2">ការបំប្លែងចាំងរូប</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>៖ គេបញ្ចាំងភ្លើងហ្វាពីចំណុច <span class="mi">\(O\)</span> ទៅលើរូបផ្កាយ <span class="mi">\(PQ\)</span> ដែលមានបិទរូបថ្លា គេឃើញស្រមោលរូបភាពផ្កាយដែលបិទរូបថ្លា <span class="mi">\(P'Q'\)</span> នៃផ្កាយ <span class="mi">\(PQ\)</span> នៅលើជញ្ជាំងមានរូបភាពដូចគ្នា ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេបាន <span class="mi">\(\frac{OQ}{OQ'} = \frac{PQ}{P'Q'}\)</span> ព្រោះ <span class="mi">\((\Delta OPQ \sim \Delta OP'Q')\)</span> ។</p>
+<p>បើ <span class="mi">\(OQ = 5\)</span>, <span class="mi">\(PQ = 3\)</span> និង <span class="mi">\(OQ' = 10\)</span> នោះគេបាន <span class="mi">\(P'Q' = \frac{PQ \times OQ'}{OQ} = \frac{3 \times 10}{5} = 6\)</span> ។</p>
+<p>គេថា <span class="mi">\(P'Q'\)</span> ជារូបភាពនៃ <span class="mi">\(PQ\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(c = \frac{P'Q'}{PQ} = 2\)</span> ។</p>
+<p><span class="mi">\(c\)</span> ហៅថា <strong>ផលធៀបបំប្លែងទំហំ</strong> ។ គេកំណត់សរសេរ <span class="mi">\(\overrightarrow{P'Q'} = c\overrightarrow{PQ}\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេបញ្ចាំងពិលទៅលើបង្គោល <span class="mi">\(AB\)</span> ដែលមានកម្ពស់ <span class="mi">\(1.5\text{ m}\)</span> គេឃើញស្រមោល <span class="mi">\(A'B'\)</span> នៃបង្គោល <span class="mi">\(AB\)</span> នៅលើជញ្ជាំង ហើយចម្ងាយពីពិលទៅបង្គោលគឺ <span class="mi">\(3\text{ m}\)</span> និងចម្ងាយពីពិលទៅស្រមោលគឺ <span class="mi">\(9\text{ m}\)</span> ។ រកកម្ពស់នៃស្រមោល <span class="mi">\(A'B'\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<span class="mi">\(A'B' = 4.5\text{ m}\)</span> ។</p></details>
+</div></section>
+<p>តាមឧទាហរណ៍ខាងលើ គេអាចសន្និដ្ឋានបានដូចខាងក្រោម៖</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>សន្និដ្ឋាន</strong></td>
+<td><strong>ការបំប្លែងចាំង</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>1. បើ <span class="mi">\(c &gt; 0\)</span> រូបភាព និងរូបដើម នៅតែម្ខាងនៃផ្ចិតបំប្លែងទំហំ ។</td>
+</tr>
+<tr>
+<td></td>
+<td>2. បើ <span class="mi">\(c &lt; 0\)</span> រូបភាព និងរូបដើម នៅម្ខាងម្នាក់នៃផ្ចិតបំប្លែងទំហំ ។</td>
+</tr>
+<tr>
+<td></td>
+<td>3. រូបភាពនៃមុំមួយជាមុំមួយទៀត ដែលមុំទាំងពីរប៉ុនគ្នា ។</td>
+</tr>
+<tr>
+<td></td>
+<td>4. រូបភាពនៃរូប <span class="mi">\(F\)</span> មួយជារូប <span class="mi">\(F'\)</span> មួយទៀត ដែលដូចគ្នានឹងរូប <span class="mi">\(F\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="u3">ការបកស្រាយនៃការបំប្លែងចាំងក្នុងតម្រុយកូអរដោនេ</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>៖ គេមានចំណុច <span class="mi">\(A(x, y)\)</span> ក្នុងតម្រុយកូអរដោនេ ។ រករូបភាពនៃចំណុច <span class="mi">\(A\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c\)</span> ដែល <span class="mi">\(c\)</span> ជាចំនួនថេរ រួចបញ្ជាក់កូអរដោនេរូបភាពនោះ ។ សិក្សាករណី <span class="mi">\(x, y &gt; 0\)</span> និង <span class="mi">\(c &gt; 0\)</span> ។</p>
+<p>តាង <span class="mi">\(A'(x', y')\)</span> ជារូបភាពនៃ <span class="mi">\(A(x, y)\)</span> ។ តាម <span class="mi">\(A\)</span> និង <span class="mi">\(A'\)</span> ទម្លាក់ចំណោលកែងលើអ័ក្សអាប់ស៊ីសត្រង់ចំណុច <span class="mi">\(B\)</span> និង <span class="mi">\(B'\)</span> ។</p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22177.45%22 height=%22155.31%22 viewBox=%220 0 177.45 155.31%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpjYmU0NjdhNC0xNjU0LTRmMGQtOTkxYS1lYzQ1OTBlMTE3MzkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaMKoJdbWssYdwME4NVRHuqsAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyNTQ4ODBlOC0zNDlmLTRiNjQtYmU5Ni1hNzUwMTA2OTBlOGVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNovzuhAF1oJiX4TMiq2RBo3gAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg8RLUj8jXGvkMfcdKSF8W1B8PlZKMnojtMmHHHB8s216kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaM7T2kiVB0cbU/QH/qXbOm4AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCCsk1lxe7g8o97CXSQ7hStXflxdOah2FEPlo%2Bpsvm4K1GRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj0Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmNiZTQ2N2E0LTE2NTQtNGYwZC05OTFhLWVjNDU5MGUxMTczOS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmFhMGViMjI4LWYwM2MtNDEzZi05MjI2LTQ0NDUxNmE3YjY3OHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDxEtSPyNca%2BQx9x0pIXxbUHw%2BVkoyeiO0yYcccHyzbXqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggsw3mOkHdX3n0LQae/UJhqfqKhrFhwSkDIJLz9ZYwpsSiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggKAjdS5U%2B38kWyrUoPV/EFzOAUWbSbQLNqvhdTYgJnGx0Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQLRgQOkqHe6QE2/r%2BOlKFNQNR28Up8v5WVFe9SwV8Uq9ZwaHKl7OCH8nhq/8GGTPeGmd%2BYxVvuOKZiOSW/JhzDU=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 3.31 -3 C 3.37 -3.25 3.60 -4.17 4.29 -4.17 C 4.34 -4.17 4.57 -4.17 4.79 -4.03 C 4.51 -3.98 4.31 -3.73 4.31 -3.5 C 4.31 -3.34 4.42 -3.15 4.68 -3.15 C 4.90 -3.15 5.23 -3.32 5.23 -3.73 C 5.23 -4.25 4.64 -4.39 4.31 -4.39 C 3.73 -4.39 3.39 -3.85 3.26 -3.62 C 3.01 -4.28 2.48 -4.39 2.18 -4.39 C 1.15 -4.39 0.59 -3.10 0.59 -2.85 C 0.59 -2.76 0.68 -2.76 0.71 -2.76 C 0.79 -2.76 0.82 -2.78 0.84 -2.87 C 1.18 -3.92 1.82 -4.17 2.17 -4.17 C 2.35 -4.17 2.70 -4.07 2.70 -3.5 C 2.70 -3.18 2.54 -2.53 2.17 -1.14 C 2.01 -0.53 1.67 -0.10 1.23 -0.10 C 1.17 -0.10 0.93 -0.10 0.73 -0.23 C 0.98 -0.28 1.20 -0.5 1.20 -0.78 C 1.20 -1.04 0.98 -1.12 0.82 -1.12 C 0.53 -1.12 0.28 -0.85 0.28 -0.54 C 0.28 -0.09 0.78 0.10 1.21 0.10 C 1.87 0.10 2.23 -0.57 2.26 -0.64 C 2.37 -0.28 2.73 0.10 3.32 0.10 C 4.35 0.10 4.92 -1.17 4.92 -1.42 C 4.92 -1.51 4.82 -1.51 4.79 -1.51 C 4.71 -1.51 4.68 -1.48 4.67 -1.40 C 4.34 -0.34 3.67 -0.10 3.35 -0.10 C 2.96 -0.10 2.81 -0.42 2.81 -0.76 C 2.81 -0.98 2.87 -1.20 2.96 -1.64 Z M 3.31 -3 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 4.82 -3.78 C 4.85 -3.92 4.85 -3.93 4.85 -4.01 C 4.85 -4.18 4.71 -4.28 4.57 -4.28 C 4.46 -4.28 4.31 -4.21 4.23 -4.06 C 4.20 -4.01 4.12 -3.70 4.09 -3.53 C 4.01 -3.28 3.95 -3 3.89 -2.73 L 3.43 -0.95 C 3.40 -0.79 2.96 -0.10 2.32 -0.10 C 1.81 -0.10 1.70 -0.54 1.70 -0.90 C 1.70 -1.37 1.87 -1.98 2.21 -2.85 C 2.37 -3.26 2.40 -3.37 2.40 -3.57 C 2.40 -4.01 2.09 -4.39 1.59 -4.39 C 0.65 -4.39 0.28 -2.95 0.28 -2.85 C 0.28 -2.76 0.39 -2.76 0.40 -2.76 C 0.5 -2.76 0.51 -2.78 0.56 -2.93 C 0.82 -3.87 1.23 -4.17 1.56 -4.17 C 1.64 -4.17 1.81 -4.17 1.81 -3.84 C 1.81 -3.60 1.71 -3.34 1.64 -3.15 C 1.25 -2.10 1.07 -1.53 1.07 -1.07 C 1.07 -0.18 1.70 0.10 2.28 0.10 C 2.67 0.10 3 -0.06 3.28 -0.34 C 3.15 0.17 3.03 0.67 2.64 1.18 C 2.37 1.53 2 1.81 1.54 1.81 C 1.40 1.81 0.96 1.78 0.79 1.40 C 0.95 1.40 1.07 1.40 1.21 1.28 C 1.31 1.18 1.42 1.06 1.42 0.87 C 1.42 0.56 1.15 0.53 1.04 0.53 C 0.82 0.53 0.5 0.68 0.5 1.17 C 0.5 1.67 0.93 2.03 1.54 2.03 C 2.56 2.03 3.59 1.12 3.87 0.01 Z M 4.82 -3.78 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-2%22%3E%3Cpath d=%22M 7.34 -4.32 C 7.34 -5.92 6.29 -7 4.81 -7 C 2.67 -7 0.48 -4.75 0.48 -2.43 C 0.48 -0.78 1.59 0.21 3.03 0.21 C 5.12 0.21 7.34 -1.95 7.34 -4.32 Z M 3.07 -0.04 C 2.10 -0.04 1.40 -0.84 1.40 -2.15 C 1.40 -2.59 1.54 -4.03 2.31 -5.20 C 3 -6.23 3.96 -6.75 4.75 -6.75 C 5.56 -6.75 6.45 -6.18 6.45 -4.71 C 6.45 -4 6.18 -2.45 5.20 -1.23 C 4.73 -0.62 3.92 -0.04 3.07 -0.04 Z M 3.07 -0.04 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-3%22%3E%3Cpath d=%22M 1.78 -1.14 C 1.37 -0.46 0.98 -0.34 0.56 -0.31 C 0.43 -0.29 0.34 -0.29 0.34 -0.10 C 0.34 -0.04 0.39 0 0.46 0 C 0.75 0 1.04 -0.03 1.32 -0.03 C 1.65 -0.03 2 0 2.32 0 C 2.37 0 2.51 0 2.51 -0.18 C 2.51 -0.29 2.42 -0.31 2.34 -0.31 C 2.12 -0.32 1.89 -0.40 1.89 -0.65 C 1.89 -0.78 1.93 -0.89 2.03 -1.01 L 2.78 -2.29 L 5.26 -2.29 C 5.28 -2.07 5.42 -0.73 5.42 -0.64 C 5.42 -0.34 4.90 -0.31 4.71 -0.31 C 4.57 -0.31 4.46 -0.31 4.46 -0.10 C 4.46 0 4.59 0 4.60 0 C 5.01 0 5.45 -0.03 5.85 -0.03 C 6.10 -0.03 6.73 0 6.96 0 C 7.03 0 7.15 0 7.15 -0.20 C 7.15 -0.31 7.04 -0.31 6.92 -0.31 C 6.31 -0.31 6.31 -0.37 6.28 -0.67 L 5.67 -6.85 C 5.65 -7.06 5.65 -7.10 5.48 -7.10 C 5.32 -7.10 5.28 -7.03 5.23 -6.93 Z M 2.96 -2.59 L 4.92 -5.87 L 5.23 -2.59 Z M 2.96 -2.59 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-4%22%3E%3Cpath d=%22M 2.01 -0.01 C 2.01 -0.67 1.76 -1.04 1.37 -1.04 C 1.04 -1.04 0.85 -0.79 0.85 -0.53 C 0.85 -0.26 1.04 0 1.37 0 C 1.5 0 1.62 -0.04 1.71 -0.12 C 1.75 -0.15 1.76 -0.15 1.78 -0.15 C 1.78 -0.15 1.79 -0.15 1.79 -0.01 C 1.79 0.71 1.45 1.31 1.12 1.64 C 1.01 1.75 1.01 1.78 1.01 1.81 C 1.01 1.87 1.06 1.92 1.10 1.92 C 1.21 1.92 2.01 1.15 2.01 -0.01 Z M 2.01 -0.01 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-5%22%3E%3Cpath d=%22M 1.59 -0.78 C 1.48 -0.39 1.46 -0.31 0.68 -0.31 C 0.51 -0.31 0.42 -0.31 0.42 -0.10 C 0.42 0 0.5 0 0.68 0 L 4.23 0 C 5.79 0 6.96 -1.17 6.96 -2.14 C 6.96 -2.85 6.39 -3.43 5.42 -3.54 C 6.45 -3.73 7.5 -4.46 7.5 -5.40 C 7.5 -6.14 6.84 -6.78 5.65 -6.78 L 2.32 -6.78 C 2.14 -6.78 2.03 -6.78 2.03 -6.57 C 2.03 -6.46 2.12 -6.46 2.31 -6.46 C 2.32 -6.46 2.51 -6.46 2.68 -6.45 C 2.87 -6.42 2.95 -6.42 2.95 -6.29 C 2.95 -6.25 2.95 -6.21 2.92 -6.10 Z M 3.07 -3.62 L 3.70 -6.09 C 3.79 -6.43 3.81 -6.46 4.23 -6.46 L 5.51 -6.46 C 6.39 -6.46 6.59 -5.89 6.59 -5.45 C 6.59 -4.57 5.75 -3.62 4.53 -3.62 Z M 2.64 -0.31 C 2.5 -0.31 2.48 -0.31 2.42 -0.31 C 2.32 -0.32 2.29 -0.34 2.29 -0.42 C 2.29 -0.45 2.29 -0.46 2.34 -0.64 L 3.03 -3.40 L 4.90 -3.40 C 5.85 -3.40 6.04 -2.67 6.04 -2.25 C 6.04 -1.26 5.15 -0.31 3.98 -0.31 Z M 2.64 -0.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 3.28 2.37 C 3.28 2.34 3.28 2.32 3.10 2.15 C 1.87 0.90 1.56 -0.96 1.56 -2.48 C 1.56 -4.20 1.93 -5.93 3.15 -7.17 C 3.28 -7.29 3.28 -7.31 3.28 -7.34 C 3.28 -7.40 3.25 -7.43 3.18 -7.43 C 3.07 -7.43 2.18 -6.76 1.60 -5.5 C 1.09 -4.42 0.98 -3.31 0.98 -2.48 C 0.98 -1.70 1.09 -0.5 1.64 0.60 C 2.23 1.82 3.07 2.48 3.18 2.48 C 3.25 2.48 3.28 2.45 3.28 2.37 Z M 3.28 2.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M 2.87 -2.48 C 2.87 -3.25 2.76 -4.45 2.21 -5.57 C 1.62 -6.79 0.76 -7.43 0.67 -7.43 C 0.60 -7.43 0.56 -7.40 0.56 -7.34 C 0.56 -7.31 0.56 -7.29 0.75 -7.10 C 1.71 -6.12 2.29 -4.54 2.29 -2.48 C 2.29 -0.78 1.92 0.96 0.68 2.21 C 0.56 2.32 0.56 2.34 0.56 2.37 C 0.56 2.43 0.60 2.48 0.67 2.48 C 0.76 2.48 1.65 1.81 2.25 0.54 C 2.75 -0.54 2.87 -1.64 2.87 -2.48 Z M 2.87 -2.48 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-0%22%3E%3Cpath d=%22M 2.01 -3.28 C 2.06 -3.39 2.07 -3.45 2.07 -3.5 C 2.07 -3.71 1.87 -3.87 1.67 -3.87 C 1.40 -3.87 1.31 -3.65 1.28 -3.54 L 0.37 -0.54 C 0.35 -0.53 0.32 -0.43 0.32 -0.43 C 0.32 -0.35 0.54 -0.28 0.60 -0.28 C 0.65 -0.28 0.65 -0.29 0.70 -0.40 Z M 2.01 -3.28 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -22.67 0.00 L 135.66 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -2.07 2.39 C -1.69 0.95 -0.84 0.27 -0.00 0.00 C -0.84 -0.27 -1.69 -0.95 -2.07 -2.39 %22 transform=%22matrix(0.99, 0, 0, -0.99, 161.13, 128.87)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22164.83%22 y=%22131.00%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -22.67 L 0.00 112.98 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -2.07 2.39 C -1.69 0.95 -0.85 0.28 0.00 -0.00 C -0.85 -0.28 -1.69 -0.95 -2.07 -2.39 %22 transform=%22matrix(0, -0.99, -0.99, 0, 25.86, 16.18)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2223.25%22 y=%2210.55%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%2214.52%22 y=%22139.15%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 0.00 L 45.35 34.01 L 45.35 0.00 Z M 0.00 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 45.35 34.01 L 113.38 85.04 L 113.38 0.00 L 45.35 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 46.55 34.01 C 46.55 34.67 46.01 35.21 45.35 35.21 C 44.69 35.21 44.15 34.67 44.15 34.01 C 44.15 33.35 44.69 32.82 45.35 32.82 C 46.01 32.82 46.55 33.35 46.55 34.01 Z M 46.55 34.01 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%2237.07%22 y=%2289.02%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2244.50%22 y=%2289.02%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2248.36%22 y=%2289.02%22/%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%2254.03%22 y=%2289.02%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2258.42%22 y=%2289.02%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2263.66%22 y=%2289.02%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 114.58 85.04 C 114.58 85.70 114.04 86.23 113.38 86.23 C 112.72 86.23 112.19 85.70 112.19 85.04 C 112.19 84.38 112.72 83.84 113.38 83.84 C 114.04 83.84 114.58 84.38 114.58 85.04 Z M 114.58 85.04 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%2296.45%22 y=%2238.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22103.89%22 y=%2234.62%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22106.67%22 y=%2238.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22110.53%22 y=%2238.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22116.20%22 y=%2234.62%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%22118.98%22 y=%2238.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22123.37%22 y=%2238.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22128.61%22 y=%2234.62%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22131.39%22 y=%2238.22%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 46.55 0.00 C 46.55 0.66 46.01 1.19 45.35 1.19 C 44.69 1.19 44.15 0.66 44.15 0.00 C 44.15 -0.66 44.69 -1.19 45.35 -1.19 C 46.01 -1.19 46.55 -0.66 46.55 0.00 Z M 46.55 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-5%22 x=%2267.01%22 y=%22139.15%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 114.58 0.00 C 114.58 0.66 114.04 1.19 113.38 1.19 C 112.72 1.19 112.19 0.66 112.19 0.00 C 112.19 -0.66 112.72 -1.19 113.38 -1.19 C 114.04 -1.19 114.58 -0.66 114.58 0.00 Z M 114.58 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-5%22 x=%22133.35%22 y=%22139.83%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22141.37%22 y=%22136.23%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%222.98 2.98%22 stroke-miterlimit=%2210%22 d=%22M 45.35 34.01 L 0.00 34.01 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2217.14%22 y=%2296.17%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-dasharray=%222.98 2.98%22 stroke-miterlimit=%2210%22 d=%22M 113.38 85.04 L 0.00 85.04 %22 transform=%22matrix(0.99, 0, 0, -0.99, 25.86, 128.87)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2214.36%22 y=%2246.97%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2219.58%22 y=%2243.37%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2268.18%22 y=%22141.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22134.52%22 y=%22144.34%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%22140.19%22 y=%22140.74%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+<p>គេបាន <span class="mi">\(\frac{OB'}{OB} = \frac{OA'}{OA} = \frac{A'B'}{AB} = c\)</span> (ព្រោះ <span class="mi">\(\Delta OAB \sim \Delta OA'B'\)</span>)</p>
+<p>នាំឱ្យ <span class="mi">\(OB' = cOB\)</span>, <span class="mi">\(A'B' = cAB\)</span> ដោយ <span class="mi">\(OB' = x'\)</span>, <span class="mi">\(OB = x\)</span>,</p>
+<p><span class="mi">\(A'B' = y'\)</span> និង <span class="mi">\(AB = y\)</span> គេបាន <span class="mi">\(x' = cx\)</span>, <span class="mi">\(y' = cy\)</span> ។</p>
+<p>ដូច្នេះ កូអរដោនេនៃចំណុច <span class="mi">\(A'\)</span> គឺ <span class="mi">\(A'(cx, cy)\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ការបំប្លែងចាំងចំណុច <span class="mi">\((x, y)\)</span> ផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c \neq 0\)</span><br/>
+កំណត់ដោយ <span class="mi">\((x, y) \xrightarrow{h} (cx, cy)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>៖ គេមានត្រីកោណ <span class="mi">\(ABC\)</span> ដែល <span class="mi">\(A(8, 4)\)</span>, <span class="mi">\(B(6, 8)\)</span> និង <span class="mi">\(C(2, 6)\)</span> ។ រករូបភាពនៃត្រីកោណ <span class="mi">\(ABC\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c = \frac{1}{2}\)</span> និង <span class="mi">\(c = -\frac{1}{2}\)</span> ។</p>
+<p>តាមការបំប្លែងចាំង <span class="mi">\((x, y) \xrightarrow{h} (cx, cy)\)</span></p>
+<p>ករណី <span class="mi">\(c = \frac{1}{2}\)</span> គេបាន</p>
+<p><span class="mi">\(A(8, 4) \xrightarrow{h} A'(4, 2)\)</span></p>
+<p><span class="mi">\(B(6, 8) \xrightarrow{h} B'(3, 4)\)</span></p>
+<p><span class="mi">\(C(2, 6) \xrightarrow{h} C'(1, 3)\)</span> ។</p>
+<p>ករណី <span class="mi">\(c = -\frac{1}{2}\)</span> គេបាន</p>
+<p><span class="mi">\(A(8, 4) \xrightarrow{h} A''(-4, -2)\)</span></p>
+<p><span class="mi">\(B(6, 8) \xrightarrow{h} B''(-3, -4)\)</span></p>
+<p><span class="mi">\(C(2, 6) \xrightarrow{h} C''(-1, -3)\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>រករូបភាពនៃរង្វង់ផ្ចិត <span class="mi">\(P(-1, 0)\)</span> កាំស្មើ <span class="mi">\(1\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c = 2\)</span> និង <span class="mi">\(c = -1\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>រូបភាពនៃចំណុច <span class="mi">\(A(2, 3)\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> គឺ <span class="mi">\(A'(4, 6)\)</span> ។ រកកូអរដោនេនៃរូបភាពរបស់ <span class="mi">\(B(1, 5)\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ដូចគ្នា ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<span class="mi">\(B'(2, 10)\)</span> ។</p></details>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>កំណត់រូបភាពនៃចំណុចខាងក្រោមតាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c = 3\)</span> ។</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\((-1, 3)\)</span></p></li>
+<li><p><span class="mi">\((-2, -5)\)</span></p></li>
+<li><p><span class="mi">\((-1, \frac{1}{3})\)</span></p></li>
+<li><p><span class="mi">\((p, q)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបមន្តនៃការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c = 3\)</span> គឺ៖ <div class="md">\[(x, y) \xrightarrow{h_{(O, 3)}} (3x, \, 3y)\]</div> <strong>ក.</strong>  <span class="mi">\((-1, 3) \to (3(-1), \, 3(3)) = (-3, 9)\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\((-2, -5) \to (3(-2), \, 3(-5)) = (-6, -15)\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(\left(-1, \dfrac{1}{3}\right) \to \left(3(-1), \, 3\left(\dfrac{1}{3}\right)\right) = (-3, 1)\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\((p, q) \to (3p, \, 3q)\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គេបំប្លែងទំហំ <span class="mi">\((x, y) \rightarrow (\frac{1}{2}x, \frac{1}{2}y)\)</span> ។ កំណត់រូបភាពនៃចំណុចខាងក្រោម ៖</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\((2, 6)\)</span></p></li>
+<li><p><span class="mi">\((-3, 2)\)</span></p></li>
+<li><p><span class="mi">\((-4, -8)\)</span></p></li>
+<li><p><span class="mi">\((p, q)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងទំហំ <span class="mi">\((x, y) \to \left(\dfrac{1}{2}x, \, \dfrac{1}{2}y\right)\)</span> ជាការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c = \dfrac{1}{2}\)</span> (បង្រួម ២ ដង)៖</p>
+<p><strong>ក.</strong>  <span class="mi">\((2, 6) \to \left(\dfrac{2}{2}, \, \dfrac{6}{2}\right) = (1, 3)\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\((-3, 2) \to \left(-\dfrac{3}{2}, \, \dfrac{2}{2}\right) = (-1.5, 1)\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\((-4, -8) \to \left(-\dfrac{4}{2}, \, -\dfrac{8}{2}\right) = (-2, -4)\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\((p, q) \to \left(\dfrac{p}{2}, \, \dfrac{q}{2}\right)\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេមានត្រីកោណ <span class="mi">\(LMN\)</span> ដែល <span class="mi">\(L(1, 1)\)</span>, <span class="mi">\(M(6, 1)\)</span> និង <span class="mi">\(N(6, 5)\)</span> ។ រករូបភាពនៃ <span class="mi">\(\Delta LMN\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(-2\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta LMN\)</span> មានកំពូល <span class="mi">\(L(1, 1), M(6, 1), N(6, 5)\)</span>។</p>
+<p>ការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c = -2\)</span> មានរូបមន្ត <span class="mi">\((x, y) \to (-2x, \, -2y)\)</span>៖</p>
+<p><div class="md">\[\begin{aligned}
+L(1, 1) &amp;\to L'(-2(1), \, -2(1)) = L'(-2, -2) \\
+M(6, 1) &amp;\to M'(-2(6), \, -2(1)) = M'(-12, -2) \\
+N(6, 5) &amp;\to N'(-2(6), \, -2(5)) = N'(-12, -10)
+\end{aligned}\]</div> ដូចនេះ កំពូលនៃត្រីកោណរូបភាពគឺ <span class="mi">\(L'(-2, -2), M'(-12, -2)\)</span> និង <span class="mi">\(N'(-12, -10)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>រករូបភាពនៃត្រីកោណ <span class="mi">\(ABC\)</span> ដែល <span class="mi">\(A(-2, -1)\)</span>, <span class="mi">\(B(-2, 2)\)</span> និង <span class="mi">\(C(4, -1)\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(c = 3\)</span> ហើយបង្ហាញថាផលធៀបផ្ទៃក្រឡាត្រីកោណនៃរូបភាពនិងត្រីកោណ <span class="mi">\(ABC\)</span> ស្មើនឹង <span class="mi">\(9\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> មានកំពូល <span class="mi">\(A(-2, -1), B(-2, 2), C(4, -1)\)</span> និងផលធៀបចាំង <span class="mi">\(c = 3\)</span> ផ្ចិត <span class="mi">\(O(0, 0)\)</span>។</p>
+<p><strong>១. រករូបភាពនៃកំពូលទាំងបី៖</strong> តាមរូបមន្ត <span class="mi">\((x, y) \to (3x, \, 3y)\)</span>៖ <div class="md">\[\begin{aligned}
+A(-2, -1) &amp;\to A'(3(-2), \, 3(-1)) = A'(-6, -3) \\
+B(-2, 2) &amp;\to B'(3(-2), \, 3(2)) = B'(-6, 6) \\
+C(4, -1) &amp;\to C'(3(4), \, 3(-1)) = C'(12, -3)
+\end{aligned}\]</div> <strong>២. បង្ហាញថាផលធៀបផ្ទៃក្រឡាស្មើនឹង <span class="mi">\(9\)</span>៖</strong></p>
+<ul>
+<li><p>ក្នុង <span class="mi">\(\triangle ABC\)</span>៖ ជ្រុង <span class="mi">\([AB]\)</span> ឈរ (<span class="mi">\(x = -2\)</span>) មានប្រវែង <span class="mi">\(AB = 2 - (-1) = 3\)</span>។ ជ្រុង <span class="mi">\([AC]\)</span> ដេក (<span class="mi">\(y = -1\)</span>) មានប្រវែង <span class="mi">\(AC = 4 - (-2) = 6\)</span>។ ដោយ <span class="mi">\([AB] \perp [AC]\)</span> នាំឱ្យ <span class="mi">\(\triangle ABC\)</span> ជាត្រីកោណកែងត្រង់ <span class="mi">\(A\)</span>។ <div class="md">\[S_{ABC} = \frac{1}{2} AB \times AC = \frac{1}{2} \times 3 \times 6 = 9 \text{ ឯកតាផ្ទៃ}\]</div></p></li>
+<li><p>ក្នុង <span class="mi">\(\triangle A'B'C'\)</span>៖ <span class="mi">\(A'B' = 6 - (-3) = 9\)</span> និង <span class="mi">\(A'C' = 12 - (-6) = 18\)</span>។ <div class="md">\[S_{A'B'C'} = \frac{1}{2} A'B' \times A'C' = \frac{1}{2} \times 9 \times 18 = 81 \text{ ឯកតាផ្ទៃ}\]</div></p></li>
+</ul>
+<p>ផលធៀបផ្ទៃក្រឡាគឺ៖ <div class="md">\[\frac{S_{A'B'C'}}{S_{ABC}} = \frac{81}{9} = 9 = c^2 = 3^2\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>រកកូអរដោនេនៃរូបភាពរបស់ <span class="mi">\((-3, 1)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(c = 2\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(c = 2\)</span> មានរូបមន្ត៖ <div class="md">\[(x, y) \to (2x, \, 2y)\]</div> អនុវត្តចំពោះចំណុច <span class="mi">\((-3, 1)\)</span>៖ <div class="md">\[(-3, 1) \to (2(-3), \, 2(1)) = (-6, 2)\]</div> ដូចនេះ កូអរដោនេនៃចំណុចរូបភាពគឺ <span class="mi">\((-6, 2)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(c\)</span> នៃចំណុច <span class="mi">\((9, 3)\)</span> មានរូបភាព <span class="mi">\((6, 2)\)</span> ។ រកតម្លៃចំនួនថេរ <span class="mi">\(c\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបភាពនៃចំណុច <span class="mi">\(A(9, 3)\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(c\)</span> គឺ <span class="mi">\(A'(6, 2)\)</span>។</p>
+<p>តាមនិយមន័យនៃការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span>៖ <div class="md">\[\overrightarrow{OA'} = c\overrightarrow{OA} \iff
+\begin{cases}
+x_{A'} = c \cdot x_A \\
+y_{A'} = c \cdot y_A
+\end{cases}\]</div> ជំនួសតម្លៃចូល៖ <div class="md">\[\begin{cases}
+6 = c \cdot 9 \implies c = \dfrac{6}{9} = \dfrac{2}{3} \\[8pt]
+2 = c \cdot 3 \implies c = \dfrac{2}{3}
+\end{cases}\]</div> ដូចនេះ តម្លៃចំនួនថេរផលធៀបចាំងគឺ <span class="mi">\(c = \dfrac{2}{3}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>រកកូអរដោនេនៃរូបភាពរបស់ <span class="mi">\((-8, -6)\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(c\)</span> នីមួយៗខាងក្រោម៖</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\(c = 2\)</span></p></li>
+<li><p><span class="mi">\(c = \frac{1}{2}\)</span></p></li>
+<li><p><span class="mi">\(c = 1\)</span></p></li>
+<li><p><span class="mi">\(c = -3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបភាពនៃចំណុច <span class="mi">\((-8, -6)\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(c\)</span> គឺ <span class="mi">\((-8c, \, -6c)\)</span>៖</p>
+<p><strong>ក.</strong>  ចំពោះ <span class="mi">\(c = 2\)</span>៖ <div class="md">\[(-8(2), \, -6(2)) = (-16, -12)\]</div> <strong>ខ.</strong>  ចំពោះ <span class="mi">\(c = \dfrac{1}{2}\)</span>៖ <div class="md">\[\left(-8\left(\frac{1}{2}\right), \, -6\left(\frac{1}{2}\right)\right) = (-4, -3)\]</div> <strong>គ.</strong>  ចំពោះ <span class="mi">\(c = 1\)</span>៖ <div class="md">\[(-8(1), \, -6(1)) = (-8, -6)\]</div> <strong>ឃ.</strong>  ចំពោះ <span class="mi">\(c = -3\)</span>៖ <div class="md">\[(-8(-3), \, -6(-3)) = (24, 18)\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>បើរូបភាពនៃ <span class="mi">\((4, 6)\)</span> តាមការបំប្លែងចាំងគឺ <span class="mi">\((6, 9)\)</span> ។ រកកូអរដោនេនៃរូបភាពរបស់ចំណុចនីមួយៗ តាមការបំប្លែងចាំងដូចគ្នា</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\((0, 2)\)</span></p></li>
+<li><p><span class="mi">\((8, 0)\)</span></p></li>
+<li><p><span class="mi">\((10, 4)\)</span></p></li>
+<li><p><span class="mi">\((-2, -4)\)</span></p></li>
+<li><p><span class="mi">\((6, 9)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបភាពនៃ <span class="mi">\((4, 6)\)</span> គឺ <span class="mi">\((6, 9)\)</span> នាំឱ្យផលធៀបចាំងគឺ៖ <div class="md">\[c = \frac{6}{4} = \frac{9}{6} = \frac{3}{2}\]</div> រូបមន្តបំប្លែងចាំងសម្រាប់គ្រប់ចំណុចគឺ <span class="mi">\((x, y) \to \left(\dfrac{3}{2}x, \, \dfrac{3}{2}y\right)\)</span>៖</p>
+<p><strong>ក.</strong>  <span class="mi">\((0, 2) \to \left(\dfrac{3}{2}(0), \, \dfrac{3}{2}(2)\right) = (0, 3)\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\((8, 0) \to \left(\dfrac{3}{2}(8), \, \dfrac{3}{2}(0)\right) = (12, 0)\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\((10, 4) \to \left(\dfrac{3}{2}(10), \, \dfrac{3}{2}(4)\right) = (15, 6)\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\((-2, -6) \to \left(\dfrac{3}{2}(-2), \, \dfrac{3}{2}(-6)\right) = (-3, -9)\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ក្នុងប្លង់កូអរដោនេ គេឱ្យបន្ទាត់ <span class="mi">\((L)\)</span> មានសមីការ <span class="mi">\(2x + 3y = 6\)</span> និងចំណុច <span class="mi">\(O(0, 0)\)</span> ។</p>
+<ol class="list oldef cols1">
+<li><p>រកកូអរដោនេចំណុច <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ដែលជាចំណុចប្រសព្វរវាងបន្ទាត់ <span class="mi">\((L)\)</span> ជាមួយអ័ក្សអាប់ស៊ីស និងអ័ក្សអរដោនេរៀងគ្នា ។</p></li>
+<li><p>រកកូអរដោនេចំណុច <span class="mi">\(A'\)</span> និង <span class="mi">\(B'\)</span> ជារូបភាពរៀងគ្នានៃចំណុច <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> តាមការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> និងផលធៀប <span class="mi">\(c = -2\)</span> ។</p></li>
+<li><p>សរសេរសមីការបន្ទាត់ <span class="mi">\((L')\)</span> កាត់តាមពីរចំណុច <span class="mi">\(A'\)</span> និង <span class="mi">\(B'\)</span> ។</p></li>
+<li><p>តើបន្ទាត់ <span class="mi">\((L')\)</span> និង <span class="mi">\((L)\)</span> មានទំនាក់ទំនងគ្នាយ៉ាងដូចម្ដេច?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់ <span class="mi">\((L): 2x + 3y = 6\)</span>។</p>
+<p><strong>ក.</strong>  <strong>រកកូអរដោនេចំណុចប្រសព្វ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span>៖</strong></p>
+<ul>
+<li><p>ប្រសព្វជាមួយ <span class="mi">\(Ox\)</span> (<span class="mi">\(y = 0\)</span>)៖ <span class="mi">\(2x = 6 \implies x = 3 \implies A(3, 0)\)</span></p></li>
+<li><p>ប្រសព្វជាមួយ <span class="mi">\(Oy\)</span> (<span class="mi">\(x = 0\)</span>)៖ <span class="mi">\(3y = 6 \implies y = 2 \implies B(0, 2)\)</span></p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>រកកូអរដោនេ <span class="mi">\(A'\)</span> និង <span class="mi">\(B'\)</span> តាម <span class="mi">\(h_{(O, -2)}\)</span>៖</strong> រូបមន្តគឺ <span class="mi">\((x, y) \to (-2x, \, -2y)\)</span>៖ <div class="md">\[\begin{aligned}
+A(3, 0) &amp;\to A'(-2(3), \, -2(0)) = A'(-6, 0) \\
+B(0, 2) &amp;\to B'(-2(0), \, -2(2)) = B'(0, -4)
+\end{aligned}\]</div> <strong>គ.</strong>  <strong>សរសេរសមីការបន្ទាត់ <span class="mi">\((L')\)</span> កាត់តាម <span class="mi">\(A'\)</span> និង <span class="mi">\(B'\)</span>៖</strong> មេគុណប្រាប់ទិស៖ <span class="mi">\(m = \dfrac{-4 - 0}{0 - (-6)} = -\dfrac{4}{6} = -\dfrac{2}{3}\)</span>។</p>
+<p>សមីការបន្ទាត់ <span class="mi">\((L')\)</span>៖ <div class="md">\[\begin{aligned}
+y = -\frac{2}{3}x - 4 &amp;\iff 3y = -2x - 12 \\
+&amp;\iff 2x + 3y + 12 = 0
+\end{aligned}\]</div> <strong>ឃ.</strong>  <strong>ទំនាក់ទំនងរវាងបន្ទាត់ <span class="mi">\((L')\)</span> និង <span class="mi">\((L)\)</span>៖</strong> បន្ទាត់ <span class="mi">\((L): 2x + 3y = 6\)</span> និង <span class="mi">\((L'): 2x + 3y = -12\)</span> មានមេគុណប្រាប់ទិសដូចគ្នា (<span class="mi">\(m = -\dfrac{2}{3}\)</span>) និងតួថេរខុសគ្នា នាំឱ្យបន្ទាត់ទាំងពីរស្របគ្នា៖ <div class="md">\[(L') \parallel (L)\]</div> (ការបំប្លែងចាំងតែងតែប្លែងបន្ទាត់ទៅជាបន្ទាត់ស្របនឹងវា)។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p><strong>ការរចនារូបសញ្ញា (Logo)៖</strong> ក្រុមហ៊ុនមួយចង់ពង្រីករូបសញ្ញារបស់ខ្លួនដើម្បីបោះពុម្ពលើផ្ទាំងប៉ាណូធំ។ រូបសញ្ញាដើមមានរាងជាចតុកោណកែងដែលមានកំពូល <span class="mi">\(A(1, 1), B(4, 1), C(4, 3)\)</span> និង <span class="mi">\(D(1, 3)\)</span>។ អ្នករចនាបានប្រើការបំប្លែងចាំងដែលមានផ្ចិតនៅគល់តម្រុយ <span class="mi">\(O(0, 0)\)</span> និងផលធៀប <span class="mi">\(k = 3\)</span> ដើម្បីពង្រីករូបសញ្ញានេះ។</p>
+<ol class="list oldef cols1">
+<li><p>ចូររកកូអរដោនេនៃកំពូលចតុកោណកែងថ្មី <span class="mi">\(A'B'C'D'\)</span>។</p></li>
+<li><p>គណនាបរិមាត្រនៃរូបសញ្ញាដើម និងបរិមាត្រនៃរូបសញ្ញាថ្មី។ តើបរិមាត្រកើនឡើងប៉ុន្មានដង?</p></li>
+<li><p>គណនាផ្ទៃក្រឡានៃរូបសញ្ញាដើម និងផ្ទៃក្រឡានៃរូបសញ្ញាថ្មី។ តើផ្ទៃក្រឡាកើនឡើងប៉ុន្មានដង?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណកែង <span class="mi">\(ABCD\)</span> មាន <span class="mi">\(A(1, 1)\)</span>, <span class="mi">\(B(4, 1)\)</span>, <span class="mi">\(C(4, 3)\)</span>, <span class="mi">\(D(1, 3)\)</span><br/>
+ពង្រីកតាម <span class="mi">\(h_{(O, 3)}\)</span> (<span class="mi">\(c = 3\)</span>)។</p>
+<p><strong>ក.</strong>  <strong>រកកូអរដោនេនៃកំពូលរូបភាព <span class="mi">\(A', B', C', D'\)</span>៖</strong> រូបមន្ត <span class="mi">\((x, y) \to (3x, 3y)\)</span>៖ <div class="md">\[\begin{aligned}
+A(1, 1) &amp;\to A'(3, 3) \\
+B(4, 1) &amp;\to B'(12, 3) \\
+C(4, 3) &amp;\to C'(12, 9) \\
+D(1, 3) &amp;\to D'(3, 9)
+\end{aligned}\]</div> <strong>ខ.</strong>  <strong>ប្រៀបធៀបបរិមាត្រ និងផ្ទៃក្រឡា៖</strong></p>
+<ul>
+<li><p>រូបដើម <span class="mi">\(ABCD\)</span> មានបណ្តោយ <span class="mi">\(a = 4 - 1 = 3\)</span> និងទទឹង <span class="mi">\(b = 3 - 1 = 2\)</span>៖ <div class="md">\[P = 2(3 + 2) = 10 \text{ ឯកតា}, \quad{} S = 3 \times 2 = 6 \text{ ឯកតាផ្ទៃ}\]</div></p></li>
+<li><p>រូបភាព <span class="mi">\(A'B'C'D'\)</span> មានបណ្តោយ <span class="mi">\(a' = 12 - 3 = 9\)</span> និងទទឹង <span class="mi">\(b' = 9 - 3 = 6\)</span>៖ <div class="md">\[\begin{aligned}
+    P' &amp;= 2(9 + 6) = 30 \text{ ឯកតា} \\
+    S' &amp;= 9 \times 6 = 54 \text{ ឯកតាផ្ទៃ}
+    
+\end{aligned}\]</div></p></li>
+</ul>
+<p>ផលធៀបបរិមាត្រ៖ <span class="mi">\(\dfrac{P'}{P} = \dfrac{30}{10} = 3 = c\)</span> (កើន <span class="mi">\(3\)</span> ដង)។</p>
+<p>ផលធៀបផ្ទៃក្រឡា៖ <span class="mi">\(\dfrac{S'}{S} = \dfrac{54}{6} = 9 = c^2 = 3^2\)</span> (កើន <span class="mi">\(9\)</span> ដង)។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p><strong>ការបង្រួមផែនទី៖</strong> ផែនទីទីក្រុងមួយត្រូវបានបង្រួមដើម្បីដាក់បញ្ចូលក្នុងសៀវភៅមគ្គុទ្ទេសក៍ទេសចរណ៍។ អាគារសារមន្ទីរមួយត្រូវបានតាងដោយត្រីកោណ <span class="mi">\(P(0, 6), Q(4, 0)\)</span> និង <span class="mi">\(R(-4, 0)\)</span>។ គេធ្វើការបំប្លែងចាំងត្រីកោណនេះ ដោយមានផ្ចិតនៅគល់តម្រុយ <span class="mi">\(O(0, 0)\)</span> និងផលធៀប <span class="mi">\(k = \frac{1}{2}\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>តើកូអរដោនេថ្មីនៃកំពូលត្រីកោណដែលតំណាងឲ្យសារមន្ទីរនៅលើផែនទីបង្រួម គឺអ្វីខ្លះ?</p></li>
+<li><p>ប្រសិនបើចម្ងាយពិតប្រាកដរវាងចំណុច <span class="mi">\(Q\)</span> និង <span class="mi">\(R\)</span> គឺ <span class="mi">\(8\text{ km}\)</span> តើប្រវែង <span class="mi">\(Q'R'\)</span> លើផែនទីបង្រួមតំណាងឲ្យចម្ងាយប៉ុន្មានគីឡូម៉ែត្រ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផែនទីបង្រួមតាមមាត្រដ្ឋាន <span class="mi">\(1 : 4\)</span> ពោលគឺការបំប្លែងចាំងផលធៀប <span class="mi">\(k = \dfrac{1}{4} = 0.25\)</span>។</p>
+<p><strong>ក.</strong>  <strong>កូអរដោនេថ្មីនៃកំពូលត្រីកោណ៖</strong> គ្រប់កូអរដោនេនៃកំពូលត្រូវគុណនឹងផលធៀប <span class="mi">\(k = \dfrac{1}{4}\)</span>៖ <div class="md">\[(x', y') = \left(\frac{1}{4}x, \, \frac{1}{4}y\right)\]</div> <strong>ខ.</strong>  <strong>ប្រវែង <span class="mi">\(Q'R'\)</span> លើផែនទីបង្រួម៖</strong> បើចម្ងាយពិតប្រាកដគឺ <span class="mi">\(QR = 8\text{ km}\)</span> នោះប្រវែងលើផែនទីបង្រួមគឺ៖ <div class="md">\[\begin{aligned}
+Q'R' &amp;= k \times QR = \frac{1}{4} \times 8\text{ km} \\
+&amp;= 2\text{ km} \quad{} (\text{តាមមាត្រដ្ឋាន})
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>រករូបភាពនៃការបំប្លែងឆ្លុះរបស់ <span class="mi">\(P(-1, 3)\)</span> ចំពោះករណីខាងក្រោមនីមួយៗ ៖</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\(y = -x\)</span></p></li>
+<li><p>អ័ក្សអាប់ស៊ីស</p></li>
+<li><p>អ័ក្សអរដោនេ</p></li>
+<li><p><span class="mi">\(y = x\)</span></p></li>
+<li><p><span class="mi">\(y = -1\)</span></p></li>
+<li><p><span class="mi">\(x = -1\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(P(-1, 3)\)</span>។ រករូបភាពឆ្លុះក្នុងករណីនីមួយៗ៖</p>
+<p><strong>ក.</strong>  ធៀបនឹង <span class="mi">\(y = -x\)</span>៖ <span class="mi">\((x', y') = (-y, -x) = (-3, 1)\)</span><br/>
+<strong>ខ.</strong>  ធៀបនឹងអ័ក្សអាប់ស៊ីស (<span class="mi">\(Ox\)</span>)៖ <span class="mi">\((x', y') = (x, -y) = (-1, -3)\)</span><br/>
+<strong>គ.</strong>  ធៀបនឹងអ័ក្សអរដោនេ (<span class="mi">\(Oy\)</span>)៖ <span class="mi">\((x', y') = (-x, y) = (1, 3)\)</span><br/>
+<strong>ឃ.</strong>  ធៀបនឹង <span class="mi">\(y = x\)</span>៖ <span class="mi">\((x', y') = (y, x) = (3, -1)\)</span><br/>
+<strong>ង.</strong>  ធៀបនឹង <span class="mi">\(y = -1\)</span>៖ <span class="mi">\(x' = -1, y' = 2(-1) - 3 = -5 \implies (-1, -5)\)</span><br/>
+<strong>ច.</strong>  ធៀបនឹង <span class="mi">\(x = -1\)</span>៖ <span class="mi">\(x' = 2(-1) - (-1) = -1, y' = 3 \implies (-1, 3)\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>រករូបភាពនៃការបំប្លែងឆ្លុះរបស់ <span class="mi">\(A(1, 4)\)</span> ចំពោះបន្ទាត់នីមួយៗខាងក្រោម ៖</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\(x = 0\)</span></p></li>
+<li><p><span class="mi">\(y = 0\)</span></p></li>
+<li><p><span class="mi">\(y = x\)</span></p></li>
+<li><p><span class="mi">\(y = -x\)</span></p></li>
+<li><p><span class="mi">\(y = 2\)</span></p></li>
+<li><p><span class="mi">\(x = -1\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(A(1, 4)\)</span>។ រករូបភាពឆ្លុះក្នុងករណីនីមួយៗ៖</p>
+<p><strong>ក.</strong>  ធៀបនឹង <span class="mi">\(x = 0\)</span> (<span class="mi">\(Oy\)</span>)៖ <span class="mi">\((-1, 4)\)</span><br/>
+<strong>ខ.</strong>  ធៀបនឹង <span class="mi">\(y = 0\)</span> (<span class="mi">\(Ox\)</span>)៖ <span class="mi">\((1, -4)\)</span><br/>
+<strong>គ.</strong>  ធៀបនឹង <span class="mi">\(y = x\)</span>៖ <span class="mi">\((4, 1)\)</span><br/>
+<strong>ឃ.</strong>  ធៀបនឹង <span class="mi">\(y = -x\)</span>៖ <span class="mi">\((-4, -1)\)</span><br/>
+<strong>ង.</strong>  ធៀបនឹង <span class="mi">\(y = 2\)</span>៖ <span class="mi">\(x' = 1, y' = 2(2) - 4 = 0 \implies (1, 0)\)</span><br/>
+<strong>ច.</strong>  ធៀបនឹង <span class="mi">\(x = -1\)</span>៖ <span class="mi">\(x' = 2(-1) - 1 = -3, y' = 4 \implies (-3, 4)\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>រករូបភាពនៃចំណុចនីមួយៗខាងក្រោម បន្ទាប់ពីការបំប្លែងឆ្លុះចំពោះបន្ទាត់ <span class="mi">\(x = 3\)</span> តាមការបំប្លែងឆ្លុះត្រង់ <span class="mi">\(O(0, 0)\)</span></p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\((1, 1)\)</span></p></li>
+<li><p><span class="mi">\((-1, 2)\)</span></p></li>
+<li><p><span class="mi">\((3, -1)\)</span></p></li>
+<li><p><span class="mi">\((2, 0)\)</span></p></li>
+<li><p><span class="mi">\((0, 0)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងបណ្តាក់៖ ឆ្លុះធៀបនឹង <span class="mi">\(x = 3\)</span> រួចបន្តឆ្លុះកណ្តាលត្រង់ <span class="mi">\(O(0, 0)\)</span>៖</p>
+<p>- ឆ្លុះធៀបនឹង <span class="mi">\(x = 3\)</span>៖ <span class="mi">\(x_1 = 2(3) - x = 6 - x, y_1 = y\)</span>។</p>
+<p>- ឆ្លុះធៀបនឹង <span class="mi">\(O(0, 0)\)</span>៖ <span class="mi">\(x' = -x_1 = -(6 - x) = x - 6, y' = -y_1 = -y\)</span>។</p>
+<p>កន្សោមបំប្លែងសរុបគឺ <span class="mi">\((x', y') = (x - 6, \, -y)\)</span>៖</p>
+<p><strong>ក.</strong>  <span class="mi">\((1, 1) \to (1 - 6, -1) = (-5, -1)\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\((-1, 2) \to (-1 - 6, -2) = (-7, -2)\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\((3, -1) \to (3 - 6, -(-1)) = (-3, 1)\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\((2, 0) \to (2 - 6, 0) = (-4, 0)\)</span><br/>
+<strong>ង.</strong>  <span class="mi">\((0, 0) \to (0 - 6, 0) = (-6, 0)\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>រករូបភាពនៃចំណុចនីមួយៗ បន្ទាប់ពីការបំប្លែងឆ្លុះខាងក្រោម ចំពោះបន្ទាត់ <span class="mi">\(y = 1\)</span> តាមការបំប្លែងឆ្លុះបន្ទាត់ <span class="mi">\(y = x\)</span></p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\((3, 3)\)</span></p></li>
+<li><p><span class="mi">\((2, -1)\)</span></p></li>
+<li><p><span class="mi">\((-1, 4)\)</span></p></li>
+<li><p><span class="mi">\((0, 1)\)</span></p></li>
+<li><p><span class="mi">\((0, 0)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងបណ្តាក់៖ ឆ្លុះធៀបនឹង <span class="mi">\(y = 1\)</span> រួចបន្តឆ្លុះធៀបនឹង <span class="mi">\(y = x\)</span>៖</p>
+<p>- ឆ្លុះធៀបនឹង <span class="mi">\(y = 1\)</span>៖ <span class="mi">\(x_1 = x, y_1 = 2(1) - y = 2 - y\)</span>។</p>
+<p>- ឆ្លុះធៀបនឹង <span class="mi">\(y = x\)</span>៖ <span class="mi">\(x' = y_1 = 2 - y, y' = x_1 = x\)</span>។</p>
+<p>កន្សោមបំប្លែងសរុបគឺ <span class="mi">\((x', y') = (2 - y, \, x)\)</span>៖</p>
+<p><strong>ក.</strong>  <span class="mi">\((3, 3) \to (2 - 3, 3) = (-1, 3)\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\((2, -1) \to (2 - (-1), 2) = (3, 2)\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\((-1, 4) \to (2 - 4, -1) = (-2, -1)\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\((0, 1) \to (2 - 1, 0) = (1, 0)\)</span><br/>
+<strong>ង.</strong>  <span class="mi">\((0, 0) \to (2 - 0, 0) = (2, 0)\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>តើការបំប្លែងខាងក្រោមមួយណា ដែលមិនផ្ដល់រូបភាពប៉ុនទៅនឹងរូបភាពដើម?</p>
+<ol class="list oldef cols1">
+<li><p>បំប្លែងឆ្លុះចំណុច</p></li>
+<li><p>បំប្លែងទំហំ</p></li>
+<li><p>បំប្លែងកិល</p></li>
+<li><p>បំប្លែងឆ្លុះបន្ទាត់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងដែលរក្សាប្រវែងអង្កត់ និងបង្កើតរូបភាពប៉ុនរូបដើម ហៅថា អ៊ីសូមេទ្រី (Isometry) រួមមាន៖ ការបំប្លែងកិល, ការបំប្លែងឆ្លុះ, និងការបំប្លែងវិល។</p>
+<p>ផ្ទុយទៅវិញ ការបំប្លែងទំហំ (Homothety/Dilation) ធ្វើឱ្យរូបភាពពង្រីក ឬបង្រួមតាមផលធៀប <span class="mi">\(k\)</span> ដែលមិនស្មើ <span class="mi">\(\pm 1\)</span> ហេតុនេះរូបភាពមិនប៉ុនរូបដើមឡើយ។</p>
+<p>ដូចនេះ ចម្លើយត្រឹមត្រូវគឺ៖ <div class="md">\[\text{\textbf{ខ.}~ } \text{បំប្លែងទំហំ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>តើការបំប្លែងណាមួយខាងក្រោម ដែលមិនរក្សាចម្ងាយ?</p>
+<ol class="list oldef cols1">
+<li><p>បំប្លែងទំហំ</p></li>
+<li><p>បំប្លែងកិល</p></li>
+<li><p>បំប្លែងវិល</p></li>
+<li><p>បំប្លែងឆ្លុះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងដែលមិនរក្សាចម្ងាយ (Non-isometric transformation) គឺការបំប្លែងណាដែលចម្ងាយរវាងចំណុចពីរនៃរូបភាព <span class="mi">\(A'B'\)</span> មិនស្មើនឹងចម្ងាយរវាងចំណុចដើម <span class="mi">\(AB\)</span>។</p>
+<p>ការបំប្លែងទំហំ (Dilation) មាន <span class="mi">\(A'B' = |k| AB\)</span>។ ប្រសិនបើ <span class="mi">\(|k| \ne 1\)</span> នោះចម្ងាយមិនត្រូវបានរក្សាទុកឡើយ។</p>
+<p>ដូចនេះ ចម្លើយត្រឹមត្រូវគឺ៖ <div class="md">\[\text{\textbf{ក.}~ } \text{បំប្លែងទំហំ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>តើការបំប្លែងណាមួយនៃ <span class="mi">\(P(x, y)\)</span> មិនសមមូលទៅនឹងការបំប្លែងបីផ្សេងៗទៀតខាងក្រោម?</p>
+<ol class="list oldef cols1">
+<li><p>បំប្លែងឆ្លុះនៃ <span class="mi">\(P(x, y)\)</span> តាមគល់ <span class="mi">\(O\)</span></p></li>
+<li><p>បំប្លែងកិលនៃ <span class="mi">\(P(x, y) \rightarrow P(x - 1, y - 1)\)</span></p></li>
+<li><p>បំប្លែងទំហំនៃ <span class="mi">\(P(x, y)\)</span> ដែលមានផ្ចិតនៅត្រង់គល់ <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(-1\)</span></p></li>
+<li><p>បំប្លែងវិលនៃ <span class="mi">\(P(x, y)\)</span> <span class="mi">\(180^\circ\)</span> ពីគល់ <span class="mi">\(O\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យកន្សោមបំប្លែងនៃជម្រើសនីមួយៗចំពោះចំណុច <span class="mi">\(P(x, y)\)</span>៖</p>
+<ul>
+<li><p><strong>a.</strong> បំប្លែងឆ្លុះតាមគល់ <span class="mi">\(O\)</span>៖ <span class="mi">\(P'( -x, -y )\)</span></p></li>
+<li><p><strong>b.</strong> បំប្លែងកិល៖ <span class="mi">\(P'( x - 1, y - 1 )\)</span></p></li>
+<li><p><strong>c.</strong> បំប្លែងទំហំផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(-1\)</span>៖ <span class="mi">\(P'( -1 \cdot x, -1 \cdot y ) = P'( -x, -y )\)</span></p></li>
+<li><p><strong>d.</strong> បំប្លែងវិល <span class="mi">\(180^\circ\)</span> ពីគល់ <span class="mi">\(O\)</span>៖ <span class="mi">\(P'( -x, -y )\)</span></p></li>
+</ul>
+<p>យើងឃើញថា a, c, និង d សុទ្ធតែផ្ដល់រូបភាព <span class="mi">\((-x, -y)\)</span> ដូចគ្នាទាំងអស់ មានតែជម្រើស b មួយគត់ដែលផ្ដល់ <span class="mi">\((x - 1, y - 1)\)</span>។</p>
+<p>ដូចនេះ ការបំប្លែងដែលមិនសមមូលនឹងបីទៀតគឺ៖ <div class="md">\[\text{\textbf{b. }} \text{បំប្លែងកិលនៃ } P(x, y) \rightarrow P(x - 1, \, y - 1)\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>តើសមីការនៃបន្ទាត់កាត់តាមចំណុចគល់ ហើយមានរូបភាពបំប្លែងកិល <span class="mi">\(\vec{a} = (2, 3)\)</span> នៃចំណុច <span class="mi">\((1, 3)\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\((1, 3)\)</span> បំប្លែងកិលតាម <span class="mi">\(\vec{a} = (2, 3)\)</span> បានចំណុចរូបភាព <span class="mi">\(M'\)</span>៖ <div class="md">\[M'(1 + 2, \, 3 + 3) = M'(3, 6)\]</div> បន្ទាត់កាត់តាមគល់ <span class="mi">\(O(0, 0)\)</span> និងចំណុច <span class="mi">\(M'(3, 6)\)</span> មានមេគុណប្រាប់ទិស៖ <div class="md">\[m = \frac{6 - 0}{3 - 0} = \frac{6}{3} = 2\]</div> សមីការបន្ទាត់កាត់តាមគល់តម្រុយគឺ៖ <div class="md">\[y = mx \iff y = 2x \quad{} (\text{ឬ } 2x - y = 0)\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ចតុកោណព្នាយកែង <span class="mi">\(ABCD\)</span> ដែលមានកំពូល <span class="mi">\(A(3, -2)\)</span>, <span class="mi">\(B(7, -2)\)</span>, <span class="mi">\(C(9, -7)\)</span> និង <span class="mi">\(D(3, -7)\)</span> ។</p>
+<ol class="list oldef cols1">
+<li><p>រករូបភាពនៃចតុកោណព្នាយកែងតាមការបំប្លែងវិលផ្ចិត <span class="mi">\(O\)</span> មុំ <span class="mi">\(90^\circ\)</span> ។</p></li>
+<li><p>រករូបភាពនៃចតុកោណព្នាយកែងតាមការបំប្លែងវិលផ្ចិត <span class="mi">\(O\)</span> មុំ <span class="mi">\(-90^\circ\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណព្នាយកែង <span class="mi">\(ABCD\)</span> មាន <span class="mi">\(A(3, -2)\)</span>, <span class="mi">\(B(7, -2)\)</span>, <span class="mi">\(C(9, -7)\)</span>, <span class="mi">\(D(3, -7)\)</span> ។</p>
+<p><strong>ក.</strong>  <strong>រូបភាពតាមការបំប្លែងវិល <span class="mi">\(R_{(O, 90^\circ)}\)</span>៖</strong> រូបមន្តគឺ <span class="mi">\((x, y) \to (-y, x)\)</span>៖ <div class="md">\[\begin{aligned}
+A(3, -2) &amp;\to A'(2, 3) \\
+B(7, -2) &amp;\to B'(2, 7) \\
+C(9, -7) &amp;\to C'(7, 9) \\
+D(3, -7) &amp;\to D'(7, 3)
+\end{aligned}\]</div> <strong>ខ.</strong>  <strong>រូបភាពតាមការបំប្លែងវិល <span class="mi">\(R_{(O, -90^\circ)}\)</span>៖</strong> រូបមន្តគឺ <span class="mi">\((x, y) \to (y, -x)\)</span>៖ <div class="md">\[\begin{aligned}
+A(3, -2) &amp;\to A''(-2, -3) \\
+B(7, -2) &amp;\to B''(-2, -7) \\
+C(9, -7) &amp;\to C''(-7, -9) \\
+D(3, -7) &amp;\to D''(-7, -3)
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>រូបភាពរបស់ត្រីកោណ <span class="mi">\(ABC\)</span> តាមការបំប្លែងវិលផ្ចិត <span class="mi">\(O\)</span> មុំ <span class="mi">\(180^\circ\)</span> និងកំពូលរបស់រូបភាពគឺ <span class="mi">\(A'(-4, 1)\)</span>, <span class="mi">\(B'(-1, 4)\)</span> និង <span class="mi">\(C'(-5, -8)\)</span> ។ រកកូអរដោនេកំពូលមុនពេលធ្វើបំប្លែងវិល ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបភាពតាមការបំប្លែងវិល <span class="mi">\(R_{(O, 180^\circ)}\)</span> គឺ <span class="mi">\(A'(-4, 1)\)</span>, <span class="mi">\(B'(-1, 4)\)</span>, <span class="mi">\(C'(-5, -8)\)</span> ។</p>
+<p>ការបំប្លែងវិលច្រាសនៃ <span class="mi">\(R_{(O, 180^\circ)}\)</span> គឺ <span class="mi">\(R_{(O, 180^\circ)}\)</span> ដដែល ដែលមានរូបមន្ត <span class="mi">\((x, y) = (-x', -y')\)</span>។</p>
+<p>កូអរដោនេកំពូលដើមមុនពេលធ្វើបំប្លែងវិលគឺ៖ <div class="md">\[\begin{aligned}
+A &amp;= (-(-4), \, -1) = (4, -1) \\
+B &amp;= (-(-1), \, -4) = (1, -4) \\
+C &amp;= (-(-5), \, -(-8)) = (5, 8)
+\end{aligned}\]</div> ដូចនេះ កំពូលដើមគឺ <span class="mi">\(A(4, -1), B(1, -4)\)</span> និង <span class="mi">\(C(5, 8)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ចតុកោណកែង <span class="mi">\(RECT\)</span> មានកំពូល <span class="mi">\(R(-5, 4)\)</span>, <span class="mi">\(E(-5, -2)\)</span>, <span class="mi">\(C(-3, -2)\)</span> និង <span class="mi">\(T(-3, 4)\)</span> ។</p>
+<ol class="list oldef cols1">
+<li><p>សង់ចតុកោណកែង <span class="mi">\(R'E'C'T'\)</span> ជារូបភាពនៃចតុកោណកែង <span class="mi">\(RECT\)</span> តាមការបំប្លែងវិលផ្ចិត <span class="mi">\(O\)</span> មុំ <span class="mi">\(\theta = -90^\circ\)</span> ។</p></li>
+<li><p>រករូបភាពនៃចតុកោណកែង <span class="mi">\(R'E'C'T'\)</span> តាមការបំប្លែងវិលផ្ចិត <span class="mi">\(O\)</span> មុំ <span class="mi">\(\theta = 180^\circ\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណកែង <span class="mi">\(RECT\)</span> មាន <span class="mi">\(R(-5, 4)\)</span>, <span class="mi">\(E(-5, -2)\)</span>, <span class="mi">\(C(-3, -2)\)</span>, <span class="mi">\(T(-3, 4)\)</span> ។</p>
+<p><strong>ក.</strong>  <strong>រូបភាពតាមការវិល <span class="mi">\(R_{(O, -90^\circ)}\)</span>៖</strong> រូបមន្ត <span class="mi">\((x, y) \to (y, -x)\)</span>៖ <div class="md">\[\begin{aligned}
+R(-5, 4) &amp;\to R'(4, 5) \\
+E(-5, -2) &amp;\to E'(-2, 5) \\
+C(-3, -2) &amp;\to C'(-2, 3) \\
+T(-3, 4) &amp;\to T'(4, 3)
+\end{aligned}\]</div> <strong>ខ.</strong>  <strong>រូបភាពនៃ <span class="mi">\(R'E'C'T'\)</span> តាមការវិល <span class="mi">\(R_{(O, 180^\circ)}\)</span>៖</strong> រូបមន្ត <span class="mi">\((x', y') \to (-x', -y')\)</span>៖ <div class="md">\[\begin{aligned}
+R'(4, 5) &amp;\to R''(-4, -5) \\
+E'(-2, 5) &amp;\to E''(2, -5) \\
+C'(-2, 3) &amp;\to C''(2, -3) \\
+T'(4, 3) &amp;\to T''(-4, -3)
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> មួយ និងចំណុច <span class="mi">\(O\)</span> មិននៅលើជ្រុងនៃត្រីកោណ។ តាង <span class="mi">\(G\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta ABC\)</span> និង <span class="mi">\(A', B', C'\)</span> ជារូបភាពរៀងគ្នានៃ <span class="mi">\(A, B, C\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, k)}\)</span> ដែល <span class="mi">\(k \ne 0\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>បង្ហាញថារូបភាពនៃ <span class="mi">\(G\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, k)}\)</span> គឺជាទីប្រជុំទម្ងន់ <span class="mi">\(G'\)</span> នៃ <span class="mi">\(\Delta A'B'C'\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(S\)</span> ជាផ្ទៃក្រឡានៃ <span class="mi">\(\Delta ABC\)</span> ចូរគណនាផ្ទៃក្រឡា <span class="mi">\(S'\)</span> នៃ <span class="mi">\(\Delta A'B'C'\)</span> ជាអនុគមន៍នៃ <span class="mi">\(k\)</span> និង <span class="mi">\(S\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>បង្ហាញថា <span class="mi">\(G' = h_{(O, k)}(G)\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\Delta A'B'C'\)</span>៖</strong> តាមនិយមន័យនៃការបំប្លែងចាំង <span class="mi">\(h_{(O, k)}\)</span>៖ <div class="md">\[\overrightarrow{OA'} = k\overrightarrow{OA}, \quad{} \overrightarrow{OB'} = k\overrightarrow{OB}, \quad{} \overrightarrow{OC'} = k\overrightarrow{OC}\]</div> បូកអង្គនិងអង្គ៖ <div class="md">\[\overrightarrow{OA'} + \overrightarrow{OB'} + \overrightarrow{OC'} = k(\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC})\]</div> ដោយសារ <span class="mi">\(G\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\triangle ABC\)</span> នោះ៖ <div class="md">\[\overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} = 3\overrightarrow{OG}\]</div> ជំនួសចូល៖ <div class="md">\[\overrightarrow{OA'} + \overrightarrow{OB'} + \overrightarrow{OC'} = 3k\overrightarrow{OG}\]</div> ម៉្យាងទៀត បើ <span class="mi">\(G'\)</span> ជាទីប្រជុំទម្ងន់នៃ <span class="mi">\(\triangle A'B'C'\)</span> នោះ៖ <div class="md">\[\overrightarrow{OA'} + \overrightarrow{OB'} + \overrightarrow{OC'} = 3\overrightarrow{OG'}\]</div> ហេតុនេះ <span class="mi">\(3\overrightarrow{OG'} = 3k\overrightarrow{OG} \iff \overrightarrow{OG'} = k\overrightarrow{OG}\)</span>។</p>
+<p>សមភាពនេះបញ្ជាក់ថា <span class="mi">\(G'\)</span> គឺជាភាពនៃ <span class="mi">\(G\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, k)}\)</span>។</p>
+<p><strong>ខ.</strong>  <strong>គណនាផ្ទៃក្រឡា <span class="mi">\(S'\)</span> ជាអនុគមន៍នៃ <span class="mi">\(k\)</span> និង <span class="mi">\(S\)</span>៖</strong> ការបំប្លែងចាំងគុណគ្រប់ប្រវែងអង្កត់នឹង <span class="mi">\(|k|\)</span> នាំឱ្យបាតគុណនឹង <span class="mi">\(|k|\)</span> និងកម្ពស់គុណនឹង <span class="mi">\(|k|\)</span>។</p>
+<p>ដូចនេះ ផ្ទៃក្រឡារូបភាពគឺ៖ <div class="md">\[S' = k^2 S\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A(2, -3)\)</span> និងផ្ចិតចាំង <span class="mi">\(O(0, 0)\)</span>។ រកកូអរដោនេនៃភាព <span class="mi">\(A'\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, k)}\)</span> ក្នុងករណី៖</p>
+<ol class="list oldef cols1">
+<li><p>ផលធៀបចាំង <span class="mi">\(k = 3\)</span> (ពង្រីក)</p></li>
+<li><p>ផលធៀបចាំង <span class="mi">\(k = -2\)</span></p></li>
+<li><p>ផលធៀបចាំង <span class="mi">\(k = \dfrac{1}{2}\)</span> (បង្រួម)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(A(2, -3)\)</span> និងផ្ចិតចាំង <span class="mi">\(O(0, 0)\)</span>។ រូបមន្តបំប្លែងចាំងគឺ <span class="mi">\(A'(ka, kb)\)</span>៖</p>
+<p><strong>ក.</strong>  <strong>ផលធៀប <span class="mi">\(k = 3\)</span> (ពង្រីក ៣ ដង)៖</strong> <div class="md">\[A'(3(2), \, 3(-3)) = A'(6, -9)\]</div> <strong>ខ.</strong>  <strong>ផលធៀប <span class="mi">\(k = -2\)</span>៖</strong> <div class="md">\[A'(-2(2), \, -2(-3)) = A'(-4, 6)\]</div> <strong>គ.</strong>  <strong>ផលធៀប <span class="mi">\(k = \dfrac{1}{2}\)</span> (បង្រួម ២ ដង)៖</strong> <div class="md">\[A'\left(\frac{1}{2}(2), \, \frac{1}{2}(-3)\right) = A'(1, \, -1.5)\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(M(5, 3)\)</span> និងផ្ចិតចាំង <span class="mi">\(I(1, -1)\)</span>។ រកកូអរដោនេនៃភាព <span class="mi">\(M'\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(I, 2)}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(M(5, 3)\)</span> ផ្ចិតចាំង <span class="mi">\(I(1, -1)\)</span> ផលធៀប <span class="mi">\(k = 2\)</span>។</p>
+<p>តាមនិយមន័យនៃការបំប្លែងចាំង <span class="mi">\(h_{(I, k)}\)</span>៖ <div class="md">\[\overrightarrow{IM'} = k\overrightarrow{IM}\]</div> គណនាវ៉ិចទ័រ <span class="mi">\(\overrightarrow{IM}\)</span>៖ <div class="md">\[\begin{aligned}
+\overrightarrow{IM} &amp;= (x_M - x_I, \, y_M - y_I) \\
+&amp;= (5 - 1, \, 3 - (-1)) = (4, 4)
+\end{aligned}\]</div> វ៉ិចទ័រ <span class="mi">\(\overrightarrow{IM'}\)</span> គឺ៖ <div class="md">\[\overrightarrow{IM'} = 2(4, 4) = (8, 8)\]</div> កូអរដោនេនៃចំណុចរូបភាព <span class="mi">\(M'\)</span> គឺ៖ <div class="md">\[\begin{cases}
+x_{M'} = x_I + 8 = 1 + 8 = 9 \\
+y_{M'} = y_I + 8 = -1 + 8 = 7
+\end{cases}
+\implies M'(9, 7)\]</div> ដូចនេះ <span class="mi">\(M'(9, 7)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\((d): 2x - 3y + 6 = 0\)</span>។ រកសមីការនៃបន្ទាត់ <span class="mi">\((d')\)</span> ជាភាពនៃ <span class="mi">\((d)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, 2)}\)</span>។ បង្ហាញថា <span class="mi">\((d') \parallel (d)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់ <span class="mi">\((d): 2x - 3y + 6 = 0\)</span>។</p>
+<p>ការបំប្លែងចាំងផ្ចិត <span class="mi">\(O(0, 0)\)</span> ផលធៀប <span class="mi">\(k = 2\)</span> មានរូបមន្ត៖ <div class="md">\[\begin{cases}
+x' = 2x \implies x = \dfrac{x'}{2} \\[8pt]
+y' = 2y \implies y = \dfrac{y'}{2}
+\end{cases}\]</div> ជំនួស <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ចូលក្នុងសមីការបន្ទាត់ <span class="mi">\((d)\)</span>៖ <div class="md">\[\begin{aligned}
+2\left(\frac{x'}{2}\right) - 3\left(\frac{y'}{2}\right) + 6 &amp;= 0 \\
+x' - \frac{3}{2}y' + 6 &amp;= 0 \\
+2x' - 3y' + 12 &amp;= 0
+\end{aligned}\]</div> ដូចនេះ សមីការបន្ទាត់រូបភាព <span class="mi">\((d')\)</span> គឺ <span class="mi">\(2x - 3y + 12 = 0\)</span>។</p>
+<p><strong>បង្ហាញថា <span class="mi">\((d') \parallel (d)\)</span>៖</strong> បន្ទាត់ <span class="mi">\((d)\)</span> និង <span class="mi">\((d')\)</span> មានវ៉ិចទ័រណរម៉ាល់ដូចគ្នាគឺ <span class="mi">\(\vec{n} = (2, -3)\)</span> ដែលបញ្ជាក់ថាមេគុណប្រាប់ទិសស្មើគ្នា <span class="mi">\(m = \dfrac{2}{3}\)</span>។ ដោយសារតួថេរខុសគ្នា (<span class="mi">\(6 \ne 12\)</span>) នាំឱ្យ <span class="mi">\((d') \parallel (d)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់ <span class="mi">\((C): (x - 2)^2 + (y + 1)^2 = 4\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>កំណត់ផ្ចិត <span class="mi">\(I\)</span> និងកាំ <span class="mi">\(R\)</span> នៃរង្វង់ <span class="mi">\((C)\)</span>។</p></li>
+<li><p>រកសមីការរង្វង់ <span class="mi">\((C')\)</span> ជាភាពនៃ <span class="mi">\((C)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, 3)}\)</span>។</p></li>
+<li><p>គណនាផ្ទៃក្រឡានៃរង្វង់ <span class="mi">\((C)\)</span> និង <span class="mi">\((C')\)</span> រួចផ្ទៀងផ្ទាត់ថាសមាមាត្រផ្ទៃក្រឡាស្មើនឹង <span class="mi">\(k^2 = 9\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រង្វង់ <span class="mi">\((C): (x - 2)^2 + (y + 1)^2 = 4\)</span>។</p>
+<p><strong>ក.</strong>  <strong>កំណត់ផ្ចិត <span class="mi">\(I\)</span> និងកាំ <span class="mi">\(R\)</span> នៃ <span class="mi">\((C)\)</span>៖</strong></p>
+<ul>
+<li><p>ផ្ចិត <span class="mi">\(I(2, -1)\)</span></p></li>
+<li><p>កាំ <span class="mi">\(R = \sqrt{4} = 2\)</span></p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>រកសមីការរង្វង់ <span class="mi">\((C')\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, 3)}\)</span>៖</strong></p>
+<ul>
+<li><p>ផ្ចិតថ្មី <span class="mi">\(I'\)</span> ជារូបភាពនៃ <span class="mi">\(I\)</span> តាម <span class="mi">\(h_{(O, 3)}\)</span>៖ <div class="md">\[I'(3(2), \, 3(-1)) = I'(6, -3)\]</div></p></li>
+<li><p>កាំថ្មីនៃ <span class="mi">\((C')\)</span>៖ <div class="md">\[R' = |k| \times R = 3 \times 2 = 6\]</div></p></li>
+</ul>
+<p>សមីការរង្វង់ <span class="mi">\((C')\)</span> គឺ៖ <div class="md">\[(x - 6)^2 + (y + 3)^2 = 6^2 = 36\]</div> <strong>គ.</strong>  <strong>គណនាផ្ទៃក្រឡា និងផ្ទៀងផ្ទាត់ផលធៀប៖</strong> <div class="md">\[\begin{aligned}
+S &amp;= \pi R^2 = \pi (2^2) = 4\pi \text{ ឯកតាផ្ទៃ} \\
+S' &amp;= \pi R'^2 = \pi (6^2) = 36\pi \text{ ឯកតាផ្ទៃ}
+\end{aligned}\]</div> ផលធៀបផ្ទៃក្រឡាគឺ៖ <div class="md">\[\frac{S'}{S} = \frac{36\pi}{4\pi} = 9 = k^2 = 3^2 \quad{} (\text{ផ្ទៀងផ្ទាត់ត្រឹមត្រូវ})\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A(1, 2)\)</span> និងភាពរបស់វាគឺ <span class="mi">\(A'(4, 8)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h\)</span> ដែលមានផ្ចិត <span class="mi">\(O(0, 0)\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>កំណត់ផលធៀបចាំង <span class="mi">\(k\)</span>។</p></li>
+<li><p>រករូបភាពនៃចំណុច <span class="mi">\(B(-2, 5)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h\)</span> នោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(A(1, 2)\)</span> មានរូបភាព <span class="mi">\(A'(4, 8)\)</span> តាម <span class="mi">\(h_{(O, k)}\)</span>។</p>
+<p><strong>ក.</strong>  <strong>កំណត់ផលធៀបចាំង <span class="mi">\(k\)</span>៖</strong> តាមនិយមន័យ <span class="mi">\(\overrightarrow{OA'} = k\overrightarrow{OA}\)</span>៖ <div class="md">\[\begin{cases}
+4 = k(1) \implies k = 4 \\
+8 = k(2) \implies k = 4
+\end{cases}\]</div> ដូចនេះ ផលធៀបចាំងគឺ <span class="mi">\(k = 4\)</span>។</p>
+<p><strong>ខ.</strong>  <strong>រករូបភាពនៃចំណុច <span class="mi">\(B(-2, 5)\)</span> តាម <span class="mi">\(h_{(O, 4)}\)</span>៖</strong> <div class="md">\[B' = (4(-2), \, 4(5)) = (-8, 20)\]</div> ដូចនេះ <span class="mi">\(B'(-8, 20)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គេឱ្យការបំប្លែងចាំងពីរមានផ្ចិតរួម <span class="mi">\(O\)</span> គឺ <span class="mi">\(h_1 = h_{(O, 2)}\)</span> និង <span class="mi">\(h_2 = h_{(O, -3)}\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>កំណត់ការបំប្លែងបណ្តាក់ <span class="mi">\(h_2 \circ h_1\)</span>។</p></li>
+<li><p>រករូបភាពនៃចំណុច <span class="mi">\(P(3, -1)\)</span> តាមការបំប្លែងបណ្តាក់នោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងចាំងពីរមានផ្ចិតរួម <span class="mi">\(O\)</span> គឺ <span class="mi">\(h_1 = h_{(O, 2)}\)</span> និង <span class="mi">\(h_2 = h_{(O, -3)}\)</span>។</p>
+<p><strong>ក.</strong>  <strong>កំណត់ការបំប្លែងបណ្តាក់ <span class="mi">\(h_2 \circ h_1\)</span>៖</strong> ចំពោះគ្រប់ចំណុច <span class="mi">\(M\)</span> ក្នុងប្លង់៖ <div class="md">\[\begin{aligned}
+(h_2 \circ h_1)(M) &amp;= h_2(h_1(M)) = h_2(2M) \\
+&amp;= -3(2M) = -6M
+\end{aligned}\]</div> ដូចនេះ ការបំប្លែងបណ្តាក់គឺជាការបំប្លែងចាំងផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(k = 2 \times (-3) = -6\)</span>៖ <div class="md">\[h_2 \circ h_1 = h_{(O, -6)}\]</div> <strong>ខ.</strong>  <strong>រករូបភាពនៃចំណុច <span class="mi">\(P(3, -1)\)</span> តាម <span class="mi">\(h_{(O, -6)}\)</span>៖</strong> <div class="md">\[P' = (-6(3), \, -6(-1)) = (-18, 6)\]</div> ដូចនេះ <span class="mi">\(P'(-18, 6)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>រកការបំប្លែងចាំងច្រាស <span class="mi">\((h_{(I, k)})^{-1}\)</span> នៃ <span class="mi">\(h_{(I, k)}\)</span> (<span class="mi">\(k \ne 0\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបំប្លែងចាំងច្រាស <span class="mi">\((h_{(I, k)})^{-1}\)</span> គឺជាការបំប្លែងដែលប្លែងចំណុចរូបភាព <span class="mi">\(M'\)</span> ឱ្យត្រឡប់មកចំណុចដើម <span class="mi">\(M\)</span> វិញ៖ <div class="md">\[(h_{(I, k)})^{-1} \circ h_{(I, k)} = \text{Id}\]</div> តាមនិយមន័យ៖ <div class="md">\[\overrightarrow{IM'} = k\overrightarrow{IM} \iff \overrightarrow{IM} = \frac{1}{k}\overrightarrow{IM'} \quad{} (k \ne 0)\]</div> សមភាពនេះបញ្ជាក់ថា ការបំប្លែងច្រាសគឺជាការបំប្លែងចាំងដែលមានផ្ចិត <span class="mi">\(I\)</span> ដដែល និងមានផលធៀបចាំងស្មើ <span class="mi">\(\dfrac{1}{k}\)</span>៖ <div class="md">\[(h_{(I, k)})^{-1} = h_{\left(I, \, \frac{1}{k}\right)}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> ដែលមានផ្ទៃក្រឡា <span class="mi">\(S = 12\text{ cm}^2\)</span>។ តាមការបំប្លែងចាំង <span class="mi">\(h_{(I, -2)}\)</span> ត្រីកោណ <span class="mi">\(ABC\)</span> ប្លែងទៅជាត្រីកោណ <span class="mi">\(A'B'C'\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>គណនាផលធៀបនៃជ្រុង <span class="mi">\(\dfrac{A'B'}{AB}\)</span>។</p></li>
+<li><p>គណនាផ្ទៃក្រឡានៃត្រីកោណ <span class="mi">\(A'B'C'\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណ <span class="mi">\(ABC\)</span> មានផ្ទៃក្រឡា <span class="mi">\(S = 12\text{ cm}^2\)</span> និងផលធៀបចាំង <span class="mi">\(k = -2\)</span>។</p>
+<p><strong>ក.</strong>  <strong>គណនាផលធៀបនៃជ្រុង <span class="mi">\(\dfrac{A'B'}{AB}\)</span>៖</strong> តាមលក្ខណៈនៃការបំប្លែងចាំង ប្រវែងអង្កត់រូបភាពស្មើនឹងប្រវែងអង្កត់ដើមគុណនឹង <span class="mi">\(|k|\)</span>៖ <div class="md">\[A'B' = |k| \times AB = |-2| \times AB = 2AB\]</div> ផលធៀបនៃជ្រុងគឺ៖ <div class="md">\[\frac{A'B'}{AB} = 2\]</div> <strong>ខ.</strong>  <strong>គណនាផ្ទៃក្រឡានៃត្រីកោណ <span class="mi">\(A'B'C'\)</span>៖</strong> ផ្ទៃក្រឡារបស់រូបភាពកើនឡើងតាមសមាមាត្រ <span class="mi">\(k^2\)</span>៖ <div class="md">\[S' = k^2 \times S = (-2)^2 \times 12 = 4 \times 12 = 48\text{ cm}^2\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A(2, 1)\)</span> និងភាពរបស់វា <span class="mi">\(A'(8, 7)\)</span> តាមការបំប្លែងចាំងដែលមានផលធៀប <span class="mi">\(k = 3\)</span>។ រកកូអរដោនេនៃផ្ចិតចាំង <span class="mi">\(I\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(A(2, 1)\)</span> និងភាពរបស់វា <span class="mi">\(A'(8, 7)\)</span> តាម <span class="mi">\(h_{(I, 3)}\)</span> (<span class="mi">\(k = 3\)</span>)។</p>
+<p>តាមនិយមន័យនៃការបំប្លែងចាំងផ្ចិត <span class="mi">\(I(a, b)\)</span>៖ <div class="md">\[\overrightarrow{IA'} = 3\overrightarrow{IA}\]</div> សរសេរជាកូអរដោនេ៖ <div class="md">\[\begin{aligned}
+\begin{cases}
+x_{A'} - a = 3(x_A - a) \\
+y_{A'} - b = 3(y_A - b)
+\end{cases}
+\end{aligned}\]</div> ជំនួសចូល៖ <div class="md">\[\begin{cases}
+8 - a = 3(2 - a) \\
+7 - b = 3(1 - b)
+\end{cases}\]</div> ដោះស្រាយសមីការនីមួយៗ៖ <div class="md">\[\begin{aligned}
+8 - a &amp;= 6 - 3a \iff 2a = -2 \implies a = -1 \\
+7 - b &amp;= 3 - 3b \iff 2b = -4 \implies b = -2
+\end{aligned}\]</div> ដូចនេះ កូអរដោនេនៃផ្ចិតចាំងគឺ <span class="mi">\(I(-1, -2)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\((d): 4x + y - 8 = 0\)</span>។ រកសមីការបន្ទាត់ <span class="mi">\((d')\)</span> ជាភាពនៃ <span class="mi">\((d)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(I, -1)}\)</span> ដោយផ្ចិត <span class="mi">\(I(1, 2)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់ <span class="mi">\((d): 4x + y - 8 = 0\)</span> និង <span class="mi">\(h_{(I, -1)}\)</span> ដោយ <span class="mi">\(I(1, 2)\)</span>។</p>
+<p>ការបំប្លែងចាំងផលធៀប <span class="mi">\(k = -1\)</span> គឺជាការបំប្លែងឆ្លុះកណ្តាលធៀបនឹងផ្ចិត <span class="mi">\(I\)</span> (<span class="mi">\(S_I\)</span>) ដែលនាំឱ្យ <span class="mi">\(I\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\([MM']\)</span>៖ <div class="md">\[\begin{cases}
+\dfrac{x + x'}{2} = 1 \implies x = 2 - x' \\[8pt]
+\dfrac{y + y'}{2} = 2 \implies y = 4 - y'
+\end{cases}\]</div> ជំនួស <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ចូលក្នុងសមីការបន្ទាត់ <span class="mi">\((d)\)</span>៖ <div class="md">\[\begin{aligned}
+4(2 - x') + (4 - y') - 8 &amp;= 0 \\
+8 - 4x' + 4 - y' - 8 &amp;= 0 \\
+-4x' - y' + 4 &amp;= 0 \iff 4x' + y' - 4 = 0
+\end{aligned}\]</div> ដូចនេះ សមីការបន្ទាត់រូបភាព <span class="mi">\((d')\)</span> គឺ <span class="mi">\(4x + y - 4 = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បង្ហាញថា ប្រសិនបើផលធៀបចាំង <span class="mi">\(k = -1\)</span> នោះការបំប្លែងចាំង <span class="mi">\(h_{(I, -1)}\)</span> គឺជាការបំប្លែងឆ្លុះកណ្តាលធៀបនឹងផ្ចិត <span class="mi">\(I\)</span> (<span class="mi">\(h_{(I, -1)} \equiv S_I\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>យកចំណុច <span class="mi">\(M\)</span> ណាមួយក្នុងប្លង់ និងតាង <span class="mi">\(M' = h_{(I, -1)}(M)\)</span>។</p>
+<p>តាមនិយមន័យនៃការបំប្លែងចាំង <span class="mi">\(h_{(I, -1)}\)</span>៖ <div class="md">\[\overrightarrow{IM'} = -1 \cdot \overrightarrow{IM} = -\overrightarrow{IM}\]</div> សមភាពនេះអាចសរសេរជា៖ <div class="md">\[\overrightarrow{IM} + \overrightarrow{IM'} = \vec{0}\]</div> សមភាពវ៉ិចទ័រនេះបញ្ជាក់ថា ចំណុច <span class="mi">\(I\)</span> គឺជាចំណុចកណ្តាលនៃអង្កត់ <span class="mi">\([MM']\)</span>។</p>
+<p>តាមនិយមន័យនៃការបំប្លែងឆ្លុះកណ្តាលធៀបនឹងចំណុច <span class="mi">\(I\)</span> (<span class="mi">\(S_I\)</span>) រូបភាពនៃចំណុច <span class="mi">\(M\)</span> គឺជាចំណុច <span class="mi">\(M'\)</span> ដែលធ្វើឱ្យ <span class="mi">\(I\)</span> ជាចំណុចកណ្តាលនៃអង្កត់ <span class="mi">\([MM']\)</span> ដែរ។</p>
+<p>ដោយសារការបំប្លែងទាំងពីរផ្ដល់លទ្ធផលដូចគ្នាចំពោះគ្រប់ចំណុច <span class="mi">\(M\)</span> យើងសន្និដ្ឋានបានថា៖ <div class="md">\[h_{(I, -1)} \equiv S_I\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់ពីរ <span class="mi">\((C_1): (x - 1)^2 + (y - 2)^2 = 4\)</span> និង <span class="mi">\((C_2): (x - 7)^2 + (y - 5)^2 = 16\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>រកផលធៀបនៃកាំ <span class="mi">\(\dfrac{R_2}{R_1}\)</span>។</p></li>
+<li><p>កំណត់កូអរដោនេនៃផ្ចិតចាំងខាងក្រៅ <span class="mi">\(I\)</span> ដែលប្លែង <span class="mi">\((C_1)\)</span> ទៅជា <span class="mi">\((C_2)\)</span> តាមផលធៀប <span class="mi">\(k &gt; 0\)</span>។</p></li>
+<li><p>កំណត់កូអរដោនេនៃផ្ចិតចាំងខាងក្នុង <span class="mi">\(J\)</span> ដែលប្លែង <span class="mi">\((C_1)\)</span> ទៅជា <span class="mi">\((C_2)\)</span> តាមផលធៀប <span class="mi">\(k &lt; 0\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រង្វង់ <span class="mi">\((C_1): (x - 1)^2 + (y - 2)^2 = 4\)</span> មានផ្ចិត <span class="mi">\(I_1(1, 2)\)</span> និងកាំ <span class="mi">\(R_1 = 2\)</span>។</p>
+<p>រង្វង់ <span class="mi">\((C_2): (x - 7)^2 + (y - 5)^2 = 16\)</span> មានផ្ចិត <span class="mi">\(I_2(7, 5)\)</span> និងកាំ <span class="mi">\(R_2 = 4\)</span>។</p>
+<p><strong>ក.</strong>  <strong>ផលធៀបនៃកាំ៖</strong> <div class="md">\[\frac{R_2}{R_1} = \frac{4}{2} = 2\]</div> <strong>ខ.</strong>  <strong>ផ្ចិតចាំងខាងក្រៅ <span class="mi">\(I\)</span> (<span class="mi">\(k = 2\)</span>)៖</strong> <div class="md">\[\overrightarrow{II_2} = 2\overrightarrow{II_1} \iff I_2 - I = 2(I_1 - I) \iff I = 2I_1 - I_2\]</div> <div class="md">\[\begin{aligned}
+x_I &amp;= 2(1) - 7 = -5 \\
+y_I &amp;= 2(2) - 5 = -1
+\end{aligned}\]</div> ដូចនេះ ផ្ចិតចាំងខាងក្រៅគឺ <span class="mi">\(I(-5, -1)\)</span>។</p>
+<p><strong>គ.</strong>  <strong>ផ្ចិតចាំងខាងក្នុង <span class="mi">\(J\)</span> (<span class="mi">\(k = -2\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+\overrightarrow{JI_2} = -2\overrightarrow{JI_1} &amp;\iff I_2 - J = -2(I_1 - J) \\
+&amp;\iff 3J = 2I_1 + I_2
+\end{aligned}\]</div> <div class="md">\[\begin{aligned}
+x_J &amp;= \frac{2(1) + 7}{3} = \frac{9}{3} = 3 \\
+y_J &amp;= \frac{2(2) + 5}{3} = \frac{9}{3} = 3
+\end{aligned}\]</div> ដូចនេះ ផ្ចិតចាំងខាងក្នុងគឺ <span class="mi">\(J(3, 3)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(M(x, y)\)</span> និងកន្សោមបំប្លែង <span class="mi">\(\begin{cases} x' = 3x - 4 \\ y' = 3y + 2 \end{cases}\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>បង្ហាញថានេះជាការបំប្លែងចាំង។</p></li>
+<li><p>កំណត់កូអរដោនេនៃផ្ចិតចាំង <span class="mi">\(I\)</span> និងផលធៀបចាំង <span class="mi">\(k\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កន្សោមបំប្លែង <span class="mi">\(\begin{cases} x' = 3x - 4 \\ y' = 3y + 2 \end{cases}\)</span>។</p>
+<p><strong>ក.</strong>  <strong>បង្ហាញថានេះជាការបំប្លែងចាំង៖</strong> សរសេរកន្សោមជាទម្រង់ <span class="mi">\(\begin{cases} x' - a = k(x - a) \\ y' - b = k(y - b) \end{cases}\)</span>៖ <div class="md">\[\begin{aligned}
+x' - a = 3(x - a) &amp;\iff x' = 3x - 2a \\
+&amp;\implies -2a = -4 \implies a = 2 \\
+y' - b = 3(y - b) &amp;\iff y' = 3y - 2b \\
+&amp;\implies -2b = 2 \implies b = -1
+\end{aligned}\]</div> កន្សោមអាចសរសេរឡើងវិញជា៖ <div class="md">\[\begin{cases}
+x' - 2 = 3(x - 2) \\
+y' - (-1) = 3(y - (-1))
+\end{cases}\]</div> នេះជាកន្សោមនៃការបំប្លែងចាំងពិតប្រាកដ។</p>
+<p><strong>ខ.</strong>  <strong>កំណត់ផ្ចិតចាំង <span class="mi">\(I\)</span> និងផលធៀប <span class="mi">\(k\)</span>៖</strong></p>
+<ul>
+<li><p>ផ្ចិតចាំងគឺ <span class="mi">\(I(2, -1)\)</span></p></li>
+<li><p>ផលធៀបចាំងគឺ <span class="mi">\(k = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>បង្ហាញថា ការបំប្លែងចាំងរក្សាភាពស្របគ្នានៃបន្ទាត់ និងរង្វាស់មុំ (Conformal transformation)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>១. រក្សាភាពស្របគ្នានៃបន្ទាត់៖</strong> យកបន្ទាត់ <span class="mi">\((d)\)</span> មួយដែលមានវ៉ិចទ័រប្រាប់ទិស <span class="mi">\(\vec{u}\)</span>។ យកពីរចំណុច <span class="mi">\(A, B \in (d)\)</span> នោះ <span class="mi">\(\overrightarrow{AB} \parallel \vec{u}\)</span>។</p>
+<p>តាមការបំប្លែងចាំង <span class="mi">\(h_{(I, k)}\)</span> រូបភាព <span class="mi">\(A', B'\)</span> ផ្ទៀងផ្ទាត់៖ <div class="md">\[\overrightarrow{A'B'} = k\overrightarrow{AB}\]</div> ដោយសារ <span class="mi">\(\overrightarrow{A'B'}\)</span> ជាផលគុណស្កាលែរនៃ <span class="mi">\(\overrightarrow{AB}\)</span> នាំឱ្យ <span class="mi">\(\overrightarrow{A'B'} \parallel \overrightarrow{AB}\)</span>។</p>
+<p>ហេតុនេះ បន្ទាត់រូបភាព <span class="mi">\((d')\)</span> ស្របនឹងបន្ទាត់ដើម <span class="mi">\((d)\)</span> ជានិច្ច នាំឱ្យការបំប្លែងចាំងរក្សាភាពស្របគ្នានៃបន្ទាត់។</p>
+<p><strong>២. រក្សារង្វាស់មុំ (Conformal)៖</strong> យកបន្ទាត់ពីរ <span class="mi">\((d_1)\)</span> និង <span class="mi">\((d_2)\)</span> កាត់គ្នាបង្កើតបានមុំ <span class="mi">\(\alpha\)</span>។</p>
+<p>រូបភាពនៃបន្ទាត់ទាំងពីរតាម <span class="mi">\(h_{(I, k)}\)</span> គឺ <span class="mi">\((d_1')\)</span> និង <span class="mi">\((d_2')\)</span> ដែល <span class="mi">\((d_1') \parallel (d_1)\)</span> និង <span class="mi">\((d_2') \parallel (d_2)\)</span>។</p>
+<p>តាមលក្ខណៈធរណីមាត្រ មុំបង្កើតឡើងដោយគូនៃបន្ទាត់ស្របគ្នាពីរ មានទំហំស្មើគ្នា៖ <div class="md">\[\angle(d_1', d_2') = \angle(d_1, d_2) = \alpha\]</div> ដូចនេះ ការបំប្លែងចាំងរក្សារង្វាស់មុំ (Conformal transformation)។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> មានទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ តាង <span class="mi">\(A', B', C'\)</span> ជាចំណុចកណ្តាលនៃជ្រុង <span class="mi">\([BC], [CA], [AB]\)</span> រៀងគ្នា។</p>
+<ol class="list oldef cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\triangle A'B'C'\)</span> ជារូបភាពនៃ <span class="mi">\(\triangle ABC\)</span> តាមការបំប្លែងចាំងមួយ។</p></li>
+<li><p>កំណត់ផ្ចិតចាំង និងផលធៀបចាំង <span class="mi">\(k\)</span> នៃការបំប្លែងនោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណ <span class="mi">\(ABC\)</span> មានទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span>។ <span class="mi">\(A', B', C'\)</span> ជាចំណុចកណ្តាលនៃជ្រុង <span class="mi">\([BC], [CA], [AB]\)</span> រៀងគ្នា។</p>
+<p><strong>ក.</strong>  <strong>បង្ហាញថា <span class="mi">\(\triangle A'B'C'\)</span> ជារូបភាពនៃ <span class="mi">\(\triangle ABC\)</span> តាមការបំប្លែងចាំង៖</strong> តាមលក្ខណៈនៃមេដ្យាន និងទីប្រជុំទម្ងន់នៃត្រីកោណ ចំណុច <span class="mi">\(G\)</span> ស្ថិតនៅលើមេដ្យាន <span class="mi">\([AA']\)</span> ហើយចែកអង្កត់នេះតាមផលធៀប៖ <div class="md">\[\overrightarrow{GA'} = -\frac{1}{2}\overrightarrow{GA}\]</div> ដូចគ្នាដែរ ចំពោះកំពូលពីរទៀត៖ <div class="md">\[\overrightarrow{GB'} = -\frac{1}{2}\overrightarrow{GB} \quad{} \text{និង} \quad{} \overrightarrow{GC'} = -\frac{1}{2}\overrightarrow{GC}\]</div> សមភាពទាំងបីនេះបង្ហាញថា ចំណុច <span class="mi">\(A', B', C'\)</span> គឺជាភាពរៀងគ្នានៃ <span class="mi">\(A, B, C\)</span> តាមការបំប្លែងចាំងតែមួយ។</p>
+<p><strong>ខ.</strong>  <strong>កំណត់ផ្ចិតចាំង និងផលធៀបចាំង <span class="mi">\(k\)</span>៖</strong></p>
+<ul>
+<li><p>ផ្ចិតចាំងគឺទីប្រជុំទម្ងន់ <span class="mi">\(G\)</span> នៃ <span class="mi">\(\triangle ABC\)</span></p></li>
+<li><p>ផលធៀបចាំងគឺ <span class="mi">\(k = -\dfrac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>គេឱ្យប៉ារ៉ាបូល <span class="mi">\((P): y = x^2\)</span>។ រកសមីការនៃខ្សែកោង <span class="mi">\((P')\)</span> ជាភាពនៃ <span class="mi">\((P)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, 2)}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប៉ារ៉ាបូល <span class="mi">\((P): y = x^2\)</span>។</p>
+<p>ការបំប្លែងចាំង <span class="mi">\(h_{(O, 2)}\)</span> មានរូបមន្ត៖ <div class="md">\[\begin{cases}
+x' = 2x \implies x = \dfrac{x'}{2} \\[8pt]
+y' = 2y \implies y = \dfrac{y'}{2}
+\end{cases}\]</div> ជំនួស <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ចូលក្នុងសមីការប៉ារ៉ាបូល <span class="mi">\((P)\)</span>៖ <div class="md">\[\begin{aligned}
+\frac{y'}{2} &amp;= \left(\frac{x'}{2}\right)^2 \\
+\frac{y'}{2} &amp;= \frac{x'^2}{4} \\
+y' &amp;= \frac{1}{2}x'^2
+\end{aligned}\]</div> ដូចនេះ សមីការប៉ារ៉ាបូលរូបភាព <span class="mi">\((P')\)</span> គឺ <span class="mi">\(y = \dfrac{1}{2}x^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p><strong>(PISA - ការពង្រីករូបថត)</strong> ជាងថតរូបម្នាក់ចង់ពង្រីករូបថតទំហំ <span class="mi">\(10\text{ cm} \times 15\text{ cm}\)</span> ឱ្យក្លាយជារូបថតធំដែលមានប្រវែងបណ្តោយ <span class="mi">\(60\text{ cm}\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>កំណត់ផលធៀបពង្រីក (ផលធៀបចាំង) <span class="mi">\(k\)</span>។</p></li>
+<li><p>គណនាប្រវែងទទឹងនៃរូបថតពង្រីករួច។</p></li>
+<li><p>គណនាផ្ទៃក្រឡានៃរូបថតពង្រីករួច និងប្រៀបធៀបទៅនឹងផ្ទៃក្រឡាដើម។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបថតដើមមានទំហំ <span class="mi">\(10\text{ cm} \times 15\text{ cm}\)</span> (ទទឹង <span class="mi">\(10\text{ cm}\)</span>, បណ្តោយ <span class="mi">\(15\text{ cm}\)</span>)។</p>
+<p>រូបថតពង្រីកមានបណ្តោយ <span class="mi">\(60\text{ cm}\)</span>។</p>
+<p><strong>ក.</strong>  <strong>កំណត់ផលធៀបពង្រីក <span class="mi">\(k\)</span>៖</strong> <div class="md">\[k = \frac{\text{បណ្តោយថ្មី}}{\text{បណ្តោយដើម}} = \frac{60}{15} = 4\]</div> <strong>ខ.</strong>  <strong>គណនាប្រវែងទទឹងនៃរូបថតពង្រីករួច៖</strong> <div class="md">\[\text{ទទឹងថ្មី} = k \times \text{ទទឹងដើម} = 4 \times 10 = 40\text{ cm}\]</div> <strong>គ.</strong>  <strong>គណនាផ្ទៃក្រឡា និងប្រៀបធៀប៖</strong></p>
+<ul>
+<li><p>ផ្ទៃក្រឡាដើម៖ <span class="mi">\(S = 10 \times 15 = 150\text{ cm}^2\)</span></p></li>
+<li><p>ផ្ទៃក្រឡាថ្មី៖ <span class="mi">\(S' = 40 \times 60 = 2400\text{ cm}^2\)</span></p></li>
+</ul>
+<p>ផលធៀបផ្ទៃក្រឡា៖ <div class="md">\[\frac{S'}{S} = \frac{2400}{150} = 16 = k^2 = 4^2\]</div> ផ្ទៃក្រឡានៃរូបថតពង្រីករួចធំជាងផ្ទៃក្រឡាដើមចំនួន <span class="mi">\(16\)</span> ដង។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ពីរស្របគ្នា <span class="mi">\((d_1): x - 2y + 4 = 0\)</span> និង <span class="mi">\((d_2): x - 2y - 6 = 0\)</span>។ រកផ្ចិតចាំង <span class="mi">\(I\)</span> លើបន្ទាត់ <span class="mi">\(y = 0\)</span> ដែលប្លែង <span class="mi">\((d_1)\)</span> ទៅជា <span class="mi">\((d_2)\)</span> តាមផលធៀប <span class="mi">\(k = 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់ពីរស្របគ្នា <span class="mi">\((d_1): x - 2y + 4 = 0\)</span> និង <span class="mi">\((d_2): x - 2y - 6 = 0\)</span>។</p>
+<p>ផ្ចិតចាំង <span class="mi">\(I\)</span> ស្ថិតនៅលើបន្ទាត់ <span class="mi">\(y = 0\)</span> នាំឱ្យ <span class="mi">\(I(a, 0)\)</span>។</p>
+<p>រូបមន្តនៃការបំប្លែងចាំង <span class="mi">\(h_{(I, 2)}\)</span> គឺ៖ <div class="md">\[\begin{cases}
+x' - a = 2(x - a) \implies x = \dfrac{x' + a}{2} \\[8pt]
+y' - 0 = 2(y - 0) \implies y = \dfrac{y'}{2}
+\end{cases}\]</div> ជំនួស <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ចូលក្នុងសមីការ <span class="mi">\((d_1)\)</span>៖ <div class="md">\[\begin{aligned}
+\frac{x' + a}{2} - 2\left(\frac{y'}{2}\right) + 4 &amp;= 0 \\
+x' + a - 2y' + 8 &amp;= 0 \\
+x' - 2y' + (a + 8) &amp;= 0
+\end{aligned}\]</div> ដើម្បីឱ្យបន្ទាត់នេះក្លាយជា <span class="mi">\((d_2): x - 2y - 6 = 0\)</span> លុះត្រាតែតួថេរស្មើគ្នា៖ <div class="md">\[a + 8 = -6 \implies a = -14\]</div> ដូចនេះ កូអរដោនេនៃផ្ចិតចាំងគឺ <span class="mi">\(I(-14, 0)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>បង្ហាញថាក្នុងការបំប្លែងចាំង <span class="mi">\(h_{(I, k)}\)</span> ផ្ចិតចាំង <span class="mi">\(I\)</span> ជាចំណុចមិនប្រែប្រួលតែមួយគត់ ប្រសិនបើ <span class="mi">\(k \ne 1\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមនិយមន័យ ចំណុច <span class="mi">\(M\)</span> គឺជាចំណុចមិនប្រែប្រួលនៃ <span class="mi">\(h_{(I, k)}\)</span> លុះត្រាតែ៖ <div class="md">\[h_{(I, k)}(M) = M \iff \overrightarrow{IM} = k\overrightarrow{IM}\]</div> បម្លែងសមីការវ៉ិចទ័រ៖ <div class="md">\[\overrightarrow{IM} - k\overrightarrow{IM} = \vec{0} \iff (1 - k)\overrightarrow{IM} = \vec{0}\]</div> ដោយសារ <span class="mi">\(k \ne 1\)</span> នាំឱ្យ <span class="mi">\(1 - k \ne 0\)</span>។ ដូច្នេះ៖ <div class="md">\[\overrightarrow{IM} = \vec{0} \iff M \equiv I\]</div> ដូចនេះ ប្រសិនបើ <span class="mi">\(k \ne 1\)</span> នោះផ្ចិតចាំង <span class="mi">\(I\)</span> គឺជាចំណុចមិនប្រែប្រួលតែមួយគត់នៃការបំប្លែងចាំង។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A(1, 3)\)</span> និង <span class="mi">\(B(4, -1)\)</span>។ រករូបភាពនៃអង្កត់ <span class="mi">\([AB]\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(I, -2)}\)</span> ដោយ <span class="mi">\(I(2, 1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(A(1, 3)\)</span> និង <span class="mi">\(B(4, -1)\)</span> ផ្ចិតចាំង <span class="mi">\(I(2, 1)\)</span> ផលធៀប <span class="mi">\(k = -2\)</span>។</p>
+<p>រូបមន្តបំប្លែងចាំង៖ <span class="mi">\(\overrightarrow{IM'} = -2\overrightarrow{IM}\)</span>។</p>
+<ul>
+<li><p>ចំពោះចំណុច <span class="mi">\(A\)</span>៖ <span class="mi">\(\overrightarrow{IA} = (1 - 2, 3 - 1) = (-1, 2)\)</span>។ <div class="md">\[\begin{aligned}
+    \overrightarrow{IA'} &amp;= -2(-1, 2) = (2, -4) \\
+    \implies A' &amp;= (2 + 2, \, 1 - 4) = (4, -3)
+    
+\end{aligned}\]</div></p></li>
+<li><p>ចំពោះចំណុច <span class="mi">\(B\)</span>៖ <span class="mi">\(\overrightarrow{IB} = (4 - 2, -1 - 1) = (2, -2)\)</span>។ <div class="md">\[\begin{aligned}
+    \overrightarrow{IB'} &amp;= -2(2, -2) = (-4, 4) \\
+    \implies B' &amp;= (2 - 4, \, 1 + 4) = (-2, 5)
+    
+\end{aligned}\]</div></p></li>
+</ul>
+<p>ដូចនេះ រូបភាពនៃអង្កត់ <span class="mi">\([AB]\)</span> គឺអង្កត់ <span class="mi">\([A'B']\)</span> ដែលមានចុងទាំងពីរគឺ <span class="mi">\(A'(4, -3)\)</span> និង <span class="mi">\(B'(-2, 5)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេឱ្យការ៉េ <span class="mi">\(ABCD\)</span> មានផ្ទៃក្រឡា <span class="mi">\(16\text{ cm}^2\)</span>។ រកផ្ទៃក្រឡានៃការ៉េ <span class="mi">\(A'B'C'D'\)</span> ជាភាពនៃ <span class="mi">\(ABCD\)</span> តាមការបំប្លែងចាំងដែលមានផលធៀប <span class="mi">\(k = -\dfrac{3}{2}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការ៉េ <span class="mi">\(ABCD\)</span> មានផ្ទៃក្រឡា <span class="mi">\(S = 16\text{ cm}^2\)</span>។</p>
+<p>ការបំប្លែងចាំងមានផលធៀប <span class="mi">\(k = -\dfrac{3}{2}\)</span>។</p>
+<p>តាមលក្ខណៈនៃការបំប្លែងចាំង ផ្ទៃក្រឡានៃរូបភាពប្រែប្រួលតាមសមាមាត្រ <span class="mi">\(k^2\)</span>៖ <div class="md">\[S' = k^2 \times S\]</div> ជំនួសតម្លៃចូល៖ <div class="md">\[S' = \left(-\frac{3}{2}\right)^2 \times 16 = \frac{9}{4} \times 16 = 9 \times 4 = 36\text{ cm}^2\]</div> ដូចនេះ ផ្ទៃក្រឡានៃការ៉េរូបភាព <span class="mi">\(A'B'C'D'\)</span> គឺ <span class="mi">\(36\text{ cm}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p><strong>(PISA - គំរូប្លង់ស្ថាបត្យកម្ម)</strong> ប្លង់ស្ថាបត្យកម្មនៃសាលារៀនមួយត្រូវបានគូរតាមមាត្រដ្ឋាន <span class="mi">\(1 : 200\)</span> (ការបំប្លែងចាំងបង្រួម <span class="mi">\(k = \dfrac{1}{200}\)</span>)។</p>
+<ol class="list olka cols1">
+<li><p>បើបន្ទប់រៀនមួយមានបណ្តោយ <span class="mi">\(8\text{ m}\)</span> និងទទឹង <span class="mi">\(6\text{ m}\)</span> តើនៅលើប្លង់បន្ទប់នោះមានវិមាត្រប៉ុន្មានសង់ទីម៉ែត្រ?</p></li>
+<li><p>បើទីធ្លាសាលាលើប្លង់មានផ្ទៃក្រឡា <span class="mi">\(150\text{ cm}^2\)</span> តើផ្ទៃក្រឡាជាក់ស្តែងលើដីស្មើនឹងប៉ុន្មានម៉ែត្រការ៉េ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>វិមាត្របន្ទប់រៀនលើប្លង់៖</strong> មាត្រដ្ឋាន <span class="mi">\(1 : 200\)</span> មានន័យថា <span class="mi">\(k = \dfrac{1}{200}\)</span>។</p>
+<p>វិមាត្រពិតប្រាកដគិតជាសង់ទីម៉ែត្រ៖</p>
+<ul>
+<li><p>បណ្តោយ៖ <span class="mi">\(8\text{ m} = 800\text{ cm} \implies \)</span> បណ្តោយលើប្លង់ <span class="mi">\( = \dfrac{800}{200} = 4\text{ cm}\)</span></p></li>
+<li><p>ទទឹង៖ <span class="mi">\(6\text{ m} = 600\text{ cm} \implies \)</span> ទទឹងលើប្លង់ <span class="mi">\( = \dfrac{600}{200} = 3\text{ cm}\)</span></p></li>
+</ul>
+<p>ដូចនេះ វិមាត្រលើប្លង់គឺ <span class="mi">\(4\text{ cm} \times 3\text{ cm}\)</span>។</p>
+<p><strong>ខ.</strong>  <strong>ផ្ទៃក្រឡាជាក់ស្តែងនៃទីធ្លាសាលា៖</strong> ផ្ទៃក្រឡាលើប្លង់គឺ <span class="mi">\(S_{\text{ប្លង់}} = 150\text{ cm}^2\)</span>។</p>
+<p>ផលធៀបផ្ទៃក្រឡាគឺ <span class="mi">\(k^2 = \left(\dfrac{1}{200}\right)^2 = \dfrac{1}{40000}\)</span>។</p>
+<p>ផ្ទៃក្រឡាជាក់ស្តែងលើដីគិតជា <span class="mi">\(\text{cm}^2\)</span>៖ <div class="md">\[S_{\text{ពិត}} = S_{\text{ប្លង់}} \times 200^2 = 150 \times 40000 = 6\,000\,000\text{ cm}^2\]</div> ប្តូរជាម៉ែត្រការ៉េ (<span class="mi">\(1\text{ m}^2 = 10\,000\text{ cm}^2\)</span>)៖ <div class="md">\[S_{\text{ពិត}} = \frac{6\,000\,000}{10\,000} = 600\text{ m}^2\]</div> ដូចនេះ ផ្ទៃក្រឡាជាក់ស្តែងគឺ <span class="mi">\(600\text{ m}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់ <span class="mi">\((C): (x - 3)^2 + (y - 1)^2 = 9\)</span>។ រកសមីការរង្វង់ <span class="mi">\((C')\)</span> ជាភាពនៃ <span class="mi">\((C)\)</span> តាមការបំប្លែងចាំង <span class="mi">\(h_{(I, -3)}\)</span> ដោយផ្ចិត <span class="mi">\(I(1, 1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រង្វង់ <span class="mi">\((C): (x - 3)^2 + (y - 1)^2 = 9\)</span> មានផ្ចិត <span class="mi">\(I_0(3, 1)\)</span> និងកាំ <span class="mi">\(R = \sqrt{9} = 3\)</span>។</p>
+<p>ការបំប្លែងចាំង <span class="mi">\(h_{(I, -3)}\)</span> មានផ្ចិត <span class="mi">\(I(1, 1)\)</span> និងផលធៀប <span class="mi">\(k = -3\)</span>៖</p>
+<ul>
+<li><p>រកផ្ចិតថ្មី <span class="mi">\(I'\)</span> នៃ <span class="mi">\((C')\)</span>៖ <div class="md">\[\overrightarrow{II'} = -3\overrightarrow{II_0}\]</div> ដោយ <span class="mi">\(\overrightarrow{II_0} = (3 - 1, 1 - 1) = (2, 0)\)</span> នាំឱ្យ៖ <div class="md">\[\begin{aligned}
+    \overrightarrow{II'} &amp;= -3(2, 0) = (-6, 0) \\
+    \implies I' &amp;= (1 - 6, \, 1 + 0) = (-5, 1)
+    
+\end{aligned}\]</div></p></li>
+<li><p>កាំថ្មីនៃ <span class="mi">\((C')\)</span>៖ <div class="md">\[R' = |k| \times R = |-3| \times 3 = 9\]</div></p></li>
+</ul>
+<p>សមីការរង្វង់រូបភាព <span class="mi">\((C')\)</span> គឺ៖ <div class="md">\[(x + 5)^2 + (y - 1)^2 = 9^2 = 81\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>បង្ហាញថា ផលបណ្តាក់នៃការបំប្លែងចាំងពីរដែលមានផ្ចិតដូចគ្នា <span class="mi">\(h_{(O, k_1)}\)</span> និង <span class="mi">\(h_{(O, k_2)}\)</span> មានលក្ខណៈត្រឡប់៖ <span class="mi">\(h_{(O, k_2)} \circ h_{(O, k_1)} = h_{(O, k_1)} \circ h_{(O, k_2)} = h_{(O, k_1 k_2)}\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>យកចំណុច <span class="mi">\(M\)</span> ណាមួយក្នុងប្លង់។</p>
+<p><strong>១. គណនា <span class="mi">\((h_{(O, k_2)} \circ h_{(O, k_1)})(M)\)</span>៖</strong> <div class="md">\[\begin{aligned}
+M_1 &amp;= h_{(O, k_1)}(M) \implies \overrightarrow{OM_1} = k_1\overrightarrow{OM} \\
+\overrightarrow{OM'} &amp;= k_2\overrightarrow{OM_1} = (k_2 k_1)\overrightarrow{OM}
+\end{aligned}\]</div> <strong>២. គណនា <span class="mi">\((h_{(O, k_1)} \circ h_{(O, k_2)})(M)\)</span>៖</strong> <div class="md">\[\begin{aligned}
+M_2 &amp;= h_{(O, k_2)}(M) \implies \overrightarrow{OM_2} = k_2\overrightarrow{OM} \\
+\overrightarrow{OM''} &amp;= k_1\overrightarrow{OM_2} = (k_1 k_2)\overrightarrow{OM}
+\end{aligned}\]</div> ដោយសារវិធីគុណចំនួនពិតមានលក្ខណៈប្តូរវេន (<span class="mi">\(k_2 k_1 = k_1 k_2\)</span>) នាំឱ្យ <span class="mi">\(\overrightarrow{OM'} = \overrightarrow{OM''}\)</span> ចំពោះគ្រប់ចំណុច <span class="mi">\(M\)</span>។</p>
+<p>ដូចនេះ យើងទាញបានសមភាព៖ <div class="md">\[h_{(O, k_2)} \circ h_{(O, k_1)} = h_{(O, k_1)} \circ h_{(O, k_2)} = h_{(O, k_1 k_2)}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>(PISA - ស្រមោល និងពន្លឺប្រភពចំណុច)</strong> អំពូលភ្លើងមួយស្ថិតនៅចំណុច <span class="mi">\(S(0, 6)\)</span> ក្នុងបន្ទប់កម្ពស់ <span class="mi">\(6\text{ m}\)</span>។ តុមួយមានកម្ពស់ <span class="mi">\(1\text{ m}\)</span> ពីដី (<span class="mi">\(y = 1\)</span>) និងមានប្រវែងផ្ទៃតុ <span class="mi">\(2\text{ m}\)</span> ស្របនឹងដី ពី <span class="mi">\(x = -1\)</span> ដល់ <span class="mi">\(x = 1\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>ពន្យល់តាមការបំប្លែងចាំងដែលមានផ្ចិត <span class="mi">\(S\)</span> ថាតើស្រមោលនៃផ្ទៃតុលើកម្រាលឥដ្ឋ (<span class="mi">\(y = 0\)</span>) ជាភាពនៃផ្ទៃតុតាមផលធៀបចាំង <span class="mi">\(k\)</span> ស្មើប៉ុន្មាន។</p></li>
+<li><p>គណនាប្រវែងស្រមោលនៃផ្ទៃតុលើកម្រាលឥដ្ឋ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>ពន្យល់តាមការបំប្លែងចាំង និងកំណត់ផលធៀប <span class="mi">\(k\)</span>៖</strong> ប្រភពពន្លឺចំណុច <span class="mi">\(S(0, 6)\)</span> បញ្ចាំងកាំរស្មីពន្លឺកាត់តាមគែមតុទៅកាន់កម្រាលឥដ្ឋ។ នេះគឺជាគំរូធរណីមាត្រនៃការបំប្លែងចាំងផ្ចិត <span class="mi">\(S\)</span>។</p>
+<ul>
+<li><p>ចម្ងាយឈរពីប្រភព <span class="mi">\(S(0, 6)\)</span> ទៅផ្ទៃតុ (<span class="mi">\(y = 1\)</span>) គឺ <span class="mi">\(d_1 = 6 - 1 = 5\text{ m}\)</span>។</p></li>
+<li><p>ចម្ងាយឈរពីប្រភព <span class="mi">\(S(0, 6)\)</span> ទៅកម្រាលឥដ្ឋ (<span class="mi">\(y = 0\)</span>) គឺ <span class="mi">\(d_2 = 6 - 0 = 6\text{ m}\)</span>។</p></li>
+</ul>
+<p>ផលធៀបចាំងគឺស្មើផលធៀបនៃចម្ងាយពីផ្ចិតទៅប្លង់ទាំងពីរ៖ <div class="md">\[k = \frac{d_2}{d_1} = \frac{6}{5} = 1.2\]</div> <strong>ខ.</strong>  <strong>គណនាប្រវែងស្រមោលនៃផ្ទៃតុលើកម្រាលឥដ្ឋ៖</strong> ប្រវែងផ្ទៃតុគឺ <span class="mi">\(L = 1 - (-1) = 2\text{ m}\)</span>។</p>
+<p>ប្រវែងស្រមោលលើកម្រាលឥដ្ឋគឺ៖ <div class="md">\[L' = k \times L = 1.2 \times 2\text{ m} = 2.4\text{ m}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A(2, 4), B(6, 4)\)</span> និង <span class="mi">\(C(4, 8)\)</span>។ តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, k)}\)</span> ត្រីកោណ <span class="mi">\(ABC\)</span> ប្លែងទៅជា <span class="mi">\(\triangle A'B'C'\)</span> ដែលមានបរិមាត្រធំជាងបរិមាត្រនៃ <span class="mi">\(\triangle ABC\)</span> ចំនួន ៣ ដង។ រកតម្លៃដែលអាចមាននៃផលធៀបចាំង <span class="mi">\(k\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុច <span class="mi">\(A(2, 4), B(6, 4), C(4, 8)\)</span>។</p>
+<p>តាមការបំប្លែងចាំង <span class="mi">\(h_{(O, k)}\)</span> រូបភាពនៃ <span class="mi">\(\triangle ABC\)</span> គឺ <span class="mi">\(\triangle A'B'C'\)</span>។</p>
+<p>ផលធៀបរវាងបរិមាត្រនៃត្រីកោណទាំងពីរស្មើនឹងត Luate ដាច់ខាតនៃផលធៀបចាំង៖ <div class="md">\[\frac{P_{A'B'C'}}{P_{ABC}} = |k|\]</div> តាមលក្ខខណ្ឌប្រធាន បរិមាត្រនៃ <span class="mi">\(\triangle A'B'C'\)</span> ធំជាងបរិមាត្រនៃ <span class="mi">\(\triangle ABC\)</span> ចំនួន ៣ ដង៖ <div class="md">\[|k| = 3 \implies k = 3 \quad{} \text{ឬ} \quad{} k = -3\]</div> ដូចនេះ តម្លៃដែលអាចមាននៃផលធៀបចាំងគឺ <span class="mi">\(k = 3\)</span> (ពង្រីកតាមទិសដៅដូចគ្នា) ឬ <span class="mi">\(k = -3\)</span> (ពង្រីកតាមទិសដៅផ្ទុយគ្នា)។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>(PISA - សំយោគទូទៅ ការបំប្លែងទំហំក្នុងឌីជីថល (Image Rescaling))</strong> ក្នុងកម្មវិធីកែសម្រួលរូបភាព រូបភាពឌីជីថលមួយត្រូវបានតំណាងដោយក្រឡាភិចសែលក្នុងប្លង់កូអរដោនេ។ អ្នករចនាចង់បង្រួមរូបភាពទំហំ <span class="mi">\(1920 \times 1080\)</span> ភិចសែល ឱ្យនៅត្រឹមទំហំ <span class="mi">\(1280 \times 720\)</span> ភិចសែល ដោយរក្សាផលធៀបទ្រង់ទ្រាយ (Aspect Ratio) ដដែល។</p>
+<ol class="list olka cols1">
+<li><p>កំណត់ផលធៀបចាំង <span class="mi">\(k\)</span> នៃការបង្រួមនេះជាប្រភាគសម្រួលមិនបាន។</p></li>
+<li><p>បើចំណុចកណ្តាលនៃរូបភាពដើមស្ថិតនៅ <span class="mi">\(I(960, 540)\)</span> ចូរសរសេរសមីការបំប្លែងកូអរដោនេ <span class="mi">\(\begin{cases} x' - 960 = k(x - 960) \\ y' - 540 = k(y - 540) \end{cases}\)</span>។</p></li>
+<li><p>គណនាផលធៀបនៃចំនួនភិចសែលសរុប (ទំហំផ្ទុកទិន្នន័យ) រវាងរូបភាពថ្មីនិងរូបភាពដើម។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>កំណត់ផលធៀបចាំង <span class="mi">\(k\)</span>៖</strong> រូបភាពដើមមានទំហំ <span class="mi">\(1920 \times 1080\)</span> និងរូបភាពថ្មីមានទំហំ <span class="mi">\(1280 \times 720\)</span>។</p>
+<p>ផលធៀបចាំងនៃការបង្រួមគឺ៖ <div class="md">\[k = \frac{1280}{1920} = \frac{720}{1080} = \frac{2}{3}\]</div> <strong>ខ.</strong>  <strong>សរសេរសមីការបំប្លែងកូអរដោនេធៀបនឹងផ្ចិត <span class="mi">\(I(960, 540)\)</span>៖</strong> ជំនួស <span class="mi">\(k = \dfrac{2}{3}\)</span> ចូលក្នុងរូបមន្ត៖ <div class="md">\[\begin{aligned}
+\begin{cases}
+x' - 960 = \dfrac{2}{3}(x - 960) \\[6pt]
+y' - 540 = \dfrac{2}{3}(y - 540)
+\end{cases}
+\end{aligned}\]</div> នាំឱ្យ៖ <div class="md">\[\begin{cases}
+x' = \dfrac{2}{3}x + 320 \\[6pt]
+y' = \dfrac{2}{3}y + 180
+\end{cases}\]</div> <strong>គ.</strong>  <strong>គណនាផលធៀបនៃចំនួនភិចសែលសរុប (ទំហំផ្ទុកទិន្នន័យ)៖</strong></p>
+<ul>
+<li><p>ចំនួនភិចសែលរូបភាពដើម៖ <span class="mi">\(N = 1920 \times 1080 = 2\,073\,600\)</span> ភិចសែល</p></li>
+<li><p>ចំនួនភិចសែលរូបភាពថ្មី៖ <span class="mi">\(N' = 1280 \times 720 = 921\,600\)</span> ភិចសែល</p></li>
+</ul>
+<p>ផលធៀបនៃចំនួនភិចសែលគឺ៖ <div class="md">\[\frac{N'}{N} = \frac{921\,600}{2\,073\,600} = \left(\frac{2}{3}\right)^2 = \frac{4}{9} \approx 44.4\%\]</div> ដូចនេះ ទំហំផ្ទុកទិន្នន័យនៃរូបភាពថ្មីស្មើនឹង <span class="mi">\(\dfrac{4}{9}\)</span> នៃរូបភាពដើម (សន្សំសំចៃទំហំផ្ទុកបានប្រមាណ <span class="mi">\(55.6\%\)</span>)។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ៩ ការបំប្លែងរូបក្នុងប្លង់</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c09">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L25.html"><small>← មេរៀនមុន</small><b>ការបំប្លែងវិល</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(3, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((6, 5)\\)<\/span>", "<span class=\"mi\">\\((9, 6)\\)<\/span>", "<span class=\"mi\">\\((-9, -6)\\)<\/span>", "<span class=\"mi\">\\((6, 9)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(3, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((6, 4)\\)<\/span>", "<span class=\"mi\">\\((-6, -4)\\)<\/span>", "<span class=\"mi\">\\((4, 6)\\)<\/span>", "<span class=\"mi\">\\((5, 4)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-2, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-4, -2)\\)<\/span>", "<span class=\"mi\">\\((4, 2)\\)<\/span>", "<span class=\"mi\">\\((0, 1)\\)<\/span>", "<span class=\"mi\">\\((-2, -4)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-2, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-4, 0)\\)<\/span>", "<span class=\"mi\">\\((-8, 7)\\)<\/span>", "<span class=\"mi\">\\((4, -4)\\)<\/span>", "<span class=\"mi\">\\((-4, 4)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-2, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-4, -2)\\)<\/span>", "<span class=\"mi\">\\((-4, -3)\\)<\/span>", "<span class=\"mi\">\\((4, 2)\\)<\/span>", "<span class=\"mi\">\\((2, 4)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(2, -2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((4, 0)\\)<\/span>", "<span class=\"mi\">\\((1, -1)\\)<\/span>", "<span class=\"mi\">\\((-1, 1)\\)<\/span>", "<span class=\"mi\">\\((4, -4)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(1, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((4, 2)\\)<\/span>", "<span class=\"mi\">\\((-3, 3)\\)<\/span>", "<span class=\"mi\">\\((3, -3)\\)<\/span>", "<span class=\"mi\">\\((3, -5)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-2, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((0, 4)\\)<\/span>", "<span class=\"mi\">\\((4, -4)\\)<\/span>", "<span class=\"mi\">\\((0, 10)\\)<\/span>", "<span class=\"mi\">\\((-4, 4)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(1, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-2, -4)\\)<\/span>", "<span class=\"mi\">\\((3, 4)\\)<\/span>", "<span class=\"mi\">\\((2, 4)\\)<\/span>", "<span class=\"mi\">\\((4, 2)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-4, 6)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-8, 12)\\)<\/span>", "<span class=\"mi\">\\((3, -2)\\)<\/span>", "<span class=\"mi\">\\((-2, 3)\\)<\/span>", "<span class=\"mi\">\\((-2, 8)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(1, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-3, -6)\\)<\/span>", "<span class=\"mi\">\\((2, -2)\\)<\/span>", "<span class=\"mi\">\\((-2, 2)\\)<\/span>", "<span class=\"mi\">\\((3, 1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(3, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((9, -3)\\)<\/span>", "<span class=\"mi\">\\((-9, 3)\\)<\/span>", "<span class=\"mi\">\\((6, 2)\\)<\/span>", "<span class=\"mi\">\\((-3, 9)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-2, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-3, -6)\\)<\/span>", "<span class=\"mi\">\\((-6, -3)\\)<\/span>", "<span class=\"mi\">\\((1, 2)\\)<\/span>", "<span class=\"mi\">\\((6, 3)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(4, 6)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((3, 2)\\)<\/span>", "<span class=\"mi\">\\((6, 8)\\)<\/span>", "<span class=\"mi\">\\((8, 12)\\)<\/span>", "<span class=\"mi\">\\((2, 3)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(3, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-2, 6)\\)<\/span>", "<span class=\"mi\">\\((-6, 2)\\)<\/span>", "<span class=\"mi\">\\((5, 1)\\)<\/span>", "<span class=\"mi\">\\((6, -2)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(3, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((6, -2)\\)<\/span>", "<span class=\"mi\">\\((-6, 2)\\)<\/span>", "<span class=\"mi\">\\((1, -3)\\)<\/span>", "<span class=\"mi\">\\((2, -6)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(4, 8)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((4, 2)\\)<\/span>", "<span class=\"mi\">\\((8, 16)\\)<\/span>", "<span class=\"mi\">\\((2, 4)\\)<\/span>", "<span class=\"mi\">\\((6, 10)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(2, 6)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((1, 3)\\)<\/span>", "<span class=\"mi\">\\((4, 8)\\)<\/span>", "<span class=\"mi\">\\((3, 1)\\)<\/span>", "<span class=\"mi\">\\((4, 12)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-4, -2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-2, -1)\\)<\/span>", "<span class=\"mi\">\\((-8, -4)\\)<\/span>", "<span class=\"mi\">\\((-2, 0)\\)<\/span>", "<span class=\"mi\">\\((-1, -2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-2, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((6, -6)\\)<\/span>", "<span class=\"mi\">\\((-6, 6)\\)<\/span>", "<span class=\"mi\">\\((4, 5)\\)<\/span>", "<span class=\"mi\">\\((1, 5)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(4, -2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((2, -1)\\)<\/span>", "<span class=\"mi\">\\((8, -4)\\)<\/span>", "<span class=\"mi\">\\((-1, 2)\\)<\/span>", "<span class=\"mi\">\\((6, 0)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(1, -1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((2, -2)\\)<\/span>", "<span class=\"mi\">\\((-1, -8)\\)<\/span>", "<span class=\"mi\">\\((-2, 2)\\)<\/span>", "<span class=\"mi\">\\((-1, -3)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-4, 8)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-8, 16)\\)<\/span>", "<span class=\"mi\">\\((4, -2)\\)<\/span>", "<span class=\"mi\">\\((-2, 4)\\)<\/span>", "<span class=\"mi\">\\((-2, 10)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(1, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-3, -6)\\)<\/span>", "<span class=\"mi\">\\((6, 3)\\)<\/span>", "<span class=\"mi\">\\((3, 6)\\)<\/span>", "<span class=\"mi\">\\((4, 5)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(2, 8)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((1, 4)\\)<\/span>", "<span class=\"mi\">\\((4, 16)\\)<\/span>", "<span class=\"mi\">\\((4, 10)\\)<\/span>", "<span class=\"mi\">\\((4, 1)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(3, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-6, -4)\\)<\/span>", "<span class=\"mi\">\\((1, 0)\\)<\/span>", "<span class=\"mi\">\\((6, 4)\\)<\/span>", "<span class=\"mi\">\\((-4, -6)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(1, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((2, 4)\\)<\/span>", "<span class=\"mi\">\\((-1, 0)\\)<\/span>", "<span class=\"mi\">\\((-2, -4)\\)<\/span>", "<span class=\"mi\">\\((-4, -2)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-2, 4)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-1, 2)\\)<\/span>", "<span class=\"mi\">\\((-4, 8)\\)<\/span>", "<span class=\"mi\">\\((1, -2)\\)<\/span>", "<span class=\"mi\">\\((-2, 4)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(6, -3)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-\\frac{1}{3}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((2, -1)\\)<\/span>", "<span class=\"mi\">\\((-2, 1)\\)<\/span>", "<span class=\"mi\">\\((-18, 9)\\)<\/span>", "<span class=\"mi\">\\((-2, -1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(5, 0)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((5, 0)\\)<\/span>", "<span class=\"mi\">\\((0, 10)\\)<\/span>", "<span class=\"mi\">\\((10, 0)\\)<\/span>", "<span class=\"mi\">\\((2.5, 0)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(0, -4)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((0, 8)\\)<\/span>", "<span class=\"mi\">\\((0, -8)\\)<\/span>", "<span class=\"mi\">\\((8, 0)\\)<\/span>", "<span class=\"mi\">\\((0, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-3, -3)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-1, -1)\\)<\/span>", "<span class=\"mi\">\\((9, 9)\\)<\/span>", "<span class=\"mi\">\\((-6, -6)\\)<\/span>", "<span class=\"mi\">\\((-9, -9)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(4, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-\\frac{1}{2}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((2, 1)\\)<\/span>", "<span class=\"mi\">\\((-2, -1)\\)<\/span>", "<span class=\"mi\">\\((-8, -4)\\)<\/span>", "<span class=\"mi\">\\((8, 4)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(7, 1)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((14, 2)\\)<\/span>", "<span class=\"mi\">\\((7, 2)\\)<\/span>", "<span class=\"mi\">\\((14, 1)\\)<\/span>", "<span class=\"mi\">\\((9, 3)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-5, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-10, 4)\\)<\/span>", "<span class=\"mi\">\\((10, 4)\\)<\/span>", "<span class=\"mi\">\\((10, -4)\\)<\/span>", "<span class=\"mi\">\\((-10, -4)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(8, -4)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{4}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-2, 1)\\)<\/span>", "<span class=\"mi\">\\((32, -16)\\)<\/span>", "<span class=\"mi\">\\((4, -2)\\)<\/span>", "<span class=\"mi\">\\((2, -1)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-1, 5)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-3, 15)\\)<\/span>", "<span class=\"mi\">\\((3, -15)\\)<\/span>", "<span class=\"mi\">\\((-3, 5)\\)<\/span>", "<span class=\"mi\">\\((-1, 15)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(2, 2)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=4\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((6, 6)\\)<\/span>", "<span class=\"mi\">\\((8, 8)\\)<\/span>", "<span class=\"mi\">\\((0.5, 0.5)\\)<\/span>", "<span class=\"mi\">\\((-8, -8)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(-6, 3)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-\\frac{1}{3}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-2, 1)\\)<\/span>", "<span class=\"mi\">\\((18, -9)\\)<\/span>", "<span class=\"mi\">\\((2, -1)\\)<\/span>", "<span class=\"mi\">\\((-18, 9)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃចំណុច <span class=\"mi\">\\(M(0, 0)\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=5\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((5, 5)\\)<\/span>", "<span class=\"mi\">\\((1, 1)\\)<\/span>", "<span class=\"mi\">\\((0, 5)\\)<\/span>", "<span class=\"mi\">\\((0, 0)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃអង្កត់ <span class=\"mi\">\\(AB\\)<\/span> តាមការបំប្លែងចាំងផលធៀប <span class=\"mi\">\\(k=4\\)<\/span> គឺអង្កត់ <span class=\"mi\">\\(A'B'\\)<\/span> ។ ប្រវែង <span class=\"mi\">\\(A'B'\\)<\/span> ស្មើនឹង៖", "options": ["<span class=\"mi\">\\(4AB\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}AB\\)<\/span>", "<span class=\"mi\">\\(-4AB\\)<\/span>", "<span class=\"mi\">\\(16AB\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃអង្កត់ <span class=\"mi\">\\(AB\\)<\/span> តាមការបំប្លែងចាំងផលធៀប <span class=\"mi\">\\(k=-3\\)<\/span> គឺអង្កត់ <span class=\"mi\">\\(A'B'\\)<\/span> ។ ប្រវែង <span class=\"mi\">\\(A'B'\\)<\/span> ស្មើនឹង៖", "options": ["<span class=\"mi\">\\(-3AB\\)<\/span>", "<span class=\"mi\">\\(3AB\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{3}AB\\)<\/span>", "<span class=\"mi\">\\(9AB\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃរង្វង់ <span class=\"mi\">\\(C\\)<\/span> កាំ <span class=\"mi\">\\(R=2\\)<\/span> តាមការបំប្លែងចាំងផលធៀប <span class=\"mi\">\\(k=5\\)<\/span> គឺរង្វង់ <span class=\"mi\">\\(C'\\)<\/span> មានកាំ <span class=\"mi\">\\(R'\\)<\/span> ស្មើនឹង៖", "options": ["<span class=\"mi\">\\(2.5\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃរង្វង់ <span class=\"mi\">\\(C\\)<\/span> កាំ <span class=\"mi\">\\(R=6\\)<\/span> តាមការបំប្លែងចាំងផលធៀប <span class=\"mi\">\\(k=-\\frac{1}{2}\\)<\/span> គឺរង្វង់ <span class=\"mi\">\\(C'\\)<\/span> មានកាំ <span class=\"mi\">\\(R'\\)<\/span> ស្មើនឹង៖", "options": ["<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A'\\)<\/span> ជារូបភាពនៃ <span class=\"mi\">\\(A\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(P\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=2\\)<\/span> នោះ វ៉ិចទ័រ <span class=\"mi\">\\(\\overrightarrow{PA'}\\)<\/span> ស្មើនឹង៖", "options": ["<span class=\"mi\">\\(2\\overrightarrow{PA}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\overrightarrow{PA}\\)<\/span>", "<span class=\"mi\">\\(-2\\overrightarrow{PA}\\)<\/span>", "<span class=\"mi\">\\(\\overrightarrow{PA}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A'\\)<\/span> ជារូបភាពនៃ <span class=\"mi\">\\(A\\)<\/span> តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(P\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-1\\)<\/span> នោះ វ៉ិចទ័រ <span class=\"mi\">\\(\\overrightarrow{PA'}\\)<\/span> ស្មើនឹង៖", "options": ["<span class=\"mi\">\\(\\overrightarrow{PA}\\)<\/span>", "<span class=\"mi\">\\(-\\overrightarrow{PA}\\)<\/span>", "<span class=\"mi\">\\(2\\overrightarrow{PA}\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{2}\\overrightarrow{PA}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=3\\)<\/span> ចំណុច <span class=\"mi\">\\(A(x, y)\\)<\/span> មានរូបភាពជា <span class=\"mi\">\\(A'(6, -9)\\)<\/span> ។ កូអរដោនេនៃ <span class=\"mi\">\\(A\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((18, -27)\\)<\/span>", "<span class=\"mi\">\\((-2, 3)\\)<\/span>", "<span class=\"mi\">\\((2, -3)\\)<\/span>", "<span class=\"mi\">\\((3, -6)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=-2\\)<\/span> ចំណុច <span class=\"mi\">\\(B(x, y)\\)<\/span> មានរូបភាពជា <span class=\"mi\">\\(B'(-4, 8)\\)<\/span> ។ កូអរដោនេនៃ <span class=\"mi\">\\(B\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((-8, 16)\\)<\/span>", "<span class=\"mi\">\\((8, -16)\\)<\/span>", "<span class=\"mi\">\\((-2, 4)\\)<\/span>", "<span class=\"mi\">\\((2, -4)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k=\\frac{1}{2}\\)<\/span> ចំណុច <span class=\"mi\">\\(C(x, y)\\)<\/span> មានរូបភាពជា <span class=\"mi\">\\(C'(1, 3)\\)<\/span> ។ កូអរដោនេនៃ <span class=\"mi\">\\(C\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\((2, 6)\\)<\/span>", "<span class=\"mi\">\\((0.5, 1.5)\\)<\/span>", "<span class=\"mi\">\\((-2, -6)\\)<\/span>", "<span class=\"mi\">\\((1, 3)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តាមការបំប្លែងចាំងផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ចំណុច <span class=\"mi\">\\(A(2, 4)\\)<\/span> មានរូបភាពជាចំណុច <span class=\"mi\">\\(A'(6, 12)\\)<\/span> ។ ផលធៀបនៃការបំប្លែងចាំងគឺ៖", "options": ["<span class=\"mi\">\\(k=\\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(k=3\\)<\/span>", "<span class=\"mi\">\\(k=-3\\)<\/span>", "<span class=\"mi\">\\(k=2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៦ : ត្រីកោណដូចគ្នា — គណិតវិទ្យាថ្នាក់ទី ៩ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៦ «ត្រីកោណដូចគ្នា» គណិតវិទ្យាថ្នាក់ទី ៩៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៦ : ត្រីកោណដូចគ្នា — គណិតវិទ្យាថ្នាក់ទី ៩ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៦ «ត្រីកោណដូចគ្នា» គណិតវិទ្យាថ្នាក់ទី ៩៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g9">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li aria-current="page">មេរៀនទី ១៦</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៦</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៦ · គណិតវិទ្យាថ្នាក់ទី ៩</span><h1>ត្រីកោណដូចគ្នា</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៣ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. និយមន័យត្រីកោណដូចគ្នា និងផលធៀបដំណូច</a></li><li class="sub"><a href="#u2">២. ករណីដំណូចទាំងបីនៃត្រីកោណទូទៅ</a></li><li class="sub"><a href="#u3">៣. អនុវត្តន៍ក្នុងត្រីកោណកែង</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-9.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃដំណូចធរណីមាត្រ និងគណិតវិទ្យារបស់ Euclid</b></header><div class="bx-b">
+<p><strong>ត្រីកោណដូចគ្នា (Similar Triangles)</strong> គឺជាគំនិតគណិតវិទ្យាដ៏សំខាន់ដែលអនុញ្ញាតឱ្យយើងសិក្សាពីរូបរាងដោយមិនគិតពីទំហំ ៖</p>
+<ul>
+<li><p><strong>លោកអឺគ្លីដ (Euclid of Alexandria, ៣២៥-២៦៥ មុន គ.ស.) ៖</strong> នៅក្នុងសៀវភៅ <em>Elements</em> ក្បាលទី ៦ លោកអឺគ្លីដបានបង្កើតទ្រឹស្តីបទស្តីពី «រូបរាងដូចគ្នា» (Similar Figures) ដោយបង្ហាញថា រូបពីរដូចគ្នា កាលណាមុំត្រូវគ្នាស្មើគ្នា ហើយជ្រុងត្រូវគ្នាសមាមាត្រគ្នា។</p></li>
+<li><p><strong>លោក Girard Desargues (១៥៩១-១៦៦១) ៖</strong> ស្ថាបត្យករ និងគណិតវិទូជនជាតិបារាំង បានបង្កើត «ធរណីមាត្រប្លង់ចំណោល» (Projective Geometry) និងការបម្លែងពង្រីក-បង្រួម (Homothety) ដែលពន្យល់ពីរបៀបដែលភ្នែកមនុស្សមើលឃើញវត្ថុនៅឆ្ងាយមានទំហំតូចជាងវត្ថុនៅជិត ប៉ុន្តែមានរាងដូចគ្នា។</p></li>
+<li><p><strong>ការអនុវត្តក្នុងវិស្វកម្មទំនើប ៖</strong> ការផលិតគំរូតូចៗ (Scale Models) នៃយន្តហោះ នាវា និងស្ពាន ដើម្បីធ្វើតេស្តក្នុងបន្ទប់ខ្យល់ (Wind Tunnel) សុទ្ធតែផ្អែកលើច្បាប់ដំណូចនៃធរណីមាត្រនេះ។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">និយមន័យត្រីកោណដូចគ្នា និងផលធៀបដំណូច</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ត្រីកោណដូចគ្នា</b></header><div class="bx-b">
+<p>ត្រីកោណពីរជា <strong>ត្រីកោណដូចគ្នា</strong> កាលណាវាមាន ៖</p>
+<ol class="list olnum cols1">
+<li><p>មុំទាំងបីប៉ុនរៀងគ្នា ៖ <div class="md">\[\angle A = \angle A', \; \angle B = \angle B', \; \angle C = \angle C'\]</div></p></li>
+<li><p>ជ្រុងទាំងបីសមាមាត្ររៀងគ្នា ៖ <div class="md">\[\frac{A'B'}{AB} = \frac{B'C'}{BC} = \frac{A'C'}{AC} = k \quad{} (k \text{ ជាផលធៀបដំណូច})\]</div></p></li>
+</ol>
+<p>គេកំណត់សរសេរ ៖ <span class="mi">\(\Delta ABC \sim \Delta A'B'C'\)</span>។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>ផលធៀបបរិមាត្រ និងផ្ទៃក្រឡា</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(\Delta ABC \sim \Delta A'B'C'\)</span> តាមផលធៀបដំណូច <span class="mi">\(k\)</span> នោះ ៖</p>
+<ul>
+<li><p>ផលធៀបបរិមាត្រ ៖ <span class="mi">\(\dfrac{P'}{P} = k\)</span></p></li>
+<li><p>ផលធៀបផ្ទៃក្រឡា ៖ <span class="mi">\(\dfrac{S'}{S} = k^2\)</span></p></li>
+<li><p>ផលធៀបកម្ពស់ មេដ្យាន និងកាំរង្វង់ ៖ <div class="md">\[\dfrac{h'}{h} = \dfrac{m'}{m} = \dfrac{R'}{R} = \dfrac{r'}{r} = k\]</div></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ត្រីកោណពីរដូចគ្នាមានផលធៀបដំណូច <span class="mi">\(k = \dfrac{1}{3}\)</span>។ បើត្រីកោណធំមានផ្ទៃ <span class="mi">\(45\,\text{cm}^2\)</span> គណនាផ្ទៃត្រីកោណតូច។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\frac{S'}{S} = k^2 = \left(\frac{1}{3}\right)^2 = \frac{1}{9} \implies S' = \frac{S}{9} = \frac{45}{9} = 5\,\text{cm}^2\]</div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ត្រីកោណពីរដូចគ្នាមានបរិមាត្រ <span class="mi">\(20\,\text{cm}\)</span> និង <span class="mi">\(30\,\text{cm}\)</span>។ បើត្រីកោណតូចមានផ្ទៃ <span class="mi">\(16\,\text{cm}^2\)</span> គណនាផ្ទៃត្រីកោណធំ។</p>
+</div></section>
+<h3 id="u2">ករណីដំណូចទាំងបីនៃត្រីកោណទូទៅ</h3>
+<section class="bx bx-amber"><header class="bx-h"><b>ករណីដំណូចទាំងបី</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p><strong>ករណីទី ១ ៖ ម.ម (Angle-Angle, AA) ៖</strong> បើត្រីកោណពីរមានមុំពីរប៉ុនរៀងគ្នា នោះត្រីកោណទាំងពីរដូចគ្នា។</p></li>
+<li><p><strong>ករណីទី ២ ៖ ជ.ម.ជ (Side-Angle-Side, SAS) ៖</strong> បើត្រីកោណពីរមានជ្រុងពីរសមាមាត្ររៀងគ្នា ហើយមុំដែលនៅចន្លោះជ្រុងទាំងនោះប៉ុនគ្នា នោះត្រីកោណទាំងពីរដូចគ្នា។</p></li>
+<li><p><strong>ករណីទី ៣ ៖ ជ.ជ.ជ (Side-Side-Side, SSS) ៖</strong> បើត្រីកោណពីរមានជ្រុងទាំងបីសមាមាត្ររៀងគ្នា នោះត្រីកោណទាំងពីរដូចគ្នា។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុង <span class="mi">\(\Delta ABC\)</span> មាន <span class="mi">\(D \in AB, E \in AC\)</span> ដោយ <span class="mi">\(DE \parallel BC\)</span>។ បង្ហាញថា <span class="mi">\(\Delta ADE \sim \Delta ABC\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ដោយ <span class="mi">\(DE \parallel BC\)</span> គេបាន ៖</p>
+<ul>
+<li><p><span class="mi">\(\angle ADE = \angle ABC\)</span> (មុំស្របគ្នា)</p></li>
+<li><p><span class="mi">\(\angle AED = \angle ACB\)</span> (មុំស្របគ្នា)</p></li>
+</ul>
+<p>តាមករណីដំណូច ម.ម (AA) គេបាន <span class="mi">\(\Delta ADE \sim \Delta ABC\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ត្រីកោណពីរមានជ្រុង <span class="mi">\(6, 8, 10\)</span> និង <span class="mi">\(9, 12, 15\)</span>។ បញ្ជាក់ថាត្រីកោណទាំងពីរដូចគ្នា និងកំណត់ផលធៀបដំណូច។</p>
+</div></section>
+<h3 id="u3">អនុវត្តន៍ក្នុងត្រីកោណកែង</h3>
+<section class="bx bx-amber"><header class="bx-h"><b>ដំណូចក្នុងត្រីកោណកែង</b></header><div class="bx-b">
+<p>កម្ពស់ <span class="mi">\(AH\)</span> គូសចេញពីកំពូលមុំកែង <span class="mi">\(A\)</span> នៃ <span class="mi">\(\Delta ABC\)</span> បង្កើតបានជាត្រីកោណកែងពីរ <span class="mi">\(\Delta HBA\)</span> និង <span class="mi">\(\Delta HAC\)</span> ដែលដូចគ្នា និងដូចត្រីកោណដើម <span class="mi">\(\Delta ABC\)</span> ៖ <div class="md">\[\Delta HBA \sim \Delta HAC \sim \Delta ABC\]</div> ពីដំណូចនេះ គេទាញបានទំនាក់ទំនងមាត្រ ៖</p>
+<ol class="list olnum cols1">
+<li><p><span class="mi">\(AH^2 = BH \times CH\)</span></p></li>
+<li><p><span class="mi">\(AB^2 = BC \times BH \quad{} ; \quad{} AC^2 = BC \times CH\)</span></p></li>
+<li><p><span class="mi">\(AB \times AC = BC \times AH\)</span></p></li>
+</ol>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ក្នុង <span class="mi">\(\Delta ABC\)</span> មាន <span class="mi">\(D, E\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(AB, AC\)</span>។ បង្ហាញថា <span class="mi">\(\Delta ADE \sim \Delta ABC\)</span> និងរកផលធៀបដំណូច។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញ <span class="mi">\(\Delta ADE \sim \Delta ABC\)</span> ៖ ដោយ <span class="mi">\(D, E\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(AB, AC\)</span> នាំឱ្យ <span class="mi">\(DE \parallel BC\)</span>។</p>
+<ul>
+<li><p><span class="mi">\(\angle ADE = \angle B\)</span> (មុំស្របគ្នា)</p></li>
+<li><p><span class="mi">\(\angle AED = \angle C\)</span> (មុំស្របគ្នា)</p></li>
+<li><p><span class="mi">\(\angle A\)</span> ជាមុំរួម</p></li>
+</ul>
+<p>តាមករណី ម.ម គេបាន <span class="mi">\(\Delta ADE \sim \Delta ABC\)</span> តាមផលធៀប <span class="mi">\(k = \frac{1}{2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p><span class="mi">\(\Delta ABC \sim \Delta A'B'C'\)</span> តាមផលធៀប <span class="mi">\(k = \frac{1}{4}\)</span>។ គណនាជ្រុងនៃត្រីកោណធំបើជ្រុងត្រីកោណតូចគឺ <span class="mi">\(2, 3, 4\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា <span class="mi">\(x, y, z\)</span> តាមផលធៀបដំណូច <span class="mi">\(k = \frac{1}{4}\)</span> ៖ <span class="mi">\(\frac{A'B'}{AB} = \frac{B'C'}{BC} = \frac{A'C'}{AC} = \frac{1}{4}\)</span> នាំឱ្យ ៖ <span class="mi">\(x = 4A'B', y = 4B'C', z = 4A'C'\)</span> តាមតម្លៃដែលបានផ្តល់ក្នុងប្រធាន។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>សរសេរឈ្មោះកំពូលត្រូវគ្នា និងផលធៀបសមាមាត្រនៃគូត្រីកោណដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរឈ្មោះ និងជ្រុងត្រូវគ្នា ៖ រៀបតាមលំដាប់មុំប៉ុនគ្នា ៖ <span class="mi">\(\Delta ABC \sim \Delta A'B'C'\)</span> នាំឱ្យ ៖ <span class="mi">\(\frac{A'B'}{AB} = \frac{B'C'}{BC} = \frac{A'C'}{AC} = k\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ត្រួតពិនិត្យថាគូត្រីកោណដែលមានមុំ <span class="mi">\(50^\circ, 60^\circ\)</span> និង <span class="mi">\(60^\circ, 70^\circ\)</span> ដូចគ្នាឬទេ? ព្រោះអ្វី?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យគូត្រីកោណដូចគ្នា ៖ ត្រួតពិនិត្យផលធៀបជ្រុង <span class="mi">\(\frac{a'}{a} = \frac{b'}{b} = \frac{c'}{c}\)</span> (ករណី ជ.ជ.ជ) ឬមុំពីរប៉ុនគ្នា (ម.ម)។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>បង្ហាញថាបន្ទាត់ស្របនឹងជ្រុងមួយនៃត្រីកោណ កាត់ជ្រុងពីរទៀតបង្កើតបានត្រីកោណថ្មីមួយដូចត្រីកោណដើម។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រៀបធៀប និងសរសេរផលធៀបដំណូច ៖ <span class="mi">\(\Delta AMN \sim \Delta ABC\)</span> (ដោយ <span class="mi">\(MN \parallel BC\)</span>) <span class="mi">\(\implies \frac{AM}{AB} = \frac{AN}{AC} = \frac{MN}{BC}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ត្រីកោណពីរមានជ្រុង <span class="mi">\(4, 5, 6\)</span> និង <span class="mi">\(8, 10, 12\)</span>។ បញ្ជាក់ភាពដូចគ្នាតាមករណី ជ.ជ.ជ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យភាពដូចគ្នានៃត្រីកោណ ៖ ពិនិត្យលក្ខខណ្ឌ ម.ម, ជ.ម.ជ, ឬ ជ.ជ.ជ។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ត្រីកោណពីរមានជ្រុង <span class="mi">\(3, 5\)</span> មុំចន្លោះ <span class="mi">\(40^\circ\)</span> និង <span class="mi">\(6, 10\)</span> មុំចន្លោះ <span class="mi">\(40^\circ\)</span>។ បញ្ជាក់ភាពដូចគ្នាតាម ជ.ម.ជ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំពេញផលធៀបដំណូច <span class="mi">\(\Delta ABC \sim \Delta GEF\)</span> ៖ <span class="mi">\(\frac{GE}{AB} = \frac{EF}{BC} = \frac{GF}{AC} = k\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់ថាត្រីកោណកែងពីរដែលមានមុំស្រួចមួយប៉ុនគ្នា តែងតែដូចគ្នាជានិច្ច។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្រាយបញ្ជាក់ <span class="mi">\(\Delta\)</span> ដូចគ្នា និងទាញវិបាក ៖ ទាញផលធៀបសមាមាត្រដើម្បីគណនាជ្រុងដែលមិនទាន់ស្គាល់។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(\Delta ABC \sim \Delta DEF\)</span> ដោយ <span class="mi">\(AB = 4, BC = 6, DE = 6\)</span> គណនាប្រវែង <span class="mi">\(EF\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាជ្រុង <span class="mi">\(EF\)</span> ៖ <span class="mi">\(\Delta ABC \sim \Delta DEF \implies \frac{EF}{BC} = \frac{DE}{AB} = \frac{6}{4} = 1.5 \implies EF = 1.5 \times 6 = 9\,\text{cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(\Delta ABC \sim \Delta MNP\)</span> ដោយ <span class="mi">\(\angle A = 50^\circ, \angle B = 70^\circ\)</span> គណនាមុំ <span class="mi">\(\angle P\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាមុំ <span class="mi">\(\angle P\)</span> ៖ <span class="mi">\(\Delta ABC \sim \Delta MNP \implies \angle P = \angle C = 180^\circ - (50^\circ + 70^\circ) = 60^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ត្រីកោណពីរដូចគ្នាមានផលធៀបដំណូច <span class="mi">\(k = \frac{1}{3}\)</span>។ គណនាផលធៀបផ្ទៃក្រឡារបស់វា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលធៀបផ្ទៃក្រឡា ៖ <span class="mi">\(k = \frac{1}{3} \implies \frac{S'}{S} = k^2 = \frac{1}{9}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ត្រីកោណពីរដូចគ្នាមានផលធៀបផ្ទៃក្រឡាស្មើ <span class="mi">\(\frac{4}{25}\)</span>។ គណនាផលធៀបដំណូច និងផលធៀបបរិមាត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលធៀបដំណូចពីផ្ទៃក្រឡា ៖ <span class="mi">\(\frac{S'}{S} = \frac{4}{25} \implies k = \sqrt{\frac{4}{25}} = \frac{2}{5}\)</span>។ ផលធៀបបរិមាត្រគឺ <span class="mi">\(k = \frac{2}{5}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ក្នុងត្រីកោណកែង <span class="mi">\(ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(BH = 4\,\text{cm}, CH = 9\,\text{cm}\)</span>។ គណនា <span class="mi">\(AH, BC, AB, AC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទំនាក់ទំនងក្នុងត្រីកោណកែង <span class="mi">\(ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> កម្ពស់ <span class="mi">\(AH\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(AH^2 = BH \times CH = 4 \times 9 = 36 \implies AH = 6\,\text{cm}\)</span></p></li>
+<li><p><span class="mi">\(BC = BH + CH = 4 + 9 = 13\,\text{cm}\)</span></p></li>
+<li><p><span class="mi">\(AB = \sqrt{BC \times BH} = \sqrt{13 \times 4} = 2\sqrt{13}\,\text{cm}\)</span></p></li>
+<li><p><span class="mi">\(AC = \sqrt{BC \times CH} = \sqrt{13 \times 9} = 3\sqrt{13}\,\text{cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ក្នុងត្រីកោណកែង <span class="mi">\(ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(AB = 6\,\text{cm}, AC = 8\,\text{cm}\)</span>។ គណនាកម្ពស់ <span class="mi">\(AH\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកម្ពស់ <span class="mi">\(AH\)</span> ៖ <span class="mi">\(AB = 6, AC = 8 \implies BC = 10\)</span> <span class="mi">\(AH = \frac{AB \times AC}{BC} = \frac{48}{10} = 4.8\,\text{cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>ត្រីកោណពីរដូចគ្នាមាន <span class="mi">\(k = 2\)</span>។ បើត្រីកោណតូចមានផ្ទៃ <span class="mi">\(15\,\text{cm}^2\)</span> គណនាផ្ទៃត្រីកោណធំ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៃក្រឡាត្រីកោណធំ ៖ <span class="mi">\(k = 2 \implies \frac{S_{\text{ធំ}}}{S_{\text{តូច}}} = k^2 = 4 \implies S_{\text{ធំ}} = 4 \times 15 = 60\,\text{cm}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ចតុកោណព្នាយ <span class="mi">\(ABCD\)</span> (<span class="mi">\(AB \parallel CD\)</span>) អង្កត់ទ្រូងកាត់គ្នាត្រង់ <span class="mi">\(O\)</span>។ បង្ហាញថា <span class="mi">\(\Delta OAB \sim \Delta OCD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណព្នាយ <span class="mi">\(ABCD\)</span> (<span class="mi">\(AB \parallel CD\)</span>) ៖ <span class="mi">\(\Delta OAB \sim \Delta OCD\)</span> តាមផលធៀប <span class="mi">\(k = \frac{AB}{CD} = \frac{4}{12} = \frac{1}{3}\)</span>។ <span class="mi">\(\frac{S_{OAB}}{S_{OCD}} = k^2 = \frac{1}{9} \implies S_{OCD} = 9 \times 5 = 45\,\text{cm}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ពីលំហាត់ ១៦ បើ <span class="mi">\(AB = 4, CD = 12\)</span> និង <span class="mi">\(S_{OAB} = 5\,\text{cm}^2\)</span> គណនាផ្ទៃក្រឡា <span class="mi">\(\Delta OCD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៃក្រឡាត្រីកោណចំហៀង ៖ <span class="mi">\(S_{OAD} = S_{OBC} = \sqrt{S_{OAB} \times S_{OCD}} = \sqrt{5 \times 45} = \sqrt{225} = 15\,\text{cm}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ពីលំហាត់ ១៦ និង ១៧ គណនាផ្ទៃក្រឡាសរុបនៃចតុកោណព្នាយ <span class="mi">\(ABCD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៃក្រឡាសរុបចតុកោណព្នាយ ៖ <span class="mi">\(S = S_{OAB} + S_{OCD} + S_{OAD} + S_{OBC} = 5 + 45 + 15 + 15 = 80\,\text{cm}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>បន្ទាត់មួយកាត់ <span class="mi">\(AB, AC\)</span> ត្រង់ <span class="mi">\(M, N\)</span> ដោយ <span class="mi">\(\angle AMN = \angle C\)</span>។ បង្ហាញថា <span class="mi">\(AM \times AB = AN \times AC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណកាត់បញ្ច្រាសមុំ ៖ <span class="mi">\(\angle AMN = \angle C, \angle A\)</span> រួម <span class="mi">\(\implies \Delta AMN \sim \Delta ACB\)</span> (ម.ម)។ <span class="mi">\(\frac{AM}{AC} = \frac{AN}{AB} \implies AM \times AB = AN \times AC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>អង្កត់ធ្នូ <span class="mi">\(AB, CD\)</span> កាត់គ្នាត្រង់ <span class="mi">\(P\)</span> ក្នុងរង្វង់។ បង្ហាញថា <span class="mi">\(\Delta PAC \sim \Delta PDB\)</span> និងទាញ <span class="mi">\(PA \cdot PB = PC \cdot PD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>អង្កត់ធ្នូកាត់គ្នា ៖ <span class="mi">\(\Delta PAC \sim \Delta PDB\)</span> (មុំចារឹកក្នុងស្កាត់ធ្នូតែមួយ) ៖ <span class="mi">\(\frac{PA}{PD} = \frac{PC}{PB} \implies PA \times PB = PC \times PD\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ពីចំណុច <span class="mi">\(P\)</span> ក្រៅរង្វង់ គូសបន្ទាត់ប៉ះ <span class="mi">\(PT\)</span> និងបន្ទាត់កាត់ <span class="mi">\(PAB\)</span>។ បង្ហាញថា <span class="mi">\(PT^2 = PA \times PB\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់ប៉ះ និងបន្ទាត់កាត់ ៖ <span class="mi">\(\Delta PTA \sim \Delta PBT\)</span> (មុំរួម <span class="mi">\(\angle P\)</span>, <span class="mi">\(\angle PTA = \angle PBT = \frac{1}{2}\overset{\frown}{AT}\)</span>) ៖ <span class="mi">\(\frac{PT}{PB} = \frac{PA}{PT} \implies PT^2 = PA \times PB\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>មនុស្សកម្ពស់ <span class="mi">\(1.6\,\text{m}\)</span> ឈរចម្ងាយ <span class="mi">\(24\,\text{m}\)</span> ពីអាគារ មើលឃើញកំពូលអាគារតម្រង់តាមកំពូលរបងកម្ពស់ <span class="mi">\(2.4\,\text{m}\)</span> ចម្ងាយ <span class="mi">\(3\,\text{m}\)</span> ពីគាត់។ គណនាកម្ពស់អាគារ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កម្ពស់អាគារ ៖ ផលធៀបកម្ពស់ធៀបនឹងចម្ងាយ ៖ <span class="mi">\(\frac{H - 1.6}{24} = \frac{2.4 - 1.6}{3} = \frac{0.8}{3} \implies H - 1.6 = 6.4 \implies H = 8.0\,\text{m}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>បង្ហាញថាក្នុងត្រីកោណកែង កម្ពស់លើអ៊ីប៉ូតេនុសចែកត្រីកោណជាពីរត្រីកោណកែងតូចៗដែលដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញត្រីកោណកែងពីរដូចគ្នា ៖ មានមុំស្រួចមួយប៉ុនគ្នា នាំឱ្យមុំស្រួចទីពីរក៏ប៉ុនគ្នាដែរ ដូចនេះដូចគ្នាតាម ម.ម។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>បង្ហាញថាផលធៀបមេដ្យានត្រូវគ្នានៃត្រីកោណពីរដូចគ្នាស្មើនឹងផលធៀបដំណូច <span class="mi">\(k\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលធៀបមេដ្យាន ៖ ផលធៀបមេដ្យានត្រូវគ្នានៃត្រីកោណពីរដូចគ្នាស្មើនឹងផលធៀបដំណូច <span class="mi">\(k\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>បង្ហាញថាផលធៀបកន្លះបន្ទាត់ពុះមុំត្រូវគ្នានៃត្រីកោណពីរដូចគ្នាស្មើនឹង <span class="mi">\(k\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលធៀបកន្លះបន្ទាត់ពុះមុំ ៖ ស្មើនឹងផលធៀបដំណូច <span class="mi">\(k\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ផ្ទៀងផ្ទាត់ទំនាក់ទំនង <span class="mi">\(AH^2 = BH \times CH\)</span> ដោយប្រើដំណូច <span class="mi">\(\Delta HBA \sim \Delta HAC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កម្ពស់ និងអ៊ីប៉ូតេនុស ៖ <span class="mi">\(\Delta HBA \sim \Delta HAC \implies \frac{HA}{HC} = \frac{HB}{HA} \implies HA^2 = HB \times HC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>បង្ហាញថាត្រីកោណសមបាតពីរដែលមានមុំកំពូលប៉ុនគ្នា តែងតែដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណសមបាតពីរដូចគ្នា ៖ មានមុំកំពូលប៉ុនគ្នា នាំឱ្យមុំបាតប៉ុនគ្នា ដូចនេះដូចគ្នាតាម ម.ម។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>បង្ហាញថាត្រីកោណសមបាតពីរដែលមានមុំបាតប៉ុនគ្នា តែងតែដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណសមបាតពីរមានមុំបាតប៉ុនគ្នា ៖ ដូចគ្នាតាមករណី ម.ម។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ត្រីកោណពីរដូចគ្នាមាន <span class="mi">\(P_1 = 30\,\text{cm}\)</span> និង <span class="mi">\(k = \frac{3}{5}\)</span>។ គណនាបរិមាត្រ <span class="mi">\(P_2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាបរិមាត្រត្រីកោណដូចគ្នា ៖ <span class="mi">\(P_1 = 30\,\text{cm}, k = \frac{3}{5} \implies P_2 = 30 \times \frac{3}{5} = 18\,\text{cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ត្រីកោណមួយមានជ្រុងសមាមាត្រនឹង <span class="mi">\(3, 5, 7\)</span> និងបរិមាត្រ <span class="mi">\(45\,\text{cm}\)</span>។ គណនាប្រវែងជ្រុងទាំងបី។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាជ្រុងត្រីកោណពីបរិមាត្រ ៖ ជ្រុងសមាមាត្រនឹង <span class="mi">\(3, 5, 7\)</span> ផលបូក <span class="mi">\(15\)</span> ភាគ <span class="mi">\(= 45\,\text{cm} \implies 1\)</span> ភាគ <span class="mi">\(= 3\,\text{cm}\)</span>។ ជ្រុងគឺ <span class="mi">\(9\,\text{cm}, 15\,\text{cm}, 21\,\text{cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>បង្ហាញពីរបៀបចែកផ្ទៃក្រឡាត្រីកោណជាពីរស្មើគ្នាដោយប្រើបន្ទាត់ស្របនឹងបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកផ្ទៃក្រឡាដោយបន្ទាត់ស្រប ៖ បន្ទាត់ស្របនឹង <span class="mi">\(BC\)</span> កាត់កម្ពស់តាមផលធៀប <span class="mi">\(k = \frac{1}{\sqrt{2}}\)</span> ដើម្បីចែកផ្ទៃជាពីរស្មើគ្នា។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>បង្ហាញថាផលធៀបកាំរង្វង់ចារឹកក្រៅនៃត្រីកោណពីរដូចគ្នាស្មើនឹងផលធៀបដំណូច <span class="mi">\(k\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណចារឹកក្នុងរង្វង់ ៖ <span class="mi">\(\Delta ABC \sim \Delta A'B'C' \implies \frac{R'}{R} = k\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>បង្ហាញថាផលធៀបកាំរង្វង់ចារឹកក្នុងនៃត្រីកោណពីរដូចគ្នាស្មើនឹង <span class="mi">\(k\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណចារឹកក្រៅរង្វង់ ៖ <span class="mi">\(\frac{r'}{r} = k\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បង្គោលកម្ពស់ <span class="mi">\(1.8\,\text{m}\)</span> បង្កើតស្រមោល <span class="mi">\(2.4\,\text{m}\)</span>។ រកប្រវែងស្រមោលនៃបង្គោលកម្ពស់ <span class="mi">\(6\,\text{m}\)</span> ក្នុងពេលជាមួយគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាប្រវែងស្រមោល ៖ កម្ពស់ <span class="mi">\(1.8\,\text{m}\)</span> ស្រមោល <span class="mi">\(2.4\,\text{m}\)</span> ៖ បង្គោល <span class="mi">\(6\,\text{m}\)</span> ស្រមោលគឺ <span class="mi">\(6 \times \frac{2.4}{1.8} = 8\,\text{m}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ពន្យល់ពីវិធីវាស់កម្ពស់ដើមឈើដោយប្រើកញ្ចក់ឆ្លុះតាមគោលការណ៍ត្រីកោណដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណោទកញ្ចក់ឆ្លុះ ៖ មុំចាំងស្មើនឹងមុំឆ្លុះ <span class="mi">\(\implies\)</span> ត្រីកោណកែងពីរដូចគ្នាតាម ម.ម។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>បង្ហាញថាបន្ទាត់កាត់កែងលើអង្កត់ទ្រូងចតុកោណកែង បង្កើតបានត្រីកោណដូចគ្នាជាច្រើន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កាត់កែងលើអង្កត់ទ្រូង ៖ បង្ហាញត្រីកោណដូចគ្នាតាមមុំកែង និងមុំឆ្លាស់ក្នុង។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>បង្ហាញថាត្រីកោណពីរដែលទាក់ទងគ្នាតាមបម្លែងពង្រីក-បង្រួម (Homothety) តែងតែដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណផ្ចិត និងត្រីកោណធំ ៖ <span class="mi">\(\Delta OAB \sim \Delta OA'B'\)</span> ក្នុងប្លង់ពង្រីក-បង្រួម (Homothety)។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>អង្កត់ទ្រូងចតុកោណចារឹកក្នុងរង្វង់កាត់គ្នាត្រង់ <span class="mi">\(H\)</span>។ បង្ហាញថា <span class="mi">\(\Delta AHD \sim \Delta BHC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញ <span class="mi">\(\Delta AHD \sim \Delta BHC\)</span> ៖ អង្កត់ទ្រូងកាត់គ្នាត្រង់ <span class="mi">\(H\)</span> នៃចតុកោណចារឹកក្នុងរង្វង់ ៖ ដូចគ្នាតាម ម.ម។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ពីលំហាត់ ៣៨ ទាញបញ្ជាក់ថា <span class="mi">\(HA \times HC = HB \times HD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលគុណអង្កត់ ៖ <span class="mi">\(HA \times HC = HB \times HD\)</span> ពីត្រីកោណដូចគ្នាខាងលើ។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>អនុវត្តត្រីកោណដូចគ្នាក្នុងចតុកោណព្នាយកែងដើម្បីគណនាជ្រុងមិនស្គាល់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណព្នាយកែង ៖ គូសកម្ពស់បំបែកជាចតុកោណកែង និងត្រីកោណកែង រួចប្រើដំណូច។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>បង្ហាញថាកម្ពស់លើអ៊ីប៉ូតេនុសជាមធ្យមធរណីមាត្រនៃចំណោលទាំងពីរ (<span class="mi">\(h = \sqrt{pq}\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មធ្យមធរណីមាត្រនៃកម្ពស់ ៖ កម្ពស់លើអ៊ីប៉ូតេនុសជាមធ្យមធរណីមាត្រនៃចំណោលទាំងពីរ ៖ <span class="mi">\(h = \sqrt{p \cdot q}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>បង្ហាញថាជ្រុងជាប់មុំកែងជាមធ្យមធរណីមាត្រនៃអ៊ីប៉ូតេនុស និងចំណោលរបស់វា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជ្រុងជាប់មុំកែងជាមធ្យមធរណីមាត្រ ៖ <span class="mi">\(b = \sqrt{c \cdot p}\)</span> និង <span class="mi">\(a = \sqrt{c \cdot q}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់ទ្រឹស្តីបទពីតាគ័រ <span class="mi">\(a^2 + b^2 = c^2\)</span> ដោយប្រើត្រីកោណដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទាញទ្រឹស្តីបទពីតាគ័រពីត្រីកោណដូចគ្នា ៖ <span class="mi">\(b^2 = c \cdot p\)</span> និង <span class="mi">\(a^2 = c \cdot q\)</span> បូកបញ្ចូលគ្នា ៖ <span class="mi">\(a^2 + b^2 = c(p + q) = c \cdot c = c^2\)</span> (សម្រាយបញ្ជាក់ដ៏ស្រស់ស្អាត)។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>រកកាំរង្វង់ប៉ះរួមនៃរង្វង់បីប៉ះគ្នាដោយប្រើត្រីកោណដូចគ្នា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កាំរង្វង់ប៉ះរួមនៃរង្វង់បី ៖ ប្រើប្រាស់ត្រីកោណដូចគ្នាបង្កើតសមីការដោះស្រាយរកកាំ។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>បង្ហាញថាពហុកោណដូចគ្នាពីរមានផលធៀបផ្ទៃក្រឡាស្មើនឹងការេនៃផលធៀបដំណូច (<span class="mi">\(k^2\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផ្ទៃក្រឡាពហុកោណដូចគ្នា ៖ <span class="mi">\(\frac{S_1}{S_2} = k^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>ផែនទីមួយមានមាត្រដ្ឋាន <span class="mi">\(1:50000\)</span>។ បើចម្ងាយលើផែនទីគឺ <span class="mi">\(4\,\text{cm}\)</span> គណនាចម្ងាយពិតប្រាកដគិតជា <span class="mi">\(\text{km}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មាត្រដ្ឋានផែនទី ៖ មាត្រដ្ឋាន <span class="mi">\(1:50000\)</span> ៖ ចម្ងាយលើផែនទី <span class="mi">\(4\,\text{cm}\)</span> ត្រូវនឹង <span class="mi">\(4 \times 50000\,\text{cm} = 2000\,\text{m} = 2\,\text{km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ពីលំហាត់ ៤៦ បើផ្ទៃដីលើផែនទីគឺ <span class="mi">\(1\,\text{cm}^2\)</span> គណនាផ្ទៃដីពិតប្រាកដគិតជាហិកតា (<span class="mi">\(\text{ha}\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៃដីលើផែនទី ៖ ផ្ទៃ <span class="mi">\(1\,\text{cm}^2\)</span> លើផែនទីត្រូវនឹង <span class="mi">\((50000)^2\,\text{cm}^2 = 250000\,\text{m}^2 = 25\,\text{ha}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>ពន្យល់ពីលក្ខណៈនៃបម្លែងពង្រីក-បង្រួម (Homothety) ផ្ចិត <span class="mi">\(O\)</span> ផលធៀប <span class="mi">\(k\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្លង់ពង្រីក-បង្រួម (Homothety) ៖ បម្លែង <span class="mi">\(\mathcal{H}(O, k)\)</span> រក្សាមុំ រក្សាភាពស្របគ្នា និងគុណប្រវែងនឹង <span class="mi">\(|k|\)</span> គុណផ្ទៃនឹង <span class="mi">\(k^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>បង្ហាញពីគន្លឹះសំខាន់ៗក្នុងការស្វែងរកគូត្រីកោណដូចគ្នាក្នុងលំហាត់ធរណីមាត្រស្មុគស្មាញ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គន្លឹះដោះស្រាយលំហាត់ត្រីកោណដូចគ្នា ៖ ស្វែងរកមុំស្មើគ្នាពីរគូ (មុំរួម មុំឆ្លាស់ក្នុង មុំចារឹកក្នុងស្កាត់ធ្នូតែមួយ) ដើម្បីអនុវត្តករណី ម.ម។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>សរសេរការពិពណ៌នាអំពីសារៈសំខាន់នៃទ្រឹស្តីបទដំណូចរបស់ Euclid ក្នុងការអភិវឌ្ឍវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រវត្តិនៃទ្រឹស្តីបទដំណូចរបស់ Euclid ៖ សៀវភៅ Elements ក្បាលទី ៦ របស់ Euclid ត្រូវបានចាត់ទុកជាស្នាដៃគ្រឹះនៃធរណីមាត្រសមាមាត្រដែលទ្រទ្រង់ដល់ការអភិវឌ្ឍវិទ្យាសាស្ត្រទំនើប។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៦ ត្រីកោណដូចគ្នា</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g09_c16">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L15.html"><small>← មេរៀនមុន</small><b>ទ្រឹស្តីបទតាលែស</b></a><a class="next" href="L17.html"><small>មេរៀនបន្ទាប់ →</small><b>ពហុកោណ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរដូចគ្នា កាលណាវាមាន ៖", "options": ["មុំទាំងបីប៉ុនរៀងគ្នា និងជ្រុងទាំងបីសមាមាត្ររៀងគ្នា", "ជ្រុងទាំងបីស្មើគ្នា", "ផ្ទៃក្រឡាស្មើគ្នា", "បរិមាត្រស្មើគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "និមិត្តសញ្ញាតាងដំណូចរវាងត្រីកោណ <span class=\"mi\">\\(ABC\\)<\/span> និង <span class=\"mi\">\\(A'B'C'\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\Delta ABC \\cong \\Delta A'B'C'\\)<\/span>", "<span class=\"mi\">\\(\\Delta ABC \\sim \\Delta A'B'C'\\)<\/span>", "<span class=\"mi\">\\(\\Delta ABC = \\Delta A'B'C'\\)<\/span>", "<span class=\"mi\">\\(\\Delta ABC \\approx \\Delta A'B'C'\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ករណីដំណូច ម.ម (AA) មានន័យថាត្រីកោណពីរដូចគ្នា កាលណាវាមាន ៖", "options": ["ជ្រុងពីរប៉ុនគ្នា", "មុំមួយ និងជ្រុងមួយស្មើគ្នា", "មុំពីរប៉ុនរៀងគ្នា", "កម្ពស់ស្មើគ្នា"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ករណីដំណូច ជ.ម.ជ (SAS) មានន័យថាត្រីកោណពីរដូចគ្នា កាលណាវាមាន ៖", "options": ["ជ្រុងពីរស្មើគ្នា និងមុំមួយស្មើគ្នា", "ជ្រុងបីសមាមាត្រគ្នា", "មុំបីស្មើគ្នា", "ជ្រុងពីរសមាមាត្ររៀងគ្នា និងមុំចន្លោះប៉ុនគ្នា"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ករណីដំណូច ជ.ជ.ជ (SSS) មានន័យថាត្រីកោណពីរដូចគ្នា កាលណាវាមាន ៖", "options": ["ជ្រុងទាំងបីសមាមាត្ររៀងគ្នា", "ជ្រុងទាំងបីស្មើគ្នា", "មុំទាំងបីស្មើគ្នា", "ជ្រុងពីរសមាមាត្រគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta A'B'C'\\)<\/span> តាមផលធៀបដំណូច <span class=\"mi\">\\(k\\)<\/span> នោះផលធៀបបរិមាត្រ <span class=\"mi\">\\(\\dfrac{P'}{P}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(k^2\\)<\/span>", "<span class=\"mi\">\\(k\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{k}\\)<\/span>", "<span class=\"mi\">\\(2k\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta A'B'C'\\)<\/span> តាមផលធៀបដំណូច <span class=\"mi\">\\(k\\)<\/span> នោះផលធៀបផ្ទៃក្រឡា <span class=\"mi\">\\(\\dfrac{S'}{S}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(k\\)<\/span>", "<span class=\"mi\">\\(2k\\)<\/span>", "<span class=\"mi\">\\(k^2\\)<\/span>", "<span class=\"mi\">\\(k^3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើផលធៀបដំណូចនៃត្រីកោណពីរគឺ <span class=\"mi\">\\(k = \\dfrac{1}{3}\\)<\/span> នោះផលធៀបផ្ទៃក្រឡាគឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{2}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{9}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើផលធៀបផ្ទៃក្រឡានៃត្រីកោណពីរដូចគ្នាគឺ <span class=\"mi\">\\(\\dfrac{S'}{S} = \\dfrac{4}{25}\\)<\/span> នោះផលធៀបដំណូច <span class=\"mi\">\\(k\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{2}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{25}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{16}{625}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{5}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ត្រីកោណសម័ង្សពីរណាក៏ដោយ តែងតែ ៖", "options": ["ប៉ុនគ្នាជានិច្ច", "ដូចគ្នាជានិច្ច", "មានផ្ទៃស្មើគ្នា", "មិនដូចគ្នាទេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ត្រីកោណកែងសមបាតពីរណាក៏ដោយ តែងតែ ៖", "options": ["ប៉ុនគ្នាជានិច្ច", "មានអ៊ីប៉ូតេនុសស្មើគ្នា", "ដូចគ្នាជានិច្ច", "មិនដូចគ្នាទេ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ត្រីកោណកែងពីរដូចគ្នា កាលណាវាមាន ៖", "options": ["អ៊ីប៉ូតេនុសស្មើគ្នា", "ជ្រុងជាប់មុំកែងស្មើគ្នា", "កម្ពស់ស្មើគ្នា", "មុំស្រួចមួយប៉ុនគ្នា"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែង <span class=\"mi\">\\(ABC\\)<\/span> កែងត្រង់ <span class=\"mi\">\\(A\\)<\/span> មានកម្ពស់ <span class=\"mi\">\\(AH\\)<\/span>។ ចំនួនគូនៃត្រីកោណដូចគ្នាគឺ ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span> គូ", "<span class=\"mi\">\\(2\\)<\/span> គូ", "<span class=\"mi\">\\(1\\)<\/span> គូ", "<span class=\"mi\">\\(4\\)<\/span> គូ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (១៣) ទំនាក់ទំនងកម្ពស់ <span class=\"mi\">\\(AH^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(AB \\times AC\\)<\/span>", "<span class=\"mi\">\\(BH \\times CH\\)<\/span>", "<span class=\"mi\">\\(BC \\times BH\\)<\/span>", "<span class=\"mi\">\\(BC \\times CH\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (១៣) ទំនាក់ទំនង <span class=\"mi\">\\(AB^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(BC \\times CH\\)<\/span>", "<span class=\"mi\">\\(BH \\times CH\\)<\/span>", "<span class=\"mi\">\\(BC \\times BH\\)<\/span>", "<span class=\"mi\">\\(AH \\times BC\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (១៣) ទំនាក់ទំនង <span class=\"mi\">\\(AC^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(BC \\times BH\\)<\/span>", "<span class=\"mi\">\\(BH \\times CH\\)<\/span>", "<span class=\"mi\">\\(AH \\times BC\\)<\/span>", "<span class=\"mi\">\\(BC \\times CH\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (១៣) ទំនាក់ទំនង <span class=\"mi\">\\(AB \\times AC\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(BC \\times AH\\)<\/span>", "<span class=\"mi\">\\(BH \\times CH\\)<\/span>", "<span class=\"mi\">\\(BC^2\\)<\/span>", "<span class=\"mi\">\\(AH^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta DEF\\)<\/span> ដោយ <span class=\"mi\">\\(AB = 4, BC = 6, DE = 6\\)<\/span> នោះ <span class=\"mi\">\\(EF\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta MNP\\)<\/span> ដោយ <span class=\"mi\">\\(\\angle A = 50^\\circ, \\angle B = 70^\\circ\\)<\/span> នោះ <span class=\"mi\">\\(\\angle P\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(50^\\circ\\)<\/span>", "<span class=\"mi\">\\(70^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរមានជ្រុង <span class=\"mi\">\\(3, 4, 5\\)<\/span> និង <span class=\"mi\">\\(6, 8, 10\\)<\/span> ៖", "options": ["មិនដូចគ្នាទេ", "ប៉ុនគ្នា", "កែងតែមិនដូចគ្នា", "ដូចគ្នាតាមករណី ជ.ជ.ជ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរមានជ្រុង <span class=\"mi\">\\(4, 6\\)<\/span> មុំចន្លោះ <span class=\"mi\">\\(50^\\circ\\)<\/span> និង <span class=\"mi\">\\(6, 9\\)<\/span> មុំចន្លោះ <span class=\"mi\">\\(50^\\circ\\)<\/span> ៖", "options": ["ដូចគ្នាតាមករណី ជ.ម.ជ", "ដូចគ្នាតាមករណី ម.ម", "មិនដូចគ្នាទេ", "ប៉ុនគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរមានមុំ <span class=\"mi\">\\(40^\\circ, 60^\\circ\\)<\/span> និង <span class=\"mi\">\\(60^\\circ, 80^\\circ\\)<\/span> ៖", "options": ["មិនដូចគ្នាទេ", "ដូចគ្នាតាមករណី ម.ម (<span class=\"mi\">\\(180^\\circ - 40^\\circ - 60^\\circ = 80^\\circ\\)<\/span>)", "ប៉ុនគ្នា", "មានផ្ទៃស្មើគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "កម្ពស់ដែលគូសចេញពីកំពូលត្រីកោណកែងទៅលើអ៊ីប៉ូតេនុស បង្កើតបានត្រីកោណកែងតូចពីរដែល ៖", "options": ["ប៉ុនគ្នាជានិច្ច", "មិនដូចគ្នាទេ", "ដូចគ្នា និងដូចត្រីកោណធំដើម", "ជាត្រីកោណសមបាត"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta A'B'C'\\)<\/span> តាមផលធៀប <span class=\"mi\">\\(k\\)<\/span> នោះផលធៀបកម្ពស់ <span class=\"mi\">\\(\\dfrac{h'}{h}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(k^2\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{k}\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(k\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (២៤) ផលធៀបកាំរង្វង់ចារឹកក្រៅ <span class=\"mi\">\\(\\dfrac{R'}{R}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(k\\)<\/span>", "<span class=\"mi\">\\(k^2\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{k}\\)<\/span>", "<span class=\"mi\">\\(2k\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (២៤) ផលធៀបកាំរង្វង់ចារឹកក្នុង <span class=\"mi\">\\(\\dfrac{r'}{r}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(k^2\\)<\/span>", "<span class=\"mi\">\\(k\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{k}\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរដូចគ្នាមានបរិមាត្រ <span class=\"mi\">\\(24\\,\\text{cm}\\)<\/span> និង <span class=\"mi\">\\(36\\,\\text{cm}\\)<\/span>។ ផលធៀបផ្ទៃក្រឡាគឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{2}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{16}{81}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{9}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{8}{27}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta DEF\\)<\/span> មាន <span class=\"mi\">\\(S_{ABC} = 18\\,\\text{cm}^2\\)<\/span> និង <span class=\"mi\">\\(S_{DEF} = 32\\,\\text{cm}^2\\)<\/span> នោះផលធៀបដំណូចគឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{9}{16}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{18}{32}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{4}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែងមួយ ចំណោលជ្រុងជាប់មុំកែងលើអ៊ីប៉ូតេនុសគឺ <span class=\"mi\">\\(4\\,\\text{cm}\\)<\/span> និង <span class=\"mi\">\\(9\\,\\text{cm}\\)<\/span>។ កម្ពស់លើអ៊ីប៉ូតេនុសគឺ ៖", "options": ["<span class=\"mi\">\\(6\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(6.5\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(36\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(5\\,\\text{cm}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (២៩) ប្រវែងអ៊ីប៉ូតេនុសគឺ ៖", "options": ["<span class=\"mi\">\\(12\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(13\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(15\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(10\\,\\text{cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (២៩) ជ្រុងជាប់មុំកែងតូចគឺ ៖", "options": ["<span class=\"mi\">\\(6\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(4\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(2\\sqrt{13}\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{52}\\,\\text{cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (២៩) ជ្រុងជាប់មុំកែងធំគឺ ៖", "options": ["<span class=\"mi\">\\(9\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(6\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(12\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(3\\sqrt{13}\\,\\text{cm}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> មាន <span class=\"mi\">\\(AB = 6, AC = 8, BC = 10\\)<\/span>។ កម្ពស់ <span class=\"mi\">\\(AH\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4.8\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរដូចគ្នាមានផលធៀបដំណូច <span class=\"mi\">\\(k = 2\\)<\/span>។ បើត្រីកោណតូចមានផ្ទៃ <span class=\"mi\">\\(15\\,\\text{cm}^2\\)<\/span> នោះត្រីកោណធំមានផ្ទៃ ៖", "options": ["<span class=\"mi\">\\(30\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(60\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(45\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(120\\,\\text{cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចតុកោណព្នាយ <span class=\"mi\">\\(ABCD\\)<\/span> (<span class=\"mi\">\\(AB \\parallel CD\\)<\/span>) អង្កត់ទ្រូងកាត់គ្នាត្រង់ <span class=\"mi\">\\(O\\)<\/span>។ គូត្រីកោណដូចគ្នាគឺ ៖", "options": ["<span class=\"mi\">\\(\\Delta OAD \\sim \\Delta OBC\\)<\/span>", "<span class=\"mi\">\\(\\Delta ABC \\sim \\Delta ADC\\)<\/span>", "<span class=\"mi\">\\(\\Delta OAB \\sim \\Delta OCD\\)<\/span>", "<span class=\"mi\">\\(\\Delta ABD \\sim \\Delta BCD\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (៣៥) បើ <span class=\"mi\">\\(AB = 4, CD = 12\\)<\/span> និង <span class=\"mi\">\\(S_{OAB} = 5\\,\\text{cm}^2\\)<\/span> នោះ <span class=\"mi\">\\(S_{OCD}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(15\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(60\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(30\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(45\\,\\text{cm}^2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (៣៦) ផ្ទៃក្រឡា <span class=\"mi\">\\(\\Delta OAD\\)<\/span> (ស្មើ <span class=\"mi\">\\(\\Delta OBC = \\sqrt{S_{OAB} \\times S_{OCD}}\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(15\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(20\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(10\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(25\\,\\text{cm}^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (៣៦) ផ្ទៃក្រឡាសរុបនៃចតុកោណព្នាយ <span class=\"mi\">\\(ABCD\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(65\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(80\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(75\\,\\text{cm}^2\\)<\/span>", "<span class=\"mi\">\\(90\\,\\text{cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បន្ទាត់មួយកាត់ <span class=\"mi\">\\(AB, AC\\)<\/span> នៃ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> ត្រង់ <span class=\"mi\">\\(M, N\\)<\/span> ដោយ <span class=\"mi\">\\(\\angle AMN = \\angle C\\)<\/span>។ គូត្រីកោណដូចគ្នាគឺ ៖", "options": ["<span class=\"mi\">\\(\\Delta AMN \\sim \\Delta ABC\\)<\/span>", "<span class=\"mi\">\\(\\Delta BMN \\sim \\Delta BAC\\)<\/span>", "<span class=\"mi\">\\(\\Delta AMN \\sim \\Delta ACB\\)<\/span>", "មិនដូចគ្នាទេ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (៣៩) សមាមាត្រដែលទាញបានគឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{AM}{AB} = \\dfrac{AN}{AC}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{AM}{MN} = \\dfrac{AC}{BC}\\)<\/span>", "<span class=\"mi\">\\(AM \\times AC = AN \\times AB\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{AM}{AC} = \\dfrac{AN}{AB} = \\dfrac{MN}{BC}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (៣៩) ទំនាក់ទំនងផលគុណគឺ ៖", "options": ["<span class=\"mi\">\\(AM \\times AB = AN \\times AC\\)<\/span>", "<span class=\"mi\">\\(AM \\times AC = AN \\times AB\\)<\/span>", "<span class=\"mi\">\\(AM^2 = AN \\times AC\\)<\/span>", "<span class=\"mi\">\\(MN^2 = AB \\times AC\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងរង្វង់មួយ អង្កត់ធ្នូ <span class=\"mi\">\\(AB\\)<\/span> និង <span class=\"mi\">\\(CD\\)<\/span> កាត់គ្នាត្រង់ <span class=\"mi\">\\(P\\)<\/span> ក្នុងរង្វង់។ គូត្រីកោណដូចគ្នាគឺ ៖", "options": ["<span class=\"mi\">\\(\\Delta PAB \\sim \\Delta PCD\\)<\/span>", "<span class=\"mi\">\\(\\Delta PAC \\sim \\Delta PDB\\)<\/span>", "<span class=\"mi\">\\(\\Delta PAD \\sim \\Delta PBC\\)<\/span>", "ទាំង ក និង គ ត្រឹមត្រូវ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (៤២) ផលធៀបដំណូចទាញបាន ៖", "options": ["<span class=\"mi\">\\(PA \\times PC = PB \\times PD\\)<\/span>", "<span class=\"mi\">\\(PA + PB = PC + PD\\)<\/span>", "<span class=\"mi\">\\(PA \\times PB = PC \\times PD\\)<\/span>", "<span class=\"mi\">\\(PA^2 = PC \\times PD\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ពីចំណុច <span class=\"mi\">\\(P\\)<\/span> ក្រៅរង្វង់ គូសបន្ទាត់ប៉ះ <span class=\"mi\">\\(PT\\)<\/span> និងបន្ទាត់កាត់ <span class=\"mi\">\\(PAB\\)<\/span>។ គូត្រីកោណដូចគ្នាគឺ ៖", "options": ["<span class=\"mi\">\\(\\Delta PTA \\sim \\Delta PTB\\)<\/span>", "<span class=\"mi\">\\(\\Delta PAT \\sim \\Delta PBT\\)<\/span>", "មិនដូចគ្នាទេ", "<span class=\"mi\">\\(\\Delta PTA \\sim \\Delta PBT\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ពីសំណួរ (៤៤) ទំនាក់ទំនងទាញបានគឺ ៖", "options": ["<span class=\"mi\">\\(PT^2 = PA \\times PB\\)<\/span>", "<span class=\"mi\">\\(PT = PA \\times PB\\)<\/span>", "<span class=\"mi\">\\(PT^2 = PA + PB\\)<\/span>", "<span class=\"mi\">\\(PT = \\dfrac{PA + PB}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កម្ពស់អាគារមួយ ៖ មនុស្សកម្ពស់ <span class=\"mi\">\\(1.6\\,\\text{m}\\)<\/span> ឈរចម្ងាយ <span class=\"mi\">\\(24\\,\\text{m}\\)<\/span> ពីអាគារ មើលឃើញកំពូលដំបូលអាគារតម្រង់តាមកំពូលរបងកម្ពស់ <span class=\"mi\">\\(2.4\\,\\text{m}\\)<\/span> ចម្ងាយ <span class=\"mi\">\\(3\\,\\text{m}\\)<\/span> ពីគាត់។ កម្ពស់អាគារគឺ ៖", "options": ["<span class=\"mi\">\\(6.4\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(8\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(10\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(7.2\\,\\text{m}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរដូចគ្នាមានផលធៀបដំណូច <span class=\"mi\">\\(k = 1\\)<\/span>។ ត្រីកោណទាំងពីរនោះ ៖", "options": ["មិនប៉ុនគ្នាទេ", "មានមុំខុសគ្នា", "ប៉ុនគ្នា (អាំងទែក្រាល)", "មានបរិមាត្រខុសគ្នា"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta A'B'C'\\)<\/span> និង <span class=\"mi\">\\(\\Delta A'B'C' \\sim \\Delta A''B''C''\\)<\/span> នោះ <span class=\"mi\">\\(\\Delta ABC \\sim \\Delta A''B''C''\\)<\/span>។ នេះជាលក្ខណៈ ៖", "options": ["ឆ្លុះ (Reflexive)", "ស៊ីមេទ្រី (Symmetric)", "ប្តូរវេន", "ឆ្លង (Transitive Property)"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ដើម្បីឱ្យចតុកោណពីរដូចគ្នា លក្ខខណ្ឌចាំបាច់គឺ ៖", "options": ["មុំទាំងអស់ប៉ុនរៀងគ្នា និងជ្រុងទាំងអស់សមាមាត្ររៀងគ្នា", "មុំស្មើគ្នាតែម្យ៉ាង", "ជ្រុងសមាមាត្រគ្នាតែម្យ៉ាង", "មានអង្កត់ទ្រូងកែងគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃប្លង់ពង្រីក-បង្រួម (Homothety / Dilation) ផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ផលធៀប <span class=\"mi\">\\(k\\)<\/span> បម្លែងត្រីកោណមួយទៅជា ៖", "options": ["ត្រីកោណកែង", "ត្រីកោណដូចគ្នា", "ត្រីកោណប៉ុនគ្នាជានិច្ច", "បន្ទាត់ត្រង់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

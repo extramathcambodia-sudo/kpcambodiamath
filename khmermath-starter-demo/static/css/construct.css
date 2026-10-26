@@ -1,0 +1,248 @@
+/* khmermath.org — geometric constructions (construct/*.html, static/js/construct.js).
+   The figure is drawn on a light sheet of squared paper in both themes, like a
+   page of an exercise book. */
+.cx-hero .lead { max-width: 640px; }
+.cx-tools { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 18px 0 0; padding: 0; list-style: none; color: var(--ink-3); font-size: 14.5px; }
+.cx-tools li { display: inline-flex; align-items: center; gap: 8px; }
+.cx-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+.cx-section { padding-top: 48px; }
+var { font-family: 'Times New Roman', 'STIX Two Text', serif; font-style: italic; font-size: 1.08em; }
+
+/* ---- the player ---- */
+.cx { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(300px, 1fr); grid-template-areas: 'board side' 'try side'; gap: 18px 26px; align-items: start; }
+.cx-board { grid-area: board; }
+.cx-side { grid-area: side; }
+.cx-try { grid-area: try; }
+.cx-board { position: relative; }
+.cx-stage { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line-2); box-shadow: var(--shadow); background: #fffefa; }
+.cx-svg { display: block; width: 100%; height: auto; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.cx-grid { stroke: #e3ebf3; stroke-width: 1; }
+.cx-grid.b { stroke: #cfdbe8; }
+.cx-seg { stroke: #132238; stroke-width: 3; stroke-linecap: round; }
+.cx-arc { fill: none; stroke: #2d6aa8; stroke-width: 2.4; stroke-linecap: round; }
+.cx-line { stroke: #2e7a70; stroke-width: 3; stroke-linecap: round; }
+.cx-radius { stroke: #c9862b; stroke-width: 2; stroke-dasharray: 6 5; }
+.cx-half { stroke: #6a788a; stroke-width: 2; }
+.cx-equal { stroke: #2d6aa8; stroke-width: 1.4; stroke-dasharray: 4 5; opacity: .55; }
+.cx-right { fill: none; stroke: #2e7a70; stroke-width: 2; }
+.cx-tick { stroke: #c9862b; stroke-width: 2.6; stroke-linecap: round; }
+.cx-pt { fill: #132238; }
+.cx-pt-m { fill: #c9862b; }
+.cx-grab { fill: transparent; cursor: grab; touch-action: none; }
+.cx.dragging .cx-grab { cursor: grabbing; }
+.cx-label { font: 700 20px 'Times New Roman', 'STIX Two Text', serif; font-style: italic; fill: #132238; paint-order: stroke; stroke: #fffefa; stroke-width: 5px; }
+.cx-note { font: 600 15px 'Kantumruy Pro', system-ui, sans-serif; fill: #6a788a; paint-order: stroke; stroke: #fffefa; stroke-width: 4px; }
+.cx-note.cx-r { font: italic 700 18px 'Times New Roman', serif; fill: #c9862b; }
+/* the compass and the ruler */
+.cx-c-leg { stroke: #56677d; stroke-width: 5; stroke-linecap: round; opacity: .9; }
+.cx-c-handle { stroke: #3d5068; stroke-width: 7; stroke-linecap: round; opacity: .9; }
+.cx-c-hinge { fill: #3d5068; stroke: #fff; stroke-width: 1.5; }
+.cx-c-needle { fill: #132238; }
+.cx-c-pencil { fill: #c9862b; stroke: #fff; stroke-width: 1.2; }
+.cx-ruler { fill: rgba(255, 222, 140, .55); stroke: #c9862b; stroke-width: 1.2; }
+.cx-ruler-tick { stroke: #a8732a; stroke-width: 1; }
+.cx-c-leg, .cx-c-handle, .cx-c-hinge, .cx-c-needle, .cx-c-pencil, .cx-ruler, .cx-ruler-tick { pointer-events: none; }
+.cx-warn { position: absolute; left: 12px; right: 12px; bottom: 12px; margin: 0; padding: 8px 14px; border-radius: 10px; background: #fbe7e9; color: #8e2a3c; border: 1px solid #efc0c8; font-size: 15px; }
+.cx-warn[hidden] { display: none; }
+
+.cx-side { display: flex; flex-direction: column; gap: 14px; }
+.cx-now { margin: 0; min-height: 5.6em; padding: 14px 16px; border-radius: var(--radius); background: var(--teal-soft); color: var(--ink); font-size: 16.5px; line-height: 1.8; }
+.cx-now b { display: inline-block; margin-right: 6px; padding: 0 9px; border-radius: 999px; background: var(--teal); color: #fff; font-size: 13.5px; }
+.cx-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cx-controls .btn { min-height: 40px; }
+.cx-controls .btn:disabled { opacity: .45; cursor: default; transform: none; }
+.cx-play.on { background: var(--amber-soft); border-color: var(--amber); color: var(--ink); }
+.cx-reset { font-size: 20px; }
+.cx-steps { margin: 0; padding: 0; list-style: none; counter-reset: cx; border-top: 1px solid var(--line); }
+.cx-steps li { counter-increment: cx; position: relative; padding: 8px 8px 8px 40px; border-bottom: 1px solid var(--line); color: var(--ink-3); font-size: 14.5px; line-height: 1.7; cursor: pointer; border-radius: 8px; }
+.cx-steps li::before { content: counter(cx, khmer); position: absolute; left: 6px; top: 9px; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--line-2); font-size: 13px; color: var(--ink-3); }
+.cx-steps li:hover { background: var(--surface-2); }
+.cx-steps li.done { color: var(--ink-2); }
+.cx-steps li.done::before { background: var(--teal-soft); border-color: var(--teal); color: var(--teal); }
+.cx-steps li.on { color: var(--ink); background: var(--surface-2); font-weight: 600; }
+.cx-steps li.on::before { background: var(--teal); border-color: var(--teal); color: #fff; }
+.cx-try { padding: 14px 16px; border: 1px dashed var(--line-2); border-radius: var(--radius); font-size: 14.5px; color: var(--ink-2); }
+.cx-try p { margin: 0 0 8px; }
+.cx-try-h { font-weight: 700; color: var(--ink); }
+.cx-k-row { display: flex; flex-direction: column; gap: 4px; }
+.cx-k { width: 100%; accent-color: var(--teal); }
+.cx-k-out { margin: 6px 0 0 !important; font-weight: 600; color: var(--teal); }
+.cx-k-out.bad { color: var(--rose); }
+
+/* ---- below the player ---- */
+.cx-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.cx-note-card { padding: 24px 26px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+.section-alt .cx-note-card { background: var(--bg); }
+.cx-note-card h2 { margin-bottom: 10px; font-size: 21px; }
+.cx-note-card p { color: var(--ink-2); }
+.cx-aside { padding: 10px 14px; border-left: 3px solid var(--teal); background: var(--surface-2); border-radius: 0 10px 10px 0; font-size: 15px; }
+.cx-mistakes, .cx-practice { margin: 0; padding-left: 1.3em; color: var(--ink-2); }
+.cx-mistakes li, .cx-practice li { margin-bottom: 10px; }
+.cx-mistakes b { color: var(--ink); }
+.cx-practice details { margin-top: 6px; }
+.cx-practice summary { cursor: pointer; color: var(--teal); font-weight: 600; }
+.cx-links { margin: 0 0 14px; padding: 0; list-style: none; }
+.cx-links li { display: flex; flex-direction: column; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.cx-links a { font-weight: 600; text-decoration: none; }
+.cx-links span { font-size: 14px; color: var(--ink-3); }
+
+/* ---- the menu page ---- */
+.cx-soon-h { margin: 44px 0 16px; font-size: 20px; color: var(--ink-2); }
+.cx-soon .card { padding: 18px 20px; }
+.cx-card .cx-thumb { width: 100%; height: auto; margin: -4px 0 12px; border-radius: 10px; background: #fffefa; border: 1px solid var(--line); }
+.cx-thumb-grid { stroke: #e6edf4; stroke-width: 1; }
+.cx-thumb-arc { fill: none; stroke: #2d6aa8; stroke-width: 2; }
+.cx-thumb-line { stroke: #2e7a70; stroke-width: 2.4; }
+.cx-thumb-seg { stroke: #132238; stroke-width: 2.6; }
+.cx-thumb-right { fill: none; stroke: #2e7a70; stroke-width: 1.6; }
+.cx-thumb circle { fill: #132238; }
+.cx-thumb circle.m { fill: #c9862b; }
+.cx-thumb text { font: italic 700 14px 'Times New Roman', serif; fill: #132238; }
+
+@media (max-width: 960px) {
+  .cx { grid-template-columns: 1fr; grid-template-areas: 'board' 'side' 'try'; }
+  .cx-now { min-height: 0; }
+  .cx-notes { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cx-section { padding-top: 24px; }
+  /* the figure is drawn smaller on a phone: thicker strokes, larger letters */
+  .cx-label { font-size: 32px; stroke-width: 7px; }
+  .cx-note { font-size: 24px; }
+  .cx-note.cx-r { font-size: 28px; }
+  .cx-pt { r: 8px; }
+  .cx-seg, .cx-line { stroke-width: 5; }
+  .cx-arc { stroke-width: 4; }
+  .cx-c-leg { stroke-width: 7; }
+  .cx-grid { stroke-width: 1.5; }
+  .cx-note-card { padding: 18px; }
+  .cx-controls .btn { flex: 1 1 auto; }
+}
+@media print {
+  .cx-controls, .cx-try { display: none; }
+}
+
+/* the angle bisector: handles that turn the sides, and the two equal angles */
+.cx-handle { fill: #fffefa; stroke: #6a788a; stroke-width: 2; }
+.cx-sector { stroke: none; }
+.cx-sector-a { fill: rgba(46, 122, 112, .26); }
+.cx-sector-b { fill: rgba(201, 134, 43, .3); }
+.cx-sector-c { fill: rgba(232, 114, 92, .28); }
+.cx-sector-edge { fill: none; stroke-width: 2.2; }
+.cx-sector-edge-a { stroke: #2e7a70; }
+.cx-sector-edge-b { stroke: #c9862b; }
+.cx-sector-edge-c { stroke: #e8725c; }
+.cx-thumb path.cx-thumb-seg { fill: none; }
+@media (max-width: 640px) { .cx-handle { r: 11px; stroke-width: 3; } }
+/* ready-made cases under the figure (the perpendicular: A off the line, A on the line) */
+.cx-presets { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+.cx-presets .btn { min-height: 36px; }
+/* dividing a segment: the parallels and their arrow heads */
+.cx-line-2 { stroke: #2d6aa8; stroke-width: 2.4; }
+.cx-par { fill: none; stroke: #2d6aa8; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 640px) { .cx-line-2 { stroke-width: 4; } .cx-par { stroke-width: 4; } }
+/* the set square that slides along the ruler */
+.cx-sq { fill: rgba(46, 122, 112, .16); stroke: #2e7a70; stroke-width: 1.6; stroke-linejoin: round; pointer-events: none; }
+.cx-sq-in { fill: none; stroke: #2e7a70; stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
+/* the special angles: a tab for each angle, the extension of a ray, the measure of the angle */
+.cx-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.cx-tab { min-width: 76px; min-height: 44px; padding: 6px 18px; border: 1.5px solid var(--line-2); border-radius: 999px; background: var(--surface); color: var(--ink-2); font: 700 18px 'Times New Roman', 'STIX Two Text', serif; cursor: pointer; }
+.cx-tab-km { font: 600 15.5px 'Kantumruy Pro', system-ui, sans-serif; }
+.cx-tab:hover { border-color: var(--teal); color: var(--ink); }
+.cx-tab[aria-selected="true"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+:root[data-theme="dark"] .cx-tab[aria-selected="true"] { color: #0d1520; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cx-tab[aria-selected="true"] { color: #0d1520; } }
+.cx-tab:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.cx[hidden] { display: none; }
+.cx-ext { stroke: #132238; stroke-width: 2.2; stroke-dasharray: 8 7; stroke-linecap: round; }
+@media (max-width: 640px) { .cx-ext { stroke-width: 3.6; } .cx-tab { flex: 1 1 0; min-width: 0; padding: 6px 8px; } }
+@media print { .cx-tabs { display: none; } .cx[hidden] { display: grid; } }
+/* triangles: the ruler with centimetres, the protractor, the given measures, the triangle */
+.cx-ruler-num { font: 600 10px 'Kantumruy Pro', system-ui, sans-serif; fill: #7a5416; pointer-events: none; }
+.cx-pr { fill: rgba(45, 106, 168, .1); stroke: #2d6aa8; stroke-width: 1.3; pointer-events: none; }
+.cx-pr-tick { stroke: #2d6aa8; stroke-width: 1; pointer-events: none; }
+.cx-pr-num { font: 600 10px 'Kantumruy Pro', system-ui, sans-serif; fill: #24598f; pointer-events: none; }
+.cx-pr-c { fill: #2d6aa8; }
+.cx-pr-mark { stroke: #c9862b; stroke-width: 2.6; stroke-linecap: round; }
+.cx-mark { fill: #c9862b; }
+.cx-given { font: 600 15px 'Kantumruy Pro', system-ui, sans-serif; fill: #132238; paint-order: stroke; stroke: #fffefa; stroke-width: 4px; white-space: pre; }
+.cx-tri { fill: rgba(46, 122, 112, .13); stroke: none; }
+@media (max-width: 640px) {
+  .cx-ruler-num, .cx-pr-num { font-size: 15px; }
+  .cx-given { font-size: 24px; }
+  .cx-tab-km { border-radius: 16px; line-height: 1.45; font-size: 14px; }
+}
+/* the circles of a triangle */
+.cx-circle { fill: none; stroke: #2e7a70; stroke-width: 3; }
+@media (max-width: 640px) { .cx-circle { stroke-width: 5; } }
+/* a tangent: the circle that is given */
+.cx-ring { fill: none; stroke: #132238; stroke-width: 3; }
+@media (max-width: 640px) { .cx-ring { stroke-width: 5; } }
+/* the ellipse drawn with two pins and a string */
+.cx-pin { fill: #b4546a; stroke: #fff; stroke-width: 1.5; }
+.cx-pin-shine { fill: rgba(255, 255, 255, .7); }
+.cx-string { fill: none; stroke: #8a5a1f; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
+.cx-pencil { fill: #e7b24a; stroke: #a8732a; stroke-width: 1; pointer-events: none; }
+.cx-pencil-tip { fill: #f4dcb3; stroke: #a8732a; stroke-width: 1; pointer-events: none; }
+.cx-sum { fill: #2e7a70; }
+@media (max-width: 640px) { .cx-string { stroke-width: 3.6; } .cx-pin { r: 10px; } }
+/* figures of the lessons: the perpendiculars, the task above the player, the list on the menu */
+.cx-perp { stroke: #c9862b; stroke-width: 2.6; stroke-linecap: round; }
+@media (max-width: 640px) { .cx-perp { stroke-width: 4.2; } }
+.cx-task { margin: 0 0 22px; padding: 16px 20px; border-left: 4px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; background: var(--surface); box-shadow: var(--shadow-sm); color: var(--ink-2); }
+.cx-task b { color: var(--ink); }
+.cx-task .src { display: block; margin-bottom: 4px; font-size: 13.5px; color: var(--ink-3); }
+.cx-task ol { margin: 6px 0 0; padding-left: 1.4em; list-style: none; }
+.cx-figs { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.cx-figs a { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); text-decoration: none; }
+.cx-figs a:hover { border-color: var(--teal); }
+.cx-figs .where { font-size: 13.5px; font-weight: 700; color: var(--teal); white-space: nowrap; }
+/* back to the picture of the lesson the visitor came from */
+.cx-back { margin: 0 0 16px; }
+.cx-back[hidden] { display: none; }
+@media print { .cx-back { display: none; } }
+
+.cx-disc { fill: rgba(46, 122, 112, .14); stroke: #2e7a70; stroke-width: 2.4; }
+.cx-trace { stroke: #e8725c; stroke-width: 5; stroke-linecap: round; fill: none; }
+.cx-sector-line { stroke: #2e7a70; stroke-width: 1.4; stroke-linejoin: round; }
+
+/* the protractor: the second scale, the lines between the scales, the degree strokes */
+.cx-pr-line { fill: none; stroke: #2d6aa8; stroke-width: 1; pointer-events: none; }
+.cx-pr-t1 { stroke-width: .6; opacity: .75; }
+.cx-pr-num2 { font-size: 9px; fill: #6a7a8e; }
+@media (max-width: 640px) { .cx-pr-num2 { font-size: 13px; } }
+
+/* the sector page: the rest of the circle, faint */
+.cx-circle-faint { stroke-width: 1.6; stroke-dasharray: 5 5; opacity: .55; }
+.cx-ghost { fill: none; stroke: #c9862b; stroke-width: 2.4; stroke-dasharray: 4 3; }
+.cx-ghost-fill { fill: rgba(201, 134, 43, .22); stroke: #c9862b; stroke-width: 2.4; stroke-dasharray: 6 4; }
+
+/* ---- 3D solids and nets (solids.html) ---- */
+.cx-face { stroke-width: 1.8; stroke-linejoin: round; }
+.cx-face-front { fill: rgba(46, 122, 112, .26); stroke: #2e7a70; }
+.cx-face-top { fill: rgba(45, 106, 168, .22); stroke: #2d6aa8; }
+.cx-face-side { fill: rgba(201, 134, 43, .24); stroke: #c9862b; }
+.cx-face-base { fill: rgba(180, 84, 106, .22); stroke: #b4546a; }
+.cx-face-back { fill: rgba(106, 120, 138, .15); stroke: #6a788a; stroke-dasharray: 4 4; }
+.cx-flap { fill: rgba(106, 120, 138, .12); stroke: #6a788a; stroke-width: 1.2; stroke-dasharray: 4 3; }
+.cx-fold { stroke: #2d6aa8; stroke-width: 1.6; stroke-dasharray: 5 4; }
+.cx-dim { stroke: #8a5a1f; stroke-width: 1.2; }
+.cx-dim-text { font: 600 13px 'Kantumruy Pro', system-ui, sans-serif; fill: #8a5a1f; }
+
+/* ---- pie chart (pie-chart.html) ---- */
+.cx-pie-s1 { fill: rgba(46, 122, 112, .35); stroke: #2e7a70; stroke-width: 2; }
+.cx-pie-s2 { fill: rgba(45, 106, 168, .32); stroke: #2d6aa8; stroke-width: 2; }
+.cx-pie-s3 { fill: rgba(201, 134, 43, .35); stroke: #c9862b; stroke-width: 2; }
+.cx-pie-s4 { fill: rgba(180, 84, 106, .32); stroke: #b4546a; stroke-width: 2; }
+.cx-pie-s5 { fill: rgba(82, 148, 138, .35); stroke: #3e887d; stroke-width: 2; }
+.cx-pie-label { font: 700 13px 'Kantumruy Pro', system-ui, sans-serif; fill: #132238; paint-order: stroke; stroke: #fffefa; stroke-width: 3px; }
+.cx-pie-pct { font: 700 14px 'Times New Roman', serif; fill: #132238; paint-order: stroke; stroke: #fffefa; stroke-width: 3px; }
+.cx-table-bg { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+.cx-th { font: 700 12px 'Kantumruy Pro', system-ui, sans-serif; fill: #1e293b; }
+.cx-td { font: 500 12px 'Kantumruy Pro', system-ui, sans-serif; fill: #334155; }
+
+/* a page of content/construct/apps/ — the app lives in a frame (static/js/appframe.js sets its height) */
+.app-frame { display: block; width: 100%; height: 640px; border: 0; background: transparent; color-scheme: normal; }
+
+/* a page of content/construct/apps/ — the app lives in a frame (static/js/appframe.js sets its height) */
+.app-frame { display: block; width: 100%; height: 640px; border: 0; background: transparent; color-scheme: normal; }

@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៨ : ប្រព័ន្ធសមីការ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៨ «ប្រព័ន្ធសមីការ» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៨ : ប្រព័ន្ធសមីការ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៨ «ប្រព័ន្ធសមីការ» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ៨</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៨</span>
+      <div><span class="ls-kicker">ជំពូកទី ៣ សមីការនិងវិសមីការ · មេរៀនទី ៨ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>ប្រព័ន្ធសមីការ</h1><div class="ls-chips"><span class="chip chip-soon">សមីការនិងវិសមីការ</span><span class="chip chip-soon">៤ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. ប្រព័ន្ធសមីការលីនេអ៊ែរមានពីរអញ្ញាត</a></li><li class="sub"><a href="#u2">២. ការដោះស្រាយតាមដេទែមីណង់ និងវិធានក្រាមែរ (Cramer’s Rule)</a></li><li class="sub"><a href="#u3">៣. ប្រព័ន្ធសមីការលីនេអ៊ែរមានបីអញ្ញាត</a></li><li class="sub"><a href="#u4">៤. ប្រព័ន្ធសមីការមិនលីនេអ៊ែរ និងប្រព័ន្ធឆ្លាស់</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃប្រព័ន្ធសមីការ និងក្បួនដោះស្រាយបុរាណ</b></header><div class="bx-b">
+<p>ការដោះស្រាយប្រព័ន្ធសមីការដែលមានអញ្ញាតច្រើនព្រមគ្នា គឺជាបេះដូងនៃការគ្រប់គ្រងធនធាន និងសេដ្ឋកិច្ចតាំងពីបុរាណកាល។ ក្នុងគម្ពីរគណិតវិទ្យាចិនបុរាណ <em>«សៀវភៅ ៩ ជំពូកស្តីពីសិល្បៈគណិតវិទ្យា» (Jiuzhang Suanshu)</em> ដែលចងក្រងនៅចន្លោះសតវត្សទី ២ មុន គ.ស. ដល់សតវត្សទី ១ នៃ គ.ស. វិធីសាស្ត្រ <em>Fangcheng</em> ត្រូវបានបង្កើតឡើងដើម្បីដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរដោយរៀបចំមេគុណជាតារាងម៉ាទ្រីស និងធ្វើប្រមាណវិធីបំបាត់អញ្ញាត ដែលដូចគ្នាបេះបិទនឹង «ក្បួនបំបាត់ហ្គោស» (Gaussian Elimination) របស់គណិតវិទូអាល្លឺម៉ង់ Carl Friedrich Gauss នៅសតវត្សទី ១៩។</p>
+<p>នៅសតវត្សទី ១៨ គណិតវិទូស្វីស ហ្កាប្រីយ៉ែល ក្រាមែរ (Gabriel Cramer, ១៧០៤–១៧៥២) បានរកឃើញរូបមន្តដ៏ល្បីហៅថា <strong>«វិធានក្រាមែរ (Cramer’s Rule)»</strong> ដែលប្រើប្រាស់ដេទែមីណង់ក្នុងការរកចម្លើយនៃប្រព័ន្ធសមីការលីនេអ៊ែរយ៉ាងឆាប់រហ័ស។</p>
+<p>នៅក្នុងអារ្យធម៌អង្គរដ៏រុងរឿង ការបែងចែកស្បៀងអាហារ ស្រូវអង្ករ កម្លាំងពលកម្មរាប់សែននាក់ និងការគ្រប់គ្រងបរិមាណទឹកហូរចូល និងចេញពីបារាយណ៍ធំៗ សុទ្ធសឹងពឹងផ្អែកលើការគិតគូរទំនាក់ទំនងសមាមាត្រដំណាលគ្នា ដែលជាទម្រង់ជាក់ស្តែងនៃប្រព័ន្ធសមីការ។</p>
+</div></section>
+<h3 id="u1">ប្រព័ន្ធសមីការលីនេអ៊ែរមានពីរអញ្ញាត</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ទម្រង់ទូទៅនៃប្រព័ន្ធសមីការលីនេអ៊ែរ</b></header><div class="bx-b">
+<p>ប្រព័ន្ធសមីការដឺក្រេទីមួយមានពីរអញ្ញាត <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> មានទម្រង់ទូទៅ ៖ <div class="md">\[\begin{cases}
+            a_1 x + b_1 y = c_1 \\
+            a_2 x + b_2 y = c_2
+        \end{cases}\]</div> ដែល <span class="mi">\(a_1, b_1, c_1, a_2, b_2, c_2\)</span> ជាចំនួនពិត ហើយ <span class="mi">\(a_1, b_1\)</span> មិនសូន្យព្រមគ្នា និង <span class="mi">\(a_2, b_2\)</span> មិនសូន្យព្រមគ្នា។ គូចំនួន <span class="mi">\((x_0, y_0)\)</span> ដែលផ្ទៀងផ្ទាត់សមីការទាំងពីរព្រមគ្នា ហៅថា <strong>គូចម្លើយ</strong> នៃប្រព័ន្ធសមីការ។</p>
+</div></section>
+<p>ដើម្បីដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរពីរអញ្ញាត យើងមានវិធីសាស្ត្រពីជគណិតសំខាន់ៗចំនួន ៣ ៖</p>
+<h4>១. វិធីជំនួស (Substitution Method)</h4>
+<p>ជំហានដោះស្រាយ ៖</p>
+<ol class="list oldef cols1">
+<li><p>ទាញរកអថេរមួយ (ឧទាហរណ៍ <span class="mi">\(y\)</span>) ជាអនុគមន៍នៃអថេរមួយទៀតពីសមីការណាមួយ។</p></li>
+<li><p>យកកន្សោមនៃអថេរនោះទៅជំនួសក្នុងសមីការមួយទៀត ដើម្បីបង្កើតសមីការដឺក្រេទីមួយមានមួយអញ្ញាត។</p></li>
+<li><p>ដោះស្រាយរកតម្លៃអញ្ញាតនោះ រួចយកតម្លៃដែលរកឃើញទៅជំនួសដើម្បីទាញរកអញ្ញាតដែលនៅសល់។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <span class="mi">\(\begin{cases} x + 2y = 8 \quad{} (1) \\ 3x - y = 3 \quad{} (2) \end{cases}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាមសមីការ (2) យើងទាញបាន ៖ <span class="mi">\(y = 3x - 3\)</span>។<br/>
+ជំនួស <span class="mi">\(y\)</span> ចូលក្នុងសមីការ (1) ៖ <div class="md">\[x + 2(3x - 3) = 8 \iff x + 6x - 6 = 8 \iff 7x = 14 \implies x = 2\]</div> ជំនួស <span class="mi">\(x = 2\)</span> ចូលក្នុងកន្សោម <span class="mi">\(y\)</span> ៖ <span class="mi">\(y = 3(2) - 3 = 3\)</span>។<br/>
+ដូច្នេះ ប្រព័ន្ធសមីការមានគូចម្លើយតែមួយគត់គឺ <span class="mi">\((x, y) = (2, 3)\)</span>។</p>
+</div></section>
+<h4>២. វិធីបូកលុប ឬវិធីបំបាត់ (Elimination Method)</h4>
+<p>ជំហានដោះស្រាយ ៖</p>
+<ol class="list oldef cols1">
+<li><p>គុណសមីការមួយ ឬទាំងពីរនឹងមេគុណសមស្រប ដើម្បីឱ្យមេគុណនៃអញ្ញាតណាមួយមានតម្លៃស្មើគ្នា ឬផ្ទុយគ្នា។</p></li>
+<li><p>បូក ឬដកសមីការទាំងពីរដើម្បីបំបាត់អញ្ញាតនោះ ចេញជាសមីការមានមួយអញ្ញាត។</p></li>
+<li><p>រកតម្លៃអញ្ញាតនោះ រួចជំនួសដើម្បីរកអញ្ញាតមួយទៀត។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <span class="mi">\(\begin{cases} 2x + 3y = 13 \quad{} (1) \\ 5x - 2y = 4 \quad{} (2) \end{cases}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គុណសមីការ (1) នឹង <span class="mi">\(2\)</span> និងសមីការ (2) នឹង <span class="mi">\(3\)</span> ៖ <div class="md">\[\begin{cases} 4x + 6y = 26 \\ 15x - 6y = 12 \end{cases}\]</div> បូកសមីការទាំងពីរអង្គនិងអង្គ ៖ <span class="mi">\(19x = 38 \implies x = 2\)</span>។<br/>
+ជំនួស <span class="mi">\(x = 2\)</span> ចូលសមីការ (1) ៖ <span class="mi">\(2(2) + 3y = 13 \iff 3y = 9 \implies y = 3\)</span>។<br/>
+ដូចនេះ គូចម្លើយគឺ <span class="mi">\((x, y) = (2, 3)\)</span>។</p>
+</div></section>
+<h3 id="u2">ការដោះស្រាយតាមដេទែមីណង់ និងវិធានក្រាមែរ (Cramer’s Rule)</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>រូបមន្តវិធានក្រាមែរ</b></header><div class="bx-b">
+<p>ចំពោះប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} a_1 x + b_1 y = c_1 \\ a_2 x + b_2 y = c_2 \end{cases}\)</span> យើងកំណត់ដេទែមីណង់ ៖ <div class="md">\[D = \begin{vmatrix} a_1 &amp; b_1 \\ a_2 &amp; b_2 \end{vmatrix} = a_1 b_2 - a_2 b_1\]</div> <div class="md">\[D_x = \begin{vmatrix} c_1 &amp; b_1 \\ c_2 &amp; b_2 \end{vmatrix} = c_1 b_2 - c_2 b_1, \qquad{} D_y = \begin{vmatrix} a_1 &amp; c_1 \\ a_2 &amp; c_2 \end{vmatrix} = a_1 c_2 - a_2 c_1\]</div></p>
+<ul>
+<li><p>បើ <span class="mi">\(D \neq 0\)</span> ៖ ប្រព័ន្ធមានគូចម្លើយតែមួយគត់គឺ <span class="mi">\(x = \dfrac{D_x}{D}, \quad{} y = \dfrac{D_y}{D}\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(D = 0\)</span> និង (<span class="mi">\(D_x \neq 0\)</span> ឬ <span class="mi">\(D_y \neq 0\)</span>) ៖ ប្រព័ន្ធគ្មានចម្លើយ (បន្ទាត់ទាំងពីរស្របគ្នា)។</p></li>
+<li><p>បើ <span class="mi">\(D = D_x = D_y = 0\)</span> ៖ ប្រព័ន្ធមានចម្លើយរាប់មិនអស់ (បន្ទាត់ទាំងពីរត្រួតស៊ីគ្នា)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការតាមវិធានក្រាមែរ ៖ <span class="mi">\(\begin{cases} 3x - 2y = 7 \\ 2x + 3y = 9 \end{cases}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គណនាដេទែមីណង់នីមួយៗ ៖ <div class="md">\[\begin{aligned}
+        D &amp;= \begin{vmatrix} 3 &amp; -2 \\ 2 &amp; 3 \end{vmatrix} = (3)(3) - (2)(-2) = 9 + 4 = 13 \neq 0 \\
+        D_x &amp;= \begin{vmatrix} 7 &amp; -2 \\ 9 &amp; 3 \end{vmatrix} = (7)(3) - (9)(-2) = 21 + 18 = 39 \\
+        D_y &amp;= \begin{vmatrix} 3 &amp; 7 \\ 2 &amp; 9 \end{vmatrix} = (3)(9) - (2)(7) = 27 - 14 = 13
+    
+\end{aligned}\]</div> ដោយ <span class="mi">\(D = 13 \neq 0\)</span> នាំឱ្យប្រព័ន្ធសមីការមានគូចម្លើយតែមួយគត់ ៖ <div class="md">\[x = \frac{D_x}{D} = \frac{39}{13} = 3, \qquad{} y = \frac{D_y}{D} = \frac{13}{13} = 1\]</div> ដូចនេះ គូចម្លើយនៃប្រព័ន្ធសមីការគឺ <span class="mi">\((x, y) = (3, 1)\)</span>។</p>
+</div></section>
+<h3 id="u3">ប្រព័ន្ធសមីការលីនេអ៊ែរមានបីអញ្ញាត</h3>
+<p>ប្រព័ន្ធសមីការលីនេអ៊ែរមានបីអញ្ញាត <span class="mi">\(x, y, z\)</span> មានទម្រង់ទូទៅ ៖ <div class="md">\[\begin{cases} a_1 x + b_1 y + c_1 z = d_1 \\ a_2 x + b_2 y + c_2 z = d_2 \\ a_3 x + b_3 y + c_3 z = d_3 \end{cases}\]</div> វិធីសាស្ត្រទូទៅបំផុតគឺប្រើ <strong>ក្បួនបំបាត់ហ្គោស (Gaussian Elimination)</strong> ដោយផ្គូផ្គងសមីការពីរៗដើម្បីបំបាត់អញ្ញាតដដែលមួយ ទទួលបានប្រព័ន្ធពីរអញ្ញាត រួចបន្តដោះស្រាយដូចប្រព័ន្ធសមីការពីមុន។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <span class="mi">\(\begin{cases} x + y + z = 6 \quad{} &amp;(1) \\ 2x - y + z = 3 \quad{} &amp;(2) \\ x + 2y - z = 2 \quad{} &amp;(3) \end{cases}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+បំបាត់អញ្ញាត <span class="mi">\(z\)</span> ដោយបូកសមីការ ៖</p>
+<ul>
+<li><p>បូកសមីការ (1) និង (3) ៖ <div class="md">\[(x + y + z) + (x + 2y - z) = 6 + 2 \implies 2x + 3y = 8 \quad{} (4)\]</div></p></li>
+<li><p>បូកសមីការ (2) និង (3) ៖ <div class="md">\[(2x - y + z) + (x + 2y - z) = 3 + 2 \implies 3x + y = 5 \quad{} (5)\]</div></p></li>
+</ul>
+<p>តាម (5) យើងទាញបាន ៖ <span class="mi">\(y = 5 - 3x\)</span>។ ជំនួសក្នុង (4) ៖ <div class="md">\[2x + 3(5 - 3x) = 8 \iff 2x + 15 - 9x = 8 \iff -7x = -7 \implies x = 1\]</div> ទាញរក <span class="mi">\(y\)</span> ៖ <span class="mi">\(y = 5 - 3(1) = 2\)</span>។<br/>
+ជំនួស <span class="mi">\(x = 1, y = 2\)</span> ចូលក្នុងសមីការ (1) ៖ <div class="md">\[1 + 2 + z = 6 \implies z = 3\]</div> ដូចនេះ ត្រីគុណចម្លើយនៃប្រព័ន្ធសមីការគឺ <span class="mi">\((x, y, z) = (1, 2, 3)\)</span>។</p>
+</div></section>
+<h3 id="u4">ប្រព័ន្ធសមីការមិនលីនេអ៊ែរ និងប្រព័ន្ធឆ្លាស់</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ប្រព័ន្ធសមីការឆ្លាស់</b></header><div class="bx-b">
+<p>ប្រព័ន្ធសមីការដែលមានទម្រង់ <span class="mi">\(\begin{cases} x + y = S \\ xy = P \end{cases}\)</span> ហៅថាប្រព័ន្ធសមីការឆ្លាស់។ គូចម្លើយ <span class="mi">\((x, y)\)</span> គឺជាឫសនៃសមីការដឺក្រេទីពីរ ៖ <div class="md">\[X^2 - SX + P = 0\]</div> ប្រព័ន្ធនេះមានចម្លើយជាចំនួនពិតលុះត្រាតែ <span class="mi">\(\Delta = S^2 - 4P \ge 0\)</span>។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <span class="mi">\(\begin{cases} x + y = 7 \\ xy = 12 \end{cases}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាមទម្រង់ប្រព័ន្ធសមីការឆ្លាស់ យើងមាន <span class="mi">\(S = x + y = 7\)</span> និង <span class="mi">\(P = xy = 12\)</span>។<br/>
+គូចម្លើយ <span class="mi">\((x, y)\)</span> គឺជាឫសនៃសមីការដឺក្រេទីពីរ ៖ <span class="mi">\(X^2 - 7X + 12 = 0\)</span> ដែលមាន <span class="mi">\(\Delta = (-7)^2 - 4(1)(12) = 1 &gt; 0\)</span>។<br/>
+សមីការមានឫសពីរផ្សេងគ្នា ៖ <span class="mi">\(X_1 = \dfrac{7 - 1}{2} = 3, \quad{} X_2 = \dfrac{7 + 1}{2} = 4\)</span>។<br/>
+ដូចនេះ គូចម្លើយនៃប្រព័ន្ធសមីការគឺ <span class="mi">\((x, y) \in \{(3, 4), (4, 3)\}\)</span>។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <span class="mi">\(\begin{cases} x - y = 1 \quad{} &amp;(1) \\ x^2 + y^2 = 5 \quad{} &amp;(2) \end{cases}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាមសមីការ (1) ទាញបាន <span class="mi">\(x = y + 1\)</span>។ ជំនួសចូលសមីការ (2) ៖ <div class="md">\[(y + 1)^2 + y^2 = 5 \iff 2y^2 + 2y - 4 = 0 \iff y^2 + y - 2 = 0\]</div> សមីការមានផលបូកមេគុណ <span class="mi">\(a+b+c = 1+1-2=0\)</span> នាំឱ្យ <span class="mi">\(y = 1\)</span> ឬ <span class="mi">\(y = -2\)</span> ៖</p>
+<ul>
+<li><p>ចំពោះ <span class="mi">\(y = 1 \implies x = 1 + 1 = 2 \implies (x, y) = (2, 1)\)</span></p></li>
+<li><p>ចំពោះ <span class="mi">\(y = -2 \implies x = -2 + 1 = -1 \implies (x, y) = (-1, -2)\)</span></p></li>
+</ul>
+<p>ដូចនេះ ប្រព័ន្ធសមីការមានគូចម្លើយគឺ <span class="mi">\((x, y) \in \{(2, 1), (-1, -2)\}\)</span>។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរដោយវិធីជំនួស ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} x + y = 7 \\ 2x - y = 5 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} y = 2x - 1 \\ 3x + y = 9 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x - 3y = 2 \\ 2x + y = 11 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 2x + y = 5 \\ 3x - 2y = 4 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរដោយវិធីជំនួស ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} x + y = 7 \quad{} (1) \\ 2x - y = 5 \quad{} (2) \end{cases}\)</span><br/>
+តាម <span class="mi">\((1)\)</span> ៖ <span class="mi">\(y = 7 - x\)</span>។ ជំនួសចូល <span class="mi">\((2)\)</span> ៖<br/>
+<span class="mi">\(2x - (7 - x) = 5 \iff 3x - 7 = 5 \iff 3x = 12 \implies x = 4\)</span>។<br/>
+ជំនួស <span class="mi">\(x = 4\)</span> រក <span class="mi">\(y\)</span> ៖ <span class="mi">\(y = 7 - 4 = 3\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (4, 3)}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} y = 2x - 1 \quad{} (1) \\ 3x + y = 9 \quad{} (2) \end{cases}\)</span><br/>
+ជំនួស <span class="mi">\((1)\)</span> ចូល <span class="mi">\((2)\)</span> ៖ <span class="mi">\(3x + (2x - 1) = 9 \iff 5x = 10 \implies x = 2\)</span>។<br/>
+<span class="mi">\(\implies y = 2(2) - 1 = 3\)</span>។ គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (2, 3)}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\begin{cases} x - 3y = 2 \quad{} (1) \\ 2x + y = 11 \quad{} (2) \end{cases}\)</span><br/>
+តាម <span class="mi">\((1)\)</span> ៖ <span class="mi">\(x = 3y + 2\)</span>។ ជំនួសចូល <span class="mi">\((2)\)</span> ៖<br/>
+<span class="mi">\(2(3y + 2) + y = 11 \iff 7y + 4 = 11 \iff 7y = 7 \implies y = 1\)</span>។<br/>
+<span class="mi">\(\implies x = 3(1) + 2 = 5\)</span>។ គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (5, 1)}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\begin{cases} 2x + y = 5 \quad{} (1) \\ 3x - 2y = 4 \quad{} (2) \end{cases}\)</span><br/>
+តាម <span class="mi">\((1)\)</span> ៖ <span class="mi">\(y = 5 - 2x\)</span>។ ជំនួសចូល <span class="mi">\((2)\)</span> ៖<br/>
+<span class="mi">\(3x - 2(5 - 2x) = 4 \iff 7x - 10 = 4 \iff 7x = 14 \implies x = 2\)</span>។<br/>
+<span class="mi">\(\implies y = 5 - 2(2) = 1\)</span>។ គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (2, 1)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរដោយវិធីបូកលុប ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} 3x + 2y = 12 \\ 5x - 2y = 4 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 2x + 3y = 13 \\ 5x - 2y = 4 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 4x - 3y = 1 \\ 3x + 2y = 5 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 5x + 4y = 22 \\ 3x - 2y = 11 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយដោយវិធីបូកលុប ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} 3x + 2y = 12 \quad{} (1) \\ 5x - 2y = 4 \quad{} (2) \end{cases}\)</span><br/>
+បូក <span class="mi">\((1) + (2)\)</span> អង្គនិងអង្គ ៖ <span class="mi">\(8x = 16 \implies x = 2\)</span>។<br/>
+ជំនួសចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(3(2) + 2y = 12 \iff 2y = 6 \implies y = 3\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (2, 3)}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} 2x + 3y = 13 \quad{} (1) \times 2 \\ 5x - 2y = 4 \quad{} (2) \times 3 \end{cases} \iff \begin{cases} 4x + 6y = 26 \\ 15x - 6y = 12 \end{cases}\)</span><br/>
+បូកបញ្ចូលគ្នា ៖ <span class="mi">\(19x = 38 \implies x = 2\)</span>។<br/>
+ជំនួសចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(2(2) + 3y = 13 \iff 3y = 9 \implies y = 3\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (2, 3)}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\begin{cases} 4x - 3y = 1 \quad{} (1) \times 2 \\ 3x + 2y = 5 \quad{} (2) \times 3 \end{cases} \iff \begin{cases} 8x - 6y = 2 \\ 9x + 6y = 15 \end{cases}\)</span><br/>
+បូកបញ្ចូលគ្នា ៖ <span class="mi">\(17x = 17 \implies x = 1 \implies y = 1\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (1, 1)}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\begin{cases} 5x + 4y = 22 \quad{} (1) \\ 3x - 2y = 11 \quad{} (2) \times 2 \end{cases} \iff \begin{cases} 5x + 4y = 22 \\ 6x - 4y = 22 \end{cases}\)</span><br/>
+បូកបញ្ចូលគ្នា ៖ <span class="mi">\(11x = 44 \implies x = 4\)</span>។<br/>
+<span class="mi">\(\implies 3(4) - 2y = 11 \iff 2y = 1 \implies y = \dfrac{1}{2}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = \left(4, \dfrac{1}{2}\right)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} \dfrac{x}{2} + \dfrac{y}{3} = 4 \\ \dfrac{x}{3} - \dfrac{y}{2} = -3 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} \dfrac{2x-1}{3} + \dfrac{y+2}{4} = 2 \\ \dfrac{x+3}{2} - \dfrac{2y-1}{3} = 1 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធសមីការប្រភាគ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} \dfrac{x}{2} + \dfrac{y}{3} = 4 \quad{} (\times 6) \\ \dfrac{x}{3} - \dfrac{y}{2} = -3 \quad{} (\times 6) \end{cases}\)</span><br/>
+<span class="mi">\(\iff \begin{cases} 3x + 2y = 24 \quad{} (1) \\ 2x - 3y = -18 \quad{} (2) \end{cases}\)</span><br/>
+យក <span class="mi">\((1)\times 3 + (2)\times 2\)</span> ៖<br/>
+<span class="mi">\(9x + 4x = 72 - 36 \iff 13x = 36 \implies x = \dfrac{36}{13}\)</span>។<br/>
+ជំនួស <span class="mi">\(x\)</span> ចូល <span class="mi">\((1)\)</span> ៖<br/>
+<span class="mi">\(2y = 24 - 3\left(\dfrac{36}{13}\right) = \dfrac{204}{13} \implies y = \dfrac{102}{13}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = \left(\dfrac{36}{13}, \dfrac{102}{13}\right)}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} \dfrac{2x-1}{3} + \dfrac{y+2}{4} = 2 \quad{} (\times 12) \\ \dfrac{x+3}{2} - \dfrac{2y-1}{3} = 1 \quad{} (\times 6) \end{cases}\)</span><br/>
+<span class="mi">\(\iff \begin{cases} 8x + 3y = 22 \quad{} (1) \\ 3x - 4y = -5 \quad{} (2) \end{cases}\)</span><br/>
+យក <span class="mi">\((1)\times 4 + (2)\times 3\)</span> ៖<br/>
+<span class="mi">\(32x + 9x = 88 - 15 \iff 41x = 73 \implies x = \dfrac{73}{41}\)</span>។<br/>
+ជំនួស <span class="mi">\(x\)</span> ចូល <span class="mi">\((1)\)</span> ៖<br/>
+<span class="mi">\(3y = 22 - 8\left(\dfrac{73}{41}\right) = \dfrac{318}{41} \implies y = \dfrac{106}{41}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = \left(\dfrac{73}{41}, \dfrac{106}{41}\right)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គណនាដេទែមីណង់ <span class="mi">\(D, D_x, D_y\)</span> រួចដោះស្រាយតាមវិធានក្រាមែរ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} 2x - y = -7 \\ x + 2y = -1 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 3x + 4y = 10 \\ 2x - 3y = 1 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 5x - 2y = 19 \\ 3x + 4y = 1 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 4x + 3y = 7 \\ 2x - 5y = 10 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយតាមវិធានក្រាមែរ (<span class="mi">\(D, D_x, D_y\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} 2x - y = -7 \\ x + 2y = -1 \end{cases}\)</span><br/>
+<span class="mi">\(D = \begin{vmatrix} 2 &amp; -1 \\ 1 &amp; 2 \end{vmatrix} = 4 - (-1) = 5\)</span><br/>
+<span class="mi">\(D_x = \begin{vmatrix} -7 &amp; -1 \\ -1 &amp; 2 \end{vmatrix} = -14 - 1 = -15 \implies x = \dfrac{D_x}{D} = \mathbf{-3}\)</span><br/>
+<span class="mi">\(D_y = \begin{vmatrix} 2 &amp; -7 \\ 1 &amp; -1 \end{vmatrix} = -2 - (-7) = 5 \implies y = \dfrac{D_y}{D} = \mathbf{1}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (-3, 1)}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} 3x + 4y = 10 \\ 2x - 3y = 1 \end{cases}\)</span><br/>
+<span class="mi">\(D = \begin{vmatrix} 3 &amp; 4 \\ 2 &amp; -3 \end{vmatrix} = -9 - 8 = -17\)</span><br/>
+<span class="mi">\(D_x = \begin{vmatrix} 10 &amp; 4 \\ 1 &amp; -3 \end{vmatrix} = -30 - 4 = -34 \implies x = \dfrac{-34}{-17} = \mathbf{2}\)</span><br/>
+<span class="mi">\(D_y = \begin{vmatrix} 3 &amp; 10 \\ 2 &amp; 1 \end{vmatrix} = 3 - 20 = -17 \implies y = \dfrac{-17}{-17} = \mathbf{1}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (2, 1)}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\begin{cases} 5x - 2y = 19 \\ 3x + 4y = 1 \end{cases}\)</span><br/>
+<span class="mi">\(D = 20 - (-6) = 26\)</span><br/>
+<span class="mi">\(D_x = 76 - (-2) = 78 \implies x = \dfrac{78}{26} = \mathbf{3}\)</span><br/>
+<span class="mi">\(D_y = 5 - 57 = -52 \implies y = \dfrac{-52}{26} = \mathbf{-2}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (3, -2)}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\begin{cases} 4x + 3y = 7 \\ 2x - 5y = 10 \end{cases}\)</span><br/>
+<span class="mi">\(D = -20 - 6 = -26\)</span><br/>
+<span class="mi">\(D_x = -35 - 30 = -65 \implies x = \dfrac{-65}{-26} = \mathbf{\dfrac{5}{2}}\)</span><br/>
+<span class="mi">\(D_y = 40 - 14 = 26 \implies y = \dfrac{26}{-26} = \mathbf{-1}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = \left(\dfrac{5}{2}, -1\right)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ដោះស្រាយ និងពិភាក្សាប្រព័ន្ធសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} 2x - 4y = 6 \\ -x + 2y = -3 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 3x + 6y = 9 \\ x + 2y = 5 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ និងពិភាក្សាប្រព័ន្ធសមីការ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} 2x - 4y = 6 \\ -x + 2y = -3 \end{cases}\)</span><br/>
+<span class="mi">\(D = \begin{vmatrix} 2 &amp; -4 \\ -1 &amp; 2 \end{vmatrix} = 4 - 4 = 0\)</span>។<br/>
+<span class="mi">\(D_x = \begin{vmatrix} 6 &amp; -4 \\ -3 &amp; 2 \end{vmatrix} = 12 - 12 = 0\)</span> និង <span class="mi">\(D_y = 0\)</span>។<br/>
+សមីការទាំងពីរសមមូលគ្នា (<span class="mi">\(2x - 4y = 6 \iff x - 2y = 3\)</span>)។<br/>
+<span class="mi">\(\implies\)</span> ប្រព័ន្ធមាន<strong>ចម្លើយរាប់មិនអស់</strong> ទម្រង់ <span class="mi">\((x, y) = (2t + 3, t)\)</span> ចំពោះ <span class="mi">\(t \in \mathbb{R}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} 3x + 6y = 9 \\ x + 2y = 5 \end{cases}\)</span><br/>
+<span class="mi">\(D = \begin{vmatrix} 3 &amp; 6 \\ 1 &amp; 2 \end{vmatrix} = 6 - 6 = 0\)</span>។<br/>
+<span class="mi">\(D_x = \begin{vmatrix} 9 &amp; 6 \\ 5 &amp; 2 \end{vmatrix} = 18 - 30 = -12 \neq 0\)</span>។<br/>
+ដោយ <span class="mi">\(D = 0\)</span> តែ <span class="mi">\(D_x \neq 0\)</span> នាំឱ្យប្រព័ន្ធ<strong>គ្មានចម្លើយ</strong> (បន្ទាត់ស្របគ្នាដាច់ខាត)។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} mx + 2y = 4 \\ 2x + my = 4 \end{cases}\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p>មានគូចម្លើយតែមួយគត់។</p></li>
+<li><p>គ្មានចម្លើយ។</p></li>
+<li><p>មានចម្លើយរាប់មិនអស់។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} mx + 2y = 4 \\ 2x + my = 4 \end{cases}\)</span> ៖<br/>
+<span class="mi">\(D = \begin{vmatrix} m &amp; 2 \\ 2 &amp; m \end{vmatrix} = m^2 - 4 = (m - 2)(m + 2)\)</span>។<br/>
+<span class="mi">\(D_x = \begin{vmatrix} 4 &amp; 2 \\ 4 &amp; m \end{vmatrix} = 4m - 8 = 4(m - 2)\)</span>។<br/>
+<span class="mi">\(D_y = \begin{vmatrix} m &amp; 4 \\ 2 &amp; 4 \end{vmatrix} = 4m - 8 = 4(m - 2)\)</span>។<br/>
+<strong>ក.</strong>  មានគូចម្លើយតែមួយគត់ <span class="mi">\(\iff D \neq 0 \iff m^2 - 4 \neq 0 \iff \mathbf{m \neq \pm 2}\)</span>។<br/>
+ចម្លើយនោះគឺ <span class="mi">\(x = y = \dfrac{4(m-2)}{(m-2)(m+2)} = \mathbf{\dfrac{4}{m+2}}\)</span>។<br/>
+<strong>ខ.</strong>  គ្មានចម្លើយ <span class="mi">\(\iff D = 0\)</span> និង <span class="mi">\(D_x \neq 0\)</span> ៖<br/>
+<span class="mi">\(m = -2 \implies D = 0, D_x = -16 \neq 0 \implies \mathbf{m = -2}\)</span>។<br/>
+<strong>គ.</strong>  មានចម្លើយរាប់មិនអស់ <span class="mi">\(\iff D = D_x = D_y = 0\)</span> ៖<br/>
+<span class="mi">\(m = 2 \implies D = 0, D_x = 0, D_y = 0 \implies \mathbf{m = 2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} (m-1)x + 2y = 3 \\ 2x + my = 2 \end{cases}\)</span> គ្មានចម្លើយ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រព័ន្ធ <span class="mi">\(\begin{cases} (m-1)x + 2y = 3 \\ 2x + my = 2 \end{cases}\)</span> គ្មានចម្លើយ <span class="mi">\(\iff D = 0\)</span> និង <span class="mi">\(D_x \neq 0\)</span> ៖<br/>
+<span class="mi">\(D = m(m - 1) - 4 = m^2 - m - 4 = 0\)</span><br/>
+<span class="mi">\(\Delta = 1 - 4(1)(-4) = 17 \implies \mathbf{m = \dfrac{1 \pm \sqrt{17}}{2}}\)</span>។<br/>
+ត្រួតពិនិត្យ <span class="mi">\(D_x = 3m - 4\)</span> ៖ ចំពោះតម្លៃ <span class="mi">\(m\)</span> ទាំងពីរនេះ ឃើញថា <span class="mi">\(D_x \neq 0\)</span> ពិតប្រាកដ ដូច្នេះប្រព័ន្ធគ្មានចម្លើយ។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>រកតម្លៃនៃ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ដើម្បីឱ្យប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} ax + by = 7 \\ 2ax - 3by = -6 \end{cases}\)</span> ទទួលគូចម្លើយ <span class="mi">\((x, y) = (2, -1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រព័ន្ធទទួល <span class="mi">\((x, y) = (2, -1)\)</span> ជាចម្លើយ ៖<br/>
+ជំនួស <span class="mi">\(x = 2, y = -1\)</span> ចូលប្រព័ន្ធ ៖<br/>
+<span class="mi">\(\begin{cases} a(2) + b(-1) = 7 \\ 2a(2) - 3b(-1) = -6 \end{cases} \iff \begin{cases} 2a - b = 7 \quad{} (1) \\ 4a + 3b = -6 \quad{} (2) \end{cases}\)</span><br/>
+យក <span class="mi">\((1)\times 3 + (2)\)</span> ៖ <span class="mi">\(10a = 15 \implies \mathbf{a = \dfrac{3}{2}}\)</span>។<br/>
+<span class="mi">\(\implies b = 2a - 7 = 2\left(\dfrac{3}{2}\right) - 7 = 3 - 7 = \mathbf{-4}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការដោយវិធីតាងអថេរជំនួយ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} \dfrac{1}{x} + \dfrac{1}{y} = 5 \\ \dfrac{2}{x} - \dfrac{3}{y} = -5 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} \dfrac{4}{x-1} + \dfrac{3}{y+2} = 5 \\ \dfrac{2}{x-1} - \dfrac{1}{y+2} = 0 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយតាមវិធីតាងអថេរជំនួយ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} \dfrac{1}{x} + \dfrac{1}{y} = 5 \\ \dfrac{2}{x} - \dfrac{3}{y} = -5 \end{cases}\)</span> (<span class="mi">\(x, y \neq 0\)</span>) ៖<br/>
+តាង <span class="mi">\(X = \dfrac{1}{x}, Y = \dfrac{1}{y}\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} X + Y = 5 \quad{} (\times 3) \\ 2X - 3Y = -5 \end{cases} \implies 5X = 10 \implies X = 2 \implies Y = 3\)</span>។<br/>
+<span class="mi">\(\implies x = \dfrac{1}{X} = \mathbf{\dfrac{1}{2}},\; y = \dfrac{1}{Y} = \mathbf{\dfrac{1}{3}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} \dfrac{4}{x-1} + \dfrac{3}{y+2} = 5 \\ \dfrac{2}{x-1} - \dfrac{1}{y+2} = 0 \end{cases}\)</span> (<span class="mi">\(x \neq 1, y \neq -2\)</span>) ៖<br/>
+តាង <span class="mi">\(U = \dfrac{1}{x-1}, V = \dfrac{1}{y+2}\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} 4U + 3V = 5 \\ 2U - V = 0 \implies V = 2U \end{cases} \implies 4U + 6U = 5 \implies U = \dfrac{1}{2}, V = 1\)</span>។<br/>
+- <span class="mi">\(x - 1 = \dfrac{1}{U} = 2 \implies \mathbf{x = 3}\)</span>។<br/>
+- <span class="mi">\(y + 2 = \dfrac{1}{V} = 1 \implies \mathbf{y = -1}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = (3, -1)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} \dfrac{3}{x} + \dfrac{4}{y} = 2 \\ \dfrac{9}{x} - \dfrac{2}{y} = 1 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} \dfrac{1}{2x+y} + \dfrac{1}{x-2y} = 1 \\ \dfrac{2}{2x+y} - \dfrac{3}{x-2y} = -3 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} \dfrac{3}{x} + \dfrac{4}{y} = 2 \\ \dfrac{9}{x} - \dfrac{2}{y} = 1 \end{cases}\)</span> ៖<br/>
+តាង <span class="mi">\(X = \dfrac{1}{x}, Y = \dfrac{1}{y}\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} 3X + 4Y = 2 \quad{} (1) \\ 9X - 2Y = 1 \quad{} (2) \end{cases}\)</span><br/>
+យក <span class="mi">\((1) + 2\times (2)\)</span> ៖ <span class="mi">\(21X = 4 \implies X = \dfrac{4}{21}\)</span>។<br/>
+ជំនួស <span class="mi">\(X\)</span> ចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(4Y = 2 - 3\left(\dfrac{4}{21}\right) = \dfrac{10}{7} \implies Y = \dfrac{5}{14}\)</span>។<br/>
+<span class="mi">\(\implies x = \dfrac{1}{X} = \dfrac{21}{4}, \quad{} y = \dfrac{1}{Y} = \dfrac{14}{5}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) = \left(\dfrac{21}{4}, \dfrac{14}{5}\right)}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} \dfrac{1}{2x+y} + \dfrac{1}{x-2y} = 1 \\ \dfrac{2}{2x+y} - \dfrac{3}{x-2y} = -3 \end{cases}\)</span> ៖<br/>
+តាង <span class="mi">\(U = \dfrac{1}{2x+y}, V = \dfrac{1}{x-2y}\)</span> (លក្ខខណ្ឌ <span class="mi">\(2x+y \neq 0, x-2y \neq 0\)</span>) ៖<br/>
+<span class="mi">\(\begin{cases} U + V = 1 \quad{} (1) \\ 2U - 3V = -3 \quad{} (2) \end{cases}\)</span><br/>
+យក <span class="mi">\(3\times (1) + (2) \implies 5U = 0 \implies U = 0\)</span>។<br/>
+ដោយសារ <span class="mi">\(U = \dfrac{1}{2x+y} \neq 0\)</span> ចំពោះគ្រប់ <span class="mi">\(x, y\)</span> នោះសមីការ <span class="mi">\(U = 0\)</span> គ្មានតម្លៃ <span class="mi">\(x, y\)</span> ផ្ទៀងផ្ទាត់ឡើយ។<br/>
+ដូចនេះ <strong>ប្រព័ន្ធសមីការគ្មានដំណោះស្រាយ</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរមានបីអញ្ញាត ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} x + y + z = 6 \\ 2x - y + z = 3 \\ x + 2y - z = 2 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x + 2y - z = 2 \\ 2x - y + 3z = 9 \\ 3x + y + 2z = 11 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធ ៣ អញ្ញាត ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} x + y + z = 6 \quad{} (1) \\ 2x - y + z = 3 \quad{} (2) \\ x + 2y - z = 2 \quad{} (3) \end{cases}\)</span><br/>
+បូក <span class="mi">\((1) + (2)\)</span> ៖ <span class="mi">\(3x + 2z = 9 \quad{} (4)\)</span>។<br/>
+បូក <span class="mi">\((2) + (3)\)</span> ៖ <span class="mi">\(3x + y = 5 \implies y = 5 - 3x\)</span>។<br/>
+ជំនួស <span class="mi">\(y\)</span> ចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(x + (5 - 3x) + z = 6 \implies z = 2x + 1\)</span>។<br/>
+ជំនួស <span class="mi">\(z\)</span> ចូល <span class="mi">\((4)\)</span> ៖ <span class="mi">\(3x + 2(2x + 1) = 9 \iff 7x = 7 \implies x = 1\)</span>។<br/>
+<span class="mi">\(\implies z = 2(1) + 1 = 3, \quad{} y = 5 - 3(1) = 2\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y, z) = (1, 2, 3)}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} x + 2y - z = 2 \quad{} (1) \\ 2x - y + 3z = 9 \quad{} (2) \\ 3x + y + 2z = 11 \quad{} (3) \end{cases}\)</span><br/>
+ដោះស្រាយតាមវិធីបំបាត់ហ្គោស ៖<br/>
+<span class="mi">\((2) - 2(1) \implies -5y + 5z = 5 \iff -y + z = 1 \implies z = y + 1\)</span>។<br/>
+<span class="mi">\((3) - 3(1) \implies -5y + 5z = 5\)</span> (សមីការស្របគ្នា)។<br/>
+ជំនួស <span class="mi">\(x = 2 - 2y + z = 2 - 2y + y + 1 = 3 - y\)</span>។<br/>
+គូចម្លើយមានទម្រង់ <span class="mi">\(\mathbf{(x, y, z) = (3 - t, t, t + 1)}\)</span> ចំពោះ <span class="mi">\(t \in \mathbb{R}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរមានបីអញ្ញាត ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} 2x + y - z = 1 \\ x - y + 2z = 5 \\ 3x + 2y + z = 8 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x + y = 3 \\ y + z = 5 \\ z + x = 4 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធ ៣ អញ្ញាត ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} 2x + y - z = 1 \quad{} (1) \\ x - y + 2z = 5 \quad{} (2) \\ 3x + 2y + z = 8 \quad{} (3) \end{cases}\)</span><br/>
+បូក <span class="mi">\((1) + (2)\)</span> ៖ <span class="mi">\(3x + z = 6 \implies z = 6 - 3x\)</span>។<br/>
+យក <span class="mi">\(2\times (1) + (2)\)</span> ៖ <span class="mi">\(5x + y = 7 \implies y = 7 - 5x\)</span>។<br/>
+ជំនួស <span class="mi">\(y, z\)</span> ចូល <span class="mi">\((3)\)</span> ៖<br/>
+<span class="mi">\(3x + 2(7 - 5x) + (6 - 3x) = 8 \iff -10x + 20 = 8 \implies x = \dfrac{6}{5}\)</span>។<br/>
+<span class="mi">\(\implies y = 7 - 5\left(\dfrac{6}{5}\right) = 1, \quad{} z = 6 - 3\left(\dfrac{6}{5}\right) = \dfrac{12}{5}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y, z) = \left(\dfrac{6}{5}, 1, \dfrac{12}{5}\right)}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} x + y = 3 \quad{} (1) \\ y + z = 5 \quad{} (2) \\ z + x = 4 \quad{} (3) \end{cases}\)</span><br/>
+បូកសមីការទាំងបីអង្គនិងអង្គ ៖<br/>
+<span class="mi">\(2(x + y + z) = 3 + 5 + 4 = 12 \implies x + y + z = 6\)</span>។<br/>
+- <span class="mi">\(z = (x+y+z) - (x+y) = 6 - 3 = \mathbf{3}\)</span>។<br/>
+- <span class="mi">\(x = (x+y+z) - (y+z) = 6 - 5 = \mathbf{1}\)</span>។<br/>
+- <span class="mi">\(y = (x+y+z) - (z+x) = 6 - 4 = \mathbf{2}\)</span>។<br/>
+ដូចនេះ <span class="mi">\(\mathbf{(x, y, z) = (1, 2, 3)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} 2x + 3y + z = 13 \\ x - 2y + 3z = 8 \\ 3x + y - 2z = 1 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធ ៖<br/>
+<span class="mi">\(\begin{cases} 2x + 3y + z = 13 \quad{} (1) \\ x - 2y + 3z = 8 \quad{} (2) \\ 3x + y - 2z = 1 \quad{} (3) \end{cases}\)</span><br/>
+តាម <span class="mi">\((2)\)</span> ៖ <span class="mi">\(x = 2y - 3z + 8\)</span>។ ជំនួសចូល <span class="mi">\((1)\)</span> និង <span class="mi">\((3)\)</span> ៖<br/>
+- <span class="mi">\(2(2y - 3z + 8) + 3y + z = 13 \iff 7y - 5z = -3 \quad{} (4)\)</span><br/>
+- <span class="mi">\(3(2y - 3z + 8) + y - 2z = 1 \iff 7y - 11z = -23 \quad{} (5)\)</span><br/>
+យក <span class="mi">\((4) - (5)\)</span> ៖ <span class="mi">\(6z = 20 \implies z = \dfrac{10}{3}\)</span>។<br/>
+តាម <span class="mi">\((4)\)</span> ៖ <span class="mi">\(7y = 5\left(\dfrac{10}{3}\right) - 3 = \dfrac{41}{3} \implies y = \dfrac{41}{21}\)</span>។<br/>
+តាម <span class="mi">\((2)\)</span> ៖ <span class="mi">\(x = 2\left(\dfrac{41}{21}\right) - 3\left(\dfrac{10}{3}\right) + 8 = \dfrac{40}{21}\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y, z) = \left(\dfrac{40}{21}, \dfrac{41}{21}, \dfrac{10}{3}\right)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x + y + z + t = 10 \\ 2x - y + z - t = 0 \\ x + 2y - z + 2t = 11 \\ 3x + y + 2z - t = 8 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធ ៤ អញ្ញាត ៖<br/>
+<span class="mi">\(\begin{cases} x + y + z + t = 10 \quad{} (1) \\ 2x - y + z - t = 0 \quad{} (2) \\ x + 2y - z + 2t = 11 \quad{} (3) \\ 3x + y + 2z - t = 8 \quad{} (4) \end{cases}\)</span><br/>
+អនុវត្តវិធីបំបាត់អថេរហ្គោស (Gauss Elimination) ៖<br/>
+- បូក <span class="mi">\((1) + (2)\)</span> ៖ <span class="mi">\(3x + 2z = 10 \quad{} (5)\)</span><br/>
+- បូក <span class="mi">\((1) + (4)\)</span> ៖ <span class="mi">\(4x + 2y + 3z = 18 \quad{} (6)\)</span><br/>
+- យក <span class="mi">\((3) + 2(2)\)</span> ៖ <span class="mi">\(5x - 3y + z = 11 \quad{} (7)\)</span><br/>
+ដោះស្រាយប្រព័ន្ធលីនេអ៊ែរ គេទទួលបានចម្លើយពិតប្រាកដ ៖<br/>
+<span class="mi">\(\mathbf{(x, y, z, t) = \left(\dfrac{12}{7}, \dfrac{27}{14}, \dfrac{17}{7}, \dfrac{55}{14}\right)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការមិនលីនេអ៊ែរ (មួយដឺក្រេទីមួយ មួយដឺក្រេទីពីរ) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} x + y = 5 \\ x^2 + y^2 = 13 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x - y = 2 \\ x^2 + y^2 = 20 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} 2x + y = 7 \\ x^2 + xy = 6 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x + 2y = 4 \\ x^2 + 4y^2 = 10 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធមិនលីនេអ៊ែរ (ដឺក្រេទីមួយ និងដឺក្រេទីពីរ) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} x + y = 5 \implies y = 5 - x \\ x^2 + y^2 = 13 \end{cases}\)</span><br/>
+<span class="mi">\(x^2 + (5 - x)^2 = 13 \iff 2x^2 - 10x + 25 = 13 \iff x^2 - 5x + 6 = 0\)</span><br/>
+<span class="mi">\((x - 2)(x - 3) = 0 \implies x = 2 \implies y = 3\)</span> ឬ <span class="mi">\(x = 3 \implies y = 2\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) \in \{(2, 3), (3, 2)\}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} x - y = 2 \implies x = y + 2 \\ x^2 + y^2 = 20 \end{cases}\)</span><br/>
+<span class="mi">\((y + 2)^2 + y^2 = 20 \iff 2y^2 + 4y - 16 = 0 \iff y^2 + 2y - 8 = 0\)</span><br/>
+<span class="mi">\((y + 4)(y - 2) = 0 \implies y = 2 \implies x = 4\)</span> ឬ <span class="mi">\(y = -4 \implies x = -2\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) \in \{(4, 2), (-2, -4)\}}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\begin{cases} 2x + y = 7 \implies y = 7 - 2x \\ x^2 + xy = 6 \end{cases}\)</span><br/>
+<span class="mi">\(x^2 + x(7 - 2x) = 6 \iff -x^2 + 7x - 6 = 0 \iff x^2 - 7x + 6 = 0\)</span><br/>
+<span class="mi">\((x - 1)(x - 6) = 0 \implies x = 1 \implies y = 5\)</span> ឬ <span class="mi">\(x = 6 \implies y = -5\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) \in \{(1, 5), (6, -5)\}}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\begin{cases} x + 2y = 4 \implies x = 4 - 2y \\ x^2 + 4y^2 = 10 \end{cases}\)</span><br/>
+<span class="mi">\((4 - 2y)^2 + 4y^2 = 10 \iff 16 - 16y + 4y^2 + 4y^2 = 10\)</span><br/>
+<span class="mi">\(8y^2 - 16y + 6 = 0 \iff 4y^2 - 8y + 3 = 0 \iff (2y - 1)(2y - 3) = 0\)</span><br/>
+<span class="mi">\(\implies y = \dfrac{1}{2} \implies x = 3\)</span> ឬ <span class="mi">\(y = \dfrac{3}{2} \implies x = 1\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) \in \left\{\left(3, \dfrac{1}{2}\right), \left(1, \dfrac{3}{2}\right)\right\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការឆ្លាស់ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} x + y = 9 \\ xy = 20 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x + y = 7 \\ xy = 12 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x + y = -3 \\ xy = -10 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x + y = 1 \\ xy = -6 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធសមីការឆ្លាស់ (<span class="mi">\(S = x+y, P = xy\)</span>) ៖<br/>
+<span class="mi">\(x, y\)</span> ជាឫសនៃសមីការ <span class="mi">\(X^2 - SX + P = 0\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(X^2 - 9X + 20 = 0 \iff (X - 4)(X - 5) = 0 \implies \mathbf{(x, y) \in \{(4, 5), (5, 4)\}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(X^2 - 7X + 12 = 0 \iff (X - 3)(X - 4) = 0 \implies \mathbf{(x, y) \in \{(3, 4), (4, 3)\}}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(X^2 + 3X - 10 = 0 \iff (X + 5)(X - 2) = 0 \implies \mathbf{(x, y) \in \{(2, -5), (-5, 2)\}}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(X^2 - X - 6 = 0 \iff (X - 3)(X + 2) = 0 \implies \mathbf{(x, y) \in \{(3, -2), (-2, 3)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\begin{cases} x^2 + y^2 = 25 \\ xy = 12 \end{cases}\)</span></p></li>
+<li><p><span class="mi">\(\begin{cases} x^2 + y^2 = 34 \\ x + y = 8 \end{cases}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\begin{cases} x^2 + y^2 = 25 \\ xy = 12 \end{cases} \implies (x + y)^2 = x^2 + y^2 + 2xy = 25 + 24 = 49\)</span><br/>
+<span class="mi">\(\implies x + y = \pm 7\)</span>។<br/>
+- បើ <span class="mi">\(x + y = 7, xy = 12 \implies (x, y) \in \{(3, 4), (4, 3)\}\)</span>។<br/>
+- បើ <span class="mi">\(x + y = -7, xy = 12 \implies (x, y) \in \{(-3, -4), (-4, -3)\}\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) \in \{(3, 4), (4, 3), (-3, -4), (-4, -3)\}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\begin{cases} x^2 + y^2 = 34 \\ x + y = 8 \end{cases} \implies 2xy = (x+y)^2 - (x^2+y^2) = 64 - 34 = 30\)</span><br/>
+<span class="mi">\(\implies xy = 15\)</span>។<br/>
+<span class="mi">\(X^2 - 8X + 15 = 0 \iff (X - 3)(X - 5) = 0 \implies \mathbf{(x, y) \in \{(3, 5), (5, 3)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x + y + xy = 11 \\ x^2 y + xy^2 = 30 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} x + y + xy = 11 \\ x^2 y + xy^2 = 30 \end{cases}\)</span> ៖<br/>
+តាង <span class="mi">\(S = x + y\)</span> និង <span class="mi">\(P = xy\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} S + P = 11 \\ SP = 30 \end{cases}\)</span><br/>
+<span class="mi">\(S, P\)</span> ជាឫសនៃ <span class="mi">\(T^2 - 11T + 30 = 0 \iff (T - 5)(T - 6) = 0\)</span> ៖<br/>
+- ករណី <span class="mi">\(S = 5, P = 6 \implies X^2 - 5X + 6 = 0 \implies \mathbf{(x, y) \in \{(2, 3), (3, 2)\}}\)</span>។<br/>
+- ករណី <span class="mi">\(S = 6, P = 5 \implies X^2 - 6X + 5 = 0 \implies \mathbf{(x, y) \in \{(1, 5), (5, 1)\}}\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) \in \{(2, 3), (3, 2), (1, 5), (5, 1)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x^3 + y^3 = 35 \\ x + y = 5 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} x^3 + y^3 = 35 \\ x + y = 5 \end{cases}\)</span> ៖<br/>
+ប្រើរូបមន្ត <span class="mi">\(x^3 + y^3 = (x + y)[(x + y)^2 - 3xy]\)</span> ៖<br/>
+<span class="mi">\(5(5^2 - 3xy) = 35 \iff 25 - 3xy = 7 \iff 3xy = 18 \implies xy = 6\)</span>។<br/>
+សមីការមាន <span class="mi">\(S = 5, P = 6 \implies X^2 - 5X + 6 = 0\)</span> ៖<br/>
+<span class="mi">\(\implies \mathbf{(x, y) \in \{(2, 3), (3, 2)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x^2 - xy + y^2 = 7 \\ x + y = 5 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} x^2 - xy + y^2 = 7 \\ x + y = 5 \end{cases}\)</span> ៖<br/>
+<span class="mi">\((x + y)^2 - 3xy = 7 \iff 5^2 - 3xy = 7 \iff 25 - 3xy = 7 \implies xy = 6\)</span>។<br/>
+<span class="mi">\(\implies X^2 - 5X + 6 = 0 \implies \mathbf{(x, y) \in \{(2, 3), (3, 2)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x^2 + y^2 + x + y = 18 \\ xy + x + y = 11 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} x^2 + y^2 + x + y = 18 \\ xy + x + y = 11 \end{cases}\)</span> ៖<br/>
+តាង <span class="mi">\(S = x + y\)</span> និង <span class="mi">\(P = xy\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} S^2 - 2P + S = 18 \quad{} (1) \\ P + S = 11 \implies P = 11 - S \quad{} (2) \end{cases}\)</span><br/>
+ជំនួស <span class="mi">\((2)\)</span> ចូល <span class="mi">\((1)\)</span> ៖<br/>
+<span class="mi">\(S^2 - 2(11 - S) + S = 18 \iff S^2 + 3S - 22 = 18 \iff S^2 + 3S - 40 = 0\)</span><br/>
+<span class="mi">\((S - 5)(S + 8) = 0 \implies S = 5 \lor S = -8\)</span>។<br/>
+- បើ <span class="mi">\(S = 5 \implies P = 6 \implies X^2 - 5X + 6 = 0 \implies \mathbf{(x, y) \in \{(2, 3), (3, 2)\}}\)</span>។<br/>
+- បើ <span class="mi">\(S = -8 \implies P = 19 \implies X^2 + 8X + 19 = 0\)</span> (<span class="mi">\(\Delta = 64 - 76 &lt; 0\)</span> គ្មានឫសពិត)។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x^2 + y = 7 \\ y^2 + x = 7 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} x^2 + y = 7 \quad{} (1) \\ y^2 + x = 7 \quad{} (2) \end{cases}\)</span> ៖<br/>
+យក <span class="mi">\((1) - (2)\)</span> ៖ <span class="mi">\((x^2 - y^2) - (x - y) = 0 \iff (x - y)(x + y - 1) = 0\)</span> ៖<br/>
+- <strong>ករណី ១</strong> ៖ <span class="mi">\(x = y\)</span> ៖<br/>
+ជំនួសចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(x^2 + x - 7 = 0 \implies \mathbf{x = y = \dfrac{-1 \pm \sqrt{29}}{2}}\)</span>។<br/>
+- <strong>ករណី ២</strong> ៖ <span class="mi">\(x + y = 1 \implies y = 1 - x\)</span> ៖<br/>
+ជំនួសចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(x^2 + (1 - x) = 7 \iff x^2 - x - 6 = 0\)</span><br/>
+<span class="mi">\((x - 3)(x + 2) = 0 \implies x = 3 \implies y = -2\)</span> ឬ <span class="mi">\(x = -2 \implies y = 3\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) \in \{(3, -2), (-2, 3)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} 2x^2 - 3xy + y^2 = 0 \\ x^2 + 2xy - y^2 = 7 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} 2x^2 - 3xy + y^2 = 0 \quad{} (1) \\ x^2 + 2xy - y^2 = 7 \quad{} (2) \end{cases}\)</span> ៖<br/>
+តាម <span class="mi">\((1)\)</span> ៖ <span class="mi">\((2x - y)(x - y) = 0 \implies y = 2x \lor y = x\)</span> ៖<br/>
+- បើ <span class="mi">\(y = 2x\)</span> ជំនួសចូល <span class="mi">\((2)\)</span> ៖<br/>
+<span class="mi">\(x^2 + 2x(2x) - (2x)^2 = 7 \iff x^2 + 4x^2 - 4x^2 = 7 \iff x^2 = 7 \implies x = \pm\sqrt{7}\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) = (\sqrt{7}, 2\sqrt{7}) \lor (-\sqrt{7}, -2\sqrt{7})}\)</span>។<br/>
+- បើ <span class="mi">\(y = x\)</span> ជំនួសចូល <span class="mi">\((2)\)</span> ៖<br/>
+<span class="mi">\(x^2 + 2x^2 - x^2 = 7 \iff 2x^2 = 7 \implies x = \pm\sqrt{\dfrac{7}{2}} = \pm\dfrac{\sqrt{14}}{2}\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{(x, y) = \left(\dfrac{\sqrt{14}}{2}, \dfrac{\sqrt{14}}{2}\right) \lor \left(-\dfrac{\sqrt{14}}{2}, -\dfrac{\sqrt{14}}{2}\right)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x^2 + 2y^2 = 17 \\ 2x^2 + y^2 = 22 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x^2 + 2y^2 = 17 \\ 2x^2 + y^2 = 22 \end{cases}\]</div> តាង <span class="mi">\(X = x^2 \ge 0, Y = y^2 \ge 0\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} X + 2Y = 17 \\ 2X + Y = 22 \end{cases} \implies X = 9, Y = 4\)</span>។<br/>
+- <span class="mi">\(x^2 = 9 \implies x = \pm 3\)</span>។<br/>
+- <span class="mi">\(y^2 = 4 \implies y = \pm 2\)</span>។<br/>
+ប្រព័ន្ធមាន ៤ គូចម្លើយ ៖<br/>
+<span class="mi">\(\mathbf{(x, y) \in \{(3, 2), (3, -2), (-3, 2), (-3, -2)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} \sqrt{x} + \sqrt{y} = 5 \\ x + y = 13 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} \sqrt{x} + \sqrt{y} = 5 \\ x + y = 13 \end{cases}\)</span> (<span class="mi">\(x, y \ge 0\)</span>) ៖<br/>
+តាង <span class="mi">\(u = \sqrt{x} \ge 0, v = \sqrt{y} \ge 0\)</span> ៖<br/>
+<span class="mi">\(\begin{cases} u + v = 5 \\ u^2 + v^2 = 13 \end{cases} \implies 2uv = (u+v)^2 - (u^2+v^2) = 25 - 13 = 12 \implies uv = 6\)</span>។<br/>
+<span class="mi">\(u, v\)</span> ជាឫសនៃ <span class="mi">\(T^2 - 5T + 6 = 0 \implies (u, v) \in \{(2, 3), (3, 2)\}\)</span>។<br/>
+- បើ <span class="mi">\((u, v) = (2, 3) \implies x = 2^2 = 4,\; y = 3^2 = 9\)</span>។<br/>
+- បើ <span class="mi">\((u, v) = (3, 2) \implies x = 9,\; y = 4\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) \in \{(4, 9), (9, 4)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} \sqrt{\dfrac{x}{y}} + \sqrt{\dfrac{y}{x}} = \dfrac{5}{2} \\ x + y = 10 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} \sqrt{\dfrac{x}{y}} + \sqrt{\dfrac{y}{x}} = \dfrac{5}{2} \\ x + y = 10 \end{cases}\)</span> (<span class="mi">\(x, y &gt; 0\)</span>) ៖<br/>
+តាង <span class="mi">\(t = \sqrt{\dfrac{x}{y}} &gt; 0 \implies t + \dfrac{1}{t} = \dfrac{5}{2} \iff 2t^2 - 5t + 2 = 0 \implies t = 2 \lor t = \dfrac{1}{2}\)</span> ៖<br/>
+- បើ <span class="mi">\(t = 2 \implies \dfrac{x}{y} = 4 \implies x = 4y\)</span>។ ជំនួសចូល <span class="mi">\(x + y = 10\)</span> ៖<br/>
+<span class="mi">\(4y + y = 10 \iff 5y = 10 \implies y = 2 \implies x = 8\)</span>។<br/>
+- បើ <span class="mi">\(t = \dfrac{1}{2} \implies y = 4x \implies 5x = 10 \implies x = 2 \implies y = 8\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) \in \{(8, 2), (2, 8)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} |x| + y = 5 \\ x + |y| = 3 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} |x| + y = 5 \quad{} (1) \\ x + |y| = 3 \quad{} (2) \end{cases}\)</span> ៖<br/>
+- បើ <span class="mi">\(x \ge 0, y \ge 0\)</span> ៖ <span class="mi">\(\begin{cases} x + y = 5 \\ x + y = 3 \end{cases}\)</span> (គ្មានចម្លើយ)។<br/>
+- បើ <span class="mi">\(x &lt; 0, y \ge 0\)</span> ៖ <span class="mi">\(\begin{cases} -x + y = 5 \implies y = x + 5 \\ x + y = 3 \end{cases}\)</span><br/>
+<span class="mi">\(\implies x + (x + 5) = 3 \iff 2x = -2 \implies x = -1\)</span>។<br/>
+<span class="mi">\(\implies y = -1 + 5 = 4 \ge 0\)</span> (ផ្ទៀងផ្ទាត់)។<br/>
+- បើ <span class="mi">\(x \ge 0, y &lt; 0\)</span> ៖ <span class="mi">\(\begin{cases} x + y = 5 \\ x - y = 3 \end{cases} \implies 2x = 8 \implies x = 4, y = 1 \not&lt; 0\)</span> (មិនយក)។<br/>
+- បើ <span class="mi">\(x &lt; 0, y &lt; 0\)</span> ៖ <span class="mi">\(\begin{cases} -x + y = 5 \\ x - y = 3 \end{cases}\)</span> (ផ្ទុយគ្នា គ្មានចម្លើយ)។<br/>
+ដូចនេះ ប្រព័ន្ធមានចម្លើយតែមួយគត់គឺ ៖ <span class="mi">\(\mathbf{(x, y) = (-1, 4)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} |x - 1| + |y - 2| = 3 \\ x + y = 6 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} |x - 1| + |y - 2| = 3 \\ x + y = 6 \end{cases}\)</span> ៖<br/>
+តាមសមីការទីពីរ ៖ <span class="mi">\(y = 6 - x\)</span>។ ជំនួសចូលសមីការទីមួយ ៖<br/>
+<span class="mi">\(|x - 1| + |(6 - x) - 2| = 3 \iff |x - 1| + |4 - x| = 3\)</span>។<br/>
+តាមវិសមីការត្រីកោណ <span class="mi">\(|x - 1| + |4 - x| \ge |(x - 1) + (4 - x)| = 3\)</span>។<br/>
+សមភាពកើតឡើងលុះត្រាតែ <span class="mi">\((x - 1)\)</span> និង <span class="mi">\((4 - x)\)</span> មានសញ្ញាដូចគ្នា ៖<br/>
+<span class="mi">\((x - 1)(4 - x) \ge 0 \iff 1 \le x \le 4\)</span>។<br/>
+ដូចនេះ សំណុំចម្លើយគឺជាគ្រប់គូ <span class="mi">\((x, y)\)</span> ដែល ៖<br/>
+<span class="mi">\(\mathbf{(x, y) = (x, 6 - x)\text{ ចំពោះ } x \in [1, 4]}\)</span>។<br/>
+(ចំពោះចំនួនគត់ ៖ <span class="mi">\((1, 5), (2, 4), (3, 3), (4, 2)\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>រកពីរចំនួនដែលដឹងថាផលបូករបស់វាស្មើនឹង <span class="mi">\(85\)</span> ហើយផលដករបស់វាស្មើនឹង <span class="mi">\(15\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងពីរចំនួននោះដោយ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> (<span class="mi">\(x \ge y\)</span>) ៖<br/>
+<span class="mi">\(\begin{cases} x + y = 85 \\ x - y = 15 \end{cases}\)</span><br/>
+បូកសមីការទាំងពីរ ៖ <span class="mi">\(2x = 100 \implies x = 50\)</span>។<br/>
+ជំនួសចូលសមីការទីមួយ ៖ <span class="mi">\(50 + y = 85 \implies y = 35\)</span>។<br/>
+ដូចនេះ ពីរចំនួននោះគឺ <strong><span class="mi">\(50\)</span> និង <span class="mi">\(35\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>រកពីរចំនួនដែលដឹងថាមួយធំជាងមួយទៀត <span class="mi">\(12\)</span> ហើយផលបូកស្មើនឹងពីរដងនៃផលដករបស់វា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងពីរចំនួនដោយ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> (<span class="mi">\(x &gt; y\)</span>) ៖<br/>
+<span class="mi">\(\begin{cases} x - y = 12 \quad{} (1) \\ x + y = 2(x - y) \quad{} (2) \end{cases}\)</span><br/>
+តាម <span class="mi">\((1)\)</span> ជំនួសចូល <span class="mi">\((2)\)</span> ៖ <span class="mi">\(x + y = 2(12) = 24\)</span>។<br/>
+យើងបានប្រព័ន្ធ ៖ <span class="mi">\(\begin{cases} x - y = 12 \\ x + y = 24 \end{cases} \implies 2x = 36 \implies x = 18, y = 6\)</span>។<br/>
+ដូចនេះ ពីរចំនួននោះគឺ <strong><span class="mi">\(18\)</span> និង <span class="mi">\(6\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ក្នុងកសិដ្ឋានមួយមានចិញ្ចឹមមាន់ និងជ្រូកសរុបមានក្បាល <span class="mi">\(40\)</span> និងជើង <span class="mi">\(110\)</span>។ រកចំនួនមាន់ និងចំនួនជ្រូក។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងចំនួនមាន់ដោយ <span class="mi">\(x\)</span> និងចំនួនជ្រូកដោយ <span class="mi">\(y\)</span> (<span class="mi">\(x, y \in \mathbb{N}\)</span>) ៖<br/>
+- សរុបក្បាល ៖ <span class="mi">\(x + y = 40 \quad{} (1)\)</span><br/>
+- សរុបជើង (មាន់មាន ២ ជើង, ជ្រូកមាន ៤ ជើង) ៖ <span class="mi">\(2x + 4y = 110 \quad{} (2)\)</span><br/>
+យក <span class="mi">\((2) - 2(1)\)</span> ៖ <span class="mi">\(2y = 110 - 80 = 30 \implies y = 15\)</span>។<br/>
+<span class="mi">\(\implies x = 40 - 15 = 25\)</span>។<br/>
+ដូចនេះ មាន<strong>មាន់ចំនួន <span class="mi">\(25\)</span> ក្បាល និងជ្រូកចំនួន <span class="mi">\(15\)</span> ក្បាល</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>ទូកមួយបើកបរចុះតាមខ្សែទឹក បានចម្ងាយ <span class="mi">\(36\text{ km}\)</span> ក្នុងរយៈពេល <span class="mi">\(2\)</span> ម៉ោង។ ពេលបើកបរ បញ្ច្រាសទឹក ក្នុងចម្ងាយដដែល ចំណាយពេល <span class="mi">\(3\)</span> ម៉ោង។ រកល្បឿនពិត នៃទូកក្នុងទឹកស្ងប់ និងល្បឿន នៃខ្សែទឹកហូរ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងល្បឿនទូកក្នុងទឹកស្ងប់ដោយ <span class="mi">\(v\)</span> និងល្បឿនខ្សែទឹកដោយ <span class="mi">\(v_w\)</span> (<span class="mi">\(v &gt; v_w &gt; 0\)</span>, km/h) ៖<br/>
+- ល្បឿនចុះទឹក ៖ <span class="mi">\(v + v_w = \dfrac{36}{2} = 18\text{ km/h}\)</span><br/>
+- ល្បឿនបញ្ច្រាសទឹក ៖ <span class="mi">\(v - v_w = \dfrac{36}{3} = 12\text{ km/h}\)</span><br/>
+<span class="mi">\(\begin{cases} v + v_w = 18 \\ v - v_w = 12 \end{cases} \implies 2v = 30 \implies v = 15\text{ km/h}, v_w = 3\text{ km/h}\)</span>។<br/>
+ដូចនេះ ល្បឿនទូកគឺ <strong><span class="mi">\(15\text{ km/h}\)</span></strong> និងល្បឿនខ្សែទឹកគឺ <strong><span class="mi">\(3\text{ km/h}\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>ឪពុកម្នាក់មានអាយុច្រើនជាងកូន ៣ ដង។ ក្នុងរយៈពេល ១២ ឆ្នាំទៀត អាយុរបស់គាត់នឹងច្រើនជាងកូន ២ ដង។ រកអាយុបច្ចុប្បន្នរបស់ឪពុក និងកូន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងអាយុឪពុកបច្ចុប្បន្នដោយ <span class="mi">\(x\)</span> និងអាយុកូនដោយ <span class="mi">\(y\)</span> (ឆ្នាំ) ៖<br/>
+<span class="mi">\(\begin{cases} x = 3y \quad{} (1) \\ x + 12 = 2(y + 12) \quad{} (2) \end{cases}\)</span><br/>
+ជំនួស <span class="mi">\((1)\)</span> ចូល <span class="mi">\((2)\)</span> ៖ <span class="mi">\(3y + 12 = 2y + 24 \implies y = 12\)</span> ឆ្នាំ។<br/>
+<span class="mi">\(\implies x = 3(12) = 36\)</span> ឆ្នាំ។<br/>
+ដូចនេះ <strong>ឪពុកមានអាយុ <span class="mi">\(36\)</span> ឆ្នាំ និងកូនមានអាយុ <span class="mi">\(12\)</span> ឆ្នាំ</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>រកចំនួនមួយដែលមានលេខពីរខ្ទង់ ដោយដឹងថាផលបូកលេខខ្ទង់ស្មើ <span class="mi">\(9\)</span> ហើយបើត្រឡប់លេខខ្ទង់វិញ ចំនួនថ្មីធំជាងចំនួនដើម <span class="mi">\(27\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងចំនួនពីរខ្ទង់ដោយ <span class="mi">\(\overline{xy} = 10x + y\)</span><br/>
+(<span class="mi">\(1 \le x \le 9, 0 \le y \le 9\)</span>) ៖<br/>
+<span class="mi">\(\begin{cases} x + y = 9 \\ (10y + x) - (10x + y) = 27 \end{cases}\)</span><br/>
+<span class="mi">\(\iff \begin{cases} x + y = 9 \\ y - x = 3 \end{cases}\)</span><br/>
+បូកសមីការទាំងពីរ ៖ <span class="mi">\(2y = 12 \implies y = 6 \implies x = 3\)</span>។<br/>
+ដូចនេះ ចំនួនដើមនោះគឺ <strong><span class="mi">\(36\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>គេមានសូលុយស្យុងអាស៊ីតពីរប្រភេទ ៖ ប្រភេទទីមួយមានកំហាប់ <span class="mi">\(10\%\)</span> និងប្រភេទទីពីរមានកំហាប់ <span class="mi">\(30\%\)</span>។ តើត្រូវយកសូលុយស្យុងនីមួយៗប៉ុន្មានលីត្រដើម្បីលាយបានសូលុយស្យុងកំហាប់ <span class="mi">\(18\%\)</span> ចំនួន <span class="mi">\(100\text{ L}\)</span>?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងបរិមាណសូលុយស្យុង <span class="mi">\(10\%\)</span> ដោយ <span class="mi">\(x\)</span> និងសូលុយស្យុង <span class="mi">\(30\%\)</span> ដោយ <span class="mi">\(y\)</span> (លីត្រ) ៖<br/>
+<span class="mi">\(\begin{cases} x + y = 100 \\ 0.10x + 0.30y = 0.18(100) = 18 \end{cases}\)</span><br/>
+គុណសមីការទីពីរនឹង <span class="mi">\(10\)</span> ៖ <span class="mi">\(x + 3y = 180\)</span>។<br/>
+ដកសមីការទីមួយ ៖ <span class="mi">\(2y = 80 \implies y = 40\text{ L} \implies x = 60\text{ L}\)</span>។<br/>
+ដូចនេះ ត្រូវប្រើ<strong>សូលុយស្យុង <span class="mi">\(10\%\)</span> ចំនួន <span class="mi">\(60\text{ L}\)</span> និងសូលុយស្យុង <span class="mi">\(30\%\)</span> ចំនួន <span class="mi">\(40\text{ L}\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>រកវិមាត្រនៃចតុកោណកែងមួយដែលដឹងថា បើបង្កើនបណ្តោយ <span class="mi">\(2\text{ m}\)</span> និងទទឹង <span class="mi">\(3\text{ m}\)</span> នោះផ្ទៃក្រឡាកើន <span class="mi">\(54\text{ m}^2\)</span>។ តែបើបន្ថយបណ្តោយ <span class="mi">\(1\text{ m}\)</span> និងទទឹង <span class="mi">\(1\text{ m}\)</span> នោះផ្ទៃក្រឡាថយ <span class="mi">\(17\text{ m}^2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងបណ្តោយដោយ <span class="mi">\(x\)</span> និងទទឹងដោយ <span class="mi">\(y\)</span> (<span class="mi">\(x &gt; y &gt; 0\)</span>, m) ៖<br/>
+- <span class="mi">\((x + 2)(y + 3) = xy + 54 \iff 3x + 2y = 48 \quad{} (1)\)</span><br/>
+- <span class="mi">\((x - 1)(y - 1) = xy - 17 \iff x + y = 18 \quad{} (2)\)</span><br/>
+យក <span class="mi">\((1) - 2(2)\)</span> ៖ <span class="mi">\(x = 48 - 36 = 12\text{ m}\)</span>។<br/>
+<span class="mi">\(\implies y = 18 - 12 = 6\text{ m}\)</span>។<br/>
+ដូចនេះ <strong>បណ្តោយស្មើ <span class="mi">\(12\text{ m}\)</span> និងទទឹងស្មើ <span class="mi">\(6\text{ m}\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>កំណត់តម្លៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} x + my = 1 \\ mx + y = m^2 \end{cases}\)</span> មានចម្លើយ <span class="mi">\((x, y)\)</span> ផ្ទៀងផ្ទាត់ <span class="mi">\(x &gt; 0\)</span> និង <span class="mi">\(y &gt; 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រព័ន្ធសមីការ <span class="mi">\(\begin{cases} x + my = 1 \quad{} (1) \\ mx + y = m^2 \quad{} (2) \end{cases}\)</span> ៖<br/>
+<span class="mi">\(D = 1 - m^2\)</span>។<br/>
+<span class="mi">\(D_x = 1 - m^3\)</span> និង <span class="mi">\(D_y = m^2 - m = m(m - 1)\)</span>។<br/>
+ចំពោះ <span class="mi">\(m \neq \pm 1\)</span> ៖<br/>
+<span class="mi">\(x = \dfrac{1 - m^3}{1 - m^2} = \dfrac{m^2 + m + 1}{m + 1}\)</span> និង <span class="mi">\(y = \dfrac{m(m-1)}{-(m-1)(m+1)} = \dfrac{-m}{m + 1}\)</span>។<br/>
+លក្ខខណ្ឌ <span class="mi">\(x &gt; 0\)</span> និង <span class="mi">\(y &gt; 0\)</span> ៖<br/>
+- <span class="mi">\(m^2 + m + 1 &gt; 0\)</span> ជានិច្ចគ្រប់ <span class="mi">\(m\)</span> នាំឱ្យ <span class="mi">\(x &gt; 0 \iff m + 1 &gt; 0 \iff m &gt; -1\)</span>។<br/>
+- <span class="mi">\(y = \dfrac{-m}{m + 1} &gt; 0\)</span> ដោយ <span class="mi">\(m + 1 &gt; 0 \implies -m &gt; 0 \iff m &lt; 0\)</span>។<br/>
+ផ្សំលក្ខខណ្ឌទាំងពីរ ៖ <span class="mi">\(\mathbf{-1 &lt; m &lt; 0}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>រកគ្រប់គូចំនួនគត់ <span class="mi">\((x, y)\)</span> ដែលផ្ទៀងផ្ទាត់សមីការ ៖ <span class="mi">\(xy + 2x - 3y = 11\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការ <span class="mi">\(xy + 2x - 3y = 11\)</span> (<span class="mi">\(x, y \in \mathbb{Z}\)</span>) ៖<br/>
+<span class="mi">\(x(y + 2) - 3(y + 2) - 6 = 11 \iff (x - 3)(y + 2) = 5\)</span>។<br/>
+ដោយ <span class="mi">\(x, y \in \mathbb{Z}\)</span> នាំឱ្យ <span class="mi">\((x-3)\)</span> និង <span class="mi">\((y+2)\)</span> ជាតួចែកនៃ <span class="mi">\(5\)</span> (<span class="mi">\(\pm 1, \pm 5\)</span>) ៖<br/>
+1. <span class="mi">\(\begin{cases} x - 3 = 1 \implies x = 4 \\ y + 2 = 5 \implies y = 3 \end{cases}\)</span><br/>
+2. <span class="mi">\(\begin{cases} x - 3 = 5 \implies x = 8 \\ y + 2 = 1 \implies y = -1 \end{cases}\)</span><br/>
+3. <span class="mi">\(\begin{cases} x - 3 = -1 \implies x = 2 \\ y + 2 = -5 \implies y = -7 \end{cases}\)</span><br/>
+4. <span class="mi">\(\begin{cases} x - 3 = -5 \implies x = -2 \\ y + 2 = -1 \implies y = -3 \end{cases}\)</span><br/>
+គូចំនួនគត់ ៖ <span class="mi">\(\mathbf{(x, y) \in \{(4, 3), (8, -1), (2, -7), (-2, -3)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} xy = 6 \\ yz = 12 \\ zx = 8 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} xy = 6 \quad{} (1) \\ yz = 12 \quad{} (2) \\ zx = 8 \quad{} (3) \end{cases}\)</span> ៖<br/>
+គុណសមីការទាំងបីបញ្ចូលគ្នា ៖<br/>
+<span class="mi">\((xy)(yz)(zx) = (xyz)^2 = 6 \times 12 \times 8 = 576 = 24^2\)</span><br/>
+<span class="mi">\(\implies xyz = 24 \lor xyz = -24\)</span>។<br/>
+- បើ <span class="mi">\(xyz = 24\)</span> ៖<br/>
+<span class="mi">\(z = \dfrac{xyz}{xy} = \dfrac{24}{6} = 4,\; x = \dfrac{xyz}{yz} = \dfrac{24}{12} = 2,\; y = \dfrac{xyz}{zx} = \dfrac{24}{8} = 3\)</span>។<br/>
+- បើ <span class="mi">\(xyz = -24\)</span> ៖ <span class="mi">\(x = -2, y = -3, z = -4\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y, z) \in \{(2, 3, 4), (-2, -3, -4)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x(y+z) = 8 \\ y(z+x) = 18 \\ z(x+y) = 20 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} xy + xz = 8 \quad{} (1) \\ yz + xy = 18 \quad{} (2) \\ zx + yz = 20 \quad{} (3) \end{cases}\)</span> ៖<br/>
+បូកសមីការទាំងបីបញ្ចូលគ្នា ៖<br/>
+<span class="mi">\(2(xy + yz + zx) = 8 + 18 + 20 = 46 \implies xy + yz + zx = 23\)</span>។<br/>
+- <span class="mi">\(yz = 23 - (xy + xz) = 23 - 8 = 15\)</span>។<br/>
+- <span class="mi">\(zx = 23 - (yz + xy) = 23 - 18 = 5\)</span>។<br/>
+- <span class="mi">\(xy = 23 - (zx + yz) = 23 - 20 = 3\)</span>។<br/>
+<span class="mi">\((xyz)^2 = (xy)(yz)(zx) = 3 \times 15 \times 5 = 225 = 15^2 \implies xyz = \pm 15\)</span>។<br/>
+- បើ <span class="mi">\(xyz = 15 \implies \mathbf{x = 1, y = 3, z = 5}\)</span>។<br/>
+- បើ <span class="mi">\(xyz = -15 \implies \mathbf{x = -1, y = -3, z = -5}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x^2 + xy + y^2 = 3 \\ x^4 + x^2 y^2 + y^4 = 21 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} x^2 + xy + y^2 = 3 \\ x^4 + x^2 y^2 + y^4 = 21 \end{cases}\)</span> ៖<br/>
+ប្រើកត្តាសមភាព ៖ <span class="mi">\(x^4 + x^2 y^2 + y^4 = (x^2 + xy + y^2)(x^2 - xy + y^2)\)</span> ៖<br/>
+<span class="mi">\(21 = 3(x^2 - xy + y^2) \implies x^2 - xy + y^2 = 7\)</span>។<br/>
+យកសមីការទាំងពីរដកគ្នា ៖ <span class="mi">\(2xy = 3 - 7 = -4 \implies xy = -2\)</span>។<br/>
+បូកគ្នា ៖ <span class="mi">\(2(x^2 + y^2) = 10 \implies x^2 + y^2 = 5\)</span>។<br/>
+<span class="mi">\((x + y)^2 = x^2 + y^2 + 2xy = 5 - 4 = 1 \implies x + y = \pm 1\)</span>។<br/>
+- <span class="mi">\(x + y = 1, xy = -2 \implies X^2 - X - 2 = 0 \implies (2, -1) \lor (-1, 2)\)</span>។<br/>
+- <span class="mi">\(x + y = -1, xy = -2 \implies X^2 + X - 2 = 0 \implies (1, -2) \lor (-2, 1)\)</span>។<br/>
+គូចម្លើយ ៖ <span class="mi">\(\mathbf{(x, y) \in \{(2, -1), (-1, 2), (1, -2), (-2, 1)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <div class="md">\[\begin{cases} x + y + z = 9 \\ \dfrac{1}{x} + \dfrac{1}{y} + \dfrac{1}{z} = 1 \\ xy + yz + zx = 27 \end{cases}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} x + y + z = 9 \\ \dfrac{1}{x} + \dfrac{1}{y} + \dfrac{1}{z} = 1 \\ xy + yz + zx = 27 \end{cases}\)</span> ៖<br/>
+ពីសមីការទីពីរ ៖ <span class="mi">\(\dfrac{xy + yz + zx}{xyz} = 1 \implies xyz = xy + yz + zx = 27\)</span>។<br/>
+តាមទ្រឹស្តីបទវីយ៉ែត <span class="mi">\(x, y, z\)</span> ជាឫសនៃសមីការដឺក្រេទី ៣ ៖<br/>
+<span class="mi">\(T^3 - 9T^2 + 27T - 27 = 0 \iff (T - 3)^3 = 0 \implies T = 3\)</span> (ឫសត្រួត ៣ ដង)។<br/>
+ដូចនេះ ចម្លើយតែមួយគត់គឺ ៖ <span class="mi">\(\mathbf{(x, y, z) = (3, 3, 3)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ដោះស្រាយប្រព័ន្ធសមីការ ៖ <span class="mi">\(\begin{cases} 2x^2 - y^2 = 1 \\ 3xy + 2y^2 = 8 \end{cases}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយ <span class="mi">\(\begin{cases} 2x^2 - y^2 = 1 \quad{} (1) \\ 3xy + 2y^2 = 8 \quad{} (2) \end{cases}\)</span> ៖<br/>
+គុណ <span class="mi">\((1)\)</span> នឹង <span class="mi">\(8\)</span> រួចដក <span class="mi">\((2)\)</span> ដើម្បីទទួលបានសមីការអូម៉ូសែន ៖<br/>
+<span class="mi">\(8(2x^2 - y^2) - (3xy + 2y^2) = 0 \iff 16x^2 - 3xy - 10y^2 = 0\)</span>។<br/>
+ដោយ <span class="mi">\(y \neq 0\)</span> (បើ <span class="mi">\(y=0\)</span> នោះ <span class="mi">\(3xy+2y^2=0 \neq 8\)</span>) តាង <span class="mi">\(x = ty\)</span> ៖<br/>
+<span class="mi">\(16t^2 - 3t - 10 = 0 \implies t = \dfrac{3 \pm \sqrt{649}}{32}\)</span>។<br/>
+ជំនួស <span class="mi">\(x = ty\)</span> ចូល <span class="mi">\((1)\)</span> ៖<br/>
+<span class="mi">\(y^2(2t^2 - 1) = 1 \implies y = \pm\dfrac{1}{\sqrt{2t^2 - 1}}\)</span> និង <span class="mi">\(x = ty\)</span>។<br/>
+ដូចនេះ គូចម្លើយនៃប្រព័ន្ធគឺ <span class="mi">\((x, y) = (\pm ty_0, \pm y_0)\)</span><br/>
+ដែល <span class="mi">\(y_0 = \dfrac{1}{\sqrt{2t^2 - 1}}\)</span> និង <span class="mi">\(t = \dfrac{3 \pm \sqrt{649}}{32}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>កំណត់ <span class="mi">\(a, b, c\)</span> នៃអនុគមន៍ <span class="mi">\(y = ax^2 + bx + c\)</span> ដោយដឹងថាក្រាបរបស់វាកាត់តាមចំណុច <span class="mi">\(A(1, 2)\)</span>, <span class="mi">\(B(-1, 8)\)</span> និង <span class="mi">\(C(2, 5)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប៉ារ៉ាបូល <span class="mi">\(y = ax^2 + bx + c\)</span> កាត់តាមចំណុច<br/>
+<span class="mi">\(A(1, 2)\)</span>, <span class="mi">\(B(-1, 8)\)</span>, <span class="mi">\(C(2, 5)\)</span> ៖<br/>
+ជំនួសចំណុចនីមួយៗ ៖<br/>
+<span class="mi">\(\begin{cases} a + b + c = 2 \quad{} (1) \\ a - b + c = 8 \quad{} (2) \\ 4a + 2b + c = 5 \quad{} (3) \end{cases}\)</span><br/>
+យក <span class="mi">\((1) - (2)\)</span> ៖ <span class="mi">\(2b = -6 \implies \mathbf{b = -3}\)</span>។<br/>
+យក <span class="mi">\((1) + (2)\)</span> ៖ <span class="mi">\(2a + 2c = 10 \implies a + c = 5 \implies c = 5 - a\)</span>។<br/>
+ជំនួស <span class="mi">\(b = -3\)</span> និង <span class="mi">\(c = 5 - a\)</span> ចូល <span class="mi">\((3)\)</span> ៖<br/>
+<span class="mi">\(4a + 2(-3) + (5 - a) = 5 \iff 3a - 1 = 5 \iff 3a = 6 \implies \mathbf{a = 2}\)</span>។<br/>
+<span class="mi">\(\implies c = 5 - 2 = \mathbf{3}\)</span>។<br/>
+ដូចនេះ សមីការប៉ារ៉ាបូលគឺ ៖ <span class="mi">\(\mathbf{y = 2x^2 - 3x + 3}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>រកសមីការរង្វង់ <span class="mi">\(x^2 + y^2 + ax + by + c = 0\)</span> ដែលកាត់តាមចំណុច <span class="mi">\(P(1, 1)\)</span>, <span class="mi">\(Q(2, -1)\)</span> និង <span class="mi">\(R(3, 2)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រង្វង់ <span class="mi">\(x^2 + y^2 + ax + by + c = 0\)</span> កាត់តាម <span class="mi">\(P(1, 1), Q(2, -1), R(3, 2)\)</span> ៖<br/>
+ជំនួសចំណុចនីមួយៗបង្កើតបានប្រព័ន្ធលីនេអ៊ែរ ៣ អញ្ញាត ៖<br/>
+<span class="mi">\(\begin{cases} a + b + c = -2 \\ 2a - b + c = -5 \\ 3a + 2b + c = -13 \end{cases}\)</span><br/>
+ដោះស្រាយប្រព័ន្ធលីនេអ៊ែរ ទទួលបាន <span class="mi">\(a = -4, b = -2, c = 4\)</span>។<br/>
+សមីការរង្វង់គឺ ៖ <span class="mi">\(\mathbf{x^2 + y^2 - 4x - 2y + 4 = 0}\)</span> (ឬ <span class="mi">\((x-2)^2 + (y-1)^2 = 1\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការលក់សំបុត្រទស្សនាការប្រគំតន្ត្រី ៖</strong> ក្នុងពិធីប្រគំតន្ត្រីសប្បុរសធម៌មួយ សំបុត្រត្រូវបានបែងចែកជាពីរប្រភេទ ៖ សំបុត្រធម្មតាតម្លៃ <span class="mi">\(8\$\)</span> និងសំបុត្រពិសេស VIP តម្លៃ <span class="mi">\(15\$\)</span>។ អ្នករៀបចំកម្មវិធីលក់សំបុត្របានសរុបចំនួន <span class="mi">\(500\)</span> សន្លឹក និងប្រមូលប្រាក់បានសរុប <span class="mi">\(5400\$\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>សរសេរប្រព័ន្ធសមីការតំណាងឱ្យស្ថានភាព។</p></li>
+<li><p>គណនាចំនួនសំបុត្រប្រភេទនីមួយៗ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការលក់សំបុត្រទស្សនាការប្រគំតន្ត្រី ៖</strong><br/>
+តាង <span class="mi">\(x\)</span> ជាចំនួនសំបុត្រធម្មតា (<span class="mi">\(8\$\)</span>) និង <span class="mi">\(y\)</span> ជាចំនួនសំបុត្រ VIP (<span class="mi">\(15\$\)</span>) ៖<br/>
+<strong>ក.</strong>  ប្រព័ន្ធសមីការតំណាងឱ្យស្ថានភាព ៖<br/>
+<span class="mi">\(\mathbf{\begin{cases} x + y = 500 \\ 8x + 15y = 5400 \end{cases}}\)</span><br/>
+<strong>ខ.</strong>  គុណសមីការទីមួយនឹង <span class="mi">\(8\)</span> ៖ <span class="mi">\(8x + 8y = 4000\)</span>។<br/>
+ដកពីសមីការទីពីរ ៖ <span class="mi">\(7y = 1400 \implies \mathbf{y = 200}\)</span> សន្លឹក VIP។<br/>
+<span class="mi">\(\implies x = 500 - 200 = \mathbf{300}\)</span> សន្លឹកធម្មតា។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - យុទ្ធសាស្ត្រវិនិយោគហិរញ្ញវត្ថុ ៖</strong> អ្នកវិនិយោគម្នាក់បានបែងចែកប្រាក់សន្សំចំនួន <span class="mi">\(40\,000\$\)</span> ទៅវិនិយោគក្នុងគម្រោងពីរផ្សេងគ្នា។ គម្រោងទីមួយទទួលបានអត្រាការប្រាក់ប្រចាំឆ្នាំ <span class="mi">\(5\%\)</span> និងគម្រោងទីពីរទទួលបានអត្រាការប្រាក់ <span class="mi">\(8\%\)</span>។ ក្រោយរយៈពេលមួយឆ្នាំ គាត់ទទួលបានការប្រាក់សរុបចំនួន <span class="mi">\(2600\$\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>កំណត់ប្រព័ន្ធសមីការតំណាងឱ្យទុនវិនិយោគ។</p></li>
+<li><p>គណនាទំហំទឹកប្រាក់ក្នុងគម្រោងនីមួយៗ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - យុទ្ធសាស្ត្រវិនិយោគហិរញ្ញវត្ថុ ៖</strong><br/>
+តាង <span class="mi">\(x\)</span> ជាទុនវិនិយោគក្នុងគម្រោងទីមួយ (<span class="mi">\(5\%\)</span>) និង <span class="mi">\(y\)</span> ក្នុងគម្រោងទីពីរ (<span class="mi">\(8\%\)</span>) ៖<br/>
+<strong>ក.</strong>  ប្រព័ន្ធសមីការ ៖<br/>
+<span class="mi">\(\mathbf{\begin{cases} x + y = 40\,000 \\ 0.05x + 0.08y = 2600 \end{cases}}\)</span><br/>
+<strong>ខ.</strong>  គុណសមីការទីពីរនឹង <span class="mi">\(20\)</span> ៖ <span class="mi">\(x + 1.6y = 52\,000\)</span>។<br/>
+ដកសមីការទីមួយ ៖ <span class="mi">\(0.6y = 12\,000 \implies \mathbf{y = 20\,000\$}\)</span>។<br/>
+<span class="mi">\(\implies x = 40\,000 - 20\,000 = \mathbf{20\,000\$}\)</span>។<br/>
+ដូចនេះ វិនិយោគក្នុងគម្រោងនីមួយៗចំនួន <strong><span class="mi">\(20\,000\$\)</span></strong> ស្មើគ្នា។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - សៀគ្វីអគ្គិសនីច្បាប់ Kirchhoff ៖</strong> ក្នុងសៀគ្វីអគ្គិសនីបិទជិតពីររង្វិល ចរន្តអគ្គិសនី <span class="mi">\(I_1\)</span> និង <span class="mi">\(I_2\)</span> (គិតជាអំពែ A) ផ្ទៀងផ្ទាត់ប្រព័ន្ធសមីការច្បាប់ Kirchhoff ៖ <span class="mi">\(\begin{cases} 4I_1 + 2I_2 = 16 \\ 2I_1 + 5I_2 = 20 \end{cases}\)</span></p>
+<ol class="list olka cols2">
+<li><p>ដោះស្រាយប្រព័ន្ធសមីការគណនា <span class="mi">\(I_1, I_2\)</span>។</p></li>
+<li><p>គណនាចរន្តរួម <span class="mi">\(I = I_1 + I_2\)</span> ឆ្លងកាត់ខ្សែបម្រុង។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - សៀគ្វីអគ្គិសនីច្បាប់ Kirchhoff ៖</strong><br/>
+<span class="mi">\(\begin{cases} 4I_1 + 2I_2 = 16 \quad{} (1) \\ 2I_1 + 5I_2 = 20 \quad{} (2) \end{cases}\)</span> ៖<br/>
+<strong>ក.</strong>  គុណ <span class="mi">\((2)\)</span> នឹង <span class="mi">\(2\)</span> ៖ <span class="mi">\(4I_1 + 10I_2 = 40\)</span>។<br/>
+ដក <span class="mi">\((1)\)</span> ៖ <span class="mi">\(8I_2 = 24 \implies \mathbf{I_2 = 3\text{ A}}\)</span>។<br/>
+ជំនួសចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(4I_1 + 6 = 16 \iff 4I_1 = 10 \implies \mathbf{I_1 = 2.5\text{ A}}\)</span>។<br/>
+<strong>ខ.</strong>  ចរន្តរួម ៖ <span class="mi">\(I = I_1 + I_2 = 2.5 + 3 = \mathbf{5.5\text{ A}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការរៀបចំរបបអាហាររូបត្ថម្ភ ៖</strong> អ្នកជំនាញអាហារូបត្ថម្ភចង់រៀបចំរបបអាហារមួយដោយផ្សំពីអាហារប្រភេទ A និងប្រភេទ B។ អាហារ A មួយកញ្ចប់មានប្រូតេអ៊ីន <span class="mi">\(10\text{ g}\)</span> និងកាបូអ៊ីដ្រាត <span class="mi">\(20\text{ g}\)</span>។ អាហារ B មួយកញ្ចប់មានប្រូតេអ៊ីន <span class="mi">\(15\text{ g}\)</span> និងកាបូអ៊ីដ្រាត <span class="mi">\(10\text{ g}\)</span>។ តើត្រូវប្រើអាហារប្រភេទ A និង B ប៉ុន្មានកញ្ចប់ដើម្បីទទួលបានប្រូតេអ៊ីន <span class="mi">\(65\text{ g}\)</span> និងកាបូអ៊ីដ្រាត <span class="mi">\(70\text{ g}\)</span> យ៉ាងពិតប្រាកដ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA ៖</strong><br/>
+<strong>ការរៀបចំរបបអាហាររូបត្ថម្ភ ៖</strong><br/>
+តាង <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាចំនួនកញ្ចប់អាហារប្រភេទ A និង B ៖<br/>
+<span class="mi">\(\begin{cases} 10A + 15B = 65 \quad{} (\text{ប្រូតេអ៊ីន}) \\ 20A + 10B = 70 \quad{} (\text{កាបូអ៊ីដ្រាត}) \end{cases}\)</span><br/>
+<span class="mi">\(\iff \begin{cases} 2A + 3B = 13 \quad{} (\times 2) \\ 2A + B = 7 \end{cases}\)</span><br/>
+<span class="mi">\(\implies 4A + 6B = 26\)</span>។<br/>
+យក <span class="mi">\((2A + 3B) - (2A + B) = 13 - 7 \iff 2B = 6 \implies \mathbf{B = 3}\)</span> កញ្ចប់។<br/>
+<span class="mi">\(\implies 2A + 3 = 7 \iff 2A = 4 \implies \mathbf{A = 2}\)</span> កញ្ចប់។<br/>
+ដូចនេះ ត្រូវប្រើ <strong>អាហារ A ចំនួន ២ កញ្ចប់ និងអាហារ B ចំនួន ៣ កញ្ចប់</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ភស្តុភារកម្ម និងការដឹកជញ្ជូន ៖</strong> ឃ្លាំងទំនិញមួយមានរថយន្តពីរប្រភេទ ៖ ប្រភេទតូចដឹកបាន <span class="mi">\(3\)</span> តោន  និងប្រភេទធំដឹកបាន <span class="mi">\(5\)</span> តោន ។ ដើម្បីដឹកជញ្ជូនទំនិញសរុប <span class="mi">\(62\)</span> តោន  គេត្រូវប្រើប្រាស់រថយន្តទាំងពីរប្រភេទសរុបចំនួន <span class="mi">\(16\)</span> ជើង។ រកចំនួនជើងដែលរថយន្តប្រភេទនីមួយៗត្រូវធ្វើដំណើរ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ភស្តុភារកម្ម និងការដឹកជញ្ជូន ៖</strong><br/>
+តាង <span class="mi">\(x\)</span> ជាចំនួនជើងរថយន្តតូច (<span class="mi">\(3\text{ t}\)</span>) និង <span class="mi">\(y\)</span> ជាចំនួនជើងរថយន្តធំ (<span class="mi">\(5\text{ t}\)</span>) ៖<br/>
+<span class="mi">\(\begin{cases} x + y = 16 \quad{} (\text{ចំនួនជើងសរុប}) \\ 3x + 5y = 62 \quad{} (\text{ទម្ងន់ទំនិញសរុប}) \end{cases}\)</span><br/>
+គុណសមីការទីមួយនឹង <span class="mi">\(3\)</span> ៖ <span class="mi">\(3x + 3y = 48\)</span>។<br/>
+ដកពីសមីការទីពីរ ៖ <span class="mi">\(2y = 14 \implies \mathbf{y = 7}\)</span> ជើង (រថយន្តធំ)។<br/>
+<span class="mi">\(\implies x = 16 - 7 = \mathbf{9}\)</span> ជើង (រថយន្តតូច)។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ៣ សមីការ និងវិសមីការ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c03">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L07.html"><small>← មេរៀនមុន</small><b>សមីការអសនិទាននិងសមីការដឺក្រេលំដាប់ខ្ពស់</b></a><a class="next" href="L09.html"><small>មេរៀនបន្ទាប់ →</small><b>វិសមីការនិងប្រព័ន្ធវិសមីការ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x - y = -7 \\\\ x +2y = -1 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -1)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x +2y = 8 \\\\ x + y = 4 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x + y = 6 \\\\ -x + y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x -2y = 0 \\\\ -x + y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (3, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -3)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x +2y = -3 \\\\ 3x + y = 6 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-3, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 3)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x + y = -7 \\\\ x +2y = -8 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -3)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = -2 \\\\ x + y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x +2y = 2 \\\\ 3x + y = -4 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -2)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = -2 \\\\ x + y = 4 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 3)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x +2y = 0 \\\\ 3x +2y = 1 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 1)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x - y = 0 \\\\ -x +2y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (0, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 0)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x -2y = 4 \\\\ x +2y = -7 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 3)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x -2y = -2 \\\\ 3x + y = 9 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (3, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 3)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x +2y = 0 \\\\ x + y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x +2y = 5 \\\\ -x + y = 1 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x + y = -1 \\\\ x +2y = 4 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, -2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x -2y = -5 \\\\ 3x + y = -1 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x + y = -5 \\\\ 3x + y = -6 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 3)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x +2y = -1 \\\\ -x +2y = 1 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, -1)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x +2y = -8 \\\\ 3x +2y = -10 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x - y = -6 \\\\ 3x +2y = -9 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-3, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 0)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = 5 \\\\ -x +2y = -8 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x + y = 2 \\\\ 3x +2y = 6 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x + y = 0 \\\\ 3x + y = -4 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x + y = 2 \\\\ 3x +2y = 4 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (0, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, -2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = -2 \\\\ x + y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x + y = 1 \\\\ -x + y = -3 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x -2y = 7 \\\\ -x +2y = -7 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, -2)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x +2y = 4 \\\\ 3x + y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -3)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x - y = 0 \\\\ -x + y = 1 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 2)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x -2y = -3 \\\\ 3x + y = 5 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -2)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x -2y = 9 \\\\ x + y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-3, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, -3)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x +2y = 4 \\\\ -x +2y = 0 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x + y = 1 \\\\ -x + y = 5 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 3)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x + y = -2 \\\\ x + y = -2 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -1)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x -2y = -6 \\\\ -x + y = 3 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (3, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 3)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x -2y = -4 \\\\ x +2y = 8 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (3, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 3)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x -2y = 1 \\\\ x +2y = -3 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -1)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = -4 \\\\ -x +2y = 5 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -3)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x +2y = 0 \\\\ -x +2y = -3 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x - y = -7 \\\\ -x +2y = 5 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x + y = -4 \\\\ 3x + y = -7 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-3, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = 2 \\\\ 3x + y = -2 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (0, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, -2)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x + y = 6 \\\\ 3x + y = 8 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -2)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = 1 \\\\ x + y = 1 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (1, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, 0)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (0, 1)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x - y = -4 \\\\ 3x + y = -11 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (3, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 2)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x +2y = -6 \\\\ x +2y = -5 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-1, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (1, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -1)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} 2x -2y = 2 \\\\ -x +2y = -4 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, -2)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x - y = -1 \\\\ x + y = -3 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (2, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, -1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-2, 1)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-1, -2)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូចម្លើយនៃប្រព័ន្ធសមីការ <span class=\"mi\">\\(\\begin{cases} x +2y = -4 \\\\ -x +2y = -8 \\end{cases}\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\((x, y) = (-2, -3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (-3, 2)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, 3)\\)<\/span>", "<span class=\"mi\">\\((x, y) = (2, -3)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

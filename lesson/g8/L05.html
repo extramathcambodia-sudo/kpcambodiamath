@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៥ : កន្សោមពីជគណិត — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៥ «កន្សោមពីជគណិត» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៥ : កន្សោមពីជគណិត — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៥ «កន្សោមពីជគណិត» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g8">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li aria-current="page">មេរៀនទី ៥</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៥</span>
+      <div><span class="ls-kicker">មេរៀនទី ៥ · គណិតវិទ្យាថ្នាក់ទី ៨</span><h1>កន្សោមពីជគណិត</h1><div class="ls-chips"><span class="chip chip-soon">ពីជគណិត</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. ឯកធា (Monomials)</a></li><li class="sub"><a href="#u2">២. ប្រមាណវិធីលើឯកធា</a></li><li class="sub"><a href="#u3">៣. ពហុធា (Polynomials)</a></li><li class="sub"><a href="#u4">៤. សមភាពសំខាន់ៗ (Remarkable Identities)</a></li><li class="sub"><a href="#u5">៥. ការដាក់កន្សោមជាផលគុណកត្តា (Factoring)</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-8.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃពីជគណិត និងការវិវត្តនៃកន្សោមពីជគណិត</b></header><div class="bx-b">
+<p>ពាក្យ <strong>ពីជគណិត (Algebra)</strong> មានប្រភពដើមមកពីភាសាអារ៉ាប់ <em>"al-jabr"</em> ដែលដកស្រង់ចេញពីចំណងជើងសៀវភៅដ៏ល្បីល្បាញ <em>"Al-Kitāb al-mukhtaṣar fī ḥisāb al-jabr wal-muqābala"</em> និពន្ធដោយគណិតវិទូជនជាតិពែរ្សដ៏ឆ្នើម <strong>Al-Khwarizmi</strong> នៅឆ្នាំ ៨២០ នៃ គ.ស. នៅទីក្រុងបាដាដ។ សៀវភៅនេះបានបង្កើតគ្រឹះជាមូលដ្ឋាននៃការដោះស្រាយសមីការ និងការគណនាពីជគណិតជាប្រព័ន្ធ៖</p>
+<ul>
+<li><p><strong>ឌីយ៉ូផង់នៃអាឡិចសង់ទ្រី (Diophantus of Alexandria, សតវត្សទី ៣)៖</strong> ត្រូវបានប្រសិទ្ធនាមថាជា «បិតានៃពីជគណិត» ដោយសារស្នាដៃសៀវភៅ <em>Arithmetica</em> ដែលជាកម្រងឯកសារដំបូងបង្អស់ចាប់ផ្តើមប្រើប្រាស់និមិត្តសញ្ញាក្នុងការជំនួសតំណាងឱ្យចំនួនមិនស្គាល់ (Unknowns)។</p></li>
+<li><p><strong>ហ្វ្រង់ស័រ វីយែត (François Viète, 1540–1603)៖</strong> គណិតវិទូជនជាតិបារាំងដំបូងគេដែលបានណែនាំការប្រើប្រាស់តួអក្សរជាប្រព័ន្ធ ដូចជាការប្រើប្រាស់ព្យញ្ជនៈស្រៈ (<span class="mi">\(A, E, I, O, U\)</span>) សម្រាប់តំណាងអញ្ញាត និងព្យញ្ជនៈ (<span class="mi">\(B, C, D, \dots\)</span>) សម្រាប់តំណាងចំនួនថេរ ដែលបានធ្វើឱ្យពីជគណិតក្លាយជាភាសានិមិត្តសញ្ញាពិតប្រាកដ។</p></li>
+<li><p><strong>រឺណេ ដេកាត (René Descartes, 1596–1650)៖</strong> បានកែសម្រួលនិមិត្តសញ្ញាឱ្យកាន់តែទំនើប ដោយប្រើតួអក្សរ <span class="mi">\(x, y, z\)</span> តំណាងឱ្យអថេរ និង <span class="mi">\(a, b, c\)</span> តំណាងឱ្យមេគុណថេរ ព្រមទាំងបង្កើតការសរសេរស្វ័យគុណ <span class="mi">\(x^2, x^3\)</span> ដូចដែលយើងប្រើប្រាស់សព្វថ្ងៃ។</p></li>
+<li><p><strong>ប្លែស ប៉ាស្កាល់ (Blaise Pascal, 1623–1662)៖</strong> បានរកឃើញលក្ខណៈនៃ <strong>ត្រីកោណប៉ាស្កាល់ (Pascal’s Triangle)</strong> ដែលជួយសម្រួលដល់ការពន្លាតស្វ័យគុណនៃទ្វេធា <span class="mi">\((a+b)^n\)</span> យ៉ាងងាយស្រួល និងរហ័ស។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">ឯកធា (Monomials)</h3>
+<h4>សញ្ញាណ និងនិយមន័យនៃឯកធា</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ឯកធា</b></header><div class="bx-b">
+<p><strong>ឯកធា (Monomial)</strong> គឺជាកន្សោមពីជគណិតដែលមានតែប្រមាណវិធីគុណ និងស្វ័យគុណ ដែលមាននិទស្សន្តជាចំនួនគត់វិជ្ជមាន ឬសូន្យ។</p>
+<ul>
+<li><p>ឯកធាផ្សំឡើងដោយពីរផ្នែក ៖ <strong>ផ្នែកមេគុណ (Numerical Coefficient)</strong> និង <strong>ផ្នែកអថេរ (Variable Part)</strong>។</p></li>
+<li><p>ចំនួនពិតថេរក៏ជាឯកធាផងដែរ ព្រោះ <span class="mi">\(c = c \cdot x^0\)</span> (<span class="mi">\(x \ne 0\)</span>)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ចូរកំណត់មេគុណ និងផ្នែកអថេរនៃឯកធាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(7x^2y\)</span></p></li>
+<li><p><span class="mi">\(-\dfrac{3}{5}a^3b^2c\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{3}mn^4\)</span></p></li>
+<li><p><span class="mi">\(-xyz\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(7x^2y\)</span> មានមេគុណ <span class="mi">\(7\)</span> និងផ្នែកអថេរ <span class="mi">\(x^2y\)</span>។</p></li>
+<li><p><span class="mi">\(-\dfrac{3}{5}a^3b^2c\)</span> មានមេគុណ <span class="mi">\(-\dfrac{3}{5}\)</span> និងផ្នែកអថេរ <span class="mi">\(a^3b^2c\)</span>។</p></li>
+<li><p><span class="mi">\(\sqrt{3}mn^4\)</span> មានមេគុណ <span class="mi">\(\sqrt{3}\)</span> និងផ្នែកអថេរ <span class="mi">\(mn^4\)</span>។</p></li>
+<li><p><span class="mi">\(-xyz\)</span> មានមេគុណ <span class="mi">\(-1\)</span> និងផ្នែកអថេរ <span class="mi">\(xyz\)</span>។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-coral"><header class="bx-h"><b>កំហុសដែលត្រូវប្រុងប្រយ័ត្ន</b></header><div class="bx-b">
+<ul>
+<li><p>កន្សោមដែលមានអថេរនៅភាគបែងដូចជា <span class="mi">\(\dfrac{3}{x} = 3x^{-1}\)</span> ឬ <span class="mi">\(4a^{-2}\)</span> <strong>មិនមែនជាឯកធាទេ</strong> ព្រោះនិទស្សន្តអវិជ្ជមាន។</p></li>
+<li><p>កន្សោមដែលមានអថេរនៅក្នុងរ៉ាឌីកាល់ដូចជា <span class="mi">\(\sqrt{x} = x^{1/2}\)</span> <strong>មិនមែនជាឯកធាទេ</strong> ព្រោះនិទស្សន្តមិនមែនជាចំនួនគត់។</p></li>
+<li><p>កន្សោមដែលមានប្រមាណវិធីបូកឬដកដូចជា <span class="mi">\(2x + 3\)</span> <strong>មិនមែនជាឯកធាទេ</strong> (វាជាពហុធា)។</p></li>
+</ul>
+</div></section>
+<h4>ដឺក្រេនៃឯកធា</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ដឺក្រេនៃឯកធា</b></header><div class="bx-b">
+<p><strong>ដឺក្រេនៃឯកធា</strong> គឺជាផលបូកនៃនិទស្សន្តរបស់អថេរទាំងអស់ដែលមាននៅក្នុងឯកធានោះ។</p>
+<ul>
+<li><p>ចំពោះចំនួនពិតថេរខុសពីសូន្យ មានដឺក្រេស្មើ <span class="mi">\(0\)</span> (ឧទាហរណ៍ <span class="mi">\(5 = 5x^0\)</span> មានដឺក្រេ <span class="mi">\(0\)</span>)។</p></li>
+<li><p>ចំនួន <span class="mi">\(0\)</span> គ្មានដឺក្រេកំណត់ឡើយ។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រកដឺក្រេនៃឯកធាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = 5x^3y^2\)</span></p></li>
+<li><p><span class="mi">\(B = -4a^2b^3c^4\)</span></p></li>
+<li><p><span class="mi">\(C = 12x\)</span></p></li>
+<li><p><span class="mi">\(D = -25\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>ដឺក្រេនៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(3 + 2 = 5\)</span>។</p></li>
+<li><p>ដឺក្រេនៃ <span class="mi">\(B\)</span> គឺ <span class="mi">\(2 + 3 + 4 = 9\)</span>។</p></li>
+<li><p>ដឺក្រេនៃ <span class="mi">\(C\)</span> គឺ <span class="mi">\(1\)</span> (ព្រោះ <span class="mi">\(x = x^1\)</span>)។</p></li>
+<li><p>ដឺក្រេនៃ <span class="mi">\(D\)</span> គឺ <span class="mi">\(0\)</span> (ចំនួនថេរ)។</p></li>
+</ol>
+</div></section>
+<h4>ឯកធាដូចគ្នា (Like Monomials)</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ឯកធាដូចគ្នា</b></header><div class="bx-b">
+<p><strong>ឯកធាដូចគ្នា</strong> គឺជាឯកធាទាំងឡាយណាដែលមាន <strong>ផ្នែកអថេរដូចគ្នាទាំងស្រុង</strong> (មានអថេរដូចគ្នា និងនិទស្សន្តនៃអថេរនីមួយៗស្មើគ្នា) ដោយខុសគ្នាតែផ្នែកមេគុណប៉ុណ្ណោះ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<ul>
+<li><p><span class="mi">\(3x^2y\)</span> និង <span class="mi">\(-5x^2y\)</span> ជាឯកធាដូចគ្នា (ផ្នែកអថេរ <span class="mi">\(x^2y\)</span> ដូចគ្នា)។</p></li>
+<li><p><span class="mi">\(4ab^2\)</span> និង <span class="mi">\(4a^2b\)</span> <strong>មិនមែនជាឯកធាដូចគ្នាទេ</strong> ព្រោះនិទស្សន្តនៃ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ខុសគ្នា។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>កំណត់ដឺក្រេ និងឯកធាដូចគ្នា</b></header><div class="bx-b">
+<p>រកដឺក្រេនៃឯកធា <span class="mi">\(M = -7a^3b^4c\)</span> រួចសរសេរឯកធាពីរផ្សេងទៀតដែលដូចគ្នានឹង <span class="mi">\(M\)</span>។</p>
+</div></section>
+<h3 id="u2">ប្រមាណវិធីលើឯកធា</h3>
+<h4>វិធីបូក និងដកឯកធាដូចគ្នា</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>វិធីបូក-ដកឯកធា</b></header><div class="bx-b">
+<p>ដើម្បីបូក ឬដកឯកធាដូចគ្នា គេបូក ឬដកតែផ្នែកមេគុណ រួចរក្សាទុកផ្នែកអថេរនៅដដែល ៖ <div class="md">\[ma + na = (m+n)a \quad{};\quad{} ma - na = (m-n)a\]</div> <em>សម្គាល់ ៖</em> ឯកធាមិនដូចគ្នា មិនអាចបូក ឬដកបញ្ចូលគ្នាបានឡើយ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = 5xy + 8xy - 4xy\)</span></p></li>
+<li><p><span class="mi">\(B = 3a^2b - 7a^2b + 9a^2b\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = (5 + 8 - 4)xy = 9xy\)</span>។</p></li>
+<li><p><span class="mi">\(B = (3 - 7 + 9)a^2b = 5a^2b\)</span>។</p></li>
+</ol>
+</div></section>
+<h4>វិធីគុណ និងចែកឯកធា</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>វិធីគុណ និងចែកឯកធា</b></header><div class="bx-b">
+<ul>
+<li><p><strong>វិធីគុណ ៖</strong> ដើម្បីគុណឯកធានិងឯកធា គេគុណមេគុណនឹងមេគុណ ហើយគុណផ្នែកអថេរនឹងផ្នែកអថេរ (ដោយបូកនិទស្សន្តនៃអថេរដូចគ្នា) ៖ <div class="md">\[(ax^m)(bx^n) = (a \cdot b)x^{m+n}\]</div></p></li>
+<li><p><strong>វិធីចែក ៖</strong> ដើម្បីចែកឯកធានឹងឯកធា គេចែកមេគុណនឹងមេគុណ ហើយចែកផ្នែកអថេរនឹងផ្នែកអថេរ (ដោយដកនិទស្សន្តនៃអថេរដូចគ្នា) ៖ <div class="md">\[\frac{ax^m}{bx^n} = \left(\frac{a}{b}\right)x^{m-n} \quad{} (b \ne 0, x \ne 0)\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាផលគុណ និងផលចែកខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(P = (-4a^2b^3)(3a^4b)\)</span></p></li>
+<li><p><span class="mi">\(Q = \dfrac{24x^5y^3}{8x^2y}\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(P = [(-4) \times 3](a^{2+4})(b^{3+1}) = -12a^6b^4\)</span>។</p></li>
+<li><p><span class="mi">\(Q = \left(\dfrac{24}{8}\right)(x^{5-2})(y^{3-1}) = 3x^3y^2\)</span>។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាផលគុណ និងផលចែកឯកធា</b></header><div class="bx-b">
+<p>គណនា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = \left(-\dfrac{2}{3}x^2y\right)\left(6xy^3\right)\)</span></p></li>
+<li><p><span class="mi">\(B = \dfrac{-36a^4b^7c^2}{12a^2b^5c^2}\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u3">ពហុធា (Polynomials)</h3>
+<h4>និយមន័យ និងដឺក្រេនៃពហុធា</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ពហុធា</b></header><div class="bx-b">
+<p><strong>ពហុធា (Polynomial)</strong> គឺជាផលបូកពីជគណិតនៃពីរ ឬច្រើនឯកធា។</p>
+<ul>
+<li><p>ឯកធានីមួយៗនៅក្នុងពហុធាហៅថា <strong>តួ (Terms)</strong> នៃពហុធា។</p></li>
+<li><p>ពហុធាដែលមានពីរតួហៅថា <strong>ទ្វេធា (Binomial)</strong> (ឧ. <span class="mi">\(2x+3\)</span>)។</p></li>
+<li><p>ពហុធាដែលមានបីតួហៅថា <strong>ត្រីធា (Trinomial)</strong> (ឧ. <span class="mi">\(x^2 - 4x + 4\)</span>)។</p></li>
+<li><p><strong>ដឺក្រេនៃពហុធា</strong> គឺជាដឺក្រេខ្ពស់ជាងគេបំផុតក្នុងចំណោមដឺក្រេនៃតួនីមួយៗរបស់ពហុធានោះ។</p></li>
+</ul>
+</div></section>
+<h4>ការរៀបលំដាប់ពហុធា</h4>
+<p>គេនិយមរៀបតួនៃពហុធាតាម <strong>លំដាប់ចុះនៃនិទស្សន្ត</strong> (Descending order) ឬ <strong>លំដាប់កើននៃនិទស្សន្ត</strong> (Ascending order) នៃអថេរ ៖</p>
+<ul>
+<li><p>លំដាប់ចុះ ៖ <span class="mi">\(P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0\)</span></p></li>
+<li><p>លំដាប់កើន ៖ <span class="mi">\(P(x) = a_0 + a_1 x + \dots + a_{n-1} x^{n-1} + a_n x^n\)</span></p></li>
+</ul>
+<h4>ប្រមាណវិធីលើពហុធា</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>វិធីគុណពហុធា</b></header><div class="bx-b">
+<ul>
+<li><p><strong>គុណឯកធានឹងពហុធា ៖</strong> <span class="mi">\(a(b + c + d) = ab + ac + ad\)</span></p></li>
+<li><p><strong>គុណពហុធានឹងពហុធា ៖</strong> <span class="mi">\((a + b)(c + d) = ac + ad + bc + bd\)</span></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនា និងបង្រួមផលគុណ <span class="mi">\(A = (2x - 3)(3x^2 + 4x - 5)\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{aligned}
+    A &amp;= 2x(3x^2 + 4x - 5) - 3(3x^2 + 4x - 5) \\
+    &amp;= 6x^3 + 8x^2 - 10x - 9x^2 - 12x + 15 \\
+    &amp;= 6x^3 - x^2 - 22x + 15
+\end{aligned}\]</div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រមាណវិធីលើពហុធា</b></header><div class="bx-b">
+<p>គេឱ្យពហុធា <span class="mi">\(A = 3x^2 - 5x + 2\)</span> និង <span class="mi">\(B = 2x^2 + 4x - 7\)</span>។ គណនា <span class="mi">\(A + B\)</span> និង <span class="mi">\(A - B\)</span>។</p>
+</div></section>
+<h3 id="u4">សមភាពសំខាន់ៗ (Remarkable Identities)</h3>
+<section class="bx bx-amber"><header class="bx-h"><b>រូបមន្តសមភាពសំខាន់ៗទាំង ៧</b></header><div class="bx-b">
+<p><div class="md">\[\begin{aligned}
+    (a + b)^2 &amp;= a^2 + 2ab + b^2 \quad{} &amp;\text{(ការេនៃផលបូក)} \\
+    (a - b)^2 &amp;= a^2 - 2ab + b^2 \quad{} &amp;\text{(ការេនៃផលដក)} \\
+    a^2 - b^2 &amp;= (a - b)(a + b) \quad{} &amp;\text{(ផលដកការេ)} \\
+    (a + b)^3 &amp;= a^3 + 3a^2b + 3ab^2 + b^3 \quad{} &amp;\text{(គូបនៃផលបូក)} \\
+    (a - b)^3 &amp;= a^3 - 3a^2b + 3ab^2 - b^3 \quad{} &amp;\text{(គូបនៃផលដក)} \\
+    a^3 + b^3 &amp;= (a + b)(a^2 - ab + b^2) \quad{} &amp;\text{(ផលបូកគូប)} \\
+    a^3 - b^3 &amp;= (a - b)(a^2 + ab + b^2) \quad{} &amp;\text{(ផលដកគូប)}
+\end{aligned}\]</div></p>
+</div></section>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22197.21%22 height=%22144.23%22 viewBox=%220 0 197.21 144.23%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5YTU3ZDIxMi00ZDcxLTRmYWMtOWRiZS01M2M5ZjE1ODA0MGQAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaEUZoaMuvRVeEthmE/Ad6mYAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo1MzY2Zjg5MC05NGVhLTRkZTAtOTFjNC0xMDJjM2UzNzllOGRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoQmeFlJOsN76VjhdrbtdEfQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggYJyamzOkUh5SfAtgcUB09nyncmto2XYuF/fMmWUmSuykZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaJtL18OIXB8ZXkCsiAFUeMcAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAp%2BBS7ObWxoUDuJyyidkit9UafdVxiR/sE8wurBgTCKWRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj0Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjlhNTdkMjEyLTRkNzEtNGZhYy05ZGJlLTUzYzlmMTU4MDQwZC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjBjMTdkZDhmLTdkNjMtNGZlZC1iZTBlLWE4ZmI0OGE0MmRhNXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBgnJqbM6RSHlJ8C2BxQHT2fKdya2jZdi4X98yZZSZK7KJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggxEvg8d5WM7w9t3SrWbHnDvoRaWuxWNcU9ZymwjSc3VmiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggsEVO8VCPRyceWSZj0e08E5Y9uJX7MjxBzP8/2i9uGn50Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQHvlBViG%2B1elKH%2BsyuXk3y93k8q%2BUOHlYsn3SyCO0faIyrkP4aIA/jqSP1gKGbzdVJ3hUPRzfS8EatjKh0YGGuk=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 3.68 -3.75 C 3.51 -4.10 3.23 -4.37 2.78 -4.37 C 1.62 -4.37 0.39 -2.92 0.39 -1.46 C 0.39 -0.54 0.93 0.10 1.71 0.10 C 1.90 0.10 2.40 0.06 3 -0.64 C 3.07 -0.21 3.42 0.10 3.90 0.10 C 4.25 0.10 4.48 -0.12 4.64 -0.43 C 4.79 -0.79 4.93 -1.39 4.93 -1.42 C 4.93 -1.51 4.84 -1.51 4.81 -1.51 C 4.71 -1.51 4.70 -1.46 4.67 -1.34 C 4.5 -0.68 4.32 -0.10 3.92 -0.10 C 3.65 -0.10 3.62 -0.35 3.62 -0.56 C 3.62 -0.78 3.64 -0.85 3.75 -1.29 C 3.85 -1.71 3.89 -1.81 3.96 -2.18 L 4.32 -3.57 C 4.39 -3.85 4.39 -3.87 4.39 -3.90 C 4.39 -4.07 4.28 -4.18 4.10 -4.18 C 3.87 -4.18 3.71 -3.96 3.68 -3.75 Z M 3.04 -1.17 C 3 -1 3 -0.98 2.85 -0.81 C 2.42 -0.26 2.01 -0.10 1.73 -0.10 C 1.23 -0.10 1.09 -0.65 1.09 -1.04 C 1.09 -1.53 1.42 -2.75 1.64 -3.20 C 1.95 -3.79 2.39 -4.15 2.79 -4.15 C 3.43 -4.15 3.57 -3.34 3.57 -3.28 C 3.57 -3.23 3.56 -3.17 3.54 -3.12 Z M 3.04 -1.17 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 2.37 -6.76 C 2.37 -6.78 2.37 -6.87 2.23 -6.87 C 2.01 -6.87 1.28 -6.79 1.03 -6.78 C 0.95 -6.76 0.84 -6.75 0.84 -6.57 C 0.84 -6.45 0.93 -6.45 1.07 -6.45 C 1.56 -6.45 1.57 -6.39 1.57 -6.29 C 1.57 -6.21 1.48 -5.89 1.43 -5.67 L 0.62 -2.45 C 0.5 -1.95 0.46 -1.79 0.46 -1.45 C 0.46 -0.5 0.98 0.10 1.71 0.10 C 2.89 0.10 4.10 -1.35 4.10 -2.79 C 4.10 -3.68 3.59 -4.37 2.79 -4.37 C 2.34 -4.37 1.93 -4.09 1.64 -3.78 Z M 1.43 -3.01 C 1.5 -3.23 1.5 -3.26 1.57 -3.37 C 2.07 -4.01 2.51 -4.15 2.78 -4.15 C 3.12 -4.15 3.39 -3.85 3.39 -3.23 C 3.39 -2.64 3.07 -1.5 2.89 -1.12 C 2.56 -0.46 2.10 -0.10 1.71 -0.10 C 1.39 -0.10 1.06 -0.37 1.06 -1.10 C 1.06 -1.29 1.06 -1.48 1.21 -2.10 Z M 1.43 -3.01 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 3.5 -1.26 L 3.26 -1.26 C 3.25 -1.10 3.17 -0.70 3.09 -0.62 C 3.03 -0.59 2.5 -0.59 2.40 -0.59 L 1.12 -0.59 C 1.85 -1.23 2.09 -1.42 2.51 -1.75 C 3.03 -2.17 3.5 -2.59 3.5 -3.25 C 3.5 -4.09 2.76 -4.60 1.87 -4.60 C 1.01 -4.60 0.43 -4 0.43 -3.35 C 0.43 -3.01 0.73 -2.96 0.81 -2.96 C 0.96 -2.96 1.17 -3.09 1.17 -3.34 C 1.17 -3.46 1.12 -3.71 0.76 -3.71 C 0.98 -4.20 1.45 -4.35 1.78 -4.35 C 2.46 -4.35 2.82 -3.81 2.82 -3.25 C 2.82 -2.65 2.40 -2.17 2.17 -1.92 L 0.5 -0.26 C 0.43 -0.20 0.43 -0.18 0.43 0 L 3.29 0 Z M 3.5 -1.26 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-0%22%3E%3Cpath d=%22M 4.5 0.06 C 4.13 0.06 3.84 -0.01 3.64 -0.17 C 3.42 -0.32 3.32 -0.55 3.32 -0.85 C 3.32 -1.16 3.41 -1.38 3.57 -1.53 C 3.74 -1.67 3.98 -1.75 4.31 -1.75 L 4.45 -1.75 L 4.06 -1.35 L 4.06 -3.64 C 4.06 -3.79 4.02 -3.91 3.95 -4 C 3.89 -4.09 3.77 -4.16 3.60 -4.20 L 3.60 -4.93 C 3.60 -5.28 3.69 -5.53 3.87 -5.71 C 4.05 -5.90 4.30 -6 4.64 -6 L 5.82 -6 L 5.82 -4.73 L 5.20 -4.73 C 5.07 -4.73 5.01 -4.66 5.01 -4.53 L 5.01 -4.43 C 5.27 -4.35 5.46 -4.25 5.57 -4.12 C 5.69 -4.00 5.75 -3.83 5.75 -3.60 L 5.75 -0.60 C 5.75 -0.42 5.66 -0.25 5.48 -0.12 C 5.31 0 4.98 0.06 4.5 0.06 Z M 1.28 -1.18 C 1.06 -1.18 0.95 -1.07 0.95 -0.84 C 0.95 -0.61 1.06 -0.5 1.28 -0.5 Z M 1.40 0.06 C 1.03 0.06 0.75 -0.01 0.54 -0.17 C 0.33 -0.32 0.23 -0.55 0.23 -0.85 C 0.23 -1.16 0.31 -1.38 0.48 -1.53 C 0.64 -1.67 0.89 -1.75 1.21 -1.75 L 1.35 -1.75 L 0.96 -1.35 L 0.96 -3.64 C 0.96 -3.81 0.92 -3.94 0.84 -4.03 C 0.76 -4.11 0.66 -4.17 0.53 -4.20 L 0.53 -4.93 C 0.53 -5.28 0.61 -5.53 0.78 -5.71 C 0.95 -5.90 1.21 -6 1.54 -6 L 2.73 -6 L 2.73 -4.73 L 2.10 -4.73 C 1.99 -4.73 1.93 -4.66 1.93 -4.53 L 1.93 -4.43 C 2.18 -4.35 2.36 -4.25 2.48 -4.12 C 2.59 -4.00 2.65 -3.83 2.65 -3.60 L 2.65 -0.60 C 2.65 -0.41 2.56 -0.25 2.37 -0.12 C 2.19 0 1.87 0.06 1.40 0.06 Z M 4.37 -1.18 C 4.15 -1.18 4.04 -1.07 4.04 -0.84 C 4.04 -0.61 4.15 -0.5 4.37 -0.5 Z M 1.60 -2.25 L 1.60 -3.28 L 4.90 -3.28 L 4.90 -2.25 Z M 1.60 -2.25 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-1%22%3E%3Cpath d=%22M 3.96 -2.34 C 3.96 -2.56 3.89 -2.72 3.75 -2.84 C 3.61 -2.96 3.42 -3.03 3.20 -3.03 C 2.97 -3.03 2.78 -2.96 2.64 -2.84 C 2.50 -2.72 2.43 -2.56 2.43 -2.34 L 2.43 -1.35 L 2.03 -1.75 L 2.15 -1.75 C 2.48 -1.75 2.73 -1.67 2.89 -1.53 C 3.05 -1.38 3.14 -1.16 3.14 -0.85 C 3.14 -0.55 3.04 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.54 0.06 1.24 0.00 1.04 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -2.34 C 0.75 -2.93 0.96 -3.39 1.40 -3.71 C 1.84 -4.05 2.44 -4.21 3.20 -4.21 C 3.96 -4.21 4.55 -4.05 4.98 -3.71 C 5.42 -3.39 5.64 -2.93 5.64 -2.34 L 5.64 0 L 3.96 0 Z M 2.20 -0.5 C 2.41 -0.5 2.51 -0.61 2.51 -0.84 C 2.51 -1.07 2.41 -1.18 2.20 -1.18 Z M 0.71 -4.73 L 0.71 -6 L 5.68 -6 L 5.68 -4.73 Z M 0.71 -4.73 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-2%22%3E%3Cpath d=%22M -4.07 2.60 C -4.50 2.60 -4.84 2.51 -5.09 2.34 C -5.34 2.16 -5.46 1.89 -5.46 1.53 C -5.46 1.18 -5.35 0.91 -5.12 0.70 C -4.89 0.49 -4.53 0.39 -4.03 0.39 C -3.72 0.39 -3.46 0.42 -3.25 0.5 C -3.03 0.57 -2.84 0.66 -2.67 0.76 C -2.50 0.87 -2.34 0.98 -2.18 1.09 C -2.03 1.20 -1.86 1.29 -1.68 1.35 C -1.50 1.42 -1.30 1.46 -1.07 1.46 L -0.90 1.46 L -0.90 2.56 L -1.07 2.56 C -1.45 2.56 -1.76 2.51 -2.01 2.43 C -2.26 2.35 -2.46 2.25 -2.62 2.12 C -2.78 2 -2.91 1.87 -3.03 1.75 C -3.14 1.62 -3.25 1.51 -3.34 1.43 C -3.43 1.35 -3.54 1.31 -3.67 1.31 C -3.75 1.31 -3.81 1.33 -3.85 1.37 C -3.91 1.42 -3.93 1.48 -3.93 1.56 C -3.93 1.64 -3.91 1.70 -3.85 1.75 C -3.81 1.80 -3.75 1.82 -3.67 1.82 C -3.64 1.82 -3.60 1.82 -3.56 1.81 C -3.53 1.80 -3.5 1.78 -3.46 1.76 L -3.46 2.53 C -3.50 2.55 -3.57 2.56 -3.67 2.57 C -3.77 2.59 -3.91 2.60 -4.07 2.60 Z M -4.07 2.60 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-3%22%3E%3Cpath d=%22M 3.68 0.09 C 3.36 0.09 3.08 0.04 2.84 -0.04 C 2.61 -0.14 2.42 -0.27 2.28 -0.45 C 2.14 -0.62 2.04 -0.83 1.98 -1.07 L 2.23 -1.62 C 2.25 -1.53 2.30 -1.45 2.37 -1.37 C 2.45 -1.28 2.56 -1.21 2.68 -1.15 C 2.81 -1.09 2.95 -1.06 3.10 -1.06 C 3.28 -1.06 3.42 -1.10 3.54 -1.20 C 3.66 -1.29 3.71 -1.42 3.71 -1.57 L 3.71 -1.93 C 3.22 -2.00 2.78 -2.09 2.40 -2.20 C 2.01 -2.31 1.69 -2.45 1.42 -2.62 C 1.14 -2.78 0.94 -3 0.79 -3.25 C 0.64 -3.50 0.57 -3.82 0.57 -4.18 C 0.57 -4.84 0.80 -5.32 1.26 -5.64 C 1.72 -5.95 2.32 -6.10 3.07 -6.10 C 3.81 -6.10 4.39 -5.97 4.79 -5.70 C 5.21 -5.44 5.42 -5.06 5.42 -4.56 C 5.42 -4.15 5.28 -3.85 5.03 -3.65 C 4.78 -3.45 4.42 -3.35 3.98 -3.35 C 3.84 -3.35 3.71 -3.36 3.57 -3.39 C 3.44 -3.41 3.33 -3.42 3.26 -3.45 L 3.26 -4.29 C 3.29 -4.28 3.33 -4.26 3.37 -4.25 C 3.42 -4.23 3.46 -4.23 3.5 -4.23 C 3.58 -4.23 3.64 -4.25 3.70 -4.31 C 3.75 -4.36 3.78 -4.42 3.78 -4.5 C 3.78 -4.63 3.71 -4.73 3.59 -4.81 C 3.47 -4.89 3.31 -4.93 3.09 -4.93 C 2.83 -4.93 2.62 -4.86 2.46 -4.71 C 2.31 -4.58 2.23 -4.39 2.23 -4.14 C 2.23 -3.82 2.36 -3.58 2.62 -3.40 C 2.89 -3.23 3.26 -3.10 3.73 -3.01 C 4.20 -2.92 4.75 -2.84 5.37 -2.78 L 5.37 -1.34 C 5.37 -0.88 5.22 -0.53 4.92 -0.28 C 4.62 -0.03 4.21 0.09 3.68 0.09 Z M 0.68 0 L 0.68 -1.87 L 2.28 -1.87 L 2.28 -0.92 L 2.12 0 Z M 0.68 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-4%22%3E%3Cpath d=%22M -3.53 -6.53 C -4.05 -6.53 -4.45 -6.62 -4.75 -6.82 C -5.05 -7.02 -5.20 -7.32 -5.20 -7.73 C -5.20 -8.06 -5.08 -8.32 -4.85 -8.5 C -4.64 -8.68 -4.33 -8.78 -3.93 -8.78 C -3.78 -8.78 -3.66 -8.76 -3.54 -8.75 C -3.44 -8.73 -3.36 -8.72 -3.32 -8.70 L -3.32 -7.98 C -3.35 -7.99 -3.39 -8.00 -3.42 -8.01 C -3.46 -8.02 -3.5 -8.03 -3.53 -8.03 C -3.61 -8.03 -3.67 -8.00 -3.71 -7.95 C -3.76 -7.89 -3.79 -7.82 -3.79 -7.73 C -3.79 -7.62 -3.75 -7.54 -3.68 -7.48 C -3.61 -7.42 -3.51 -7.39 -3.39 -7.39 C -3.14 -7.39 -2.92 -7.51 -2.75 -7.76 C -2.58 -8.01 -2.47 -8.36 -2.43 -8.81 L -0.98 -8.81 C -1.12 -8.06 -1.40 -7.49 -1.81 -7.10 C -2.22 -6.72 -2.80 -6.53 -3.53 -6.53 Z M -3.53 -6.53 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-5%22%3E%3Cpath d=%22M 2.96 0.09 C 2.26 0.09 1.72 -0.06 1.32 -0.39 C 0.94 -0.71 0.75 -1.17 0.75 -1.78 L 0.75 -5.39 C 0.75 -5.50 0.77 -5.60 0.82 -5.70 C 0.89 -5.80 1.00 -5.89 1.17 -5.95 C 1.33 -6.02 1.58 -6.06 1.90 -6.06 C 2.67 -6.06 3.06 -5.75 3.06 -5.14 C 3.06 -4.84 2.97 -4.62 2.81 -4.48 C 2.64 -4.33 2.39 -4.26 2.07 -4.26 L 1.93 -4.26 L 2.43 -4.53 L 2.43 -1.78 C 2.43 -1.56 2.5 -1.39 2.62 -1.26 C 2.75 -1.14 2.93 -1.09 3.15 -1.09 C 3.38 -1.09 3.56 -1.14 3.68 -1.26 C 3.82 -1.39 3.89 -1.56 3.89 -1.78 L 3.89 -3.64 C 3.89 -3.81 3.85 -3.94 3.79 -4.03 C 3.74 -4.11 3.66 -4.17 3.56 -4.20 L 3.56 -4.93 C 3.56 -5.28 3.64 -5.53 3.81 -5.71 C 3.98 -5.90 4.25 -6 4.59 -6 L 5.62 -6 L 5.62 -4.73 L 5.15 -4.73 C 5.03 -4.73 4.96 -4.66 4.96 -4.53 L 4.96 -4.43 C 5.18 -4.35 5.33 -4.25 5.42 -4.12 C 5.51 -4.00 5.56 -3.83 5.56 -3.60 L 5.56 -1.78 C 5.56 -1.56 5.62 -1.39 5.75 -1.26 C 5.88 -1.14 6.06 -1.09 6.29 -1.09 C 6.51 -1.09 6.68 -1.14 6.81 -1.26 C 6.94 -1.39 7.01 -1.56 7.01 -1.78 L 7.01 -3.64 C 7.01 -3.81 6.98 -3.94 6.92 -4.03 C 6.86 -4.11 6.79 -4.17 6.70 -4.20 L 6.70 -4.93 C 6.70 -5.28 6.78 -5.53 6.95 -5.71 C 7.12 -5.90 7.38 -6 7.71 -6 L 8.75 -6 L 8.75 -4.73 L 8.28 -4.73 C 8.16 -4.73 8.10 -4.66 8.10 -4.53 L 8.10 -4.43 C 8.31 -4.35 8.46 -4.25 8.56 -4.12 C 8.65 -4.00 8.70 -3.83 8.70 -3.60 L 8.70 -1.78 C 8.70 -1.17 8.50 -0.71 8.10 -0.39 C 7.72 -0.06 7.17 0.09 6.48 0.09 C 6.06 0.09 5.69 0.01 5.37 -0.12 C 5.05 -0.26 4.77 -0.51 4.54 -0.85 L 4.90 -0.85 C 4.66 -0.51 4.38 -0.26 4.06 -0.12 C 3.73 0.01 3.37 0.09 2.96 0.09 Z M 2.09 -4.81 C 2.31 -4.81 2.42 -4.92 2.42 -5.15 C 2.42 -5.39 2.31 -5.51 2.09 -5.51 Z M 2.09 -4.81 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-6%22%3E%3Cpath d=%22M 0.75 -3.64 C 0.75 -3.80 0.72 -3.92 0.67 -4.01 C 0.61 -4.10 0.54 -4.17 0.45 -4.23 L 0.45 -4.82 C 0.45 -5.22 0.55 -5.51 0.75 -5.70 C 0.95 -5.89 1.25 -6 1.64 -6 L 5.67 -6 L 5.67 -4.73 L 2.21 -4.73 C 2.18 -4.73 2.14 -4.72 2.09 -4.70 C 2.03 -4.67 2.01 -4.61 2.01 -4.51 L 2.01 -4.43 C 2.14 -4.35 2.23 -4.25 2.31 -4.14 C 2.39 -4.02 2.43 -3.85 2.43 -3.62 L 2.43 -1.48 L 3.20 -2.20 L 3.96 -1.48 L 3.96 -2.75 L 4.37 -2.37 L 4.23 -2.37 C 3.91 -2.37 3.66 -2.44 3.5 -2.59 C 3.34 -2.73 3.26 -2.96 3.26 -3.26 C 3.26 -3.56 3.35 -3.79 3.54 -3.95 C 3.73 -4.10 4.03 -4.18 4.45 -4.18 C 4.85 -4.18 5.15 -4.12 5.34 -4.01 C 5.53 -3.91 5.64 -3.73 5.64 -3.5 L 5.64 0 L 4.09 0 L 3.20 -0.90 L 2.31 0 L 0.75 0 Z M 4.20 -3.62 C 3.99 -3.62 3.89 -3.50 3.89 -3.28 C 3.89 -3.05 3.99 -2.93 4.20 -2.93 Z M 4.20 -3.62 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-7%22%3E%3Cpath d=%22M 1.57 0.06 C 1.16 0.06 0.85 -0.01 0.65 -0.17 C 0.46 -0.32 0.37 -0.55 0.37 -0.85 C 0.37 -1.16 0.45 -1.38 0.60 -1.53 C 0.77 -1.67 1.01 -1.75 1.34 -1.75 L 1.46 -1.75 L 1.09 -1.35 L 1.09 -3.64 C 1.09 -3.81 1.05 -3.94 0.96 -4.03 C 0.89 -4.11 0.78 -4.17 0.65 -4.20 L 0.65 -4.93 C 0.65 -5.28 0.73 -5.53 0.90 -5.71 C 1.08 -5.90 1.33 -6 1.67 -6 L 2.85 -6 L 2.85 -4.73 L 2.23 -4.73 C 2.11 -4.73 2.06 -4.66 2.06 -4.53 L 2.06 -4.43 C 2.31 -4.35 2.49 -4.25 2.60 -4.12 C 2.72 -4.00 2.78 -3.83 2.78 -3.60 L 2.78 -0.60 C 2.78 -0.16 2.37 0.06 1.57 0.06 Z M 1.40 -1.18 C 1.19 -1.18 1.09 -1.07 1.09 -0.84 C 1.09 -0.61 1.19 -0.5 1.40 -0.5 Z M 1.40 -1.18 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-8%22%3E%3Cpath d=%22M 3.79 -4.28 C 3.79 -4.46 3.73 -4.61 3.60 -4.73 C 3.49 -4.84 3.33 -4.90 3.12 -4.90 C 2.91 -4.90 2.75 -4.84 2.62 -4.73 C 2.5 -4.61 2.43 -4.46 2.43 -4.28 L 2.43 -1.35 L 2.03 -1.75 L 2.15 -1.75 C 2.48 -1.75 2.73 -1.67 2.89 -1.53 C 3.05 -1.38 3.14 -1.16 3.14 -0.85 C 3.14 -0.55 3.04 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.54 0.06 1.24 0.00 1.04 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -4.28 C 0.75 -4.83 0.95 -5.27 1.37 -5.60 C 1.80 -5.94 2.38 -6.10 3.12 -6.10 C 3.86 -6.10 4.44 -5.94 4.85 -5.60 C 5.27 -5.27 5.48 -4.83 5.48 -4.28 L 5.48 -1.48 L 6.20 -2.20 L 6.92 -1.48 L 6.92 -4.28 C 6.92 -4.83 7.12 -5.27 7.53 -5.60 C 7.94 -5.94 8.52 -6.10 9.26 -6.10 C 10.00 -6.10 10.58 -5.94 11.01 -5.60 C 11.44 -5.27 11.65 -4.83 11.65 -4.28 L 11.65 0 L 9.96 0 L 9.96 -4.28 C 9.96 -4.46 9.89 -4.61 9.76 -4.73 C 9.64 -4.84 9.47 -4.90 9.26 -4.90 C 9.06 -4.90 8.90 -4.84 8.78 -4.73 C 8.65 -4.61 8.59 -4.46 8.59 -4.28 L 8.59 0 L 7.04 0 L 6.20 -0.90 L 5.34 0 L 3.79 0 Z M 2.20 -0.5 C 2.41 -0.5 2.51 -0.61 2.51 -0.84 C 2.51 -1.07 2.41 -1.18 2.20 -1.18 Z M 2.20 -0.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-9%22%3E%3Cpath d=%22M -4.18 -6.64 C -4.63 -6.64 -4.97 -6.72 -5.20 -6.89 C -5.42 -7.05 -5.54 -7.31 -5.54 -7.65 C -5.54 -8.03 -5.41 -8.33 -5.14 -8.56 C -4.87 -8.80 -4.50 -8.92 -4.03 -8.92 C -3.75 -8.92 -3.48 -8.87 -3.25 -8.79 C -3.01 -8.72 -2.81 -8.61 -2.64 -8.48 C -2.47 -8.35 -2.33 -8.21 -2.21 -8.06 L -2.17 -8.06 L -2.17 -8.92 L -0.98 -8.92 L -0.98 -6.64 Z M -3.76 -7.29 L -2.31 -7.29 C -2.40 -7.39 -2.53 -7.49 -2.68 -7.57 C -2.84 -7.66 -3.00 -7.72 -3.18 -7.78 C -3.36 -7.84 -3.53 -7.87 -3.68 -7.87 C -3.85 -7.87 -3.97 -7.84 -4.04 -7.79 C -4.11 -7.74 -4.15 -7.67 -4.15 -7.57 C -4.15 -7.49 -4.12 -7.42 -4.06 -7.37 C -4 -7.32 -3.89 -7.29 -3.76 -7.29 Z M -3.76 -7.29 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-10%22%3E%3Cpath d=%22M 7.10 -4.09 C 7.10 -4.51 6.91 -4.73 6.53 -4.73 L 5.48 -4.73 L 5.48 -6 L 7.12 -6 C 8.23 -6 8.79 -5.43 8.79 -4.31 L 8.79 0 L 7.10 0 Z M 3.18 0.09 C 2.42 0.09 1.82 -0.06 1.39 -0.39 C 0.96 -0.71 0.75 -1.17 0.75 -1.78 L 0.75 -3.64 C 0.75 -3.81 0.71 -3.94 0.65 -4.03 C 0.60 -4.11 0.53 -4.17 0.43 -4.20 L 0.43 -4.93 C 0.43 -5.28 0.51 -5.53 0.68 -5.71 C 0.86 -5.90 1.11 -6 1.45 -6 L 2.5 -6 L 2.5 -4.73 L 2.01 -4.73 C 1.89 -4.73 1.84 -4.66 1.84 -4.53 L 1.84 -4.43 C 2.05 -4.35 2.20 -4.25 2.29 -4.12 C 2.39 -4.00 2.43 -3.83 2.43 -3.60 L 2.43 -1.78 C 2.43 -1.56 2.50 -1.39 2.64 -1.26 C 2.77 -1.14 2.95 -1.09 3.18 -1.09 C 3.41 -1.09 3.59 -1.14 3.71 -1.26 C 3.85 -1.39 3.92 -1.56 3.92 -1.78 L 3.92 -3.64 C 3.92 -3.81 3.89 -3.94 3.82 -4.03 C 3.77 -4.11 3.70 -4.17 3.60 -4.20 L 3.60 -4.93 C 3.60 -5.28 3.69 -5.53 3.85 -5.71 C 4.03 -5.90 4.28 -6 4.62 -6 L 5.67 -6 L 5.67 -4.73 L 5.18 -4.73 C 5.07 -4.73 5.01 -4.66 5.01 -4.53 L 5.01 -4.43 C 5.22 -4.35 5.37 -4.25 5.46 -4.12 C 5.56 -4.00 5.60 -3.83 5.60 -3.60 L 5.60 -1.78 C 5.60 -1.17 5.39 -0.71 4.96 -0.39 C 4.53 -0.06 3.94 0.09 3.18 0.09 Z M 1.53 -2.31 L 1.53 -3.39 L 4.82 -3.39 L 4.82 -2.31 Z M 1.53 -2.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-11%22%3E%3C/g%3E%3Cg id=%22glyph-2-12%22%3E%3Cpath d=%22M 3.18 2.65 C 2.42 2.65 1.82 2.48 1.39 2.15 C 0.96 1.83 0.75 1.36 0.75 0.76 L 0.75 -3.64 C 0.75 -3.81 0.71 -3.94 0.65 -4.03 C 0.60 -4.11 0.53 -4.17 0.43 -4.20 L 0.43 -4.93 C 0.43 -5.28 0.51 -5.53 0.68 -5.71 C 0.86 -5.90 1.11 -6 1.45 -6 L 2.5 -6 L 2.5 -4.73 L 2.01 -4.73 C 1.89 -4.73 1.84 -4.66 1.84 -4.53 L 1.84 -4.43 C 2.05 -4.35 2.20 -4.25 2.29 -4.12 C 2.39 -4.00 2.43 -3.83 2.43 -3.60 L 2.43 0.76 C 2.43 0.98 2.5 1.15 2.62 1.28 C 2.75 1.40 2.94 1.46 3.18 1.46 C 3.42 1.46 3.60 1.40 3.73 1.28 C 3.86 1.15 3.93 0.98 3.93 0.76 L 3.93 0.5 L 5.62 0.5 L 5.62 0.76 C 5.62 1.36 5.41 1.83 4.98 2.15 C 4.55 2.48 3.95 2.65 3.18 2.65 Z M 3.18 2.65 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-13%22%3E%3Cpath d=%22M 1.98 -3.82 C 1.53 -3.82 1.19 -3.92 0.95 -4.14 C 0.71 -4.34 0.59 -4.61 0.59 -4.95 C 0.59 -5.28 0.71 -5.55 0.95 -5.76 C 1.19 -5.97 1.53 -6.07 1.98 -6.07 C 2.44 -6.07 2.78 -5.97 3.03 -5.76 C 3.26 -5.55 3.39 -5.28 3.39 -4.95 C 3.39 -4.61 3.26 -4.34 3.03 -4.14 C 2.78 -3.92 2.44 -3.82 1.98 -3.82 Z M 1.98 -4.59 C 2.09 -4.59 2.18 -4.62 2.25 -4.68 C 2.31 -4.75 2.34 -4.84 2.34 -4.95 C 2.34 -5.06 2.31 -5.15 2.25 -5.21 C 2.18 -5.28 2.09 -5.31 1.98 -5.31 C 1.87 -5.31 1.79 -5.28 1.73 -5.21 C 1.67 -5.15 1.64 -5.06 1.64 -4.95 C 1.64 -4.84 1.67 -4.75 1.73 -4.68 C 1.79 -4.62 1.87 -4.59 1.98 -4.59 Z M 1.98 0.09 C 1.53 0.09 1.19 -0.00 0.95 -0.21 C 0.71 -0.42 0.59 -0.69 0.59 -1.03 C 0.59 -1.36 0.71 -1.63 0.95 -1.84 C 1.19 -2.05 1.53 -2.15 1.98 -2.15 C 2.44 -2.15 2.78 -2.05 3.03 -1.84 C 3.26 -1.63 3.39 -1.36 3.39 -1.03 C 3.39 -0.69 3.26 -0.42 3.03 -0.21 C 2.78 -0.00 2.44 0.09 1.98 0.09 Z M 1.98 -0.67 C 2.09 -0.67 2.18 -0.70 2.25 -0.76 C 2.31 -0.83 2.34 -0.92 2.34 -1.03 C 2.34 -1.14 2.31 -1.23 2.25 -1.29 C 2.18 -1.35 2.09 -1.39 1.98 -1.39 C 1.87 -1.39 1.79 -1.35 1.73 -1.29 C 1.67 -1.23 1.64 -1.14 1.64 -1.03 C 1.64 -0.92 1.67 -0.83 1.73 -0.76 C 1.79 -0.70 1.87 -0.67 1.98 -0.67 Z M 0.25 -2.64 L 0.25 -3.35 L 3.71 -3.35 L 3.71 -2.64 Z M 0.25 -2.64 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-0%22%3E%3Cpath d=%22M 3.28 2.37 C 3.28 2.34 3.28 2.32 3.10 2.15 C 1.87 0.90 1.56 -0.95 1.56 -2.48 C 1.56 -4.20 1.93 -5.92 3.15 -7.15 C 3.28 -7.28 3.28 -7.29 3.28 -7.32 C 3.28 -7.40 3.23 -7.43 3.18 -7.43 C 3.07 -7.43 2.18 -6.75 1.60 -5.5 C 1.09 -4.40 0.98 -3.31 0.98 -2.48 C 0.98 -1.70 1.09 -0.5 1.64 0.60 C 2.23 1.82 3.07 2.48 3.18 2.48 C 3.23 2.48 3.28 2.45 3.28 2.37 Z M 3.28 2.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-1%22%3E%3Cpath d=%22M 4.04 -2.28 L 6.81 -2.28 C 6.95 -2.28 7.14 -2.28 7.14 -2.48 C 7.14 -2.67 6.95 -2.67 6.81 -2.67 L 4.04 -2.67 L 4.04 -5.45 C 4.04 -5.59 4.04 -5.78 3.85 -5.78 C 3.65 -5.78 3.65 -5.59 3.65 -5.45 L 3.65 -2.67 L 0.87 -2.67 C 0.75 -2.67 0.56 -2.67 0.56 -2.48 C 0.56 -2.28 0.75 -2.28 0.87 -2.28 L 3.65 -2.28 L 3.65 0.5 C 3.65 0.64 3.65 0.82 3.85 0.82 C 4.04 0.82 4.04 0.64 4.04 0.5 Z M 4.04 -2.28 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-2%22%3E%3Cpath d=%22M 2.85 -2.48 C 2.85 -3.25 2.75 -4.45 2.20 -5.56 C 1.60 -6.78 0.76 -7.43 0.65 -7.43 C 0.60 -7.43 0.56 -7.39 0.56 -7.32 C 0.56 -7.29 0.56 -7.28 0.75 -7.10 C 1.71 -6.12 2.28 -4.54 2.28 -2.48 C 2.28 -0.78 1.92 0.95 0.68 2.20 C 0.56 2.32 0.56 2.34 0.56 2.37 C 0.56 2.43 0.60 2.48 0.65 2.48 C 0.76 2.48 1.65 1.79 2.23 0.54 C 2.75 -0.54 2.85 -1.64 2.85 -2.48 Z M 2.85 -2.48 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-3%22%3E%3Cpath d=%22M 6.81 -3.23 C 6.95 -3.23 7.14 -3.23 7.14 -3.43 C 7.14 -3.64 6.95 -3.64 6.81 -3.64 L 0.87 -3.64 C 0.75 -3.64 0.56 -3.64 0.56 -3.43 C 0.56 -3.23 0.75 -3.23 0.89 -3.23 Z M 6.81 -1.31 C 6.95 -1.31 7.14 -1.31 7.14 -1.51 C 7.14 -1.71 6.95 -1.71 6.81 -1.71 L 0.89 -1.71 C 0.75 -1.71 0.56 -1.71 0.56 -1.51 C 0.56 -1.31 0.75 -1.31 0.87 -1.31 Z M 6.81 -1.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-4%22%3E%3Cpath d=%22M 1.26 -0.76 L 2.31 -1.78 C 3.85 -3.15 4.45 -3.68 4.45 -4.67 C 4.45 -5.81 3.56 -6.59 2.34 -6.59 C 1.23 -6.59 0.5 -5.68 0.5 -4.79 C 0.5 -4.25 0.98 -4.25 1.01 -4.25 C 1.18 -4.25 1.53 -4.37 1.53 -4.78 C 1.53 -5.03 1.35 -5.29 1.01 -5.29 C 0.93 -5.29 0.90 -5.29 0.87 -5.28 C 1.10 -5.92 1.64 -6.29 2.21 -6.29 C 3.12 -6.29 3.54 -5.48 3.54 -4.67 C 3.54 -3.89 3.04 -3.09 2.5 -2.48 L 0.60 -0.35 C 0.5 -0.25 0.5 -0.23 0.5 0 L 4.17 0 L 4.45 -1.71 L 4.20 -1.71 C 4.15 -1.42 4.07 -0.98 3.98 -0.84 C 3.90 -0.76 3.26 -0.76 3.04 -0.76 Z M 1.26 -0.76 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(80.89%25, 87.99%25, 87.69%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 28.91 L 0.00 96.37 L 67.46 96.37 L 67.46 28.91 Z M 0.00 28.91 %22 transform=%22matrix(0.99, 0, 0, -0.99, 50.28, 112.52)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2278.99%22 y=%2254.24%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2284.23%22 y=%2250.64%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 89.99%25, 79.99%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 50%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 67.46 28.91 L 67.46 96.37 L 96.37 96.37 L 96.37 28.91 Z M 67.46 28.91 %22 transform=%22matrix(0.99, 0, 0, -0.99, 50.28, 112.52)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22127.02%22 y=%2253.65%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22132.25%22 y=%2253.65%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 89.99%25, 79.99%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 50%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -0.00 L 0.00 28.91 L 67.46 28.91 L 67.46 -0.00 Z M 0.00 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 50.28, 112.52)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2279.08%22 y=%22101.58%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2284.32%22 y=%22101.58%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(98.50%25, 80.00%25, 90.97%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(92.54%25, 0%25, 54.89%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 67.46 -0.00 L 67.46 28.91 L 96.37 28.91 L 96.37 -0.00 Z M 67.46 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 50.28, 112.52)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22127.41%22 y=%22102.17%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22131.67%22 y=%2298.58%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%221.19%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 -0.00 L 0.00 96.37 L 96.37 96.37 L 96.37 -0.00 Z M 0.00 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 50.28, 112.52)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2281.21%22 y=%2213.15%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22129.64%22 y=%2213.15%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2241.54%22 y=%2252.34%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2242.52%22 y=%22101.58%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%226.40%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-1%22 x=%2212.90%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-2%22 x=%2219.30%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-3%22 x=%2219.30%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-4%22 x=%2226.08%22 y=%22134.43%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-5%22 x=%2225.35%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-6%22 x=%2234.80%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-7%22 x=%2241.20%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-8%22 x=%2244.79%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-9%22 x=%2257.33%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-10%22 x=%2257.20%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-11%22 x=%2266.75%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-12%22 x=%2266.75%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-2-1%22 x=%2269.94%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-13%22 x=%2279.17%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-0%22 x=%2286.00%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2289.85%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-1%22 x=%2297.29%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22107.20%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-2%22 x=%22111.45%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22115.31%22 y=%22130.93%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-3%22 x=%22122.51%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22132.97%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22138.20%22 y=%22130.93%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-1%22 x=%22144.85%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-4%22 x=%22154.75%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22159.72%22 y=%22134.53%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22164.95%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-1%22 x=%22171.41%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22181.32%22 y=%22134.53%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22185.57%22 y=%22130.93%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+<section class="bx bx-green"><header class="bx-h"><b>ត្រីកោណប៉ាស្កាល់សម្រាប់ទ្វេធា <span class="mi">\((a+b)^n\)</span></b></header><div class="bx-b">
+<p>មេគុណនៃការពន្លាត <span class="mi">\((a+b)^n\)</span> អាចទាញបានតាមត្រីកោណប៉ាស្កាល់ ៖</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(n=0\)</span> :</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="mi">\(n=1\)</span> :</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="mi">\(n=2\)</span> :</td>
+<td>1</td>
+<td></td>
+<td>2</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="mi">\(n=3\)</span> : 1</td>
+<td></td>
+<td>3</td>
+<td></td>
+<td>3</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="mi">\(n=4\)</span> : 1 4</td>
+<td></td>
+<td>6</td>
+<td></td>
+<td>4 1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ប្រើសមភាពសំខាន់ៗដើម្បីគណនា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((2x + 3y)^2\)</span></p></li>
+<li><p><span class="mi">\((3x - 5)^2\)</span></p></li>
+<li><p><span class="mi">\((4x - 7)(4x + 7)\)</span></p></li>
+<li><p><span class="mi">\(99^2\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\((2x + 3y)^2 = (2x)^2 + 2(2x)(3y) + (3y)^2 = 4x^2 + 12xy + 9y^2\)</span>។</p></li>
+<li><p><span class="mi">\((3x - 5)^2 = (3x)^2 - 2(3x)(5) + 5^2 = 9x^2 - 30x + 25\)</span>។</p></li>
+<li><p><span class="mi">\((4x - 7)(4x + 7) = (4x)^2 - 7^2 = 16x^2 - 49\)</span>។</p></li>
+<li><p><span class="mi">\(99^2 = (100 - 1)^2 = 100^2 - 2(100)(1) + 1^2 = 10000 - 200 + 1 = 9801\)</span>។</p></li>
+</ol>
+</div></section>
+<h3 id="u5">ការដាក់កន្សោមជាផលគុណកត្តា (Factoring)</h3>
+<h4>វិធីសាស្ត្រដាក់ជាផលគុណកត្តា</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ការដាក់ជាផលគុណកត្តា</b></header><div class="bx-b">
+<p><strong>ការដាក់ជាផលគុណកត្តា</strong> គឺជាការបំប្លែងផលបូក ឬផលដកនៃពហុធា ឱ្យទៅជាផលគុណនៃពីរ ឬច្រើនកត្តា។</p>
+</div></section>
+<p>វិធីសាស្ត្រចម្បងៗរួមមាន ៖</p>
+<ol class="list oldef cols1">
+<li><p><strong>ការទាញកត្តារួម ៖</strong> <span class="mi">\(ma + mb = m(a + b)\)</span></p></li>
+<li><p><strong>ការផ្តុំតួ ៖</strong> <span class="mi">\(ax + ay + bx + by = a(x + y) + b(x + y) = (x + y)(a + b)\)</span></p></li>
+<li><p><strong>ការប្រើសមភាពសំខាន់ៗ ៖</strong></p>
+<ul>
+<li><p><span class="mi">\(a^2 + 2ab + b^2 = (a+b)^2\)</span></p></li>
+<li><p><span class="mi">\(a^2 - 2ab + b^2 = (a-b)^2\)</span></p></li>
+<li><p><span class="mi">\(a^2 - b^2 = (a-b)(a+b)\)</span></p></li>
+<li><p><span class="mi">\(a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2)\)</span></p></li>
+</ul></li>
+<li><p><strong>ការបំបែកតួកណ្តាលនៃត្រីធាដឺក្រេទី ២ ៖</strong> <span class="mi">\(x^2 + (m+n)x + mn = (x + m)(x + n)\)</span></p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដាក់កន្សោមខាងក្រោមជាផលគុណកត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = 6x^3y - 9x^2y^2\)</span></p></li>
+<li><p><span class="mi">\(B = x^2 - 16\)</span></p></li>
+<li><p><span class="mi">\(C = 4x^2 - 12x + 9\)</span></p></li>
+<li><p><span class="mi">\(D = x^2 + 7x + 12\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = 3x^2y(2x - 3y)\)</span>។</p></li>
+<li><p><span class="mi">\(B = x^2 - 4^2 = (x - 4)(x + 4)\)</span>។</p></li>
+<li><p><span class="mi">\(C = (2x)^2 - 2(2x)(3) + 3^2 = (2x - 3)^2\)</span>។</p></li>
+<li><p><span class="mi">\(D = x^2 + 3x + 4x + 12 = x(x+3) + 4(x+3) = (x+3)(x+4)\)</span>។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ដាក់ជាផលគុណកត្តា</b></header><div class="bx-b">
+<p>ដាក់កន្សោមខាងក្រោមជាផលគុណកត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(E = 2x(a-b) + 5y(a-b)\)</span></p></li>
+<li><p><span class="mi">\(F = x^3 - 27\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ក្នុងចំណោមកន្សោមពីជគណិតខាងក្រោម តើកន្សោមណាខ្លះជាឯកធា? ប្រសិនបើជាឯកធា ចូរប្រាប់មេគុណ និងដឺក្រេរបស់វា ៖ <div class="md">\[5x^2y \;,\; -\frac{3}{4}a^3b^4 \;,\; 2x + 3 \;,\; \frac{7}{x^2} \;,\; \sqrt{5}mn^2 \;,\; 4x^{-3} \;,\; 2027\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ឯកធា ៖</p>
+<ul>
+<li><p><span class="mi">\(5x^2y\)</span> ៖ ជាឯកធា, មេគុណ <span class="mi">\(5\)</span>, ដឺក្រេ <span class="mi">\(3\)</span></p></li>
+<li><p><span class="mi">\(-\dfrac{3}{4}a^3b^4\)</span> ៖ ជាឯកធា, មេគុណ <span class="mi">\(-\dfrac{3}{4}\)</span>, ដឺក្រេ <span class="mi">\(7\)</span></p></li>
+<li><p><span class="mi">\(2x+3\)</span> ៖ មិនមែន (ជាពហុធា)</p></li>
+<li><p><span class="mi">\(\dfrac{7}{x^2} = 7x^{-2}\)</span> ៖ មិនមែន (និទស្សន្តអវិជ្ជមាន)</p></li>
+<li><p><span class="mi">\(\sqrt{5}mn^2\)</span> ៖ ជាឯកធា, មេគុណ <span class="mi">\(\sqrt{5}\)</span>, ដឺក្រេ <span class="mi">\(3\)</span></p></li>
+<li><p><span class="mi">\(4x^{-3}\)</span> ៖ មិនមែន</p></li>
+<li><p><span class="mi">\(2027\)</span> ៖ ជាឯកធា (ចំនួនថេរ), មេគុណ <span class="mi">\(2027\)</span>, ដឺក្រេ <span class="mi">\(0\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គណនាផលបូក និងផលដកនៃឯកធាដូចគ្នាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(7xy^2 - 12xy^2 + 8xy^2\)</span></p></li>
+<li><p><span class="mi">\(-4a^3b + 9a^3b - 15a^3b\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{2}x^2y^2 + \dfrac{2}{3}x^2y^2 - \dfrac{5}{6}x^2y^2\)</span></p></li>
+<li><p><span class="mi">\(3.5mn^3 - 1.2mn^3 - 4.8mn^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូក ដកឯកធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((7 - 12 + 8)xy^2 = 3xy^2\)</span></p></li>
+<li><p>b. <span class="mi">\((-4 + 9 - 15)a^3b = -10a^3b\)</span></p></li>
+<li><p>c. <span class="mi">\(\left(\dfrac{1}{2} + \dfrac{2}{3} - \dfrac{5}{6}\right)x^2y^2 = \left(\dfrac{3+4-5}{6}\right)x^2y^2 = \dfrac{1}{3}x^2y^2\)</span></p></li>
+<li><p>d. <span class="mi">\((3.5 - 1.2 - 4.8)mn^3 = -2.5mn^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គណនាផលគុណនៃឯកធាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((4a^2b^3)(-3a^4b^5)\)</span></p></li>
+<li><p><span class="mi">\(\left(-\dfrac{2}{5}x^3y\right)\left(\dfrac{15}{4}x^2y^4\right)\)</span></p></li>
+<li><p><span class="mi">\((\sqrt{3}x^2yz)(2\sqrt{3}xy^3z^2)\)</span></p></li>
+<li><p><span class="mi">\((-2a^2b)(3ab^2)(-4a^3b^3)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណឯកធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\([4 \times (-3)]a^{2+4}b^{3+5} = -12a^6b^8\)</span></p></li>
+<li><p>b. <span class="mi">\(\left(-\dfrac{2}{5} \times \dfrac{15}{4}\right)x^{3+2}y^{1+4} = -\dfrac{3}{2}x^5y^5\)</span></p></li>
+<li><p>c. <span class="mi">\((\sqrt{3} \times 2\sqrt{3})x^{2+1}y^{1+3}z^{1+2} = 6x^3y^4z^3\)</span></p></li>
+<li><p>d. <span class="mi">\([(-2) \times 3 \times (-4)]a^{2+1+3}b^{1+2+3} = 24a^6b^6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គណនាផលចែកនៃឯកធាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((36x^5y^4z^2) \div (-9x^2y^3z)\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{-48a^7b^5c^3}{16a^4b^5c}\)</span></p></li>
+<li><p><span class="mi">\(\left(\dfrac{3}{4}m^6n^4\right) \div \left(-\dfrac{9}{8}m^2n^3\right)\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{(6x^2y^3)^2}{12x^3y^4}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែកឯកធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\dfrac{36}{-9}x^{5-2}y^{4-3}z^{2-1} = -4x^3yz\)</span></p></li>
+<li><p>b. <span class="mi">\(\dfrac{-48}{16}a^{7-4}b^{5-5}c^{3-1} = -3a^3c^2\)</span></p></li>
+<li><p>c. <span class="mi">\(\left(\dfrac{3}{4} \div -\dfrac{9}{8}\right)m^{6-2}n^{4-3} = -\dfrac{2}{3}m^4n\)</span></p></li>
+<li><p>d. <span class="mi">\(\dfrac{36x^4y^6}{12x^3y^4} = 3xy^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមស្វ័យគុណនៃឯកធា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = (-3x^2y^3)^3\)</span></p></li>
+<li><p><span class="mi">\(B = (-2a^3b^2)^4 \times (3ab^3)^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោមស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(A = (-3)^3 (x^2)^3 (y^3)^3 = -27x^6y^9\)</span></p></li>
+<li><p>b. <span class="mi">\(B = [16a^{12}b^8] \times [9a^2b^6] = 144a^{14}b^{14}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>រៀបចំតួនៃពហុធា <span class="mi">\(P(x) = 5x^2 - 7x^4 + 3 - 2x + 4x^3\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តាមលំដាប់ចុះនៃស្វ័យគុណ</p></li>
+<li><p>តាមលំដាប់កើននៃស្វ័យគុណ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រៀបពហុធា <span class="mi">\(P(x)\)</span> ៖</p>
+<ul>
+<li><p>a. លំដាប់ចុះ ៖ <span class="mi">\(-7x^4 + 4x^3 + 5x^2 - 2x + 3\)</span></p></li>
+<li><p>b. លំដាប់កើន ៖ <span class="mi">\(3 - 2x + 5x^2 + 4x^3 - 7x^4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេឱ្យពហុធា <span class="mi">\(A = 4x^3 - 2x^2 + 5x - 7\)</span> និង <span class="mi">\(B = -3x^3 + 5x^2 - 8x + 2\)</span>។ គណនា ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(A + B\)</span></p></li>
+<li><p><span class="mi">\(A - B\)</span></p></li>
+<li><p><span class="mi">\(B - A\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាពហុធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(A + B = (4-3)x^3 + (-2+5)x^2 + (5-8)x + (-7+2) = x^3 + 3x^2 - 3x - 5\)</span></p></li>
+<li><p>b. <span class="mi">\(A - B = (4+3)x^3 + (-2-5)x^2 + (5+8)x + (-7-2) = 7x^3 - 7x^2 + 13x - 9\)</span></p></li>
+<li><p>c. <span class="mi">\(B - A = -(A - B) = -7x^3 + 7x^2 - 13x + 9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេឱ្យពហុធា <span class="mi">\(M = 2x^2 - 3xy + y^2\)</span>, <span class="mi">\(N = x^2 + 2xy - 3y^2\)</span> និង <span class="mi">\(P = -3x^2 + xy + 2y^2\)</span>។ គណនា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(M + N + P\)</span></p></li>
+<li><p><span class="mi">\(2M - 3N + P\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(M+N+P = (2+1-3)x^2 + (-3+2+1)xy + (1-3+2)y^2 = 0\)</span></p></li>
+<li><p>b. <span class="mi">\(2M - 3N + P = 2(2x^2-3xy+y^2) - 3(x^2+2xy-3y^2) + (-3x^2+xy+2y^2) = (4-3-3)x^2 + (-6-6+1)xy + (2+9+2)y^2 = -2x^2 - 11xy + 13y^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គណនាផលគុណឯកធានឹងពហុធា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3x^2(2x^3 - 4x^2 + 5x - 1)\)</span></p></li>
+<li><p><span class="mi">\(-2ab^2(3a^2b - 5ab^2 + 4ab - 7)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គុណឯកធានឹងពហុធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(6x^5 - 12x^4 + 15x^3 - 3x^2\)</span></p></li>
+<li><p>b. <span class="mi">\(-6a^3b^3 + 10a^2b^4 - 8a^2b^3 + 14ab^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គណនាផលគុណទ្វេធានឹងទ្វេធា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((2x + 3)(3x - 4)\)</span></p></li>
+<li><p><span class="mi">\((5a - 2b)(3a - 4b)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គុណទ្វេធានឹងទ្វេធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(6x^2 - 8x + 9x - 12 = 6x^2 + x - 12\)</span></p></li>
+<li><p>b. <span class="mi">\(15a^2 - 20ab - 6ab + 8b^2 = 15a^2 - 26ab + 8b^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គណនាផលគុណពហុធានឹងពហុធា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((x - 2)(x^2 + 2x + 4)\)</span></p></li>
+<li><p><span class="mi">\((2x - 3)(3x^2 - 2x + 5)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គុណពហុធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x-2)(x^2+2x+4) = x^3 - 2^3 = x^3 - 8\)</span></p></li>
+<li><p>b. <span class="mi">\(2x(3x^2-2x+5) - 3(3x^2-2x+5) = 6x^3 - 4x^2 + 10x - 9x^2 + 6x - 15 = 6x^3 - 13x^2 + 16x - 15\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គណនាផលចែកពហុធានឹងឯកធា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((15x^4 - 25x^3 + 10x^2) \div (5x^2)\)</span></p></li>
+<li><p><span class="mi">\((12a^3b^2 - 18a^2b^3 + 6ab^2) \div (-6ab^2)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកពហុធានឹងឯកធា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\dfrac{15x^4}{5x^2} - \dfrac{25x^3}{5x^2} + \dfrac{10x^2}{5x^2} = 3x^2 - 5x + 2\)</span></p></li>
+<li><p>b. <span class="mi">\(\dfrac{12a^3b^2}{-6ab^2} - \dfrac{18a^2b^3}{-6ab^2} + \dfrac{6ab^2}{-6ab^2} = -2a^2 + 3ab - 1\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ប្រើរូបមន្ត <span class="mi">\((a+b)^2\)</span> ដើម្បីពន្លាតកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\((x + 5)^2\)</span></p></li>
+<li><p><span class="mi">\((2x + 3)^2\)</span></p></li>
+<li><p><span class="mi">\((3a + 4b)^2\)</span></p></li>
+<li><p><span class="mi">\((x^2 + 2)^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពន្លាត <span class="mi">\((a+b)^2\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2 + 10x + 25\)</span></p></li>
+<li><p>b. <span class="mi">\(4x^2 + 12x + 9\)</span></p></li>
+<li><p>c. <span class="mi">\(9a^2 + 24ab + 16b^2\)</span></p></li>
+<li><p>d. <span class="mi">\(x^4 + 4x^2 + 4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ប្រើរូបមន្ត <span class="mi">\((a-b)^2\)</span> ដើម្បីពន្លាតកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\((x - 7)^2\)</span></p></li>
+<li><p><span class="mi">\((3x - 2)^2\)</span></p></li>
+<li><p><span class="mi">\((4a - 5b)^2\)</span></p></li>
+<li><p><span class="mi">\((2x^2 - 3)^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពន្លាត <span class="mi">\((a-b)^2\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2 - 14x + 49\)</span></p></li>
+<li><p>b. <span class="mi">\(9x^2 - 12x + 4\)</span></p></li>
+<li><p>c. <span class="mi">\(16a^2 - 40ab + 25b^2\)</span></p></li>
+<li><p>d. <span class="mi">\(4x^4 - 12x^2 + 9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>ប្រើរូបមន្ត <span class="mi">\((a-b)(a+b) = a^2 - b^2\)</span> ដើម្បីគណនា ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\((x - 6)(x + 6)\)</span></p></li>
+<li><p><span class="mi">\((2x - 5)(2x + 5)\)</span></p></li>
+<li><p><span class="mi">\((3a - 7b)(3a + 7b)\)</span></p></li>
+<li><p><span class="mi">\((x^2 - 4)(x^2 + 4)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពន្លាត <span class="mi">\((a-b)(a+b)\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2 - 36\)</span></p></li>
+<li><p>b. <span class="mi">\(4x^2 - 25\)</span></p></li>
+<li><p>c. <span class="mi">\(9a^2 - 49b^2\)</span></p></li>
+<li><p>d. <span class="mi">\(x^4 - 16\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ប្រើរូបមន្តសមភាពសំខាន់ៗគណនារហ័ស ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(102^2\)</span></p></li>
+<li><p><span class="mi">\(98^2\)</span></p></li>
+<li><p><span class="mi">\(105 \times 95\)</span></p></li>
+<li><p><span class="mi">\(201 \times 199\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនារហ័ស ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(102^2 = (100+2)^2 = 10000 + 400 + 4 = 10404\)</span></p></li>
+<li><p>b. <span class="mi">\(98^2 = (100-2)^2 = 10000 - 400 + 4 = 9604\)</span></p></li>
+<li><p>c. <span class="mi">\(105 \times 95 = (100+5)(100-5) = 10000 - 25 = 9975\)</span></p></li>
+<li><p>d. <span class="mi">\(201 \times 199 = (200+1)(200-1) = 40000 - 1 = 39999\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ពន្លាតគូបនៃផលបូក និងផលដក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((x + 3)^3\)</span></p></li>
+<li><p><span class="mi">\((2x - 1)^3\)</span></p></li>
+<li><p><span class="mi">\((a - 2b)^3\)</span></p></li>
+<li><p><span class="mi">\((3x + 2y)^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពន្លាតគូប ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^3 + 3(x^2)(3) + 3(x)(9) + 27 = x^3 + 9x^2 + 27x + 27\)</span></p></li>
+<li><p>b. <span class="mi">\(8x^3 - 3(4x^2)(1) + 3(2x)(1) - 1 = 8x^3 - 12x^2 + 6x - 1\)</span></p></li>
+<li><p>c. <span class="mi">\(a^3 - 6a^2b + 12ab^2 - 8b^3\)</span></p></li>
+<li><p>d. <span class="mi">\(27x^3 + 54x^2y + 36xy^2 + 8y^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ពន្លាតផលបូក និងផលដកគូប ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((x + 4)(x^2 - 4x + 16)\)</span></p></li>
+<li><p><span class="mi">\((2a - 3)(4a^2 + 6a + 9)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពន្លាតផលបូក-ដកគូប ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^3 + 4^3 = x^3 + 64\)</span></p></li>
+<li><p>b. <span class="mi">\((2a)^3 - 3^3 = 8a^3 - 27\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមពីជគណិតខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = (x + 3)^2 + (x - 3)^2\)</span></p></li>
+<li><p><span class="mi">\(B = (2x + 1)^2 - (2x - 1)^2\)</span></p></li>
+<li><p><span class="mi">\(C = (x + 2)^3 - (x - 2)^3\)</span></p></li>
+<li><p><span class="mi">\(D = (x - 1)(x + 1)(x^2 + 1)(x^4 + 1)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x^2+6x+9) + (x^2-6x+9) = 2x^2 + 18\)</span></p></li>
+<li><p>b. <span class="mi">\((4x^2+4x+1) - (4x^2-4x+1) = 8x\)</span></p></li>
+<li><p>c. <span class="mi">\((x^3+6x^2+12x+8) - (x^3-6x^2+12x-8) = 12x^2 + 16\)</span></p></li>
+<li><p>d. <span class="mi">\((x^2-1)(x^2+1)(x^4+1) = (x^4-1)(x^4+1) = x^8 - 1\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាដោយទាញកត្តារួម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(6x^3 - 9x^2 + 12x\)</span></p></li>
+<li><p><span class="mi">\(15a^2b^3 - 25a^3b^2 + 10a^2b^2\)</span></p></li>
+<li><p><span class="mi">\(3x(a - 2b) + 5y(a - 2b)\)</span></p></li>
+<li><p><span class="mi">\(2a(x + y) - 4b(x + y) + 6c(x + y)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទាញកត្តារួម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(3x(2x^2 - 3x + 4)\)</span></p></li>
+<li><p>b. <span class="mi">\(5a^2b^2(3b - 5a + 2)\)</span></p></li>
+<li><p>c. <span class="mi">\((a - 2b)(3x + 5y)\)</span></p></li>
+<li><p>d. <span class="mi">\(2(x + y)(a - 2b + 3c)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាដោយវិធីផ្តុំតួ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(ax - ay + bx - by\)</span></p></li>
+<li><p><span class="mi">\(x^3 + x^2 + x + 1\)</span></p></li>
+<li><p><span class="mi">\(2x^2 + 4xy - 3x - 6y\)</span></p></li>
+<li><p><span class="mi">\(ab - 5b + 3a - 15\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្តុំតួ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(a(x - y) + b(x - y) = (x - y)(a + b)\)</span></p></li>
+<li><p>b. <span class="mi">\(x^2(x + 1) + (x + 1) = (x + 1)(x^2 + 1)\)</span></p></li>
+<li><p>c. <span class="mi">\(2x(x + 2y) - 3(x + 2y) = (x + 2y)(2x - 3)\)</span></p></li>
+<li><p>d. <span class="mi">\(b(a - 5) + 3(a - 5) = (a - 5)(b + 3)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាដោយប្រើ <span class="mi">\(a^2 - b^2\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(x^2 - 49\)</span></p></li>
+<li><p><span class="mi">\(4x^2 - 81\)</span></p></li>
+<li><p><span class="mi">\(25a^2 - 16b^2\)</span></p></li>
+<li><p><span class="mi">\(1 - 64y^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើ <span class="mi">\(a^2 - b^2\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x - 7)(x + 7)\)</span></p></li>
+<li><p>b. <span class="mi">\((2x - 9)(2x + 9)\)</span></p></li>
+<li><p>c. <span class="mi">\((5a - 4b)(5a + 4b)\)</span></p></li>
+<li><p>d. <span class="mi">\((1 - 8y)(1 + 8y)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាដោយប្រើ <span class="mi">\(a^2 - b^2\)</span> (កន្សោមសាំញ៉ាំ) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((x + 3)^2 - 16\)</span></p></li>
+<li><p><span class="mi">\((2x - 1)^2 - (x + 2)^2\)</span></p></li>
+<li><p><span class="mi">\(9(a - b)^2 - 4(a + b)^2\)</span></p></li>
+<li><p><span class="mi">\(x^4 - 81\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើ <span class="mi">\(a^2 - b^2\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x+3-4)(x+3+4) = (x - 1)(x + 7)\)</span></p></li>
+<li><p>b. <span class="mi">\([(2x-1)-(x+2)][(2x-1)+(x+2)] = (x - 3)(3x + 1)\)</span></p></li>
+<li><p>c. <span class="mi">\([3(a-b)-2(a+b)][3(a-b)+2(a+b)] = (a - 5b)(5a - b)\)</span></p></li>
+<li><p>d. <span class="mi">\((x^2 - 9)(x^2 + 9) = (x - 3)(x + 3)(x^2 + 9)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាដោយប្រើការេប្រាកដ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 + 10x + 25\)</span></p></li>
+<li><p><span class="mi">\(4x^2 - 12x + 9\)</span></p></li>
+<li><p><span class="mi">\(9a^2 + 24ab + 16b^2\)</span></p></li>
+<li><p><span class="mi">\(25x^2 - 20xy + 4y^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការេប្រាកដ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x + 5)^2\)</span></p></li>
+<li><p>b. <span class="mi">\((2x - 3)^2\)</span></p></li>
+<li><p>c. <span class="mi">\((3a + 4b)^2\)</span></p></li>
+<li><p>d. <span class="mi">\((5x - 2y)^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាដោយប្រើផលបូក និងផលដកគូប ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^3 + 64\)</span></p></li>
+<li><p><span class="mi">\(8a^3 - 27\)</span></p></li>
+<li><p><span class="mi">\(27x^3 + 125y^3\)</span></p></li>
+<li><p><span class="mi">\(1000 - a^3b^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូក-ដកគូប ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x + 4)(x^2 - 4x + 16)\)</span></p></li>
+<li><p>b. <span class="mi">\((2a - 3)(4a^2 + 6a + 9)\)</span></p></li>
+<li><p>c. <span class="mi">\((3x + 5y)(9x^2 - 15xy + 25y^2)\)</span></p></li>
+<li><p>d. <span class="mi">\((10 - ab)(100 + 10ab + a^2b^2)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាត្រីធាដឺក្រេទី ២ ទម្រង់ <span class="mi">\(x^2 + bx + c\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 + 8x + 15\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 9x + 20\)</span></p></li>
+<li><p><span class="mi">\(x^2 + 2x - 24\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 3x - 28\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2 + 3x + 5x + 15 = (x + 3)(x + 5)\)</span></p></li>
+<li><p>b. <span class="mi">\(x^2 - 4x - 5x + 20 = (x - 4)(x - 5)\)</span></p></li>
+<li><p>c. <span class="mi">\(x^2 + 6x - 4x - 24 = (x + 6)(x - 4)\)</span></p></li>
+<li><p>d. <span class="mi">\(x^2 - 7x + 4x - 28 = (x - 7)(x + 4)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាត្រីធាដឺក្រេទី ២ ទម្រង់ <span class="mi">\(ax^2 + bx + c\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2x^2 + 7x + 3\)</span></p></li>
+<li><p><span class="mi">\(3x^2 - 8x + 4\)</span></p></li>
+<li><p><span class="mi">\(6x^2 + 7x - 5\)</span></p></li>
+<li><p><span class="mi">\(4x^2 - 13x + 3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2x^2 + 6x + x + 3 = 2x(x+3) + (x+3) = (x + 3)(2x + 1)\)</span></p></li>
+<li><p>b. <span class="mi">\(3x^2 - 6x - 2x + 4 = 3x(x-2) - 2(x-2) = (x - 2)(3x - 2)\)</span></p></li>
+<li><p>c. <span class="mi">\(6x^2 + 10x - 3x - 5 = 2x(3x+5) - (3x+5) = (3x + 5)(2x - 1)\)</span></p></li>
+<li><p>d. <span class="mi">\(4x^2 - 12x - x + 3 = 4x(x-3) - (x-3) = (x - 3)(4x - 1)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = x^3 - 3x^2 - 4x + 12\)</span></p></li>
+<li><p><span class="mi">\(B = x^3 + 4x^2 - 9x - 36\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2(x - 3) - 4(x - 3) = (x - 3)(x^2 - 4) = (x - 3)(x - 2)(x + 2)\)</span></p></li>
+<li><p>b. <span class="mi">\(x^2(x + 4) - 9(x + 4) = (x + 4)(x^2 - 9) = (x + 4)(x - 3)(x + 3)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តាដោយបង្កើតការេប្រាកដ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^4 + 4\)</span> (ជំនួយ ៖ ថែមនិងថយ <span class="mi">\(4x^2\)</span>)</p></li>
+<li><p><span class="mi">\(x^4 + x^2 + 1\)</span> (ជំនួយ ៖ ថែមនិងថយ <span class="mi">\(x^2\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្កើតការេប្រាកដ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x^4 + 4x^2 + 4) - 4x^2 = (x^2 + 2)^2 - (2x)^2 = (x^2 - 2x + 2)(x^2 + 2x + 2)\)</span></p></li>
+<li><p>b. <span class="mi">\((x^4 + 2x^2 + 1) - x^2 = (x^2 + 1)^2 - x^2 = (x^2 - x + 1)(x^2 + x + 1)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 - 2xy + y^2 - z^2\)</span></p></li>
+<li><p><span class="mi">\(a^2 - b^2 + 2bc - c^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x - y)^2 - z^2 = (x - y - z)(x - y + z)\)</span></p></li>
+<li><p>b. <span class="mi">\(a^2 - (b^2 - 2bc + c^2) = a^2 - (b - c)^2 = [a - (b - c)][a + (b - c)] = (a - b + c)(a + b - c)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គណនាតម្លៃលេខនៃកន្សោមដោយប្រើការដាក់ជាផលគុណកត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = 73^2 - 27^2\)</span></p></li>
+<li><p><span class="mi">\(B = 87^2 + 2 \times 87 \times 13 + 13^2\)</span></p></li>
+<li><p><span class="mi">\(C = 105^2 - 2 \times 105 \times 5 + 5^2\)</span></p></li>
+<li><p><span class="mi">\(D = \dfrac{75^2 - 25^2}{65^2 - 35^2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃលេខ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((73 - 27)(73 + 27) = 46 \times 100 = 4600\)</span></p></li>
+<li><p>b. <span class="mi">\((87 + 13)^2 = 100^2 = 10000\)</span></p></li>
+<li><p>c. <span class="mi">\((105 - 5)^2 = 100^2 = 10000\)</span></p></li>
+<li><p>d. <span class="mi">\(\dfrac{(75-25)(75+25)}{(65-35)(65+35)} = \dfrac{50 \times 100}{30 \times 100} = \dfrac{5}{3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>គណនាតម្លៃលេខនៃកន្សោម <span class="mi">\(P = x^3 - 6x^2 + 12x - 8\)</span> ចំពោះ <span class="mi">\(x = 102\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កន្សោម <span class="mi">\(P = (x - 2)^3\)</span>។ ចំពោះ <span class="mi">\(x = 102\)</span> ៖ <div class="md">\[P = (102 - 2)^3 = 100^3 = 1000000\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(x + y = 7\)</span> និង <span class="mi">\(xy = 10\)</span> ចូរកំណត់តម្លៃនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(x^2 + y^2\)</span></p></li>
+<li><p><span class="mi">\(x^3 + y^3\)</span></p></li>
+<li><p><span class="mi">\((x - y)^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បើ <span class="mi">\(x+y=7, xy=10\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2+y^2 = (x+y)^2 - 2xy = 49 - 20 = 29\)</span></p></li>
+<li><p>b. <span class="mi">\(x^3+y^3 = (x+y)(x^2-xy+y^2) = 7(29 - 10) = 7 \times 19 = 133\)</span></p></li>
+<li><p>c. <span class="mi">\((x-y)^2 = (x+y)^2 - 4xy = 49 - 40 = 9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(a - b = 5\)</span> និង <span class="mi">\(ab = 6\)</span> ចូរកំណត់តម្លៃនៃ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(a^2 + b^2\)</span></p></li>
+<li><p><span class="mi">\(a^3 - b^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បើ <span class="mi">\(a-b=5, ab=6\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(a^2+b^2 = (a-b)^2 + 2ab = 25 + 12 = 37\)</span></p></li>
+<li><p>b. <span class="mi">\(a^3-b^3 = (a-b)(a^2+ab+b^2) = 5(37 + 6) = 5 \times 43 = 215\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(x + \dfrac{1}{x} = 4\)</span> ចូរកំណត់តម្លៃនៃ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 + \dfrac{1}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(x^3 + \dfrac{1}{x^3}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បើ <span class="mi">\(x + \dfrac{1}{x} = 4\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2 + \dfrac{1}{x^2} = \left(x+\dfrac{1}{x}\right)^2 - 2 = 16 - 2 = 14\)</span></p></li>
+<li><p>b. <span class="mi">\(x^3 + \dfrac{1}{x^3} = \left(x+\dfrac{1}{x}\right)\left(x^2 - 1 + \dfrac{1}{x^2}\right) = 4(14 - 1) = 52\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(x - \dfrac{1}{x} = 3\)</span> ចូរកំណត់តម្លៃនៃ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 + \dfrac{1}{x^2}\)</span></p></li>
+<li><p><span class="mi">\(x^3 - \dfrac{1}{x^3}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បើ <span class="mi">\(x - \dfrac{1}{x} = 3\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^2 + \dfrac{1}{x^2} = \left(x-\dfrac{1}{x}\right)^2 + 2 = 9 + 2 = 11\)</span></p></li>
+<li><p>b. <span class="mi">\(x^3 - \dfrac{1}{x^3} = \left(x-\dfrac{1}{x}\right)\left(x^2 + 1 + \dfrac{1}{x^2}\right) = 3(11 + 1) = 36\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់សមភាព ៖ <span class="mi">\((a^2 + b^2)(x^2 + y^2) = (ax - by)^2 + (ay + bx)^2\)</span> (សមភាព Lagrange)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពន្លាតអង្គទាំងពីរ ៖ <div class="md">\[\begin{aligned}
+    (ax-by)^2 + (ay+bx)^2 &amp;= a^2x^2 - 2abxy + b^2y^2 \\
+    &amp;\quad{} + a^2y^2 + 2abxy + b^2x^2 \\
+    &amp;= a^2(x^2+y^2) + b^2(x^2+y^2) \\
+    &amp;= (a^2+b^2)(x^2+y^2) \quad{} (\text{ពិត})
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់ថា ផលគុណនៃបួនចំនួនគត់តៗគ្នា បូកនឹង <span class="mi">\(1\)</span> គឺជាការេប្រាកដជានិច្ច ៖ <div class="md">\[n(n+1)(n+2)(n+3) + 1 = [n(n+3) + 1]^2\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្តុំតួ ៖ <span class="mi">\([n(n+3)][(n+1)(n+2)] + 1 = (n^2+3n)(n^2+3n+2) + 1\)</span>។<br/>
+តាង <span class="mi">\(t = n^2+3n\)</span> ៖ <span class="mi">\(t(t+2) + 1 = t^2 + 2t + 1 = (t+1)^2 = [n(n+3) + 1]^2\)</span> ដែលជាការេប្រាកដ។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់ថា បើ <span class="mi">\(a + b + c = 0\)</span> នោះ <span class="mi">\(a^3 + b^3 + c^3 = 3abc\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមរូបមន្ត ៖ <span class="mi">\(a^3+b^3+c^3 - 3abc = (a+b+c)(a^2+b^2+c^2 - ab - bc - ca)\)</span>។<br/>
+ដោយ <span class="mi">\(a+b+c = 0\)</span> នាំឱ្យ <span class="mi">\(a^3+b^3+c^3 - 3abc = 0 \implies a^3+b^3+c^3 = 3abc\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃ <span class="mi">\(A = 100^2 - 99^2 + 98^2 - 97^2 + \dots + 2^2 - 1^2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្តុំជាគូៗ ៖ <div class="md">\[\begin{aligned}
+    A &amp;= (100-99)(100+99) + \dots + (2-1)(2+1) \\
+    &amp;= 199 + 195 + \dots + 3 \\
+    &amp;= 100 + 99 + 98 + \dots + 1 = \dfrac{100 \times 101}{2} = 5050
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>រកតម្លៃតូចបំផុតនៃកន្សោម <span class="mi">\(A = x^2 - 6x + 14\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(A = (x - 3)^2 + 5\)</span>។ ដោយ <span class="mi">\((x-3)^2 \ge 0\)</span> នោះ <span class="mi">\(A \ge 5\)</span>។ តម្លៃតូចបំផុតនៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(5\)</span> កាលណា <span class="mi">\(x = 3\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>រកតម្លៃធំបំផុតនៃកន្សោម <span class="mi">\(B = -x^2 + 8x - 10\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(B = -(x^2 - 8x + 16) + 6 = -(x - 4)^2 + 6\)</span>។<br/>
+ដោយ <span class="mi">\(-(x-4)^2 \le 0\)</span> នោះ <span class="mi">\(B \le 6\)</span>។ តម្លៃធំបំផុតនៃ <span class="mi">\(B\)</span> គឺ <span class="mi">\(6\)</span> កាលណា <span class="mi">\(x = 4\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ចតុកោណកែងមួយមានបណ្តោយ <span class="mi">\((2x + 5)\text{ cm}\)</span> និងទទឹង <span class="mi">\((x + 3)\text{ cm}\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>រកកន្សោមតាងបរិមាត្រនៃចតុកោណកែង</p></li>
+<li><p>រកកន្សោមតាងផ្ទៃក្រឡានៃចតុកោណកែង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>វិមាត្រចតុកោណកែង ៖</p>
+<ul>
+<li><p>a. បរិមាត្រ ៖ <span class="mi">\(P = 2[(2x+5) + (x+3)] = 2(3x+8) = 6x + 16\text{ cm}\)</span></p></li>
+<li><p>b. ផ្ទៃក្រឡា ៖ <span class="mi">\(S = (2x+5)(x+3) = 2x^2 + 11x + 15\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>បន្ទះដែកការេមួយមានរង្វាស់ជ្រុង <span class="mi">\(a\text{ cm}\)</span>។ គេកាត់ការេតូចៗចំនួន ៤ ចេញពីជ្រុងទាំងបួន ដែលការេតូចនីមួយៗមានជ្រុង <span class="mi">\(b\text{ cm}\)</span> (<span class="mi">\(b &lt; \dfrac{a}{2}\)</span>)។</p>
+<ol class="list olka cols2">
+<li><p>សរសេរកន្សោមតាងផ្ទៃក្រឡាដែលនៅសល់</p></li>
+<li><p>ដាក់កន្សោមនោះជាផលគុណកត្តា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទះដែកការេ ៖</p>
+<ul>
+<li><p>a. ផ្ទៃក្រឡាដែលនៅសល់ ៖ <span class="mi">\(S = a^2 - 4b^2\text{ cm}^2\)</span></p></li>
+<li><p>b. ដាក់ជាផលគុណកត្តា ៖ <span class="mi">\(S = (a - 2b)(a + 2b)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>គូបមួយមានទ្រនុងប្រវែង <span class="mi">\((x + 2)\text{ cm}\)</span>។ រកកន្សោមតាង ៖</p>
+<ol class="list olka cols2">
+<li><p>ផ្ទៃក្រឡាខាងទាំងអស់</p></li>
+<li><p>មាឌនៃគូប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គូបមានទ្រនុង <span class="mi">\((x+2)\)</span> ៖</p>
+<ul>
+<li><p>a. ផ្ទៃក្រឡាខាង ៖ <span class="mi">\(S_{lat} = 4(x+2)^2 = 4x^2 + 16x + 16\text{ cm}^2\)</span></p></li>
+<li><p>b. មាឌ ៖ <span class="mi">\(V = (x+2)^3 = x^3 + 6x^2 + 12x + 8\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការពីជគណិតដោយដាក់ជាផលគុណកត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 - 9 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 5x + 6 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x-3)(x+3) = 0 \implies x = 3\)</span> ឬ <span class="mi">\(x = -3\)</span></p></li>
+<li><p>b. <span class="mi">\((x-2)(x-3) = 0 \implies x = 2\)</span> ឬ <span class="mi">\(x = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((2x - 3)^2 - (x + 1)^2 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^3 - 4x = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\([(2x-3)-(x+1)][(2x-3)+(x+1)] = 0 \iff (x-4)(3x-2) = 0 \implies x = 4\)</span> ឬ <span class="mi">\(x = \dfrac{2}{3}\)</span></p></li>
+<li><p>b. <span class="mi">\(x(x^2-4) = 0 \iff x(x-2)(x+2) = 0 \implies x = 0, 2, -2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>រកគ្រប់គូនៃចំនួនគត់ <span class="mi">\((x, y)\)</span> ដែលផ្ទៀងផ្ទាត់សមភាព ៖ <span class="mi">\(xy + 2x - 3y = 11\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(xy + 2x - 3y = 11 \iff x(y+2) - 3(y+2) - 6 = 11 \iff (x-3)(y+2) = 17\)</span>។<br/>
+ដោយ <span class="mi">\(17\)</span> ជាចំនួនបឋម កត្តាអាចជា <span class="mi">\((\pm 1, \pm 17)\)</span> ឬ <span class="mi">\((\pm 17, \pm 1)\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(x-3=1, y+2=17 \implies (4, 15)\)</span></p></li>
+<li><p><span class="mi">\(x-3=17, y+2=1 \implies (20, -1)\)</span></p></li>
+<li><p><span class="mi">\(x-3=-1, y+2=-17 \implies (2, -19)\)</span></p></li>
+<li><p><span class="mi">\(x-3=-17, y+2=-1 \implies (-14, -3)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ស្រាយបញ្ជាក់ថា ចំពោះគ្រប់ចំនួនគត់ <span class="mi">\(n\)</span> កន្សោម <span class="mi">\(A = n^3 - n\)</span> ចែកដាច់នឹង <span class="mi">\(6\)</span> ជានិច្ច។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(A = n(n^2 - 1) = (n-1)n(n+1)\)</span>។<br/>
+កន្សោមនេះជាផលគុណនៃបីចំនួនគត់តៗគ្នា។ ក្នុងបីចំនួនគត់តគ្នា តែងតែមានមួយតួចែកដាច់នឹង <span class="mi">\(2\)</span> និងមួយតួចែកដាច់នឹង <span class="mi">\(3\)</span>។ ដូច្នេះផលគុណចែកដាច់នឹង <span class="mi">\(2 \times 3 = 6\)</span> ជានិច្ច។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖ <div class="md">\[S = \frac{1}{(x-y)(y-z)} + \frac{1}{(y-z)(z-x)} + \frac{1}{(z-x)(x-y)}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្រូវភាគបែងរួម <span class="mi">\((x-y)(y-z)(z-x)\)</span> ៖ <div class="md">\[\begin{aligned}
+    S &amp;= \frac{-(z-x) - (x-y) - (y-z)}{(x-y)(y-z)(z-x)} \\
+    &amp;= \frac{-z+x-x+y-y+z}{(x-y)(y-z)(z-x)} = \frac{0}{(x-y)(y-z)(z-x)} = 0
+\end{aligned}\]</div></p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៥ កន្សោមពីជគណិត</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g08_c05">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L04.html"><small>← មេរៀនមុន</small><b>រង្វាស់រង្វាល់</b></a><a class="next" href="L06.html"><small>មេរៀនបន្ទាប់ →</small><b>កន្សោមសនិទាន</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "កន្សោមណាខាងក្រោមនេះជាឯកធា?", "options": ["<span class=\"mi\">\\(-4x^3y\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{5}{x}\\)<\/span>", "<span class=\"mi\">\\(3x^2 + 1\\)<\/span>", "<span class=\"mi\">\\(2\\sqrt{x}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មេគុណនៃឯកធា <span class=\"mi\">\\(-\\dfrac{3}{7}x^2y^4\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{7}\\)<\/span>", "<span class=\"mi\">\\(-\\dfrac{3}{7}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ដឺក្រេនៃឯកធា <span class=\"mi\">\\(8x^3y^2z\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ដឺក្រេនៃចំនួនថេរមិនសូន្យស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "គ្មានដឺក្រេ", "មិនកំណត់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គូនៃឯកធាណាជាឯកធាដូចគ្នា?", "options": ["<span class=\"mi\">\\(2x^2y\\)<\/span> និង <span class=\"mi\">\\(2xy^2\\)<\/span>", "<span class=\"mi\">\\(3a^2\\)<\/span> និង <span class=\"mi\">\\(3b^2\\)<\/span>", "<span class=\"mi\">\\(4x\\)<\/span> និង <span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(-5ab^3\\)<\/span> និង <span class=\"mi\">\\(3ab^3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(4x^2y + 7x^2y\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(11x^4y^2\\)<\/span>", "<span class=\"mi\">\\(28x^2y\\)<\/span>", "<span class=\"mi\">\\(11x^2y\\)<\/span>", "<span class=\"mi\">\\(11xy\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលដក <span class=\"mi\">\\(3a^2b - 8a^2b\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5a^2b\\)<\/span>", "<span class=\"mi\">\\(-5\\)<\/span>", "<span class=\"mi\">\\(-11a^2b\\)<\/span>", "<span class=\"mi\">\\(-5a^2b\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((3x^2y)(4xy^3)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(12x^3y^4\\)<\/span>", "<span class=\"mi\">\\(12x^2y^3\\)<\/span>", "<span class=\"mi\">\\(7x^3y^4\\)<\/span>", "<span class=\"mi\">\\(12x^3y^3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(\\dfrac{18a^5b^3}{6a^2b}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(12a^3b^2\\)<\/span>", "<span class=\"mi\">\\(3a^7b^4\\)<\/span>", "<span class=\"mi\">\\(3a^3b^2\\)<\/span>", "<span class=\"mi\">\\(3ab^2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-2x^2y)^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-6x^6y^3\\)<\/span>", "<span class=\"mi\">\\(-8x^6y^3\\)<\/span>", "<span class=\"mi\">\\(8x^6y^3\\)<\/span>", "<span class=\"mi\">\\(-8x^5y^3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនតួនៃពហុធា <span class=\"mi\">\\(4x^3 - 2x^2 + 5x - 7\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ដឺក្រេនៃពហុធា <span class=\"mi\">\\(5x^4 - 2x^6 + 3x - 1\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រៀបពហុធា <span class=\"mi\">\\(3x - 5x^3 + 2 - x^2\\)<\/span> តាមលំដាប់ចុះនៃស្វ័យគុណគឺ ៖", "options": ["<span class=\"mi\">\\(5x^3 + x^2 - 3x - 2\\)<\/span>", "<span class=\"mi\">\\(2 + 3x - x^2 - 5x^3\\)<\/span>", "<span class=\"mi\">\\(-5x^3 - x^2 + 3x + 2\\)<\/span>", "<span class=\"mi\">\\(-5x^3 + 3x - x^2 + 2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\((3x^2 - 2x + 1) + (2x^2 + 5x - 4)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5x^2 + 3x - 3\\)<\/span>", "<span class=\"mi\">\\(5x^2 - 7x + 5\\)<\/span>", "<span class=\"mi\">\\(5x^2 + 3x + 3\\)<\/span>", "<span class=\"mi\">\\(x^2 + 3x - 3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលដក <span class=\"mi\">\\((5x - 3) - (2x + 4)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3x - 7\\)<\/span>", "<span class=\"mi\">\\(3x + 1\\)<\/span>", "<span class=\"mi\">\\(7x - 7\\)<\/span>", "<span class=\"mi\">\\(3x - 1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(2x(3x^2 - 4x + 5)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6x^3 - 4x^2 + 5x\\)<\/span>", "<span class=\"mi\">\\(6x^3 - 8x^2 + 10x\\)<\/span>", "<span class=\"mi\">\\(6x^2 - 8x + 10\\)<\/span>", "<span class=\"mi\">\\(5x^3 - 2x^2 + 7x\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((x + 3)(x + 5)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(x^2 + 8x + 15\\)<\/span>", "<span class=\"mi\">\\(x^2 + 15\\)<\/span>", "<span class=\"mi\">\\(x^2 + 15x + 8\\)<\/span>", "<span class=\"mi\">\\(x^2 + 2x + 15\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((2x - 1)(3x + 2)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6x^2 - 2\\)<\/span>", "<span class=\"mi\">\\(6x^2 - x - 2\\)<\/span>", "<span class=\"mi\">\\(6x^2 + x - 2\\)<\/span>", "<span class=\"mi\">\\(6x^2 + 7x - 2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ការេនៃផលបូក <span class=\"mi\">\\((x + 4)^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(x^2 + 16\\)<\/span>", "<span class=\"mi\">\\(x^2 + 8x + 16\\)<\/span>", "<span class=\"mi\">\\(x^2 + 4x + 16\\)<\/span>", "<span class=\"mi\">\\(x^2 + 16x + 16\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ការេនៃផលដក <span class=\"mi\">\\((2x - 3)^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4x^2 - 12x + 9\\)<\/span>", "<span class=\"mi\">\\(4x^2 - 9\\)<\/span>", "<span class=\"mi\">\\(4x^2 - 6x + 9\\)<\/span>", "<span class=\"mi\">\\(4x^2 + 12x + 9\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((3x - 5)(3x + 5)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(9x^2 - 30x + 25\\)<\/span>", "<span class=\"mi\">\\(9x^2 + 25\\)<\/span>", "<span class=\"mi\">\\(6x^2 - 25\\)<\/span>", "<span class=\"mi\">\\(9x^2 - 25\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(101^2 - 99^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(400\\)<\/span>", "<span class=\"mi\">\\(200\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(52 \\times 48\\)<\/span> គណនាតាម <span class=\"mi\">\\((50+2)(50-2)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2500\\)<\/span>", "<span class=\"mi\">\\(2504\\)<\/span>", "<span class=\"mi\">\\(2496\\)<\/span>", "<span class=\"mi\">\\(2400\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គូបនៃផលបូក <span class=\"mi\">\\((x + 2)^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(x^3 + 8\\)<\/span>", "<span class=\"mi\">\\(x^3 + 6x^2 + 12x + 8\\)<\/span>", "<span class=\"mi\">\\(x^3 + 3x^2 + 6x + 8\\)<\/span>", "<span class=\"mi\">\\(x^3 + 8x^2 + 12x + 8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គូបនៃផលដក <span class=\"mi\">\\((x - 1)^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(x^3 - 1\\)<\/span>", "<span class=\"mi\">\\(x^3 - 3x^2 + 3x - 1\\)<\/span>", "<span class=\"mi\">\\(x^3 + 3x^2 - 3x - 1\\)<\/span>", "<span class=\"mi\">\\(x^3 - x^2 + x - 1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ពន្លាតនៃ <span class=\"mi\">\\((x + 3)(x^2 - 3x + 9)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(x^3 - 27\\)<\/span>", "<span class=\"mi\">\\((x+3)^3\\)<\/span>", "<span class=\"mi\">\\(x^3 + 9\\)<\/span>", "<span class=\"mi\">\\(x^3 + 27\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ពន្លាតនៃ <span class=\"mi\">\\((2x - 1)(4x^2 + 2x + 1)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(8x^3 + 1\\)<\/span>", "<span class=\"mi\">\\(8x^3 - 1\\)<\/span>", "<span class=\"mi\">\\(4x^3 - 1\\)<\/span>", "<span class=\"mi\">\\(8x^3 - 2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "កត្តារួមធំបំផុតនៃ <span class=\"mi\">\\(12x^3y^2\\)<\/span> និង <span class=\"mi\">\\(18x^2y^4\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(6x^2y^2\\)<\/span>", "<span class=\"mi\">\\(6xy\\)<\/span>", "<span class=\"mi\">\\(36x^3y^4\\)<\/span>", "<span class=\"mi\">\\(3x^2y\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(5x^2 - 15x\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\(5(x^2 - 3)\\)<\/span>", "<span class=\"mi\">\\(x(5x - 15)\\)<\/span>", "<span class=\"mi\">\\(5x(x - 3)\\)<\/span>", "<span class=\"mi\">\\(5x(x + 3)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^2 - 36\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x - 6)^2\\)<\/span>", "<span class=\"mi\">\\((x - 18)(x + 18)\\)<\/span>", "<span class=\"mi\">\\((x - 6)(x + 6)\\)<\/span>", "<span class=\"mi\">\\((x + 6)^2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(4x^2 - 25y^2\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((2x - 5y)(2x + 5y)\\)<\/span>", "<span class=\"mi\">\\((4x - 5y)(4x + 5y)\\)<\/span>", "<span class=\"mi\">\\((2x - 5y)^2\\)<\/span>", "<span class=\"mi\">\\((2x + 5y)^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^2 + 6x + 9\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x + 9)^2\\)<\/span>", "<span class=\"mi\">\\((x + 3)(x - 3)\\)<\/span>", "<span class=\"mi\">\\((x - 3)^2\\)<\/span>", "<span class=\"mi\">\\((x + 3)^2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(9x^2 - 12x + 4\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((3x - 2)^2\\)<\/span>", "<span class=\"mi\">\\((3x + 2)^2\\)<\/span>", "<span class=\"mi\">\\((9x - 4)^2\\)<\/span>", "<span class=\"mi\">\\((3x - 2)(3x + 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^3 + 8\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x + 2)^3\\)<\/span>", "<span class=\"mi\">\\((x + 2)(x^2 + 2x + 4)\\)<\/span>", "<span class=\"mi\">\\((x - 2)(x^2 + 2x + 4)\\)<\/span>", "<span class=\"mi\">\\((x + 2)(x^2 - 2x + 4)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^3 - 125\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x - 5)(x^2 - 5x + 25)\\)<\/span>", "<span class=\"mi\">\\((x + 5)(x^2 - 5x + 25)\\)<\/span>", "<span class=\"mi\">\\((x - 5)(x^2 + 5x + 25)\\)<\/span>", "<span class=\"mi\">\\((x - 5)^3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^2 + 5x + 6\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x + 1)(x + 6)\\)<\/span>", "<span class=\"mi\">\\((x + 2)(x + 3)\\)<\/span>", "<span class=\"mi\">\\((x - 2)(x - 3)\\)<\/span>", "<span class=\"mi\">\\((x + 5)(x + 1)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^2 - 7x + 10\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x + 2)(x + 5)\\)<\/span>", "<span class=\"mi\">\\((x - 2)(x - 5)\\)<\/span>", "<span class=\"mi\">\\((x - 1)(x - 10)\\)<\/span>", "<span class=\"mi\">\\((x - 2)(x + 5)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^2 - x - 12\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x - 3)(x + 4)\\)<\/span>", "<span class=\"mi\">\\((x - 2)(x + 6)\\)<\/span>", "<span class=\"mi\">\\((x - 6)(x + 2)\\)<\/span>", "<span class=\"mi\">\\((x - 4)(x + 3)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(2x^2 + 5x + 3\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((2x + 3)(x + 1)\\)<\/span>", "<span class=\"mi\">\\((2x + 1)(x + 3)\\)<\/span>", "<span class=\"mi\">\\((2x - 3)(x - 1)\\)<\/span>", "<span class=\"mi\">\\((x + 1)(x + 5)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(ax + ay + bx + by\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((a + b)(x - y)\\)<\/span>", "<span class=\"mi\">\\(ab(x + y)\\)<\/span>", "<span class=\"mi\">\\((a - b)(x + y)\\)<\/span>", "<span class=\"mi\">\\((a + b)(x + y)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\(A = x^2 - 4x + 4\\)<\/span> ចំពោះ <span class=\"mi\">\\(x = 12\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(144\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(120\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(B = x^3 - 3x^2 + 3x - 1\\)<\/span> ចំពោះ <span class=\"mi\">\\(x = 11\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(1000\\)<\/span>", "<span class=\"mi\">\\(121\\)<\/span>", "<span class=\"mi\">\\(1331\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a + b = 5\\)<\/span> និង <span class=\"mi\">\\(ab = 6\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(a^2 + b^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(19\\)<\/span>", "<span class=\"mi\">\\(37\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a - b = 4\\)<\/span> និង <span class=\"mi\">\\(ab = 5\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(a^2 + b^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(26\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលចែកនៃ <span class=\"mi\">\\((6x^3 - 9x^2 + 3x) \\div (3x)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2x^2 - 3x\\)<\/span>", "<span class=\"mi\">\\(3x^2 - 3x + 1\\)<\/span>", "<span class=\"mi\">\\(2x^2 - 3x - 1\\)<\/span>", "<span class=\"mi\">\\(2x^2 - 3x + 1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\((x+1)^2 - (x-1)^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(2x^2 + 2\\)<\/span>", "<span class=\"mi\">\\(4x\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\((x+2)^2 - 9\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x-1)(x+5)\\)<\/span>", "<span class=\"mi\">\\((x+5)(x+1)\\)<\/span>", "<span class=\"mi\">\\((x-7)(x+11)\\)<\/span>", "<span class=\"mi\">\\((x-1)^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ដាក់ជាផលគុណកត្តា <span class=\"mi\">\\(x^4 - 16\\)<\/span> បាន ៖", "options": ["<span class=\"mi\">\\((x^2 - 4)(x^2 + 4)\\)<\/span>", "<span class=\"mi\">\\((x^2 - 4)^2\\)<\/span>", "<span class=\"mi\">\\((x - 2)^2 (x + 2)^2\\)<\/span>", "<span class=\"mi\">\\((x - 2)(x + 2)(x^2 + 4)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ពហុធា <span class=\"mi\">\\(P(x) = x^2 - 6x + k\\)<\/span> ជាការេប្រាកដ កាលណា <span class=\"mi\">\\(k\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(x + \\dfrac{1}{x} = 3\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(x^2 + \\dfrac{1}{x^2}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

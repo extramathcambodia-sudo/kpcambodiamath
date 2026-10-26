@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៤ : សំណុំ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៤ «សំណុំ» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៤ : សំណុំ — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៤ «សំណុំ» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ៤</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៤</span>
+      <div><span class="ls-kicker">ជំពូកទី ២ តក្កវិទ្យា សំណុំ និងចំនួន · មេរៀនទី ៤ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>សំណុំ</h1><div class="ls-chips"><span class="chip chip-soon">តក្កវិទ្យា សំណុំ និងចំនួន</span><span class="chip chip-soon">៧ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណនៃសំណុំ</a></li><li class="sub"><a href="#u2">២. សំណុំស្មើគ្នា</a></li><li class="sub"><a href="#u3">៣. សំណុំរង</a></li><li class="sub"><a href="#u4">៤. សំណុំសកល</a></li><li class="sub"><a href="#u5">៥. សំណុំបំពេញ</a></li><li class="sub"><a href="#u6">៦. ប្រមាណវិធីលើសំណុំ</a></li><li class="sub"><a href="#u7">៧. លក្ខណៈនៃប្រមាណវិធីលើសំណុំ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃទ្រឹស្ដីសំណុំ និងអ្នកប្រាជ្ញ Georg Cantor</b></header><div class="bx-b">
+<p><strong>ទ្រឹស្ដីសំណុំ (Set Theory)</strong> ត្រូវបានបង្កើតឡើងនៅចុងសតវត្សទី១៩ ដោយគណិតវិទូអាល្លឺម៉ង់ដ៏ឆ្នើមលោក ចច កង់ទ័រ (Georg Cantor, ១៨៤៥–១៩១៨)។ លោកបានបង្កើតនិយមន័យនៃសំណុំ និងបានណែនាំគំនិតបដិវត្តន៍អំពី «អនន្តភាព» (Infinity) ដែលបានបង្ហាញថាសំណុំអនន្តមួយចំនួនមានទំហំធំជាងសំណុំអនន្តដទៃទៀត។</p>
+<p>ទោះបីជាដំបូងទ្រឹស្ដីនេះត្រូវបានជំទាស់ដោយគណិតវិទូមួយចំនួនក៏ដោយ ក្រោយមកលោក ដាវីឌ ហ៊ីលបឺត (David Hilbert) បានប្រកាសយ៉ាងឱឡារិកថា៖ «គ្មាននរណាម្នាក់អាចបណ្តេញយើងចេញពីឋានសួគ៌ដែលកង់ទ័របានបង្កើតឡើងនោះឡើយ!»។ សព្វថ្ងៃនេះ ទ្រឹស្ដីសំណុំគឺជាភាសាសកល និងជាគ្រឹះនៃគណិតវិទ្យាគ្រប់ផ្នែក ដូចជា ធរណីមាត្រ ពីជគណិត ការវិភាគ និងប្រព័ន្ធមូលដ្ឋានទិន្នន័យ (Relational Database) ក្នុងបច្ចេកវិទ្យាព័ត៌មានវិទ្យា។</p>
+<p>ក្នុងវិស្វកម្មខ្មែរបុរាណ គោលគំនិតនៃការចាត់ថ្នាក់ និងការបែងចែកក្រុមវត្ថុធាតុ (ដូចជាថ្មភក់ ថ្មបាយក្រៀម ប្រភេទឈើ) និងរចនាសម្ព័ន្ធឋានានុក្រមកងទ័ពនាសម័យអង្គរ សុទ្ធសឹងឆ្លុះបញ្ចាំងពីការអនុវត្តជាក់ស្ដែងនៃទ្រឹស្ដីសំណុំក្នុងសង្គមខ្មែរ។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ?</b></header><div class="bx-b">
+<p>រំលឹកចំណេះដឹងពីថ្នាក់ក្រោម៖<br/>
+១. ការស្គាល់ចំនួនគត់ ចំនួនសនិទាន និងចំនួនទសភាគ។<br/>
+២. ការប្រើប្រាស់វង់ក្រចក និងសញ្ញាផ្សេងៗក្នុងការគណនា។</p>
+</div></section>
+<h3 id="u1">សញ្ញាណនៃសំណុំ</h3>
+<h4>សំណុំកំណត់តាមការរៀបរាប់ឈ្មោះធាតុ</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សុខបានជ្រើសរើសអក្សរ <span class="mi">\(m, a, t, h, s\)</span> ដើម្បីសរសេរពាក្យ maths ។ អក្សរ <span class="mi">\(m, a, t, h, s\)</span> អាចបង្កើតបានជាសំណុំមួយ ។ បើគេតាង <span class="mi">\(A\)</span> ជាសំណុំខាងលើនោះ គេកំណត់សរសេរ <span class="mi">\(A = \{m, a, t, h, s\}\)</span> ។</p>
+<p>គេតាងឈ្មោះនៃសំណុំដោយអក្សរធំ ដូចជា <span class="mi">\(A, B, C, D, F, ...\)</span> ។ អក្សរនីមួយៗនៃសំណុំ <span class="mi">\(A\)</span> ហៅថា</p>
+<p><strong>ធាតុ</strong>នៃ <span class="mi">\(A\)</span> ។</p>
+<p>គេបានកំណត់សំណុំ <span class="mi">\(A = \{m, a, t, h, s\}\)</span> ដោយរៀបរាប់ឈ្មោះធាតុទាំងអស់នៃ <span class="mi">\(A\)</span> ។</p>
+<p>គេបាន <span class="mi">\(a\)</span> ជាធាតុមួយនៃ <span class="mi">\(A\)</span> ហើយគេកំណត់សរសេរ <span class="mi">\(a \in A\)</span> (អានថា <span class="mi">\(a\)</span> ជាធាតុនៃ <span class="mi">\(A\)</span> ) ។ ផ្ទុយទៅវិញ <span class="mi">\(b\)</span> មិនមែនជាធាតុនៃ <span class="mi">\(A\)</span> ទេ នោះគេកំណត់សរសេរ <span class="mi">\(b \notin A\)</span> (អានថា <span class="mi">\(b\)</span> មិនមែនជាធាតុនៃ <span class="mi">\(A\)</span> ) ។ គេបាន សំណុំកំណត់ដោយលក្ខខណ្ឌជាក់លាក់ ព្រោះគេអាចបញ្ជាក់ថា វត្ថុណាជាធាតុនៃ <span class="mi">\(A\)</span> ឬមិនមែនជាធាតុនៃ <span class="mi">\(A\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>តាមរបៀបដូចគ្នានេះ បើ <span class="mi">\(D\)</span> ជាសំណុំនៃថ្ងៃប្រចាំសប្តាហ៍ នោះគេបាន៖<br/>
+<span class="mi">\(D = \{\)</span> ចន្ទ អង្គារ ពុធ ព្រហស្បតិ៍ សុក្រ សៅរ៍ និងអាទិត្យ <span class="mi">\(\}\)</span> ។</p>
+<p>គេអាចតាងធាតុទាំងអស់នៃសំណុំដោយចំណុចនៅខ្សែបិទជិតហៅថា</p>
+<p><strong>ដ្យាក្រាមវ៉ែន</strong> (Venn Diagram) ។ ចំពោះសំណុំ <span class="mi">\(A\)</span> ខាងលើគេអាចតាងដ្យាក្រាមវ៉ែនដូចខាងស្ដាំ ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណុំគឺជាបណ្ដុំនៃវត្ថុ ដែលកំណត់ដោយលក្ខខណ្ឌជាក់លាក់ ។ ចំនួនធាតុនៃសំណុំ <span class="mi">\(A\)</span> គេកំណត់សរសេរដោយ <span class="mi">\(n(A)\)</span> ។</p>
+</div></section>
+<p><strong>សម្គាល់</strong> សំណុំដែលគ្មានធាតុគេហៅថាសំណុំទទេ ហើយតាងដោយ <span class="mi">\(\varnothing\)</span> ឬ <span class="mi">\(\{ \}\)</span> ។ គេបាន <span class="mi">\(n(\varnothing) = 0\)</span> ។ ធាតុនីមួយៗនៃសំណុំមិនមានភាពច្រំដែល មានន័យថាធាតុនីមួយៗនៃសំណុំត្រូវតែខុសៗគ្នា ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១</span><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>កំណត់សំណុំខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  កំណត់សំណុំតួចែកវិជ្ជមាននៃ <span class="mi">\(6\)</span> ។</td>
+<td><strong>ខ.</strong>  កំណត់សំណុំចំនួនគត់រ៉ឺឡាទីប ដែលធំជាង <span class="mi">\(-3\)</span> តែតូចជាង <span class="mi">\(3\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<strong>ក.</strong>  សំណុំតួចែកវិជ្ជមាននៃ <span class="mi">\(6\)</span> តាងដោយ <span class="mi">\(B = \{1, 2, 3, 6\}\)</span> ។<br/>
+<strong>ខ.</strong>  សំណុំចំនួនគត់រ៉ឺឡាទីប ដែលធំជាង <span class="mi">\(-3\)</span> តែតូចជាង <span class="mi">\(3\)</span> តាងដោយ <span class="mi">\(C = \{-2, -1, 0, 1, 2\}\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់សំណុំដោយរៀបរាប់ឈ្មោះធាតុ កំណត់ចំនួនធាតុ និងគូសដ្យាក្រាមវ៉ែនតាងសំណុំនីមួយៗខាងក្រោម៖<br/>
+<strong>ក.</strong>  សំណុំនៃចំនួនគត់គូវិជ្ជមានតូចជាងឬស្មើ <span class="mi">\(10\)</span> ។<br/>
+<strong>ខ.</strong>  សំណុំនៃចំនួនគត់ធម្មជាតិដែលតូចជាង <span class="mi">\(8\)</span> តែធំជាង ឬស្មើ <span class="mi">\(1\)</span> ។</p>
+</div></section>
+<h4>សំណុំកំណត់តាមលក្ខណៈរួមនៃធាតុ</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានសំណុំពីរ <span class="mi">\(E\)</span> និង <span class="mi">\(F\)</span> ដែលកំណត់ដោយ<br/>
+<span class="mi">\(E = \{x|x \)</span> ជាចំនួនគត់វិជ្ជមានតូចជាង <span class="mi">\( 10\}\)</span><br/>
+<span class="mi">\(F = \{y|y^2 - 4 = 0\}\)</span> ។</p>
+<p>គេសង្កេតឃើញថា <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ជាធាតុនៃសំណុំ <span class="mi">\(E\)</span> និង <span class="mi">\(F\)</span> រៀងគ្នា ដែលកំណត់ដោយលក្ខណៈរួមនៃធាតុ "<span class="mi">\(x\)</span> ជាចំនួនគត់វិជ្ជមានតូចជាង 10" និង "<span class="mi">\(y^2 - 4 = 0\)</span>" រៀងគ្នា ។ គេថាសំណុំ <span class="mi">\(E\)</span> និង <span class="mi">\(F\)</span> កំណត់តាមលក្ខណៈរួមនៃធាតុ ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណុំនៃ <span class="mi">\(x\)</span> ដែលផ្ទៀងផ្ទាត់តាមលក្ខខណ្ឌដែលឱ្យ គឺកំណត់ដោយ <span class="mi">\(\{x|x \)</span> ផ្ទៀងផ្ទាត់លក្ខខណ្ឌដែលឱ្យ <span class="mi">\(\}\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">២</span><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>កំណត់សំណុំខាងក្រោមតាមលក្ខណៈរួមនៃធាតុ និងតាមការរៀបរាប់ឈ្មោះធាតុ ហើយបញ្ជាក់ចំនួនធាតុរបស់វា ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  សំណុំចំនួនបឋមតូចជាង ឬស្មើនឹង <span class="mi">\(23\)</span></td>
+<td><strong>ខ.</strong>  សំណុំចំនួនដែលជាតួចែកវិជ្ជមាននៃ <span class="mi">\(20\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  សំណុំចំនួនគត់សេសដែលចែកដាច់នឹង <span class="mi">\(2\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<strong>ក.</strong>  <span class="mi">\(A = \{x \mid x \)</span> ជាចំនួនបឋមតូចជាងឬស្មើនឹង <span class="mi">\( 23\}\)</span> (កំណត់សំណុំតាមលក្ខណៈរួមនៃធាតុ)<br/>
+<span class="mi">\(A = \{2, 3, 5, 7, 11, 13, 17, 19, 23\}\)</span> (កំណត់សំណុំតាមការរៀបរាប់ឈ្មោះធាតុ)<br/>
+គេបាន <span class="mi">\(n(A) = 9\)</span> ។<br/>
+<strong>ខ.</strong>  <span class="mi">\(B = \{x \mid x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 20\}\)</span> (តាមលក្ខណៈរួមនៃធាតុ)<br/>
+<span class="mi">\(B = \{1, 2, 4, 5, 10, 20\}\)</span> (តាមការរៀបរាប់ឈ្មោះធាតុ)<br/>
+គេបាន <span class="mi">\(n(B) = 6\)</span> ។<br/>
+<strong>គ.</strong>  <span class="mi">\(C = \{x \mid x \)</span> ជាចំនួនគត់សេសដែលចែកដាច់នឹង <span class="mi">\( 2\}\)</span> (តាមលក្ខណៈរួមនៃធាតុ)<br/>
+<span class="mi">\(C = \varnothing\)</span> ព្រោះចំនួនសេសចែកមិនដាច់នឹង <span class="mi">\(2\)</span> ទេ (ដោយ <span class="mi">\(C\)</span> ជាសំណុំទទេ នោះគេមិនអាចកំណត់វាតាមការរៀបរាប់ឈ្មោះធាតុទេ)<br/>
+គេបាន <span class="mi">\(n(C) = 0\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់សំណុំតាមលក្ខណៈរួមនៃធាតុ និងតាមការរៀបរាប់ឈ្មោះធាតុ ហើយកំណត់ចំនួនធាតុនៃសំណុំខាងក្រោម ៖<br/>
+<strong>ក.</strong>  សំណុំចំនួនគត់សេសវិជ្ជមានតូចជាង ឬស្មើ <span class="mi">\(10\)</span> ។<br/>
+<strong>ខ.</strong>  សំណុំចម្លើយនៃសមីការ <span class="mi">\((x - 1)(x - 3) = 0\)</span> ។<br/>
+<strong>គ.</strong>  សំណុំចំនួនគត់សេសវិជ្ជមានដែលតូចជាង <span class="mi">\(20\)</span> និងធំជាង <span class="mi">\(2\)</span> ។</p>
+</div></section>
+<h4>សំណុំរាប់អស់និងសំណុំអនន្ត</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានសំណុំ <span class="mi">\(A = \{x|x^2 = 4\} = \{2, -2\}\)</span> ។</p>
+<p>គេបាន <span class="mi">\(n(A) = 2\)</span> ជាចំនួនកំណត់ដោយ <span class="mi">\(A\)</span> មានចំនួនធាតុជាចំនួនកំណត់នោះ គេថា <span class="mi">\(A\)</span> ជាសំណុំរាប់អស់ ។</p>
+<p>សំណុំ <span class="mi">\(B = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន <span class="mi">\(\} = \{1, 2, 3, 4, 5, ...\}\)</span> មានចំនួនធាតុច្រើនរាប់មិនអស់ នោះគេថា <span class="mi">\(B\)</span> ជាសំណុំអនន្ត ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណុំចែកចេញជាពីរប្រភេទគឺ<br/>
+1. សំណុំរាប់អស់ គឺជាសំណុំដែលមានចំនួនធាតុ ជាចំនួនកំណត់ ។<br/>
+2. សំណុំអនន្ត គឺជាសំណុំដែលមានចំនួនធាតុច្រើនរាប់មិនអស់ ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់ប្រភេទនៃសំណុំដូចខាងក្រោម៖<br/>
+<strong>ក.</strong>  សំណុំ <span class="mi">\(C = \{x|x^2 - 16 = 0\}\)</span> ។<br/>
+<strong>ខ.</strong>  សំណុំ <span class="mi">\(D = \{x|x &gt; 0, x \)</span> ជាចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(\}\)</span> ។<br/>
+<strong>គ.</strong>  <span class="mi">\(\{y|y \)</span> ចំនួនគត់សេសវិជ្ជមាន <span class="mi">\(\}\)</span> ។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\{2n|0 \leq n \leq 3, n \)</span> ជាចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(\}\)</span> ។</p>
+</div></section>
+<h4>សំណុំដែលមានធាតុមិនមែនជាចំនួន</h4>
+<p>គេបានសិក្សាសំណុំដែលមានធាតុជាចំនួនរួចហើយ ។ តើអាចមានសំណុំដែលមានធាតុមិនមែនជាចំនួនដែរឬទេ ?</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រង្វង់ដែលមានផ្ចិត <span class="mi">\(O\)</span> និងមានកាំ <span class="mi">\(r\)</span> គឺជាសំណុំនៃចំណុចទាំងអស់នៅលើប្លង់ដែលមានចម្ងាយស្មើ <span class="mi">\(r\)</span> ពីចំណុច <span class="mi">\(O\)</span> ហើយកំណត់ដោយ <span class="mi">\(\{P|OP = r\}\)</span> ។ សំណុំចំណុចនៅផ្នែកខាងក្នុងនៃរង្វង់នេះកំណត់ដោយ <span class="mi">\(\{P|OP &lt; r\}\)</span> ហើយសំណុំចំណុចនៅផ្នែកខាងក្រៅនៃរង្វង់នេះកំណត់ដោយ <span class="mi">\(\{P|OP &gt; r\}\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្រាបនៃអនុគមន៍ <span class="mi">\(y = ax + b\)</span> គឺជាសំណុំចំណុច <span class="mi">\((x, y)\)</span> ទាំងអស់ដែលមានកូអរដោនេ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ជាចំនួនពិតហើយផ្ទៀងផ្ទាត់សមីការ <span class="mi">\(y = ax + b\)</span> ។<br/>
+គេកំណត់សរសេរ <span class="mi">\(\{(x, y)|y = ax + b\}\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ប្រើនិមិត្តសញ្ញាសំណុំ ដើម្បីតាងក្រាបនៃអនុគមន៍ <span class="mi">\(y = x^2\)</span> ។</p>
+</div></section>
+<h3 id="u2">សំណុំស្មើគ្នា</h3>
+<p>គេមានសំណុំបី <span class="mi">\(A, B\)</span> និង <span class="mi">\(C\)</span> ដែល<br/>
+<span class="mi">\(A = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបដែល <span class="mi">\( 0 &lt; x &lt; 4\}\)</span><br/>
+<span class="mi">\(B = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន ដែល <span class="mi">\( x \leq 3\}\)</span><br/>
+<span class="mi">\(C = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបដែល <span class="mi">\( 3 &lt; x &lt; 5\}\)</span></p>
+<p>គេបាន <span class="mi">\(A = \{1, 2, 3\}\)</span>, <span class="mi">\(B = \{1, 2, 3\}\)</span> និង <span class="mi">\(C = \{4\}\)</span> ។</p>
+<p>គេសង្កេតឃើញថាសំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> មានបញ្ជីធាតុដូចគ្នា គេថា <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាសំណុំស្មើគ្នា ។ គេកំណត់សរសេរ <span class="mi">\(A = B\)</span> ។ តែសំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(C\)</span> ព្រមទាំងសំណុំ <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> មានបញ្ជីធាតុមិនដូចគ្នា គេថាសំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(C\)</span> ហើយ <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> ជាសំណុំមិនស្មើគ្នា ។<br/>
+គេកំណត់សរសេរ <span class="mi">\(A \neq C, B \neq C\)</span> ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>សំណុំពីរស្មើគ្នា កាលណាសំណុំទាំងពីរមានបញ្ជីធាតុដូចគ្នា ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់គំរូ ៣</b></header><div class="bx-b">
+<p>កំណត់សំណុំតាមការរៀបរាប់ឈ្មោះធាតុ និងប្រៀបធៀបសំណុំខាងក្រោម៖<br/>
+<span class="mi">\(A = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( 3x \leq 12\}\)</span><br/>
+<span class="mi">\(B = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( 1 \leq x \leq 4\}\)</span><br/>
+<span class="mi">\(C = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( x^2 \leq 36\}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ចំពោះសំណុំ <span class="mi">\(A\)</span> គេបាន <span class="mi">\(3x \leq 12 \Leftrightarrow x \leq 4\)</span> ដោយ <span class="mi">\(x\)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន<br/>
+នោះគេអាចសរសេរបញ្ជីធាតុនៃសំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(A = \{1, 2, 3, 4\}\)</span> ។<br/>
+ចំពោះសំណុំ <span class="mi">\(B\)</span> គេបាន <span class="mi">\(B = \{1, 2, 3, 4\}\)</span><br/>
+ចំពោះសំណុំ <span class="mi">\(C\)</span> គេបាន <span class="mi">\(C = \{1, 2, 3, 4, 5, 6\}\)</span><br/>
+ដូច្នេះ គេបាន <span class="mi">\(A = B, A \neq C \)</span> និង <span class="mi">\( B \neq C\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់សំណុំតាមការរៀបរាប់ឈ្មោះធាតុ និងប្រៀបធៀបសំណុំខាងក្រោម៖<br/>
+<span class="mi">\(D = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( 5x \leq 16\}\)</span><br/>
+<span class="mi">\(E = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( \sqrt{x} \leq 2\}\)</span><br/>
+<span class="mi">\(F = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( x^2 &lt; 25\}\)</span> ។</p>
+</div></section>
+<h3 id="u3">សំណុំរង</h3>
+<p>គេមានពីរសំណុំ <span class="mi">\(A = \{1, 2, 3, 4\}\)</span>, <span class="mi">\(B = \{a, b, 1, 2, 3, 4\}\)</span> និង <span class="mi">\(C = \{a, b, 1, 2, 3, 4\}\)</span> ។ គេឃើញថាគ្រប់ធាតុនៃសំណុំ <span class="mi">\(A\)</span> គឺជាធាតុរបស់សំណុំ <span class="mi">\(B\)</span> គេកំណត់សរសេរ <span class="mi">\(x \in A \Rightarrow x \in B\)</span> នោះ គេថាសំណុំ <span class="mi">\(A\)</span> ជាសំណុំរងនៃសំណុំ <span class="mi">\(B\)</span> ។<br/>
+គេកំណត់សរសេរ <span class="mi">\(A \subseteq B\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>ដូចគ្នាដែរគ្រប់ធាតុនៃសំណុំ <span class="mi">\(C\)</span> ជាសំណុំរងនៃសំណុំ <span class="mi">\(B\)</span> គេកំណត់សរសេរ <span class="mi">\(x \in C \Rightarrow x \in B\)</span> នោះគេថាសំណុំ <span class="mi">\(C\)</span> ជាសំណុំរងនៃសំណុំ <span class="mi">\(B\)</span> គេកំណត់សរសេរ <span class="mi">\(C \subseteq B\)</span> ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p><span class="mi">\(A\)</span> ជាសំណុំរងនៃ <span class="mi">\(B\)</span> លុះត្រាតែគ្រប់ <span class="mi">\(x \in A\)</span> នោះ <span class="mi">\(x \in B\)</span><br/>
+<span class="mi">\(A \subseteq B \Leftrightarrow \)</span> គ្រប់ <span class="mi">\( x \in A \Rightarrow x \in B\)</span> ។</p>
+</div></section>
+<p>ដូច្នេះ សំណុំ <span class="mi">\(A\)</span> និងសំណុំ <span class="mi">\(C\)</span> សុទ្ធតែជាសំណុំរងនៃសំណុំ <span class="mi">\(B\)</span> ប៉ុន្តែសំណុំទាំងពីរនេះមានចំនួនធាតុខុសគ្នា ហើយ <span class="mi">\(n(A) = 4 &lt; n(B)\)</span> និង <span class="mi">\(n(C) = 6 = n(B)\)</span> ។ ដោយ <span class="mi">\(n(A) &lt; n(B)\)</span> នោះគេហៅថា <span class="mi">\(A\)</span> ជាសំណុំរងផ្ទាល់នៃសំណុំ <span class="mi">\(B\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(A\)</span> ជាសំណុំរងនៃសំណុំ <span class="mi">\(B\)</span> មានន័យថា <span class="mi">\(A \subseteq B\)</span> នោះ <span class="mi">\(n(A) \leq n(B)\)</span> ។<br/>
+បើ <span class="mi">\(A\)</span> ជាសំណុំរងផ្ទាល់នៃសំណុំ <span class="mi">\(B\)</span> មានន័យថា <span class="mi">\(A \subset B\)</span> នោះ <span class="mi">\(n(A) &lt; n(B)\)</span> ។</p>
+</div></section>
+<p><strong>សម្គាល់</strong> ចំពោះគ្រប់សំណុំ <span class="mi">\(A\)</span> គេបាន <span class="mi">\(A \subseteq A\)</span> នោះ <span class="mi">\(\varnothing \subseteq A\)</span> ។ បើសំណុំ <span class="mi">\(A\)</span> មិនមែនជាសំណុំរងនៃសំណុំ <span class="mi">\(B\)</span> នោះគេកំណត់សរសេរ <span class="mi">\(A \not\subseteq B\)</span> ។</p>
+<h3 id="u4">សំណុំសកល</h3>
+<p>ឧបមាថា គេមានបីសំណុំ <span class="mi">\(P, Q\)</span> និង <span class="mi">\(R\)</span> ដូចខាងក្រោម៖<br/>
+<span class="mi">\(P = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( 3x \leq 15\} = \{1, 2, 3, 4, 5\}\)</span><br/>
+<span class="mi">\(Q = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( \sqrt{x} \leq 2\} = \{1, 2, 3, 4\}\)</span><br/>
+<span class="mi">\(R = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន និង <span class="mi">\( x^2 \leq 49\} = \{1, 2, 3, 4, 5, 6, 7\}\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>បើគេកំណត់សំណុំ <span class="mi">\(U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}\)</span> នោះ គេបានសំណុំទាំងបីសុទ្ធតែជាសំណុំរងនៃសំណុំ <span class="mi">\(U\)</span> ។ សំណុំ <span class="mi">\(U\)</span> ហៅថា <strong>សំណុំសកល</strong> ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>សំណុំសកល គឺជាសំណុំមានគ្រប់ធាតុដែលគេបានជ្រើសរើសមកសិក្សា ។</p>
+</div></section>
+<h3 id="u5">សំណុំបំពេញ</h3>
+<p>គេមានសំណុំសកល <span class="mi">\(U = \{0, 1, 2, 3, 4, 5, 6\}\)</span> និងសំណុំ <span class="mi">\(A = \{0, 1, 2, 3\}\)</span> ។ គេអាចកំណត់បាននូវសំណុំ <span class="mi">\(\{4, 5, 6\}\)</span> មួយទៀតដែលគ្រប់ជារបស់វាជាធាតុរបស់ <span class="mi">\(U\)</span> តែមិនមែនជាធាតុរបស់សំណុំ <span class="mi">\(A\)</span> ។ សំណុំថ្មីនេះ ហៅថា <strong>សំណុំបំពេញ</strong>នៃសំណុំ <span class="mi">\(A\)</span> ដែលតាងដោយ <span class="mi">\(\overline{A}\)</span> ។<br/>
+គេបាន <span class="mi">\(\overline{A} = \{4, 5, 6\}\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\(A\)</span> គឺជាសំណុំរងនៃសំណុំសកល <span class="mi">\(U\)</span> ។ សំណុំបំពេញនៃសំណុំ <span class="mi">\(A\)</span> គឺជាសំណុំដែលកំណត់ដោយ <span class="mi">\(\overline{A} = \{x|x \notin A, x \in U\}\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់គំរូ ៤</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំសកល <span class="mi">\(U = \{a, b, c, 1, 2, 3, 4\}\)</span> និងសំណុំ <span class="mi">\(P = \{a, 1, 2\}\)</span> ។ កំណត់សំណុំបំពេញនៃ <span class="mi">\(P\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+សំណុំបំពេញនៃ <span class="mi">\(P\)</span> កំណត់ដោយ <span class="mi">\(\overline{P} = \{x|x \notin P, x \in U\} = \{b, c, 3, 4\}\)</span> ។</p>
+<p><strong>សង្កេត</strong> តាមឧទាហរណ៍ខាងលើនេះ គេបាន <span class="mi">\(n(U) = 7\)</span>, <span class="mi">\(n(P) = 3\)</span> និង <span class="mi">\(n(\overline{P}) = 4\)</span><br/>
+ដូច្នេះ <span class="mi">\(n(U) = n(P) + n(\overline{P})\)</span> ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(U\)</span> គឺជាសំណុំសកល និង <span class="mi">\(\overline{A}\)</span> ជាសំណុំបំពេញនៃសំណុំ <span class="mi">\(A\)</span> នោះ <span class="mi">\(n(\overline{A}) = n(U) - n(A)\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំសកល <span class="mi">\(U = \{x|x \)</span> ជាចំនួនគត់រ៉ឺឡាទីបដែល <span class="mi">\( 0 &lt; x \leq 11\}\)</span> និងសំណុំរងពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ដែល <span class="mi">\(A = \{x|0 &lt; 2x &lt; 7\}\)</span> , <span class="mi">\(B = \{x|0 &lt; 2x &lt; 20\}\)</span> ។<br/>
+<strong>ក.</strong>  សរសេរសំណុំបំពេញ <span class="mi">\(\overline{A}\)</span> និងកំណត់ចំនួនធាតុរបស់សំណុំនោះ ។<br/>
+<strong>ខ.</strong>  សរសេរសំណុំបំពេញ <span class="mi">\(\overline{B}\)</span> និងកំណត់ចំនួនធាតុរបស់សំណុំនោះ ។<br/>
+<strong>គ.</strong>  ចូរបង្ហាញថា សំណើណាពិតហើយសំណើណាមិនពិត ចំពោះសំណើ <span class="mi">\(\overline{A} \subseteq \overline{B}, \overline{B} \not\subseteq A \)</span> និង <span class="mi">\( A \not\subset B\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  <span class="mi">\(\overline{A} = \{4, 5, 6, 7, 8, 9, 10, 11\}\)</span>, <span class="mi">\(n(\overline{A}) = 8\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(\overline{B} = \{10, 11\}\)</span>, <span class="mi">\(n(\overline{B}) = 2\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(\overline{A} \subseteq \overline{B}\)</span> មិនពិត, <span class="mi">\(\overline{B} \not\subseteq A\)</span> ពិតនិង <span class="mi">\(A \not\subset B\)</span> មិនពិត ។</p></details>
+</div></section>
+<h3 id="u6">ប្រមាណវិធីលើសំណុំ</h3>
+<h4>ប្រសព្វនៃសំណុំ</h4>
+<p>គេមានសំណុំពីរ<br/>
+<span class="mi">\(A = \{x|x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 8\}\)</span><br/>
+<span class="mi">\(A = \{1, 2, 4, 8\}\)</span> ។<br/>
+<span class="mi">\(B = \{x|x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 12\}\)</span><br/>
+<span class="mi">\(B = \{1, 2, 3, 4, 6, 12\}\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេបានសំណុំ <span class="mi">\(\{1, 2, 4\}\)</span> ដែលមានធាតុជាតួចែករួមរបស់ <span class="mi">\(A\)</span> ផងនិង <span class="mi">\(B\)</span> ផង ហើយដែលជាតួចែកវិជ្ជមាននៃ <span class="mi">\(8\)</span> និង <span class="mi">\(12\)</span> ។ គេថាសំណុំនេះជា<strong>ប្រសព្វ</strong>នៃសំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។<br/>
+គេកំណត់សរសេរ <span class="mi">\(A \cap B\)</span> (អានថា <span class="mi">\(A\)</span> ប្រសព្វ <span class="mi">\(B\)</span> ) ។<br/>
+គេបាន <span class="mi">\(A \cap B = \{1, 2, 4\}\)</span> ហើយ <span class="mi">\(n(A \cap B) = 3\)</span> ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p><span class="mi">\(A \cap B = \{x|x \in A \)</span> និង <span class="mi">\( x \in B\}\)</span> ចំនួនធាតុនៃ <span class="mi">\(A \cap B\)</span> តាងដោយ <span class="mi">\(n(A \cap B)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់គំរូ ៥</b></header><div class="bx-b">
+<p>គេមានពីរសំណុំ <span class="mi">\(A = \{x|x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 15\}\)</span> និង <span class="mi">\(B = \{x|x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 30\}\)</span> ។ កំណត់សំណុំ <span class="mi">\(A \cap B\)</span> និង <span class="mi">\(n(A \cap B)\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ដោយ <span class="mi">\(A = \{x|x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 15\} = \{1, 3, 5, 15\}\)</span> និង<br/>
+<span class="mi">\(B = \{x|x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 30\} = \{1, 2, 3, 5, 6, 10, 15, 30\}\)</span><br/>
+គេបាន <span class="mi">\(A \cap B = \{x|x \)</span> ជាតួចែកវិជ្ជមាននៃ <span class="mi">\( 15 \)</span> និង <span class="mi">\( 30\} = \{1, 3, 5, 15\}\)</span><br/>
+ដូច្នេះ <span class="mi">\(n(A \cap B) = n(A) = 4\)</span> ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់គំរូ ៦</b></header><div class="bx-b">
+<p>គេមានពីរសំណុំ <span class="mi">\(R = \{a, b, c, 2, 4, 6\}\)</span> និង <span class="mi">\(P = \{1, 3, 5, 7\}\)</span> ។<br/>
+កំណត់សំណុំ <span class="mi">\(R \cap P\)</span> និង <span class="mi">\(n(R \cap P)\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ដោយសំណុំទាំងពីរនេះគ្មានធាតុរួម នោះគេបាន <span class="mi">\(R \cap P = \varnothing\)</span> និង <span class="mi">\(n(R \cap P) = 0\)</span><br/>
+តាមឧទាហរណ៍ 2 គេបាន <span class="mi">\(R \cap P = \varnothing\)</span><br/>
+ដូច្នេះ ហៅសំណុំ <span class="mi">\(R\)</span> និង <span class="mi">\(P\)</span> ជាសំណុំដាច់គ្នា ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>សំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាសំណុំដាច់គ្នា លុះត្រាតែ <span class="mi">\(A \cap B = \varnothing\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់ប្រសព្វនិងចំនួនធាតុនៃប្រសព្វ របស់គូសំណុំនីមួយៗខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(A = \{1, 2, 3, 4\}\)</span> និង <span class="mi">\(B = \{2, 4, 6\}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(R = \{1, 2, 4, 8\}\)</span> និង <span class="mi">\(P = \{1, 3, 9\}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(C = \{1, 2, 3, 6\}\)</span> និង <span class="mi">\(D = \{4, 7\}\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(M = \{m, a, t, h\}\)</span> និង <span class="mi">\(N = \{c, u, t\}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(A \cap B = \{2, 4\}, \; n(A \cap B) = 2\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(R \cap P = \{1\}, \; n(R \cap P) = 1\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(C \cap D = \varnothing, \; n(C \cap D) = 0\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(M \cap N = \{t\}, \; n(M \cap N) = 1\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h4>ប្រជុំនៃសំណុំ</h4>
+<p>គេមានពីរសំណុំ <span class="mi">\(A = \{1, 2, 3, 6\}\)</span> និង <span class="mi">\(B = \{1, 2, 4, 8\}\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេអាចបង្កើតបានសំណុំ <span class="mi">\(\{1, 2, 3, 4, 6, 8\}\)</span> ដែលមានធាតុជាធាតុរបស់ <span class="mi">\(A\)</span> តែមិនជារបស់ <span class="mi">\(B\)</span> ឬជាជារបស់ <span class="mi">\(B\)</span> តែមិនជារបស់ <span class="mi">\(A\)</span> ឬជាធាតុរបស់សំណុំទាំងពីរ ។ សំណុំនេះហៅថាប្រជុំនៃសំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។<br/>
+គេកំណត់សរសេរ <span class="mi">\(A \cup B\)</span> (អានថា <span class="mi">\(A\)</span> ប្រជុំ <span class="mi">\(B\)</span> ) ។<br/>
+គេបាន <span class="mi">\(A \cup B = \{1, 2, 3, 4, 6, 8\}\)</span> ហើយ <span class="mi">\(n(A \cup B) = 6\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\(A \cup B = \{x|x \in A \)</span> ឬ <span class="mi">\( x \in B\}\)</span> ចំនួនធាតុនៃ <span class="mi">\(A \cup B\)</span> តាងដោយ <span class="mi">\(n(A \cup B)\)</span> ។</p>
+</div></section>
+<p><strong>សម្គាល់</strong> <span class="mi">\(x \in A \)</span> ឬ <span class="mi">\( x \in B\)</span> មានន័យថា <span class="mi">\(x \in A\)</span> តែ <span class="mi">\(x \notin B\)</span> ឬ <span class="mi">\(x \in B\)</span> តែ <span class="mi">\(x \notin A\)</span> ឬ <span class="mi">\(x \in A \cap B\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់គំរូ ៧</b></header><div class="bx-b">
+<p>គេមានសំណុំសកល <span class="mi">\(U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}\)</span> និង <span class="mi">\(A = \{x|x \in U \)</span> និង <span class="mi">\( x \)</span> ជាចំនួនគត់សេស <span class="mi">\(\}\)</span> ។ បង្ហាញថា <span class="mi">\(A \cap \overline{A} = \varnothing\)</span> និង <span class="mi">\(A \cup \overline{A} = U\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ដោយ <span class="mi">\(A = \{x|x \in U \)</span> និង <span class="mi">\( x \)</span> ជាចំនួនគត់សេស <span class="mi">\(\}\)</span> នោះគេបាន<br/>
+<span class="mi">\(A = \{1, 3, 5, 7, 9\}\)</span><br/>
+<span class="mi">\(\overline{A} = \{2, 4, 6, 8, 10\}\)</span><br/>
+ដូច្នេះ <span class="mi">\(A \cap \overline{A} = \varnothing\)</span> និង <span class="mi">\(A \cup \overline{A} = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\} = U\)</span> ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ចំពោះគ្រប់សំណុំ <span class="mi">\(A\)</span> និងសំណុំសកល <span class="mi">\(U\)</span><br/>
+គេបាន <span class="mi">\(A \cap \overline{A} = \varnothing\)</span> និង <span class="mi">\(A \cup \overline{A} = U\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់គំរូ ៨</b></header><div class="bx-b">
+<p>គេមានពីរសំណុំ <span class="mi">\(A = \{1, 2, 3, 6, o, p, k\}\)</span> និង <span class="mi">\(B = \{k, r, 1, 2, 4, 8\}\)</span> ។<br/>
+កំណត់សំណុំ <span class="mi">\(A \cap B\)</span>, <span class="mi">\(A \cup B\)</span>, <span class="mi">\(n(A \cap B)\)</span> និង <span class="mi">\(n(A \cup B)\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ដោយ <span class="mi">\(A \cap B = \{x|x \in A \)</span> និង <span class="mi">\( x \in B\}\)</span><br/>
+នោះគេបាន <span class="mi">\(A \cap B = \{1, 2, k\}\)</span><br/>
+ម្យ៉ាងទៀត <span class="mi">\(A \cup B = \{x|x \in A \)</span> ឬ <span class="mi">\( x \in B\}\)</span><br/>
+នោះគេបាន <span class="mi">\(A \cup B = \{1, 2, 3, 4, 6, 8, o, p, k, r\}\)</span><br/>
+<span class="mi">\(n(A \cap B) = 3\)</span> ហើយ <span class="mi">\(n(A \cup B) = 10\)</span> ។<br/>
+តាមរយៈឧទាហរណ៍នេះ គេបាន<br/>
+<span class="mi">\(n(A \cup B) = 10 = 7 + 6 - 3 = n(A) + n(B) - n(A \cap B)\)</span> ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើគេមានសំណុំរាប់អស់ពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> នោះ គេបាន<br/>
+<span class="mi">\(n(A \cup B) = n(A) + n(B) - n(A \cap B)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់គំរូ ៩</b></header><div class="bx-b">
+<p>អង្គការក្រៅរដ្ឋាភិបាលមួយបានចុះស៊ើបសួរពីចំណង់ចំណូលចិត្តសិក្សាមុខវិជ្ជាគណិតវិទ្យានិងមុខវិជ្ជាភាសាខ្មែររបស់សិស្សចំនួន 150 នាក់នៅវិទ្យាល័យមួយក្នុងរាជធានីភ្នំពេញ ។ គេទទួលបានព័ត៌មានថា មានសិស្សចំនួន 102 នាក់ចូលចិត្តសិក្សាគណិតវិទ្យា ចំនួន 71 នាក់ចូលចិត្តសិក្សាភាសាខ្មែរនិងចំនួន 40 នាក់ចូលចិត្តសិក្សាមុខវិជ្ជាទាំងពីរ ។<br/>
+<strong>ក.</strong>  តើមានសិស្សចំនួនប៉ុន្មាននាក់ដែលចូលចិត្តសិក្សាតែមុខវិជ្ជាគណិតវិទ្យាមួយប៉ុណ្ណោះ?<br/>
+<strong>ខ.</strong>  តើមានសិស្សចំនួនប៉ុន្មាននាក់ដែលចូលចិត្តសិក្សាតែមុខវិជ្ជាភាសាខ្មែរមួយប៉ុណ្ណោះ?<br/>
+<strong>គ.</strong>  តើមានសិស្សចំនួនប៉ុន្មាននាក់ដែលចូលចិត្តសិក្សាយ៉ាងហោចណាស់មួយមុខវិជ្ជា?<br/>
+<strong>ឃ.</strong>  តើមានសិស្សចំនួនប៉ុន្មាននាក់ដែលមិនចូលចិត្តសិក្សាមុខវិជ្ជាទាំងពីរ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាង <span class="mi">\(U\)</span> ជាសំណុំសិស្សទាំងអស់</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><span class="mi">\(M\)</span> ជាសំណុំសិស្សដែលចូលចិត្តសិក្សាគណិតវិទ្យា, <span class="mi">\(K\)</span> ជាសំណុំសិស្សដែលចូលចិត្តសិក្សាភាសាខ្មែរ ។<br/>
+គេបាន <span class="mi">\(n(M) = 102\)</span>, <span class="mi">\(n(K) = 71\)</span> និង <span class="mi">\(n(M \cap K) = 40\)</span> ។<br/>
+<strong>ក.</strong>  ចំនួនសិស្សដែលចូលចិត្តសិក្សាតែមុខវិជ្ជាគណិតវិទ្យា<br/>
+<span class="mi">\(n(M \cap \overline{K}) = n(M) - n(M \cap K) = 102 - 40 = 62\)</span><br/>
+ដូច្នេះ សិស្សដែលចូលចិត្តសិក្សាតែមុខវិជ្ជាគណិតវិទ្យាមានចំនួន 62 នាក់ ។<br/>
+<strong>ខ.</strong>  ចំនួនសិស្សដែលចូលចិត្តសិក្សាតែមុខវិជ្ជាភាសាខ្មែរ<br/>
+<span class="mi">\(n(\overline{M} \cap K) = n(K) - n(M \cap K) = 71 - 40 = 31\)</span> ។<br/>
+ដូច្នេះ សិស្សដែលចូលចិត្តសិក្សាតែមុខវិជ្ជាភាសាខ្មែរមានចំនួន 31 នាក់ ។<br/>
+<strong>គ.</strong>  ចំនួនសិស្សដែលចូលចិត្តសិក្សាយ៉ាងហោចណាស់មួយមុខវិជ្ជា<br/>
+<span class="mi">\(n(M \cup K) = n(M) + n(K) - n(M \cap K) = 102 + 71 - 40 = 133\)</span> ។<br/>
+ដូច្នេះ សិស្សចូលចិត្តសិក្សាយ៉ាងហោចណាស់មួយមុខវិជ្ជាមានចំនួន 133 នាក់ ។<br/>
+<strong>ឃ.</strong>  ចំនួនសិស្សដែលមិនចូលចិត្តសិក្សាមុខវិជ្ជាទាំងពីរ<br/>
+<span class="mi">\(n(U) - n(M \cup K) = 150 - 133 = 17\)</span><br/>
+ដូច្នេះ សិស្សដែលមិនចូលចិត្តសិក្សាមុខវិជ្ជាទាំងពីរមានចំនួន 17 នាក់ ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>តាមការសាកសួរព័ត៌មានពីសិស្សចំនួន 160 នាក់បានឱ្យដឹងថាមានសិស្សចំនួន 79 នាក់ចូលចិត្តអានសៀវភៅនៅបណ្ណាល័យ 65 នាក់ចូលចិត្តអានសៀវភៅនៅផ្ទះ និង 41 នាក់ចូលចិត្តអានសៀវភៅនៅកន្លែងទាំងពីរនេះ ។ រកចំនួនសិស្សដែលចូលចិត្តអានសៀវភៅតាមករណីដូចខាងក្រោម៖<br/>
+<strong>ក.</strong>  នៅបណ្ណាល័យតែម្យ៉ាងប៉ុណ្ណោះ ។<br/>
+<strong>ខ.</strong>  នៅផ្ទះតែម្យ៉ាងប៉ុណ្ណោះ ។<br/>
+<strong>គ.</strong>  នៅកន្លែងផ្សេងពីកន្លែងទាំងពីរនោះ ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  <span class="mi">\(38\)</span> នាក់ <strong>ខ.</strong>  <span class="mi">\(24\)</span> នាក់ <strong>គ.</strong>  <span class="mi">\(57\)</span> នាក់</p></details>
+</div></section>
+<h3 id="u7">លក្ខណៈនៃប្រមាណវិធីលើសំណុំ</h3>
+<h4>លក្ខណៈដឺម៉ហ្គាន់ (De Morgan)</h4>
+<p>ចំពោះគ្រប់ពីរសំណុំ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គេបាន ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>សម្រាយបញ្ជាក់</strong><br/>
+ក. គេបាន <span class="mi">\(A \cup B = \{x|x \in A \)</span> ឬ <span class="mi">\( x \in B\}\)</span><br/>
+<span class="mi">\(\overline{A \cup B} = \{x|x \notin A \)</span> និង <span class="mi">\( x \notin B\}\)</span><br/>
+<span class="mi">\(\overline{A \cup B} = \{x|x \notin A\} \cap \{x|x \notin B\} = \overline{A} \cap \overline{B}\)</span> ។ ដូច្នេះ <span class="mi">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span> ។<br/>
+ខ. តាមរបៀបដូចខាងលើដែរគេបាន <span class="mi">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span> ។<br/>
+ការបង្ហាញតាមដ្យាក្រាមវ៉ែន៖</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<h4>លក្ខណៈផ្ដុំ</h4>
+<p>គេមានបីសំណុំ <span class="mi">\(A, B\)</span> និង <span class="mi">\(C\)</span> គេបាន ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(A \cap (B \cap C) = (A \cap B) \cap C\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>សម្រាយបញ្ជាក់</strong> ៖ ការបង្ហាញតាមដ្យាក្រាមវ៉ែន</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<h4>លក្ខណៈបំបែក</h4>
+<p>គេមានបីសំណុំ <span class="mi">\(A, B\)</span> និង <span class="mi">\(C\)</span> គេបាន ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>សម្រាយបញ្ជាក់</strong> ៖ ការបង្ហាញតាមដ្យាក្រាមវ៉ែន</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>សរសេរសំណុំខាងក្រោមដោយរៀបរាប់ឈ្មោះធាតុ និងកំណត់ចំនួនធាតុ <span class="mi">\(n\)</span> នៃសំណុំនីមួយៗ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A =\)</span> សំណុំស្រៈក្នុងភាសាអង់គ្លេស</p></li>
+<li><p><span class="mi">\(B =\)</span> សំណុំចំនួនគត់ធម្មជាតិតូចជាង <span class="mi">\(8\)</span></p></li>
+<li><p><span class="mi">\(C =\)</span> សំណុំចំនួនបឋមតូចជាង <span class="mi">\(15\)</span></p></li>
+<li><p><span class="mi">\(D =\)</span> សំណុំខែក្នុងមួយឆ្នាំដែលមាន ៣០ ថ្ងៃ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរសំណុំដោយរៀបរាប់ឈ្មោះធាតុ និងរកចំនួនធាតុ <span class="mi">\(n\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A =\)</span> សំណុំស្រៈក្នុងភាសាអង់គ្លេស ៖<br/>
+<span class="mi">\(A = \{a, e, i, o, u\} \implies \mathbf{n(A) = 5}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(B =\)</span> សំណុំចំនួនគត់ធម្មជាតិតូចជាង <span class="mi">\(8\)</span> ៖<br/>
+<span class="mi">\(B = \{1, 2, 3, 4, 5, 6, 7\} \implies \mathbf{n(B) = 7}\)</span> (បើគិតពី <span class="mi">\(0\)</span> គឺ <span class="mi">\(B = \{0, 1, \dots, 7\} \implies n(B) = 8\)</span>)។<br/>
+<strong>គ.</strong>  <span class="mi">\(C =\)</span> សំណុំចំនួនបឋមតូចជាង <span class="mi">\(15\)</span> ៖<br/>
+<span class="mi">\(C = \{2, 3, 5, 7, 11, 13\} \implies \mathbf{n(C) = 6}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(D =\)</span> សំណុំខែក្នុងមួយឆ្នាំដែលមាន ៣០ ថ្ងៃ ៖<br/>
+<span class="mi">\(D = \{\)</span> មេសា <span class="mi">\(, \)</span> មិថុនា <span class="mi">\(, \)</span> កញ្ញា <span class="mi">\(, \)</span> វិច្ឆិកា <span class="mi">\(\} \implies \mathbf{n(D) = 4}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>សរសេរសំណុំខាងក្រោមដោយរៀបរាប់ឈ្មោះធាតុ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = \{x \in \mathbb{Z} \mid -3 &lt; x \leq 4\}\)</span></p></li>
+<li><p><span class="mi">\(B = \{x \in \mathbb{N} \mid x \)</span> ជាពហុគុណនៃ <span class="mi">\( 3 \)</span> និង <span class="mi">\( x \leq 18\}\)</span></p></li>
+<li><p><span class="mi">\(C = \{x \in \mathbb{R} \mid x^2 - 5x + 6 = 0\}\)</span></p></li>
+<li><p><span class="mi">\(D = \{x \in \mathbb{Z} \mid x^2 \leq 9\}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរសំណុំដោយរៀបរាប់ឈ្មោះធាតុ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A = \{x \in \mathbb{Z} \mid -3 &lt; x \leq 4\}\)</span> ៖<br/>
+<span class="mi">\(\mathbf{A = \{-2, -1, 0, 1, 2, 3, 4\}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(B = \{x \in \mathbb{N} \mid x \)</span> ជាពហុគុណនៃ <span class="mi">\( 3 \)</span> និង <span class="mi">\( x \leq 18\}\)</span> ៖<br/>
+<span class="mi">\(\mathbf{B = \{3, 6, 9, 12, 15, 18\}}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(C = \{x \in \mathbb{R} \mid x^2 - 5x + 6 = 0\}\)</span> ៖<br/>
+ដោះស្រាយសមីការ ៖ <span class="mi">\((x-2)(x-3) = 0 \implies x = 2 \lor x = 3\)</span>។<br/>
+<span class="mi">\(\implies \mathbf{C = \{2, 3\}}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(D = \{x \in \mathbb{Z} \mid x^2 \leq 9\}\)</span> ៖<br/>
+<span class="mi">\(x^2 \leq 9 \iff -3 \leq x \leq 3\)</span>។ ដោយ <span class="mi">\(x \in \mathbb{Z}\)</span> នាំឱ្យ ៖<br/>
+<span class="mi">\(\mathbf{D = \{-3, -2, -1, 0, 1, 2, 3\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>សរសេរសំណុំខាងក្រោមដោយបញ្ជាក់លក្ខណៈរួមនៃធាតុ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = \{2, 4, 6, 8, 10\}\)</span></p></li>
+<li><p><span class="mi">\(B = \{1, 3, 5, 7, 9, \dots\}\)</span></p></li>
+<li><p><span class="mi">\(C = \{1, 4, 9, 16, 25\}\)</span></p></li>
+<li><p><span class="mi">\(D = \{-2, -1, 0, 1, 2\}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរសំណុំដោយបញ្ជាក់លក្ខណៈរួមនៃធាតុ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A = \{2, 4, 6, 8, 10\}\)</span> ៖<br/>
+<span class="mi">\(\mathbf{A = \{x \in \mathbb{N} \mid x \text{ ជាចំនួនគូ និង } 2 \leq x \leq 10\}}\)</span><br/>
+(ឬ <span class="mi">\(A = \{x = 2k \mid k \in \mathbb{N}, 1 \leq k \leq 5\}\)</span>)។<br/>
+<strong>ខ.</strong>  <span class="mi">\(B = \{1, 3, 5, 7, 9, \dots\}\)</span> ៖<br/>
+<span class="mi">\(\mathbf{B = \{x \in \mathbb{N} \mid x \text{ ជាចំនួនគត់សេស}\}}\)</span><br/>
+(ឬ <span class="mi">\(B = \{x = 2k - 1 \mid k \in \mathbb{N}^*\}\)</span>)។<br/>
+<strong>គ.</strong>  <span class="mi">\(C = \{1, 4, 9, 16, 25\}\)</span> ៖<br/>
+<span class="mi">\(\mathbf{C = \{x \in \mathbb{N} \mid x = k^2, k \in \mathbb{N}, 1 \leq k \leq 5\}}\)</span> (ការ៉េប្រាកដនៃ ៥ ចំនួនគត់ដំបូង)។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(D = \{-2, -1, 0, 1, 2\}\)</span> ៖<br/>
+<span class="mi">\(\mathbf{D = \{x \in \mathbb{Z} \mid -2 \leq x \leq 2\}}\)</span> (ឬ <span class="mi">\(\{x \in \mathbb{Z} \mid |x| \leq 2\}\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>កំណត់ថាតើសំណុំខាងក្រោមជាសំណុំទទេ (<span class="mi">\(\emptyset\)</span>) ឬមិនមែន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = \{x \in \mathbb{R} \mid x^2 + 1 = 0\}\)</span></p></li>
+<li><p><span class="mi">\(B = \{x \in \mathbb{N} \mid 2x + 1 = 4\}\)</span></p></li>
+<li><p><span class="mi">\(C = \{x \in \mathbb{Z} \mid x^2 = 4\}\)</span></p></li>
+<li><p><span class="mi">\(D = \{x \in \mathbb{R} \mid x \neq x\}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យលក្ខខណ្ឌនៃសំណុំទទេ (<span class="mi">\(\emptyset\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A = \{x \in \mathbb{R} \mid x^2 + 1 = 0\}\)</span> ៖ <strong>ជាសំណុំទទេ (<span class="mi">\(A = \emptyset\)</span>)</strong> ព្រោះគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> នាំឱ្យ <span class="mi">\(x^2 \geq 0 \implies x^2 + 1 \geq 1 &gt; 0\)</span> គ្មានចំនួនពិតណាផ្ទៀងផ្ទាត់ឡើយ។<br/>
+<strong>ខ.</strong>  <span class="mi">\(B = \{x \in \mathbb{N} \mid 2x + 1 = 4\}\)</span> ៖ <strong>ជាសំណុំទទេ (<span class="mi">\(B = \emptyset\)</span>)</strong> ព្រោះ <span class="mi">\(2x = 3 \implies x = 1.5 \notin \mathbb{N}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(C = \{x \in \mathbb{Z} \mid x^2 = 4\} = \{-2, 2\}\)</span> ៖ <strong>មិនមែនសំណុំទទេទេ (<span class="mi">\(C \neq \emptyset\)</span>)</strong> ព្រោះមានធាតុពីរ។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(D = \{x \in \mathbb{R} \mid x \neq x\}\)</span> ៖ <strong>ជាសំណុំទទេ (<span class="mi">\(D = \emptyset\)</span>)</strong> ព្រោះតាមលក្ខណៈឆ្លុះ ចំពោះគ្រប់ <span class="mi">\(x \in \mathbb{R}\)</span> គឺ <span class="mi">\(x = x\)</span> ជានិច្ច គ្មាន <span class="mi">\(x\)</span> ណាខុសពីខ្លួនឯងឡើយ។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>បញ្ជាក់ថាតើសំណុំខាងក្រោមជាសំណុំកម្រិត ឬសំណុំអនន្ត ៖</p>
+<ol class="list olka cols2">
+<li><p>សំណុំចំនួនគត់គូទាំងអស់</p></li>
+<li><p>សំណុំចំនួនសិស្សក្នុងសាលារៀនរបស់អ្នក</p></li>
+<li><p>សំណុំចំនួនទសភាគនៅចន្លោះ <span class="mi">\(0\)</span> និង <span class="mi">\(1\)</span></p></li>
+<li><p>សំណុំខ្សាច់នៅលើឆ្នេរសមុទ្រ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បែងចែកសំណុំកម្រិត និងសំណុំអនន្ត ៖<br/>
+<strong>ក.</strong>  «សំណុំចំនួនគត់គូទាំងអស់» ៖ <strong>សំណុំអនន្ត (Infinite set)</strong> ព្រោះមានចំនួនធាតុច្រើនរាប់មិនអស់ <span class="mi">\(\{ \dots, -4, -2, 0, 2, 4, \dots \}\)</span>។<br/>
+<strong>ខ.</strong>  «សំណុំចំនួនសិស្សក្នុងសាលារៀន» ៖ <strong>សំណុំកម្រិត (Finite set)</strong> ព្រោះចំនួនសិស្សជាក់ស្តែងអាចរាប់អស់ និងកំណត់ដោយចំនួនគត់ធម្មជាតិ <span class="mi">\(N\)</span> ជាក់លាក់។<br/>
+<strong>គ.</strong>  «សំណុំចំនួនទសភាគចន្លោះ <span class="mi">\(0\)</span> និង <span class="mi">\(1\)</span>» ៖ <strong>សំណុំអនន្ត</strong> ព្រោះចន្លោះ <span class="mi">\((0, 1)\)</span> ផ្ទុកចំនួនពិតច្រើនឥតគណនា។<br/>
+<strong>ឃ.</strong>  «សំណុំខ្សាច់នៅលើឆ្នេរសមុទ្រ» ៖ <strong>សំណុំកម្រិត</strong> ព្រោះទោះបីជាគ្រាប់ខ្សាច់មានចំនួនច្រើនមហិមាយ៉ាងណាក៏ដោយ ក៏វាជាចំនួនរូបវន្តជាក់លាក់ដែលអាចកំណត់បរិមាណបាន។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>កំណត់ទំនាក់ទំនង <span class="mi">\(\in, \notin, \subset, \not\subset\)</span> ឱ្យបានត្រឹមត្រូវ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(3 \;\dots\; \{1, 2, 3, 4\}\)</span></p></li>
+<li><p><span class="mi">\(\{2\} \;\dots\; \{1, 2, 3\}\)</span></p></li>
+<li><p><span class="mi">\(\emptyset \;\dots\; \{5, 6, 7\}\)</span></p></li>
+<li><p><span class="mi">\(\{1, 4\} \;\dots\; \{1, 2, 3\}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំពេញនិមិត្តសញ្ញាឱ្យបានត្រឹមត្រូវ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(3 \in \{1, 2, 3, 4\}\)</span> (៣ ជាធាតុនៃសំណុំ)។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\{2\} \subset \{1, 2, 3\}\)</span> (<span class="mi">\(\{2\}\)</span> ជាសំណុំរង)។<br/>
+<strong>គ.</strong>  <span class="mi">\(\emptyset \subset \{5, 6, 7\}\)</span> (សំណុំទទេជាសំណុំរងនៃគ្រប់សំណុំ)។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(\{1, 4\} \not\subset \{1, 2, 3\}\)</span> (ព្រោះធាតុ <span class="mi">\(4 \notin \{1, 2, 3\}\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំ <span class="mi">\(A = \{a, b, c\}\)</span>។ ចូរសរសេរគ្រប់សំណុំរងទាំងអស់នៃ <span class="mi">\(A\)</span> និងគណនាចំនួនសំណុំរងសរុប។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណុំ <span class="mi">\(A = \{a, b, c\}\)</span> មាន <span class="mi">\(n = 3\)</span> ធាតុ។ គ្រប់សំណុំរងទាំងអស់នៃ <span class="mi">\(A\)</span> រួមមាន ៖<br/>
+- សំណុំរងមាន ០ ធាតុ ៖ <span class="mi">\(\emptyset\)</span><br/>
+- សំណុំរងមាន ១ ធាតុ ៖ <span class="mi">\(\{a\}, \{b\}, \{c\}\)</span><br/>
+- សំណុំរងមាន ២ ធាតុ ៖ <span class="mi">\(\{a, b\}, \{a, c\}, \{b, c\}\)</span><br/>
+- សំណុំរងមាន ៣ ធាតុ ៖ <span class="mi">\(\{a, b, c\}\)</span><br/>
+ចំនួនសំណុំរងសរុបគឺ <span class="mi">\(N = 2^3 = \mathbf{8}\)</span> សំណុំរង។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>រកចំនួនសំណុំរងទាំងអស់នៃសំណុំ <span class="mi">\(B = \{1, 2, 3, 4\}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណុំ <span class="mi">\(B = \{1, 2, 3, 4\}\)</span> មានចំនួនធាតុ <span class="mi">\(n = 4\)</span>។<br/>
+តាមរូបមន្ត ចំនួនសំណុំរងសរុបនៃសំណុំដែលមាន <span class="mi">\(n\)</span> ធាតុគឺ <span class="mi">\(2^n\)</span> ៖<br/>
+<span class="mi">\(N = 2^4 = \mathbf{16}\)</span> សំណុំរង។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>រកចំនួនសំណុំរងដែលមាន ២ ធាតុ នៃសំណុំ <span class="mi">\(S = \{a, b, c, d\}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនសំណុំរងដែលមាន ២ ធាតុ នៃសំណុំ <span class="mi">\(S = \{a, b, c, d\}\)</span> (<span class="mi">\(n = 4\)</span>) ស្មើនឹងបន្ទំ ២ ធាតុ យកចេញពី ៤ ធាតុ ៖<br/>
+<span class="mi">\(C(4, 2) = \dfrac{4!}{2!(4-2)!} = \dfrac{4 \times 3}{2 \times 1} = \mathbf{6}\)</span> សំណុំរង។<br/>
+សំណុំរងទាំង ៦ នោះរួមមាន ៖<br/>
+<span class="mi">\(\{a, b\}, \{a, c\}, \{a, d\}, \{b, c\}, \{b, d\}, \{c, d\}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>បង្ហាញថាសំណុំមួយដែលមាន <span class="mi">\(n\)</span> ធាតុ តែងតែមានចំនួនសំណុំរងសរុបស្មើនឹង <span class="mi">\(2^n\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្រាយបញ្ជាក់ថាសំណុំ <span class="mi">\(n\)</span> ធាតុ មាន <span class="mi">\(2^n\)</span> សំណុំរង ៖<br/>
+<strong>តាមគោលការណ៍ផលគុណ</strong> ៖<br/>
+ក្នុងការបង្កើតសំណុំរងមួយ ធាតុនីមួយៗក្នុងចំណោម <span class="mi">\(n\)</span> ធាតុ មាន ២ ជម្រើសឯករាជ្យពីគ្នា ៖<br/>
+1. ជ្រើសរើសចូលក្នុងសំណុំរង<br/>
+2. មិនជ្រើសរើសចូលក្នុងសំណុំរង<br/>
+ដោយមាន <span class="mi">\(n\)</span> ធាតុ នោះចំនួនបន្សំនៃការបង្កើតសំណុំរងសរុបគឺ ៖<br/>
+<span class="mi">\(\underbrace{2 \times 2 \times 2 \times \dots \times 2}_{n \text{ កត្តា}} = \mathbf{2^n}\)</span>។<br/>
+(ឬតាមរូបមន្តទ្វេធា <span class="mi">\(\sum_{k=0}^n C(n, k) = (1+1)^n = 2^n\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំ <span class="mi">\(A = \{1, 2, 3, 4, 5\}\)</span> និង <span class="mi">\(B = \{3, 4, 5, 6, 7\}\)</span>។ រក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A \cup B\)</span></p></li>
+<li><p><span class="mi">\(A \cap B\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(A = \{1, 2, 3, 4, 5\}\)</span> និង <span class="mi">\(B = \{3, 4, 5, 6, 7\}\)</span> ៖<br/>
+<strong>ក.</strong>  <strong>ប្រជុំសំណុំ</strong> <span class="mi">\(A \cup B\)</span> (ប្រមូលផ្តុំគ្រប់ធាតុនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span>) ៖<br/>
+<span class="mi">\(\mathbf{A \cup B = \{1, 2, 3, 4, 5, 6, 7\}}\)</span>។<br/>
+<strong>ខ.</strong>  <strong>ប្រសព្វសំណុំ</strong> <span class="mi">\(A \cap B\)</span> (ជ្រើសរើសធាតុរួមគ្នានៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span>) ៖<br/>
+<span class="mi">\(\mathbf{A \cap B = \{3, 4, 5\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>តាមសំណុំក្នុងលំហាត់ទី ១១ រក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A \setminus B\)</span></p></li>
+<li><p><span class="mi">\(B \setminus A\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមសំណុំក្នុងលំហាត់ទី ១១ ៖<br/>
+<strong>ក.</strong>  <strong>ផលដកសំណុំ</strong> <span class="mi">\(A \setminus B\)</span> (ធាតុនៅក្នុង <span class="mi">\(A\)</span> តែមិននៅក្នុង <span class="mi">\(B\)</span>) ៖<br/>
+<span class="mi">\(A \setminus B = \{1, 2, 3, 4, 5\} \setminus \{3, 4, 5, 6, 7\} = \mathbf{\{1, 2\}}\)</span>។<br/>
+<strong>ខ.</strong>  <strong>ផលដកសំណុំ</strong> <span class="mi">\(B \setminus A\)</span> (ធាតុនៅក្នុង <span class="mi">\(B\)</span> តែមិននៅក្នុង <span class="mi">\(A\)</span>) ៖<br/>
+<span class="mi">\(B \setminus A = \{3, 4, 5, 6, 7\} \setminus \{1, 2, 3, 4, 5\} = \mathbf{\{6, 7\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំសកល <span class="mi">\(U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}\)</span> និង <span class="mi">\(A = \{2, 4, 6, 8, 10\}\)</span>។ រកសំណុំបំពេញ <span class="mi">\(\bar{A}\)</span> (ឬ <span class="mi">\(A^c\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}\)</span> និង <span class="mi">\(A = \{2, 4, 6, 8, 10\}\)</span> ៖<br/>
+សំណុំបំពេញ <span class="mi">\(\bar{A} = A^c = U \setminus A\)</span> (ធាតុក្នុង <span class="mi">\(U\)</span> ក្រៅពី <span class="mi">\(A\)</span>) ៖<br/>
+<span class="mi">\(\mathbf{\bar{A} = \{1, 3, 5, 7, 9\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>តាមសំណុំសកល <span class="mi">\(U\)</span> ក្នុងលំហាត់ទី ១៣ និង <span class="mi">\(B = \{1, 2, 3, 4, 5\}\)</span>។ រក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\bar{B}\)</span></p></li>
+<li><p><span class="mi">\(\bar{A} \cap \bar{B}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមសំណុំសកល <span class="mi">\(U\)</span> និង <span class="mi">\(B = \{1, 2, 3, 4, 5\}\)</span> ៖<br/>
+<strong>ក.</strong>  សំណុំបំពេញ <span class="mi">\(\bar{B} = U \setminus B\)</span> ៖<br/>
+<span class="mi">\(\mathbf{\bar{B} = \{6, 7, 8, 9, 10\}}\)</span>។<br/>
+<strong>ខ.</strong>  គណនា <span class="mi">\(\bar{A} \cap \bar{B}\)</span> ៖<br/>
+ដោយ <span class="mi">\(\bar{A} = \{1, 3, 5, 7, 9\}\)</span> និង <span class="mi">\(\bar{B} = \{6, 7, 8, 9, 10\}\)</span> នាំឱ្យធាតុរួមគឺ ៖<br/>
+<span class="mi">\(\mathbf{\bar{A} \cap \bar{B} = \{7, 9\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>ផ្ទៀងផ្ទាត់ច្បាប់ដឺម៉ូហ្គង់ <span class="mi">\(\overline{A \cup B} = \bar{A} \cap \bar{B}\)</span> ចំពោះសំណុំ <span class="mi">\(A, B\)</span> និង <span class="mi">\(U\)</span> ក្នុងលំហាត់ទី ១៣ និង ១៤។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៀងផ្ទាត់ច្បាប់ដឺម៉ូហ្គង់ <span class="mi">\(\overline{A \cup B} = \bar{A} \cap \bar{B}\)</span> ៖<br/>
+- អង្គខាងឆ្វេង ៖<br/>
+<span class="mi">\(A \cup B = \{2, 4, 6, 8, 10\} \cup \{1, 2, 3, 4, 5\} = \{1, 2, 3, 4, 5, 6, 8, 10\}\)</span><br/>
+<span class="mi">\(\implies \overline{A \cup B} = U \setminus (A \cup B) = \{7, 9\}\)</span>។<br/>
+- អង្គខាងស្តាំ ៖<br/>
+<span class="mi">\(\bar{A} = \{1, 3, 5, 7, 9\}\)</span> និង <span class="mi">\(\bar{B} = \{6, 7, 8, 9, 10\}\)</span><br/>
+<span class="mi">\(\implies \bar{A} \cap \bar{B} = \{7, 9\}\)</span>។<br/>
+ឃើញថា អង្គខាងឆ្វេង = អង្គខាងស្តាំ <span class="mi">\(= \{7, 9\}\)</span> ដូចនេះសមភាពពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ផ្ទៀងផ្ទាត់ច្បាប់ដឺម៉ូហ្គង់ <span class="mi">\(\overline{A \cap B} = \bar{A} \cup \bar{B}\)</span> ចំពោះសំណុំដដែល។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៀងផ្ទាត់ច្បាប់ដឺម៉ូហ្គង់ <span class="mi">\(\overline{A \cap B} = \bar{A} \cup \bar{B}\)</span> ៖<br/>
+- អង្គខាងឆ្វេង ៖<br/>
+<span class="mi">\(A \cap B = \{2, 4\}\)</span><br/>
+<span class="mi">\(\implies \overline{A \cap B} = U \setminus \{2, 4\} = \{1, 3, 5, 6, 7, 8, 9, 10\}\)</span>។<br/>
+- អង្គខាងស្តាំ ៖<br/>
+<span class="mi">\(\bar{A} \cup \bar{B} = \{1, 3, 5, 7, 9\} \cup \{6, 7, 8, 9, 10\}\)</span><br/>
+<span class="mi">\(= \{1, 3, 5, 6, 7, 8, 9, 10\}\)</span>។<br/>
+អង្គទាំងពីរស្មើគ្នា ដូចនេះច្បាប់ដឺម៉ូហ្គង់ទីពីរត្រូវបានផ្ទៀងផ្ទាត់។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(A = \{x \in \mathbb{R} \mid x &gt; 2\}\)</span> និង <span class="mi">\(B = \{x \in \mathbb{R} \mid x \leq 5\}\)</span>។ រក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A \cup B\)</span></p></li>
+<li><p><span class="mi">\(A \cap B\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(A = \{x \in \mathbb{R} \mid x &gt; 2\} = (2, +\infty)\)</span> និង <span class="mi">\(B = \{x \in \mathbb{R} \mid x \leq 5\} = (-\infty, 5]\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A \cup B = (-\infty, 5] \cup (2, +\infty) = (-\infty, +\infty) = \mathbf{\mathbb{R}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(A \cap B = (2, +\infty) \cap (-\infty, 5] = \mathbf{(2, 5]} = \{x \in \mathbb{R} \mid 2 &lt; x \leq 5\}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេឱ្យចន្លោះចំនួនពិត <span class="mi">\(A = [-3, 4)\)</span> និង <span class="mi">\(B = (1, 6]\)</span>។ រក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A \cup B\)</span></p></li>
+<li><p><span class="mi">\(A \cap B\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យចន្លោះចំនួនពិត <span class="mi">\(A = [-3, 4)\)</span> និង <span class="mi">\(B = (1, 6]\)</span> ៖<br/>
+<strong>ក.</strong>  ប្រជុំចន្លោះ ៖<br/>
+<span class="mi">\(\mathbf{A \cup B = [-3, 6]}\)</span> (គ្របដណ្តប់ពី <span class="mi">\(-3\)</span> ដល់ <span class="mi">\(6\)</span>)។<br/>
+<strong>ខ.</strong>  ប្រសព្វចន្លោះ (ផ្នែកត្រួតស៊ីគ្នា) ៖<br/>
+<span class="mi">\(\mathbf{A \cap B = (1, 4)}\)</span> (ចន្លោះបើកពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(4\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>តាមចន្លោះចំនួនពិតក្នុងលំហាត់ទី ១៨ រក <span class="mi">\(A \setminus B\)</span> និង <span class="mi">\(B \setminus A\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមចន្លោះក្នុងលំហាត់ទី ១៨ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A \setminus B = [-3, 4) \setminus (1, 6]\)</span> ៖<br/>
+ដកផ្នែកដែលធំជាង <span class="mi">\(1\)</span> ចេញ ដូច្នេះនៅសល់ត្រឹម <span class="mi">\(1\)</span> រួមបញ្ចូល <span class="mi">\(1\)</span> ៖<br/>
+<span class="mi">\(\mathbf{A \setminus B = [-3, 1]}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(B \setminus A = (1, 6] \setminus [-3, 4)\)</span> ៖<br/>
+ដកផ្នែកដែលតូចជាង <span class="mi">\(4\)</span> ចេញ ដូច្នេះនៅសល់ពី <span class="mi">\(4\)</span> ដល់ <span class="mi">\(6\)</span> រួមបញ្ចូល <span class="mi">\(4\)</span> ៖<br/>
+<span class="mi">\(\mathbf{B \setminus A = [4, 6]}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(A = (-\infty, 3]\)</span>។ រកសំណុំបំពេញ <span class="mi">\(A^c\)</span> ក្នុងសំណុំចំនួនពិត <span class="mi">\(\mathbb{R}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(A = (-\infty, 3]\)</span>។ សំណុំបំពេញនៃ <span class="mi">\(A\)</span> ក្នុង <span class="mi">\(\mathbb{R}\)</span> គឺ ៖<br/>
+<span class="mi">\(\mathbf{A^c = \mathbb{R} \setminus (-\infty, 3] = (3, +\infty)} = \{x \in \mathbb{R} \mid x &gt; 3\}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>សង់ដ្យាក្រាមវ៉ែនតំណាងឱ្យសំណុំ <span class="mi">\(A = \{1, 2, 3, 4\}\)</span> និង <span class="mi">\(B = \{3, 4, 5, 6\}\)</span> ក្នុងសំណុំសកល <span class="mi">\(U = \{1, 2, 3, 4, 5, 6, 7, 8\}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង់ដ្យាក្រាមវ៉ែនសម្រាប់ <span class="mi">\(A = \{1, 2, 3, 4\}\)</span> និង <span class="mi">\(B = \{3, 4, 5, 6\}\)</span> ក្នុង <span class="mi">\(U = \{1, 2, \dots, 8\}\)</span> ៖<br/>
+- តំបន់ប្រសព្វ <span class="mi">\(A \cap B = \{3, 4\}\)</span><br/>
+- តំបន់ <span class="mi">\(A\)</span> តែឯង (<span class="mi">\(A \setminus B\)</span>) ផ្ទុក <span class="mi">\(\{1, 2\}\)</span><br/>
+- តំបន់ <span class="mi">\(B\)</span> តែឯង (<span class="mi">\(B \setminus A\)</span>) ផ្ទុក <span class="mi">\(\{5, 6\}\)</span><br/>
+- តំបន់ក្រៅរង្វង់ទាំងពីរក្នុង <span class="mi">\(U\)</span> ផ្ទុក <span class="mi">\(\{7, 8\}\)</span>។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គូសដ្យាក្រាមវ៉ែនបង្ហាញតំបន់ <span class="mi">\(A \cap B\)</span>, <span class="mi">\(A \cup B\)</span>, និង <span class="mi">\(A \setminus B\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញតំបន់ប្រតិបត្តិការសំណុំតាមដ្យាក្រាមវ៉ែន ៖</p>
+<ul>
+<li><p><strong><span class="mi">\(A \cap B\)</span></strong> ៖ ផាត់ពណ៌តែលើផ្ទៃប្រសព្វត្រួតស៊ីគ្នារវាងរង្វង់ <span class="mi">\(A\)</span> និងរង្វង់ <span class="mi">\(B\)</span>។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</li>
+<li><p><strong><span class="mi">\(A \cup B\)</span></strong> ៖ ផាត់ពណ៌គ្របដណ្តប់លើរង្វង់ <span class="mi">\(A\)</span> និងរង្វង់ <span class="mi">\(B\)</span> ទាំងស្រុង។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</li>
+<li><p><strong><span class="mi">\(A \setminus B\)</span></strong> ៖ ផាត់ពណ៌លើរង្វង់ <span class="mi">\(A\)</span> តែមិនរាប់បញ្ចូលតំបន់ប្រសព្វជាមួយ <span class="mi">\(B\)</span> ឡើយ។</p>
+
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%2297.1%22 height=%2269.95%22 viewBox=%220 0 97.1 69.95%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozNWZlYmRlOS1kY2U2LTRiZTItYTNkOS0xYjk1NWM3NTg2YzgAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaPe8micwlRaKT4SuOKaRHusAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpmMWNlNjU1My0yYjZlLTRjMTQtYjIzNi02MTFjZWNhYjVlMmNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoA91p2Aw/UuvaD/G7%2BbNqCgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggwSn14TgERP%2BQ%2BwD3%2BILsJXQsfQTU1tiEU5/Hm5in/9mkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaLRLeAKf5sX%2B1lUWLvT1tM8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCCbfPqVPEDYrx/mDfHrwDf/hNosNwbT4ztaHhKdbArunWRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjuZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjM1ZmViZGU5LWRjZTYtNGJlMi1hM2Q5LTFiOTU1Yzc1ODZjOC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjVlMWRlOTUwLWVlNDYtNGQ3Mi1hN2JlLTQwOTVhNTRmOTM4Y3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDBKfXhOARE/5D7APf4guwldCx9BNTW2IRTn8ebmKf/2aJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggxrDPN692eABckUzx1sp4ZqEUTVyOkSK2F/2KGuezrXGiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggk0CxqQLf9gmjB0463ie25LxNfC8fHsWhe9iSJolXt1F0Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQL1eP9nBHR3xHr8uy6OFV%2BwWpGOFuDbTC6wwrfwyCFNwcuyuRVwp5FqfFTGQGd8kE1Y4YWfhzf%2B9MG198eCOo38=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 1.76 -1.14 C 1.37 -0.46 0.98 -0.32 0.54 -0.31 C 0.43 -0.29 0.34 -0.29 0.34 -0.10 C 0.34 -0.04 0.39 0 0.46 0 C 0.73 0 1.04 -0.03 1.32 -0.03 C 1.65 -0.03 2 0 2.31 0 C 2.37 0 2.5 0 2.5 -0.18 C 2.5 -0.29 2.40 -0.31 2.34 -0.31 C 2.10 -0.32 1.87 -0.40 1.87 -0.65 C 1.87 -0.76 1.93 -0.87 2.01 -1.01 L 2.76 -2.28 L 5.25 -2.28 C 5.26 -2.07 5.40 -0.73 5.40 -0.62 C 5.40 -0.32 4.89 -0.31 4.68 -0.31 C 4.54 -0.31 4.45 -0.31 4.45 -0.10 C 4.45 0 4.57 0 4.59 0 C 5 0 5.42 -0.03 5.82 -0.03 C 6.07 -0.03 6.68 0 6.93 0 C 7 0 7.12 0 7.12 -0.20 C 7.12 -0.31 7.01 -0.31 6.89 -0.31 C 6.28 -0.31 6.28 -0.37 6.25 -0.65 L 5.65 -6.82 C 5.62 -7.03 5.62 -7.07 5.45 -7.07 C 5.29 -7.07 5.26 -7 5.20 -6.90 Z M 2.95 -2.59 L 4.89 -5.84 L 5.21 -2.59 Z M 2.95 -2.59 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 1.57 -0.76 C 1.48 -0.39 1.46 -0.31 0.68 -0.31 C 0.51 -0.31 0.42 -0.31 0.42 -0.10 C 0.42 0 0.5 0 0.68 0 L 4.20 0 C 5.76 0 6.93 -1.17 6.93 -2.14 C 6.93 -2.84 6.35 -3.42 5.40 -3.53 C 6.42 -3.71 7.46 -4.43 7.46 -5.37 C 7.46 -6.10 6.81 -6.75 5.62 -6.75 L 2.31 -6.75 C 2.12 -6.75 2.03 -6.75 2.03 -6.54 C 2.03 -6.43 2.10 -6.43 2.29 -6.43 C 2.32 -6.43 2.51 -6.43 2.67 -6.42 C 2.85 -6.40 2.93 -6.39 2.93 -6.26 C 2.93 -6.21 2.93 -6.18 2.90 -6.07 Z M 3.07 -3.60 L 3.68 -6.06 C 3.76 -6.40 3.79 -6.43 4.21 -6.43 L 5.48 -6.43 C 6.35 -6.43 6.56 -5.85 6.56 -5.42 C 6.56 -4.54 5.71 -3.60 4.51 -3.60 Z M 2.62 -0.31 C 2.48 -0.31 2.46 -0.31 2.40 -0.31 C 2.31 -0.32 2.28 -0.32 2.28 -0.42 C 2.28 -0.43 2.28 -0.46 2.32 -0.64 L 3.01 -3.39 L 4.87 -3.39 C 5.82 -3.39 6.01 -2.67 6.01 -2.23 C 6.01 -1.26 5.14 -0.31 3.96 -0.31 Z M 2.62 -0.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 3.95 2.23 C 4.01 2.37 4.06 2.46 4.18 2.46 C 4.29 2.46 4.39 2.37 4.39 2.26 C 4.39 2.25 4.39 2.23 4.32 2.10 L 0.95 -7.17 C 0.90 -7.34 0.87 -7.40 0.73 -7.40 C 0.62 -7.40 0.54 -7.31 0.54 -7.20 C 0.54 -7.18 0.54 -7.17 0.59 -7.04 Z M 3.95 2.23 %22/%3E%3C/g%3E%3C/g%3E%3CclipPath id=%22clip-0%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 21 3 L 53 3 L 53 35 L 21 35 Z M 21 3 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-1%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 52.44 19.09 C 52.44 10.56 45.53 3.65 37 3.65 C 28.46 3.65 21.55 10.56 21.55 19.09 C 21.55 27.62 28.46 34.54 37 34.54 C 45.53 34.54 52.44 27.62 52.44 19.09 Z M 52.44 19.09 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-2%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 43 3 L 75 3 L 75 35 L 43 35 Z M 43 3 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-3%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 74.07 19.09 C 74.07 10.56 67.15 3.65 58.62 3.65 C 50.09 3.65 43.17 10.56 43.17 19.09 C 43.17 27.62 50.09 34.54 58.62 34.54 C 67.15 34.54 74.07 27.62 74.07 19.09 Z M 74.07 19.09 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-4%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 10 0.29 L 64 0.29 L 64 46 L 10 46 Z M 10 0.29 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-5%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 32 0.29 L 86 0.29 L 86 46 L 32 46 Z M 32 0.29 %22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path=%22url(%23clip-0)%22%3E%3Cg clip-path=%22url(%23clip-1)%22%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(66.59%25, 78.99%25, 78.49%25)%22 fill-opacity=%221%22 d=%22M 16.91 49.99 L 16.91 -11.79 L 78.70 -11.79 L 78.70 49.99 Z M 16.91 49.99 %22/%3E%3C/g%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-2)%22%3E%3Cg clip-path=%22url(%23clip-3)%22%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 100%25, 100%25)%22 fill-opacity=%221%22 d=%22M 16.91 49.99 L 16.91 -11.79 L 78.70 -11.79 L 78.70 49.99 Z M 16.91 49.99 %22/%3E%3C/g%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-4)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 4.67 0.00 C 4.67 8.61 -2.30 15.58 -10.91 15.58 C -19.52 15.58 -26.50 8.61 -26.50 0.00 C -26.50 -8.60 -19.52 -15.59 -10.91 -15.59 C -2.30 -15.59 4.67 -8.60 4.67 0.00 Z M 4.67 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 47.81, 19.09)%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%226.25%22 y=%2222.47%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-5)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 26.50 0.00 C 26.50 8.61 19.52 15.58 10.91 15.58 C 2.30 15.58 -4.67 8.61 -4.67 0.00 C -4.67 -8.60 2.30 -15.59 10.91 -15.59 C 19.52 -15.59 26.50 -8.60 26.50 0.00 Z M 26.50 0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 47.81, 19.09)%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2281.97%22 y=%2222.47%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2235.45%22 y=%2260.88%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2245.05%22 y=%2260.88%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2252.18%22 y=%2260.88%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+</li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គូសដ្យាក្រាមវ៉ែនបង្ហាញតំបន់ <span class="mi">\((A \cup B)^c\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដ្យាក្រាមវ៉ែននៃ <span class="mi">\((A \cup B)^c\)</span> ៖<br/>
+- គូសចតុកោណកែងតំណាងសំណុំសកល <span class="mi">\(U\)</span> និងរង្វង់ពីរ <span class="mi">\(A, B\)</span>។<br/>
+- ផ្ទៃនៃ <span class="mi">\((A \cup B)^c\)</span> គឺជា<strong>ផ្ទៃទាំងអស់នៃ <span class="mi">\(U\)</span> ដែលស្ថិតនៅក្រៅរង្វង់ <span class="mi">\(A\)</span> និងក្រៅរង្វង់ <span class="mi">\(B\)</span></strong> (ផាត់ពណ៌ជុំវិញរង្វង់ទាំងពីរក្នុងក្របខ័ណ្ឌ <span class="mi">\(U\)</span>)។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គូសដ្យាក្រាមវ៉ែនបង្ហាញតំបន់ <span class="mi">\(A \cap (B \cup C)\)</span> សម្រាប់បីសំណុំ <span class="mi">\(A, B, C\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដ្យាក្រាមវ៉ែននៃ <span class="mi">\(A \cap (B \cup C)\)</span> សម្រាប់បីសំណុំ ៖<br/>
+- សង់រង្វង់បី <span class="mi">\(A, B, C\)</span> ត្រួតស៊ីគ្នា។<br/>
+- សំណុំ <span class="mi">\(B \cup C\)</span> គឺជាផ្ទៃរង្វង់ <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> រួមគ្នា។<br/>
+- ផ្ទៃ <span class="mi">\(A \cap (B \cup C)\)</span> គឺជាផ្នែកនៃរង្វង់ <span class="mi">\(A\)</span> ដែលត្រួតស៊ីគ្នាជាមួយនឹង <span class="mi">\(B\)</span> ឬជាមួយ <span class="mi">\(C\)</span> (រួមមានតំបន់ <span class="mi">\(A \cap B\)</span>, <span class="mi">\(A \cap C\)</span>, និង <span class="mi">\(A \cap B \cap C\)</span>)។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>បង្ហាញតាមដ្យាក្រាមវ៉ែនថាលក្ខណៈចែកចាយពិត ៖ <span class="mi">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញតាមដ្យាក្រាមវ៉ែន ៖ <span class="mi">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span> ៖<br/>
+បែងចែកប្លង់នៃរង្វង់ទាំង ៣ ជា ៧ តំបន់ដាច់ដោយឡែកពីគ្នា ៖<br/>
+- តំបន់នៃ <span class="mi">\(A \cap B\)</span> ផ្ទុកតំបន់រួមរវាង <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span>។<br/>
+- តំបន់នៃ <span class="mi">\(A \cap C\)</span> ផ្ទុកតំបន់រួមរវាង <span class="mi">\(A\)</span> និង <span class="mi">\(C\)</span>។<br/>
+- ប្រជុំនៃតំបន់ទាំងពីរ <span class="mi">\((A \cap B) \cup (A \cap C)\)</span> បង្កើតបានផ្ទៃដូចគ្នាបេះបិទនឹងតំបន់ដែលរង្វង់ <span class="mi">\(A\)</span> ជួបនឹង <span class="mi">\(B \cup C\)</span>។<br/>
+ដូចនេះ លក្ខណៈចែកចាយនៃ <span class="mi">\(\cap\)</span> លើ <span class="mi">\(\cup\)</span> ត្រូវបានផ្ទៀងផ្ទាត់។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div> <div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>បង្ហាញតាមដ្យាក្រាមវ៉ែន ៖ <span class="mi">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញតាមដ្យាក្រាមវ៉ែន ៖ <span class="mi">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span> ៖<br/>
+- អង្គខាងឆ្វេង ៖ យកផ្ទៃរង្វង់ <span class="mi">\(A\)</span> ទាំងមូល រួមជាមួយផ្ទៃប្រសព្វតូច <span class="mi">\(B \cap C\)</span>។<br/>
+- អង្គខាងស្តាំ ៖ យកផ្ទៃប្រសព្វរួមរវាងតំបន់ <span class="mi">\((A \cup B)\)</span> និង <span class="mi">\((A \cup C)\)</span>។ ផ្ទៃរួមនេះគ្របដណ្តប់លើ <span class="mi">\(A\)</span> ទាំងមូល បូកបន្ថែមផ្នែក <span class="mi">\(B \cap C\)</span>។<br/>
+តំបន់ផាត់ពណ៌នៃអង្គទាំងពីរដូចគ្នាទាំងស្រុង នាំឱ្យសមភាពពិត។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div> <div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(n(A) = 20\)</span>, <span class="mi">\(n(B) = 15\)</span> និង <span class="mi">\(n(A \cap B) = 7\)</span>។ រក <span class="mi">\(n(A \cup B)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបមន្តចំនួនធាតុនៃប្រជុំពីរសំណុំ ៖<br/>
+<span class="mi">\(n(A \cup B) = n(A) + n(B) - n(A \cap B)\)</span><br/>
+ជំនួសតម្លៃ ៖<br/>
+<span class="mi">\(n(A \cup B) = 20 + 15 - 7 = \mathbf{28}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(n(A \cup B) = 35\)</span>, <span class="mi">\(n(A) = 22\)</span> និង <span class="mi">\(n(B) = 18\)</span>។ រក <span class="mi">\(n(A \cap B)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទាញរកចំនួនធាតុប្រសព្វ ៖<br/>
+<span class="mi">\(n(A \cap B) = n(A) + n(B) - n(A \cup B)\)</span><br/>
+ជំនួសតម្លៃ ៖<br/>
+<span class="mi">\(n(A \cap B) = 22 + 18 - 35 = 40 - 35 = \mathbf{5}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(n(A) = 30\)</span>, <span class="mi">\(n(B) = 25\)</span> និង <span class="mi">\(A \cap B = \emptyset\)</span> (សំណុំដាច់គ្នា)។ រក <span class="mi">\(n(A \cup B)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោយ <span class="mi">\(A \cap B = \emptyset\)</span> (សំណុំដាច់គ្នា គ្មានធាតុរួម នាំឱ្យ <span class="mi">\(n(A \cap B) = 0\)</span>) ៖<br/>
+<span class="mi">\(n(A \cup B) = n(A) + n(B) = 30 + 25 = \mathbf{55}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(n(U) = 50\)</span>, <span class="mi">\(n(A) = 28\)</span>, <span class="mi">\(n(B) = 20\)</span> និង <span class="mi">\(n(A \cap B) = 8\)</span>។ រកចំនួនធាតុដែលមិនស្ថិតក្នុង <span class="mi">\(A\)</span> ផង និងមិនស្ថិតក្នុង <span class="mi">\(B\)</span> ផង (<span class="mi">\(n((A \cup B)^c)\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា <span class="mi">\(n((A \cup B)^c)\)</span> ៖<br/>
+- ចំនួនធាតុនៃ <span class="mi">\(A \cup B\)</span> គឺ ៖<br/>
+<span class="mi">\(n(A \cup B) = n(A) + n(B) - n(A \cap B) = 28 + 20 - 8 = 40\)</span>។<br/>
+- ចំនួនធាតុនៅក្រៅ <span class="mi">\(A\)</span> ផង និង <span class="mi">\(B\)</span> ផង ៖<br/>
+<span class="mi">\(n((A \cup B)^c) = n(U) - n(A \cup B) = 50 - 40 = \mathbf{10}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(n(A \setminus B) = 12\)</span>, <span class="mi">\(n(B \setminus A) = 8\)</span> និង <span class="mi">\(n(A \cap B) = 5\)</span>។ រក <span class="mi">\(n(A)\)</span> និង <span class="mi">\(n(B)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមនិយមន័យនៃផលដក និងប្រសព្វសំណុំ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(n(A) = n(A \setminus B) + n(A \cap B) = 12 + 5 = \mathbf{17}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(n(B) = n(B \setminus A) + n(A \cap B) = 8 + 5 = \mathbf{13}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>រក <span class="mi">\(n(A \cup B)\)</span> យោងតាមលំហាត់ទី ៣១។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា <span class="mi">\(n(A \cup B)\)</span> យោងតាមលំហាត់ទី ៣១ ៖<br/>
+<strong>វិធីទី១</strong> ៖ បូកតំបន់ដាច់គ្នាទាំង ៣ ៖<br/>
+<span class="mi">\(n(A \cup B) = n(A \setminus B) + n(B \setminus A) + n(A \cap B) = 12 + 8 + 5 = \mathbf{25}\)</span>។<br/>
+<strong>វិធីទី២</strong> ៖ តាមរូបមន្តទូទៅ ៖<br/>
+<span class="mi">\(n(A \cup B) = n(A) + n(B) - n(A \cap B) = 17 + 13 - 5 = \mathbf{25}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>គេឱ្យបីសំណុំ <span class="mi">\(A, B, C\)</span> ដែល <span class="mi">\(n(A)=10, n(B)=12, n(C)=14\)</span>, <span class="mi">\(n(A \cap B)=4, n(B \cap C)=5, n(A \cap C)=3\)</span> និង <span class="mi">\(n(A \cap B \cap C)=2\)</span>។ រក <span class="mi">\(n(A \cup B \cup C)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបមន្តចំនួនធាតុនៃប្រជុំបីសំណុំ ៖<br/>
+<span class="mi">\(n(A \cup B \cup C) = n(A) + n(B) + n(C) - [n(A \cap B) + n(B \cap C) + n(A \cap C)] + n(A \cap B \cap C)\)</span><br/>
+ជំនួសតម្លៃ ៖<br/>
+<span class="mi">\(n(A \cup B \cup C) = 10 + 12 + 14 - (4 + 5 + 3) + 2\)</span><br/>
+<span class="mi">\(= 36 - 12 + 2 = \mathbf{26}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំ <span class="mi">\(A = \{x \in \mathbb{N} \mid x \)</span> ចែកដាច់នឹង <span class="mi">\( 2 \)</span> និង <span class="mi">\( x \leq 30\}\)</span> និង <span class="mi">\(B = \{x \in \mathbb{N} \mid x \)</span> ចែកដាច់នឹង <span class="mi">\( 3 \)</span> និង <span class="mi">\( x \leq 30\}\)</span>។ រក <span class="mi">\(n(A \cap B)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណុំចំនួនគត់ធម្មជាតិតូចជាង ឬស្មើ <span class="mi">\(30\)</span> ៖<br/>
+- <span class="mi">\(A\)</span> ៖ ចែកដាច់នឹង <span class="mi">\(2\)</span> ៖ <span class="mi">\(\{2, 4, 6, \dots, 30\}\)</span><br/>
+- <span class="mi">\(B\)</span> ៖ ចែកដាច់នឹង <span class="mi">\(3\)</span> ៖ <span class="mi">\(\{3, 6, 9, \dots, 30\}\)</span><br/>
+ធាតុនៃ <span class="mi">\(A \cap B\)</span> ត្រូវចែកដាច់នឹងទាំង ២ និង ៣ ពោលគឺចែកដាច់នឹង <span class="mi">\(\text{LCM}(2, 3) = 6\)</span> ៖<br/>
+<span class="mi">\(A \cap B = \{6, 12, 18, 24, 30\}\)</span><br/>
+<span class="mi">\(\implies \mathbf{n(A \cap B) = 5}\)</span> (ឬ <span class="mi">\(\lfloor 30/6 \rfloor = 5\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>តាមសំណុំក្នុងលំហាត់ទី ៣៤ រក <span class="mi">\(n(A \cup B)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមសំណុំក្នុងលំហាត់ទី ៣៤ ៖<br/>
+- <span class="mi">\(n(A) = \left\lfloor \dfrac{30}{2} \right\rfloor = 15\)</span><br/>
+- <span class="mi">\(n(B) = \left\lfloor \dfrac{30}{3} \right\rfloor = 10\)</span><br/>
+- <span class="mi">\(n(A \cap B) = 5\)</span><br/>
+<span class="mi">\(\implies n(A \cup B) = n(A) + n(B) - n(A \cap B) = 15 + 10 - 5 = \mathbf{20}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>រកចំនួនធាតុនៃសំណុំចំនួនគត់ពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(100\)</span> ដែលមិនចែកដាច់នឹង <span class="mi">\(2\)</span> ផង និងមិនចែកដាច់នឹង <span class="mi">\(3\)</span> ផង។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សំណុំសកល <span class="mi">\(U = \{1, 2, \dots, 100\} \implies n(U) = 100\)</span>។<br/>
+- តាង <span class="mi">\(A\)</span> ជាសំណុំចំនួនចែកដាច់នឹង <span class="mi">\(2\)</span> <span class="mi">\(\implies n(A) = \lfloor 100/2 \rfloor = 50\)</span>។<br/>
+- តាង <span class="mi">\(B\)</span> ជាសំណុំចំនួនចែកដាច់នឹង <span class="mi">\(3\)</span> <span class="mi">\(\implies n(B) = \lfloor 100/3 \rfloor = 33\)</span>។<br/>
+- <span class="mi">\(A \cap B\)</span> ជាចំនួនចែកដាច់នឹង <span class="mi">\(6\)</span> <span class="mi">\(\implies n(A \cap B) = \lfloor 100/6 \rfloor = 16\)</span>។<br/>
+ចំនួនដែលចែកដាច់នឹង <span class="mi">\(2\)</span> ឬ <span class="mi">\(3\)</span> គឺ ៖<br/>
+<span class="mi">\(n(A \cup B) = 50 + 33 - 16 = 67\)</span>។<br/>
+ចំនួនដែល<strong>មិនចែកដាច់នឹង <span class="mi">\(2\)</span> ផង និងមិនចែកដាច់នឹង <span class="mi">\(3\)</span> ផង</strong> គឺ ៖<br/>
+<span class="mi">\(N = n(U) - n(A \cup B) = 100 - 67 = \mathbf{33}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំ <span class="mi">\(A \subset B\)</span>។ សម្រួលកន្សោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(A \cup B\)</span></p></li>
+<li><p><span class="mi">\(A \cap B\)</span></p></li>
+<li><p><span class="mi">\(A \setminus B\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោយសារ <span class="mi">\(A \subset B\)</span> (គ្រប់ធាតុនៃ <span class="mi">\(A\)</span> សុទ្ធតែនៅក្នុង <span class="mi">\(B\)</span>) នាំឱ្យ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\mathbf{A \cup B = B}\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(\mathbf{A \cap B = A}\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(\mathbf{A \setminus B = \emptyset}\)</span> (គ្មានធាតុណាក្នុង <span class="mi">\(A\)</span> ដែលនៅក្រៅ <span class="mi">\(B\)</span> ឡើយ)។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមសំណុំ ៖ <span class="mi">\((A \cap B) \cup (A \cap \bar{B})\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោម <span class="mi">\((A \cap B) \cup (A \cap \bar{B})\)</span> ៖<br/>
+អនុវត្តលក្ខណៈចែកចាយទាញ <span class="mi">\(A\)</span> ជាកត្តា ៖<br/>
+<span class="mi">\((A \cap B) \cup (A \cap \bar{B}) = A \cap (B \cup \bar{B})\)</span><br/>
+ដោយ <span class="mi">\(B \cup \bar{B} = U\)</span> (សំណុំសកល) ៖<br/>
+<span class="mi">\(= A \cap U = \mathbf{A}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមសំណុំ ៖ <span class="mi">\(A \cup (B \setminus A)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោម <span class="mi">\(A \cup (B \setminus A)\)</span> ៖<br/>
+ដោយ <span class="mi">\(B \setminus A = B \cap \bar{A}\)</span> ៖<br/>
+<span class="mi">\(A \cup (B \setminus A) = A \cup (B \cap \bar{A})\)</span><br/>
+អនុវត្តលក្ខណៈចែកចាយនៃ <span class="mi">\(\cup\)</span> លើ <span class="mi">\(\cap\)</span> ៖<br/>
+<span class="mi">\(= (A \cup B) \cap (A \cup \bar{A})\)</span><br/>
+ដោយ <span class="mi">\(A \cup \bar{A} = U\)</span> ៖<br/>
+<span class="mi">\(= (A \cup B) \cap U = \mathbf{A \cup B}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមសំណុំ ៖ <span class="mi">\((A \setminus B) \cap B\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោម <span class="mi">\((A \setminus B) \cap B\)</span> ៖<br/>
+ដោយ <span class="mi">\(A \setminus B = A \cap \bar{B}\)</span> ៖<br/>
+<span class="mi">\((A \setminus B) \cap B = (A \cap \bar{B}) \cap B = A \cap (\bar{B} \cap B)\)</span> (លក្ខណៈផ្តុំ)<br/>
+ដោយ <span class="mi">\(\bar{B} \cap B = \emptyset\)</span> ៖<br/>
+<span class="mi">\(= A \cap \emptyset = \mathbf{\emptyset}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\(A \setminus B = A \cap \bar{B}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្រាយបញ្ជាក់ថា <span class="mi">\(A \setminus B = A \cap \bar{B}\)</span> ៖<br/>
+ចំពោះគ្រប់ធាតុ <span class="mi">\(x\)</span> ៖<br/>
+<span class="mi">\(x \in A \setminus B \iff (x \in A \land x \notin B)\)</span><br/>
+<span class="mi">\(\iff (x \in A \land x \in \bar{B})\)</span> (តាមនិយមន័យសំណុំបំពេញ)<br/>
+<span class="mi">\(\iff x \in A \cap \bar{B}\)</span> (តាមនិយមន័យប្រសព្វសំណុំ)។<br/>
+ដោយសមមូលទ្វេទិសផ្ទៀងផ្ទាត់គ្រប់ <span class="mi">\(x\)</span> នាំឱ្យ <span class="mi">\(A \setminus B = A \cap \bar{B}\)</span> ពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\((A \setminus B) \setminus C = A \setminus (B \cup C)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្រាយបញ្ជាក់ថា <span class="mi">\((A \setminus B) \setminus C = A \setminus (B \cup C)\)</span> ៖<br/>
+ប្រើសមភាព <span class="mi">\(X \setminus Y = X \cap \bar{Y}\)</span> ៖<br/>
+<span class="mi">\((A \setminus B) \setminus C = (A \cap \bar{B}) \cap \bar{C}\)</span><br/>
+<span class="mi">\(= A \cap (\bar{B} \cap \bar{C})\)</span> (លក្ខណៈផ្តុំ)<br/>
+តាមច្បាប់ដឺម៉ូហ្គង់ <span class="mi">\(\bar{B} \cap \bar{C} = \overline{B \cup C}\)</span> ៖<br/>
+<span class="mi">\(= A \cap \overline{B \cup C} = \mathbf{A \setminus (B \cup C)}\)</span> ពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>គេឱ្យសំណុំ <span class="mi">\(A = \{1, 2\}\)</span> និង <span class="mi">\(B = \{a, b\}\)</span>។ រកផលគុណដេកាត <span class="mi">\(A \times B\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(A = \{1, 2\}\)</span> និង <span class="mi">\(B = \{a, b\}\)</span> ៖<br/>
+ផលគុណដេកាត <span class="mi">\(A \times B\)</span> គឺជាសំណុំនៃគ្រប់គូមានលំដាប់ <span class="mi">\((x, y)\)</span> ដែល <span class="mi">\(x \in A, y \in B\)</span> ៖<br/>
+<span class="mi">\(\mathbf{A \times B = \{(1, a), (1, b), (2, a), (2, b)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>តាមសំណុំក្នុងលំហាត់ទី ៤៣ រក <span class="mi">\(B \times A\)</span> និង <span class="mi">\(A \times A\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមសំណុំក្នុងលំហាត់ទី ៤៣ ៖<br/>
+- <span class="mi">\(\mathbf{B \times A = \{(a, 1), (a, 2), (b, 1), (b, 2)\}}\)</span><br/>
+- <span class="mi">\(\mathbf{A \times A = \{(1, 1), (1, 2), (2, 1), (2, 2)\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>រកចំនួនធាតុ <span class="mi">\(n(A \times B)\)</span> បើ <span class="mi">\(n(A) = 4\)</span> និង <span class="mi">\(n(B) = 5\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនធាតុនៃផលគុណដេកាត ស្មើនឹងផលគុណនៃចំនួនធាតុសំណុំនីមួយៗ ៖<br/>
+<span class="mi">\(n(A \times B) = n(A) \times n(B) = 4 \times 5 = \mathbf{20}\)</span> ធាតុ។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការស្ទង់មតិចំណូលចិត្តកីឡា ៖</strong> ក្នុងថ្នាក់រៀនមួយមានសិស្ស ៤០ នាក់។ ក្នុងនោះមាន ២៥ នាក់ចូលចិត្តលេងបាល់ទាត់ ១៨ នាក់ចូលចិត្តលេងបាល់ទះ និង ៨ នាក់ចូលចិត្តលេងកីឡាទាំងពីរ។</p>
+<ol class="list olka cols2">
+<li><p>សិស្សចូលចិត្តយ៉ាងហោចមួយ?</p></li>
+<li><p>សិស្សមិនចូលចិត្តទាំងពីរ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការស្ទង់មតិចំណូលចិត្តកីឡា ៖</strong><br/>
+តាង <span class="mi">\(F\)</span> (បាល់ទាត់), <span class="mi">\(V\)</span> (បាល់ទះ) ក្នុងចំណោមសិស្សសរុប <span class="mi">\(n(U) = 40\)</span> ៖<br/>
+<span class="mi">\(n(F) = 25\)</span>, <span class="mi">\(n(V) = 18\)</span>, <span class="mi">\(n(F \cap V) = 8\)</span>។<br/>
+<strong>ក.</strong>  សិស្សចូលចិត្តលេងយ៉ាងហោចមួយកីឡា ៖<br/>
+<span class="mi">\(n(F \cup V) = n(F) + n(V) - n(F \cap V) = 25 + 18 - 8 = \mathbf{35}\)</span> នាក់។<br/>
+<strong>ខ.</strong>  សិស្សមិនចូលចិត្តលេងកីឡាទាំងពីរ ៖<br/>
+<span class="mi">\(n((F \cup V)^c) = n(U) - n(F \cup V) = 40 - 35 = \mathbf{5}\)</span> នាក់។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ភាសាបរទេស ៖</strong> ក្នុងវិទ្យាស្ថានភាសាមួយមាននិស្សិត ១០០ នាក់។ មាន ៦០ នាក់រៀនភាសាអង់គ្លេស ៤០ នាក់រៀនភាសាបារាំង និង ២០ នាក់រៀនភាសាទាំងពីរ។</p>
+<ol class="list olka cols2">
+<li><p>រៀនតែអង់គ្លេសមួយមុខគត់?</p></li>
+<li><p>មិនរៀនភាសាទាំងពីរនេះ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ភាសាបរទេស ៖</strong><br/>
+តាង <span class="mi">\(E\)</span> (អង់គ្លេស), <span class="mi">\(F\)</span> (បារាំង) ក្នុងចំណោមនិស្សិតសរុប <span class="mi">\(n(U) = 100\)</span> ៖<br/>
+<span class="mi">\(n(E) = 60\)</span>, <span class="mi">\(n(F) = 40\)</span>, <span class="mi">\(n(E \cap F) = 20\)</span>។<br/>
+<strong>ក.</strong>  ចំនួននិស្សិតរៀនតែភាសាអង់គ្លេសមួយមុខគត់ ៖<br/>
+<span class="mi">\(n(E \setminus F) = n(E) - n(E \cap F) = 60 - 20 = \mathbf{40}\)</span> នាក់។<br/>
+<strong>ខ.</strong>  និស្សិតមិនរៀនភាសាទាំងពីរនេះ ៖<br/>
+<span class="mi">\(n(E \cup F) = 60 + 40 - 20 = 80\)</span> នាក់<br/>
+<span class="mi">\(\implies n((E \cup F)^c) = 100 - 80 = \mathbf{20}\)</span> នាក់។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការអានសៀវភៅ ៖</strong> ក្នុងបណ្ណាល័យមួយ សិស្ស ៥០ នាក់ត្រូវបានសាកសួរពីការអាន ៖ ៣០ នាក់អានសៀវភៅប្រលោមលោក ២០ នាក់អានសៀវភៅវិទ្យាសាស្ត្រ និង ១០ នាក់អានសៀវភៅទាំងពីរប្រភេទ។ តើសិស្សប៉ុន្មាននាក់អានសៀវភៅតែមួយប្រភេទគត់?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការអានសៀវភៅ ៖</strong><br/>
+តាង <span class="mi">\(N\)</span> (ប្រលោមលោក), <span class="mi">\(S\)</span> (វិទ្យាសាស្ត្រ) ក្នុងចំណោមសិស្ស <span class="mi">\(50\)</span> នាក់ ៖<br/>
+<span class="mi">\(n(N) = 30\)</span>, <span class="mi">\(n(S) = 20\)</span>, <span class="mi">\(n(N \cap S) = 10\)</span>។<br/>
+- សិស្សអានតែប្រលោមលោកមួយគត់ ៖ <span class="mi">\(30 - 10 = 20\)</span> នាក់។<br/>
+- សិស្សអានតែវិទ្យាសាស្ត្រមួយគត់ ៖ <span class="mi">\(20 - 10 = 10\)</span> នាក់។<br/>
+ចំនួនសិស្សដែលអានសៀវភៅ<strong>តែមួយប្រភេទគត់</strong> គឺ ៖<br/>
+<span class="mi">\(20 + 10 = \mathbf{30}\)</span> នាក់។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការប្រើប្រាស់បណ្តាញសង្គម ៖</strong> ក្នុងចំណោមមនុស្ស ៨០ នាក់ មាន ៥៥ នាក់ប្រើប្រាស់ Facebook ៤០ នាក់ប្រើប្រាស់ Telegram និង ២៥ នាក់ប្រើប្រាស់ទាំងពីរ។ តើមានមនុស្សប៉ុន្មាននាក់ដែលប្រើប្រាស់យ៉ាងច្រើនបណ្តាញសង្គមមួយ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការប្រើប្រាស់បណ្តាញសង្គម ៖</strong><br/>
+តាង <span class="mi">\(F\)</span> (Facebook), <span class="mi">\(T\)</span> (Telegram) ក្នុងចំណោមមនុស្ស <span class="mi">\(80\)</span> នាក់ ៖<br/>
+<span class="mi">\(n(F) = 55\)</span>, <span class="mi">\(n(T) = 40\)</span>, <span class="mi">\(n(F \cap T) = 25\)</span>។<br/>
+- មនុស្សប្រើតែ FB មួយគត់ ៖ <span class="mi">\(55 - 25 = 30\)</span> នាក់។<br/>
+- មនុស្សប្រើតែ TG មួយគត់ ៖ <span class="mi">\(40 - 25 = 15\)</span> នាក់។<br/>
+- មនុស្សមិនប្រើទាំងពីរ ៖ <span class="mi">\(80 - (55 + 40 - 25) = 80 - 70 = 10\)</span> នាក់។<br/>
+ចំនួនមនុស្សប្រើប្រាស់<strong>យ៉ាងច្រើនបណ្តាញសង្គមមួយ</strong> (០ ឬ ១) គឺ ៖<br/>
+<span class="mi">\(30 + 15 + 10 = \mathbf{55}\)</span> នាក់ (ឬ <span class="mi">\(80 - 25 = 55\)</span> នាក់)។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការគ្រប់គ្រងទិន្នន័យអតិថិជន ៖</strong> ផ្សារទំនើបមួយកត់ត្រាអតិថិជន ១២០ នាក់។ មាន ៧០ នាក់ទិញភេសជ្ជៈ ៥០ នាក់ទិញអាហារសម្រន់ ៤០ នាក់ទិញផ្លែឈើ ២០ នាក់ទិញភេសជ្ជៈនិងអាហារសម្រន់ ១៥ នាក់ទិញភេសជ្ជៈនិងផ្លែឈើ ១០ នាក់ទិញអាហារសម្រន់និងផ្លែឈើ និង ៥ នាក់ទិញទាំងបីមុខ។</p>
+<ol class="list olka cols2">
+<li><p>ទិញយ៉ាងហោចណាស់មួយមុខ?</p></li>
+<li><p>មិនបានទិញទាំងបីមុខនេះសោះ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការគ្រប់គ្រងទិន្នន័យអតិថិជន ៖</strong><br/>
+តាង <span class="mi">\(D\)</span> (ភេសជ្ជៈ), <span class="mi">\(S\)</span> (អាហារសម្រន់), <span class="mi">\(F\)</span> (ផ្លែឈើ) ក្នុងចំណោមអតិថិជន <span class="mi">\(n(U) = 120\)</span> ៖<br/>
+<span class="mi">\(n(D)=70, n(S)=50, n(F)=40\)</span>,<br/>
+<span class="mi">\(n(D \cap S)=20, n(D \cap F)=15, n(S \cap F)=10\)</span>,<br/>
+<span class="mi">\(n(D \cap S \cap F)=5\)</span>។<br/>
+<strong>ក.</strong>  ចំនួនអតិថិជនទិញយ៉ាងហោចមួយមុខ ៖<br/>
+<span class="mi">\(n(D \cup S \cup F) = 70 + 50 + 40 - (20 + 15 + 10) + 5 = 160 - 45 + 5 = \mathbf{120}\)</span> នាក់។<br/>
+<strong>ខ.</strong>  ចំនួនអតិថិជនមិនបានទិញទាំងបីមុខសោះ ៖<br/>
+<span class="mi">\(n(U) - n(D \cup S \cup F) = 120 - 120 = \mathbf{0}\)</span> នាក់ (អតិថិជនទាំងអស់បានទិញយ៉ាងហោចមួយមុខ)។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ២ តក្កវិទ្យា សំណុំ និងចំនួន</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c02">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L03.html"><small>← មេរៀនមុន</small><b>តក្កវិទ្យា</b></a><a class="next" href="L05.html"><small>មេរៀនបន្ទាប់ →</small><b>ចំនួន</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើនិមិត្តសញ្ញាណាប្រើសម្រាប់សម្គាល់ «ជាធាតុនៃសំណុំ»?", "options": ["<span class=\"mi\">\\(\\notin\\)<\/span>", "<span class=\"mi\">\\(\\subset\\)<\/span>", "<span class=\"mi\">\\(\\in\\)<\/span>", "<span class=\"mi\">\\(\\subseteq\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើនិមិត្តសញ្ញាណាប្រើសម្រាប់សម្គាល់ «សំណុំទទេ»?", "options": ["<span class=\"mi\">\\(\\{0\\}\\)<\/span>", "<span class=\"mi\">\\(\\emptyset\\)<\/span> ឬ <span class=\"mi\">\\(\\{\\}\\)<\/span>", "<span class=\"mi\">\\(\\infty\\)<\/span>", "<span class=\"mi\">\\(U\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើសំណុំណាខាងក្រោមជាសំណុំទទេ?", "options": ["<span class=\"mi\">\\(\\{x \\in \\mathbb{R} \\mid x^2 + 1 = 0\\}\\)<\/span>", "<span class=\"mi\">\\(\\{0\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 2\\}\\)<\/span>", "<span class=\"mi\">\\(\\{x \\in \\mathbb{R} \\mid x + 3 = 5\\}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណុំ <span class=\"mi\">\\(A = \\{2, 4, 6, 8\\}\\)<\/span>។ តើចំនួនធាតុនៃសំណុំ <span class=\"mi\">\\(A\\)<\/span> គឺប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(n(A) = 3\\)<\/span>", "<span class=\"mi\">\\(n(A) = 4\\)<\/span>", "<span class=\"mi\">\\(n(A) = 5\\)<\/span>", "<span class=\"mi\">\\(n(A) = 8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណុំ <span class=\"mi\">\\(B = \\{1, 2, 2, 3, 3, 3\\}\\)<\/span>។ តើកន្សោមសរសេរត្រឹមត្រូវតាមក្បួនខ្នាតនៃសំណុំ <span class=\"mi\">\\(B\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\(B = \\{1, 2, 3\\}\\)<\/span>", "<span class=\"mi\">\\(B = \\{6\\}\\)<\/span>", "<span class=\"mi\">\\(B = \\{1, 2, 2, 3, 3, 3\\}\\)<\/span>", "<span class=\"mi\">\\(B = \\{1, 4, 9\\}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើសំណុំណាខាងក្រោមនេះជាសំណុំរាប់អស់ (Finite Set)?", "options": ["សំណុំចំនួនគត់ធម្មជាតិ <span class=\"mi\">\\(\\mathbb{N}\\)<\/span>", "សំណុំចំនួនពិត <span class=\"mi\">\\(\\mathbb{R}\\)<\/span>", "សំណុំថ្ងៃក្នុងមួយសប្តាហ៍", "សំណុំចំនួនគត់រ៉ឺឡាទីប <span class=\"mi\">\\(\\mathbb{Z}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើសំណុំណាខាងក្រោមនេះជាសំណុំអនន្ត (Infinite Set)?", "options": ["សំណុំខែក្នុងមួយឆ្នាំ", "សំណុំចំនួនបឋមតូចជាង <span class=\"mi\">\\(10\\)<\/span>", "សំណុំចំនួនគត់គូ", "សំណុំព្យញ្ជនៈខ្មែរ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណុំ <span class=\"mi\">\\(C = \\{x \\in \\mathbb{N} \\mid 2 &lt; x \\leq 7\\}\\)<\/span>។ សរសេរដោយរៀបរាប់ឈ្មោះធាតុ ៖", "options": ["<span class=\"mi\">\\(C = \\{2, 3, 4, 5, 6, 7\\}\\)<\/span>", "<span class=\"mi\">\\(C = \\{3, 4, 5, 6, 7\\}\\)<\/span>", "<span class=\"mi\">\\(C = \\{3, 4, 5, 6\\}\\)<\/span>", "<span class=\"mi\">\\(C = \\{2, 3, 4, 5, 6\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សំណុំពីរ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> ស្មើគ្នា (<span class=\"mi\">\\(A = B\\)<\/span>) លុះត្រាតែ ៖", "options": ["<span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> មានចំនួនធាតុស្មើគ្នា", "<span class=\"mi\">\\(A \\subseteq B\\)<\/span> និង <span class=\"mi\">\\(B \\subseteq A\\)<\/span>", "<span class=\"mi\">\\(A \\cup B = U\\)<\/span>", "<span class=\"mi\">\\(A \\cap B = \\emptyset\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សំណុំពីរហៅថាសំណុំដាច់គ្នា (Disjoint Sets) កាលណា ៖", "options": ["<span class=\"mi\">\\(A \\cup B = \\emptyset\\)<\/span>", "<span class=\"mi\">\\(A \\cap B = \\emptyset\\)<\/span>", "<span class=\"mi\">\\(A = B\\)<\/span>", "<span class=\"mi\">\\(A \\subseteq B\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើសំណុំទទេ <span class=\"mi\">\\(\\emptyset\\)<\/span> ជាសំណុំរងនៃសំណុំណាខ្លះ?", "options": ["ជាសំណុំរងនៃគ្រប់សំណុំទាំងអស់", "ជាសំណុំរងនៃតែសំណុំទទេប៉ុណ្ណោះ", "មិនមែនជាសំណុំរងនៃសំណុំណាឡើយ", "ជាសំណុំរងនៃតែសំណុំសកល <span class=\"mi\">\\(U\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើកាលណាគ្រប់ធាតុរបស់សំណុំ <span class=\"mi\">\\(A\\)<\/span> សុទ្ធតែជាធាតុរបស់សំណុំ <span class=\"mi\">\\(B\\)<\/span> នោះគេបាន ៖", "options": ["<span class=\"mi\">\\(A \\in B\\)<\/span>", "<span class=\"mi\">\\(B \\subseteq A\\)<\/span>", "<span class=\"mi\">\\(A \\subseteq B\\)<\/span>", "<span class=\"mi\">\\(A = B\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តសម្រាប់គណនាចំនួនសំណុំរងទាំងអស់នៃសំណុំដែលមាន <span class=\"mi\">\\(n\\)<\/span> ធាតុ គឺ ៖", "options": ["<span class=\"mi\">\\(2n\\)<\/span>", "<span class=\"mi\">\\(n^2\\)<\/span>", "<span class=\"mi\">\\(2^n\\)<\/span>", "<span class=\"mi\">\\(2^n - 1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តសម្រាប់គណនាចំនួនសំណុំរងពិត (Proper Subsets) នៃសំណុំមាន <span class=\"mi\">\\(n\\)<\/span> ធាតុ គឺ ៖", "options": ["<span class=\"mi\">\\(2^n\\)<\/span>", "<span class=\"mi\">\\(2^n - 1\\)<\/span>", "<span class=\"mi\">\\(2n - 1\\)<\/span>", "<span class=\"mi\">\\(n^2 - 1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណុំ <span class=\"mi\">\\(A = \\{x, y, z\\}\\)<\/span>។ តើសំណុំ <span class=\"mi\">\\(A\\)<\/span> មានចំនួនសំណុំរងសរុបប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណុំ <span class=\"mi\">\\(B = \\{1, 2, 3, 4\\}\\)<\/span>។ តើសំណុំ <span class=\"mi\">\\(B\\)<\/span> មានចំនួនសំណុំរងពិតប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើសំណុំទទេ <span class=\"mi\">\\(\\emptyset\\)<\/span> មានចំនួនសំណុំរងប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "មិនកំណត់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(A = \\{a, b\\}\\)<\/span>។ តើស្វ័យគុណនៃសំណុំ <span class=\"mi\">\\(\\mathcal{P}(A)\\)<\/span> គឺអ្វី?", "options": ["<span class=\"mi\">\\(\\{\\{a\\}, \\{b\\}\\}\\)<\/span>", "<span class=\"mi\">\\(\\{\\emptyset, \\{a\\}, \\{b\\}, \\{a, b\\}\\}\\)<\/span>", "<span class=\"mi\">\\(\\{\\emptyset, a, b\\}\\)<\/span>", "<span class=\"mi\">\\(\\{a, b\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើគេដឹងថាចំនួនធាតុនៃស្វ័យគុណសំណុំ <span class=\"mi\">\\(n(\\mathcal{P}(A)) = 32\\)<\/span> នោះចំនួនធាតុនៃ <span class=\"mi\">\\(A\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A \\subseteq B\\)<\/span> និង <span class=\"mi\">\\(B \\subseteq C\\)<\/span> នោះគេទាញបាន ៖", "options": ["<span class=\"mi\">\\(C \\subseteq A\\)<\/span>", "<span class=\"mi\">\\(A \\subseteq C\\)<\/span>", "<span class=\"mi\">\\(A = C\\)<\/span>", "<span class=\"mi\">\\(A \\cap C = \\emptyset\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ប្រជុំនៃពីរសំណុំ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> កំណត់ដោយ ៖", "options": ["<span class=\"mi\">\\(A \\cup B = \\{x \\mid x \\in A \\land x \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\cup B = \\{x \\mid x \\in A \\lor x \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\cup B = \\{x \\mid x \\in A \\land x \\notin B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\cup B = \\{x \\mid x \\notin A \\land x \\notin B\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ប្រសព្វនៃពីរសំណុំ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> កំណត់ដោយ ៖", "options": ["<span class=\"mi\">\\(A \\cap B = \\{x \\mid x \\in A \\lor x \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\cap B = \\{x \\mid x \\in A \\land x \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\cap B = \\{x \\mid x \\in A \\land x \\notin B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\cap B = \\{x \\mid x \\notin A \\lor x \\notin B\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលដកនៃសំណុំ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> (<span class=\"mi\">\\(A \\setminus B\\)<\/span>) កំណត់ដោយ ៖", "options": ["<span class=\"mi\">\\(\\{x \\mid x \\in A \\land x \\notin B\\}\\)<\/span>", "<span class=\"mi\">\\(\\{x \\mid x \\in A \\lor x \\notin B\\}\\)<\/span>", "<span class=\"mi\">\\(\\{x \\mid x \\notin A \\land x \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(\\{x \\mid x \\in A \\land x \\in B\\}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សំណុំបំពេញនៃ <span class=\"mi\">\\(A\\)<\/span> ធៀបនឹងសំណុំសកល <span class=\"mi\">\\(U\\)<\/span> (<span class=\"mi\">\\(A^c\\)<\/span> ឬ <span class=\"mi\">\\(\\bar{A}\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(A \\setminus U\\)<\/span>", "<span class=\"mi\">\\(U \\setminus A\\)<\/span>", "<span class=\"mi\">\\(U \\cap A\\)<\/span>", "<span class=\"mi\">\\(U \\cup A\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(A = \\{1, 2, 3\\}\\)<\/span> និង <span class=\"mi\">\\(B = \\{2, 3, 4\\}\\)<\/span>។ តើ <span class=\"mi\">\\(A \\cup B\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(\\{2, 3\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 4\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 2, 3, 4\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 2, 2, 3, 3, 4\\}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(A = \\{1, 2, 3\\}\\)<\/span> និង <span class=\"mi\">\\(B = \\{2, 3, 4\\}\\)<\/span>។ តើ <span class=\"mi\">\\(A \\cap B\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(\\{2, 3\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 2, 3, 4\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1\\}\\)<\/span>", "<span class=\"mi\">\\(\\{4\\}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(A = \\{1, 2, 3\\}\\)<\/span> និង <span class=\"mi\">\\(B = \\{2, 3, 4\\}\\)<\/span>។ តើ <span class=\"mi\">\\(A \\setminus B\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(\\{4\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1\\}\\)<\/span>", "<span class=\"mi\">\\(\\{2, 3\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 4\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(A = \\{1, 2, 3\\}\\)<\/span> និង <span class=\"mi\">\\(B = \\{2, 3, 4\\}\\)<\/span>។ តើ <span class=\"mi\">\\(B \\setminus A\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(\\{1\\}\\)<\/span>", "<span class=\"mi\">\\(\\{4\\}\\)<\/span>", "<span class=\"mi\">\\(\\{2, 3\\}\\)<\/span>", "<span class=\"mi\">\\(\\emptyset\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(U = \\{1, 2, 3, 4, 5, 6\\}\\)<\/span> និង <span class=\"mi\">\\(A = \\{2, 4, 6\\}\\)<\/span>។ តើ <span class=\"mi\">\\(A^c\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(\\{1, 3, 5\\}\\)<\/span>", "<span class=\"mi\">\\(\\{2, 4, 6\\}\\)<\/span>", "<span class=\"mi\">\\(U\\)<\/span>", "<span class=\"mi\">\\(\\emptyset\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំពោះគ្រប់សំណុំ <span class=\"mi\">\\(A\\)<\/span> តើ <span class=\"mi\">\\((A^c)^c\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(A^c\\)<\/span>", "<span class=\"mi\">\\(U\\)<\/span>", "<span class=\"mi\">\\(A\\)<\/span>", "<span class=\"mi\">\\(\\emptyset\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំពោះគ្រប់សំណុំ <span class=\"mi\">\\(A\\)<\/span> តើ <span class=\"mi\">\\(A \\cup \\emptyset\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(\\emptyset\\)<\/span>", "<span class=\"mi\">\\(A\\)<\/span>", "<span class=\"mi\">\\(U\\)<\/span>", "<span class=\"mi\">\\(\\{0\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំពោះគ្រប់សំណុំ <span class=\"mi\">\\(A\\)<\/span> តើ <span class=\"mi\">\\(A \\cap \\emptyset\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(A\\)<\/span>", "<span class=\"mi\">\\(\\emptyset\\)<\/span>", "<span class=\"mi\">\\(U\\)<\/span>", "មិនកំណត់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំពោះគ្រប់សំណុំ <span class=\"mi\">\\(A\\)<\/span> តើ <span class=\"mi\">\\(A \\cup A^c\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(\\emptyset\\)<\/span>", "<span class=\"mi\">\\(A\\)<\/span>", "<span class=\"mi\">\\(U\\)<\/span>", "<span class=\"mi\">\\(2A\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំពោះគ្រប់សំណុំ <span class=\"mi\">\\(A\\)<\/span> តើ <span class=\"mi\">\\(A \\cap A^c\\)<\/span> ស្មើនឹងអ្វី?", "options": ["<span class=\"mi\">\\(U\\)<\/span>", "<span class=\"mi\">\\(\\emptyset\\)<\/span>", "<span class=\"mi\">\\(A\\)<\/span>", "<span class=\"mi\">\\(A^c\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តាមច្បាប់ដឺម៉ូហ្គង់ (De Morgan) ចំពោះសំណុំ ៖ <span class=\"mi\">\\((A \\cup B)^c\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(A^c \\cup B^c\\)<\/span>", "<span class=\"mi\">\\(A^c \\cap B^c\\)<\/span>", "<span class=\"mi\">\\(A \\cap B\\)<\/span>", "<span class=\"mi\">\\((A \\cap B)^c\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តាមច្បាប់ដឺម៉ូហ្គង់ (De Morgan) ចំពោះសំណុំ ៖ <span class=\"mi\">\\((A \\cap B)^c\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(A^c \\cup B^c\\)<\/span>", "<span class=\"mi\">\\(A^c \\cap B^c\\)<\/span>", "<span class=\"mi\">\\(A \\cup B\\)<\/span>", "<span class=\"mi\">\\(A^c \\setminus B^c\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបមន្តចំនួនធាតុនៃប្រជុំពីរគឺ <span class=\"mi\">\\(n(A \\cup B) =\\)<\/span>", "options": ["<span class=\"mi\">\\(n(A) + n(B)\\)<\/span>", "<span class=\"mi\">\\(n(A) + n(B) - n(A \\cap B)\\)<\/span>", "<span class=\"mi\">\\(n(A) + n(B) + n(A \\cap B)\\)<\/span>", "<span class=\"mi\">\\(n(A) \\times n(B)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(n(A) = 15\\)<\/span>, <span class=\"mi\">\\(n(B) = 20\\)<\/span> និង <span class=\"mi\">\\(n(A \\cap B) = 5\\)<\/span>។ គណនា <span class=\"mi\">\\(n(A \\cup B)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(35\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(40\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(n(A \\cup B) = 35\\)<\/span>, <span class=\"mi\">\\(n(A) = 22\\)<\/span> និង <span class=\"mi\">\\(n(B) = 18\\)<\/span>។ គណនា <span class=\"mi\">\\(n(A \\cap B)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> ជាសំណុំដាច់គ្នា (<span class=\"mi\">\\(A \\cap B = \\emptyset\\)<\/span>) ដោយ <span class=\"mi\">\\(n(A) = 12, n(B) = 8\\)<\/span> នោះ <span class=\"mi\">\\(n(A \\cup B)\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(96\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបមន្តសម្រាប់គណនាចំនួនធាតុនៃ <span class=\"mi\">\\(A \\setminus B\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(n(A) - n(B)\\)<\/span>", "<span class=\"mi\">\\(n(A) - n(A \\cap B)\\)<\/span>", "<span class=\"mi\">\\(n(B) - n(A \\cap B)\\)<\/span>", "<span class=\"mi\">\\(n(A \\cup B) - n(B)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(n(A) = 25\\)<\/span> និង <span class=\"mi\">\\(n(A \\cap B) = 7\\)<\/span>។ គណនា <span class=\"mi\">\\(n(A \\setminus B)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(32\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេឱ្យសំណុំសកលមាន <span class=\"mi\">\\(n(U) = 50\\)<\/span> និង <span class=\"mi\">\\(n(A) = 32\\)<\/span>។ គណនា <span class=\"mi\">\\(n(A^c)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(28\\)<\/span>", "<span class=\"mi\">\\(82\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងថ្នាក់មួយមានសិស្ស <span class=\"mi\">\\(40\\)<\/span> នាក់។ សិស្សចូលចិត្តគណិត <span class=\"mi\">\\(25\\)<\/span> នាក់ រូបវិទ្យា <span class=\"mi\">\\(20\\)<\/span> នាក់ និងចូលចិត្តទាំងពីរ <span class=\"mi\">\\(10\\)<\/span> នាក់។ តើសិស្សចូលចិត្តយ៉ាងហោចមុខវិជ្ជាមួយមានប៉ុន្មាននាក់?", "options": ["<span class=\"mi\">\\(35\\)<\/span> នាក់", "<span class=\"mi\">\\(45\\)<\/span> នាក់", "<span class=\"mi\">\\(30\\)<\/span> នាក់", "<span class=\"mi\">\\(25\\)<\/span> នាក់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរខាងលើ តើសិស្សដែលមិនចូលចិត្តទាំងពីរមុខវិជ្ជាមានប៉ុន្មាននាក់?", "options": ["<span class=\"mi\">\\(10\\)<\/span> នាក់", "<span class=\"mi\">\\(5\\)<\/span> នាក់", "<span class=\"mi\">\\(15\\)<\/span> នាក់", "<span class=\"mi\">\\(0\\)<\/span> នាក់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលគុណដេកាតនៃពីរសំណុំ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> កំណត់ដោយ ៖", "options": ["<span class=\"mi\">\\(A \\times B = \\{(a, b) \\mid a \\in A \\)<\/span> និង <span class=\"mi\">\\( b \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\times B = \\{a \\times b \\mid a \\in A \\)<\/span> និង <span class=\"mi\">\\( b \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\times B = \\{a + b \\mid a \\in A \\)<\/span> និង <span class=\"mi\">\\( b \\in B\\}\\)<\/span>", "<span class=\"mi\">\\(A \\times B = A \\cup B\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបមន្តចំនួនធាតុនៃផលគុណដេកាត <span class=\"mi\">\\(n(A \\times B)\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(n(A) + n(B)\\)<\/span>", "<span class=\"mi\">\\(n(A) \\times n(B)\\)<\/span>", "<span class=\"mi\">\\([n(A)]^{n(B)}\\)<\/span>", "<span class=\"mi\">\\(2^{n(A)+n(B)}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(n(A) = 3\\)<\/span> និង <span class=\"mi\">\\(n(B) = 4\\)<\/span>។ គណនា <span class=\"mi\">\\(n(A \\times B)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(64\\)<\/span>", "<span class=\"mi\">\\(81\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(A = \\{1, 2\\}\\)<\/span> និង <span class=\"mi\">\\(B = \\{x, y\\}\\)<\/span>។ តើផលគុណដេកាត <span class=\"mi\">\\(A \\times B\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\{(1, x), (2, y)\\}\\)<\/span>", "<span class=\"mi\">\\(\\{(1, x), (1, y), (2, x), (2, y)\\}\\)<\/span>", "<span class=\"mi\">\\(\\{1, 2, x, y\\}\\)<\/span>", "<span class=\"mi\">\\(\\{(x, 1), (y, 2)\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើគេដឹងថា <span class=\"mi\">\\(n(A \\times B) = 24\\)<\/span> និង <span class=\"mi\">\\(n(A) = 6\\)<\/span> នោះ <span class=\"mi\">\\(n(B)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(144\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

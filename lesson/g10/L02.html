@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២ : ប្រមាណវិធីចែកពហុធា — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២ «ប្រមាណវិធីចែកពហុធា» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២ : ប្រមាណវិធីចែកពហុធា — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២ «ប្រមាណវិធីចែកពហុធា» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២</span>
+      <div><span class="ls-kicker">ជំពូកទី ១ ពហុធា · មេរៀនទី ២ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>ប្រមាណវិធីចែកពហុធា</h1><div class="ls-chips"><span class="chip chip-soon">ពហុធា</span><span class="chip chip-soon">៣ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. ប្រមាណវិធីចែកពហុធា</a></li><li class="sub"><a href="#u2">២. តួចែករួមធំបំផុតនិងពហុគុណរួមតូចបំផុតនៃពហុធា</a></li><li class="sub"><a href="#u3">៣. ប្រមាណវិធីលើប្រភាគសនិទាន</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃវិធីចែកពហុធា និងអ្នកប្រាជ្ញ Horner-Ruffini</b></header><div class="bx-b">
+<p>ការអភិវឌ្ឍប្រមាណវិធីលើពហុធា និងវិធីចែកពហុធា មានការចូលរួមយ៉ាងសំខាន់ពីអ្នកប្រាជ្ញល្បីៗជាច្រើនក្នុងប្រវត្តិសាស្ត្រគណិតវិទ្យា។ គណិតវិទូជនជាតិក្រិកបុរាណ អឺគ្លីដ (Euclid) បានបង្កើតក្បួនចែកអឺគ្លីដសម្រាប់ចំនួនគត់ ដែលក្រោយមកត្រូវបានពង្រីកទៅជាក្បួនចែកពហុធាដោយគណិតវិទូសម័យក្រុមហ៊ុនវិទ្យាសាស្ត្រអឺរ៉ុប។</p>
+<p>នៅឆ្នាំ១៨០៩ គណិតវិទូជនជាតិអ៊ីតាលី ប៉ាវឡូ រូហ្វីនី (Paolo Ruffini) បានរកឃើញក្បួនចែកសំយោគដ៏រហ័សហៅថា <strong>វិធានរូហ្វីនី (Ruffini’s Rule)</strong> សម្រាប់ការចែកពហុធានឹងទ្វេធាដឺក្រេទីមួយ <span class="mi">\(x - c\)</span>។ ក្រោយមកនៅឆ្នាំ១៨១៩ គណិតវិទូជនជាតិអង់គ្លេស វីលៀម ចច ហន័រ (William George Horner) បានកែលម្អក្បួននេះឱ្យកាន់តែទូលំទូលាយហៅថា <strong>ក្បួនហន័រ (Horner’s Method)</strong> ដែលត្រូវបានប្រើប្រាស់ទាំងក្នុងការគណនាតម្លៃពហុធា និងការរកឫសប្រហាក់ប្រហែល។</p>
+<p>លើសពីនេះ ទ្រឹស្តីបទសំណល់ (Remainder Theorem) និងទ្រឹស្តីបទកត្តា (Factor Theorem) របស់ Étienne Bézout (អេជាន បេហ្ស៊ូ) បានក្លាយជាឧបករណ៍ដ៏មានឥទ្ធិពលបំផុតក្នុងការដោះស្រាយសមីការពីជគណិតដឺក្រេខ្ពស់រហូតដល់បច្ចុប្បន្ន។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ?</b></header><div class="bx-b">
+<p>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ៖<br/>
+១. វិធីបូក ដក និងគុណពហុធា<br/>
+២. ការដាក់កន្សោមជាផលគុណកត្តា<br/>
+៣. លក្ខណៈនៃស្វ័យគុណ <span class="mi">\(\frac{a^m}{a^n} = a^{m-n}\)</span></p>
+</div></section>
+<h3 id="u1">ប្រមាណវិធីចែកពហុធា</h3>
+<h4>សំណុំកំណត់តាងការរៀបចំឈ្មោះតួ</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងវិធីចែករវាងចំនួន <span class="mi">\(18\)</span> និង <span class="mi">\(3\)</span> គេអាចសរសេរ <span class="mi">\(18 \div 3 = \frac{18}{3} = 6\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(18 = 3 \times 6\)</span> គេថា <span class="mi">\(18\)</span> ចែកដាច់នឹង <span class="mi">\(3\)</span> ។ <span class="mi">\(3\)</span> ជាតួចែកនៃ <span class="mi">\(18\)</span> ហើយ <span class="mi">\(18\)</span> ជាផលគុណនៃ <span class="mi">\(3\)</span> និង <span class="mi">\(6\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើគេឱ្យកន្សោមពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> រួចមានកន្សោម <span class="mi">\(Q\)</span> មួយដែល <span class="mi">\(A = B \times Q\)</span> នោះគេថា <span class="mi">\(A\)</span> ចែកដាច់នឹង <span class="mi">\(B\)</span> ។ <span class="mi">\(B\)</span> ជាតួចែក <span class="mi">\(Q\)</span> ជាផលចែក និង <span class="mi">\(A\)</span> ជាតំណាងចែកឬជាផលគុណនៃ <span class="mi">\(B\)</span> និង <span class="mi">\(Q\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(A \div B = Q\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោយ <span class="mi">\(x^2 - 5x + 4 = (x - 1)(x - 4)\)</span> នោះ គេថា កន្សោម <span class="mi">\(x - 1\)</span> ជាតួចែក និង <span class="mi">\(x - 4\)</span> ជាផលចែករវាងកន្សោម <span class="mi">\(x^2 - 5x + 4\)</span> និង <span class="mi">\(x - 1\)</span> ហើយ <span class="mi">\(x^2 - 5x + 4\)</span> ជាផលគុណ <span class="mi">\(x - 1\)</span> និង <span class="mi">\(x - 4\)</span> ។ គេកំណត់សរសេរ <span class="mi">\((x^2 - 5x + 4) \div (x - 1) = x - 4\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១</span><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>បើគេមានកន្សោម <span class="mi">\(A = 6x^2 + 5x - 4\)</span> និង <span class="mi">\(B = 2x - 1\)</span> គណនា <span class="mi">\(A + B\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គេគណនាតាមរបៀបខាងក្រោម៖</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(\begin{array}{r|l}
+                6x^2 + 5x - 4                                          &amp; 2x - 1 \\
+                
+                - \begin{array}{r} 6x^2 - 3x  \end{array} &amp; 3x + 4 \\
+                
+                8x - 4                                                 &amp;        \\
+                - \begin{array}{r} 8x - 4 \end{array}                  &amp;        \\
+                
+                0                                                      &amp;
+            \end{array}\)</span></td>
+<td><span class="mi">\(\begin{array}{r}
+                3x + 4                                                                   \\
+                2x - 1 \overline{) 6x^2 + 5x - 4}                                        \\
+                - \begin{array}{r} 6x^2 - 3x  \end{array}                   \\
+                \hline
+                8x - 4 \quad{} \leftarrow (2x - 1) \times 3x                               \\
+                - \begin{array}{r} 8x - 4 \end{array} \quad{} \leftarrow (2x - 1) \times 4 \\
+                \hline
+                0 \quad{} 
+            \end{array}\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>ដូច្នេះ <span class="mi">\(A + B = (3x + 4)\)</span> ឬ <span class="mi">\(6x^2 + 5x - 4 = (2x - 1)(3x + 4)\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\((x^2 + 6x - 55) \div (x - 5)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\((6y^4 - 10y^2 + y^3 + 6 + 7y) \div (2y + 3)\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\((5a^2 + 2a^3 - 1) \div (-1 + 2a + a^2)\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(x + 11\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(3y^3 - 4y^2 + y + 2\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(2a + 1\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">២</span><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែក <span class="mi">\((2x^3 - 3x^2 - x + 4) \div (2x^2 + 2x - 3)\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{array}{r}
+            x - \frac{5}{2}                                               \\
+            2x^2 + 2x - 3 \overline{) 2x^3 - 3x^2 - x + 4}                \\
+            - \begin{array}{r} 2x^3 + 2x^2 - 3x  \end{array} \\
+            \hline
+            - 5x^2 + 2x + 4                                               \\
+            - \begin{array}{r} - 5x^2 - 5x + \frac{15}{2} \end{array}     \\
+            \hline
+            7x - \frac{7}{2}
+        \end{array}\]</div></p>
+<p>តាង <span class="mi">\(Q = x - \frac{5}{2}\)</span> ជាផលចែក <span class="mi">\(R = 7x - \frac{7}{2}\)</span> ជាសំណល់នៃវិធីចែក</p>
+<p>គេបាន <span class="mi">\(2x^3 - 3x^2 - x + 4 = (2x^2 + 2x - 3)(x - \frac{5}{2}) + (7x - \frac{7}{2})\)</span> ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេឱ្យកន្សោមពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ដែលមានអថេរដូចគ្នា ហើយមានដឺក្រេ <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> រៀងគ្នា។ បើ <span class="mi">\(m \geq n\)</span> គេអាចរកកន្សោមពីជគណិត <span class="mi">\(Q\)</span> និង <span class="mi">\(R\)</span> ដែល<br/>
+<span class="mi">\(A = B \times Q + R\)</span> ។ ដឺក្រេនៃ <span class="mi">\(R\)</span> តូចជាងដឺក្រេនៃ <span class="mi">\(B\)</span> ។ <span class="mi">\(Q\)</span> ជាផលចែក ហើយ <span class="mi">\(R\)</span> ជាសំណល់ក្នុងវិធីចែក។ ផលចែក <span class="mi">\(Q\)</span> មានដឺក្រេ <span class="mi">\(m - n\)</span> ។ បើ <span class="mi">\(R = 0\)</span> គេថា <span class="mi">\(A\)</span> ចែកដាច់នឹង <span class="mi">\(B\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\((4x - 5) \div (x + 2)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\((x^3 - x^2 + x - 1) \div (x + 2)\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\((3x^2 + 2x + 1) \div (3x - 4)\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\((3x^2 + 5x - 2) \div (2x + 1)\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(4 - \dfrac{13}{x + 2}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(x^2 - 3x + 7 - \dfrac{15}{x + 2}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(x + 2 + \dfrac{9}{3x - 4}\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(\dfrac{3}{2}x + \dfrac{7}{4} - \dfrac{15}{4(2x + 1)}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់គំរូ ៣</b></header><div class="bx-b">
+<p>ចែក <span class="mi">\((y^4 - 2y^2 - y + 8)\)</span> និង <span class="mi">\((y^2 - y - 2)\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{array}{r}
+            y^2 + y + 1                                                                                               \\
+            y^2 - y - 2 \overline{) y^4  - 2y^2  - y + 8}                         \\
+            - \begin{array}{r} y^4 - y^3 - 2y^2  \end{array} \\
+            \hline
+            y^3  - y + 8                                                                           \\
+            - \begin{array}{r} y^3 - y^2 - 2y  \end{array}        \\
+            \hline
+            y^2 + y + 8                                                                                               \\
+            - \begin{array}{r} y^2 - y - 2 \end{array}                                                                \\
+            \hline
+            2y + 10
+        \end{array}\]</div></p>
+<p>គេទទួលបាន <span class="mi">\(y^4 - 2y^2 - y + 8 = (y^2 - y - 2)(y^2 + y + 1) + (2y + 10)\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\((a^4 + 7a - 1) \div (a^2 + 2)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\((x^4 - 25x^2 + 8x - 3) \div (x^2 - 3x + 1)\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\((x^5 - 2x^3 - 4x + 5) \div (3x^3 + 2)\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\((\frac{1}{2}x^4 + 4x^2 + x + 5) \div (3x^2 + 2)\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(a^2 - 2 + \dfrac{7a + 3}{a^2 + 2}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(x^2 + 3x - 17 - \dfrac{46x - 14}{x^2 - 3x + 1}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{1}{3}x^2 - \dfrac{2}{3} - \dfrac{2x^2 + 12x - 19}{3(3x^3 + 2)}\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(\dfrac{1}{6}x^2 + \dfrac{11}{9} + \dfrac{9x + 23}{9(3x^2 + 2)}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h3 id="u2">តួចែករួមធំបំផុតនិងពហុគុណរួមតូចបំផុតនៃពហុធា</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានឯកធា <span class="mi">\(75x^3y^4\)</span> និង <span class="mi">\(45x^2y^5\)</span> ។</p>
+<p>គេសរសេរ <span class="mi">\(75x^3y^4 = 3 \times 5^2 \times x^3 \times y^4\)</span> និង <span class="mi">\(45x^2y^5 = 3^2 \times 5 \times x^2 \times y^5\)</span></p>
+<p>គេសង្កេតឃើញថា ឯកធាទាំងពីរនេះមាន <span class="mi">\(3 \times 5 \times x^2 \times y^4\)</span> ជាកត្តារួមដែលតួនៃឯកធានីមួយៗមាននិទស្សន្តតូចជាងគេ ។ គេថាកន្សោម <span class="mi">\(3 \times 5 \times x^2 \times y^4 = 15x^2y^4\)</span> ជាតួចែករួមធំបំផុតនៃ <span class="mi">\(75x^3y^4\)</span> និង <span class="mi">\(45x^2y^5\)</span> ។</p>
+<p>ម្យ៉ាងទៀតកន្សោម <span class="mi">\(3^2 \times 5^2 \times x^3 \times y^5 = 225x^3y^5\)</span> ហៅថាពហុគុណរួមតូចបំផុតនៃ <span class="mi">\(75x^3y^4\)</span> និង <span class="mi">\(45x^2y^5\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<ol class="list oldef cols1">
+<li><p>តួចែករួមធំបំផុតនៃកន្សោម <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺជាផលគុណកត្តារួម ដែលមាននិទស្សន្តតូចជាងគេ។</p></li>
+<li><p>ពហុគុណរួមតូចបំផុតនៃកន្សោម <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺជាផលគុណកត្តារួមដែលមាននិទស្សន្តធំជាងគេ និងកត្តាមិនរួមទាំងអស់។</p></li>
+</ol>
+</div></section>
+<p><strong>វិធាន</strong></p>
+<p>ដើម្បីគណនាតួចែករួមធំបំផុតនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span></p>
+<ol class="list oldef cols1">
+<li><p>ដាក់ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាផលគុណកត្តា។</p></li>
+<li><p>ជ្រើសរើសកត្តារួម ដែលមាននិទស្សន្តតូចជាងគេ។</p></li>
+<li><p>ដាក់តួចែករួមធំបំផុតជាផលគុណនៃកត្តារួមដែលមាននិទស្សន្តតូចជាងគេទាំងនោះ។</p></li>
+</ol>
+<p>ដើម្បីគណនាពហុគុណរួមតូចបំផុតនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span></p>
+<ol class="list oldef cols1">
+<li><p>ដាក់ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាផលគុណកត្តា។</p></li>
+<li><p>ជ្រើសរើសកត្តាមិនរួមនិងកត្តារួមដោយយកនិទស្សន្តធំជាងគេ។</p></li>
+<li><p>ដាក់ពហុគុណរួមតូចបំផុតជាផលគុណនៃកត្តាទាំងនោះ។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់គំរូ ៤</b></header><div class="bx-b">
+<p>រកតួចែករួមធំបំផុត និងពហុគុណរួមតូចបំផុតនៃកន្សោម៖<br/>
+<span class="mi">\(A = 54x^3y^5\)</span>, <span class="mi">\(B = 36x^4y^2\)</span> និង <span class="mi">\(C = 90x^6y^3\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<span class="mi">\(A = 54x^3y^5 = 2^1 \times 3^3 \times x^3 \times y^5\)</span><br/>
+<span class="mi">\(B = 36x^4y^2 = 2^2 \times 3^2 \times x^4 \times y^2\)</span><br/>
+<span class="mi">\(C = 90x^6y^3 = 2^1 \times 3^2 \times 5^1 \times x^6 \times y^3\)</span></p>
+<p>ដូច្នេះ គេបាន <span class="mi">\(2^1 \times 3^2 \times x^3 \times y^2 = 18x^3y^2\)</span> ជាតួចែករួមធំបំផុត ។<br/>
+<span class="mi">\(2^2 \times 3^3 \times 5 \times x^6 \times y^5 = 540x^6y^5\)</span> ជាពហុគុណរួមតូចបំផុត ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់គំរូ ៥</b></header><div class="bx-b">
+<p>រកតួចែករួមធំបំផុត និងពហុគុណរួមតូចបំផុតនៃកន្សោម <span class="mi">\(x^2(x - 1)\)</span> និង <span class="mi">\(x(x - 1)(x + 1)\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គេអាចដោះស្រាយតាមវិធីម្យ៉ាងទៀតដូចខាងក្រោម ៖</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(x^2\)</span></td>
+<td><span class="mi">\((x - 1)\)</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="mi">\(x\)</span></td>
+<td><span class="mi">\((x - 1)\)</span></td>
+<td><span class="mi">\((x + 1)\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(x\)</span></td>
+<td><span class="mi">\((x - 1)\)</span></td>
+<td>តួចែករួមធំបំផុត ។</td>
+</tr>
+<tr>
+<td><span class="mi">\(x^2\)</span></td>
+<td><span class="mi">\(\times (x - 1)\)</span></td>
+<td><span class="mi">\(\times (x + 1)\)</span> ពហុគុណរួមតូចបំផុត ។</td>
+</tr>
+</tbody>
+</table></div>
+<p>ដូច្នេះតួចែករួមធំបំផុតគឺ <span class="mi">\(x(x - 1)\)</span> និងពហុគុណរួមតូចបំផុតគឺ <span class="mi">\(x^2(x - 1)(x + 1)\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>រកតួចែករួមធំបំផុត និងពហុគុណរួមតូចបំផុត ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(3x^5\)</span>, <span class="mi">\(4x^7\)</span> និង <span class="mi">\(5x^3\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(25x^3y^2\)</span>, <span class="mi">\(30x^6y^3\)</span> និង <span class="mi">\(15x^2y^4\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(4x^2 - 2x - 12\)</span> និង <span class="mi">\(4x^2 - 16\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th></th>
+<th>តួចែករួមធំបំផុត</th>
+<th>ពហុគុណរួមតូចបំផុត</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ក.</strong> </td>
+<td><span class="mi">\(x^3\)</span></td>
+<td><span class="mi">\(60x^7\)</span></td>
+</tr>
+<tr>
+<td><strong>ខ.</strong> </td>
+<td><span class="mi">\(5x^2y^2\)</span></td>
+<td><span class="mi">\(150x^6y^4\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong> </td>
+<td><span class="mi">\(2(x - 2)\)</span></td>
+<td><span class="mi">\(4(2x + 3)(x^2 - 4)\)</span></td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>ក.</strong>  គេឱ្យការ៉េមួយដែលមានរង្វាស់ជ្រុងស្មើនឹង <span class="mi">\(r\)</span> រកតួចែករួមធំបំផុតនៃផ្ទៃក្រឡាការ៉េ និងផ្ទៃក្រឡារង្វង់។<br/>
+<strong>ខ.</strong>  តាង <span class="mi">\(A_1\)</span> និង <span class="mi">\(A_2\)</span> ជាផ្ទៃបាត និងផ្ទៃខាងរៀងគ្នានៃស៊ីឡាំងបរិវត្តមួយដែលមានកាំនៃបាតស្មើនឹង <span class="mi">\(r\)</span> និងកម្ពស់ស្មើនឹង <span class="mi">\(h\)</span> ។ រកតួចែករួមធំបំផុតនៃ <span class="mi">\(A_1\)</span> និង <span class="mi">\(A_2\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(r^2\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\pi r\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h3 id="u3">ប្រមាណវិធីលើប្រភាគសនិទាន</h3>
+<h4>ការសម្រួលកន្សោមប្រភាគ</h4>
+<p>កន្សោមដែលមានទម្រង់ <span class="mi">\(\frac{A}{B}\)</span> <span class="mi">\((B \neq 0)\)</span> ហៅថាប្រភាគសនិទាន ហើយ <span class="mi">\(A\)</span> ជាភាគយក និង <span class="mi">\(B\)</span> ជាភាគបែង។ កន្សោមប្រភាគ <span class="mi">\(\frac{A}{B}\)</span> និង <span class="mi">\(\frac{A'}{B'}\)</span> <span class="mi">\((B \neq 0, B' \neq 0)\)</span> សមមូលគ្នា កាលណាវាមាផ្ទៀងផ្ទាត់សមភាព <span class="mi">\(A \times B' = A' \times B\)</span> ។</p>
+<p>ពេលដែល <span class="mi">\(A\)</span> ចែកដាច់នឹង <span class="mi">\(B\)</span> នោះគេបាន <span class="mi">\(\frac{A}{B}\)</span> ជាផលចែក។ កន្សោមប្រភាគ <span class="mi">\(\frac{A}{1}\)</span> គឺសមមូលនឹងកន្សោមពីជគណិត <span class="mi">\(A\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\(\frac{A \times B}{B \times C} = \frac{A}{C}\)</span> <span class="mi">\((B \neq 0, C \neq 0)\)</span> ។</p>
+</div></section>
+<p>ដូច្នេះ បើភាគយកនិងភាគបែង មានតួចែករួមនោះ គេអាចសម្រួលប្រភាគឱ្យទៅជាប្រភាគមិនអាចសម្រួលបាន។</p>
+<p>បើគេចែកភាគយកនិងភាគបែងដោយតួចែករួមធំបំផុតរបស់វានោះ គេបានកន្សោមប្រភាគដែលមិនអាចសម្រួលបាន។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់គំរូ ៦</b></header><div class="bx-b">
+<p>សម្រួលកន្សោម <span class="mi">\(\frac{2x^2 - x - 1}{x^3 - 1}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<span class="mi">\(\frac{2x^2 - x - 1}{x^3 - 1} = \frac{(x - 1)(2x + 1)}{(x - 1)(x^2 + x + 1)} = \frac{2x + 1}{x^2 + x + 1}\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមខាងក្រោម និងបំប្លែងវាទៅជាកន្សោមប្រភាគដែលមិនអាចសម្រួលបាន ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{3a^2b^3c}{9ab^4c^3}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{x^2 - 1}{x^3 + 1}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{a^3 - a^2 - 2a}{a^3 - 4a}\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{a}{3bc^2}; \; (b \neq 0, c \neq 0)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{x - 1}{x^2 - x + 1}; \; (x + 1 \neq 0)\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{a + 1}{a + 2}; \; (a \neq 0, a - 2 \neq 0)\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់គំរូ ៧</b></header><div class="bx-b">
+<p>សរសេរកន្សោមប្រភាគ <span class="mi">\(\frac{2}{x + 1}\)</span> និង <span class="mi">\(\frac{3}{x - 1}\)</span> ឱ្យទៅជាកន្សោមប្រភាគដែលមានតួចែកដូចគ្នា (ភាគបែងរួម) ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គេបាន <span class="mi">\(\frac{2}{x + 1} = \frac{2(x - 1)}{(x + 1)(x - 1)}\)</span> និង <span class="mi">\(\frac{3}{x - 1} = \frac{3(x + 1)}{(x - 1)(x + 1)}\)</span> ។</p>
+<p>ការធ្វើភាគបែងឱ្យស្មើគ្នាហៅថា ការតម្រូវភាគបែងកន្សោមប្រភាគឱ្យដូចគ្នា ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>តម្រូវភាគបែងនៃកន្សោមប្រភាគនីមួយៗខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{x^2 + x + 1}{x + 1}, \dfrac{x^2 - x + 1}{x - 1}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{x}{yz}, \dfrac{y}{zx}, \dfrac{z}{xy}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{1}{x + y}, \dfrac{1}{y - x}, \dfrac{1}{x^2 - y^2}\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{x^3 - 1}{x^2 - 1}, \; \dfrac{x^3 + 1}{x^2 - 1}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{x^2}{xyz}, \; \dfrac{y^2}{xyz}, \; \dfrac{z^2}{xyz}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{x - y}{x^2 - y^2}, \; \dfrac{-(x + y)}{x^2 - y^2}, \; \dfrac{1}{x^2 - y^2}\)</span> ។</td>
+<td></td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h4>ប្រមាណវិធីបូកនិងប្រមាណវិធីដកនៃកន្សោមប្រភាគ</h4>
+<p>រំលឹក : ប្រមាណវិធីបូកនិងប្រមាណវិធីដកនៃកន្សោមប្រភាគដែលមានភាគបែងដូចគ្នា អាចអនុវត្តវិធីដូចតទៅ៖</p>
+<p><span class="mi">\(\frac{1}{5} + \frac{2}{5} = \frac{1 + 2}{5} = \frac{3}{5}\)</span> និង <span class="mi">\(\frac{1}{5} - \frac{2}{5} = \frac{1 - 2}{5} = -\frac{1}{5}\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\(\frac{A}{C} + \frac{B}{C} = \frac{A + B}{C}\)</span> និង <span class="mi">\(\frac{A}{C} - \frac{B}{C} = \frac{A - B}{C} \quad{} (C \neq 0)\)</span> ។</p>
+</div></section>
+<p><strong>វិធាន</strong></p>
+<ol class="list oldef cols1">
+<li><p>តម្រូវប្រភាគនីមួយៗឱ្យមានភាគបែងរួម ។</p></li>
+<li><p>ធ្វើប្រមាណវិធីបូក ឬដកតែភាគយក រក្សាទុកភាគបែងរួម ។</p></li>
+<li><p>សម្រួលលទ្ធផល ។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់គំរូ ៨</b></header><div class="bx-b">
+<p>គណនា <span class="mi">\(\frac{x + 8}{x^2 + x - 2} - \frac{x + 4}{x^2 + 3x + 2}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{aligned}
+    \frac{x + 8}{x^2 + x - 2} - \frac{x + 4}{x^2 + 3x + 2} &amp; = \frac{x + 8}{(x + 2)(x - 1)} - \frac{x + 4}{(x + 2)(x + 1)}   \\
+                                                           &amp; = \frac{(x + 8)(x + 1) - (x + 4)(x - 1)}{(x + 2)(x - 1)(x + 1)} \\
+                                                           &amp; = \frac{x^2 + 9x + 8 - x^2 - 3x + 4}{(x + 2)(x - 1)(x + 1)}     \\
+                                                           &amp; = \frac{6x + 12}{(x + 2)(x - 1)(x + 1)}                         \\
+                                                           &amp; = \frac{6(x + 2)}{(x + 2)(x - 1)(x + 1)}                        \\
+    \frac{x + 8}{x^2 + x - 2} - \frac{x + 4}{x^2 + 3x + 2} &amp; = \frac{6}{(x - 1)(x + 1)} \text{~។}
+\end{aligned}\]</div></p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គណនាកន្សោមខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{x}{x^2 - 1} - \dfrac{1}{x^2 - 1}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{x + 2}{x - 2} + \dfrac{4}{2 - x}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{1}{1 + a} + \dfrac{2a}{1 - a^2}\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(\dfrac{x - 2}{x^2 - x + 1} - \dfrac{1}{x + 1} + \dfrac{x^2 + x + 3}{x^3 + 1}\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{1}{x + 1}; \; (x - 1 \neq 0)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(1; \; (2 - x \neq 0)\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{1}{1 - a}; \; (1 + a \neq 0)\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(\dfrac{x}{x^2 - x + 1}; \; (x + 1 \neq 0)\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\(\dfrac{1}{x - 1} - \dfrac{1}{x + 1} - \dfrac{2}{x^2 + 1} - \dfrac{4}{x^4 + 1} = \dfrac{8}{x^8 - 1}\)</span> ។</p>
+</div></section>
+<h4>ប្រមាណវិធីគុណនិងប្រមាណវិធីចែក</h4>
+<p>រំលឹក : ប្រមាណវិធីគុណនិងចែកនៃកន្សោមពីជគណិត</p>
+<p><span class="mi">\(\frac{1}{2} \times \frac{3}{4} = \frac{1 \times 3}{2 \times 4} = \frac{3}{8}, \quad{} \frac{1}{2} \div \frac{3}{4} = \frac{1}{2} \times \frac{4}{3} = \frac{1 \times 4}{2 \times 3} = \frac{4}{6} = \frac{2}{3}\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\(\frac{A}{B} \times \frac{C}{D} = \frac{A \times C}{B \times D}\)</span> និង <span class="mi">\(\frac{A}{B} \div \frac{C}{D} = \frac{A}{B} \times \frac{D}{C} = \frac{A \times D}{B \times C} \quad{} (B \neq 0, C \neq 0, D \neq 0)\)</span> ។</p>
+</div></section>
+<p><strong>វិធាន</strong></p>
+<ol class="list oldef cols1">
+<li><p>ដាក់ភាគយក និងភាគបែងនៃកន្សោមប្រភាគទាំងអស់ជាផលគុណកត្តា។</p></li>
+<li><p>សម្រួលកន្សោមប្រភាគនីមួយៗ។</p></li>
+<li><p>ធ្វើប្រមាណវិធីគុណ ឬចែកតាមរូបមន្តខាងលើ។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់គំរូ ៩</b></header><div class="bx-b">
+<p>គណនាកន្សោមប្រភាគ <span class="mi">\(\frac{x^2 - 2x - 3}{x^2 - 4} \div \frac{x^2 - 4x + 3}{x^2 + 4x + 4}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{aligned}
+    \frac{x^2 - 2x - 3}{x^2 - 4} \div \frac{x^2 - 4x + 3}{x^2 + 4x + 4} &amp; = \frac{x^2 - 2x - 3}{x^2 - 4} \times \frac{x^2 + 4x + 4}{x^2 - 4x + 3}                                                           \\
+                                                                        &amp; = \frac{(x - 3)(x + 1)}{(x + 2)(x - 2)} \times \frac{(x + 2)^2}{(x - 3)(x - 1)} = \frac{(x + 1)(x + 2)}{(x - 1)(x - 2)}; \; (x - 3 \neq 0, x + 2 \neq 0) \text{~។}
+\end{aligned}\]</div></p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គណនាកន្សោមប្រភាគខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{x^2 - 49}{x^2 + 2x} \times \dfrac{x + 2}{x - 7}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{2a - 1}{a^2 - 2a + 1} \times \dfrac{a^2 - 3a + 2}{4a^2 - 1}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{x^2 - 4}{x^2 + 4x + 4} \div \dfrac{x^3 - 8}{2x + 4}\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(\dfrac{2x^3 + 7x^2 + 6x}{3x^2 + 5x - 2} \div \dfrac{4x^3 - 9x}{6x^2 - 11x + 3}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{x + 7}{x}; \; (x - 7 \neq 0, x + 2 \neq 0)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{a - 2}{2a^2 - a - 1}; \; (a - 1 \neq 0)\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{2}{x^2 + 2x + 4}; \; (x - 4 \neq 0)\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(1; \; (x + 2 \neq 0, 4x^2 - 9 \neq 0, 3x - 1 \neq 0)\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមប្រភាគ ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{x - \frac{1}{x}}{1 - \frac{1}{x}}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{\frac{a + 2}{2}}{a - \frac{2}{a + 1}}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(x + 1; \; (x - 1 \neq 0)\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{a + 1}{2a - 2}; \; (a + 2 \neq 0)\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដនៃពហុធាខាងក្រោម ៖ <div class="md">\[(6x^2 - 7x + 2) \div (2x - 1)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ធ្វើវិធីចែកអឺគ្លីដ <span class="mi">\((6x^2 - 7x + 2) \div (2x - 1)\)</span> ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(6x^2 \div 2x = 3x\)</span> ៖ ដក <span class="mi">\(3x(2x - 1) = 6x^2 - 3x\)</span> នៅសល់ <span class="mi">\(-4x + 2\)</span></p></li>
+<li><p>យក <span class="mi">\(-4x \div 2x = -2\)</span> ៖ ដក <span class="mi">\(-2(2x - 1) = -4x + 2\)</span> នៅសល់ <span class="mi">\(0\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[6x^2 - 7x + 2 = (2x - 1)(3x - 2) + 0\]</div> ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = 3x - 2\)</span> និងសំណល់ <span class="mi">\(R = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដ ៖ <div class="md">\[(4x^3 - 3x - 9) \div (2x - 3)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ធ្វើវិធីចែកអឺគ្លីដ <span class="mi">\((4x^3 - 3x - 9) \div (2x - 3)\)</span> ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(4x^3 \div 2x = 2x^2\)</span> ៖ ដក <span class="mi">\(2x^2(2x - 3) = 4x^3 - 6x^2\)</span> នៅសល់ <span class="mi">\(6x^2 - 3x - 9\)</span></p></li>
+<li><p>យក <span class="mi">\(6x^2 \div 2x = 3x\)</span> ៖ ដក <span class="mi">\(3x(2x - 3) = 6x^2 - 9x\)</span> នៅសល់ <span class="mi">\(6x - 9\)</span></p></li>
+<li><p>យក <span class="mi">\(6x \div 2x = 3\)</span> ៖ ដក <span class="mi">\(3(2x - 3) = 6x - 9\)</span> នៅសល់ <span class="mi">\(0\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[4x^3 - 3x - 9 = (2x - 3)(2x^2 + 3x + 3) + 0\]</div> ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = 2x^2 + 3x + 3\)</span> និងសំណល់ <span class="mi">\(R = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដ ៖ <div class="md">\[(x^3 - 2x^2 - 5x + 6) \div (x - 1)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ធ្វើវិធីចែកអឺគ្លីដ <span class="mi">\((x^3 - 2x^2 - 5x + 6) \div (x - 1)\)</span> ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(x^3 \div x = x^2\)</span> ៖ ដក <span class="mi">\(x^2(x - 1) = x^3 - x^2\)</span> នៅសល់ <span class="mi">\(-x^2 - 5x + 6\)</span></p></li>
+<li><p>យក <span class="mi">\(-x^2 \div x = -x\)</span> ៖ ដក <span class="mi">\(-x(x - 1) = -x^2 + x\)</span> នៅសល់ <span class="mi">\(-6x + 6\)</span></p></li>
+<li><p>យក <span class="mi">\(-6x \div x = -6\)</span> ៖ ដក <span class="mi">\(-6(x - 1) = -6x + 6\)</span> នៅសល់ <span class="mi">\(0\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[x^3 - 2x^2 - 5x + 6 = (x - 1)(x^2 - x - 6) + 0\]</div> ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = x^2 - x - 6\)</span> និងសំណល់ <span class="mi">\(R = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដ ៖ <div class="md">\[(2x^3 + 5x^2 - 4x - 5) \div (2x + 1)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ធ្វើវិធីចែកអឺគ្លីដ <span class="mi">\((2x^3 + 5x^2 - 4x - 5) \div (2x + 1)\)</span> ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(2x^3 \div 2x = x^2\)</span> ៖ ដក <span class="mi">\(x^2(2x + 1) = 2x^3 + x^2\)</span> នៅសល់ <span class="mi">\(4x^2 - 4x - 5\)</span></p></li>
+<li><p>យក <span class="mi">\(4x^2 \div 2x = 2x\)</span> ៖ ដក <span class="mi">\(2x(2x + 1) = 4x^2 + 2x\)</span> នៅសល់ <span class="mi">\(-6x - 5\)</span></p></li>
+<li><p>យក <span class="mi">\(-6x \div 2x = -3\)</span> ៖ ដក <span class="mi">\(-3(2x + 1) = -6x - 3\)</span> នៅសល់ <span class="mi">\(-5 - (-3) = -2\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[2x^3 + 5x^2 - 4x - 5 = (2x + 1)(x^2 + 2x - 3) - 2\]</div> ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = x^2 + 2x - 3\)</span> និងសំណល់ <span class="mi">\(R = -2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដ ៖ <div class="md">\[(3x^3 - 5x^2 + 8x - 3) \div (3x - 2)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ធ្វើវិធីចែកអឺគ្លីដ <span class="mi">\((3x^3 - 5x^2 + 8x - 3) \div (3x - 2)\)</span> ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(3x^3 \div 3x = x^2\)</span> ៖ ដក <span class="mi">\(x^2(3x - 2) = 3x^3 - 2x^2\)</span> នៅសល់ <span class="mi">\(-3x^2 + 8x - 3\)</span></p></li>
+<li><p>យក <span class="mi">\(-3x^2 \div 3x = -x\)</span> ៖ ដក <span class="mi">\(-x(3x - 2) = -3x^2 + 2x\)</span> នៅសល់ <span class="mi">\(6x - 3\)</span></p></li>
+<li><p>យក <span class="mi">\(6x \div 3x = 2\)</span> ៖ ដក <span class="mi">\(2(3x - 2) = 6x - 4\)</span> នៅសល់ <span class="mi">\(-3 - (-4) = 1\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[3x^3 - 5x^2 + 8x - 3 = (3x - 2)(x^2 - x + 2) + 1\]</div> ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = x^2 - x + 2\)</span> និងសំណល់ <span class="mi">\(R = 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដ ៖ <div class="md">\[(x^4 - 3x^3 + 2x^2 - 5) \div (x^2 - x + 1)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ធ្វើវិធីចែកអឺគ្លីដ <span class="mi">\((x^4 - 3x^3 + 2x^2 - 5) \div (x^2 - x + 1)\)</span> ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(x^4 \div x^2 = x^2\)</span> ៖ ដក <span class="mi">\(x^2(x^2 - x + 1) = x^4 - x^3 + x^2\)</span> នៅសល់ <span class="mi">\(-2x^3 + x^2 - 5\)</span></p></li>
+<li><p>យក <span class="mi">\(-2x^3 \div x^2 = -2x\)</span> ៖ ដក <span class="mi">\(-2x(x^2 - x + 1) = -2x^3 + 2x^2 - 2x\)</span> នៅសល់ <span class="mi">\(-x^2 + 2x - 5\)</span></p></li>
+<li><p>យក <span class="mi">\(-x^2 \div x^2 = -1\)</span> ៖ ដក <span class="mi">\(-1(x^2 - x + 1) = -x^2 + x - 1\)</span> នៅសល់ <span class="mi">\(x - 4\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[\begin{aligned}
+x^4 - 3x^3 + 2x^2 - 5 &amp;= (x^2 - x + 1)(x^2 - 2x - 1) \\
+&amp;\quad{} + (x - 4)
+\end{aligned}\]</div> ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = x^2 - 2x - 1\)</span> និងសំណល់ <span class="mi">\(R(x) = x - 4\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដ ៖ <div class="md">\[(2x^4 + 3x^3 - 2x^2 + x - 1) \div (x^2 + 2x - 3)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ធ្វើវិធីចែកអឺគ្លីដ <span class="mi">\((2x^4 + 3x^3 - 2x^2 + x - 1) \div (x^2 + 2x - 3)\)</span> ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(2x^4 \div x^2 = 2x^2\)</span> ៖ ដក <span class="mi">\(2x^2(x^2 + 2x - 3) = 2x^4 + 4x^3 - 6x^2\)</span> នៅសល់ <span class="mi">\(-x^3 + 4x^2 + x - 1\)</span></p></li>
+<li><p>យក <span class="mi">\(-x^3 \div x^2 = -x\)</span> ៖ ដក <span class="mi">\(-x(x^2 + 2x - 3) = -x^3 - 2x^2 + 3x\)</span> នៅសល់ <span class="mi">\(6x^2 - 2x - 1\)</span></p></li>
+<li><p>យក <span class="mi">\(6x^2 \div x^2 = 6\)</span> ៖ ដក <span class="mi">\(6(x^2 + 2x - 3) = 6x^2 + 12x - 18\)</span> នៅសល់ <span class="mi">\(-14x + 17\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[\begin{aligned}
+&amp;2x^4 + 3x^3 - 2x^2 + x - 1 \\
+&amp;= (x^2 + 2x - 3)(2x^2 - x + 6) + (-14x + 17)
+\end{aligned}\]</div> ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = 2x^2 - x + 6\)</span> និងសំណល់ <span class="mi">\(R(x) = -14x + 17\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ធ្វើប្រមាណវិធីចែកអឺគ្លីដ ៖ <div class="md">\[(a^4 - 4a^3 - 10a^2 + 2a + 5) \div (5a + 4 - a^2)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្រៀបពហុធាតាមលំដាប់ស្វ័យគុណចុះ ៖ <div class="md">\[(a^4 - 4a^3 - 10a^2 + 2a + 5) \div (-a^2 + 5a + 4)\]</div></p>
+<ul>
+<li><p>យក <span class="mi">\(a^4 \div (-a^2) = -a^2\)</span> ៖ ដក <span class="mi">\(-a^2(-a^2 + 5a + 4) = a^4 - 5a^3 - 4a^2\)</span> នៅសល់ <span class="mi">\(a^3 - 6a^2 + 2a + 5\)</span></p></li>
+<li><p>យក <span class="mi">\(a^3 \div (-a^2) = -a\)</span> ៖ ដក <span class="mi">\(-a(-a^2 + 5a + 4) = a^3 - 5a^2 - 4a\)</span> នៅសល់ <span class="mi">\(-a^2 + 6a + 5\)</span></p></li>
+<li><p>យក <span class="mi">\(-a^2 \div (-a^2) = 1\)</span> ៖ ដក <span class="mi">\(1(-a^2 + 5a + 4) = -a^2 + 5a + 4\)</span> នៅសល់ <span class="mi">\(a + 1\)</span></p></li>
+</ul>
+<p>សមភាពចែក ៖ <div class="md">\[\begin{aligned}
+&amp;a^4 - 4a^3 - 10a^2 + 2a + 5 \\
+&amp;= (-a^2 + 5a + 4)(-a^2 - a + 1) + (a + 1)
+\end{aligned}\]</div> ផលចែកគឺ <span class="mi">\(Q(a) = -a^2 - a + 1\)</span> និងសំណល់ <span class="mi">\(R(a) = a + 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>រកពហុធា <span class="mi">\(P(x)\)</span> បើដឹងថាចែក <span class="mi">\(P(x)\)</span> នឹង <span class="mi">\((3x^2 + 1)\)</span> ទទួលបានផលចែក <span class="mi">\((x^3 - 2)\)</span> និងសំណល់ <span class="mi">\((4x - 5)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមរូបមន្តនៃវិធីចែកអឺគ្លីដ <span class="mi">\(P(x) = D(x) \cdot Q(x) + R(x)\)</span> ដែល <span class="mi">\(D(x) = 3x^2 + 1\)</span>, <span class="mi">\(Q(x) = x^3 - 2\)</span>, <span class="mi">\(R(x) = 4x - 5\)</span> ៖ <div class="md">\[\begin{aligned}
+P(x) &amp;= (3x^2 + 1)(x^3 - 2) + (4x - 5) \\
+&amp;= 3x^2(x^3 - 2) + 1(x^3 - 2) + 4x - 5 \\
+&amp;= 3x^5 - 6x^2 + x^3 - 2 + 4x - 5 \\
+&amp;= 3x^5 + x^3 - 6x^2 + 4x - 7
+\end{aligned}\]</div> ដូចនេះ ពហុធាដែលត្រូវរកគឺ <span class="mi">\(P(x) = 3x^5 + x^3 - 6x^2 + 4x - 7\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>រកពហុធា <span class="mi">\(A(x)\)</span> បើដឹងថា <span class="mi">\((2x^2 - 3x + 1) \cdot A(x) = 6x^4 - 7x^3 - 4x^2 + 7x - 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមសមភាព <span class="mi">\((2x^2 - 3x + 1) \cdot A(x) = 6x^4 - 7x^3 - 4x^2 + 7x - 2\)</span> គេទាញបាន ៖ <div class="md">\[A(x) = \dfrac{6x^4 - 7x^3 - 4x^2 + 7x - 2}{2x^2 - 3x + 1}\]</div> ធ្វើវិធីចែកអឺគ្លីដ ៖</p>
+<ul>
+<li><p>យក <span class="mi">\(6x^4 \div 2x^2 = 3x^2\)</span> ៖ ដក <span class="mi">\(3x^2(2x^2 - 3x + 1) = 6x^4 - 9x^3 + 3x^2\)</span> នៅសល់ <span class="mi">\(2x^3 - 7x^2 + 7x - 2\)</span></p></li>
+<li><p>យក <span class="mi">\(2x^3 \div 2x^2 = x\)</span> ៖ ដក <span class="mi">\(x(2x^2 - 3x + 1) = 2x^3 - 3x^2 + x\)</span> នៅសល់ <span class="mi">\(-4x^2 + 6x - 2\)</span></p></li>
+<li><p>យក <span class="mi">\(-4x^2 \div 2x^2 = -2\)</span> ៖ ដក <span class="mi">\(-2(2x^2 - 3x + 1) = -4x^2 + 6x - 2\)</span> នៅសល់ <span class="mi">\(0\)</span></p></li>
+</ul>
+<p>ដូចនេះ ពហុធាដែលត្រូវរកគឺ <span class="mi">\(A(x) = 3x^2 + x - 2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ប្រើក្បួនហន័រ ឬវិធីចែកសំយោគ រកផលចែក និងសំណល់ ៖ <div class="md">\[(x^3 - 4x^2 + 5x - 2) \div (x - 2)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើក្បួនហន័រចែកនឹង <span class="mi">\(x - 2\)</span> (<span class="mi">\(c = 2\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>1</td>
+<td>-4</td>
+<td>5</td>
+<td>-2</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>2</td>
+<td>-4</td>
+<td>2</td>
+</tr>
+<tr>
+<td></td>
+<td>1</td>
+<td>-2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>មេគុណនៃផលចែកគឺ <span class="mi">\(1, -2, 1\)</span> និងសំណល់ <span class="mi">\(0\)</span>។<br/>
+ដូចនេះ ផលចែក <span class="mi">\(Q(x) = x^2 - 2x + 1\)</span> និងសំណល់ <span class="mi">\(R = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ប្រើក្បួនហន័រ រកផលចែក និងសំណល់ ៖ <div class="md">\[(2x^3 - 7x^2 + 9x - 3) \div (x - 3)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើក្បួនហន័រចែកនឹង <span class="mi">\(x - 3\)</span> (<span class="mi">\(c = 3\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>2</td>
+<td>-7</td>
+<td>9</td>
+<td>-3</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>6</td>
+<td>-3</td>
+<td>18</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td>-1</td>
+<td>6</td>
+<td>15</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>មេគុណនៃផលចែកគឺ <span class="mi">\(2, -1, 6\)</span> និងសំណល់ <span class="mi">\(15\)</span>។<br/>
+ដូចនេះ ផលចែក <span class="mi">\(Q(x) = 2x^2 - x + 6\)</span> និងសំណល់ <span class="mi">\(R = 15\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ប្រើក្បួនហន័រ រកផលចែក និងសំណល់ ៖ <div class="md">\[(3x^3 + 8x^2 - x - 10) \div (x + 2)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើក្បួនហន័រចែកនឹង <span class="mi">\(x + 2 = x - (-2)\)</span> (<span class="mi">\(c = -2\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>3</td>
+<td>8</td>
+<td>-1</td>
+<td>-10</td>
+</tr>
+<tr>
+<td>-2</td>
+<td></td>
+<td>-6</td>
+<td>-4</td>
+<td>10</td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td>2</td>
+<td>-5</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>មេគុណនៃផលចែកគឺ <span class="mi">\(3, 2, -5\)</span> និងសំណល់ <span class="mi">\(0\)</span>។<br/>
+ដូចនេះ ផលចែក <span class="mi">\(Q(x) = 3x^2 + 2x - 5\)</span> និងសំណល់ <span class="mi">\(R = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ប្រើក្បួនហន័រ រកផលចែក និងសំណល់ ៖ <div class="md">\[(x^4 - 2x^3 - 7x^2 + 8x + 12) \div (x + 1)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើក្បួនហន័រចែកនឹង <span class="mi">\(x + 1 = x - (-1)\)</span> (<span class="mi">\(c = -1\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>1</td>
+<td>-2</td>
+<td>-7</td>
+<td>8</td>
+<td>12</td>
+</tr>
+<tr>
+<td>-1</td>
+<td></td>
+<td>-1</td>
+<td>3</td>
+<td>4</td>
+<td>-12</td>
+</tr>
+<tr>
+<td></td>
+<td>1</td>
+<td>-3</td>
+<td>-4</td>
+<td>12</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>មេគុណនៃផលចែកគឺ <span class="mi">\(1, -3, -4, 12\)</span> និងសំណល់ <span class="mi">\(0\)</span>។<br/>
+ដូចនេះ ផលចែក <span class="mi">\(Q(x) = x^3 - 3x^2 - 4x + 12\)</span> និងសំណល់ <span class="mi">\(R = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>ប្រើក្បួនហន័រ រកផលចែក និងសំណល់ ៖ <div class="md">\[(4x^3 - 6x^2 + 8x - 5) \div \left(x - \dfrac{1}{2}\right)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រើក្បួនហន័រចែកនឹង <span class="mi">\(x - \dfrac{1}{2}\)</span> (<span class="mi">\(c = \dfrac{1}{2}\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>4</td>
+<td>-6</td>
+<td>8</td>
+<td>-5</td>
+</tr>
+<tr>
+<td><span class="mi">\(1/2\)</span></td>
+<td></td>
+<td>2</td>
+<td>-2</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td>4</td>
+<td>-4</td>
+<td>6</td>
+<td>-2</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>មេគុណនៃផលចែកគឺ <span class="mi">\(4, -4, 6\)</span> និងសំណល់ <span class="mi">\(-2\)</span>។<br/>
+ដូចនេះ ផលចែកគឺ <span class="mi">\(Q(x) = 4x^2 - 4x + 6\)</span> និងសំណល់ <span class="mi">\(R = -2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ប្រើក្បួនហន័រ រកផលចែក និងសំណល់ ៖ <div class="md">\[(2x^3 + 3x^2 - 6x - 5) \div (2x - 1)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកនឹង <span class="mi">\(2x - 1 = 2\left(x - \dfrac{1}{2}\right)\)</span>។ ជាដំបូងចែកនឹង <span class="mi">\(x - \dfrac{1}{2}\)</span> ដោយប្រើតារាងហន័រ (<span class="mi">\(c = \dfrac{1}{2}\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>2</td>
+<td>3</td>
+<td>-6</td>
+<td>-5</td>
+</tr>
+<tr>
+<td><span class="mi">\(1/2\)</span></td>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>-2</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td>4</td>
+<td>-4</td>
+<td>-7</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ដោយតួចែកដើមគឺ <span class="mi">\(2x - 1\)</span> នោះមេគុណផលចែកត្រូវចែកនឹង <span class="mi">\(2\)</span> ៖ <div class="md">\[Q(x) = \dfrac{2x^2 + 4x - 4}{2} = x^2 + 2x - 2\]</div> សំណល់នៃការចែកមិនប្រែប្រួលទេ គឺ <span class="mi">\(R = -7\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃ <span class="mi">\(P(3)\)</span> ចំពោះ <span class="mi">\(P(x) = x^4 - 3x^3 + 2x^2 - 5x + 7\)</span> ដោយប្រើតារាងហន័រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃនៃ <span class="mi">\(P(3)\)</span> ចំពោះ <span class="mi">\(P(x) = x^4 - 3x^3 + 2x^2 - 5x + 7\)</span> ដោយប្រើតារាងហន័រ (<span class="mi">\(c = 3\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>1</td>
+<td>-3</td>
+<td>2</td>
+<td>-5</td>
+<td>7</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>3</td>
+<td>0</td>
+<td>6</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>10</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>តាមទ្រឹស្តីបទសំណល់ តម្លៃនៃពហុធា <span class="mi">\(P(3)\)</span> គឺស្មើនឹងសំណល់ចុងក្រោយនៃតារាងហន័រ។<br/>
+ដូចនេះ <span class="mi">\(P(3) = 10\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃ <span class="mi">\(P(-2)\)</span> ចំពោះ <span class="mi">\(P(x) = 2x^4 + 5x^3 - 4x + 6\)</span> ដោយប្រើតារាងហន័រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃនៃ <span class="mi">\(P(-2)\)</span> ចំពោះ <span class="mi">\(P(x) = 2x^4 + 5x^3 + 0x^2 - 4x + 6\)</span> ដោយប្រើតារាងហន័រ (<span class="mi">\(c = -2\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>2</td>
+<td>5</td>
+<td>0</td>
+<td>-4</td>
+<td>6</td>
+</tr>
+<tr>
+<td>-2</td>
+<td></td>
+<td>-4</td>
+<td>-2</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td>1</td>
+<td>-2</td>
+<td>0</td>
+<td>6</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>តាមទ្រឹស្តីបទសំណល់ តម្លៃនៃពហុធា <span class="mi">\(P(-2)\)</span> គឺស្មើនឹងសំណល់ចុងក្រោយនៃតារាងហន័រ។<br/>
+ដូចនេះ <span class="mi">\(P(-2) = 6\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>ដោយប្រើទ្រឹស្តីបទសំណល់ ចូរកំណត់សំណល់នៃការចែក <span class="mi">\(P(x) = 3x^3 - 4x^2 + 2x - 5\)</span> នឹង <span class="mi">\((x - 1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្តីបទសំណល់ សំណល់នៃការចែក <span class="mi">\(P(x) = 3x^3 - 4x^2 + 2x - 5\)</span> នឹង <span class="mi">\(x - 1\)</span> គឺស្មើនឹង <span class="mi">\(R = P(1)\)</span> ៖ <div class="md">\[\begin{aligned}
+R = P(1) &amp;= 3(1)^3 - 4(1)^2 + 2(1) - 5 \\
+&amp;= 3(1) - 4(1) + 2 - 5 \\
+&amp;= 3 - 4 + 2 - 5 = -4
+\end{aligned}\]</div> ដូចនេះ សំណល់គឺ <span class="mi">\(R = -4\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>រកសំណល់នៃការចែក <span class="mi">\(P(x) = 2x^4 - 5x^2 + 3x - 8\)</span> នឹង <span class="mi">\((x + 2)\)</span> ដោយប្រើទ្រឹស្តីបទសំណល់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្តីបទសំណល់ សំណល់នៃការចែក <span class="mi">\(P(x) = 2x^4 - 5x^2 + 3x - 8\)</span> នឹង <span class="mi">\(x + 2 = x - (-2)\)</span> គឺ <span class="mi">\(R = P(-2)\)</span> ៖ <div class="md">\[\begin{aligned}
+R = P(-2) &amp;= 2(-2)^4 - 5(-2)^2 + 3(-2) - 8 \\
+&amp;= 2(16) - 5(4) - 6 - 8 \\
+&amp;= 32 - 20 - 6 - 8 = -2
+\end{aligned}\]</div> ដូចនេះ សំណល់គឺ <span class="mi">\(R = -2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>រកសំណល់នៃការចែក <span class="mi">\(P(x) = 4x^3 - 6x + 7\)</span> នឹង <span class="mi">\((2x - 1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ឫសនៃតួចែក ៖ <span class="mi">\(2x - 1 = 0 \implies x = \dfrac{1}{2}\)</span>។<br/>
+តាមទ្រឹស្តីបទសំណល់ សំណល់គឺ <span class="mi">\(R = P\left(\dfrac{1}{2}\right)\)</span> ៖ <div class="md">\[\begin{aligned}
+R &amp;= 4\left(\dfrac{1}{2}\right)^3 - 6\left(\dfrac{1}{2}\right) + 7 \\
+&amp;= 4\left(\dfrac{1}{8}\right) - 3 + 7 \\
+&amp;= \dfrac{1}{2} + 4 = \dfrac{9}{2}
+\end{aligned}\]</div> ដូចនេះ សំណល់គឺ <span class="mi">\(R = \dfrac{9}{2} = 4.5\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ពហុធា <span class="mi">\(P(x) = x^3 + kx^2 - 2x + 4\)</span> ចែកនឹង <span class="mi">\((x - 2)\)</span> មានសំណល់ស្មើ <span class="mi">\(12\)</span>។ រកតម្លៃ <span class="mi">\(k\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្តីបទសំណល់ សំណល់នៃការចែក <span class="mi">\(P(x) = x^3 + kx^2 - 2x + 4\)</span> នឹង <span class="mi">\(x - 2\)</span> គឺ <span class="mi">\(R = P(2)\)</span>។ ដោយ <span class="mi">\(R = 12\)</span> គេបាន ៖ <div class="md">\[\begin{aligned}
+P(2) = 12 &amp;\iff 2^3 + k(2)^2 - 2(2) + 4 = 12 \\
+&amp;\iff 8 + 4k - 4 + 4 = 12 \\
+&amp;\iff 4k + 8 = 12 \\
+&amp;\iff 4k = 4 \implies k = 1
+\end{aligned}\]</div> ដូចនេះ តម្លៃដែលត្រូវរកគឺ <span class="mi">\(k = 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ពហុធា <span class="mi">\(P(x) = 2x^3 - x^2 + ax + b\)</span> ចែកនឹង <span class="mi">\((x - 1)\)</span> សល់ <span class="mi">\(3\)</span> ហើយចែកនឹង <span class="mi">\((x + 1)\)</span> សល់ <span class="mi">\(-5\)</span>។ រកតម្លៃ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពហុធា <span class="mi">\(P(x) = 2x^3 - x^2 + ax + b\)</span>។ តាមបម្រាប់ ៖</p>
+<ul>
+<li><p>ចែកនឹង <span class="mi">\((x - 1)\)</span> សល់ <span class="mi">\(3 \implies P(1) = 3\)</span> ៖ <div class="md">\[\begin{aligned}
+    2(1)^3 - 1^2 + a(1) + b &amp;= 3 \\
+    \iff 2 - 1 + a + b &amp;= 3 \\
+    \iff a + b &amp;= 2 \quad{} (1)
+    
+\end{aligned}\]</div></p></li>
+<li><p>ចែកនឹង <span class="mi">\((x + 1)\)</span> សល់ <span class="mi">\(-5 \implies P(-1) = -5\)</span> ៖ <div class="md">\[\begin{aligned}
+    2(-1)^3 - (-1)^2 + a(-1) + b &amp;= -5 \\
+    \iff -2 - 1 - a + b &amp;= -5 \\
+    \iff -a + b &amp;= -2 \quad{} (2)
+    
+\end{aligned}\]</div></p></li>
+</ul>
+<p>បូកសមីការ <span class="mi">\((1)\)</span> និង <span class="mi">\((2)\)</span> អង្គនិងអង្គ ៖ <div class="md">\[2b = 0 \implies b = 0\]</div> ជំនួស <span class="mi">\(b = 0\)</span> ចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(a + 0 = 2 \implies a = 2\)</span>។<br/>
+ដូចនេះ <span class="mi">\(a = 2\)</span> និង <span class="mi">\(b = 0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ពហុធា <span class="mi">\(P(x)\)</span> មួយចែកនឹង <span class="mi">\((x - 1)\)</span> សល់ <span class="mi">\(4\)</span> ហើយចែកនឹង <span class="mi">\((x - 3)\)</span> សល់ <span class="mi">\(10\)</span>។ រកសំណល់នៃការចែក <span class="mi">\(P(x)\)</span> នឹង <span class="mi">\((x - 1)(x - 3)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោយតួចែក <span class="mi">\((x - 1)(x - 3)\)</span> ជាពហុធាដឺក្រេទី ២ នោះសំណល់ត្រូវតែជាពហុធាដឺក្រេយ៉ាងច្រើនទី ១ ដែលមានទម្រង់ ៖ <div class="md">\[R(x) = ax + b\]</div> សមភាពចែកគឺ <span class="mi">\(P(x) = Q(x)(x - 1)(x - 3) + (ax + b)\)</span>។<br/>
+តាមបម្រាប់ ៖</p>
+<ul>
+<li><p>ចែកនឹង <span class="mi">\(x - 1\)</span> សល់ <span class="mi">\(4 \implies P(1) = a(1) + b = 4 \iff a + b = 4\)</span></p></li>
+<li><p>ចែកនឹង <span class="mi">\(x - 3\)</span> សល់ <span class="mi">\(10 \implies P(3) = a(3) + b = 10 \iff 3a + b = 10\)</span></p></li>
+</ul>
+<p>ដកសមីការទាំងពីរ ៖ <div class="md">\[(3a + b) - (a + b) = 10 - 4 \implies 2a = 6 \implies a = 3\]</div> ជំនួស <span class="mi">\(a = 3\)</span> ចូល <span class="mi">\(a + b = 4 \implies 3 + b = 4 \implies b = 1\)</span>។<br/>
+ដូចនេះ សំណល់គឺ <span class="mi">\(R(x) = 3x + 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>ពហុធា <span class="mi">\(P(x)\)</span> ចែកនឹង <span class="mi">\((x - 2)\)</span> សល់ <span class="mi">\(5\)</span> ហើយចែកនឹង <span class="mi">\((x + 3)\)</span> សល់ <span class="mi">\(-5\)</span>។ រកសំណល់នៃការចែក <span class="mi">\(P(x)\)</span> នឹង <span class="mi">\((x^2 + x - 6)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង្កេតឃើញ <span class="mi">\(x^2 + x - 6 = (x - 2)(x + 3)\)</span> ជាពហុធាដឺក្រេទី ២ នាំឱ្យសំណល់មានទម្រង់ <span class="mi">\(R(x) = ax + b\)</span>។<br/>
+សមភាពចែកគឺ <span class="mi">\(P(x) = Q(x)(x - 2)(x + 3) + (ax + b)\)</span>។<br/>
+តាមបម្រាប់ ៖</p>
+<ul>
+<li><p><span class="mi">\(P(2) = 2a + b = 5\)</span></p></li>
+<li><p><span class="mi">\(P(-3) = -3a + b = -5\)</span></p></li>
+</ul>
+<p>ដកសមីការទាំងពីរ ៖ <div class="md">\[\begin{aligned}
+(2a + b) - (-3a + b) &amp;= 5 - (-5) \\
+\implies 5a = 10 &amp;\implies a = 2
+\end{aligned}\]</div> ជំនួស <span class="mi">\(a = 2\)</span> ចូល <span class="mi">\(2(2) + b = 5 \implies b = 1\)</span>។<br/>
+ដូចនេះ សំណល់នៃការចែកគឺ <span class="mi">\(R(x) = 2x + 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\((x - 2)\)</span> ជាកត្តានៃពហុធា <span class="mi">\(P(x) = x^3 - 3x^2 + 4\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្តីបទកត្តា ទ្វេធា <span class="mi">\((x - 2)\)</span> ជាកត្តានៃ <span class="mi">\(P(x) = x^3 - 3x^2 + 4\)</span> លុះត្រាតែ <span class="mi">\(P(2) = 0\)</span>។ គណនា <span class="mi">\(P(2)\)</span> ៖ <div class="md">\[\begin{aligned}
+P(2) &amp;= 2^3 - 3(2)^2 + 4 \\
+&amp;= 8 - 3(4) + 4 \\
+&amp;= 8 - 12 + 4 = 0
+\end{aligned}\]</div> ដោយ <span class="mi">\(P(2) = 0\)</span> ដូចនេះ <span class="mi">\((x - 2)\)</span> ពិតជាកត្តានៃពហុធា <span class="mi">\(P(x)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\((x + 3)\)</span> ជាកត្តានៃពហុធា <span class="mi">\(P(x) = 2x^3 + 5x^2 - 4x - 3\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្តីបទកត្តា <span class="mi">\((x + 3)\)</span> ជាកត្តានៃ <span class="mi">\(P(x) = 2x^3 + 5x^2 - 4x - 3\)</span> លុះត្រាតែ <span class="mi">\(P(-3) = 0\)</span>។ គណនា <span class="mi">\(P(-3)\)</span> ៖ <div class="md">\[\begin{aligned}
+P(-3) &amp;= 2(-3)^3 + 5(-3)^2 - 4(-3) - 3 \\
+&amp;= 2(-27) + 5(9) + 12 - 3 \\
+&amp;= -54 + 45 + 12 - 3 = 0
+\end{aligned}\]</div> ដោយ <span class="mi">\(P(-3) = 0\)</span> ដូចនេះ <span class="mi">\((x + 3)\)</span> ជាកត្តានៃពហុធា <span class="mi">\(P(x)\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>រកតម្លៃនៃ <span class="mi">\(m\)</span> ដើម្បីឱ្យ <span class="mi">\((x - 3)\)</span> ជាកត្តានៃ <span class="mi">\(P(x) = x^3 - 2x^2 + mx - 12\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្តីបទកត្តា <span class="mi">\((x - 3)\)</span> ជាកត្តានៃ <span class="mi">\(P(x) = x^3 - 2x^2 + mx - 12\)</span> លុះត្រាតែ <span class="mi">\(P(3) = 0\)</span> ៖ <div class="md">\[\begin{aligned}
+P(3) = 0 &amp;\iff 3^3 - 2(3)^2 + m(3) - 12 = 0 \\
+&amp;\iff 27 - 18 + 3m - 12 = 0 \\
+&amp;\iff 3m - 3 = 0 \\
+&amp;\iff 3m = 3 \implies m = 1
+\end{aligned}\]</div> ដូចនេះ តម្លៃដែលត្រូវរកគឺ <span class="mi">\(m = 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>រកតម្លៃនៃ <span class="mi">\(a\)</span> ដើម្បីឱ្យ <span class="mi">\((x + 1)\)</span> ជាកត្តានៃ <span class="mi">\(P(x) = 3x^3 + ax^2 - 5x + 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\((x + 1)\)</span> ជាកត្តានៃ <span class="mi">\(P(x) = 3x^3 + ax^2 - 5x + 2\)</span> លុះត្រាតែ <span class="mi">\(P(-1) = 0\)</span> ៖ <div class="md">\[\begin{aligned}
+P(-1) = 0 &amp;\iff -3 + a + 5 + 2 = 0 \\
+&amp;\iff a + 4 = 0 \implies a = -4
+\end{aligned}\]</div> ដូចនេះ តម្លៃដែលត្រូវរកគឺ <span class="mi">\(a = -4\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>រកតម្លៃនៃ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ដើម្បីឱ្យពហុធា <span class="mi">\(P(x) = x^3 + ax^2 + bx - 6\)</span> ចែកដាច់នឹង <span class="mi">\((x - 1)\)</span> ផង និង <span class="mi">\((x + 2)\)</span> ផង។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពហុធា <span class="mi">\(P(x) = x^3 + ax^2 + bx - 6\)</span> ចែកដាច់នឹង <span class="mi">\((x - 1)\)</span> និង <span class="mi">\((x + 2)\)</span> នាំឱ្យ <span class="mi">\(P(1) = 0\)</span> និង <span class="mi">\(P(-2) = 0\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(P(1) = 1^3 + a(1)^2 + b(1) - 6 = 0 \iff a + b = 5 \quad{} (1)\)</span></p></li>
+<li><p><span class="mi">\(P(-2) = 0\)</span> ៖ <div class="md">\[\begin{aligned}
+    -8 + 4a - 2b - 6 = 0 &amp;\iff 4a - 2b = 14 \\
+    &amp;\iff 2a - b = 7 \quad{} (2)
+    
+\end{aligned}\]</div></p></li>
+</ul>
+<p>បូក <span class="mi">\((1)\)</span> និង <span class="mi">\((2)\)</span> អង្គនិងអង្គ ៖ <div class="md">\[3a = 12 \implies a = 4\]</div> ជំនួស <span class="mi">\(a = 4\)</span> ចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(4 + b = 5 \implies b = 1\)</span>។<br/>
+ដូចនេះ <span class="mi">\(a = 4\)</span> និង <span class="mi">\(b = 1\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តា ៖ <span class="mi">\(P(x) = x^3 - 4x^2 + x + 6\)</span> ដោយដឹងថា <span class="mi">\(x = -1\)</span> ជាឫសមួយរបស់ពហុធា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោយ <span class="mi">\(x = -1\)</span> ជាឫស នោះ <span class="mi">\((x + 1)\)</span> ជាកត្តានៃ <span class="mi">\(P(x) = x^3 - 4x^2 + x + 6\)</span>។ ចែក <span class="mi">\(P(x)\)</span> នឹង <span class="mi">\(x + 1\)</span> ដោយប្រើតារាងហន័រ (<span class="mi">\(c = -1\)</span>) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>1</td>
+<td>-4</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>-1</td>
+<td></td>
+<td>-1</td>
+<td>5</td>
+<td>-6</td>
+</tr>
+<tr>
+<td></td>
+<td>1</td>
+<td>-5</td>
+<td>6</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ផលចែកគឺ <span class="mi">\(x^2 - 5x + 6 = (x - 2)(x - 3)\)</span>។<br/>
+ដូចនេះ ផលគុណកត្តាគឺ ៖ <div class="md">\[P(x) = (x + 1)(x - 2)(x - 3)\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>ដាក់ជាផលគុណកត្តា ៖ <span class="mi">\(P(x) = 2x^3 - 3x^2 - 3x + 2\)</span> ដោយស្វែងរកឫសងាយមួយជាមុន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្វែងរកឫសងាយនៃ <span class="mi">\(P(x) = 2x^3 - 3x^2 - 3x + 2\)</span> ៖ - ចំពោះ <span class="mi">\(x = -1\)</span> ៖ <span class="mi">\(P(-1) = 2(-1) - 3(1) - 3(-1) + 2 = -2 - 3 + 3 + 2 = 0\)</span>។ នាំឱ្យ <span class="mi">\((x + 1)\)</span> ជាកត្តាមួយ។ ចែក <span class="mi">\(P(x)\)</span> នឹង <span class="mi">\(x + 1\)</span> តាមក្បួនហន័រ ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td></td>
+<td>2</td>
+<td>-3</td>
+<td>-3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>-1</td>
+<td></td>
+<td>-2</td>
+<td>5</td>
+<td>-2</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td>-5</td>
+<td>2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ផលចែកគឺ <span class="mi">\(2x^2 - 5x + 2 = (2x - 1)(x - 2)\)</span>។<br/>
+ដូចនេះ ផលគុណកត្តាគឺ ៖ <div class="md">\[P(x) = (x + 1)(2x - 1)(x - 2)\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>រក PGCD និង PPCM នៃឯកធា ៖ <span class="mi">\(18a^3b^2c\)</span> និង <span class="mi">\(30a^2b^3c^2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកឯកធានីមួយៗជាកត្តាបឋម ៖ <div class="md">\[\begin{aligned}
+18a^3b^2c &amp;= 2 \cdot 3^2 \cdot a^3 \cdot b^2 \cdot c \\
+30a^2b^3c^2 &amp;= 2 \cdot 3 \cdot 5 \cdot a^2 \cdot b^3 \cdot c^2
+\end{aligned}\]</div></p>
+<ul>
+<li><p><span class="mi">\(\text{PGCD}\)</span> យកកត្តារួមដែលមានស្វ័យគុណតូចបំផុត ៖ <div class="md">\[\text{PGCD} = 2 \cdot 3 \cdot a^2 \cdot b^2 \cdot c = 6a^2b^2c\]</div></p></li>
+<li><p><span class="mi">\(\text{PPCM}\)</span> យកកត្តារួមនិងមិនរួមដែលមានស្វ័យគុណធំបំផុត ៖ <div class="md">\[\text{PPCM} = 2 \cdot 3^2 \cdot 5 \cdot a^3 \cdot b^3 \cdot c^2 = 90a^3b^3c^2\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>រក PGCD និង PPCM នៃពហុធា ៖ <span class="mi">\(A = (2x - 3)(x + 2)\)</span> និង <span class="mi">\(B = (2x - 3)(3x - 1)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេមាន <span class="mi">\(A = (2x - 3)(x + 2)\)</span> និង <span class="mi">\(B = (2x - 3)(3x - 1)\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(\text{PGCD}\)</span> ជាកត្តារួម ៖ <div class="md">\[\text{PGCD} = 2x - 3\]</div></p></li>
+<li><p><span class="mi">\(\text{PPCM}\)</span> ជាផលគុណកត្តារួមនិងមិនរួម ៖ <div class="md">\[\text{PPCM} = (2x - 3)(x + 2)(3x - 1)\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>រក PGCD និង PPCM នៃពហុធា ៖ <span class="mi">\(A = x^2 - 4\)</span> និង <span class="mi">\(B = x^2 + 4x + 4\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តា ៖ <div class="md">\[\begin{aligned}
+A &amp;= x^2 - 4 = (x - 2)(x + 2) \\
+B &amp;= x^2 + 4x + 4 = (x + 2)^2
+\end{aligned}\]</div></p>
+<ul>
+<li><p><span class="mi">\(\text{PGCD}\)</span> (កត្តារួមស្វ័យគុណតូច) ៖ <span class="mi">\(\text{PGCD} = x + 2\)</span></p></li>
+<li><p><span class="mi">\(\text{PPCM}\)</span> (កត្តាស្វ័យគុណធំ) ៖ <span class="mi">\(\text{PPCM} = (x - 2)(x + 2)^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>រក PGCD និង PPCM នៃពហុធា ៖ <span class="mi">\(A = x^2 - 9\)</span> និង <span class="mi">\(B = x^2 - 5x + 6\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តា ៖ <div class="md">\[\begin{aligned}
+A &amp;= x^2 - 9 = (x - 3)(x + 3) \\
+B &amp;= x^2 - 5x + 6 = (x - 2)(x - 3)
+\end{aligned}\]</div></p>
+<ul>
+<li><p><span class="mi">\(\text{PGCD}\)</span> យកកត្តារួម ៖ <span class="mi">\(\text{PGCD} = x - 3\)</span></p></li>
+<li><p><span class="mi">\(\text{PPCM}\)</span> យកកត្តារួមនិងមិនរួម ៖ <span class="mi">\(\text{PPCM} = (x - 3)(x + 3)(x - 2)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>រក PGCD និង PPCM នៃពហុធា ៖ <span class="mi">\(A = x^3 - 1\)</span> និង <span class="mi">\(B = x^2 + x - 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តា ៖ <div class="md">\[\begin{aligned}
+A &amp;= x^3 - 1 = (x - 1)(x^2 + x + 1) \\
+B &amp;= x^2 + x - 2 = (x - 1)(x + 2)
+\end{aligned}\]</div></p>
+<ul>
+<li><p><span class="mi">\(\text{PGCD} = x - 1\)</span></p></li>
+<li><p><span class="mi">\(\text{PPCM} = (x - 1)(x + 2)(x^2 + x + 1)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>រក PGCD និង PPCM នៃពហុធា ៖ <span class="mi">\(A = x^2 - 2x\)</span>, <span class="mi">\(B = x^2 - 4\)</span> និង <span class="mi">\(C = x^2 - x - 2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តានៃពហុធាទាំងបី ៖ <div class="md">\[\begin{aligned}
+A &amp;= x^2 - 2x = x(x - 2) \\
+B &amp;= x^2 - 4 = (x - 2)(x + 2) \\
+C &amp;= x^2 - x - 2 = (x - 2)(x + 1)
+\end{aligned}\]</div></p>
+<ul>
+<li><p><span class="mi">\(\text{PGCD}\)</span> (កត្តារួមទាំងបី) ៖ <span class="mi">\(\text{PGCD} = x - 2\)</span></p></li>
+<li><p><span class="mi">\(\text{PPCM}\)</span> ៖ <span class="mi">\(\text{PPCM} = x(x - 2)(x + 2)(x + 1)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>រកដែនកំណត់នៃប្រភាគសនិទានខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\dfrac{2x + 1}{x - 3}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{5}{x^2 - 4}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x - 1}{x^2 + 3x - 10}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រភាគសនិទានមានន័យ (កំណត់) កាលណាភាគបែងខុសពីសូន្យ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\dfrac{2x + 1}{x - 3}\)</span> មានន័យកាលណា ៖ <div class="md">\[x - 3 \neq 0 \implies x \neq 3\]</div></p></li>
+<li><p>b. <span class="mi">\(\dfrac{5}{x^2 - 4}\)</span> មានន័យកាលណា ៖ <div class="md">\[x^2 - 4 \neq 0 \iff x \neq \pm 2\]</div></p></li>
+<li><p>c. <span class="mi">\(\dfrac{x - 1}{x^2 + 3x - 10}\)</span> មានន័យកាលណា ៖ <div class="md">\[\begin{aligned}
+    x^2 + 3x - 10 \neq 0 &amp;\iff (x + 5)(x - 2) \neq 0 \\
+    &amp;\implies x \neq -5, \ x \neq 2
+    
+\end{aligned}\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>សម្រួលប្រភាគសនិទានខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{6x^2y^3}{9xy^5}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x^2 - 9}{x^2 + 6x + 9}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលប្រភាគសនិទាន ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\dfrac{6x^2y^3}{9xy^5} = \dfrac{3xy^3(2x)}{3xy^3(3y^2)} = \dfrac{2x}{3y^2}\)</span></p></li>
+<li><p>b. <span class="mi">\(\dfrac{x^2 - 9}{x^2 + 6x + 9} = \dfrac{(x - 3)(x + 3)}{(x + 3)^2} = \dfrac{x - 3}{x + 3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>សម្រួលប្រភាគសនិទានខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{2x^2 - 8}{x^2 - x - 2}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x^3 - 8}{x^2 - 4}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ភាគយកនិងភាគបែងជាកត្តា រួចសម្រួលកត្តារួម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\dfrac{2x^2 - 8}{x^2 - x - 2} = \dfrac{2(x^2 - 4)}{(x - 2)(x + 1)} = \dfrac{2(x - 2)(x + 2)}{(x - 2)(x + 1)} = \dfrac{2(x + 2)}{x + 1}\)</span></p></li>
+<li><p>b. <span class="mi">\(\dfrac{x^3 - 8}{x^2 - 4} = \dfrac{(x - 2)(x^2 + 2x + 4)}{(x - 2)(x + 2)} = \dfrac{x^2 + 2x + 4}{x + 2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>សម្រួលប្រភាគសនិទានខាងក្រោម ៖ <div class="md">\[\dfrac{x^2 + xy - 2y^2}{x^2 + 3xy + 2y^2}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ភាគយកនិងភាគបែងជាផលគុណកត្តា ៖ <div class="md">\[\begin{aligned}
+\dfrac{x^2 + xy - 2y^2}{x^2 + 3xy + 2y^2} &amp;= \dfrac{(x^2 - xy) + (2xy - 2y^2)}{(x^2 + xy) + (2xy + 2y^2)} \\
+&amp;= \dfrac{x(x - y) + 2y(x - y)}{x(x + y) + 2y(x + y)} \\
+&amp;= \dfrac{(x - y)(x + 2y)}{(x + y)(x + 2y)} = \dfrac{x - y}{x + y}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>គណនាផលបូក និងផលដកប្រភាគសនិទាន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{3}{x + 1} + \dfrac{2}{x - 1}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{5}{x - 2} - \dfrac{3}{x + 2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្រូវភាគបែងរួមរួចគណនា ៖</p>
+<ul>
+<li><p>a. ភាគបែងរួមគឺ <span class="mi">\((x + 1)(x - 1) = x^2 - 1\)</span> ៖ <div class="md">\[\begin{aligned}
+    \dfrac{3}{x + 1} + \dfrac{2}{x - 1} &amp;= \dfrac{3(x - 1) + 2(x + 1)}{(x + 1)(x - 1)} \\
+    &amp;= \dfrac{3x - 3 + 2x + 2}{x^2 - 1} \\
+    &amp;= \dfrac{5x - 1}{x^2 - 1}
+    
+\end{aligned}\]</div></p></li>
+<li><p>b. ភាគបែងរួមគឺ <span class="mi">\((x - 2)(x + 2) = x^2 - 4\)</span> ៖ <div class="md">\[\begin{aligned}
+    \dfrac{5}{x - 2} - \dfrac{3}{x + 2} &amp;= \dfrac{5(x + 2) - 3(x - 2)}{(x - 2)(x + 2)} \\
+    &amp;= \dfrac{5x + 10 - 3x + 6}{x^2 - 4} \\
+    &amp;= \dfrac{2x + 16}{x^2 - 4} = \dfrac{2(x + 8)}{x^2 - 4}
+    
+\end{aligned}\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គណនាផលបូក និងផលដកប្រភាគសនិទាន ៖ <div class="md">\[\dfrac{1}{1 - x} + \dfrac{2}{1 + x} + \dfrac{2x}{x^2 - 1}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សង្កេតឃើញ <span class="mi">\(1 - x = -(x - 1)\)</span> នាំឱ្យ <span class="mi">\(\dfrac{1}{1 - x} = -\dfrac{1}{x - 1}\)</span>។ ភាគបែងរួមគឺ <span class="mi">\((x - 1)(x + 1) = x^2 - 1\)</span> ៖ <div class="md">\[\begin{aligned}
+&amp;\dfrac{1}{1 - x} + \dfrac{2}{1 + x} + \dfrac{2x}{x^2 - 1} \\
+&amp;\quad{} = -\dfrac{1}{x - 1} + \dfrac{2}{x + 1} + \dfrac{2x}{(x - 1)(x + 1)} \\
+&amp;\quad{} = \dfrac{-(x + 1) + 2(x - 1) + 2x}{(x - 1)(x + 1)} \\
+&amp;\quad{} = \dfrac{-x - 1 + 2x - 2 + 2x}{x^2 - 1} \\
+&amp;\quad{} = \dfrac{3x - 3}{x^2 - 1} = \dfrac{3(x - 1)}{(x - 1)(x + 1)} = \dfrac{3}{x + 1}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>គណនាផលគុណប្រភាគសនិទាន ៖ <div class="md">\[\dfrac{x^2 - 4}{x + 3} \times \dfrac{x^2 - 9}{x - 2}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ជាផលគុណកត្តាគ្រប់ភាគយកនិងភាគបែង រួចសម្រួលកត្តារួម ៖ <div class="md">\[\begin{aligned}
+&amp;\dfrac{x^2 - 4}{x + 3} \times \dfrac{x^2 - 9}{x - 2} \\
+&amp;= \dfrac{(x - 2)(x + 2)}{x + 3} \times \dfrac{(x - 3)(x + 3)}{x - 2} \\
+&amp;= (x + 2)(x - 3) \\
+&amp;= x^2 - x - 6
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គណនាផលចែកប្រភាគសនិទាន ៖ <div class="md">\[\dfrac{x^2 - 1}{x^2 + 4x + 4} \div \dfrac{x - 1}{x + 2}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គុណនឹងចម្រាសនៃតួចែក រួចសម្រួល ៖ <div class="md">\[\begin{aligned}
+\dfrac{x^2 - 1}{x^2 + 4x + 4} \div \dfrac{x - 1}{x + 2} &amp;= \dfrac{(x - 1)(x + 1)}{(x + 2)^2} \times \dfrac{x + 2}{x - 1} \\
+&amp;= \dfrac{x + 1}{x + 2}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ចលនានិងល្បឿន ៖</strong> ចម្ងាយចរនៃរថយន្តមួយត្រូវបានកំណត់ដោយ <span class="mi">\(s(t) = t^3 + 2t^2 - t - 2\)</span> (គិតជា <span class="mi">\(\text{km}\)</span>) ក្នុងរយៈពេល <span class="mi">\(t + 2\)</span> (គិតជាម៉ោង)។</p>
+<ol class="list olka cols1">
+<li><p>ចូរសរសេរកន្សោមនៃល្បឿនមធ្យម <span class="mi">\(v(t) = \dfrac{s(t)}{t + 2}\)</span> ជាពហុធាសម្រួលរួច។</p></li>
+<li><p>ប្រសិនបើ <span class="mi">\(t = 3\text{ h}\)</span> ចូរគណនាល្បឿនមធ្យមនៃរថយន្តនោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ចលនានិងល្បឿន ៖</strong> ចម្ងាយចរ <span class="mi">\(s(t) = t^3 + 2t^2 - t - 2\)</span> ក្នុងរយៈពេល <span class="mi">\(t + 2\)</span>។</p>
+<ul>
+<li><p>a. ដាក់ <span class="mi">\(s(t)\)</span> ជាផលគុណកត្តា ៖ <div class="md">\[\begin{aligned}
+    s(t) &amp;= t^2(t + 2) - 1(t + 2) \\
+    &amp;= (t + 2)(t^2 - 1)
+    
+\end{aligned}\]</div> កន្សោមនៃល្បឿនមធ្យមគឺ ៖ <div class="md">\[v(t) = \dfrac{s(t)}{t + 2} = \dfrac{(t + 2)(t^2 - 1)}{t + 2} = t^2 - 1\text{ km/h}\]</div></p></li>
+<li><p>b. ចំពោះ <span class="mi">\(t = 3\text{ h}\)</span> ៖ <div class="md">\[v(3) = 3^2 - 1 = 9 - 1 = 8\text{ km/h}\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ធន់ទ្រាំអគ្គិសនីតជាស្រប ៖</strong> ក្នុងសៀគ្វីអគ្គិសនីមួយដែលមានរេស៊ីស្តង់ពីរ <span class="mi">\(R_1 = x\)</span> និង <span class="mi">\(R_2 = x + 2\)</span> (<span class="mi">\(\Omega\)</span>) តជាស្រប នោះរេស៊ីស្តង់សមមូល <span class="mi">\(R\)</span> ផ្ទៀងផ្ទាត់ <span class="mi">\(\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>ចូរសរសេរសមីការទាញរក <span class="mi">\(R\)</span> ជាប្រភាគសនិទាននៃ <span class="mi">\(x\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(x = 4\ \Omega\)</span> គណនាតម្លៃនៃរេស៊ីស្តង់សមមូល <span class="mi">\(R\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ធន់ទ្រាំអគ្គិសនីតជាស្រប ៖</strong></p>
+<ul>
+<li><p>a. តាមរូបមន្តរេស៊ីស្តង់សមមូល <span class="mi">\(\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}\)</span> ដោយ <span class="mi">\(R_1 = x, R_2 = x + 2\)</span> ៖ <div class="md">\[\begin{aligned}
+    \dfrac{1}{R} &amp;= \dfrac{1}{x} + \dfrac{1}{x + 2} \\
+    &amp;= \dfrac{(x + 2) + x}{x(x + 2)} = \dfrac{2x + 2}{x(x + 2)}
+    
+\end{aligned}\]</div> ទាញរក <span class="mi">\(R\)</span> ដោយចម្រាសប្រភាគ ៖ <div class="md">\[R = \dfrac{x(x + 2)}{2x + 2} = \dfrac{x^2 + 2x}{2x + 2}\ (\Omega)\]</div></p></li>
+<li><p>b. ចំពោះ <span class="mi">\(x = 4\ \Omega\)</span> ៖ <div class="md">\[R = \dfrac{4(4 + 2)}{2(4) + 2} = \dfrac{4(6)}{8 + 2} = \dfrac{24}{10} = 2.4\ \Omega\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - អត្រាបូមទឹក ៖</strong> ម៉ាស៊ីនបូមទឹកទី១ បូមទឹកពេញអាងក្នុងរយៈពេល <span class="mi">\(x\)</span> ម៉ោង ហើយម៉ាស៊ីនទី២ ត្រូវការរយៈពេល <span class="mi">\((x + 3)\)</span> ម៉ោង។</p>
+<ol class="list olka cols1">
+<li><p>សរសេរប្រភាគតំណាងឱ្យបរិមាណទឹកដែលម៉ាស៊ីនទាំងពីររួមគ្នាអាចបូមបានក្នុងរយៈពេល ១ ម៉ោង។</p></li>
+<li><p>ប្រសិនបើ <span class="mi">\(x = 2\)</span> ម៉ោង ចូរគណនាបរិមាណទឹកនោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - អត្រាបូមទឹក ៖</strong></p>
+<ul>
+<li><p>a. ក្នុងរយៈពេល ១ ម៉ោង ៖ - ម៉ាស៊ីនទី១ បូមបាន <span class="mi">\(\dfrac{1}{x}\)</span> នៃអាង - ម៉ាស៊ីនទី២ បូមបាន <span class="mi">\(\dfrac{1}{x + 3}\)</span> នៃអាង បរិមាណទឹកដែលម៉ាស៊ីនទាំងពីរបូមបានរួមគ្នាក្នុង ១ ម៉ោងគឺ ៖ <div class="md">\[\begin{aligned}
+    \dfrac{1}{x} + \dfrac{1}{x + 3} &amp;= \dfrac{(x + 3) + x}{x(x + 3)} \\
+    &amp;= \dfrac{2x + 3}{x^2 + 3x}\text{ (នៃអាង)}
+    
+\end{aligned}\]</div></p></li>
+<li><p>b. ប្រសិនបើ <span class="mi">\(x = 2\)</span> ម៉ោង ៖ <div class="md">\[\dfrac{2(2) + 3}{2^2 + 3(2)} = \dfrac{4 + 3}{4 + 6} = \dfrac{7}{10} = 0.7\text{ នៃអាង}\]</div> (ស្មើនឹង <span class="mi">\(70\%\)</span> នៃចំណុះអាង)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ថ្លៃដើមផលិតកម្មមធ្យម ៖</strong> រោងចក្រមួយចំណាយសរុប <span class="mi">\(C(x) = x^2 + 50x + 400\)</span> (គិតជាពាន់រៀល) ក្នុងការផលិតទំនិញ <span class="mi">\(x\)</span> ឯកតា។ ថ្លៃដើមមធ្យមក្នុងមួយឯកតាគឺ <span class="mi">\(\bar{C}(x) = \dfrac{C(x)}{x}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>ចូរសរសេរ <span class="mi">\(\bar{C}(x)\)</span> ជាផលបូកនៃទ្វេធានិងប្រភាគសនិទាន។</p></li>
+<li><p>គណនាថ្លៃដើមមធ្យមក្នុងមួយឯកតា ប្រសិនបើរោងចក្រផលិតបាន <span class="mi">\(x = 20\)</span> ឯកតា និង <span class="mi">\(x = 100\)</span> ឯកតា។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ថ្លៃដើមផលិតកម្មមធ្យម ៖</strong> ចំណាយសរុប <span class="mi">\(C(x) = x^2 + 50x + 400\)</span>។</p>
+<ul>
+<li><p>a. កន្សោមថ្លៃដើមមធ្យមក្នុងមួយឯកតា ៖ <div class="md">\[\begin{aligned}
+    \bar{C}(x) &amp;= \dfrac{C(x)}{x} = \dfrac{x^2 + 50x + 400}{x} \\
+    &amp;= \dfrac{x^2}{x} + \dfrac{50x}{x} + \dfrac{400}{x} \\
+    &amp;= x + 50 + \dfrac{400}{x}\text{ (ពាន់រៀល)}
+    
+\end{aligned}\]</div></p></li>
+<li><p>b. គណនាថ្លៃដើមមធ្យម ៖</p>
+<ul>
+<li><p>ចំពោះ <span class="mi">\(x = 20\)</span> ឯកតា ៖ <div class="md">\[\bar{C}(20) = 20 + 50 + \dfrac{400}{20} = 70 + 20 = 90\text{ ពាន់រៀល}\]</div> (ស្មើនឹង <span class="mi">\(90\,000\)</span> រៀលក្នុងមួយឯកតា)</p></li>
+<li><p>ចំពោះ <span class="mi">\(x = 100\)</span> ឯកតា ៖ <div class="md">\[\begin{aligned}
+        \bar{C}(100) &amp;= 100 + 50 + \frac{400}{100} \\
+        &amp;= 150 + 4 = 154\text{ ពាន់រៀល}
+        
+\end{aligned}\]</div> (ស្មើនឹង <span class="mi">\(154\,000\)</span> រៀលក្នុងមួយឯកតា)</p></li>
+</ul></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ១ ពហុធា និងប្រមាណវិធីចែកពហុធា</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c01">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L01.html"><small>← មេរៀនមុន</small><b>ពហុធា</b></a><a class="next" href="L03.html"><small>មេរៀនបន្ទាប់ →</small><b>តក្កវិទ្យា</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 4x + 3\\)<\/span> និង <span class=\"mi\">\\(x - 1\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(x - 3\\)<\/span>", "<span class=\"mi\">\\(-x + 3\\)<\/span>", "<span class=\"mi\">\\(x + 3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(3x^2 - 2x - 3\\)<\/span> នឹង <span class=\"mi\">\\(x - 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(2x^2 - x\\)<\/span> នឹង <span class=\"mi\">\\(x + 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - x - 6 }{ x^2 + 5x + 6 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x + 3 }{ x - 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x - 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 3 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x + 3 }\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 + 2x - 3\\)<\/span> និង <span class=\"mi\">\\(x + 3\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x + 1\\)<\/span>", "<span class=\"mi\">\\(-x - 1\\)<\/span>", "<span class=\"mi\">\\(x - 1\\)<\/span>", "<span class=\"mi\">\\(x + 1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 2x - 3\\)<\/span> និង <span class=\"mi\">\\(x - 3\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x + 1\\)<\/span>", "<span class=\"mi\">\\(x + 1\\)<\/span>", "<span class=\"mi\">\\(x - 1\\)<\/span>", "<span class=\"mi\">\\(-x - 1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 5}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = -5\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 16\\)<\/span> និង <span class=\"mi\">\\(x + 4\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x - 4\\)<\/span>", "<span class=\"mi\">\\(x + 4\\)<\/span>", "<span class=\"mi\">\\(x - 4\\)<\/span>", "<span class=\"mi\">\\(-x + 4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 1}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = -1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 1}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -1\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 2x - 3\\)<\/span> និង <span class=\"mi\">\\(x - 3\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(x + 1\\)<\/span>", "<span class=\"mi\">\\(x - 1\\)<\/span>", "<span class=\"mi\">\\(-x - 1\\)<\/span>", "<span class=\"mi\">\\(-x + 1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 5}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = -5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 1\\)<\/span> និង <span class=\"mi\">\\(x + 1\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x - 1\\)<\/span>", "<span class=\"mi\">\\(x - 1\\)<\/span>", "<span class=\"mi\">\\(-x + 1\\)<\/span>", "<span class=\"mi\">\\(x + 1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 4}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = -4\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 + 7x + 12\\)<\/span> និង <span class=\"mi\">\\(x + 4\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(x - 3\\)<\/span>", "<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(x + 3\\)<\/span>", "<span class=\"mi\">\\(-x + 3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(-3x^2 + 2x - 2\\)<\/span> នឹង <span class=\"mi\">\\(x - 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(-13\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - 3x + 2 }{ x^2 + 2x - 3 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x - 2 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 2 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 2 }{ x - 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 2 }{ x - 3 }\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 1\\)<\/span> និង <span class=\"mi\">\\(x - 1\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x + 1\\)<\/span>", "<span class=\"mi\">\\(x - 1\\)<\/span>", "<span class=\"mi\">\\(x + 1\\)<\/span>", "<span class=\"mi\">\\(-x - 1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(-2x^2 - 1\\)<\/span> នឹង <span class=\"mi\">\\(x - 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(-9\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(-x^2 + x - 2\\)<\/span> នឹង <span class=\"mi\">\\(x\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 2}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(-76\\)<\/span>", "<span class=\"mi\">\\(-73\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 + x }{ x^2 - 2x - 3 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(-72\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x - 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(-77\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 2x - 3\\)<\/span> និង <span class=\"mi\">\\(x + 1\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x + 3\\)<\/span>", "<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(x + 3\\)<\/span>", "<span class=\"mi\">\\(x - 3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 + 5x + 6\\)<\/span> និង <span class=\"mi\">\\(x + 2\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(x - 3\\)<\/span>", "<span class=\"mi\">\\(x + 3\\)<\/span>", "<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(-x + 3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 + x - 6 }{ x^2 - 5x + 6 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x + 3 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x - 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 3 }{ x - 3 }\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - x - 12\\)<\/span> និង <span class=\"mi\">\\(x - 4\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(x + 3\\)<\/span>", "<span class=\"mi\">\\(x - 3\\)<\/span>", "<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(-x + 3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 3}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -3\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 3x + 2\\)<\/span> និង <span class=\"mi\">\\(x - 2\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(x + 1\\)<\/span>", "<span class=\"mi\">\\(-x + 1\\)<\/span>", "<span class=\"mi\">\\(-x - 1\\)<\/span>", "<span class=\"mi\">\\(x - 1\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - 9 }{ x^2 - 2x - 3 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x + 3 }{ x - 1 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 3 }{ x + 1 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x + 1 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x - 1 }\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 + 6x + 9 }{ x^2 + 3x }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x - 3 }{ x }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 3 }{ x }\\)<\/span>", "<span class=\"mi\">\\(-61\\)<\/span>", "<span class=\"mi\">\\(13\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(x^2 - x\\)<\/span> នឹង <span class=\"mi\">\\(x + 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(-6\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 + 3x }{ x^2 + x - 6 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(-31\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x + 2 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x - 2 }\\)<\/span>", "<span class=\"mi\">\\(-22\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(-3x^2 + 3x + 3\\)<\/span> នឹង <span class=\"mi\">\\(x - 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(-6\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(-x^2 + x - 3\\)<\/span> នឹង <span class=\"mi\">\\(x - 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(-5\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - 2x - 3 }{ x^2 - 1 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x + 3 }{ x + 1 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x + 1 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 3 }{ x - 1 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x - 1 }\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(-x^2 + x + 3\\)<\/span> នឹង <span class=\"mi\">\\(x - 2\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 + x - 6\\)<\/span> និង <span class=\"mi\">\\(x + 3\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x + 2\\)<\/span>", "<span class=\"mi\">\\(x - 2\\)<\/span>", "<span class=\"mi\">\\(x + 2\\)<\/span>", "<span class=\"mi\">\\(-x - 2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 + 2x }{ x^2 + 3x + 2 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(31\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x - 1 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x + 1 }\\)<\/span>", "<span class=\"mi\">\\(38\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 2x - 3\\)<\/span> និង <span class=\"mi\">\\(x + 1\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(x - 3\\)<\/span>", "<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(-x + 3\\)<\/span>", "<span class=\"mi\">\\(x + 3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - 2x - 3 }{ x^2 + 3x + 2 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x + 3 }{ x + 2 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x - 2 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 3 }{ x - 2 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 3 }{ x + 2 }\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - x - 6\\)<\/span> និង <span class=\"mi\">\\(x + 2\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x + 3\\)<\/span>", "<span class=\"mi\">\\(x + 3\\)<\/span>", "<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(x - 3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 - 2x - 8\\)<\/span> និង <span class=\"mi\">\\(x - 4\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(-x - 2\\)<\/span>", "<span class=\"mi\">\\(x - 2\\)<\/span>", "<span class=\"mi\">\\(-x + 2\\)<\/span>", "<span class=\"mi\">\\(x + 2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{x + 2}{x - 3}\\)<\/span> មិនកំណត់នៅពេលណា?", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(x^2 + 2x - 2\\)<\/span> នឹង <span class=\"mi\">\\(x\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(-4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើផលចែកនៃពហុធា <span class=\"mi\">\\(x^2 + x - 6\\)<\/span> និង <span class=\"mi\">\\(x - 2\\)<\/span> ជាអ្វី?", "options": ["<span class=\"mi\">\\(x - 3\\)<\/span>", "<span class=\"mi\">\\(-x - 3\\)<\/span>", "<span class=\"mi\">\\(x + 3\\)<\/span>", "<span class=\"mi\">\\(-x + 3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - 4 }{ x^2 - 5x + 6 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x - 2 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 2 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 2 }{ x - 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 2 }{ x - 3 }\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(-3x^2 - 3x + 2\\)<\/span> នឹង <span class=\"mi\">\\(x + 1\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - x }{ x^2 + x - 2 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(-18\\)<\/span>", "<span class=\"mi\">\\(-73\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x + 2 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x }{ x - 2 }\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចូរសម្រួលប្រភាគសនិទាន <span class=\"mi\">\\(\\frac{ x^2 - 4 }{ x^2 - x - 6 }\\)<\/span> ។", "options": ["<span class=\"mi\">\\(\\frac{ x + 2 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 2 }{ x + 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x - 2 }{ x - 3 }\\)<\/span>", "<span class=\"mi\">\\(\\frac{ x + 2 }{ x - 3 }\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើសំណល់នៃវិធីចែកពហុធា <span class=\"mi\">\\(3x^2 + x\\)<\/span> នឹង <span class=\"mi\">\\(x + 1\\)<\/span> ស្មើប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

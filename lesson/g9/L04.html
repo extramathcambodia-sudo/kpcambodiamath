@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៤ : សមីការដឺក្រេទី១ មានមួយអញ្ញាត — គណិតវិទ្យាថ្នាក់ទី ៩ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៤ «សមីការដឺក្រេទី១ មានមួយអញ្ញាត» គណិតវិទ្យាថ្នាក់ទី ៩៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៤ : សមីការដឺក្រេទី១ មានមួយអញ្ញាត — គណិតវិទ្យាថ្នាក់ទី ៩ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៤ «សមីការដឺក្រេទី១ មានមួយអញ្ញាត» គណិតវិទ្យាថ្នាក់ទី ៩៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g9">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li aria-current="page">មេរៀនទី ៤</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៤</span>
+      <div><span class="ls-kicker">មេរៀនទី ៤ · គណិតវិទ្យាថ្នាក់ទី ៩</span><h1>សមីការដឺក្រេទី១ មានមួយអញ្ញាត</h1><div class="ls-chips"><span class="chip chip-soon">ពីជគណិត</span><span class="chip chip-soon">៣ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សមីការដឺក្រេទី១ មានមួយអញ្ញាត និងលក្ខណៈគ្រឹះ</a></li><li class="sub"><a href="#u2">២. សមីការដែលមានភាគបែងជាលេខ និងសមីការផលគុណកត្តា</a></li><li class="sub"><a href="#u3">៣. វិធីសាស្ត្រដោះស្រាយចំណោទតាមសមីការ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-9.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃសមីការ និងសិល្បៈនៃការដោះស្រាយសមីការ</b></header><div class="bx-b">
+<p><strong>សមីការ (Equation)</strong> គឺជាបេះដូងនៃពីជគណិត ៖</p>
+<ul>
+<li><p><strong>ក្រដាសផាពីរុសរីន (Rhind Papyrus, ១៦៥០ មុន គ.ស.) ៖</strong> ជនជាតិអេហ្ស៊ីបបុរាណបានដោះស្រាយសមីការដឺក្រេទីមួយដោយហៅចំនួនមិនស្គាល់ថា «Aha» (មានន័យថា «គំនរ») ដូចជា ៖ «គំនរមួយ បូកនឹងមួយភាគប្រាំពីរបង្កើតបាន <span class="mi">\(19\)</span>» (<span class="mi">\(x + \frac{1}{7}x = 19\)</span>) ដោយប្រើវិធីសន្មតខុស។</p></li>
+<li><p><strong>លោក Diophantus (សតវត្សទី ៣ នៃ គ.ស.) ៖</strong> ក្នុងសៀវភៅ <em>Arithmetica</em> គណិតវិទូក្រិក Diophantus បានណែនាំនិមិត្តសញ្ញាដំបូងសម្រាប់តាងអថេរ និងបានដោះស្រាយសមីការជាច្រើន។</p></li>
+<li><p><strong>វិធាន Al-Jabr (សតវត្សទី ៩) ៖</strong> លោក Al-Khwarizmi បានបង្កើតវិធាន <strong>Al-Jabr</strong> (ការប្តូរតួអវិជ្ជមានទៅអង្គម្ខាងទៀតដោយប្តូរសញ្ញា) និង <strong>Al-Muqabala</strong> (ការលុបតួដូចគ្នាចេញពីអង្គទាំងពីរ) ដែលជាគ្រឹះពីជគណិតរហូតដល់សព្វថ្ងៃ។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សមីការដឺក្រេទី១ មានមួយអញ្ញាត និងលក្ខណៈគ្រឹះ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>សមីការដឺក្រេទី១ មានមួយអញ្ញាត</b></header><div class="bx-b">
+<p><strong>សមីការដឺក្រេទី១ មានមួយអញ្ញាត</strong> គឺជាសមីការដែលអាចសរសេរជាទម្រង់ទូទៅ ៖ <div class="md">\[ax + b = 0 \quad{} (a \ne 0)\]</div> ដែល <span class="mi">\(x\)</span> ជាអញ្ញាត (អថេរ) ហើយ <span class="mi">\(a, b\)</span> ជាចំនួនពិតដែលបានស្គាល់ (<span class="mi">\(a\)</span> ជាមេគុណនៃ <span class="mi">\(x\)</span> និង <span class="mi">\(b\)</span> ជាតួថេរ)។</p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>ដំណោះស្រាយសមីការ <span class="mi">\(ax + b = 0\)</span></b></header><div class="bx-b">
+<ul>
+<li><p>បើ <span class="mi">\(a \ne 0\)</span> ៖ សមីការមានឫសតែមួយគត់គឺ <span class="mi">\(x = -\dfrac{b}{a}\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(a = 0\)</span> និង <span class="mi">\(b \ne 0\)</span> ៖ សមីការទៅជា <span class="mi">\(0x = -b\)</span> គ្មានឫស (សំណុំចម្លើយ <span class="mi">\(S = \emptyset\)</span>)។</p></li>
+<li><p>បើ <span class="mi">\(a = 0\)</span> និង <span class="mi">\(b = 0\)</span> ៖ សមីការទៅជា <span class="mi">\(0x = 0\)</span> ផ្ទៀងផ្ទាត់ចំពោះគ្រប់ចំនួនពិត <span class="mi">\(x\)</span> (មានឫសរាប់មិនអស់ <span class="mi">\(S = \mathbb{R}\)</span>)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(5x - 7 = 2x + 8\)</span></p></li>
+<li><p><span class="mi">\(3(2x - 1) - 2(x - 4) = 17\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p><span class="mi">\(5x - 7 = 2x + 8 \iff 5x - 2x = 8 + 7 \iff 3x = 15 \iff x = \dfrac{15}{3} = 5\)</span></p></li>
+<li><p>ដូចនេះ សមីការមានឫស <span class="mi">\(x = 5\)</span>។</p></li>
+<li><p><span class="mi">\(3(2x - 1) - 2(x - 4) = 17 \iff 6x - 3 - 2x + 8 = 17\)</span></p></li>
+<li><p><span class="mi">\(\iff 4x + 5 = 17 \iff 4x = 17 - 5 \iff 4x = 12 \iff x = 3\)</span></p></li>
+<li><p>ដូចនេះ សមីការមានឫស <span class="mi">\(x = 3\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(7x - 4 = 3x + 16\)</span></p></li>
+<li><p><span class="mi">\(4(x - 2) - 3(2x - 5) = 1\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u2">សមីការដែលមានភាគបែងជាលេខ និងសមីការផលគុណកត្តា</h3>
+<h4>សមីការដែលមានភាគបែងជាលេខ</h4>
+<p>ដើម្បីដោះស្រាយសមីការដែលមានភាគបែងជាលេខ គេត្រូវ ៖</p>
+<ol class="list olnum cols1">
+<li><p>រកភាគបែងរួមតូចបំផុត (LCM) នៃភាគបែងទាំងអស់។</p></li>
+<li><p>គុណអង្គទាំងពីរនៃសមីការនឹងភាគបែងរួមនោះ ដើម្បីបំបាត់ភាគបែង។</p></li>
+<li><p>ពន្លាតវង់ក្រចក និងលើកតួមានអញ្ញាតទៅអង្គម្ខាង តួថេរទៅអង្គម្ខាងទៀត រួចទាញរកតម្លៃ <span class="mi">\(x\)</span>។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <span class="mi">\(\dfrac{2x - 1}{3} - \dfrac{x - 2}{4} = \dfrac{x + 5}{6}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p>ភាគបែងរួមតូចបំផុតនៃ <span class="mi">\(3, 4, 6\)</span> គឺ <span class="mi">\(\text{LCM}(3, 4, 6) = 12\)</span>។</p></li>
+<li><p>គុណអង្គទាំងពីរនៃសមីការនឹង <span class="mi">\(12\)</span> ៖ <div class="md">\[12\left(\frac{2x - 1}{3}\right) - 12\left(\frac{x - 2}{4}\right) = 12\left(\frac{x + 5}{6}\right)\]</div> <div class="md">\[4(2x - 1) - 3(x - 2) = 2(x + 5)\]</div></p></li>
+<li><p>ពន្លាតវង់ក្រចក និងដោះស្រាយ ៖ <div class="md">\[8x - 4 - 3x + 6 = 2x + 10 \iff 5x + 2 = 2x + 10\]</div> <div class="md">\[\iff 5x - 2x = 10 - 2 \iff 3x = 8 \iff x = \frac{8}{3}\]</div></p></li>
+<li><p>ដូចនេះ សមីការមានឫស <span class="mi">\(x = \dfrac{8}{3}\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <span class="mi">\(\dfrac{x + 3}{2} - \dfrac{2x - 1}{5} = \dfrac{x + 9}{10}\)</span></p>
+</div></section>
+<h4>សមីការដែលអង្គទី១ ជាផលគុណកត្តា</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>លក្ខណៈផលគុណស្មើសូន្យ</b></header><div class="bx-b">
+<p>ផលគុណនៃពីរកត្តាស្មើសូន្យ លុះត្រាតែកត្តាណាមួយស្មើសូន្យ ៖ <div class="md">\[A \times B = 0 \iff A = 0 \quad{} \text{ឬ} \quad{} B = 0\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការផលគុណកត្តាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((2x - 5)(3x + 6) = 0\)</span></p></li>
+<li><p><span class="mi">\((x - 3)(2x + 1) + (x - 3)(x + 4) = 0\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p><span class="mi">\((2x - 5)(3x + 6) = 0 \iff 2x - 5 = 0 \quad{} \)</span> ឬ <span class="mi">\( \quad{} 3x + 6 = 0\)</span></p>
+<ul>
+<li><p><span class="mi">\(2x - 5 = 0 \iff 2x = 5 \iff x = \dfrac{5}{2}\)</span></p></li>
+<li><p><span class="mi">\(3x + 6 = 0 \iff 3x = -6 \iff x = -2\)</span></p></li>
+</ul></li>
+<li><p>ដូចនេះ សមីការមានឫសពីរគឺ <span class="mi">\(x = \dfrac{5}{2}\)</span> និង <span class="mi">\(x = -2\)</span>។</p></li>
+<li><p>ដាក់ជាផលគុណកត្តាដោយទាញកត្តារួម <span class="mi">\((x - 3)\)</span> ៖ <div class="md">\[(x - 3)[(2x + 1) + (x + 4)] = 0 \iff (x - 3)(3x + 5) = 0\]</div> <div class="md">\[\iff x - 3 = 0 \quad{} \text{ឬ} \quad{} 3x + 5 = 0 \iff x = 3 \quad{} \text{ឬ} \quad{} x = -\frac{5}{3}\]</div></p></li>
+<li><p>ដូចនេះ សមីការមានឫសពីរគឺ <span class="mi">\(x = 3\)</span> និង <span class="mi">\(x = -\dfrac{5}{3}\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((3x - 1)(x + 4) = 0\)</span></p></li>
+<li><p><span class="mi">\((2x - 1)(x + 2) - (2x - 1)(3x - 5) = 0\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u3">វិធីសាស្ត្រដោះស្រាយចំណោទតាមសមីការ</h3>
+<p>ដើម្បីដោះស្រាយចំណោទដោយប្រើសមីការ គេត្រូវអនុវត្តតាម ៥ ជំហាន ៖</p>
+<ol class="list olnum cols1">
+<li><p><strong>ជ្រើសរើសអញ្ញាត ៖</strong> តាងអក្សរ <span class="mi">\(x\)</span> តំណាងឱ្យបរិមាណមិនស្គាល់ដែលត្រូវរក ព្រមទាំងបញ្ជាក់ខ្នាត និងលក្ខខណ្ឌ។</p></li>
+<li><p><strong>បកប្រែប្រធានជាកន្សោមពីជគណិត ៖</strong> សរសេរបរិមាណដទៃទៀតជាអនុគមន៍នៃ <span class="mi">\(x\)</span>។</p></li>
+<li><p><strong>បង្កើតសមីការ ៖</strong> ផ្អែកលើទំនាក់ទំនងដែលប្រធានបានកំណត់។</p></li>
+<li><p><strong>ដោះស្រាយសមីការ ៖</strong> រកតម្លៃ <span class="mi">\(x\)</span>។</p></li>
+<li><p><strong>ផ្ទៀងផ្ទាត់ និងឆ្លើយ ៖</strong> ពិនិត្យថាតើតម្លៃ <span class="mi">\(x\)</span> ស្របតាមលក្ខខណ្ឌជាក់ស្ដែង រួចសរសេរចម្លើយ។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ចតុកោណកែងមួយមានបរិមាត្រ <span class="mi">\(48\,\text{cm}\)</span>។ ប្រវែងបណ្តោយវែងជាងទទឹង <span class="mi">\(4\,\text{cm}\)</span>។ គណនាទទឹង បណ្តោយ និងផ្ទៃក្រឡានៃចតុកោណកែងនោះ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p><strong>ជំហានទី ១ (ជ្រើសរើសអញ្ញាត) ៖</strong> តាង <span class="mi">\(x\)</span> ជាទទឹងនៃចតុកោណកែង (<span class="mi">\(x &gt; 0\)</span>, គិតជា <span class="mi">\(\text{cm}\)</span>)។</p></li>
+<li><p><strong>ជំហានទី ២ (បកប្រែកន្សោម) ៖</strong> នោះបណ្តោយគឺ <span class="mi">\(x + 4\)</span> (គិតជា <span class="mi">\(\text{cm}\)</span>)។</p></li>
+<li><p><strong>ជំហានទី ៣ (បង្កើតសមីការ) ៖</strong> រូបមន្តបរិមាត្រគឺ <span class="mi">\(P = 2(\)</span> បណ្តោយ <span class="mi">\( + \)</span> ទទឹង <span class="mi">\()\)</span> ៖ <div class="md">\[2[(x + 4) + x] = 48\]</div></p></li>
+<li><p><strong>ជំហានទី ៤ (ដោះស្រាយសមីការ) ៖</strong> <div class="md">\[2(2x + 4) = 48 \iff 4x + 8 = 48 \iff 4x = 40 \iff x = 10\]</div></p></li>
+<li><p><strong>ជំហានទី ៥ (ផ្ទៀងផ្ទាត់ និងឆ្លើយ) ៖</strong></p>
+<ul>
+<li><p>ទទឹងនៃចតុកោណកែងគឺ <span class="mi">\(10\,\text{cm}\)</span></p></li>
+<li><p>បណ្តោយនៃចតុកោណកែងគឺ <span class="mi">\(10 + 4 = 14\,\text{cm}\)</span></p></li>
+<li><p>ផ្ទៀងផ្ទាត់បរិមាត្រ ៖ <span class="mi">\(2(14 + 10) = 48\,\text{cm}\)</span> (ពិត)</p></li>
+<li><p>ផ្ទៃក្រឡាចតុកោណកែង ៖ <span class="mi">\(S = 14 \times 10 = 140\,\text{cm}^2\)</span></p></li>
+</ul></li>
+<li><p>ដូចនេះ ទទឹងស្មើ <span class="mi">\(10\,\text{cm}\)</span>, បណ្តោយស្មើ <span class="mi">\(14\,\text{cm}\)</span> និងផ្ទៃក្រឡាស្មើ <span class="mi">\(140\,\text{cm}^2\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ផលបូកពីរចំនួនស្មើនឹង <span class="mi">\(54\)</span>។ បើចំនួនធំ ធំជាងពីរដងនៃចំនួនតូចចំនួន <span class="mi">\(6\)</span> ចូរកំណត់ចំនួនទាំងពីរនោះ។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ដោះស្រាយសមីការដឺក្រេទី១ មានមួយអញ្ញាតខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(3x - 12 = 0\)</span></p></li>
+<li><p><span class="mi">\(5x + 20 = 0\)</span></p></li>
+<li><p><span class="mi">\(7x - 4 = 17\)</span></p></li>
+<li><p><span class="mi">\(4x + 9 = 25\)</span></p></li>
+<li><p><span class="mi">\(6x - 15 = 3x\)</span></p></li>
+<li><p><span class="mi">\(8x + 6 = 2x + 24\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(3x = 12 \implies x = 4\)</span></p></li>
+<li><p>b. <span class="mi">\(5x = -20 \implies x = -4\)</span></p></li>
+<li><p>c. <span class="mi">\(7x = 21 \implies x = 3\)</span></p></li>
+<li><p>d. <span class="mi">\(4x = 16 \implies x = 4\)</span></p></li>
+<li><p>e. <span class="mi">\(3x = 15 \implies x = 5\)</span></p></li>
+<li><p>f. <span class="mi">\(6x = 18 \implies x = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដែលមានវង់ក្រចក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3(x - 4) = 2(x + 1)\)</span></p></li>
+<li><p><span class="mi">\(5(2x - 1) = 3(3x + 2)\)</span></p></li>
+<li><p><span class="mi">\(4(x + 2) - 3(2x - 1) = 5\)</span></p></li>
+<li><p><span class="mi">\(2(3x - 4) + 5(x + 1) = 30\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(3x - 12 = 2x + 2 \implies x = 14\)</span></p></li>
+<li><p>b. <span class="mi">\(10x - 5 = 9x + 6 \implies x = 11\)</span></p></li>
+<li><p>c. <span class="mi">\(4x + 8 - 6x + 3 = 5 \implies -2x = -6 \implies x = 3\)</span></p></li>
+<li><p>d. <span class="mi">\(6x - 8 + 5x + 5 = 30 \implies 11x = 33 \implies x = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2(x - 3) - 4(x + 1) = 3(x - 2)\)</span></p></li>
+<li><p><span class="mi">\(5(x + 1) + 2(3 - x) = 4(x + 2) - 1\)</span></p></li>
+<li><p><span class="mi">\(3[x - 2(x - 1)] = 4x - 6\)</span></p></li>
+<li><p><span class="mi">\(2 - [3x - (2x - 5)] = 4(x - 1)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2x - 6 - 4x - 4 = 3x - 6 \implies -5x = 4 \implies x = -0.8\)</span></p></li>
+<li><p>b. <span class="mi">\(5x + 5 + 6 - 2x = 4x + 8 - 1 \implies 3x + 11 = 4x + 7 \implies x = 4\)</span></p></li>
+<li><p>c. <span class="mi">\(3(2 - x) = 4x - 6 \implies 6 - 3x = 4x - 6 \implies 7x = 12 \implies x = \frac{12}{7}\)</span></p></li>
+<li><p>d. <span class="mi">\(2 - (x + 5) = 4x - 4 \implies -x - 3 = 4x - 4 \implies 5x = 1 \implies x = 0.2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដែលមានភាគបែងជាលេខ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\dfrac{x}{4} + 3 = 8\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x}{3} - 5 = 1\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3x}{5} + \dfrac{x}{2} = 11\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x}{2} - \dfrac{x}{6} = 4\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{5x}{6} - \dfrac{3x}{4} = 2\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x}{7} + \dfrac{3x}{14} = 5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការមានភាគបែង ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x/4 = 5 \implies x = 20\)</span></p></li>
+<li><p>b. <span class="mi">\(2x/3 = 6 \implies 2x = 18 \implies x = 9\)</span></p></li>
+<li><p>c. <span class="mi">\(6x + 5x = 110 \implies 11x = 110 \implies x = 10\)</span></p></li>
+<li><p>d. <span class="mi">\(3x - x = 24 \implies 2x = 24 \implies x = 12\)</span></p></li>
+<li><p>e. <span class="mi">\(10x - 9x = 24 \implies x = 24\)</span></p></li>
+<li><p>f. <span class="mi">\(4x + 3x = 70 \implies 7x = 70 \implies x = 10\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដែលមានភាគបែងជាលេខ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{x+1}{3} = \dfrac{x-2}{2}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x-3}{4} = \dfrac{x+5}{3}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3x+1}{5} = \dfrac{2x-4}{3}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{4x-1}{6} = \dfrac{2x+3}{4}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការសមាមាត្រ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2(x+1) = 3(x-2) \implies 2x+2 = 3x-6 \implies x = 8\)</span></p></li>
+<li><p>b. <span class="mi">\(3(2x-3) = 4(x+5) \implies 6x-9 = 4x+20 \implies 2x = 29 \implies x = 14.5\)</span></p></li>
+<li><p>c. <span class="mi">\(3(3x+1) = 5(2x-4) \implies 9x+3 = 10x-20 \implies x = 23\)</span></p></li>
+<li><p>d. <span class="mi">\(2(4x-1) = 3(2x+3) \implies 8x-2 = 6x+9 \implies 2x = 11 \implies x = 5.5\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{x-1}{2} + \dfrac{x+3}{4} = 3\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x+1}{3} - \dfrac{x-2}{6} = 2\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3x-1}{4} - \dfrac{2x+3}{3} = \dfrac{1}{12}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x+4}{5} - \dfrac{x-3}{2} = \dfrac{x-1}{10}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្រូវភាគបែង ៖</p>
+<ul>
+<li><p>a. ភាគបែងរួម <span class="mi">\(4\)</span> ៖ <span class="mi">\(2(x-1) + (x+3) = 12 \implies 3x + 1 = 12 \implies x = \frac{11}{3}\)</span></p></li>
+<li><p>b. ភាគបែងរួម <span class="mi">\(6\)</span> ៖ <span class="mi">\(2(2x+1) - (x-2) = 12 \implies 3x + 4 = 12 \implies x = \frac{8}{3}\)</span></p></li>
+<li><p>c. ភាគបែងរួម <span class="mi">\(12\)</span> ៖ <span class="mi">\(3(3x-1) - 4(2x+3) = 1 \implies x - 15 = 1 \implies x = 16\)</span></p></li>
+<li><p>d. ភាគបែងរួម <span class="mi">\(10\)</span> ៖ <span class="mi">\(2(x+4) - 5(x-3) = x-1 \implies -3x + 23 = x - 1 \implies 4x = 24 \implies x = 6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{2x-1}{3} - \dfrac{5x+2}{6} = 1 - \dfrac{x-3}{2}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3(x-1)}{4} - \dfrac{2(x+1)}{3} = \dfrac{x+5}{6}\)</span></p></li>
+<li><p><span class="mi">\(x - \dfrac{2x-1}{3} = \dfrac{x+3}{2} - 1\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x+2}{4} - \dfrac{2x-3}{6} = \dfrac{3x+1}{12}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. ភាគបែងរួម <span class="mi">\(6\)</span> ៖ <span class="mi">\(2(2x-1) - (5x+2) = 6 - 3(x-3) \implies -x - 4 = 15 - 3x \implies 2x = 19 \implies x = 9.5\)</span></p></li>
+<li><p>b. ភាគបែងរួម <span class="mi">\(12\)</span> ៖ <span class="mi">\(9(x-1) - 8(x+1) = 2(x+5) \implies x - 17 = 2x + 10 \implies x = -27\)</span></p></li>
+<li><p>c. ភាគបែងរួម <span class="mi">\(6\)</span> ៖ <span class="mi">\(6x - 2(2x-1) = 3(x+3) - 6 \implies 2x + 2 = 3x + 3 \implies x = -1\)</span></p></li>
+<li><p>d. ភាគបែងរួម <span class="mi">\(12\)</span> ៖ <span class="mi">\(3(x+2) - 2(2x-3) = 3x+1 \implies -x + 12 = 3x + 1 \implies 4x = 11 \implies x = 2.75\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដែលអង្គទី១ ជាផលគុណកត្តា (<span class="mi">\(A \times B = 0\)</span>) ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((x - 5)(x + 2) = 0\)</span></p></li>
+<li><p><span class="mi">\((2x - 3)(x + 4) = 0\)</span></p></li>
+<li><p><span class="mi">\((3x + 1)(2x - 5) = 0\)</span></p></li>
+<li><p><span class="mi">\(x(x - 7) = 0\)</span></p></li>
+<li><p><span class="mi">\((4x - 6)(5x + 15) = 0\)</span></p></li>
+<li><p><span class="mi">\((x - \sqrt{2})(x + \sqrt{2}) = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការផលគុណស្មើសូន្យ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x = 5\)</span> ឬ <span class="mi">\(x = -2\)</span></p></li>
+<li><p>b. <span class="mi">\(x = 1.5\)</span> ឬ <span class="mi">\(x = -4\)</span></p></li>
+<li><p>c. <span class="mi">\(x = -1/3\)</span> ឬ <span class="mi">\(x = 2.5\)</span></p></li>
+<li><p>d. <span class="mi">\(x = 0\)</span> ឬ <span class="mi">\(x = 7\)</span></p></li>
+<li><p>e. <span class="mi">\(x = 1.5\)</span> ឬ <span class="mi">\(x = -3\)</span></p></li>
+<li><p>f. <span class="mi">\(x = \pm \sqrt{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការតាមវិធីទាញកត្តារួម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(x^2 - 8x = 0\)</span></p></li>
+<li><p><span class="mi">\(3x^2 + 12x = 0\)</span></p></li>
+<li><p><span class="mi">\(2x^2 - 5x = 0\)</span></p></li>
+<li><p><span class="mi">\(4x^2 = 16x\)</span></p></li>
+<li><p><span class="mi">\(5x^2 = -10x\)</span></p></li>
+<li><p><span class="mi">\(x(x + 2) = 3(x + 2)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទាញកត្តារួម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x(x-8) = 0 \implies x = 0\)</span> ឬ <span class="mi">\(x = 8\)</span></p></li>
+<li><p>b. <span class="mi">\(3x(x+4) = 0 \implies x = 0\)</span> ឬ <span class="mi">\(x = -4\)</span></p></li>
+<li><p>c. <span class="mi">\(x(2x-5) = 0 \implies x = 0\)</span> ឬ <span class="mi">\(x = 2.5\)</span></p></li>
+<li><p>d. <span class="mi">\(4x(x-4) = 0 \implies x = 0\)</span> ឬ <span class="mi">\(x = 4\)</span></p></li>
+<li><p>e. <span class="mi">\(5x(x+2) = 0 \implies x = 0\)</span> ឬ <span class="mi">\(x = -2\)</span></p></li>
+<li><p>f. <span class="mi">\((x+2)(x-3) = 0 \implies x = -2\)</span> ឬ <span class="mi">\(x = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការតាមរូបមន្ត <span class="mi">\(a^2 - b^2 = 0\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(x^2 - 49 = 0\)</span></p></li>
+<li><p><span class="mi">\(4x^2 - 25 = 0\)</span></p></li>
+<li><p><span class="mi">\(9x^2 - 1 = 0\)</span></p></li>
+<li><p><span class="mi">\((x + 1)^2 - 9 = 0\)</span></p></li>
+<li><p><span class="mi">\((2x - 3)^2 - 16 = 0\)</span></p></li>
+<li><p><span class="mi">\((3x + 2)^2 - 25 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការ <span class="mi">\(a^2-b^2 = 0\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x = \pm 7\)</span></p></li>
+<li><p>b. <span class="mi">\((2x-5)(2x+5) = 0 \implies x = \pm 2.5\)</span></p></li>
+<li><p>c. <span class="mi">\(x = \pm 1/3\)</span></p></li>
+<li><p>d. <span class="mi">\((x+1-3)(x+1+3) = 0 \implies (x-2)(x+4) = 0 \implies x = 2\)</span> ឬ <span class="mi">\(x = -4\)</span></p></li>
+<li><p>e. <span class="mi">\((2x-3-4)(2x-3+4) = 0 \implies (2x-7)(2x+1) = 0 \implies x = 3.5\)</span> ឬ <span class="mi">\(x = -0.5\)</span></p></li>
+<li><p>f. <span class="mi">\((3x+2-5)(3x+2+5) = 0 \implies (3x-3)(3x+7) = 0 \implies x = 1\)</span> ឬ <span class="mi">\(x = -7/3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការតាមវិធីដាក់ជាផលគុណកត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((2x - 1)^2 - (x + 3)^2 = 0\)</span></p></li>
+<li><p><span class="mi">\((3x + 2)^2 - (2x - 5)^2 = 0\)</span></p></li>
+<li><p><span class="mi">\((x + 4)^2 = (2x - 1)^2\)</span></p></li>
+<li><p><span class="mi">\(4(x - 1)^2 - 9(x + 2)^2 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការផលដកការេ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\([(2x-1)-(x+3)][(2x-1)+(x+3)] = (x-4)(3x+2) = 0 \implies x = 4\)</span> ឬ <span class="mi">\(x = -2/3\)</span></p></li>
+<li><p>b. <span class="mi">\((5x-3)(x+7) = 0 \implies x = 3/5\)</span> ឬ <span class="mi">\(x = -7\)</span></p></li>
+<li><p>c. <span class="mi">\((x+4)^2 - (2x-1)^2 = (-x+5)(3x+3) = 0 \implies x = 5\)</span> ឬ <span class="mi">\(x = -1\)</span></p></li>
+<li><p>d. <span class="mi">\([2(x-1)-3(x+2)][2(x-1)+3(x+2)] = (-x-8)(5x+4) = 0 \implies x = -8\)</span> ឬ <span class="mi">\(x = -4/5\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការត្រីធាដឺក្រេទីពីរដោយបំបែកតួកណ្ដាល ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 - 5x + 6 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 7x + 12 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 + 8x + 15 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 + 3x - 10 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដាក់ត្រីធាជាផលគុណកត្តា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x-2)(x-3) = 0 \implies x = 2\)</span> ឬ <span class="mi">\(x = 3\)</span></p></li>
+<li><p>b. <span class="mi">\((x-3)(x-4) = 0 \implies x = 3\)</span> ឬ <span class="mi">\(x = 4\)</span></p></li>
+<li><p>c. <span class="mi">\((x+3)(x+5) = 0 \implies x = -3\)</span> ឬ <span class="mi">\(x = -5\)</span></p></li>
+<li><p>d. <span class="mi">\((x+5)(x-2) = 0 \implies x = -5\)</span> ឬ <span class="mi">\(x = 2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការត្រីធាដឺក្រេទីពីរ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^2 - 2x - 24 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 + x - 20 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 9x + 14 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 4x - 21 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x-6)(x+4) = 0 \implies x = 6\)</span> ឬ <span class="mi">\(x = -4\)</span></p></li>
+<li><p>b. <span class="mi">\((x+5)(x-4) = 0 \implies x = -5\)</span> ឬ <span class="mi">\(x = 4\)</span></p></li>
+<li><p>c. <span class="mi">\((x-2)(x-7) = 0 \implies x = 2\)</span> ឬ <span class="mi">\(x = 7\)</span></p></li>
+<li><p>d. <span class="mi">\((x-7)(x+3) = 0 \implies x = 7\)</span> ឬ <span class="mi">\(x = -3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការត្រីធាដឺក្រេទីពីរ (<span class="mi">\(a \ne 1\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2x^2 + 5x + 2 = 0\)</span></p></li>
+<li><p><span class="mi">\(2x^2 - 7x + 3 = 0\)</span></p></li>
+<li><p><span class="mi">\(3x^2 + 10x + 3 = 0\)</span></p></li>
+<li><p><span class="mi">\(3x^2 - 8x + 4 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ (<span class="mi">\(a \ne 1\)</span>) ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((2x+1)(x+2) = 0 \implies x = -0.5\)</span> ឬ <span class="mi">\(x = -2\)</span></p></li>
+<li><p>b. <span class="mi">\((2x-1)(x-3) = 0 \implies x = 0.5\)</span> ឬ <span class="mi">\(x = 3\)</span></p></li>
+<li><p>c. <span class="mi">\((3x+1)(x+3) = 0 \implies x = -1/3\)</span> ឬ <span class="mi">\(x = -3\)</span></p></li>
+<li><p>d. <span class="mi">\((3x-2)(x-2) = 0 \implies x = 2/3\)</span> ឬ <span class="mi">\(x = 2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការត្រីធា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2x^2 + x - 6 = 0\)</span></p></li>
+<li><p><span class="mi">\(3x^2 - 5x - 2 = 0\)</span></p></li>
+<li><p><span class="mi">\(4x^2 + 4x - 3 = 0\)</span></p></li>
+<li><p><span class="mi">\(6x^2 - 7x - 3 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((2x-3)(x+2) = 0 \implies x = 1.5\)</span> ឬ <span class="mi">\(x = -2\)</span></p></li>
+<li><p>b. <span class="mi">\((3x+1)(x-2) = 0 \implies x = -1/3\)</span> ឬ <span class="mi">\(x = 2\)</span></p></li>
+<li><p>c. <span class="mi">\((2x-1)(2x+3) = 0 \implies x = 0.5\)</span> ឬ <span class="mi">\(x = -1.5\)</span></p></li>
+<li><p>d. <span class="mi">\((2x-3)(3x+1) = 0 \implies x = 1.5\)</span> ឬ <span class="mi">\(x = -1/3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដឺក្រេខ្ពស់តាមវិធីដាក់ជាផលគុណកត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x^3 - 4x = 0\)</span></p></li>
+<li><p><span class="mi">\(x^3 - 9x = 0\)</span></p></li>
+<li><p><span class="mi">\(x^3 - 3x^2 - 4x + 12 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^3 + 2x^2 - x - 2 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការដឺក្រេទី ៣ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x(x-2)(x+2) = 0 \implies x \in \{0, 2, -2\}\)</span></p></li>
+<li><p>b. <span class="mi">\(x(x-3)(x+3) = 0 \implies x \in \{0, 3, -3\}\)</span></p></li>
+<li><p>c. <span class="mi">\(x^2(x-3) - 4(x-3) = (x^2-4)(x-3) = 0 \implies x \in \{3, 2, -2\}\)</span></p></li>
+<li><p>d. <span class="mi">\(x^2(x+2) - (x+2) = (x^2-1)(x+2) = 0 \implies x \in \{-2, 1, -1\}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((x - 2)(x^2 + 3x + 2) = 0\)</span></p></li>
+<li><p><span class="mi">\((2x + 1)(x^2 - 5x + 6) = 0\)</span></p></li>
+<li><p><span class="mi">\(x^4 - 5x^2 + 4 = 0\)</span></p></li>
+<li><p><span class="mi">\(x^4 - 10x^2 + 9 = 0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((x-2)(x+1)(x+2) = 0 \implies x \in \{2, -1, -2\}\)</span></p></li>
+<li><p>b. <span class="mi">\((2x+1)(x-2)(x-3) = 0 \implies x \in \{-0.5, 2, 3\}\)</span></p></li>
+<li><p>c. <span class="mi">\((x^2-1)(x^2-4) = 0 \implies x \in \{\pm 1, \pm 2\}\)</span></p></li>
+<li><p>d. <span class="mi">\((x^2-1)(x^2-9) = 0 \implies x \in \{\pm 1, \pm 3\}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដែលមានលក្ខខណ្ឌអញ្ញាតនៅភាគបែង ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{2}{x-1} = 1\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3}{x+2} = \dfrac{2}{x-1}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x+3}{x-2} = \dfrac{x-1}{x+4}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x}{x-3} - \dfrac{6}{x-3} = 2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការមានភាគបែង ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x - 1 = 2 \implies x = 3\)</span> (យក)</p></li>
+<li><p>b. <span class="mi">\(3(x-1) = 2(x+2) \implies 3x - 3 = 2x + 4 \implies x = 7\)</span> (យក)</p></li>
+<li><p>c. <span class="mi">\((x+3)(x+4) = (x-2)(x-1) \implies x^2+7x+12 = x^2-3x+2 \implies 10x = -10 \implies x = -1\)</span> (យក)</p></li>
+<li><p>d. <span class="mi">\(2x - 6 = 2(x-3) \implies 2x - 6 = 2x - 6\)</span> (ពិតជានិច្ច លើកលែង <span class="mi">\(x = 3\)</span>) ៖ <span class="mi">\(x \in \mathbb{R} \setminus \{3\}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការសមាមាត្រ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{x^2-1}{x+1} = 4\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x^2-4}{x-2} = 5\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x^2-9}{x+3} = 2x - 1\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x^2+3x}{x+3} = x\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការសមាមាត្រ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x - 1 = 4 \implies x = 5\)</span> (យក)</p></li>
+<li><p>b. <span class="mi">\(x + 2 = 5 \implies x = 3\)</span> (យក)</p></li>
+<li><p>c. <span class="mi">\(x - 3 = 2x - 1 \implies x = -2\)</span> (យក)</p></li>
+<li><p>d. <span class="mi">\(x = x\)</span> (ពិតជានិច្ច លើកលែង <span class="mi">\(x = -3\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដែលមានរ៉ាឌីកាល់បឋម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\sqrt{2}x - 6 = 0\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{3}x + 3 = 0\)</span></p></li>
+<li><p><span class="mi">\((x - \sqrt{3})(x + \sqrt{5}) = 0\)</span></p></li>
+<li><p><span class="mi">\(x\sqrt{2} - 1 = x - \sqrt{2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការរ៉ាឌីកាល់ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x = 6/\sqrt{2} = 3\sqrt{2}\)</span></p></li>
+<li><p>b. <span class="mi">\(x = -3/\sqrt{3} = -\sqrt{3}\)</span></p></li>
+<li><p>c. <span class="mi">\(x = \sqrt{3}\)</span> ឬ <span class="mi">\(x = -\sqrt{5}\)</span></p></li>
+<li><p>d. <span class="mi">\((\sqrt{2}-1)x = 1-\sqrt{2} = -(\sqrt{2}-1) \implies x = -1\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ផលបូកនៃពីរចំនួនស្មើនឹង <span class="mi">\(84\)</span> ហើយចំនួនមួយធំជាងចំនួនមួយទៀត <span class="mi">\(16\)</span>។ ចូររកចំនួនទាំងពីរនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកពីរចំនួន ៖ តាង <span class="mi">\(x\)</span> ជាចំនួនតូច នោះចំនួនធំគឺ <span class="mi">\(x + 16\)</span>។ <span class="mi">\(x + (x + 16) = 84 \implies 2x = 68 \implies x = 34\)</span>។ ចំនួនទាំងពីរគឺ <span class="mi">\(34\)</span> និង <span class="mi">\(50\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>រកពីរចំនួនគត់គូបន្តបន្ទាប់គ្នា ដែលមានផលបូកស្មើនឹង <span class="mi">\(106\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពីរចំនួនគត់គូបន្តបន្ទាប់ ៖ <span class="mi">\(2n + (2n + 2) = 106 \implies 4n = 104 \implies n = 26\)</span>។ ចំនួនទាំងពីរគឺ <span class="mi">\(52\)</span> និង <span class="mi">\(54\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>រកបីចំនួនគត់សេសបន្តបន្ទាប់គ្នា ដែលមានផលបូកស្មើនឹង <span class="mi">\(87\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បីចំនួនគត់សេសបន្តបន្ទាប់ ៖ <span class="mi">\((2n+1) + (2n+3) + (2n+5) = 87 \implies 6n + 9 = 87 \implies 6n = 78 \implies n = 13\)</span>។ ចំនួនទាំងបីគឺ <span class="mi">\(27, 29, 31\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>បច្ចុប្បន្ន ម្ដាយមានអាយុ <span class="mi">\(36\)</span> ឆ្នាំ ហើយកូនស្រីមានអាយុ <span class="mi">\(10\)</span> ឆ្នាំ។ តើនៅប៉ុន្មានឆ្នាំទៀត ទើបអាយុម្ដាយស្មើនឹងពីរដងនៃអាយុកូនស្រី?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>អាយុម្ដាយនិងកូន ៖ តាង <span class="mi">\(x\)</span> ជាចំនួនឆ្នាំទៅមុខទៀត ៖ <span class="mi">\(36 + x = 2(10 + x) \implies 36 + x = 20 + 2x \implies x = 16\,\)</span> ឆ្នាំ ។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>បច្ចុប្បន្ន លោកតាមានអាយុ <span class="mi">\(68\)</span> ឆ្នាំ ហើយចៅប្រុសមានអាយុ <span class="mi">\(14\)</span> ឆ្នាំ។ កាលពីប៉ុន្មានឆ្នាំមុន ទើបអាយុលោករស្មើនឹង <span class="mi">\(4\)</span> ដងនៃអាយុចៅប្រុស?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>អាយុលោករនិងចៅ ៖ តាង <span class="mi">\(x\)</span> ជាចំនួនឆ្នាំកាលពីមុន ៖ <span class="mi">\(68 - x = 4(14 - x) \implies 68 - x = 56 - 4x \implies 3x = -12\)</span> (មិនសមហេតុផល ៖ <span class="mi">\(68-x = 4(14-x) \implies 3x = -12\)</span>? បើ <span class="mi">\(14 \times 4 = 56 &lt; 68\)</span>)។ កែសម្រួល <span class="mi">\(4\)</span> ដង ៖ <span class="mi">\(68-x = 4(14-x) \implies 3x = -12\)</span> (គ្មានកាលពីមុន តែបើកាល <span class="mi">\(x\)</span> ឆ្នាំមុន លោករចាស់ជាង <span class="mi">\(4\)</span> ដង)។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ចតុកោណកែងមួយមានបរិមាត្រ <span class="mi">\(56\,\text{m}\)</span>។ បើបណ្ដោយវែងជាងទទឹង <span class="mi">\(6\,\text{m}\)</span> ចូរគណនាវិមាត្រ និងផ្ទៃក្រឡានៃចតុកោណកែងនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណកែង ៖ កន្លះបរិមាត្រ <span class="mi">\(L + W = 28\)</span>។ <span class="mi">\(W + (W + 6) = 28 \implies 2W = 22 \implies W = 11\,\text{m}, L = 17\,\text{m}\)</span>។ ផ្ទៃក្រឡា <span class="mi">\(S = 17 \times 11 = 187\,\text{m}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ចតុកោណកែងមួយមានបណ្ដោយពីរដងនៃទទឹង។ បើគេបង្កើនបណ្ដោយ <span class="mi">\(3\,\text{m}\)</span> និងបន្ថយទទឹង <span class="mi">\(2\,\text{m}\)</span> នោះផ្ទៃក្រឡាថយចុះ <span class="mi">\(24\,\text{m}^2\)</span>។ គណនាវិមាត្រដើមនៃចតុកោណកែង។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណកែងដើម ៖ ទទឹងដើម <span class="mi">\(x\)</span>, បណ្ដោយ <span class="mi">\(2x\)</span> ផ្ទៃ <span class="mi">\(2x^2\)</span>។ ផ្ទៃថ្មី <span class="mi">\((2x+3)(x-2) = 2x^2 - x - 6\)</span>។ <span class="mi">\(2x^2 - (2x^2 - x - 6) = 24 \implies x + 6 = 24 \implies x = 18\,\text{m}\)</span>។ វិមាត្រដើម ៖ ទទឹង <span class="mi">\(18\,\text{m}\)</span>, បណ្ដោយ <span class="mi">\(36\,\text{m}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ត្រីកោណមួយមានជ្រុងទីពីរវែងជាងជ្រុងទីមួយ <span class="mi">\(3\,\text{cm}\)</span> និងជ្រុងទីបីវែងជាងជ្រុងទីពីរ <span class="mi">\(2\,\text{cm}\)</span>។ បើបរិមាត្រនៃត្រីកោណស្មើ <span class="mi">\(35\,\text{cm}\)</span> គណនាប្រវែងជ្រុងនីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជ្រុងត្រីកោណ ៖ <span class="mi">\(x + (x+3) + (x+5) = 35 \implies 3x + 8 = 35 \implies 3x = 27 \implies x = 9\,\text{cm}\)</span>។ ជ្រុងទាំងបីគឺ <span class="mi">\(9\,\text{cm}, 12\,\text{cm}, 14\,\text{cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ត្រីកោណកែងមួយមានរង្វាស់ជ្រុងទាំងបីជាបីចំនួនគត់បន្តបន្ទាប់គ្នា។ គណនាប្រវែងជ្រុងទាំងបីនៃត្រីកោណកែងនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ត្រីកោណកែងជ្រុងបន្តបន្ទាប់ ៖ <span class="mi">\((x+1)^2 = x^2 + (x-1)^2 \implies x^2+2x+1 = 2x^2-2x+1 \implies x^2 - 4x = 0 \implies x = 4\)</span>។ ជ្រុងទាំងបីគឺ <span class="mi">\(3, 4, 5\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ការេមួយ និងត្រីកោណសម័ង្សមួយមានបរិមាត្រស្មើគ្នា។ បើជ្រុងនៃការេខ្លីជាងជ្រុងនៃត្រីកោណសម័ង្ស <span class="mi">\(3\,\text{cm}\)</span> ចូរគណនាប្រវែងជ្រុងនៃការេ និងត្រីកោណសម័ង្ស។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការេ និងត្រីកោណសម័ង្ស ៖ តាង <span class="mi">\(c\)</span> ជាជ្រុងការេ នោះជ្រុងត្រីកោណគឺ <span class="mi">\(c + 3\)</span>។ បរិមាត្រស្មើគ្នា ៖ <span class="mi">\(4c = 3(c + 3) \implies 4c = 3c + 9 \implies c = 9\,\text{cm}\)</span>។ ជ្រុងការេគឺ <span class="mi">\(9\,\text{cm}\)</span> និងជ្រុងត្រីកោណគឺ <span class="mi">\(12\,\text{cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>រថយន្តមួយបើកបរពីទីក្រុង <span class="mi">\(A\)</span> ទៅទីក្រុង <span class="mi">\(B\)</span> ដោយល្បឿន <span class="mi">\(60\,\text{km/h}\)</span>។ ពេលត្រឡប់មកវិញ តាមផ្លូវដដែល រថយន្តបើកបរដោយល្បឿន <span class="mi">\(40\,\text{km/h}\)</span>។ រយៈពេលសរុបនៃការធ្វើដំណើរទាំងទៅទាំងមកគឺ <span class="mi">\(5\)</span> ម៉ោង។ គណនាចម្ងាយផ្លូវពី <span class="mi">\(A\)</span> ទៅ <span class="mi">\(B\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចម្ងាយផ្លូវ <span class="mi">\(A\)</span> ទៅ <span class="mi">\(B\)</span> ៖ <span class="mi">\(\frac{d}{60} + \frac{d}{40} = 5 \implies \frac{2d + 3d}{120} = 5 \implies 5d = 600 \implies d = 120\,\text{km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>រថភ្លើងពីរចេញដំណើរពីស្ថានីយពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ក្នុងពេលតែមួយឆ្ពោះមករកគ្នា។ ចម្ងាយរវាង <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ <span class="mi">\(330\,\text{km}\)</span>។ រថភ្លើងទីមួយមានល្បឿន <span class="mi">\(50\,\text{km/h}\)</span> ហើយរថភ្លើងទីពីរមានល្បឿន <span class="mi">\(60\,\text{km/h}\)</span>។ តើរថភ្លើងទាំងពីរជួបគ្នាក្រោយរយៈពេលប៉ុន្មានម៉ោង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រថភ្លើងជួបគ្នា ៖ <span class="mi">\((50 + 60)t = 330 \implies 110t = 330 \implies t = 3\,\)</span> ម៉ោង ។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>អ្នកជិះកង់ម្នាក់ចេញដំណើរពីភូមិ <span class="mi">\(A\)</span> ដោយល្បឿន <span class="mi">\(15\,\text{km/h}\)</span>។ ក្រោយមក <span class="mi">\(2\)</span> ម៉ោង អ្នកជិះម៉ូតូម្នាក់ចេញដំណើរតាមពីក្រោយដោយល្បឿន <span class="mi">\(45\,\text{km/h}\)</span>។ តើអ្នកជិះម៉ូតូត្រូវចំណាយពេលប៉ុន្មានម៉ោងទើបតាមទាន់អ្នកជិះកង់?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ម៉ូតូតាមទាន់កង់ ៖ កង់បានចេញមុន <span class="mi">\(2\)</span> ម៉ោង ៖ ចម្ងាយនាំមុខ <span class="mi">\(15 \times 2 = 30\,\text{km}\)</span>។ ល្បឿនដេញទាន់ <span class="mi">\(45 - 15 = 30\,\text{km/h}\)</span>។ រយៈពេល <span class="mi">\(t = 30 / 30 = 1\,\)</span> ម៉ោង ។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>កាណូតមួយបើកបណ្ដោយទឹកបានចម្ងាយ <span class="mi">\(48\,\text{km}\)</span> ក្នុងរយៈពេល <span class="mi">\(2\)</span> ម៉ោង ហើយបើកច្រាសទឹកក្នុងចម្ងាយដដែលត្រូវចំណាយពេល <span class="mi">\(3\)</span> ម៉ោង។ គណនាល្បឿនកាណូតក្នុងទឹកស្ងប់ និងល្បឿនចរន្តទឹក។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កាណូត ៖ <span class="mi">\(v + u = 48/2 = 24\)</span> និង <span class="mi">\(v - u = 48/3 = 16\)</span>។ <span class="mi">\(2v = 40 \implies v = 20\,\text{km/h}\)</span> (កាណូត) និង <span class="mi">\(u = 4\,\text{km/h}\)</span> (ទឹក)។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ពូសុខទិញគោ និងជ្រូកសរុបចំនួន <span class="mi">\(25\)</span> ក្បាល។ បើគេរាប់ជើងសត្វទាំងអស់ឃើញមាន <span class="mi">\(70\)</span> ជើង។ រកចំនួនគោ និងជ្រូក (ដោះស្រាយតាមសមីការមួយអថេរ)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គោ និងជ្រូក ៖ តាង <span class="mi">\(x\)</span> ជាចំនួនគោ នោះជ្រូកគឺ <span class="mi">\(25 - x\)</span> (សត្វទាំងពីរជើង ៤ ដូចគ្នា)។ បើមាន់ និងឆ្កែ ៖ មាន់ជើង ២ ឆ្កែជើង ៤។ <span class="mi">\(2x + 4(25-x) = 70 \implies -2x + 100 = 70 \implies 2x = 30 \implies x = 15\)</span> មាន់ និង <span class="mi">\(10\)</span> ឆ្កែ។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>សិស្សមួយក្រុមរៃអង្គាសប្រាក់ទិញបាល់មួយ។ បើម្នាក់ៗចូលប្រាក់ <span class="mi">\(3\,\$\)</span> នោះខ្វះប្រាក់ <span class="mi">\(4\,\$\)</span> ប៉ុន្តែបើម្នាក់ៗចូលប្រាក់ <span class="mi">\(4\,\$\)</span> នោះលើសប្រាក់ <span class="mi">\(3\,\$\)</span>។ រកចំនួនសិស្សក្នុងក្រុម និងតម្លៃបាល់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សិស្សរៃអង្គាសប្រាក់ ៖ តាង <span class="mi">\(n\)</span> ជាចំនួនសិស្ស ៖ <span class="mi">\(3n + 4 = 4n - 3 \implies n = 7\)</span> នាក់។ តម្លៃបាល់ <span class="mi">\(3(7) + 4 = 25\,\$\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>កម្មករពីរនាក់ធ្វើការងារមួយជាមួយគ្នាចប់ក្នុងរយៈពេល <span class="mi">\(6\)</span> ថ្ងៃ។ បើកម្មករទីមួយធ្វើការតែម្នាក់ឯងត្រូវចំណាយពេល <span class="mi">\(10\)</span> ថ្ងៃទើបចប់។ តើកម្មករទីពីរធ្វើការតែម្នាក់ឯងត្រូវចំណាយពេលប៉ុន្មានថ្ងៃ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កម្មករធ្វើការងារ ៖ <span class="mi">\(\frac{1}{10} + \frac{1}{x} = \frac{1}{6} \implies \frac{1}{x} = \frac{1}{6} - \frac{1}{10} = \frac{2}{30} = \frac{1}{15} \implies x = 15\,\)</span> ថ្ងៃ ។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ទុយោទឹកពីរបង្ហូរទឹកចូលអាងមួយ។ បើបើកទុយោទាំងពីរព្រមគ្នា ទឹកពេញអាងក្នុងរយៈពេល <span class="mi">\(4\)</span> ម៉ោង។ បើបើកតែទុយោទីមួយ ទឹកពេញអាងក្នុងរយៈពេល <span class="mi">\(6\)</span> ម៉ោង។ តើបើកតែទុយោទីពីរត្រូវចំណាយពេលប៉ុន្មានម៉ោងទើបពេញអាង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទុយោទឹក ៖ <span class="mi">\(\frac{1}{6} + \frac{1}{y} = \frac{1}{4} \implies \frac{1}{y} = \frac{1}{4} - \frac{1}{6} = \frac{1}{12} \implies y = 12\,\)</span> ម៉ោង ។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>អ្នកជំនួញម្នាក់បានទិញសៀវភៅមួយចំនួនអស់ប្រាក់ <span class="mi">\(120\,\$\)</span>។ បើសៀវភៅមួយក្បាលបញ្ចុះតម្លៃ <span class="mi">\(1\,\$\)</span> នោះគាត់អាចទិញបានសៀវភៅបន្ថែម <span class="mi">\(4\)</span> ក្បាលទៀតលើប្រាក់ដដែល។ រកចំនួនសៀវភៅដែលគាត់បានទិញ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទិញសៀវភៅ ៖ <span class="mi">\(\frac{120}{x-1} - \frac{120}{x} = 4 \implies \frac{120}{x(x-1)} = 4 \implies x(x-1) = 30 \implies x = 6\)</span> ក្បាល។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ពូហេងមានប្រាក់សរុប <span class="mi">\(8000\,\$\)</span>។ គាត់បានយកប្រាក់មួយផ្នែកទៅដាក់ធនាគារក្នុងអត្រាការប្រាក់ <span class="mi">\(5\%\)</span> និងប្រាក់ដែលនៅសល់ដាក់ក្នុងអត្រាការប្រាក់ <span class="mi">\(7\%\)</span> ក្នុងមួយឆ្នាំ។ ក្នុងមួយឆ្នាំគាត់ទទួលបានការប្រាក់សរុប <span class="mi">\(460\,\$\)</span>។ រកប្រាក់ដែលគាត់ដាក់ក្នុងអត្រានីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការប្រាក់ ៖ <span class="mi">\(0.05x + 0.07(8000 - x) = 460 \implies -0.02x + 560 = 460 \implies 0.02x = 100 \implies x = 5000\,\$\)</span> ក្នុងអត្រា <span class="mi">\(5\%\)</span> និង <span class="mi">\(3000\,\$\)</span> ក្នុងអត្រា <span class="mi">\(7\%\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ដោះស្រាយ និងពិភាក្សាសមីការតាមប៉ារ៉ាម៉ែត្រ <span class="mi">\(m\)</span> ៖ <div class="md">\[mx - 4 = 2x + m\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការប៉ារ៉ាម៉ែត្រ ៖ <span class="mi">\((m-2)x = m+4\)</span></p>
+<ul>
+<li><p>បើ <span class="mi">\(m \ne 2\)</span> ៖ <span class="mi">\(x = \frac{m+4}{m-2}\)</span></p></li>
+<li><p>បើ <span class="mi">\(m = 2\)</span> ៖ <span class="mi">\(0x = 6\)</span> (គ្មានឫស)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>ដោះស្រាយ និងពិភាក្សាសមីការតាមប៉ារ៉ាម៉ែត្រ <span class="mi">\(m\)</span> ៖ <div class="md">\[(m^2 - 1)x = m - 1\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការប៉ារ៉ាម៉ែត្រ ៖ <span class="mi">\((m-1)(m+1)x = m-1\)</span></p>
+<ul>
+<li><p>បើ <span class="mi">\(m \ne \pm 1\)</span> ៖ <span class="mi">\(x = \frac{1}{m+1}\)</span></p></li>
+<li><p>បើ <span class="mi">\(m = 1\)</span> ៖ <span class="mi">\(0x = 0\)</span> (ឫសរាប់មិនអស់)</p></li>
+<li><p>បើ <span class="mi">\(m = -1\)</span> ៖ <span class="mi">\(0x = -2\)</span> (គ្មានឫស)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <div class="md">\[\frac{x-a}{b+c} + \frac{x-b}{c+a} + \frac{x-c}{a+b} = 3 \quad{} (a+b, b+c, c+a \ne 0)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការស៊ីមេទ្រី ៖ ដក <span class="mi">\(1\)</span> ពីប្រភាគនីមួយៗ ៖ <span class="mi">\(\frac{x-(a+b+c)}{b+c} + \frac{x-(a+b+c)}{c+a} + \frac{x-(a+b+c)}{a+b} = 0\)</span> <div class="md">\[[x - (a+b+c)] \left( \frac{1}{b+c} + \frac{1}{c+a} + \frac{1}{a+b} \right) = 0\]</div> <div class="md">\[\implies x = a + b + c\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <div class="md">\[\frac{x+1}{99} + \frac{x+2}{98} + \frac{x+3}{97} = \frac{x+4}{96} + \frac{x+5}{95} + \frac{x+6}{94}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការបូក <span class="mi">\(1\)</span> ៖ បូក <span class="mi">\(1\)</span> លើគ្រប់ប្រភាគ ៖ <span class="mi">\(\frac{x+100}{99} + \frac{x+100}{98} + \frac{x+100}{97} = \frac{x+100}{96} + \frac{x+100}{95} + \frac{x+100}{94}\)</span> <span class="mi">\(\implies (x + 100) \times K = 0 \implies x = -100\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <div class="md">\[(x - 1)^3 + (x - 2)^3 + (x - 3)^3 = 3(x - 1)(x - 2)(x - 3)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកគូបស្មើ <span class="mi">\(3abc\)</span> ៖ <span class="mi">\(a^3+b^3+c^3 = 3abc \iff a+b+c = 0\)</span> <span class="mi">\((x-1) + (x-2) + (x-3) = 0 \implies 3x - 6 = 0 \implies x = 2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <div class="md">\[|2x - 3| = 7\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការតម្លៃដាច់ខាត ៖ <span class="mi">\(2x - 3 = 7 \implies 2x = 10 \implies x = 5\)</span> <span class="mi">\(2x - 3 = -7 \implies 2x = -4 \implies x = -2\)</span> សំណុំចម្លើយ <span class="mi">\(S = \{-2, 5\}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <div class="md">\[|x - 1| + |x - 4| = 3\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការ <span class="mi">\(|x-1| + |x-4| = 3\)</span> ៖ តាមវិសមភាពត្រីកោណ <span class="mi">\(|x-1| + |4-x| \ge |(x-1) + (4-x)| = 3\)</span>។ សមភាពកើតឡើងលុះត្រាតែ <span class="mi">\((x-1)(4-x) \ge 0 \iff 1 \le x \le 4\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <div class="md">\[|x + 2| = 2x - 1\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការ <span class="mi">\(|x+2| = 2x-1\)</span> ៖ លក្ខខណ្ឌ <span class="mi">\(2x - 1 \ge 0 \iff x \ge 0.5\)</span>។ <span class="mi">\(x + 2 = 2x - 1 \implies x = 3\)</span> (យក) <span class="mi">\(x + 2 = -(2x - 1) \implies 3x = -1 \implies x = -1/3\)</span> (មិនយក)។ ចម្លើយគឺ <span class="mi">\(x = 3\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖ <div class="md">\[(x^2 - 3x + 1)^2 - 3(x^2 - 3x + 1) + 2 = 0\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការដឺក្រេទី ៤ ៖ តាង <span class="mi">\(t = x^2 - 3x + 1\)</span> ៖ <span class="mi">\(t^2 - 3t + 2 = 0 \implies t = 1\)</span> ឬ <span class="mi">\(t = 2\)</span>។</p>
+<ul>
+<li><p><span class="mi">\(x^2 - 3x + 1 = 1 \implies x(x-3) = 0 \implies x = 0\)</span> ឬ <span class="mi">\(x = 3\)</span></p></li>
+<li><p><span class="mi">\(x^2 - 3x + 1 = 2 \implies x^2 - 3x - 1 = 0 \implies x = \frac{3 \pm \sqrt{13}}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>រកតម្លៃនៃ <span class="mi">\(k\)</span> ដើម្បីឱ្យសមីការ <span class="mi">\(x^2 - 2(k+1)x + k^2 + 5 = 0\)</span> មានឫសឌុប។ រកឫសឌុបនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការមានឫសឌុប ៖ <span class="mi">\(\Delta' = (k+1)^2 - (k^2+5) = k^2 + 2k + 1 - k^2 - 5 = 2k - 4\)</span> សមីការមានឫសឌុប <span class="mi">\(\iff \Delta' = 0 \iff 2k - 4 = 0 \iff k = 2\)</span>។ ឫសឌុបនោះគឺ <span class="mi">\(x_0 = -\frac{b'}{a} = k+1 = 2+1 = 3\)</span>។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៤ សមីការដឺក្រេទី១ មានមួយអញ្ញាត</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g09_c04">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L03.html"><small>← មេរៀនមុន</small><b>កន្សោមពីជគណិត</b></a><a class="next" href="L05.html"><small>មេរៀនបន្ទាប់ →</small><b>វិសមីការដឺក្រេទី១ មានមួយអញ្ញាត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សមីការដឺក្រេទី១ មានមួយអញ្ញាត មានទម្រង់ទូទៅ ៖", "options": ["<span class=\"mi\">\\(ax + b = 0 \\; (a \\ne 0)\\)<\/span>", "<span class=\"mi\">\\(ax^2 + bx + c = 0\\)<\/span>", "<span class=\"mi\">\\(ax + by = c\\)<\/span>", "<span class=\"mi\">\\(a + b = 0\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(2x - 8 = 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = -4\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(3x + 9 = 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 9\\)<\/span>", "<span class=\"mi\">\\(x = -3\\)<\/span>", "<span class=\"mi\">\\(x = -9\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(5x - 7 = 2x + 8\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = 7\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(4(x - 2) = 12\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 5\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 6\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(3(2x + 1) = 2(x + 5) + 1\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{x}{3} = 7\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 10\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{7}{3}\\)<\/span>", "<span class=\"mi\">\\(x = 21\\)<\/span>", "<span class=\"mi\">\\(x = 14\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{2x}{5} = 6\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 12\\)<\/span>", "<span class=\"mi\">\\(x = 10\\)<\/span>", "<span class=\"mi\">\\(x = 30\\)<\/span>", "<span class=\"mi\">\\(x = 15\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{x+1}{2} = 4\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 7\\)<\/span>", "<span class=\"mi\">\\(x = 8\\)<\/span>", "<span class=\"mi\">\\(x = 9\\)<\/span>", "<span class=\"mi\">\\(x = 6\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{2x-3}{4} = \\dfrac{x+1}{3}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 5\\)<\/span>", "<span class=\"mi\">\\(x = 6.5\\)<\/span>", "<span class=\"mi\">\\(x = 7\\)<\/span>", "<span class=\"mi\">\\(x = 6\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\((x - 3)(x + 4) = 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = -3\\)<\/span> ឬ <span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span> ឬ <span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span> ឬ <span class=\"mi\">\\(x = -4\\)<\/span>", "<span class=\"mi\">\\(x = \\pm 3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\((2x - 1)(3x + 6) = 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = -\\dfrac{1}{2}\\)<\/span> ឬ <span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span> ឬ <span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span> ឬ <span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = \\dfrac{1}{2}\\)<\/span> ឬ <span class=\"mi\">\\(x = -2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(x^2 - 16 = 0\\)<\/span> មានសំណុំចម្លើយគឺ ៖", "options": ["<span class=\"mi\">\\(S = \\{-4, 4\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{4\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{-4\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{16\\}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(x^2 - 5x = 0\\)<\/span> មានសំណុំចម្លើយគឺ ៖", "options": ["<span class=\"mi\">\\(S = \\{5\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{0, 5\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{-5, 5\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{0, -5\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(x^2 + 9 = 0\\)<\/span> មានសំណុំចម្លើយក្នុង <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(S = \\{-3, 3\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{3\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\emptyset\\)<\/span>", "<span class=\"mi\">\\(S = \\{-3\\}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(0x = 5\\)<\/span> ៖", "options": ["មានឫស <span class=\"mi\">\\(x = 0\\)<\/span>", "មានឫសរាប់មិនអស់", "មានឫស <span class=\"mi\">\\(x = 5\\)<\/span>", "គ្មានឫស (គ្មានចម្លើយ)"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(0x = 0\\)<\/span> ៖", "options": ["មានឫសរាប់មិនអស់", "គ្មានឫស", "មានឫស <span class=\"mi\">\\(x = 0\\)<\/span> តែមួយ", "គ្មានន័យ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{x}{2} + \\dfrac{x}{3} = 10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 10\\)<\/span>", "<span class=\"mi\">\\(x = 12\\)<\/span>", "<span class=\"mi\">\\(x = 15\\)<\/span>", "<span class=\"mi\">\\(x = 8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{3x}{4} - \\dfrac{x}{2} = 5\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 10\\)<\/span>", "<span class=\"mi\">\\(x = 15\\)<\/span>", "<span class=\"mi\">\\(x = 20\\)<\/span>", "<span class=\"mi\">\\(x = 25\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{x-1}{3} - \\dfrac{x-2}{4} = 1\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 10\\)<\/span>", "<span class=\"mi\">\\(x = 12\\)<\/span>", "<span class=\"mi\">\\(x = 16\\)<\/span>", "<span class=\"mi\">\\(x = 14\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\((x - 5)^2 = 0\\)<\/span> មានឫសឌុបគឺ ៖", "options": ["<span class=\"mi\">\\(x = 5\\)<\/span>", "<span class=\"mi\">\\(x = -5\\)<\/span>", "<span class=\"mi\">\\(x = \\pm 5\\)<\/span>", "<span class=\"mi\">\\(x = 25\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\((2x + 3)^2 = 25\\)<\/span> មានសំណុំចម្លើយគឺ ៖", "options": ["<span class=\"mi\">\\(S = \\{1, 4\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{1, -4\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{-1, 4\\}\\)<\/span>", "<span class=\"mi\">\\(S = \\{5, -5\\}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលបូកពីរចំនួនស្មើ <span class=\"mi\">\\(45\\)<\/span> ហើយចំនួនមួយធំជាងមួយទៀត <span class=\"mi\">\\(7\\)<\/span>។ ចំនួនតូចគឺ ៖", "options": ["<span class=\"mi\">\\(26\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(19\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បីចំនួនគត់បន្តបន្ទាប់គ្នាមានផលបូកស្មើ <span class=\"mi\">\\(72\\)<\/span>។ ចំនួនកណ្ដាលគឺ ៖", "options": ["<span class=\"mi\">\\(23\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(26\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បច្ចុប្បន្នឪពុកអាយុ <span class=\"mi\">\\(40\\)<\/span> ឆ្នាំ កូនអាយុ <span class=\"mi\">\\(10\\)<\/span> ឆ្នាំ។ រយៈពេល <span class=\"mi\">\\(x\\)<\/span> ឆ្នាំទៀតទើបអាយុឪពុកស្មើ <span class=\"mi\">\\(3\\)<\/span> ដងអាយុកូន។ តម្លៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span> ឆ្នាំ", "<span class=\"mi\">\\(4\\)<\/span> ឆ្នាំ", "<span class=\"mi\">\\(6\\)<\/span> ឆ្នាំ", "<span class=\"mi\">\\(10\\)<\/span> ឆ្នាំ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចតុកោណកែងមួយមានបណ្ដោយវែងជាងទទឹង <span class=\"mi\">\\(4\\,\\text{m}\\)<\/span> និងបរិមាត្រ <span class=\"mi\">\\(40\\,\\text{m}\\)<\/span>។ បណ្ដោយគឺ ៖", "options": ["<span class=\"mi\">\\(8\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(12\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(10\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(14\\,\\text{m}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ត្រីកោណសមបាតមួយមានមុំបាតស្មើ <span class=\"mi\">\\(50^\\circ\\)<\/span>។ រង្វាស់មុំកំពូលគឺ ៖", "options": ["<span class=\"mi\">\\(65^\\circ\\)<\/span>", "<span class=\"mi\">\\(70^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>", "<span class=\"mi\">\\(100^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(2(x - 3) + 3(x + 1) = 4(x - 2) + 7\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\((x + 2)(x - 2) = x(x + 4)\\)<\/span> មានឫស ៖", "options": ["<span class=\"mi\">\\(x = -1\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\((x - 1)^2 = (x + 3)^2\\)<\/span> មានឫស ៖", "options": ["<span class=\"mi\">\\(x = 0\\)<\/span>", "<span class=\"mi\">\\(x = -1\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{2x-1}{5} + 3 = \\dfrac{3x+2}{2}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(x^2 - 7x + 10 = 0\\)<\/span> តាមការដាក់ជាផលគុណកត្តាមានឫសគឺ ៖", "options": ["<span class=\"mi\">\\(x = -2\\)<\/span> ឬ <span class=\"mi\">\\(x = -5\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span> ឬ <span class=\"mi\">\\(x = 10\\)<\/span>", "<span class=\"mi\">\\(x = -1\\)<\/span> ឬ <span class=\"mi\">\\(x = -10\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span> ឬ <span class=\"mi\">\\(x = 5\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(x^2 + 3x - 18 = 0\\)<\/span> មានឫសគឺ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span> ឬ <span class=\"mi\">\\(x = -6\\)<\/span>", "<span class=\"mi\">\\(x = -3\\)<\/span> ឬ <span class=\"mi\">\\(x = 6\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span> ឬ <span class=\"mi\">\\(x = -9\\)<\/span>", "<span class=\"mi\">\\(x = -2\\)<\/span> ឬ <span class=\"mi\">\\(x = 9\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(2x^2 + 5x - 3 = 0\\)<\/span> មានឫសគឺ ៖", "options": ["<span class=\"mi\">\\(x = -\\dfrac{1}{2}\\)<\/span> ឬ <span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = \\dfrac{1}{2}\\)<\/span> ឬ <span class=\"mi\">\\(x = -3\\)<\/span>", "<span class=\"mi\">\\(x = 1\\)<\/span> ឬ <span class=\"mi\">\\(x = -3\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span> ឬ <span class=\"mi\">\\(x = -3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មាន់ និងឆ្កែសរុប <span class=\"mi\">\\(20\\)<\/span> ក្បាល មានជើងសរុប <span class=\"mi\">\\(56\\)<\/span> ជើង។ ចំនួនឆ្កែគឺ ៖", "options": ["<span class=\"mi\">\\(12\\)<\/span> ក្បាល", "<span class=\"mi\">\\(10\\)<\/span> ក្បាល", "<span class=\"mi\">\\(8\\)<\/span> ក្បាល", "<span class=\"mi\">\\(6\\)<\/span> ក្បាល"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មាន់ និងឆ្កែសរុប <span class=\"mi\">\\(20\\)<\/span> ក្បាល មានជើងសរុប <span class=\"mi\">\\(56\\)<\/span> ជើង។ ចំនួនមាន់គឺ ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span> ក្បាល", "<span class=\"mi\">\\(14\\)<\/span> ក្បាល", "<span class=\"mi\">\\(10\\)<\/span> ក្បាល", "<span class=\"mi\">\\(12\\)<\/span> ក្បាល"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ទិញប៊ិច <span class=\"mi\">\\(5\\)<\/span> ដើម និងសៀវភៅ <span class=\"mi\">\\(1\\)<\/span> ក្បាលថ្លៃ <span class=\"mi\">\\(2.50\\,\\$\\)<\/span>។ បើសៀវភៅមួយក្បាលថ្លៃ <span class=\"mi\">\\(1.00\\,\\$\\)<\/span> នោះប៊ិចមួយដើមថ្លៃ ៖", "options": ["<span class=\"mi\">\\(0.30\\,\\$\\)<\/span>", "<span class=\"mi\">\\(0.25\\,\\$\\)<\/span>", "<span class=\"mi\">\\(0.40\\,\\$\\)<\/span>", "<span class=\"mi\">\\(0.50\\,\\$\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "កាណូតមួយបើកបរក្នុងទឹកស្ងប់បានល្បឿន <span class=\"mi\">\\(v\\,\\text{km/h}\\)<\/span>។ បើចរន្តទឹកហូរល្បឿន <span class=\"mi\">\\(3\\,\\text{km/h}\\)<\/span> នោះល្បឿនកាណូតបណ្ដោយទឹកគឺ ៖", "options": ["<span class=\"mi\">\\(v - 3\\)<\/span>", "<span class=\"mi\">\\(v + 3\\)<\/span>", "<span class=\"mi\">\\(3v\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{v}{3}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ល្បឿនកាណូតច្រាសទឹកគឺ ៖", "options": ["<span class=\"mi\">\\(v + 3\\)<\/span>", "<span class=\"mi\">\\(3 - v\\)<\/span>", "<span class=\"mi\">\\(v - 3\\)<\/span>", "<span class=\"mi\">\\(3v\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចម្ងាយ <span class=\"mi\">\\(120\\,\\text{km}\\)<\/span> បើករថយន្តអស់ពេល <span class=\"mi\">\\(2\\)<\/span> ម៉ោង។ ល្បឿនមធ្យមនៃរថយន្តគឺ ៖", "options": ["<span class=\"mi\">\\(50\\,\\text{km/h}\\)<\/span>", "<span class=\"mi\">\\(70\\,\\text{km/h}\\)<\/span>", "<span class=\"mi\">\\(80\\,\\text{km/h}\\)<\/span>", "<span class=\"mi\">\\(60\\,\\text{km/h}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{3}{x} = \\dfrac{5}{x-2}\\)<\/span> (<span class=\"mi\">\\(x \\ne 0, x \\ne 2\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(x = -3\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = -5\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\dfrac{x+2}{x-2} = 3\\)<\/span> (<span class=\"mi\">\\(x \\ne 2\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span>", "<span class=\"mi\">\\(x = 6\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(4x^2 - 12x + 9 = 0\\)<\/span> មានឫសឌុប ៖", "options": ["<span class=\"mi\">\\(x = -\\dfrac{3}{2}\\)<\/span>", "<span class=\"mi\">\\(x = 3\\)<\/span>", "<span class=\"mi\">\\(x = \\dfrac{3}{2}\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(\\sqrt{2}x - 4 = 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = \\sqrt{2}\\)<\/span>", "<span class=\"mi\">\\(x = 4\\sqrt{2}\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 2\\sqrt{2}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ឫសនៃសមីការ <span class=\"mi\">\\(x\\sqrt{3} + 1 = x + \\sqrt{3}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(x = 1\\)<\/span>", "<span class=\"mi\">\\(x = -1\\)<\/span>", "<span class=\"mi\">\\(x = \\sqrt{3}\\)<\/span>", "<span class=\"mi\">\\(x = 0\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលបូកឫសនៃសមីការ <span class=\"mi\">\\((x - 2)(x + 5) = 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលគុណឫសនៃសមីការ <span class=\"mi\">\\((x - 2)(x + 5) = 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(x = 2\\)<\/span> ជាឫសនៃសមីការ <span class=\"mi\">\\(kx - 6 = 0\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(k\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(x = -1\\)<\/span> ជាឫសនៃសមីការ <span class=\"mi\">\\(3x + m = 5\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(m\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តួលេខពីរខ្ទង់មួយមានផលបូកខ្ទង់ស្មើ <span class=\"mi\">\\(9\\)<\/span>។ បើត្រឡប់ខ្ទង់គ្នា ចំនួនថ្មីធំជាងចំនួនចាស់ <span class=\"mi\">\\(27\\)<\/span>។ ចំនួនដើមនោះគឺ ៖", "options": ["<span class=\"mi\">\\(27\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(45\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>
