@@ -7,7 +7,7 @@
   function sequences(A) {
     var T = A.T, shape = A.shape, page = A.slide, S = A.school;
     // header / footer as in the sample deck — change them in រចនា › ក្បាល / ជើងស្លាយ
-    var info = { school: 'វិទ្យាល័យ', school2: 'ព្រះស៊ីសុវត្ថិ', school3: '(NGS)', teacher: 'បង្រៀនដោយ លោកគ្រូ ចាយ សុភា' };
+    var info = { school: 'វិទ្យាល័យ', school2: 'ព្រះស៊ីសុវត្ថិ', school3: '(NGS)', teacher: 'បង្រៀនដោយ លោកគ្រូ ខែម ពុទ្ធី' };
     var kids = function (x, y, w) { return S.kids(x, y, w); };
     // one line of text; step() is the same but appears on click
     var line = function (x, y, w, text, o) {
@@ -374,6 +374,6 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
   }
 
   window.KPSlideTemplates = [
-    { id: 'g11-sequences', ver: 2, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences }
+    { id: 'g11-sequences', ver: 3, name: '📘 ថ្នាក់ទី១១ · ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences }
   ];
 })();
