@@ -316,7 +316,7 @@
                 T(80, 190, 300, 60, '!!__ដំណោះស្រាយ__!!', { size: 32 }),
                 T(110, 260, 900, 70, '$\\Rightarrow f(1) = 2(1) - 1 = 1$', { size: 34, anim: true })].concat(SCHOOL.conclude(560, '$f(1) = 1$'))); } },
     s_quiz:   { name: '🏫 ពង្រឹងពុទ្ធិ (Quiz + ⏱)', slide: function () { return SCHOOL.quiz('១. សំណួរ ...', ['$a_n = 2n$', '$a_n = 4n - 2$', '$a_n = 3n - 1$', '$a_n = n + 1$'], 0); } },
-    s_home:   { name: '🏫 កិច្ចការផ្ទះ', slide: function () { return SCHOOL.homework('កំណត់តួទី !!$n$!! នៃស្វ៊ីតខាងក្រោម ៖\nក. $5, 7, 9, 11, \\ldots$'); } },
+    s_home:   { name: '🏫 កិច្ចការផ្ទះ', slide: function () { return SCHOOL.homework('កំណត់តួទី !!$n$!! នៃស៊ីតខាងក្រោម ៖\nក. $5, 7, 9, 11, \\ldots$'); } },
     s_thanks: { name: '🏫 សូមអរគុណ', slide: function () { return SCHOOL.thanks(); } }
   };
 
