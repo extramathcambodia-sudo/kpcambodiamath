@@ -6,7 +6,9 @@
 
   function sequences(A) {
     var T = A.T, shape = A.shape, page = A.slide, S = A.school;
-    var info = { school: 'KP', school2: 'Cambodian Mathematics', teacher: 'បង្រៀនដោយ លោកគ្រូ ...' };
+    // header / footer as in the sample deck — change them in រចនា › ក្បាល / ជើងស្លាយ
+    var info = { school: 'វិទ្យាល័យ', school2: 'ព្រះស៊ីសុវត្ថិ', school3: '(NGS)', teacher: 'បង្រៀនដោយ លោកគ្រូ ចាយ សុភា' };
+    var kids = function (x, y, w) { return S.kids(x, y, w); };
     // one line of text; step() is the same but appears on click
     var line = function (x, y, w, text, o) {
       var e = T(x, y, w, 64, text, { size: 32, valign: 'middle' });
@@ -17,7 +19,7 @@
     var solTitle = function (x, y) { return T(x || 440, y || 112, 400, 64, '!!__ដំណោះស្រាយ__!!', { size: 34, align: 'center' }); };
 
     var slides = [
-      /* 1 */ S.cover('គណិតវិទ្យា ថ្នាក់ទី១១', '==ជំពូកទី១==      មេរៀនទី១', 'ស្វ៊ីតចំនួនពិត', info),
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី១==        មេរៀនទី១', 'ស្វ៊ីតចំនួនពិត', info),
       /* 2 */ S.toc(['==១.សញ្ញាណស្វ៊ីត==', R`២.តួទី $n$ នៃស្វ៊ីត`]),
       /* 3 */ S.objective(['បង្ហាញសញ្ញាណស្វ៊ីតចំនួនពិត ស្វ៊ីតរាប់អស់ និងស្វ៊ីតអនន្តតួ', R`សរសេរតួនៃស្វ៊ីត និងកំណត់តួទី $n$ នៃស្វ៊ីត`]),
 
@@ -35,12 +37,13 @@
         line(520, 190, 600, R`$x = 1,\ 2,\ 3,\ 4,\ \ldots$`, { size: 40 }),
         line(390, 265, 700, R`គេបាន ៖    $1,\ 3,\ 5,\ 7,\ \ldots$`, { size: 36 }),
         step(200, 370, 900, '!!តើចំនួនដែលរៀបតាមលំដាប់បែបនេះ គេហៅថាអ្វី?!!', { size: 36, align: 'center' }),
-        step(560, 460, 600, '!!- ហៅថា ស្វ៊ីតចំនួនពិត ។!!', { size: 38 })
+        step(560, 460, 600, '!!- ហៅថា ស្វ៊ីតចំនួនពិត ។!!', { size: 38 }),
+        kids()
       ]),
 
       /* 6 section 1 + example 1 */ page([
-        T(40, 108, 900, 70, 'មេរៀនទី ១ ៖   ស្វ៊ីតចំនួនពិត', { size: 44, font: 'display', color: 'title' }),
-        T(40, 175, 700, 70, '១. សញ្ញាណស្វ៊ីត', { size: 44, font: 'display', color: 'accent' }),
+        T(40, 108, 900, 70, 'មេរៀនទី ១ ៖   ស្វ៊ីតចំនួនពិត', { size: 46, font: 'display', color: 'title', shadow: true }),
+        T(40, 175, 700, 70, '១. សញ្ញាណស្វ៊ីត', { size: 46, font: 'display', color: 'head', shadow: true }),
         line(80, 250, 1180, R`!!__ឧទាហរណ៍ ១ ៖__!!  - គេមានអនុគមន៍  $f : \mathbb{N} \to \mathbb{R},\ \ n \mapsto f(n) = 2n + 1$`, { size: 30 }),
         step(60, 320, 700, R`បើ $n = 1$ នោះ $f(1) = 2 \times 1 + 1 = 3$   តួទី១`, { size: 28 }),
         step(60, 385, 700, R`បើ $n = 2$ នោះ $f(2) = 2 \times 2 + 1 = 5$   តួទី២`, { size: 28 }),
@@ -68,7 +71,8 @@
           $a_1$ ជា តួទី ១ ,  $a_2$ ជា តួទី ២ , ..... ,  $a_n$ ជា តួទី $n$
           ដែល  $n \in \mathbb{N}^*,\ \ \mathbb{N}^* = \{1, 2, 3, \ldots\}$
 ករណីដែលគេឱ្យចំនួនគត់  $n = 0,\ 1,\ 2,\ 3,\ \ldots$
-នោះ ស្វ៊ីត $(a_n)$ ផ្តើមពីតួ  $a_0,\ a_1,\ a_2,\ \ldots,\ a_n$ ។`, { size: 34 })
+នោះ ស្វ៊ីត $(a_n)$ ផ្តើមពីតួ  $a_0,\ a_1,\ a_2,\ \ldots,\ a_n$ ។`, { size: 34, w: 960 }),
+        kids(1020, 430, 240)
       ]),
 
       /* 8 example 2: finite / infinite */ page([
@@ -90,13 +94,15 @@
         line(320, 380, 330, R`!!ខ.!!  $1,\ 8,\ 27,$`, { size: 40 }),
         step(650, 380, 400, R`$64,\ 125,\ 216$`, { size: 40, color: 'title' }),
         line(320, 500, 500, R`!!គ.!!  $1,\ 5,\ 14,\ 30,\ 55,$`, { size: 40 }),
-        step(820, 500, 400, R`$91,\ 140,\ 204$`, { size: 40, color: 'title' })
+        step(820, 500, 400, R`$91,\ 140,\ 204$`, { size: 40, color: 'title' }),
+        kids(1110, 530, 150)
       ]),
 
       /* 10 practice 2 */ page([
         line(360, 180, 600, '!!__លំហាត់គំរូ ២ ៖__!!', { size: 36 }),
         T(360, 260, 880, 110, R`!!១.!!  សរសេរតួនៃស្វ៊ីត $(a_n)$ កំណត់ដោយ  $a_n = \dfrac{1}{n+2}$  ដែល  $1 \le n \le 4$ ។`, { size: 32, valign: 'middle' }),
-        T(360, 410, 880, 110, R`!!២.!!  សរសេរតួនៃស្វ៊ីតតាមលំដាប់តគ្នា  $a_n = 2 + \dfrac{1}{2^n}$  ដែល  $n \in \mathbb{N}$ ។`, { size: 32, valign: 'middle' })
+        T(360, 410, 880, 110, R`!!២.!!  សរសេរតួនៃស្វ៊ីតតាមលំដាប់តគ្នា  $a_n = 2 + \dfrac{1}{2^n}$  ដែល  $n \in \mathbb{N}$ ។`, { size: 32, valign: 'middle' }),
+        kids(1110, 530, 150)
       ]),
 
       /* 11 solution 1 */ page([
@@ -120,7 +126,7 @@
       ].concat(S.conclude(560, R`ស្វ៊ីត  $(a_n)_{n \in \mathbb{N}} :\ \dfrac{5}{2},\ \dfrac{9}{4},\ \dfrac{17}{8},\ \ldots$`, 120))),
 
       /* 13 section 2 */ page([
-        T(50, 108, 700, 70, R`២. តួទី $n$ នៃស្វ៊ីត`, { size: 44, font: 'display', color: 'accent' }),
+        T(50, 108, 700, 70, R`២. តួទី $n$ នៃស្វ៊ីត`, { size: 46, font: 'display', color: 'head', shadow: true }),
         line(40, 185, 1200, R`!!__ឧទាហរណ៍ ៖__!!    កំណត់តួទី $n$ នៃស្វ៊ីត  $3,\ 5,\ 7,\ 9,\ 11,\ \ldots$   ចំពោះ  $\forall n \in \mathbb{N}^*$`, { size: 30 }),
         T(80, 270, 1100, 160, R`$$3\;\overset{+2}{\frown}\;5\;\overset{+2}{\frown}\;7\;\overset{+2}{\frown}\;9\;\overset{+2}{\frown}\;11,\ \ldots \quad\longrightarrow\quad 2n + (3 - 2) = 2n + 1$$`, { size: 34, anim: true }),
         step(160, 470, 900, R`គេបាន តួទី !!$n$!! នៃស្វ៊ីតគឺ  $a_n = 2n + 1,\ \ \forall n \in \mathbb{N}^*$`, { size: 32 })
@@ -143,7 +149,8 @@
         T(110, 120, 1080, 150, R`ដើម្បីសរសេររូបមន្តតួទី !!$n$!! នៃស្វ៊ីត គេពិនិត្យមើលតួនីមួយៗនៃស្វ៊ីត រួចរកមើលលំនាំគំរូរបស់វា ។ តួនីមួយៗនៃស្វ៊ីតជាអនុគមន៍នៃចំនួនតួ ។`, { size: 34, valign: 'middle' }),
         line(40, 320, 1200, R`!!__លំហាត់ ៖__!!     កំណត់តួទី !!$n$!! ចំពោះ $\forall n \in \mathbb{N}^*$  នៃស្វ៊ីតខាងក្រោម ៖`, { size: 32 }),
         T(270, 420, 520, 140, R`ក.  $\dfrac{2}{3},\ \dfrac{3}{4},\ \dfrac{4}{5},\ \dfrac{5}{6},\ \ldots$`, { size: 38, valign: 'middle' }),
-        T(840, 420, 420, 140, R`ខ.  $-1,\ 2,\ 7,\ 14,\ 23,\ \ldots$`, { size: 34, valign: 'middle' })
+        T(840, 420, 420, 140, R`ខ.  $-1,\ 2,\ 7,\ 14,\ 23,\ \ldots$`, { size: 34, valign: 'middle' }),
+        kids(1110, 530, 150)
       ]),
 
       /* 16 solution a */ page([
@@ -200,11 +207,11 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
       ]),
 
       /* 25 increasing / decreasing */ page([
-        T(40, 108, 560, 70, '៣. អថេរភាពនៃស្វ៊ីត', { size: 44, font: 'display', color: 'accent' }),
+        T(40, 108, 560, 70, '៣. អថេរភាពនៃស្វ៊ីត', { size: 46, font: 'display', color: 'head', shadow: true }),
         T(660, 112, 560, 64, '!!__៣.១ ស្វ៊ីតកើន - ស្វ៊ីតចុះ__!!', { size: 38 }),
         S.box(440, 190, 800, 230, R`!!__និយមន័យ ៖__!!
 ❶ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតកើន!! លុះត្រាតែ $a_{n+1} > a_n$ ឬ $a_{n+1} - a_n > 0$
-❷ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតចុះ!! លុះត្រាតែ $a_{n+1} < a_n$ ឬ $a_{n+1} - a_n < 0$`, { size: 29, valign: 'top' }),
+❷ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតចុះ!! លុះត្រាតែ $a_{n+1} < a_n$ ឬ $a_{n+1} - a_n < 0$`, { size: 27, valign: 'top' }),
         shape('rect', 60, 200, 160, 210, { fill: '#ffffff', stroke: '#dee2e6', sw: 2 }),
         shape('line', 85, 270, 120, 30, { stroke: 'title', sw: 4, rot: -45 }),
         T(60, 365, 160, 40, 'ស្វ៊ីតកើន', { size: 20, color: 'title', bold: true, align: 'center' }),
@@ -244,7 +251,8 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
         line(160, 130, 600, '!!__លំហាត់គំរូ ២ ៖__!!', { size: 36 }),
         line(160, 220, 1000, 'តើស្វ៊ីតខាងក្រោម មួយណាជាស្វ៊ីតកើន មួយណាជាស្វ៊ីតចុះ ។', { size: 36 }),
         line(160, 330, 900, R`!!ក.!! ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$  ដែល  $a_n = 2^{n-1}$`, { size: 36 }),
-        T(160, 440, 900, 120, R`!!ខ.!! ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$  ដែល  $a_n = \left(\dfrac{2}{3}\right)^{n+1}$`, { size: 36, valign: 'middle' })
+        T(160, 440, 900, 120, R`!!ខ.!! ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$  ដែល  $a_n = \left(\dfrac{2}{3}\right)^{n+1}$`, { size: 36, valign: 'middle' }),
+        kids()
       ]),
 
       /* 30 solution a */ page([
@@ -306,7 +314,8 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
         line(80, 220, 500, '!!__លំហាត់ ២ ៖__!!', { size: 36 }),
         line(80, 300, 1000, 'សិក្សាភាពម៉ូណូតូននៃស្វ៊ីតដែលកំណត់ដូចខាងក្រោម ៖', { size: 36 }),
         T(80, 390, 900, 110, R`!!ក.!!  ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$  ដែល  $a_n = \dfrac{1}{n}$`, { size: 36, valign: 'middle' }),
-        T(80, 510, 900, 110, R`!!ខ.!!  ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$  ដែល  $a_n = \dfrac{2n + 1}{n + 3}$`, { size: 36, valign: 'middle' })
+        T(80, 510, 900, 110, R`!!ខ.!!  ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$  ដែល  $a_n = \dfrac{2n + 1}{n + 3}$`, { size: 36, valign: 'middle' }),
+        kids(920, 330, 340)
       ]),
 
       /* 37 solution a */ page([
@@ -337,7 +346,8 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
 
       /* 43 */ S.thanks()
     ];
-    return { name: 'ថ្នាក់ទី១១ · មេរៀនទី១ ស្វ៊ីតចំនួនពិត', theme: 'school', school: info.school, school2: info.school2, teacher: info.teacher, slides: slides };
+    return { name: 'ថ្នាក់ទី១១ · មេរៀនទី១ ស្វ៊ីតចំនួនពិត', theme: 'school', school: info.school, school2: info.school2, school3: info.school3,
+             teacher: info.teacher, slides: slides };
   }
 
   window.KPSlideTemplates = [

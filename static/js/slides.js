@@ -18,17 +18,25 @@
     night:  { name: 'យប់', bg: '#101828', title: '#63e6be', text: '#e9ecef', accent: '#74c0fc', card: 'rgba(255,255,255,0.08)',
               deco: '<div class="sl-deco" style="left:60px;bottom:40px;width:160px;height:8px;border-radius:4px;background:#63e6be"></div>' },
     // classroom style: school name header, page badge, navy footer with the teacher's name
-    school: { name: 'គំរូសាលា', bg: '#f7f8fa', title: '#0b2e6f', text: '#13306b', accent: '#c92a2a', brand: '#f08c00', card: '#ffffff', math: '#a61e1e',
-              titleFont: true, deco: schoolDeco }
+    school: { name: 'គំរូសាលា', bg: '#f8f9fb', title: '#002060', text: '#002060', accent: '#c00000', brand: '#f68c1f', head: '#8b0000', card: '#ffffff', math: '#7f0000',
+              titleFont: true, bodyFont: "'Battambang', 'Kantumruy Pro', sans-serif", deco: schoolDeco,
+              // artwork taken from the sample deck; slide.kind picks one, header/footer text is drawn on top
+              images: { content: 'bg-content', cover: 'bg-cover', toc: 'bg-toc', goal: 'bg-goal', thanks: 'bg-thanks' } }
   };
 
+  var SCHOOL_IMG = 'static/img/slides/school/';
+  // positions follow the sample deck (1440×810 scaled to 1280×720)
   function schoolDeco(deck, sl, idx) {
-    if (sl.plain) return '';
-    var n = idx + 1;
-    return '<div class="sl-deco sl-hdr"><b style="color:#0b2e6f">' + esc(deck.school || '') + '</b> <b style="color:#f08c00">' + esc(deck.school2 || '') + '</b></div>' +
-      '<div class="sl-deco" style="left:0;top:100px;width:100%;height:3px;background:#f08c00"></div>' +
-      '<div class="sl-deco sl-badge">' + (n < 10 ? '0' : '') + n + '</div>' +
-      '<div class="sl-deco sl-ftr"><span>🎓</span><b>' + esc(deck.teacher || '') + '</b><span>📖</span></div>';
+    var kind = sl.kind || 'content';
+    if (sl.plain || kind === 'cover') return '';
+    var n = idx + 1, left = kind === 'content' ? 23 : kind === 'thanks' ? 28 : 48, top = kind === 'thanks' ? 3 : -9;
+    return '<div class="sl-deco sl-hdr" style="left:' + left + 'px;top:' + top + 'px">' + schoolName(deck) + '</div>' +
+      (kind === 'thanks' ? '' : '<div class="sl-deco sl-badge">' + (n < 10 ? '0' : '') + n + '</div>') +
+      '<div class="sl-deco sl-ftr">' + esc(deck.teacher || '') + '</div>';
+  }
+  function schoolName(d) {
+    return '<span style="color:#002060">' + esc(d.school || '') + '</span> <span style="color:#f68c1f">' + esc(d.school2 || '') + '</span>' +
+      (d.school3 ? ' <span class="sl-latin" style="color:#002060">' + esc(d.school3) + '</span>' : '');
   }
 
   var S = { store: null, deck: null, cur: 0, sel: null, edit: null, undo: [], redo: [], undoKey: '', undoT: 0,
@@ -59,7 +67,8 @@
   // colour tokens follow the theme: card / accent / brand / title / text
   function resolveFill(f) {
     var t = th();
-    return f === 'card' ? t.card : f === 'accent' ? t.accent : f === 'brand' ? (t.brand || t.accent) : f === 'title' ? t.title : f === 'text' ? t.text : f;
+    return f === 'card' ? t.card : f === 'accent' ? t.accent : f === 'brand' ? (t.brand || t.accent) : f === 'title' ? t.title : f === 'text' ? t.text :
+           f === 'head' ? (t.head || t.accent) : f;
   }
   var DISPLAY_FONT = "'Koulen', 'Kantumruy Pro', sans-serif";
   function hexOr(c, d) { return /^#[0-9a-f]{6}$/i.test(c || '') ? c : d; }
@@ -138,6 +147,8 @@
       box.style.textAlign = el.align;
       box.style.justifyContent = el.valign === 'middle' ? 'center' : el.valign === 'bottom' ? 'flex-end' : 'flex-start';
       if (display) { box.style.fontFamily = DISPLAY_FONT; box.style.lineHeight = '1.35'; }
+      if (el.lh) box.style.lineHeight = el.lh;
+      if (el.shadow) box.style.textShadow = '2px 3px 3px rgba(0,0,0,.35)';
       if (el.fill) { box.style.background = resolveFill(el.fill); box.style.padding = '14px 22px'; }
       if (el.border) { box.style.border = (el.bw || 3) + 'px solid ' + resolveFill(el.border); box.style.padding = '6px 20px'; }
       if (el.radius) box.style.borderRadius = el.radius + 'px';
@@ -170,6 +181,8 @@
     var t = th();
     st.innerHTML = '';
     st.style.background = sl.bg || t.bg;
+    if (t.images && !sl.bg && !sl.plain) st.style.background = 'url("' + SCHOOL_IMG + (t.images[sl.kind] || t.images.content) + '.jpg") center / 100% 100% no-repeat, ' + t.bg;
+    st.style.fontFamily = t.bodyFont || '';
     st.style.setProperty('--sl-accent', t.accent);
     st.style.setProperty('--sl-brand', t.brand || t.accent);
     if (t.math) st.style.setProperty('--sl-math', t.math); else st.style.removeProperty('--sl-math');
@@ -229,6 +242,7 @@
     if (d.school == null) d.school = 'KP';
     if (d.school2 == null) d.school2 = 'Cambodian Mathematics';
     if (d.teacher == null) d.teacher = 'បង្រៀនដោយ លោកគ្រូ ...';
+    if (d.school3 == null) d.school3 = '';
     return d;
   }
   function addDeck(d) { deckDefaults(d); S.store.decks[d.id] = d; S.store.current = d.id; S.deck = d; S.cur = 0; S.sel = null; S.undo = []; S.redo = []; }
@@ -252,7 +266,7 @@
     question: { name: '❓ សំណួរ + ចម្លើយ', make: function () { return questionEls('សំណួរ', 'គណនា $2 + 3 \\times 4$ ។', ['$20$', '$14$', '$24$', '$9$'], 'ខ', ''); } },
     blank:    { name: '⬜ ទទេ', make: function () { return []; } },
     // classroom layouts — designed for the «គំរូសាលា» theme (header 0–105, footer 656–720)
-    s_cover:  { name: '🏫 គម្រប (Cover)', slide: function () { return SCHOOL.cover('គណិតវិទ្យា ថ្នាក់ទី..', '==ជំពូកទី១==      មេរៀនទី១', 'ចំណងជើងមេរៀន'); } },
+    s_cover:  { name: '🏫 គម្រប (Cover)', slide: function () { return SCHOOL.cover('==គណិតវិទ្យា== ថ្នាក់ទី..', '==ជំពូកទី១==      មេរៀនទី១', 'ចំណងជើងមេរៀន'); } },
     s_toc:    { name: '🏫 មាតិកា', slide: function () { return SCHOOL.toc(['==១. ផ្នែកទី១==', '២. ផ្នែកទី២']); } },
     s_goal:   { name: '🏫 វត្ថុបំណង', slide: function () { return SCHOOL.objective(['បំណងទី ១ ...', 'បំណងទី ២ ...']); } },
     s_def:    { name: '🏫 និយមន័យ (ប្រអប់ក្រហម)', slide: function () { return SCHOOL.page([
@@ -277,7 +291,8 @@
   function timerEl(x, y, w, h, sec) { return { id: uid(), type: 'timer', x: x, y: y, w: w, h: h, sec: sec || 30 }; }
   var SCHOOL = {
     page: function (els, o) { var s = newSlide(els); for (var k in o) s[k] = o[k]; return s; },
-    heading: function (text, y) { return T(40, y || 112, 1200, 90, text, { size: 50, font: 'display', color: 'accent' }); },
+    heading: function (text, y) { return T(40, y || 112, 1200, 90, text, { size: 50, font: 'display', color: 'head', shadow: true }); },
+    kids: function (x, y, w) { w = w || 160; return { id: uid(), type: 'image', src: SCHOOL_IMG + 'students.png', x: x == null ? 961 : x, y: y == null ? 526 : y, w: w, h: Math.round(w * 414 / 560) }; },
     box: function (x, y, w, h, text, o) {
       var e = T(x, y, w, h, text, { size: 30, border: 'accent', fill: 'card', radius: 12, valign: 'middle' });
       for (var k in o) e[k] = o[k];
@@ -291,63 +306,45 @@
     cover: function (sub, chapter, title, info) {
       var d = info || S.deck || {};
       return SCHOOL.page([
-        shp('ellipse', 700, 300, 900, 700, { fill: '#dbe6f5' }),
-        shp('ellipse', 620, 560, 820, 420, { fill: 'brand' }),
-        shp('ellipse', 760, 600, 700, 400, { fill: 'title' }),
-        shp('ellipse', 940, -300, 680, 640, { fill: 'title' }),
-        shp('ellipse', 1110, -280, 420, 420, { fill: 'brand' }),
-        T(60, 40, 900, 110, (d.school || '') + ' ==' + (d.school2 || '') + '==', { size: 60, font: 'display', color: 'title' }),
-        T(70, 200, 720, 70, '==' + sub + '==', { size: 36, font: 'display', color: 'title' }),
-        T(70, 270, 820, 90, chapter, { size: 54, font: 'display', color: 'title' }),
-        T(60, 380, 860, 220, title, { size: 120, font: 'display', color: 'brand', valign: 'middle' }),
-        T(60, 620, 600, 60, d.teacher || '', { size: 26, color: 'title', bold: true })
-      ], { plain: true });
+        T(75, 0, 820, 120, (d.school || '') + ' ==' + (d.school2 || '') + '==' + (d.school3 ? ' ' + d.school3 : ''), { size: 59, font: 'display', color: 'title' }),
+        T(60, 175, 700, 60, sub, { size: 29, font: 'display', color: 'title' }),
+        T(58, 222, 720, 95, chapter, { size: 48, font: 'display', color: '#003382' }),
+        T(170, 335, 720, 210, title, { size: 102, font: 'display', color: 'brand', valign: 'middle' })
+      ], { kind: 'cover' });
     },
-    toc: function (items, quads) {
-      var q = quads || ['វិន័យ និង\nការទទួលខុសត្រូវ', 'សុវត្ថិភាព\nសិស្សគ្រប់រូប', 'ឧត្តមភាព\nក្នុងការសិក្សា', 'ឥរិយាបថ\nវិជ្ជមាន'];
-      var els = [T(40, 110, 560, 120, 'មាតិកា', { size: 96, font: 'display', color: 'title' }),
-                 T(110, 250, 620, 380, items.join('\n'), { size: 60, font: 'display', color: 'title' })];
-      [[740, 135, 'title'], [1010, 135, 'brand'], [740, 395, 'brand'], [1010, 395, 'title']].forEach(function (p, i) {
-        els.push(T(p[0], p[1], 260, 250, q[i], { fill: p[2], color: '#ffffff', size: 26, bold: true, align: 'center', valign: 'middle', radius: 30 }));
-      });
-      els.push(shp('ellipse', 935, 330, 150, 130, { fill: '#ffffff', stroke: '#f08c00', sw: 4 }));
-      els.push(T(935, 352, 150, 90, '🏫', { size: 54, align: 'center', valign: 'middle' }));
-      return SCHOOL.page(els);
+    toc: function (items) {
+      return SCHOOL.page([
+        T(15, 95, 400, 130, 'មាតិកា', { size: 70, font: 'display', color: '#00398e' }),
+        T(98, 215, 640, 420, items.join('\n'), { size: items.length > 2 ? 54 : 68, font: 'display', color: '#00398e', lh: items.length > 2 ? '1.45' : '1.6' })
+      ], { kind: 'toc' });
     },
     objective: function (items, note) {
-      var els = [T(50, 115, 520, 90, 'វត្ថុបំណង', { size: 70, font: 'display', color: 'title' }),
-                 T(50, 210, 760, 80, 'ក្រោយពីសិក្សាមេរៀននេះចប់ សិស្សទទួលបាន', { size: 44, font: 'display', color: 'brand' }),
-                 shp('rect', 100, 300, 90, 5, { fill: 'brand' })];
-      items.forEach(function (it, i) { els.push(T(100, 330 + i * 90, 660, 80, '✅  ' + it, { size: 30, valign: 'middle', italic: true, color: 'title' })); });
-      els.push(T(750, 120, 480, 72, note || 'ប្អូនៗ អាចសិក្សាបន្ថែម នៅក្នុងសៀវភៅ', { fill: 'title', color: '#ffffff', size: 26, bold: true, align: 'center', valign: 'middle', radius: 14 }));
-      els.push(T(880, 210, 280, 400, '📗\nដាក់រូបសៀវភៅ\n(បញ្ចូល › រូបភាព)', { fill: '#eef3e2', border: '#ced4da', bw: 2, size: 22, align: 'center', valign: 'middle', color: '#868e96' }));
-      return SCHOOL.page(els);
+      var els = [T(30, 100, 420, 100, 'វត្ថុបំណង', { size: 48, font: 'display', color: '#003893' }),
+                 T(30, 205, 780, 90, 'ក្រោយពីសិក្សាមេរៀននេះចប់សិស្សទទួល', { size: 43, font: 'display', color: '#ff8200' }),
+                 T(667, 98, 506, 71, note || 'ប្អូនៗ អាចសិក្សាបន្ថែម នៅក្នុងសៀវភៅ', { size: 30, font: 'display', color: '#ffffff', align: 'center', valign: 'middle' })];
+      items.slice(0, 2).forEach(function (it, i) { els.push(T(184, 322 + i * 78, 640, 70, it, { size: 30, font: 'display', color: '#002c5b', valign: 'middle' })); });
+      return SCHOOL.page(els, { kind: 'goal' });
     },
     quiz: function (q, opts, ans, sec, title) {
       var keys = ['ក', 'ខ', 'គ', 'ឃ'], els = [
-        T(200, 115, 620, 80, title || 'ពង្រឹងពុទ្ធិ', { size: 52, font: 'display', color: 'accent', align: 'center' }),
-        T(40, 200, 800, 60, '!!ចូរគូសរង្វង់ ◯ ខាងមុខចម្លើយដែលត្រឹមត្រូវ ៖!!', { size: 30, align: 'center' }),
-        T(40, 270, 820, 120, q, { size: 32 }),
-        timerEl(880, 170, 360, 230, sec || 30)];
+        T(170, 115, 600, 90, title || 'ពង្រឹងពុទ្ធិ', { size: 50, font: 'display', color: 'head', align: 'center', shadow: true }),
+        T(30, 200, 720, 60, '!!ចូរគូសរង្វង់ ◯ ខាងមុខចម្លើយដែលត្រឹមត្រូវ ៖!!', { size: 30, align: 'center' }),
+        T(30, 275, 740, 130, q, { size: 30 }),
+        timerEl(774, 157, 439, 242, sec || 30),
+        SCHOOL.kids()];
       opts.forEach(function (o, i) {
-        var x = 70 + (i % 2) * 400, y = 400 + Math.floor(i / 2) * 95;
-        els.push(T(x, y, 380, 80, '!!' + keys[i] + '.!!  ' + o, { size: 32, valign: 'middle' }));
-        if (i === ans) els.push(shp('ellipse', x - 6, y + 8, 66, 64, { fill: 'none', stroke: 'title', sw: 4, anim: true }));
+        var x = 60 + (i % 2) * 340, y = 420 + Math.floor(i / 2) * 90;
+        els.push(T(x, y, 330, 76, '!!' + keys[i] + '.!!  ' + o, { size: 32, valign: 'middle' }));
+        if (i === ans) els.push(shp('ellipse', x - 6, y + 8, 64, 62, { fill: 'none', stroke: 'title', sw: 3, anim: true }));
       });
       return SCHOOL.page(els);
     },
     homework: function (body) {
-      return SCHOOL.page([T(340, 190, 600, 110, 'កិច្ចការផ្ទះ', { size: 72, font: 'display', color: 'accent', align: 'center' }),
-                          SCHOOL.box(140, 315, 1000, 310, body, { radius: 40, size: 40 })]);
+      return SCHOOL.page([T(390, 200, 500, 100, 'កិច្ចការផ្ទះ', { size: 64, font: 'display', color: 'head', align: 'center', shadow: true }),
+                          SCHOOL.box(117, 290, 964, 300, body, { radius: 40, size: 36, bw: 3 }),
+                          SCHOOL.kids(1110, 84, 150)]);
     },
-    thanks: function () {
-      return SCHOOL.page([
-        T(50, 170, 640, 110, '==សូមអរគុណ ខិតខំរៀនសូត្រ==', { size: 60, font: 'display', align: 'center' }),
-        shp('rect', 80, 295, 580, 4, { fill: '#a5c8f0' }),
-        T(80, 320, 600, 160, 'វិន័យ ការគោរព ការទទួលខុសត្រូវ និងភាពស្មោះត្រង់ ជាតម្លៃសំខាន់ដែលជួយឱ្យសិស្សទទួលបានជោគជ័យ ទាំងក្នុង និងក្រៅថ្នាក់រៀន ។', { size: 26, bold: true, color: 'title' }),
-        T(110, 510, 520, 90, 'Together We Create', { fill: 'title', color: '#ffffff', size: 38, italic: true, align: 'center', valign: 'middle' }),
-        T(760, 140, 460, 440, '🎓\nLearn Today,\n==Lead Tomorrow!==', { size: 50, font: 'display', color: 'title', align: 'center', valign: 'middle' })]);
-    }
+    thanks: function () { return SCHOOL.page([], { kind: 'thanks' }); }
   };
   function layoutSlide(k) {
     var L = LAYOUTS[k] || LAYOUTS.content;
@@ -534,7 +531,7 @@
       return grp('ប្រធានបទ (Theme)', cards) +
         grp('ផ្ទៃស្លាយ', colorIn('bg', 'ពណ៌ផ្ទៃ') + '<div class="sl-col">' + b('bg-all', '🎨', 'អនុវត្តគ្រប់ស្លាយ') + b('bg-reset', '↺', 'តាមប្រធានបទ') + '</div>') +
         grp('ក្បាល / ជើងស្លាយ (គំរូសាលា)', '<div class="sl-col"><input class="sl-name" data-prop="school" placeholder="ឈ្មោះសាលា (ពណ៌ខៀវ)">' +
-          '<input class="sl-name" data-prop="school2" placeholder="ឈ្មោះសាលា (ពណ៌ទឹកក្រូច)"></div><div class="sl-col"><input class="sl-name" data-prop="teacher" placeholder="បង្រៀនដោយ លោកគ្រូ ...">' +
+          '<input class="sl-name" data-prop="school2" placeholder="ឈ្មោះសាលា (ពណ៌ទឹកក្រូច)"><input class="sl-name" data-prop="school3" placeholder="ឧ. (NGS)"></div><div class="sl-col"><input class="sl-name" data-prop="teacher" placeholder="បង្រៀនដោយ លោកគ្រូ ...">' +
           b('plain', '🚫', 'លាក់ក្បាល/ជើងស្លាយនេះ') + '</div>');
     },
     show: function () {
@@ -681,7 +678,7 @@
       set('rot', el.rot || 0);
     }
     set('bg', hexOr(slide().bg, '#ffffff'));
-    set('school', S.deck.school || ''); set('school2', S.deck.school2 || ''); set('teacher', S.deck.teacher || '');
+    set('school', S.deck.school || ''); set('school2', S.deck.school2 || ''); set('school3', S.deck.school3 || ''); set('teacher', S.deck.teacher || '');
     var ds = q('[data-prop="deck"]');
     if (ds) {
       ds.innerHTML = Object.keys(S.store.decks).map(function (k) { return S.store.decks[k]; })
@@ -793,7 +790,7 @@
     var p = e.target.dataset.prop; if (!p) return;
     var v = e.target.value, el = selEl();
     if (p === 'deck') { if (e.type === 'change') { switchDeck(v); renderAll(); } return; }
-    if (p === 'school' || p === 'school2' || p === 'teacher') { S.deck[p] = v; renderStage(); clearTimeout(S.thumbT); S.thumbT = setTimeout(renderThumbs, 400); save(); return; }
+    if (p === 'school' || p === 'school2' || p === 'school3' || p === 'teacher') { S.deck[p] = v; renderStage(); clearTimeout(S.thumbT); S.thumbT = setTimeout(renderThumbs, 400); save(); return; }
     if (p === 'deckname') { S.deck.name = v || 'គ្មានចំណងជើង'; root.querySelector('.sl-title').textContent = S.deck.name; save(); return; }
     if (p === 'bg') { var s = slide(); change(function () { s.bg = v; }, 'bg' + s.id); return; }
     if (!el) return;
