@@ -25,7 +25,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = os.path.join(ROOT, "khmermath-starter-demo", "lesson-g7-l01.html")
 SITE = "KPCambodianmathematics"
 # public address of the site (used in sitemap.xml / robots.txt) — change it after you choose a domain
-SITE_URL = "https://kpcambodianmathematics.netlify.app"
+SITE_URL = "https://kpcmath.netlify.app"
 KH = "០១២៣៤៥៦៧៨៩"
 
 

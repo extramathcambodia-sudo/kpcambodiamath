@@ -5,7 +5,7 @@
   var KB = window.KPBooks, books = window.KP_BOOKS || [];
   var $ = function (id) { return document.getElementById(id); };
   if (!KB || !$('ad-books')) return;
-  var SITE = 'https://kpcambodianmathematics.netlify.app';
+  var SITE = 'https://kpcmath.netlify.app';
   var kh = KB.kh, esc = KB.esc;
   function get(k, d) { try { return JSON.parse(localStorage.getItem(k) || 'null') || d; } catch (e) { return d; } }
   function put(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
