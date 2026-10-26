@@ -333,9 +333,9 @@
         timerEl(774, 157, 439, 242, sec || 30),
         SCHOOL.kids()];
       opts.forEach(function (o, i) {
-        var x = 60 + (i % 2) * 340, y = 420 + Math.floor(i / 2) * 90;
-        els.push(T(x, y, 330, 76, '!!' + keys[i] + '.!!  ' + o, { size: 32, valign: 'middle' }));
-        if (i === ans) els.push(shp('ellipse', x - 6, y + 8, 64, 62, { fill: 'none', stroke: 'title', sw: 3, anim: true }));
+        var x = 50 + (i % 2) * 350, y = 420 + Math.floor(i / 2) * 90;
+        els.push(T(x, y, 370, 76, '!!' + keys[i] + '.!!  ' + o, { size: 32, valign: 'middle' }));
+        if (i === ans) els.push(shp('ellipse', x - 10, y + 8, 54, 60, { fill: 'none', stroke: 'title', sw: 3, anim: true }));
       });
       return SCHOOL.page(els);
     },

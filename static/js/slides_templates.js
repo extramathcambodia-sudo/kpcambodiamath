@@ -16,6 +16,35 @@
       return e;
     };
     var step = function (x, y, w, text, o) { var e = line(x, y, w, text, o); e.anim = true; return e; };
+    // number line with a dot + label per term; open=true ends in "… →" (infinite sequence)
+    var numberLine = function (x, y, vals, color, open) {
+      var gap = 50, w = open ? vals.length * gap + 90 : (vals.length - 1) * gap + 30, els = [
+        shape(open ? 'arrow' : 'line', x, y - 10, w, 20, { stroke: color, sw: 3 }),
+        shape('rect', x, y - 12, 3, 24, { fill: color })];
+      if (!open) els.push(shape('rect', x + w - 3, y - 12, 3, 24, { fill: color }));
+      else els.push(T(x + 5 + vals.length * gap, y - 34, 60, 30, '. . .', { size: 20, color: color }));
+      vals.forEach(function (v, i) {
+        var cx = x + 15 + i * gap;
+        els.push(shape('ellipse', cx - 7, y - 7, 14, 14, { fill: color }));
+        els.push(T(cx - 25, y + 10, 50, 32, '$' + v + '$', { size: 20, color: color, align: 'center' }));
+      });
+      return els;
+    };
+    // small a_n–n graph card: five dots rising (up) or falling, with axes
+    var dotChart = function (x, y, up, color, label) {
+      var ox = x + 28, oy = y + 160, els = [
+        shape('rect', x, y, 170, 215, { fill: '#ffffff', stroke: '#dee2e6', sw: 2 }),
+        shape('rect', ox, y + 14, 2, oy - y - 14, { fill: '#868e96' }),
+        shape('arrow', ox, oy - 6, 130, 12, { stroke: '#868e96', sw: 2 }),
+        T(ox + 6, y + 4, 40, 28, '$a_n$', { size: 16, color: '#495057' }),
+        T(ox + 112, oy + 2, 30, 28, '$n$', { size: 16, color: '#495057' }),
+        T(x, y + 172, 170, 36, label, { size: 21, color: color, bold: true, align: 'center' })];
+      for (var i = 0; i < 5; i++) {
+        var cx = ox + 22 + i * 23, cy = up ? oy - 22 - i * 25 : oy - 122 + i * 25;
+        els.push(shape('ellipse', cx - 8, cy - 8, 16, 16, { fill: color }));
+      }
+      return els;
+    };
     var solTitle = function (x, y) { return T(x || 440, y || 112, 400, 64, '!!__ដំណោះស្រាយ__!!', { size: 34, align: 'center' }); };
 
     var slides = [
@@ -83,9 +112,8 @@
         line(40, 425, 800, R`- បើគេមានស្វ៊ីតនៃចំនួនពិត  $1,\ 2,\ 3,\ 4,\ \ldots$`, { size: 32 }),
         line(110, 495, 900, 'នោះ ស្វ៊ីតនេះជា !!ស្វ៊ីតរាប់មិនអស់ (ស្វ៊ីតអនន្តតួ)!! ។', { size: 32 }),
         S.box(100, 565, 1070, 80, '☞  !!ស្វ៊ីតអនន្តតួ!! គឺជាស្វ៊ីតដែលគេមិនអាចរាប់ចំនួនតួបាន ។', { size: 30, anim: true }),
-        shape('line', 860, 420, 380, 30, { stroke: 'title', sw: 3 }),
-        T(860, 445, 400, 40, '1     3     5     7     9    11   13   15', { size: 18, color: 'title' })
-      ]),
+      ].concat(numberLine(860, 365, [1, 3, 5, 7, 9, 11, 13, 15], 'title', false),
+               numberLine(860, 455, [1, 2, 3, 4, 5, 6], 'accent', true))),
 
       /* 9 practice 1 */ page([
         line(180, 150, 1000, '!!__លំហាត់គំរូ ១ ៖__!!    ចូរបំពេញតួនៃស្វ៊ីតខាងក្រោមនេះ ឱ្យបានបីតួទៀត', { size: 34 }),
@@ -114,7 +142,7 @@
         step(100, 495, 660, R`ចំពោះ $n = 4$ នោះ  $a_4 = \dfrac{1}{4+2} = \dfrac{1}{6}$`, { size: 28, h: 80 }),
         step(100, 575, 700, R`គេបាន តួនៃស្វ៊ីត  $(a_n)_{1 \le n \le 4} :\ \dfrac{1}{3},\ \dfrac{1}{4},\ \dfrac{1}{5},\ \dfrac{1}{6}$`, { size: 28, h: 76 }),
         step(800, 260, 200, '!!ដូចនេះ!!', { size: 32 }),
-        S.box(820, 330, 420, 110, R`ស្វ៊ីត $(a_n)_{1 \le n \le 4} :\ \dfrac{1}{3},\ \dfrac{1}{4},\ \dfrac{1}{5},\ \dfrac{1}{6}$`, { size: 28, anim: true, align: 'center' })
+        S.box(780, 330, 480, 110, R`ស្វ៊ីត $(a_n)_{1 \le n \le 4} :\ \dfrac{1}{3},\ \dfrac{1}{4},\ \dfrac{1}{5},\ \dfrac{1}{6}$`, { size: 26, anim: true, align: 'center' })
       ]),
 
       /* 12 solution 2 */ page([
@@ -141,8 +169,8 @@
         step(440, 410, 500, R`$a_4 = 9 = 2 \times 4 + 1$`, { size: 36 }),
         step(440, 470, 400, '...........................', { size: 32 }),
         step(50, 560, 650, R`តាមលំនាំគំរូ គេបាន ៖   $a_n = 2 \times n + 1$`, { size: 32 }),
-        step(720, 560, 140, '!!ដូចនេះ ៖!!', { size: 32 }),
-        S.box(870, 550, 380, 84, R`$a_n = 2n + 1,\ \forall n \in \mathbb{N}^*$`, { size: 32, anim: true, align: 'center' })
+        step(680, 560, 140, '!!ដូចនេះ ៖!!', { size: 32 }),
+        S.box(820, 550, 440, 84, R`$a_n = 2n + 1,\ \forall n \in \mathbb{N}^*$`, { size: 32, anim: true, align: 'center' })
       ]),
 
       /* 15 method + exercise */ page([
@@ -211,17 +239,12 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
         T(660, 112, 560, 64, '!!__៣.១ ស្វ៊ីតកើន - ស្វ៊ីតចុះ__!!', { size: 38 }),
         S.box(440, 190, 800, 230, R`!!__និយមន័យ ៖__!!
 ❶ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតកើន!! លុះត្រាតែ $a_{n+1} > a_n$ ឬ $a_{n+1} - a_n > 0$
-❷ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតចុះ!! លុះត្រាតែ $a_{n+1} < a_n$ ឬ $a_{n+1} - a_n < 0$`, { size: 27, valign: 'top' }),
-        shape('rect', 60, 200, 160, 210, { fill: '#ffffff', stroke: '#dee2e6', sw: 2 }),
-        shape('line', 85, 270, 120, 30, { stroke: 'title', sw: 4, rot: -45 }),
-        T(60, 365, 160, 40, 'ស្វ៊ីតកើន', { size: 20, color: 'title', bold: true, align: 'center' }),
-        shape('rect', 240, 200, 160, 210, { fill: '#ffffff', stroke: '#dee2e6', sw: 2 }),
-        shape('line', 265, 270, 120, 30, { stroke: 'accent', sw: 4, rot: 45 }),
-        T(240, 365, 160, 40, '!!ស្វ៊ីតចុះ!!', { size: 20, bold: true, align: 'center' }),
+❷ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតចុះ!! លុះត្រាតែ $a_{n+1} < a_n$ ឬ $a_{n+1} - a_n < 0$`, { size: 24, valign: 'top' })
+      ].concat(dotChart(50, 195, true, 'title', 'ស្វ៊ីតកើន'), dotChart(235, 195, false, 'accent', '!!ស្វ៊ីតចុះ!!'), [
         line(40, 440, 500, '!!__លំហាត់គំរូ ១ ៖__!!', { size: 32 }),
         line(110, 510, 1000, R`!!ក.!! បង្ហាញថា ស្វ៊ីត $(a_n)$ ដែល  $a_n = 3n + 1$  ជា ស្វ៊ីតកើន ។`, { size: 30 }),
         line(110, 580, 1000, R`!!ខ.!! បង្ហាញថា ស្វ៊ីត $(a_n)$ ដែល  $a_n = 12 - 2n$  ជា ស្វ៊ីតចុះ ។`, { size: 30 })
-      ]),
+      ])),
 
       /* 26 solution a */ page([
         solTitle(),
@@ -242,9 +265,9 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
 
       /* 28 ratio test */ page([
         line(40, 120, 800, R`❖ ចំពោះ  $a_n > 0,\ \ \forall n \in \mathbb{N}$`, { size: 34 }),
-        S.box(300, 210, 940, 260, R`❸ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតកើន!! លុះត្រាតែ  $a_{n+1} > a_n$  ឬ  $\dfrac{a_{n+1}}{a_n} > 1$
+        S.box(220, 200, 1030, 280, R`❸ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតកើន!! លុះត្រាតែ  $a_{n+1} > a_n$  ឬ  $\dfrac{a_{n+1}}{a_n} > 1$
 
-❹ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតចុះ!! លុះត្រាតែ  $a_{n+1} < a_n$  ឬ  $\dfrac{a_{n+1}}{a_n} < 1$`, { size: 36 })
+❹ ស្វ៊ីត $(a_n)_{n \in \mathbb{N}}$ ជា !!ស្វ៊ីតចុះ!! លុះត្រាតែ  $a_{n+1} < a_n$  ឬ  $\dfrac{a_{n+1}}{a_n} < 1$`, { size: 33 })
       ]),
 
       /* 29 practice 2 */ page([
