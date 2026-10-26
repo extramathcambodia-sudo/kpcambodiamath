@@ -1,0 +1,922 @@
+/* KP Slides — PowerPoint-style teaching slide maker for studio.html (#view-slides).
+   Decks are kept in localStorage; slides are 1280×720 stages with absolutely positioned
+   text / image / shape elements. Text supports $…$, $$…$$, \(…\), \[…\] (KaTeX) and **bold**. */
+(function () {
+  'use strict';
+
+  var W = 1280, H = 720, KEY = 'kp-slides-v1';
+
+  var THEMES = {
+    ocean:  { name: 'មហាសមុទ្រ', bg: 'linear-gradient(135deg,#0b3d91 0%,#1971c2 60%,#4dabf7 100%)', title: '#ffffff', text: '#e7f5ff', accent: '#ffd43b', card: 'rgba(255,255,255,0.14)' },
+    paper:  { name: 'ក្រដាសស', bg: '#ffffff', title: '#1864ab', text: '#212529', accent: '#e8590c', card: '#e7f5ff',
+              deco: '<div class="sl-deco" style="left:0;top:0;width:100%;height:14px;background:#1971c2"></div>' },
+    chalk:  { name: 'ក្តារខៀន', bg: 'radial-gradient(circle at 30% 20%,#2f5d46,#1b3a2b 70%)', title: '#fff3bf', text: '#f1f3f5', accent: '#ffd43b', card: 'rgba(255,255,255,0.10)',
+              deco: '<div class="sl-deco" style="inset:12px;border:10px solid #8d6e4a;border-radius:6px"></div>' },
+    khmer:  { name: 'ក្បាច់ខ្មែរ', bg: '#fdf6e3', title: '#8b1e1e', text: '#3b2f2f', accent: '#b8860b', card: '#f6e7c1',
+              deco: '<div class="sl-deco" style="inset:18px;border:5px double #b8860b;border-radius:10px"></div>' },
+    sunset: { name: 'ថ្ងៃលិច', bg: 'linear-gradient(135deg,#e8590c,#f59f00)', title: '#ffffff', text: '#fff9db', accent: '#1864ab', card: 'rgba(255,255,255,0.2)' },
+    night:  { name: 'យប់', bg: '#101828', title: '#63e6be', text: '#e9ecef', accent: '#74c0fc', card: 'rgba(255,255,255,0.08)',
+              deco: '<div class="sl-deco" style="left:60px;bottom:40px;width:160px;height:8px;border-radius:4px;background:#63e6be"></div>' }
+  };
+
+  var S = { store: null, deck: null, cur: 0, sel: null, edit: null, undo: [], redo: [], undoKey: '', undoT: 0,
+            scale: 1, clip: null, show: null, built: false, tab: 'home' };
+  var root, stage, holder, wrap, thumbs, ribbon, notes, statusEl;
+
+  /* ---------------- helpers ---------------- */
+  function uid() { return 'e' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+  function kh(n) { return String(n).replace(/\d/g, function (d) { return '០១២៣៤៥៦៧៨៩'[d]; }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function th() { return THEMES[S.deck.theme] || THEMES.ocean; }
+  function slide() { return S.deck.slides[S.cur]; }
+  function selEl() { if (!S.sel) return null; var s = slide(); for (var i = 0; i < s.els.length; i++) if (s.els[i].id === S.sel) return s.els[i]; return null; }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+  function T(x, y, w, h, text, o) {
+    var e = { id: uid(), type: 'text', x: x, y: y, w: w, h: h, text: text, size: 30, color: null, bold: false, italic: false,
+              align: 'left', valign: 'top', role: 'body', fill: null, radius: 0 };
+    for (var k in o) e[k] = o[k];
+    return e;
+  }
+  function newSlide(els) { return { id: uid(), bg: null, notes: '', els: els || [] }; }
+
+  function roleColor(role) {
+    var t = th();
+    return role === 'title' ? t.title : (role === 'sub' || role === 'ans') ? t.accent : t.text;
+  }
+  function resolveFill(f) { var t = th(); return f === 'card' ? t.card : f === 'accent' ? t.accent : f; }
+  function hexOr(c, d) { return /^#[0-9a-f]{6}$/i.test(c || '') ? c : d; }
+
+  /* ---------------- text formatting (KaTeX + **bold**) ---------------- */
+  var MATH_RE = /(\\begin\{([a-zA-Z]+\*?)\}[\s\S]+?\\end\{\2\}|\$\$[\s\S]+?\$\$|\\\[[\s\S]+?\\\]|\\\([\s\S]+?\\\)|\$[^$]+?\$)/g;
+  var MACROS = { '\\Am': '\\textbf{\\color{blue}✍️ ដំណោះស្រាយ៖}', '\\ans': '\\textbf{\\color{blue}✍️ ដំណោះស្រាយ៖}' };
+  function tex(src, display) {
+    if (!window.katex) return esc(src);
+    try { return katex.renderToString(src, { displayMode: display, throwOnError: false, macros: clone(MACROS) }); }
+    catch (e) { return esc(src); }
+  }
+  function plain(s) {
+    return esc(s)
+      .replace(/^#{1,4}\s*(.+)$/gm, '<b>$1</b>')
+      .replace(/^\s*\*\*\s*$/gm, '')
+      .replace(/\*\*([^*]+?)\*\*/g, '<b>$1</b>')
+      .replace(/\\q?quad\b/g, '&emsp;')
+      .replace(/\n/g, '<br>');
+  }
+  function fmt(text) {
+    text = text || ''; var out = '', last = 0;
+    text.replace(MATH_RE, function (m) {
+      var off = arguments[arguments.length - 2];
+      out += plain(text.slice(last, off));
+      if (m.slice(0, 6) === '\\begin') out += tex(m, true);
+      else if (m.slice(0, 2) === '$$' || m.slice(0, 2) === '\\[') out += tex(m.slice(2, -2), true);
+      else if (m.slice(0, 2) === '\\(') out += tex(m.slice(2, -2), false);
+      else out += tex(m.slice(1, -1), false);
+      last = off + m.length; return m;
+    });
+    return out + plain(text.slice(last));
+  }
+
+  /* ---------------- painting ---------------- */
+  function shapeSVG(el) {
+    var w = el.w, h = el.h, sw = el.sw != null ? el.sw : 0, t = th();
+    var fill = el.shape === 'line' || el.shape === 'arrow' ? 'none' : (resolveFill(el.fill) || t.accent);
+    var stroke = el.stroke || (el.shape === 'line' || el.shape === 'arrow' ? t.accent : 'none');
+    if ((el.shape === 'line' || el.shape === 'arrow') && !sw) sw = 6;
+    var a = 'fill="' + esc(fill) + '" stroke="' + esc(stroke) + '" stroke-width="' + sw + '"', b = sw / 2, body;
+    switch (el.shape) {
+      case 'ellipse': body = '<ellipse cx="' + w / 2 + '" cy="' + h / 2 + '" rx="' + Math.max(1, w / 2 - b) + '" ry="' + Math.max(1, h / 2 - b) + '" ' + a + '/>'; break;
+      case 'triangle': body = '<polygon points="' + w / 2 + ',' + b + ' ' + (w - b) + ',' + (h - b) + ' ' + b + ',' + (h - b) + '" ' + a + ' stroke-linejoin="round"/>'; break;
+      case 'line': body = '<line x1="0" y1="' + h / 2 + '" x2="' + w + '" y2="' + h / 2 + '" ' + a + ' stroke-linecap="round"/>'; break;
+      case 'arrow':
+        var hl = Math.min(w * 0.5, Math.max(18, sw * 4));
+        body = '<line x1="0" y1="' + h / 2 + '" x2="' + (w - hl * 0.8) + '" y2="' + h / 2 + '" ' + a + ' stroke-linecap="round"/>' +
+               '<polygon points="' + w + ',' + h / 2 + ' ' + (w - hl) + ',' + (h / 2 - hl * 0.6) + ' ' + (w - hl) + ',' + (h / 2 + hl * 0.6) + '" fill="' + esc(stroke) + '"/>';
+        break;
+      default:
+        var rx = el.shape === 'round' ? Math.min(28, w / 4, h / 4) : 0;
+        body = '<rect x="' + b + '" y="' + b + '" width="' + Math.max(1, w - sw) + '" height="' + Math.max(1, h - sw) + '" rx="' + rx + '" ' + a + '/>';
+    }
+    return '<svg viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' + body + '</svg>';
+  }
+
+  function buildEl(el) {
+    var d = document.createElement('div');
+    d.className = 'sl-el sl-' + el.type; d.dataset.id = el.id;
+    place(d, el);
+    if (el.op != null && el.op < 1) d.style.opacity = el.op;
+    if (el.type === 'text') {
+      var box = document.createElement('div'), inner = document.createElement('div');
+      box.className = 'sl-txt';
+      box.style.fontSize = el.size + 'px';
+      box.style.color = el.color || roleColor(el.role);
+      box.style.fontWeight = el.bold ? '700' : '400';
+      box.style.fontStyle = el.italic ? 'italic' : 'normal';
+      box.style.textAlign = el.align;
+      box.style.justifyContent = el.valign === 'middle' ? 'center' : el.valign === 'bottom' ? 'flex-end' : 'flex-start';
+      if (el.fill) { box.style.background = resolveFill(el.fill); box.style.padding = '14px 22px'; }
+      if (el.radius) box.style.borderRadius = el.radius + 'px';
+      inner.innerHTML = fmt(el.text);
+      box.appendChild(inner); d.appendChild(box);
+    } else if (el.type === 'image') {
+      var img = document.createElement('img'); img.src = el.src; img.alt = ''; img.draggable = false;
+      d.appendChild(img);
+    } else {
+      d.innerHTML = shapeSVG(el);
+    }
+    return d;
+  }
+  function place(d, el) {
+    d.style.left = el.x + 'px'; d.style.top = el.y + 'px'; d.style.width = el.w + 'px'; d.style.height = el.h + 'px';
+    d.style.transform = el.rot ? 'rotate(' + el.rot + 'deg)' : '';
+  }
+  // shrink text that overflows its box (display only — el.size is kept)
+  function fit(scope) {
+    scope.querySelectorAll('.sl-txt').forEach(function (b) {
+      var inner = b.firstChild, fs = parseFloat(b.style.fontSize), n = 0;
+      var avail = function () { var cs = getComputedStyle(b); return b.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom); };
+      while (inner.offsetHeight > avail() + 1 && fs > 12 && n++ < 80) { fs -= fs > 30 ? 2 : 1; b.style.fontSize = fs + 'px'; }
+    });
+  }
+  function paint(sl, st, mode) {
+    var t = th();
+    st.innerHTML = '';
+    st.style.background = sl.bg || t.bg;
+    if (t.deco) st.insertAdjacentHTML('beforeend', t.deco);
+    sl.els.forEach(function (el) {
+      var d = buildEl(el);
+      if (el.anim) d.classList.add(mode === 'show' ? 'sl-hidden' : 'sl-anim-mark');
+      st.appendChild(d);
+    });
+    fit(st);
+  }
+
+  /* ---------------- persistence & undo ---------------- */
+  var saveTimer;
+  function save() {
+    S.deck.updated = Date.now();
+    clearTimeout(saveTimer);
+    status('… កំពុងរក្សាទុក');
+    saveTimer = setTimeout(function () {
+      try { localStorage.setItem(KEY, JSON.stringify(S.store)); status('✓ បានរក្សាទុកក្នុងកម្មវិធីរុករក'); }
+      catch (e) { status('⚠ ទំហំផ្ទុកពេញ — សូមរក្សាទុកជាឯកសារ .json (ផ្ទាំង ឯកសារ)'); }
+    }, 350);
+  }
+  function status(t) { if (statusEl) statusEl.textContent = t; }
+
+  function pushUndoRaw(snap) {
+    S.undo.push(snap); if (S.undo.length > 60) S.undo.shift(); S.redo = []; S.undoKey = '';
+  }
+  // key: coalesce rapid edits of the same property (colour sliders, typing a size)
+  function pushUndo(key) {
+    var now = Date.now();
+    if (key && key === S.undoKey && now - S.undoT < 1200) { S.undoT = now; return; }
+    pushUndoRaw(JSON.stringify({ deck: S.deck, cur: S.cur }));
+    S.undoKey = key || ''; S.undoT = now;
+  }
+  function restore(snap) {
+    var o = JSON.parse(snap);
+    S.deck = o.deck; S.store.decks[S.deck.id] = S.deck;
+    S.cur = Math.min(o.cur, S.deck.slides.length - 1); S.sel = null;
+    renderAll(); save();
+  }
+  function undo() { if (!S.undo.length) return; commitEdit(); S.redo.push(JSON.stringify({ deck: S.deck, cur: S.cur })); restore(S.undo.pop()); S.undoKey = ''; }
+  function redo() { if (!S.redo.length) return; commitEdit(); S.undo.push(JSON.stringify({ deck: S.deck, cur: S.cur })); restore(S.redo.pop()); S.undoKey = ''; }
+  function change(fn, key) { commitEdit(); pushUndo(key); fn(); renderStage(); renderThumb(S.cur); syncRibbon(); save(); }
+
+  function load() {
+    try { S.store = JSON.parse(localStorage.getItem(KEY)); } catch (e) { S.store = null; }
+    if (!S.store || !S.store.decks) S.store = { current: null, decks: {} };
+    if (!Object.keys(S.store.decks).length) addDeck(sampleDeck());
+    S.deck = S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
+    S.store.current = S.deck.id;
+  }
+  function addDeck(d) { S.store.decks[d.id] = d; S.store.current = d.id; S.deck = d; S.cur = 0; S.sel = null; S.undo = []; S.redo = []; }
+
+  /* ---------------- layouts & sample ---------------- */
+  var LAYOUTS = {
+    title:    { name: '🏷 ស្លាយចំណងជើង', make: function () { return [
+                T(100, 200, 1080, 160, 'ចំណងជើងមេរៀន', { size: 64, bold: true, align: 'center', valign: 'middle', role: 'title' }),
+                T(100, 385, 1080, 80, 'ថ្នាក់ទី ... · គ្រូបង្រៀន ...', { size: 30, align: 'center', role: 'sub' })]; } },
+    content:  { name: '📝 ចំណងជើង + ខ្លឹមសារ', make: function () { return [
+                T(60, 40, 1160, 100, 'ចំណងជើង', { size: 46, bold: true, valign: 'middle', role: 'title' }),
+                T(60, 160, 1160, 500, '• ចំណុចទី ១\n• ចំណុចទី ២ ដែលមានរូបមន្ត $a^2 + b^2 = c^2$\n• ចំណុចទី ៣', { size: 32 })]; } },
+    two:      { name: '◫ ពីរជួរឈរ', make: function () { return [
+                T(60, 40, 1160, 100, 'ប្រៀបធៀប', { size: 46, bold: true, valign: 'middle', role: 'title' }),
+                T(60, 170, 560, 490, '**ផ្នែកទី ១**\n• ...', { size: 30, fill: 'card', radius: 18 }),
+                T(660, 170, 560, 490, '**ផ្នែកទី ២**\n• ...', { size: 30, fill: 'card', radius: 18 })]; } },
+    formula:  { name: '∑ រូបមន្ត', make: function () { return [
+                T(60, 40, 1160, 100, 'រូបមន្តសំខាន់', { size: 46, bold: true, valign: 'middle', role: 'title' }),
+                T(140, 190, 1000, 300, '$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$', { size: 44, align: 'center', valign: 'middle', fill: 'card', radius: 24 }),
+                T(140, 520, 1000, 120, 'ដែល $a \\neq 0$ និង $\\Delta = b^2 - 4ac \\geq 0$', { size: 28, align: 'center', role: 'sub' })]; } },
+    question: { name: '❓ សំណួរ + ចម្លើយ', make: function () { return questionEls('សំណួរ', 'គណនា $2 + 3 \\times 4$ ។', ['$20$', '$14$', '$24$', '$9$'], 'ខ', ''); } },
+    blank:    { name: '⬜ ទទេ', make: function () { return []; } }
+  };
+
+  function questionEls(title, q, opts, ans, ansText) {
+    var keys = ['ក', 'ខ', 'គ', 'ឃ', 'ង'], els = [
+      T(60, 30, 1160, 90, title, { size: 42, bold: true, valign: 'middle', role: 'title' }),
+      T(60, 130, 1160, 170, q, { size: 32 })];
+    opts.slice(0, 4).forEach(function (o, i) {
+      els.push(T(60 + (i % 2) * 590, 315 + Math.floor(i / 2) * 135, 570, 115, '**' + keys[i] + '.** ' + o,
+        { size: 30, valign: 'middle', fill: 'card', radius: 16, role: 'opt' }));
+    });
+    var ai = keys.indexOf(ans);
+    els.push(T(60, 600, 1160, 90, '✅ ចម្លើយ៖ **(' + ans + ')** ' + (ansText || (ai >= 0 && opts[ai]) || ''),
+      { size: 30, bold: false, valign: 'middle', fill: 'card', radius: 16, role: 'ans', anim: true }));
+    return els;
+  }
+
+  function sampleDeck() {
+    var d = { id: uid(), name: 'គំរូ — ទ្រឹស្តីបទពីតាគ័រ', theme: 'ocean', updated: Date.now(), slides: [
+      newSlide([T(100, 190, 1080, 170, 'ទ្រឹស្តីបទពីតាគ័រ', { size: 72, bold: true, align: 'center', valign: 'middle', role: 'title' }),
+                T(100, 380, 1080, 80, 'គណិតវិទ្យា ថ្នាក់ទី ៨ · ស្លាយគំរូ', { size: 32, align: 'center', role: 'sub' }),
+                T(240, 520, 800, 80, 'ចុចពីរដងលើអក្សរ ដើម្បីកែ · អូសដើម្បីផ្លាស់ទី', { size: 22, align: 'center', italic: true })]),
+      newSlide([T(60, 40, 1160, 100, 'ខ្លឹមសារមេរៀន', { size: 46, bold: true, valign: 'middle', role: 'title' }),
+                T(60, 160, 700, 500, '• ក្នុងត្រីកោណកែង ការេនៃអ៊ីប៉ូតេនុស ស្មើនឹងផលបូកការេនៃជ្រុងជាប់មុំកែងទាំងពីរ។\n\n$$c^2 = a^2 + b^2$$\n• ឧទាហរណ៍៖ $a = 3,\\ b = 4 \\Rightarrow c = 5$', { size: 30 }),
+                { id: uid(), type: 'shape', shape: 'triangle', x: 820, y: 220, w: 360, h: 300, fill: 'card', stroke: '#ffd43b', sw: 6 },
+                T(800, 540, 400, 60, '✨ ចុចដើម្បីបង្ហាញ', { size: 26, align: 'center', role: 'sub', anim: true })]),
+      newSlide(questionEls('សំណួរទី ១', 'ត្រីកោណកែងមួយមានជ្រុងជាប់មុំកែង $6$ cm និង $8$ cm ។ រកអ៊ីប៉ូតេនុស។', ['$12$ cm', '$10$ cm', '$14$ cm', '$7$ cm'], 'ខ', '$10$ cm'))
+    ] };
+    return d;
+  }
+
+  /* ---------------- lesson import ---------------- */
+  function chunks(text, max) {
+    var lines = String(text || '').split('\n'), blocks = [], cur = '';
+    var open = function (s) {
+      return (s.split('\\[').length - s.split('\\]').length) > 0 || (s.split('$$').length - 1) % 2 === 1 ||
+             (s.match(/\\begin\{/g) || []).length > (s.match(/\\end\{/g) || []).length;
+    };
+    lines.forEach(function (ln) { cur = cur ? cur + '\n' + ln : ln; if (!open(cur)) { blocks.push(cur); cur = ''; } });
+    if (cur) blocks.push(cur);
+    // display maths and line breaks take far more room than their character count
+    var cost = function (b) { return b.length + 90 * (b.match(/\$\$|\\\[|\\begin\{/g) || []).length + 25 * (b.match(/\n/g) || []).length; };
+    var out = [], acc = '', used = 0;
+    blocks.forEach(function (b) {
+      var c = cost(b) + 25;
+      if (acc && used + c > max) { out.push(acc); acc = b; used = c; } else { acc = acc ? acc + '\n' + b : b; used += c; }
+    });
+    if (acc) out.push(acc);
+    return out.map(function (s) { return s.replace(/^\s+|\s+$/g, ''); }).filter(Boolean);
+  }
+  function contentSlide(title, body) {
+    return newSlide([T(60, 36, 1160, 100, title, { size: 44, bold: true, valign: 'middle', role: 'title' }),
+                     T(60, 150, 1160, 530, body, { size: 30 })]);
+  }
+  function part(title, i, n) { return n > 1 ? title + ' (' + kh(i + 1) + '/' + kh(n) + ')' : title; }
+
+  function lessonSlides(g, L, o) {
+    var out = [], gname = 'ថ្នាក់ទី ' + kh(g);
+    out.push(newSlide([T(100, 170, 1080, 200, 'មេរៀនទី ' + kh(L.num) + '\n' + L.title, { size: 62, bold: true, align: 'center', valign: 'middle', role: 'title' }),
+                       T(100, 395, 1080, 80, gname + (L.category ? ' · ' + L.category : ''), { size: 32, align: 'center', role: 'sub' })]));
+    if (o.theory) {
+      var secs = L.theorySections || [];
+      if (secs.length) secs.forEach(function (s) {
+        var c = chunks(s.content, 640); c.forEach(function (b, i) { out.push(contentSlide(part(s.title, i, c.length), b)); });
+      });
+      else if (L.summary) { var c = chunks(L.summary, 640); c.forEach(function (b, i) { out.push(contentSlide(part('សេចក្តីសង្ខេប', i, c.length), b)); }); }
+    }
+    if (o.formulas && L.formulas && L.formulas.length) {
+      for (var i = 0; i < L.formulas.length; i += 3) {
+        var els = [T(60, 30, 1160, 90, part('រូបមន្តសំខាន់', i / 3, Math.ceil(L.formulas.length / 3)), { size: 42, bold: true, valign: 'middle', role: 'title' })];
+        L.formulas.slice(i, i + 3).forEach(function (f, j) {
+          els.push(T(60, 135 + j * 190, 1160, 175, '**' + (f.name || '') + '**\n' + (f.math || '') + (f.desc ? '\n' + f.desc : ''),
+            { size: 26, align: 'center', valign: 'middle', fill: 'card', radius: 18 }));
+        });
+        out.push(newSlide(els));
+      }
+    }
+    if (o.examples) (L.examples || []).forEach(function (ex, i) {
+      out.push(contentSlide(ex.title || 'ឧទាហរណ៍ទី ' + kh(i + 1), ex.question || ''));
+      var c = chunks(ex.solution, 640);
+      c.forEach(function (b, j) { out.push(contentSlide(part('✍️ ដំណោះស្រាយ', j, c.length), b)); });
+    });
+    if (o.q > 0) {
+      var bank = (window.MATH_DATA && MATH_DATA.questionBank) || [];
+      var pre = 'q_g' + (g < 10 ? '0' : '') + g + '_c' + (L.num < 10 ? '0' : '') + L.num + '_';
+      var qs = bank.filter(function (q) { return q.options && q.options.length >= 2 && q.id && q.id.indexOf(pre) === 0; });
+      if (!qs.length) qs = bank.filter(function (q) { return q.options && q.grade == g && String(q.chapter || '').indexOf(L.title) >= 0; });
+      qs.slice(0, o.q).forEach(function (q, k) {
+        var opt = q.options.map(function (x) { return x.text; }), ai = -1;
+        q.options.forEach(function (x, j) { if (x.key === q.answer) ai = j; });
+        out.push(newSlide(questionEls('សំណួរទី ' + kh(k + 1), q.question, opt, q.answer, ai >= 0 ? opt[ai] : '')));
+      });
+    }
+    out.push(newSlide([T(100, 230, 1080, 150, 'សូមអរគុណ! 🙏', { size: 72, bold: true, align: 'center', valign: 'middle', role: 'title' }),
+                       T(100, 400, 1080, 80, 'មានសំណួរ ឬចម្ងល់ទេ?', { size: 34, align: 'center', role: 'sub' })]));
+    return out;
+  }
+
+  function openLessonDialog() {
+    var D = window.MATH_DATA;
+    if (!D || !D.lessons) { alert('រកមិនឃើញទិន្នន័យមេរៀន (math_data.js)'); return; }
+    var grades = Object.keys(D.lessons).sort(function (a, b) { return a - b; });
+    var bg = document.createElement('div');
+    bg.className = 'sl-modal-bg';
+    bg.innerHTML = '<div class="sl-modal"><h3>📚 បង្កើតស្លាយពីមេរៀន</h3>' +
+      '<label>ថ្នាក់<select id="sl-li-g">' + grades.map(function (g) { return '<option value="' + g + '">ថ្នាក់ទី ' + kh(g) + '</option>'; }).join('') + '</select></label>' +
+      '<label>មេរៀន<select id="sl-li-l"></select></label>' +
+      '<div class="sl-checks"><label><input type="checkbox" id="sl-li-t" checked> ទ្រឹស្តី</label>' +
+      '<label><input type="checkbox" id="sl-li-f" checked> រូបមន្ត</label>' +
+      '<label><input type="checkbox" id="sl-li-e" checked> ឧទាហរណ៍ + ដំណោះស្រាយ</label>' +
+      '<label>សំណួរ MCQ <input type="number" id="sl-li-q" value="5" min="0" max="30" style="width:60px"></label></div>' +
+      '<div class="sl-checks"><label><input type="radio" name="sl-li-m" value="new" checked> ឯកសារថ្មី</label>' +
+      '<label><input type="radio" name="sl-li-m" value="append"> បន្ថែមក្រោយស្លាយបច្ចុប្បន្ន</label></div>' +
+      '<div class="sl-modal-foot"><button class="sl-btn" data-x="cancel">បោះបង់</button><button class="sl-btn sl-primary" data-x="ok">បង្កើតស្លាយ ➔</button></div></div>';
+    document.body.appendChild(bg);
+    var gs = bg.querySelector('#sl-li-g'), ls = bg.querySelector('#sl-li-l');
+    var fill = function () {
+      ls.innerHTML = (D.lessons[gs.value] || []).map(function (L, i) { return '<option value="' + i + '">មេរៀនទី ' + kh(L.num) + ' · ' + esc(L.title) + '</option>'; }).join('');
+    };
+    var cg = typeof currentGrade !== 'undefined' ? currentGrade : null; // studio.html global
+    if (cg && D.lessons[cg]) gs.value = String(cg);
+    fill(); gs.onchange = fill;
+    bg.addEventListener('click', function (e) {
+      var x = e.target.getAttribute('data-x');
+      if (e.target === bg || x === 'cancel') { bg.remove(); return; }
+      if (x !== 'ok') return;
+      var g = +gs.value, L = D.lessons[gs.value][+ls.value];
+      if (!L) return;
+      var made = lessonSlides(g, L, { theory: bg.querySelector('#sl-li-t').checked, formulas: bg.querySelector('#sl-li-f').checked,
+                                      examples: bg.querySelector('#sl-li-e').checked, q: Math.max(0, +bg.querySelector('#sl-li-q').value || 0) });
+      var mode = bg.querySelector('input[name="sl-li-m"]:checked').value;
+      bg.remove(); commitEdit();
+      if (mode === 'new') addDeck({ id: uid(), name: 'ថ្នាក់ទី ' + kh(g) + ' · មេរៀនទី ' + kh(L.num) + ' ' + L.title, theme: S.deck ? S.deck.theme : 'ocean', updated: Date.now(), slides: made });
+      else { pushUndo(); Array.prototype.splice.apply(S.deck.slides, [S.cur + 1, 0].concat(made)); S.cur++; S.sel = null; }
+      renderAll(); save();
+      status('✓ បានបង្កើត ' + kh(made.length) + ' ស្លាយ');
+    });
+  }
+
+  /* ---------------- UI build ---------------- */
+  function b(act, ic, label, o) {
+    o = o || {};
+    return '<button class="sl-btn' + (o.big ? ' big' : '') + (o.cls ? ' ' + o.cls : '') + '" data-act="' + act + '"' + (o.v ? ' data-v="' + o.v + '"' : '') +
+           ' title="' + esc(o.title || label) + '"><span class="ic">' + ic + '</span>' + (label ? '<span>' + label + '</span>' : '') + '</button>';
+  }
+  function grp(label, body, ctx) { return '<div class="sl-grp' + (ctx ? ' sl-ctx' : '') + '"><div class="sl-grp-body">' + body + '</div><div class="sl-grp-label">' + label + '</div></div>'; }
+  function colorIn(prop, title) { return '<label class="sl-color" title="' + title + '"><input type="color" data-prop="' + prop + '"><span>' + title + '</span></label>'; }
+
+  var PANELS = {
+    home: function () {
+      return grp('ស្លាយ', b('new', '➕', 'ស្លាយថ្មី ▾', { big: true }) + '<div class="sl-col">' + b('dup-slide', '📑', 'ចម្លង') + b('del-slide', '🗑', 'លុប') + '</div>') +
+        grp('អក្សរ', b('size-dn', 'A−', '', { title: 'បន្ថយទំហំ' }) + '<input class="sl-num" type="number" min="8" max="200" data-prop="size" title="ទំហំអក្សរ">' +
+          b('size-up', 'A+', '', { title: 'បង្កើនទំហំ' }) + b('bold', '<b>B</b>', '', { title: 'ដិត (Ctrl+B)' }) + b('italic', '<i>I</i>', '', { title: 'ទ្រេត (Ctrl+I)' }) +
+          colorIn('color', 'ពណ៌អក្សរ'), true) +
+        grp('តម្រឹម', b('align', '⇤', '', { v: 'left', title: 'ឆ្វេង' }) + b('align', '↔', '', { v: 'center', title: 'កណ្តាល' }) + b('align', '⇥', '', { v: 'right', title: 'ស្តាំ' }) +
+          '<span class="sl-sep"></span>' + b('valign', '⤒', '', { v: 'top', title: 'ខាងលើ' }) + b('valign', '⇕', '', { v: 'middle', title: 'កណ្តាលបញ្ឈរ' }) + b('valign', '⤓', '', { v: 'bottom', title: 'ខាងក្រោម' }), true) +
+        grp('រូបរាង', colorIn('fill', 'ផ្ទៃ') + b('nofill', '⊘', '', { title: 'គ្មានផ្ទៃ' }) + colorIn('stroke', 'បន្ទាត់') +
+          '<select class="sl-sel-in" data-prop="sw" title="កម្រាស់បន្ទាត់"><option value="0">0</option><option value="2">2</option><option value="4">4</option><option value="6">6</option><option value="10">10</option><option value="16">16</option></select>' +
+          '<input class="sl-num" type="number" step="15" data-prop="rot" title="បង្វិល (ដឺក្រេ)" placeholder="°">', true) +
+        grp('ចលនា', b('anim', '✨', 'បង្ហាញពេលចុច', { title: 'ធាតុនេះលាក់ ហើយបង្ហាញនៅពេលចុចក្នុងពេលបញ្ចាំង' }), true) +
+        grp('រៀបចំ', b('front', '⬆', 'មុខ', { title: 'នាំមកមុខ' }) + b('back', '⬇', 'ក្រោយ', { title: 'បញ្ជូនទៅក្រោយ' }) +
+          b('dup-el', '⧉', 'ចម្លង', { title: 'ចម្លងធាតុ (Ctrl+D)' }) + b('del-el', '✕', 'លុប', { title: 'លុបធាតុ (Delete)' }), true) +
+        grp('កែ', b('undo', '↶', '', { title: 'ថយក្រោយ (Ctrl+Z)' }) + b('redo', '↷', '', { title: 'ធ្វើវិញ (Ctrl+Y)' }));
+    },
+    insert: function () {
+      return grp('អត្ថបទ', b('ins-text', '🅣', 'ប្រអប់អក្សរ', { big: true }) + b('ins-title', '🔠', 'ចំណងជើង', { big: true }) + b('ins-math', '∑', 'រូបមន្ត', { big: true })) +
+        grp('រូបភាព', b('ins-img', '🖼', 'រូបភាព', { big: true, title: 'បញ្ចូលរូបភាព (ឬ Ctrl+V បិទភ្ជាប់)' })) +
+        grp('រាង', b('ins-shape', '▭', '', { v: 'rect', title: 'ចតុកោណ' }) + b('ins-shape', '▢', '', { v: 'round', title: 'ចតុកោណជ្រុងមូល' }) +
+          b('ins-shape', '◯', '', { v: 'ellipse', title: 'រង្វង់ / អេលីប' }) + b('ins-shape', '△', '', { v: 'triangle', title: 'ត្រីកោណ' }) +
+          b('ins-shape', '─', '', { v: 'line', title: 'បន្ទាត់' }) + b('ins-shape', '➜', '', { v: 'arrow', title: 'ព្រួញ' })) +
+        grp('មេរៀន', b('lesson', '📚', 'បង្កើតពីមេរៀន', { big: true, title: 'បង្កើតស្លាយដោយស្វ័យប្រវត្តិពីមេរៀន និងធនាគារសំណួរ' }) +
+          b('add-layout', '❓', 'ស្លាយសំណួរ', { big: true, v: 'question' }) + b('add-layout', '∑', 'ស្លាយរូបមន្ត', { big: true, v: 'formula' }));
+    },
+    design: function () {
+      var cards = Object.keys(THEMES).map(function (k) {
+        var t = THEMES[k];
+        return '<button class="sl-theme" data-act="theme" data-v="' + k + '" title="' + t.name + '"><span class="sl-theme-sw" style="background:' + t.bg + '">' +
+               '<b style="color:' + t.title + '">Aa</b><i style="background:' + t.accent + '"></i></span><span>' + t.name + '</span></button>';
+      }).join('');
+      return grp('ប្រធានបទ (Theme)', cards) +
+        grp('ផ្ទៃស្លាយ', colorIn('bg', 'ពណ៌ផ្ទៃ') + '<div class="sl-col">' + b('bg-all', '🎨', 'អនុវត្តគ្រប់ស្លាយ') + b('bg-reset', '↺', 'តាមប្រធានបទ') + '</div>');
+    },
+    show: function () {
+      return grp('ចាប់ផ្តើម', b('show-start', '▶', 'ពីដើម (F5)', { big: true }) + b('show-cur', '▷', 'ពីស្លាយនេះ', { big: true, title: 'Shift+F5' })) +
+        grp('គន្លឹះពេលបញ្ចាំង', '<div class="sl-tips">→ / Space / ចុច៖ បន្ទាប់ · ←៖ ថយក្រោយ<br>P៖ ប៊ិចគូស · E៖ លុបគំនូរ · B៖ អេក្រង់ខ្មៅ · Esc៖ ចេញ</div>');
+    },
+    file: function () {
+      return grp('បទបង្ហាញ', '<select class="sl-sel-in sl-deck" data-prop="deck" title="ជ្រើសឯកសារ"></select>' +
+          '<input class="sl-name" data-prop="deckname" placeholder="ឈ្មោះបទបង្ហាញ">' + b('new-deck', '🆕', 'ថ្មី') + b('del-deck', '🗑', 'លុប')) +
+        grp('នាំចេញ / នាំចូល', b('export', '💾', 'រក្សាទុក .json', { big: true, title: 'ទាញយកជាឯកសារ ដើម្បីរក្សាទុក ឬចែករំលែក' }) +
+          b('import', '📂', 'បើក .json', { big: true }) + b('print', '🖨', 'បោះពុម្ព / PDF', { big: true, title: 'ជ្រើស «Save as PDF» ក្នុងប្រអប់បោះពុម្ព' }));
+    }
+  };
+
+  function build() {
+    root = document.getElementById('view-slides');
+    root.innerHTML =
+      '<div class="sl-app">' +
+        '<div class="sl-tabs">' +
+          ['home:ទំព័រដើម', 'insert:បញ្ចូល', 'design:រចនា', 'show:បញ្ចាំង', 'file:ឯកសារ'].map(function (s) {
+            s = s.split(':'); return '<button class="sl-tab" data-tab="' + s[0] + '">' + s[1] + '</button>';
+          }).join('') +
+          '<div class="sl-tabs-r"><span class="sl-title"></span>' +
+          '<button class="sl-play" data-act="show-cur" title="បញ្ចាំងពីស្លាយនេះ">▶ បញ្ចាំង</button></div>' +
+        '</div>' +
+        '<div class="sl-ribbon"></div>' +
+        '<div class="sl-body">' +
+          '<div class="sl-thumbs"></div>' +
+          '<div class="sl-center"><div class="sl-wrap"><div class="sl-holder"><div class="sl-stage sl-edit-stage"></div></div></div>' +
+            '<textarea class="sl-notes" placeholder="កំណត់ចំណាំគ្រូ (Speaker notes) — មិនបង្ហាញពេលបញ្ចាំង"></textarea>' +
+            '<div class="sl-status"><span class="sl-count"></span><span class="sl-st"></span></div></div>' +
+        '</div>' +
+        '<input type="file" accept="image/*" class="sl-f-img" hidden><input type="file" accept=".json,application/json" class="sl-f-json" hidden>' +
+      '</div>';
+    stage = root.querySelector('.sl-edit-stage'); holder = root.querySelector('.sl-holder'); wrap = root.querySelector('.sl-wrap');
+    thumbs = root.querySelector('.sl-thumbs'); ribbon = root.querySelector('.sl-ribbon'); notes = root.querySelector('.sl-notes');
+    statusEl = root.querySelector('.sl-st');
+
+    root.addEventListener('click', onClick);
+    root.addEventListener('input', onInput);
+    root.addEventListener('change', onInput);
+    stage.addEventListener('pointerdown', onStageDown);
+    stage.addEventListener('dblclick', function (e) { if (e.target.closest('textarea')) return; var d = e.target.closest('.sl-el'); if (d) startEdit(d.dataset.id); });
+    notes.addEventListener('input', function () { pushUndo('notes'); slide().notes = notes.value; save(); });
+    root.querySelector('.sl-f-img').addEventListener('change', function (e) { if (e.target.files[0]) addImageFile(e.target.files[0]); e.target.value = ''; });
+    root.querySelector('.sl-f-json').addEventListener('change', function (e) { if (e.target.files[0]) importJSON(e.target.files[0]); e.target.value = ''; });
+    thumbs.addEventListener('click', function (e) { var t = e.target.closest('.sl-th'); if (t) goSlide(+t.dataset.i); });
+    thumbs.addEventListener('dragstart', function (e) { var t = e.target.closest('.sl-th'); if (t) { e.dataTransfer.setData('text/plain', t.dataset.i); e.dataTransfer.effectAllowed = 'move'; } });
+    thumbs.addEventListener('dragover', function (e) { if (e.target.closest('.sl-th')) e.preventDefault(); });
+    thumbs.addEventListener('drop', function (e) {
+      var t = e.target.closest('.sl-th'); if (!t) return; e.preventDefault();
+      var from = +e.dataTransfer.getData('text/plain'), to = +t.dataset.i;
+      if (isNaN(from) || from === to) return;
+      commitEdit(); pushUndo();
+      var s = S.deck.slides.splice(from, 1)[0]; S.deck.slides.splice(to, 0, s); S.cur = to; S.sel = null;
+      renderAll(); save();
+    });
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('paste', onPaste);
+    document.addEventListener('pointerdown', function (e) { if (!e.target.closest('.sl-menu') && !e.target.closest('[data-act="new"]')) closeMenu(); });
+    if (window.ResizeObserver) new ResizeObserver(fitStage).observe(wrap); else window.addEventListener('resize', fitStage);
+    S.built = true;
+  }
+
+  function setTab(t) {
+    S.tab = t;
+    root.querySelectorAll('.sl-tab').forEach(function (x) { x.classList.toggle('on', x.dataset.tab === t); });
+    ribbon.innerHTML = PANELS[t]();
+    syncRibbon();
+  }
+
+  function fitStage() {
+    if (!wrap || !wrap.clientWidth) return;
+    var s = Math.max(0.1, Math.min((wrap.clientWidth - 40) / W, (wrap.clientHeight - 40) / H));
+    S.scale = s;
+    holder.style.width = W * s + 'px'; holder.style.height = H * s + 'px';
+    stage.style.transform = 'scale(' + s + ')';
+    stage.style.setProperty('--hs', (13 / s) + 'px');
+  }
+
+  /* ---------------- rendering ---------------- */
+  function renderAll() { renderThumbs(); renderStage(); syncRibbon(); }
+  function renderThumbs() {
+    thumbs.innerHTML = S.deck.slides.map(function (s, i) {
+      return '<div class="sl-th' + (i === S.cur ? ' on' : '') + '" data-i="' + i + '" draggable="true"><span class="sl-th-n">' + kh(i + 1) + '</span>' +
+             '<div class="sl-th-box"><div class="sl-stage"></div></div></div>';
+    }).join('');
+    thumbs.querySelectorAll('.sl-th').forEach(function (t, i) { paint(S.deck.slides[i], t.querySelector('.sl-stage'), 'thumb'); });
+  }
+  function renderThumb(i) {
+    var t = thumbs.querySelector('.sl-th[data-i="' + i + '"]');
+    if (t && S.deck.slides[i]) paint(S.deck.slides[i], t.querySelector('.sl-stage'), 'thumb');
+  }
+  function renderStage() {
+    var sl = slide();
+    paint(sl, stage, 'edit');
+    drawSel();
+    if (document.activeElement !== notes) notes.value = sl.notes || '';
+    root.querySelector('.sl-count').textContent = 'ស្លាយ ' + kh(S.cur + 1) + ' / ' + kh(S.deck.slides.length);
+    root.querySelector('.sl-title').textContent = S.deck.name;
+  }
+  function drawSel() {
+    stage.querySelectorAll('.sl-sel').forEach(function (x) { x.remove(); });
+    var el = selEl(); if (!el) return;
+    var box = document.createElement('div');
+    box.className = 'sl-sel';
+    box.innerHTML = ['nw', 'n', 'ne', 'e', 'se', 's', 'sw', 'w'].map(function (d) { return '<i class="sl-h sl-h-' + d + '" data-dir="' + d + '"></i>'; }).join('');
+    place(box, el);
+    stage.appendChild(box);
+  }
+  function goSlide(i) {
+    commitEdit();
+    S.cur = Math.max(0, Math.min(S.deck.slides.length - 1, i)); S.sel = null;
+    thumbs.querySelectorAll('.sl-th').forEach(function (t) { t.classList.toggle('on', +t.dataset.i === S.cur); });
+    var on = thumbs.querySelector('.sl-th.on'); if (on) on.scrollIntoView({ block: 'nearest' });
+    renderStage(); syncRibbon();
+  }
+
+  function syncRibbon() {
+    if (!ribbon) return;
+    var el = selEl();
+    ribbon.classList.toggle('sl-nosel', !el);
+    var q = function (s) { return ribbon.querySelector(s); };
+    ribbon.querySelectorAll('[data-act="align"],[data-act="valign"]').forEach(function (x) { x.classList.toggle('on', !!el && el[x.dataset.act] === x.dataset.v); });
+    ribbon.querySelectorAll('[data-act="theme"]').forEach(function (x) { x.classList.toggle('on', x.dataset.v === S.deck.theme); });
+    var tog = function (a, v) { var x = q('[data-act="' + a + '"]'); if (x) x.classList.toggle('on', !!v); };
+    tog('bold', el && el.bold); tog('italic', el && el.italic); tog('anim', el && el.anim);
+    var set = function (p, v) { var x = q('[data-prop="' + p + '"]'); if (x && document.activeElement !== x) x.value = v; };
+    if (el) {
+      set('size', el.size || '');
+      set('color', hexOr(el.color || roleColor(el.role), '#000000'));
+      set('fill', hexOr(resolveFill(el.fill) || (el.type === 'shape' ? th().accent : ''), '#ffffff'));
+      set('stroke', hexOr(el.stroke || th().accent, '#000000'));
+      set('sw', String(el.sw != null ? el.sw : (el.shape === 'line' || el.shape === 'arrow' ? 6 : 0)));
+      set('rot', el.rot || 0);
+    }
+    set('bg', hexOr(slide().bg, '#ffffff'));
+    var ds = q('[data-prop="deck"]');
+    if (ds) {
+      ds.innerHTML = Object.keys(S.store.decks).map(function (k) { return S.store.decks[k]; })
+        .sort(function (a, c) { return (c.updated || 0) - (a.updated || 0); })
+        .map(function (d) { return '<option value="' + d.id + '"' + (d.id === S.deck.id ? ' selected' : '') + '>' + esc(d.name) + '</option>'; }).join('');
+      set('deckname', S.deck.name);
+    }
+  }
+
+  /* ---------------- menus ---------------- */
+  function closeMenu() { var m = document.querySelector('.sl-menu'); if (m) m.remove(); }
+  function layoutMenu(btn) {
+    if (document.querySelector('.sl-menu')) { closeMenu(); return; }
+    var m = document.createElement('div'); m.className = 'sl-menu';
+    m.innerHTML = Object.keys(LAYOUTS).map(function (k) { return '<button data-act="add-layout" data-v="' + k + '">' + LAYOUTS[k].name + '</button>'; }).join('');
+    var r = btn.getBoundingClientRect();
+    m.style.left = r.left + 'px'; m.style.top = r.bottom + 4 + 'px';
+    m.addEventListener('click', function (e) { var x = e.target.closest('[data-act]'); if (x) { addSlide(x.dataset.v); closeMenu(); } });
+    document.body.appendChild(m);
+  }
+
+  /* ---------------- actions ---------------- */
+  function addSlide(layout) {
+    commitEdit(); pushUndo();
+    S.deck.slides.splice(S.cur + 1, 0, newSlide((LAYOUTS[layout] || LAYOUTS.content).make()));
+    S.cur++; S.sel = null; renderAll(); save();
+  }
+  function addEl(el, edit) {
+    change(function () { slide().els.push(el); S.sel = el.id; });
+    if (edit) startEdit(el.id);
+  }
+  function setProp(p, v, key) { var el = selEl(); if (!el) return; change(function () { el[p] = v; }, key); }
+
+  function onClick(e) {
+    var t = e.target.closest('[data-tab]');
+    if (t) { setTab(t.dataset.tab); return; }
+    var a = e.target.closest('[data-act]'); if (!a || a.closest('.sl-menu')) return;
+    var act = a.dataset.act, v = a.dataset.v, el = selEl(), s = slide();
+    switch (act) {
+      case 'new': layoutMenu(a); break;
+      case 'add-layout': addSlide(v); break;
+      case 'dup-slide': dupSlide(); break;
+      case 'del-slide':
+        if (S.deck.slides.length < 2) { alert('ត្រូវមានយ៉ាងហោចណាស់មួយស្លាយ'); break; }
+        commitEdit(); pushUndo(); S.deck.slides.splice(S.cur, 1); S.cur = Math.min(S.cur, S.deck.slides.length - 1); S.sel = null; renderAll(); save(); break;
+      case 'size-dn': if (el && el.type === 'text') setProp('size', Math.max(8, el.size - 2), 'size'); break;
+      case 'size-up': if (el && el.type === 'text') setProp('size', Math.min(200, el.size + 2), 'size'); break;
+      case 'bold': if (el) setProp('bold', !el.bold); break;
+      case 'italic': if (el) setProp('italic', !el.italic); break;
+      case 'align': case 'valign': if (el) setProp(act, v); break;
+      case 'nofill': if (el) setProp('fill', el.type === 'shape' ? 'none' : null); break;
+      case 'anim': if (el) setProp('anim', !el.anim); break;
+      case 'front': if (el) change(function () { s.els.splice(s.els.indexOf(el), 1); s.els.push(el); }); break;
+      case 'back': if (el) change(function () { s.els.splice(s.els.indexOf(el), 1); s.els.unshift(el); }); break;
+      case 'dup-el': dupEl(); break;
+      case 'del-el': delEl(); break;
+      case 'undo': undo(); break;
+      case 'redo': redo(); break;
+      case 'ins-text': addEl(T(340, 300, 600, 120, 'អត្ថបទថ្មី', { size: 32 }), true); break;
+      case 'ins-title': addEl(T(60, 40, 1160, 100, 'ចំណងជើង', { size: 46, bold: true, valign: 'middle', role: 'title' }), true); break;
+      case 'ins-math': addEl(T(290, 260, 700, 200, '$$\\frac{a}{b} + \\frac{c}{d} = \\frac{ad + bc}{bd}$$', { size: 40, align: 'center', valign: 'middle' }), true); break;
+      case 'ins-img': root.querySelector('.sl-f-img').click(); break;
+      case 'ins-shape':
+        var line = v === 'line' || v === 'arrow';
+        addEl({ id: uid(), type: 'shape', shape: v, x: line ? 440 : 490, y: line ? 340 : 210, w: line ? 400 : 300, h: line ? 40 : 300, fill: null, stroke: null, sw: line ? 6 : 0 });
+        break;
+      case 'lesson': openLessonDialog(); break;
+      case 'theme': change(function () { S.deck.theme = v; }); renderThumbs(); break;
+      case 'bg-all': change(function () { var bg = s.bg; S.deck.slides.forEach(function (x) { x.bg = bg; }); }); renderThumbs(); break;
+      case 'bg-reset': change(function () { s.bg = null; }); break;
+      case 'show-start': present(0); break;
+      case 'show-cur': present(S.cur); break;
+      case 'new-deck': commitEdit(); addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: S.deck.theme, updated: Date.now(), slides: [newSlide(LAYOUTS.title.make())] }); renderAll(); save(); break;
+      case 'del-deck':
+        if (!confirm('លុបបទបង្ហាញ «' + S.deck.name + '» ? (មិនអាចត្រឡប់វិញបានទេ)')) break;
+        delete S.store.decks[S.deck.id];
+        if (!Object.keys(S.store.decks).length) addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: 'ocean', updated: Date.now(), slides: [newSlide(LAYOUTS.title.make())] });
+        else switchDeck(Object.keys(S.store.decks)[0]);
+        renderAll(); save(); break;
+      case 'export': exportJSON(); break;
+      case 'import': root.querySelector('.sl-f-json').click(); break;
+      case 'print': printDeck(); break;
+    }
+  }
+
+  function onInput(e) {
+    var p = e.target.dataset.prop; if (!p) return;
+    var v = e.target.value, el = selEl();
+    if (p === 'deck') { if (e.type === 'change') { switchDeck(v); renderAll(); } return; }
+    if (p === 'deckname') { S.deck.name = v || 'គ្មានចំណងជើង'; root.querySelector('.sl-title').textContent = S.deck.name; save(); return; }
+    if (p === 'bg') { var s = slide(); change(function () { s.bg = v; }, 'bg' + s.id); return; }
+    if (!el) return;
+    if (p === 'size') { var n = +v; if (n >= 8 && n <= 200) setProp('size', n, 'size' + el.id); return; }
+    if (p === 'rot') { setProp('rot', ((+v || 0) % 360 + 360) % 360, 'rot' + el.id); return; }
+    if (p === 'sw') { setProp('sw', +v, 'sw' + el.id); return; }
+    setProp(p, v, p + el.id);
+  }
+
+  function switchDeck(id) {
+    if (!S.store.decks[id]) return;
+    commitEdit(); S.deck = S.store.decks[id]; S.store.current = id; S.cur = 0; S.sel = null; S.undo = []; S.redo = [];
+  }
+  function dupSlide() {
+    commitEdit(); pushUndo();
+    var c = clone(slide()); c.id = uid(); c.els.forEach(function (x) { x.id = uid(); });
+    S.deck.slides.splice(S.cur + 1, 0, c); S.cur++; S.sel = null; renderAll(); save();
+  }
+  function dupEl() {
+    var el = selEl(); if (!el) return;
+    var c = clone(el); c.id = uid(); c.x += 24; c.y += 24;
+    addEl(c);
+  }
+  function delEl() {
+    var el = selEl(); if (!el) return; var s = slide();
+    change(function () { s.els.splice(s.els.indexOf(el), 1); S.sel = null; });
+  }
+
+  /* ---------------- stage interaction ---------------- */
+  function onStageDown(e) {
+    if (e.button !== 0 || e.target.closest('textarea')) return;
+    var ae = document.activeElement;
+    if (ae && ae !== document.body && !stage.contains(ae) && ae.blur) ae.blur();
+    var h = e.target.closest('.sl-h'), d = e.target.closest('.sl-el');
+    commitEdit();
+    if (h) { startDrag(e, h.dataset.dir); return; }
+    if (d) {
+      if (S.sel !== d.dataset.id) { S.sel = d.dataset.id; drawSel(); syncRibbon(); }
+      startDrag(e, null); return;
+    }
+    if (S.sel) { S.sel = null; drawSel(); syncRibbon(); }
+  }
+
+  function startDrag(e, dir) {
+    var el = selEl(); if (!el) return;
+    e.preventDefault();
+    var sx = e.clientX, sy = e.clientY, o = { x: el.x, y: el.y, w: el.w, h: el.h }, ratio = o.w / o.h;
+    var snap = JSON.stringify({ deck: S.deck, cur: S.cur }), moved = false;
+    var dEl = stage.querySelector('.sl-el[data-id="' + el.id + '"]'), box = stage.querySelector('.sl-sel');
+    var gv = guide('v'), gh = guide('h');
+    function mv(ev) {
+      var dx = (ev.clientX - sx) / S.scale, dy = (ev.clientY - sy) / S.scale;
+      if (!moved && Math.abs(dx) + Math.abs(dy) < 3) return;
+      if (!moved) { moved = true; pushUndoRaw(snap); }
+      if (!dir) {
+        var x = o.x + dx, y = o.y + dy, cx = x + el.w / 2, cy = y + el.h / 2;
+        var snx = !ev.altKey && Math.abs(cx - W / 2) < 8, sny = !ev.altKey && Math.abs(cy - H / 2) < 8;
+        if (snx) x = W / 2 - el.w / 2;
+        if (sny) y = H / 2 - el.h / 2;
+        gv.style.display = snx ? 'block' : 'none'; gh.style.display = sny ? 'block' : 'none';
+        el.x = Math.round(x); el.y = Math.round(y);
+      } else {
+        var X = o.x, Y = o.y, w = o.w, h = o.h;
+        if (dir.indexOf('e') >= 0) w = o.w + dx;
+        if (dir.indexOf('w') >= 0) { w = o.w - dx; X = o.x + dx; }
+        if (dir.indexOf('s') >= 0) h = o.h + dy;
+        if (dir.indexOf('n') >= 0) { h = o.h - dy; Y = o.y + dy; }
+        if (dir.length === 2 && (ev.shiftKey || el.type === 'image')) {
+          if (w / h > ratio) w = h * ratio; else h = w / ratio;
+          if (dir.indexOf('w') >= 0) X = o.x + o.w - w;
+          if (dir.indexOf('n') >= 0) Y = o.y + o.h - h;
+        }
+        el.w = Math.round(Math.max(20, w)); el.h = Math.round(Math.max(el.type === 'shape' ? 8 : 20, h));
+        el.x = Math.round(X); el.y = Math.round(Y);
+        if (el.type === 'shape' && dEl) dEl.innerHTML = shapeSVG(el);
+      }
+      if (dEl) place(dEl, el);
+      if (box) place(box, el);
+    }
+    function up() {
+      window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', up);
+      gv.remove(); gh.remove();
+      if (moved) { renderStage(); renderThumb(S.cur); save(); }
+    }
+    window.addEventListener('pointermove', mv); window.addEventListener('pointerup', up);
+  }
+  function guide(k) {
+    var g = document.createElement('div'); g.className = 'sl-guide sl-guide-' + k; g.style.display = 'none';
+    stage.appendChild(g); return g;
+  }
+
+  function startEdit(id) {
+    var s = slide(), el = null;
+    s.els.forEach(function (x) { if (x.id === id) el = x; });
+    if (!el || el.type !== 'text') return;
+    commitEdit();
+    S.sel = id; drawSel(); syncRibbon();
+    var d = stage.querySelector('.sl-el[data-id="' + id + '"]'); if (!d) return;
+    var ta = document.createElement('textarea');
+    ta.className = 'sl-edit'; ta.value = el.text; ta.spellcheck = false;
+    ta.style.fontSize = Math.max(16, el.size) + 'px'; ta.style.fontWeight = el.bold ? '700' : '400'; ta.style.textAlign = el.align;
+    d.innerHTML = ''; d.appendChild(ta);
+    S.edit = { ta: ta, el: el, before: JSON.stringify({ deck: S.deck, cur: S.cur }) };
+    ta.addEventListener('keydown', function (ev) { ev.stopPropagation(); if (ev.key === 'Escape') { ev.preventDefault(); commitEdit(); } });
+    ta.addEventListener('blur', commitEdit);
+    ta.focus(); ta.select();
+  }
+  function commitEdit() {
+    var ed = S.edit; if (!ed) return;
+    S.edit = null;
+    if (ed.ta.value !== ed.el.text) { pushUndoRaw(ed.before); ed.el.text = ed.ta.value; save(); }
+    renderStage(); renderThumb(S.cur);
+  }
+
+  /* ---------------- keyboard / paste ---------------- */
+  function active() { return S.built && !S.show && root.offsetParent !== null; }
+  function typing(e) { var t = e.target; return t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable); }
+
+  function onKey(e) {
+    if (!active() || typing(e) || document.querySelector('.sl-modal-bg')) return;
+    var k = e.key, ctrl = e.ctrlKey || e.metaKey, el = selEl();
+    if (k === 'F5') { e.preventDefault(); present(e.shiftKey ? S.cur : 0); return; }
+    if (ctrl && (k === 'z' || k === 'Z')) { e.preventDefault(); if (e.shiftKey) redo(); else undo(); return; }
+    if (ctrl && (k === 'y' || k === 'Y')) { e.preventDefault(); redo(); return; }
+    if (ctrl && (k === 'd' || k === 'D')) { e.preventDefault(); if (el) dupEl(); else dupSlide(); return; }
+    if (ctrl && (k === 'c' || k === 'C') && el) { S.clip = clone(el); return; }
+    if (ctrl && (k === 'b' || k === 'B') && el) { e.preventDefault(); setProp('bold', !el.bold); return; }
+    if (ctrl && (k === 'i' || k === 'I') && el) { e.preventDefault(); setProp('italic', !el.italic); return; }
+    if (ctrl && (k === 'm' || k === 'M')) { e.preventDefault(); addSlide('content'); return; }
+    if ((k === 'Delete' || k === 'Backspace') && el) { e.preventDefault(); delEl(); return; }
+    if (k === 'Enter' && el && el.type === 'text') { e.preventDefault(); startEdit(el.id); return; }
+    if (k === 'Escape' && el) { S.sel = null; drawSel(); syncRibbon(); return; }
+    if (k.indexOf('Arrow') === 0) {
+      e.preventDefault();
+      if (el) {
+        var st = e.shiftKey ? 10 : 1, dx = k === 'ArrowLeft' ? -st : k === 'ArrowRight' ? st : 0, dy = k === 'ArrowUp' ? -st : k === 'ArrowDown' ? st : 0;
+        change(function () { el.x += dx; el.y += dy; }, 'nudge' + el.id);
+      } else if (k === 'ArrowUp' || k === 'ArrowLeft') goSlide(S.cur - 1);
+      else goSlide(S.cur + 1);
+      return;
+    }
+    if (k === 'PageUp') { e.preventDefault(); goSlide(S.cur - 1); }
+    if (k === 'PageDown') { e.preventDefault(); goSlide(S.cur + 1); }
+  }
+
+  function onPaste(e) {
+    if (!active() || typing(e)) return;
+    var items = (e.clipboardData && e.clipboardData.items) || [];
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].type.indexOf('image') === 0) { e.preventDefault(); addImageFile(items[i].getAsFile()); return; }
+    }
+    if (S.clip) { e.preventDefault(); var c = clone(S.clip); c.id = uid(); c.x += 24; c.y += 24; S.clip = clone(c); addEl(c); }
+  }
+
+  /* ---------------- images ---------------- */
+  function addImageFile(file) {
+    var r = new FileReader();
+    r.onload = function () {
+      var img = new Image();
+      img.onload = function () {
+        var max = 1600, k = Math.min(1, max / Math.max(img.width, img.height));
+        var cv = document.createElement('canvas'); cv.width = Math.round(img.width * k); cv.height = Math.round(img.height * k);
+        cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+        var src = cv.toDataURL('image/png');
+        if (src.length > 700000) src = cv.toDataURL('image/jpeg', 0.85);
+        var f = Math.min(1, 640 / cv.width, 480 / cv.height), w = Math.round(cv.width * f), h = Math.round(cv.height * f);
+        addEl({ id: uid(), type: 'image', src: src, x: Math.round((W - w) / 2), y: Math.round((H - h) / 2), w: w, h: h });
+      };
+      img.src = r.result;
+    };
+    r.readAsDataURL(file);
+  }
+
+  /* ---------------- file ---------------- */
+  function exportJSON() {
+    var blob = new Blob([JSON.stringify({ kpSlides: 1, deck: S.deck })], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = (S.deck.name || 'slides').replace(/[\\/:*?"<>|]+/g, '_') + '.kpslides.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+  }
+  function importJSON(file) {
+    var r = new FileReader();
+    r.onload = function () {
+      try {
+        var o = JSON.parse(r.result), d = o.deck || o;
+        if (!d.slides || !d.slides.length) throw new Error('no slides');
+        d.id = uid(); d.updated = Date.now(); d.theme = THEMES[d.theme] ? d.theme : 'ocean';
+        commitEdit(); addDeck(d); renderAll(); save(); status('✓ បានបើក «' + d.name + '»');
+      } catch (err) { alert('ឯកសារមិនត្រឹមត្រូវ (ត្រូវតែជា .kpslides.json)'); }
+    };
+    r.readAsText(file);
+  }
+  function printDeck() {
+    commitEdit();
+    var box = document.createElement('div'); box.id = 'sl-print';
+    document.body.appendChild(box);
+    S.deck.slides.forEach(function (s) { var p = document.createElement('div'); p.className = 'sl-stage sl-page'; box.appendChild(p); paint(s, p, 'print'); });
+    var st = document.createElement('style'); st.textContent = '@page{size:1280px 720px;margin:0}';
+    document.head.appendChild(st); document.body.classList.add('sl-printing');
+    var done = function () { box.remove(); st.remove(); document.body.classList.remove('sl-printing'); window.removeEventListener('afterprint', done); };
+    window.addEventListener('afterprint', done);
+    setTimeout(function () { window.print(); }, 300);
+  }
+
+  /* ---------------- slide show ---------------- */
+  function present(from) {
+    if (S.show) return;
+    commitEdit();
+    var ov = document.createElement('div');
+    ov.id = 'sl-show';
+    ov.innerHTML = '<div class="sl-show-holder"><div class="sl-stage"></div></div><canvas class="sl-pen"></canvas>' +
+      '<div class="sl-show-bar"><button data-s="prev" title="ថយក្រោយ">◀</button><span class="sl-show-n"></span><button data-s="next" title="បន្ទាប់">▶</button>' +
+      '<button data-s="pen" title="ប៊ិចគូស (P)">✏️</button><button data-s="clear" title="លុបគំនូរ (E)">🧽</button><button data-s="black" title="អេក្រង់ខ្មៅ (B)">⬛</button><button data-s="exit" title="ចេញ (Esc)">✕</button></div>';
+    document.body.appendChild(ov);
+    var sh = S.show = { ov: ov, st: ov.querySelector('.sl-stage'), hold: ov.querySelector('.sl-show-holder'), cv: ov.querySelector('.sl-pen'), i: from, pen: false, fs: false, t: 0 };
+    sh.key = function (e) {
+      var k = e.key; e.stopPropagation();
+      if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter', 'n', 'N'].indexOf(k) >= 0) { e.preventDefault(); next(); }
+      else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].indexOf(k) >= 0) { e.preventDefault(); prev(); }
+      else if (k === 'Home') showSlide(0); else if (k === 'End') showSlide(S.deck.slides.length - 1, true);
+      else if (k === 'Escape') { e.preventDefault(); endShow(); }
+      else if (k === 'b' || k === 'B' || k === '.') ov.classList.toggle('black');
+      else if (k === 'p' || k === 'P') togglePen();
+      else if (k === 'e' || k === 'E') clearPen();
+    };
+    sh.resize = function () { layoutShow(); };
+    sh.fsch = function () { if (document.fullscreenElement) sh.fs = true; else if (sh.fs) endShow(); };
+    sh.move = function () { ov.classList.add('mouse'); clearTimeout(sh.t); sh.t = setTimeout(function () { ov.classList.remove('mouse'); }, 2200); };
+    document.addEventListener('keydown', sh.key, true);
+    window.addEventListener('resize', sh.resize);
+    document.addEventListener('fullscreenchange', sh.fsch);
+    ov.addEventListener('mousemove', sh.move);
+    ov.addEventListener('click', function (e) {
+      var bt = e.target.closest('[data-s]');
+      if (bt) { var s = bt.dataset.s; if (s === 'prev') prev(); else if (s === 'next') next(); else if (s === 'pen') togglePen(); else if (s === 'clear') clearPen(); else if (s === 'black') ov.classList.toggle('black'); else endShow(); return; }
+      if (!sh.pen) next();
+    });
+    ov.addEventListener('contextmenu', function (e) { e.preventDefault(); prev(); });
+    penSetup(sh);
+    if (ov.requestFullscreen) ov.requestFullscreen().catch(function () {});
+    layoutShow(); showSlide(from);
+  }
+  function layoutShow() {
+    var sh = S.show; if (!sh) return;
+    var s = Math.min(window.innerWidth / W, window.innerHeight / H);
+    sh.hold.style.width = W * s + 'px'; sh.hold.style.height = H * s + 'px';
+    sh.st.style.transform = 'scale(' + s + ')';
+    var dpr = window.devicePixelRatio || 1;
+    sh.cv.width = window.innerWidth * dpr; sh.cv.height = window.innerHeight * dpr;
+  }
+  function showSlide(i, revealAll) {
+    var sh = S.show; sh.i = Math.max(0, Math.min(S.deck.slides.length - 1, i));
+    sh.ov.classList.remove('end');
+    paint(S.deck.slides[sh.i], sh.st, 'show');
+    if (revealAll) sh.st.querySelectorAll('.sl-hidden').forEach(function (x) { x.classList.remove('sl-hidden'); });
+    sh.st.classList.remove('sl-fade'); void sh.st.offsetWidth; sh.st.classList.add('sl-fade');
+    sh.ov.querySelector('.sl-show-n').textContent = kh(sh.i + 1) + ' / ' + kh(S.deck.slides.length);
+    clearPen();
+  }
+  function next() {
+    var sh = S.show, h = sh.st.querySelector('.sl-hidden');
+    if (h) { h.classList.remove('sl-hidden'); h.classList.add('sl-reveal'); return; }
+    if (sh.i < S.deck.slides.length - 1) showSlide(sh.i + 1);
+    else if (sh.ov.classList.contains('end')) endShow();
+    else { sh.ov.classList.add('end'); sh.st.innerHTML = '<div class="sl-endmsg">ចប់ការបញ្ចាំង — ចុចម្តងទៀតដើម្បីចេញ</div>'; sh.st.style.background = '#000'; }
+  }
+  function prev() {
+    var sh = S.show;
+    if (sh.ov.classList.contains('end')) { sh.ov.classList.remove('end'); showSlide(sh.i, true); return; }
+    if (sh.i > 0) showSlide(sh.i - 1, true);
+  }
+  function endShow() {
+    var sh = S.show; if (!sh) return;
+    S.show = null;
+    document.removeEventListener('keydown', sh.key, true);
+    window.removeEventListener('resize', sh.resize);
+    document.removeEventListener('fullscreenchange', sh.fsch);
+    if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+    sh.ov.remove();
+    goSlide(sh.i);
+  }
+  function penSetup(sh) {
+    var ctx = sh.cv.getContext('2d'), drawing = false;
+    sh.cv.addEventListener('pointerdown', function (e) {
+      if (!sh.pen) return; drawing = true; var d = window.devicePixelRatio || 1;
+      ctx.strokeStyle = '#ff3b3b'; ctx.lineWidth = 5 * d; ctx.lineCap = ctx.lineJoin = 'round';
+      ctx.beginPath(); ctx.moveTo(e.clientX * d, e.clientY * d); sh.cv.setPointerCapture(e.pointerId);
+    });
+    sh.cv.addEventListener('pointermove', function (e) { if (!drawing) return; var d = window.devicePixelRatio || 1; ctx.lineTo(e.clientX * d, e.clientY * d); ctx.stroke(); });
+    sh.cv.addEventListener('pointerup', function () { drawing = false; });
+  }
+  function togglePen() { var sh = S.show; sh.pen = !sh.pen; sh.ov.classList.toggle('pen-on', sh.pen); }
+  function clearPen() { var sh = S.show; if (sh) sh.cv.getContext('2d').clearRect(0, 0, sh.cv.width, sh.cv.height); }
+
+  /* ---------------- public ---------------- */
+  window.KPSlides = {
+    open: function () {
+      if (!S.built) { load(); build(); setTab('home'); }
+      requestAnimationFrame(function () { fitStage(); renderAll(); });
+    }
+  };
+})();

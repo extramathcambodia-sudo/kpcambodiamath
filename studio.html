@@ -19,6 +19,7 @@
   <!-- Local Geometric Constructions CSS -->
   <link rel="stylesheet" href="static/css/site.css">
   <link rel="stylesheet" href="static/css/construct.css">
+  <link rel="stylesheet" href="static/css/slides.css">
 
   <!-- External Math Data Store -->
   <script src="math_data.js"></script>
@@ -1033,6 +1034,9 @@
               <div onclick="switchTab('lessons')" id="nav-lessons" class="nav-item active">
                 <span class="text-base">📖</span> <span>ខ្លឹមសារមេរៀន</span>
               </div>
+              <div onclick="switchTab('slides')" id="nav-slides" class="nav-item">
+                <span class="text-base">🖥</span> <span>ស្លាយបង្រៀន (Slides)</span>
+              </div>
               <div onclick="switchTab('geometry')" id="nav-geometry" class="nav-item">
                 <span class="text-base">📐</span> <span>សំណង់ធរណីមាត្រ</span>
               </div>
@@ -1199,6 +1203,9 @@
         <!-- =========================================================
              2. ផ្ទាំង «សំណង់ធរណីមាត្រ» (Modeled after geometry-angle-bisector.html)
         ========================================================== -->
+        <!-- ស្លាយបង្រៀន — PowerPoint-style slide maker (static/js/slides.js) -->
+        <div id="view-slides" class="hidden"></div>
+
         <section id="view-geometry" class="space-y-6 max-w-7xl mx-auto hidden">
           <div class="card-modern p-6 flex flex-wrap items-center justify-between gap-4">
             <div>
@@ -1657,6 +1664,7 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
+  <script src="static/js/slides.js"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
@@ -1953,7 +1961,7 @@
 
     // Tab Switching
     function switchTab(tabId) {
-      const tabs = ['lessons', 'geometry', 'exam-player', 'qbank', 'tests', 'monthly', 'exam-studio', 'schedule', 'classes', 'grading', 'wheel', 'group-games'];
+      const tabs = ['lessons', 'slides', 'geometry', 'exam-player', 'qbank', 'tests', 'monthly', 'exam-studio', 'schedule', 'classes', 'grading', 'wheel', 'group-games'];
       tabs.forEach(t => {
         const el = document.getElementById('view-' + t);
         const nav = document.getElementById('nav-' + t);
@@ -1968,6 +1976,7 @@
 
       const titleMap = {
         'lessons': 'ខ្លឹមសារមេរៀន (Lesson System)',
+        'slides': 'ស្លាយបង្រៀន (Teaching Slides)',
         'geometry': 'សំណង់ធរណីមាត្រ (Geometric Studio)',
         'exam-player': 'ប្រព័ន្ធប្រឡងគំរូ (Exam Player)',
         'qbank': 'ធនាគារសំណួរ (Question Bank)',
@@ -1986,6 +1995,7 @@
 
       if (tabId === 'wheel') drawWheel();
       if (tabId === 'geometry') initGeoStudio();
+      if (tabId === 'slides') KPSlides.open();
       if (tabId === 'exam-player' && examQuestions.length === 0) launchQuickExam();
 
       setTimeout(() => renderMath(), 100);
@@ -3281,6 +3291,7 @@
     // =========================================================
     window.addEventListener('DOMContentLoaded', () => {
       // Check URL hash
+      const startTab = location.hash === '#slides' ? 'slides' : 'lessons';
       goToDashboard();
 
       // Populate wheel names input
@@ -3294,7 +3305,7 @@
       renderClassesSystem();
       previewExamInStudio();
       drawWheel();
-      switchTab('lessons');
+      switchTab(startTab);
 
       setTimeout(() => renderMath(), 200);
     });
