@@ -6773,14 +6773,22 @@
 
     function stopPlay() {
       playing = false; clearTimeout(timer);
-      btn('.cx-play').classList.remove('on');
-      btn('.cx-play span').textContent = btn('.cx-play').getAttribute('data-play');
+      var p = btn('.cx-play');
+      if (p) {
+        p.classList.remove('on');
+        var sp = p.querySelector('span');
+        if (sp) sp.textContent = p.getAttribute('data-play');
+      }
     }
     function play() {
       if (playing) { stopPlay(); return; }
       playing = true;
-      btn('.cx-play').classList.add('on');
-      btn('.cx-play span').textContent = btn('.cx-play').getAttribute('data-pause');
+      var p = btn('.cx-play');
+      if (p) {
+        p.classList.add('on');
+        var sp = p.querySelector('span');
+        if (sp) sp.textContent = p.getAttribute('data-pause');
+      }
       var next = function () {
         if (!playing) return;
         if (step >= def.steps - 1) { stopPlay(); return; }
