@@ -50,8 +50,8 @@ VERCEL = """{
 
 def build():
     if os.path.isdir(DIST):
-        shutil.rmtree(DIST)
-    os.makedirs(DIST)
+        shutil.rmtree(DIST, ignore_errors=True)
+    os.makedirs(DIST, exist_ok=True)
     n = 0
     for f in PAGES + FILES + glob.glob(os.path.join(BASE, "grade-*.html")):
         src = f if os.path.isabs(f) else os.path.join(BASE, f)

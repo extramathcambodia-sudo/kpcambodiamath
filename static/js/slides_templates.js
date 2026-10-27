@@ -1823,9 +1823,326 @@ $a_6 = 36 - 6 + 1 = 31$ ✓`, { size: 22, anim: true })
 !!២.!! កំណត់តួទី $n$ និងផលបូក $n$ តួដំបូងនៃស៊ីត  $1,\ 5,\ 14,\ 30,\ 55,\ 91,\ \ldots$
 !!៣.!! កំណត់តួទី $n$ នៃស៊ីត $(a_n)$ ៖  $p,\ q,\ p,\ q,\ p,\ q,\ \ldots$`),
 
-      /* 43 */ S.thanks()
+      /* 43 solutions to homework 2 */ page([
+        sec('កំណែកិច្ចការផ្ទះ ២'),
+        s(60, 160, 1180, R`!!១.!!   $\displaystyle\sum_{k=1}^{n} k(k+1) = \sum_{k=1}^{n} (k^2+k) = \dfrac{n(n+1)(2n+1)}{6} + \dfrac{n(n+1)}{2} = \dfrac{n(n+1)(n+2)}{3}$`, { h: 76, size: 23 }),
+        s(120, 244, 1100, R`ជំនួស $n = 28$ ៖   $S = \dfrac{28 \times 29 \times 30}{3} = 28 \times 29 \times 10 = 8120$`, { h: 60, size: 24 }),
+        s(60, 316, 1180, R`!!២.!!   $(a_n)$ ៖ $1,\ 5,\ 14,\ 30,\ 55,\ \ldots$  មានផលសង  $b_k = (k+1)^2$  $\Rightarrow\ a_n = \displaystyle\sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}$`, { h: 72, size: 22 }),
+        s(120, 394, 1100, R`ផលបូក ៖   $S_n = \displaystyle\sum_{k=1}^{n} a_k = \dfrac{n(n+1)^2(n+2)}{12}$`, { h: 64, size: 24 }),
+        s(60, 466, 1180, R`!!៣.!!   $p,\ q,\ p,\ q,\ \ldots$  ៖   $a_n = \dfrac{p + q}{2} + \dfrac{p - q}{2}(-1)^{n-1}$   (ឬ $a_n = p$ បើ $n$ សេស, $q$ បើ $n$ គូ)`, { h: 66, size: 22 }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 44 textbook exercise 6 */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៦'),
+        l(60, 155, 1180, R`!!ក.!! សម្រួលកន្សោម  $\displaystyle\sum_{k=1}^{n} k(k+1)(k+2)$      !!ខ.!! គណនា  $1 \cdot 2 \cdot 3 + 2 \cdot 3 \cdot 4 + \ldots + 20 \cdot 21 \cdot 22$`, { size: 25, h: 60 }),
+        K.solTitle(440, 224),
+        s(60, 290, 1180, R`ប្រើសមភាព ៖   $k(k+1)(k+2) = \dfrac{k(k+1)(k+2)(k+3) - (k-1)k(k+1)(k+2)}{4}$`),
+        s(60, 350, 1180, R`បូកតួទាំងអស់លុបគ្នាអស់ សល់តួចុងក្រោយ ៖   $\displaystyle\sum_{k=1}^{n} k(k+1)(k+2) = \dfrac{n(n+1)(n+2)(n+3)}{4}$`, { h: 72, size: 24 }),
+        s(60, 436, 1180, R`!!ខ.!! ចំពោះ $n = 20$ ៖   $S = \dfrac{20 \times 21 \times 22 \times 23}{4} = 5 \times 21 \times 22 \times 23$`, { h: 66, size: 25 }),
+        S.box(200, 516, 800, 76, R`!!ដូចនេះ!!   $S = 53130$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 45 textbook exercise 8 */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៨'),
+        l(60, 155, 1180, R`កំណត់តួទី $n$ និងផលបូក $n$ តួដំបូងនៃស៊ីត   $1,\ 5,\ 14,\ 30,\ 55,\ 91,\ \ldots$`, { size: 26, h: 50 }),
+        s(60, 215, 1180, R`ផលសងលំដាប់ទី ១ ៖  $4,\ 9,\ 16,\ 25,\ 36,\ \ldots$  មានតួទូទៅ  $b_k = (k+1)^2$`),
+        s(60, 268, 1180, R`$a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} (k+1)^2 = 1 + \left(\sum_{j=1}^{n} j^2 - 1\right) = \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}$`, { h: 72, size: 23 }),
+        s(60, 352, 1180, R`ផលបូក $S_n = \displaystyle\sum_{k=1}^{n} \dfrac{k(k+1)(2k+1)}{6} = \dfrac{1}{6}\sum_{k=1}^{n} (2k^3 + 3k^2 + k)$`, { h: 72, size: 23 }),
+        s(140, 432, 1000, R`$= \dfrac{1}{6}\left[2 \times \dfrac{n^2(n+1)^2}{4} + 3 \times \dfrac{n(n+1)(2n+1)}{6} + \dfrac{n(n+1)}{2}\right]$`, { h: 72, size: 23 }),
+        S.box(160, 520, 860, 80, R`!!ដូចនេះ!!   $a_n = \dfrac{n(n+1)(2n+1)}{6}$   ;   $S_n = \dfrac{n(n+1)^2(n+2)}{12}$`, { size: 26, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 46 summary */ page([
+        sec('សង្ខេបរូបមន្តសំខាន់ៗនៃមេរៀនទី ៤'),
+        S.box(60, 160, 1180, 420, R`!!__១. រូបមន្តផលបូកគ្រឹះ ៖__!!
+• $\displaystyle\sum_{k=1}^{n} k = 1 + 2 + \ldots + n = \dfrac{n(n+1)}{2}$
+• $\displaystyle\sum_{k=1}^{n} k^2 = 1^2 + 2^2 + \ldots + n^2 = \dfrac{n(n+1)(2n+1)}{6}$
+• $\displaystyle\sum_{k=1}^{n} k^3 = 1^3 + 2^3 + \ldots + n^3 = \left[\dfrac{n(n+1)}{2}\right]^2$
+• $\displaystyle\sum_{k=1}^{n} c = nc$   ;   $\displaystyle\sum_{k=1}^{n} c\,a_k = c\sum_{k=1}^{n} a_k$
+!!__២. កំណត់តួទី $n$ តាមផលសងតួ ៖__!!
+• ផលសងលំដាប់ទី ១ ៖   $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k$   ($b_k = a_{k+1} - a_k$)
+• ផលសងលំដាប់ទី ២ ៖   $b_n = b_1 + \displaystyle\sum_{k=1}^{n-1} c_k$   រួចរក $a_n$`, { size: 23, lh: '1.5' }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 47 */ S.thanks()
     ];
     return { name: 'ថ្នាក់ទី១១ · មេរៀនទី៤ ផលបូកតួនៃស៊ីតផ្សេងៗ', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
+             teacher: K.info.teacher, slides: slides };
+  }
+
+  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៥ ទំនាក់ទំនងតួនៃស៊ីត — book pages 36–43
+  function recurrence(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, rows = K.rows;
+    var sec = function (text, y) { return title(text, { x: 60, y: y, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+
+    var slides = [
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី១==        មេរៀនទី៥', 'ទំនាក់ទំនងតួនៃស៊ីត', K.info),
+      /* 2 */ K.toc(['==១.កំណត់តួទី n ដោយប្រើស៊ីតជំនួយ==', '២.ទំនាក់ទំនងរវាង an និង Sn', R`៣.ទម្រង់ $a_{n+2} + pa_{n+1} + qa_n = 0$`], 46),
+      /* 3 */ S.objective([R`កំណត់តួទី $n$ ដោយប្រើស៊ីតជំនួយ $(r_n)$`, R`កំណត់តួទី $n$ តាមទំនាក់ទំនងរវាង $a_n$ និង $S_n$`, R`ដោះស្រាយសមីការសម្គាល់នៃទំនាក់ទំនងលំដាប់ ២`]),
+
+      /* 4 review */ page([
+        sec('រំលឹកមេរៀនចាស់'),
+        l(60, 165, 1100, '!!__ទំនាក់ទំនងតួដែលបានរៀន ៖__!!', { size: 28 }),
+        s(100, 226, 1000, R`• !!ស៊ីតនព្វន្ត ៖!!   $a_{n+1} = a_n + d$   ($d$ ជាផលសងរួម)`),
+        s(100, 280, 1000, R`• !!ស៊ីតធរណីមាត្រ ៖!!   $a_{n+1} = a_n \times q$   ($q$ ជាផលធៀបរួម)`),
+        l(60, 356, 1100, R`!!__សំណួរ ៖__!!  ចុះបើ  $a_{n+1} = 1 + 4a_n$  ឬ  $a_{n+1} = 2a_n - n + 1$  វិញ?`, { size: 28 }),
+        s(100, 416, 1000, 'មិនមែនជានព្វន្តសុទ្ធ ក៏មិនមែនជាធរណីមាត្រសុទ្ធ → ហៅថា !!ទំនាក់ទំនងកំណើននៃស៊ីត!!'),
+        S.box(100, 490, 1000, 96, 'គោលដៅ ៖ រកវិធីបំប្លែងទំនាក់ទំនងកំណើន ឱ្យទៅជាស៊ីតធរណីមាត្រ ឬស៊ីតនព្វន្ត ដើម្បីរកតួទី $n$ ។', { size: 26, anim: true }),
+        kids()
+      ]),
+
+      /* 5 section 1 setup */ page([
+        sec('១. កំណត់តួទី n ដោយប្រើស៊ីតជំនួយ'),
+        tip(60, 160, 1180, 70, R`ចំពោះទំនាក់ទំនងកំណើនទម្រង់  $a_{n+1} = p a_n + q$  គេអាចរកតួទី $n$ តាម ៣ របៀប ៖`, { size: 24 }),
+        l(60, 250, 1100, R`!!__លំហាត់គំរូ ១ ៖__!!  កំណត់តួទូទៅនៃ $(a_n)$ ដោយ  $a_1 = 1,\ a_{n+1} = 1 + 4a_n$`, { size: 27 }),
+        title('របៀបទី ១ ៖ ពិនិត្យលំនាំគំរូតួដំបូងៗ', { x: 80, y: 310, size: 25, color: 'head' }),
+        s(120, 360, 1000, R`$a_1 = 1$`),
+        s(120, 404, 1000, R`$a_2 = 1 + 4a_1 = 1 + 4$`),
+        s(120, 448, 1000, R`$a_3 = 1 + 4a_2 = 1 + 4(1 + 4) = 1 + 4 + 4^2$`),
+        s(120, 492, 1000, R`$a_4 = 1 + 4a_3 = 1 + 4 + 4^2 + 4^3$`),
+        s(120, 540, 1000, R`$\Rightarrow\ a_n = 1 + 4 + 4^2 + \ldots + 4^{n-1} = \dfrac{1(4^n - 1)}{4 - 1} = \dfrac{4^n - 1}{3}$`, { h: 64 }),
+        S.box(780, 380, 440, 110, R`ផលបូក $n$ តួនៃ !!ស៊ីតធរណីមាត្រ!!  $a_1 = 1,\ q = 4$`, { size: 22, anim: true })
+      ]),
+
+      /* 6 example 1: method 2 */ page([
+        sec('លំហាត់គំរូ ១ (ត) — របៀបទី ២'),
+        title('របៀបទី ២ ៖ ប្រើផលសងលំដាប់ទី ១', { x: 80, y: 160, size: 26, color: 'head' }),
+        l(80, 215, 1100, R`គេមាន  $a_{n+1} = 1 + 4a_n$  និង  $a_n = 1 + 4a_{n-1}$   ($n \ge 2$) ៖`, { size: 25 }),
+        s(120, 270, 1000, R`ដកសមីការទាំងពីរ ៖   $a_{n+1} - a_n = 4(a_n - a_{n-1})$`),
+        s(120, 324, 1000, R`តាង $b_n = a_{n+1} - a_n \Rightarrow b_n = 4b_{n-1}$  ជាស៊ីតធរណីមាត្រ  $q = 4$`),
+        s(120, 376, 1000, R`$b_1 = a_2 - a_1 = 5 - 1 = 4 \Rightarrow b_n = 4 \times 4^{n-1} = 4^n$`),
+        s(80, 436, 1100, R`តាមរូបមន្តផលសង ៖   $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} 4^k = 1 + \dfrac{4(4^{n-1} - 1)}{4 - 1} = \dfrac{4^n - 1}{3}$`, { h: 72 }),
+        S.box(200, 530, 800, 80, R`!!ដូចនេះ!!   $a_n = \dfrac{4^n - 1}{3}$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 7 example 1: method 3 (auxiliary) */ page([
+        sec('លំហាត់គំរូ ១ (ត) — របៀបទី ៣'),
+        title('របៀបទី ៣ ៖ ប្រើស៊ីតជំនួយ (Auxiliary Sequence)', { x: 80, y: 160, size: 26, color: 'head' }),
+        l(80, 215, 1100, R`តាងចំនួនថេរ $c$ ដែល  $a_{n+1} - c = 4(a_n - c) \iff a_{n+1} = 4a_n - 3c$`, { size: 25 }),
+        s(120, 270, 1000, R`ផ្ទឹមនឹង  $a_{n+1} = 4a_n + 1 \Rightarrow -3c = 1 \Rightarrow c = -\dfrac{1}{3}$`),
+        s(120, 330, 1000, R`គេបាន ៖   $a_{n+1} + \dfrac{1}{3} = 4\left(a_n + \dfrac{1}{3}\right)$`),
+        s(120, 386, 1000, R`តាង  $V_n = a_n + \dfrac{1}{3} \Rightarrow V_{n+1} = 4V_n$  ជាស៊ីតធរណីមាត្រ  $q = 4$`),
+        s(120, 442, 1000, R`$V_1 = a_1 + \dfrac{1}{3} = 1 + \dfrac{1}{3} = \dfrac{4}{3} \Rightarrow V_n = \dfrac{4}{3} \times 4^{n-1} = \dfrac{4^n}{3}$`),
+        S.box(160, 520, 860, 80, R`$\Rightarrow\ a_n = V_n - \dfrac{1}{3} = \dfrac{4^n - 1}{3}$`, { size: 30, align: 'center', anim: true }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 8 general note for auxiliary sequence */ page([
+        title('ជាទូទៅ — របៀបរកស៊ីតជំនួយ', { x: 60, size: 32, color: 'head' }),
+        S.box(60, 160, 1180, 240, R`!!__១. ទម្រង់ $a_{n+1} = p a_n + q$  ($p \ne 1$) ៖__!!
+តាងចំនួនថេរ $c$ ដែល  $a_{n+1} - c = p(a_n - c)$  នោះ  $c = \dfrac{q}{1 - p}$ ។
+ស៊ីតជំនួយ $V_n = a_n - c$ ជាស៊ីតធរណីមាត្រមានផលធៀបរួម $p$ ៖  $V_n = V_1 \cdot p^{n-1}$ ។
+
+!!__២. ទម្រង់ $a_{n+1} = p a_n + f(n)$  (មានកន្សោមអថេរ $n$) ៖__!!
+គេតាងស៊ីតជំនួយ $r_n = \alpha n + \beta$ រួចជំនួសចូលសមីការដើម្បីរក $\alpha, \beta$ ។`, { size: 23, lh: '1.5' }),
+        tip(60, 430, 1180, 90, R`!!គន្លឹះ ៖!! គោលបំណងនៃស៊ីតជំនួយ គឺបំប្លែងសមីការកំណើនទៅជាទម្រង់ស៊ីតធរណីមាត្រ  $V_{n+1} = p\,V_n$  ដែលងាយស្រួលរកតួទី $n$ ។`, { size: 23, anim: true }),
+        kids()
+      ]),
+
+      /* 9 worked example 2: linear f(n) */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ២ ៖__!!  គេឱ្យស៊ីត $(a_n)$ ដោយ  $a_1 = 3,\ a_{n+1} = 2a_n - n + 1$ ។ រក $a_n$ ។`, { size: 27 }),
+        K.solTitle(440, 160),
+        s(60, 226, 1180, R`តាងស៊ីតជំនួយ  $r_n = \alpha n + \beta$  ផ្ទៀងផ្ទាត់  $r_{n+1} = 2r_n - n + 1$ ៖`),
+        s(100, 276, 1080, R`$\alpha(n+1) + \beta = 2(\alpha n + \beta) - n + 1 \iff (\alpha - 1)n + (\beta - \alpha + 1) = 0$`),
+        s(100, 332, 1080, R`$\Rightarrow\ \begin{cases} \alpha - 1 = 0\\ \beta - \alpha + 1 = 0 \end{cases} \iff \alpha = 1,\ \beta = 0 \Rightarrow r_n = n$`),
+        s(60, 400, 1180, R`ដកសមីការ ៖   $a_{n+1} - (n+1) = 2(a_n - n)$`),
+        s(100, 452, 1080, R`តាង  $V_n = a_n - n \Rightarrow V_{n+1} = 2V_n$  ជាស៊ីតធរណីមាត្រ  $V_1 = a_1 - 1 = 2 \Rightarrow V_n = 2^n$`),
+        S.box(200, 526, 800, 80, R`!!ដូចនេះ!!   $a_n = V_n + n = 2^n + n$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 10 practice */ page([
+        sec('ប្រតិបត្តិ'),
+        l(80, 190, 1100, R`កំណត់តួទី $n$ នៃស៊ីត $(a_n)$ កំណត់ដោយ  $a_1 = 5,\ a_n = 2a_{n-1} - n$  ($n \ge 2$)`, { size: 28 }),
+        s(120, 280, 1100, R`តាង  $r_n = \alpha n + \beta \Rightarrow \alpha n + \beta = 2[\alpha(n-1) + \beta] - n$`, { size: 25 }),
+        s(120, 340, 1100, R`$\Rightarrow\ \alpha = 1,\ \beta = 2 \Rightarrow r_n = n + 2$`),
+        s(120, 400, 1100, R`$a_n + n + 2 = 2[a_{n-1} + (n-1) + 2] \Rightarrow V_n = a_n + n + 2$  មាន  $V_1 = 5 + 3 = 8$`),
+        S.box(260, 480, 680, 80, R`!!ចម្លើយ ៖!!   $a_n = 2^n + (n + 2)$`, { size: 32, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 11 section 2 */ page([
+        sec(R`២. ទំនាក់ទំនងរវាង $a_n$ និង $S_n$`),
+        tip(60, 160, 1180, 86, R`ផលបូក $n$ តួដំបូងគឺ  $S_n = a_1 + a_2 + \ldots + a_{n-1} + a_n$  និង  $S_{n-1} = a_1 + a_2 + \ldots + a_{n-1}$ ។`, { size: 24 }),
+        S.box(60, 270, 1180, 130, R`!!__រូបមន្តគ្រឹះ ៖__!!
+$$a_n = S_n - S_{n-1} \quad (n \ge 2) \qquad \text{និង} \qquad a_1 = S_1$$`, { size: 28, align: 'center' }),
+        l(60, 424, 1100, R`!!__ឧទាហរណ៍ ៖__!!  គេមាន  $S_n = n^2 + n$ ។ រកតួទី $n$ នៃស៊ីត $(a_n)$ ៖`, { size: 26 }),
+        s(120, 480, 1000, R`$S_{n-1} = (n - 1)^2 + (n - 1) = n^2 - n$`),
+        s(120, 536, 1000, R`$a_n = S_n - S_{n-1} = (n^2 + n) - (n^2 - n) = 2n$   (ពិតចំពោះ $a_1 = S_1 = 2$)`),
+        S.box(780, 500, 420, 76, R`$a_n = 2n$   (ស៊ីតចំនួនគូ)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 12 worked example Sn */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ៖__!!  គេមាន  $S_n = n^3 + 2n$ ។ កំណត់តួទី $n$ នៃស៊ីត $(a_n)$ ៖`, { size: 27 }),
+        K.solTitle(440, 160),
+        s(60, 226, 1180, R`ចំពោះ $n \ge 2$ ៖   $S_{n-1} = (n - 1)^3 + 2(n - 1) = n^3 - 3n^2 + 5n - 3$`),
+        s(60, 290, 1180, R`$a_n = S_n - S_{n-1} = (n^3 + 2n) - (n^3 - 3n^2 + 5n - 3)$`),
+        s(160, 350, 1000, R`$= 3n^2 - 3n + 3$`),
+        s(60, 420, 1180, R`ចំពោះ $n = 1$ ៖   $a_1 = 3(1)^2 - 3(1) + 3 = 3$  ហើយ  $S_1 = 1^3 + 2(1) = 3$  (ពិត)`),
+        S.box(160, 500, 860, 80, R`!!ដូចនេះ!!   $a_n = 3n^2 - 3n + 3$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 13 practice Sn */ page([
+        sec('ប្រតិបត្តិ — ទំនាក់ទំនង Sn'),
+        l(60, 160, 1180, R`គេមាន  $S_n = 4 - a_n - \dfrac{1}{2^{n-2}}$  ជាផលបូក $n$ តួដំបូងនៃ $(a_n)$ ៖`, { size: 25 }),
+        s(60, 226, 1180, R`!!ក.!!  $S_n - S_{n-1} = a_n \iff (4 - a_n - 2^{2-n}) - (4 - a_{n-1} - 2^{3-n}) = a_n$`),
+        s(120, 280, 1060, R`$\iff 2a_n = a_{n-1} + 2^{2-n} \Rightarrow 2a_{n+1} = a_n + \dfrac{1}{2^{n-1}}$`, { h: 60 }),
+        s(60, 360, 1180, R`!!ខ.!!  គុណនឹង $2^n$ ៖   $2^{n+1} a_{n+1} = 2^n a_n + 2$`),
+        s(120, 416, 1060, R`តាង $U_n = 2^n a_n \Rightarrow U_{n+1} = U_n + 2$  ជាស៊ីតនព្វន្ត  $d = 2,\ U_1 = 2a_1 = 2$`),
+        s(120, 474, 1060, R`$U_n = 2 + 2(n - 1) = 2n \Rightarrow 2^n a_n = 2n$`),
+        S.box(260, 536, 680, 76, R`!!ចម្លើយ ៖!!   $a_n = \dfrac{2n}{2^n} = \dfrac{n}{2^{n-1}}$`, { size: 28, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 14-16 quizzes */
+      S.quiz(R`!!១.!! បើ $a_1 = 1,\ a_{n+1} = 2a_n + 1$ នោះតួទី $n$ គឺ ៖`, [R`$a_n = 2^n$`, R`$a_n = 2^n - 1$`, R`$a_n = 2^{n-1}$`, R`$a_n = 2n + 1$`], 1),
+      S.quiz(R`!!២.!! ទំនាក់ទំនងរវាង $a_n$ និង $S_n$ គឺ ៖`, [R`$a_n = S_n + S_{n-1}$`, R`$a_n = S_n \times S_{n-1}$`, R`$a_n = S_n - S_{n-1}$`, R`$a_n = \frac{S_n}{n}$`], 2),
+      S.quiz(R`!!៣.!! បើ $S_n = 3n^2$ នោះតួទី $n$ គឺ ៖`, [R`$a_n = 6n - 3$`, R`$a_n = 6n$`, R`$a_n = 3n$`, R`$a_n = 6n + 3$`], 0),
+
+      /* 17 homework 1 */ S.homework(R`!!១.!! ស៊ីត $(a_n)$ ៖ $a_1 = 3,\ a_{n+1} = 2a_n - 4$ ។ គណនាតួទី $4$ ។
+!!២.!! គេមាន $S_n = 2n^2 + 5n$ ។ រកតួទី $n$ នៃស៊ីត $(a_n)$ ។
+!!៣.!! រកតួទូទៅនៃស៊ីត $a_1 = 1,\ 3a_{n+1} = 2a_n + 3$ ។`),
+
+      /* ===== part 2: second order recurrences ===== */
+      /* 18 */ K.toc([R`==៣.ទម្រង់ $a_{n+2} + pa_{n+1} + qa_n = 0$==`, '៣.១.សមីការសម្គាល់', '៣.២.លំហាត់អនុវត្តន៍'], 46),
+      /* 19 */ S.objective(['កំណត់សមីការសម្គាល់នៃទំនាក់ទំនងលំដាប់ ២', 'ដោះស្រាយរកតួទី n នៃស៊ីតតាមឫសនៃសមីការសម្គាល់']),
+
+      /* 20 homework 1 answers */ page([
+        sec('កំណែកិច្ចការផ្ទះ ១'),
+        s(60, 160, 1180, R`!!១.!!  $a_1 = 3 \Rightarrow a_2 = 2(3) - 4 = 2 \Rightarrow a_3 = 2(2) - 4 = 0 \Rightarrow a_4 = 2(0) - 4 = -4$`),
+        s(60, 240, 1180, R`!!២.!!  $S_n = 2n^2 + 5n \Rightarrow a_n = S_n - S_{n-1} = (2n^2 + 5n) - [2(n-1)^2 + 5(n-1)] = 4n + 3$`),
+        s(60, 320, 1180, R`!!៣.!!  $a_{n+1} = \dfrac{2}{3}a_n + 1 \Rightarrow c = \dfrac{1}{1 - 2/3} = 3 \Rightarrow a_{n+1} - 3 = \dfrac{2}{3}(a_n - 3)$`),
+        s(120, 390, 1000, R`$V_n = a_n - 3 \Rightarrow V_n = (a_1 - 3)\left(\dfrac{2}{3}\right)^{n-1} = -2\left(\dfrac{2}{3}\right)^{n-1}$`),
+        S.box(200, 480, 800, 80, R`!!ចម្លើយ ៖!!   $a_n = 3 - 2\left(\dfrac{2}{3}\right)^{n-1}$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 21 section 3 setup */ page([
+        sec(R`៣. ទំនាក់ទំនងតួ $a_{n+2} + pa_{n+1} + qa_n = 0$`),
+        tip(60, 155, 1180, 70, R`នេះជាទំនាក់ទំនងលីនេអ៊ែរលំដាប់ ២ អូម៉ូសែន មានមេគុណថេរ $p, q$ ។`, { size: 24 }),
+        l(60, 250, 1100, R`!!__ឧទាហរណ៍ ៖__!!  គេមាន  $a_1 = 1,\ a_2 = 3,\ a_{n+2} = 3a_{n+1} - 2a_n$`, { size: 26 }),
+        s(100, 310, 1000, R`$a_3 = 3(3) - 2(1) = 7$`),
+        s(100, 360, 1000, R`$a_4 = 3(7) - 2(3) = 15$`),
+        s(100, 410, 1000, R`$a_5 = 3(15) - 2(7) = 31$`),
+        s(100, 460, 1000, R`$a_6 = 3(31) - 2(15) = 63$`),
+        s(60, 520, 1180, R`ផលសង ៖  $a_2 - a_1 = 2,\ a_3 - a_2 = 4,\ a_4 - a_3 = 8,\ \ldots\ \Rightarrow\ a_n = 2^n - 1$`),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 22 characteristic equation method */ page([
+        title('សមីការសម្គាល់ (Characteristic Equation)', { x: 60, size: 30, color: 'head' }),
+        S.box(60, 160, 1180, 280, R`ចំពោះទំនាក់ទំនង  $a_{n+2} + pa_{n+1} + qa_n = 0$ ៖
+សមីការដឺក្រេទី ២  !!$x^2 + px + q = 0$!!  ហៅថា !!សមីការសម្គាល់!! ។
+បើ $\alpha$ និង $\beta$ ជាឫសទាំងពីរនៃសមីការ នោះ $\alpha + \beta = -p$ និង $\alpha\beta = q$ ។
+គេអាចសរសេរជា ២ ប្រព័ន្ធស៊ីតធរណីមាត្រ ៖
+$$\begin{cases} a_{n+2} - \alpha a_{n+1} = \beta(a_{n+1} - \alpha a_n)\\ a_{n+2} - \beta a_{n+1} = \alpha(a_{n+1} - \beta a_n) \end{cases}$$`, { size: 24, lh: '1.5' }),
+        tip(60, 470, 1180, 80, R`!!គន្លឹះ ៖!! តាមរយៈសមីការទាំងពីរ យើងទទួលបាន ២ ស៊ីតធរណីមាត្រ រួចធ្វើផលដកដើម្បីបំបាត់ $a_{n+1}$ និងទាញរក $a_n$ !`, { size: 22, anim: true }),
+        kids()
+      ]),
+
+      /* 23 worked example: 2 distinct roots */ page([
+        l(60, 100, 1100, R`!!__លំហាត់គំរូ ៖__!!  $a_1 = 1,\ a_2 = 13,\ a_{n+2} = a_{n+1} + 6a_n$ ។ កំណត់តួទី $n$ ។`, { size: 27 }),
+        K.solTitle(440, 160),
+        s(60, 226, 1180, R`សរសេរជា ៖   $a_{n+2} - a_{n+1} - 6a_n = 0$`),
+        s(60, 280, 1180, R`សមីការសម្គាល់ ៖   $x^2 - x - 6 = 0 \iff (x - 3)(x + 2) = 0 \iff \alpha = 3,\ \beta = -2$`),
+        s(60, 350, 1180, R`គេបាន ២ ស៊ីតធរណីមាត្រ ៖`),
+        s(100, 400, 1000, R`$(1)\ a_{n+1} + 2a_n = 3(a_n + 2a_{n-1}) \Rightarrow a_{n+1} + 2a_n = (a_2 + 2a_1) \cdot 3^{n-1} = 15 \cdot 3^{n-1}$`),
+        s(100, 460, 1000, R`$(2)\ a_{n+1} - 3a_n = -2(a_n - 3a_{n-1}) \Rightarrow a_{n+1} - 3a_n = (a_2 - 3a_1) \cdot (-2)^{n-1} = 10 \cdot (-2)^{n-1}$`),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 24 worked example: solving an */ page([
+        sec('លំហាត់គំរូ (ត) — រកតួ an'),
+        l(80, 160, 1100, R`យកសមីការ $(1)$ ដកសមីការ $(2)$ ៖`, { size: 26 }),
+        s(120, 220, 1000, R`$(a_{n+1} + 2a_n) - (a_{n+1} - 3a_n) = 15 \cdot 3^{n-1} - 10 \cdot (-2)^{n-1}$`),
+        s(120, 280, 1000, R`$5a_n = 5 \times 3 \cdot 3^{n-1} + 5 \times 2 \cdot (-2) \cdot (-2)^{n-2}$`),
+        s(120, 340, 1000, R`$5a_n = 5 \cdot 3^n - 5 \cdot (-2) \cdot (-2)^{n-1} = 5 \cdot 3^n + 5 \cdot (-2)^n$`),
+        s(120, 410, 1000, R`ចែកនឹង $5$ ៖   $a_n = 3^n + (-2)^n$`),
+        S.box(160, 490, 860, 80, R`!!ដូចនេះ!!   $a_n = 3^n + (-2)^n$`, { size: 30, align: 'center', anim: true }),
+        tip(160, 590, 860, 60, R`!!ផ្ទៀងផ្ទាត់ ៖!!  $a_1 = 3 - 2 = 1$ ✓  ;  $a_2 = 9 + 4 = 13$ ✓`, { size: 22, anim: true })
+      ]),
+
+      /* 25 practice characteristic */ page([
+        sec('ប្រតិបត្តិ'),
+        l(80, 190, 1100, R`ស៊ីត $(a_n)$ កំណត់ដោយ  $a_1 = 0,\ a_2 = 3,\ a_{n+2} = 4a_{n+1} - 3a_n$ ។ កំណត់តួទី $n$ ។`, { size: 27 }),
+        s(120, 270, 1000, R`សមីការសម្គាល់ ៖  $x^2 - 4x + 3 = 0 \iff x = 1$  ឬ  $x = 3$`),
+        s(120, 330, 1000, R`$a_{n+1} - a_n = 3(a_n - a_{n-1}) \Rightarrow a_{n+1} - a_n = (3 - 0) \cdot 3^{n-1} = 3^n$`),
+        s(120, 390, 1000, R`$a_{n+1} - 3a_n = 1 \cdot (a_n - 3a_{n-1}) = a_2 - 3a_1 = 3$`),
+        s(120, 450, 1000, R`ដកសមីការទាំងពីរ ៖   $2a_n = 3^n - 3 \Rightarrow a_n = \dfrac{3^n - 3}{2}$`),
+        S.box(260, 520, 680, 80, R`!!ចម្លើយ ៖!!   $a_n = \dfrac{3^n - 3}{2}$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 26 textbook exercise 2: fibonacci */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ២ — ស៊ីត ហ្វីបូណាស៊ី'),
+        l(60, 160, 1180, R`ស៊ីត $(a_n)$ កំណត់ដោយ  $a_1 = 1,\ a_2 = 2,\ a_{n+2} = a_{n+1} + a_n$ ។ កំណត់តួទី $7$ ។`, { size: 26 }),
+        s(100, 230, 1000, R`$a_3 = a_2 + a_1 = 2 + 1 = 3$`),
+        s(100, 280, 1000, R`$a_4 = a_3 + a_2 = 3 + 2 = 5$`),
+        s(100, 330, 1000, R`$a_5 = a_4 + a_3 = 5 + 3 = 8$`),
+        s(100, 380, 1000, R`$a_6 = a_5 + a_4 = 8 + 5 = 13$`),
+        s(100, 430, 1000, R`$a_7 = a_6 + a_5 = 13 + 8 = 21$`),
+        S.box(260, 500, 680, 80, R`!!ដូចនេះ!!   $a_7 = 21$`, { size: 32, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 27 textbook exercise 4 */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៤'),
+      ].concat(rows([
+        { q: R`ក. $a_1 = 1,\ 3a_{n+1} = 2a_n + 3$`, a: R`$a_n = 3 - 2\left(\frac{2}{3}\right)^{n-1}$` },
+        { q: R`ខ. $a_1 = 1,\ 3a_{n+1} = 3a_n + 4 \iff a_{n+1} - a_n = \frac{4}{3}$`, a: R`$a_n = 1 + \frac{4}{3}(n-1) = \frac{4n-1}{3}$` },
+        { q: R`គ. $a_1 = 1,\ a_{n+1} = a_n + n$ (ផលសងជានព្វន្ត)`, a: R`$a_n = 1 + \frac{n(n-1)}{2} = \frac{n^2-n+2}{2}$` }
+      ], { y: 180, h: 96, gap: 130, size: 24, ansSize: 22 }))),
+
+      /* 28 textbook exercise 5: fraction */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៥ — ស៊ីតប្រភាគ'),
+        l(60, 150, 1180, R`គេមាន  $a_1 = 4,\ a_{n+1} = \dfrac{4a_n - 9}{a_n - 2}$ ។ តាង  $b_n = \dfrac{1}{a_n - 3}$ ៖`, { size: 25 }),
+        s(60, 220, 1180, R`$a_{n+1} - 3 = \dfrac{4a_n - 9 - 3(a_n - 2)}{a_n - 2} = \dfrac{a_n - 3}{a_n - 2}$`),
+        s(60, 290, 1180, R`$\Rightarrow\ b_{n+1} = \dfrac{1}{a_{n+1} - 3} = \dfrac{a_n - 2}{a_n - 3} = \dfrac{a_n - 3 + 1}{a_n - 3} = 1 + b_n$`),
+        s(60, 360, 1180, R`$\Rightarrow\ b_{n+1} - b_n = 1$  ជាស៊ីតនព្វន្ត  $d = 1,\ b_1 = \dfrac{1}{4 - 3} = 1 \Rightarrow b_n = n$`),
+        s(60, 430, 1180, R`$\Rightarrow\ a_n - 3 = \dfrac{1}{b_n} = \dfrac{1}{n} \Rightarrow a_n = 3 + \dfrac{1}{n} = \dfrac{3n + 1}{n}$`),
+        S.box(260, 510, 680, 80, R`!!ដូចនេះ!!   $a_n = \dfrac{3n + 1}{n}$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 29 textbook exercise 9: inversion */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៩ — ចម្រាសនៃស៊ីត'),
+        l(60, 150, 1180, R`គេមាន  $a_1 = 2,\ a_{n+1} = \dfrac{a_n}{a_n + 3}$ ។ តាង  $b_n = \dfrac{1}{a_n}$ ៖`, { size: 25 }),
+        s(60, 220, 1180, R`$b_{n+1} = \dfrac{1}{a_{n+1}} = \dfrac{a_n + 3}{a_n} = 1 + \dfrac{3}{a_n} = 3b_n + 1$`),
+        s(60, 290, 1180, R`$b_{n+1} + \dfrac{1}{2} = 3\left(b_n + \dfrac{1}{2}\right) \Rightarrow V_n = b_n + \dfrac{1}{2}$  ជាស៊ីតធរណីមាត្រ  $q = 3$`),
+        s(60, 360, 1180, R`$V_1 = b_1 + \dfrac{1}{2} = \dfrac{1}{2} + \dfrac{1}{2} = 1 \Rightarrow V_n = 3^{n-1} \Rightarrow b_n = 3^{n-1} - \dfrac{1}{2} = \dfrac{2 \cdot 3^{n-1} - 1}{2}$`),
+        S.box(260, 480, 680, 80, R`!!ដូចនេះ!!   $a_n = \dfrac{1}{b_n} = \dfrac{2}{2 \cdot 3^{n-1} - 1}$`, { size: 30, align: 'center', anim: true }),
+        kids()
+      ]),
+
+      /* 30 summary */ page([
+        sec('សង្ខេបមេរៀនទី ៥ — ទំនាក់ទំនងតួនៃស៊ីត'),
+        S.box(60, 160, 1180, 430, R`!!__១. ទំនាក់ទំនងលំដាប់ ១__ ៖
+• $a_{n+1} = p a_n + q \Rightarrow a_{n+1} - c = p(a_n - c)$  ដោយ  $c = \dfrac{q}{1 - p}$
+• $a_{n+1} = p a_n + \alpha n + \beta \Rightarrow$ ប្រើស៊ីតជំនួយ $r_n = A n + B$
+!!__២. ទំនាក់ទំនងរវាង $a_n$ និង $S_n$__ ៖
+• $a_n = S_n - S_{n-1}$  ($n \ge 2$)  និង  $a_1 = S_1$
+!!__៣. ទំនាក់ទំនងលំដាប់ ២__ ៖
+• $a_{n+2} + pa_{n+1} + qa_n = 0 \Rightarrow$ ដោះស្រាយសមីការសម្គាល់ $x^2 + px + q = 0$
+  ឫស $\alpha, \beta \Rightarrow \begin{cases} a_{n+1} - \alpha a_n = (a_2 - \alpha a_1)\beta^{n-1}\\ a_{n+1} - \beta a_n = (a_2 - \beta a_1)\alpha^{n-1} \end{cases}$ រួចដកសមីការរក $a_n$ ។`, { size: 22, lh: '1.5' }),
+        kids(1100, 526, 150)
+      ]),
+
+      /* 31 homework 2 */ S.homework(R`!!១.!! ដោះស្រាយទំនាក់ទំនង $a_1 = 1,\ a_2 = 5,\ a_{n+2} = 5a_{n+1} - 6a_n$ ។
+!!២.!! គេមាន $S_n = 3n^2 - n$ ។ កំណត់តួទី $n$ នៃស៊ីត $(a_n)$ ។
+!!៣.!! គេមាន $a_1 = 1,\ a_{n+1} = \dfrac{2a_n}{a_n + 2}$ ។ រកតួទី $n$ នៃស៊ីត $(a_n)$ ។`),
+
+      /* 32 */ S.thanks()
+    ];
+    return { name: 'ថ្នាក់ទី១១ · មេរៀនទី៥ ទំនាក់ទំនងតួនៃស៊ីត', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
              teacher: K.info.teacher, slides: slides };
   }
 
@@ -1833,6 +2150,7 @@ $a_6 = 36 - 6 + 1 = 31$ ✓`, { size: 22, anim: true })
     { id: 'g11-sequences', ver: 6, name: '📘 ថ្នាក់ទី១១ · ស៊ីតចំនួនពិត (៤៣ ស្លាយ)', build: sequences },
     { id: 'g11-arith', ver: 4, name: '📘 ថ្នាក់ទី១១ · ស៊ីតនព្វន្ត (៣៩ ស្លាយ)', build: arithmetic },
     { id: 'g11-geom', ver: 4, name: '📘 ថ្នាក់ទី១១ · ស៊ីតធរណីមាត្រ (៤០ ស្លាយ)', build: geometric },
-    { id: 'g11-sums', ver: 2, name: '📘 ថ្នាក់ទី១១ · ផលបូកតួនៃស៊ីតផ្សេងៗ (៤៣ ស្លាយ)', build: sums }
+    { id: 'g11-sums', ver: 3, name: '📘 ថ្នាក់ទី១១ · ផលបូកតួនៃស៊ីតផ្សេងៗ (៤៧ ស្លាយ)', build: sums },
+    { id: 'g11-recur', ver: 1, name: '📘 ថ្នាក់ទី១១ · ទំនាក់ទំនងតួនៃស៊ីត (៣២ ស្លាយ)', build: recurrence }
   ];
 })();
