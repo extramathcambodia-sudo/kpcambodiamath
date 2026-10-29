@@ -24,7 +24,7 @@
   <!-- External Math Data Store -->
   <script src="math_data.js"></script>
   <script src="static/js/book_tests.js"></script>
-  <script src="static/js/studio_extra.js?v=21"></script>
+  <script src="static/js/studio_extra.js?v=22"></script>
 
   <!-- Tailwind CSS for utility layout -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -1664,8 +1664,8 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
-  <script src="static/js/slides.js?v=21"></script>
-  <script src="static/js/slides_templates.js?v=21"></script>
+  <script src="static/js/slides.js?v=22"></script>
+  <script src="static/js/slides_templates.js?v=22"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
@@ -2098,7 +2098,7 @@
           <div class="flex flex-wrap gap-2">
             <a href="${lesson.url}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-bold no-underline">បើកមេរៀនពេញ</a>
             ${(() => {
-              const dMap = {'1':'g11-sequences','2':'g11-arith','3':'g11-geom','4':'g11-sums','5':'g11-recur','6':'g11-induction'};
+              const dMap = {'1':'g11-sequences','2':'g11-arith','3':'g11-geom','4':'g11-sums','5':'g11-recur','6':'g11-induction','7':'g11-exponential','8':'g11-logarithm'};
               const dId = dMap[String(lesson.num)];
               return dId ? `<a href="studio.html?deck=${dId}#slides" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold no-underline flex items-center gap-1.5 shadow-sm transition"><span>🖥</span> <span>ស្លាយបង្រៀន (Slides)</span></a>` : '';
             })()}
