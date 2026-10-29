@@ -109,6 +109,7 @@
 
   /* ---------------- painting ---------------- */
   function shapeSVG(el) {
+    if (el.svg) return el.svg;
     var w = el.w, h = el.h, sw = el.sw != null ? el.sw : 0, t = th();
     var fill = el.shape === 'line' || el.shape === 'arrow' ? 'none' : (resolveFill(el.fill) || t.accent);
     var stroke = resolveFill(el.stroke) || (el.shape === 'line' || el.shape === 'arrow' ? t.accent : 'none');

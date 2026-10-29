@@ -46,6 +46,176 @@
       }
       return els;
     };
+    // SVG exponential graph: inc (y=2^x), dec (y=(1/2)^x), both (comparison)
+    K.expGraph = function (x, y, w, h, gtype) {
+      w = w || 460; h = h || 370;
+      var x0 = Math.round(w * 0.44), y0 = Math.round(h * 0.80);
+      var sx = (w - 70) / 7.5;
+      var sy = (h - 70) / 10.0;
+      var s = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">';
+      s += '<rect width="' + w + '" height="' + h + '" rx="16" fill="#ffffff" stroke="#c5d3e8" stroke-width="2"/>';
+      for (var xi = -3; xi <= 3; xi++) {
+        var gx = x0 + xi * sx;
+        s += '<line x1="' + gx.toFixed(1) + '" y1="25" x2="' + gx.toFixed(1) + '" y2="' + (h - 25) + '" stroke="#edf2f7" stroke-width="1.2" stroke-dasharray="3,3"/>';
+      }
+      var yTicks = [1, 2, 4, 8];
+      for (var yi = 0; yi < yTicks.length; yi++) {
+        var gy = y0 - yTicks[yi] * sy;
+        s += '<line x1="25" y1="' + gy.toFixed(1) + '" x2="' + (w - 25) + '" y2="' + gy.toFixed(1) + '" stroke="#edf2f7" stroke-width="1.2" stroke-dasharray="3,3"/>';
+      }
+      s += '<line x1="18" y1="' + y0 + '" x2="' + (w - 16) + '" y2="' + y0 + '" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + (w - 10) + ',' + y0 + ' ' + (w - 20) + ',' + (y0 - 5) + ' ' + (w - 20) + ',' + (y0 + 5) + '" fill="#495057"/>';
+      s += '<text x="' + (w - 14) + '" y="' + (y0 + 20) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#495057">x</text>';
+
+      s += '<line x1="' + x0 + '" y1="' + (h - 18) + '" x2="' + x0 + '" y2="18" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + x0 + ',10 ' + (x0 - 5) + ',20 ' + (x0 + 5) + ',20" fill="#495057"/>';
+      s += '<text x="' + (x0 - 18) + '" y="20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#495057">y</text>';
+      s += '<text x="' + (x0 - 14) + '" y="' + (y0 + 16) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#868e96">O</text>';
+
+      for (var xi = -3; xi <= 3; xi++) {
+        if (xi === 0) continue;
+        var gx = x0 + xi * sx;
+        s += '<line x1="' + gx.toFixed(1) + '" y1="' + (y0 - 4) + '" x2="' + gx.toFixed(1) + '" y2="' + (y0 + 4) + '" stroke="#495057" stroke-width="1.5"/>';
+        s += '<text x="' + gx.toFixed(1) + '" y="' + (y0 + 18) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057" text-anchor="middle">' + xi + '</text>';
+      }
+      for (var yi = 0; yi < yTicks.length; yi++) {
+        var gy = y0 - yTicks[yi] * sy;
+        s += '<line x1="' + (x0 - 4) + '" y1="' + gy.toFixed(1) + '" x2="' + (x0 + 4) + '" y2="' + gy.toFixed(1) + '" stroke="#495057" stroke-width="1.5"/>';
+        s += '<text x="' + (x0 - 8) + '" y="' + (gy + 4).toFixed(1) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057" text-anchor="end">' + yTicks[yi] + '</text>';
+      }
+
+      if (gtype === 'inc' || gtype === 'both') {
+        var pts = [];
+        for (var i = 0; i <= 80; i++) {
+          var xv = -3.5 + i * (3.12 - (-3.5)) / 80.0;
+          var yv = Math.pow(2, xv);
+          pts.push((x0 + xv * sx).toFixed(1) + ',' + (y0 - yv * sy).toFixed(1));
+        }
+        s += '<path d="M ' + pts.join(' L ') + '" fill="none" stroke="#1971c2" stroke-width="3.5" stroke-linecap="round"/>';
+        s += '<text x="' + (x0 + 2.8 * sx).toFixed(1) + '" y="' + (y0 - 8.3 * sy).toFixed(1) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1971c2">y = 2ˣ</text>';
+
+        [1, 2, 3].forEach(function (v) {
+          var px = x0 + v * sx, py = y0 - Math.pow(2, v) * sy;
+          s += '<line x1="' + px.toFixed(1) + '" y1="' + y0 + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="#1971c2" stroke-width="1" stroke-dasharray="3,3"/>';
+          s += '<line x1="' + x0 + '" y1="' + py.toFixed(1) + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="#1971c2" stroke-width="1" stroke-dasharray="3,3"/>';
+          s += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="4.5" fill="#1971c2"/>';
+        });
+      }
+
+      if (gtype === 'dec' || gtype === 'both') {
+        var pts = [];
+        for (var i = 0; i <= 80; i++) {
+          var xv = -3.12 + i * (3.5 - (-3.12)) / 80.0;
+          var yv = Math.pow(0.5, xv);
+          pts.push((x0 + xv * sx).toFixed(1) + ',' + (y0 - yv * sy).toFixed(1));
+        }
+        var strokeC = gtype === 'dec' ? '#e03131' : '#f08c00';
+        s += '<path d="M ' + pts.join(' L ') + '" fill="none" stroke="' + strokeC + '" stroke-width="3.5" stroke-linecap="round"/>';
+        s += '<text x="' + (x0 - 3.2 * sx - 60).toFixed(1) + '" y="' + (y0 - 8.3 * sy).toFixed(1) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="' + strokeC + '">y = (1/2)ˣ</text>';
+
+        [-3, -2, -1].forEach(function (v) {
+          var px = x0 + v * sx, py = y0 - Math.pow(0.5, v) * sy;
+          if (gtype === 'dec') {
+            s += '<line x1="' + px.toFixed(1) + '" y1="' + y0 + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="' + strokeC + '" stroke-width="1" stroke-dasharray="3,3"/>';
+            s += '<line x1="' + x0 + '" y1="' + py.toFixed(1) + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="' + strokeC + '" stroke-width="1" stroke-dasharray="3,3"/>';
+          }
+          s += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="4.5" fill="' + strokeC + '"/>';
+        });
+      }
+
+      var py1 = y0 - 1.0 * sy;
+      s += '<circle cx="' + x0 + '" cy="' + py1.toFixed(1) + '" r="5.5" fill="#e03131"/>';
+      s += '<text x="' + (x0 + 8) + '" y="' + (py1 - 4).toFixed(1) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e03131">(0, 1)</text>';
+      s += '<text x="25" y="' + (h - 10) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#868e96">អាស៊ីមតូតដេក y = 0</text>';
+      s += '</svg>';
+      return shape('custom', x, y, w, h, { svg: s });
+    };
+
+    // SVG logarithm graph: inc (y=log2 x), dec (y=log1/2 x), both
+    K.logGraph = function (x, y, w, h, gtype) {
+      w = w || 460; h = h || 370;
+      var x0 = Math.round(w * 0.22), y0 = Math.round(h * 0.50);
+      var sx = (w - 70) / 9.0;
+      var sy = (h - 70) / 7.0;
+      var s = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">';
+      s += '<rect width="' + w + '" height="' + h + '" rx="16" fill="#ffffff" stroke="#c5d3e8" stroke-width="2"/>';
+      var xTicks = [1, 2, 4, 8];
+      for (var xi = 0; xi < xTicks.length; xi++) {
+        var gx = x0 + xTicks[xi] * sx;
+        s += '<line x1="' + gx.toFixed(1) + '" y1="25" x2="' + gx.toFixed(1) + '" y2="' + (h - 25) + '" stroke="#edf2f7" stroke-width="1.2" stroke-dasharray="3,3"/>';
+      }
+      for (var yi = -3; yi <= 3; yi++) {
+        if (yi === 0) continue;
+        var gy = y0 - yi * sy;
+        s += '<line x1="25" y1="' + gy.toFixed(1) + '" x2="' + (w - 25) + '" y2="' + gy.toFixed(1) + '" stroke="#edf2f7" stroke-width="1.2" stroke-dasharray="3,3"/>';
+      }
+      s += '<line x1="18" y1="' + y0 + '" x2="' + (w - 16) + '" y2="' + y0 + '" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + (w - 10) + ',' + y0 + ' ' + (w - 20) + ',' + (y0 - 5) + ' ' + (w - 20) + ',' + (y0 + 5) + '" fill="#495057"/>';
+      s += '<text x="' + (w - 16) + '" y="' + (y0 + 20) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#495057">x</text>';
+
+      s += '<line x1="' + x0 + '" y1="' + (h - 18) + '" x2="' + x0 + '" y2="18" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + x0 + ',10 ' + (x0 - 5) + ',20 ' + (x0 + 5) + ',20" fill="#495057"/>';
+      s += '<text x="' + (x0 - 18) + '" y="20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#495057">y</text>';
+      s += '<text x="' + (x0 - 14) + '" y="' + (y0 + 16) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#868e96">O</text>';
+
+      for (var xi = 0; xi < xTicks.length; xi++) {
+        var gx = x0 + xTicks[xi] * sx;
+        s += '<line x1="' + gx.toFixed(1) + '" y1="' + (y0 - 4) + '" x2="' + gx.toFixed(1) + '" y2="' + (y0 + 4) + '" stroke="#495057" stroke-width="1.5"/>';
+        s += '<text x="' + gx.toFixed(1) + '" y="' + (y0 + 18) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057" text-anchor="middle">' + xTicks[xi] + '</text>';
+      }
+      for (var yi = -3; yi <= 3; yi++) {
+        if (yi === 0) continue;
+        var gy = y0 - yi * sy;
+        s += '<line x1="' + (x0 - 4) + '" y1="' + gy.toFixed(1) + '" x2="' + (x0 + 4) + '" y2="' + gy.toFixed(1) + '" stroke="#495057" stroke-width="1.5"/>';
+        s += '<text x="' + (x0 - 8) + '" y="' + (gy + 4).toFixed(1) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057" text-anchor="end">' + yi + '</text>';
+      }
+
+      if (gtype === 'inc' || gtype === 'both') {
+        var pts = [];
+        for (var i = 1; i <= 80; i++) {
+          var xv = 0.12 + i * (8.5 - 0.12) / 80.0;
+          var yv = Math.log2(xv);
+          pts.push((x0 + xv * sx).toFixed(1) + ',' + (y0 - yv * sy).toFixed(1));
+        }
+        s += '<path d="M ' + pts.join(' L ') + '" fill="none" stroke="#099268" stroke-width="3.5" stroke-linecap="round"/>';
+        s += '<text x="' + (x0 + 7.5 * sx).toFixed(1) + '" y="' + (y0 - 3.2 * sy).toFixed(1) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#099268">y = log₂ x</text>';
+
+        [2, 4, 8].forEach(function (v) {
+          var px = x0 + v * sx, py = y0 - Math.log2(v) * sy;
+          s += '<line x1="' + px.toFixed(1) + '" y1="' + y0 + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="#099268" stroke-width="1" stroke-dasharray="3,3"/>';
+          s += '<line x1="' + x0 + '" y1="' + py.toFixed(1) + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="#099268" stroke-width="1" stroke-dasharray="3,3"/>';
+          s += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="4.5" fill="#099268"/>';
+        });
+      }
+
+      if (gtype === 'dec' || gtype === 'both') {
+        var pts = [];
+        for (var i = 1; i <= 80; i++) {
+          var xv = 0.12 + i * (8.5 - 0.12) / 80.0;
+          var yv = -Math.log2(xv);
+          pts.push((x0 + xv * sx).toFixed(1) + ',' + (y0 - yv * sy).toFixed(1));
+        }
+        var strokeC = gtype === 'dec' ? '#7048e8' : '#e03131';
+        s += '<path d="M ' + pts.join(' L ') + '" fill="none" stroke="' + strokeC + '" stroke-width="3.5" stroke-linecap="round"/>';
+        s += '<text x="' + (x0 + 7.5 * sx).toFixed(1) + '" y="' + (y0 + 3.4 * sy + 16).toFixed(1) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="' + strokeC + '">y = log₁/₂ x</text>';
+
+        [2, 4, 8].forEach(function (v) {
+          var px = x0 + v * sx, py = y0 - (-Math.log2(v)) * sy;
+          if (gtype === 'dec') {
+            s += '<line x1="' + px.toFixed(1) + '" y1="' + y0 + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="' + strokeC + '" stroke-width="1" stroke-dasharray="3,3"/>';
+            s += '<line x1="' + x0 + '" y1="' + py.toFixed(1) + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="' + strokeC + '" stroke-width="1" stroke-dasharray="3,3"/>';
+          }
+          s += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="4.5" fill="' + strokeC + '"/>';
+        });
+      }
+
+      var px1 = x0 + 1.0 * sx;
+      s += '<circle cx="' + px1.toFixed(1) + '" cy="' + y0 + '" r="5.5" fill="#e03131"/>';
+      s += '<text x="' + px1.toFixed(1) + '" y="' + (y0 - 8) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e03131" text-anchor="middle">(1, 0)</text>';
+      s += '<text x="25" y="' + (h - 10) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#868e96">អាស៊ីមតូតឈរ x = 0</text>';
+      s += '</svg>';
+      return shape('custom', x, y, w, h, { svg: s });
+    };
     K.solTitle = function (x, y) { return T(x || 440, y || 112, 400, 64, '!!__ដំណោះស្រាយ__!!', { size: 34, align: 'center' }); };
     // section title: centred, or left-aligned at x when given
     K.title = function (text, o) {
@@ -2243,7 +2413,7 @@ $$\begin{cases} a_{n+2} - \alpha a_{n+1} = \beta(a_{n+1} - \alpha a_n)\\ a_{n+2}
   // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៦ វិចារអនុមានរួមគណិតវិទ្យា — book pages 44–56
   function induction(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
-        title = K.title, tip = K.tip, card = K.card;
+        title = K.title, tip = K.tip, card = K.card, expGraph = K.expGraph, logGraph = K.logGraph;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
     var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
@@ -2833,7 +3003,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
   // ថ្នាក់ទី១១ ជំពូកទី២ មេរៀនទី១ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល — book pages 58–71
   function exponential(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
-        title = K.title, tip = K.tip, card = K.card;
+        title = K.title, tip = K.tip, card = K.card, expGraph = K.expGraph, logGraph = K.logGraph;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
     var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
@@ -2887,61 +3057,48 @@ $$f(x) = a^x \quad \text{ឬ} \quad y = a^x$$
 
       /* 6 */ page([
         sec('២.១ ក្រាបនៃអនុគមន៍អិចស្ប៉ូណង់ស្យែល — ករណី a > 1'),
-        l(60, 155, 1180, R`ពិនិត្យអនុគមន៍  $f(x) = 2^x$  (គោល $a = 2 > 1$) ៖`, { size: 26 }),
-        card(80, 215, 600, 240, 'តារាងតម្លៃត្រូវគ្នា (x និង y)', R`$$\begin{array}{|c|c|c|c|c|c|c|c|}
+        card(60, 155, 660, 375, 'តារាងតម្លៃ & លក្ខណៈក្រាប y = 2ˣ (a = 2 > 1)', R`$$\begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 x & -3 & -2 & -1 & 0 & 1 & 2 & 3 \\
 \hline
 y = 2^x & \frac{1}{8} & \frac{1}{4} & \frac{1}{2} & 1 & 2 & 4 & 8 \\
 \hline
 \end{array}$$
-• កាលណា $x$ កើន $\Rightarrow y$ កើនយ៉ាងលឿន (អនុគមន៍កើនដាច់ខាត)
-• កាលណា $x \to -\infty \Rightarrow y \to 0^+$ (ខិតជិតអ័ក្ស $x$)`, { size: 22 }),
-        card(720, 215, 480, 240, 'លក្ខណៈក្រាបករណី a > 1', R`• ក្រាបកើនពីឆ្វេងទៅស្តាំ (កើនលើ $\mathbb{R}$)
-• កាត់អ័ក្សអរដោនេ $(Oy)$ ត្រង់ចំណុច $(0, 1)$
-• អ័ក្សដេក $y = 0$ ជា!!អាស៊ីមតូតដេក!!ខាងឆ្វេង ($x \to -\infty$)
-• ក្រាបស្ថិតនៅខាងលើអ័ក្ស $Ox$ ជានិច្ច ($y > 0$)`, { size: 22 }),
-        S.box(100, 490, 1080, 80, R`!!សន្និដ្ឋាន!! ៖  ចំពោះ $a > 1$ អនុគមន៍ $y = a^x$ ជា!!អនុគមន៍កើនដាច់ខាត!!លើ $\mathbb{R}$ ។`, { size: 26, align: 'center', anim: true })
+• **ទិសដៅក្រាប** ៖ កើនឡើងពីឆ្វេងទៅស្តាំ (អនុគមន៍កើនដាច់ខាតលើ $\mathbb{R}$)
+• **ចំណុចពិសេស** ៖ ក្រាបកាត់អ័ក្ស $(Oy)$ ត្រង់ចំណុច $(0, 1)$
+• **អាស៊ីមតូត** ៖ អ័ក្សដេក $y = 0$ ជាអាស៊ីមតូតដេកខាងឆ្វេង ($x \to -\infty$)
+• **សំណុំតម្លៃ** ៖ ក្រាបស្ថិតនៅខាងលើអ័ក្ស $Ox$ ជានិច្ច ($y > 0$)`, { size: 23 }),
+        expGraph(740, 155, 480, 375, 'inc'),
+        S.box(60, 545, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  ចំពោះ $a > 1$ អនុគមន៍ $y = a^x$ ជា!!អនុគមន៍កើនដាច់ខាត!!លើ $\mathbb{R}$ ។`, { size: 26, align: 'center', anim: true })
       ]),
 
       /* 7 */ page([
         sec('២.២ ក្រាបនៃអនុគមន៍អិចស្ប៉ូណង់ស្យែល — ករណី 0 < a < 1'),
-        l(60, 155, 1180, R`ពិនិត្យអនុគមន៍  $g(x) = \left(\dfrac{1}{2}\right)^x = 2^{-x}$  (គោល $a = \frac{1}{2} < 1$) ៖`, { size: 26 }),
-        card(80, 215, 600, 240, 'តារាងតម្លៃត្រូវគ្នា (x និង y)', R`$$\begin{array}{|c|c|c|c|c|c|c|c|}
+        card(60, 155, 660, 375, 'តារាងតម្លៃ & លក្ខណៈក្រាប y = (1/2)ˣ (a = 1/2 < 1)', R`$$\begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 x & -3 & -2 & -1 & 0 & 1 & 2 & 3 \\
 \hline
 y = (\frac{1}{2})^x & 8 & 4 & 2 & 1 & \frac{1}{2} & \frac{1}{4} & \frac{1}{8} \\
 \hline
 \end{array}$$
-• កាលណា $x$ កើន $\Rightarrow y$ ថយចុះ (អនុគមន៍ចុះដាច់ខាត)
-• កាលណា $x \to +\infty \Rightarrow y \to 0^+$ (ខិតជិតអ័ក្ស $x$)`, { size: 22 }),
-        card(720, 215, 480, 240, 'លក្ខណៈក្រាបករណី 0 < a < 1', R`• ក្រាបចុះពីឆ្វេងទៅស្តាំ (ចុះលើ $\mathbb{R}$)
-• កាត់អ័ក្សអរដោនេ $(Oy)$ ត្រង់ចំណុច $(0, 1)$
-• អ័ក្សដេក $y = 0$ ជា!!អាស៊ីមតូតដេក!!ខាងស្តាំ ($x \to +\infty$)
-• ឆ្លុះគ្នានឹងក្រាប $y = 2^x$ ធៀបនឹងអ័ក្ស $(Oy)$`, { size: 22 }),
-        S.box(100, 490, 1080, 80, R`!!សន្និដ្ឋាន!! ៖  ចំពោះ $0 < a < 1$ អនុគមន៍ $y = a^x$ ជា!!អនុគមន៍ចុះដាច់ខាត!!លើ $\mathbb{R}$ ។`, { size: 26, align: 'center', anim: true })
+• **ទិសដៅក្រាប** ៖ ថយចុះពីឆ្វេងទៅស្តាំ (អនុគមន៍ចុះដាច់ខាតលើ $\mathbb{R}$)
+• **ចំណុចពិសេស** ៖ ក្រាបកាត់អ័ក្ស $(Oy)$ ត្រង់ចំណុច $(0, 1)$
+• **អាស៊ីមតូត** ៖ អ័ក្សដេក $y = 0$ ជាអាស៊ីមតូតដេកខាងស្តាំ ($x \to +\infty$)
+• **ភាពឆ្លុះ** ៖ ក្រាប $y = (1/2)^x$ ឆ្លុះគ្នានឹងក្រាប $y = 2^x$ ធៀបនឹងអ័ក្ស $(Oy)$`, { size: 23 }),
+        expGraph(740, 155, 480, 375, 'dec'),
+        S.box(60, 545, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  ចំពោះ $0 < a < 1$ អនុគមន៍ $y = a^x$ ជា!!អនុគមន៍ចុះដាច់ខាត!!លើ $\mathbb{R}$ ។`, { size: 26, align: 'center', anim: true })
       ]),
 
       /* 8 */ page([
         sec('២.៣ សង្ខេបលក្ខណៈទូទៅនៃអនុគមន៍ y = aˣ'),
-        l(60, 150, 1180, R`លក្ខណៈគ្រឹះទាំង ៦ នៃអនុគមន៍ $y = a^x$ ($a > 0, a \ne 1$) ៖`, { size: 26 }),
-        card(80, 215, 350, 230, 'ដែនកំណត់ & សំណុំតម្លៃ', R`• ដែនកំណត់ ៖
-  $$D = \mathbb{R} = (-\infty, +\infty)$$
-• សំណុំតម្លៃ ៖
-  $$R_f = (0, +\infty)$$
-  ($y > 0$ ជានិច្ច)`, { size: 22 }),
-        card(465, 215, 350, 230, 'ចំណុចពិសេស & អាស៊ីមតូត', R`• កាត់អ័ក្ស $(Oy)$ ត្រង់ ៖
-  $$(0, 1)$$
-  (ព្រោះ $a^0 = 1$)
-• បន្ទាត់ $y = 0$ (អ័ក្ស $Ox$) ជា!!អាស៊ីមតូតដេក!!`, { size: 22 }),
-        card(850, 215, 350, 230, 'ទិសដៅអថេរភាព', R`• បើ $a > 1$ ៖
-  អនុគមន៍!!កើនដាច់ខាត!!
-• បើ $0 < a < 1$ ៖
-  អនុគមន៍!!ចុះដាច់ខាត!!
-• ជាអនុគមន៍មួយទល់មួយ (1-to-1)`, { size: 22 }),
-        S.box(120, 475, 1040, 85, R`!!លក្ខណៈមួយទល់មួយ!! ៖  ចំពោះគ្រប់ចំនួនពិត $u, v \in \mathbb{R}$
-$$a^u = a^v \iff u = v \qquad \text{និង} \qquad a^u > a^v \iff \begin{cases} u > v & \text{បើ } a > 1 \\ u < v & \text{បើ } 0 < a < 1 \end{cases}$$`, { size: 23, align: 'center' })
+        card(60, 155, 660, 375, 'លក្ខណៈគ្រឹះទាំង ៦ នៃអនុគមន៍ y = aˣ', R`• **ដែនកំណត់** ៖ $D = \mathbb{R} = (-\infty, +\infty)$
+• **សំណុំតម្លៃ** ៖ $R_f = (0, +\infty)$ ($y > 0$ ជានិច្ច)
+• **ចំណុចកាត់រួម** ៖ កាត់អ័ក្ស $(Oy)$ ត្រង់ចំណុច $(0, 1)$ (ព្រោះ $a^0 = 1$)
+• **អាស៊ីមតូតដេក** ៖ បន្ទាត់ $y = 0$ (អ័ក្សដេក $Ox$)
+• **ករណី $a > 1$** ៖ អនុគមន៍កើនដាច់ខាត (ក្រាបខៀវ $y = 2^x$ ↗)
+• **ករណី $0 < a < 1$** ៖ អនុគមន៍ចុះដាច់ខាត (ក្រាបទឹកក្រូច $y = (1/2)^x$ ↘)`, { size: 23 }),
+        expGraph(740, 155, 480, 375, 'both'),
+        S.box(60, 545, 1160, 80, R`!!ចំណាំសំខាន់!! ៖  ក្រាបនៃ  $y = a^x$  និង  $y = \left(\dfrac{1}{a}\right)^x = a^{-x}$  ឆ្លុះគ្នាធៀបនឹងអ័ក្សអរដោនេ $(Oy)$ ជានិច្ច ។`, { size: 25, align: 'center', anim: true })
       ]),
 
       /* 9 */ page([
@@ -3287,38 +3444,31 @@ $$y = \log_a x \iff a^y = x$$
       ]),
 
       /* 6 */ page([
-        sec('១.៣ ក្រាបនៃអនុគមន៍លោការីត — អនុគមន៍ច្រាសនៃ aˣ'),
-        l(60, 150, 1180, R`ដោយសារ $y = \log_a x$ ជាអនុគមន៍ច្រាសនៃ $y = a^x$ ក្រាបរបស់វាឆ្លុះគ្នាធៀបនឹងបន្ទាត់ពុះ $y = x$ ៖`, { size: 26 }),
-        card(80, 215, 540, 255, 'ករណីគោល a > 1 (ឧ. y = log₂ x)', R`• ក្រាបកើនពីឆ្វេងទៅស្តាំ (អនុគមន៍កើនលើ $(0, +\infty)$)
-• កាត់អ័ក្សអាប់ស៊ីស $(Ox)$ ត្រង់ចំណុច $(1, 0)$
-• អ័ក្សឈរ $x = 0$ ជា!!អាស៊ីមតូតឈរ!!ខាងក្រោម ($x \to 0^+$)
-• កាលណា $x \to +\infty \Rightarrow y \to +\infty$`, { size: 22 }),
-        card(660, 215, 540, 255, 'ករណីគោល 0 < a < 1 (ឧ. y = log₁/₂ x)', R`• ក្រាបចុះពីឆ្វេងទៅស្តាំ (អនុគមន៍ចុះលើ $(0, +\infty)$)
-• កាត់អ័ក្សអាប់ស៊ីស $(Ox)$ ត្រង់ចំណុច $(1, 0)$
-• អ័ក្សឈរ $x = 0$ ជា!!អាស៊ីមតូតឈរ!!ខាងលើ ($x \to 0^+$)
-• ឆ្លុះគ្នានឹងក្រាប $y = \log_2 x$ ធៀបនឹងអ័ក្ស $(Ox)$`, { size: 22 }),
-        S.box(100, 495, 1080, 80, R`!!លក្ខណៈឆ្លុះធៀបនឹងបន្ទាត់ y = x!! ៖  បើចំណុច $(u, v)$ នៅលើក្រាប $y = a^x$ នោះចំណុច $(v, u)$ ស្ថិតនៅលើក្រាប $y = \log_a x$ ជានិច្ច ។`, { size: 24, align: 'center', anim: true })
+        sec('១.៣ ក្រាបនៃអនុគមន៍លោការីត — ករណី a > 1 និង 0 < a < 1'),
+        card(60, 155, 660, 375, 'លក្ខណៈក្រាប y = logₐ x', R`• **ករណី $a > 1$ (ក្រាបបៃតង $y = \log_2 x$)** ៖
+  - ក្រាបកើនពីឆ្វេងទៅស្តាំ (កើនលើ $(0, +\infty)$)
+  - កាត់អ័ក្សអាប់ស៊ីស $(Ox)$ ត្រង់ចំណុច $(1, 0)$
+  - អ័ក្សឈរ $x = 0$ ($Oy$) ជា!!អាស៊ីមតូតឈរ!!ខាងក្រោម ($x \to 0^+$)
+• **ករណី $0 < a < 1$ (ក្រាបស្វាយ $y = \log_{1/2} x$)** ៖
+  - ក្រាបចុះពីឆ្វេងទៅស្តាំ (ចុះលើ $(0, +\infty)$)
+  - អ័ក្សឈរ $x = 0$ ($Oy$) ជា!!អាស៊ីមតូតឈរ!!ខាងលើ ($x \to 0^+$)
+  - ក្រាបទាំងពីរឆ្លុះគ្នាធៀបនឹងអ័ក្សអាប់ស៊ីស $(Ox)$`, { size: 23 }),
+        logGraph(740, 155, 480, 375, 'both'),
+        S.box(60, 545, 1160, 80, R`!!លក្ខណៈកាត់រួម!! ៖  គ្រប់ក្រាបនៃអនុគមន៍ $y = \log_a x$ តែងតែកាត់អ័ក្ស $(Ox)$ ត្រង់ចំណុច $(1, 0)$ ជានិច្ច ព្រោះ $\log_a 1 = 0$ ។`, { size: 25, align: 'center', anim: true })
       ]),
 
       /* 7 */ page([
         sec('១.៤ សង្ខេបលក្ខណៈទូទៅនៃអនុគមន៍ y = logₐ x'),
-        l(60, 150, 1180, R`លក្ខណៈគ្រឹះទាំង ៥ នៃអនុគមន៍ $y = \log_a x$ ($a > 0, a \ne 1$) ៖`, { size: 26 }),
-        card(80, 215, 350, 230, 'ដែនកំណត់ & សំណុំតម្លៃ', R`• ដែនកំណត់ ៖
-  $$D = (0, +\infty)$$
-  (អថេរ $x > 0$ ជានិច្ច)
-• សំណុំតម្លៃ ៖
-  $$R_f = \mathbb{R} = (-\infty, +\infty)$$`, { size: 22 }),
-        card(465, 215, 350, 230, 'ចំណុចពិសេស & អាស៊ីមតូត', R`• កាត់អ័ក្ស $(Ox)$ ត្រង់ ៖
-  $$(1, 0)$$
-  (ព្រោះ $\log_a 1 = 0$)
-• បន្ទាត់ $x = 0$ (អ័ក្ស $Oy$) ជា!!អាស៊ីមតូតឈរ!!`, { size: 22 }),
-        card(850, 215, 350, 230, 'ទិសដៅអថេរភាព', R`• បើ $a > 1$ ៖
-  អនុគមន៍!!កើនដាច់ខាត!!
-• បើ $0 < a < 1$ ៖
-  អនុគមន៍!!ចុះដាច់ខាត!!
-• ជាអនុគមន៍មួយទល់មួយ (1-to-1)`, { size: 22 }),
-        S.box(120, 475, 1040, 85, R`!!លក្ខណៈមួយទល់មួយ!! ៖  ចំពោះ $u, v > 0$
-$$\log_a u = \log_a v \iff u = v \qquad \text{និង} \qquad \log_a u > \log_a v \iff \begin{cases} u > v & \text{បើ } a > 1 \\ u < v & \text{បើ } 0 < a < 1 \end{cases}$$`, { size: 23, align: 'center' })
+        card(60, 155, 660, 375, 'លក្ខណៈគ្រឹះទាំង ៥ នៃអនុគមន៍ y = logₐ x', R`• **ដែនកំណត់** ៖ $D = (0, +\infty)$ (អថេរ $x > 0$ ជានិច្ច)
+• **សំណុំតម្លៃ** ៖ $R_f = \mathbb{R} = (-\infty, +\infty)$
+• **ចំណុចកាត់អ័ក្ស** ៖ ក្រាបកាត់អ័ក្ស $(Ox)$ ត្រង់ចំណុច $(1, 0)$
+• **អាស៊ីមតូតឈរ** ៖ បន្ទាត់ $x = 0$ (អ័ក្សឈរ $Oy$)
+• **ទិសដៅអថេរភាព** ៖
+  - បើ $a > 1$ ៖ អនុគមន៍កើនដាច់ខាត (ក្រាបបៃតង ↗)
+  - បើ $0 < a < 1$ ៖ អនុគមន៍ចុះដាច់ខាត (ក្រាបស្វាយ ↘)
+• **លក្ខណៈ 1-to-1** ៖ $\log_a u = \log_a v \iff u = v$`, { size: 23 }),
+        logGraph(740, 155, 480, 375, 'inc'),
+        S.box(60, 545, 1160, 80, R`!!លក្ខណៈមួយទល់មួយ!! ៖  ចំពោះ $u, v > 0$ ៖   $\log_a u > \log_a v \iff u > v$ (បើ $a > 1$)   និង   $\iff u < v$ (បើ $0 < a < 1$)`, { size: 24, align: 'center', anim: true })
       ]),
 
       /* 8 */ page([
@@ -3750,7 +3900,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-exponential',
-      ver: 7,
+      ver: 8,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',
@@ -3771,7 +3921,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-logarithm',
-      ver: 6,
+      ver: 7,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',
