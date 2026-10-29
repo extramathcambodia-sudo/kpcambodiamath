@@ -67,7 +67,15 @@
       for (var k in o) e[k] = o[k];
       return e;
     };
-    K.card = function (x, y, w, h, text, o) {
+    K.card = function (x, y, w, h, text, o, extra) {
+      if (typeof o === 'string') {
+        if (/^[A-Dក-ឃ]$/.test(String(text).trim())) {
+          text = '!!' + String(text).trim() + '.!!   ' + o;
+        } else {
+          text = (text ? '!!__' + text + '__!!\n\n' : '') + o;
+        }
+        o = extra || {};
+      }
       var e = T(x, y, w, h, text, { size: 24, fill: '#f5f8fc', border: '#c5d3e8', bw: 2, radius: 16, valign: 'middle' });
       for (var k in o) e[k] = o[k];
       return e;
@@ -2923,7 +2931,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
     },
     {
       id: 'g11-induction',
-      ver: 2,
+      ver: 3,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
