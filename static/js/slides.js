@@ -139,10 +139,12 @@
       var box = document.createElement('div'), inner = document.createElement('div');
       box.className = 'sl-txt';
       var display = el.font === 'display' || (el.font == null && el.role === 'title' && th().titleFont);
-      var fs = el.size || 28;
-      if (fs < 38) {
-        fs = Math.round(fs * 1.12);
-      }
+      var fs = el.size || 30;
+      if (fs <= 24) fs = 28;
+      else if (fs <= 26) fs = 30;
+      else if (fs <= 28) fs = 32;
+      else if (fs <= 32) fs = 35;
+      else if (fs <= 36) fs = 38;
       box.style.fontSize = fs + 'px';
       box.style.color = el.color ? resolveFill(el.color) : roleColor(el.role);
       if (el.color) box.style.setProperty('--sl-math', resolveFill(el.color));
