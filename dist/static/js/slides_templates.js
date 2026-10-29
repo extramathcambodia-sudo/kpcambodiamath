@@ -63,7 +63,7 @@
               T(x, y, w, h, text, { size: size || 20, bold: true, color: '#ffffff', align: 'center', valign: 'middle' })];
     };
     K.tip = function (x, y, w, h, text, o) {
-      var e = T(x, y, w, h, text, { size: 22, fill: '#fff4e6', border: '#f68c1f', bw: 2, radius: 14, valign: 'middle' });
+      var e = T(x, y, w, h, text, { size: 26, fill: '#fff4e6', border: '#f68c1f', bw: 2, radius: 14, valign: 'middle' });
       for (var k in o) e[k] = o[k];
       return e;
     };
@@ -76,8 +76,10 @@
         }
         o = extra || {};
       }
-      var e = T(x, y, w, h, text, { size: 24, fill: '#f5f8fc', border: '#c5d3e8', bw: 2, radius: 16, valign: 'middle' });
+      var sz = (o && o.size && o.size >= 28) ? o.size : 28;
+      var e = T(x, y, w, h, text, { size: sz, fill: '#f5f8fc', border: '#c5d3e8', bw: 2, radius: 16, valign: 'middle' });
       for (var k in o) e[k] = o[k];
+      e.size = sz;
       return e;
     };
     // terms in circles (or rounded boxes with o.box = {w, h}) joined by arrows labelled o.op;
@@ -3627,7 +3629,7 @@ $$2 < x \le 5$$
   window.KPSlideTemplates = [
     {
       id: 'g11-sequences',
-      ver: 10,
+      ver: 11,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -3647,7 +3649,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-arith',
-      ver: 8,
+      ver: 9,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -3668,7 +3670,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-geom',
-      ver: 8,
+      ver: 9,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -3689,7 +3691,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-sums',
-      ver: 8,
+      ver: 9,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -3709,7 +3711,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-recur',
-      ver: 4,
+      ver: 5,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -3728,7 +3730,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-induction',
-      ver: 3,
+      ver: 4,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -3749,7 +3751,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-exponential',
-      ver: 3,
+      ver: 4,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',
@@ -3770,7 +3772,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-logarithm',
-      ver: 2,
+      ver: 3,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',

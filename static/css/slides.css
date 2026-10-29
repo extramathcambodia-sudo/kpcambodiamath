@@ -1,3 +1,4 @@
+@import url('../fonts/kantumruy-pro.css');
 /* Fonts of the «គំរូសាលា» theme, matching the sample deck (fall back to Kantumruy Pro offline) */
 @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Battambang:wght@400;700&family=Montserrat:wght@800&display=swap');
 /* KP Slides — PowerPoint-style editor (studio.html #view-slides) */
@@ -66,14 +67,17 @@
 
 /* stage & elements */
 .sl-stage { position: relative; width: 1280px; height: 720px; overflow: hidden; font-family: 'Kantumruy Pro', 'Khmer OS Battambang', sans-serif;
-  line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 .sl-deco { position: absolute; pointer-events: none; }
 .sl-el { position: absolute; box-sizing: border-box; }
 .sl-edit-stage .sl-el { cursor: move; }
-.sl-txt { width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-sizing: border-box; overflow-wrap: break-word; padding: 4px 6px; }
+.sl-txt { width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-sizing: border-box; overflow-wrap: break-word; padding: 5px 8px;
+  font-family: 'Kantumruy Pro', 'Khmer OS Battambang', sans-serif; font-weight: 500; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .sl-txt > div { min-width: 0; }
-.sl-txt .katex-display { margin: .35em 0; }
-.sl-txt .katex { font-size: 1.16em; }
+.sl-txt .katex-display { margin: .38em 0; }
+.sl-txt .katex { font-size: 1.28em; line-height: 1.2; }
+.sl-txt .katex-display .katex { font-size: 1.38em; }
+.sl-txt .katex .mfrac .vlist-t .vlist-r { font-size: 1.02em; }
 .sl-image img { display: block; width: 100%; height: 100%; max-width: none; object-fit: contain; }
 .sl-shape svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .sl-stage .sl-txt .katex { color: var(--sl-math, inherit); }

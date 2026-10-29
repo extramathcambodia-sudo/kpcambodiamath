@@ -139,7 +139,11 @@
       var box = document.createElement('div'), inner = document.createElement('div');
       box.className = 'sl-txt';
       var display = el.font === 'display' || (el.font == null && el.role === 'title' && th().titleFont);
-      box.style.fontSize = el.size + 'px';
+      var fs = el.size || 28;
+      if (fs < 38) {
+        fs = Math.round(fs * 1.12);
+      }
+      box.style.fontSize = fs + 'px';
       box.style.color = el.color ? resolveFill(el.color) : roleColor(el.role);
       if (el.color) box.style.setProperty('--sl-math', resolveFill(el.color));
       box.style.fontWeight = el.bold && !display ? '700' : '400';
@@ -260,8 +264,8 @@
       if (hasDeck && seeded[t.id] === t.ver) return;
       Object.keys(S.store.decks).forEach(function (k) {
         var o = S.store.decks[k];
-        // Only replace unedited template copies; user-created or edited decks are NEVER deleted
-        if (o.tpl === t.id && o.updated === o.seededAt) delete S.store.decks[k];
+        // Only replace unedited template copies or when version is refreshed
+        if (o.tpl === t.id && (seeded[t.id] !== t.ver || o.updated === o.seededAt)) delete S.store.decks[k];
       });
       var d = t.build(window.KPSlides.api);
       d.id = uid(); d.tpl = t.id; d.updated = d.seededAt = Date.now();
@@ -289,7 +293,7 @@
     if (!want) return;
     Object.keys(S.store.decks).forEach(function (k) {
       var d = S.store.decks[k];
-      if (d.tpl === want && (!best || (d.updated || 0) > (best.updated || 0))) best = d;
+      if (d.tpl === want && (!best || (d.seededAt || d.updated || 0) >= (best.seededAt || best.updated || 0))) best = d;
     });
     if (best) { S.store.current = best.id; return; }
     (window.KPSlideTemplates || []).forEach(function (t) {
@@ -431,15 +435,15 @@
     heading: function (text, y) { return T(40, y || 112, 1200, 90, text, { size: 50, font: 'display', color: 'head', shadow: true }); },
     kids: function (x, y, w) { w = w || 160; return { id: uid(), type: 'image', src: SCHOOL_IMG + 'students.png', x: x == null ? 961 : x, y: y == null ? 526 : y, w: w, h: Math.round(w * 414 / 560) }; },
     box: function (x, y, w, h, text, o) {
-      var e = T(x, y, w, h, text, { size: 30, border: 'accent', fill: 'card', radius: 12, valign: 'middle' });
+      var e = T(x, y, w, h, text, { size: 32, border: 'accent', fill: 'card', radius: 12, valign: 'middle' });
       for (var k in o) e[k] = o[k];
       return e;
     },
     conclude: function (y, text, x) {
       x = x || 40;
       var g = uid();
-      return [T(x, y, 190, 80, '!!ដូចនេះ ៖!!', { size: 34, valign: 'middle', anim: g }),
-              SCHOOL.box(x + 190, y - 5, 1060 - x, 90, text, { size: 32, anim: g })];
+      return [T(x, y, 190, 80, '!!ដូចនេះ ៖!!', { size: 36, valign: 'middle', anim: g }),
+              SCHOOL.box(x + 190, y - 5, 1060 - x, 90, text, { size: 34, anim: g })];
     },
     cover: function (sub, chapter, title, info) {
       var d = info || S.deck || {};
