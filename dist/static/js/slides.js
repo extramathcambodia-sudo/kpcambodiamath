@@ -139,12 +139,14 @@
       var box = document.createElement('div'), inner = document.createElement('div');
       box.className = 'sl-txt';
       var display = el.font === 'display' || (el.font == null && el.role === 'title' && th().titleFont);
-      var fs = el.size || 30;
-      if (fs <= 24) fs = 28;
-      else if (fs <= 26) fs = 30;
-      else if (fs <= 28) fs = 32;
-      else if (fs <= 32) fs = 35;
-      else if (fs <= 36) fs = 38;
+      var fs = el.size || 28;
+      if (fs <= 20) fs = 22;
+      else if (fs <= 22) fs = 24;
+      else if (fs <= 24) fs = 26;
+      else if (fs <= 26) fs = 28;
+      else if (fs <= 28) fs = 30;
+      else if (fs <= 32) fs = 33;
+      else if (fs <= 36) fs = 36;
       box.style.fontSize = fs + 'px';
       box.style.color = el.color ? resolveFill(el.color) : roleColor(el.role);
       if (el.color) box.style.setProperty('--sl-math', resolveFill(el.color));
@@ -180,7 +182,8 @@
     scope.querySelectorAll('.sl-txt').forEach(function (b) {
       var inner = b.firstChild, fs = parseFloat(b.style.fontSize), n = 0;
       var avail = function () { var cs = getComputedStyle(b); return b.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom); };
-      while (inner.offsetHeight > avail() + 1 && fs > 12 && n++ < 80) { fs -= fs > 30 ? 2 : 1; b.style.fontSize = fs + 'px'; }
+      var minFs = 21;
+      while (inner.offsetHeight > avail() + 1 && fs > minFs && n++ < 80) { fs -= fs > 30 ? 1.5 : 1; b.style.fontSize = fs + 'px'; }
     });
   }
   function paint(sl, st, mode, idx) {
