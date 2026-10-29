@@ -1,0 +1,76 @@
+/* khmermath.org — «ក្ដារខៀនធរណីមាត្រ» (construct/board.html, static/js/board.js).
+   Loaded after construct.css, whose ruler and compass it reuses. The sheet is light
+   paper in both themes; everything a finger touches is at least 44 px. */
+.bd-hero .lead { max-width: 640px; }
+.bd { display: flex; flex-direction: column; gap: 12px; }
+.bd-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; }
+.bd-tools, .bd-acts, .bd-foot, .bd-opt { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.bd-opt[hidden] { display: none; }
+.bd .btn { min-height: 44px; }
+.bd .btn:disabled { opacity: .45; cursor: default; transform: none; }
+.bd-tool, .bd-seg button {
+  min-height: 44px; padding: 6px 18px; border-radius: 999px; border: 1.5px solid var(--line-2);
+  background: var(--surface); color: var(--ink); font: inherit; font-size: 16px; font-weight: 600; cursor: pointer;
+}
+.bd-tool[aria-pressed="true"], .bd-seg button[aria-pressed="true"] { background: var(--teal-soft); border-color: var(--teal); color: var(--teal-strong); box-shadow: inset 0 0 0 1px var(--teal); }
+.bd-opts { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; min-height: 60px; padding: 8px 14px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); }
+.bd-hint { flex: 1 1 260px; margin: 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.7; }
+.bd-name label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.bd-name input { width: 5.5em; min-height: 44px; padding: 4px 12px; border-radius: 10px; border: 1.5px solid var(--line-2); background: var(--surface); color: var(--ink); font: italic 700 20px 'Times New Roman', 'STIX Two Text', serif; }
+.bd-name input:disabled { opacity: .5; }
+.bd-confirm { flex: 1 1 100%; font-weight: 600; color: var(--ink); }
+.bd-foot { gap: 4px 22px; }
+.bd-ic { flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; font-size: 19px; line-height: 1; }
+.bd-ic-on, .bd.full .bd-ic-off { display: none; }
+.bd.full .bd-ic-on { display: inline; }
+.bd-switch { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 6px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
+.bd-switch input { width: 22px; height: 22px; accent-color: var(--teal); }
+
+/* ---- the sheet ---- */
+.bd-stage { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line-2); box-shadow: var(--shadow); background: #fffefa; }
+.bd-svg { display: block; width: 100%; height: auto; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.bd[data-tool="point"] .bd-svg { cursor: crosshair; }
+.bd[data-tool="name"] .bd-svg { cursor: pointer; }
+.bd-svg [data-h] { touch-action: none; }
+.bd-hit { fill: transparent; cursor: grab; }
+.bd.dragging .bd-hit, .bd.dragging .bd-svg { cursor: grabbing; }
+.bd-svg .bd-ruler { pointer-events: auto; cursor: move; }
+.bd-edge { stroke: transparent; stroke-width: 44; pointer-events: stroke; cursor: crosshair; }
+.bd-edge-line { stroke: #a8732a; stroke-width: 1.6; pointer-events: none; }
+.bd-num { font: 600 11px system-ui, sans-serif; fill: #7a5216; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.bd-anchor { fill: #c9862b; stroke: #fffefa; stroke-width: 1.5; pointer-events: none; }
+.bd-stem { stroke: #a8732a; stroke-width: 1.2; stroke-dasharray: 3 3; pointer-events: none; }
+.bd-grip { fill: #fffefa; stroke: #a8732a; stroke-width: 2.4; pointer-events: none; }
+.bd-ring { fill: rgba(61, 80, 104, .1); stroke: #3d5068; stroke-width: 1.6; stroke-dasharray: 4 4; pointer-events: none; }
+.bd-ring-p { fill: rgba(201, 134, 43, .12); stroke: #c9862b; }
+.bd-ring-p.on { fill: rgba(201, 134, 43, .38); stroke-dasharray: none; stroke-width: 2.4; }
+.bd-open { font: 600 14px 'Kantumruy Pro', system-ui, sans-serif; fill: #6a788a; text-anchor: middle; paint-order: stroke; stroke: #fffefa; stroke-width: 4px; pointer-events: none; }
+.bd-cross { fill: #2d6aa8; stroke: #fffefa; stroke-width: 1.5; pointer-events: none; }
+.bd-snap { fill: rgba(45, 106, 168, .22); stroke: #2d6aa8; stroke-width: 2.4; pointer-events: none; }
+
+/* ---- the whole window: the way the board opens ---- */
+html.bd-full-on, html.bd-full-on body { overflow: hidden; overscroll-behavior: none; }
+.bd.full {
+  position: fixed; inset: 0; z-index: 2000; gap: 8px; background: var(--bg);
+  padding: max(8px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+}
+.bd.full .bd-stage { position: relative; flex: 1 1 0; min-height: 0; border-radius: 12px; box-shadow: none; }
+.bd.full .bd-svg { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; }
+.bd.full .bd-opts { min-height: 0; padding: 6px 12px; }
+.bd.full .bd-hint { font-size: 14.5px; line-height: 1.55; }
+.bd.full .bd-foot { min-height: 0; }
+
+@media (max-width: 640px) {
+  .bd-tool, .bd-seg button { padding: 6px 14px; font-size: 15.5px; }
+  .bd-tools, .bd-acts { width: 100%; }
+  .bd-acts .btn { flex: 1 1 auto; min-width: 44px; padding-left: 10px; padding-right: 10px; }
+  /* the arrows and the two drawings say it: the words would not fit on one row */
+  .bd-acts .bd-lbl { display: none; }
+  .bd.full .bd-tool { flex: 1 1 auto; padding: 6px 8px; }
+  .bd.full .bd-hint { font-size: 13.5px; }
+  .bd-foot { gap: 0 14px; }
+  .bd-switch { font-size: 15px; padding: 0 2px; }
+}
+@media print {
+  .bd-bar, .bd-opts, .bd-foot { display: none; }
+}

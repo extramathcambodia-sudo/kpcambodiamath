@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៣ : ចំនួនគត់រ៉ឺឡាទីប — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៣ «ចំនួនគត់រ៉ឺឡាទីប» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៣ : ចំនួនគត់រ៉ឺឡាទីប — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៣ «ចំនួនគត់រ៉ឺឡាទីប» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ៣</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៣</span>
+      <div><span class="ls-kicker">មេរៀនទី ៣ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>ចំនួនគត់រ៉ឺឡាទីប</h1><div class="ls-chips"><span class="chip chip-soon">នព្វន្ត</span><span class="chip chip-soon">៧ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណចំនួនគត់រ៉ឺឡាទីប និងបន្ទាត់ចំនួន</a></li><li class="sub"><a href="#u2">២. តម្លៃដាច់ខាត និងចំនួនផ្ទុយ</a></li><li class="sub"><a href="#u3">៣. ការប្រៀបធៀប និងលំដាប់នៃចំនួនគត់រ៉ឺឡាទីប</a></li><li class="sub"><a href="#u4">៤. វិធីបូក និងវិធីដកចំនួនគត់រ៉ឺឡាទីប</a></li><li class="sub"><a href="#u5">៥. វិធីគុណ និងវិធីចែកចំនួនគត់រ៉ឺឡាទីប</a></li><li class="sub"><a href="#u6">៦. លំដាប់នៃប្រមាណវិធី និងការប្រើវង់ក្រចក</a></li><li class="sub"><a href="#u7">៧. ចំណោទអនុវត្តជាក់ស្ដែង</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃចំនួនគត់អវិជ្ជមាន និងសញ្ញាណរ៉ឺឡាទីប</b></header><div class="bx-b">
+<p>សញ្ញាណនៃចំនួនអវិជ្ជមានមានប្រភពដើមតាំងពីរាប់ពាន់ឆ្នាំមុន។ ក្នុងប្រវត្តិសាស្ត្រគណិតវិទ្យាបុរាណចិន នៅក្នុងសៀវភៅ <em>Jiuzhang Suanshu</em> (សៀវភៅក្បួនគណិតវិទ្យា ៩ ជំពូក រៀបរៀងនៅសតវត្សទី២ មុន គ.ស.) គណិតវិទូបុរាណបានប្រើប្រាស់បន្ទះរាប់ពណ៌ក្រហមតំណាងឱ្យចំនួនវិជ្ជមាន (ប្រាក់ចំណូល ឬទ្រព្យសម្បត្តិ) និងបន្ទះរាប់ពណ៌ខ្មៅតំណាងឱ្យចំនួនអវិជ្ជមាន (ប្រាក់ជំពាក់ ឬការខាតបង់)។</p>
+<p>លុះមកដល់សតវត្សទី៧ នៃ គ.ស. គណិតវិទូ និងតារាវិទូជនជាតិឥណ្ឌាដ៏ល្បីល្បាញ <strong>Brahmagupta</strong> (៥៩៨–៦៦៨ នៃ គ.ស.) បានចងក្រងក្បួនគណិតវិទ្យាជាផ្លូវការនៅក្នុងសៀវភៅ <em>Brahmasphutasiddhanta</em> ដោយបានបង្កើតវិធាននៃប្រមាណវិធីលើចំនួនអវិជ្ជមាន និងលេខសូន្យយ៉ាងច្បាស់លាស់ ៖ <em>«បំណុលដកនឹងសូន្យនៅតែជាបំណុល ទ្រព្យសម្បត្តិដកនឹងសូន្យនៅតែជាទ្រព្យសម្បត្តិ ហើយផលគុណនៃបំណុលពីរគឺក្លាយជាទ្រព្យសម្បត្តិ»</em> (មានន័យថា អវិជ្ជមានគុណនឹងអវិជ្ជមាន ទទួលបានវិជ្ជមាន)។</p>
+<p>នៅទ្វីបអឺរ៉ុប គណិតវិទូដំបូងៗបានចាត់ទុកចំនួនអវិជ្ជមានថាជា «ចំនួនមិនពិត» រហូតដល់សតវត្សទី១៧ ទើបគណិតវិទូបារាំងដ៏ល្បីល្បាញ <strong>René Descartes</strong> (១៥៩៦–១៦៥០) បានបង្កើតប្រព័ន្ធកូអរដោនេដែកាត និងបង្ហាញថា ចំនួនអវិជ្ជមានគឺជាចំណុចដែលស្ថិតនៅខាងឆ្វេងនៃលេខសូន្យនៅលើបន្ទាត់ចំនួន ដែលធ្វើឱ្យចំនួនអវិជ្ជមានទទួលបានការទទួលស្គាល់ពេញលេញក្នុងពិភពវិទ្យាសាស្ត្ររហូតមកដល់សព្វថ្ងៃ។</p>
+</div></section>
+<h3 id="u1">សញ្ញាណចំនួនគត់រ៉ឺឡាទីប និងបន្ទាត់ចំនួន</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំនួនគត់រ៉ឺឡាទីប</b></header><div class="bx-b">
+<p><strong>ចំនួនគត់រ៉ឺឡាទីប</strong> គឺជាចំនួនដែលរួមមាន ចំនួនគត់វិជ្ជមាន ចំនួនសូន្យ និងចំនួនគត់អវិជ្ជមាន។</p>
+<ul>
+<li><p><strong>ចំនួនគត់វិជ្ជមាន</strong> ៖ <span class="mi">\(+1, +2, +3, +4, \dots\)</span> (អាចសរសេរគ្មានសញ្ញា <span class="mi">\(+\)</span> គឺ <span class="mi">\(1, 2, 3, 4, \dots\)</span>)</p></li>
+<li><p><strong>ចំនួនសូន្យ</strong> ៖ <span class="mi">\(0\)</span> (មិនមែនជាចំនួនវិជ្ជមាន ហើយក៏មិនមែនជាចំនួនអវិជ្ជមានឡើយ)</p></li>
+<li><p><strong>ចំនួនគត់អវិជ្ជមាន</strong> ៖ <span class="mi">\(-1, -2, -3, -4, \dots\)</span> (មានសញ្ញា <span class="mi">\(-\)</span> នៅពីមុខជានិច្ច)</p></li>
+</ul>
+<p>សំណុំនៃចំនួនគត់រ៉ឺឡាទីបតាងដោយអក្សរ <span class="mi">\(\mathbb{Z}\)</span> (មកពីពាក្យអាល្លឺម៉ង់ <em>Zahlen</em> មានន័យថាចំនួន) ៖ <div class="md">\[\mathbb{Z} = \{\dots, -4, -3, -2, -1, 0, +1, +2, +3, +4, \dots\}\]</div></p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>បន្ទាត់ចំនួន</b></header><div class="bx-b">
+<p><strong>បន្ទាត់ចំនួន</strong> គឺជាបន្ទាត់តម្រង់ទិសដែលមានចំណុចគល់ <span class="mi">\(O\)</span> តំណាងឱ្យលេខ <span class="mi">\(0\)</span> និងឯកតារង្វាស់ស្មើៗគ្នា ៖</p>
+<ul>
+<li><p>ចំណុចដែលស្ថិតនៅ<strong>ខាងស្ដាំ</strong>នៃគល់ <span class="mi">\(O\)</span> តំណាងឱ្យ<strong>ចំនួនគត់វិជ្ជមាន</strong>។</p></li>
+<li><p>ចំណុចដែលស្ថិតនៅ<strong>ខាងឆ្វេង</strong>នៃគល់ <span class="mi">\(O\)</span> តំណាងឱ្យ<strong>ចំនួនគត់អវិជ្ជមាន</strong>។</p></li>
+</ul>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងចំណោមចំនួនខាងក្រោម តើចំនួនណាខ្លះជាចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន ចំនួនណាជាចំនួនគត់រ៉ឺឡាទីបអវិជ្ជមាន និងចំនួនណាខ្លះមិនមែនជាចំនួនគត់រ៉ឺឡាទីប ៖ <div class="md">\[-8, \quad{} +15, \quad{} 0, \quad{} -3.5, \quad{} \frac{7}{2}, \quad{} -120, \quad{} 45, \quad{} -\frac{10}{2}\]</div></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p><strong>ចំនួនគត់រ៉ឺឡាទីបវិជ្ជមាន</strong> ៖ <span class="mi">\(+15, 45\)</span> (ចំនួនគត់ធំជាងសូន្យ)។</p></li>
+<li><p><strong>ចំនួនគត់រ៉ឺឡាទីបអវិជ្ជមាន</strong> ៖ <span class="mi">\(-8, -120\)</span> និង <span class="mi">\(-\frac{10}{2} = -5\)</span>។</p></li>
+<li><p><strong>ចំនួនសូន្យ</strong> (<span class="mi">\(0\)</span>) ៖ ជាចំនួនគត់រ៉ឺឡាទីប ប៉ុន្តែមិនវិជ្ជមាន ហើយក៏មិនអវិជ្ជមាន។</p></li>
+<li><p><strong>មិនមែនជាចំនួនគត់រ៉ឺឡាទីប</strong> ៖ <span class="mi">\(-3.5\)</span> (ចំនួនទសភាគ) និង <span class="mi">\(\frac{7}{2} = 3.5\)</span> (ប្រភាគមិនដាច់)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>កំណត់ចំនួន និងដៅចំណុចលើបន្ទាត់ចំនួន</b></header><div class="bx-b">
+<p>១. ក្នុងចំណោមចំនួនខាងក្រោម ចូរញែកចំនួនគត់វិជ្ជមាន និងអវិជ្ជមាន ៖ <div class="md">\[-15, \quad{} +24, \quad{} -7, \quad{} 0, \quad{} -102, \quad{} 58, \quad{} -1, \quad{} +99\]</div> ២. ចូរដៅចំណុច <span class="mi">\(A(-4), B(3), C(-1), D(5), E(0)\)</span> នៅលើបន្ទាត់ចំនួនតែមួយ។</p>
+</div></section>
+<h3 id="u2">តម្លៃដាច់ខាត និងចំនួនផ្ទុយ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>តម្លៃដាច់ខាត</b></header><div class="bx-b">
+<p><strong>តម្លៃដាច់ខាត</strong> នៃចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(a\)</span> (តាងដោយ <span class="mi">\(|a|\)</span>) គឺជា<strong>ចម្ងាយ</strong>ពីចំណុចតាងចំនួន <span class="mi">\(a\)</span> ទៅកាន់ចំណុចគល់ <span class="mi">\(0\)</span> នៅលើបន្ទាត់ចំនួន។ ដោយសារចម្ងាយមិនអាចអវិជ្ជមាន ដូច្នេះតម្លៃដាច់ខាតជាចំនួនមិនអវិជ្ជមានជានិច្ច ៖ <div class="md">\[|a| = \begin{cases}
+        a &amp; \text{បើ } a \ge 0 \\
+        -a &amp; \text{បើ } a &lt; 0
+    \end{cases}\]</div> ឧទាហរណ៍ ៖ <span class="mi">\(|+5| = 5, \quad{} |-5| = 5, \quad{} |0| = 0, \quad{} |-12| = 12\)</span>។</p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំនួនផ្ទុយ</b></header><div class="bx-b">
+<p><strong>ចំនួនផ្ទុយ</strong> នៃចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(a\)</span> គឺជាចំនួនដែលស្ថិតនៅសងខាងនៃគល់ <span class="mi">\(0\)</span> និងមានចម្ងាយស្មើគ្នាពីគល់ <span class="mi">\(0\)</span> (មានតម្លៃដាច់ខាតស្មើគ្នា ប៉ុន្តែមានសញ្ញាផ្ទុយគ្នា)។</p>
+<ul>
+<li><p>ចំនួនផ្ទុយនៃ <span class="mi">\(a\)</span> គឺកំណត់សរសេរដោយ <span class="mi">\(-(a) = -a\)</span></p></li>
+<li><p>ចំនួនផ្ទុយនៃ <span class="mi">\(-a\)</span> គឺ <span class="mi">\(-(-a) = a\)</span></p></li>
+<li><p>ចំនួនផ្ទុយនៃ <span class="mi">\(0\)</span> គឺ <span class="mi">\(0\)</span></p></li>
+<li><p>ផលបូកនៃពីរចំនួនផ្ទុយគ្នា តែងតែស្មើនឹងសូន្យ ៖ <span class="mi">\(a + (-a) = 0\)</span></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = |-15| + |+8| - |-7|\)</span></p></li>
+<li><p><span class="mi">\(B = -|-12| + |-3|^2 - (-5)\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = |-15| + |+8| - |-7| = 15 + 8 - 7 = 23 - 7 = 16\)</span></p></li>
+<li><p><span class="mi">\(B = -|-12| + |-3|^2 - (-5) = -12 + 3^2 + 5 = -12 + 9 + 5 = 2\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាតម្លៃដាច់ខាត និងចំនួនផ្ទុយ</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|-25| + |+14|\)</span></p></li>
+<li><p><span class="mi">\(|-18| - |-9| + |0|\)</span></p></li>
+<li><p><span class="mi">\(-(-16) + [-(-7)]\)</span></p></li>
+<li><p><span class="mi">\(|-6| \times |+4| - |-15|\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u3">ការប្រៀបធៀប និងលំដាប់នៃចំនួនគត់រ៉ឺឡាទីប</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃការប្រៀបធៀបចំនួនគត់រ៉ឺឡាទីប</b></header><div class="bx-b">
+<p>នៅលើបន្ទាត់ចំនួនផ្ដេក ចំនួនដែលស្ថិតនៅ<strong>ខាងស្ដាំ</strong> តែងតែ<strong>ធំជាង</strong>ចំនួនដែលស្ថិតនៅ<strong>ខាងឆ្វេង</strong>ជានិច្ច ៖</p>
+<ul>
+<li><p><strong>រវាងចំនួនវិជ្ជមាន និងសូន្យ</strong> ៖ គ្រប់ចំនួនវិជ្ជមានតែងតែធំជាងសូន្យ (<span class="mi">\(a &gt; 0\)</span> ចំពោះ <span class="mi">\(a &gt; 0\)</span>)។</p></li>
+<li><p><strong>រវាងចំនួនអវិជ្ជមាន និងសូន្យ</strong> ៖ គ្រប់ចំនួនអវិជ្ជមានតែងតែតូចជាងសូន្យ (<span class="mi">\(b &lt; 0\)</span> ចំពោះ <span class="mi">\(b &lt; 0\)</span>)។</p></li>
+<li><p><strong>រវាងចំនួនវិជ្ជមាន និងចំនួនអវិជ្ជមាន</strong> ៖ ចំនួនវិជ្ជមានតែងតែធំជាងចំនួនអវិជ្ជមានជានិច្ច។</p></li>
+<li><p><strong>រវាងចំនួនវិជ្ជមានពីរ</strong> ៖ ចំនួនណាដែលមាន<strong>តម្លៃដាច់ខាតធំជាង</strong> ជាចំនួន<strong>ធំជាង</strong>។</p></li>
+<li><p><strong>រវាងចំនួនអវិជ្ជមានពីរ</strong> ៖ ចំនួនណាដែលមាន<strong>តម្លៃដាច់ខាតតូចជាង</strong> ជាចំនួន<strong>ធំជាង</strong> (ឧទាហរណ៍ ៖ <span class="mi">\(-3 &gt; -8\)</span> ពីព្រោះ <span class="mi">\(|-3| = 3 &lt; 8 = |-8|\)</span>)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ប្រៀបធៀបគូចំនួនខាងក្រោមដោយប្រើសញ្ញា <span class="mi">\(&lt;\)</span> ឬ <span class="mi">\(&gt;\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(+7\)</span> និង <span class="mi">\(-12\)</span></p></li>
+<li><p><span class="mi">\(-15\)</span> និង <span class="mi">\(0\)</span></p></li>
+<li><p><span class="mi">\(-9\)</span> និង <span class="mi">\(-4\)</span></p></li>
+<li><p><span class="mi">\(-25\)</span> និង <span class="mi">\(-30\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(+7 &gt; -12\)</span> (ចំនួនវិជ្ជមានធំជាងចំនួនអវិជ្ជមាន)</p></li>
+<li><p><span class="mi">\(-15 &lt; 0\)</span> (ចំនួនអវិជ្ជមានតូចជាងសូន្យ)</p></li>
+<li><p><span class="mi">\(-9 &lt; -4\)</span> (ព្រោះ <span class="mi">\(|-9| = 9 &gt; 4 = |-4|\)</span> ដូច្នេះចំនួនអវិជ្ជមានមានតម្លៃដាច់ខាតធំ ជាចំនួនតូចជាង)</p></li>
+<li><p><span class="mi">\(-25 &gt; -30\)</span> (ព្រោះ <span class="mi">\(|-25| = 25 &lt; 30 = |-30|\)</span>)</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រៀបធៀប និងតម្រៀបលំដាប់</b></header><div class="bx-b">
+<p>១. ប្រៀបធៀបគូចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(-14\)</span> និង <span class="mi">\(-20\)</span></p></li>
+<li><p><span class="mi">\(+3\)</span> និង <span class="mi">\(-100\)</span></p></li>
+</ol>
+<p>២. ចូររៀបចំនួនខាងក្រោមតាមលំដាប់កើន ៖ <span class="mi">\(-12, +5, -3, 0, -18, +9, -1, +14\)</span>។<br/>
+៣. ចូររៀបចំនួនខាងក្រោមតាមលំដាប់ចុះ ៖ <span class="mi">\(-8, -25, +17, -2, +30, 0, -15\)</span>។</p>
+</div></section>
+<h3 id="u4">វិធីបូក និងវិធីដកចំនួនគត់រ៉ឺឡាទីប</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃវិធីបូកចំនួនគត់រ៉ឺឡាទីប</b></header><div class="bx-b">
+<ul>
+<li><p><strong>បូកពីរចំនួនមានសញ្ញាដូចគ្នា</strong> ៖ គេបូកតម្លៃដាច់ខាតនៃចំនួនទាំងពីរ ហើយរក្សាសញ្ញារួមដដែល ៖ <div class="md">\[(+a) + (+b) = +(a + b), \qquad{} (-a) + (-b) = -(a + b)\]</div></p></li>
+<li><p><strong>បូកពីរចំនួនមានសញ្ញាផ្ទុយគ្នា</strong> ៖ គេយកតម្លៃដាច់ខាតធំដកតម្លៃដាច់ខាតតូច ហើយដាក់សញ្ញាតាមតួដែលមានតម្លៃដាច់ខាតធំជាង ៖ <div class="md">\[(-8) + (+5) = -(8 - 5) = -3, \qquad{} (+12) + (-4) = +(12 - 4) = +8\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃវិធីដកចំនួនគត់រ៉ឺឡាទីប</b></header><div class="bx-b">
+<p>ដើម្បីដកចំនួនគត់រ៉ឺឡាទីបមួយ គេត្រូវ<strong>បូកចំនួនផ្ទុយ</strong>របស់វា ៖ <div class="md">\[a - b = a + (-b)\]</div> <strong>ក្បួនសម្រួលសញ្ញាជាប់គ្នា</strong> ៖ <div class="md">\[+(+a) = +a, \quad{} +(-a) = -a, \quad{} -(+a) = -a, \quad{} -(-a) = +a\]</div></p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>លក្ខណៈនៃវិធីបូកចំនួនគត់រ៉ឺឡាទីប</b></header><div class="bx-b">
+<p>ចំពោះគ្រប់ចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(a, b, c\)</span> គេបាន ៖</p>
+<ul>
+<li><p><strong>លក្ខណៈត្រឡប់</strong> ៖ <span class="mi">\(a + b = b + a\)</span></p></li>
+<li><p><strong>លក្ខណៈផ្ដុំ</strong> ៖ <span class="mi">\((a + b) + c = a + (b + c)\)</span></p></li>
+<li><p><strong>ធាតុណឺត</strong> ៖ <span class="mi">\(a + 0 = 0 + a = a\)</span> (<span class="mi">\(0\)</span> ជាធាតុណឺតនៃវិធីបូក)</p></li>
+<li><p><strong>ធាតុផ្ទុយ</strong> ៖ <span class="mi">\(a + (-a) = (-a) + a = 0\)</span></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = (-14) + (-26) + (+15)\)</span></p></li>
+<li><p><span class="mi">\(B = 18 - (-12) - 25 + (-7)\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = [(-14) + (-26)] + 15 = -40 + 15 = -(40 - 15) = -25\)</span></p></li>
+<li><p><span class="mi">\(B = 18 + 12 - 25 - 7 = 30 - 32 = -2\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាផលបូក និងផលដក</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((-35) + (+18) + (-15)\)</span></p></li>
+<li><p><span class="mi">\(42 - (-18) - (+30)\)</span></p></li>
+<li><p><span class="mi">\((-12) - (-25) + (-13) - 8\)</span></p></li>
+<li><p><span class="mi">\(100 - (+45) - (-25) + (-80)\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u5">វិធីគុណ និងវិធីចែកចំនួនគត់រ៉ឺឡាទីប</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធានសញ្ញានៃវិធីគុណ និងវិធីចែក</b></header><div class="bx-b">
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><strong>ក្បួនសញ្ញានៃវិធីគុណ</strong></th>
+<th><strong>ក្បួនសញ្ញានៃវិធីចែក</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\((+) \times (+) = (+)\)</span></td>
+<td><span class="mi">\((+) \div (+) = (+)\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\((-) \times (-) = (+)\)</span></td>
+<td><span class="mi">\((-) \div (-) = (+)\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\((+) \times (-) = (-)\)</span></td>
+<td><span class="mi">\((+) \div (-) = (-)\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\((-) \times (+) = (-)\)</span></td>
+<td><span class="mi">\((-) \div (+) = (-)\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>សេចក្ដីសន្និដ្ឋាន</strong> ៖</p>
+<ul>
+<li><p>តួពីរមាន<strong>សញ្ញាដូចគ្នា</strong> គុណ ឬចែកគ្នា ទទួលបានលទ្ធផល<strong>វិជ្ជមាន</strong> (<span class="mi">\(+\)</span>)។</p></li>
+<li><p>តួពីរមាន<strong>សញ្ញាផ្ទុយគ្នា</strong> គុណ ឬចែកគ្នា ទទួលបានលទ្ធផល<strong>អវិជ្ជមាន</strong> (<span class="mi">\(-\)</span>)។</p></li>
+<li><p>ផលគុណដែលមានកត្តាអវិជ្ជមានចំនួន<strong>គូ</strong> ផ្ដល់លទ្ធផល<strong>វិជ្ជមាន</strong>។ បើមានកត្តាអវិជ្ជមានចំនួន<strong>សេស</strong> ផ្ដល់លទ្ធផល<strong>អវិជ្ជមាន</strong>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ស្វ័យគុណនៃចំនួនគត់រ៉ឺឡាទីប</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(a\)</span> ជាចំនួនវិជ្ជមាន និង <span class="mi">\(n\)</span> ជាចំនួនគត់ធម្មជាតិ ៖</p>
+<ul>
+<li><p><span class="mi">\((-a)^n &gt; 0\)</span> (វិជ្ជមាន) បើ <span class="mi">\(n\)</span> ជាចំនួន<strong>គូ</strong> (ឧទាហរណ៍ ៖ <span class="mi">\((-3)^2 = +9, \quad{} (-2)^4 = +16\)</span>)</p></li>
+<li><p><span class="mi">\((-a)^n &lt; 0\)</span> (អវិជ្ជមាន) បើ <span class="mi">\(n\)</span> ជាចំនួន<strong>សេស</strong> (ឧទាហរណ៍ ៖ <span class="mi">\((-3)^3 = -27, \quad{} (-2)^5 = -32\)</span>)</p></li>
+<li><p><strong>ចំណាំការប្រើវង់ក្រចក</strong> ៖ <span class="mi">\((-3)^2 = (-3) \times (-3) = +9\)</span> ខុសពី <span class="mi">\(-3^2 = -(3 \times 3) = -9\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = (-4) \times (-5) \times (-3)\)</span></p></li>
+<li><p><span class="mi">\(B = (-72) \div (-8) + (-45) \div (+9)\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = [(-4) \times (-5)] \times (-3) = (+20) \times (-3) = -60\)</span></p></li>
+<li><p><span class="mi">\(B = (+9) + (-5) = 9 - 5 = 4\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាផលគុណ ផលចែក និងស្វ័យគុណ</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((-6) \times (+8) \div (-4)\)</span></p></li>
+<li><p><span class="mi">\((-2)^3 \times (-3)^2\)</span></p></li>
+<li><p><span class="mi">\((-120) \div [(-3) \times (-8) \div (-6)]\)</span></p></li>
+<li><p><span class="mi">\(-5^2 + (-5)^2 - (-2)^4\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u6">លំដាប់នៃប្រមាណវិធី និងការប្រើវង់ក្រចក</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>ក្បួនអាទិភាពនៃប្រមាណវិធី (Order of Operations)</b></header><div class="bx-b">
+<p>ដើម្បីគណនាកន្សោមលេខដែលមានប្រមាណវិធីច្រើនចម្រុះគ្នា គេត្រូវអនុវត្តតាមលំដាប់លំដោយដូចខាងក្រោម ៖</p>
+<ol class="list oldef cols1">
+<li><p><strong>វង់ក្រចក</strong> ៖ ធ្វើប្រមាណវិធីក្នុងវង់ក្រចកមុនគេបង្អស់ ដោយចាប់ផ្ដើមពីវង់ក្រចកតូច <span class="mi">\(( )\)</span>, បន្ទាប់មកវង់ក្រចកធំ ឬដង្កៀប <span class="mi">\([ ]\)</span>, និងចុងក្រោយវង់ក្រចកអង្កាញ់ <span class="mi">\(\{ \}\)</span>។</p></li>
+<li><p><strong>ស្វ័យគុណ និងឫស</strong> ៖ គណនាស្វ័យគុណ និងឫសការ៉េ/គូប។</p></li>
+<li><p><strong>វិធីគុណ និងវិធីចែក</strong> ៖ ធ្វើប្រមាណវិធីគុណ និងចែកពី<strong>ឆ្វេងទៅស្ដាំ</strong>។</p></li>
+<li><p><strong>វិធីបូក និងវិធីដក</strong> ៖ ធ្វើប្រមាណវិធីបូក និងដកពី<strong>ឆ្វេងទៅស្ដាំ</strong>ជាចុងក្រោយ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោម <span class="mi">\(E = 15 - [(-3)^2 - (4 - 7 \times 2)] \div (-3)\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong> <div class="md">\[\begin{aligned}
+    E &amp;= 15 - [(-3)^2 - (4 - 14)] \div (-3) \\
+      &amp;= 15 - [9 - (-10)] \div (-3) \\
+      &amp;= 15 - [9 + 10] \div (-3) \\
+      &amp;= 15 - 19 \div (-3) = 15 - \left(-\frac{19}{3}\right) = \frac{45 + 19}{3} = \frac{64}{3}
+\end{aligned}\]</div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាកន្សោមចម្រុះ</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = 24 - 4 \times [5 - (-3)]\)</span></p></li>
+<li><p><span class="mi">\(B = (-2) \times [18 - (6 - 10 \div 2)] + (-5)^2\)</span></p></li>
+<li><p><span class="mi">\(C = [(-15 + 5) \div (-2)] \times [12 - (-4 \times 3)]\)</span></p></li>
+<li><p><span class="mi">\(D = \dfrac{-18 - (-6)}{(-2) \times (-3)} + (-1)^5\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u7">ចំណោទអនុវត្តជាក់ស្ដែង</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>នៅទីក្រុងអូស្លូ (Oslo) សីតុណ្ហភាពនៅម៉ោង ៦ ព្រឹក គឺ <span class="mi">\(-8^\circ\text{C}\)</span>។ នៅពេលថ្ងៃត្រង់ សីតុណ្ហភាពបានកើនឡើង <span class="mi">\(13^\circ\text{C}\)</span> ហើយលុះដល់ពាក់កណ្ដាលអធ្រាត្រ សីតុណ្ហភាពបានធ្លាក់ចុះទៅវិញចំនួន <span class="mi">\(9^\circ\text{C}\)</span>។ រកសីតុណ្ហភាពនៅពាក់កណ្ដាលអធ្រាត្រ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p>សីតុណ្ហភាពនៅពេលថ្ងៃត្រង់ គឺ ៖ <span class="mi">\((-8) + 13 = +5^\circ\text{C}\)</span>។</p></li>
+<li><p>សីតុណ្ហភាពនៅពាក់កណ្ដាលអធ្រាត្រ គឺ ៖ <span class="mi">\(5 - 9 = -4^\circ\text{C}\)</span>។</p></li>
+<li><p>ដូចនេះ សីតុណ្ហភាពនៅពាក់កណ្ដាលអធ្រាត្រគឺ <span class="mi">\(-4^\circ\text{C}\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ដោះស្រាយចំណោទ</b></header><div class="bx-b">
+<p>១. មុជទឹកម្នាក់បានមុជចុះក្រោមនីវ៉ូទឹកសមុទ្រជម្រៅ <span class="mi">\(25\text{ m}\)</span> (តាងដោយ <span class="mi">\(-25\)</span>)។ បន្ទាប់មក គាត់បានហែលឡើងលើវិញបាន <span class="mi">\(12\text{ m}\)</span> រួចមុជចុះក្រោមថែម <span class="mi">\(8\text{ m}\)</span> ទៀត។ តើបច្ចុប្បន្នគាត់ស្ថិតនៅជម្រៅប៉ុន្មានម៉ែត្រធៀបនឹងនីវ៉ូទឹកសមុទ្រ?<br/>
+២. អាជីវករម្នាក់ខែទីមួយខាតបង់ប្រាក់ <span class="mi">\(150\,000\)</span> រៀល  ខែទីពីរគាត់ចំណេញបាន <span class="mi">\(400\,000\)</span> រៀល  និងខែទីបីគាត់ខាតបង់ <span class="mi">\(120\,000\)</span> រៀល ។ គណនាប្រាក់ចំណេញ ឬខាតសុទ្ធរបស់គាត់ក្នុងរយៈពេល ៣ ខែនេះ។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ចូរដៅចំណុច <span class="mi">\(A(-5), B(-2), C(0), D(+3), E(+6)\)</span> នៅលើបន្ទាត់ចំនួនតែមួយ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដៅចំណុច <span class="mi">\(A(-5), B(-2), C(0), D(+3), E(+6)\)</span> លើបន្ទាត់ចំនួន ៖</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>រកចំនួនផ្ទុយនៃចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(+14\)</span></p></li>
+<li><p><span class="mi">\(-23\)</span></p></li>
+<li><p><span class="mi">\(0\)</span></p></li>
+<li><p><span class="mi">\(-(-8)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនផ្ទុយនៃចំនួននីមួយៗ ៖</p>
+<ul>
+<li><p>ចំនួនផ្ទុយនៃ <span class="mi">\(+14\)</span> គឺ <span class="mi">\(\boxed{-14}\)</span></p></li>
+<li><p>ចំនួនផ្ទុយនៃ <span class="mi">\(-23\)</span> គឺ <span class="mi">\(\boxed{+23}\)</span></p></li>
+<li><p>ចំនួនផ្ទុយនៃ <span class="mi">\(0\)</span> គឺ <span class="mi">\(\boxed{0}\)</span></p></li>
+<li><p>ចំនួនផ្ទុយនៃ <span class="mi">\(-(-8) = +8\)</span> គឺ <span class="mi">\(\boxed{-8}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គណនាតម្លៃដាច់ខាត ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(|-34|\)</span></p></li>
+<li><p><span class="mi">\(|+45|\)</span></p></li>
+<li><p><span class="mi">\(|-105|\)</span></p></li>
+<li><p><span class="mi">\(-|-18|\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃដាច់ខាត ៖</p>
+<ul>
+<li><p><span class="mi">\(|-34| = \mathbf{34}\)</span></p></li>
+<li><p><span class="mi">\(|+45| = \mathbf{45}\)</span></p></li>
+<li><p><span class="mi">\(|-105| = \mathbf{105}\)</span></p></li>
+<li><p><span class="mi">\(-|-18| = -(18) = \mathbf{-18}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ប្រៀបធៀបគូចំនួនខាងក្រោមដោយប្រើសញ្ញា <span class="mi">\(&lt;\)</span> ឬ <span class="mi">\(&gt;\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(-12\)</span> និង <span class="mi">\(-18\)</span></p></li>
+<li><p><span class="mi">\(+4\)</span> និង <span class="mi">\(-25\)</span></p></li>
+<li><p><span class="mi">\(-30\)</span> និង <span class="mi">\(0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រៀបធៀបគូចំនួនដោយប្រើ <span class="mi">\(&lt;\)</span> ឬ <span class="mi">\(&gt;\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(-12 &gt; -18\)</span> (ព្រោះ <span class="mi">\(|-12| &lt; |-18|\)</span>)</p></li>
+<li><p><span class="mi">\(+4 &gt; -25\)</span> (ចំនួនវិជ្ជមានធំជាងអវិជ្ជមាន)</p></li>
+<li><p><span class="mi">\(-30 &lt; 0\)</span> (ចំនួនអវិជ្ជមានតូចជាងសូន្យ)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ចូររៀបចំនួនខាងក្រោមតាមលំដាប់កើន ៖ <div class="md">\[-15, \quad{} +8, \quad{} -22, \quad{} 0, \quad{} -3, \quad{} +12, \quad{} -1, \quad{} +20\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រៀបចំនួនតាមលំដាប់កើន (ពីតូចទៅធំ) ៖<br/>
+<span class="mi">\(\boxed{-22 &lt; -15 &lt; -3 &lt; -1 &lt; 0 &lt; +8 &lt; +12 &lt; +20}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ចូររៀបចំនួនខាងក្រោមតាមលំដាប់ចុះ ៖ <div class="md">\[+17, \quad{} -9, \quad{} -35, \quad{} +40, \quad{} -2, \quad{} 0, \quad{} -18, \quad{} +5\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រៀបចំនួនតាមលំដាប់ចុះ (ពីធំទៅតូច) ៖<br/>
+<span class="mi">\(\boxed{+40 &gt; +17 &gt; +5 &gt; 0 &gt; -2 &gt; -9 &gt; -18 &gt; -35}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(x\)</span> ដែលបំពេញលក្ខខណ្ឌ <span class="mi">\(-5 \le x &lt; 3\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គ្រប់ចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(x\)</span> ដែល <span class="mi">\(-5 \le x &lt; 3\)</span> គឺ ៖<br/>
+<span class="mi">\(\boxed{x \in \{-5, -4, -3, -2, -1, 0, 1, 2\}}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់រ៉ឺឡាទីបអវិជ្ជមាន <span class="mi">\(y\)</span> ដែលបំពេញលក្ខខណ្ឌ <span class="mi">\(-8 &lt; y \le -2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គ្រប់ចំនួនគត់រ៉ឺឡាទីបអវិជ្ជមាន <span class="mi">\(y\)</span> ដែល <span class="mi">\(-8 &lt; y \le -2\)</span> គឺ ៖<br/>
+<span class="mi">\(\boxed{y \in \{-7, -6, -5, -4, -3, -2\}}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-14) + (-26)\)</span></p></li>
+<li><p><span class="mi">\((+32) + (-18)\)</span></p></li>
+<li><p><span class="mi">\((-45) + (+60)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូក ៖</p>
+<ul>
+<li><p><span class="mi">\((-14) + (-26) = -(14 + 26) = \mathbf{-40}\)</span></p></li>
+<li><p><span class="mi">\((+32) + (-18) = +(32 - 18) = \mathbf{+14}\)</span></p></li>
+<li><p><span class="mi">\((-45) + (+60) = +(60 - 45) = \mathbf{+15}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-125) + (+75)\)</span></p></li>
+<li><p><span class="mi">\((-88) + (-12)\)</span></p></li>
+<li><p><span class="mi">\((+210) + (-350)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូក ៖</p>
+<ul>
+<li><p><span class="mi">\((-125) + (+75) = -(125 - 75) = \mathbf{-50}\)</span></p></li>
+<li><p><span class="mi">\((-88) + (-12) = -(88 + 12) = \mathbf{-100}\)</span></p></li>
+<li><p><span class="mi">\((+210) + (-350) = -(350 - 210) = \mathbf{-140}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គណនាផលដក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(18 - 25\)</span></p></li>
+<li><p><span class="mi">\((-15) - (-9)\)</span></p></li>
+<li><p><span class="mi">\((-30) - (+14)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលដក ៖</p>
+<ul>
+<li><p><span class="mi">\(18 - 25 = 18 + (-25) = \mathbf{-7}\)</span></p></li>
+<li><p><span class="mi">\((-15) - (-9) = -15 + 9 = \mathbf{-6}\)</span></p></li>
+<li><p><span class="mi">\((-30) - (+14) = -30 - 14 = \mathbf{-44}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គណនាផលដក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(45 - (-25)\)</span></p></li>
+<li><p><span class="mi">\((-60) - (-60)\)</span></p></li>
+<li><p><span class="mi">\(0 - (-19)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលដក ៖</p>
+<ul>
+<li><p><span class="mi">\(45 - (-25) = 45 + 25 = \mathbf{70}\)</span></p></li>
+<li><p><span class="mi">\((-60) - (-60) = -60 + 60 = \mathbf{0}\)</span></p></li>
+<li><p><span class="mi">\(0 - (-19) = 0 + 19 = \mathbf{19}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គណនាកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-8) + 12 - 15\)</span></p></li>
+<li><p><span class="mi">\(24 - (-6) + (-18)\)</span></p></li>
+<li><p><span class="mi">\((-35) - 15 - (-20)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\((-8) + 12 - 15 = 4 - 15 = \mathbf{-11}\)</span></p></li>
+<li><p><span class="mi">\(24 - (-6) + (-18) = 30 - 18 = \mathbf{12}\)</span></p></li>
+<li><p><span class="mi">\((-35) - 15 - (-20) = -50 + 20 = \mathbf{-30}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គណនាផលគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-7) \times (+9)\)</span></p></li>
+<li><p><span class="mi">\((-12) \times (-6)\)</span></p></li>
+<li><p><span class="mi">\((+15) \times (-8)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណ ៖</p>
+<ul>
+<li><p><span class="mi">\((-7) \times (+9) = -(7 \times 9) = \mathbf{-63}\)</span></p></li>
+<li><p><span class="mi">\((-12) \times (-6) = +(12 \times 6) = \mathbf{72}\)</span></p></li>
+<li><p><span class="mi">\((+15) \times (-8) = -(15 \times 8) = \mathbf{-120}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គណនាផលគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-4) \times (-5) \times (+3)\)</span></p></li>
+<li><p><span class="mi">\((-2) \times (-3) \times (-7)\)</span></p></li>
+<li><p><span class="mi">\((-10) \times (+5) \times (-4)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណ ៖</p>
+<ul>
+<li><p><span class="mi">\((-4) \times (-5) \times (+3) = 20 \times 3 = \mathbf{60}\)</span></p></li>
+<li><p><span class="mi">\((-2) \times (-3) \times (-7) = 6 \times (-7) = \mathbf{-42}\)</span></p></li>
+<li><p><span class="mi">\((-10) \times (+5) \times (-4) = -50 \times (-4) = \mathbf{200}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>គណនាផលចែក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-72) \div (+8)\)</span></p></li>
+<li><p><span class="mi">\((-96) \div (-12)\)</span></p></li>
+<li><p><span class="mi">\((+144) \div (-9)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែក ៖</p>
+<ul>
+<li><p><span class="mi">\((-72) \div (+8) = -(72 \div 8) = \mathbf{-9}\)</span></p></li>
+<li><p><span class="mi">\((-96) \div (-12) = +(96 \div 12) = \mathbf{8}\)</span></p></li>
+<li><p><span class="mi">\((+144) \div (-9) = -(144 \div 9) = \mathbf{-16}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គណនាផលចែក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-250) \div (-25)\)</span></p></li>
+<li><p><span class="mi">\((+400) \div (-16)\)</span></p></li>
+<li><p><span class="mi">\((-500) \div (+20)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែក ៖</p>
+<ul>
+<li><p><span class="mi">\((-250) \div (-25) = \mathbf{10}\)</span></p></li>
+<li><p><span class="mi">\((+400) \div (-16) = \mathbf{-25}\)</span></p></li>
+<li><p><span class="mi">\((-500) \div (+20) = \mathbf{-25}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គណនាស្វ័យគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-4)^2\)</span></p></li>
+<li><p><span class="mi">\(-4^2\)</span></p></li>
+<li><p><span class="mi">\((-3)^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាស្វ័យគុណ ៖</p>
+<ul>
+<li><p><span class="mi">\((-4)^2 = (-4) \times (-4) = \mathbf{16}\)</span></p></li>
+<li><p><span class="mi">\(-4^2 = -(4 \times 4) = \mathbf{-16}\)</span></p></li>
+<li><p><span class="mi">\((-3)^3 = (-3) \times (-3) \times (-3) = \mathbf{-27}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គណនាស្វ័យគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-2)^5\)</span></p></li>
+<li><p><span class="mi">\((-1)^{50}\)</span></p></li>
+<li><p><span class="mi">\((-1)^{77}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាស្វ័យគុណ ៖</p>
+<ul>
+<li><p><span class="mi">\((-2)^5 = \mathbf{-32}\)</span> (ស្វ័យគុណសេស)</p></li>
+<li><p><span class="mi">\((-1)^{50} = \mathbf{1}\)</span> (ស្វ័យគុណគូ)</p></li>
+<li><p><span class="mi">\((-1)^{77} = \mathbf{-1}\)</span> (ស្វ័យគុណសេស)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-3)^2 + (-2)^3\)</span></p></li>
+<li><p><span class="mi">\(-5^2 - (-3)^2\)</span></p></li>
+<li><p><span class="mi">\((-2)^4 \times (-1)^7\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\((-3)^2 + (-2)^3 = 9 + (-8) = \mathbf{1}\)</span></p></li>
+<li><p><span class="mi">\(-5^2 - (-3)^2 = -25 - 9 = \mathbf{-34}\)</span></p></li>
+<li><p><span class="mi">\((-2)^4 \times (-1)^7 = 16 \times (-1) = \mathbf{-16}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោមដោយប្រើលក្ខណៈផ្ដុំ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = (-25) + 38 + (-75) + 62\)</span></p></li>
+<li><p><span class="mi">\(B = (-18) + (-45) + (+18) + (+55)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោមដោយប្រើលក្ខណៈផ្ដុំ ៖</p>
+<ul>
+<li><p><span class="mi">\(A = [(-25) + (-75)] + (38 + 62) = -100 + 100 = \mathbf{0}\)</span></p></li>
+<li><p><span class="mi">\(B = [(-18) + (+18)] + [(-45) + (+55)] = 0 + 10 = \mathbf{10}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោមដោយប្រើលក្ខណៈបំបែក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(C = (-15) \times 43 + (-15) \times 57\)</span></p></li>
+<li><p><span class="mi">\(D = 28 \times (-34) - 28 \times (-14)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោមដោយប្រើលក្ខណៈបំបែក ៖</p>
+<ul>
+<li><p><span class="mi">\(C = (-15) \times (43 + 57) = (-15) \times 100 = \mathbf{-1500}\)</span></p></li>
+<li><p><span class="mi">\(D = 28 \times [(-34) - (-14)] = 28 \times (-20) = \mathbf{-560}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(15 - 3 \times (-4) + 8\)</span></p></li>
+<li><p><span class="mi">\((-24) \div 6 - 5 \times (-2)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\(15 - 3 \times (-4) + 8 = 15 - (-12) + 8 = 15 + 12 + 8 = \mathbf{35}\)</span></p></li>
+<li><p><span class="mi">\((-24) \div 6 - 5 \times (-2) = -4 - (-10) = -4 + 10 = \mathbf{6}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(8 + 4 \times (-3)^2 - 20\)</span></p></li>
+<li><p><span class="mi">\(100 - [(-4) \times (-5) + 10]\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\(8 + 4 \times (-3)^2 - 20 = 8 + 4 \times 9 - 20 = 8 + 36 - 20 = \mathbf{24}\)</span></p></li>
+<li><p><span class="mi">\(100 - [(-4) \times (-5) + 10] = 100 - [20 + 10] = 100 - 30 = \mathbf{70}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((-18) \div [(-2) \times 3] + (-5)\)</span></p></li>
+<li><p><span class="mi">\(35 - [14 - (8 - 12)]\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\((-18) \div [(-2) \times 3] + (-5) = (-18) \div (-6) - 5 = 3 - 5 = \mathbf{-2}\)</span></p></li>
+<li><p><span class="mi">\(35 - [14 - (8 - 12)] = 35 - [14 - (-4)] = 35 - 18 = \mathbf{17}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\([(-12 + 4) \times (-3)] \div (-6)\)</span></p></li>
+<li><p><span class="mi">\(45 \div [(-3)^2] - (-2) \times (-7)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\([(-12 + 4) \times (-3)] \div (-6) = [(-8) \times (-3)] \div (-6) = 24 \div (-6) = \mathbf{-4}\)</span></p></li>
+<li><p><span class="mi">\(45 \div [(-3)^2] - (-2) \times (-7) = 45 \div 9 - 14 = 5 - 14 = \mathbf{-9}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\{[(-5) \times 4 + 6] \div (-2)\} - 8\)</span></p></li>
+<li><p><span class="mi">\(2 \times [3 - 5 \times (4 - 7)] + (-4)^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\(\{[(-5) \times 4 + 6] \div (-2)\} - 8 = \{[-20 + 6] \div (-2)\} - 8 = \{-14 \div (-2)\} - 8 = 7 - 8 = \mathbf{-1}\)</span></p></li>
+<li><p><span class="mi">\(2 \times [3 - 5 \times (-3)] + 16 = 2 \times [3 + 15] + 16 = 2 \times 18 + 16 = 36 + 16 = \mathbf{52}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>បំពេញចំនួនក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\((-12) + \Box = -5\)</span></p></li>
+<li><p><span class="mi">\(\Box - (-8) = 15\)</span></p></li>
+<li><p><span class="mi">\((-6) \times \Box = 42\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំពេញចំនួនក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\((-12) + \Box = -5 \implies \Box = -5 - (-12) = \mathbf{7}\)</span></p></li>
+<li><p><span class="mi">\(\Box - (-8) = 15 \implies \Box = 15 + (-8) = \mathbf{7}\)</span></p></li>
+<li><p><span class="mi">\((-6) \times \Box = 42 \implies \Box = 42 \div (-6) = \mathbf{-7}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>បំពេញចំនួនក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\Box \div (-4) = -9\)</span></p></li>
+<li><p><span class="mi">\((-15) - \Box = -20\)</span></p></li>
+<li><p><span class="mi">\(\Box + (-30) = -50\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំពេញចំនួនក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(\Box \div (-4) = -9 \implies \Box = (-9) \times (-4) = \mathbf{36}\)</span></p></li>
+<li><p><span class="mi">\((-15) - \Box = -20 \implies \Box = -15 - (-20) = \mathbf{5}\)</span></p></li>
+<li><p><span class="mi">\(\Box + (-30) = -50 \implies \Box = -50 - (-30) = \mathbf{-20}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>គណនាប្រវែងអង្កត់លើបន្ទាត់ចំនួន (ចម្ងាយរវាងពីរចំណុច <span class="mi">\(d(A, B) = |x_B - x_A|\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>ចំណុច <span class="mi">\(A(-4)\)</span> និង <span class="mi">\(B(5)\)</span></p></li>
+<li><p>ចំណុច <span class="mi">\(C(-9)\)</span> និង <span class="mi">\(D(-2)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាប្រវែងអង្កត់លើបន្ទាត់ចំនួន ៖</p>
+<ul>
+<li><p><span class="mi">\(d(A, B) = |5 - (-4)| = |5 + 4| = |9| = \mathbf{9\,\text{ឯកតា}}\)</span></p></li>
+<li><p><span class="mi">\(d(C, D) = |-2 - (-9)| = |-2 + 9| = |7| = \mathbf{7\,\text{ឯកតា}}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គណនាប្រវែងអង្កត់ ៖</p>
+<ol class="list olka cols2">
+<li><p>ចំណុច <span class="mi">\(M(7)\)</span> និង <span class="mi">\(N(-8)\)</span></p></li>
+<li><p>ចំណុច <span class="mi">\(P(-15)\)</span> និង <span class="mi">\(Q(-3)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាប្រវែងអង្កត់ ៖</p>
+<ul>
+<li><p><span class="mi">\(d(M, N) = |-8 - 7| = |-15| = \mathbf{15\,\text{ឯកតា}}\)</span></p></li>
+<li><p><span class="mi">\(d(P, Q) = |-3 - (-15)| = |-3 + 15| = |12| = \mathbf{12\,\text{ឯកតា}}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(x = -3\)</span> និង <span class="mi">\(y = 4\)</span> ចូរគណនាតម្លៃនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2x - 3y\)</span></p></li>
+<li><p><span class="mi">\(x^2 - y^2\)</span></p></li>
+<li><p><span class="mi">\((x + y)^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំពោះ <span class="mi">\(x = -3\)</span> និង <span class="mi">\(y = 4\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(2x - 3y = 2(-3) - 3(4) = -6 - 12 = \mathbf{-18}\)</span></p></li>
+<li><p><span class="mi">\(x^2 - y^2 = (-3)^2 - 4^2 = 9 - 16 = \mathbf{-7}\)</span></p></li>
+<li><p><span class="mi">\((x + y)^3 = (-3 + 4)^3 = 1^3 = \mathbf{1}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(a = -5, b = -2, c = 3\)</span> ចូរគណនាតម្លៃនៃ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(ab - bc + ac\)</span></p></li>
+<li><p><span class="mi">\(a^2 - 2bc\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំពោះ <span class="mi">\(a = -5, b = -2, c = 3\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(ab - bc + ac = (-5)(-2) - (-2)(3) + (-5)(3) = 10 - (-6) - 15 = 16 - 15 = \mathbf{1}\)</span></p></li>
+<li><p><span class="mi">\(a^2 - 2bc = (-5)^2 - 2(-2)(3) = 25 - (-12) = 25 + 12 = \mathbf{37}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>គណនាតម្លៃប្រភាគ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{-36 + 12}{-4}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{(-8) \times (-6)}{-16}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃប្រភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(\dfrac{-36 + 12}{-4} = \dfrac{-24}{-4} = \mathbf{6}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{(-8) \times (-6)}{-16} = \dfrac{48}{-16} = \mathbf{-3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>គណនាតម្លៃប្រភាគ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{(-5)^2 - 9}{-2}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{-48 - (-18)}{(-2) \times (-3)}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃប្រភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(\dfrac{(-5)^2 - 9}{-2} = \dfrac{25 - 9}{-2} = \dfrac{16}{-2} = \mathbf{-8}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{-48 - (-18)}{(-2) \times (-3)} = \dfrac{-30}{6} = \mathbf{-5}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>គណនាកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|-15 + 7| - |-12 - (-4)|\)</span></p></li>
+<li><p><span class="mi">\(|(-3) \times 4| + |-20 \div (-5)|\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\(|-15 + 7| - |-12 - (-4)| = |-8| - |-8| = 8 - 8 = \mathbf{0}\)</span></p></li>
+<li><p><span class="mi">\(|(-3) \times 4| + |-20 \div (-5)| = |-12| + |4| = 12 + 4 = \mathbf{16}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>គណនាផលបូក <span class="mi">\(S = 1 - 2 + 3 - 4 + 5 - 6 + \dots + 99 - 100\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា <span class="mi">\(S = 1 - 2 + 3 - 4 + 5 - 6 + \dots + 99 - 100\)</span> ៖<br/>
+ផ្ដុំជា ៥០ គូ ៖ <span class="mi">\((1 - 2) + (3 - 4) + \dots + (99 - 100)\)</span><br/>
+<span class="mi">\(= \underbrace{(-1) + (-1) + \dots + (-1)}_{50\,\text{ដង}} = 50 \times (-1) = \mathbf{-50}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>គណនាផលបូក <span class="mi">\(T = (-1) + (-2) + (-3) + \dots + (-50)\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា <span class="mi">\(T = (-1) + (-2) + (-3) + \dots + (-50)\)</span> ៖<br/>
+<span class="mi">\(T = -(1 + 2 + 3 + \dots + 50) = -\dfrac{50 \times 51}{2} = -25 \times 51 = \mathbf{-1275}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>រកចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(n\)</span> ដែលធ្វើឱ្យ <span class="mi">\(\dfrac{12}{n}\)</span> ជាចំនួនគត់រ៉ឺឡាទីប។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\dfrac{12}{n} \in \mathbb{Z} \iff n\)</span> ជាតួចែករ៉ឺឡាទីបនៃ <span class="mi">\(12\)</span> ៖<br/>
+<span class="mi">\(\boxed{n \in \{\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12\}}\)</span> (មាន ១២ តម្លៃ)</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់ <span class="mi">\(x\)</span> ដែល <span class="mi">\(|x| \le 5\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គ្រប់ចំនួនគត់ <span class="mi">\(x\)</span> ដែល <span class="mi">\(|x| \le 5\)</span> គឺ ៖<br/>
+<span class="mi">\(\boxed{x \in \{-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5\}}\)</span> (មាន ១១ តួ)</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់ <span class="mi">\(x\)</span> ដែល <span class="mi">\(|x - 2| = 7\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គ្រប់ចំនួនគត់ <span class="mi">\(x\)</span> ដែល <span class="mi">\(|x - 2| = 7\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(x - 2 = 7 \implies x = 7 + 2 = \mathbf{9}\)</span></p></li>
+<li><p><span class="mi">\(x - 2 = -7 \implies x = -7 + 2 = \mathbf{-5}\)</span></p></li>
+</ul>
+<p>ដូចនេះ <span class="mi">\(\boxed{x \in \{-5, 9\}}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>រកគ្រប់ចំនួនគត់ <span class="mi">\(y\)</span> ដែល <span class="mi">\(|y + 3| \le 4\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គ្រប់ចំនួនគត់ <span class="mi">\(y\)</span> ដែល <span class="mi">\(|y + 3| \le 4\)</span> ៖<br/>
+<span class="mi">\(-4 \le y + 3 \le 4 \implies -7 \le y \le 1\)</span><br/>
+ដូចនេះ <span class="mi">\(\boxed{y \in \{-7, -6, -5, -4, -3, -2, -1, 0, 1\}}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការក្នុងសំណុំ <span class="mi">\(\mathbb{Z}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x + 15 = 4\)</span></p></li>
+<li><p><span class="mi">\(x - (-9) = -12\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការក្នុងសំណុំ <span class="mi">\(\mathbb{Z}\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(x + 15 = 4 \implies x = 4 - 15 = \mathbf{-11}\)</span></p></li>
+<li><p><span class="mi">\(x - (-9) = -12 \implies x + 9 = -12 \implies x = -12 - 9 = \mathbf{-21}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការក្នុងសំណុំ <span class="mi">\(\mathbb{Z}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(-4x = 36\)</span></p></li>
+<li><p><span class="mi">\(-7x - 5 = 16\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការក្នុងសំណុំ <span class="mi">\(\mathbb{Z}\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(-4x = 36 \implies x = 36 \div (-4) = \mathbf{-9}\)</span></p></li>
+<li><p><span class="mi">\(-7x - 5 = 16 \implies -7x = 21 \implies x = 21 \div (-7) = \mathbf{-3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>នៅម៉ោង ៤ ទៀបភ្លឺ សីតុណ្ហភាពនៅកំពូលភ្នំមួយគឺ <span class="mi">\(-6^\circ\text{C}\)</span>។ លុះដល់ថ្ងៃត្រង់ សីតុណ្ហភាពឡើងបាន <span class="mi">\(11^\circ\text{C}\)</span> ហើយដល់យប់ធ្លាក់ចុះវិញ <span class="mi">\(8^\circ\text{C}\)</span>។ គណនាសីតុណ្ហភាពនៅពេលយប់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សីតុណ្ហភាពនៅពេលយប់គឺ ៖<br/>
+<span class="mi">\(T = (-6) + 11 - 8 = 5 - 8 = \mathbf{-3^\circ\text{C}}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>យន្តហោះមួយកំពុងហោះហើរនៅកម្ពស់ <span class="mi">\(3500\text{ m}\)</span> ធៀបនឹងនីវ៉ូសមុទ្រ។ នៅខាងក្រោមកន្លែងដដែលនោះ នាវាមុជទឹកមួយកំពុងស្ថិតនៅជម្រៅ <span class="mi">\(450\text{ m}\)</span> ក្រោមនីវ៉ូសមុទ្រ (តាងដោយ <span class="mi">\(-450\)</span>)។ គណនាគម្លាតបញ្ឈររវាងយន្តហោះ និងនាវាមុជទឹក។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គម្លាតបញ្ឈររវាងយន្តហោះ និងនាវាមុជទឹកគឺ ៖<br/>
+<span class="mi">\(d = 3500 - (-450) = 3500 + 450 = \mathbf{3950\,\text{m}}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនមួយមានប្រវត្តិហិរញ្ញវត្ថុក្នុងរយៈពេល ៤ ត្រីមាស ៖ ត្រីមាសទី១ ចំណេញ <span class="mi">\(+45\,000\)</span> ដុល្លារ , ត្រីមាសទី២ ខាតបង់ <span class="mi">\(-18\,000\)</span> ដុល្លារ , ត្រីមាសទី៣ ខាតបង់ <span class="mi">\(-12\,000\)</span> ដុល្លារ , និងត្រីមាសទី៤ ចំណេញ <span class="mi">\(+60\,000\)</span> ដុល្លារ ។ គណនាស្ថានភាពហិរញ្ញវត្ថុសរុបប្រចាំឆ្នាំរបស់ក្រុមហ៊ុន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្ថានភាពហិរញ្ញវត្ថុសរុបប្រចាំឆ្នាំគឺ ៖<br/>
+<span class="mi">\(S = (+45~000) + (-18~000) + (-12~000) + (+60~000)\)</span><br/>
+<span class="mi">\(= 45~000 - 18~000 - 12~000 + 60~000 = \mathbf{+75~000\,\text{ដុល្លារ}}\)</span><br/>
+(ក្រុមហ៊ុនចំណេញសុទ្ធ <span class="mi">\(75~000\,\)</span> ដុល្លារ )</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>គណិតវិទូក្រិកបុរាណ Archimedes កើតនៅឆ្នាំ <span class="mi">\(287\)</span> មុន គ.ស. និងបានទទួលមរណភាពនៅឆ្នាំ <span class="mi">\(212\)</span> មុន គ.ស.។</p>
+<ol class="list olka cols2">
+<li><p>តាងឆ្នាំកំណើត និងឆ្នាំមរណភាពរបស់គាត់ដោយចំនួនគត់រ៉ឺឡាទីប។</p></li>
+<li><p>គណនាអាយុរបស់លោក Archimedes ពេលគាត់ទទួលមរណភាព។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ឆ្នាំកំណើត ៖ <span class="mi">\(\boxed{-287}\)</span> ; ឆ្នាំមរណភាព ៖ <span class="mi">\(\boxed{-212}\)</span></p></li>
+<li><p>អាយុរបស់ Archimedes ពេលទទួលមរណភាពគឺ ៖<br/>
+<span class="mi">\((-212) - (-287) = -212 + 287 = \mathbf{75\,\text{ឆ្នាំ}}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>សិស្សម្នាក់ចូលរួមការប្រកួតគណិតវិទ្យាដែលមាន ៣០ សំណួរ។ វិធានការដាក់ពិន្ទុគឺ ៖ ឆ្លើយត្រូវ ១ សំណួរបាន <span class="mi">\(+4\)</span> ពិន្ទុ, ឆ្លើយខុស ១ សំណួរត្រូវដក <span class="mi">\(-2\)</span> ពិន្ទុ, និងមិនឆ្លើយបាន <span class="mi">\(0\)</span> ពិន្ទុ។ ប្រសិនបើសិស្សនោះឆ្លើយត្រូវ ២២ សំណួរ, មិនឆ្លើយ ៣ សំណួរ និងឆ្លើយខុសសំណួរដែលនៅសល់ តើសិស្សនោះទទួលបានពិន្ទុសរុបប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនសំណួរឆ្លើយខុសគឺ ៖ <span class="mi">\(30 - 22 - 3 = 5\)</span> សំណួរ។<br/>
+ពិន្ទុសរុបដែលទទួលបានគឺ ៖<br/>
+<span class="mi">\(S = 22 \times (+4) + 5 \times (-2) + 3 \times 0 = 88 - 10 + 0 = \mathbf{78\,\text{ពិន្ទុ}}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>កម្រងចំនួនមួយមានច្បាប់ដូចតទៅ ៖ តួបន្ទាប់ស្មើនឹងតួមុនដកនឹង <span class="mi">\(7\)</span>។ ប្រសិនបើតួទី១ គឺ <span class="mi">\(15\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>ចូរសរសេរ ៦ តួដំបូងនៃកម្រងចំនួននេះ។</p></li>
+<li><p>តើតួទីប៉ុន្មានជាចំនួនអវិជ្ជមានដំបូងគេបង្អស់?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ច្បាប់កម្រង ៖ តួបន្ទាប់ស្មើនឹងតួមុនដក <span class="mi">\(7\)</span> (<span class="mi">\(u_1 = 15\)</span>) ៖</p>
+<ul>
+<li><p>៦ តួដំបូង ៖ <span class="mi">\(\boxed{15, \; 8, \; 1, \; -6, \; -13, \; -20}\)</span></p></li>
+<li><p>តួអវិជ្ជមានដំបូងគេបង្អស់គឺ <span class="mi">\(-6\)</span> ដែលត្រូវជា <span class="kfbox">តួទី ៤</span>។</p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៣ ចំនួនគត់រ៉ឺឡាទីប</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c03">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L02.html"><small>← មេរៀនមុន</small><b>តួចែក និងពហុគុណ</b></a><a class="next" href="L04.html"><small>មេរៀនបន្ទាប់ →</small><b>ប្រភាគ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សំណុំនៃចំនួនគត់រ៉ឺឡាទីបត្រូវបានតាងដោយនិមិត្តសញ្ញាណា?", "options": ["<span class=\"mi\">\\(\\mathbb{N}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{Z}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{Q}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{R}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនណាខាងក្រោមនេះជាចំនួនគត់រ៉ឺឡាទីបអវិជ្ជមាន?", "options": ["<span class=\"mi\">\\(+5\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(-17\\)<\/span>", "<span class=\"mi\">\\(3.14\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួន <span class=\"mi\">\\(0\\)<\/span> ជាចំនួនអ្វី?", "options": ["ចំនួនវិជ្ជមាន", "ចំនួនអវិជ្ជមាន", "មិនវិជ្ជមាន មិនអវិជ្ជមាន", "មិនមែនចំនួនគត់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃដាច់ខាតនៃ <span class=\"mi\">\\(-19\\)<\/span> តាងដោយ <span class=\"mi\">\\(|-19|\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-19\\)<\/span>", "<span class=\"mi\">\\(19\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(\\pm 19\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(-|-15|\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(-15\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនផ្ទុយនៃចំនួន <span class=\"mi\">\\(-28\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(-28\\)<\/span>", "<span class=\"mi\">\\(28\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{28}\\)<\/span>", "<span class=\"mi\">\\(-\\frac{1}{28}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនផ្ទុយនៃចំនួន <span class=\"mi\">\\(+45\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(+45\\)<\/span>", "<span class=\"mi\">\\(-45\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(90\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\(-(-(-7))\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមចំនួនខាងក្រោម តើចំនួនណាមានតម្លៃតូចជាងគេបង្អស់?", "options": ["<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមចំនួនខាងក្រោម តើចំនួនណាមានតម្លៃធំជាងគេបង្អស់?", "options": ["<span class=\"mi\">\\(-50\\)<\/span>", "<span class=\"mi\">\\(-15\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(-100\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ប្រៀបធៀបគូចំនួន <span class=\"mi\">\\(-8\\)<\/span> និង <span class=\"mi\">\\(-5\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(-8 &gt; -5\\)<\/span>", "<span class=\"mi\">\\(-8 &lt; -5\\)<\/span>", "<span class=\"mi\">\\(-8 = -5\\)<\/span>", "មិនអាចប្រៀបធៀប"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a = -10\\)<\/span> និង <span class=\"mi\">\\(b = -14\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(a &lt; b\\)<\/span>", "<span class=\"mi\">\\(a &gt; b\\)<\/span>", "<span class=\"mi\">\\(a = b\\)<\/span>", "<span class=\"mi\">\\(a + b &gt; 0\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនគត់រ៉ឺឡាទីបអវិជ្ជមានធំជាងគេបង្អស់គឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "មិនមាន", "<span class=\"mi\">\\(-\\infty\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនគត់រ៉ឺឡាទីបវិជ្ជមានតូចជាងគេបង្អស់គឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-15) + (-8)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-23\\)<\/span>", "<span class=\"mi\">\\(23\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-24) + (+16)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-40\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(40\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((+35) + (-12)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(47\\)<\/span>", "<span class=\"mi\">\\(-23\\)<\/span>", "<span class=\"mi\">\\(23\\)<\/span>", "<span class=\"mi\">\\(-47\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-9) - (+14)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(-5\\)<\/span>", "<span class=\"mi\">\\(23\\)<\/span>", "<span class=\"mi\">\\(-23\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-18) - (-25)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-43\\)<\/span>", "<span class=\"mi\">\\(43\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(14 - (-6)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(-20\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-7) + 0\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>", "គ្មានចម្លើយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលបូកនៃពីរចំនួនផ្ទុយគ្នា <span class=\"mi\">\\(a + (-a)\\)<\/span> តែងតែស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2a\\)<\/span>", "<span class=\"mi\">\\(-2a\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-6) \\times (+7)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(42\\)<\/span>", "<span class=\"mi\">\\(-42\\)<\/span>", "<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(-13\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-8) \\times (-9)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-72\\)<\/span>", "<span class=\"mi\">\\(72\\)<\/span>", "<span class=\"mi\">\\(-17\\)<\/span>", "<span class=\"mi\">\\(17\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((-1) \\times (-1) \\times (-1) \\times (-1) \\times (-1)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(-5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-5)^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(-25\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(-5^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(-25\\)<\/span>", "<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-2)^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-6\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-3)^4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(81\\)<\/span>", "<span class=\"mi\">\\(-81\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-48) \\div (+6)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(-42\\)<\/span>", "<span class=\"mi\">\\(42\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-56) \\div (-7)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-8\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(-49\\)<\/span>", "<span class=\"mi\">\\(49\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(0 \\div (-15)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-15\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "គ្មានន័យ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-12) \\div 0\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "មិនមានន័យ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គណនាតម្លៃ <span class=\"mi\">\\(A = (-3) \\times (-4) - (-2) \\times 5\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(22\\)<\/span>", "<span class=\"mi\">\\(-22\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គណនាតម្លៃ <span class=\"mi\">\\(B = 20 - 4 \\times (-3)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(-48\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(32\\)<\/span>", "<span class=\"mi\">\\(-32\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គណនាតម្លៃ <span class=\"mi\">\\(C = (-16) \\div 4 - (-3) \\times (-2)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(x = -4\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(x^2 - 2x + 1\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(17\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\(|-8| - |+12| + |-5|\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(-9\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំនួនគត់រ៉ឺឡាទីប <span class=\"mi\">\\(x\\)<\/span> ដែលបំពេញវិសមភាព <span class=\"mi\">\\(-3 &lt; x \\le 2\\)<\/span> មានចំនួនប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផលបូកនៃគ្រប់ចំនួនគត់ <span class=\"mi\">\\(x\\)<\/span> ដែល <span class=\"mi\">\\(-4 \\le x \\le 4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(-16\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\([(-2)^3 + 12] \\div (-2)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(5 - 3 \\times [2 - (-4)]\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(-13\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ប្រសិនបើសីតុណ្ហភាពពេលព្រឹកគឺ <span class=\"mi\">\\(-5^\\circ\\text{C}\\)<\/span> ហើយពេលថ្ងៃឡើងបាន <span class=\"mi\">\\(8^\\circ\\text{C}\\)<\/span> នោះសីតុណ្ហភាពពេលថ្ងៃគឺ ៖", "options": ["<span class=\"mi\">\\(-13^\\circ\\text{C}\\)<\/span>", "<span class=\"mi\">\\(3^\\circ\\text{C}\\)<\/span>", "<span class=\"mi\">\\(13^\\circ\\text{C}\\)<\/span>", "<span class=\"mi\">\\(-3^\\circ\\text{C}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កំពូលភ្នំមួយខ្ពស់ជាងនីវ៉ូសមុទ្រ <span class=\"mi\">\\(1500\\text{ m}\\)<\/span> ហើយជ្រលងបាតសមុទ្រមួយជ្រៅ <span class=\"mi\">\\(-800\\text{ m}\\)<\/span>។ គម្លាតរវាងកម្ពស់ទាំងពីរគឺ ៖", "options": ["<span class=\"mi\">\\(700\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(2300\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(-700\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(-2300\\text{ m}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\((-1)^{100} + (-1)^{101}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a = -3\\)<\/span> និង <span class=\"mi\">\\(b = 5\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(|a - b|\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(-8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-2) \\times (-3) \\times (-4) \\times (+5)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(120\\)<\/span>", "<span class=\"mi\">\\(-120\\)<\/span>", "<span class=\"mi\">\\(60\\)<\/span>", "<span class=\"mi\">\\(-60\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(x + 12 = 5\\)<\/span> មានឫសជាចំនួនគត់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(17\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(-17\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(-3x = -21\\)<\/span> មានឫសជាចំនួនគត់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(-18\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\(\\dfrac{(-4) \\times (-9)}{(-2) \\times (+3)}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(-6\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(-12\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៥ : ចំនួនទសភាគ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៥ «ចំនួនទសភាគ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៥ : ចំនួនទសភាគ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៥ «ចំនួនទសភាគ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ៥</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៥</span>
+      <div><span class="ls-kicker">មេរៀនទី ៥ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>ចំនួនទសភាគ</h1><div class="ls-chips"><span class="chip chip-soon">នព្វន្ត</span><span class="chip chip-soon">៨ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណចំនួនទសភាគ និងតម្លៃលេខតាមខ្ទង់</a></li><li class="sub"><a href="#u2">២. ការប្រៀបធៀប និងរៀបលំដាប់ចំនួនទសភាគ</a></li><li class="sub"><a href="#u3">៣. ការបំប្លែងរវាងប្រភាគ និងចំនួនទសភាគ</a></li><li class="sub"><a href="#u4">៤. វិធីបូក និងវិធីដកចំនួនទសភាគ</a></li><li class="sub"><a href="#u5">៥. វិធីគុណចំនួនទសភាគ</a></li><li class="sub"><a href="#u6">៦. វិធីចែកចំនួនទសភាគ</a></li><li class="sub"><a href="#u7">៧. ការបង្គត់ចំនួនទសភាគ</a></li><li class="sub"><a href="#u8">៨. ចំណោទអនុវត្តជាក់ស្ដែង</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃចំនួនទសភាគ និងចំណុចទសភាគ</b></header><div class="bx-b">
+<p>ប្រព័ន្ធចំនួនទសភាគមានដើមកំណើត និងការវិវត្តយ៉ាងយូរអង្វែងក្នុងប្រវត្តិសាស្ត្រគណិតវិទ្យាពិភពលោក។ នៅប្រទេសចិនបុរាណ ចាប់តាំងពីសតវត្សទី៤ មុន គ.ស. គណិតវិទូបានប្រើប្រាស់បន្ទះរាប់ទសភាគក្នុងការវាស់វែងប្រវែង ទម្ងន់ និងមាឌយ៉ាងសុក្រឹត។</p>
+<p>នៅក្នុងពិភពឥស្លាម នាសតវត្សទី១០ គណិតវិទូស៊ីរី <strong>Abu’l-Hasan al-Uqlidisi</strong> បានសរសេរក្បួនគណនាប្រភាគទសភាគជាលើកដំបូងក្នុងសៀវភៅរបស់គាត់។ លុះដល់សតវត្សទី១៥ គណិតវិទូពែរ្សដ៏ល្បីល្បាញ <strong>Jamshid al-Kashi</strong> បានគណនាតម្លៃនៃចំនួន <span class="mi">\(\pi\)</span> ដោយប្រើប្រាស់ខ្ទង់ទសភាគរហូតដល់ ១៦ ខ្ទង់យ៉ាងត្រឹមត្រូវអស្ចារ្យ។</p>
+<p>នៅទ្វីបអឺរ៉ុប គណិតវិទូ និងវិស្វករជនជាតិហូឡង់ <strong>Simon Stevin</strong> (១៥៤៨–១៦២០) បានបោះពុម្ពផ្សាយសៀវភៅដ៏មានឥទ្ធិពលឈ្មោះថា <em>De Thiende</em> (ភាគដប់) ក្នុងឆ្នាំ ១៥៨៥ ដោយបានពន្យល់ពីសារសំខាន់នៃប្រព័ន្ធទសភាគក្នុងការសម្រួលដល់ការគណនាពាណិជ្ជកម្ម និងវិស្វកម្ម។</p>
+<p>រហូតមកដល់ឆ្នាំ ១៦១៧ គណិតវិទូស្កុតឡែនដ៏ឆ្នើម <strong>John Napier</strong> (អ្នករកឃើញអនុគមន៍លោការីត) បានបង្កើតការប្រើប្រាស់<strong>សញ្ញាចុចទសភាគ</strong> (Decimal Point) ឬក្បៀស ដើម្បីខណ្ឌចែករវាងផ្នែកគត់ និងផ្នែកទសភាគ ដែលធ្វើឱ្យការកត់ត្រាមានភាពសាមញ្ញ ងាយស្រួលយល់ និងត្រូវបានប្រើប្រាស់ជាសកលរហូតមកដល់បច្ចុប្បន្ន។</p>
+</div></section>
+<h3 id="u1">សញ្ញាណចំនួនទសភាគ និងតម្លៃលេខតាមខ្ទង់</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំនួនទសភាគ</b></header><div class="bx-b">
+<p><strong>ចំនួនទសភាគ</strong> គឺជាចំនួនដែលផ្សំឡើងដោយ ៖</p>
+<ul>
+<li><p><strong>ផ្នែកគត់</strong> ៖ ស្ថិតនៅខាងឆ្វេងនៃចំណុចទសភាគ (តំណាងឱ្យចំនួនឯកតាពេញ)។</p></li>
+<li><p><strong>ចំណុចទសភាគ</strong> ៖ សញ្ញាចុច <span class="mi">\((.)\)</span> ខណ្ឌចែករវាងផ្នែកគត់ និងផ្នែកទសភាគ។</p></li>
+<li><p><strong>ផ្នែកទសភាគ</strong> ៖ ស្ថិតនៅខាងស្ដាំនៃចំណុចទសភាគ (តំណាងឱ្យចំណែកដែលតូចជាង <span class="mi">\(1\)</span> ឯកតា)។</p></li>
+</ul>
+<p>ចំនួនទសភាគក៏ជាការសរសេរតំណាងឱ្យប្រភាគដែលមានភាគបែងជាស្វ័យគុណនៃ <span class="mi">\(10\)</span> ដូចជា <span class="mi">\(10, 100, 1000, \dots\)</span> ផងដែរ ៖ <div class="md">\[\frac{7}{10} = 0.7, \qquad{} \frac{25}{100} = 0.25, \qquad{} \frac{125}{1000} = 0.125\]</div></p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>តារាងតម្លៃលេខតាមខ្ទង់</b></header><div class="bx-b">
+<p>លេខនីមួយៗនៅក្នុងចំនួនទសភាគមានតម្លៃជាក់លាក់ទៅតាមទីតាំងខ្ទង់របស់វា ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><strong>ផ្នែកគត់</strong></th>
+<th><strong>ចំណុច</strong></th>
+<th><strong>ផ្នែកទសភាគ</strong></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ខ្ទង់ពាន់</td>
+<td>ខ្ទង់រយ</td>
+<td>ខ្ទង់ដប់</td>
+<td>ខ្ទង់រាយ</td>
+<td><strong>ទសភាគ</strong></td>
+<td>ខ្ទង់ភាគដប់</td>
+<td>ខ្ទង់ភាគរយ</td>
+<td>ខ្ទង់ភាគពាន់</td>
+</tr>
+<tr>
+<td>(<span class="mi">\(1000\)</span>)</td>
+<td>(<span class="mi">\(100\)</span>)</td>
+<td>(<span class="mi">\(10\)</span>)</td>
+<td>(<span class="mi">\(1\)</span>)</td>
+<td><span class="mi">\(.\)</span></td>
+<td>(<span class="mi">\(\frac{1}{10} = 0.1\)</span>)</td>
+<td>(<span class="mi">\(\frac{1}{100} = 0.01\)</span>)</td>
+<td>(<span class="mi">\(\frac{1}{1000} = 0.001\)</span>)</td>
+</tr>
+<tr>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(.\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>ចំនួន <span class="mi">\(2538.476\)</span> អាចបំបែកតាមខ្ទង់ ៖ <div class="md">\[2538.476 = 2000 + 500 + 30 + 8 + 0.4 + 0.07 + 0.006\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>កំណត់តម្លៃលេខតាមខ្ទង់ និងបំបែកចំនួន <span class="mi">\(345.078\)</span> តាមតម្លៃខ្ទង់។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p>លេខ <span class="mi">\(3\)</span> ស្ថិតនៅខ្ទង់រយ មានតម្លៃ <span class="mi">\(3 \times 100 = 300\)</span></p></li>
+<li><p>លេខ <span class="mi">\(4\)</span> ស្ថិតនៅខ្ទង់ដប់ មានតម្លៃ <span class="mi">\(4 \times 10 = 40\)</span></p></li>
+<li><p>លេខ <span class="mi">\(5\)</span> ស្ថិតនៅខ្ទង់រាយ មានតម្លៃ <span class="mi">\(5 \times 1 = 5\)</span></p></li>
+<li><p>លេខ <span class="mi">\(0\)</span> ស្ថិតនៅខ្ទង់ភាគដប់ មានតម្លៃ <span class="mi">\(\frac{0}{10} = 0\)</span></p></li>
+<li><p>លេខ <span class="mi">\(7\)</span> ស្ថិតនៅខ្ទង់ភាគរយ មានតម្លៃ <span class="mi">\(\frac{7}{100} = 0.07\)</span></p></li>
+<li><p>លេខ <span class="mi">\(8\)</span> ស្ថិតនៅខ្ទង់ភាគពាន់ មានតម្លៃ <span class="mi">\(\frac{8}{1000} = 0.008\)</span></p></li>
+<li><p>បំបែកតាមខ្ទង់ ៖ <span class="mi">\(345.078 = 300 + 40 + 5 + 0.07 + 0.008\)</span></p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>កំណត់ខ្ទង់ និងបំបែកចំនួនទសភាគ</b></header><div class="bx-b">
+<p>១. ប្រាប់ឈ្មោះខ្ទង់នៃលេខដែលមានគូសបន្ទាត់ពីក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(12.\underline{7}5\)</span></p></li>
+<li><p><span class="mi">\(345.2\underline{8}\)</span></p></li>
+<li><p><span class="mi">\(0.00\underline{9}\)</span></p></li>
+<li><p><span class="mi">\(2\underline{5}6.78\)</span></p></li>
+</ol>
+<p>២. ចូរសរសេរចំនួនខាងក្រោមជាទម្រង់ពង្រាយតាមខ្ទង់ ៖ <span class="mi">\(54.308\)</span> និង <span class="mi">\(1205.075\)</span>។</p>
+</div></section>
+<h3 id="u2">ការប្រៀបធៀប និងរៀបលំដាប់ចំនួនទសភាគ</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃការប្រៀបធៀបចំនួនទសភាគ</b></header><div class="bx-b">
+<p>ដើម្បីប្រៀបធៀបចំនួនទសភាគវិជ្ជមានពីរ ៖</p>
+<ol class="list oldef cols1">
+<li><p>ប្រៀបធៀប<strong>ផ្នែកគត់</strong>មុនគេ ៖ ចំនួនណាដែលមានផ្នែកគត់ធំជាង ជាចំនួនធំជាង (ឧ. <span class="mi">\(12.3 &gt; 9.87\)</span>)។</p></li>
+<li><p>បើផ្នែកគត់ស្មើគ្នា គេប្រៀបធៀប<strong>ផ្នែកទសភាគ</strong>ពីឆ្វេងទៅស្ដាំ ដោយចាប់ផ្ដើមពីខ្ទង់ភាគដប់ ភាគរយ ភាគពាន់ <span class="mi">\(\dots\)</span>។</p></li>
+<li><p>ការបន្ថែមលេខសូន្យនៅខាងចុងផ្នែកទសភាគ មិនផ្លាស់ប្ដូរតម្លៃចំនួនឡើយ (ឧ. <span class="mi">\(0.5 = 0.50 = 0.500\)</span>)។</p></li>
+<li><p>ចំពោះចំនួនទសភាគអវិជ្ជមាន ៖ ចំនួនណាដែលមានតម្លៃដាច់ខាតតូចជាង ជាចំនួនធំជាង (ឧ. <span class="mi">\(-1.5 &gt; -2.3\)</span>)។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក. ប្រៀបធៀបគូចំនួនទសភាគ <span class="mi">\(4.258\)</span> និង <span class="mi">\(4.26\)</span>។<br/>
+ខ. រៀបចំនួនខាងក្រោមតាមលំដាប់កើន ៖ <span class="mi">\(3.45, \quad{} 3.05, \quad{} 3.54, \quad{} 3.405, \quad{} 3.5\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>ប្រៀបធៀប <span class="mi">\(4.258\)</span> និង <span class="mi">\(4.260\)</span> ៖</p>
+<ul>
+<li><p>ផ្នែកគត់ស្មើគ្នាគឺ <span class="mi">\(4\)</span></p></li>
+<li><p>ខ្ទង់ភាគដប់ស្មើគ្នាគឺ <span class="mi">\(2\)</span></p></li>
+<li><p>ខ្ទង់ភាគរយ ៖ <span class="mi">\(5 &lt; 6 \implies 4.258 &lt; 4.26\)</span></p></li>
+</ul></li>
+<li><p>បន្ថែមសូន្យដើម្បីឱ្យមាន ៣ ខ្ទង់ទសភាគដូចគ្នា ៖ <span class="mi">\(3.450, \quad{} 3.050, \quad{} 3.540, \quad{} 3.405, \quad{} 3.500\)</span>។<br/>
+ដោយ <span class="mi">\(3.050 &lt; 3.405 &lt; 3.450 &lt; 3.500 &lt; 3.540\)</span>។<br/>
+ដូចនេះ លំដាប់កើនគឺ ៖ <span class="mi">\(3.05 &lt; 3.405 &lt; 3.45 &lt; 3.5 &lt; 3.54\)</span>។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រៀបធៀប និងរៀបលំដាប់</b></header><div class="bx-b">
+<p>១. បំពេញសញ្ញា <span class="mi">\(&lt;, &gt;\)</span> ឬ <span class="mi">\(=\)</span> ក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(0.75 \ \Box \ 0.705\)</span></p></li>
+<li><p><span class="mi">\(5.6 \ \Box \ 5.600\)</span></p></li>
+<li><p><span class="mi">\(-3.2 \ \Box \ -3.02\)</span></p></li>
+<li><p><span class="mi">\(0.08 \ \Box \ 0.1\)</span></p></li>
+</ol>
+<p>២. រៀបចំនួនខាងក្រោមតាមលំដាប់ចុះ ៖ <span class="mi">\(12.35, \quad{} 12.09, \quad{} 12.4, \quad{} 12.305, \quad{} 12.355\)</span>។</p>
+</div></section>
+<h3 id="u3">ការបំប្លែងរវាងប្រភាគ និងចំនួនទសភាគ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ការបំប្លែងប្រភាគជាចំនួនទសភាគ</b></header><div class="bx-b">
+<p>ដើម្បីបំប្លែងប្រភាគ <span class="mi">\(\frac{a}{b}\)</span> ជាចំនួនទសភាគ គេអាច ៖</p>
+<ul>
+<li><p>ចែកភាគយក <span class="mi">\(a\)</span> នឹងភាគបែង <span class="mi">\(b\)</span> ដោយផ្ទាល់។</p></li>
+<li><p>ឬគុណពង្រីកប្រភាគឱ្យមានភាគបែងជា <span class="mi">\(10, 100, 1000, \dots\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំនួនទសភាគខួប (Periodic/Repeating Decimals)</b></header><div class="bx-b">
+<p><strong>ចំនួនទសភាគខួប</strong> គឺជាចំនួនទសភាគដែលមានលេខ ឬក្រុមលេខនៅផ្នែកទសភាគកើតឡើងដដែលៗមិនចេះចប់។ គេប្រើរបារបន្ទាត់ផ្ដេកពីលើលេខដើម្បីតាងខួប ៖ <div class="md">\[0.333\dots = 0.\overline{3}, \qquad{} 0.2727\dots = 0.\overline{27}, \qquad{} 1.41666\dots = 1.41\overline{6}\]</div> <strong>ក្បួនបំប្លែងទសភាគខួបជាប្រភាគ</strong> ៖</p>
+<ul>
+<li><p>ខួប ១ ខ្ទង់ ៖ <span class="mi">\(0.\overline{a} = \dfrac{a}{9}\)</span> (ឧ. <span class="mi">\(0.\overline{7} = \dfrac{7}{9}\)</span>)</p></li>
+<li><p>ខួប ២ ខ្ទង់ ៖ <span class="mi">\(0.\overline{ab} = \dfrac{ab}{99}\)</span> (ឧ. <span class="mi">\(0.\overline{45} = \dfrac{45}{99} = \dfrac{5}{11}\)</span>)</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក. បំប្លែងប្រភាគ <span class="mi">\(\frac{3}{8}\)</span> និង <span class="mi">\(\frac{7}{20}\)</span> ជាចំនួនទសភាគ។<br/>
+ខ. បំប្លែងចំនួនទសភាគកំណត់ <span class="mi">\(0.35\)</span> និងទសភាគខួប <span class="mi">\(0.\overline{6}\)</span> ជាប្រភាគបង្រួមមិនបាន។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>បំប្លែងជាចំនួនទសភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(\dfrac{3}{8} = \dfrac{3 \times 125}{8 \times 125} = \dfrac{375}{1000} = 0.375\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{7}{20} = \dfrac{7 \times 5}{20 \times 5} = \dfrac{35}{100} = 0.35\)</span></p></li>
+</ul></li>
+<li><p>បំប្លែងជាប្រភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(0.35 = \dfrac{35}{100} = \dfrac{35 \div 5}{100 \div 5} = \dfrac{7}{20}\)</span></p></li>
+<li><p>តាង <span class="mi">\(x = 0.\overline{6} = 0.666\dots \implies 10x = 6.666\dots\)</span><br/>
+យក <span class="mi">\(10x - x = 6 \implies 9x = 6 \implies x = \dfrac{6}{9} = \dfrac{2}{3}\)</span>។</p></li>
+</ul></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បំប្លែងប្រភាគ និងទសភាគ</b></header><div class="bx-b">
+<p>១. បំប្លែងប្រភាគខាងក្រោមជាចំនួនទសភាគ ៖ <span class="mi">\(\dfrac{4}{5}, \quad{} \dfrac{9}{25}, \quad{} \dfrac{5}{8}, \quad{} \dfrac{11}{40}\)</span>។<br/>
+២. បំប្លែងចំនួនទសភាគខាងក្រោមជាប្រភាគបង្រួមមិនបាន ៖ <span class="mi">\(0.64, \quad{} 1.75, \quad{} 0.\overline{5}, \quad{} 0.\overline{18}\)</span>។</p>
+</div></section>
+<h3 id="u4">វិធីបូក និងវិធីដកចំនួនទសភាគ</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃវិធីបូក និងវិធីដកចំនួនទសភាគ</b></header><div class="bx-b">
+<p>ដើម្បីបូក ឬដកចំនួនទសភាគ ៖</p>
+<ol class="list oldef cols1">
+<li><p>សរសេរតួបូក ឬតួដកតម្រៀបតាមជួរឈរ ដោយតម្រឹម<strong>ចំណុចទសភាគឱ្យត្រង់គ្នា</strong>។</p></li>
+<li><p>បន្ថែមលេខសូន្យនៅខាងចុងផ្នែកទសភាគដើម្បីឱ្យមានចំនួនខ្ទង់ស្មើគ្នា (បើចាំបាច់)។</p></li>
+<li><p>អនុវត្តវិធីបូក ឬដកដូចចំនួនគត់ រួចដាក់ចំណុចទសភាគក្នុងផលបូក/ផលដកឱ្យត្រង់នឹងចំណុចទសភាគនៃតួខាងលើ។</p></li>
+<li><p>ចំពោះចំនួនទសភាគមានសញ្ញា (<span class="mi">\(+\)</span> និង <span class="mi">\(-\)</span>) អនុវត្តតាមក្បួនសញ្ញានៃចំនួនគត់រ៉ឺឡាទីប។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = 25.48 + 138.756\)</span></p></li>
+<li><p><span class="mi">\(B = 45.2 - 18.765\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>តម្រៀបតាមជួរឈរ ៖ <div class="md">\[\begin{array}{rl}
+      25.480 &amp; \\
+    + 138.756 &amp; \\
+    \hline
+      164.236 &amp; \implies A = 164.236
+    \end{array}\]</div></p></li>
+<li><p>តម្រៀបតាមជួរឈរ ៖ <div class="md">\[\begin{array}{rl}
+      45.200 &amp; \\
+    - 18.765 &amp; \\
+    \hline
+      26.435 &amp; \implies B = 26.435
+    \end{array}\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាផលបូក និងផលដក</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(15.75 + 248.6 + 9.085\)</span></p></li>
+<li><p><span class="mi">\(100 - 37.458\)</span></p></li>
+<li><p><span class="mi">\((-12.45) + 8.75 - (-4.2)\)</span></p></li>
+<li><p><span class="mi">\(24.6 - 35.84 + 11.24\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u5">វិធីគុណចំនួនទសភាគ</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃវិធីគុណចំនួនទសភាគ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>គុណនឹង <span class="mi">\(10, 100, 1000, \dots\)</span></strong> ៖ គេរំកិលចំណុចទសភាគទៅ<strong>ខាងស្ដាំ</strong> <span class="mi">\(1, 2, 3, \dots\)</span> ខ្ទង់រៀងគ្នា ៖ <div class="md">\[3.456 \times 10 = 34.56, \qquad{} 3.456 \times 100 = 345.6, \qquad{} 3.456 \times 1000 = 3456\]</div></p></li>
+<li><p><strong>គុណទសភាគនឹងទសភាគ</strong> ៖</p>
+<ol class="list oldef cols1">
+<li><p>គុណតួទាំងពីរដូចជាចំនួនគត់ធម្មតា (ដោយមិនទាន់គិតចំណុចទសភាគ)។</p></li>
+<li><p>រាប់ចំនួនខ្ទង់ទសភាគសរុបនៃកត្តាទាំងពីរ។</p></li>
+<li><p>កាត់ចំណុចទសភាគលើផលគុណពីស្ដាំមកឆ្វេង ឱ្យស្មើនឹងចំនួនខ្ទង់ទសភាគសរុបនោះ។</p></li>
+</ol></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនា ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = 12.5 \times 100\)</span></p></li>
+<li><p><span class="mi">\(B = 3.25 \times 4.6\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(A = 12.5 \times 100 = 1250\)</span> (រំកិលចុះ ២ ខ្ទង់ទៅស្ដាំ)</p></li>
+<li><p>គុណ <span class="mi">\(325 \times 46 = 14950\)</span>។ កត្តាទីមួយមាន ២ ខ្ទង់ទសភាគ កត្តាទីពីរមាន ១ ខ្ទង់ទសភាគ (សរុប ៣ ខ្ទង់ទសភាគ) ៖ <div class="md">\[B = 14.950 = 14.95\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាផលគុណទសភាគ</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(0.485 \times 1000\)</span></p></li>
+<li><p><span class="mi">\(4.25 \times 16\)</span></p></li>
+<li><p><span class="mi">\(2.4 \times 3.75\)</span></p></li>
+<li><p><span class="mi">\((-1.5) \times (-0.08) \times 2.5\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u6">វិធីចែកចំនួនទសភាគ</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃវិធីចែកចំនួនទសភាគ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ចែកនឹង <span class="mi">\(10, 100, 1000, \dots\)</span></strong> ៖ គេរំកិលចំណុចទសភាគទៅ<strong>ខាងឆ្វេង</strong> <span class="mi">\(1, 2, 3, \dots\)</span> ខ្ទង់រៀងគ្នា ៖ <div class="md">\[47.5 \div 10 = 4.75, \qquad{} 47.5 \div 100 = 0.475, \qquad{} 47.5 \div 1000 = 0.0475\]</div></p></li>
+<li><p><strong>ចែកនឹង <span class="mi">\(0.1, 0.01, 0.001, \dots\)</span></strong> ៖ គេរំកិលចំណុចទសភាគទៅ<strong>ខាងស្ដាំ</strong> <span class="mi">\(1, 2, 3, \dots\)</span> ខ្ទង់ (ស្មើនឹងគុណនឹង <span class="mi">\(10, 100, 1000\)</span>) ៖ <div class="md">\[5.4 \div 0.1 = 54, \qquad{} 0.35 \div 0.01 = 35\]</div></p></li>
+<li><p><strong>ចែកទសភាគនឹងទសភាគ</strong> ៖ គេត្រូវធ្វើតួចែកឱ្យទៅជាចំនួនគត់ ដោយគុណតំណាងចែក និងតួចែកនឹង <span class="mi">\(10, 100, 1000, \dots\)</span> រួចចែកដូចវិធីចែកចំនួនគត់ធម្មតា ៖ <div class="md">\[\frac{a}{b} = \frac{a \times 10^k}{b \times 10^k}\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាផលចែកខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(C = 14.4 \div 1.2\)</span></p></li>
+<li><p><span class="mi">\(D = 1.272 \div 0.03\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>គុណនឹង <span class="mi">\(10\)</span> ទាំងពីរ ៖ <span class="mi">\(C = \dfrac{14.4 \times 10}{1.2 \times 10} = \dfrac{144}{12} = 12\)</span></p></li>
+<li><p>គុណនឹង <span class="mi">\(100\)</span> ទាំងពីរ ៖ <span class="mi">\(D = \dfrac{1.272 \times 100}{0.03 \times 100} = \dfrac{127.2}{3} = 42.4\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាផលចែកទសភាគ</b></header><div class="bx-b">
+<p>គណនាផលចែកខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(156.8 \div 100\)</span></p></li>
+<li><p><span class="mi">\(0.84 \div 0.01\)</span></p></li>
+<li><p><span class="mi">\(17.5 \div 2.5\)</span></p></li>
+<li><p><span class="mi">\(0.054 \div 0.09\)</span></p></li>
+<li><p><span class="mi">\((-2.48) \div (-0.8)\)</span></p></li>
+<li><p><span class="mi">\(4.5 \div 0.15\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u7">ការបង្គត់ចំនួនទសភាគ</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាននៃការបង្គត់ចំនួនទសភាគ</b></header><div class="bx-b">
+<p>ដើម្បីបង្គត់ចំនួនទសភាគត្រឹមខ្ទង់ណាមួយ គេពិនិត្យមើលលេខដែលស្ថិតនៅ<strong>ខាងស្ដាំបន្ទាប់</strong>នៃខ្ទង់បង្គត់នោះ ៖</p>
+<ul>
+<li><p>បើលេខនោះ <strong>ធំជាង ឬស្មើ <span class="mi">\(5\)</span></strong> (<span class="mi">\(5, 6, 7, 8, 9\)</span>) គេត្រូវ<strong>បង្គត់ឡើង</strong> (បូក <span class="mi">\(1\)</span> ថែមលើខ្ទង់បង្គត់ ហើយលុបចោលខ្ទង់នៅខាងស្ដាំទាំងអស់)។</p></li>
+<li><p>បើលេខនោះ <strong>តូចជាង <span class="mi">\(5\)</span></strong> (<span class="mi">\(0, 1, 2, 3, 4\)</span>) គេត្រូវ<strong>បង្គត់ចុះ</strong> (រក្សាខ្ទង់បង្គត់ទុកដដែល ហើយលុបចោលខ្ទង់នៅខាងស្ដាំទាំងអស់)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>បង្គត់ចំនួន <span class="mi">\(28.4763\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p>ត្រឹមចំនួនគត់</p></li>
+<li><p>ត្រឹមខ្ទង់ភាគដប់ (<span class="mi">\(0.1\)</span>)</p></li>
+<li><p>ត្រឹមខ្ទង់ភាគរយ (<span class="mi">\(0.01\)</span>)</p></li>
+<li><p>ត្រឹមខ្ទង់ភាគពាន់ (<span class="mi">\(0.001\)</span>)</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>ត្រឹមចំនួនគត់ ៖ មើលលេខបន្ទាប់គឺ <span class="mi">\(4 &lt; 5 \implies 28.4763 \approx 28\)</span></p></li>
+<li><p>ត្រឹមខ្ទង់ភាគដប់ ៖ មើលលេខបន្ទាប់គឺ <span class="mi">\(7 \ge 5 \implies 28.4763 \approx 28.5\)</span></p></li>
+<li><p>ត្រឹមខ្ទង់ភាគរយ ៖ មើលលេខបន្ទាប់គឺ <span class="mi">\(6 \ge 5 \implies 28.4763 \approx 28.48\)</span></p></li>
+<li><p>ត្រឹមខ្ទង់ភាគពាន់ ៖ មើលលេខបន្ទាប់គឺ <span class="mi">\(3 &lt; 5 \implies 28.4763 \approx 28.476\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បង្គត់ចំនួនទសភាគ</b></header><div class="bx-b">
+<p>១. បង្គត់ចំនួន <span class="mi">\(145.682\)</span> ត្រឹមចំនួនគត់ និងត្រឹមខ្ទង់ភាគដប់។<br/>
+២. បង្គត់ចំនួន <span class="mi">\(7.4586\)</span> ត្រឹមខ្ទង់ភាគរយ និងត្រឹមខ្ទង់ភាគពាន់។</p>
+</div></section>
+<h3 id="u8">ចំណោទអនុវត្តជាក់ស្ដែង</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ពីរាជធានីភ្នំពេញទៅខេត្តពោធិ៍សាត់មានចម្ងាយ <span class="mi">\(189.65\text{ km}\)</span>។ ខេត្តកំពង់ឆ្នាំងស្ថិតនៅចន្លោះរាជធានីភ្នំពេញ និងខេត្តពោធិ៍សាត់ ដោយមានចម្ងាយ <span class="mi">\(91.45\text{ km}\)</span> ពីរាជធានីភ្នំពេញ។ រកចម្ងាយពីខេត្តកំពង់ឆ្នាំងទៅកាន់ខេត្តពោធិ៍សាត់។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ul>
+<li><p>ចម្ងាយពីខេត្តកំពង់ឆ្នាំងទៅខេត្តពោធិ៍សាត់គឺ ៖ <div class="md">\[189.65 - 91.45 = 98.20\text{ km} = 98.2\text{ km}\]</div></p></li>
+<li><p>ដូចនេះ ចម្ងាយពីខេត្តកំពង់ឆ្នាំងទៅខេត្តពោធិ៍សាត់គឺ <span class="mi">\(98.2\text{ km}\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ដោះស្រាយចំណោទ</b></header><div class="bx-b">
+<p>១. កញ្ញាចិន្តាលាយទឹកក្រូច <span class="mi">\(0.225\)</span> លីត្រ  បញ្ចូលគ្នាជាមួយទឹកបរិសុទ្ធ <span class="mi">\(1.65\)</span> លីត្រ  ដើម្បីធ្វើភេសជ្ជៈ។ តើនាងទទួលបានភេសជ្ជៈសរុបប៉ុន្មានលីត្រ?<br/>
+២. បុរសម្នាក់ចែកប្រាក់ <span class="mi">\(864.60\)</span> ដុល្លារ  ឱ្យកូន ៥ នាក់ស្មើៗគ្នា។ តើកូនម្នាក់ៗទទួលបានប្រាក់ប៉ុន្មានដុល្លារ?</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>សរសេរប្រភាគនីមួយៗខាងក្រោមជាចំនួនទសភាគ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(\dfrac{3}{10}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{17}{100}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{45}{1000}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{125}{100}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរប្រភាគជាចំនួនទសភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(\dfrac{3}{10} = 0.3\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{17}{100} = 0.17\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{45}{1000} = 0.045\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{125}{100} = 1.25\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>សរសេរប្រភាគនីមួយៗខាងក្រោមជាចំនួនទសភាគ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(\dfrac{3}{4}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{7}{20}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{5}{8}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{11}{25}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរប្រភាគជាចំនួនទសភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(\dfrac{3}{4} = \dfrac{3 \times 25}{4 \times 25} = \dfrac{75}{100} = 0.75\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{7}{20} = \dfrac{7 \times 5}{20 \times 5} = \dfrac{35}{100} = 0.35\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{5}{8} = \dfrac{5 \times 125}{8 \times 125} = \dfrac{625}{1000} = 0.625\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{11}{25} = \dfrac{11 \times 4}{25 \times 4} = \dfrac{44}{100} = 0.44\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>សរសេរចំនួនទសភាគខាងក្រោមជាប្រភាគបង្រួមមិនបាន ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(0.6\)</span></p></li>
+<li><p><span class="mi">\(0.25\)</span></p></li>
+<li><p><span class="mi">\(0.08\)</span></p></li>
+<li><p><span class="mi">\(0.125\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាប្រភាគបង្រួមមិនបាន ៖</p>
+<ul>
+<li><p><span class="mi">\(0.6 = \dfrac{6}{10} = \dfrac{3}{5}\)</span></p></li>
+<li><p><span class="mi">\(0.25 = \dfrac{25}{100} = \dfrac{1}{4}\)</span></p></li>
+<li><p><span class="mi">\(0.08 = \dfrac{8}{100} = \dfrac{2}{25}\)</span></p></li>
+<li><p><span class="mi">\(0.125 = \dfrac{125}{1000} = \dfrac{1}{8}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>សរសេរចំនួនទសភាគខាងក្រោមជាប្រភាគ ឬចំនួនចម្រុះ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(1.4\)</span></p></li>
+<li><p><span class="mi">\(2.75\)</span></p></li>
+<li><p><span class="mi">\(4.375\)</span></p></li>
+<li><p><span class="mi">\(5.05\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាប្រភាគ ឬចំនួនចម្រុះ ៖</p>
+<ul>
+<li><p><span class="mi">\(1.4 = \dfrac{14}{10} = \dfrac{7}{5} = 1\dfrac{2}{5}\)</span></p></li>
+<li><p><span class="mi">\(2.75 = 2\dfrac{75}{100} = 2\dfrac{3}{4} = \dfrac{11}{4}\)</span></p></li>
+<li><p><span class="mi">\(4.375 = 4\dfrac{375}{1000} = 4\dfrac{3}{8} = \dfrac{35}{8}\)</span></p></li>
+<li><p><span class="mi">\(5.05 = 5\dfrac{5}{100} = 5\dfrac{1}{20} = \dfrac{101}{20}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>បំប្លែងចំនួនទសភាគខួបខាងក្រោមជាប្រភាគបង្រួមមិនបាន ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(0.\overline{3}\)</span></p></li>
+<li><p><span class="mi">\(0.\overline{7}\)</span></p></li>
+<li><p><span class="mi">\(0.\overline{15}\)</span></p></li>
+<li><p><span class="mi">\(0.\overline{54}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងទសភាគខួបជាប្រភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(0.\overline{3} = \dfrac{3}{9} = \dfrac{1}{3}\)</span></p></li>
+<li><p><span class="mi">\(0.\overline{7} = \dfrac{7}{9}\)</span></p></li>
+<li><p><span class="mi">\(0.\overline{15} = \dfrac{15}{99} = \dfrac{5}{33}\)</span></p></li>
+<li><p><span class="mi">\(0.\overline{54} = \dfrac{54}{99} = \dfrac{6}{11}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ប្រាប់ឈ្មោះខ្ទង់ និងតម្លៃនៃលេខដែលមានគូសបន្ទាត់ពីក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(14.\underline{5}8\)</span></p></li>
+<li><p><span class="mi">\(205.1\underline{7}2\)</span></p></li>
+<li><p><span class="mi">\(0.0\underline{4}5\)</span></p></li>
+<li><p><span class="mi">\(34\underline{8}.92\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រាប់ឈ្មោះខ្ទង់ និងតម្លៃលេខគូសបន្ទាត់ ៖</p>
+<ul>
+<li><p><span class="mi">\(14.\underline{5}8\)</span> ៖ ខ្ទង់ភាគដប់ មានតម្លៃ <span class="mi">\(0.5\)</span></p></li>
+<li><p><span class="mi">\(205.1\underline{7}2\)</span> ៖ ខ្ទង់ភាគរយ មានតម្លៃ <span class="mi">\(0.07\)</span></p></li>
+<li><p><span class="mi">\(0.0\underline{4}5\)</span> ៖ ខ្ទង់ភាគរយ មានតម្លៃ <span class="mi">\(0.04\)</span></p></li>
+<li><p><span class="mi">\(34\underline{8}.92\)</span> ៖ ខ្ទង់រាយ មានតម្លៃ <span class="mi">\(8\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>សរសេរចំនួនទសភាគជាទម្រង់ពង្រាយតាមខ្ទង់ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(48.256\)</span></p></li>
+<li><p><span class="mi">\(305.074\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាទម្រង់ពង្រាយតាមខ្ទង់ ៖</p>
+<ul>
+<li><p><span class="mi">\(48.256 = 40 + 8 + 0.2 + 0.05 + 0.006\)</span></p></li>
+<li><p><span class="mi">\(305.074 = 300 + 5 + 0.07 + 0.004\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>បំពេញសញ្ញា <span class="mi">\(&lt;, &gt;\)</span> ឬ <span class="mi">\(=\)</span> ក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(0.6 \ \Box \ 0.60\)</span></p></li>
+<li><p><span class="mi">\(0.45 \ \Box \ 0.54\)</span></p></li>
+<li><p><span class="mi">\(3.08 \ \Box \ 3.8\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំពេញសញ្ញា <span class="mi">\(&lt;, &gt;\)</span> ឬ <span class="mi">\(=\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(0.6 \ \mathbf{=} \ 0.60\)</span></p></li>
+<li><p><span class="mi">\(0.45 \ \mathbf{&lt;} \ 0.54\)</span></p></li>
+<li><p><span class="mi">\(3.08 \ \mathbf{&lt;} \ 3.8\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>បំពេញសញ្ញា <span class="mi">\(&lt;, &gt;\)</span> ឬ <span class="mi">\(=\)</span> ក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(-1.5 \ \Box \ -1.25\)</span></p></li>
+<li><p><span class="mi">\(0.009 \ \Box \ 0.01\)</span></p></li>
+<li><p><span class="mi">\(12.35 \ \Box \ 12.305\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំពេញសញ្ញា <span class="mi">\(&lt;, &gt;\)</span> ឬ <span class="mi">\(=\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(-1.5 \ \mathbf{&lt;} \ -1.25\)</span></p></li>
+<li><p><span class="mi">\(0.009 \ \mathbf{&lt;} \ 0.01\)</span></p></li>
+<li><p><span class="mi">\(12.35 \ \mathbf{&gt;} \ 12.305\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>រៀបចំនួនទសភាគខាងក្រោមតាមលំដាប់កើន ៖ <div class="md">\[3.45, \quad{} 3.05, \quad{} 3.54, \quad{} 3.405, \quad{} 3.5, \quad{} 3.045\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រៀបតាមលំដាប់កើន ៖ ប្រៀបធៀបខ្ទង់ទសភាគ ៖ <div class="md">\[3.045 &lt; 3.05 &lt; 3.405 &lt; 3.45 &lt; 3.5 &lt; 3.54\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>រៀបចំនួនទសភាគខាងក្រោមតាមលំដាប់ចុះ ៖ <div class="md">\[15.6, \quad{} 15.06, \quad{} 15.65, \quad{} 15.56, \quad{} 15.006, \quad{} 15.605\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រៀបតាមលំដាប់ចុះ ៖ ប្រៀបធៀបខ្ទង់ទសភាគ ៖ <div class="md">\[15.65 &gt; 15.605 &gt; 15.6 &gt; 15.56 &gt; 15.06 &gt; 15.006\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>រៀបចំនួនទសភាគអវិជ្ជមានខាងក្រោមតាមលំដាប់កើន ៖ <div class="md">\[-4.5, \quad{} -4.05, \quad{} -4.55, \quad{} -4.005, \quad{} -4.505\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រៀបចំនួនអវិជ្ជមានតាមលំដាប់កើន ៖ ចំនួនអវិជ្ជមានដែលមានតម្លៃដាច់ខាតកាន់តែធំ គឺកាន់តែតូច ៖ <div class="md">\[-4.55 &lt; -4.505 &lt; -4.5 &lt; -4.05 &lt; -4.005\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(14.5 + 23.8\)</span></p></li>
+<li><p><span class="mi">\(45.67 + 18.35\)</span></p></li>
+<li><p><span class="mi">\(128.4 + 75.68\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូក ៖</p>
+<ul>
+<li><p><span class="mi">\(14.5 + 23.8 = 38.3\)</span></p></li>
+<li><p><span class="mi">\(45.67 + 18.35 = 64.02\)</span></p></li>
+<li><p><span class="mi">\(128.4 + 75.68 = 204.08\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(3.456 + 12.8 + 0.74\)</span></p></li>
+<li><p><span class="mi">\(105.2 + 38.075 + 4.9\)</span></p></li>
+<li><p><span class="mi">\(0.05 + 0.005 + 0.5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូក ៖</p>
+<ul>
+<li><p><span class="mi">\(3.456 + 12.8 + 0.74 = 16.996\)</span></p></li>
+<li><p><span class="mi">\(105.2 + 38.075 + 4.9 = 148.175\)</span></p></li>
+<li><p><span class="mi">\(0.05 + 0.005 + 0.5 = 0.555\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គណនាផលដក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(45.8 - 23.5\)</span></p></li>
+<li><p><span class="mi">\(72.15 - 38.48\)</span></p></li>
+<li><p><span class="mi">\(100 - 45.65\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលដក ៖</p>
+<ul>
+<li><p><span class="mi">\(45.8 - 23.5 = 22.3\)</span></p></li>
+<li><p><span class="mi">\(72.15 - 38.48 = 33.67\)</span></p></li>
+<li><p><span class="mi">\(100 - 45.65 = 54.35\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>គណនាផលដក ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(24.5 - 18.765\)</span></p></li>
+<li><p><span class="mi">\(12.05 - 8.456\)</span></p></li>
+<li><p><span class="mi">\(50 - 0.075\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលដក ៖</p>
+<ul>
+<li><p><span class="mi">\(24.5 - 18.765 = 5.735\)</span></p></li>
+<li><p><span class="mi">\(12.05 - 8.456 = 3.594\)</span></p></li>
+<li><p><span class="mi">\(50 - 0.075 = 49.925\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គណនាកន្សោមចម្រុះវិធីបូក និងដក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(15.4 + 28.75 - 19.8\)</span></p></li>
+<li><p><span class="mi">\(45.6 - (18.25 + 12.4)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកន្សោមចម្រុះបូក និងដក ៖</p>
+<ul>
+<li><p><span class="mi">\(15.4 + 28.75 - 19.8 = 44.15 - 19.8 = 24.35\)</span></p></li>
+<li><p><span class="mi">\(45.6 - (18.25 + 12.4) = 45.6 - 30.65 = 14.95\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គណនាកន្សោមដែលមានចំនួនទសភាគអវិជ្ជមាន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((-14.5) + (-8.75)\)</span></p></li>
+<li><p><span class="mi">\(24.8 - (-12.45)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកន្សោមចំនួនអវិជ្ជមាន ៖</p>
+<ul>
+<li><p><span class="mi">\((-14.5) + (-8.75) = -(14.5 + 8.75) = -23.25\)</span></p></li>
+<li><p><span class="mi">\(24.8 - (-12.45) = 24.8 + 12.45 = 37.25\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គណនាកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((-35.6) - (-18.2) + (-7.4)\)</span></p></li>
+<li><p><span class="mi">\(12.5 - 28.4 + 6.75\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\((-35.6) - (-18.2) + (-7.4) = -35.6 + 18.2 - 7.4 = -24.8\)</span></p></li>
+<li><p><span class="mi">\(12.5 - 28.4 + 6.75 = 19.25 - 28.4 = -9.15\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គណនាផលគុណនឹង <span class="mi">\(10, 100, 1000\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(4.56 \times 10\)</span></p></li>
+<li><p><span class="mi">\(0.785 \times 100\)</span></p></li>
+<li><p><span class="mi">\(0.045 \times 1000\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណនឹង <span class="mi">\(10, 100, 1000\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(4.56 \times 10 = 45.6\)</span></p></li>
+<li><p><span class="mi">\(0.785 \times 100 = 78.5\)</span></p></li>
+<li><p><span class="mi">\(0.045 \times 1000 = 45\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>គណនាផលគុណនឹង <span class="mi">\(10, 100, 1000\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(12.5 \times 1000\)</span></p></li>
+<li><p><span class="mi">\(0.0084 \times 100\)</span></p></li>
+<li><p><span class="mi">\(3.2 \times 10000\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណ ៖</p>
+<ul>
+<li><p><span class="mi">\(12.5 \times 1000 = 12\,500\)</span></p></li>
+<li><p><span class="mi">\(0.0084 \times 100 = 0.84\)</span></p></li>
+<li><p><span class="mi">\(3.2 \times 10\,000 = 32\,000\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គណនាផលគុណទសភាគនឹងចំនួនគត់ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(4.25 \times 6\)</span></p></li>
+<li><p><span class="mi">\(12.8 \times 15\)</span></p></li>
+<li><p><span class="mi">\(0.075 \times 24\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណទសភាគនឹងចំនួនគត់ ៖</p>
+<ul>
+<li><p><span class="mi">\(4.25 \times 6 = 25.5\)</span></p></li>
+<li><p><span class="mi">\(12.8 \times 15 = 192\)</span></p></li>
+<li><p><span class="mi">\(0.075 \times 24 = 1.8\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គណនាផលគុណទសភាគនឹងទសភាគ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2.4 \times 3.5\)</span></p></li>
+<li><p><span class="mi">\(4.25 \times 1.6\)</span></p></li>
+<li><p><span class="mi">\(0.15 \times 0.4\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណទសភាគនឹងទសភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(2.4 \times 3.5 = 8.4\)</span></p></li>
+<li><p><span class="mi">\(4.25 \times 1.6 = 6.8\)</span></p></li>
+<li><p><span class="mi">\(0.15 \times 0.4 = 0.06\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គណនាផលគុណទសភាគនឹងទសភាគ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(12.5 \times 0.08\)</span></p></li>
+<li><p><span class="mi">\(3.14 \times 2.5\)</span></p></li>
+<li><p><span class="mi">\(0.025 \times 0.04\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណទសភាគនឹងទសភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(12.5 \times 0.08 = 1\)</span></p></li>
+<li><p><span class="mi">\(3.14 \times 2.5 = 7.85\)</span></p></li>
+<li><p><span class="mi">\(0.025 \times 0.04 = 0.001\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គណនាផលគុណ ៣ កត្តា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2.5 \times 4.8 \times 1.2\)</span></p></li>
+<li><p><span class="mi">\((-1.5) \times 0.4 \times (-5.0)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណ ៣ កត្តា ៖</p>
+<ul>
+<li><p><span class="mi">\(2.5 \times 4.8 \times 1.2 = 12 \times 1.2 = 14.4\)</span></p></li>
+<li><p><span class="mi">\((-1.5) \times 0.4 \times (-5.0) = +(1.5 \times 2.0) = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គណនាផលចែកនឹង <span class="mi">\(10, 100, 1000\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(145.8 \div 10\)</span></p></li>
+<li><p><span class="mi">\(78.5 \div 100\)</span></p></li>
+<li><p><span class="mi">\(4.2 \div 1000\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែកនឹង <span class="mi">\(10, 100, 1000\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(145.8 \div 10 = 14.58\)</span></p></li>
+<li><p><span class="mi">\(78.5 \div 100 = 0.785\)</span></p></li>
+<li><p><span class="mi">\(4.2 \div 1000 = 0.0042\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>គណនាផលចែកនឹង <span class="mi">\(0.1, 0.01, 0.001\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(12.5 \div 0.1\)</span></p></li>
+<li><p><span class="mi">\(3.45 \div 0.01\)</span></p></li>
+<li><p><span class="mi">\(0.08 \div 0.001\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែកនឹង <span class="mi">\(0.1, 0.01, 0.001\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(12.5 \div 0.1 = 12.5 \times 10 = 125\)</span></p></li>
+<li><p><span class="mi">\(3.45 \div 0.01 = 3.45 \times 100 = 345\)</span></p></li>
+<li><p><span class="mi">\(0.08 \div 0.001 = 0.08 \times 1000 = 80\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គណនាផលចែកទសភាគនឹងចំនួនគត់ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(18.6 \div 3\)</span></p></li>
+<li><p><span class="mi">\(45.75 \div 5\)</span></p></li>
+<li><p><span class="mi">\(12.48 \div 8\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែកទសភាគនឹងចំនួនគត់ ៖</p>
+<ul>
+<li><p><span class="mi">\(18.6 \div 3 = 6.2\)</span></p></li>
+<li><p><span class="mi">\(45.75 \div 5 = 9.15\)</span></p></li>
+<li><p><span class="mi">\(12.48 \div 8 = 1.56\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គណនាផលចែកទសភាគនឹងទសភាគ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(14.4 \div 1.2\)</span></p></li>
+<li><p><span class="mi">\(25.5 \div 0.5\)</span></p></li>
+<li><p><span class="mi">\(7.2 \div 0.18\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែកទសភាគនឹងទសភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(14.4 \div 1.2 = 144 \div 12 = 12\)</span></p></li>
+<li><p><span class="mi">\(25.5 \div 0.5 = 255 \div 5 = 51\)</span></p></li>
+<li><p><span class="mi">\(7.2 \div 0.18 = 720 \div 18 = 40\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>គណនាផលចែកទសភាគនឹងទសភាគ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(1.272 \div 0.03\)</span></p></li>
+<li><p><span class="mi">\(0.0084 \div 1.2\)</span></p></li>
+<li><p><span class="mi">\(15.6 \div 0.39\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែកទសភាគនឹងទសភាគ ៖</p>
+<ul>
+<li><p><span class="mi">\(1.272 \div 0.03 = 127.2 \div 3 = 42.4\)</span></p></li>
+<li><p><span class="mi">\(0.0084 \div 1.2 = 0.084 \div 12 = 0.007\)</span></p></li>
+<li><p><span class="mi">\(15.6 \div 0.39 = 1560 \div 39 = 40\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គណនាផលចែក ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((-18.4) \div (-0.4)\)</span></p></li>
+<li><p><span class="mi">\(24.75 \div (-2.5)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែក ៖</p>
+<ul>
+<li><p><span class="mi">\((-18.4) \div (-0.4) = 184 \div 4 = 46\)</span></p></li>
+<li><p><span class="mi">\(24.75 \div (-2.5) = -(247.5 \div 25) = -9.9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>បង្គត់ចំនួនខាងក្រោមត្រឹមចំនួនគត់ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(14.38\)</span></p></li>
+<li><p><span class="mi">\(28.75\)</span></p></li>
+<li><p><span class="mi">\(105.49\)</span></p></li>
+<li><p><span class="mi">\(99.62\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្គត់ត្រឹមចំនួនគត់ ៖</p>
+<ul>
+<li><p><span class="mi">\(14.38 \approx 14\)</span> (ខ្ទង់ភាគដប់ <span class="mi">\(3 &lt; 5\)</span>)</p></li>
+<li><p><span class="mi">\(28.75 \approx 29\)</span> (ខ្ទង់ភាគដប់ <span class="mi">\(7 \ge 5\)</span>)</p></li>
+<li><p><span class="mi">\(105.49 \approx 105\)</span> (ខ្ទង់ភាគដប់ <span class="mi">\(4 &lt; 5\)</span>)</p></li>
+<li><p><span class="mi">\(99.62 \approx 100\)</span> (ខ្ទង់ភាគដប់ <span class="mi">\(6 \ge 5\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>បង្គត់ចំនួនខាងក្រោមត្រឹមខ្ទង់ភាគដប់ (<span class="mi">\(0.1\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(4.542\)</span></p></li>
+<li><p><span class="mi">\(12.678\)</span></p></li>
+<li><p><span class="mi">\(35.049\)</span></p></li>
+<li><p><span class="mi">\(8.952\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្គត់ត្រឹមខ្ទង់ភាគដប់ (<span class="mi">\(0.1\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(4.542 \approx 4.5\)</span></p></li>
+<li><p><span class="mi">\(12.678 \approx 12.7\)</span></p></li>
+<li><p><span class="mi">\(35.049 \approx 35.0\)</span></p></li>
+<li><p><span class="mi">\(8.952 \approx 9.0\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បង្គត់ចំនួនខាងក្រោមត្រឹមខ្ទង់ភាគរយ (<span class="mi">\(0.01\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(7.4562\)</span></p></li>
+<li><p><span class="mi">\(18.3429\)</span></p></li>
+<li><p><span class="mi">\(0.0784\)</span></p></li>
+<li><p><span class="mi">\(2.998\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្គត់ត្រឹមខ្ទង់ភាគរយ (<span class="mi">\(0.01\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(7.4562 \approx 7.46\)</span></p></li>
+<li><p><span class="mi">\(18.3429 \approx 18.34\)</span></p></li>
+<li><p><span class="mi">\(0.0784 \approx 0.08\)</span></p></li>
+<li><p><span class="mi">\(2.998 \approx 3.00\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>បង្គត់ចំនួនខាងក្រោមត្រឹមខ្ទង់ភាគពាន់ (<span class="mi">\(0.001\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3.14159\)</span></p></li>
+<li><p><span class="mi">\(0.02468\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្គត់ត្រឹមខ្ទង់ភាគពាន់ (<span class="mi">\(0.001\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(3.14159 \approx 3.142\)</span></p></li>
+<li><p><span class="mi">\(0.02468 \approx 0.025\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(14.5 + 3.2 \times 4.5\)</span></p></li>
+<li><p><span class="mi">\(45.8 - 18.6 \div 3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\(14.5 + 3.2 \times 4.5 = 14.5 + 14.4 = 28.9\)</span></p></li>
+<li><p><span class="mi">\(45.8 - 18.6 \div 3 = 45.8 - 6.2 = 39.6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((12.4 - 4.8) \times 2.5 + 7.5\)</span></p></li>
+<li><p><span class="mi">\(100 - [24.5 + 3.5 \times (8.4 - 4.4)]\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\((12.4 - 4.8) \times 2.5 + 7.5 = 7.6 \times 2.5 + 7.5 = 19 + 7.5 = 26.5\)</span></p></li>
+<li><p><span class="mi">\(100 - [24.5 + 3.5 \times (8.4 - 4.4)]\)</span><br/>
+<span class="mi">\(= 100 - [24.5 + 3.5 \times 4] = 100 - 38.5 = 61.5\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2.5^2 + 1.2^2\)</span></p></li>
+<li><p><span class="mi">\((0.4)^3 \times 100 - 1.5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ul>
+<li><p><span class="mi">\(2.5^2 + 1.2^2 = 6.25 + 1.44 = 7.69\)</span></p></li>
+<li><p><span class="mi">\((0.4)^3 \times 100 - 1.5 = 0.064 \times 100 - 1.5 = 6.4 - 1.5 = 4.9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការលើសំណុំចំនួនទសភាគ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x + 4.75 = 12.5\)</span></p></li>
+<li><p><span class="mi">\(x - 8.35 = 14.8\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការលើ <span class="mi">\(\mathbb{D}\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(x + 4.75 = 12.5 \Rightarrow x = 12.5 - 4.75 = 7.75\)</span></p></li>
+<li><p><span class="mi">\(x - 8.35 = 14.8 \Rightarrow x = 14.8 + 8.35 = 23.15\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការលើសំណុំចំនួនទសភាគ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2.5x = 15\)</span></p></li>
+<li><p><span class="mi">\(0.4x + 1.2 = 3.6\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p><span class="mi">\(2.5x = 15 \Rightarrow x = 15 \div 2.5 = 6\)</span></p></li>
+<li><p><span class="mi">\(0.4x + 1.2 = 3.6 \Rightarrow 0.4x = 2.4 \Rightarrow x = 6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{x}{1.5} = 4.2\)</span></p></li>
+<li><p><span class="mi">\(3.2x - 1.4 = 1.8x + 4.2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p><span class="mi">\(\dfrac{x}{1.5} = 4.2 \Rightarrow x = 4.2 \times 1.5 = 6.3\)</span></p></li>
+<li><p><span class="mi">\(3.2x - 1.4 = 1.8x + 4.2 \Rightarrow 1.4x = 5.6 \Rightarrow x = 4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(a = 3.5\)</span> និង <span class="mi">\(b = 1.2\)</span> ចូរគណនាតម្លៃនៃ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2a - 3b\)</span></p></li>
+<li><p><span class="mi">\(a^2 - b^2\)</span></p></li>
+<li><p><span class="mi">\((a + b)(a - b)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃ (<span class="mi">\(a = 3.5, b = 1.2\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(2a - 3b = 2(3.5) - 3(1.2) = 7 - 3.6 = 3.4\)</span></p></li>
+<li><p><span class="mi">\(a^2 - b^2 = 3.5^2 - 1.2^2 = 12.25 - 1.44 = 10.81\)</span></p></li>
+<li><p><span class="mi">\((a + b)(a - b) = (4.7)(2.3) = 10.81\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>បំពេញចំនួនក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(4.25 + \Box = 10\)</span></p></li>
+<li><p><span class="mi">\(\Box - 3.85 = 7.15\)</span></p></li>
+<li><p><span class="mi">\(2.5 \times \Box = 20\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំពេញចំនួនក្នុងប្រអប់ <span class="mi">\(\Box\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(4.25 + \mathbf{5.75} = 10\)</span></p></li>
+<li><p><span class="mi">\(\mathbf{11} - 3.85 = 7.15\)</span></p></li>
+<li><p><span class="mi">\(2.5 \times \mathbf{8} = 20\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គណនាផលបូកដោយប្រើលក្ខណៈងាយស្រួល ៖ <div class="md">\[S = 1.25 + 3.75 + 4.8 + 5.2 + 8.45 + 1.55\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាដោយប្រើលក្ខណៈងាយស្រួល ៖ <div class="md">\[\begin{aligned}
+S &amp;= (1.25 + 3.75) + (4.8 + 5.2) + (8.45 + 1.55) \\
+  &amp;= 5 + 10 + 10 = 25
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>សិស្សម្នាក់ទិញសៀវភៅ ៤ ក្បាល តម្លៃ <span class="mi">\(2.75\$\)</span> ក្នុងមួយក្បាល និងប៊ិច ៦ ដើម តម្លៃ <span class="mi">\(0.65\$\)</span> ក្នុងមួយដើម។ គាត់ឱ្យក្រដាសប្រាក់ <span class="mi">\(20\$\)</span> ទៅអ្នកលក់។ គណនាប្រាក់អាប់ដែលគាត់ត្រូវទទួលបាន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាប្រាក់អាប់ ៖</p>
+<ul>
+<li><p>តម្លៃសៀវភៅ ៤ ក្បាល ៖ <span class="mi">\(4 \times 2.75 = 11\$\)</span></p></li>
+<li><p>តម្លៃប៊ិច ៦ ដើម ៖ <span class="mi">\(6 \times 0.65 = 3.90\$\)</span></p></li>
+<li><p>ចំណាយសរុប ៖ <span class="mi">\(11 + 3.90 = 14.90\$\)</span></p></li>
+<li><p>ប្រាក់អាប់ត្រូវទទួលបាន ៖<br/>
+<span class="mi">\(20 - 14.90 = 5.10\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>រថយន្តមួយធ្វើដំណើរដោយល្បឿនមធ្យម <span class="mi">\(65.5\text{ km/h}\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនាចម្ងាយផ្លូវដែលរថយន្តធ្វើបានក្នុងរយៈពេល <span class="mi">\(3.5\)</span> ម៉ោង ។</p></li>
+<li><p>តើរថយន្តត្រូវចំណាយពេលប៉ុន្មានម៉ោងដើម្បីធ្វើដំណើរបានចម្ងាយ <span class="mi">\(262\text{ km}\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចម្ងាយ និងរយៈពេល ៖</p>
+<ul>
+<li><p>ចម្ងាយក្នុងរយៈពេល <span class="mi">\(3.5\text{ h}\)</span> ៖<br/>
+<span class="mi">\(d = 65.5 \times 3.5 = 229.25\text{ km}\)</span></p></li>
+<li><p>រយៈពេលសម្រាប់ចម្ងាយ <span class="mi">\(262\text{ km}\)</span> ៖<br/>
+<span class="mi">\(t = 262 \div 65.5 = 4\)</span> ម៉ោង </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ធុងប្រេងមួយមានប្រេង <span class="mi">\(45.6\)</span> លីត្រ ។ គេរំលែកប្រេងនោះដាក់ដបតូចៗដែលមួយដបផ្ទុកបាន <span class="mi">\(0.75\)</span> លីត្រ ។</p>
+<ol class="list olka cols2">
+<li><p>តើគេអាចច្រកបានដបពេញចំនួនប៉ុន្មានដប?</p></li>
+<li><p>តើនៅសល់ប្រេងប៉ុន្មានលីត្រទៀត?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចំនួនដប និងប្រេងនៅសល់ ៖</p>
+<ul>
+<li><p>ព្រោះ <span class="mi">\(45.6 \div 0.75 = 60.8\)</span><br/>
+<span class="mi">\(\Rightarrow\)</span> គេច្រកបានដបពេញចំនួន <span class="mi">\(60\)</span> ដប</p></li>
+<li><p>ចំណុះក្នុង <span class="mi">\(60\)</span> ដបគឺ <span class="mi">\(60 \times 0.75 = 45\text{ L}\)</span></p></li>
+<li><p>ប្រេងនៅសល់ ៖ <span class="mi">\(45.6 - 45 = 0.6\)</span> លីត្រ </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>បន្ទប់រាងចតុកោណកែងមួយមានបណ្ដោយ <span class="mi">\(6.4\text{ m}\)</span> និងទទឹង <span class="mi">\(4.5\text{ m}\)</span>។ គេចង់ក្រាលការ៉ូបន្ទប់នោះដោយការ៉ូការ៉េមានជ្រុងប្រវែង <span class="mi">\(0.4\text{ m}\)</span>។ គណនាចំនួនការ៉ូដែលត្រូវប្រើប្រាស់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចំនួនការ៉ូត្រូវប្រើ ៖</p>
+<ul>
+<li><p>ក្រឡាផ្ទៃបន្ទប់ ៖ <span class="mi">\(S_1 = 6.4 \times 4.5 = 28.8\text{ m}^2\)</span></p></li>
+<li><p>ក្រឡាផ្ទៃការ៉ូ ១ ផ្ទាំង ៖ <span class="mi">\(S_2 = 0.4 \times 0.4 = 0.16\text{ m}^2\)</span></p></li>
+<li><p>ចំនួនការ៉ូ ៖ <span class="mi">\(28.8 \div 0.16 = 180\)</span> សន្លឹក</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>កម្ដៅនៅក្នុងទូទឹកកកមួយពេលដំបូងគឺ <span class="mi">\(-4.5^\circ\text{C}\)</span>។ នៅពេលដាច់ចរន្តអគ្គិសនី សីតុណ្ហភាពបានកើនឡើង <span class="mi">\(8.8^\circ\text{C}\)</span>។ ពេលចរន្តអគ្គិសនីមកវិញ សីតុណ្ហភាពបានធ្លាក់ចុះទៅវិញ <span class="mi">\(10.2^\circ\text{C}\)</span>។ គណនាសីតុណ្ហភាពចុងក្រោយក្នុងទូទឹកកក។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាសីតុណ្ហភាពចុងក្រោយ ៖ <div class="md">\[\begin{aligned}
+T &amp;= -4.5 + 8.8 - 10.2 \\
+  &amp;= 4.3 - 10.2 = -5.9^\circ\text{C}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>កម្រងចំនួនទសភាគមួយមានតួ ៖ <span class="mi">\(1.2, \ 2.5, \ 3.8, \ 5.1, \dots\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>រកផលសងរួមរវាងពីរតួជាប់គ្នា។</p></li>
+<li><p>សរសេរ ៣ តួបន្ទាប់នៃកម្រងចំនួននេះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កម្រងចំនួន <span class="mi">\(1.2, \ 2.5, \ 3.8, \ 5.1, \dots\)</span> ៖</p>
+<ul>
+<li><p>ផលសងរួម ៖ <span class="mi">\(d = 2.5 - 1.2 = 1.3\)</span></p></li>
+<li><p>៣ តួបន្ទាប់ ៖<br/>
+<span class="mi">\(5.1 + 1.3 = 6.4\)</span><br/>
+<span class="mi">\(6.4 + 1.3 = 7.7\)</span><br/>
+<span class="mi">\(7.7 + 1.3 = 9.0\)</span></p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៥ ចំនួនទសភាគ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c05">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L04.html"><small>← មេរៀនមុន</small><b>ប្រភាគ</b></a><a class="next" href="L06.html"><small>មេរៀនបន្ទាប់ →</small><b>ភាគរយ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងចំនួនទសភាគ <span class=\"mi\">\\(45.678\\)<\/span> តួលេខ <span class=\"mi\">\\(6\\)<\/span> ស្ថិតនៅខ្ទង់អ្វី?", "options": ["ខ្ទង់ដប់", "ខ្ទង់ភាគដប់", "ខ្ទង់ភាគរយ", "ខ្ទង់ភាគពាន់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងចំនួនទសភាគ <span class=\"mi\">\\(12.345\\)<\/span> តួលេខ <span class=\"mi\">\\(4\\)<\/span> មានតម្លៃស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(0.4\\)<\/span>", "<span class=\"mi\">\\(0.04\\)<\/span>", "<span class=\"mi\">\\(0.004\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រភាគ <span class=\"mi\">\\(\\dfrac{7}{100}\\)<\/span> សរសេរជាចំនួនទសភាគស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.7\\)<\/span>", "<span class=\"mi\">\\(0.07\\)<\/span>", "<span class=\"mi\">\\(0.007\\)<\/span>", "<span class=\"mi\">\\(7.0\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រភាគ <span class=\"mi\">\\(\\dfrac{3}{5}\\)<\/span> ស្មើនឹងចំនួនទសភាគណា?", "options": ["<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>", "<span class=\"mi\">\\(0.6\\)<\/span>", "<span class=\"mi\">\\(0.35\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រភាគ <span class=\"mi\">\\(\\dfrac{1}{8}\\)<\/span> ស្មើនឹងចំនួនទសភាគណា?", "options": ["<span class=\"mi\">\\(0.125\\)<\/span>", "<span class=\"mi\">\\(0.8\\)<\/span>", "<span class=\"mi\">\\(0.18\\)<\/span>", "<span class=\"mi\">\\(1.8\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនទសភាគ <span class=\"mi\">\\(0.45\\)<\/span> បំប្លែងជាប្រភាគបង្រួមមិនបានស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\dfrac{45}{100}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{9}{20}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{9}{25}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{5}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនទសភាគ <span class=\"mi\">\\(1.25\\)<\/span> ស្មើនឹងប្រភាគណា?", "options": ["<span class=\"mi\">\\(\\dfrac{5}{4}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{12}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{25}{10}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនទសភាគខួប <span class=\"mi\">\\(0.\\overline{4}\\)<\/span> ស្មើនឹងប្រភាគណា?", "options": ["<span class=\"mi\">\\(\\dfrac{4}{10}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{9}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{2}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{99}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនទសភាគខួប <span class=\"mi\">\\(0.\\overline{27}\\)<\/span> ស្មើនឹងប្រភាគបង្រួមមិនបានណា?", "options": ["<span class=\"mi\">\\(\\dfrac{27}{100}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{11}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{27}{9}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{9}{33}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនទសភាគណាខាងក្រោមនេះធំជាងគេ?", "options": ["<span class=\"mi\">\\(0.45\\)<\/span>", "<span class=\"mi\">\\(0.405\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>", "<span class=\"mi\">\\(0.495\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំនួនទសភាគណាខាងក្រោមនេះតូចជាងគេ?", "options": ["<span class=\"mi\">\\(0.12\\)<\/span>", "<span class=\"mi\">\\(0.09\\)<\/span>", "<span class=\"mi\">\\(0.105\\)<\/span>", "<span class=\"mi\">\\(0.015\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ប្រៀបធៀប <span class=\"mi\">\\(0.8\\)<\/span> និង <span class=\"mi\">\\(0.80\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(0.8 &gt; 0.80\\)<\/span>", "<span class=\"mi\">\\(0.8 &lt; 0.80\\)<\/span>", "<span class=\"mi\">\\(0.8 = 0.80\\)<\/span>", "មិនអាចប្រៀបធៀប"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ប្រៀបធៀប <span class=\"mi\">\\(-2.5\\)<\/span> និង <span class=\"mi\">\\(-2.05\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(-2.5 &gt; -2.05\\)<\/span>", "<span class=\"mi\">\\(-2.5 &lt; -2.05\\)<\/span>", "<span class=\"mi\">\\(-2.5 = -2.05\\)<\/span>", "គ្មានចម្លើយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(4.5 + 3.25\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(7.30\\)<\/span>", "<span class=\"mi\">\\(7.75\\)<\/span>", "<span class=\"mi\">\\(7.55\\)<\/span>", "<span class=\"mi\">\\(8.0\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(12.65 + 8.4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(20.69\\)<\/span>", "<span class=\"mi\">\\(21.05\\)<\/span>", "<span class=\"mi\">\\(21.5\\)<\/span>", "<span class=\"mi\">\\(20.05\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលដក <span class=\"mi\">\\(15.8 - 6.45\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(9.35\\)<\/span>", "<span class=\"mi\">\\(9.45\\)<\/span>", "<span class=\"mi\">\\(9.25\\)<\/span>", "<span class=\"mi\">\\(8.35\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលដក <span class=\"mi\">\\(10 - 3.75\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6.75\\)<\/span>", "<span class=\"mi\">\\(7.25\\)<\/span>", "<span class=\"mi\">\\(6.25\\)<\/span>", "<span class=\"mi\">\\(7.75\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-3.5) + (-4.8)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-8.3\\)<\/span>", "<span class=\"mi\">\\(8.3\\)<\/span>", "<span class=\"mi\">\\(-1.3\\)<\/span>", "<span class=\"mi\">\\(1.3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(5.2 - (-3.8)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1.4\\)<\/span>", "<span class=\"mi\">\\(-1.4\\)<\/span>", "<span class=\"mi\">\\(9.0\\)<\/span>", "<span class=\"mi\">\\(-9.0\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(4.35 \\times 10\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.435\\)<\/span>", "<span class=\"mi\">\\(43.5\\)<\/span>", "<span class=\"mi\">\\(435\\)<\/span>", "<span class=\"mi\">\\(4350\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(0.068 \\times 100\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.68\\)<\/span>", "<span class=\"mi\">\\(6.8\\)<\/span>", "<span class=\"mi\">\\(68\\)<\/span>", "<span class=\"mi\">\\(680\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(2.5 \\times 4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1.0\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(8.5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(0.3 \\times 0.7\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2.1\\)<\/span>", "<span class=\"mi\">\\(0.21\\)<\/span>", "<span class=\"mi\">\\(0.021\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(1.2 \\times 1.2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(14.4\\)<\/span>", "<span class=\"mi\">\\(1.44\\)<\/span>", "<span class=\"mi\">\\(0.144\\)<\/span>", "<span class=\"mi\">\\(144\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((-0.5) \\times (-0.6)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-0.3\\)<\/span>", "<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(-0.03\\)<\/span>", "<span class=\"mi\">\\(0.03\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(56.8 \\div 10\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(568\\)<\/span>", "<span class=\"mi\">\\(5.68\\)<\/span>", "<span class=\"mi\">\\(0.568\\)<\/span>", "<span class=\"mi\">\\(56.8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(3.45 \\div 100\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(34.5\\)<\/span>", "<span class=\"mi\">\\(0.345\\)<\/span>", "<span class=\"mi\">\\(0.0345\\)<\/span>", "<span class=\"mi\">\\(345\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(4.8 \\div 0.1\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.48\\)<\/span>", "<span class=\"mi\">\\(48\\)<\/span>", "<span class=\"mi\">\\(480\\)<\/span>", "<span class=\"mi\">\\(0.048\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(7.5 \\div 2.5\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(0.03\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(0.36 \\div 0.04\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(0.9\\)<\/span>", "<span class=\"mi\">\\(90\\)<\/span>", "<span class=\"mi\">\\(0.09\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(1.5 \\div 0.5\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(0.75\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បង្គត់ចំនួន <span class=\"mi\">\\(14.63\\)<\/span> ត្រឹមចំនួនគត់ គេទទួលបាន ៖", "options": ["<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(14.6\\)<\/span>", "<span class=\"mi\">\\(14.5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បង្គត់ចំនួន <span class=\"mi\">\\(28.568\\)<\/span> ត្រឹមខ្ទង់ភាគដប់ គេទទួលបាន ៖", "options": ["<span class=\"mi\">\\(28.5\\)<\/span>", "<span class=\"mi\">\\(28.6\\)<\/span>", "<span class=\"mi\">\\(28.57\\)<\/span>", "<span class=\"mi\">\\(29\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បង្គត់ចំនួន <span class=\"mi\">\\(3.456\\)<\/span> ត្រឹមខ្ទង់ភាគរយ គេទទួលបាន ៖", "options": ["<span class=\"mi\">\\(3.45\\)<\/span>", "<span class=\"mi\">\\(3.46\\)<\/span>", "<span class=\"mi\">\\(3.5\\)<\/span>", "<span class=\"mi\">\\(3.4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បង្គត់ចំនួន <span class=\"mi\">\\(9.995\\)<\/span> ត្រឹមខ្ទង់ភាគរយ គេទទួលបាន ៖", "options": ["<span class=\"mi\">\\(9.99\\)<\/span>", "<span class=\"mi\">\\(10.00\\)<\/span>", "<span class=\"mi\">\\(9.90\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\(2.5 \\times 4 - 3.2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6.8\\)<\/span>", "<span class=\"mi\">\\(7.2\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(6.2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\(15 - 6 \\div 1.5\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(13.5\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((3.5 + 1.5) \\times 0.4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(2.5\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(0.2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(0.5^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2.5\\)<\/span>", "<span class=\"mi\">\\(0.25\\)<\/span>", "<span class=\"mi\">\\(0.025\\)<\/span>", "<span class=\"mi\">\\(1.0\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(0.1^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.3\\)<\/span>", "<span class=\"mi\">\\(0.01\\)<\/span>", "<span class=\"mi\">\\(0.001\\)<\/span>", "<span class=\"mi\">\\(0.0001\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(x + 2.5 = 7.8\\)<\/span> មានឫស <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5.3\\)<\/span>", "<span class=\"mi\">\\(10.3\\)<\/span>", "<span class=\"mi\">\\(5.5\\)<\/span>", "<span class=\"mi\">\\(4.3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សមីការ <span class=\"mi\">\\(0.4x = 2.4\\)<\/span> មានឫស <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(0.6\\)<\/span>", "<span class=\"mi\">\\(60\\)<\/span>", "<span class=\"mi\">\\(9.6\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រណាត់មួយដុំប្រវែង <span class=\"mi\">\\(12.5\\text{ m}\\)<\/span> តម្លៃ <span class=\"mi\">\\(50\\)<\/span> ដុល្លារ ។ តើក្រណាត់ ១ ម៉ែត្រតម្លៃប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(3.5\\$\\)<\/span>", "<span class=\"mi\">\\(4\\$\\)<\/span>", "<span class=\"mi\">\\(4.5\\$\\)<\/span>", "<span class=\"mi\">\\(5\\$\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រថយន្តមួយស៊ីសាំង <span class=\"mi\">\\(6.5\\)<\/span> លីត្រ  ក្នុងចម្ងាយ <span class=\"mi\">\\(100\\text{ km}\\)<\/span>។ ក្នុងចម្ងាយ <span class=\"mi\">\\(300\\text{ km}\\)<\/span> រថយន្តនោះស៊ីសាំងប៉ុន្មានលីត្រ?", "options": ["<span class=\"mi\">\\(18.5\\)<\/span>", "<span class=\"mi\">\\(19.5\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(19\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បន្ទប់មួយមានបណ្ដោយ <span class=\"mi\">\\(5.4\\text{ m}\\)<\/span> និងទទឹង <span class=\"mi\">\\(3.5\\text{ m}\\)<\/span>។ ក្រឡាផ្ទៃបន្ទប់នោះគឺ ៖", "options": ["<span class=\"mi\">\\(18.9\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(17.8\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(18.5\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(19.2\\text{ m}^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បរិមាត្រនៃចតុកោណកែងដែលមានវិមាត្រ <span class=\"mi\">\\(4.2\\text{ cm}\\)<\/span> និង <span class=\"mi\">\\(2.8\\text{ cm}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(7.0\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(14.0\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(11.76\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(15.0\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សីតុណ្ហភាពនៅម៉ោង ៧ ព្រឹកគឺ <span class=\"mi\">\\(24.5^\\circ\\text{C}\\)<\/span> ហើយនៅថ្ងៃត្រង់ឡើងដល់ <span class=\"mi\">\\(32.8^\\circ\\text{C}\\)<\/span>។ សីតុណ្ហភាពកើនឡើងបាន ៖", "options": ["<span class=\"mi\">\\(8.3^\\circ\\text{C}\\)<\/span>", "<span class=\"mi\">\\(7.3^\\circ\\text{C}\\)<\/span>", "<span class=\"mi\">\\(8.5^\\circ\\text{C}\\)<\/span>", "<span class=\"mi\">\\(9.3^\\circ\\text{C}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃកន្សោម <span class=\"mi\">\\(\\dfrac{0.12 \\times 0.5}{0.03}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(0.2\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(0.02\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{0.36}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.06\\)<\/span>", "<span class=\"mi\">\\(0.6\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(0.18\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{0.04}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.2\\)<\/span>", "<span class=\"mi\">\\(0.02\\)<\/span>", "<span class=\"mi\">\\(0.002\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១២ : ការប្រៀបធៀបត្រីកោណ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១២ «ការប្រៀបធៀបត្រីកោណ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១២ : ការប្រៀបធៀបត្រីកោណ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១២ «ការប្រៀបធៀបត្រីកោណ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g8">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li aria-current="page">មេរៀនទី ១២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១២</span>
+      <div><span class="ls-kicker">មេរៀនទី ១២ · គណិតវិទ្យាថ្នាក់ទី ៨</span><h1>ការប្រៀបធៀបត្រីកោណ</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណត្រីកោណប៉ុនគ្នា</a></li><li class="sub"><a href="#u2">២. ករណីប៉ុនគ្នានៃត្រីកោណទូទៅ</a></li><li class="sub"><a href="#u3">៣. ករណីប៉ុនគ្នានៃត្រីកោណកែង</a></li><li class="sub"><a href="#u4">៤. លក្ខណៈនៃត្រីកោណសមបាត និងត្រីកោណសម័ង្ស</a></li><li class="sub"><a href="#u5">៥. វិសមភាពត្រីកោណ និងទំនាក់ទំនងរវាងជ្រុង និងមុំ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-8.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃការសិក្សាត្រីកោណប៉ុនគ្នា និងវិភាគទានរបស់ថាលេស</b></header><div class="bx-b">
+<p>ការសិក្សាអំពី <strong>ភាពប៉ុនគ្នានៃត្រីកោណ (Congruence of Triangles)</strong> មានដើមកំណើតតាំងពីសម័យបុរាណកាល ៖</p>
+<ul>
+<li><p><strong>ថាលេស នៃមីឡេ (Thales of Miletus, c. 624–546 មុន គ.ស.) ៖</strong> ត្រូវបានចាត់ទុកជាបិតានៃធរណីមាត្រដកស្រង់ហេតុផល (Deductive Geometry)។ លោកគឺជាបុគ្គលដំបូងគេដែលបានប្រើប្រាស់ទ្រឹស្ដីត្រីកោណប៉ុនគ្នា (ជាពិសេសករណី មុំ-ជ្រុង-មុំ) ដើម្បីគណនាចម្ងាយពីច្រាំងសមុទ្រទៅកាន់កប៉ាល់ដែលកំពុងបើកបរកណ្តាលសមុទ្រ និងវាស់កម្ពស់ពីរ៉ាមីតតាមរយៈប្រវែងស្រមោល។</p></li>
+<li><p><strong>អឺគ្លីដ (Euclid of Alexandria, c. 300 មុន គ.ស.) ៖</strong> នៅក្នុងគម្ពីរ <em>The Elements</em> (ធាតុ) ដ៏ល្បីល្បាញ ក្បួនខ្នាតនៃត្រីកោណប៉ុនគ្នាត្រូវបានចងក្រងយ៉ាងម៉ត់ចត់ជាទ្រឹស្ដីបទមូលដ្ឋាន (សៀវភៅទី ១ ទ្រឹស្ដីបទ ៤, ៨ និង ២៦ សម្រាប់ករណី ជ.ម.ជ, ជ.ជ.ជ និង ម.ជ.ម)។</p></li>
+<li><p><strong>សារៈសំខាន់ក្នុងការអនុវត្តជាក់ស្តែង ៖</strong> ភាពប៉ុនគ្នានៃត្រីកោណ គឺជាគ្រឹះស្នូលក្នុងការស្ថាបនាស្ពាន អាគារ ការវាស់វែងដីធ្លី (Triangulation Surveying) និងការរចនាក្រាហ្វិកកុំព្យូទ័រទំនើប។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សញ្ញាណត្រីកោណប៉ុនគ្នា</h3>
+<h4>និយមន័យត្រីកោណប៉ុនគ្នា</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ត្រីកោណប៉ុនគ្នា</b></header><div class="bx-b">
+<p>ត្រីកោណពីរជាត្រីកោណប៉ុនគ្នា លុះត្រាតែធាតុត្រូវគ្នា (ជ្រុងត្រូវគ្នា និងមុំត្រូវគ្នា) ទាំងអស់ជាធាតុប៉ុនគ្នា។<br/>
+បើ <span class="mi">\(\Delta ABC\)</span> និង <span class="mi">\(\Delta A'B'C'\)</span> ប៉ុនគ្នា គេសរសេរ ៖ <div class="md">\[\Delta ABC \cong \Delta A'B'C'\]</div> ដែលមានលក្ខខណ្ឌសមមូល ៖ <div class="md">\[\begin{cases}
+AB = A'B', \quad{} BC = B'C', \quad{} AC = A'C' &amp; (\text{ជ្រុងត្រូវគ្នាប៉ុនគ្នា}) \\
+\angle A = \angle A', \quad{} \angle B = \angle B', \quad{} \angle C = \angle C' &amp; (\text{មុំត្រូវគ្នាប៉ុនគ្នា})
+\end{cases}\]</div></p>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>កំណត់សម្គាល់អំពីការសរសេរឈ្មោះកំពូលត្រូវគ្នា</b></header><div class="bx-b">
+<p>នៅពេលសរសេរសញ្ញាភាពប៉ុនគ្នា <span class="mi">\(\cong\)</span> យើងត្រូវតម្រៀបឈ្មោះកំពូលឱ្យត្រូវគ្នាតាមលំដាប់ ៖ បើកំពូល <span class="mi">\(A\)</span> ត្រូវនឹង <span class="mi">\(A'\)</span>, <span class="mi">\(B\)</span> ត្រូវនឹង <span class="mi">\(B'\)</span>, <span class="mi">\(C\)</span> ត្រូវនឹង <span class="mi">\(C'\)</span> នោះត្រូវសរសេរ <span class="mi">\(\Delta ABC \cong \Delta A'B'C'\)</span>។ ការសរសេរខុសលំដាប់ដូចជា <span class="mi">\(\Delta ABC \cong \Delta B'A'C'\)</span> អាចនាំឱ្យមានការភ័ន្តច្រឡំក្នុងការទាញវិបាក។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC \cong \Delta DEF\)</span> ដោយដឹងថា <span class="mi">\(AB = 6\text{ cm}\)</span>, <span class="mi">\(BC = 8\text{ cm}\)</span>, <span class="mi">\(\angle A = 70^\circ\)</span>, <span class="mi">\(\angle B = 50^\circ\)</span>។ គណនាប្រវែងជ្រុង <span class="mi">\(DE, EF\)</span> និងរង្វាស់មុំ <span class="mi">\(\angle D, \angle E, \angle F\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ដោយសារ <span class="mi">\(\Delta ABC \cong \Delta DEF\)</span> តាមនិយមន័យធាតុត្រូវគ្នា ៖</p>
+<ul>
+<li><p><span class="mi">\(DE = AB = 6\text{ cm}\)</span> និង <span class="mi">\(EF = BC = 8\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(\angle D = \angle A = 70^\circ\)</span> និង <span class="mi">\(\angle E = \angle B = 50^\circ\)</span></p></li>
+<li><p>ក្នុង <span class="mi">\(\Delta DEF\)</span> ផលបូកមុំក្នុងគឺ <span class="mi">\(180^\circ\)</span> ៖ <div class="md">\[\angle F = 180^\circ - (\angle D + \angle E) = 180^\circ - (70^\circ + 50^\circ) = 60^\circ\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta MNP \cong \Delta XYZ\)</span> ដែល <span class="mi">\(MN = 5\text{ cm}, NP = 7\text{ cm}, XZ = 9\text{ cm}\)</span> និង <span class="mi">\(\angle Y = 65^\circ, \angle Z = 45^\circ\)</span>។ គណនា <span class="mi">\(XY, YZ, MP\)</span> និង <span class="mi">\(\angle M\)</span>។</p>
+</div></section>
+<p><span>3</span></p>
+<h3 id="u2">ករណីប៉ុនគ្នានៃត្រីកោណទូទៅ</h3>
+<p>ដើម្បីបញ្ជាក់ថាត្រីកោណពីរជាត្រីកោណប៉ុនគ្នា គេមិនចាំបាច់ផ្ទៀងផ្ទាត់គ្រប់ធាតុទាំង ៦ នោះទេ គឺគ្រាន់តែផ្ទៀងផ្ទាត់លក្ខខណ្ឌមួយក្នុងចំណោម ៣ ករណីខាងក្រោម ៖</p>
+<h4>ករណីទី ១ ៖ ជ្រុង-មុំ-ជ្រុង (ជ.ម.ជ ឬ SAS)</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>ករណី ជ.ម.ជ</b></header><div class="bx-b">
+<p>បើត្រីកោណពីរមានជ្រុងពីរ និងមុំមួយដែលនៅចន្លោះជ្រុងទាំងពីរនោះ ប៉ុនរៀងគ្នា នោះត្រីកោណទាំងពីរជាត្រីកោណប៉ុនគ្នា។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><div class="md">\[AB = DE, \quad{} \angle B = \angle E, \quad{} BC = EF \implies \Delta ABC \cong \Delta DEF\text{ (តាម ជ.ម.ជ)}\]</div></p>
+<h4>ករណីទី ២ ៖ មុំ-ជ្រុង-មុំ (ម.ជ.ម ឬ ASA)</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>ករណី ម.ជ.ម</b></header><div class="bx-b">
+<p>បើត្រីកោណពីរមានជ្រុងមួយ និងមុំពីរជាប់នឹងជ្រុងនោះ ប៉ុនរៀងគ្នា នោះត្រីកោណទាំងពីរជាត្រីកោណប៉ុនគ្នា។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><div class="md">\[\angle B = \angle E, \quad{} BC = EF, \quad{} \angle C = \angle F \implies \Delta ABC \cong \Delta DEF\text{ (តាម ម.ជ.ម)}\]</div></p>
+<h4>ករណីទី ៣ ៖ ជ្រុង-ជ្រុង-ជ្រុង (ជ.ជ.ជ ឬ SSS)</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>ករណី ជ.ជ.ជ</b></header><div class="bx-b">
+<p>បើត្រីកោណពីរមានជ្រុងទាំងបីប៉ុនរៀងគ្នា នោះត្រីកោណទាំងពីរជាត្រីកោណប៉ុនគ្នា។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><div class="md">\[AB = DE, \quad{} BC = EF, \quad{} AC = DF \implies \Delta ABC \cong \Delta DEF\text{ (តាម ជ.ជ.ជ)}\]</div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ពីរ <span class="mi">\(AB\)</span> និង <span class="mi">\(CD\)</span> ប្រសព្វគ្នាកាត់តាមចំណុចកណ្តាល <span class="mi">\(O\)</span> រៀងគ្នា (<span class="mi">\(OA = OB\)</span> និង <span class="mi">\(OC = OD\)</span>)។ បង្ហាញថា <span class="mi">\(\Delta OAC \cong \Delta OBD\)</span> រួចទាញបញ្ជាក់ថា <span class="mi">\(AC = BD\)</span> និង <span class="mi">\(AC \parallel BD\)</span>។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<ul>
+<li><p>ពិនិត្យត្រីកោណទាំងពីរ <span class="mi">\(\Delta OAC\)</span> និង <span class="mi">\(\Delta OBD\)</span> ៖</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\(OA = OB\)</span> (តាមសម្មតិកម្ម <span class="mi">\(O\)</span> ជាចំណុចកណ្តាល <span class="mi">\(AB\)</span>)</p></li>
+<li><p><span class="mi">\(\angle AOC = \angle BOD\)</span> (មុំទល់កំពូល)</p></li>
+<li><p><span class="mi">\(OC = OD\)</span> (តាមសម្មតិកម្ម <span class="mi">\(O\)</span> ជាចំណុចកណ្តាល <span class="mi">\(CD\)</span>)</p></li>
+</ol></li>
+<li><p>ដូចនេះ <span class="mi">\(\Delta OAC \cong \Delta OBD\)</span> តាមករណី ជ្រុង-មុំ-ជ្រុង (ជ.ម.ជ)។</p></li>
+<li><p><strong>វិបាក ៖</strong></p>
+<ul>
+<li><p><span class="mi">\(AC = BD\)</span> (ជ្រុងត្រូវគ្នានៃត្រីកោណប៉ុនគ្នា)</p></li>
+<li><p><span class="mi">\(\angle OCA = \angle ODB\)</span> (មុំត្រូវគ្នានៃត្រីកោណប៉ុនគ្នា)។ ដោយមុំទាំងពីរនេះជាមុំឆ្លាស់ក្នុងគ្នា នាំឱ្យ <span class="mi">\(AC \parallel BD\)</span>។</p></li>
+</ul></li>
+</ul>
+<h3 id="u3">ករណីប៉ុនគ្នានៃត្រីកោណកែង</h3>
+<p>ដោយសារត្រីកោណកែងមានមុំកែង (<span class="mi">\(90^\circ\)</span>) មួយស្រាប់ ករណីប៉ុនគ្នារបស់វាត្រូវបានសម្រួលជាពិសេស ៖</p>
+<section class="bx bx-amber"><header class="bx-h"><b>ករណី អុីប៉ូតេនុស-មុំស្រួច (អ.ម ឬ HA)</b></header><div class="bx-b">
+<p>បើត្រីកោណកែងពីរមានអុីប៉ូតេនុសប៉ុនគ្នា និងមុំស្រួចមួយប៉ុនគ្នា នោះត្រីកោណកែងទាំងពីរជាត្រីកោណប៉ុនគ្នា។</p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>ករណី អុីប៉ូតេនុស-ជ្រុងជាប់មុំកែង (អ.ជ ឬ HL)</b></header><div class="bx-b">
+<p>បើត្រីកោណកែងពីរមានអុីប៉ូតេនុសប៉ុនគ្នា និងជ្រុងជាប់មុំកែងមួយប៉ុនគ្នា នោះត្រីកោណកែងទាំងពីរជាត្រីកោណប៉ុនគ្នា។</p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(M\)</span> ជាចំណុចមួយនៅលើកន្លះបន្ទាត់ពុះនៃមុំ <span class="mi">\(xOy\)</span>។ តាម <span class="mi">\(M\)</span> គូសបន្ទាត់កែងនឹង <span class="mi">\(Ox\)</span> ត្រង់ <span class="mi">\(A\)</span> និងកែងនឹង <span class="mi">\(Oy\)</span> ត្រង់ <span class="mi">\(B\)</span>។ បង្ហាញថា <span class="mi">\(MA = MB\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p>ពិនិត្យត្រីកោណកែង <span class="mi">\(\Delta OAM\)</span> (កែងត្រង់ <span class="mi">\(A\)</span>) និង <span class="mi">\(\Delta OBM\)</span> (កែងត្រង់ <span class="mi">\(B\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(OM\)</span> ជាអុីប៉ូតេនុសរួម</p></li>
+<li><p><span class="mi">\(\angle MOA = \angle MOB\)</span> (<span class="mi">\(OM\)</span> ជាកន្លះបន្ទាត់ពុះនៃមុំ <span class="mi">\(\angle xOy\)</span>)</p></li>
+</ul></li>
+<li><p>ដូចនេះ <span class="mi">\(\Delta OAM \cong \Delta OBM\)</span> តាមករណី អុីប៉ូតេនុស-មុំស្រួច (អ.ម)។</p></li>
+<li><p>វិបាក ៖ <span class="mi">\(MA = MB\)</span> (ចំណុចនៅលើកន្លះបន្ទាត់ពុះ ស្មើចម្ងាយពីជ្រុងទាំងពីរនៃមុំ)។</p></li>
+</ul>
+</div></section>
+<h3 id="u4">លក្ខណៈនៃត្រីកោណសមបាត និងត្រីកោណសម័ង្ស</h3>
+<section class="bx bx-amber"><header class="bx-h"><b>លក្ខណៈត្រីកោណសមបាត</b></header><div class="bx-b">
+<ol class="list oldef cols1">
+<li><p>ក្នុងត្រីកោណសមបាត មុំបាតទាំងពីរមានរង្វាស់ប៉ុនគ្នា ៖ <div class="md">\[AB = AC \iff \angle B = \angle C\]</div></p></li>
+<li><p>ក្នុងត្រីកោណសមបាត បន្ទាត់ពុះមុំកំពូល កម្ពស់គូសចេញពីកំពូល មេដ្យានគូសចេញពីកំពូល និងមេដ្យាទ័រនៃបាត គឺជាបន្ទាត់តែមួយ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>លក្ខណៈត្រីកោណសម័ង្ស</b></header><div class="bx-b">
+<ol class="list oldef cols1">
+<li><p>ត្រីកោណមួយជាត្រីកោណសម័ង្ស លុះត្រាតែមុំទាំងបីប៉ុនគ្នា ដែលមុំនីមួយៗស្មើនឹង <span class="mi">\(60^\circ\)</span>។</p></li>
+<li><p>គ្រប់បន្ទាត់ពិសេសគូសចេញពីកំពូលនីមួយៗ (កម្ពស់, មេដ្យាន, បន្ទាត់ពុះ, មេដ្យាទ័រ) គឺត្រួតស៊ីគ្នា។</p></li>
+</ol>
+</div></section>
+<h3 id="u5">វិសមភាពត្រីកោណ និងទំនាក់ទំនងរវាងជ្រុង និងមុំ</h3>
+<section class="bx bx-amber"><header class="bx-h"><b>ទំនាក់ទំនងរវាងជ្រុង និងមុំឈម</b></header><div class="bx-b">
+<p>ក្នុងត្រីកោណមួយ ៖</p>
+<ul>
+<li><p>បើជ្រុងពីរមិនប៉ុនគ្នា នោះមុំឈមនឹងជ្រុងទាំងពីរក៏មិនប៉ុនគ្នាដែរ ហើយមុំឈមនឹងជ្រុងធំ គឺជាមុំធំជាង ៖ <div class="md">\[a &gt; b \iff \angle A &gt; \angle B\]</div></p></li>
+<li><p>ជ្រុងឈមនឹងមុំកែង (អុីប៉ូតេនុស) ជាជ្រុងវែងជាងគេក្នុងត្រីកោណកែង។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>វិសមភាពត្រីកោណ</b></header><div class="bx-b">
+<p>ក្នុងគ្រប់ត្រីកោណ ផលបូកប្រវែងជ្រុងពីរ តែងតែធំជាងប្រវែងជ្រុងទីបីជានិច្ច ៖ <div class="md">\[\begin{cases}
+a + b &gt; c \\
+b + c &gt; a \\
+c + a &gt; b
+\end{cases}
+\iff |a - b| &lt; c &lt; a + b\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>តើរង្វាស់ប្រវែង <span class="mi">\(4\text{ cm}, 7\text{ cm}, 12\text{ cm}\)</span> អាចបង្កើតបានជាត្រីកោណមួយដែរឬទេ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ពិនិត្យផលបូកជ្រុងតូចទាំងពីរ ៖ <span class="mi">\(4 + 7 = 11\)</span>។ ដោយសារ <span class="mi">\(11 &lt; 12\)</span> (ផលបូកជ្រុងពីរតូចជាងជ្រុងទីបី) នោះតាមវិសមភាពត្រីកោណ ប្រវែងទាំងបីនេះមិនអាចបង្កើតជាត្រីកោណបានឡើយ។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>គេឱ្យ <span class="mi">\(\Delta ABC \cong \Delta DEF\)</span>។ ចូរសរសេរគូនៃជ្រុងត្រូវគ្នាប៉ុនគ្នា និងគូនៃមុំត្រូវគ្នាប៉ុនគ្នាទាំងអស់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោយសារ <span class="mi">\(\Delta ABC \cong \Delta DEF\)</span> ៖</p>
+<ul>
+<li><p>ជ្រុងត្រូវគ្នាប៉ុនគ្នា ៖ <span class="mi">\(AB = DE, BC = EF, AC = DF\)</span></p></li>
+<li><p>មុំត្រូវគ្នាប៉ុនគ្នា ៖ <span class="mi">\(\angle A = \angle D, \angle B = \angle E, \angle C = \angle F\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta MNP \cong \Delta TRS\)</span> ដោយដឹងថា <span class="mi">\(MN = 7\text{ cm}, NP = 9\text{ cm}, MP = 11\text{ cm}\)</span> និង <span class="mi">\(\angle M = 55^\circ, \angle N = 80^\circ\)</span>។ គណនាប្រវែងជ្រុងទាំងអស់ និងមុំទាំងអស់នៃ <span class="mi">\(\Delta TRS\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោយ <span class="mi">\(\Delta MNP \cong \Delta TRS\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(TR = MN = 7\text{ cm}, RS = NP = 9\text{ cm}, TS = MP = 11\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(\angle T = \angle M = 55^\circ, \angle R = \angle N = 80^\circ\)</span></p></li>
+<li><p><span class="mi">\(\angle S = 180^\circ - (55^\circ + 80^\circ) = 45^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC \cong \Delta DEF\)</span> ដែល <span class="mi">\(AB = 3x - 4\)</span> និង <span class="mi">\(DE = 2x + 5\)</span>។ គណនាតម្លៃ <span class="mi">\(x\)</span> និងប្រវែង <span class="mi">\(AB\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC \cong \Delta DEF \implies AB = DE\)</span> ៖ <div class="md">\[3x - 4 = 2x + 5 \implies x = 9\]</div> ប្រវែង <span class="mi">\(AB = 3(9) - 4 = 23\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC \cong \Delta DEF\)</span> ដែល <span class="mi">\(\angle A = 4x + 10^\circ\)</span> និង <span class="mi">\(\angle D = 6x - 20^\circ\)</span>។ គណនាតម្លៃ <span class="mi">\(x\)</span> និងរង្វាស់ <span class="mi">\(\angle A\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC \cong \Delta DEF \implies \angle A = \angle D\)</span> ៖ <div class="md">\[4x + 10^\circ = 6x - 20^\circ \implies 2x = 30^\circ \implies x = 15^\circ\]</div> រង្វាស់ <span class="mi">\(\angle A = 4(15^\circ) + 10^\circ = 70^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC \cong \Delta MNP\)</span> ដែល <span class="mi">\(BC = 2x + 30\)</span> និង <span class="mi">\(NP = 5x - 90\)</span> (គិតជា cm)។ កំណត់តម្លៃ <span class="mi">\(x\)</span> និងប្រវែង <span class="mi">\(BC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC \cong \Delta MNP \implies BC = NP\)</span> ៖ <div class="md">\[2x + 30 = 5x - 90 \implies 3x = 120 \implies x = 40\]</div> ប្រវែង <span class="mi">\(BC = 2(40) + 30 = 110\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC \cong \Delta XYZ\)</span> ដែល <span class="mi">\(AB = 4x + 8\)</span> និង <span class="mi">\(XY = 6x - 16\)</span> (គិតជា cm)។ កំណត់តម្លៃ <span class="mi">\(x\)</span> និងប្រវែង <span class="mi">\(AB\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC \cong \Delta XYZ \implies AB = XY\)</span> ៖ <div class="md">\[4x + 8 = 6x - 16 \implies 2x = 24 \implies x = 12\]</div> ប្រវែង <span class="mi">\(AB = 4(12) + 8 = 56\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>លើប្លង់មួយ មានអង្កត់ពីរ <span class="mi">\(AB\)</span> និង <span class="mi">\(CD\)</span> កាត់គ្នាត្រង់ចំណុចកណ្តាល <span class="mi">\(O\)</span> រៀងគ្នា។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta OAD \cong \Delta OBC\)</span>។</p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(AD = BC\)</span> និង <span class="mi">\(AD \parallel BC\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>អង្កត់ <span class="mi">\(AB, CD\)</span> កាត់គ្នាត្រង់ចំណុចកណ្តាល <span class="mi">\(O\)</span> ៖</p>
+<ul>
+<li><p>a. ពិនិត្យ <span class="mi">\(\Delta OAD\)</span> និង <span class="mi">\(\Delta OBC\)</span> ៖ <span class="mi">\(OA = OB\)</span>, <span class="mi">\(OD = OC\)</span>, និង <span class="mi">\(\angle AOD = \angle BOC\)</span> (ទល់កំពូល) <span class="mi">\(\implies \Delta OAD \cong \Delta OBC\)</span> (ជ.ម.ជ)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(AD = BC\)</span> និង <span class="mi">\(\angle OAD = \angle OBC\)</span> (មុំឆ្លាស់ក្នុងស្មើគ្នា) <span class="mi">\(\implies AD \parallel BC\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span> (<span class="mi">\(AB = AC\)</span>)។ <span class="mi">\(M\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(BC\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABM \cong \Delta ACM\)</span>។</p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(AM \bot BC\)</span> និង <span class="mi">\(AM\)</span> ជាកន្លះបន្ទាត់ពុះនៃមុំ <span class="mi">\(\angle BAC\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សមបាត (<span class="mi">\(AB = AC\)</span>), <span class="mi">\(M\)</span> កណ្តាល <span class="mi">\(BC\)</span> ៖</p>
+<ul>
+<li><p>a. ពិនិត្យ <span class="mi">\(\Delta ABM\)</span> និង <span class="mi">\(\Delta ACM\)</span> ៖ <span class="mi">\(AB = AC\)</span>, <span class="mi">\(BM = CM\)</span>, <span class="mi">\(AM\)</span> រួម <span class="mi">\(\implies \Delta ABM \cong \Delta ACM\)</span> (ជ.ជ.ជ)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(\angle BMA = \angle CMA = 180^\circ/2 = 90^\circ \implies AM \bot BC\)</span> និង <span class="mi">\(\angle BAM = \angle CAM \implies AM\)</span> ជាកន្លះបន្ទាត់ពុះ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\angle xOy\)</span> និងកន្លះបន្ទាត់ពុះ <span class="mi">\(Oz\)</span>។ នៅលើ <span class="mi">\(Ox\)</span> ដៅចំណុច <span class="mi">\(A\)</span> និងលើ <span class="mi">\(Oy\)</span> ដៅចំណុច <span class="mi">\(B\)</span> ដែល <span class="mi">\(OA = OB\)</span>។ លើ <span class="mi">\(Oz\)</span> ដៅចំណុច <span class="mi">\(M\)</span> មួយ។</p>
+<ol class="list olka cols1">
+<li><p>ប្រៀបធៀប <span class="mi">\(\Delta OMA\)</span> និង <span class="mi">\(\Delta OMB\)</span>។</p></li>
+<li><p>ទាញវិបាកបញ្ជាក់ថា <span class="mi">\(MA = MB\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. ពិនិត្យ <span class="mi">\(\Delta OMA\)</span> និង <span class="mi">\(\Delta OMB\)</span> ៖ <span class="mi">\(OA = OB\)</span>, <span class="mi">\(OM\)</span> រួម, <span class="mi">\(\angle AOM = \angle BOM\)</span> (<span class="mi">\(Oz\)</span> ជាកន្លះបន្ទាត់ពុះ) <span class="mi">\(\implies \Delta OMA \cong \Delta OMB\)</span> (ជ.ម.ជ)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(MA = MB\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span>។ កម្ពស់ <span class="mi">\(BD\)</span> និង <span class="mi">\(CE\)</span> គូសចេញពី <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> កាត់ជ្រុងឈមត្រង់ <span class="mi">\(D\)</span> និង <span class="mi">\(E\)</span> រៀងគ្នា។ បង្ហាញថា <span class="mi">\(BD = CE\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សមបាត <span class="mi">\(\implies AB = AC\)</span> និង <span class="mi">\(\angle B = \angle C\)</span>។ ពិនិត្យត្រីកោណកែង <span class="mi">\(\Delta BDC\)</span> (កែងត្រង់ <span class="mi">\(D\)</span>) និង <span class="mi">\(\Delta CEB\)</span> (កែងត្រង់ <span class="mi">\(E\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(BC\)</span> ជាអុីប៉ូតេនុសរួម</p></li>
+<li><p><span class="mi">\(\angle BCD = \angle CBE\)</span> (<span class="mi">\(\angle C = \angle B\)</span>)</p></li>
+</ul>
+<p><span class="mi">\(\implies \Delta BDC \cong \Delta CEB\)</span> (អ.ម) <span class="mi">\(\implies BD = CE\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> មួយ។ កម្ពស់ <span class="mi">\(BD\)</span> និង <span class="mi">\(CE\)</span> កាត់ជ្រុង <span class="mi">\(AC\)</span> និង <span class="mi">\(AB\)</span> ត្រង់ <span class="mi">\(D\)</span> និង <span class="mi">\(E\)</span> រៀងគ្នា។ បង្ហាញថា បើ <span class="mi">\(BD = CE\)</span> នោះ <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណសមបាតត្រង់ <span class="mi">\(A\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យត្រីកោណកែង <span class="mi">\(\Delta BDC\)</span> និង <span class="mi">\(\Delta CEB\)</span> ៖ <span class="mi">\(BC\)</span> រួម, <span class="mi">\(BD = CE \implies \Delta BDC \cong \Delta CEB\)</span> (អ.ជ)។ វិបាក ៖ <span class="mi">\(\angle BCD = \angle CBE \implies \angle C = \angle B \implies \Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> និងចំណុចកណ្តាល <span class="mi">\(M\)</span> នៃជ្រុង <span class="mi">\(BC\)</span>។ តាម <span class="mi">\(M\)</span> គូសបន្ទាត់កែងនឹង <span class="mi">\(AB\)</span> ត្រង់ <span class="mi">\(D\)</span> និងកែងនឹង <span class="mi">\(AC\)</span> ត្រង់ <span class="mi">\(E\)</span>។ បង្ហាញថា បើ <span class="mi">\(MD = ME\)</span> នោះ <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យត្រីកោណកែង <span class="mi">\(\Delta MDB\)</span> និង <span class="mi">\(\Delta MEC\)</span> ៖ <span class="mi">\(MB = MC\)</span> (<span class="mi">\(M\)</span> កណ្តាល <span class="mi">\(BC\)</span>), <span class="mi">\(MD = ME\)</span> (សម្មតិកម្ម) <span class="mi">\(\implies \Delta MDB \cong \Delta MEC\)</span> (អ.ជ)។ វិបាក ៖ <span class="mi">\(\angle B = \angle C \implies \Delta ABC\)</span> សមបាត។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(ABCD\)</span> ជាប្រលេឡូក្រាម និងអង្កត់ទ្រូង <span class="mi">\(BD\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABD \cong \Delta CDB\)</span>។</p></li>
+<li><p>ទាញវិបាកអំពីជ្រុងឈម និងមុំឈមនៃប្រលេឡូក្រាម។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(ABCD\)</span> ជាប្រលេឡូក្រាម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(AB \parallel CD \implies \angle ABD = \angle CDB\)</span> (ឆ្លាស់ក្នុង)។ <span class="mi">\(AD \parallel BC \implies \angle ADB = \angle CBD\)</span> (ឆ្លាស់ក្នុង)។ <span class="mi">\(BD\)</span> ជ្រុងរួម <span class="mi">\(\implies \Delta ABD \cong \Delta CDB\)</span> (ម.ជ.ម)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(AB = CD, AD = BC\)</span> (ជ្រុងឈមស្មើគ្នា) និង <span class="mi">\(\angle A = \angle C\)</span> (មុំឈមស្មើគ្នា)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គេឱ្យចតុកោណ <span class="mi">\(ABCD\)</span> ដែលមាន <span class="mi">\(AB = CD\)</span> និង <span class="mi">\(AD = BC\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABC \cong \Delta CDA\)</span>។</p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(ABCD\)</span> ជាប្រលេឡូក្រាម។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. ពិនិត្យ <span class="mi">\(\Delta ABC\)</span> និង <span class="mi">\(\Delta CDA\)</span> ៖ <span class="mi">\(AB = CD, BC = DA, AC\)</span> រួម <span class="mi">\(\implies \Delta ABC \cong \Delta CDA\)</span> (ជ.ជ.ជ)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(\angle BAC = \angle DCA \implies AB \parallel CD\)</span> និង <span class="mi">\(\angle BCA = \angle DAC \implies BC \parallel AD\)</span>។ ដូចនេះ <span class="mi">\(ABCD\)</span> ជាប្រលេឡូក្រាម។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណសមបាត <span class="mi">\(ABC\)</span> មាន <span class="mi">\(AB = AC\)</span>។ នៅលើបន្លាយនៃបាត <span class="mi">\(BC\)</span> គេដៅចំណុច <span class="mi">\(D\)</span> និង <span class="mi">\(E\)</span> ដោយឱ្យ <span class="mi">\(BD = CE\)</span> (<span class="mi">\(D\)</span> នៅខាង <span class="mi">\(B\)</span> និង <span class="mi">\(E\)</span> នៅខាង <span class="mi">\(C\)</span>)។ បង្ហាញថា <span class="mi">\(\Delta ADE\)</span> ជាត្រីកោណសមបាត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សមបាត <span class="mi">\(\implies AB = AC, \angle B = \angle C\)</span>។ នាំឱ្យមុំក្រៅ <span class="mi">\(\angle ABD = \angle ACE\)</span>។ ពិនិត្យ <span class="mi">\(\Delta ABD\)</span> និង <span class="mi">\(\Delta ACE\)</span> ៖ <span class="mi">\(AB = AC, BD = CE, \angle ABD = \angle ACE \implies \Delta ABD \cong \Delta ACE\)</span> (ជ.ម.ជ)។ វិបាក ៖ <span class="mi">\(AD = AE \implies \Delta ADE\)</span> សមបាត។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ក្នុងរូបត្រីកោណ <span class="mi">\(ABC\)</span> មួយ គេឱ្យ <span class="mi">\(AB = AC\)</span> ហើយ <span class="mi">\(D, E\)</span> ជាចំណុចនៅលើ <span class="mi">\(AB, AC\)</span> រៀងគ្នាដែល <span class="mi">\(AD = AE\)</span>។ បង្ហាញថា <span class="mi">\(BE = CD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យ <span class="mi">\(\Delta ABE\)</span> និង <span class="mi">\(\Delta ACD\)</span> ៖ <span class="mi">\(AB = AC, AE = AD, \angle A\)</span> រួម <span class="mi">\(\implies \Delta ABE \cong \Delta ACD\)</span> (ជ.ម.ជ)។ វិបាក ៖ <span class="mi">\(BE = CD\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណកែងពីរ <span class="mi">\(\Delta ABC\)</span> (កែងត្រង់ <span class="mi">\(A\)</span>) និង <span class="mi">\(\Delta DEF\)</span> (កែងត្រង់ <span class="mi">\(D\)</span>) ដែលមានអុីប៉ូតេនុស <span class="mi">\(BC = EF\)</span> និង <span class="mi">\(\angle B = \angle E\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABC \cong \Delta DEF\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(AB = 5\text{ cm}, BC = 13\text{ cm}\)</span> គណនា <span class="mi">\(DE\)</span> និង <span class="mi">\(DF\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\Delta ABC\)</span> និង <span class="mi">\(\Delta DEF\)</span> កែងត្រង់ <span class="mi">\(A, D\)</span> មាន <span class="mi">\(BC = EF\)</span> (អុីប៉ូតេនុស) និង <span class="mi">\(\angle B = \angle E \implies \Delta ABC \cong \Delta DEF\)</span> (អ.ម)។</p></li>
+<li><p>b. <span class="mi">\(DE = AB = 5\text{ cm}\)</span>។ តាមពីតាករ ៖ <span class="mi">\(DF = \sqrt{13^2 - 5^2} = \sqrt{169 - 25} = 12\text{ cm}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> និង <span class="mi">\(\Delta A'B'C'\)</span> កែងត្រង់ <span class="mi">\(A'\)</span> ដែល <span class="mi">\(BC = B'C'\)</span> និង <span class="mi">\(AB = A'B'\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABC \cong \Delta A'B'C'\)</span>។</p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(\angle C = \angle C'\)</span> និង <span class="mi">\(AC = A'C'\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\Delta ABC, \Delta A'B'C'\)</span> កែងត្រង់ <span class="mi">\(A, A'\)</span> មាន <span class="mi">\(BC = B'C'\)</span> (អុីប៉ូតេនុស) និង <span class="mi">\(AB = A'B'\)</span> (ជ្រុងជាប់មុំកែង) <span class="mi">\(\implies \Delta ABC \cong \Delta A'B'C'\)</span> (អ.ជ)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(\angle C = \angle C'\)</span> និង <span class="mi">\(AC = A'C'\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ <span class="mi">\(AB\)</span> មួយ និងបន្ទាត់មេដ្យាទ័រ <span class="mi">\(\Delta\)</span> របស់វាដែលកាត់ <span class="mi">\(AB\)</span> ត្រង់ <span class="mi">\(I\)</span>។ ចំណុច <span class="mi">\(M\)</span> ស្ថិតនៅលើ <span class="mi">\(\Delta\)</span>។ បង្ហាញថា <span class="mi">\(\Delta MIA \cong \Delta MIB\)</span> រួចទាញថា <span class="mi">\(MA = MB\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta MIA\)</span> និង <span class="mi">\(\Delta MIB\)</span> កែងត្រង់ <span class="mi">\(I\)</span> ៖ <span class="mi">\(IA = IB\)</span> (<span class="mi">\(I\)</span> ជាចំណុចកណ្តាល <span class="mi">\(AB\)</span>), <span class="mi">\(MI\)</span> រួម <span class="mi">\(\implies \Delta MIA \cong \Delta MIB\)</span> (ជ.ម.ជ)។ វិបាក ៖ <span class="mi">\(MA = MB\)</span> (ចំណុចលើមេដ្យាទ័រស្មើចម្ងាយពីចុងសងខាង)។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គេឱ្យមុំស្រួច <span class="mi">\(\angle xOy\)</span>។ លើ <span class="mi">\(Ox\)</span> ដៅចំណុច <span class="mi">\(A, B\)</span> និងលើ <span class="mi">\(Oy\)</span> ដៅចំណុច <span class="mi">\(C, D\)</span> ដែល <span class="mi">\(OA = OC\)</span> និង <span class="mi">\(OB = OD\)</span> (<span class="mi">\(A\)</span> នៅចន្លោះ <span class="mi">\(O\)</span> និង <span class="mi">\(B\)</span>)។ បង្ហាញថា <span class="mi">\(AD = BC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យ <span class="mi">\(\Delta OAD\)</span> និង <span class="mi">\(\Delta OCB\)</span> ៖ <span class="mi">\(OA = OC, OD = OB, \angle O\)</span> រួម <span class="mi">\(\implies \Delta OAD \cong \Delta OCB\)</span> (ជ.ម.ជ)។ វិបាក ៖ <span class="mi">\(AD = BC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>តាមទិន្នន័យលំហាត់ទី ២០ តាង <span class="mi">\(I\)</span> ជាចំណុចប្រសព្វរវាង <span class="mi">\(AD\)</span> និង <span class="mi">\(BC\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta IAB \cong \Delta ICD\)</span> ឬ <span class="mi">\(\Delta IAB\)</span> និង <span class="mi">\(\Delta ICD\)</span> មិនប៉ុនគ្នា? ចូរប្រៀបធៀប <span class="mi">\(\Delta IAB\)</span> ជាមួយ <span class="mi">\(\Delta ICD\)</span>? (ពិនិត្យ <span class="mi">\(\Delta DAB\)</span> និង <span class="mi">\(\Delta BCD\)</span>)។</p></li>
+<li><p>បង្ហាញថា <span class="mi">\(OI\)</span> ជាកន្លះបន្ទាត់ពុះនៃមុំ <span class="mi">\(\angle xOy\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. ពី <span class="mi">\(\Delta OAD \cong \Delta OCB \implies \angle ODA = \angle OBC\)</span> និង <span class="mi">\(\angle OAD = \angle OCB \implies \angle IAB = \angle ICD\)</span> (មុំបន្ថែម)។ ម៉្យាងទៀត <span class="mi">\(AB = OB - OA = OD - OC = CD\)</span>។ ដូចនេះ <span class="mi">\(\Delta IAB \cong \Delta ICD\)</span> (ម.ជ.ម)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(IA = IC\)</span>។ ពិនិត្យ <span class="mi">\(\Delta OIA\)</span> និង <span class="mi">\(\Delta OIC\)</span> មាន <span class="mi">\(OA = OC, IA = IC, OI\)</span> រួម <span class="mi">\(\implies \Delta OIA \cong \Delta OIC\)</span> (ជ.ជ.ជ) <span class="mi">\(\implies \angle AOI = \angle COI \implies OI\)</span> ជាកន្លះបន្ទាត់ពុះ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(\angle A = 40^\circ\)</span>។ គណនារង្វាស់មុំបាត <span class="mi">\(\angle B\)</span> និង <span class="mi">\(\angle C\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(\angle B = \angle C\)</span> ៖ <div class="md">\[\angle B = \angle C = \frac{180^\circ - 40^\circ}{2} = 70^\circ\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span> មានមុំបាតមួយស្មើ <span class="mi">\(65^\circ\)</span>។ គណនារង្វាស់មុំកំពូល <span class="mi">\(\angle A\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A \implies \angle B = \angle C = 65^\circ\)</span> ៖ <div class="md">\[\angle A = 180^\circ - 2(65^\circ) = 50^\circ\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span> មានមុំក្រៅត្រង់កំពូល <span class="mi">\(A\)</span> ស្មើ <span class="mi">\(130^\circ\)</span>។ គណនារង្វាស់មុំក្នុងទាំងបីនៃត្រីកោណ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មុំក្រៅត្រង់ <span class="mi">\(A\)</span> ស្មើ <span class="mi">\(130^\circ \implies \angle A = 180^\circ - 130^\circ = 50^\circ\)</span>។ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A \implies \angle B = \angle C = \dfrac{180^\circ - 50^\circ}{2} = 65^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> ដែលមាន <span class="mi">\(\angle B = 70^\circ\)</span> និង <span class="mi">\(\angle C = 40^\circ\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle A\)</span>។</p></li>
+<li><p>រៀបលំដាប់ប្រវែងជ្រុងទាំងបីពីតូចទៅធំ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\angle A = 180^\circ - (70^\circ + 40^\circ) = 70^\circ\)</span>។</p></li>
+<li><p>b. មុំ <span class="mi">\(\angle C = 40^\circ\)</span> តូចជាងគេ <span class="mi">\(\implies AB\)</span> ខ្លីជាងគេ។ <span class="mi">\(\angle A = \angle B = 70^\circ \implies BC = AC\)</span>។ លំដាប់ ៖ <span class="mi">\(AB &lt; BC = AC\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta MNP\)</span> ដែលមាន <span class="mi">\(MN = 6\text{ cm}, NP = 8\text{ cm}, MP = 11\text{ cm}\)</span>។ រៀបលំដាប់រង្វាស់មុំទាំងបីពីធំទៅតូច។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(MP = 11\text{ cm} &gt; NP = 8\text{ cm} &gt; MN = 6\text{ cm}\)</span>។ មុំឈមនឹងជ្រុងធំជាង ជាមុំធំជាង ៖ <div class="md">\[\angle N &gt; \angle M &gt; \angle P\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ក្នុង <span class="mi">\(\Delta EFG\)</span> មាន <span class="mi">\(\angle E = 55^\circ\)</span> និង <span class="mi">\(\angle F = 65^\circ\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនា <span class="mi">\(\angle G\)</span>។</p></li>
+<li><p>កំណត់ជ្រុងវែងជាងគេ និងជ្រុងខ្លីជាងគេ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\angle G = 180^\circ - (55^\circ + 65^\circ) = 60^\circ\)</span>។</p></li>
+<li><p>b. <span class="mi">\(\angle F = 65^\circ\)</span> ធំជាងគេ <span class="mi">\(\implies EG\)</span> វែងជាងគេ។ <span class="mi">\(\angle E = 55^\circ\)</span> តូចជាងគេ <span class="mi">\(\implies FG\)</span> ខ្លីជាងគេ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>កំណត់ថាតើរង្វាស់ប្រវែងជ្រុងក្នុងករណីនីមួយៗខាងក្រោម អាចគូសបានជាត្រីកោណដែរឬទេ? ព្រោះអ្វី?</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(12\text{ cm}, 11\text{ cm}, 17\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(1\text{ cm}, 2\text{ cm}, 3\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(5.5\text{ cm}, 3.5\text{ cm}, 4.5\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(2\text{ m}, 5.8\text{ m}, 10.2\text{ m}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យវិសមភាពត្រីកោណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(11 + 12 = 23 &gt; 17\)</span> ៖ គូសបាន។</p></li>
+<li><p>b. <span class="mi">\(1 + 2 = 3\)</span> (មិនធំជាង ៣) ៖ មិនអាចគូសបាន។</p></li>
+<li><p>c. <span class="mi">\(3.5 + 4.5 = 8 &gt; 5.5\)</span> ៖ គូសបាន។</p></li>
+<li><p>d. <span class="mi">\(2 + 5.8 = 7.8 &lt; 10.2\)</span> ៖ មិនអាចគូសបាន។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ត្រីកោណមួយមានជ្រុងពីរប្រវែង <span class="mi">\(6\text{ cm}\)</span> និង <span class="mi">\(10\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>រកចន្លោះតម្លៃនៃប្រវែងជ្រុងទីបី <span class="mi">\(x\)</span>។</p></li>
+<li><p>បើ <span class="mi">\(x\)</span> ជាចំនួនគត់សេស តើ <span class="mi">\(x\)</span> អាចមានតម្លៃប៉ុន្មានខ្លះ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. តាមវិសមភាពត្រីកោណ ៖ <span class="mi">\(10 - 6 &lt; x &lt; 10 + 6 \implies 4 &lt; x &lt; 16\)</span> (គិតជា cm)។</p></li>
+<li><p>b. <span class="mi">\(x\)</span> ជាចំនួនគត់សេស ៖ <span class="mi">\(x \in \{5, 7, 9, 11, 13, 15\}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ត្រីកោណសមបាតមួយមានជ្រុងពីរប្រវែង <span class="mi">\(4\text{ cm}\)</span> និង <span class="mi">\(9\text{ cm}\)</span>។ កំណត់ប្រវែងជ្រុងទីបី។ ពន្យល់មូលហេតុ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជ្រុងទាំងពីរគឺ <span class="mi">\(4\text{ cm}\)</span> និង <span class="mi">\(9\text{ cm}\)</span> ៖</p>
+<ul>
+<li><p>បើជ្រុងទីបីស្មើ <span class="mi">\(4\text{ cm}\)</span> នោះ <span class="mi">\(4 + 4 = 8 &lt; 9\)</span> (មិនអាចកើតមាន)។</p></li>
+<li><p>ដូចនេះជ្រុងទីបីត្រូវតែស្មើ <span class="mi">\(9\text{ cm}\)</span> ព្រោះ <span class="mi">\(4 + 9 = 13 &gt; 9\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ត្រីកោណសមបាតមួយមានជ្រុងពីរប្រវែង <span class="mi">\(7\text{ cm}\)</span> និង <span class="mi">\(3\text{ cm}\)</span>។ តើជ្រុងទីបីមានប្រវែងប៉ុន្មាន? ព្រោះអ្វី?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជ្រុងទាំងពីរគឺ <span class="mi">\(7\text{ cm}\)</span> និង <span class="mi">\(3\text{ cm}\)</span> ៖</p>
+<ul>
+<li><p>បើជ្រុងទីបីស្មើ <span class="mi">\(3\text{ cm}\)</span> នោះ <span class="mi">\(3 + 3 = 6 &lt; 7\)</span> (មិនអាចកើតមាន)។</p></li>
+<li><p>ដូចនេះជ្រុងទីបីត្រូវតែស្មើ <span class="mi">\(7\text{ cm}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> ដែល <span class="mi">\(AB &lt; AC\)</span>។ <span class="mi">\(AD\)</span> ជាកន្លះបន្ទាត់ពុះនៃមុំ <span class="mi">\(\angle A\)</span> (<span class="mi">\(D \in BC\)</span>)។ បង្ហាញថា <span class="mi">\(CD &gt; BD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>យក <span class="mi">\(E\)</span> លើ <span class="mi">\(AC\)</span> ដែល <span class="mi">\(AE = AB \implies \Delta ABD \cong \Delta AED\)</span> (ជ.ម.ជ)។ <span class="mi">\(\implies BD = ED\)</span>។ ក្នុង <span class="mi">\(\Delta CDE\)</span> តាមវិសមភាពត្រីកោណ ៖ <span class="mi">\(CD &gt; CE - ED \dots\)</span> នាំឱ្យបាន <span class="mi">\(CD &gt; BD\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> និងចំណុច <span class="mi">\(M\)</span> មួយនៅខាងក្នុងត្រីកោណ។ បង្ហាញថា <span class="mi">\(MB + MC &lt; AB + AC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្លាយ <span class="mi">\(BM\)</span> កាត់ <span class="mi">\(AC\)</span> ត្រង់ <span class="mi">\(K\)</span>។ ក្នុង <span class="mi">\(\Delta ABK\)</span> ៖ <span class="mi">\(MB + MK &lt; AB + AK\)</span>។ ក្នុង <span class="mi">\(\Delta KMC\)</span> ៖ <span class="mi">\(MC &lt; MK + KC\)</span>។ បូកបញ្ចូលគ្នា ៖ <span class="mi">\(MB + MC &lt; AB + AC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> និងចំណុច <span class="mi">\(M\)</span> នៅខាងក្នុងត្រីកោណ។ បង្ហាញថា ៖ <div class="md">\[\frac{AB + BC + CA}{2} &lt; MA + MB + MC &lt; AB + BC + CA\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>តាមលំហាត់ ៣៣ ៖ <span class="mi">\(MA + MB &lt; AC + BC\)</span>, <span class="mi">\(MB + MC &lt; AB + AC\)</span>, <span class="mi">\(MC + MA &lt; AB + BC\)</span>។ បូកបញ្ចូលគ្នា ៖ <span class="mi">\(2(MA + MB + MC) &lt; 2(AB + BC + CA) \implies MA + MB + MC &lt; AB + BC + CA\)</span>។</p></li>
+<li><p>ក្នុង <span class="mi">\(\Delta MAB, \Delta MBC, \Delta MCA\)</span> ៖ <span class="mi">\(MA + MB &gt; AB\)</span>, <span class="mi">\(MB + MC &gt; BC\)</span>, <span class="mi">\(MC + MA &gt; CA\)</span> <span class="mi">\(\implies MA + MB + MC &gt; \frac{AB + BC + CA}{2}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span>។ បន្លាយបាត <span class="mi">\(BC\)</span> ទៅខាង <span class="mi">\(C\)</span> ឱ្យបានចំណុច <span class="mi">\(D\)</span> (<span class="mi">\(CD = AC\)</span>)។ បង្ហាញថា <span class="mi">\(\angle ACD &gt; \angle CAD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សមបាត <span class="mi">\(\implies \angle B = \angle ACB\)</span>។ <span class="mi">\(\angle ACD\)</span> ជាមុំក្រៅនៃ <span class="mi">\(\Delta ABC \implies \angle ACD = \angle A + \angle B &gt; \angle B\)</span>។ <span class="mi">\(\Delta ACD\)</span> សមបាត (<span class="mi">\(AC = CD\)</span>) <span class="mi">\(\implies \angle CAD = \angle D\)</span>។ ដោយ <span class="mi">\(\angle B = \angle ACB = 2\angle D \implies \angle ACD &gt; \angle CAD\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span>។ តាម <span class="mi">\(A\)</span> គូសបន្ទាត់ស្របនឹង <span class="mi">\(BC\)</span> កាត់បន្ទាត់គូសចេញពី <span class="mi">\(C\)</span> ត្រង់ <span class="mi">\(D\)</span>។ បង្ហាញថា <span class="mi">\(AD + AB &gt; CD\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុង <span class="mi">\(\Delta ACD\)</span> តាមវិសមភាពត្រីកោណ ៖ <span class="mi">\(AD + AC &gt; CD\)</span>។ ដោយ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A \implies AC = AB\)</span>។ ដូចនេះ <span class="mi">\(AD + AB &gt; CD\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ <span class="mi">\(AB\)</span> និងចំណុច <span class="mi">\(M\)</span> មិននៅលើ <span class="mi">\(AB\)</span>។ បង្ហាញថា ប្រសិនបើ <span class="mi">\(MA = MB\)</span> នោះ <span class="mi">\(M\)</span> ស្ថិតនៅលើបន្ទាត់មេដ្យាទ័រនៃ <span class="mi">\(AB\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាង <span class="mi">\(I\)</span> ជាចំណុចកណ្តាល <span class="mi">\(AB\)</span>។ ពិនិត្យ <span class="mi">\(\Delta MIA\)</span> និង <span class="mi">\(\Delta MIB\)</span> ៖ <span class="mi">\(MA = MB, IA = IB, MI\)</span> រួម <span class="mi">\(\implies \Delta MIA \cong \Delta MIB\)</span> (ជ.ជ.ជ)។ <span class="mi">\(\implies \angle MIA = \angle MIB = 90^\circ \implies MI \bot AB\)</span>។ ដូចនេះ <span class="mi">\(M\)</span> ស្ថិតនៅលើបន្ទាត់មេដ្យាទ័រនៃ <span class="mi">\(AB\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> មាន <span class="mi">\(\angle B = 30^\circ\)</span>។ បង្ហាញថា ជ្រុងឈមនឹងមុំ <span class="mi">\(30^\circ\)</span> ស្មើនឹងពាក់កណ្តាលអុីប៉ូតេនុស (<span class="mi">\(AC = \frac{1}{2}BC\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>លើបន្លាយ <span class="mi">\(AC\)</span> យក <span class="mi">\(D\)</span> ឱ្យ <span class="mi">\(CD = AC\)</span>។ <span class="mi">\(\Delta ABD\)</span> មាន <span class="mi">\(BC\)</span> ជាមេដ្យាន និងកម្ពស់ <span class="mi">\(\implies \Delta ABD\)</span> សមបាត <span class="mi">\(\implies \angle D = \angle A = 60^\circ \implies \Delta ABD\)</span> សម័ង្ស <span class="mi">\(\implies AD = AB = BC \implies AC = \frac{1}{2}BC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានមេដ្យាន <span class="mi">\(AM\)</span> ដែលផ្ទៀងផ្ទាត់ <span class="mi">\(AM = \frac{1}{2}BC\)</span>។ បង្ហាញថា <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណកែងត្រង់ <span class="mi">\(A\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta MAB\)</span> សមបាត (<span class="mi">\(MA = MB\)</span>) <span class="mi">\(\implies \angle MAB = \angle B\)</span>។ <span class="mi">\(\Delta MAC\)</span> សមបាត (<span class="mi">\(MA = MC\)</span>) <span class="mi">\(\implies \angle MAC = \angle C\)</span>។ <span class="mi">\(\angle A = \angle MAB + \angle MAC = \angle B + \angle C\)</span>។ ដោយ <span class="mi">\(\angle A + \angle B + \angle C = 180^\circ \implies 2\angle A = 180^\circ \implies \angle A = 90^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សម័ង្ស។ <span class="mi">\(M, N, P\)</span> ជាចំណុចរៀងគ្នានៅលើ <span class="mi">\(AB, BC, CA\)</span> ដែល <span class="mi">\(AM = BN = CP\)</span>។ បង្ហាញថា <span class="mi">\(\Delta MNP\)</span> ជាត្រីកោណសម័ង្ស។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABC\)</span> សម័ង្ស <span class="mi">\(\implies AB = BC = CA\)</span> និង <span class="mi">\(\angle A = \angle B = \angle C = 60^\circ\)</span>។ <span class="mi">\(AM = BN = CP \implies MB = NC = PA\)</span>។ <span class="mi">\(\Delta AMP \cong \Delta BNM \cong \Delta CPN\)</span> (ជ.ម.ជ) ៖ <span class="mi">\(\implies MP = MN = NP \implies \Delta MNP\)</span> សម័ង្ស។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មាន <span class="mi">\(AB = AC\)</span>។ កន្លះបន្ទាត់ពុះមុំ <span class="mi">\(\angle B\)</span> និង <span class="mi">\(\angle C\)</span> កាត់គ្នាត្រង់ <span class="mi">\(I\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta IBC\)</span> ជាត្រីកោណសមបាត។</p></li>
+<li><p>បង្ហាញថា <span class="mi">\(AI\)</span> ជាបន្ទាត់ពុះនៃមុំ <span class="mi">\(\angle BAC\)</span> និងជាបន្ទាត់មេដ្យាទ័រនៃ <span class="mi">\(BC\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\angle B = \angle C \implies \frac{1}{2}\angle B = \frac{1}{2}\angle C \implies \angle IBC = \angle ICB \implies \Delta IBC\)</span> សមបាតត្រង់ <span class="mi">\(I\)</span>។</p></li>
+<li><p>b. <span class="mi">\(\Delta ABI \cong \Delta ACI\)</span> (ជ.ជ.ជ) <span class="mi">\(\implies \angle BAI = \angle CAI \implies AI\)</span> ជាកន្លះបន្ទាត់ពុះ។ ដោយ <span class="mi">\(\Delta ABC\)</span> សមបាត នាំឱ្យ <span class="mi">\(AI\)</span> ក៏ជាមេដ្យាទ័រនៃ <span class="mi">\(BC\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មួយ។ នៅខាងក្រៅត្រីកោណ គេសង់ត្រីកោណសម័ង្ស <span class="mi">\(\Delta ABD\)</span> និង <span class="mi">\(\Delta ACE\)</span>។ បង្ហាញថា <span class="mi">\(CD = BE\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យ <span class="mi">\(\Delta DAC\)</span> និង <span class="mi">\(\Delta BAE\)</span> ៖ <span class="mi">\(AD = AB\)</span> (<span class="mi">\(\Delta ABD\)</span> សម័ង្ស), <span class="mi">\(AC = AE\)</span> (<span class="mi">\(\Delta ACE\)</span> សម័ង្ស)។ <span class="mi">\(\angle DAC = 60^\circ + \angle BAC = \angle BAE\)</span>។ <span class="mi">\(\implies \Delta DAC \cong \Delta BAE\)</span> (ជ.ម.ជ) <span class="mi">\(\implies CD = BE\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>គេឱ្យការេ <span class="mi">\(ABCD\)</span>។ លើជ្រុង <span class="mi">\(AB, BC, CD, DA\)</span> គេដៅចំណុច <span class="mi">\(M, N, P, Q\)</span> រៀងគ្នាដែល <span class="mi">\(AM = BN = CP = DQ\)</span>។ បង្ហាញថា <span class="mi">\(MNPQ\)</span> ជាការេ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិនិត្យ ៤ ត្រីកោណកែង <span class="mi">\(\Delta AMQ, \Delta BNM, \Delta CPN, \Delta DQP\)</span> ៖ មានជ្រុងជាប់មុំកែងប៉ុនរៀងគ្នា (<span class="mi">\(AM = BN = CP = DQ\)</span> និង <span class="mi">\(AQ = BM = CN = DP\)</span>)។ <span class="mi">\(\implies\)</span> ត្រីកោណទាំង ៤ ប៉ុនគ្នា <span class="mi">\(\implies MN = NP = PQ = QM\)</span> (ចតុកោណស្មើ)។ ម៉្យាងទៀត មុំស្រួចទាំងពីរនៃត្រីកោណកែងបូកគ្នាបាន <span class="mi">\(90^\circ \implies \angle NMQ = 90^\circ\)</span>។ ដូចនេះ <span class="mi">\(MNPQ\)</span> ជាការេ។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span>។ លើជ្រុង <span class="mi">\(AB\)</span> និង <span class="mi">\(AC\)</span> គេដៅចំណុច <span class="mi">\(D\)</span> និង <span class="mi">\(E\)</span> រៀងគ្នាដែល <span class="mi">\(AD = AE\)</span>។ ហៅ <span class="mi">\(K\)</span> ជាចំណុចប្រសព្វនៃ <span class="mi">\(BE\)</span> និង <span class="mi">\(CD\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABE \cong \Delta ACD\)</span>។</p></li>
+<li><p>បង្ហាញថា <span class="mi">\(\Delta KBC\)</span> ជាត្រីកោណសមបាត។</p></li>
+<li><p>បង្ហាញថា <span class="mi">\(AK\)</span> កែងនឹង <span class="mi">\(BC\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(AB = AC, AE = AD, \angle A\)</span> រួម <span class="mi">\(\implies \Delta ABE \cong \Delta ACD\)</span> (ជ.ម.ជ)។</p></li>
+<li><p>b. វិបាក ៖ <span class="mi">\(\angle ABE = \angle ACD\)</span>។ ដោយ <span class="mi">\(\angle ABC = \angle ACB \implies \angle KBC = \angle KCB \implies \Delta KBC\)</span> សមបាត។</p></li>
+<li><p>c. <span class="mi">\(\Delta ABK \cong \Delta ACK\)</span> (ជ.ជ.ជ) <span class="mi">\(\implies AK\)</span> ជាកន្លះបន្ទាត់ពុះកំពូលនៃ <span class="mi">\(\Delta ABC\)</span> សមបាត <span class="mi">\(\implies AK \bot BC\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>គេឱ្យមុំស្រួច <span class="mi">\(\angle xOy\)</span> និងចំណុច <span class="mi">\(A\)</span> នៅក្នុងមុំនោះ។ គូស <span class="mi">\(H\)</span> ជាចំណោលកែងនៃ <span class="mi">\(A\)</span> លើ <span class="mi">\(Ox\)</span> និង <span class="mi">\(K\)</span> ជាចំណោលកែងនៃ <span class="mi">\(A\)</span> លើ <span class="mi">\(Oy\)</span>។ បង្ហាញថា បើ <span class="mi">\(AH = AK\)</span> នោះ <span class="mi">\(OA\)</span> ជាកន្លះបន្ទាត់ពុះមុំ <span class="mi">\(\angle xOy\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta OHA\)</span> និង <span class="mi">\(\Delta OKA\)</span> កែងត្រង់ <span class="mi">\(H, K\)</span> ៖ <span class="mi">\(OA\)</span> ជាអុីប៉ូតេនុសរួម, <span class="mi">\(AH = AK \implies \Delta OHA \cong \Delta OKA\)</span> (អ.ជ)។ វិបាក ៖ <span class="mi">\(\angle HOA = \angle KOA \implies OA\)</span> ជាកន្លះបន្ទាត់ពុះមុំ <span class="mi">\(\angle xOy\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មានកម្ពស់ <span class="mi">\(AH\)</span>។ ដឹងថា <span class="mi">\(AB = 13\text{ cm}, AC = 15\text{ cm}, AH = 12\text{ cm}\)</span>។ គណនាប្រវែងបាត <span class="mi">\(BC\)</span> (ករណី <span class="mi">\(H\)</span> នៅលើអង្កត់ <span class="mi">\(BC\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមពីតាករ ៖ <span class="mi">\(BH = \sqrt{13^2 - 12^2} = \sqrt{25} = 5\text{ cm}\)</span>។ <span class="mi">\(CH = \sqrt{15^2 - 12^2} = \sqrt{81} = 9\text{ cm}\)</span>។ បាត <span class="mi">\(BC = BH + CH = 5 + 9 = 14\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មាន <span class="mi">\(AB = 5\text{ cm}, AC = 12\text{ cm}, BC = 13\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណកែង។</p></li>
+<li><p>គណនាប្រវែងកម្ពស់ <span class="mi">\(AH\)</span> គូសចេញពី <span class="mi">\(A\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(5^2 + 12^2 = 25 + 144 = 169 = 13^2 \implies \Delta ABC\)</span> កែងត្រង់ <span class="mi">\(A\)</span> (ច្រាសពីតាករ)។</p></li>
+<li><p>b. ផ្ទៃក្រឡា ៖ <span class="mi">\(S = \frac{1}{2}AB \times AC = \frac{1}{2}BC \times AH\)</span> ៖ <div class="md">\[AH = \frac{AB \times AC}{BC} = \frac{5 \times 12}{13} = \frac{60}{13}\text{ cm}\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span>។ លើបាត <span class="mi">\(BC\)</span> គេយកចំណុច <span class="mi">\(D\)</span> និង <span class="mi">\(E\)</span> ដែល <span class="mi">\(BD = DE = EC\)</span>។ ប្រៀបធៀបរង្វាស់មុំ <span class="mi">\(\angle BAD\)</span> និង <span class="mi">\(\angle DAE\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\Delta ABD\)</span> និង <span class="mi">\(\Delta ACE\)</span> ប៉ុនគ្នា (ជ.ម.ជ) <span class="mi">\(\implies AD = AE\)</span>។ ក្នុង <span class="mi">\(\Delta ADE\)</span> សមបាតត្រង់ <span class="mi">\(A\)</span> ៖ <span class="mi">\(D, E\)</span> នៅចន្លោះ <span class="mi">\(B, C\)</span> នាំឱ្យ <span class="mi">\(\angle DAE &lt; \angle BAD\)</span> (ឬអាស្រ័យលើមុំកំពូល <span class="mi">\(A\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span>។ <span class="mi">\(D\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(AB\)</span>។ តាម <span class="mi">\(D\)</span> គូសបន្ទាត់ស្របនឹង <span class="mi">\(BC\)</span> កាត់ <span class="mi">\(AC\)</span> ត្រង់ <span class="mi">\(E\)</span>។ បង្ហាញថា <span class="mi">\(E\)</span> ជាចំណុចកណ្តាលនៃ <span class="mi">\(AC\)</span> និង <span class="mi">\(DE = \frac{1}{2}BC\)</span> (បាតមធ្យមនៃត្រីកោណ)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គូស <span class="mi">\(EF \parallel AB\)</span> (<span class="mi">\(F \in BC\)</span>) <span class="mi">\(\implies BDEF\)</span> ជាប្រលេឡូក្រាម <span class="mi">\(\implies EF = BD = AD\)</span>។ <span class="mi">\(\Delta ADE \cong \Delta EFC\)</span> (ម.ជ.ម) <span class="mi">\(\implies AE = EC\)</span> (<span class="mi">\(E\)</span> ជាចំណុចកណ្តាល <span class="mi">\(AC\)</span>) និង <span class="mi">\(DE = FC = BF \implies DE = \frac{1}{2}BC\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\Delta ABC\)</span> មួយ។ បង្ហាញថា ផលបូកនៃកម្ពស់ទាំងបីនៃត្រីកោណ តូចជាងបរិមាត្រនៃត្រីកោណនោះ (<span class="mi">\(h_a + h_b + h_c &lt; AB + BC + CA\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្នុងត្រីកោណកែង កាត់តាមកម្ពស់ ជ្រុងទ្រេតវែងជាងកម្ពស់ជានិច្ច ៖ <span class="mi">\(h_a &lt; AB\)</span>, <span class="mi">\(h_b &lt; BC\)</span>, <span class="mi">\(h_c &lt; CA\)</span>។ បូកវិសមភាពទាំងបីអង្គ និងអង្គ ៖ <div class="md">\[h_a + h_b + h_c &lt; AB + BC + CA\]</div></p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១២ ការប្រៀបធៀបត្រីកោណ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g08_c12">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L11.html"><small>← មេរៀនមុន</small><b>ប្រូបាប</b></a><a class="next" href="L13.html"><small>មេរៀនបន្ទាប់ →</small><b>ចតុកោណ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ត្រីកោណពីរជាត្រីកោណប៉ុនគ្នា លុះត្រាតែ ៖", "options": ["ធាតុត្រូវគ្នាទាំងអស់ជាធាតុប៉ុនគ្នា", "ផ្ទៃក្រឡាស្មើគ្នា", "បរិមាត្រស្មើគ្នា", "មានមុំកែងដូចគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\cong \\Delta DEF\\)<\/span> នោះជ្រុងត្រូវគ្នានឹងជ្រុង <span class=\"mi\">\\(AC\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(DE\\)<\/span>", "<span class=\"mi\">\\(EF\\)<\/span>", "<span class=\"mi\">\\(DF\\)<\/span>", "<span class=\"mi\">\\(FD\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta MNP \\cong \\Delta QRS\\)<\/span> នោះមុំត្រូវគ្នានឹង <span class=\"mi\">\\(\\angle N\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\angle Q\\)<\/span>", "<span class=\"mi\">\\(\\angle S\\)<\/span>", "<span class=\"mi\">\\(\\angle R\\)<\/span>", "<span class=\"mi\">\\(\\angle P\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ករណីប៉ុនគ្នានៃត្រីកោណ «ជ.ម.ជ» តំណាងឱ្យ ៖", "options": ["ជ្រុង-ជ្រុង-មុំ", "មុំ-ជ្រុង-មុំ", "ជ្រុង-ជ្រុង-ជ្រុង", "ជ្រុង-មុំ-ជ្រុង"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ករណីប៉ុនគ្នា «ម.ជ.ម» តម្រូវឱ្យ ៖", "options": ["ជ្រុងពីរ និងមុំមួយប៉ុនគ្នា", "មុំពីរ និងជ្រុងឈមប៉ុនគ្នា", "ជ្រុងមួយប៉ុនគ្នា និងមុំពីរជាប់ជ្រុងនោះប៉ុនរៀងគ្នា", "ជ្រុងបីប៉ុនគ្នា"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងករណីប៉ុនគ្នា «ជ.ជ.ជ» មានន័យថា ៖", "options": ["មុំទាំងបីប៉ុនរៀងគ្នា", "ជ្រុងទាំងបីប៉ុនរៀងគ្នា", "ជ្រុងពីរ និងមុំមួយប៉ុនគ្នា", "ជ្រុងពីរស្មើគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើករណីមួយណាខាងក្រោម <strong>មិនមែន<\/strong> ជាករណីប៉ុនគ្នានៃត្រីកោណទូទៅ?", "options": ["ជ.ជ.ជ", "ជ.ម.ជ", "ម.ជ.ម", "ម.ម.ម"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើត្រីកោណពីរមានមុំទាំងបីប៉ុនរៀងគ្នា (ម.ម.ម) នោះត្រីកោណទាំងពីរ ៖", "options": ["គ្រាន់តែជាត្រីកោណដូចគ្នា មិនប្រាកដថាប៉ុនគ្នាទេ", "ប្រាកដជាប៉ុនគ្នាជានិច្ច", "ជាត្រីកោណកែងជានិច្ច", "ជាត្រីកោណសម័ង្សជានិច្ច"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែង ករណីប៉ុនគ្នា «អ.ម» តំណាងឱ្យ ៖", "options": ["អង្កត់ទ្រូង និងមុំស្រួចប៉ុនគ្នា", "អុីប៉ូតេនុស និងមុំកែងប៉ុនគ្នា", "អង្កត់ផ្ចិត និងមុំមួយប៉ុនគ្នា", "អុីប៉ូតេនុស និងមុំស្រួចមួយប៉ុនគ្នា"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែង ករណីប៉ុនគ្នា «អ.ជ» តំណាងឱ្យ ៖", "options": ["អុីប៉ូតេនុស និងជ្រុងជាប់មុំកែងមួយប៉ុនគ្នា", "អុីប៉ូតេនុសពីរស្មើគ្នា", "ជ្រុងជាប់មុំកែងពីរស្មើគ្នា", "អង្កត់កែង និងជ្រុងទ្រេតស្មើគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(\\Delta ABC \\cong \\Delta DEF\\)<\/span> ដោយ <span class=\"mi\">\\(AB = 2x+1\\)<\/span> និង <span class=\"mi\">\\(DE = 9\\)<\/span>។ តម្លៃនៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(\\Delta ABC \\cong \\Delta DEF\\)<\/span> ដោយ <span class=\"mi\">\\(\\angle A = 3x - 10^\\circ\\)<\/span> និង <span class=\"mi\">\\(\\angle D = 50^\\circ\\)<\/span>។ តម្លៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(20^\\circ\\)<\/span>", "<span class=\"mi\">\\(15^\\circ\\)<\/span>", "<span class=\"mi\">\\(25^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណសមបាត <span class=\"mi\">\\(ABC\\)<\/span> ដែលមាន <span class=\"mi\">\\(AB = AC\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(\\angle A = 60^\\circ\\)<\/span>", "<span class=\"mi\">\\(\\angle A = \\angle B\\)<\/span>", "<span class=\"mi\">\\(\\angle A = \\angle C\\)<\/span>", "<span class=\"mi\">\\(\\angle B = \\angle C\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើត្រីកោណសមបាតមួយមានមុំកំពូលស្មើ <span class=\"mi\">\\(40^\\circ\\)<\/span> នោះមុំបាតនីមួយៗស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(80^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(70^\\circ\\)<\/span>", "<span class=\"mi\">\\(50^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើត្រីកោណសមបាតមួយមានមុំបាតស្មើ <span class=\"mi\">\\(55^\\circ\\)<\/span> នោះមុំកំពូលស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>", "<span class=\"mi\">\\(65^\\circ\\)<\/span>", "<span class=\"mi\">\\(70^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណសមបាត បន្ទាត់ពុះមុំកំពូលក៏ជា ៖", "options": ["គ្រាន់តែកម្ពស់មួយគត់", "កម្ពស់ មេដ្យាន និងមេដ្យាទ័រនៃបាត", "គ្រាន់តែមេដ្យានមួយគត់", "អង្កត់ទ្រូង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណសម័ង្ស មុំនីមួយៗមានរង្វាស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើត្រីកោណសមបាតមួយមានមុំមួយស្មើ <span class=\"mi\">\\(60^\\circ\\)<\/span> នោះត្រីកោណនោះជា ៖", "options": ["ត្រីកោណសម័ង្ស", "ត្រីកោណកែង", "ត្រីកោណកែងសមបាត", "ត្រីកោណទាល"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែងសមបាត មុំស្រួចនីមួយៗមានរង្វាស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(50^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> បើ <span class=\"mi\">\\(AB &gt; AC\\)<\/span> នោះទំនាក់ទំនងមុំឈមគឺ ៖", "options": ["<span class=\"mi\">\\(\\angle A &gt; \\angle C\\)<\/span>", "<span class=\"mi\">\\(\\angle B &gt; \\angle C\\)<\/span>", "<span class=\"mi\">\\(\\angle C &gt; \\angle B\\)<\/span>", "<span class=\"mi\">\\(\\angle B &gt; \\angle A\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> បើ <span class=\"mi\">\\(\\angle A = 80^\\circ, \\angle B = 60^\\circ, \\angle C = 40^\\circ\\)<\/span> នោះជ្រុងវែងជាងគេគឺ ៖", "options": ["<span class=\"mi\">\\(BC\\)<\/span>", "<span class=\"mi\">\\(AC\\)<\/span>", "<span class=\"mi\">\\(AB\\)<\/span>", "មិនអាចកំណត់បាន"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរទី ២១ ជ្រុងខ្លីជាងគេគឺ ៖", "options": ["ស្មើគ្នាទាំងអស់", "<span class=\"mi\">\\(BC\\)<\/span>", "<span class=\"mi\">\\(AC\\)<\/span>", "<span class=\"mi\">\\(AB\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងត្រីកោណកែង ជ្រុងដែលមានប្រវែងវែងជាងគេគឺ ៖", "options": ["ជ្រុងជាប់មុំកែងទីមួយ", "អុីប៉ូតេនុស", "ជ្រុងជាប់មុំកែងទីពីរ", "កម្ពស់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើប្រវែងជ្រុងមួយណាអាចបង្កើតជាត្រីកោណបាន?", "options": ["<span class=\"mi\">\\(1, 2, 4\\)<\/span>", "<span class=\"mi\">\\(2, 3, 5\\)<\/span>", "<span class=\"mi\">\\(3, 4, 5\\)<\/span>", "<span class=\"mi\">\\(4, 5, 10\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើប្រវែងជ្រុងមួយណា <strong>មិនអាច<\/strong> បង្កើតជាត្រីកោណបាន?", "options": ["<span class=\"mi\">\\(5, 6, 7\\)<\/span>", "<span class=\"mi\">\\(2, 4, 7\\)<\/span>", "<span class=\"mi\">\\(6, 8, 10\\)<\/span>", "<span class=\"mi\">\\(7, 24, 25\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ត្រីកោណមួយមានជ្រុងពីរប្រវែង <span class=\"mi\">\\(5\\text{ cm}\\)<\/span> និង <span class=\"mi\">\\(9\\text{ cm}\\)<\/span>។ ប្រវែងជ្រុងទីបី <span class=\"mi\">\\(x\\)<\/span> ត្រូវផ្ទៀងផ្ទាត់ ៖", "options": ["<span class=\"mi\">\\(4 &lt; x &lt; 14\\)<\/span>", "<span class=\"mi\">\\(x &gt; 14\\)<\/span>", "<span class=\"mi\">\\(x &lt; 4\\)<\/span>", "<span class=\"mi\">\\(5 &lt; x &lt; 9\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ត្រីកោណមួយមានជ្រុងពីរប្រវែង <span class=\"mi\">\\(7\\text{ cm}\\)<\/span> និង <span class=\"mi\">\\(10\\text{ cm}\\)<\/span>។ តើប្រវែងជ្រុងទីបីអាចជាតម្លៃណា?", "options": ["<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(12\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(18\\text{ cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ពីចំណុចមួយនៅក្រៅបន្ទាត់ អង្កត់ណាខ្លីជាងគេទៅកាន់បន្ទាត់នោះ?", "options": ["អង្កត់ស្រប", "អង្កត់ទ្រេត", "អង្កត់កែង", "អង្កត់ពុះ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើអង្កត់ទ្រេតពីរគូសចេញពីចំណុចតែមួយទៅកាន់បន្ទាត់មួយមានគម្លាតស្មើគ្នា នោះ ៖", "options": ["អង្កត់ទ្រេតទាំងពីរប៉ុនគ្នា", "អង្កត់ទ្រេតទាំងពីរកែងគ្នា", "អង្កត់ទ្រេតមួយវែងជាងមួយ", "គ្មានទំនាក់ទំនង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\cong \\Delta PQR\\)<\/span> ហើយបរិមាត្រ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> ស្មើ <span class=\"mi\">\\(30\\text{ cm}\\)<\/span> នោះបរិមាត្រ <span class=\"mi\">\\(\\Delta PQR\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(60\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(15\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(30\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(45\\text{ cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\cong \\Delta DEF\\)<\/span> ហើយផ្ទៃក្រឡា <span class=\"mi\">\\(\\Delta ABC\\)<\/span> ស្មើ <span class=\"mi\">\\(24\\text{ cm}^2\\)<\/span> នោះផ្ទៃ <span class=\"mi\">\\(\\Delta DEF\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(12\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(24\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(48\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើចំណុច <span class=\"mi\">\\(M\\)<\/span> ស្ថិតនៅលើបន្ទាត់មេដ្យាទ័រនៃអង្កត់ <span class=\"mi\">\\(AB\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(MA = MB\\)<\/span>", "<span class=\"mi\">\\(MA &gt; MB\\)<\/span>", "<span class=\"mi\">\\(MA &lt; MB\\)<\/span>", "<span class=\"mi\">\\(MA + MB = AB\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើចំណុច <span class=\"mi\">\\(P\\)<\/span> ស្ថិតនៅលើកន្លះបន្ទាត់ពុះនៃមុំមួយ នោះ <span class=\"mi\">\\(P\\)<\/span> ៖", "options": ["កែងនឹងជ្រុងទាំងពីរ", "ស្ថិតនៅចំកណ្តាលជ្រុង", "ស្មើចម្ងាយពីជ្រុងទាំងពីរនៃមុំ", "នៅជិតជ្រុងមួយជាង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សមបាតត្រង់ <span class=\"mi\">\\(A\\)<\/span> មាន <span class=\"mi\">\\(\\angle B = 72^\\circ\\)<\/span>។ គណនា <span class=\"mi\">\\(\\angle A\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(54^\\circ\\)<\/span>", "<span class=\"mi\">\\(72^\\circ\\)<\/span>", "<span class=\"mi\">\\(36^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> មាន <span class=\"mi\">\\(\\angle A = 50^\\circ\\)<\/span> និង <span class=\"mi\">\\(\\angle B = 60^\\circ\\)<\/span>។ រៀបលំដាប់ជ្រុងពីខ្លីទៅវែង ៖", "options": ["<span class=\"mi\">\\(BC &lt; AB &lt; AC\\)<\/span>", "<span class=\"mi\">\\(AB &lt; BC &lt; AC\\)<\/span>", "<span class=\"mi\">\\(AC &lt; BC &lt; AB\\)<\/span>", "<span class=\"mi\">\\(BC &lt; AC &lt; AB\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(\\Delta ABC \\cong \\Delta DEF\\)<\/span> ដោយ <span class=\"mi\">\\(BC = 3x - 5\\)<\/span> និង <span class=\"mi\">\\(EF = x + 7\\)<\/span>។ រកតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងប្រលេឡូក្រាម <span class=\"mi\">\\(ABCD\\)<\/span> អង្កត់ទ្រូង <span class=\"mi\">\\(AC\\)<\/span> ចែកប្រលេឡូក្រាមជាពីរត្រីកោណ ៖", "options": ["មិនប៉ុនគ្នា", "ប៉ុនគ្នា (<span class=\"mi\">\\(\\Delta ABC \\cong \\Delta CDA\\)<\/span>)", "កែង", "សមបាត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើអង្កត់ទ្រូងពីរនៃចតុកោណមួយកាត់គ្នាត្រង់ចំណុចកណ្តាលរៀងគ្នា នោះត្រីកោណឈមពីរជាត្រីកោណ ៖", "options": ["ប៉ុនគ្នា (តាម ជ.ម.ជ)", "ដូចគ្នា", "កែង", "សម័ង្ស"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> មាន <span class=\"mi\">\\(AB = 6\\text{ cm}, BC = 8\\text{ cm}, AC = 10\\text{ cm}\\)<\/span>។ ត្រីកោណនេះជា ៖", "options": ["ត្រីកោណកែងត្រង់ <span class=\"mi\">\\(B\\)<\/span>", "ត្រីកោណសមបាត", "ត្រីកោណទាល", "ត្រីកោណស្រួច"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សមបាតត្រង់ <span class=\"mi\">\\(A\\)<\/span> មាន <span class=\"mi\">\\(AH\\)<\/span> ជាកម្ពស់។ ត្រីកោណទាំងពីរ <span class=\"mi\">\\(\\Delta AHB\\)<\/span> និង <span class=\"mi\">\\(\\Delta AHC\\)<\/span> ប៉ុនគ្នា តាមករណី ៖", "options": ["ម.ម.ម", "ជ.ជ.ជ", "ម.ជ.ម", "អុីប៉ូតេនុស-ជ្រុងជាប់មុំកែង (អ.ជ)"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើប្រវែងជ្រុងមួយណាខាងក្រោម <strong>អាច<\/strong> បង្កើតជាត្រីកោណសមបាតបាន?", "options": ["<span class=\"mi\">\\(5, 5, 8\\)<\/span>", "<span class=\"mi\">\\(2, 2, 5\\)<\/span>", "<span class=\"mi\">\\(3, 3, 7\\)<\/span>", "<span class=\"mi\">\\(1, 1, 3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> មានមុំក្រៅត្រង់កំពូល <span class=\"mi\">\\(A\\)<\/span> ស្មើ <span class=\"mi\">\\(110^\\circ\\)<\/span> និង <span class=\"mi\">\\(\\angle B = 50^\\circ\\)<\/span>។ នោះ <span class=\"mi\">\\(\\angle C\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(70^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(50^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលបូកមុំក្នុងនៃត្រីកោណមួយស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(360^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> បើ <span class=\"mi\">\\(AB = AC = BC\\)<\/span> នោះ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> ជា ៖", "options": ["ត្រីកោណស្មើត", "ត្រីកោណកែង", "ត្រីកោណសមបាតធម្មតា", "ត្រីកោណសម័ង្ស"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\Delta ABC \\cong \\Delta DEF\\)<\/span> ដោយ <span class=\"mi\">\\(\\angle B = 2x + 15^\\circ\\)<\/span> និង <span class=\"mi\">\\(\\angle E = 3x - 10^\\circ\\)<\/span> នោះ <span class=\"mi\">\\(x\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(25^\\circ\\)<\/span>", "<span class=\"mi\">\\(20^\\circ\\)<\/span>", "<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(15^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេឱ្យ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សមបាតត្រង់ <span class=\"mi\">\\(A\\)<\/span> មាន <span class=\"mi\">\\(\\angle A = 100^\\circ\\)<\/span>។ មុំ <span class=\"mi\">\\(\\angle B\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(50^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>", "<span class=\"mi\">\\(40^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(AD\\)<\/span> ជាកន្លះបន្ទាត់ពុះមុំ <span class=\"mi\">\\(\\angle A\\)<\/span> នៃ <span class=\"mi\">\\(\\Delta ABC\\)<\/span> សមបាតត្រង់ <span class=\"mi\">\\(A\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(BD &gt; CD\\)<\/span>", "<span class=\"mi\">\\(BD = CD\\)<\/span> និង <span class=\"mi\">\\(AD \\bot BC\\)<\/span>", "<span class=\"mi\">\\(AD \\parallel BC\\)<\/span>", "<span class=\"mi\">\\(\\angle B \\ne \\angle C\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ត្រីកោណមួយមានជ្រុង <span class=\"mi\">\\(x, 2x, 15\\)<\/span>។ ដើម្បីឱ្យត្រីកោណនេះមាន នោះ <span class=\"mi\">\\(x\\)<\/span> ត្រូវធំជាង ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុង <span class=\"mi\">\\(\\Delta ABC\\)<\/span> បើ <span class=\"mi\">\\(\\angle A &gt; \\angle B &gt; \\angle C\\)<\/span> នោះទំនាក់ទំនងជ្រុងគឺ ៖", "options": ["<span class=\"mi\">\\(AC &gt; BC &gt; AB\\)<\/span>", "<span class=\"mi\">\\(AB &gt; AC &gt; BC\\)<\/span>", "<span class=\"mi\">\\(BC &gt; AC &gt; AB\\)<\/span>", "<span class=\"mi\">\\(BC &gt; AB &gt; AC\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ការបម្លែងធរណីមាត្រណាដែលរក្សាភាពប៉ុនគ្នានៃរូប?", "options": ["ចំណោលប្លង់ទ្រេត", "បម្លែងពង្រីក-បង្រួម (Homothety)", "បម្លែងកម្រើក (បណ្ដុំឆ្លុះ រង្វិល បណ្តូរទី)", "ការបំភ្លៃរូប"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

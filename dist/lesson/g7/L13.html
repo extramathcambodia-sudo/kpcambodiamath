@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៣ : មុំ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៣ «មុំ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៣ : មុំ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៣ «មុំ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ១៣</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៣</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៣ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>មុំ</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណមុំ និងធាតុនៃមុំ</a></li><li class="sub"><a href="#u2">២. ប្រភេទនៃមុំ និងឯកតាមុំ</a></li><li class="sub"><a href="#u3">៣. មុំជាប់គ្នា មុំបំពេញ និងមុំបន្ថែម</a></li><li class="sub"><a href="#u4">៤. មុំទល់កំពូល</a></li><li class="sub"><a href="#u5">៥. កន្លះបន្ទាត់ពុះមុំ និងការសង់មុំ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិ និងការកកើតនៃសញ្ញាណរង្វាស់មុំ</b></header><div class="bx-b">
+<p>សញ្ញាណនៃ «<strong>មុំ</strong>» និងការវាស់មុំ មានប្រវត្តិសាស្ត្រយ៉ាងយូរលង់តាំងពីរាប់ពាន់ឆ្នាំមុនគ្រិស្តសករាជ។ ជនជាតិបាប៊ីឡូនបុរាណ (Babylonians) គឺជាមនុស្សដំបូងគេដែលបានបែងចែករង្វង់មូលពេញលេញមួយជា <span class="mi">\(360\)</span> ចំណែកស្មើគ្នា ដែលក្រោយមកត្រូវបានហៅថា «<strong>ដឺក្រេ</strong>» (<span class="mi">\(^\circ\)</span>)។ ការជ្រើសរើសយកលេខ <span class="mi">\(360\)</span> នេះ គឺដោយសារពួកគេប្រើប្រព័ន្ធរាប់គោល ៦០ (Sexagesimal system) ហើយមួយឆ្នាំតាមប្រតិទិនបុរាណមានប្រហែល ៣៦០ ថ្ងៃ។</p>
+<p>លុះមកដល់សតវត្សទី ២ មុនគ្រិស្តសករាជ តារាវិទូ និងគណិតវិទូក្រិកលោក <strong>Hipparchus of Nicaea</strong> (ប្រហែល ១៩០–១២០ មុន គ.ស.) ដែលត្រូវបានគេប្រសិទ្ធនាមថា «<strong>បិតានៃត្រីកោណមាត្រ</strong>» បានបង្កើតតារាងខ្សែធ្នូដំបូងគេដើម្បីគណនាមុំ និងចម្ងាយនៃផ្កាយលើមេឃ។ នាពេលបច្ចុប្បន្ន រង្វាស់មុំបានដើរតួនាទីយ៉ាងសំខាន់មិនអាចខ្វះបានក្នុងវិស័យនាវាចរណ៍ ប្រព័ន្ធរុករកផ្កាយរណប (GPS) វិស្វកម្មសំណង់ និងស្ថាបត្យកម្មទំនើប។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃមុំ</b></header><div class="bx-b">
+<p>នៅក្នុងធរណីមាត្រ មុំ គឺជាភាវៈធរណីមាត្រគ្រឹះមួយដែលមានលក្ខណៈសម្គាល់ ៖</p>
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> មុំ កើតឡើងពីកន្លះបន្ទាត់ពីរដែលមានគល់រួមគ្នា។</p></li>
+<li><p><strong>ធាតុនៃមុំ ៖</strong> គល់រួមហៅថា <strong>កំពូល</strong> (Vertex) ហើយកន្លះបន្ទាត់ទាំងពីរហៅថា <strong>ជ្រុង</strong> (Sides) នៃមុំ។</p></li>
+<li><p><strong>និមិត្តសញ្ញា ៖</strong> មុំកំណត់សរសេរដោយ <span class="mi">\(\angle AOB\)</span> ឬ <span class="mi">\(\widehat{AOB}\)</span> (អក្សរកំពូលនៅកណ្ដាលជានិច្ច)។</p></li>
+<li><p><strong>ឯកតារង្វាស់ ៖</strong> ដឺក្រេ (<span class="mi">\(^\circ\)</span>), មីនុត (<span class="mi">\('\)</span>), សឺកុង (<span class="mi">\(''\)</span>) ដោយ <span class="mi">\(1^\circ = 60'\)</span> និង <span class="mi">\(1' = 60''\)</span>។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សញ្ញាណមុំ និងធាតុនៃមុំ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>សញ្ញាណមុំ និងការវាស់មុំ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>មុំ (Angle) ៖</strong> ជាផ្នែកមួយនៃប្លង់កំណត់ដោយកន្លះបន្ទាត់ពីរដែលមានគល់រួម។</p></li>
+<li><p>ចំណុច <span class="mi">\(O\)</span> ហៅថា <strong>កំពូល</strong>។ កន្លះបន្ទាត់ <span class="mi">\([Ox)\)</span> និង <span class="mi">\([Oy)\)</span> ហៅថា <strong>ជ្រុង</strong> នៃមុំ។</p></li>
+<li><p>តាងដោយ ៖ <span class="mi">\(\angle xOy\)</span> ឬ <span class="mi">\(\angle yOx\)</span> ឬ <span class="mi">\(\angle O\)</span>។</p></li>
+<li><p><strong>ឧបករណ៍វាស់មុំ ៖</strong> រ៉ាប៉ទ័រ (Protractor) ប្រើសម្រាប់វាស់ និងសង់មុំពី <span class="mi">\(0^\circ\)</span> ដល់ <span class="mi">\(180^\circ\)</span>។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យចំណុចបី <span class="mi">\(A, O, B\)</span> មិនរត់ត្រង់ជួរគ្នា។<br/>
+ក. ចូរប្រាប់ឈ្មោះកំពូល និងជ្រុងទាំងពីរនៃមុំដែលបង្កើតឡើងដោយកន្លះបន្ទាត់ <span class="mi">\([OA)\)</span> និង <span class="mi">\([OB)\)</span>។<br/>
+ខ. តើគេអាចសរសេរឈ្មោះមុំនោះតាមរបៀបណាខ្លះ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ កំពូលនៃមុំគឺ <span class="kfbox">ចំណុច <span class="mi">\(O\)</span></span> និងជ្រុងទាំងពីរគឺ <span class="kfbox">កន្លះបន្ទាត់ <span class="mi">\([OA)\)</span> និង <span class="mi">\([OB)\)</span></span>។<br/>
+ ឈ្មោះមុំអាចសរសេរបានជា ៖ <span class="kfbox"><span class="mi">\(\angle AOB\)</span> ឬ <span class="mi">\(\angle BOA\)</span> ឬ <span class="mi">\(\angle O\)</span></span> (អក្សរកំពូល <span class="mi">\(O\)</span> នៅកណ្ដាលជានិច្ច)។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>សញ្ញាណមុំ</b></header><div class="bx-b">
+<p>១. ចូរគូសមុំមួយដែលមានកំពូល <span class="mi">\(S\)</span> និងជ្រុងទាំងពីរជាកន្លះបន្ទាត់ <span class="mi">\(Sm\)</span> និង <span class="mi">\(Sn\)</span>។<br/>
+រួចសរសេរនិមិត្តសញ្ញាតំណាងមុំនោះ។<br/>
+២. តើចំណុចដែលស្ថិតនៅចន្លោះជ្រុងទាំងពីរនៃមុំ ហៅថាចំណុចក្នុង ឬចំណុចក្រៅនៃមុំ?</p>
+</div></section>
+<h3 id="u2">ប្រភេទនៃមុំ និងឯកតាមុំ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំណាត់ថ្នាក់ប្រភេទមុំ និងឯកតា</b></header><div class="bx-b">
+<ul>
+<li><p><strong>មុំស្រួច (Acute) ៖</strong> មុំដែលមានរង្វាស់តូចជាង <span class="mi">\(90^\circ\)</span> (<span class="mi">\(0^\circ &lt; \alpha &lt; 90^\circ\)</span>)។</p></li>
+<li><p><strong>មុំកែង (Right) ៖</strong> មុំដែលមានរង្វាស់ស្មើនឹង <span class="mi">\(90^\circ\)</span> (<span class="mi">\(\alpha = 90^\circ\)</span>)។</p></li>
+<li><p><strong>មុំទាល (Obtuse) ៖</strong> មុំដែលមានរង្វាស់ធំជាង <span class="mi">\(90^\circ\)</span> និងតូចជាង <span class="mi">\(180^\circ\)</span> (<span class="mi">\(90^\circ &lt; \alpha &lt; 180^\circ\)</span>)។</p></li>
+<li><p><strong>មុំរាប (Straight) ៖</strong> មុំដែលមានរង្វាស់ស្មើនឹង <span class="mi">\(180^\circ\)</span> (<span class="mi">\(\alpha = 180^\circ\)</span>) (ជ្រុងទាំងពីរជាកន្លះបន្ទាត់ឈម)។</p></li>
+<li><p><strong>ទំនាក់ទំនងឯកតា ៖</strong> <span class="mi">\(1^\circ = 60'\)</span> (មីនុត), <span class="mi">\(1' = 60''\)</span> (សឺកុង) <span class="mi">\(\implies 1^\circ = 3600''\)</span>។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<ol class="list oldef cols1">
+<li><p>ចូរប្រាប់ប្រភេទមុំ ៖ <span class="mi">\(\angle A = 35^\circ, \quad{} \angle B = 90^\circ, \quad{} \angle C = 128^\circ, \quad{} \angle D = 180^\circ\)</span>។</p></li>
+<li><p>គណនាផលបូក ៖ <span class="mi">\(24^\circ 35' 42'' + 15^\circ 40' 38''\)</span>។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ <span class="mi">\(\angle A = 35^\circ\)</span> ជា<strong>មុំស្រួច</strong>, <span class="mi">\(\angle B = 90^\circ\)</span> ជា<strong>មុំកែង</strong>, <span class="mi">\(\angle C = 128^\circ\)</span> ជា<strong>មុំទាល</strong>, <span class="mi">\(\angle D = 180^\circ\)</span> ជា<strong>មុំរាប</strong>។<br/>
+ បូកតាមជួរ ៖ <span class="mi">\(42'' + 38'' = 80'' = 1' 20''\)</span> ; <span class="mi">\(35' + 40' + 1' = 76' = 1^\circ 16'\)</span> ; <span class="mi">\(24^\circ + 15^\circ + 1^\circ = 40^\circ\)</span>។<br/>
+ដូចនេះ <span class="mi">\(\boxed{24^\circ 35' 42'' + 15^\circ 40' 38'' = 40^\circ 16' 20''}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រភេទមុំ និងឯកតា</b></header><div class="bx-b">
+<p>១. ចូរប្រាប់ប្រភេទនៃមុំដែលមានរង្វាស់ ៖ ក. <span class="mi">\(72^\circ\)</span> ខ. <span class="mi">\(90^\circ\)</span> គ. <span class="mi">\(165^\circ\)</span> ឃ. <span class="mi">\(89^\circ 59'\)</span>។<br/>
+២. គណនាផលសង ៖ <span class="mi">\(45^\circ 20' 15'' - 18^\circ 42' 30''\)</span>។</p>
+</div></section>
+<h3 id="u3">មុំជាប់គ្នា មុំបំពេញ និងមុំបន្ថែម</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>មុំជាប់គ្នា មុំបំពេញ និងមុំបន្ថែម</b></header><div class="bx-b">
+<ul>
+<li><p><strong>មុំជាប់គ្នា (Adjacent Angles) ៖</strong> មុំពីរដែលមានកំពូលរួម មានជ្រុងមួយរួម ហើយជ្រុងពីរទៀតនៅសងខាងជ្រុងរួមនោះ។</p></li>
+<li><p><strong>មុំបំពេញ (Complementary Angles) ៖</strong> មុំពីរដែលមានផលបូករង្វាស់ស្មើនឹង <span class="mi">\(90^\circ\)</span> (<span class="mi">\(\alpha + \beta = 90^\circ\)</span>)។</p></li>
+<li><p><strong>មុំបន្ថែម (Supplementary Angles) ៖</strong> មុំពីរដែលមានផលបូករង្វាស់ស្មើនឹង <span class="mi">\(180^\circ\)</span> (<span class="mi">\(\alpha + \beta = 180^\circ\)</span>)។</p></li>
+<li><p><strong>មុំជាប់បន្ថែម ៖</strong> មុំពីរដែលជាប់គ្នាផង និងបន្ថែមគ្នាផង នោះជ្រុងមិនរួមបង្កើតបានជាបន្ទាត់ត្រង់។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<ol class="list oldef cols1">
+<li><p>រកមុំបំពេញនៃមុំ <span class="mi">\(38^\circ\)</span>។</p></li>
+<li><p>រកមុំបន្ថែមនៃមុំ <span class="mi">\(115^\circ\)</span>។</p></li>
+<li><p>មុំពីរជាប់បន្ថែមគ្នា <span class="mi">\(\angle xOy\)</span> និង <span class="mi">\(\angle yOz\)</span> ដោយ <span class="mi">\(\angle xOy = 2\angle yOz\)</span>។ គណនារង្វាស់មុំទាំងពីរ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ មុំបំពេញនៃ <span class="mi">\(38^\circ\)</span> គឺ ៖ <span class="mi">\(90^\circ - 38^\circ = 52^\circ\)</span>។ ដូចនេះ <span class="kfbox">មុំបំពេញគឺ <span class="mi">\(52^\circ\)</span></span><br/>
+ មុំបន្ថែមនៃ <span class="mi">\(115^\circ\)</span> គឺ ៖ <span class="mi">\(180^\circ - 115^\circ = 65^\circ\)</span>។ ដូចនេះ <span class="kfbox">មុំបន្ថែមគឺ <span class="mi">\(65^\circ\)</span></span><br/>
+ ដោយ <span class="mi">\(\angle xOy + \angle yOz = 180^\circ \implies 2\angle yOz + \angle yOz = 180^\circ \iff 3\angle yOz = 180^\circ \implies \angle yOz = 60^\circ\)</span>។<br/>
+នាំឱ្យ <span class="mi">\(\angle xOy = 2 \times 60^\circ = 120^\circ\)</span>។ ដូចនេះ <span class="mi">\(\boxed{\angle xOy = 120^\circ, \quad{} \angle yOz = 60^\circ}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>មុំជាប់គ្នា មុំបំពេញ និងបន្ថែម</b></header><div class="bx-b">
+<p>១. រកមុំបំពេញនៃ <span class="mi">\(54^\circ\)</span> និងមុំបន្ថែមនៃ <span class="mi">\(76^\circ\)</span>។<br/>
+២. មុំពីរជាប់គ្នាបន្ថែមគ្នា មានផលដកស្មើនឹង <span class="mi">\(40^\circ\)</span>។ គណនារង្វាស់មុំនីមួយៗ។</p>
+</div></section>
+<h3 id="u4">មុំទល់កំពូល</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>មុំទល់កំពូល និងទ្រឹស្ដីបទ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>មុំទល់កំពូល (Vertically Opposite Angles) ៖</strong> មុំពីរហៅថាមុំទល់កំពូល កាលណាជ្រុងនៃមុំមួយជាកន្លះបន្ទាត់ឈមនឹងជ្រុងនៃមុំមួយទៀត។</p></li>
+<li><p><strong>ទ្រឹស្ដីបទគ្រឹះ ៖</strong> <strong>មុំទល់កំពូលពីរ តែងតែមានរង្វាស់ស្មើគ្នាជានិច្ច</strong>។</p></li>
+<li><p>បន្ទាត់ពីរ <span class="mi">\(xx'\)</span> និង <span class="mi">\(yy'\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span> បង្កើតបានគូមុំទល់កំពូលពីរគូ ៖ <div class="md">\[\widehat{xOy} = \widehat{x'Oy'} \qquad{} \text{និង} \qquad{} \widehat{xOy'} = \widehat{x'Oy}\]</div></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(AB\)</span> និង <span class="mi">\(CD\)</span> ប្រសព្វគ្នាត្រង់ <span class="mi">\(O\)</span> ដោយដឹងថា <span class="mi">\(\widehat{AOC} = 65^\circ\)</span>។<br/>
+គណនារង្វាស់មុំ ៖ <span class="mi">\(\widehat{BOD}, \quad{} \widehat{AOD}, \quad{} \)</span> និង <span class="mi">\( \quad{} \widehat{BOC}\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ដោយ <span class="mi">\(\widehat{BOD}\)</span> និង <span class="mi">\(\widehat{AOC}\)</span> ជាមុំទល់កំពូល នាំឱ្យ ៖ <span class="mi">\(\widehat{BOD} = \widehat{AOC} = 65^\circ\)</span>។<br/>
+ ដោយ <span class="mi">\(\widehat{AOD}\)</span> និង <span class="mi">\(\widehat{AOC}\)</span> ជាមុំជាប់បន្ថែម នាំឱ្យ ៖ <span class="mi">\(\widehat{AOD} = 180^\circ - 65^\circ = 115^\circ\)</span>។<br/>
+ ដោយ <span class="mi">\(\widehat{BOC}\)</span> និង <span class="mi">\(\widehat{AOD}\)</span> ជាមុំទល់កំពូល នាំឱ្យ ៖ <span class="mi">\(\widehat{BOC} = \widehat{AOD} = 115^\circ\)</span>។<br/>
+ដូចនេះ <span class="mi">\(\boxed{\widehat{BOD} = 65^\circ, \quad{} \widehat{AOD} = 115^\circ, \quad{} \widehat{BOC} = 115^\circ}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>មុំទល់កំពូល</b></header><div class="bx-b">
+<p>១. បន្ទាត់ពីរប្រសព្វគ្នាកំណត់បានមុំមួយមានរង្វាស់ <span class="mi">\(48^\circ\)</span>។ គណនារង្វាស់មុំ ៣ ផ្សេងទៀត។<br/>
+២. គេឱ្យមុំពីរទល់កំពូលមានរង្វាស់ <span class="mi">\((3x - 10^\circ)\)</span> និង <span class="mi">\((2x + 25^\circ)\)</span>។ គណនាតម្លៃ <span class="mi">\(x\)</span> និងរង្វាស់មុំនោះ។</p>
+</div></section>
+<h3 id="u5">កន្លះបន្ទាត់ពុះមុំ និងការសង់មុំ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>កន្លះបន្ទាត់ពុះមុំ និងលក្ខណៈ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>កន្លះបន្ទាត់ពុះមុំ (Angle Bisector) ៖</strong> ជាកន្លះបន្ទាត់ដែលមានគល់ជាកំពូលនៃមុំ ស្ថិតនៅចន្លោះជ្រុងទាំងពីរ ហើយចែកមុំនោះជាពីរមុំប៉ុនគ្នា ៖ <div class="md">\[[Ot) \text{ ជាកន្លះបន្ទាត់ពុះនៃ } \angle xOy \iff \widehat{xOt} = \widehat{tOy} = \frac{\widehat{xOy}}{2}\]</div></p></li>
+<li><p><strong>លក្ខណៈសំខាន់ ៖</strong> កន្លះបន្ទាត់ពុះនៃមុំពីរជាប់គ្នាបន្ថែមគ្នា <strong>កែងគ្នាជានិច្ច</strong> (បង្កើតបានមុំកែង <span class="mi">\(90^\circ\)</span>)។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<ol class="list oldef cols1">
+<li><p>គេឱ្យ <span class="mi">\(\angle AOB = 84^\circ\)</span> និង <span class="mi">\([OC)\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle AOB\)</span>។ គណនារង្វាស់មុំ <span class="mi">\(\angle AOC\)</span>។</p></li>
+<li><p>បង្ហាញថាកន្លះបន្ទាត់ពុះនៃមុំពីរជាប់គ្នាបន្ថែមគ្នា កែងគ្នា។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ដោយ <span class="mi">\([OC)\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle AOB\)</span> នាំឱ្យ ៖ <span class="mi">\(\angle AOC = \frac{\angle AOB}{2} = \frac{84^\circ}{2} = 42^\circ\)</span>។ ដូចនេះ <span class="mi">\(\boxed{\angle AOC = 42^\circ}\)</span><br/>
+ តាង <span class="mi">\(\angle xOy\)</span> និង <span class="mi">\(\angle yOz\)</span> ជាមុំពីរជាប់គ្នាបន្ថែមគ្នា (<span class="mi">\(\angle xOy + \angle yOz = 180^\circ\)</span>)។<br/>
+តាង <span class="mi">\(Om, On\)</span> ជាកន្លះបន្ទាត់ពុះរៀងគ្នា នាំឱ្យ ៖ <span class="mi">\(\angle mOn = \frac{\angle xOy}{2} + \frac{\angle yOz}{2} = \frac{\angle xOy + \angle yOz}{2} = \frac{180^\circ}{2} = 90^\circ\)</span>។<br/>
+ដូចនេះ <span class="kfbox">កន្លះបន្ទាត់ពុះទាំងពីរ កែងគ្នាជានិច្ច (<span class="mi">\(Om \perp On\)</span>)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>កន្លះបន្ទាត់ពុះមុំ</b></header><div class="bx-b">
+<p>១. គេឱ្យ <span class="mi">\(\angle MNP = 130^\circ\)</span> និង <span class="mi">\([NQ)\)</span> ជាកន្លះបន្ទាត់ពុះ។ គណនា <span class="mi">\(\angle MNQ\)</span>។<br/>
+២. គេឱ្យ <span class="mi">\([Ot)\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle xOy\)</span>។ ដឹងថា <span class="mi">\(\angle xOt = 37^\circ\)</span>។ គណនារង្វាស់មុំ <span class="mi">\(\angle xOy\)</span>។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ចូរគូស និងប្រាប់ឈ្មោះកំពូល ជ្រុង ព្រមទាំងនិមិត្តសញ្ញានៃមុំនីមួយៗខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>មុំមានកំពូល <span class="mi">\(A\)</span> និងជ្រុង <span class="mi">\(AB, AC\)</span></p></li>
+<li><p>មុំមានកំពូល <span class="mi">\(O\)</span> និងជ្រុង <span class="mi">\(Om, On\)</span></p></li>
+<li><p>មុំមានកំពូល <span class="mi">\(M\)</span> និងជ្រុង <span class="mi">\(MN, MP\)</span></p></li>
+<li><p>មុំមានកំពូល <span class="mi">\(K\)</span> និងជ្រុង <span class="mi">\(Kx, Ky\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កំពូល <span class="mi">\(A\)</span>, ជ្រុង <span class="mi">\(AB, AC\)</span> ៖ និមិត្តសញ្ញា <span class="mi">\(\angle BAC\)</span> (ឬ <span class="mi">\(\angle A\)</span>)</p></li>
+<li><p>កំពូល <span class="mi">\(O\)</span>, ជ្រុង <span class="mi">\(Om, On\)</span> ៖ និមិត្តសញ្ញា <span class="mi">\(\angle mOn\)</span></p></li>
+<li><p>កំពូល <span class="mi">\(M\)</span>, ជ្រុង <span class="mi">\(MN, MP\)</span> ៖ និមិត្តសញ្ញា <span class="mi">\(\angle NMP\)</span> (ឬ <span class="mi">\(\angle M\)</span>)</p></li>
+<li><p>កំពូល <span class="mi">\(K\)</span>, ជ្រុង <span class="mi">\(Kx, Ky\)</span> ៖ និមិត្តសញ្ញា <span class="mi">\(\angle xKy\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ចូរចាត់ថ្នាក់មុំខាងក្រោមជា មុំស្រួច មុំកែង មុំទាល ឬមុំរាប ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(35^\circ\)</span></p></li>
+<li><p><span class="mi">\(90^\circ\)</span></p></li>
+<li><p><span class="mi">\(125^\circ\)</span></p></li>
+<li><p><span class="mi">\(180^\circ\)</span></p></li>
+<li><p><span class="mi">\(89^\circ\)</span></p></li>
+<li><p><span class="mi">\(91^\circ\)</span></p></li>
+<li><p><span class="mi">\(15^\circ\)</span></p></li>
+<li><p><span class="mi">\(179^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចាត់ថ្នាក់មុំ ៖</p>
+<ul>
+<li><p><span class="mi">\(35^\circ &lt; 90^\circ\)</span> ៖ មុំស្រួច</p></li>
+<li><p><span class="mi">\(90^\circ\)</span> ៖ មុំកែង</p></li>
+<li><p><span class="mi">\(125^\circ\)</span> (<span class="mi">\(90^\circ &lt; 125^\circ &lt; 180^\circ\)</span>) ៖ មុំទាល</p></li>
+<li><p><span class="mi">\(180^\circ\)</span> ៖ មុំរាប</p></li>
+<li><p><span class="mi">\(89^\circ &lt; 90^\circ\)</span> ៖ មុំស្រួច</p></li>
+<li><p><span class="mi">\(91^\circ\)</span> ៖ មុំទាល</p></li>
+<li><p><span class="mi">\(15^\circ &lt; 90^\circ\)</span> ៖ មុំស្រួច</p></li>
+<li><p><span class="mi">\(179^\circ\)</span> ៖ មុំទាល</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ចូរប្ដូររង្វាស់មុំខាងក្រោមជាមីនុត (<span class="mi">\('\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(5^\circ\)</span></p></li>
+<li><p><span class="mi">\(12^\circ\)</span></p></li>
+<li><p><span class="mi">\(2.5^\circ\)</span></p></li>
+<li><p><span class="mi">\(10.25^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្ដូរជារង្វាស់ជាមីនុត (<span class="mi">\('\)</span>) (ដឹងថា <span class="mi">\(1^\circ = 60'\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(5^\circ = 5 \times 60' = 300'\)</span></p></li>
+<li><p><span class="mi">\(12^\circ = 12 \times 60' = 720'\)</span></p></li>
+<li><p><span class="mi">\(2.5^\circ = 2.5 \times 60' = 150'\)</span></p></li>
+<li><p><span class="mi">\(10.25^\circ = 10.25 \times 60' = 615'\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ចូរប្ដូររង្វាស់មុំខាងក្រោមជាសឺកុង (<span class="mi">\(''\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(4'\)</span></p></li>
+<li><p><span class="mi">\(15'\)</span></p></li>
+<li><p><span class="mi">\(2^\circ\)</span></p></li>
+<li><p><span class="mi">\(3^\circ 20'\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្ដូរជារង្វាស់ជាសឺកុង (<span class="mi">\(''\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(4' = 4 \times 60'' = 240''\)</span></p></li>
+<li><p><span class="mi">\(15' = 15 \times 60'' = 900''\)</span></p></li>
+<li><p><span class="mi">\(2^\circ = 2 \times 3600'' = 7200''\)</span></p></li>
+<li><p><span class="mi">\(3^\circ 20' = 3 \times 3600'' + 20 \times 60'' = 12000''\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ចូរប្ដូររង្វាស់មុំខាងក្រោមជាដឺក្រេ មីនុត សឺកុង ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3250''\)</span></p></li>
+<li><p><span class="mi">\(5420''\)</span></p></li>
+<li><p><span class="mi">\(15200''\)</span></p></li>
+<li><p><span class="mi">\(45.5^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្ដូរជាដឺក្រេ មីនុត សឺកុង ៖</p>
+<ul>
+<li><p><span class="mi">\(3250'' = 54' 10'' = 0^\circ 54' 10''\)</span></p></li>
+<li><p><span class="mi">\(5420'' = 90' 20'' = 1^\circ 30' 20''\)</span></p></li>
+<li><p><span class="mi">\(15200'' = 4^\circ 13' 20''\)</span></p></li>
+<li><p><span class="mi">\(45.5^\circ = 45^\circ + 0.5 \times 60' = 45^\circ 30' 00''\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គណនាផលបូករង្វាស់មុំខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(18^\circ 25' + 32^\circ 15'\)</span></p></li>
+<li><p><span class="mi">\(24^\circ 45' + 35^\circ 30'\)</span></p></li>
+<li><p><span class="mi">\(12^\circ 35' 40'' + 27^\circ 42' 35''\)</span></p></li>
+<li><p><span class="mi">\(45^\circ 52' 18'' + 19^\circ 28' 54''\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូករង្វាស់មុំ ៖</p>
+<ul>
+<li><p><span class="mi">\(18^\circ 25' + 32^\circ 15' = 50^\circ 40'\)</span></p></li>
+<li><p><span class="mi">\(24^\circ 45' + 35^\circ 30' = 59^\circ 75' = 60^\circ 15'\)</span></p></li>
+<li><p><span class="mi">\(12^\circ 35' 40'' + 27^\circ 42' 35'' = 39^\circ 77' 75'' = 40^\circ 18' 15''\)</span></p></li>
+<li><p><span class="mi">\(45^\circ 52' 18'' + 19^\circ 28' 54'' = 64^\circ 80' 72'' = 65^\circ 21' 12''\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គណនាផលសងរង្វាស់មុំខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(58^\circ 40' - 23^\circ 15'\)</span></p></li>
+<li><p><span class="mi">\(90^\circ - 34^\circ 28'\)</span></p></li>
+<li><p><span class="mi">\(180^\circ - 125^\circ 42'\)</span></p></li>
+<li><p><span class="mi">\(42^\circ 15' 20'' - 18^\circ 36' 45''\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលសងរង្វាស់មុំ ៖</p>
+<ul>
+<li><p><span class="mi">\(58^\circ 40' - 23^\circ 15' = 35^\circ 25'\)</span></p></li>
+<li><p><span class="mi">\(90^\circ - 34^\circ 28' = 89^\circ 60' - 34^\circ 28' = 55^\circ 32'\)</span></p></li>
+<li><p><span class="mi">\(180^\circ - 125^\circ 42' = 179^\circ 60' - 125^\circ 42' = 54^\circ 18'\)</span></p></li>
+<li><p><span class="mi">\(42^\circ 15' 20'' - 18^\circ 36' 45'' = 41^\circ 74' 80'' - 18^\circ 36' 45'' = 23^\circ 38' 35''\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គណនាផលគុណ និងផលចែករង្វាស់មុំ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((15^\circ 20') \times 3\)</span></p></li>
+<li><p><span class="mi">\((12^\circ 15' 30'') \times 4\)</span></p></li>
+<li><p><span class="mi">\((45^\circ 30') \div 2\)</span></p></li>
+<li><p><span class="mi">\((75^\circ 40' 20'') \div 4\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណ និងផលចែក ៖</p>
+<ul>
+<li><p><span class="mi">\((15^\circ 20') \times 3 = 45^\circ 60' = 46^\circ 00'\)</span></p></li>
+<li><p><span class="mi">\((12^\circ 15' 30'') \times 4 = 48^\circ 60' 120'' = 49^\circ 02' 00''\)</span></p></li>
+<li><p><span class="mi">\((45^\circ 30') \div 2 = 44^\circ 90' \div 2 = 22^\circ 45'\)</span></p></li>
+<li><p><span class="mi">\((75^\circ 40' 20'') \div 4 = 18^\circ 55' 05''\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គេឱ្យមុំ <span class="mi">\(\angle AOB = 65^\circ\)</span>។ ចូររក ៖</p>
+<ol class="list olka cols2">
+<li><p>រង្វាស់មុំបំពេញនៃ <span class="mi">\(\angle AOB\)</span></p></li>
+<li><p>រង្វាស់មុំបន្ថែមនៃ <span class="mi">\(\angle AOB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គេឱ្យ <span class="mi">\(\angle AOB = 65^\circ\)</span> ៖</p>
+<ul>
+<li><p>មុំបំពេញ ៖ <span class="mi">\(90^\circ - 65^\circ = 25^\circ\)</span></p></li>
+<li><p>មុំបន្ថែម ៖ <span class="mi">\(180^\circ - 65^\circ = 115^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>រកមុំបំពេញ និងមុំបន្ថែមនៃមុំនីមួយៗខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(20^\circ\)</span></p></li>
+<li><p><span class="mi">\(48^\circ\)</span></p></li>
+<li><p><span class="mi">\(72^\circ\)</span></p></li>
+<li><p><span class="mi">\(85^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកមុំបំពេញ និងមុំបន្ថែម ៖</p>
+<ul>
+<li><p><span class="mi">\(20^\circ\)</span> ៖ បំពេញ <span class="mi">\(70^\circ\)</span>, បន្ថែម <span class="mi">\(160^\circ\)</span></p></li>
+<li><p><span class="mi">\(48^\circ\)</span> ៖ បំពេញ <span class="mi">\(42^\circ\)</span>, បន្ថែម <span class="mi">\(132^\circ\)</span></p></li>
+<li><p><span class="mi">\(72^\circ\)</span> ៖ បំពេញ <span class="mi">\(18^\circ\)</span>, បន្ថែម <span class="mi">\(108^\circ\)</span></p></li>
+<li><p><span class="mi">\(85^\circ\)</span> ៖ បំពេញ <span class="mi">\(5^\circ\)</span>, បន្ថែម <span class="mi">\(95^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>មុំពីរជាមុំបំពេញគ្នា។ រកមុំទាំងពីរ បើដឹងថាមុំមួយធំជាងមុំមួយទៀតចំនួន <span class="mi">\(24^\circ\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងមុំទាំងពីរដោយ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> (<span class="mi">\(x &gt; y\)</span>) ៖<br/>
+យើងមាន <span class="mi">\(\begin{cases} x + y = 90^\circ \\ x - y = 24^\circ \end{cases}\)</span><br/>
+បូកអង្គនិងអង្គ ៖ <span class="mi">\(2x = 114^\circ \Rightarrow x = 57^\circ\)</span><br/>
+នាំឱ្យ <span class="mi">\(y = 90^\circ - 57^\circ = 33^\circ\)</span><br/>
+ដូចនេះ មុំទាំងពីរគឺ <span class="mi">\(57^\circ\)</span> និង <span class="mi">\(33^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>មុំពីរជាមុំបន្ថែមគ្នា។ រកមុំទាំងពីរ បើដឹងថាមុំមួយធំជាងមុំមួយទៀតចំនួន <span class="mi">\(50^\circ\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងមុំទាំងពីរដោយ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> (<span class="mi">\(x &gt; y\)</span>) ៖<br/>
+យើងមាន <span class="mi">\(\begin{cases} x + y = 180^\circ \\ x - y = 50^\circ \end{cases}\)</span><br/>
+បូកអង្គនិងអង្គ ៖ <span class="mi">\(2x = 230^\circ \Rightarrow x = 115^\circ\)</span><br/>
+នាំឱ្យ <span class="mi">\(y = 180^\circ - 115^\circ = 65^\circ\)</span><br/>
+ដូចនេះ មុំទាំងពីរគឺ <span class="mi">\(115^\circ\)</span> និង <span class="mi">\(65^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>មុំពីរជាមុំបំពេញគ្នា ហើយផលធៀបនៃរង្វាស់មុំទាំងពីរគឺ <span class="mi">\(2 : 3\)</span>។ គណនារង្វាស់មុំនីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងមុំទាំងពីរដោយ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ៖<br/>
+<span class="mi">\(\frac{x}{2} = \frac{y}{3} = \frac{x+y}{2+3} = \frac{90^\circ}{5} = 18^\circ\)</span><br/>
+</p>
+<ul>
+<li><p><span class="mi">\(x = 2 \times 18^\circ = 36^\circ\)</span></p></li>
+<li><p><span class="mi">\(y = 3 \times 18^\circ = 54^\circ\)</span></p></li>
+</ul>
+<p>ដូចនេះ មុំទាំងពីរមានរង្វាស់ <span class="mi">\(36^\circ\)</span> និង <span class="mi">\(54^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>មុំពីរជាមុំបន្ថែមគ្នា ហើយផលធៀបនៃរង្វាស់មុំទាំងពីរគឺ <span class="mi">\(4 : 5\)</span>។ គណនារង្វាស់មុំនីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងមុំទាំងពីរដោយ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ៖<br/>
+<span class="mi">\(\frac{x}{4} = \frac{y}{5} = \frac{x+y}{4+5} = \frac{180^\circ}{9} = 20^\circ\)</span><br/>
+</p>
+<ul>
+<li><p><span class="mi">\(x = 4 \times 20^\circ = 80^\circ\)</span></p></li>
+<li><p><span class="mi">\(y = 5 \times 20^\circ = 100^\circ\)</span></p></li>
+</ul>
+<p>ដូចនេះ មុំទាំងពីរគឺ <span class="mi">\(80^\circ\)</span> និង <span class="mi">\(100^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>មុំពីរ <span class="mi">\(\angle xOy\)</span> និង <span class="mi">\(\angle yOz\)</span> ជាមុំជាប់គ្នាដោយ <span class="mi">\(\angle xOy = 45^\circ\)</span> និង <span class="mi">\(\angle yOz = 35^\circ\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle xOz\)</span></p></li>
+<li><p>តើ <span class="mi">\(\angle xOz\)</span> ជាប្រភេទមុំអ្វី?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. រង្វាស់មុំ <span class="mi">\(\angle xOz\)</span> ៖<br/>
+<span class="mi">\(\angle xOz = \angle xOy + \angle yOz = 45^\circ + 35^\circ = 80^\circ\)</span></p></li>
+<li><p>ខ. ដោយ <span class="mi">\(80^\circ &lt; 90^\circ\)</span> នោះ <span class="mi">\(\angle xOz\)</span> ជាមុំស្រួច។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>មុំបីជាប់គ្នា <span class="mi">\(\angle AOB, \angle BOC, \angle COD\)</span> មានរង្វាស់រៀងគ្នា <span class="mi">\(30^\circ, 40^\circ, 50^\circ\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle AOC\)</span></p></li>
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle AOD\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(\angle AOC = \angle AOB + \angle BOC = 30^\circ + 40^\circ = 70^\circ\)</span></p></li>
+<li><p>ខ. <span class="mi">\(\angle AOD = \angle AOC + \angle COD = 70^\circ + 50^\circ = 120^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គេឱ្យមុំជាប់បន្ថែមពីរ <span class="mi">\(\angle AOB\)</span> និង <span class="mi">\(\angle BOC\)</span> ដោយ <span class="mi">\(\angle AOB = 3x\)</span> និង <span class="mi">\(\angle BOC = 2x\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនាតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>រកមុំ <span class="mi">\(\angle AOB\)</span> និង <span class="mi">\(\angle BOC\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំជាប់បន្ថែមមានផលបូក <span class="mi">\(180^\circ\)</span> ៖<br/>
+<span class="mi">\(3x + 2x = 180^\circ \Rightarrow 5x = 180^\circ \Rightarrow x = 36^\circ\)</span></p></li>
+<li><p>ខ. រង្វាស់មុំ ៖<br/>
+<span class="mi">\(\angle AOB = 3 \times 36^\circ = 108^\circ\)</span><br/>
+<span class="mi">\(\angle BOC = 2 \times 36^\circ = 72^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេឱ្យមុំជាប់បំពេញពីរ <span class="mi">\(\angle MON\)</span> និង <span class="mi">\(\angle NOP\)</span> ដោយ <span class="mi">\(\angle MON = x + 15^\circ\)</span> និង <span class="mi">\(\angle NOP = 2x\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនាតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>រកមុំ <span class="mi">\(\angle MON\)</span> និង <span class="mi">\(\angle NOP\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំជាប់បំពេញមានផលបូក <span class="mi">\(90^\circ\)</span> ៖<br/>
+<span class="mi">\((x + 15^\circ) + 2x = 90^\circ \Rightarrow 3x = 75^\circ \Rightarrow x = 25^\circ\)</span></p></li>
+<li><p>ខ. រង្វាស់មុំ ៖<br/>
+<span class="mi">\(\angle MON = 25^\circ + 15^\circ = 40^\circ\)</span><br/>
+<span class="mi">\(\angle NOP = 2 \times 25^\circ = 50^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(AB\)</span> និង <span class="mi">\(CD\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span> ដោយបង្កើតបានមុំ <span class="mi">\(\angle AOC = 52^\circ\)</span>។<br/>
+គណនារង្វាស់មុំ ៖ <span class="mi">\(\angle BOD, \quad{} \angle AOD, \quad{} \angle BOC\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនារង្វាស់មុំ ៖</p>
+<ul>
+<li><p><span class="mi">\(\angle BOD = \angle AOC = 52^\circ\)</span> (មុំទល់កំពូល)</p></li>
+<li><p><span class="mi">\(\angle AOD = 180^\circ - \angle AOC = 180^\circ - 52^\circ = 128^\circ\)</span> (មុំជាប់បន្ថែម)</p></li>
+<li><p><span class="mi">\(\angle BOC = \angle AOD = 128^\circ\)</span> (មុំទល់កំពូល)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(xy\)</span> និង <span class="mi">\(zt\)</span> ប្រសព្វគ្នាត្រង់ <span class="mi">\(I\)</span> ដោយដឹងថា <span class="mi">\(\angle xIz = 118^\circ\)</span>។<br/>
+ចូរសរសេរឈ្មោះគូមុំទល់កំពូល និងគណនារង្វាស់មុំទាំងអស់ដែលមានកំពូល <span class="mi">\(I\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ទាត់ <span class="mi">\(xy\)</span> និង <span class="mi">\(zt\)</span> ប្រសព្វគ្នាត្រង់ <span class="mi">\(I\)</span> ៖</p>
+<ul>
+<li><p>គូមុំទល់កំពូល ៖ <span class="mi">\((\angle xIz, \angle yIt)\)</span> និង <span class="mi">\((\angle xIt, \angle yIz)\)</span></p></li>
+<li><p>រង្វាស់មុំ ៖<br/>
+<span class="mi">\(\angle yIt = \angle xIz = 118^\circ\)</span><br/>
+<span class="mi">\(\angle xIt = 180^\circ - 118^\circ = 62^\circ\)</span><br/>
+<span class="mi">\(\angle yIz = \angle xIt = 62^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>គេឱ្យមុំពីរទល់កំពូលគ្នាមានរង្វាស់ <span class="mi">\((4x - 20^\circ)\)</span> និង <span class="mi">\((2x + 30^\circ)\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនាតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>គណនារង្វាស់មុំទាំងពីរនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. មុំទល់កំពូលមានរង្វាស់ស្មើគ្នា ៖<br/>
+<span class="mi">\(4x - 20^\circ = 2x + 30^\circ \Rightarrow 2x = 50^\circ \Rightarrow x = 25^\circ\)</span></p></li>
+<li><p>ខ. រង្វាស់មុំនីមួយៗ ៖<br/>
+<span class="mi">\(4(25^\circ) - 20^\circ = 100^\circ - 20^\circ = 80^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរប្រសព្វគ្នាកំណត់បានមុំជាប់បន្ថែមពីរមានរង្វាស់ <span class="mi">\((5x - 10^\circ)\)</span> និង <span class="mi">\((3x + 30^\circ)\)</span>។<br/>
+គណនាតម្លៃនៃ <span class="mi">\(x\)</span> និងរង្វាស់មុំទាំងពីរនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកមុំជាប់បន្ថែមស្មើ <span class="mi">\(180^\circ\)</span> ៖<br/>
+<span class="mi">\((5x - 10^\circ) + (3x + 30^\circ) = 180^\circ\)</span><br/>
+<span class="mi">\(8x + 20^\circ = 180^\circ \Rightarrow 8x = 160^\circ \Rightarrow x = 20^\circ\)</span><br/>
+រង្វាស់មុំទាំងពីរ ៖</p>
+<ul>
+<li><p><span class="mi">\(5(20^\circ) - 10^\circ = 90^\circ\)</span></p></li>
+<li><p><span class="mi">\(3(20^\circ) + 30^\circ = 90^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គេឱ្យមុំ <span class="mi">\(\angle xOy = 120^\circ\)</span> និង <span class="mi">\([Ot)\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle xOy\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle xOt\)</span> និង <span class="mi">\(\angle tOy\)</span></p></li>
+<li><p>តើមុំទាំងពីរជាប្រភេទមុំអ្វី?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\([Ot)\)</span> ជាកន្លះបន្ទាត់ពុះ ៖<br/>
+<span class="mi">\(\angle xOt = \angle tOy = \frac{120^\circ}{2} = 60^\circ\)</span></p></li>
+<li><p>ខ. ដោយ <span class="mi">\(60^\circ &lt; 90^\circ\)</span> នាំឱ្យមុំទាំងពីរជាមុំស្រួច។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\([OM)\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle AOB\)</span> ដោយ <span class="mi">\(\angle AOM = 36^\circ 30'\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle AOB\)</span></p></li>
+<li><p>តើ <span class="mi">\(\angle AOB\)</span> ជាប្រភេទមុំអ្វី?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\([OM)\)</span> ជាកន្លះបន្ទាត់ពុះ ៖<br/>
+<span class="mi">\(\angle AOB = 2 \times 36^\circ 30' = 73^\circ 00'\)</span></p></li>
+<li><p>ខ. ដោយ <span class="mi">\(73^\circ &lt; 90^\circ\)</span> នាំឱ្យ <span class="mi">\(\angle AOB\)</span> ជាមុំស្រួច។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គេឱ្យមុំរាប <span class="mi">\(\angle xOy = 180^\circ\)</span> និងកន្លះបន្ទាត់ <span class="mi">\([Oz)\)</span> មួយ។ តាង <span class="mi">\([Om)\)</span> និង <span class="mi">\([On)\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle xOz\)</span> និង <span class="mi">\(\angle zOy\)</span> រៀងគ្នា។<br/>
+បង្ហាញថាមុំ <span class="mi">\(\angle mOn = 90^\circ\)</span> (កន្លះបន្ទាត់ពុះទាំងពីរកែងគ្នា)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>យើងមាន <span class="mi">\(\angle xOz + \angle zOy = 180^\circ\)</span> (មុំជាប់បន្ថែម)។<br/>
+ដោយ <span class="mi">\([Om)\)</span> និង <span class="mi">\([On)\)</span> ជាកន្លះបន្ទាត់ពុះ ៖<br/>
+<span class="mi">\(\angle mOz = \frac{\angle xOz}{2}\)</span> និង <span class="mi">\(\angle zOn = \frac{\angle zOy}{2}\)</span><br/>
+នាំឱ្យ <span class="mi">\(\angle mOn = \angle mOz + \angle zOn = \frac{\angle xOz + \angle zOy}{2} = \frac{180^\circ}{2} = 90^\circ\)</span><br/>
+ដូចនេះ កន្លះបន្ទាត់ពុះទាំងពីរកែងគ្នា (<span class="mi">\(Om \perp On\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>លើបន្ទាត់ត្រង់ <span class="mi">\(xy\)</span> គេដៅចំណុច <span class="mi">\(O\)</span> មួយ។ គេគូសកន្លះបន្ទាត់ <span class="mi">\(OA\)</span> និង <span class="mi">\(OB\)</span> ក្នុងប្លង់កន្លះតែមួយ ដោយ <span class="mi">\(\angle xOA = 40^\circ\)</span> និង <span class="mi">\(\angle yOB = 50^\circ\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle AOB\)</span></p></li>
+<li><p>តើ <span class="mi">\(OA\)</span> និង <span class="mi">\(OB\)</span> កែងគ្នាដែរឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. រង្វាស់មុំ <span class="mi">\(\angle AOB\)</span> ៖<br/>
+<span class="mi">\(\angle AOB = 180^\circ - (\angle xOA + \angle yOB) = 180^\circ - (40^\circ + 50^\circ) = 90^\circ\)</span></p></li>
+<li><p>ខ. ដោយ <span class="mi">\(\angle AOB = 90^\circ\)</span> នោះកន្លះបន្ទាត់ <span class="mi">\(OA\)</span> និង <span class="mi">\(OB\)</span> កែងគ្នា (<span class="mi">\(OA \perp OB\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\angle xOy = 80^\circ\)</span>។ គូសកន្លះបន្ទាត់ <span class="mi">\(Oz\)</span> ឱ្យជាប់នឹង <span class="mi">\(\angle xOy\)</span> ដោយ <span class="mi">\(\angle yOz = 50^\circ\)</span>។<br/>
+គណនា <span class="mi">\(\angle xOz\)</span> (ពិចារណា ២ ករណី ៖ <span class="mi">\(Oz\)</span> នៅក្រៅ <span class="mi">\(\angle xOy\)</span> និង <span class="mi">\(Oz\)</span> នៅក្នង <span class="mi">\(\angle xOy\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា <span class="mi">\(\angle xOz\)</span> ជា ២ ករណី ៖</p>
+<ul>
+<li><p>ករណី <span class="mi">\(Oz\)</span> នៅក្រៅ <span class="mi">\(\angle xOy\)</span> ៖<br/>
+<span class="mi">\(\angle xOz = \angle xOy + \angle yOz = 80^\circ + 50^\circ = 130^\circ\)</span></p></li>
+<li><p>ករណី <span class="mi">\(Oz\)</span> នៅខាងក្នុង <span class="mi">\(\angle xOy\)</span> ៖<br/>
+<span class="mi">\(\angle xOz = \angle xOy - \angle yOz = 80^\circ - 50^\circ = 30^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>រកមុំមួយដែលស្មើនឹង ៤ ដងនៃមុំបំពេញរបស់វា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាង <span class="mi">\(x\)</span> ជារង្វាស់មុំនោះ ៖<br/>
+មុំបំពេញនៃ <span class="mi">\(x\)</span> គឺ <span class="mi">\(90^\circ - x\)</span>។<br/>
+តាមបម្រាប់ ៖ <span class="mi">\(x = 4(90^\circ - x) \Rightarrow x = 360^\circ - 4x\)</span><br/>
+<span class="mi">\(5x = 360^\circ \Rightarrow x = 72^\circ\)</span><br/>
+ដូចនេះ មុំនោះមានរង្វាស់ <span class="mi">\(72^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>រកមុំមួយដែលស្មើនឹង ៥ ដងនៃមុំបន្ថែមរបស់វា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាង <span class="mi">\(x\)</span> ជារង្វាស់មុំនោះ ៖<br/>
+មុំបន្ថែមនៃ <span class="mi">\(x\)</span> គឺ <span class="mi">\(180^\circ - x\)</span>។<br/>
+តាមបម្រាប់ ៖ <span class="mi">\(x = 5(180^\circ - x) \Rightarrow x = 900^\circ - 5x\)</span><br/>
+<span class="mi">\(6x = 900^\circ \Rightarrow x = 150^\circ\)</span><br/>
+ដូចនេះ មុំនោះមានរង្វាស់ <span class="mi">\(150^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>រកមុំមួយដែលស្មើនឹងពាក់កណ្ដាលនៃមុំបន្ថែមរបស់វា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាង <span class="mi">\(x\)</span> ជារង្វាស់មុំនោះ ៖<br/>
+តាមបម្រាប់ ៖ <span class="mi">\(x = \frac{1}{2}(180^\circ - x)\)</span><br/>
+<span class="mi">\(2x = 180^\circ - x \Rightarrow 3x = 180^\circ \Rightarrow x = 60^\circ\)</span><br/>
+ដូចនេះ មុំនោះមានរង្វាស់ <span class="mi">\(60^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ផលបូកនៃមុំបំពេញ និងមុំបន្ថែមនៃមុំមួយស្មើនឹង <span class="mi">\(150^\circ\)</span>។ គណនារង្វាស់មុំដើមនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាង <span class="mi">\(x\)</span> ជារង្វាស់មុំដើម ៖<br/>
+<span class="mi">\((90^\circ - x) + (180^\circ - x) = 150^\circ\)</span><br/>
+<span class="mi">\(270^\circ - 2x = 150^\circ \Rightarrow 2x = 120^\circ \Rightarrow x = 60^\circ\)</span><br/>
+ដូចនេះ មុំដើមនោះមានរង្វាស់ <span class="mi">\(60^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>មុំបន្ថែមនៃមុំ <span class="mi">\(\alpha\)</span> ធំជាង ៣ ដងនៃមុំបំពេញរបស់វាចំនួន <span class="mi">\(10^\circ\)</span>។ គណនា <span class="mi">\(\alpha\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមបម្រាប់ ៖<br/>
+<span class="mi">\((180^\circ - \alpha) - 3(90^\circ - \alpha) = 10^\circ\)</span><br/>
+<span class="mi">\(180^\circ - \alpha - 270^\circ + 3\alpha = 10^\circ\)</span><br/>
+<span class="mi">\(2\alpha - 90^\circ = 10^\circ \Rightarrow 2\alpha = 100^\circ \Rightarrow \alpha = 50^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់បី <span class="mi">\(AB, CD, EF\)</span> ប្រសព្វគ្នាត្រង់ចំណុច <span class="mi">\(O\)</span> តែមួយ។</p>
+<ol class="list olka cols2">
+<li><p>តើមានគូមុំទល់កំពូលចំនួនប៉ុន្មានគូ?</p></li>
+<li><p>បើដឹងថា <span class="mi">\(\angle AOC = 40^\circ\)</span> និង <span class="mi">\(\angle COE = 75^\circ\)</span> គណនា <span class="mi">\(\angle EOB\)</span> និង <span class="mi">\(\angle BOD\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. ចំនួនគូមុំទល់កំពូល ៖ <span class="mi">\(3 \times 2 = 6\)</span> គូ។</p></li>
+<li><p>ខ. ដោយ <span class="mi">\(A, O, B\)</span> រត់ត្រង់ជួរគ្នា ៖<br/>
+<span class="mi">\(\angle EOB = 180^\circ - (\angle AOC + \angle COE) = 180^\circ - (40^\circ + 75^\circ) = 65^\circ\)</span><br/>
+<span class="mi">\(\angle BOD = \angle AOC = 40^\circ\)</span> (មុំទល់កំពូល)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_2\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span>។ ផលបូករង្វាស់មុំពីរក្នុងចំណោមមុំទាំងបួនស្មើ <span class="mi">\(100^\circ\)</span>។<br/>
+គណនារង្វាស់មុំទាំងបួនដែលមានកំពូល <span class="mi">\(O\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកមុំពីរស្មើ <span class="mi">\(100^\circ\)</span> គឺជាមុំទល់កំពូល ៖<br/>
+<span class="mi">\(\angle 1 = \angle 2 = \frac{100^\circ}{2} = 50^\circ\)</span><br/>
+មុំពីរទៀតជាមុំជាប់បន្ថែម ៖<br/>
+<span class="mi">\(\angle 3 = \angle 4 = 180^\circ - 50^\circ = 130^\circ\)</span><br/>
+ដូចនេះ មុំទាំងបួនគឺ <span class="mi">\(50^\circ, 130^\circ, 50^\circ, 130^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>បន្ទាត់ពីរ <span class="mi">\(d_1\)</span> និង <span class="mi">\(d_2\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span>។ ផលបូករង្វាស់មុំបីក្នុងចំណោមមុំទាំងបួនស្មើ <span class="mi">\(250^\circ\)</span>។<br/>
+គណនារង្វាស់មុំនីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកមុំទាំងបួនជុំវិញចំណុចមួយស្មើ <span class="mi">\(360^\circ\)</span> ៖<br/>
+មុំទីបួន ៖ <span class="mi">\(360^\circ - 250^\circ = 110^\circ\)</span><br/>
+មុំទល់កំពូលរបស់វា ៖ <span class="mi">\(110^\circ\)</span><br/>
+មុំពីរទៀតស្មើគ្នា ៖ <span class="mi">\(\frac{360^\circ - 2(110^\circ)}{2} = \frac{140^\circ}{2} = 70^\circ\)</span><br/>
+ដូចនេះ មុំទាំងបួនគឺ <span class="mi">\(110^\circ, 70^\circ, 110^\circ, 70^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>គេឱ្យមុំកែង <span class="mi">\(\angle xOy = 90^\circ\)</span>។ ក្នុងមុំនេះគេគូសកន្លះបន្ទាត់ <span class="mi">\(OA\)</span> និង <span class="mi">\(OB\)</span> ដោយ <span class="mi">\(\angle xOA = 30^\circ\)</span> និង <span class="mi">\(\angle yOB = 30^\circ\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំ <span class="mi">\(\angle AOB\)</span></p></li>
+<li><p>បង្ហាញថាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle xOy\)</span> ក៏ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle AOB\)</span> ដែរ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(\angle AOB = 90^\circ - (\angle xOA + \angle yOB) = 90^\circ - (30^\circ + 30^\circ) = 30^\circ\)</span></p></li>
+<li><p>ខ. តាង <span class="mi">\(Ot\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle xOy \Rightarrow \angle xOt = 45^\circ\)</span>។<br/>
+<span class="mi">\(\angle AOt = 45^\circ - 30^\circ = 15^\circ\)</span><br/>
+<span class="mi">\(\angle tOB = 45^\circ - 30^\circ = 15^\circ\)</span><br/>
+ដោយ <span class="mi">\(\angle AOt = \angle tOB = 15^\circ\)</span> នោះ <span class="mi">\(Ot\)</span> ក៏ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle AOB\)</span> ដែរ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>គេឱ្យមុំ <span class="mi">\(\angle xOy = 110^\circ\)</span>។ គូសកន្លះបន្ទាត់ពុះ <span class="mi">\([Ot)\)</span> នៃ <span class="mi">\(\angle xOy\)</span>។ គូសកន្លះបន្ទាត់ <span class="mi">\(Ot'\)</span> ជាកន្លះបន្ទាត់ឈមនឹង <span class="mi">\(Ot\)</span>។<br/>
+គណនារង្វាស់មុំ <span class="mi">\(\angle xOt'\)</span> និង <span class="mi">\(\angle yOt'\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\([Ot)\)</span> ជាពុះមុំ <span class="mi">\(\angle xOy \Rightarrow \angle xOt = \angle tOy = \frac{110^\circ}{2} = 55^\circ\)</span>។<br/>
+ដោយ <span class="mi">\(Ot'\)</span> ឈមនឹង <span class="mi">\(Ot\)</span> នាំឱ្យ ៖</p>
+<ul>
+<li><p><span class="mi">\(\angle xOt' = 180^\circ - 55^\circ = 125^\circ\)</span></p></li>
+<li><p><span class="mi">\(\angle yOt' = 180^\circ - 55^\circ = 125^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\angle AOB = 60^\circ\)</span>។ គូសកន្លះបន្ទាត់ <span class="mi">\(OC\)</span> ជាកន្លះបន្ទាត់ឈមនឹង <span class="mi">\(OA\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនា <span class="mi">\(\angle BOC\)</span></p></li>
+<li><p>គូសកន្លះបន្ទាត់ពុះ <span class="mi">\(OD\)</span> នៃ <span class="mi">\(\angle BOC\)</span>។ គណនា <span class="mi">\(\angle AOD\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(\angle BOC = 180^\circ - \angle AOB = 180^\circ - 60^\circ = 120^\circ\)</span></p></li>
+<li><p>ខ. <span class="mi">\(OD\)</span> ជាពុះមុំនៃ <span class="mi">\(\angle BOC \Rightarrow \angle BOD = \frac{120^\circ}{2} = 60^\circ\)</span><br/>
+<span class="mi">\(\angle AOD = \angle AOB + \angle BOD = 60^\circ + 60^\circ = 120^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ត្រីកោណ <span class="mi">\(ABC\)</span> មួយមាន <span class="mi">\(\angle A = 50^\circ\)</span> និង <span class="mi">\(\angle B = 70^\circ\)</span>។<br/>
+ដឹងថាផលបូកមុំក្នុងត្រីកោណស្មើ <span class="mi">\(180^\circ\)</span>។ គណនា <span class="mi">\(\angle C\)</span> និងមុំក្រៅត្រង់កំពូល <span class="mi">\(C\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកមុំក្នុងត្រីកោណស្មើ <span class="mi">\(180^\circ\)</span> ៖<br/>
+<span class="mi">\(\angle C = 180^\circ - (50^\circ + 70^\circ) = 60^\circ\)</span><br/>
+មុំក្រៅត្រង់កំពូល <span class="mi">\(C\)</span> គឺ ៖<br/>
+<span class="mi">\(180^\circ - 60^\circ = 120^\circ\)</span> (ឬ <span class="mi">\(\angle A + \angle B = 120^\circ\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>មុំជុំវិញចំណុចមួយត្រូវបានបែងចែកជា ៥ មុំស្មើៗគ្នា។ គណនារង្វាស់មុំនីមួយៗ និងប្រាប់ប្រភេទមុំ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកមុំជុំវិញចំណុចមួយស្មើ <span class="mi">\(360^\circ\)</span> ៖<br/>
+រង្វាស់មុំនីមួយៗ ៖ <span class="mi">\(\frac{360^\circ}{5} = 72^\circ\)</span><br/>
+ដោយ <span class="mi">\(72^\circ &lt; 90^\circ\)</span> នាំឱ្យមុំនីមួយៗជាមុំស្រួច។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>គេឱ្យមុំបួនជុំវិញចំណុចមួយមានរង្វាស់ <span class="mi">\(x, 2x, 3x, 4x\)</span>។ គណនាតម្លៃនៃ <span class="mi">\(x\)</span> និងរង្វាស់មុំនីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកមុំជុំវិញចំណុចមួយស្មើ <span class="mi">\(360^\circ\)</span> ៖<br/>
+<span class="mi">\(x + 2x + 3x + 4x = 360^\circ \Rightarrow 10x = 360^\circ \Rightarrow x = 36^\circ\)</span><br/>
+រង្វាស់មុំនីមួយៗ ៖</p>
+<ul>
+<li><p><span class="mi">\(x = 36^\circ\)</span></p></li>
+<li><p><span class="mi">\(2x = 72^\circ\)</span></p></li>
+<li><p><span class="mi">\(3x = 108^\circ\)</span></p></li>
+<li><p><span class="mi">\(4x = 144^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>គេឱ្យមុំ <span class="mi">\(\angle xOy = 70^\circ\)</span>។ គូសកន្លះបន្ទាត់ពុះ <span class="mi">\([Oz)\)</span> នៃ <span class="mi">\(\angle xOy\)</span>។ គូសកន្លះបន្ទាត់ពុះ <span class="mi">\([Ot)\)</span> នៃ <span class="mi">\(\angle xOz\)</span>។<br/>
+គណនារង្វាស់មុំ <span class="mi">\(\angle tOy\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\([Oz)\)</span> ជាពុះមុំ <span class="mi">\(\angle xOy \Rightarrow \angle xOz = \angle zOy = \frac{70^\circ}{2} = 35^\circ\)</span>។<br/>
+<span class="mi">\([Ot)\)</span> ជាពុះមុំ <span class="mi">\(\angle xOz \Rightarrow \angle zOt = \frac{35^\circ}{2} = 17.5^\circ\)</span>។<br/>
+<span class="mi">\(\angle tOy = \angle zOt + \angle zOy = 17.5^\circ + 35^\circ = 52.5^\circ = 52^\circ 30'\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>គេឱ្យមុំជាប់គ្នាពីរ <span class="mi">\(\angle AOB = 50^\circ\)</span> និង <span class="mi">\(\angle BOC = 70^\circ\)</span>។ តាង <span class="mi">\(Ox, Oy\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle AOB\)</span> និង <span class="mi">\(\angle BOC\)</span> រៀងគ្នា។<br/>
+គណនារង្វាស់មុំ <span class="mi">\(\angle xOy\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(Ox, Oy\)</span> ជាកន្លះបន្ទាត់ពុះនៃមុំជាប់គ្នា ៖<br/>
+<span class="mi">\(\angle xOy = \frac{\angle AOB}{2} + \frac{\angle BOC}{2} = \frac{50^\circ + 70^\circ}{2} = \frac{120^\circ}{2} = 60^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេឱ្យមុំជាប់គ្នាពីរ <span class="mi">\(\angle AOB\)</span> និង <span class="mi">\(\angle BOC\)</span> ដោយ <span class="mi">\(\angle AOC = 100^\circ\)</span>។ តាង <span class="mi">\(Ox, Oy\)</span> ជាកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle AOB\)</span> និង <span class="mi">\(\angle BOC\)</span> រៀងគ្នា។<br/>
+គណនារង្វាស់មុំ <span class="mi">\(\angle xOy\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(Ox, Oy\)</span> ជាកន្លះបន្ទាត់ពុះនៃមុំជាប់គ្នា ៖<br/>
+<span class="mi">\(\angle xOy = \frac{\angle AOB + \angle BOC}{2} = \frac{\angle AOC}{2} = \frac{100^\circ}{2} = 50^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>បង្ហាញថាក្នុងមុំជាប់គ្នាពីរ កន្លះបន្ទាត់ពុះនៃមុំទាំងពីរ បង្កើតបានមុំមួយដែលមានរង្វាស់ស្មើនឹងពាក់កណ្ដាលនៃផលបូករង្វាស់មុំទាំងពីរនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងមុំជាប់គ្នាពីរគឺ <span class="mi">\(\angle AOB\)</span> និង <span class="mi">\(\angle BOC\)</span> ហើយ <span class="mi">\(Ox, Oy\)</span> ជាកន្លះបន្ទាត់ពុះរៀងគ្នា។<br/>
+យើងមាន <span class="mi">\(\angle xOB = \frac{1}{2}\angle AOB\)</span> និង <span class="mi">\(\angle BOy = \frac{1}{2}\angle BOC\)</span><br/>
+<span class="mi">\(\angle xOy = \angle xOB + \angle BOy = \frac{1}{2}(\angle AOB + \angle BOC)\)</span><br/>
+ពិតជាស្មើនឹងពាក់កណ្ដាលនៃផលបូករង្វាស់មុំទាំងពីរ។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គេឱ្យ <span class="mi">\(\angle xOy = 80^\circ\)</span> និង <span class="mi">\(\angle yOz = 40^\circ\)</span> ជាមុំជាប់គ្នា។ គណនាមុំរវាងកន្លះបន្ទាត់ពុះនៃ <span class="mi">\(\angle xOy\)</span> និងកន្លះបន្ទាត់ឈមនៃ <span class="mi">\(Oy\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាង <span class="mi">\(Ot\)</span> ជាពុះមុំនៃ <span class="mi">\(\angle xOy \Rightarrow \angle yOt = \frac{80^\circ}{2} = 40^\circ\)</span>។<br/>
+តាង <span class="mi">\(Oy'\)</span> ជាកន្លះបន្ទាត់ឈមនៃ <span class="mi">\(Oy \Rightarrow \angle yOy' = 180^\circ\)</span>។<br/>
+មុំរវាង <span class="mi">\(Ot\)</span> និង <span class="mi">\(Oy'\)</span> គឺ ៖<br/>
+<span class="mi">\(\angle tOy' = 180^\circ - \angle yOt = 180^\circ - 40^\circ = 140^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ពីរប្រសព្វគ្នាត្រង់ <span class="mi">\(O\)</span> បង្កើតបានមុំបួន។ បង្ហាញថាកន្លះបន្ទាត់ពុះនៃមុំទល់កំពូលពីរ គឺជាកន្លះបន្ទាត់ឈមគ្នា (រត់ត្រង់ជួរគ្នាជាបន្ទាត់តែមួយ)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងមុំទល់កំពូលពីរគឺ <span class="mi">\(\angle AOB\)</span> និង <span class="mi">\(\angle A'OB'\)</span>។<br/>
+តាង <span class="mi">\(Ot\)</span> និង <span class="mi">\(Ot'\)</span> ជាកន្លះបន្ទាត់ពុះរៀងគ្នា ៖<br/>
+<span class="mi">\(\angle AOt = \frac{1}{2}\angle AOB = \frac{1}{2}\angle A'OB' = \angle A'Ot'\)</span><br/>
+<span class="mi">\(\angle tOA' + \angle A'Ot' = (180^\circ - \angle AOt) + \angle AOt = 180^\circ\)</span><br/>
+នាំឱ្យ <span class="mi">\(Ot\)</span> និង <span class="mi">\(Ot'\)</span> បង្កើតបានជាបន្ទាត់ត្រង់តែមួយ (កន្លះបន្ទាត់ឈមគ្នា)។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>គេឱ្យមុំរាប <span class="mi">\(\angle AOB = 180^\circ\)</span>។ លើកន្លះប្លង់តែមួយដែលមានព្រំដែនបន្ទាត់ <span class="mi">\(AB\)</span> គេគូសកន្លះបន្ទាត់ <span class="mi">\(OC\)</span> និង <span class="mi">\(OD\)</span> ដោយ <span class="mi">\(\angle AOC = 40^\circ\)</span> និង <span class="mi">\(\angle BOD = 50^\circ\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនា <span class="mi">\(\angle COD\)</span></p></li>
+<li><p>តើ <span class="mi">\(OC\)</span> និង <span class="mi">\(OD\)</span> កែងគ្នាដែរឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. <span class="mi">\(\angle COD = 180^\circ - (\angle AOC + \angle BOD) = 180^\circ - (40^\circ + 50^\circ) = 90^\circ\)</span></p></li>
+<li><p>ខ. ដោយ <span class="mi">\(\angle COD = 90^\circ\)</span> នោះកន្លះបន្ទាត់ <span class="mi">\(OC\)</span> និង <span class="mi">\(OD\)</span> កែងគ្នា (<span class="mi">\(OC \perp OD\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>មុំមួយមានរង្វាស់ស្មើនឹង <span class="mi">\(x\)</span>។ រកតម្លៃ <span class="mi">\(x\)</span> បើដឹងថាមុំបន្ថែមនៃ <span class="mi">\(x\)</span> ធំជាង ៤ ដងនៃមុំបំពេញនៃ <span class="mi">\(x\)</span> ចំនួន <span class="mi">\(15^\circ\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមីការ ៖ <span class="mi">\((180^\circ - x) - 4(90^\circ - x) = 15^\circ\)</span><br/>
+<span class="mi">\(180^\circ - x - 360^\circ + 4x = 15^\circ\)</span><br/>
+<span class="mi">\(3x - 180^\circ = 15^\circ \Rightarrow 3x = 195^\circ \Rightarrow x = 65^\circ\)</span><br/>
+ដូចនេះ តម្លៃនៃ <span class="mi">\(x\)</span> គឺ <span class="mi">\(65^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>នៅលើផ្ទៃនាឡិកាមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>តើមុំរវាងទ្រនិចម៉ោង និងទ្រនិចនាទីនៅម៉ោង ៣:០០ គត់ មានរង្វាស់ប៉ុន្មានដឺក្រេ?</p></li>
+<li><p>តើមុំរវាងទ្រនិចម៉ោង និងទ្រនិចនាទីនៅម៉ោង ៦:០០ គត់ ជាប្រភេទមុំអ្វី?</p></li>
+<li><p>គណនារង្វាស់មុំរវាងទ្រនិចទាំងពីរនៅម៉ោង ៤:០០ គត់ និងនៅម៉ោង ៨:០០ គត់។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក. នៅម៉ោង ៣:០០ ៖ មុំរវាងទ្រនិចទាំងពីរគឺ <span class="mi">\(3 \times 30^\circ = 90^\circ\)</span> (មុំកែង)។</p></li>
+<li><p>ខ. នៅម៉ោង ៦:០០ ៖ មុំរវាងទ្រនិចទាំងពីរគឺ <span class="mi">\(6 \times 30^\circ = 180^\circ\)</span> ជាមុំរាប។</p></li>
+<li><p>គ. នៅម៉ោង ៤:០០ ៖ <span class="mi">\(4 \times 30^\circ = 120^\circ\)</span>។<br/>
+នៅម៉ោង ៨:០០ ៖ <span class="mi">\(4 \times 30^\circ = 120^\circ\)</span> (មុំតូចជាង)។</p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៣ មុំ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c13">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L12.html"><small>← មេរៀនមុន</small><b>សញ្ញាណដំបូងនៃរូបធរណីមាត្រ</b></a><a class="next" href="L14.html"><small>មេរៀនបន្ទាប់ →</small><b>បន្ទាត់ស្រប និងបន្ទាត់កែង</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មុំ គឺជាភាវៈធរណីមាត្រដែលកើតឡើងពីកន្លះបន្ទាត់ពីរមាន ៖", "options": ["ទិសដៅផ្ទុយ", "គល់រួមគ្នា", "ប្រវែងស្មើ", "ស្របគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងនិមិត្តសញ្ញា <span class=\"mi\">\\(\\angle AOB\\)<\/span> កំពូលនៃមុំគឺចំណុច ៖", "options": ["<span class=\"mi\">\\(A\\)<\/span>", "<span class=\"mi\">\\(B\\)<\/span>", "<span class=\"mi\">\\(O\\)<\/span>", "គ្មានកំពូល"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ជ្រុងទាំងពីរនៃមុំ <span class=\"mi\">\\(\\angle xOy\\)<\/span> គឺកន្លះបន្ទាត់ ៖", "options": ["<span class=\"mi\">\\([Ox), [Oy)\\)<\/span>", "<span class=\"mi\">\\([xy), [yx)\\)<\/span>", "<span class=\"mi\">\\((Ox), (Oy)\\)<\/span>", "<span class=\"mi\">\\([Ox], [Oy]\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឧបករណ៍ដែលប្រើប្រាស់សម្រាប់វាស់ និងសង់រង្វាស់មុំគឺ ៖", "options": ["បន្ទាត់ត្រង់", "ដែកឈាន", "រ៉ាប៉ទ័រ", "កែវពង្រីក"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មុំស្រួច គឺជារាល់មុំទាំងឡាយណាដែលមានរង្វាស់ ៖", "options": ["ស្មើ <span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(&lt; 90^\\circ\\)<\/span>", "<span class=\"mi\">\\(&gt; 90^\\circ\\)<\/span>", "ស្មើ <span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មុំកែង មានរង្វាស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មុំទាល គឺជារាល់មុំទាំងឡាយណាដែលមានរង្វាស់ ៖", "options": ["<span class=\"mi\">\\(&lt; 90^\\circ\\)<\/span>", "<span class=\"mi\">\\(= 90^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ &lt; \\alpha &lt; 180^\\circ\\)<\/span>", "<span class=\"mi\">\\(= 180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មុំរាប មានរង្វាស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ជ្រុងទាំងពីរនៃមុំរាបជា ៖", "options": ["ត្រួតស៊ីគ្នា", "កែងគ្នា", "កន្លះបន្ទាត់ឈម", "អង្កត់ស្មើ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ទំនាក់ទំនងរវាងដឺក្រេ និងមីនុតគឺ <span class=\"mi\">\\(1^\\circ\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(10'\\)<\/span>", "<span class=\"mi\">\\(60'\\)<\/span>", "<span class=\"mi\">\\(100'\\)<\/span>", "<span class=\"mi\">\\(360'\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទំនាក់ទំនងរវាងមីនុត និងសឺកុងគឺ <span class=\"mi\">\\(1'\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(10''\\)<\/span>", "<span class=\"mi\">\\(60''\\)<\/span>", "<span class=\"mi\">\\(100''\\)<\/span>", "<span class=\"mi\">\\(3600''\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រង្វាស់ <span class=\"mi\">\\(1^\\circ\\)<\/span> គិតជាសឺកុងស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(60''\\)<\/span>", "<span class=\"mi\">\\(360''\\)<\/span>", "<span class=\"mi\">\\(600''\\)<\/span>", "<span class=\"mi\">\\(3600''\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំពេញ (Perigon) មួយជុំរង្វង់ មានរង្វាស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំពីរហៅថាមុំបំពេញគ្នា កាលណាផលបូករង្វាស់របស់វាស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំពីរហៅថាមុំបន្ថែមគ្នា កាលណាផលបូករង្វាស់របស់វាស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំបំពេញនៃមុំ <span class=\"mi\">\\(30^\\circ\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(150^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំបន្ថែមនៃមុំ <span class=\"mi\">\\(70^\\circ\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(20^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(110^\\circ\\)<\/span>", "<span class=\"mi\">\\(130^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំបំពេញនៃមុំ <span class=\"mi\">\\(45^\\circ\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(35^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(55^\\circ\\)<\/span>", "<span class=\"mi\">\\(135^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំបន្ថែមនៃមុំ <span class=\"mi\">\\(125^\\circ\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(55^\\circ\\)<\/span>", "<span class=\"mi\">\\(65^\\circ\\)<\/span>", "<span class=\"mi\">\\(75^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំពីរហៅថាមុំជាប់គ្នា លុះត្រាតែមុំទាំងពីរមាន ៖", "options": ["កំពូល និងជ្រុងរួម", "កំពូលខុសគ្នា", "ជ្រុងស្របគ្នា", "រង្វាស់ស្មើគ្នា"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "មុំពីរជាប់គ្នាបន្ថែមគ្នា បង្កើតបានជាមុំ ៖", "options": ["ស្រួច", "កែង", "ទាល", "រាប"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "មុំពីរទល់កំពូល គឺជាមុំពីរដែល ៖", "options": ["ស្មើគ្នាជានិច្ច", "ជ្រុងជាកន្លះបន្ទាត់ឈម", "ក និង ខ ត្រូវ", "ផលបូក <span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរប្រសព្វគ្នាកំណត់បានគូមុំទល់កំពូលចំនួន ៖", "options": ["១ គូ", "២ គូ", "៣ គូ", "៤ គូ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើបន្ទាត់ពីរប្រសព្វគ្នាកំណត់បានមុំមួយស្មើ <span class=\"mi\">\\(50^\\circ\\)<\/span> នោះមុំទល់កំពូលនឹងវាស្មើ ៖", "options": ["<span class=\"mi\">\\(40^\\circ\\)<\/span>", "<span class=\"mi\">\\(50^\\circ\\)<\/span>", "<span class=\"mi\">\\(130^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើបន្ទាត់ពីរប្រសព្វគ្នាកំណត់បានមុំមួយស្មើ <span class=\"mi\">\\(40^\\circ\\)<\/span> នោះមុំជាប់បន្ថែមនឹងវាស្មើ ៖", "options": ["<span class=\"mi\">\\(50^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(140^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "កន្លះបន្ទាត់ពុះមុំ ចែកមុំមួយជាពីរមុំ ៖", "options": ["បន្ថែមគ្នា", "បំពេញគ្នា", "ប៉ុនគ្នា", "ទល់កំពូល"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\angle AOB = 70^\\circ\\)<\/span> ហើយ <span class=\"mi\">\\([OC)\\)<\/span> ជាកន្លះបន្ទាត់ពុះ នោះ <span class=\"mi\">\\(\\angle AOC\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(35^\\circ\\)<\/span>", "<span class=\"mi\">\\(40^\\circ\\)<\/span>", "<span class=\"mi\">\\(140^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "កន្លះបន្ទាត់ពុះនៃមុំពីរជាប់គ្នាបន្ថែមគ្នា បង្កើតបានជាមុំ ៖", "options": ["ស្រួច", "កែង (<span class=\"mi\">\\(90^\\circ\\)<\/span>)", "ទាល", "រាប"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(15^\\circ 30' + 25^\\circ 45'\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(40^\\circ 15'\\)<\/span>", "<span class=\"mi\">\\(41^\\circ 15'\\)<\/span>", "<span class=\"mi\">\\(41^\\circ 75'\\)<\/span>", "<span class=\"mi\">\\(40^\\circ 75'\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលសង <span class=\"mi\">\\(90^\\circ - 32^\\circ 25'\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(57^\\circ 35'\\)<\/span>", "<span class=\"mi\">\\(58^\\circ 35'\\)<\/span>", "<span class=\"mi\">\\(57^\\circ 25'\\)<\/span>", "<span class=\"mi\">\\(58^\\circ 25'\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្ដូរ <span class=\"mi\">\\(2.5^\\circ\\)<\/span> ជាដឺក្រេ និងមីនុត គេបាន ៖", "options": ["<span class=\"mi\">\\(2^\\circ 5'\\)<\/span>", "<span class=\"mi\">\\(2^\\circ 30'\\)<\/span>", "<span class=\"mi\">\\(2^\\circ 50'\\)<\/span>", "<span class=\"mi\">\\(2^\\circ 15'\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំមួយស្មើនឹង ៣ ដងនៃមុំបំពេញរបស់វា។ រង្វាស់មុំនោះគឺ ៖", "options": ["<span class=\"mi\">\\(22.5^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(67.5^\\circ\\)<\/span>", "<span class=\"mi\">\\(75^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំមួយស្មើនឹងមុំបន្ថែមរបស់វា។ រង្វាស់មុំនោះគឺ ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំមួយស្មើនឹងមុំបំពេញរបស់វា។ រង្វាស់មុំនោះគឺ ៖", "options": ["<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផលបូកមុំជុំវិញចំណុចមួយក្នុងប្លង់មានរង្វាស់ស្មើ ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើមុំពីរទល់កំពូលមានរង្វាស់ <span class=\"mi\">\\(2x\\)<\/span> និង <span class=\"mi\">\\(x + 40^\\circ\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(20^\\circ\\)<\/span>", "<span class=\"mi\">\\(40^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើមុំពីរជាប់បន្ថែមគ្នាមានរង្វាស់ <span class=\"mi\">\\(3x\\)<\/span> និង <span class=\"mi\">\\(2x\\)<\/span> នោះតម្លៃនៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(18^\\circ\\)<\/span>", "<span class=\"mi\">\\(36^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(72^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំស្រួចពីរអាចជាមុំបន្ថែមគ្នាបានដែរឬទេ?", "options": ["បាន ជានិច្ច", "មិនអាចបាន", "ពេលស្មើគ្នា", "អាស្រ័យកំពូល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំទាលពីរអាចជាមុំបន្ថែមគ្នាបានដែរឬទេ?", "options": ["បាន ជានិច្ច", "មិនអាចបាន", "ពេលស្មើគ្នា", "អាស្រ័យកំពូល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំកែងពីរ ជាមុំ ៖", "options": ["បំពេញគ្នា", "បន្ថែមគ្នា", "ស្រួច", "ឆក"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ប្ដូរ <span class=\"mi\">\\(120'\\)<\/span> ជាដឺក្រេ គេបាន ៖", "options": ["<span class=\"mi\">\\(1^\\circ\\)<\/span>", "<span class=\"mi\">\\(2^\\circ\\)<\/span>", "<span class=\"mi\">\\(3^\\circ\\)<\/span>", "<span class=\"mi\">\\(12^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ប្ដូរ <span class=\"mi\">\\(7200''\\)<\/span> ជាដឺក្រេ គេបាន ៖", "options": ["<span class=\"mi\">\\(1^\\circ\\)<\/span>", "<span class=\"mi\">\\(2^\\circ\\)<\/span>", "<span class=\"mi\">\\(4^\\circ\\)<\/span>", "<span class=\"mi\">\\(12^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំដែលមានរង្វាស់ <span class=\"mi\">\\(90^\\circ 15'\\)<\/span> ជាប្រភេទមុំ ៖", "options": ["ស្រួច", "កែង", "ទាល", "រាប"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំដែលមានរង្វាស់ <span class=\"mi\">\\(89^\\circ 59' 60''\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(89^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(91^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\([Ot)\\)<\/span> ជាកន្លះបន្ទាត់ពុះនៃ <span class=\"mi\">\\(\\angle xOy\\)<\/span> ហើយ <span class=\"mi\">\\(\\angle xOt = 45^\\circ\\)<\/span> នោះ <span class=\"mi\">\\(\\angle xOy\\)<\/span> ជាមុំ ៖", "options": ["ស្រួច", "កែង", "ទាល", "រាប"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ពីរប្រសព្វគ្នាកែងគ្នា បង្កើតបានមុំកែងចំនួន ៖", "options": ["១", "២", "៣", "៤"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំឆក (Reflex angle) គឺជារាល់មុំដែលមានរង្វាស់ ៖", "options": ["<span class=\"mi\">\\(&lt; 90^\\circ\\)<\/span>", "<span class=\"mi\">\\(&gt; 90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ &lt; \\alpha &lt; 360^\\circ\\)<\/span>", "<span class=\"mi\">\\(= 360^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំបន្ថែមនៃមុំស្រួច ជាមុំ ៖", "options": ["ស្រួច", "កែង", "ទាល", "រាប"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំបន្ថែមនៃមុំទាល ជាមុំ ៖", "options": ["ស្រួច", "កែង", "ទាល", "រាប"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំបំពេញនៃមុំស្រួច ជាមុំ ៖", "options": ["ស្រួច", "កែង", "ទាល", "រាប"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

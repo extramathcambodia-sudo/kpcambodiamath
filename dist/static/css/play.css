@@ -1,0 +1,146 @@
+/* khmermath.org — «ល្បែងបាយខុំ» (play/baykhom.html, static/js/baykhom.js).
+   Holes are real buttons, at least 64 px, so a finger or a mouse can hit them. */
+.bk { display: flex; flex-direction: column; gap: 14px; max-width: 900px; margin: 0 auto; }
+.bk-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; }
+.bk-seg, .bk-acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.bk-seg button {
+  min-height: 44px; padding: 6px 18px; border-radius: 999px; border: 1.5px solid var(--line-2);
+  background: var(--surface); color: var(--ink); font: inherit; font-size: 16px; font-weight: 600; cursor: pointer;
+}
+.bk-seg button[aria-pressed="true"] { background: var(--teal-soft); border-color: var(--teal); color: var(--teal-strong); box-shadow: inset 0 0 0 1px var(--teal); }
+.bk .btn { min-height: 44px; }
+.bk-score { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bk-pl { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 16px; border-radius: var(--radius); background: var(--surface-2); border: 2px solid var(--line); }
+.bk-pl.on { border-color: var(--amber); background: var(--amber-soft); }
+.bk-pl .bk-name { font-weight: 700; }
+.bk-pl b { font-size: 28px; line-height: 1.2; color: var(--teal-strong); }
+.bk-pl small { color: var(--ink-3); font-size: 14px; }
+.bk-msg { min-height: 3.4em; margin: 0; font-size: 18px; font-weight: 600; color: var(--ink); line-height: 1.7; }
+.bk-board {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 16px;
+  border-radius: 28px; background: #b07a3f; border: 3px solid #7a4f22; box-shadow: var(--shadow);
+}
+.bk-cell { position: relative; }
+.bk-board { position: relative; }
+.bk-hole {
+  position: relative; width: 100%; aspect-ratio: 1; min-height: 64px; padding: 0; border-radius: 50%; cursor: default;
+  background: radial-gradient(circle at 50% 40%, #4a2d12, #2a1808); border: 3px solid #6b4520;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,.6); font: inherit; color: #fff;
+}
+.bk-hole.chi { border-color: #e0b24a; box-shadow: inset 0 4px 10px rgba(0,0,0,.6), 0 0 0 3px rgba(224,178,74,.35); }
+.bk-hole.can { cursor: pointer; animation: bk-pulse 1.4s ease-in-out infinite; border-color: #f0c866; }
+.bk-hole.can:hover, .bk-hole.can:focus-visible { transform: scale(1.04); outline: 3px solid var(--amber); outline-offset: 2px; }
+.bk-hole.hit { box-shadow: inset 0 4px 10px rgba(0,0,0,.6), 0 0 0 5px #fff; }
+.bk-hole.cap { box-shadow: inset 0 4px 10px rgba(0,0,0,.6), 0 0 0 6px #e0524d; }
+.bk-hole:disabled { color: #fff; opacity: 1; }
+.bk-seeds { position: absolute; inset: 14%; }
+.bk-seed { position: absolute; width: 17%; height: 17%; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff1c9, #e0a93f 70%); box-shadow: 0 1px 2px rgba(0,0,0,.5); }
+.bk-n {
+  position: absolute; right: 2px; top: 2px; min-width: 28px; padding: 0 6px; border-radius: 999px;
+  background: rgba(0,0,0,.72); font-size: 15px; font-weight: 700; line-height: 26px; text-align: center;
+}
+.bk-note { margin: 0; color: var(--ink-3); font-size: 15px; }
+.bk-rules { max-width: 900px; margin: 28px auto 0; }
+.bk-rules ol { padding-left: 1.4em; line-height: 1.9; }
+.bk-credit { color: var(--ink-3); font-size: 14.5px; }
+@keyframes bk-pulse { 50% { box-shadow: inset 0 4px 10px rgba(0,0,0,.6), 0 0 0 5px rgba(240,200,102,.55); } }
+@media (prefers-reduced-motion: reduce) { .bk-hole.can { animation: none; } }
+@media (max-width: 560px) {
+  .bk-board { gap: 6px; padding: 10px; border-radius: 20px; }
+  .bk-score { gap: 8px; }
+  .bk-pl { padding: 8px 10px; }
+  .bk-n { font-size: 13px; min-width: 24px; line-height: 22px; }
+}
+/* arrows: the lower half of a hole you may play, left and right */
+.bk-arr { position: absolute; bottom: 4%; width: 46%; height: 42%; min-height: 44px; padding: 0; border: 2px solid #f0c866; border-radius: 999px;
+  background: rgba(240,200,102,.9); color: #3a2208; font-size: 20px; font-weight: 700; line-height: 1; cursor: pointer; z-index: 2; }
+.bk-arr.l { left: 2%; } .bk-arr.r { right: 2%; }
+.bk-arr[hidden] { display: none; }
+.bk-arr:hover, .bk-arr:focus-visible { background: #fff; outline: 3px solid var(--amber); outline-offset: 2px; }
+.bk-hole.next { cursor: pointer; border-color: #fff; animation: bk-pulse .9s ease-in-out infinite; box-shadow: inset 0 4px 10px rgba(0,0,0,.6), 0 0 0 6px rgba(255,255,255,.7); }
+.bk-hand { position: absolute; left: 0; top: 0; z-index: 5; pointer-events: none; transition: transform .28s ease; margin: -6px 0 0 -6px; }
+.bk-hand[hidden] { display: none; }
+.bk-hand-ic { display: block; font-size: 48px; line-height: 1; filter: drop-shadow(0 3px 3px rgba(0,0,0,.5)); transform: rotate(-15deg); }
+.bk-hand-n { position: absolute; left: 22px; top: -10px; min-width: 26px; padding: 0 7px; border-radius: 999px; background: #e0524d; color: #fff; font-size: 16px; line-height: 26px; text-align: center; }
+.bk-hand-n:empty { display: none; }
+@media (prefers-reduced-motion: reduce) { .bk-hand { transition: none; } }
+@media (max-width: 560px) { .bk-arr { font-size: 16px; min-height: 36px; } .bk-hand-ic { font-size: 36px; } }
+/* several rounds */
+.bk-round { margin: 0; font-weight: 700; color: var(--teal-strong); }
+.bk-round[hidden], .bk-nr[hidden] { display: none; }
+.bk-rules h3 { margin: 22px 0 6px; }
+.bk-extra { flex-basis: 100%; color: var(--ink-3); font-size: 14px; }
+.bk-extra:empty { display: none; }
+.bk-nr { min-height: 44px; align-self: flex-start; }
+.bk-hole.dead { opacity: .45; background: #1a0f06; border-style: dashed; border-color: #4a2d12; box-shadow: none; }
+.bk-hole.dead::after { content: '✕'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #6b4520; }
+.bk-hole.dead .bk-n { display: none; }
+
+/* ===== games page (play/index.html): a showcase for teachers ===== */
+.pl-hero { background: radial-gradient(circle at 15% 10%, #6d4ae0 0%, #3a2390 45%, #1b1048 100%); color: #fff; padding: clamp(28px, 6vw, 64px) 0; overflow: hidden; }
+.pl-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; align-items: center; }
+.pl-eyebrow { display: inline-block; padding: 5px 14px; border-radius: 99px; background: rgba(255, 255, 255, .16); font-weight: 700; font-size: 14px; }
+.pl-hero h1 { margin: 14px 0 10px; font-size: clamp(30px, 5vw, 50px); line-height: 1.35; color: #fff; }
+.pl-hl { color: #ffd43b; }
+.pl-lead { font-size: clamp(16px, 2vw, 19px); line-height: 1.8; opacity: .92; margin: 0 0 14px; max-width: 34em; }
+.pl-points { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.pl-points li { padding: 5px 12px; border-radius: 99px; background: rgba(255, 255, 255, .13); font-weight: 600; font-size: 14px; }
+.pl-cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.pl-hero .btn-primary { background: #ffd43b; color: #2b1d00; border-color: #ffd43b; }
+.pl-hero .btn-ghost { background: rgba(255, 255, 255, .1); color: #fff; border-color: rgba(255, 255, 255, .55); }
+.pl-hero .btn-ghost:hover { background: rgba(255, 255, 255, .22); color: #fff; }
+.pl-hero-art img { width: 100%; height: auto; border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, .45); display: block; transform: rotate(1.5deg); }
+
+.pl-feature { padding: clamp(28px, 5vw, 56px) 0 8px; }
+.pl-feat { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(18px, 3vw, 36px); align-items: center; background: var(--surface, #fff); border: 1px solid var(--line, #e1e8f0); border-radius: 24px; padding: clamp(14px, 2.5vw, 26px); box-shadow: 0 14px 40px rgba(16, 42, 67, .1); }
+.pl-feat-art img { width: 100%; height: auto; border-radius: 16px; display: block; }
+.pl-badge { display: inline-block; padding: 4px 12px; border-radius: 99px; background: #fff3bf; color: #7a5a00; font-weight: 800; font-size: 13px; }
+.pl-feat h2 { margin: 10px 0 8px; font-size: clamp(22px, 3vw, 30px); }
+.pl-feat p { line-height: 1.8; margin: 0 0 10px; }
+.pl-list { margin: 0 0 16px; padding: 0; list-style: none; display: grid; gap: 7px; }
+.pl-list li { position: relative; padding-left: 26px; line-height: 1.6; }
+.pl-list li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; background: #2f9e44; color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 800; }
+.pl-note { font-size: 13px; opacity: .7; margin: 12px 0 0 !important; }
+
+.pl-h2 { text-align: center; font-size: clamp(22px, 3.2vw, 32px); margin: 0 0 8px; }
+.pl-sub { text-align: center; opacity: .75; margin: 0 auto 26px; max-width: 40em; }
+.pl-steps { padding: clamp(28px, 5vw, 52px) 0 8px; }
+.pl-steps-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; counter-reset: s; }
+.pl-steps-list li { display: grid; gap: 4px; justify-items: center; text-align: center; padding: 18px 14px; border-radius: 18px; background: var(--surface, #fff); border: 1px solid var(--line, #e1e8f0); }
+.pl-steps-list span { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, #6d4ae0, #3a2390); color: #fff; font-weight: 800; font-size: 20px; }
+.pl-steps-list b { font-size: 17px; margin-top: 4px; } .pl-steps-list small { opacity: .75; line-height: 1.6; font-size: 14px; }
+
+.pl-games { padding: clamp(26px, 5vw, 52px) 0 clamp(36px, 6vw, 72px); }
+.pl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.pl-card { --c: #12a594; display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--surface, #fff); border: 1px solid var(--line, #e1e8f0); border-radius: 20px; overflow: hidden; transition: transform .18s, box-shadow .18s; }
+.pl-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(16, 42, 67, .18); }
+.pl-card.pl-green { --c: #2b8a3e; } .pl-card.pl-teal { --c: #12a594; } .pl-card.pl-orange { --c: #e8590c; } .pl-card.pl-blue { --c: #1971c2; } .pl-card.pl-amber { --c: #e67700; } .pl-card.pl-violet { --c: #5f3dc4; }
+.pl-cover { position: relative; aspect-ratio: 16 / 9; background: var(--c); }
+.pl-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pl-new { white-space: nowrap; min-width: 54px; text-align: center; box-sizing: border-box; position: absolute; top: 10px; left: 10px; padding: 3px 11px; border-radius: 99px; background: #ffd43b; color: #2b1d00; font-weight: 800; font-size: 12px; box-shadow: 0 2px 6px rgba(0, 0, 0, .25); }
+.pl-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
+.pl-body h3 { margin: 0; font-size: 20px; } .pl-body p { margin: 0; line-height: 1.7; font-size: 15px; opacity: .85; flex: 1; }
+.pl-tags { display: flex; flex-wrap: wrap; gap: 6px; } .pl-tags span { padding: 2px 10px; border-radius: 99px; background: color-mix(in srgb, var(--c) 14%, transparent); color: var(--c); font-weight: 700; font-size: 12.5px; }
+.pl-go { align-self: flex-start; margin-top: 4px; padding: 8px 18px; border-radius: 99px; background: var(--c); color: #fff; font-weight: 800; font-size: 15px; display: inline-flex; gap: 6px; }
+.pl-go i { font-style: normal; transition: transform .15s; } .pl-card:hover .pl-go i { transform: translateX(4px); }
+@media (max-width: 960px) { .pl-hero-grid, .pl-feat { grid-template-columns: 1fr; } .pl-grid { grid-template-columns: repeat(2, 1fr); } .pl-hero-art { order: -1; max-width: 520px; } }
+@media (max-width: 620px) { .pl-grid, .pl-steps-list { grid-template-columns: 1fr; } .pl-hero-art img { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pl-card, .pl-go i { transition: none; } }
+
+/* compact title strip for the game pages, so the game itself is on screen straight away */
+.page-hero.page-hero-sm { padding: 14px 0 12px; }
+.page-hero-sm .crumbs { margin: 0 0 4px; }
+.page-hero-sm h1 { font-size: clamp(24px, 3.4vw, 32px); margin: 0 0 2px; }
+.page-hero-sm .lead { font-size: 15px; margin: 0; max-width: 60em; }
+@media (max-width: 760px) { .page-hero-sm .lead { display: none; } }
+
+/* baykhom: mode choice and the new-game button first, the rest in a small menu */
+.bk-seg button { min-height: 48px; font-size: 16px; }
+.bk-acts { align-items: center; }
+.bk-set { position: relative; }
+.bk-set > summary { list-style: none; cursor: pointer; } .bk-set > summary::-webkit-details-marker { display: none; }
+.bk-set-pop { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; display: flex; flex-direction: column; gap: 6px; min-width: 240px; padding: 10px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(16, 42, 67, .2); }
+.bk-set-pop .btn { justify-content: flex-start; width: 100%; }
+.bk-score { gap: 14px; } .bk-pl { padding: 12px 18px; border-radius: 16px; }
+.bk-pl.on { box-shadow: 0 0 0 4px var(--amber-soft); }
+.bk-msg { padding: 10px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); text-align: center; }

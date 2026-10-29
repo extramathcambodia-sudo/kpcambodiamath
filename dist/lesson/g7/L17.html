@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៧ : រង្វង់ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៧ «រង្វង់» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៧ : រង្វង់ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៧ «រង្វង់» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ១៧</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៧</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៧ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>រង្វង់</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណរង្វង់ និងធាតុសំខាន់ៗនៃរង្វង់</a></li><li class="sub"><a href="#u2">២. បរិមាត្ររង្វង់</a></li><li class="sub"><a href="#u3">៣. ក្រឡាផ្ទៃថាស</a></li><li class="sub"><a href="#u4">៤. ប្រវែងធ្នូ និងបរិមាត្រចម្រៀកថាស</a></li><li class="sub"><a href="#u5">៥. ក្រឡាផ្ទៃចម្រៀកថាស និងរូបផ្គុំ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃសញ្ញាណរង្វង់ និងចំនួន <span class="mi">\(\pi\)</span></b></header><div class="bx-b">
+<p>«<strong>រង្វង់</strong>» (Circle) គឺជារូបធរណីមាត្រដ៏ល្អឥតខ្ចោះ និងមានភាពស៊ីមេទ្រីបំផុតនៅក្នុងធម្មជាតិ និងគណិតវិទ្យា។ ការច្នៃប្រឌិតកង់រទេះរាងរង្វង់នៅតំបន់មេសូប៉ូតាមី (ប្រហែល ៣៥០០ ឆ្នាំមុន គ.ស.) ត្រូវបានចាត់ទុកថាជារបកគំហើញបច្ចេកវិទ្យាដ៏អស្ចារ្យបំផុតមួយក្នុងប្រវត្តិសាស្ត្រមនុស្សជាតិ ដែលបានផ្លាស់ប្ដូរការដឹកជញ្ជូន និងការអភិវឌ្ឍសង្គម។ អស់រយៈពេលរាប់ពាន់ឆ្នាំ មនុស្សបានកត់សម្គាល់ឃើញថា ផលធៀបរវាងបរិមាត្ររង្វង់ និងអង្កត់ផ្ចិតរបស់វា គឺជាចំនួនថេរមួយ ដែលក្រោយមកត្រូវបានតាងដោយអក្សរក្រិក <span class="mi">\(\boldsymbol{\pi}\)</span> (ពី)។ គណិតវិទូក្រិកបុរាណលោក <strong>អាស៊ីម៉ែត</strong> (Archimedes of Syracuse, ប្រហែល ២៨៧–២១២ មុន គ.ស.) បានគណនាតម្លៃប្រហាក់ប្រហែលនៃ <span class="mi">\(\pi\)</span> ដោយប្រើពហុកោណចារឹកក្នុង និងចារឹកក្រៅរង្វង់រហូតដល់ ៩៦ ជ្រុង (<span class="mi">\(3\frac{10}{71} &lt; \pi &lt; 3\frac{1}{7}\)</span> ឬ <span class="mi">\(\pi \approx 3.14\)</span>)។</p>
+<p>នៅក្នុងវប្បធម៌ខ្មែរ រូបរង្វង់បានផ្សារភ្ជាប់យ៉ាងជិតស្និទ្ធជាមួយទស្សនវិជ្ជា និងសិល្បៈស្ថាបត្យកម្ម ដូចជា «<strong>កង់ធម្មចក្រ</strong>» (Dharmachakra) ដែលឆ្លាក់លើសិលាសម័យបុរាណ ព្រមទាំងការរៀបចំប្លង់មូលនៃកំពូលប្រាសាទ និងក្បូរក្បាច់ភ្ញីទេសភ្ញីវល្លិរាងរង្វង់មូលនៅលើផ្ដែរប្រាសាទនានា។ ក្នុងវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យាទំនើប រង្វង់ជាមូលដ្ឋានគ្រឹះនៃកង់យានយន្ត ម៉ាស៊ីនចក្រ ត្រីវិស័យ ផ្កាយរណបគោចរជុំវិញផែនដី និងប្រព័ន្ធរ៉ាដា។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃរង្វង់ និងថាសរង្វង់</b></header><div class="bx-b">
+<p>នៅក្នុងធរណីមាត្រប្លង់ គេត្រូវបែងចែកឱ្យច្បាស់រវាង «រង្វង់» និង «ថាស» ៖</p>
+<ul>
+<li><p><strong>រង្វង់ (Circle, <span class="mi">\(\mathcal{C}\)</span>) ៖</strong> ជាខ្សែកោងបិទជិតក្នុងប្លង់ ដែលគ្រប់ចំណុចរបស់វាមានចម្ងាយស្មើគ្នាពីចំណុចនឹងមួយហៅថា <strong>ផ្ចិត</strong>។ រង្វង់មានតែប្រវែងជុំវិញ (បរិមាត្រ) ប៉ុណ្ណោះ។</p></li>
+<li><p><strong>ថាស (Disk) ៖</strong> ជាផ្នែកនៃប្លង់ដែលខណ្ឌដោយរង្វង់ រួមបញ្ចូលទាំងរង្វង់ព្រំប្រទល់ និងគ្រប់ចំណុចទាំងអស់នៅខាងក្នុងរង្វង់។ ថាសមានក្រឡាផ្ទៃ។</p></li>
+<li><p><strong>ធាតុគ្រឹះ ៖</strong> ផ្ចិត (<span class="mi">\(O\)</span>), កាំ (<span class="mi">\(R\)</span>), អង្កត់ផ្ចិត (<span class="mi">\(d = 2R\)</span>), អង្កត់ធ្នូ, ធ្នូ, ចម្រៀកថាស និងបន្ទាត់ប៉ះ។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សញ្ញាណរង្វង់ និងធាតុសំខាន់ៗនៃរង្វង់</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>សញ្ញាណរង្វង់ និងធាតុបង្កគ្រឹះ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> រង្វង់ផ្ចិត <span class="mi">\(O\)</span> កាំ <span class="mi">\(R\)</span> តាងដោយ <span class="mi">\(\mathcal{C}(O, R)\)</span> គឺជាសំណុំចំណុច <span class="mi">\(M\)</span> ក្នុងប្លង់ដែល <span class="mi">\(OM = R\)</span>។</p></li>
+<li><p><strong>កាំ (Radius, <span class="mi">\(R\)</span>) ៖</strong> អង្កត់ភ្ជាប់ពីផ្ចិតទៅចំណុចណាមួយនៅលើរង្វង់ (<span class="mi">\(OA = R\)</span>)។</p></li>
+<li><p><strong>អង្កត់ផ្ចិត (Diameter, <span class="mi">\(d\)</span>) ៖</strong> អង្កត់កាត់តាមផ្ចិត និងមានចុងសងខាងលើរង្វង់ (<span class="mi">\(d = 2R\)</span>)។</p></li>
+<li><p><strong>អង្កត់ធ្នូ (Chord) ៖</strong> អង្កត់ភ្ជាប់ពីរចំណុចលើរង្វង់ (<span class="mi">\(CD\)</span>)។ អង្កត់ផ្ចិតជាអង្កត់ធ្នូវែងបំផុត។</p></li>
+<li><p><strong>ធ្នូ (Arc) ៖</strong> ផ្នែកនៃរង្វង់ខណ្ឌដោយពីរចំណុច (ធ្នូតូច <span class="mi">\(CD\)</span> និងធ្នូធំ)។</p></li>
+<li><p><strong>បន្ទាត់ប៉ះ (Tangent) ៖</strong> បន្ទាត់ដែលមានចំណុចរួមតែមួយជាមួយរង្វង់ ហើយកែងនឹងកាំត្រង់ចំណុចប៉ះ។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់ <span class="mi">\(\mathcal{C}(O, 4.5\text{ cm})\)</span>។<br/>
+ក. គណនាប្រវែងអង្កត់ផ្ចិតនៃរង្វង់នេះ។ ខ. បើ <span class="mi">\(OP = 5\text{ cm}\)</span> និង <span class="mi">\(OQ = 3\text{ cm}\)</span> កំណត់ទីតាំង <span class="mi">\(P\)</span> និង <span class="mi">\(Q\)</span> ធៀបនឹងរង្វង់។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ អង្កត់ផ្ចិតរង្វង់ ៖ <span class="mi">\(d = 2R = 2 \times 4.5 = 9\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{d = 9\text{ cm}}\)</span><br/>
+ ទីតាំងចំណុច ៖ <span class="mi">\(OP = 5\text{ cm} &gt; R \implies\)</span> <span class="kfbox"><span class="mi">\(P\)</span> នៅក្រៅរង្វង់</span> ; <span class="mi">\(OQ = 3\text{ cm} &lt; R \implies\)</span> <span class="kfbox"><span class="mi">\(Q\)</span> នៅខាងក្នុងរង្វង់</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>សញ្ញាណ និងធាតុនៃរង្វង់</b></header><div class="bx-b">
+<p>១. រង្វង់មួយមានអង្កត់ផ្ចិត <span class="mi">\(d = 15\text{ cm}\)</span>។ គណនាកាំ <span class="mi">\(R\)</span> នៃរង្វង់នោះ។<br/>
+២. តើអង្កត់ធ្នូដែលវែងជាងគេក្នុងរង្វង់គឺជាអ្វី? បើកាំ <span class="mi">\(R = 6\text{ cm}\)</span> តើអង្កត់ធ្នូនោះមានប្រវែងប៉ុន្មាន?</p>
+</div></section>
+<h3 id="u2">បរិមាត្ររង្វង់</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>រូបមន្តបរិមាត្ររង្វង់ និងចម្ងាយកង់បរ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> បរិមាត្ររង្វង់ (<span class="mi">\(P\)</span> ឬ <span class="mi">\(C\)</span>) គឺជាប្រវែងជុំវិញនៃរង្វង់។</p></li>
+<li><p><strong>រូបមន្តបរិមាត្រ ៖</strong> <div class="md">\[P = 2\pi R \quad{} \text{ឬ} \quad{} P = \pi d \quad{} (\pi \approx 3.14 \text{ ឬ } \pi \approx \tfrac{22}{7})\]</div></p></li>
+<li><p><strong>រូបមន្តទាញ ៖</strong> កាំ <span class="mi">\(R = \dfrac{P}{2\pi}\)</span> និង អង្កត់ផ្ចិត <span class="mi">\(d = \dfrac{P}{\pi}\)</span></p></li>
+<li><p><strong>ចម្ងាយកង់បរ ៖</strong> កាលណាកង់រង្វង់មួយវិលបាន <span class="mi">\(N\)</span> ជុំ នោះចម្ងាយដែលបរបានគឺ ៖ <div class="md">\[S = N \times P = N \times 2\pi R\]</div></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>កង់កង់មួយមានកាំ <span class="mi">\(R = 35\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)។<br/>
+ក. គណនាបរិមាត្រនៃកង់កង់នោះ។<br/>
+ខ. ប្រសិនបើកង់នោះវិលបាន <span class="mi">\(500\)</span> ជុំ តើកង់បរបានចម្ងាយប៉ុន្មានម៉ែត្រ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ បរិមាត្រកង់កង់ ៖ <span class="mi">\(P = 2\pi R = 2 \times \dfrac{22}{7} \times 35 = 2 \times 22 \times 5 = 220\text{ cm} = 2.2\text{ m}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{P = 2.2\text{ m}}\)</span><br/>
+ ចម្ងាយបរបាន ៖ <span class="mi">\(S = N \times P = 500 \times 2.2 = 1100\text{ m}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{S = 1100\text{ m} = 1.1\text{ km}}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បរិមាត្ររង្វង់</b></header><div class="bx-b">
+<p>១. រង្វង់មួយមានបរិមាត្រ <span class="mi">\(P = 31.4\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)។ គណនាកាំ និងអង្កត់ផ្ចិត។<br/>
+២. អាងទឹកមូលមួយមានអង្កត់ផ្ចិត <span class="mi">\(d = 4.2\text{ m}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)។ គណនាប្រវែងមាត់អាងជុំវិញ។</p>
+</div></section>
+<h3 id="u3">ក្រឡាផ្ទៃថាស</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>រូបមន្តក្រឡាផ្ទៃថាស និងកងរង្វង់</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ក្រឡាផ្ទៃថាស ៖</strong> ថាសដែលមានកាំ <span class="mi">\(R\)</span> (ឬអង្កត់ផ្ចិត <span class="mi">\(d = 2R\)</span>) មានក្រឡាផ្ទៃ ៖ <div class="md">\[S = \pi R^2 = \dfrac{\pi d^2}{4}\]</div></p></li>
+<li><p><strong>រូបមន្តទាញ ៖</strong> កាំនៃថាសគឺ <span class="mi">\(R = \sqrt{\dfrac{S}{\pi}}\)</span></p></li>
+<li><p><strong>ក្រឡាផ្ទៃកងរង្វង់ (Annulus) ៖</strong> ផ្ទៃដែលខណ្ឌចន្លោះរង្វង់រួមផ្ចិតពីរ (<span class="mi">\(R &gt; r\)</span>) ៖ <div class="md">\[S = \pi R^2 - \pi r^2 = \pi(R^2 - r^2)\]</div></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ថាសរង្វង់មួយមានអង្កត់ផ្ចិត <span class="mi">\(d = 14\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)។<br/>
+ក. គណនាកាំ និងក្រឡាផ្ទៃនៃថាសរង្វង់នោះ។ ខ. បើគេចោះប្រហោងមូលកាំ <span class="mi">\(r = 3.5\text{ cm}\)</span> ចំកណ្ដាល រកក្រឡាផ្ទៃផ្នែកនៅសល់។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ កាំថាស ៖ <span class="mi">\(R = \dfrac{d}{2} = 7\text{ cm}\)</span>។ ក្រឡាផ្ទៃ ៖ <span class="mi">\(S = \pi R^2 = \dfrac{22}{7} \times 7^2 = 154\text{ cm}^2\)</span>។ ដូចនេះ <span class="mi">\(\boxed{S = 154\text{ cm}^2}\)</span><br/>
+ ផ្ទៃប្រហោង ៖ <span class="mi">\(S_{\text{in}} = \dfrac{22}{7} \times 3.5^2 = 38.5\text{ cm}^2\)</span> នាំឱ្យផ្ទៃនៅសល់ ៖ <span class="mi">\(S' = 154 - 38.5 = 115.5\text{ cm}^2\)</span>។ <span class="mi">\(\boxed{S' = 115.5\text{ cm}^2}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ក្រឡាផ្ទៃថាស</b></header><div class="bx-b">
+<p>១. គណនាក្រឡាផ្ទៃថាសរង្វង់ដែលមានកាំ <span class="mi">\(R = 10\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)។<br/>
+២. ថាសមួយមានក្រឡាផ្ទៃ <span class="mi">\(S = 28.26\text{ cm}^2\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)។ គណនាកាំ និងបរិមាត្រនៃថាសនោះ។</p>
+</div></section>
+<h3 id="u4">ប្រវែងធ្នូ និងបរិមាត្រចម្រៀកថាស</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>មុំផ្ចិត ប្រវែងធ្នូ និងបរិមាត្រចម្រៀកថាស</b></header><div class="bx-b">
+<ul>
+<li><p><strong>មុំផ្ចិត (Central Angle) ៖</strong> ជាមុំដែលមានកំពូលត្រង់ផ្ចិតនៃរង្វង់ (<span class="mi">\(\angle AOB = \alpha^\circ\)</span>)។</p></li>
+<li><p><strong>ប្រវែងធ្នូ (<span class="mi">\(L\)</span>) ៖</strong> ប្រវែងធ្នូសមាមាត្រនឹងមុំផ្ចិតត្រូវគ្នា ៖ <div class="md">\[L = 2\pi R \times \dfrac{\alpha^\circ}{360^\circ} = \dfrac{\pi R \alpha^\circ}{180^\circ}\]</div></p></li>
+<li><p><strong>បរិមាត្រចម្រៀកថាស ៖</strong> ស្មើផលបូកប្រវែងធ្នូ និងកាំទាំងពីរ ៖ <div class="md">\[P_{\text{sector}} = L + 2R = \dfrac{\pi R \alpha^\circ}{180^\circ} + 2R\]</div></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់មួយមានកាំ <span class="mi">\(R = 12\text{ cm}\)</span> និងមុំផ្ចិត <span class="mi">\(\alpha = 60^\circ\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)។<br/>
+ក. គណនាប្រវែងធ្នូនៃចម្រៀកថាសនេះ។ ខ. គណនាបរិមាត្រសរុបនៃចម្រៀកថាសនោះ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ប្រវែងធ្នូ ៖ <span class="mi">\(L = 2\pi R \times \dfrac{\alpha^\circ}{360^\circ} = 2 \times 3.14 \times 12 \times \dfrac{60^\circ}{360^\circ} = 12.56\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{L = 12.56\text{ cm}}\)</span><br/>
+ បរិមាត្រចម្រៀកថាស ៖ <span class="mi">\(P = L + 2R = 12.56 + 2(12) = 36.56\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{P = 36.56\text{ cm}}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រវែងធ្នូរង្វង់</b></header><div class="bx-b">
+<p>១. រង្វង់កាំ <span class="mi">\(R = 9\text{ cm}\)</span>។ គណនាប្រវែងធ្នូត្រូវនឹងមុំផ្ចិត ៖ ក. <span class="mi">\(\alpha = 90^\circ\)</span> ខ. <span class="mi">\(\alpha = 120^\circ\)</span>។<br/>
+២. ធ្នូមួយមានប្រវែង <span class="mi">\(L = 6.28\text{ cm}\)</span> ត្រូវនឹងមុំផ្ចិត <span class="mi">\(45^\circ\)</span>។ រកកាំ <span class="mi">\(R\)</span> នៃរង្វង់ (យក <span class="mi">\(\pi \approx 3.14\)</span>)។</p>
+</div></section>
+<h3 id="u5">ក្រឡាផ្ទៃចម្រៀកថាស និងរូបផ្គុំ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ក្រឡាផ្ទៃចម្រៀកថាស និងរូបធរណីមាត្រផ្គុំ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ក្រឡាផ្ទៃចម្រៀកថាស (Sector Area) ៖</strong> សមាមាត្រនឹងមុំផ្ចិត <span class="mi">\(\alpha^\circ\)</span> ៖ <div class="md">\[S_{\text{sec}} = \pi R^2 \times \dfrac{\alpha^\circ}{360^\circ} = \dfrac{L \times R}{2}\]</div></p></li>
+<li><p><strong>ករណីពិសេស ៖</strong></p>
+<ul>
+<li><p>កន្លះថាស (<span class="mi">\(\alpha = 180^\circ\)</span>) ៖ <span class="mi">\(S = \dfrac{\pi R^2}{2}\)</span> | មួយភាគបួនថាស (<span class="mi">\(\alpha = 90^\circ\)</span>) ៖ <span class="mi">\(S = \dfrac{\pi R^2}{4}\)</span></p></li>
+</ul></li>
+<li><p><strong>ក្រឡាផ្ទៃរូបផ្គុំ ៖</strong> ស្មើផលបូក ឬផលដកនៃក្រឡាផ្ទៃរូបគ្រឹះ (ការ៉េ ចតុកោណកែង ត្រីកោណ ថាស)។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទះឈើរាងការ៉េមួយមានជ្រុង <span class="mi">\(a = 10\text{ cm}\)</span>។ គេចោះកាត់ថាសរង្វង់ធំបំផុតចេញពីការ៉េនោះ (យក <span class="mi">\(\pi \approx 3.14\)</span>)។<br/>
+ក. គណនាក្រឡាផ្ទៃនៃការ៉េ និងថាសដែលចោះចេញ។ ខ. គណនាក្រឡាផ្ទៃនៃកម្ទេចឈើដែលនៅសល់។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ផ្ទៃការ៉េ ៖ <span class="mi">\(S_{\text{sq}} = 10^2 = 100\text{ cm}^2\)</span>។ ថាសចារឹកក្នុងមានកាំ <span class="mi">\(R = \dfrac{a}{2} = 5\text{ cm} \implies S_{\text{disk}} = 3.14 \times 5^2 = 78.5\text{ cm}^2\)</span>។<br/>
+ ផ្ទៃនៅសល់ ៖ <span class="mi">\(S_{\text{rem}} = 100 - 78.5 = 21.5\text{ cm}^2\)</span>។ ដូចនេះ <span class="mi">\(\boxed{S_{\text{rem}} = 21.5\text{ cm}^2}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ចម្រៀកថាស និងរូបផ្គុំ</b></header><div class="bx-b">
+<p>១. ចម្រៀកថាសមួយមានកាំ <span class="mi">\(R = 6\text{ cm}\)</span> និងមុំផ្ចិត <span class="mi">\(\alpha = 60^\circ\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)។ គណនាក្រឡាផ្ទៃ។<br/>
+២. បង្អួចមួយមានរាងចតុកោណកែងទំហំ <span class="mi">\(1\text{ m} \times 1.5\text{ m}\)</span> លើដោយកន្លះថាសរង្វង់កាំ <span class="mi">\(0.5\text{ m}\)</span>។ គណនាផ្ទៃសរុប។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>គេឱ្យរង្វង់ <span class="mi">\(\mathcal{C}(O, R)\)</span> ដែលមានអង្កត់ផ្ចិត <span class="mi">\(d = 16\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងកាំ <span class="mi">\(R\)</span> នៃរង្វង់នេះ</p></li>
+<li><p>រកប្រវែងអង្កត់ធ្នូដែលវែងជាងគេក្នុងរង្វង់នេះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កាំរង្វង់ ៖ <span class="mi">\(R = \frac{d}{2} = \frac{16}{2} = 8\text{ cm}\)</span></p></li>
+<li><p>អង្កត់ធ្នូវែងជាងគេគឺអង្កត់ផ្ចិត ៖ <span class="mi">\(d = 16\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់មួយមានផ្ចិត <span class="mi">\(O\)</span> និងកាំ <span class="mi">\(R = 5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>ចំណុច <span class="mi">\(A\)</span> មាន <span class="mi">\(OA = 4.8\text{ cm}\)</span> តើ <span class="mi">\(A\)</span> នៅឯណា?</p></li>
+<li><p>ចំណុច <span class="mi">\(B\)</span> មាន <span class="mi">\(OB = 5.2\text{ cm}\)</span> តើ <span class="mi">\(B\)</span> នៅឯណា?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រង្វង់កាំ <span class="mi">\(R = 5\text{ cm}\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(OA = 4.8\text{ cm} &lt; R \Rightarrow A\)</span> នៅខាងក្នុងរង្វង់។</p></li>
+<li><p><span class="mi">\(OB = 5.2\text{ cm} &gt; R \Rightarrow B\)</span> នៅខាងក្រៅរង្វង់។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>សង់រង្វង់មួយដោយប្រើដែកឈាន ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់រង្វង់ <span class="mi">\(\mathcal{C}(O, 3\text{ cm})\)</span> រួចគូសអង្កត់ផ្ចិត <span class="mi">\(AB\)</span></p></li>
+<li><p>គូសអង្កត់ធ្នូ <span class="mi">\(CD = 4\text{ cm}\)</span> មិនកាត់តាមផ្ចិត <span class="mi">\(O\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បើកដែកឈានកាំ <span class="mi">\(3\text{ cm}\)</span> គូសរង្វង់ផ្ចិត <span class="mi">\(O\)</span>។ គូសបន្ទាត់កាត់តាម <span class="mi">\(O\)</span> កាត់រង្វង់ត្រង់ <span class="mi">\(A, B\)</span> បានអង្កត់ផ្ចិត <span class="mi">\(AB\)</span>។</p></li>
+<li><p>ដៅ <span class="mi">\(C\)</span> លើរង្វង់ យកដែកឈានកាំ <span class="mi">\(4\text{ cm}\)</span> កាត់រង្វង់ត្រង់ <span class="mi">\(D\)</span>។ ភ្ជាប់ <span class="mi">\(CD\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>បន្ទាត់ <span class="mi">\((d)\)</span> ប៉ះរង្វង់ <span class="mi">\(\mathcal{C}(O, 4\text{ cm})\)</span> ត្រង់ចំណុច <span class="mi">\(H\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បញ្ជាក់រង្វាស់មុំរវាង <span class="mi">\((d)\)</span> និងកាំ <span class="mi">\(OH\)</span></p></li>
+<li><p>រកចម្ងាយពីផ្ចិត <span class="mi">\(O\)</span> ទៅកាន់បន្ទាត់ <span class="mi">\((d)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បន្ទាត់ប៉ះកែងនឹងកាំត្រង់ចំណុចប៉ះ នាំឱ្យមុំស្មើ <span class="mi">\(90^\circ\)</span>។</p></li>
+<li><p>ចម្ងាយពី <span class="mi">\(O\)</span> ទៅ <span class="mi">\((d)\)</span> ស្មើនឹងកាំ <span class="mi">\(OH = 4\text{ cm}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់ផ្ចិត <span class="mi">\(O\)</span> និងអង្កត់ធ្នូ <span class="mi">\(AB\)</span> មិនកាត់តាមផ្ចិត ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថា <span class="mi">\(\triangle OAB\)</span> ជាត្រីកោណសមបាត</p></li>
+<li><p>បើ <span class="mi">\(M\)</span> ជាចំណុចកណ្ដាល <span class="mi">\(AB\)</span> បង្ហាញថា <span class="mi">\(OM \perp AB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(OA = OB = R\)</span> នាំឱ្យ <span class="mi">\(\triangle OAB\)</span> ជាត្រីកោណសមបាតកំពូល <span class="mi">\(O\)</span>។</p></li>
+<li><p>មេដ្យាន <span class="mi">\(OM\)</span> ចេញពីកំពូលនៃត្រីកោណសមបាតជាកម្ពស់ នាំឱ្យ <span class="mi">\(OM \perp AB\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>រង្វង់ពីរប៉ះគ្នាក្រៅមានកាំ <span class="mi">\(R_1 = 6\text{ cm}\)</span> និង <span class="mi">\(R_2 = 4\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចម្ងាយរវាងផ្ចិតទាំងពីរ <span class="mi">\(O_1O_2\)</span></p></li>
+<li><p>រកចម្ងាយ <span class="mi">\(O_1O_2\)</span> បើរង្វង់ទាំងពីរប៉ះគ្នាក្នុង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ប៉ះក្រៅ ៖ <span class="mi">\(O_1O_2 = R_1 + R_2 = 6 + 4 = 10\text{ cm}\)</span></p></li>
+<li><p>ប៉ះក្នុង ៖ <span class="mi">\(O_1O_2 = R_1 - R_2 = 6 - 4 = 2\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេមានបន្ទះក្រដាសរាងថាសមូលមួយដែលមិនស្គាល់ផ្ចិត ៖</p>
+<ol class="list olka cols2">
+<li><p>ពណ៌នាពីរបៀបបត់ក្រដាសដើម្បីរកអង្កត់ផ្ចិត</p></li>
+<li><p>ពណ៌នាពីរបៀបកំណត់ចំណុចផ្ចិតតាមផ្នត់បត់ពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បត់ក្រដាសជាពីរឱ្យគែមត្រួតស៊ីគ្នានោះបានផ្នត់បត់ជាអង្កត់ផ្ចិត។</p></li>
+<li><p>បត់ម្ដងទៀតតាមទិសផ្សេង នោះចំណុចប្រសព្វនៃផ្នត់បត់ទាំងពីរជាផ្ចិតនៃរង្វង់។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ក្នុងរង្វង់មួយមានអង្កត់ផ្ចិត <span class="mi">\(AB = 10\text{ cm}\)</span> និងចំណុច <span class="mi">\(C\)</span> លើរង្វង់ ៖</p>
+<ol class="list olka cols2">
+<li><p>បញ្ជាក់ប្រភេទនៃត្រីកោណ <span class="mi">\(ABC\)</span></p></li>
+<li><p>បើ <span class="mi">\(AC = 6\text{ cm}\)</span> គណនាប្រវែងជ្រុង <span class="mi">\(BC\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ត្រីកោណ <span class="mi">\(ABC\)</span> ចារឹកក្នុងកន្លះរង្វង់ នាំឱ្យជាត្រីកោណកែងត្រង់ <span class="mi">\(C\)</span>។</p></li>
+<li><p>តាមពីតាករ ៖<br/>
+<span class="mi">\(BC = \sqrt{10^2 - 6^2} = \sqrt{64} = 8\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់ផ្ចិត <span class="mi">\(O\)</span> កាំ <span class="mi">\(R = 8\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើអង្កត់ធ្នូមួយអាចមានប្រវែង <span class="mi">\(18\text{ cm}\)</span> បានទេ? ព្រោះអ្វី?</p></li>
+<li><p>រកប្រវែងអតិបរមានៃអង្កត់ធ្នូក្នុងរង្វង់នេះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មិនអាចទេ ព្រោះអង្កត់ធ្នូវែងបំផុតគឺអង្កត់ផ្ចិត <span class="mi">\(d = 2(8) = 16\text{ cm} &lt; 18\text{ cm}\)</span>។</p></li>
+<li><p>ប្រវែងអតិបរមាគឺ <span class="mi">\(16\text{ cm}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>លើរង្វង់មួយ គេកំណត់ចំណុចពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>ប្រាប់ឈ្មោះធ្នូទាំងពីរដែលកំណត់ដោយ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span></p></li>
+<li><p>តើធ្នូទាំងពីរស្មើគ្នាពេលណា?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ធ្នូទាំងពីរ ៖ ធ្នូតូច <span class="mi">\(AB\)</span> និងធ្នូធំ <span class="mi">\(AB\)</span>។</p></li>
+<li><p>ធ្នូទាំងពីរស្មើគ្នា (ស្មើកន្លះរង្វង់ <span class="mi">\(180^\circ\)</span>) នៅពេល <span class="mi">\([AB]\)</span> ជាអង្កត់ផ្ចិត។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គណនាបរិមាត្ររង្វង់ (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>កាំ <span class="mi">\(R = 15\text{ cm}\)</span></p></li>
+<li><p>កាំ <span class="mi">\(R = 2.5\text{ m}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បរិមាត្ររង្វង់ (<span class="mi">\(P = 2\pi R\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P = 2 \times 3.14 \times 15 = 94.2\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(P = 2 \times 3.14 \times 2.5 = 15.7\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គណនាបរិមាត្ររង្វង់ (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>អង្កត់ផ្ចិត <span class="mi">\(d = 21\text{ cm}\)</span></p></li>
+<li><p>អង្កត់ផ្ចិត <span class="mi">\(d = 28\text{ m}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បរិមាត្ររង្វង់ (<span class="mi">\(P = \pi d\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P = \frac{22}{7} \times 21 = 66\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(P = \frac{22}{7} \times 28 = 88\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>រង្វង់មួយមានបរិមាត្រ <span class="mi">\(P = 50.24\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងកាំ <span class="mi">\(R\)</span> នៃរង្វង់</p></li>
+<li><p>គណនាប្រវែងអង្កត់ផ្ចិត <span class="mi">\(d\)</span> នៃរង្វង់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កាំ ៖ <span class="mi">\(R = \frac{50.24}{2 \times 3.14} = 8\text{ cm}\)</span></p></li>
+<li><p>អង្កត់ផ្ចិត ៖ <span class="mi">\(d = 2 \times 8 = 16\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>កង់រថយន្តមួយមានអង្កត់ផ្ចិត <span class="mi">\(70\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាបរិមាត្រនៃកង់រថយន្តនោះ</p></li>
+<li><p>បើកង់វិលបាន <span class="mi">\(1000\)</span> ជុំ រកចម្ងាយបរបានគិតជា <span class="mi">\(\text{km}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បរិមាត្រកង់ ៖ <span class="mi">\(P = \frac{22}{7} \times 70 = 220\text{ cm} = 2.2\text{ m}\)</span></p></li>
+<li><p>ចម្ងាយ ១០០០ ជុំ ៖<br/>
+<span class="mi">\(1000 \times 2.2 = 2200\text{ m} = 2.2\text{ km}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>អាងចិញ្ចឹមត្រីមូលមួយមានប្រវែងមាត់អាងជុំវិញ <span class="mi">\(18.84\text{ m}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាកាំនៃអាងទឹកនោះ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>គណនាអង្កត់ផ្ចិតនៃអាងទឹកនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កាំ ៖ <span class="mi">\(R = \frac{18.84}{2 \times 3.14} = 3\text{ m}\)</span></p></li>
+<li><p>អង្កត់ផ្ចិត ៖ <span class="mi">\(d = 2 \times 3 = 6\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>កង់ម៉ូតូមួយមានកាំ <span class="mi">\(R = 30\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាបរិមាត្រកង់ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>តើកង់ត្រូវវិលប៉ុន្មានជុំដើម្បីបរបានចម្ងាយ <span class="mi">\(1.884\text{ km}\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បរិមាត្រកង់ ៖ <span class="mi">\(P = 2 \times 3.14 \times 30 = 188.4\text{ cm} = 1.884\text{ m}\)</span></p></li>
+<li><p>ចំនួនជុំ ៖ <span class="mi">\(\frac{1884\text{ m}}{1.884\text{ m}} = 1000\)</span> ជុំ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គណនាបរិមាត្រនៃកន្លះរង្វង់ (រួមទាំងអង្កត់ផ្ចិត) ៖</p>
+<ol class="list olka cols2">
+<li><p>កាំ <span class="mi">\(R = 7\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)</p></li>
+<li><p>អង្កត់ផ្ចិត <span class="mi">\(d = 10\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បរិមាត្រកន្លះរង្វង់ (<span class="mi">\(P = \pi R + 2R\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(P = \frac{22}{7} \times 7 + 14 = 22 + 14 = 36\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(P = \frac{3.14 \times 10}{2} + 10 = 15.7 + 10 = 25.7\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេមានរង្វង់ពីរ ៖ រង្វង់ទី ១ មានកាំ <span class="mi">\(4\text{ cm}\)</span> រង្វង់ទី ២ មានកាំ <span class="mi">\(8\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាបរិមាត្រនៃរង្វង់នីមួយៗ</p></li>
+<li><p>រកផលធៀបនៃបរិមាត្ររង្វង់ទាំងពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P_1 = 2\pi(4) = 8\pi\text{ cm}\)</span>, <span class="mi">\(P_2 = 2\pi(8) = 16\pi\text{ cm}\)</span></p></li>
+<li><p>ផលធៀប ៖ <span class="mi">\(\frac{P_1}{P_2} = \frac{8\pi}{16\pi} = \frac{1}{2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>ដើមឈើធំមួយដើមមានរាងមូល បុរសម្នាក់យកខ្សែវាស់ជុំវិញដើមបានប្រវែង <span class="mi">\(2.2\text{ m}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាកាំនៃដើមឈើនោះ (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)</p></li>
+<li><p>គណនាអង្កត់ផ្ចិតនៃដើមឈើនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កាំ ៖ <span class="mi">\(R = \frac{2.2}{2 \times \frac{22}{7}} = 0.35\text{ m} = 35\text{ cm}\)</span></p></li>
+<li><p>អង្កត់ផ្ចិត ៖ <span class="mi">\(d = 2 \times 0.35 = 0.7\text{ m} = 70\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ផ្លូវរត់ប្រណាំងមួយជុំមានរាងជារង្វង់កាំ <span class="mi">\(50\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងផ្លូវរត់មួយជុំ</p></li>
+<li><p>កីឡាករម្នាក់រត់បាន ៥ ជុំ គណនាចម្ងាយសរុប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>១ ជុំ ៖ <span class="mi">\(P = 2 \times 3.14 \times 50 = 314\text{ m}\)</span></p></li>
+<li><p>៥ ជុំ ៖ <span class="mi">\(5 \times 314 = 1570\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>គណនាក្រឡាផ្ទៃថាសរង្វង់ (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>កាំ <span class="mi">\(R = 6\text{ cm}\)</span></p></li>
+<li><p>កាំ <span class="mi">\(R = 20\text{ m}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្រឡាផ្ទៃថាស (<span class="mi">\(S = \pi R^2\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(S = 3.14 \times 6^2 = 113.04\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S = 3.14 \times 20^2 = 1256\text{ m}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គណនាក្រឡាផ្ទៃថាសរង្វង់ (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>អង្កត់ផ្ចិត <span class="mi">\(d = 14\text{ cm}\)</span></p></li>
+<li><p>អង្កត់ផ្ចិត <span class="mi">\(d = 42\text{ m}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក្រឡាផ្ទៃថាស (<span class="mi">\(S = \pi R^2\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(R = 7\text{ cm} \Rightarrow S = \frac{22}{7} \times 7^2 = 154\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(R = 21\text{ m} \Rightarrow S = \frac{22}{7} \times 21^2 = 1386\text{ m}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ថាសរង្វង់មួយមានក្រឡាផ្ទៃ <span class="mi">\(S = 78.5\text{ cm}^2\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាកាំ <span class="mi">\(R\)</span> នៃថាសរង្វង់</p></li>
+<li><p>គណនាបរិមាត្រនៃរង្វង់ព្រំប្រទល់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R^2 = \frac{78.5}{3.14} = 25 \Rightarrow R = 5\text{ cm}\)</span></p></li>
+<li><p>បរិមាត្រ ៖ <span class="mi">\(P = 2 \times 3.14 \times 5 = 31.4\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>កងរង្វង់មួយមានកាំក្រៅ <span class="mi">\(R = 8\text{ cm}\)</span> និងកាំក្នុង <span class="mi">\(r = 6\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃនៃថាសក្រៅ និងថាសក្នុង</p></li>
+<li><p>គណនាក្រឡាផ្ទៃកងរង្វង់ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_{\text{out}} = 3.14 \times 64 = 200.96\text{ cm}^2\)</span><br/>
+<span class="mi">\(S_{\text{in}} = 3.14 \times 36 = 113.04\text{ cm}^2\)</span></p></li>
+<li><p>ផ្ទៃកង ៖ <span class="mi">\(200.96 - 113.04 = 87.92\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>តុបាយមូលមួយមានអង្កត់ផ្ចិត <span class="mi">\(1.2\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃមុខតុគិតជា <span class="mi">\(\text{m}^2\)</span></p></li>
+<li><p>បើថ្លៃវ៉ារនីស <span class="mi">\(15\$\text{/m}^2\)</span> រកប្រាក់ចំណាយ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R = 0.6\text{ m} \Rightarrow S = 3.14 \times 0.6^2 = 1.1304\text{ m}^2\)</span></p></li>
+<li><p>ប្រាក់ចំណាយ ៖ <span class="mi">\(1.1304 \times 15 = 16.96\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ថាសមូលពីរមានកាំ <span class="mi">\(R_1 = 3\text{ cm}\)</span> និង <span class="mi">\(R_2 = 6\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃនៃថាសនីមួយៗ</p></li>
+<li><p>រកផលធៀបនៃក្រឡាផ្ទៃថាសទាំងពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_1 = 9\pi\text{ cm}^2\)</span> និង <span class="mi">\(S_2 = 36\pi\text{ cm}^2\)</span></p></li>
+<li><p>ផលធៀប ៖ <span class="mi">\(\frac{S_1}{S_2} = \frac{9\pi}{36\pi} = \frac{1}{4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ដីសួនផ្ការាងកន្លះថាសមួយមានអង្កត់ផ្ចិត <span class="mi">\(14\text{ m}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃនៃសួនផ្កានោះ</p></li>
+<li><p>គណនាបរិមាត្រសរុបនៃសួនផ្កានោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្ទៃ ៖ <span class="mi">\(S = \frac{1}{2} \times \frac{22}{7} \times 7^2 = 77\text{ m}^2\)</span></p></li>
+<li><p>បរិមាត្រ ៖ <span class="mi">\(P = \frac{22}{7} \times 7 + 14 = 36\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គេមានការ៉េមួយជ្រុង <span class="mi">\(10\text{ cm}\)</span> និងថាសកាំ <span class="mi">\(5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃរូបទាំងពីរ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>ប្រៀបធៀបក្រឡាផ្ទៃរូបទាំងពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_{\text{ការ៉េ}} = 10^2 = 100\text{ cm}^2\)</span><br/>
+<span class="mi">\(S_{\text{ថាស}} = 3.14 \times 5^2 = 78.5\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S_{\text{ការ៉េ}} &gt; S_{\text{ថាស}}\)</span> (ធំជាង <span class="mi">\(21.5\text{ cm}^2\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>កងរង្វង់មួយមានផ្ទៃ <span class="mi">\(S = 66\text{ cm}^2\)</span> និងកាំក្នុង <span class="mi">\(r = 4\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរសមីការរកកាំក្រៅ <span class="mi">\(R\)</span></p></li>
+<li><p>គណនាប្រវែងកាំក្រៅ <span class="mi">\(R\)</span> នោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សមីការ ៖ <span class="mi">\(\frac{22}{7}(R^2 - 16) = 66\)</span></p></li>
+<li><p><span class="mi">\(R^2 - 16 = 21 \Rightarrow R = \sqrt{37} \approx 6.08\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ស្រះទឹកមូលមួយមានកាំ <span class="mi">\(10\text{ m}\)</span>។ គេធ្វើផ្លូវដើរទទឹង <span class="mi">\(2\text{ m}\)</span> ព័ទ្ធជុំវិញ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកាំក្រៅនៃផ្លូវដើរព័ទ្ធជុំវិញស្រះ</p></li>
+<li><p>គណនាក្រឡាផ្ទៃនៃផ្លូវដើរនោះ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កាំក្រៅ ៖ <span class="mi">\(R = 10 + 2 = 12\text{ m}\)</span></p></li>
+<li><p>ផ្ទៃផ្លូវ ៖<br/>
+<span class="mi">\(S = 3.14 \times (144 - 100) = 138.16\text{ m}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>រង្វង់មួយមានកាំ <span class="mi">\(R = 18\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងធ្នូត្រូវនឹងមុំផ្ចិត <span class="mi">\(\alpha = 40^\circ\)</span></p></li>
+<li><p>គណនាប្រវែងធ្នូត្រូវនឹងមុំផ្ចិត <span class="mi">\(\alpha = 100^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រវែងធ្នូ (<span class="mi">\(L = \frac{\pi R \alpha}{180}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(L_1 = \frac{3.14 \times 18 \times 40}{180} = 12.56\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(L_2 = \frac{3.14 \times 18 \times 100}{180} = 31.4\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>ធ្នូមួយមានប្រវែង <span class="mi">\(L = 15.7\text{ cm}\)</span> ត្រូវនឹងមុំផ្ចិត <span class="mi">\(\alpha = 90^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាបរិមាត្ររង្វង់ទាំងមូល</p></li>
+<li><p>គណនាកាំ <span class="mi">\(R\)</span> នៃរង្វង់នោះ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\alpha = 90^\circ \Rightarrow\)</span> បរិមាត្ររង្វង់ ៖<br/>
+<span class="mi">\(P = 4 \times 15.7 = 62.8\text{ cm}\)</span></p></li>
+<li><p>កាំ ៖ <span class="mi">\(R = \frac{62.8}{2 \times 3.14} = 10\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>ចម្រៀកថាសមួយមានកាំ <span class="mi">\(R = 14\text{ cm}\)</span> និងមុំផ្ចិត <span class="mi">\(45^\circ\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងធ្នូនៃចម្រៀកថាស</p></li>
+<li><p>គណនាបរិមាត្រនៃចម្រៀកថាសនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ធ្នូ ៖ <span class="mi">\(L = \frac{\frac{22}{7} \times 14 \times 45}{180} = 11\text{ cm}\)</span></p></li>
+<li><p>បរិមាត្រចម្រៀក ៖ <span class="mi">\(11 + 2(14) = 39\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>ក្នុងរង្វង់កាំ <span class="mi">\(R = 10\text{ cm}\)</span> ធ្នូមួយមានប្រវែងស្មើកាំ <span class="mi">\(R\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរសមីការរកមុំផ្ចិត <span class="mi">\(\alpha^\circ\)</span></p></li>
+<li><p>គណនារង្វាស់មុំផ្ចិត <span class="mi">\(\alpha\)</span> គិតជាដឺក្រេ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សមីការ ៖ <span class="mi">\(\frac{\pi R \alpha}{180} = R \Rightarrow \frac{\pi \alpha}{180} = 1\)</span></p></li>
+<li><p><span class="mi">\(\alpha = \frac{180^\circ}{\pi} \approx 57.3^\circ\)</span> (១ រ៉ាដ្យង់)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ចម្រៀកថាសមួយមានបរិមាត្រ <span class="mi">\(P = 26\text{ cm}\)</span> និងកាំ <span class="mi">\(R = 7\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងធ្នូនៃចម្រៀកថាស</p></li>
+<li><p>រកមុំផ្ចិត <span class="mi">\(\alpha^\circ\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ប្រវែងធ្នូ ៖ <span class="mi">\(L = 26 - 2(7) = 12\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(12 = \frac{22\alpha}{180} \Rightarrow \alpha \approx 98.18^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>ត្រីកោណសម័ង្ស <span class="mi">\(ABC\)</span> ចារឹកក្នុងរង្វង់ផ្ចិត <span class="mi">\(O\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំផ្ចិត <span class="mi">\(\angle AOB\)</span></p></li>
+<li><p>បើកាំ <span class="mi">\(R = 6\text{ cm}\)</span> គណនាប្រវែងធ្នូតូច <span class="mi">\(AB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\angle AOB = \frac{360^\circ}{3} = 120^\circ\)</span></p></li>
+<li><p><span class="mi">\(L = \frac{2 \times 3.14 \times 6}{3} = 12.56\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>ចតុកោណកែងមួយចារឹកក្នុងរង្វង់កាំ <span class="mi">\(R = 10\text{ cm}\)</span> មានអង្កត់ទ្រូងកាត់គ្នាត្រង់ <span class="mi">\(O\)</span> ដោយបង្កើតមុំ <span class="mi">\(60^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងធ្នូតូចត្រូវនឹងមុំ <span class="mi">\(60^\circ\)</span></p></li>
+<li><p>គណនាប្រវែងធ្នូធំត្រូវគ្នានឹងធ្នូនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ធ្នូតូច (<span class="mi">\(60^\circ\)</span>) ៖<br/>
+<span class="mi">\(L = \frac{2 \times 3.14 \times 10 \times 60}{360} \approx 10.47\text{ cm}\)</span></p></li>
+<li><p>ធ្នូធំ (<span class="mi">\(300^\circ\)</span>) ៖ <span class="mi">\(5 \times 10.47 \approx 52.33\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ទ្រនិចនាឡិកាវែងមានប្រវែង <span class="mi">\(12\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកមុំដែលទ្រនិចវិលបានក្នុងរយៈពេល ២០ នាទី</p></li>
+<li><p>គណនាចម្ងាយដែលចុងទ្រនិចចរបាន (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>២០ នាទី ៖ <span class="mi">\(\alpha = \frac{20}{60} \times 360^\circ = 120^\circ\)</span></p></li>
+<li><p>ចម្ងាយ ៖<br/>
+<span class="mi">\(L = \frac{2 \times 3.14 \times 12 \times 120}{360} = 25.12\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>រង្វង់មួយមានកាំ <span class="mi">\(R = 21\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែងធ្នូត្រូវនឹងមុំ <span class="mi">\(\alpha = 120^\circ\)</span></p></li>
+<li><p>គណនាបរិមាត្រចម្រៀកថាសត្រូវគ្នានោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ធ្នូ ៖ <span class="mi">\(L = \frac{\frac{22}{7} \times 21 \times 120}{180} = 44\text{ cm}\)</span></p></li>
+<li><p>បរិមាត្រចម្រៀក ៖ <span class="mi">\(44 + 2(21) = 86\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ធ្នូពីរនៃរង្វង់តែមួយមានមុំផ្ចិត <span class="mi">\(30^\circ\)</span> និង <span class="mi">\(90^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកផលធៀបនៃប្រវែងធ្នូទាំងពីរ</p></li>
+<li><p>បើធ្នូតូចមានប្រវែង <span class="mi">\(5\text{ cm}\)</span> រកប្រវែងធ្នូធំ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផលធៀប ៖ <span class="mi">\(\frac{L_1}{L_2} = \frac{30^\circ}{90^\circ} = \frac{1}{3}\)</span></p></li>
+<li><p>ប្រវែងធ្នូធំ ៖ <span class="mi">\(L_2 = 3 \times 5 = 15\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>គណនាក្រឡាផ្ទៃចម្រៀកថាស (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>កាំ <span class="mi">\(R = 10\text{ cm}\)</span> និងមុំ <span class="mi">\(\alpha = 36^\circ\)</span></p></li>
+<li><p>កាំ <span class="mi">\(R = 12\text{ cm}\)</span> និងមុំ <span class="mi">\(\alpha = 90^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៃចម្រៀកថាស (<span class="mi">\(S = \frac{\pi R^2 \alpha}{360}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(S = \frac{3.14 \times 100 \times 36}{360} = 31.4\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S = \frac{3.14 \times 144 \times 90}{360} = 113.04\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>គណនាក្រឡាផ្ទៃចម្រៀកថាស (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>កាំ <span class="mi">\(R = 14\text{ cm}\)</span> និងមុំ <span class="mi">\(\alpha = 60^\circ\)</span></p></li>
+<li><p>កាំ <span class="mi">\(R = 7\text{ cm}\)</span> និងមុំ <span class="mi">\(\alpha = 120^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៃចម្រៀកថាស ៖</p>
+<ul>
+<li><p><span class="mi">\(S = \frac{\frac{22}{7} \times 196 \times 60}{360} \approx 102.67\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S = \frac{\frac{22}{7} \times 49 \times 120}{360} \approx 51.33\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ចម្រៀកថាសមួយមានកាំ <span class="mi">\(R = 8\text{ cm}\)</span> និងប្រវែងធ្នូ <span class="mi">\(L = 10\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃតាមរូបមន្ត <span class="mi">\(S = \frac{LR}{2}\)</span></p></li>
+<li><p>គណនាមុំផ្ចិត <span class="mi">\(\alpha^\circ\)</span> នៃចម្រៀកថាសនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្ទៃ ៖ <span class="mi">\(S = \frac{LR}{2} = \frac{10 \times 8}{2} = 40\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(\alpha = \frac{10 \times 180}{3.14 \times 8} \approx 71.66^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>កម្រាលឥដ្ឋការ៉ូការ៉េមួយជ្រុង <span class="mi">\(20\text{ cm}\)</span> មានចារឹកថាសមូលមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃថាសមូលនោះ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>គណនាក្រឡាផ្ទៃផ្នែក ៤ ជ្រុងដែលនៅសល់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R = 10\text{ cm} \Rightarrow S_{\text{ថាស}} = 3.14 \times 100 = 314\text{ cm}^2\)</span></p></li>
+<li><p>ផ្ទៃនៅសល់ ៖ <span class="mi">\(20^2 - 314 = 86\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ចម្រៀកថាសមួយមានផ្ទៃ <span class="mi">\(S = 25.12\text{ cm}^2\)</span> និងមុំ <span class="mi">\(\alpha = 72^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃថាសទាំងមូល (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>គណនាប្រវែងកាំ <span class="mi">\(R\)</span> នៃថាសនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(72^\circ = \frac{360^\circ}{5} \Rightarrow S_{\text{សរុប}} = 5 \times 25.12 = 125.6\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(R = \sqrt{\frac{125.6}{3.14}} = \sqrt{40} \approx 6.32\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>បង្អួចផ្ទះមួយរាងចតុកោណកែងទំហំ <span class="mi">\(1.2\text{ m} \times 1.6\text{ m}\)</span> លើដោយកន្លះថាសរង្វង់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាកាំ និងផ្ទៃកន្លះថាស (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>គណនាក្រឡាផ្ទៃសរុបនៃបង្អួចនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R = 0.6\text{ m} \Rightarrow S_{\text{កន្លះថាស}} = \frac{3.14 \times 0.36}{2} = 0.5652\text{ m}^2\)</span></p></li>
+<li><p>ផ្ទៃសរុប ៖ <span class="mi">\(1.2 \times 1.6 + 0.5652 = 2.4852\text{ m}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ក្នុងថាសកាំ <span class="mi">\(R = 6\text{ cm}\)</span> ចម្រៀកថាសមុំ <span class="mi">\(\alpha = 90^\circ\)</span> មានត្រីកោណកែង <span class="mi">\(OAB\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃចម្រៀកថាស និងផ្ទៃ <span class="mi">\(\triangle OAB\)</span></p></li>
+<li><p>គណនាក្រឡាផ្ទៃកំណាត់ថាសតូច (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_{\text{ចម្រៀក}} = \frac{3.14 \times 36}{4} = 28.26\text{ cm}^2\)</span><br/>
+<span class="mi">\(S_{\triangle OAB} = \frac{6 \times 6}{2} = 18\text{ cm}^2\)</span></p></li>
+<li><p>ផ្ទៃកំណាត់ថាស ៖ <span class="mi">\(28.26 - 18 = 10.26\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>ផ្ទាំងរូបភាពរាងចតុកោណកែង <span class="mi">\(30\text{ cm} \times 20\text{ cm}\)</span> មានកាត់ជ្រុងទាំង ៤ ជារង្វង់មួយភាគបួនកាំ <span class="mi">\(5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផលបូកក្រឡាផ្ទៃជ្រុងទាំង ៤ ដែលកាត់ចេញ</p></li>
+<li><p>គណនាក្រឡាផ្ទៃនៃផ្ទាំងរូបភាពដែលនៅសល់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្ទៃជ្រុងកាត់ចេញ ៖ <span class="mi">\(3.14 \times 5^2 = 78.5\text{ cm}^2\)</span></p></li>
+<li><p>ផ្ទៃនៅសល់ ៖ <span class="mi">\(30 \times 20 - 78.5 = 521.5\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ផ្លិតកង្ហារមួយបើកបានមុំ <span class="mi">\(150^\circ\)</span> និងមានប្រវែងកាំ <span class="mi">\(24\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃខ្យល់បក់របស់ផ្លិត (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>គណនាបរិមាត្រនៃរាងផ្លិតនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្ទៃផ្លិត ៖ <span class="mi">\(\frac{3.14 \times 576 \times 150}{360} = 753.6\text{ cm}^2\)</span></p></li>
+<li><p>បរិមាត្រ ៖ <span class="mi">\(62.8 + 2(24) = 110.8\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>ចម្ការមួយរាងចតុកោណកែង <span class="mi">\(40\text{ m} \times 30\text{ m}\)</span> មានស្រះមូលកាំ <span class="mi">\(7\text{ m}\)</span> ចំកណ្ដាល ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផ្ទៃស្រះមូល (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)</p></li>
+<li><p>គណនាផ្ទៃដីចម្ការដែលនៅសល់សម្រាប់ដាំដំណាំ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្ទៃស្រះ ៖ <span class="mi">\(\frac{22}{7} \times 7^2 = 154\text{ m}^2\)</span></p></li>
+<li><p>ផ្ទៃដាំដំណាំ ៖ <span class="mi">\(40 \times 30 - 154 = 1046\text{ m}^2\)</span></p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៧ រង្វង់</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c17">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L16.html"><small>← មេរៀនមុន</small><b>បរិមាត្រ និងក្រឡាផ្ទៃពហុកោណ</b></a><a class="next" href="L18.html"><small>មេរៀនបន្ទាប់ →</small><b>មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រង្វង់ជាខ្សែកោងបិទជិតដែលមានគ្រប់ចំណុចស្ថិតនៅស្មើចម្ងាយពី ៖", "options": ["បន្ទាត់មួយ", "ចំណុចនឹងមួយ (ផ្ចិត)", "កំពូលមួយ", "អង្កត់មួយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "អង្កត់ដែលភ្ជាប់ពីផ្ចិតទៅចំណុចលើរង្វង់ ហៅថា ៖", "options": ["អង្កត់ធ្នូ", "អង្កត់ផ្ចិត", "កាំ", "បន្ទាត់ប៉ះ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ទំនាក់ទំនងរវាងអង្កត់ផ្ចិត <span class=\"mi\">\\(d\\)<\/span> និងកាំ <span class=\"mi\">\\(R\\)<\/span> នៃរង្វង់គឺ ៖", "options": ["<span class=\"mi\">\\(d = R\\)<\/span>", "<span class=\"mi\">\\(d = 2R\\)<\/span>", "<span class=\"mi\">\\(d = \\frac{R}{2}\\)<\/span>", "<span class=\"mi\">\\(d = R^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "អង្កត់ធ្នូដែលវែងជាងគេបំផុតក្នុងរង្វង់ គឺជា ៖", "options": ["កាំ", "បន្ទាត់ប៉ះ", "អង្កត់ផ្ចិត", "ធ្នូ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ដែលមានចំណុចរួមតែមួយជាមួយរង្វង់ ហៅថា ៖", "options": ["ខ្នាត់កាត់", "បន្ទាត់ប៉ះ", "អង្កត់ធ្នូ", "កន្លះបន្ទាត់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ប៉ះនឹងរង្វង់បង្កើតបានមុំជាមួយកាំត្រង់ចំណុចប៉ះស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើកាំនៃរង្វង់ស្មើ <span class=\"mi\">\\(7\\text{ cm}\\)<\/span> នោះអង្កត់ផ្ចិតស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(7\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(14\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(21\\text{ cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុច <span class=\"mi\">\\(M\\)<\/span> ស្ថិតនៅលើរង្វង់ <span class=\"mi\">\\(\\mathcal{C}(O, R)\\)<\/span> លុះត្រាតែ ៖", "options": ["<span class=\"mi\">\\(OM &lt; R\\)<\/span>", "<span class=\"mi\">\\(OM = R\\)<\/span>", "<span class=\"mi\">\\(OM &gt; R\\)<\/span>", "<span class=\"mi\">\\(OM = 2R\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "អង្កត់ផ្ចិតមួយចែករង្វង់ជាពីរផ្នែកស្មើគ្នា ហៅថា ៖", "options": ["កំណាត់រង្វង់", "កន្លះរង្វង់", "ចម្រៀកថាស", "ធ្នូតូច"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួនបន្ទាត់ប៉ះដែលអាចគូសចេញពីចំណុចមួយនៅក្រៅរង្វង់ទៅកាន់រង្វង់គឺ ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "រាប់មិនអស់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បរិមាត្ររង្វង់កាំ <span class=\"mi\">\\(R\\)<\/span> គណនាតាមរូបមន្ត ៖", "options": ["<span class=\"mi\">\\(P = \\pi R\\)<\/span>", "<span class=\"mi\">\\(P = 2\\pi R\\)<\/span>", "<span class=\"mi\">\\(P = \\pi R^2\\)<\/span>", "<span class=\"mi\">\\(P = 2\\pi R^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បរិមាត្ររង្វង់អង្កត់ផ្ចិត <span class=\"mi\">\\(d\\)<\/span> គណនាតាមរូបមន្ត ៖", "options": ["<span class=\"mi\">\\(P = \\pi d\\)<\/span>", "<span class=\"mi\">\\(P = 2\\pi d\\)<\/span>", "<span class=\"mi\">\\(P = \\frac{\\pi d}{2}\\)<\/span>", "<span class=\"mi\">\\(P = \\pi d^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃប្រហាក់ប្រហែលនៃចំនួន <span class=\"mi\">\\(\\pi\\)<\/span> ជាប្រភាគគឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{22}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{22}{7}\\)<\/span>", "<span class=\"mi\">\\(\\frac{7}{22}\\)<\/span>", "<span class=\"mi\">\\(\\frac{31}{10}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រង្វង់មួយមានកាំ <span class=\"mi\">\\(10\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ បរិមាត្រស្មើ ៖", "options": ["<span class=\"mi\">\\(31.4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(62.8\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(314\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(628\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រង្វង់មួយមានអង្កត់ផ្ចិត <span class=\"mi\">\\(14\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx \\frac{22}{7}\\)<\/span>)។ បរិមាត្រស្មើ ៖", "options": ["<span class=\"mi\">\\(22\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(44\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(88\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(154\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រង្វង់មួយមានបរិមាត្រ <span class=\"mi\">\\(31.4\\text{ m}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ កាំរបស់វាស្មើ ៖", "options": ["<span class=\"mi\">\\(5\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(15\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(20\\text{ m}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើកាំនៃរង្វង់កើនឡើង ២ ដង នោះបរិមាត្ររបស់វានឹង ៖", "options": ["កើន ២ ដង", "កើន ៤ ដង", "នៅដដែល", "កើន ៨ ដង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "កង់រទេះមួយមានបរិមាត្រ <span class=\"mi\">\\(2\\text{ m}\\)<\/span>។ បើកង់វិលបាន <span class=\"mi\">\\(50\\)<\/span> ជុំ ចម្ងាយចរបានគឺ ៖", "options": ["<span class=\"mi\">\\(25\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(50\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(200\\text{ m}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បរិមាត្រនៃកន្លះរង្វង់កាំ <span class=\"mi\">\\(R\\)<\/span> (មិនគិតអង្កត់ផ្ចិត) ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\pi R\\)<\/span>", "<span class=\"mi\">\\(2\\pi R\\)<\/span>", "<span class=\"mi\">\\(\\pi R + 2R\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រង្វង់មួយមានបរិមាត្រ <span class=\"mi\">\\(88\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx \\frac{22}{7}\\)<\/span>)។ អង្កត់ផ្ចិតស្មើ ៖", "options": ["<span class=\"mi\">\\(14\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(28\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(44\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(56\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃថាសដែលមានកាំ <span class=\"mi\">\\(R\\)<\/span> គណនាតាមរូបមន្ត ៖", "options": ["<span class=\"mi\">\\(S = 2\\pi R\\)<\/span>", "<span class=\"mi\">\\(S = \\pi R^2\\)<\/span>", "<span class=\"mi\">\\(S = 2\\pi R^2\\)<\/span>", "<span class=\"mi\">\\(S = 4\\pi R^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃថាសតាមអង្កត់ផ្ចិត <span class=\"mi\">\\(d\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(S = \\pi d^2\\)<\/span>", "<span class=\"mi\">\\(S = \\frac{\\pi d^2}{2}\\)<\/span>", "<span class=\"mi\">\\(S = \\frac{\\pi d^2}{4}\\)<\/span>", "<span class=\"mi\">\\(S = 2\\pi d^2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ថាសមួយមានកាំ <span class=\"mi\">\\(R = 7\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx \\frac{22}{7}\\)<\/span>)។ ក្រឡាផ្ទៃស្មើ ៖", "options": ["<span class=\"mi\">\\(44\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(77\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(154\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(308\\text{ cm}^2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ថាសមួយមានកាំ <span class=\"mi\">\\(10\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ ក្រឡាផ្ទៃស្មើ ៖", "options": ["<span class=\"mi\">\\(31.4\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(62.8\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(314\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(628\\text{ cm}^2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើកាំនៃថាសកើនឡើង ២ ដង នោះក្រឡាផ្ទៃរបស់វានឹង ៖", "options": ["កើន ២ ដង", "កើន ៤ ដង", "កើន ៨ ដង", "នៅដដែល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ថាសមួយមានអង្កត់ផ្ចិត <span class=\"mi\">\\(20\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ ក្រឡាផ្ទៃស្មើ ៖", "options": ["<span class=\"mi\">\\(314\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(628\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(1256\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(157\\text{ cm}^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃកងរង្វង់ដែលមានកាំក្រៅ <span class=\"mi\">\\(R\\)<\/span> និងកាំក្នុង <span class=\"mi\">\\(r\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\pi(R - r)\\)<\/span>", "<span class=\"mi\">\\(\\pi(R^2 - r^2)\\)<\/span>", "<span class=\"mi\">\\(\\pi(R + r)^2\\)<\/span>", "<span class=\"mi\">\\(2\\pi(R - r)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ថាសមួយមានក្រឡាផ្ទៃ <span class=\"mi\">\\(314\\text{ cm}^2\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ កាំស្មើ ៖", "options": ["<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(20\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃកន្លះថាសកាំ <span class=\"mi\">\\(R\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\pi R^2\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R^2}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R^2}{4}\\)<\/span>", "<span class=\"mi\">\\(2\\pi R^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "កងរង្វង់មួយមាន <span class=\"mi\">\\(R = 5\\text{ cm}, r = 3\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ ផ្ទៃស្មើ ៖", "options": ["<span class=\"mi\">\\(16\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(8\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(4\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(2\\pi\\text{ cm}^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំផ្ចិតនៃរង្វង់មួយមានកំពូលស្ថិតនៅត្រង់ ៖", "options": ["លើរង្វង់", "ក្រៅរង្វង់", "ផ្ចិតនៃរង្វង់", "លើអង្កត់ធ្នូ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រវែងធ្នូត្រូវនឹងមុំផ្ចិត <span class=\"mi\">\\(\\alpha^\\circ\\)<\/span> នៃរង្វង់កាំ <span class=\"mi\">\\(R\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2\\pi R \\frac{\\alpha}{180^\\circ}\\)<\/span>", "<span class=\"mi\">\\(2\\pi R \\frac{\\alpha}{360^\\circ}\\)<\/span>", "<span class=\"mi\">\\(\\pi R^2 \\frac{\\alpha}{360^\\circ}\\)<\/span>", "<span class=\"mi\">\\(\\pi R \\frac{\\alpha}{360^\\circ}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រវែងធ្នូនៃកន្លះរង្វង់កាំ <span class=\"mi\">\\(R\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\frac{\\pi R}{2}\\)<\/span>", "<span class=\"mi\">\\(\\pi R\\)<\/span>", "<span class=\"mi\">\\(2\\pi R\\)<\/span>", "<span class=\"mi\">\\(4\\pi R\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រវែងធ្នូត្រូវនឹងមុំផ្ចិត <span class=\"mi\">\\(90^\\circ\\)<\/span> នៃរង្វង់កាំ <span class=\"mi\">\\(R\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{\\pi R}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R}{2}\\)<\/span>", "<span class=\"mi\">\\(\\pi R\\)<\/span>", "<span class=\"mi\">\\(2\\pi R\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រង្វង់កាំ <span class=\"mi\">\\(6\\text{ cm}\\)<\/span> មុំផ្ចិត <span class=\"mi\">\\(60^\\circ\\)<\/span>។ ប្រវែងធ្នូស្មើ (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>) ៖", "options": ["<span class=\"mi\">\\(3.14\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6.28\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(9.42\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(12.56\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំផ្ចិតនៃរង្វង់ទាំងមូលមានរង្វាស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ធ្នូមួយមានប្រវែងស្មើនឹងកន្លះបរិមាត្ររង្វង់ នោះមុំផ្ចិតស្មើ ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បរិមាត្រនៃចម្រៀកថាសកាំ <span class=\"mi\">\\(R\\)<\/span> ធ្នូ <span class=\"mi\">\\(L\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(L + R\\)<\/span>", "<span class=\"mi\">\\(L + 2R\\)<\/span>", "<span class=\"mi\">\\(L + \\pi R\\)<\/span>", "<span class=\"mi\">\\(2L + R\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រង្វង់កាំ <span class=\"mi\">\\(R=10\\text{ cm}\\)<\/span> ធ្នូត្រូវនឹងមុំ <span class=\"mi\">\\(36^\\circ\\)<\/span> មានប្រវែង ៖", "options": ["<span class=\"mi\">\\(\\pi\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(2\\pi\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\pi\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\pi\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើមុំផ្ចិតកើនឡើង ២ ដង (កាំថេរ) នោះប្រវែងធ្នូនឹង ៖", "options": ["កើន ២ ដង", "កើន ៤ ដង", "ថយចុះពាក់កណ្ដាល", "នៅដដែល"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃចម្រៀកថាសមុំ <span class=\"mi\">\\(\\alpha^\\circ\\)<\/span> កាំ <span class=\"mi\">\\(R\\)<\/span> គណនាតាមរូបមន្ត ៖", "options": ["<span class=\"mi\">\\(\\pi R^2 \\frac{\\alpha}{180^\\circ}\\)<\/span>", "<span class=\"mi\">\\(\\pi R^2 \\frac{\\alpha}{360^\\circ}\\)<\/span>", "<span class=\"mi\">\\(2\\pi R \\frac{\\alpha}{360^\\circ}\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R^2}{\\alpha}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃមួយភាគបួនថាសកាំ <span class=\"mi\">\\(R\\)<\/span> (<span class=\"mi\">\\(\\alpha = 90^\\circ\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{\\pi R^2}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R^2}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R^2}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\pi R^2}{6}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃចម្រៀកថាសអាចគណនាតាមប្រវែងធ្នូ <span class=\"mi\">\\(L\\)<\/span> និងកាំ <span class=\"mi\">\\(R\\)<\/span> ដោយ ៖", "options": ["<span class=\"mi\">\\(S = L \\times R\\)<\/span>", "<span class=\"mi\">\\(S = \\frac{L \\times R}{2}\\)<\/span>", "<span class=\"mi\">\\(S = 2LR\\)<\/span>", "<span class=\"mi\">\\(S = \\frac{L}{2R}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ថាសកាំ <span class=\"mi\">\\(6\\text{ cm}\\)<\/span> មុំផ្ចិត <span class=\"mi\">\\(60^\\circ\\)<\/span>។ ក្រឡាផ្ទៃចម្រៀកថាសស្មើ ៖", "options": ["<span class=\"mi\">\\(3\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(6\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(12\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(36\\pi\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ការ៉េមួយមានជ្រុង <span class=\"mi\">\\(10\\text{ cm}\\)<\/span>។ ក្រឡាផ្ទៃថាសចារឹកក្នុងការ៉េនោះគឺ (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>) ៖", "options": ["<span class=\"mi\">\\(31.4\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(78.5\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(100\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(314\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃចម្រៀកថាសមុំ <span class=\"mi\">\\(180^\\circ\\)<\/span> ហៅថា ៖", "options": ["កំណាត់ថាស", "កន្លះថាស", "មួយភាគបួនថាស", "កងរង្វង់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ថាសកាំ <span class=\"mi\">\\(R=12\\text{ cm}\\)<\/span> មុំ <span class=\"mi\">\\(\\alpha = 30^\\circ\\)<\/span>។ ផ្ទៃចម្រៀកថាសស្មើ ៖", "options": ["<span class=\"mi\">\\(6\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(12\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(24\\pi\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(144\\pi\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើមុំផ្ចិត និងកាំកើនឡើង ២ ដង នោះក្រឡាផ្ទៃចម្រៀកថាសនឹង ៖", "options": ["កើន ២ ដង", "កើន ៤ ដង", "កើន ៨ ដង", "កើន ១៦ ដង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រឡាផ្ទៃកំណាត់ថាសស្មើនឹង ៖", "options": ["ផ្ទៃចម្រៀកថាស ដក ផ្ទៃត្រីកោណ", "ផ្ទៃចម្រៀកថាស បូក ផ្ទៃត្រីកោណ", "ផ្ទៃថាស ចែក ២", "ផលគុណកាំ និងអង្កត់ធ្នូ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ការ៉េជ្រុង <span class=\"mi\">\\(a=4\\text{ cm}\\)<\/span> មានចារឹកក្រៅរង្វង់។ ផ្ទៃផ្នែកសល់ ៤ ជ្រុងស្មើ ៖", "options": ["<span class=\"mi\">\\(16 - 4\\pi\\)<\/span>", "<span class=\"mi\">\\(16 - 2\\pi\\)<\/span>", "<span class=\"mi\">\\(16 - 8\\pi\\)<\/span>", "<span class=\"mi\">\\(8 - 2\\pi\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

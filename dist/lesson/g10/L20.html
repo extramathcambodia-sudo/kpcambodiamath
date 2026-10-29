@@ -1,0 +1,2278 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២០ : រង្វាស់ទីតាំង — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២០ «រង្វាស់ទីតាំង» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២០ : រង្វាស់ទីតាំង — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២០ «រង្វាស់ទីតាំង» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ២០</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២០</span>
+      <div><span class="ls-kicker">ជំពូកទី ៧ ស្ថិតិ · មេរៀនទី ២០ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>រង្វាស់ទីតាំង</h1><div class="ls-chips"><span class="chip chip-soon">ស្ថិតិ</span><span class="chip chip-soon">៣ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. មធ្យម</a></li><li class="sub"><a href="#u2">២. មេដ្យាន</a></li><li class="sub"><a href="#u3">៣. ម៉ូត</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃរង្វាស់ទីតាំង មធ្យម មេដ្យាន និងម៉ូត</b></header><div class="bx-b">
+<p>ការប្រើប្រាស់មធ្យមនព្វន្ធមានតាំងពីសម័យក្រិកបុរាណ ដោយលោក ពីតាក័រ (Pythagoras) ប៉ុន្តែការប្រើប្រាស់ជាទូទៅក្នុងស្ថិតិត្រូវបានពង្រីកនៅសតវត្សទី១៩។ ចំណែកឯមេដ្យាន និងម៉ូត ត្រូវបានណែនាំឱ្យស្គាល់ច្បាស់លាស់នៅចុងសតវត្សទី១៩ ដោយលោក កាល ភៀរសុន (Karl Pearson) និង ហ្វ្រង់ស៊ីស ហ្គាល់តុង (Francis Galton) ដើម្បីជួយពិពណ៌នាពីទំនោរកណ្តាលនៃទិន្នន័យឲ្យបានកាន់តែច្បាស់លាស់ ពិសេសនៅពេលទិន្នន័យមានតម្លៃរង្វៀងខ្លាំង (Outliers) ដែលធ្វើឲ្យមធ្យមភាគមិនឆ្លុះបញ្ចាំងពីតថភាពពិត។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ?</b></header><div class="bx-b">
+<p>រំលឹកចំណេះដឹងពីថ្នាក់ទី៩៖<br/>
+១. ការគណនាមធ្យមនព្វន្ធនៃចំនួនមួយក្រុម<br/>
+២. ការបូកសរុបប្រេកង់ក្នុងតារាង<br/>
+៣. ការស្វែងរកតម្លៃដែលកើតឡើងច្រើនដងជាងគេ</p>
+</div></section>
+<h3 id="u1">មធ្យម</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេមានតារាងពិន្ទុតេស្តគណិតវិទ្យារបស់សិស្ស 45 នាក់ ដូចខាងក្រោម៖</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td>15</td>
+<td>19</td>
+<td>32</td>
+<td>43</td>
+<td>46</td>
+<td>47</td>
+<td>48</td>
+<td>52</td>
+</tr>
+<tr>
+<td>52</td>
+<td>53</td>
+<td>54</td>
+<td>60</td>
+<td>60</td>
+<td>61</td>
+<td>63</td>
+<td>64</td>
+</tr>
+<tr>
+<td>64</td>
+<td>66</td>
+<td>66</td>
+<td>69</td>
+<td>72</td>
+<td>72</td>
+<td>72</td>
+<td>73</td>
+</tr>
+<tr>
+<td>75</td>
+<td>75</td>
+<td>76</td>
+<td>79</td>
+<td>79</td>
+<td>80</td>
+<td>80</td>
+<td>81</td>
+</tr>
+<tr>
+<td>81</td>
+<td>81</td>
+<td>81</td>
+<td>83</td>
+<td>83</td>
+<td>87</td>
+<td>87</td>
+<td>89</td>
+</tr>
+<tr>
+<td>90</td>
+<td>91</td>
+<td>91</td>
+<td>93</td>
+<td>94</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>តាមតារាងនេះ គេចង់ដឹងថា៖</p>
+<ul>
+<li><p>តើសិស្សច្រើនជាងគេទទួលបានពិន្ទុមួយណា? ពិន្ទុនេះហៅថា <strong>ម៉ូតនៃពិន្ទុតាងដោយ <span class="mi">\(M_o\)</span></strong> ។</p></li>
+<li><p>តើពិន្ទុណាសម្រាប់តំណាងសមត្ថភាពរួមរបស់សិស្ស? ពិន្ទុនេះហៅថា<strong>មធ្យមតាងដោយ <span class="mi">\(\bar{x}\)</span></strong> ។</p></li>
+<li><p>តើគេកំណត់យកត្រង់ពិន្ទុណាដើម្បីចែកសិស្សជាពីរក្រុមដែលមាន <span class="mi">\(50\%\)</span> ជាសិស្សបានពិន្ទុខ្ពស់ និង <span class="mi">\(50\%\)</span> ទៀតជាសិស្សបានពិន្ទុទាប? ពិន្ទុនេះហៅថា <strong>មេដ្យានតាងដោយ <span class="mi">\(M_e\)</span></strong> ។</p></li>
+<li><p>ម៉ូត មធ្យម និងមេដ្យានហៅថា <strong>រង្វាស់ទីតាំង</strong> ។</p></li>
+</ul>
+<h4>មធ្យមនៃទិន្នន័យដែលមិនផ្ដុំជាថ្នាក់</h4>
+<p>តាមតារាងពិន្ទុតេស្តគណិតវិទ្យារបស់សិស្ស 45 នាក់ គេអាចគណនាមធ្យមនៃពិន្ទុ៖ <span class="mi">\(\bar{x} = \frac{15 + 29 + 32 + 43 + ... + 91 + 91 + 93 + 94}{45} = \frac{3089}{45} , \quad{} \bar{x} \approx 68.64\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើទិន្នន័យមានអថេរ <span class="mi">\(x_i\)</span> និងប្រេកង់សរុប <span class="mi">\(N\)</span> នោះមធ្យម <span class="mi">\(\bar{x}\)</span> គឺ<br/>
+<span class="mi">\(\bar{x} = \frac{x_1 + x_2 + ... + x_N}{N}\)</span></p>
+</div></section>
+<h4>មធ្យមនៃទិន្នន័យដែលផ្ដុំជាថ្នាក់</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ដោយពិន្ទុតេស្តគណិតវិទ្យាខាងលើនេះមានច្រើនពេកនោះដើម្បីងាយស្រួលគេផ្ដុំតម្លៃទិន្នន័យជាថ្នាក់ដាក់ក្នុងតារាងបំណែងចែកប្រេកង់ រួចគណនាមធ្យម <span class="mi">\(\bar{x}\)</span> ។ បើគេផ្ដុំតម្លៃពិន្ទុជា 8 ថ្នាក់ ដែលមានប្រវែងចន្លោះថ្នាក់ 10 គេបានតារាងបំណែងចែកប្រេកង់</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ពិន្ទុគណិតវិទ្យា</th>
+<th><span class="mi">\(15-25\)</span></th>
+<th><span class="mi">\(25-35\)</span></th>
+<th><span class="mi">\(35-45\)</span></th>
+<th><span class="mi">\(45-55\)</span></th>
+<th><span class="mi">\(55-65\)</span></th>
+<th><span class="mi">\(65-75\)</span></th>
+<th><span class="mi">\(75-85\)</span></th>
+<th><span class="mi">\(85-95\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនសិស្ស</td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(13\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>ដើម្បីគណនាមធ្យម គេត្រូវរកផ្ចិតនៃថ្នាក់ (ឬចំណុចកណ្ដាលនៃថ្នាក់) : <span class="mi">\(x_1 = \frac{15 + 25}{2} = 20 , \quad{} x_2 = \frac{25 + 35}{2} = 30 , \quad{} x_3 = \frac{35 + 45}{2} = 40 , \quad{} x_4 = \frac{45 + 55}{2} = 50\)</span> <span class="mi">\(x_5 = \frac{55 + 65}{2} = 60 , \quad{} x_6 = \frac{65 + 75}{2} = 70 , \quad{} x_7 = \frac{75 + 85}{2} = 80 , \quad{} x_8 = \frac{85 + 95}{2} = 90\)</span> ។</p>
+<p>គេបាន <span class="mi">\(\bar{x} = \frac{20 \times 1 + 30 \times 2 + 40 \times 1 + 50 \times 7 + 60 \times 6 + 70 \times 7 + 80 \times 13 + 90 \times 8}{1 + 2 + 1 + 7 + 6 + 7 + 13 + 8}\)</span><br/>
+<span class="mi">\(= \frac{3080}{45} \approx 68.44\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើទិន្នន័យផ្ដុំជាថ្នាក់មានប្រេកង់ <span class="mi">\(f_i\)</span> មាន <span class="mi">\(x_i\)</span> ជាផ្ចិតនៃថ្នាក់ ហើយ <span class="mi">\(n\)</span> ជាចំនួនថ្នាក់នោះមធ្យម <span class="mi">\(\bar{x}\)</span> គឺ <span class="mi">\(\bar{x} = \frac{x_1f_1 + x_2f_2 + ... + x_nf_n}{f_1 + f_2 + ... + f_n}\)</span> ។</p>
+</div></section>
+<p>គេសង្កេតឃើញថា មធ្យមរបស់ទិន្នន័យមិនប្រមូលផ្ដុំជាថ្នាក់ មានភាពជាក់លាក់ជាងមធ្យមរបស់ទិន្នន័យប្រមូលផ្ដុំជាថ្នាក់ ប៉ុន្តែវាមានភាពលំបាកក្នុងការគណនា ។</p>
+<p>តារាងបំណែងចែកប្រេកង់នៃប្រាក់ខែរបស់បុគ្គលិកក្រុមហ៊ុនមួយ (គិតជាម៉ឺនរៀល) ។</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ប្រាក់ខែ (គិតជាម៉ឺនរៀល)</th>
+<th><span class="mi">\(20-30\)</span></th>
+<th><span class="mi">\(30-40\)</span></th>
+<th><span class="mi">\(40-50\)</span></th>
+<th><span class="mi">\(50-60\)</span></th>
+<th><span class="mi">\(60-70\)</span></th>
+<th><span class="mi">\(70-80\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនបុគ្គលិក</td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(20\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>ចូររកមធ្យមនៃប្រាក់ខែរបស់បុគ្គលិកក្រុមហ៊ុន ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ចន្លោះថ្នាក់</th>
+<th>ប្រេកង់ <span class="mi">\(f_i\)</span></th>
+<th>ផ្ចិតនៃថ្នាក់ <span class="mi">\(x_i\)</span></th>
+<th><span class="mi">\(x_if_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\(20-30\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(25\)</span></td>
+<td><span class="mi">\(200\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(30-40\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(35\)</span></td>
+<td><span class="mi">\(525\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(40-50\)</span></td>
+<td><span class="mi">\(20\)</span></td>
+<td><span class="mi">\(45\)</span></td>
+<td><span class="mi">\(900\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(50-60\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(55\)</span></td>
+<td><span class="mi">\(550\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(60-70\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(65\)</span></td>
+<td><span class="mi">\(455\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(70-80\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(75\)</span></td>
+<td><span class="mi">\(375\)</span></td>
+</tr>
+<tr>
+<td>សរុប</td>
+<td><span class="mi">\(N=65\)</span></td>
+<td></td>
+<td><span class="mi">\(x_1f_1 + ... + x_6f_6 = 3005\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><span class="mi">\(\bar{x} = \frac{x_1f_1 + x_2f_2 + ... + x_6f_6}{f_1 + f_2 + ... + f_6} = \frac{3005}{65} \Rightarrow \bar{x} \approx 46.23\)</span> ។</p>
+<p>សង្កេត បើទិន្នន័យមានអថេរជាអថេរគុណភាព នោះគេមិនអាចរកមធ្យមបានទេ ព្រោះអថេរគ្មានតម្លៃជាលេខសម្រាប់គណនា ។</p>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>តារាងទិន្នន័យនេះជាល្បឿនរថយន្តចំនួន 40 គ្រឿងដែលបានឆ្លងកាត់តំបន់ប៉ូលិសត្រួតពិនិត្យ (ល្បឿនគិតជា <span class="mi">\(\text{km/h}\)</span>) 105 63 85 93 95 92 100 101 98 109 90 80 82 86 70 76 72 63 67 90 91 95 97 89 85 70 102 90 91 89 84 77 65 118 117 105 95 90 91 89</p>
+<p><strong>ក.</strong>  គណនាមធ្យមនៃទិន្នន័យនេះ ។<br/>
+<strong>ខ.</strong>  ចូរផ្ដុំទិន្នន័យនេះជា 8 ថ្នាក់ ដោយយកតម្លៃគោលក្រោម 62.5 រួចគណនាមធ្យម ។<br/>
+<strong>គ.</strong>  ចូរបង្ហាញថា <span class="mi">\((x_1 - \bar{x})f_1 + \dots + (x_n - \bar{x})f_n = 0\)</span> ដោយប្រើមធ្យម និងទិន្នន័យក្នុងសំណួរទី 2 ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>ក.</strong>  <span class="mi">\(\bar{x} = 88.67\text{ km/h}\)</span> <strong>ខ.</strong>  <span class="mi">\(\bar{x} = 89.45\text{ km/h}\)</span> ។</p></details>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>តារាងបំណែងចែកប្រេកង់នេះជាអាយុរបស់អ្នករស់នៅក្នុងសហគមន៍មួយ ។ ចូររកមធ្យម ។</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>អាយុគិតជាឆ្នាំ</th>
+<th><span class="mi">\(10-20\)</span></th>
+<th><span class="mi">\(20-30\)</span></th>
+<th><span class="mi">\(30-40\)</span></th>
+<th><span class="mi">\(40-50\)</span></th>
+<th><span class="mi">\(50-60\)</span></th>
+<th><span class="mi">\(60-70\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់</td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(23\)</span></td>
+<td><span class="mi">\(17\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<span class="mi">\(\bar{x} = 29\)</span> ឆ្នាំ  ។</p></details>
+</div></section>
+<h3 id="u2">មេដ្យាន</h3>
+<h4>មេដ្យាននៃទិន្នន័យមិនផ្ដុំជាថ្នាក់</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>តាមតារាងពិន្ទុតេស្តគណិតវិទ្យារបស់សិស្ស 45 នាក់</p>
+<p>18 27 33 40 45 48 49 50 52 53 54 56 57 58 59<br/>
+61 62 66 68 69 70 71 72 74 75 76 76 77 78 79<br/>
+80 81 82 82 83 84 84 85 86 88 89 90 91 92 94</p>
+<p>គេឃើញថា ទិន្នន័យនេះរៀបតាមលំដាប់ពីតូចទៅធំរួចហើយ និងមានប្រេកង់សរុប 45 ដែលជាចំនួនសេស ។ តម្លៃដែលនៅកណ្ដាលគេគឺ 72 មានន័យថាមានសិស្ស <span class="mi">\(50\%\)</span> បានពិន្ទុតិចជាង 72 និងសិស្ស <span class="mi">\(50\%\)</span> ទៀតបានពិន្ទុខ្ពស់ជាង 72 ។ 72 ហៅថាមេដ្យាននៃពិន្ទុ ។ គេកំណត់សរសេរ <span class="mi">\(Me = 72\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រកមេដ្យានក្នុងទិន្នន័យខាងក្រោម៖</p>
+<p>18 20 21 21 22 22 23 23 27 27 33 33 34 35 38 38 39 40 40 41<br/>
+43 44 44 45 49 51 51 51 51 52 52 53 54 55 56 58 59 59 59 60</p>
+<p>ទិន្នន័យនេះរៀបតាមលំដាប់រួចហើយ និងមានប្រេកង់សរុប 40 ដែលជាចំនួនគូ ។ គេឃើញថាតម្លៃដែលនៅកណ្ដាលគេមានពីរគឺ 41 និង 43 ។ ដូច្នេះ មេដ្យានគឺ <span class="mi">\(Me = \frac{41 + 43}{2} = 42\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>មេដ្យាននៃទិន្នន័យមួយដែលមានប្រេកង់សរុប <span class="mi">\(N\)</span> គឺជាតម្លៃរបស់អថេរដែលត្រូវនឹងកាត់កណ្ដាលប្រេកង់សរុប មានន័យថាមេដ្យានគឺតួទី <span class="mi">\(\frac{N+1}{2}\)</span> អថេរ <span class="mi">\(X\)</span> រៀបតាមលំដាប់ពីតូចទៅធំ តាងដោយ <span class="mi">\(x_1, x_2, ..., x_N\)</span> ។<br/>
+បើ <span class="mi">\(N\)</span> ជាចំនួនគត់សេស នោះមេដ្យាន <span class="mi">\(M_e = x_{\frac{N+1}{2}}\)</span><br/>
+បើ <span class="mi">\(N\)</span> ជាចំនួនគត់គូ នោះមេដ្យាន <span class="mi">\(M_e = \frac{1}{2}\left(x_{\frac{N}{2}} + x_{\frac{N}{2}+1}\right)\)</span> ។</p>
+</div></section>
+<h4>មេដ្យាននៃទិន្នន័យផ្ដុំជាថ្នាក់</h4>
+<p>ដើម្បីរកមេដ្យាននៃទិន្នន័យផ្ដុំជាថ្នាក់ គេត្រូវប្រើប្រេកង់កើន ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រកមេដ្យាននៃទិន្នន័យក្នុងតារាងបំណែងចែកប្រេកង់នៃពិន្ទុតេស្តគណិតវិទ្យា</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ចន្លោះថ្នាក់</th>
+<th><span class="mi">\(15-25\)</span></th>
+<th><span class="mi">\(25-35\)</span></th>
+<th><span class="mi">\(35-45\)</span></th>
+<th><span class="mi">\(45-55\)</span></th>
+<th><span class="mi">\(55-65\)</span></th>
+<th><span class="mi">\(65-75\)</span></th>
+<th><span class="mi">\(75-85\)</span></th>
+<th><span class="mi">\(85-95\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់ <span class="mi">\(f_i\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(13\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+</tr>
+<tr>
+<td>ប្រេកង់កើន <span class="mi">\(F_i\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(11\)</span></td>
+<td><span class="mi">\(17\)</span></td>
+<td><span class="mi">\(24\)</span></td>
+<td><span class="mi">\(37\)</span></td>
+<td><span class="mi">\(45\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><p>ពាក់កណ្ដាលប្រេកង់សរុប ឬ <span class="mi">\(50\%\)</span> នៃទិន្នន័យគឺ <span class="mi">\(\frac{45}{2} = 22.5\)</span> ។</p></li>
+<li><p>ក្នុងជួរប្រេកង់កើន <span class="mi">\(22.5\)</span> ឋិតក្នុងថ្នាក់ <span class="mi">\(65-75\)</span> ។</p></li>
+<li><p>ថ្នាក់ <span class="mi">\(65-75\)</span> ហៅថាថ្នាក់មេដ្យាន ។</p></li>
+</ul>
+<p><strong>គណនាមេដ្យានតាមពីជគណិត</strong></p>
+<p>គេឃើញថាប្រេកង់កើន <span class="mi">\(22.5\)</span> នៅក្នុងចន្លោះ <span class="mi">\(17\)</span> និង <span class="mi">\(24\)</span> និងមេដ្យាននៅចន្លោះ <span class="mi">\(65\)</span> និង <span class="mi">\(75\)</span> ។</p>
+<p>ក្នុងតម្រុយកូអរដោនេ គេយកចំណុច <span class="mi">\(A(65, 17)\)</span> , <span class="mi">\(B(75, 24)\)</span> និង <span class="mi">\(C(M_e, 22.5)\)</span> ដែល <span class="mi">\(C \in AB\)</span> ដោយ <span class="mi">\(C \in AB\)</span> នោះបន្ទាត់ <span class="mi">\(AB\)</span> និង <span class="mi">\(AC\)</span> មានមេគុណប្រាប់ទិសស្មើគ្នា ។<br/>
+មេគុណប្រាប់ទិសនៃ <span class="mi">\(AB\)</span> គឺ <span class="mi">\(\frac{24 - 17}{75 - 65} = \frac{7}{10}\)</span> ។<br/>
+មេគុណប្រាប់ទិសនៃបន្ទាត់ <span class="mi">\(AC\)</span> គឺ <span class="mi">\(\frac{22.5 - 17}{M_e - 65}\)</span> ។<br/>
+គេបាន <span class="mi">\(\frac{22.5 - 17}{M_e - 65} = \frac{7}{10}\)</span><br/>
+នាំឱ្យ <span class="mi">\(M_e - 65 = \frac{5.5 \times 10}{7}\)</span><br/>
+ដូច្នេះ <span class="mi">\(M_e \approx 65 + 7.86 \approx 72.86\)</span> ។</p>
+<p><strong>តាមក្រាប</strong><br/>
+គេសង់ពហុកោណប្រេកង់កើន គេបានមេដ្យានគឺជាអាប់ស៊ីសនៃចំណុចមួយនៅលើពហុកោណប្រេកង់កើនដែលមានអរដោនេស្មើនឹង <span class="mi">\(22.5\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ចំពោះទិន្នន័យថ្នាក់ ដែលមានប្រេកង់ដែលមានប្រេកង់សរុប <span class="mi">\(N\)</span> ។</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ចន្លោះថ្នាក់</th>
+<th>ប្រេកង់</th>
+<th>ប្រេកង់កើន <span class="mi">\(F_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\(c_0 - c_1\)</span></td>
+<td><span class="mi">\(f_1\)</span></td>
+<td><span class="mi">\(F_1 = f_1\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(c_1 - c_2\)</span></td>
+<td><span class="mi">\(f_2\)</span></td>
+<td><span class="mi">\(F_2 = f_1 + f_2\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(\vdots\)</span></td>
+<td><span class="mi">\(\vdots\)</span></td>
+<td><span class="mi">\(\vdots\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(c_{i-2} - c_{i-1}\)</span></td>
+<td><span class="mi">\(f_{i-1}\)</span></td>
+<td><span class="mi">\(F_{i-1} = f_1 + f_2 + ... + f_{i-1} \leq \frac{N}{2}\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(c_{i-1} - c_i\)</span></td>
+<td><span class="mi">\(f_i\)</span></td>
+<td><span class="mi">\(F_i = f_1 + f_2 + ... + f_{i-1} + f_i &gt; \frac{N}{2}\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(\vdots\)</span></td>
+<td><span class="mi">\(\vdots\)</span></td>
+<td><span class="mi">\(\vdots\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(c_{k-1} - c_k\)</span></td>
+<td><span class="mi">\(f_k\)</span></td>
+<td><span class="mi">\(F_k = f_1 + f_2 + ... + f_k\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>បើ <span class="mi">\(F_{i-1} \leq \frac{N}{2} &lt; F_i\)</span> នោះ <span class="mi">\(c_{i-1} \leq M_e &lt; c_i\)</span> (<span class="mi">\(c_{i-1} - c_i\)</span> ហៅថា <strong>ថ្នាក់មេដ្យាន</strong>)<br/>
+គេបាន <span class="mi">\(\frac{F_i - F_{i-1}}{c_i - c_{i-1}} = \frac{\frac{N}{2} - F_{i-1}}{M_e - c_{i-1}}\)</span> ឬ <span class="mi">\(M_e = c_{i-1} + \frac{\frac{N}{2} - F_{i-1}}{f_i}(c_i - c_{i-1})\)</span> ។</p>
+</div></section>
+<p>តារាងទិន្នន័យខាងក្រោមនេះបង្ហាញពីរង្វាស់នៃការលោតកម្ពស់របស់សិស្ស 90 នាក់ក្នុងសាលារៀនមួយ ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>កម្ពស់ (<span class="mi">\(\text{cm}\)</span>)</th>
+<th><span class="mi">\(110-116\)</span></th>
+<th><span class="mi">\(116-122\)</span></th>
+<th><span class="mi">\(122-128\)</span></th>
+<th><span class="mi">\(128-134\)</span></th>
+<th><span class="mi">\(134-140\)</span></th>
+<th><span class="mi">\(140-146\)</span></th>
+<th><span class="mi">\(146-152\)</span></th>
+<th><span class="mi">\(152-158\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់ <span class="mi">\(f_i\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>រកមេដ្យាននៃទិន្នន័យតាមពីជគណិត និងតាមក្រាប ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+តាមទិន្នន័យនេះ គេបានតារាងប្រេកង់កើន ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>កម្ពស់ (<span class="mi">\(\text{cm}\)</span>)</th>
+<th><span class="mi">\(110-116\)</span></th>
+<th><span class="mi">\(116-122\)</span></th>
+<th><span class="mi">\(122-128\)</span></th>
+<th><span class="mi">\(128-134\)</span></th>
+<th><span class="mi">\(134-140\)</span></th>
+<th><span class="mi">\(140-146\)</span></th>
+<th><span class="mi">\(146-152\)</span></th>
+<th><span class="mi">\(152-158\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់ <span class="mi">\(f_i\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+</tr>
+<tr>
+<td>ប្រេកង់កើន <span class="mi">\(F_i\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(36\)</span></td>
+<td><span class="mi">\(48\)</span></td>
+<td><span class="mi">\(66\)</span></td>
+<td><span class="mi">\(78\)</span></td>
+<td><span class="mi">\(86\)</span></td>
+<td><span class="mi">\(90\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><p>តាមពីជគណិត : ពាក់កណ្ដាលប្រេកង់សរុប ឬ 50% នៃទិន្នន័យគឺ <span class="mi">\(\frac{90}{2} = 45\)</span> ។</p></li>
+</ul>
+<p>តាមរូបមន្តមេដ្យាន គេបាន <span class="mi">\(M_e = 128 + \frac{\frac{90}{2} - 36}{12}(134 - 128)\)</span><br/>
+ឬ <span class="mi">\(M_e = 128 + 4.5 = 132.5\text{ cm}\)</span> ។</p>
+<ul>
+<li><p>តាមក្រាប : សង់ពហុកោណប្រេកង់កើន</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>មេដ្យានជាអាប់ស៊ីសនៃចំណុច <span class="mi">\(G\)</span> : <span class="mi">\(M_e = 132.5\text{ cm}\)</span> ។</p>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<p>ចំពោះអថេរគុណភាព គេមិនអាចគណនាមេដ្យាន និងមធ្យមបានទេ ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ ១</b></header><div class="bx-b">
+<p>តាមទិន្នន័យល្បឿនរថយន្ត <span class="mi">\(40\)</span> គ្រឿង (គិតជា <span class="mi">\(\text{km/h}\)</span>) ឆ្លងកាត់ប៉ុស្តិ៍ត្រួតពិនិត្យ ៖<br/>
+<span class="mi">\(105, 63, 85, 93, 95, 92, 100, 101, 98, 109, 90, 80, 82, 86, 70, 76, 72, 63, 67, 90,\)</span><br/>
+<span class="mi">\(91, 95, 97, 89, 85, 70, 102, 90, 91, 89, 84, 77, 65, 118, 117, 105, 95, 90, 91, 89\)</span><br/>
+ចូររកមេដ្យាននៃទិន្នន័យមិនផ្ដុំជាថ្នាក់ និងទិន្នន័យផ្ដុំជា <span class="mi">\(8\)</span> ថ្នាក់។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><ul>
+<li><p><strong>មេដ្យាននៃទិន្នន័យមិនផ្ដុំជាថ្នាក់ ៖</strong> រៀបទិន្នន័យពីតូចទៅធំ ដោយ <span class="mi">\(N=40\)</span> ជាចំនួនគូ នាំឱ្យ <span class="mi">\(M_e = \dfrac{x_{20} + x_{21}}{2} = \dfrac{90 + 90}{2} = 90\text{ km/h}\)</span>។</p></li>
+<li><p><strong>មេដ្យាននៃទិន្នន័យផ្ដុំជាថ្នាក់ ៖</strong> ផ្ដុំជា <span class="mi">\(8\)</span> ថ្នាក់ដោយផ្ដើមពីគោលក្រោម <span class="mi">\(62.5\)</span> និងប្រវែងថ្នាក់ <span class="mi">\(c \approx 7.25\)</span> នាំឱ្យថ្នាក់មេដ្យានគឺ <span class="mi">\(90.5 - 97.75\)</span> (មាន <span class="mi">\(f=9, F_{i-1}=17\)</span>) ៖ <div class="md">\[M_e = 90.5 + \frac{20 - 17}{9} \times 7.25 \approx 92.92\text{ km/h}\]</div></p></li>
+</ul></details>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ ២</b></header><div class="bx-b">
+<p>គេមានតារាងបំណែងចែកប្រេកង់នៃអាយុអ្នករស់នៅក្នុងសហគមន៍មួយ ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>អាយុ (ឆ្នាំ)</th>
+<th><span class="mi">\(10-20\)</span></th>
+<th><span class="mi">\(20-30\)</span></th>
+<th><span class="mi">\(30-40\)</span></th>
+<th><span class="mi">\(40-50\)</span></th>
+<th><span class="mi">\(50-60\)</span></th>
+<th><span class="mi">\(60-70\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់ <span class="mi">\(f_i\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(23\)</span></td>
+<td><span class="mi">\(17\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+</tr>
+<tr>
+<td>ប្រេកង់កើន <span class="mi">\(F_i\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(35\)</span></td>
+<td><span class="mi">\(52\)</span></td>
+<td><span class="mi">\(58\)</span></td>
+<td><span class="mi">\(59\)</span></td>
+<td><span class="mi">\(60\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>ចូររកមេដ្យាននៃអាយុអ្នករស់នៅក្នុងសហគមន៍។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+ប្រេកង់សរុប <span class="mi">\(N = 60 \implies \dfrac{N}{2} = 30\)</span>។ ដោយ <span class="mi">\(F_1 = 12 &lt; 30 \le F_2 = 35\)</span> នាំឱ្យថ្នាក់មេដ្យានគឺ <span class="mi">\(20 - 30\)</span> (មាន <span class="mi">\(c_{i-1}=20, F_{i-1}=12, f_i=23, c=10\)</span>) ៖ <div class="md">\[M_e = c_{i-1} + \frac{\frac{N}{2} - F_{i-1}}{f_i} \times c = 20 + \frac{30 - 12}{23} \times 10 \approx 27.83\text{ ឆ្នាំ}\]</div> <em>(ឬតាមក្រាបពហុកោណប្រេកង់កើនដែលអានប្រមាណបាន <span class="mi">\(M_e \approx 26.15\)</span> ឆ្នាំ )</em>។</p></details>
+</div></section>
+<h3 id="u3">ម៉ូត</h3>
+<p>នៅក្នុងតារាងពិន្ទុតេស្តគណិតវិទ្យារបស់សិស្ស 45 នាក់ គេឃើញថាពិន្ទុ ដែលមានញឹកញាប់ជាងគេគឺ 81 បានន័យថាពិន្ទុ 81 មានប្រេកង់ធំជាងគេ ។ ពិន្ទុ 81 នេះហៅថា <strong>ម៉ូត</strong> ។ គេកំណត់សរសេរ <span class="mi">\(M_o = 81\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ក្នុងទិន្នន័យ ម៉ូតគឺជាតម្លៃរបស់អថេរ ដែលមានប្រេកង់ធំជាងគេ ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>តារាងនេះបង្ហាញពីប្រាក់ខែរបស់កម្មករក្នុងរោងចក្រ</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ប្រាក់ខែ (គិតជាម៉ឺន)</th>
+<th><span class="mi">\(15-18\)</span></th>
+<th><span class="mi">\(18-21\)</span></th>
+<th><span class="mi">\(21-24\)</span></th>
+<th><span class="mi">\(24-27\)</span></th>
+<th><span class="mi">\(27-30\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនកម្មករ</td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>គេឃើញថាថ្នាក់ <span class="mi">\(18-21\)</span> និងថ្នាក់ <span class="mi">\(24-27\)</span> មានប្រេកង់ស្មើនឹង <span class="mi">\(6\)</span> ដូចគ្នាដែលជាប្រេកង់ធំជាងគេ បើធៀបទៅនឹងថ្នាក់ផ្សេងៗទៀត ។ ដូច្នេះ ម៉ូតនៃប្រាក់ខែកម្មករគឺ</p>
+<p><span class="mi">\(M_{o_1} = \frac{18 + 21}{2} = 19.5 \)</span> ម៉ឺនរៀល  និង <span class="mi">\(M_{o_2} = \frac{24 + 27}{2} = 25.5 \)</span> ម៉ឺនរៀល  ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងបញ្ជីរបស់ស្ថាប័នលក់អង្ករមួយ បានកត់ត្រាម៉ាសអង្ករដែលបានលក់ចេញតាមប្រភេទនីមួយៗនៅខែមុននេះ ។</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ប្រភេទអង្ករ</th>
+<th>នាងខិញ</th>
+<th>នាងខុន</th>
+<th>ផ្កាខ្ញី</th>
+<th>ផ្ការំដួល</th>
+<th>ដងស្ទឹង</th>
+<th>ក្រោញ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ម៉ាសអង្ករ (គិតជាតោន)</td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>គេឃើញថា អង្ករប្រភេទផ្កាខ្ញី លក់បានច្រើនជាងគេ ។ ដូច្នេះ ម៉ូតគឺ <span class="mi">\(M_o = \)</span> ផ្កាខ្ញី  ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេបោះឡុកឡាក់មួយគ្រាប់ចំនួន 30 ដង ។ គេកត់ត្រាបានលទ្ធផលដូចខាងក្រោម ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>3</th>
+<th>1</th>
+<th>4</th>
+<th>3</th>
+<th>1</th>
+<th>3</th>
+<th>4</th>
+<th>3</th>
+<th>1</th>
+<th>5</th>
+<th>4</th>
+<th>5</th>
+<th>2</th>
+<th>2</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>6</td>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>6</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>រកម៉ូតនៃទិន្នន័យនេះ ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p> <span class="mi">\(M_o = 3\)</span> ។</p></details>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ទិន្នន័យនេះជាចំនួនអាវយឺតដែលលក់បាននៅក្នុងហាងមួយក្នុងរយៈពេល 7 ថ្ងៃ ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ថ្ងៃដែលបើកលក់</th>
+<th><span class="mi">\(1\)</span></th>
+<th><span class="mi">\(2\)</span></th>
+<th><span class="mi">\(3\)</span></th>
+<th><span class="mi">\(4\)</span></th>
+<th><span class="mi">\(5\)</span></th>
+<th><span class="mi">\(6\)</span></th>
+<th><span class="mi">\(7\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនអាវយឺត</td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(11\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>រកម៉ូតនៃថ្ងៃលក់អាវយឺត ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p> <span class="mi">\(M_o = 6\)</span> ។</p></details>
+</div></section>
+</div></section>
+</div></section>
+</div></section>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ទិន្នន័យនេះជាពិន្ទុរបស់សិស្ស 30, 40, 60, 50, 70, 80, 60, 90, 60 ។ គណនាម៉ូត មធ្យម និងមេដ្យាននៃទិន្នន័យ ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទិន្នន័យពិន្ទុសិស្ស៖ <span class="mi">\(30\)</span>, <span class="mi">\(40\)</span>, <span class="mi">\(60\)</span>, <span class="mi">\(50\)</span>, <span class="mi">\(70\)</span>, <span class="mi">\(80\)</span>, <span class="mi">\(60\)</span>, <span class="mi">\(90\)</span>, <span class="mi">\(60\)</span> (<span class="mi">\(N = 9\)</span> តួ)។</p>
+<p>តម្រៀបទិន្នន័យតាមលំដាប់កើន៖ <div class="md">\[30, 40, 50, 60, 60, 60, 70, 80, 90\]</div> <strong>ក.</strong>  <strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> តម្លៃ <span class="mi">\(60\)</span> កើតឡើងចំនួន ៣ ដង (ច្រើនជាងគេបំផុត) នាំឱ្យ៖ <div class="md">\[Mo = 60\]</div> <strong>ខ.</strong>  <strong>មធ្យមនព្វន្ធ (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+\sum x_i &amp;= 30 + 40 + 50 + 60 + 60 \\
+&amp;\quad{} + 60 + 70 + 80 + 90 = 540 \\
+\bar{x} &amp;= \frac{\sum x_i}{N} = \frac{540}{9} = 60
+\end{aligned}\]</div> <strong>គ.</strong>  <strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> ដោយចំនួនតួ <span class="mi">\(N = 9\)</span> (ចំនួនសេស) មេដ្យានគឺជាតួទី <span class="mi">\(\dfrac{N+1}{2} = \dfrac{9+1}{2} = 5\)</span>៖ <div class="md">\[Me = x_5 = 60\]</div> <strong>សន្និដ្ឋាន៖</strong> ដោយ <span class="mi">\(\bar{x} = Me = Mo = 60\)</span> បំណែងចែកពិន្ទុនេះជាបំណែងចែកស៊ីមេទ្រីល្អឥតខ្ចោះ។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ក្នុងការប្រឡង សិស្សម្នាក់ទទួលបានការវាយតម្លៃរបស់គណៈកម្មការតាមពិន្ទុដូចខាងក្រោម៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ពិន្ទុ</th>
+<th><span class="mi">\(85\)</span></th>
+<th><span class="mi">\(70\)</span></th>
+<th><span class="mi">\(75\)</span></th>
+<th><span class="mi">\(80\)</span></th>
+<th><span class="mi">\(82\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ការវាយតម្លៃ</td>
+<td><span class="mi">\(30\%\)</span></td>
+<td><span class="mi">\(20\%\)</span></td>
+<td><span class="mi">\(20\%\)</span></td>
+<td><span class="mi">\(20\%\)</span></td>
+<td><span class="mi">\(10\%\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>ចូររកពិន្ទុមធ្យម ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិន្ទុមធ្យមរបស់សិស្សគណនាតាមមធ្យមនព្វន្ធធៀប (Weighted Mean) តាមទម្ងន់ភាគរយ៖ <div class="md">\[\bar{x} = \frac{\sum w_i x_i}{\sum w_i}\]</div> ជំនួសតម្លៃតាមតារាង៖ <div class="md">\[\begin{aligned}
+\bar{x} &amp;= 85(0.30) + 70(0.20) + 75(0.20) \\
+&amp;\quad{} + 80(0.20) + 82(0.10) \\
+&amp;= 25.5 + 14.0 + 15.0 + 16.0 + 8.2 = 78.7
+\end{aligned}\]</div> ដូចនេះ ពិន្ទុមធ្យមវាយតម្លៃរបស់គណៈកម្មការគឺ <span class="mi">\(\bar{x} = 78.7\)</span> ពិន្ទុ។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>តារាងទិន្នន័យនេះ បង្ហាញពីរយៈពេលដែលសិស្សអង្គុយរៀនដោយខ្លួនឯងក្នុងមួយអាទិត្យ (រយៈពេលគិតជាម៉ោង) ។</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>រយៈពេល</th>
+<th><span class="mi">\(0-4\)</span></th>
+<th><span class="mi">\(4-8\)</span></th>
+<th><span class="mi">\(8-12\)</span></th>
+<th><span class="mi">\(12-16\)</span></th>
+<th><span class="mi">\(16-20\)</span></th>
+<th><span class="mi">\(20-24\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនសិស្ស</td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(35\)</span></td>
+<td><span class="mi">\(11\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>រកម៉ូតនិងមធ្យមនៃរយៈពេលដែលសិស្សរៀនដោយខ្លួនឯង ។</p></li>
+<li><p>រកមេដ្យាន ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 1 + 2 + 18 + 35 + 20 + 4 = 80\)</span> នាក់។</p>
+<p><strong>ក.</strong>  <strong>ផ្ចិតថ្នាក់ <span class="mi">\(m_i\)</span> និងផលគុណ <span class="mi">\(f_i m_i\)</span>៖</strong></p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>រយៈពេល (ម៉ោង)</th>
+<th>ផ្ចិត (<span class="mi">\(m_i\)</span>)</th>
+<th>ប្រេកង់ (<span class="mi">\(f_i\)</span>)</th>
+<th><span class="mi">\(f_i m_i\)</span></th>
+<th>ប្រេកង់កើន (<span class="mi">\(F_i\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\([0, 4)\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([4, 8)\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([8, 12)\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(180\)</span></td>
+<td><span class="mi">\(21\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([12, 16)\)</span></td>
+<td><span class="mi">\(14\)</span></td>
+<td><span class="mi">\(35\)</span></td>
+<td><span class="mi">\(490\)</span></td>
+<td><span class="mi">\(56\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([16, 20)\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(20\)</span></td>
+<td><span class="mi">\(360\)</span></td>
+<td><span class="mi">\(76\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([20, 24]\)</span></td>
+<td><span class="mi">\(22\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(88\)</span></td>
+<td><span class="mi">\(80\)</span></td>
+</tr>
+<tr>
+<td><strong>សរុប</strong></td>
+<td>—</td>
+<td><span class="mi">\(N = 80\)</span></td>
+<td><span class="mi">\(\sum f_i m_i = 1132\)</span></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>ខ.</strong>  <strong>គណនាមធ្យម (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\bar{x} = \frac{\sum f_i m_i}{N} = \frac{1132}{80} = 14.15 \text{ ម៉ោង}\]</div> <strong>គ.</strong>  <strong>គណនាម៉ូត (<span class="mi">\(Mo\)</span>) និងមេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong></p>
+<ul>
+<li><p><strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> ថ្នាក់ដែលមានប្រេកង់ធំជាងគេ (<span class="mi">\(f = 35\)</span>) គឺ <span class="mi">\([12, 16)\)</span>។ <div class="md">\[Mo = L + \left(\frac{\Delta_1}{\Delta_1 + \Delta_2}\right) \times h\]</div> ដោយ <span class="mi">\(L = 12\)</span>, <span class="mi">\(\Delta_1 = 35 - 18 = 17\)</span>, <span class="mi">\(\Delta_2 = 35 - 20 = 15\)</span>, <span class="mi">\(h = 4\)</span>៖ <div class="md">\[\begin{aligned}
+    Mo &amp;= 12 + \left(\frac{17}{17 + 15}\right) \times 4 \\
+    &amp;= 12 + \frac{68}{32} = 14.125 \text{ ម៉ោង}
+    
+\end{aligned}\]</div></p></li>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> តំណែងមេដ្យាន <span class="mi">\(\dfrac{N}{2} = \dfrac{80}{2} = 40\)</span> ស្ថិតក្នុងថ្នាក់ <span class="mi">\([12, 16)\)</span> (ព្រោះ <span class="mi">\(F_3 = 21 &lt; 40 \le F_4 = 56\)</span>)។ <div class="md">\[\begin{aligned}
+    Me &amp;= L + \left(\frac{\frac{N}{2} - F_{c}}{f_m}\right) \times h \\
+    &amp;= 12 + \left(\frac{40 - 21}{35}\right) \times 4 \approx 14.17 \text{ ម៉ោង}
+    
+\end{aligned}\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>តារាងបំណែងចែកប្រេកង់អំពីចំនួនជួលនៅតាមទំហំផ្ទៃក្រឡានៃផ្សារនីមួយៗ ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ផ្ទៃក្រឡា (<span class="mi">\(\text{m}^2\)</span>)</th>
+<th><span class="mi">\(400-700\)</span></th>
+<th><span class="mi">\(700-1000\)</span></th>
+<th><span class="mi">\(1000-1300\)</span></th>
+<th><span class="mi">\(1300-1600\)</span></th>
+<th><span class="mi">\(1600-1900\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនផ្សារ</td>
+<td><span class="mi">\(26\)</span></td>
+<td><span class="mi">\(28\)</span></td>
+<td><span class="mi">\(33\)</span></td>
+<td><span class="mi">\(40\)</span></td>
+<td><span class="mi">\(20\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>កំណត់រកមធ្យមនៃផ្ទៃក្រឡាផ្សារ ។</p></li>
+<li><p>កំណត់ម៉ូតនិងមេដ្យាននៃផ្ទៃក្រឡាផ្សារ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 26 + 28 + 33 + 40 + 20 = 147\)</span> ផ្សារ។ ប្រវែងថ្នាក់ <span class="mi">\(h = 300\text{ m}^2\)</span>។</p>
+<p><strong>ក.</strong>  <strong>កំណត់រកមធ្យមនៃផ្ទៃក្រឡាផ្សារ (<span class="mi">\(\bar{x}\)</span>)៖</strong> ផ្ចិតថ្នាក់រៀងគ្នាគឺ <span class="mi">\(m_1 = 550\)</span>, <span class="mi">\(m_2 = 850\)</span>, <span class="mi">\(m_3 = 1150\)</span>, <span class="mi">\(m_4 = 1450\)</span>, <span class="mi">\(m_5 = 1750\)</span>។ <div class="md">\[\begin{aligned}
+\sum f_i m_i &amp;= 26(550) + 28(850) + 33(1150) \\
+&amp;\quad{} + 40(1450) + 20(1750) \\
+&amp;= 14300 + 23800 + 37950 \\
+&amp;\quad{} + 58000 + 35000 = 169050\text{ m}^2
+\end{aligned}\]</div> មធ្យមផ្ទៃក្រឡាផ្សារគឺ៖ <div class="md">\[\bar{x} = \frac{\sum f_i m_i}{N} = \frac{169050}{147} \approx 1150 \text{ m}^2\]</div> <strong>ខ.</strong>  <strong>កំណត់ម៉ូត (<span class="mi">\(Mo\)</span>) និងមេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong></p>
+<ul>
+<li><p><strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> ថ្នាក់ម៉ូតគឺ <span class="mi">\([1300, 1600)\)</span> (<span class="mi">\(f_4 = 40\)</span> ធំបំផុត)។ <span class="mi">\(\Delta_1 = 40 - 33 = 7\)</span>, <span class="mi">\(\Delta_2 = 40 - 20 = 20\)</span>, <span class="mi">\(L = 1300\)</span>, <span class="mi">\(h = 300\)</span>៖ <div class="md">\[\begin{aligned}
+    Mo &amp;= 1300 + \left(\frac{7}{7 + 20}\right) \times 300 \\
+    &amp;= 1300 + \frac{2100}{27} \approx 1377.78 \text{ m}^2
+    
+\end{aligned}\]</div></p></li>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> តំណែងមេដ្យាន <span class="mi">\(\dfrac{N}{2} = \dfrac{147}{2} = 73.5\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(26, 54, 87, 127, 147\)</span>។ ថ្នាក់មេដ្យានគឺ <span class="mi">\([1000, 1300)\)</span> (ព្រោះ <span class="mi">\(54 &lt; 73.5 \le 87\)</span>)។ <div class="md">\[\begin{aligned}
+    Me &amp;= 1000 + \left(\frac{73.5 - 54}{33}\right) \times 300 \\
+    &amp;= 1000 + \frac{19.5 \times 300}{33} \approx 1177.27 \text{ m}^2
+    
+\end{aligned}\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ចំនួនសត្វចិញ្ចឹមត្រូវបានសិស្ស <span class="mi">\(40\)</span> នាក់កត់ត្រា ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ចំនួនសត្វចិញ្ចឹម</th>
+<th><span class="mi">\(2\)</span></th>
+<th><span class="mi">\(4\)</span></th>
+<th><span class="mi">\(6\)</span></th>
+<th><span class="mi">\(8\)</span></th>
+<th><span class="mi">\(10\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនសិស្ស</td>
+<td><span class="mi">\(x\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(y\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(14\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>ស្រាយបញ្ជាក់ថា <span class="mi">\(x + y = 18\)</span> ។</p></li>
+<li><p>បើមធ្យមទិន្នន័យស្មើ <span class="mi">\(6.4\)</span> ស្រាយបញ្ជាក់ថា <span class="mi">\(x + 3y = 30\)</span> ។</p></li>
+<li><p>កំណត់ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> តាមទំនាក់ទំនងខាងលើ ។</p></li>
+<li><p>ដោយប្រើតម្លៃ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> ចូរកំណត់ម៉ូតនិងមេដ្យាននៃទិន្នន័យខាងលើ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>ស្រាយបញ្ជាក់ថា <span class="mi">\(x + y = 18\)</span>៖</strong> ចំនួនសិស្សសរុបគឺ <span class="mi">\(40\)</span> នាក់ នាំឱ្យផលបូកប្រេកង់ស្មើ <span class="mi">\(40\)</span>៖ <div class="md">\[\begin{aligned}
+x + 2 + y + 6 + 14 &amp;= 40 \\
+\implies x + y &amp;= 18 \quad{} (1)
+\end{aligned}\]</div> <strong>ខ.</strong>  <strong>ស្រាយបញ្ជាក់ថា <span class="mi">\(x + 3y = 30\)</span>៖</strong> មធ្យមនព្វន្ធ <span class="mi">\(\bar{x} = 6.4\)</span>៖ <div class="md">\[\begin{aligned}
+\bar{x} &amp;= \frac{2x + 8 + 6y + 48 + 140}{40} = 6.4 \\
+\implies 2x + 6y &amp;= 60 \implies x + 3y = 30 \quad{} (2)
+\end{aligned}\]</div> <strong>គ.</strong>  <strong>កំណត់តម្លៃ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span>៖</strong> ដកសមីការ (២) នឹង (១)៖ <div class="md">\[(x + 3y) - (x + y) = 30 - 18 \implies 2y = 12 \implies y = 6\]</div> ជំនួស <span class="mi">\(y = 6\)</span> ចូល (១)៖ <span class="mi">\(x + 6 = 18 \implies x = 12\)</span>។</p>
+<p><strong>ឃ.</strong>  <strong>កំណត់ម៉ូត និងមេដ្យាន៖</strong> ជាមួយ <span class="mi">\(x = 12, y = 6\)</span> តារាងប្រេកង់គឺ៖ <span class="mi">\((2: 12)\)</span>, <span class="mi">\((4: 2)\)</span>, <span class="mi">\((6: 6)\)</span>, <span class="mi">\((8: 6)\)</span>, <span class="mi">\((10: 14)\)</span>។</p>
+<ul>
+<li><p><strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> តម្លៃសត្វចិញ្ចឹមដែលមានប្រេកង់ធំជាងគេ (<span class="mi">\(f = 14\)</span>) គឺ <span class="mi">\(Mo = 10\)</span>។</p></li>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> ចំនួនតួ <span class="mi">\(N = 40\)</span> (គូ)។ តំណែងមេដ្យានគឺតួទី <span class="mi">\(20\)</span> និងទី <span class="mi">\(21\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(12, 14, 20, 26, 40\)</span>។ តួទី <span class="mi">\(20\)</span> គឺ <span class="mi">\(6\)</span> និងតួទី <span class="mi">\(21\)</span> គឺ <span class="mi">\(8\)</span>។ <div class="md">\[Me = \frac{6 + 8}{2} = 7\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p><strong>ការជ្រើសរើសបុគ្គលិក៖</strong> ក្រុមហ៊ុនមួយកំពុងពិចារណាដំឡើងប្រាក់ខែដល់បុគ្គលិក។ ប្រាក់ខែប្រចាំខែ (គិតជាដុល្លារ) របស់បុគ្គលិក ១០ នាក់ក្នុងផ្នែកលក់គឺ៖ <span class="mi">\(300, 320, 350, 350, 400, 420, 450, 500, 600, 2500\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>ចូរគណនាមធ្យម មេដ្យាន និងម៉ូតនៃប្រាក់ខែរបស់បុគ្គលិកទាំងនេះ។</p></li>
+<li><p>តើរង្វាស់ទីតាំងមួយណា (មធ្យម មេដ្យាន ឬម៉ូត) ដែលតំណាងឲ្យប្រាក់ខែទូទៅរបស់បុគ្គលិកផ្នែកលក់នេះបានល្អជាងគេ? ហេតុអ្វី?</p></li>
+<li><p>ប្រសិនបើក្រុមហ៊ុនសម្រេចចិត្តដកបុគ្គលិកដែលមានប្រាក់ខែខ្ពស់ជាងគេ ($2500) ចេញពីការគណនា តើមធ្យម និងមេដ្យាននឹងប្រែប្រួលយ៉ាងដូចម្តេច?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>គណនាមធ្យម មេដ្យាន និងម៉ូត៖</strong> ប្រាក់ខែបុគ្គលិក ១០ នាក់៖ <span class="mi">\(300\)</span>, <span class="mi">\(320\)</span>, <span class="mi">\(350\)</span>, <span class="mi">\(350\)</span>, <span class="mi">\(400\)</span>, <span class="mi">\(420\)</span>, <span class="mi">\(450\)</span>, <span class="mi">\(500\)</span>, <span class="mi">\(600\)</span>, <span class="mi">\(2500\)</span>។</p>
+<ul>
+<li><p><strong>មធ្យម (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+    \sum x_i &amp;= 300 + 320 + 700 + 400 + 420 \\
+    &amp;\quad{} + 450 + 500 + 600 + 2500 = 6190\$ \\
+    \bar{x} &amp;= \frac{6190}{10} = 619\$
+    
+\end{aligned}\]</div></p></li>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> <span class="mi">\(N = 10\)</span> តួ (គូ) តម្រៀបកើនស្រាប់។ មេដ្យានជាមធ្យមនៃតួទី ៥ និងទី ៦៖ <div class="md">\[Me = \frac{400 + 420}{2} = 410\$\]</div></p></li>
+<li><p><strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> តម្លៃ <span class="mi">\(350\$\)</span> កើតឡើង ២ ដង (ច្រើនជាងគេ) នាំឱ្យ <span class="mi">\(Mo = 350\$\)</span>។</p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>រង្វាស់ទីតាំងដែលតំណាងឱ្យទិន្នន័យបានល្អជាងគេ៖</strong> គឺ <strong>មេដ្យាន (<span class="mi">\(Me = 410\$\)</span>)</strong> ពីព្រោះមធ្យម (<span class="mi">\(\bar{x} = 619\$\)</span>) ត្រូវបានទាញឡើងខ្ពស់ខ្លាំងដោយសារតែប្រាក់ខែមិនប្រក្រតី (Outlier) របស់បុគ្គលិកម្នាក់ ($2500)។ មធ្យម <span class="mi">\(619\$\)</span> ខ្ពស់ជាងប្រាក់ខែរបស់បុគ្គលិកដល់ទៅ ៩ នាក់ក្នុងចំណោម ១០ នាក់ ដែលធ្វើឱ្យវាមិនឆ្លុះបញ្ចាំងពីស្ថានភាពជាក់ស្តែងឡើយ។</p>
+<p><strong>គ.</strong>  <strong>ការប្រែប្រួលក្រោយដកប្រាក់ខែ $2500 ចេញ (នៅសល់ ៩ នាក់)៖</strong></p>
+<ul>
+<li><p>មធ្យមថ្មី៖ <span class="mi">\(\bar{x}_{\text{new}} = \frac{6190 - 2500}{9} = \frac{3690}{9} = 410\$\)</span> (ថយចុះយ៉ាងច្រើនពី <span class="mi">\(619\$\)</span> មក <span class="mi">\(410\$\)</span>)។</p></li>
+<li><p>មេដ្យានថ្មី៖ តួទី ៥ នៃ ៩ តួគឺ <span class="mi">\(Me_{\text{new}} = 400\$\)</span> (ប្រែប្រួលតិចតួចពី <span class="mi">\(410\$\)</span> មក <span class="mi">\(400\$\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p><strong>ការវាយតម្លៃគុណភាពទឹកដោះគោ៖</strong> រោងចក្រផលិតទឹកដោះគោមួយបានវាស់បរិមាណជាតិខ្លាញ់ (គិតជាក្រាម) ក្នុងមួយដបនៃទឹកដោះគោ ៥០ ដប។ ទិន្នន័យត្រូវបានរៀបចំជាថ្នាក់ដូចខាងក្រោម៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>បរិមាណជាតិខ្លាញ់ (g)</th>
+<th><span class="mi">\(10-12\)</span></th>
+<th><span class="mi">\(12-14\)</span></th>
+<th><span class="mi">\(14-16\)</span></th>
+<th><span class="mi">\(16-18\)</span></th>
+<th><span class="mi">\(18-20\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនដប</td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(20\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>ចូរគណនាបរិមាណជាតិខ្លាញ់មធ្យមក្នុងទឹកដោះគោមួយដប (ប្រើចំណុចកណ្តាលថ្នាក់)។</p></li>
+<li><p>តើថ្នាក់ណាជាថ្នាក់ម៉ូត? តើវាមានន័យយ៉ាងណាចំពោះការផលិតរបស់រោងចក្រ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>គណនាបរិមាណជាតិខ្លាញ់មធ្យម (<span class="mi">\(\bar{x}\)</span>)៖</strong> ផ្ចិតថ្នាក់នីមួយៗ (<span class="mi">\(m_i\)</span>)៖ <span class="mi">\(11, 13, 15, 17, 19\)</span>។ <div class="md">\[\begin{aligned}
+\sum f_i m_i &amp;= 5(11) + 15(13) + 20(15) + 8(17) + 2(19) \\
+&amp;= 55 + 195 + 300 + 136 + 38 = 724\text{ g}
+\end{aligned}\]</div> ជាតិខ្លាញ់មធ្យមក្នុងមួយដបគឺ៖ <div class="md">\[\bar{x} = \frac{\sum f_i m_i}{N} = \frac{724}{50} = 14.48\text{ g}\]</div> <strong>ខ.</strong>  <strong>កំណត់ថ្នាក់ម៉ូត និងអត្ថន័យ៖</strong> ថ្នាក់ដែលមានប្រេកង់ធំជាងគេ (<span class="mi">\(f = 20\)</span>) គឺ <strong>ថ្នាក់ <span class="mi">\([14, 16)\)</span></strong>។</p>
+<p><strong>អត្ថន័យចំពោះការផលិត៖</strong> វាបញ្ជាក់ថាទឹកដោះគោដែលផលិតភាគច្រើនបំផុត (រហូតដល់ <span class="mi">\(40\%\)</span> នៃផលិតផលសរុប) មានកម្រិតជាតិខ្លាញ់ស្ថិតក្នុងចន្លោះពី <span class="mi">\(14\text{ g}\)</span> ទៅ <span class="mi">\(16\text{ g}\)</span> ដែលជាស្តង់ដារគុណភាពចម្បងដែលរោងចក្រត្រូវរក្សាឱ្យមានស្ថិរភាព។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>តារាងបំណែងចែកប្រេកង់នេះបង្ហាញពីចំនួនបងប្អូនបង្កើតរបស់សិស្ស ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ចំនួនបងប្អូន</th>
+<th><span class="mi">\(0\)</span></th>
+<th><span class="mi">\(1\)</span></th>
+<th><span class="mi">\(2\)</span></th>
+<th><span class="mi">\(3\)</span></th>
+<th><span class="mi">\(4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់</td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(17\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>បកស្រាយទិន្នន័យជាក្រាប ។</p></li>
+<li><p>តើសិស្សមានបងប្អូនបង្កើត <span class="mi">\(3\)</span> នាក់មានចំនួនប៉ុន្មាន? ត្រូវនឹងប៉ុន្មានភាគរយ?</p></li>
+<li><p>តើមានសិស្សប៉ុន្មាននាក់ដែលមានបងប្អូនបង្កើតយ៉ាងតិចម្នាក់? យ៉ាងច្រើន <span class="mi">\(2\)</span> នាក់? ត្រូវនឹងប៉ុន្មានភាគរយ?</p></li>
+<li><p>សង់តារាងបំណែងចែកប្រេកង់ធៀប ប្រេកង់កើន ប្រេកង់ថយ ។</p></li>
+<li><p>គណនាមធ្យម មេដ្យាន និងម៉ូតនៃទិន្នន័យ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 5 + 10 + 17 + 6 + 2 = 40\)</span> នាក់។</p>
+<p><strong>ក.</strong>  <strong>បកស្រាយទិន្នន័យជាក្រាប (ដ្យាក្រាមសសរ)៖</strong> អ័ក្សដេកជាចំនួនបងប្អូន (<span class="mi">\(0, 1, 2, 3, 4\)</span>) និងអ័ក្សឈរជាប្រេកង់ ដោយកម្ពស់សសររៀងគ្នាគឺ <span class="mi">\(5, 10, 17, 6, 2\)</span>។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p><strong>ខ.</strong>  <strong>សិស្សមានបងប្អូន ៣ នាក់៖</strong> មានចំនួន <span class="mi">\(6\)</span> នាក់។ គិតជាភាគរយគឺ <span class="mi">\(\dfrac{6}{40} \times 100\% = 15\%\)</span>។</p>
+<p><strong>គ.</strong>  <strong>ការវិភាគចំនួនសិស្ស៖</strong></p>
+<ul>
+<li><p>យ៉ាងតិចម្នាក់ (<span class="mi">\(x \ge 1\)</span>)៖ <span class="mi">\(40 - 5 = 35\)</span> នាក់ <span class="mi">\(\implies \dfrac{35}{40} \times 100\% = 87.5\%\)</span></p></li>
+<li><p>យ៉ាងច្រើន ២ នាក់ (<span class="mi">\(x \le 2\)</span>)៖ <span class="mi">\(5 + 10 + 17 = 32\)</span> នាក់ <span class="mi">\(\implies \dfrac{32}{40} \times 100\% = 80.0\%\)</span></p></li>
+</ul>
+<p><strong>ឃ.</strong>  <strong>តារាងបំណែងចែកប្រេកង់ពេញលេញ៖</strong></p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ចំនួនបងប្អូន (<span class="mi">\(x_i\)</span>)</th>
+<th>ប្រេកង់ (<span class="mi">\(f_i\)</span>)</th>
+<th>ប្រេកង់ធៀប</th>
+<th>ប្រេកង់កើន (<span class="mi">\(F_i\)</span>)</th>
+<th>ប្រេកង់ថយ (<span class="mi">\(F'_i\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\(0\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(0.125\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(40\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(0.250\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(35\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(17\)</span></td>
+<td><span class="mi">\(0.425\)</span></td>
+<td><span class="mi">\(32\)</span></td>
+<td><span class="mi">\(25\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(0.150\)</span></td>
+<td><span class="mi">\(38\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(0.050\)</span></td>
+<td><span class="mi">\(40\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+</tr>
+<tr>
+<td><strong>សរុប</strong></td>
+<td><span class="mi">\(N = 40\)</span></td>
+<td><span class="mi">\(1.000\)</span></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>ង.</strong>  <strong>គណនារង្វាស់ទីតាំង៖</strong></p>
+<ul>
+<li><p><strong>មធ្យម៖</strong> <span class="mi">\(\bar{x} = \frac{0(5) + 1(10) + 2(17) + 3(6) + 4(2)}{40} = \frac{0 + 10 + 34 + 18 + 8}{40} = \frac{70}{40} = 1.75\)</span> នាក់</p></li>
+<li><p><strong>មេដ្យាន៖</strong> <span class="mi">\(N = 40\)</span> (គូ) តួទី <span class="mi">\(20\)</span> និង <span class="mi">\(21\)</span> សុទ្ធតែជា <span class="mi">\(2\)</span> នាំឱ្យ <span class="mi">\(Me = 2\)</span> នាក់</p></li>
+<li><p><strong>ម៉ូត៖</strong> <span class="mi">\(Mo = 2\)</span> នាក់ (ប្រេកង់ធំបំផុត <span class="mi">\(f = 17\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ទិន្នន័យនេះ ជាប្រេកង់នៃការចំណាយប្រចាំខែរបស់គ្រួសារមួយ ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ប្រភេទចំណាយ</th>
+<th>អគ្គិសនី</th>
+<th>ទឹក</th>
+<th>អាហារ</th>
+<th>ការសិក្សា</th>
+<th>ការធ្វើដំណើរ</th>
+<th>ផ្សេងៗ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ភាគរយនៃប្រាក់ចំណាយ</td>
+<td><span class="mi">\(9\,\%\)</span></td>
+<td><span class="mi">\(5\,\%\)</span></td>
+<td><span class="mi">\(41\,\%\)</span></td>
+<td><span class="mi">\(20\,\%\)</span></td>
+<td><span class="mi">\(10\,\%\)</span></td>
+<td><span class="mi">\(15\,\%\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>បកស្រាយទិន្នន័យជាក្រាប ។</p></li>
+<li><p>រករង្វាស់ទីតាំងនៃទិន្នន័យ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>បកស្រាយទិន្នន័យជាក្រាប (ដ្យាក្រាមផ្លិតរង្វង់ Pie Chart)៖</strong> មុំផ្ចិតគណនាតាមរូបមន្ត <span class="mi">\(\alpha_i = \)</span> ភាគរយ <span class="mi">\( \times 3.6^\circ\)</span>៖</p>
+<ul>
+<li><p>អាហារ (<span class="mi">\(41\%\)</span>)៖ <span class="mi">\(\alpha_1 = 41 \times 3.6^\circ = 147.6^\circ\)</span></p></li>
+<li><p>ការសិក្សា (<span class="mi">\(20\%\)</span>)៖ <span class="mi">\(\alpha_2 = 20 \times 3.6^\circ = 72.0^\circ\)</span></p></li>
+<li><p>ផ្សេងៗ (<span class="mi">\(15\%\)</span>)៖ <span class="mi">\(\alpha_3 = 15 \times 3.6^\circ = 54.0^\circ\)</span></p></li>
+<li><p>ការធ្វើដំណើរ (<span class="mi">\(10\%\)</span>)៖ <span class="mi">\(\alpha_4 = 10 \times 3.6^\circ = 36.0^\circ\)</span></p></li>
+<li><p>អគ្គិសនី (<span class="mi">\(9\%\)</span>)៖ <span class="mi">\(\alpha_5 = 9 \times 3.6^\circ = 32.4^\circ\)</span></p></li>
+<li><p>ទឹក (<span class="mi">\(5\%\)</span>)៖ <span class="mi">\(\alpha_6 = 5 \times 3.6^\circ = 18.0^\circ\)</span></p></li>
+</ul>
+<p>ផលបូកមុំផ្ចិត៖ <span class="mi">\(147.6^\circ + 72^\circ + 54^\circ + 36^\circ + 32.4^\circ + 18^\circ = 360^\circ\)</span>។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p><strong>ខ.</strong>  <strong>រករង្វាស់ទីតាំងនៃទិន្នន័យ៖</strong> ដោយសារតែប្រភេទចំណាយជា <strong>ទិន្នន័យគុណភាព (Categorical data)</strong> គេមិនអាចគណនាមធ្យម ឬមេដ្យានបានឡើយ។ រង្វាស់ទីតាំងតែមួយគត់ដែលអាចប្រើបានគឺ <strong>ម៉ូត (Mode)</strong>៖ <div class="md">\[Mo = \text{ចំណាយលើអាហារ}\]</div> (ព្រោះមានចំណែកធំបំផុតរហូតដល់ <span class="mi">\(41\%\)</span>)</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ទិន្នន័យនេះជារយៈពេលដែលទារកទាំងឡាយបានពោរពោះម្តាយ (គិតជាខែ) ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(13\)</span></td>
+<td><span class="mi">\(0\)</span></td>
+<td><span class="mi">\(0\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(9\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(9\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(17\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(11\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(17\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>ប្រមូលផ្ដុំទិន្នន័យជាថ្នាក់ <span class="mi">\(6\)</span> ថ្នាក់ក្នុងតារាងបំណែងចែកប្រេកង់ រួចបកស្រាយទិន្នន័យជាក្រាប ។</p></li>
+<li><p>សង់តារាងបំណែងចែកប្រេកង់កើន និងពហុកោណប្រេកង់កើន ។</p></li>
+<li><p>គណនាមធ្យម មេដ្យាន និងម៉ូតនៃរយៈពេល ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទិន្នន័យមានចំនួនសរុប <span class="mi">\(N = 50\)</span> តម្លៃ។</p>
+<p><strong>ក.</strong>  <strong>តារាងបំណែងចែកប្រេកង់ ៦ ថ្នាក់ (<span class="mi">\(h = 3\)</span>)៖</strong></p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ថ្នាក់ (ខែ)</th>
+<th>ផ្ចិត (<span class="mi">\(m_i\)</span>)</th>
+<th>ប្រេកង់ (<span class="mi">\(f_i\)</span>)</th>
+<th><span class="mi">\(f_i m_i\)</span></th>
+<th>ភាគរយ (%)</th>
+<th>ប្រេកង់កើន (<span class="mi">\(F_i\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\([0, 3)\)</span></td>
+<td><span class="mi">\(1.5\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(7.5\)</span></td>
+<td><span class="mi">\(10\%\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([3, 6)\)</span></td>
+<td><span class="mi">\(4.5\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(67.5\)</span></td>
+<td><span class="mi">\(30\%\)</span></td>
+<td><span class="mi">\(20\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([6, 9)\)</span></td>
+<td><span class="mi">\(7.5\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(112.5\)</span></td>
+<td><span class="mi">\(30\%\)</span></td>
+<td><span class="mi">\(35\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([9, 12)\)</span></td>
+<td><span class="mi">\(10.5\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(63.0\)</span></td>
+<td><span class="mi">\(12\%\)</span></td>
+<td><span class="mi">\(41\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([12, 15)\)</span></td>
+<td><span class="mi">\(13.5\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(54.0\)</span></td>
+<td><span class="mi">\(8\%\)</span></td>
+<td><span class="mi">\(45\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([15, 18]\)</span></td>
+<td><span class="mi">\(16.5\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(82.5\)</span></td>
+<td><span class="mi">\(10\%\)</span></td>
+<td><span class="mi">\(50\)</span></td>
+</tr>
+<tr>
+<td><strong>សរុប</strong></td>
+<td>—</td>
+<td><span class="mi">\(N = 50\)</span></td>
+<td><span class="mi">\(\sum = 387.0\)</span></td>
+<td><span class="mi">\(100\%\)</span></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>ខ.</strong>  <strong>សង់ពហុកោណប្រេកង់កើន (Ogive)៖</strong> ភ្ជាប់ចំណុច <span class="mi">\((0, 0)\)</span>, <span class="mi">\((3, 5)\)</span>, <span class="mi">\((6, 20)\)</span>, <span class="mi">\((9, 35)\)</span>, <span class="mi">\((12, 41)\)</span>, <span class="mi">\((15, 45)\)</span>, <span class="mi">\((18, 50)\)</span>។</p>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p><strong>គ.</strong>  <strong>គណនាមធ្យម មេដ្យាន និងម៉ូត៖</strong></p>
+<ul>
+<li><p><strong>មធ្យម៖</strong> <span class="mi">\(\bar{x} = \frac{\sum f_i m_i}{N} = \frac{387}{50} = 7.74\)</span> ខែ</p></li>
+<li><p><strong>មេដ្យាន៖</strong> <span class="mi">\(\frac{N}{2} = 25\)</span> ស្ថិតក្នុងថ្នាក់ <span class="mi">\([6, 9)\)</span> (ព្រោះ <span class="mi">\(20 &lt; 25 \le 35\)</span>)៖ <div class="md">\[\begin{aligned}
+    Me &amp;= 6 + \left(\frac{25 - 20}{15}\right) \times 3 \\
+    &amp;= 6 + \frac{15}{15} = 7.00 \text{ ខែ}
+    
+\end{aligned}\]</div></p></li>
+<li><p><strong>ម៉ូត៖</strong> មានថ្នាក់ម៉ូតពីរគឺ <span class="mi">\([3, 6)\)</span> និង <span class="mi">\([6, 9)\)</span> ដែលមានប្រេកង់ស្មើគ្នា <span class="mi">\(f = 15\)</span> (បំណែងចែកទ្វេម៉ូត Bimodal)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គេដឹងថា មធ្យមនៃទិន្នន័យមួយស្មើនឹង <span class="mi">\(40\)</span> និងមេដ្យានស្មើនឹង <span class="mi">\(39\)</span> ។ បើគេបន្ថែម <span class="mi">\(5\)</span> ទៅលើតម្លៃអថេរនីមួយៗ តើមធ្យម និងមេដ្យានស្មើនឹងប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមទ្រឹស្តីបទនៃការបំប្លែងលីនេអ៊ែរនៃទិន្នន័យស្ថិតិ ប្រសិនបើគេបូកបន្ថែមចំនួនថេរ <span class="mi">\(c\)</span> ទៅលើគ្រប់តម្លៃទិន្នន័យទាំងអស់ (<span class="mi">\(y_i = x_i + c\)</span>)៖</p>
+<ul>
+<li><p><strong>មធ្យមថ្មី៖</strong> <span class="mi">\(\bar{y} = \bar{x} + c\)</span></p></li>
+<li><p><strong>មេដ្យានថ្មី៖</strong> <span class="mi">\(Me_y = Me_x + c\)</span></p></li>
+</ul>
+<p>ដោយ <span class="mi">\(\bar{x} = 40\)</span>, <span class="mi">\(Me = 39\)</span> ហើយគេបន្ថែម <span class="mi">\(c = 3\)</span> ទៅគ្រប់ទិន្នន័យទាំងអស់៖ <div class="md">\[\begin{aligned}
+\bar{x}_{\text{new}} &amp;= 40 + 3 = 43 \\
+Me_{\text{new}} &amp;= 39 + 3 = 42
+\end{aligned}\]</div> ដូចនេះ មធ្យមថ្មីគឺ <span class="mi">\(43\)</span> និងមេដ្យានថ្មីគឺ <span class="mi">\(42\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ក្រាបនេះជាពហុកោណប្រេកង់កើន បង្ហាញពីពិន្ទុគណិតវិទ្យារបស់សិស្ស <span class="mi">\(50\)</span> នាក់ ៖</p>
+<ol class="list oldef cols1">
+<li><p>គណនាមធ្យមនៃពិន្ទុគណិតវិទ្យា</p></li>
+<li><p>រកមេដ្យាននៃពិន្ទុគណិតវិទ្យា ។</p></li>
+</ol>
+
+<p><span><strong>ពហុកោណប្រេកង់កើននៃពិន្ទុគណិតវិទ្យា</strong></span><br/>
+<div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមក្រាបពហុកោណប្រេកង់កើននៃពិន្ទុសិស្ស <span class="mi">\(50\)</span> នាក់៖</p>
+<p><strong>ក.</strong>  <strong>កំណត់តំណែងមេដ្យាន៖</strong> មេដ្យានស្ថិតនៅចំណុចកណ្តាលនៃប្រេកង់សរុប៖ <div class="md">\[\text{តំណែង } Me = \frac{N}{2} = \frac{50}{2} = 25 \text{ នាក់}\]</div> <strong>ខ.</strong>  <strong>អានតម្លៃមេដ្យានតាមរយៈក្រាប៖</strong> នៅលើអ័ក្សឈរ (ប្រេកង់កើន) ត្រង់កម្ពស់ <span class="mi">\(y = 2.5\)</span> (តំណាងឱ្យ ២៥ នាក់) គូសបន្ទាត់ដេកទៅកាត់ក្រាប Ogive រួចទម្លាក់បន្ទាត់ឈរមកអ័ក្សដេក (ពិន្ទុ)។ ចំណុចកាត់ស្ថិតនៅលើអង្កត់តភ្ជាប់ពី <span class="mi">\((4.0, 20)\)</span> ទៅ <span class="mi">\((5.0, 28)\)</span>។</p>
+<p>តាមវិធីបន្ទាត់កាត់៖ <div class="md">\[\begin{aligned}
+Me &amp;= 4.0 + \frac{25 - 20}{28 - 20} \times (5.0 - 4.0) \\
+&amp;= 4.0 + \frac{5}{8} \times 1.0 = 4.0 + 0.625 = 4.625
+\end{aligned}\]</div> ដូចនេះ មេដ្យាននៃពិន្ទុគឺប្រហែល <span class="mi">\(4.6\)</span> ពិន្ទុ។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>តារាងទិន្នន័យនេះ ជាប្រាក់បៀវត្សរបស់កម្មករនិងអ្នកជំនាញក្នុងរោងចក្រមួយ (គិតជាម៉ឺនរៀល)</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>កម្មករ</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រាក់បៀវត្ស</td>
+<td>ចំនួនកម្មករ</td>
+</tr>
+<tr>
+<td>24 - 28</td>
+<td>56</td>
+</tr>
+<tr>
+<td>28 - 32</td>
+<td>38</td>
+</tr>
+<tr>
+<td>32 - 36</td>
+<td>6</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>អ្នកជំនាញ</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រាក់បៀវត្ស</td>
+<td>ចំនួនអ្នកជំនាញ</td>
+</tr>
+<tr>
+<td>36 - 42</td>
+<td>62</td>
+</tr>
+<tr>
+<td>42 - 48</td>
+<td>37</td>
+</tr>
+<tr>
+<td>48 - 54</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>គណនាមធ្យមនៃបៀវត្សរបស់កម្មករ និងមធ្យមបៀវត្សរបស់អ្នកជំនាញ ។</p></li>
+<li><p>គណនាមធ្យមបៀវត្សរបស់បុគ្គលិកក្នុងរោងចក្រ បើគេដឹងថាក្នុងរោងចក្រនេះមានកម្មករ 80 % និងអ្នកជំនាញ 20 % ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>គណនាមធ្យមបៀវត្សរបស់កម្មករ និងអ្នកជំនាញ៖</strong></p>
+<ul>
+<li><p><strong>កម្មករ (<span class="mi">\(N_w = 56 + 38 + 6 = 100\)</span> នាក់)៖</strong> ផ្ចិតថ្នាក់គឺ <span class="mi">\(26, 30, 34\)</span> (ម៉ឺនរៀល)។ <div class="md">\[\begin{aligned}
+\bar{x}_w &amp;= \frac{56(26) + 38(30) + 6(34)}{100} \\
+&amp;= \frac{1456 + 1140 + 204}{100} = \frac{2800}{100} = 28 \text{ ម៉ឺនរៀល}
+\end{aligned}\]</div></p></li>
+<li><p><strong>អ្នកជំនាញ (<span class="mi">\(N_s = 62 + 37 + 1 = 100\)</span> នាក់)៖</strong> ផ្ចិតថ្នាក់គឺ <span class="mi">\(39, 45, 51\)</span> (ម៉ឺនរៀល)។ <div class="md">\[\begin{aligned}
+\bar{x}_s &amp;= \frac{62(39) + 37(45) + 1(51)}{100} \\
+&amp;= \frac{2418 + 1665 + 51}{100} = \frac{4134}{100} = 41.34 \text{ ម៉ឺនរៀល}
+\end{aligned}\]</div></p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>គណនាមធ្យមបៀវត្សរួមរបស់បុគ្គលិកទាំងអស់ក្នុងរោងចក្រ៖</strong> ដោយរោងចក្រមានកម្មករ <span class="mi">\(80\%\)</span> និងអ្នកជំនាញ <span class="mi">\(20\%\)</span> មធ្យមរួមគឺ៖ <div class="md">\[\begin{aligned}
+\bar{x} &amp;= 0.80 \times \bar{x}_w + 0.20 \times \bar{x}_s \\
+&amp;= 0.80(28) + 0.20(41.34) \\
+&amp;= 22.4 + 8.268 = 30.668 \text{ ម៉ឺនរៀល}
+\end{aligned}\]</div> (ស្មើនឹង <span class="mi">\(306,680\)</span> រៀល)។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ពិន្ទុសំណួរត្រួតពិនិត្យរបស់សុភទាំង 8 លើកមានមធ្យមភាគ 12.5 (ពិន្ទុ 20 លើ 20) ។ បើធ្វើសំណួរថែមមួយលើកទៀត តើសុភសង្ឃឹមថាពិន្ទុបានមធ្យមនៃពិន្ទុច្រើនបំផុតប៉ុន្មាន ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកពិន្ទុនៃសំណួរត្រួតពិនិត្យទាំង ៨ លើកដំបូងគឺ៖ <div class="md">\[S_8 = 8 \times 12.5 = 100 \text{ ពិន្ទុ}\]</div> ដើម្បីឱ្យពិន្ទុមធ្យមនៃ ៩ លើកមានតម្លៃច្រើនបំផុត ពិន្ទុលើកទី ៩ ត្រូវតែទទួលបានពិន្ទុអតិបរមាគឺ <span class="mi">\(20\)</span> លើ <span class="mi">\(20\)</span>។</p>
+<p>ផលបូកពិន្ទុច្រើនបំផុតនៃ ៩ លើកគឺ៖ <div class="md">\[S_9 = 100 + 20 = 120 \text{ ពិន្ទុ}\]</div> ពិន្ទុមធ្យមច្រើនបំផុតដែលសុភអាចសង្ឃឹមទទួលបានគឺ៖ <div class="md">\[\bar{x}_{\max} = \frac{120}{9} = \frac{40}{3} \approx 13.33 \text{ ពិន្ទុ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>តើគេបានធ្វើសំណួរត្រួតពិនិត្យចំនួនប៉ុន្មានដងរួចមកហើយ ? បើគេដឹងថាឥឡូវនេះ មធ្យមនៃពិន្ទុគឺ 13 ហើយបើសិនជាលើកសំណួរមួយដងទៀតបានពិន្ទុ 18 នោះគេបានមធ្យមនៃពិន្ទុ 14 ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាង <span class="mi">\(n\)</span> ជាចំនួនដងដែលបានធ្វើសំណួរត្រួតពិនិត្យកន្លងមក។</p>
+<p>ផលបូកពិន្ទុនៃ <span class="mi">\(n\)</span> ដងនោះគឺ៖ <div class="md">\[S_n = 13 \times n = 13n\]</div> បើសិនធ្វើថែម ១ ដងទៀតបានពិន្ទុ <span class="mi">\(18\)</span> នោះចំនួនដងសរុបគឺ <span class="mi">\(n+1\)</span> ហើយផលបូកពិន្ទុថ្មីគឺ <span class="mi">\(13n + 18\)</span>។</p>
+<p>តាមបម្រាប់ មធ្យមថ្មីស្មើនឹង <span class="mi">\(14\)</span>៖ <div class="md">\[\frac{13n + 18}{n + 1} = 14\]</div> <div class="md">\[\begin{aligned}
+13n + 18 &amp;= 14(n + 1) \\
+\implies 14n - 13n &amp;= 18 - 14 \implies n = 4
+\end{aligned}\]</div> ដូចនេះ គេបានធ្វើសំណួរត្រួតពិនិត្យចំនួន <span class="mi">\(4\)</span> ដងរួចមកហើយ។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>សិស្សម្នាក់ប្រឡងបានពិន្ទុ <span class="mi">\(65, 70, 78, 82\)</span> ក្នុងតេស្ត ៤ លើកដំបូង។</p>
+<ol class="list oldef cols1">
+<li><p>គណនាពិន្ទុមធ្យមនៃតេស្តទាំង ៤ លើកដំបូង។</p></li>
+<li><p>តើលើកទី ៥ គាត់ត្រូវទទួលបានពិន្ទុប៉ុន្មាន ដើម្បីឱ្យពិន្ទុមធ្យមនៃតេស្តទាំង ៥ លើកស្មើនឹង <span class="mi">\(75\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>ពិន្ទុមធ្យមនៃតេស្ត ៤ លើកដំបូង៖</strong> <div class="md">\[\bar{x}_4 = \frac{65 + 70 + 78 + 82}{4} = \frac{295}{4} = 73.75 \text{ ពិន្ទុ}\]</div> <strong>ខ.</strong>  <strong>ពិន្ទុដែលត្រូវទទួលបានក្នុងលើកទី ៥ (<span class="mi">\(x_5\)</span>)៖</strong> ដើម្បីឱ្យមធ្យមនៃតេស្តទាំង ៥ លើកស្មើនឹង <span class="mi">\(75\)</span>៖ <div class="md">\[\frac{295 + x_5}{5} = 75\]</div> <div class="md">\[295 + x_5 = 5 \times 75 = 375\]</div> <div class="md">\[x_5 = 375 - 295 = 80 \text{ ពិន្ទុ}\]</div> ដូចនេះ ក្នុងលើកទី ៥ គាត់ត្រូវទទួលបានយ៉ាងតិច <span class="mi">\(80\)</span> ពិន្ទុ។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ថ្នាក់រៀនមួយមានសិស្សប្រុស <span class="mi">\(20\)</span> នាក់ដែលមានពិន្ទុមធ្យម <span class="mi">\(68\)</span> និងសិស្សស្រី <span class="mi">\(15\)</span> នាក់ដែលមានពិន្ទុមធ្យម <span class="mi">\(75\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>គណនាផលបូកពិន្ទុសរុបរបស់សិស្សប្រុស និងសិស្សស្រី។</p></li>
+<li><p>គណនាពិន្ទុមធ្យមរួមនៃសិស្សទាំងអស់ក្នុងថ្នាក់នោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>ផលបូកពិន្ទុសរុបរបស់សិស្សប្រុស និងសិស្សស្រី៖</strong></p>
+<ul>
+<li><p>ផលបូកពិន្ទុសិស្សប្រុស (២០ នាក់ មធ្យម ៦៨)៖ <span class="mi">\(\sum x_b = 20 \times 68 = 1360\)</span> ពិន្ទុ</p></li>
+<li><p>ផលបូកពិន្ទុសិស្សស្រី (១៥ នាក់ មធ្យម ៧៥)៖ <span class="mi">\(\sum x_g = 15 \times 75 = 1125\)</span> ពិន្ទុ</p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>ពិន្ទុមធ្យមរួមនៃសិស្សទាំងអស់ក្នុងថ្នាក់ (<span class="mi">\(N = 20 + 15 = 35\)</span> នាក់)៖</strong> <div class="md">\[\begin{aligned}
+\bar{x} &amp;= \frac{\sum x_b + \sum x_g}{N_b + N_g} \\
+&amp;= \frac{1360 + 1125}{20 + 15} = \frac{2485}{35} = 71 \text{ ពិន្ទុ}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេមានទិន្នន័យ៖ <span class="mi">\(2, 5, x, 11, 14\)</span> ដែលត្រូវបានតម្រៀបតាមលំដាប់កើន។</p>
+<ol class="list oldef cols1">
+<li><p>បើដឹងថាមេដ្យានស្មើនឹង <span class="mi">\(8\)</span> ចូររកតម្លៃនៃ <span class="mi">\(x\)</span>។</p></li>
+<li><p>គណនាមធ្យមនព្វន្ធនៃសំណុំទិន្នន័យនេះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>រកតម្លៃនៃ <span class="mi">\(x\)</span>៖</strong> សំណុំទិន្នន័យមាន <span class="mi">\(5\)</span> តួ (ចំនួនសេស) តម្រៀបកើនស្រាប់៖ <span class="mi">\(2, 5, x, 11, 14\)</span>។</p>
+<p>មេដ្យានគឺជាតួទី ៣ គឺ <span class="mi">\(Me = x\)</span>។</p>
+<p>ដោយមេដ្យានស្មើនឹង <span class="mi">\(8\)</span> នាំឱ្យ៖ <div class="md">\[x = 8\]</div> (ផ្ទៀងផ្ទាត់លំដាប់កើន៖ <span class="mi">\(2 &lt; 5 &lt; 8 &lt; 11 &lt; 14\)</span> ពិត)។</p>
+<p><strong>ខ.</strong>  <strong>គណនាមធ្យមនព្វន្ធ (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\bar{x} = \frac{2 + 5 + 8 + 11 + 14}{5} = \frac{40}{5} = 8\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គេមានទិន្នន័យបំណែងចែកប្រេកង់នៃចំនួនគ្រាប់បាល់ដែលកីឡាករទាត់បញ្ចូលទី៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ចំនួនគ្រាប់ (<span class="mi">\(x_i\)</span>)</th>
+<th><span class="mi">\(1\)</span></th>
+<th><span class="mi">\(2\)</span></th>
+<th><span class="mi">\(3\)</span></th>
+<th><span class="mi">\(4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់ (<span class="mi">\(f_i\)</span>)</td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>គណនាមធ្យមនព្វន្ធ <span class="mi">\(\bar{x}\)</span>។</p></li>
+<li><p>រកមេដ្យាន <span class="mi">\(Me\)</span> និងម៉ូត <span class="mi">\(Mo\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 3 + 8 + 6 + 3 = 20\)</span>។</p>
+<p><strong>ក.</strong>  <strong>គណនាមធ្យមនព្វន្ធ (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+\bar{x} &amp;= \frac{\sum f_i x_i}{N} = \frac{1(3) + 2(8) + 3(6) + 4(3)}{20} \\
+&amp;= \frac{3 + 16 + 18 + 12}{20} = \frac{49}{20} = 2.45 \text{ គ្រាប់}
+\end{aligned}\]</div> <strong>ខ.</strong>  <strong>រកមេដ្យាន (<span class="mi">\(Me\)</span>) និងម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong></p>
+<ul>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> <span class="mi">\(N = 20\)</span> (គូ) តំណែងមេដ្យានជាតួទី <span class="mi">\(10\)</span> និងទី <span class="mi">\(11\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(3, 11, 17, 20\)</span>។ តួទី <span class="mi">\(10\)</span> គឺ <span class="mi">\(2\)</span> និងតួទី <span class="mi">\(11\)</span> គឺ <span class="mi">\(2\)</span> នាំឱ្យ <span class="mi">\(Me = 2\)</span> គ្រាប់។</p></li>
+<li><p><strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> តម្លៃដែលមានប្រេកង់ធំជាងគេ (<span class="mi">\(f = 8\)</span>) គឺ <span class="mi">\(Mo = 2\)</span> គ្រាប់។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>រកមេដ្យាននៃសំណុំទិន្នន័យខាងក្រោម៖</p>
+<ol class="list oldef cols1">
+<li><p><span class="mi">\(15, 22, 18, 30, 25, 12, 35, 28\)</span></p></li>
+<li><p><span class="mi">\(7, 13, 9, 21, 15, 18, 11\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>សំណុំទិន្នន័យ៖</strong> <span class="mi">\(15\)</span>, <span class="mi">\(22\)</span>, <span class="mi">\(18\)</span>, <span class="mi">\(30\)</span>, <span class="mi">\(25\)</span>, <span class="mi">\(12\)</span>, <span class="mi">\(35\)</span>, <span class="mi">\(28\)</span> (<span class="mi">\(N = 8\)</span> តួ)។</p>
+<ul>
+<li><p>តម្រៀបតាមលំដាប់កើន៖ <span class="mi">\(12\)</span>, <span class="mi">\(15\)</span>, <span class="mi">\(18\)</span>, <span class="mi">\(22\)</span>, <span class="mi">\(25\)</span>, <span class="mi">\(28\)</span>, <span class="mi">\(30\)</span>, <span class="mi">\(35\)</span></p></li>
+<li><p>ដោយ <span class="mi">\(N = 8\)</span> (គូ) មេដ្យានជាមធ្យមនៃតួទី ៤ និងទី ៥៖ <div class="md">\[Me = \frac{22 + 25}{2} = \frac{47}{2} = 23.5\]</div></p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>សំណុំទិន្នន័យ៖</strong> <span class="mi">\(7, 13, 9, 21, 15, 18, 11\)</span> (<span class="mi">\(N = 7\)</span> តួ)។</p>
+<ul>
+<li><p>តម្រៀបតាមលំដាប់កើន៖ <span class="mi">\(7, 9, 11, 13, 15, 18, 21\)</span></p></li>
+<li><p>ដោយ <span class="mi">\(N = 7\)</span> (សេស) មេដ្យានជាតួទី <span class="mi">\(\dfrac{7+1}{2} = 4\)</span>៖ <div class="md">\[Me = 13\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ក្នុងតារាងបំណែងចែកប្រេកង់នៃទិន្នន័យផ្ដុំជាថ្នាក់ខាងក្រោម៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ថ្នាក់</th>
+<th><span class="mi">\([10, 20)\)</span></th>
+<th><span class="mi">\([20, 30)\)</span></th>
+<th><span class="mi">\([30, 40)\)</span></th>
+<th><span class="mi">\([40, 50)\)</span></th>
+<th><span class="mi">\([50, 60)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់ (<span class="mi">\(f_i\)</span>)</td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(16\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>គណនាមធ្យមនព្វន្ធ <span class="mi">\(\bar{x}\)</span> ដោយប្រើផ្ចិតថ្នាក់ <span class="mi">\(m_i\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផ្ចិតថ្នាក់ <span class="mi">\(m_i = \dfrac{L_i + U_i}{2}\)</span> និងផលគុណ <span class="mi">\(f_i m_i\)</span>៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ថ្នាក់</th>
+<th>ផ្ចិត (<span class="mi">\(m_i\)</span>)</th>
+<th>ប្រេកង់ (<span class="mi">\(f_i\)</span>)</th>
+<th><span class="mi">\(f_i m_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\([10, 20)\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(60\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([20, 30)\)</span></td>
+<td><span class="mi">\(25\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(250\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([30, 40)\)</span></td>
+<td><span class="mi">\(35\)</span></td>
+<td><span class="mi">\(16\)</span></td>
+<td><span class="mi">\(560\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([40, 50)\)</span></td>
+<td><span class="mi">\(45\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(540\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\([50, 60)\)</span></td>
+<td><span class="mi">\(55\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(440\)</span></td>
+</tr>
+<tr>
+<td><strong>សរុប</strong></td>
+<td>—</td>
+<td><span class="mi">\(N = 50\)</span></td>
+<td><span class="mi">\(\sum f_i m_i = 1850\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>មធ្យមនព្វន្ធគឺ៖ <div class="md">\[\bar{x} = \frac{\sum f_i m_i}{N} = \frac{1850}{50} = 37\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ផ្អែកលើតារាងទិន្នន័យក្នុងលំហាត់ទី 21៖</p>
+<ol class="list oldef cols1">
+<li><p>កំណត់ថ្នាក់មេដ្យាន។</p></li>
+<li><p>គណនាមេដ្យានតាមរូបមន្ត <span class="mi">\(Me = L + \left(\dfrac{\frac{N}{2} - F_{prev}}{f_m}\right) \times c\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្អែកលើតារាងទិន្នន័យក្នុងលំហាត់ទី 21 (<span class="mi">\(N = 50\)</span>, ប្រវែងថ្នាក់ <span class="mi">\(c = 10\)</span>)៖</p>
+<p><strong>ក.</strong>  <strong>កំណត់ថ្នាក់មេដ្យាន៖</strong> ប្រេកង់កើនតាមថ្នាក់នីមួយៗគឺ៖ <span class="mi">\(4, 14, 30, 42, 50\)</span>។</p>
+<p>តំណែងមេដ្យានគឺ <span class="mi">\(\dfrac{N}{2} = \dfrac{50}{2} = 25\)</span>។</p>
+<p>ដោយ <span class="mi">\(F_2 = 14 &lt; 25 \le F_3 = 30\)</span> នាំឱ្យ <strong>ថ្នាក់មេដ្យានគឺ <span class="mi">\([30, 40)\)</span></strong>។</p>
+<p><strong>ខ.</strong>  <strong>គណនាមេដ្យានតាមរូបមន្ត៖</strong> <div class="md">\[Me = L + \left(\frac{\frac{N}{2} - F_{prev}}{f_m}\right) \times c\]</div> ដោយ <span class="mi">\(L = 30\)</span>, <span class="mi">\(\frac{N}{2} = 25\)</span>, <span class="mi">\(F_{prev} = 14\)</span>, <span class="mi">\(f_m = 16\)</span>, <span class="mi">\(c = 10\)</span>៖ <div class="md">\[\begin{aligned}
+Me &amp;= 30 + \left(\frac{25 - 14}{16}\right) \times 10 \\
+&amp;= 30 + \frac{110}{16} = 30 + 6.875 = 36.875
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ផ្អែកលើតារាងទិន្នន័យក្នុងលំហាត់ទី 21៖</p>
+<ol class="list oldef cols1">
+<li><p>កំណត់ថ្នាក់ម៉ូត។</p></li>
+<li><p>គណនាម៉ូតតាមរូបមន្ត <span class="mi">\(Mo = L + \left(\dfrac{\Delta_1}{\Delta_1 + \Delta_2}\right) \times c\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្អែកលើតារាងទិន្នន័យក្នុងលំហាត់ទី 21 (<span class="mi">\(c = 10\)</span>)៖</p>
+<p><strong>ក.</strong>  <strong>កំណត់ថ្នាក់ម៉ូត៖</strong> ថ្នាក់ដែលមានប្រេកង់ធំជាងគេគឺ <span class="mi">\(f_3 = 16\)</span> នាំឱ្យ <strong>ថ្នាក់ម៉ូតគឺ <span class="mi">\([30, 40)\)</span></strong>។</p>
+<p><strong>ខ.</strong>  <strong>គណនាម៉ូតតាមរូបមន្ត៖</strong> <div class="md">\[Mo = L + \left(\frac{\Delta_1}{\Delta_1 + \Delta_2}\right) \times c\]</div> ដោយ៖</p>
+<ul>
+<li><p><span class="mi">\(L = 30\)</span> (ព្រំដែនក្រោមនៃថ្នាក់ម៉ូត)</p></li>
+<li><p><span class="mi">\(\Delta_1 = f_m - f_{m-1} = 16 - 10 = 6\)</span></p></li>
+<li><p><span class="mi">\(\Delta_2 = f_m - f_{m+1} = 16 - 12 = 4\)</span></p></li>
+<li><p><span class="mi">\(c = 10\)</span> (ប្រវែងថ្នាក់)</p></li>
+</ul>
+<p>ជំនួសតម្លៃ៖ <div class="md">\[\begin{aligned}
+Mo &amp;= 30 + \left(\frac{6}{6 + 4}\right) \times 10 \\
+&amp;= 30 + \frac{60}{10} = 30 + 6 = 36
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ចូរប្រៀបធៀបតម្លៃ មធ្យម មេដ្យាន និង ម៉ូត ដែលរកឃើញក្នុងលំហាត់ 21, 22, 23 រួចធ្វើការសន្និដ្ឋានអំពីទ្រង់ទ្រាយនៃបំណែងចែក (ស៊ីមេទ្រី ងាកឆ្វេង ឬងាកស្តាំ)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ការប្រៀបធៀបតម្លៃរង្វាស់ទីតាំងទាំងបីនៃលំហាត់ 21, 22, 23៖</strong> <div class="md">\[Mo = 36 &lt; Me = 36.875 &lt; \bar{x} = 37\]</div> <strong>ការសន្និដ្ឋានអំពីទ្រង់ទ្រាយនៃបំណែងចែក៖</strong></p>
+<ol class="list oldef cols1">
+<li><p>ដោយសារ <span class="mi">\(Mo &lt; Me &lt; \bar{x}\)</span> បំណែងចែកនេះមានទំនោរ <strong>ងាកស្តាំបន្តិច (Positively Skewed / Skewed to the right)</strong>។</p></li>
+<li><p>ទោះជាយ៉ាងណា ដោយសារតែតម្លៃទាំងបីនៅកៀកគ្នាខ្លាំង (<span class="mi">\(36 \approx 36.9 \approx 37\)</span>) គម្លាតរវាងមធ្យម និងមេដ្យានមានត្រឹមតែ <span class="mi">\(0.125\)</span> ប៉ុណ្ណោះ ដូច្នេះបំណែងចែកនេះអាចចាត់ទុកថា <strong>ជិតស៊ីមេទ្រីខ្លាំង (Approximately Symmetric / Bell-shaped)</strong>។</p></li>
+</ol>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>បង្ហាញថា ចំពោះសំណុំទិន្នន័យ <span class="mi">\(x_1, x_2, \dots, x_n\)</span> ណាដែលមានមធ្យម <span class="mi">\(\bar{x}\)</span> ផលបូកនៃគម្លាតទាំងអស់ធៀបនឹងមធ្យមតែងតែស្មើនឹងសូន្យ គឺ <span class="mi">\(\sum_{i=1}^n (x_i - \bar{x}) = 0\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាមនិយមន័យនៃមធ្យមនព្វន្ធ៖ <div class="md">\[\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i \implies \sum_{i=1}^n x_i = n\bar{x}\]</div> យើងគណនាផលបូកនៃគម្លាតធៀបនឹងមធ្យម៖ <div class="md">\[\begin{aligned}
+\sum_{i=1}^n (x_i - \bar{x}) &amp;= (x_1 - \bar{x}) + (x_2 - \bar{x}) + \dots + (x_n - \bar{x}) \\
+&amp;= (x_1 + x_2 + \dots + x_n) - \underbrace{(\bar{x} + \bar{x} + \dots + \bar{x})}_{n \text{ ដង}} \\
+&amp;= \sum_{i=1}^n x_i - n\bar{x} \\
+&amp;= n\bar{x} - n\bar{x} = 0
+\end{aligned}\]</div> ដូចនេះ ផលបូកនៃគម្លាតទាំងអស់ធៀបនឹងមធ្យមតែងតែស្មើនឹងសូន្យជានិច្ច ត្រូវបានស្រាយបញ្ជាក់។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គេមានទិន្នន័យ <span class="mi">\(10\)</span> ចំនួន ដែលមានមធ្យម <span class="mi">\(\bar{x} = 42\)</span>។ ក្រោយមក គេពិនិត្យឃើញថាមានចំនួនមួយត្រូវបានកត់ត្រាខុស គឺលេខ <span class="mi">\(35\)</span> ត្រូវបានកត់ជា <span class="mi">\(53\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>រកផលបូកពិន្ទុដើមដែលមិនទាន់កែតម្រូវ។</p></li>
+<li><p>គណនាមធ្យមត្រឹមត្រូវក្រោយការកែតម្រូវ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>រកផលបូកពិន្ទុដើមដែលមិនទាន់កែតម្រូវ៖</strong> ទិន្នន័យមាន <span class="mi">\(n = 10\)</span> ចំនួន និងមធ្យមដើម <span class="mi">\(\bar{x} = 42\)</span>៖ <div class="md">\[\sum x_{\text{old}} = n \times \bar{x} = 10 \times 42 = 420\]</div> <strong>ខ.</strong>  <strong>គណនាមធ្យមត្រឹមត្រូវក្រោយការកែតម្រូវ៖</strong> ដោយលេខ <span class="mi">\(35\)</span> ត្រូវបានកត់ត្រាច្រឡំជា <span class="mi">\(53\)</span> នាំឱ្យផលបូកត្រឹមត្រូវគឺ៖ <div class="md">\[\sum x_{\text{correct}} = \sum x_{\text{old}} - 53 + 35 = 420 - 18 = 402\]</div> មធ្យមត្រឹមត្រូវគឺ៖ <div class="md">\[\bar{x}_{\text{correct}} = \frac{\sum x_{\text{correct}}}{n} = \frac{402}{10} = 40.2\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>តើសំណុំទិន្នន័យខាងក្រោមនីមួយៗមានម៉ូតដែរឬទេ? បើមាន ចូររកម៉ូតនោះ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(4, 7, 9, 12, 15, 18\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(3, 5, 5, 8, 8, 11\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(2, 2, 2, 6, 6, 6\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(1, 3, 4, 4, 4, 7, 9\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <span class="mi">\(4, 7, 9, 12, 15, 18\)</span>៖ គ្រប់ទិន្នន័យទាំងអស់កើតឡើងតែម្តងស្មើៗគ្នា នាំឱ្យ <strong>គ្មានម៉ូត (No Mode)</strong>។</p>
+<p><strong>ខ.</strong>  <span class="mi">\(3, 5, 5, 8, 8, 11\)</span>៖ តម្លៃ <span class="mi">\(5\)</span> និង <span class="mi">\(8\)</span> កើតឡើង ២ ដងស្មើគ្នា (ច្រើនជាងគេ) នាំឱ្យមាន <strong>ម៉ូតពីរ (Bimodal) គឺ <span class="mi">\(Mo_1 = 5\)</span> និង <span class="mi">\(Mo_2 = 8\)</span></strong>។</p>
+<p><strong>គ.</strong>  <span class="mi">\(2, 2, 2, 6, 6, 6\)</span>៖ ទិន្នន័យទាំងពីរតម្លៃកើតឡើង ៣ ដងស្មើគ្នា គ្មានតម្លៃណាលើសគេ នាំឱ្យ <strong>គ្មានម៉ូត (No Mode)</strong>។</p>
+<p><strong>ឃ.</strong>  <span class="mi">\(1, 3, 4, 4, 4, 7, 9\)</span>៖ តម្លៃ <span class="mi">\(4\)</span> កើតឡើង ៣ ដង (ច្រើនជាងគេ) នាំឱ្យមាន <strong>ម៉ូតតែមួយគត់ (Unimodal) គឺ <span class="mi">\(Mo = 4\)</span></strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ក្នុងការស្ទង់មតិប្រាក់ចំណូលប្រចាំខែរបស់កម្មករ ៥ នាក់ និងប្រធានគ្រប់គ្រងម្នាក់ក្នុងសហគ្រាសមួយ៖ កម្មកររកបានរៀងគ្នា <span class="mi">\(250\$, 260\$, 240\$, 270\$, 250\$\)</span> ចំណែកប្រធានគ្រប់គ្រងរកបាន <span class="mi">\(3000\$\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>គណនាមធ្យមនព្វន្ធ និងមេដ្យាននៃប្រាក់ចំណូលរបស់បុគ្គលិកទាំង ៦ នាក់។</p></li>
+<li><p>តើរវាងមធ្យម និងមេដ្យាន រង្វាស់ទីតាំងណាដែលឆ្លុះបញ្ចាំងពីប្រាក់ចំណូលជាក់ស្តែងរបស់បុគ្គលិកភាគច្រើនបានប្រសើរជាង? ហេតុអ្វី?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>គណនាមធ្យមនព្វន្ធ និងមេដ្យាននៃបុគ្គលិកទាំង ៦ នាក់៖</strong> ប្រាក់ចំណូល៖ <span class="mi">\(240, 250, 250, 260, 270, 3000\)</span> ($)។</p>
+<ul>
+<li><p><strong>មធ្យម (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+    \bar{x} &amp;= \frac{240 + 250 + 250 + 260 + 270 + 3000}{6} \\
+    &amp;= \frac{4270}{6} \approx 711.67\$
+    
+\end{aligned}\]</div></p></li>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> <span class="mi">\(N = 6\)</span> តួ (គូ) តម្រៀបកើនស្រាប់។ មេដ្យានជាមធ្យមនៃតួទី ៣ និងទី ៤៖ <div class="md">\[Me = \frac{250 + 260}{2} = 255\$\]</div></p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>ការប្រៀបធៀប និងហេតុផល៖</strong> <strong>មេដ្យាន (<span class="mi">\(Me = 255\$\)</span>)</strong> ឆ្លុះបញ្ចាំងពីប្រាក់ចំណូលជាក់ស្តែងរបស់បុគ្គលិកភាគច្រើនបានប្រសើរជាងមធ្យមឆ្ងាយណាស់ ពីព្រោះប្រាក់ចំណូល <span class="mi">\(3000\$\)</span> របស់ប្រធានគ្រប់គ្រងជាតម្លៃរង្វៀងធំខ្លាំង (Outlier) ដែលទាញមធ្យមឱ្យឡើងដល់ជាង <span class="mi">\(711\$\)</span> ទាំងដែលកម្មករ ៥ នាក់រកបានត្រឹមតែ <span class="mi">\(240\$\)</span> ទៅ <span class="mi">\(270\$\)</span> ប៉ុណ្ណោះ។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គេមានតារាងប្រេកង់ដែលបាត់តម្លៃប្រេកង់ <span class="mi">\(f_1\)</span> និង <span class="mi">\(f_2\)</span>៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ថ្នាក់</th>
+<th><span class="mi">\([0, 10)\)</span></th>
+<th><span class="mi">\([10, 20)\)</span></th>
+<th><span class="mi">\([20, 30)\)</span></th>
+<th><span class="mi">\([30, 40)\)</span></th>
+<th><span class="mi">\([40, 50)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់</td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(f_1\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(f_2\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>បើដឹងថាប្រេកង់សរុបគឺ <span class="mi">\(N = 30\)</span> និងមធ្យមនព្វន្ធគឺ <span class="mi">\(\bar{x} = 26\)</span> ចូររកតម្លៃនៃ <span class="mi">\(f_1\)</span> និង <span class="mi">\(f_2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 30\)</span>៖ <div class="md">\[2 + f_1 + 12 + f_2 + 4 = 30 \implies f_1 + f_2 = 12 \quad{} (1)\]</div> ផ្ចិតថ្នាក់រៀងគ្នាគឺ <span class="mi">\(5, 15, 25, 35, 45\)</span>។ ផលបូក <span class="mi">\(f_i m_i\)</span> គឺ៖ <div class="md">\[\begin{aligned}
+\sum f_i m_i &amp;= 2(5) + 15f_1 + 12(25) + 35f_2 + 4(45) \\
+&amp;= 15f_1 + 35f_2 + 490
+\end{aligned}\]</div> ដោយមធ្យម <span class="mi">\(\bar{x} = 26 \implies \sum f_i m_i = 30 \times 26 = 780\)</span>៖ <div class="md">\[15f_1 + 35f_2 + 490 = 780 \implies 15f_1 + 35f_2 = 290\]</div> សម្រួលនឹង <span class="mi">\(5\)</span>៖ <div class="md">\[3f_1 + 7f_2 = 58 \quad{} (2)\]</div> គុណសមីការ (១) នឹង <span class="mi">\(3\)</span>៖ <span class="mi">\(3f_1 + 3f_2 = 36\)</span>។ ដកសមីការទាំងពីរ៖ <div class="md">\[4f_2 = 22 \implies f_2 = 5.5 \implies f_1 = 12 - 5.5 = 6.5\]</div> <strong>ចំណាំគរុកោសល្យ៖</strong> តាមទ្រឹស្តីពីជគណិត <span class="mi">\(f_1 = 6.5, f_2 = 5.5\)</span>។ ក្នុងការអនុវត្តជាក់ស្តែងដែលប្រេកង់ត្រូវជាចំនួនគត់ គេជ្រើសយកតម្លៃគត់ដែលជិតបំផុតគឺ <span class="mi">\(f_1 = 6\)</span> និង <span class="mi">\(f_2 = 6\)</span> (ដែលផ្តល់មធ្យម <span class="mi">\(\bar{x} = \frac{790}{30} \approx 26.33\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>តាមលទ្ធផលដែលរកឃើញក្នុងលំហាត់ទី 29 ចូរគណនាមេដ្យាន និងម៉ូតនៃទិន្នន័យនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្អែកលើតារាងជាមួយ <span class="mi">\(f_1 = 6, f_2 = 6\)</span> (<span class="mi">\(N = 30\)</span>, <span class="mi">\(h = 10\)</span>)៖ ប្រេកង់រៀងគ្នា៖ <span class="mi">\(2, 6, 12, 6, 4\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(2, 8, 20, 26, 30\)</span>។</p>
+<p><strong>ក.</strong>  <strong>គណនាមេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> តំណែងមេដ្យាន <span class="mi">\(\dfrac{N}{2} = \dfrac{30}{2} = 15\)</span> ស្ថិតក្នុងថ្នាក់ <span class="mi">\([20, 30)\)</span> (ព្រោះ <span class="mi">\(8 &lt; 15 \le 20\)</span>)៖ <div class="md">\[\begin{aligned}
+Me &amp;= L + \left(\frac{\frac{N}{2} - F_{c}}{f_m}\right) \times h \\
+&amp;= 20 + \left(\frac{15 - 8}{12}\right) \times 10 = 20 + \frac{70}{12} \approx 25.83
+\end{aligned}\]</div> <strong>ខ.</strong>  <strong>គណនាម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> ថ្នាក់ម៉ូតគឺ <span class="mi">\([20, 30)\)</span> (<span class="mi">\(f_3 = 12\)</span> ធំបំផុត)៖ <span class="mi">\(\Delta_1 = 12 - 6 = 6\)</span>, <span class="mi">\(\Delta_2 = 12 - 6 = 6\)</span>៖ <div class="md">\[\begin{aligned}
+Mo &amp;= L + \left(\frac{\Delta_1}{\Delta_1 + \Delta_2}\right) \times h \\
+&amp;= 20 + \left(\frac{6}{6 + 6}\right) \times 10 = 20 + 5 = 25
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>កំណត់មេដ្យាននៃសំណុំទិន្នន័យដែលតាងដោយដ្យាក្រាមដើម-ស្លឹកខាងក្រោម៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ដើម</th>
+<th>ស្លឹក</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2, 5, 8\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(0, 3, 4, 7, 9\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(1, 5, 6\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>(កំណត់សម្គាល់៖ <span class="mi">\(1 | 2\)</span> តំណាងឱ្យ <span class="mi">\(12\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដ្យាក្រាមដើម-ស្លឹកតំណាងឱ្យទិន្នន័យចំនួន <span class="mi">\(N = 3 + 5 + 3 = 11\)</span> តួ៖ <div class="md">\[12, 15, 18, 20, 23, 24, 27, 29, 31, 35, 36\]</div> ដោយសារទិន្នន័យត្រូវបានតម្រៀបតាមលំដាប់កើនស្រាប់ និង <span class="mi">\(N = 11\)</span> (ចំនួនសេស) មេដ្យានគឺជាតួទី <span class="mi">\(\dfrac{N+1}{2} = \dfrac{11+1}{2} = 6\)</span>៖ <div class="md">\[Me = x_6 = 24\]</div> ដូចនេះ មេដ្យាននៃសំណុំទិន្នន័យគឺ <span class="mi">\(24\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>រោងចក្រកាត់ដេរមួយមានបុគ្គលិក ៣ ផ្នែក៖</p>
+<ul>
+<li><p>ផ្នែកផលិតមាន <span class="mi">\(50\)</span> នាក់ ប្រាក់ខែមធ្យម <span class="mi">\(300\$\)</span></p></li>
+<li><p>ផ្នែកបច្ចេកទេសមាន <span class="mi">\(20\)</span> នាក់ ប្រាក់ខែមធ្យម <span class="mi">\(500\$\)</span></p></li>
+<li><p>ផ្នែកគ្រប់គ្រងមាន <span class="mi">\(10\)</span> នាក់ ប្រាក់ខែមធ្យម <span class="mi">\(800\$\)</span></p></li>
+</ul>
+<p>ចូរគណនាប្រាក់ខែមធ្យមរួមនៃបុគ្គលិកទាំងអស់ក្នុងរោងចក្រនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនបុគ្គលិកសរុបក្នុងរោងចក្រ៖ <div class="md">\[N = N_1 + N_2 + N_3 = 50 + 20 + 10 = 80 \text{ នាក់}\]</div> ប្រាក់ខែមធ្យមរួមគណនាតាមមធ្យមនព្វន្ធធៀប៖ <div class="md">\[\begin{aligned}
+\bar{x} &amp;= \frac{N_1 \bar{x}_1 + N_2 \bar{x}_2 + N_3 \bar{x}_3}{N_1 + N_2 + N_3} \\
+&amp;= \frac{50(300) + 20(500) + 10(800)}{80} \\
+&amp;= \frac{15000 + 10000 + 8000}{80} = \frac{33000}{80} = 412.50\$
+\end{aligned}\]</div> ដូចនេះ ប្រាក់ខែមធ្យមរួមនៃបុគ្គលិកទាំងអស់គឺ <span class="mi">\(412.50\$\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>គេមានទិន្នន័យពិន្ទុសិស្សក្នុងតារាងបំណែងចែកប្រេកង់៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ពិន្ទុ</th>
+<th><span class="mi">\([50, 60)\)</span></th>
+<th><span class="mi">\([60, 70)\)</span></th>
+<th><span class="mi">\([70, 80)\)</span></th>
+<th><span class="mi">\([80, 90)\)</span></th>
+<th><span class="mi">\([90, 100)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនសិស្ស</td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(20\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>គណនាមធ្យម មេដ្យាន និងម៉ូតនៃពិន្ទុសិស្ស។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 5 + 15 + 20 + 8 + 2 = 50\)</span> នាក់។ ប្រវែងថ្នាក់ <span class="mi">\(h = 10\)</span>។</p>
+<p>ផ្ចិតថ្នាក់រៀងគ្នាគឺ <span class="mi">\(55, 65, 75, 85, 95\)</span>។</p>
+<p><strong>ក.</strong>  <strong>មធ្យម (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+\sum f_i m_i &amp;= 5(55) + 15(65) + 20(75) + 8(85) + 2(95) \\
+&amp;= 275 + 975 + 1500 + 680 + 190 = 3620
+\end{aligned}\]</div> <div class="md">\[\bar{x} = \frac{3620}{50} = 72.4 \text{ ពិន្ទុ}\]</div> <strong>ខ.</strong>  <strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> <span class="mi">\(\dfrac{N}{2} = 25\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(5, 20, 40, 48, 50\)</span>។ ថ្នាក់មេដ្យានគឺ <span class="mi">\([70, 80)\)</span>៖ <div class="md">\[\begin{aligned}
+Me &amp;= 70 + \left(\frac{25 - 20}{20}\right) \times 10 \\
+&amp;= 70 + \frac{50}{20} = 72.5 \text{ ពិន្ទុ}
+\end{aligned}\]</div> <strong>គ.</strong>  <strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> ថ្នាក់ម៉ូតគឺ <span class="mi">\([70, 80)\)</span> (<span class="mi">\(f_3 = 20\)</span> ធំបំផុត)៖ <span class="mi">\(\Delta_1 = 20 - 15 = 5\)</span>, <span class="mi">\(\Delta_2 = 20 - 8 = 12\)</span>៖ <div class="md">\[\begin{aligned}
+Mo &amp;= 70 + \left(\frac{5}{5 + 12}\right) \times 10 \\
+&amp;= 70 + \frac{50}{17} \approx 72.94 \text{ ពិន្ទុ}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បើបំណែងចែកទិន្នន័យមួយមានមធ្យម <span class="mi">\(\bar{x} = 15\)</span> និងមេដ្យាន <span class="mi">\(Me = 14\)</span>៖</p>
+<ol class="list oldef cols1">
+<li><p>ប៉ាន់ស្មានតម្លៃម៉ូត <span class="mi">\(Mo\)</span> ដោយប្រើរូបមន្តជាក់ស្តែងរបស់ Pearson៖ <span class="mi">\(Mo \approx 3Me - 2\bar{x}\)</span>។</p></li>
+<li><p>តើបំណែងចែកនេះមានទំនោរងាកទៅខាងណា (Skewed right or Skewed left)?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>ប៉ាន់ស្មានតម្លៃម៉ូត <span class="mi">\(Mo\)</span> តាមរូបមន្ត Pearson៖</strong> <div class="md">\[Mo \approx 3Me - 2\bar{x}\]</div> ដោយ <span class="mi">\(Me = 14\)</span> និង <span class="mi">\(\bar{x} = 15\)</span>៖ <div class="md">\[Mo \approx 3(14) - 2(15) = 42 - 30 = 12\]</div> <strong>ខ.</strong>  <strong>ទំនោរនៃបំណែងចែក៖</strong> ដោយសារ <span class="mi">\(Mo (12) &lt; Me (14) &lt; \bar{x} (15)\)</span> តម្លៃមធ្យមធំជាងមេដ្យាន និងម៉ូត នាំឱ្យបំណែងចែកនេះជា <strong>បំណែងចែកងាកស្តាំ (Skewed right / Positively skewed)</strong>។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>សំណុំទិន្នន័យមួយមានមធ្យម <span class="mi">\(\bar{x} = 10\)</span> និងមេដ្យាន <span class="mi">\(Me = 12\)</span>។ ប្រសិនបើគេយកគ្រប់តម្លៃទិន្នន័យទាំងអស់គុណនឹង <span class="mi">\(-3\)</span> រួចដក <span class="mi">\(5\)</span> តើមធ្យមថ្មី និងមេដ្យានថ្មីស្មើនឹងប៉ុន្មាន? បញ្ជាក់ទ្រឹស្តីបទដែលត្រូវប្រើ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ទ្រឹស្តីបទនៃការបំប្លែងលីនេអ៊ែរ (Linear Transformation)៖</strong> ប្រសិនបើទិន្នន័យ <span class="mi">\(x_i\)</span> ត្រូវបានបំប្លែងតាមសមីការ <span class="mi">\(y_i = a x_i + b\)</span> នោះ៖</p>
+<ul>
+<li><p><strong>មធ្យមថ្មី៖</strong> <span class="mi">\(\bar{y} = a\bar{x} + b\)</span></p></li>
+<li><p><strong>មេដ្យានថ្មី៖</strong> <span class="mi">\(Me_y = a(Me_x) + b\)</span> (ដោយសារការបំប្លែងលីនេអ៊ែររក្សាលក្ខណៈលំដាប់នៃទិន្នន័យ)</p></li>
+</ul>
+<p>ក្នុងលំហាត់នេះ <span class="mi">\(a = -3\)</span> និង <span class="mi">\(b = -5\)</span>៖</p>
+<ul>
+<li><p>មធ្យមថ្មី៖ <span class="mi">\(\bar{y} = (-3)(10) - 5 = -30 - 5 = -35\)</span></p></li>
+<li><p>មេដ្យានថ្មី៖ <span class="mi">\(Me_y = (-3)(12) - 5 = -36 - 5 = -41\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>ទិន្នន័យទម្ងន់ទារកកើតថ្មី (គិតជា <span class="mi">\(\text{kg}\)</span>) នៅមន្ទីរពេទ្យសម្ភពមួយមាន៖ <span class="mi">\(2.8, 3.2, 3.0, 3.5, 2.9, 3.1, 3.4, 3.0, 3.3, 3.1\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>គណនាមធ្យមនព្វន្ធ។</p></li>
+<li><p>រកមេដ្យាន និងម៉ូត។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទិន្នន័យ ១០ តួ៖ <span class="mi">\(2.8\)</span>, <span class="mi">\(3.2\)</span>, <span class="mi">\(3.0\)</span>, <span class="mi">\(3.5\)</span>, <span class="mi">\(2.9\)</span>, <span class="mi">\(3.1\)</span>, <span class="mi">\(3.4\)</span>, <span class="mi">\(3.0\)</span>, <span class="mi">\(3.3\)</span>, <span class="mi">\(3.1\)</span>។</p>
+<p><strong>ក.</strong>  <strong>គណនាមធ្យមនព្វន្ធ (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+\sum x &amp;= 2.8 + 3.2 + 3.0 + 3.5 + 2.9 \\
+&amp;\quad{} + 3.1 + 3.4 + 3.0 + 3.3 + 3.1 = 32.3\text{ kg}
+\end{aligned}\]</div> <div class="md">\[\bar{x} = \frac{32.3}{10} = 3.23\text{ kg}\]</div> <strong>ខ.</strong>  <strong>រកមេដ្យាន និងម៉ូត៖</strong></p>
+<ul>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> តម្រៀបកើន៖ <span class="mi">\(2.8\)</span>, <span class="mi">\(2.9\)</span>, <span class="mi">\(3.0\)</span>, <span class="mi">\(3.0\)</span>, <span class="mi">\(3.1\)</span>, <span class="mi">\(3.1\)</span>, <span class="mi">\(3.2\)</span>, <span class="mi">\(3.3\)</span>, <span class="mi">\(3.4\)</span>, <span class="mi">\(3.5\)</span>។ <span class="mi">\(N = 10\)</span> (គូ) មេដ្យានជាមធ្យមនៃតួទី ៥ និងទី ៦៖ <div class="md">\[Me = \frac{3.1 + 3.1}{2} = 3.10\text{ kg}\]</div></p></li>
+<li><p><strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> តម្លៃ <span class="mi">\(3.0\)</span> និង <span class="mi">\(3.1\)</span> សុទ្ធតែកើតឡើង ២ ដងស្មើគ្នា នាំឱ្យមាន <strong>ម៉ូតពីរ (Bimodal) គឺ <span class="mi">\(Mo_1 = 3.0\text{ kg}\)</span> និង <span class="mi">\(Mo_2 = 3.1\text{ kg}\)</span></strong>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>ចូរពន្យល់ពីមូលហេតុដែលមិនអាចគណនាមធ្យមចំពោះទិន្នន័យគុណភាព (ដូចជា ពណ៌ភ្នែក ឬកម្រិតការពេញចិត្ត) ប៉ុន្តែគេអាចកំណត់ម៉ូតបាន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>មូលហេតុដែលមិនអាចគណនាមធ្យមលើទិន្នន័យគុណភាព តែអាចកំណត់ម៉ូតបាន៖</strong></p>
+<ol class="list oldef cols1">
+<li><p><strong>ចំពោះមធ្យមនព្វន្ធ៖</strong> រូបមន្តមធ្យម <span class="mi">\(\bar{x} = \frac{\sum x_i}{N}\)</span> តម្រូវឱ្យធ្វើប្រមាណវិធីបូកលេខ និងចែកលេខ។ ទិន្នន័យគុណភាព (ដូចជា ពណ៌ភ្នែក កម្រិតការពេញចិត្ត ឬភេទ) ជាប្រភេទពាក្យសម្តី ឬឈ្មោះ គ្មានតម្លៃលេខក្នុងខ្លួនវាឡើយ ដូច្នេះមិនអាចបូកដកចែកបានទេ។</p></li>
+<li><p><strong>ចំពោះម៉ូត៖</strong> និយមន័យនៃម៉ូតផ្អែកតែលើ «ភាពញឹកញាប់នៃការកើតឡើង (ប្រេកង់)» ប៉ុណ្ណោះ។ គេគ្រាន់តែរាប់ចំនួនម្តងដែលគុណលក្ខណៈនីមួយៗកើតឡើង ហើយគុណលក្ខណៈណាដែលមានប្រេកង់ច្រើនជាងគេ គឺជាម៉ូត (ឧទាហរណ៍៖ ពណ៌ភ្នែកខ្មៅច្រើនជាងគេ នោះម៉ូតគឺ «ពណ៌ខ្មៅ»)។</p></li>
+</ol>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>គេឱ្យតារាងបំណែងចែកប្រេកង់៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ថ្នាក់</th>
+<th><span class="mi">\([20, 40)\)</span></th>
+<th><span class="mi">\([40, 60)\)</span></th>
+<th><span class="mi">\([60, 80)\)</span></th>
+<th><span class="mi">\([80, 100)\)</span></th>
+<th><span class="mi">\([100, 120)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ប្រេកង់</td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(25\)</span></td>
+<td><span class="mi">\(40\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>គណនាមេដ្យាន និងម៉ូតនៃទិន្នន័យខាងលើ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 10 + 25 + 40 + 15 + 10 = 100\)</span>។ ប្រវែងថ្នាក់ <span class="mi">\(h = 20\)</span>។</p>
+<p>ប្រេកង់កើនតាមថ្នាក់៖ <span class="mi">\(10, 35, 75, 90, 100\)</span>។</p>
+<p><strong>ក.</strong>  <strong>គណនាមេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> តំណែងមេដ្យាន <span class="mi">\(\dfrac{N}{2} = \dfrac{100}{2} = 50\)</span> ស្ថិតក្នុងថ្នាក់ <span class="mi">\([60, 80)\)</span> (ព្រោះ <span class="mi">\(35 &lt; 50 \le 75\)</span>)៖ <div class="md">\[\begin{aligned}
+Me &amp;= L + \left(\frac{\frac{N}{2} - F_{c}}{f_m}\right) \times h \\
+&amp;= 60 + \left(\frac{50 - 35}{40}\right) \times 20 \\
+&amp;= 60 + \frac{300}{40} = 60 + 7.5 = 67.5
+\end{aligned}\]</div> <strong>ខ.</strong>  <strong>គណនាម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> ថ្នាក់ម៉ូតគឺ <span class="mi">\([60, 80)\)</span> (<span class="mi">\(f_3 = 40\)</span> ធំបំផុត)៖ <span class="mi">\(\Delta_1 = 40 - 25 = 15\)</span>, <span class="mi">\(\Delta_2 = 40 - 15 = 25\)</span>៖ <div class="md">\[\begin{aligned}
+Mo &amp;= 60 + \left(\frac{15}{15 + 25}\right) \times 20 \\
+&amp;= 60 + \frac{300}{40} = 60 + 7.5 = 67.5
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ផ្អែកលើទិន្នន័យក្នុងលំហាត់ទី 38 ចូរសង់ពហុកោណប្រេកង់កើន (Ogive) និងកំណត់មេដ្យានតាមរយៈក្រាប រួចប្រៀបធៀបជាមួយតម្លៃដែលបានគណនាតាមរូបមន្ត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>សង់ពហុកោណប្រេកង់កើន (Ogive)៖</strong> ភ្ជាប់ចំណុច <span class="mi">\((20, 0)\)</span>, <span class="mi">\((40, 10)\)</span>, <span class="mi">\((60, 35)\)</span>, <span class="mi">\((80, 75)\)</span>, <span class="mi">\((100, 90)\)</span>, <span class="mi">\((120, 100)\)</span>។</p>
+<p><strong>ខ.</strong>  <strong>កំណត់មេដ្យានតាមរយៈក្រាប៖</strong></p>
+<ul>
+<li><p>នៅលើអ័ក្សឈរ គូសបន្ទាត់ដេកត្រង់កម្ពស់ <span class="mi">\(y = \frac{N}{2} = 50\)</span> កាត់ខ្សែ Ogive ត្រង់ចំណុចមួយ។</p></li>
+<li><p>ពីចំណុចកាត់នោះ ទម្លាក់បន្ទាត់ឈរមកអ័ក្សដេក គេអានបានតម្លៃអាប់ស៊ីស <span class="mi">\(x \approx 67.5\)</span>។</p></li>
+</ul>
+
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+
+<p><strong>គ.</strong>  <strong>ការប្រៀបធៀប៖</strong> តម្លៃមេដ្យានដែលអានបានពីក្រាប (<span class="mi">\(Me \approx 67.5\)</span>) គឺស៊ីគ្នាយ៉ាងជាក់លាក់ជាមួយនឹងតម្លៃដែលគណនាតាមរូបមន្តក្នុងលំហាត់ទី 38 (<span class="mi">\(Me = 67.5\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ក្នុងការប្រកួតកាយសម្ព័ន្ធមួយ ចៅក្រម ៧ នាក់បានផ្តល់ពិន្ទុដូចខាងក្រោម៖ <span class="mi">\(8.2, 8.5, 8.4, 9.1, 8.3, 8.5, 9.8\)</span>។ ដើម្បីភាពយុត្តិធម៌ គណៈកម្មការសម្រេចលុបពិន្ទុទាបបំផុតមួយ និងពិន្ទុខ្ពស់បំផុតមួយចេញ រួចគណនាមធ្យមនៃពិន្ទុដែលនៅសល់ (Trimmed Mean)។</p>
+<ol class="list oldef cols1">
+<li><p>រកពិន្ទុទាបបំផុត និងខ្ពស់បំផុត។</p></li>
+<li><p>គណនាមធ្យមនៃពិន្ទុទាំង ៥ ដែលនៅសល់។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពិន្ទុចៅក្រម ៧ នាក់៖ <span class="mi">\(8.2\)</span>, <span class="mi">\(8.5\)</span>, <span class="mi">\(8.4\)</span>, <span class="mi">\(9.1\)</span>, <span class="mi">\(8.3\)</span>, <span class="mi">\(8.5\)</span>, <span class="mi">\(9.8\)</span>។</p>
+<p><strong>ក.</strong>  <strong>រកពិន្ទុទាបបំផុត និងខ្ពស់បំផុត៖</strong> តម្រៀបពិន្ទុតាមលំដាប់កើន៖ <span class="mi">\(8.2\)</span>, <span class="mi">\(8.3\)</span>, <span class="mi">\(8.4\)</span>, <span class="mi">\(8.5\)</span>, <span class="mi">\(8.5\)</span>, <span class="mi">\(9.1\)</span>, <span class="mi">\(9.8\)</span>។</p>
+<ul>
+<li><p>ពិន្ទុទាបបំផុត៖ <span class="mi">\(X_{\min} = 8.2\)</span></p></li>
+<li><p>ពិន្ទុខ្ពស់បំផុត៖ <span class="mi">\(X_{\max} = 9.8\)</span></p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>គណនាមធ្យមកែសម្រួល (Trimmed Mean)៖</strong> លុបពិន្ទុ <span class="mi">\(8.2\)</span> និង <span class="mi">\(9.8\)</span> ចេញ ពិន្ទុទាំង ៥ ដែលនៅសល់គឺ៖ <span class="mi">\(8.3, 8.4, 8.5, 8.5, 9.1\)</span>។ <div class="md">\[\begin{aligned}
+\bar{x}_{\text{trimmed}} &amp;= \frac{8.3 + 8.4 + 8.5 + 8.5 + 9.1}{5} \\
+&amp;= \frac{42.8}{5} = 8.56 \text{ ពិន្ទុ}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p><strong>(PISA - ការគ្រប់គ្រងស្តុក)</strong> នៅក្នុងហាងលក់សម្លៀកបំពាក់មួយ ម្ចាស់ហាងចង់បញ្ជាទិញទំហំអាវយឺត (S, M, L, XL, XXL) បន្ថែម។</p>
+<ol class="list oldef cols1">
+<li><p>តើគាត់គួរប្រើប្រាស់រង្វាស់ទីតាំងណា (មធ្យម មេដ្យាន ឬម៉ូត)? ចូរពន្យល់ពីហេតុផល។</p></li>
+<li><p>បើគាត់គណនាមធ្យមនៃទំហំអាវ តើវាមានអត្ថន័យជាក់ស្តែងដែរឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>រង្វាស់ទីតាំងដែលគួរប្រើប្រាស់៖</strong> ម្ចាស់ហាងគួរប្រើប្រាស់ <strong>ម៉ូត (Mode)</strong> ពីព្រោះទំហំអាវ (S, M, L, XL, XXL) ជាទិន្នន័យគុណភាពតាមលំដាប់ (Ordinal data)។ ម៉ូតបង្ហាញពីទំហំអាវដែលមានប្រជាប្រិយភាព និងលក់ដាច់ច្រើនជាងគេបំផុត ដែលជួយឱ្យម្ចាស់ហាងបញ្ជាទិញត្រូវចំតម្រូវការទីផ្សារ ជៀសវាងការកកស្ទះស្តុក។</p>
+<p><strong>ខ.</strong>  <strong>អត្ថន័យនៃការគណនាមធ្យមនៃទំហំអាវ៖</strong> ការគណនាមធ្យមនៃទំហំអាវ <strong>គ្មានអត្ថន័យជាក់ស្តែងឡើយ</strong>។ ឧទាហរណ៍ ប្រសិនបើតាង S=1, M=2, L=3... ហើយគណនាឃើញមធ្យមស្មើ <span class="mi">\(2.4\)</span> គ្មានរោងចក្រណាអាចផលិតទំហំអាវ «2.4» បានឡើយ ព្រោះទំហំអាវមិនមែនជាទំហំរង្វាស់លេខបន្ត។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p><strong>(PISA - សេវាកម្មដឹកជញ្ជូន)</strong> ក្រុមហ៊ុនតាក់ស៊ីមួយអះអាងថា រយៈពេលរង់ចាំជាមធ្យមរបស់អតិថិជនគឺត្រឹមតែ <span class="mi">\(5\)</span> នាទី។ ប៉ុន្តែអតិថិជនជាច្រើនត្អូញត្អែរថា ពួកគេត្រូវរង់ចាំលើសពី <span class="mi">\(15\)</span> នាទីជាញឹកញាប់។</p>
+<ol class="list oldef cols1">
+<li><p>តើទិន្នន័យរយៈពេលរង់ចាំអាចមានលក្ខណៈបែបណា (Outlier) ដែលធ្វើឱ្យមធ្យមមានតម្លៃទាប?</p></li>
+<li><p>តើរង្វាស់ទីតាំងណាដែលឆ្លុះបញ្ចាំងពីបទពិសោធន៍របស់អតិថិជនបានពិតប្រាកដជាង?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>លក្ខណៈនៃទិន្នន័យរយៈពេលរង់ចាំ (Outlier និង Skewness)៖</strong> ទិន្នន័យអាចមានអតិថិជនមួយចំនួនធំរង់ចាំក្នុងរយៈពេលខ្លីបំផុត (<span class="mi">\(0\)</span> ទៅ <span class="mi">\(2\)</span> នាទី) ដូចជានៅម៉ោងទំនេរ ប៉ុន្តែនៅម៉ោងមមាញឹក អតិថិជនរង់ចាំរហូតដល់ <span class="mi">\(20\)</span> ទៅ <span class="mi">\(30\)</span> នាទី។ ម៉្យាងទៀត ក្រុមហ៊ុនអាចប្រើទិន្នន័យមិនប្រក្រតីដើម្បីទាញមធ្យមចុះ។ ការដែលមធ្យមស្មើ ៥ នាទី មិនបានឆ្លុះបញ្ចាំងពីរយៈពេលរង់ចាំនៅពេលមានតម្រូវការខ្ពស់នោះទេ។</p>
+<p><strong>ខ.</strong>  <strong>រង្វាស់ទីតាំងដែលឆ្លុះបញ្ចាំងបទពិសោធន៍ពិត៖</strong> គេគួរប្រើ <strong>មេដ្យាន (<span class="mi">\(Me\)</span>)</strong> ឬប្រើ <strong>ភាគរយទី ៩០ (<span class="mi">\(90^{\text{th}}\)</span> Percentile)</strong> ពីព្រោះវាបង្ហាញថា <span class="mi">\(90\%\)</span> នៃអតិថិជនរង់ចាំមិនលើសពីប៉ុន្មាននាទី ដែលផ្តល់នូវទំនុកចិត្ត និងឆ្លុះបញ្ចាំងពីគុណភាពសេវាកម្មជាក់ស្តែងបានល្អជាងមធ្យមនព្វន្ធ។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>គេមាន <span class="mi">\(n\)</span> ចំនួនដែលមានមធ្យមនព្វន្ធ <span class="mi">\(\bar{x}\)</span>។ ប្រសិនបើគេបន្ថែមចំនួនថ្មីមួយគឺ <span class="mi">\(a\)</span> ចូលទៅក្នុងសំណុំទិន្នន័យ៖</p>
+<ol class="list oldef cols1">
+<li><p>ចូរបង្ហាញថាមធ្យមថ្មី <span class="mi">\(\bar{x}_{new} = \dfrac{n\bar{x} + a}{n+1}\)</span>។</p></li>
+<li><p>តើពេលណាទើប <span class="mi">\(\bar{x}_{new} &gt; \bar{x}\)</span>, <span class="mi">\(\bar{x}_{new} = \bar{x}\)</span>, និង <span class="mi">\(\bar{x}_{new} &lt; \bar{x}\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ក.</strong>  <strong>បង្ហាញថាមធ្យមថ្មី <span class="mi">\(\bar{x}_{new} = \dfrac{n\bar{x} + a}{n+1}\)</span>៖</strong> ផលបូកនៃ <span class="mi">\(n\)</span> ចំនួនដើមគឺ <span class="mi">\(\sum_{i=1}^n x_i = n\bar{x}\)</span>។</p>
+<p>នៅពេលបន្ថែមចំនួន <span class="mi">\(a\)</span> ចំនួនតួសរុបកើនដល់ <span class="mi">\(n+1\)</span> ហើយផលបូកថ្មីគឺ <span class="mi">\(n\bar{x} + a\)</span>។</p>
+<p>តាមនិយមន័យនៃមធ្យមនព្វន្ធ មធ្យមថ្មីគឺ៖ <div class="md">\[\bar{x}_{new} = \frac{n\bar{x} + a}{n+1}\]</div> <strong>ខ.</strong>  <strong>ការប្រៀបធៀប <span class="mi">\(\bar{x}_{new}\)</span> និង <span class="mi">\(\bar{x}\)</span>៖</strong> យើងពិនិត្យផលដក៖ <div class="md">\[\begin{aligned}
+\bar{x}_{new} - \bar{x} &amp;= \frac{n\bar{x} + a}{n+1} - \bar{x} \\
+&amp;= \frac{n\bar{x} + a - (n+1)\bar{x}}{n+1} = \frac{a - \bar{x}}{n+1}
+\end{aligned}\]</div> ដោយ <span class="mi">\(n+1 &gt; 0\)</span> សញ្ញានៃ <span class="mi">\(\bar{x}_{new} - \bar{x}\)</span> អាស្រ័យទាំងស្រុងលើ <span class="mi">\(a - \bar{x}\)</span>៖</p>
+<ul>
+<li><p><span class="mi">\(\bar{x}_{new} &gt; \bar{x} \iff a - \bar{x} &gt; 0 \iff a &gt; \bar{x}\)</span> (ចំនួនថ្មីធំជាងមធ្យមដើម)</p></li>
+<li><p><span class="mi">\(\bar{x}_{new} = \bar{x} \iff a - \bar{x} = 0 \iff a = \bar{x}\)</span> (ចំនួនថ្មីស្មើនឹងមធ្យមដើម)</p></li>
+<li><p><span class="mi">\(\bar{x}_{new} &lt; \bar{x} \iff a - \bar{x} &lt; 0 \iff a &lt; \bar{x}\)</span> (ចំនួនថ្មីតូចជាងមធ្យមដើម)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>បង្ហាញថា ប្រសិនបើគ្រប់តម្លៃទិន្នន័យទាំងអស់មានតម្លៃស្មើគ្នា <span class="mi">\(x_1 = x_2 = \dots = x_n = c\)</span> (ថេរ) នោះមធ្យមនព្វន្ធ មេដ្យាន និងម៉ូតសុទ្ធតែមានតម្លៃស្មើនឹង <span class="mi">\(c\)</span> ដូចគ្នា៖ <div class="md">\[\bar{x} = Me = Mo = c\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ឧបមាថា <span class="mi">\(x_1 = x_2 = \dots = x_n = c\)</span> ដែល <span class="mi">\(c\)</span> ជាចំនួនថេរ។</p>
+<ul>
+<li><p><strong>មធ្យមនព្វន្ធ (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+    \bar{x} &amp;= \frac{\sum_{i=1}^n x_i}{n} \\
+    &amp;= \frac{\overbrace{c + c + \dots + c}^{n \text{ ដង}}}{n} = \frac{nc}{n} = c
+    
+\end{aligned}\]</div></p></li>
+<li><p><strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> ដោយសារគ្រប់ទិន្នន័យទាំងអស់សុទ្ធតែស្មើ <span class="mi">\(c\)</span> នោះទិន្នន័យដែលនៅចំកណ្តាល (មិនថា <span class="mi">\(n\)</span> ជាចំនួនសេស ឬគូ) សុទ្ធតែស្មើនឹង <span class="mi">\(c\)</span> ជានិច្ច នាំឱ្យ <span class="mi">\(Me = c\)</span>។</p></li>
+<li><p><strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> តម្លៃ <span class="mi">\(c\)</span> កើតឡើងចំនួន <span class="mi">\(n\)</span> ដង (គ្រប់ទិន្នន័យទាំងអស់) ដែលជាប្រេកង់អតិបរមា នាំឱ្យ <span class="mi">\(Mo = c\)</span>។</p></li>
+</ul>
+<p>ដូចនេះ យើងបាន <span class="mi">\(\bar{x} = Me = Mo = c\)</span> ត្រូវបានស្រាយបញ្ជាក់ពេញលេញ។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ទិន្នន័យអាយុរបស់អ្នកជំងឺនៅមន្ទីរពេទ្យមួយត្រូវបានកត់ត្រាក្នុងតារាង៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>អាយុ (ឆ្នាំ)</th>
+<th><span class="mi">\([0, 20)\)</span></th>
+<th><span class="mi">\([20, 40)\)</span></th>
+<th><span class="mi">\([40, 60)\)</span></th>
+<th><span class="mi">\([60, 80)\)</span></th>
+<th><span class="mi">\([80, 100)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនអ្នកជំងឺ</td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(30\)</span></td>
+<td><span class="mi">\(25\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>គណនាមធ្យម មេដ្យាន និងម៉ូតនៃអាយុអ្នកជំងឺ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 12 + 18 + 30 + 25 + 15 = 100\)</span> នាក់។ ប្រវែងថ្នាក់ <span class="mi">\(h = 20\)</span> ឆ្នាំ។</p>
+<p>ផ្ចិតថ្នាក់រៀងគ្នាគឺ <span class="mi">\(10, 30, 50, 70, 90\)</span>។</p>
+<p><strong>ក.</strong>  <strong>មធ្យម (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+\sum f_i m_i &amp;= 12(10) + 18(30) + 30(50) \\
+&amp;\quad{} + 25(70) + 15(90) = 5260 \text{ ឆ្នាំ}
+\end{aligned}\]</div> <div class="md">\[\bar{x} = \frac{5260}{100} = 52.6 \text{ ឆ្នាំ}\]</div> <strong>ខ.</strong>  <strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> <span class="mi">\(\dfrac{N}{2} = 50\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(12, 30, 60, 85, 100\)</span>។ ថ្នាក់មេដ្យានគឺ <span class="mi">\([40, 60)\)</span> (ព្រោះ <span class="mi">\(30 &lt; 50 \le 60\)</span>)៖ <div class="md">\[\begin{aligned}
+Me &amp;= L + \left(\frac{\frac{N}{2} - F_{c}}{f_m}\right) \times h \\
+&amp;= 40 + \left(\frac{50 - 30}{30}\right) \times 20 \approx 53.33 \text{ ឆ្នាំ}
+\end{aligned}\]</div> <strong>គ.</strong>  <strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> ថ្នាក់ម៉ូតគឺ <span class="mi">\([40, 60)\)</span> (<span class="mi">\(f_3 = 30\)</span> ធំបំផុត)៖ <span class="mi">\(\Delta_1 = 30 - 18 = 12\)</span>, <span class="mi">\(\Delta_2 = 30 - 25 = 5\)</span>៖ <div class="md">\[\begin{aligned}
+Mo &amp;= 40 + \left(\frac{12}{12 + 5}\right) \times 20 \\
+&amp;= 40 + \frac{240}{17} \approx 54.12 \text{ ឆ្នាំ}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គេមានសំណុំទិន្នន័យពីរគឺ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span>៖</p>
+<ul>
+<li><p>សំណុំ <span class="mi">\(A\)</span> មាន <span class="mi">\(15\)</span> ទិន្នន័យ និងមានមធ្យម <span class="mi">\(\bar{x}_A = 20\)</span></p></li>
+<li><p>សំណុំ <span class="mi">\(B\)</span> មាន <span class="mi">\(25\)</span> ទិន្នន័យ និងមានមធ្យម <span class="mi">\(\bar{x}_B = 28\)</span></p></li>
+</ul>
+<p>ចូរគណនាមធ្យមរួម <span class="mi">\(\bar{x}\)</span> នៃទិន្នន័យទាំង <span class="mi">\(40\)</span> នោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកសរុបនៃសំណុំទិន្នន័យ <span class="mi">\(A\)</span> (<span class="mi">\(N_A = 15, \bar{x}_A = 20\)</span>)៖ <div class="md">\[\sum x_A = N_A \times \bar{x}_A = 15 \times 20 = 300\]</div> ផលបូកសរុបនៃសំណុំទិន្នន័យ <span class="mi">\(B\)</span> (<span class="mi">\(N_B = 25, \bar{x}_B = 28\)</span>)៖ <div class="md">\[\sum x_B = N_B \times \bar{x}_B = 25 \times 28 = 700\]</div> ទំហំសំណាករួមនៃសំណុំទាំងពីរគឺ <span class="mi">\(N = N_A + N_B = 15 + 25 = 40\)</span>។</p>
+<p>មធ្យមរួម <span class="mi">\(\bar{x}\)</span> នៃទិន្នន័យទាំង ៤០ គឺ៖ <div class="md">\[\begin{aligned}
+\bar{x} &amp;= \frac{\sum x_A + \sum x_B}{N_A + N_B} \\
+&amp;= \frac{300 + 700}{40} = \frac{1000}{40} = 25
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>សំណុំទិន្នន័យមួយមាន ៥ ចំនួនគត់វិជ្ជមាន ដែលមានមធ្យមស្មើ <span class="mi">\(12\)</span> មេដ្យានស្មើ <span class="mi">\(11\)</span> និងម៉ូតតែមួយគត់ស្មើ <span class="mi">\(10\)</span>។</p>
+<ol class="list oldef cols1">
+<li><p>កំណត់ចំនួនទិន្នន័យដែលមានតម្លៃស្មើនឹង <span class="mi">\(10\)</span>។</p></li>
+<li><p>រកតម្លៃដែលអាចកើតមាននៃទិន្នន័យទាំង ៥ នោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តាងទិន្នន័យទាំង ៥ ជាចំនួនគត់វិជ្ជមានរៀបតាមលំដាប់កើន៖ <span class="mi">\(x_1 \le x_2 \le x_3 \le x_4 \le x_5\)</span>។</p>
+<p><strong>ក.</strong>  <strong>កំណត់ចំនួនទិន្នន័យដែលមានតម្លៃស្មើ <span class="mi">\(10\)</span>៖</strong></p>
+<ul>
+<li><p>មេដ្យាន <span class="mi">\(Me = x_3 = 11\)</span>។</p></li>
+<li><p>ដោយម៉ូតតែមួយគត់ស្មើ <span class="mi">\(10\)</span> ហើយ <span class="mi">\(10 &lt; 11\)</span> នោះតម្លៃ <span class="mi">\(10\)</span> ត្រូវតែស្ថិតនៅខាងឆ្វេងមេដ្យាន ហើយត្រូវកើតឡើងយ៉ាងតិច ២ ដង។</p></li>
+<li><p>ដូចនេះ <span class="mi">\(x_1 = x_2 = 10\)</span>។ ដូច្នេះ មានទិន្នន័យចំនួន <strong>២</strong> ដែលមានតម្លៃស្មើ <span class="mi">\(10\)</span>។</p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>រកតម្លៃដែលអាចកើតមាននៃទិន្នន័យទាំង ៥៖</strong> មធ្យមស្មើ <span class="mi">\(12 \implies x_1 + x_2 + x_3 + x_4 + x_5 = 5 \times 12 = 60\)</span>។ <div class="md">\[\begin{aligned}
+10 + 10 + 11 + x_4 + x_5 &amp;= 60 \\
+\implies 31 + x_4 + x_5 = 60 &amp;\implies x_4 + x_5 = 29
+\end{aligned}\]</div> លក្ខខណ្ឌ៖ ដោយម៉ូតតែមួយគត់គឺ <span class="mi">\(10\)</span> និង <span class="mi">\(x_3 = 11\)</span> នាំឱ្យ <span class="mi">\(11 &lt; x_4 &lt; x_5\)</span> (គ្មានតម្លៃណាស្មើគ្នាទៀតទេ)៖</p>
+<ul>
+<li><p>បើ <span class="mi">\(x_4 = 12 \implies x_5 = 17\)</span>៖ សំណុំទិន្នន័យគឺ <span class="mi">\(\{10, 10, 11, 12, 17\}\)</span></p></li>
+<li><p>បើ <span class="mi">\(x_4 = 13 \implies x_5 = 16\)</span>៖ សំណុំទិន្នន័យគឺ <span class="mi">\(\{10, 10, 11, 13, 16\}\)</span></p></li>
+<li><p>បើ <span class="mi">\(x_4 = 14 \implies x_5 = 15\)</span>៖ សំណុំទិន្នន័យគឺ <span class="mi">\(\{10, 10, 11, 14, 15\}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>(PISA - ថាមពល)</strong> ក្នុងការវាយតម្លៃការប្រើប្រាស់ថាមពលអគ្គិសនី (គិតជា <span class="mi">\(\text{kWh}\)</span>) ក្នុងមួយខែរបស់ផ្ទះ <span class="mi">\(40\)</span> ខ្នងក្នុងភូមិមួយ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ការប្រើប្រាស់ (<span class="mi">\(\text{kWh}\)</span>)</th>
+<th><span class="mi">\([50, 100)\)</span></th>
+<th><span class="mi">\([100, 150)\)</span></th>
+<th><span class="mi">\([150, 200)\)</span></th>
+<th><span class="mi">\([200, 250)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនផ្ទះ</td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(14\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<p>គណនាមធ្យម មេដ្យាន និងម៉ូតនៃការប្រើប្រាស់អគ្គិសនី។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 8 + 14 + 12 + 6 = 40\)</span> ខ្នងផ្ទះ។ ប្រវែងថ្នាក់ <span class="mi">\(h = 50\text{ kWh}\)</span>។</p>
+<p>ផ្ចិតថ្នាក់រៀងគ្នាគឺ <span class="mi">\(75, 125, 175, 225\)</span>។</p>
+<p><strong>ក.</strong>  <strong>មធ្យម (<span class="mi">\(\bar{x}\)</span>)៖</strong> <div class="md">\[\begin{aligned}
+\sum f_i m_i &amp;= 8(75) + 14(125) + 12(175) + 6(225) \\
+&amp;= 600 + 1750 + 2100 + 1350 = 5800\text{ kWh}
+\end{aligned}\]</div> <div class="md">\[\bar{x} = \frac{5800}{40} = 145\text{ kWh}\]</div> <strong>ខ.</strong>  <strong>មេដ្យាន (<span class="mi">\(Me\)</span>)៖</strong> <span class="mi">\(\dfrac{N}{2} = 20\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(8, 22, 34, 40\)</span>។ ថ្នាក់មេដ្យានគឺ <span class="mi">\([100, 150)\)</span> (ព្រោះ <span class="mi">\(8 &lt; 20 \le 22\)</span>)៖ <div class="md">\[\begin{aligned}
+Me &amp;= L + \left(\frac{\frac{N}{2} - F_{c}}{f_m}\right) \times h \\
+&amp;= 100 + \left(\frac{20 - 8}{14}\right) \times 50 \approx 142.86\text{ kWh}
+\end{aligned}\]</div> <strong>គ.</strong>  <strong>ម៉ូត (<span class="mi">\(Mo\)</span>)៖</strong> ថ្នាក់ម៉ូតគឺ <span class="mi">\([100, 150)\)</span> (<span class="mi">\(f_2 = 14\)</span> ធំបំផុត)៖ <span class="mi">\(\Delta_1 = 14 - 8 = 6\)</span>, <span class="mi">\(\Delta_2 = 14 - 12 = 2\)</span>៖ <div class="md">\[\begin{aligned}
+Mo &amp;= 100 + \left(\frac{6}{6 + 2}\right) \times 50 \\
+&amp;= 100 + \frac{300}{8} = 137.5\text{ kWh}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ផ្អែកលើទិន្នន័យក្នុងលំហាត់ទី 48 បើរដ្ឋាភិបាលមានគោលនយោបាយឧបត្ថម្ភធនសម្រាប់គ្រួសារណាដែលប្រើប្រាស់អគ្គិសនីតិចជាងកម្រិតមេដ្យាន តើមានផ្ទះប៉ុន្មានខ្នងទទួលបានការឧបត្ថម្ភធននេះ? ចូរពន្យល់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>ការវិភាគគោលនយោបាយឧបត្ថម្ភធនរបស់រដ្ឋាភិបាល៖</strong></p>
+<ul>
+<li><p>តាមនិយមន័យនៃមេដ្យាន (<span class="mi">\(Me\)</span>) តម្លៃមេដ្យានបែងចែកទិន្នន័យជាពីរចំណែកស្មើគ្នា គឺមានទិន្នន័យ <span class="mi">\(50\%\)</span> ស្ថិតនៅក្រោមមេដ្យាន និង <span class="mi">\(50\%\)</span> ទៀតស្ថិតនៅលើមេដ្យាន។</p></li>
+<li><p>ដោយចំនួនផ្ទះសរុបគឺ <span class="mi">\(N = 40\)</span> ខ្នង នោះចំនួនផ្ទះដែលប្រើប្រាស់អគ្គិសនីតិចជាងកម្រិតមេដ្យាន (<span class="mi">\(Me \approx 142.86\text{ kWh}\)</span>) គឺពាក់កណ្តាលនៃចំនួនផ្ទះសរុប៖ <div class="md">\[N_{\text{subsidized}} = \frac{40}{2} = 20 \text{ ខ្នងផ្ទះ}\]</div></p></li>
+</ul>
+<p><strong>សន្និដ្ឋាន៖</strong> មានផ្ទះចំនួន <span class="mi">\(20\)</span> ខ្នងទទួលបានការឧបត្ថម្ភធនពីរដ្ឋាភិបាល។ គោលនយោបាយផ្អែកលើមេដ្យាននេះធានាភាពយុត្តិធម៌សង្គម ដោយជួយចំគ្រួសារពាក់កណ្តាលដែលប្រើប្រាស់តិចជាងគេ។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>(PISA - ការវិភាគសេវាកម្មធនាគារ)</strong> ធនាគារមួយចង់វិភាគរយៈពេលរង់ចាំ (គិតជា នាទី) របស់អតិថិជនចំនួន <span class="mi">\(50\)</span> នាក់នៅមុខបញ្ជរ៖</p>
+
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>រយៈពេល (នាទី)</th>
+<th><span class="mi">\([0, 5)\)</span></th>
+<th><span class="mi">\([5, 10)\)</span></th>
+<th><span class="mi">\([10, 15)\)</span></th>
+<th><span class="mi">\([15, 20)\)</span></th>
+<th><span class="mi">\([20, 25)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនអតិថិជន</td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(18\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+<ol class="list oldef cols1">
+<li><p>គណនាមធ្យម មេដ្យាន និងម៉ូត។</p></li>
+<li><p>បើធនាគារចង់កំណត់ស្តង់ដារថារយៈពេលរង់ចាំមិនឱ្យលើសពី <span class="mi">\(15\)</span> នាទី តើមានអតិថិជនប៉ុន្មានភាគរយដែលត្រូវរង់ចាំលើសស្តង់ដារនេះ?</p></li>
+<li><p>ផ្តល់អនុសាសន៍ដល់ប្រធានធនាគារដើម្បីកែលម្អគុណភាពសេវាកម្ម។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រេកង់សរុប <span class="mi">\(N = 10 + 18 + 12 + 6 + 4 = 50\)</span> នាក់។ ប្រវែងថ្នាក់ <span class="mi">\(h = 5\)</span> នាទី។</p>
+<p>ផ្ចិតថ្នាក់រៀងគ្នាគឺ <span class="mi">\(2.5, 7.5, 12.5, 17.5, 22.5\)</span>។</p>
+<p><strong>ក.</strong>  <strong>គណនាមធ្យម មេដ្យាន និងម៉ូត៖</strong></p>
+<ul>
+<li><p><strong>មធ្យម៖</strong> <div class="md">\[\begin{aligned}
+    \sum f_i m_i &amp;= 10(2.5) + 18(7.5) + 12(12.5) \\
+    &amp;\quad{} + 6(17.5) + 4(22.5) \\
+    &amp;= 25 + 135 + 150 + 105 + 90 = 505\text{ នាទី}
+    
+\end{aligned}\]</div> <div class="md">\[\bar{x} = \frac{505}{50} = 10.1 \text{ នាទី}\]</div></p></li>
+<li><p><strong>មេដ្យាន៖</strong> <span class="mi">\(\frac{N}{2} = 25\)</span>។ ប្រេកង់កើន៖ <span class="mi">\(10, 28, 40, 46, 50\)</span>។ ថ្នាក់មេដ្យានគឺ <span class="mi">\([5, 10)\)</span>៖ <div class="md">\[\begin{aligned}
+    Me &amp;= 5 + \left(\frac{25 - 10}{18}\right) \times 5 \\
+    &amp;= 5 + \frac{75}{18} \approx 9.17 \text{ នាទី}
+    
+\end{aligned}\]</div></p></li>
+<li><p><strong>ម៉ូត៖</strong> ថ្នាក់ម៉ូតគឺ <span class="mi">\([5, 10)\)</span> (<span class="mi">\(f_2 = 18\)</span> ធំបំផុត)៖ <span class="mi">\(\Delta_1 = 18 - 10 = 8\)</span>, <span class="mi">\(\Delta_2 = 18 - 12 = 6\)</span>៖ <div class="md">\[\begin{aligned}
+    Mo &amp;= 5 + \left(\frac{8}{8 + 6}\right) \times 5 \\
+    &amp;= 5 + \frac{40}{14} \approx 7.86 \text{ នាទី}
+    
+\end{aligned}\]</div></p></li>
+</ul>
+<p><strong>ខ.</strong>  <strong>ភាគរយនៃអតិថិជនដែលរង់ចាំលើសពី ១៥ នាទី (<span class="mi">\(t \ge 15\)</span>)៖</strong> រួមមានអតិថិជនក្នុងថ្នាក់ <span class="mi">\([15, 20)\)</span> និង <span class="mi">\([20, 25)\)</span>៖ <div class="md">\[N_{\ge 15} = 6 + 4 = 10 \text{ នាក់}\]</div> ភាគរយគឺ៖ <div class="md">\[\frac{10}{50} \times 100\% = 20\%\]</div> <strong>គ.</strong>  <strong>អនុសាសន៍ដល់ប្រធានធនាគារ៖</strong> មានអតិថិជនរហូតដល់ <span class="mi">\(20\%\)</span> (១ នាក់ក្នុងចំណោម ៥ នាក់) ត្រូវរង់ចាំយូរជ្រុលលើសពី ១៥ នាទី។ ដើម្បីលើកកម្ពស់គុណភាពសេវាកម្ម ធនាគារគួរ៖</p>
+<ol class="list oldef cols1">
+<li><p>បង្កើនចំនួនបញ្ជរបម្រើសេវាបន្ថែម ឬចាត់ចែងបុគ្គលិកបម្រុងនៅម៉ោងមមាញឹក (Peak hours)។</p></li>
+<li><p>ដាក់ឱ្យដំណើរការប្រព័ន្ធកក់លេខរង់ចាំតាមទូរស័ព្ទ (Smart Queue) ដើម្បីកាត់បន្ថយការកកកុញនៅមុខបញ្ជរ។</p></li>
+<li><p>ជំរុញអតិថិជនឱ្យប្រើប្រាស់កម្មវិធី Mobile Banking ឬម៉ាស៊ីនស្វ័យប្រវត្តិ (ATM/CRM) សម្រាប់ប្រតិបត្តិការសាមញ្ញ។</p></li>
+</ol>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ៧ ស្ថិតិ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c07">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L19.html"><small>← មេរៀនមុន</small><b>បំណែងចែកប្រេកង់និងការតាងក្រាប</b></a><a class="next" href="L21.html"><small>មេរៀនបន្ទាប់ →</small><b>វ៉ិចទ័រនិងប្រមាណវិធីលើវ៉ិចទ័រ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រេកង់កើន គឺជាប្រេកង់ដែលបានមកពី៖", "options": ["ការបូកប្រេកង់នៃថ្នាក់នីមួយៗបន្តបន្ទាប់ពីលើចុះក្រោម", "ការបូកប្រេកង់នៃថ្នាក់នីមួយៗបន្តបន្ទាប់ពីក្រោមឡើងលើ", "ការចែកប្រេកង់នឹងប្រេកង់សរុប", "ការគុណប្រេកង់នឹងប្រេកង់សរុប"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រង្វាស់ទីតាំងណាដែលមិនអាចគណនាបានទាល់តែសោះសម្រាប់អថេរគុណភាព?", "options": ["មធ្យមនព្វន្ធ", "ម៉ូត", "មេដ្យាន", "ចម្លើយ ក និង គ ត្រឹមត្រូវ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រង្វាស់ទីតាំងណាដែលអាចប្រើបានយ៉ាងមានប្រសិទ្ធភាពសម្រាប់ទិន្នន័យគុណភាព (ឧទាហរណ៍៖ ពណ៌ ម៉ាករថយន្ត)?", "options": ["មធ្យមនព្វន្ធ", "មេដ្យាន", "ម៉ូត", "វ៉ារ្យង់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យមួយមានតម្លៃរង្វៀងខ្លាំង (Outlier) នោះរង្វាស់ទីតាំងណាដែលស័ក្តិសមបំផុតសម្រាប់ការតំណាង?", "options": ["មធ្យមនព្វន្ធ", "មេដ្យាន", "ម៉ូត", "ផ្ចិតថ្នាក់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើមធ្យមនព្វន្ធនៃទិន្នន័យ <span class=\"mi\">\\(4, 8, 12, 16\\)<\/span> ស្មើនឹងប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើមេដ្យាននៃទិន្នន័យ <span class=\"mi\">\\(1, 2, 4, 8, 16\\)<\/span> ស្មើនឹងប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3.1\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងកម្រងទិន្នន័យមួយ បើគ្រប់តម្លៃទាំងអស់ត្រូវបានបូកថែម <span class=\"mi\">\\(5\\)<\/span> នោះមធ្យមនព្វន្ធថ្មីនឹង៖", "options": ["កើនឡើង <span class=\"mi\">\\(5\\)<\/span>", "រក្សាទុកតម្លៃដដែល", "កើនឡើង <span class=\"mi\">\\(25\\)<\/span>", "គុណនឹង <span class=\"mi\">\\(5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យមួយមានតម្លៃម៉ូតពីរផ្សេងគ្នា គេហៅទិន្នន័យនោះថា៖", "options": ["ទិន្នន័យឯកម៉ូត", "ទិន្នន័យទ្វេម៉ូត", "ទិន្នន័យពហុម៉ូត", "ទិន្នន័យគ្មានម៉ូត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "យោងតាមលក្ខណៈនៃមធ្យមនព្វន្ធ <span class=\"mi\">\\(\\bar{x}\\)<\/span> តើផលបូកនៃគម្លាតរវាងតម្លៃនីមួយៗនិងមធ្យមនព្វន្ធ <span class=\"mi\">\\(\\sum (x_i - \\bar{x})\\)<\/span> ស្មើនឹងប៉ុន្មានជានិច្ច?", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(\\bar{x}\\)<\/span>", "<span class=\"mi\">\\(n\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មធ្យមនព្វន្ធនៃ <span class=\"mi\">\\(10\\)<\/span> ចំនួនគឺ <span class=\"mi\">\\(50\\)<\/span> ។ បើគេដកចំនួន <span class=\"mi\">\\(50\\)<\/span> ចេញមួយ តើមធ្យមនព្វន្ធថ្មីនៃ <span class=\"mi\">\\(9\\)<\/span> ចំនួនដែលសល់ស្មើនឹងប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(45\\)<\/span>", "<span class=\"mi\">\\(49\\)<\/span>", "<span class=\"mi\">\\(50\\)<\/span>", "<span class=\"mi\">\\(55\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យ <span class=\"mi\">\\(x_1, x_2, x_3\\)<\/span> មានមធ្យមនព្វន្ធ <span class=\"mi\">\\(\\bar{x}\\)<\/span> នោះមធ្យមនព្វន្ធនៃ <span class=\"mi\">\\(2x_1, 2x_2, 2x_3\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(\\bar{x} + 2\\)<\/span>", "<span class=\"mi\">\\(2\\bar{x}\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\bar{x}}{2}\\)<\/span>", "<span class=\"mi\">\\(\\bar{x}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តសម្រាប់គណនាមធ្យមនៃទិន្នន័យមិនផ្ដុំជាថ្នាក់គឺ៖", "options": ["<span class=\"mi\">\\(\\bar{x} = \\frac{\\sum x_i}{N}\\)<\/span>", "<span class=\"mi\">\\(\\bar{x} = \\frac{\\sum x_i f_i}{N}\\)<\/span>", "<span class=\"mi\">\\(\\bar{x} = \\frac{\\sum f_i}{N}\\)<\/span>", "<span class=\"mi\">\\(\\bar{x} = \\sum x_i\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផ្ចិតនៃថ្នាក់សម្រាប់ថ្នាក់ <span class=\"mi\">\\([15, 25)\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(40\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តសម្រាប់គណនាមធ្យមនៃទិន្នន័យផ្ដុំជាថ្នាក់គឺ៖", "options": ["<span class=\"mi\">\\(\\bar{x} = \\frac{\\sum x_i}{N}\\)<\/span>", "<span class=\"mi\">\\(\\bar{x} = \\frac{\\sum f_i}{N}\\)<\/span>", "<span class=\"mi\">\\(\\bar{x} = \\frac{\\sum x_i f_i}{\\sum f_i}\\)<\/span>", "<span class=\"mi\">\\(\\bar{x} = \\frac{\\sum x_i}{\\sum f_i}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើមធ្យមនៃទិន្នន័យ <span class=\"mi\">\\(10, 20, 30, 40, 50\\)<\/span> ស្មើនឹងប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(40\\)<\/span>", "<span class=\"mi\">\\(50\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងតារាងបំណែងចែកប្រេកង់ បើថ្នាក់មានប្រវែងស្មើៗគ្នា នោះផ្ចិតនៃថ្នាក់អាចរកបានដោយ៖", "options": ["ផលបូកគោលក្រោម និងគោលលើ ចែកនឹងពីរ", "ផលដកគោលលើ និងគោលក្រោម ចែកនឹងពីរ", "ផលបូកគោលក្រោម និងគោលលើ គុណនឹងពីរ", "គោលលើដកគោលក្រោម"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យមានមធ្យមស្មើ <span class=\"mi\">\\(15\\)<\/span> និងចំនួនទិន្នន័យសរុបស្មើ <span class=\"mi\">\\(10\\)<\/span> នោះផលបូកនៃទិន្នន័យទាំងអស់គឺ៖", "options": ["<span class=\"mi\">\\(1.5\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(150\\)<\/span>", "<span class=\"mi\">\\(1500\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើមធ្យមរបស់ទិន្នន័យផ្ដុំជាថ្នាក់និងទិន្នន័យមិនផ្ដុំជាថ្នាក់ (ដើម) អាចមានតម្លៃដូចម្តេច?", "options": ["ស្មើគ្នាបេះបិទជានិច្ច", "ខុសគ្នាជានិច្ច", "ប្រហាក់ប្រហែលគ្នា", "មិនអាចប្រៀបធៀបបាន"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើប្រេកង់សរុប <span class=\"mi\">\\(N=65\\)<\/span> និង <span class=\"mi\">\\(\\sum x_i f_i = 3005\\)<\/span> នោះមធ្យម <span class=\"mi\">\\(\\bar{x}\\)<\/span> ប្រហែលជា៖", "options": ["<span class=\"mi\">\\(40.23\\)<\/span>", "<span class=\"mi\">\\(46.23\\)<\/span>", "<span class=\"mi\">\\(50.23\\)<\/span>", "<span class=\"mi\">\\(45.23\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមរង្វាស់ខាងក្រោម តើមួយណាដែលងាយរងឥទ្ធិពលពីតម្លៃរង្វៀងខ្លាំង (Outlier) ជាងគេ?", "options": ["ម៉ូត", "មេដ្យាន", "មធ្យម", "ផ្ចិតថ្នាក់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គេសង្កេតឃើញថា មធ្យមនៃទិន្នន័យមិនប្រមូលផ្ដុំជាថ្នាក់ មានលក្ខណៈដូចម្តេចបើធៀបនឹងមធ្យមនៃទិន្នន័យប្រមូលផ្ដុំជាថ្នាក់?", "options": ["មានភាពជាក់លាក់ជាង", "មានភាពជាក់លាក់តិចជាង", "ងាយស្រួលគណនាជាង", "ចម្លើយ ខ និង គ ត្រឹមត្រូវ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "មេដ្យាននៃទិន្នន័យគឺជាតម្លៃដែល៖", "options": ["កើតឡើងញឹកញាប់ជាងគេ", "នៅកណ្តាលគេពេលទិន្នន័យរៀបតាមលំដាប់", "ជាមធ្យមភាគនៃតម្លៃធំបំផុត និងតូចបំផុត", "ជិតនឹងតម្លៃមធ្យម"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើចំនួនទិន្នន័យសរុប <span class=\"mi\">\\(N\\)<\/span> ជាចំនួនសេស នោះមេដ្យានស្ថិតនៅតួទីប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(\\frac{N}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{N+1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{N-1}{2}\\)<\/span>", "<span class=\"mi\">\\(N+1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើចំនួនទិន្នន័យសរុប <span class=\"mi\">\\(N\\)<\/span> ជាចំនួនគូ នោះមេដ្យានគឺ៖", "options": ["តួទី <span class=\"mi\">\\(\\frac{N}{2}\\)<\/span>", "តួទី <span class=\"mi\">\\(\\frac{N}{2} + 1\\)<\/span>", "មធ្យមនៃតួទី <span class=\"mi\">\\(\\frac{N}{2}\\)<\/span> និង <span class=\"mi\">\\(\\frac{N}{2} + 1\\)<\/span>", "ផលបូកនៃតួទី <span class=\"mi\">\\(\\frac{N}{2}\\)<\/span> និង <span class=\"mi\">\\(\\frac{N}{2} + 1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើមេដ្យាននៃទិន្នន័យ <span class=\"mi\">\\(18, 20, 22, 25, 30\\)<\/span> ស្មើនឹងប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(22\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(23.4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រកមេដ្យាននៃទិន្នន័យ <span class=\"mi\">\\(5, 8, 2, 4, 9, 6\\)<\/span> ។", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(5.5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ថ្នាក់មេដ្យាន គឺជាថ្នាក់ដែល៖", "options": ["មានប្រេកង់ធំជាងគេ", "មានប្រេកង់កើនផ្ទុកតម្លៃ <span class=\"mi\">\\(\\frac{N}{2}\\)<\/span>", "មានផ្ចិតថ្នាក់ធំជាងគេ", "ស្ថិតនៅកណ្តាលតារាង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងរូបមន្ត <span class=\"mi\">\\(M_e = c_{i-1} + \\frac{\\frac{N}{2} - F_{i-1}}{f_i}(c_i - c_{i-1})\\)<\/span> តើ <span class=\"mi\">\\(F_{i-1}\\)<\/span> តំណាងឲ្យអ្វី?", "options": ["ប្រេកង់នៃថ្នាក់មេដ្យាន", "ប្រេកង់កើននៃថ្នាក់មេដ្យាន", "ប្រេកង់កើននៃថ្នាក់មុនថ្នាក់មេដ្យាន", "ប្រវែងចន្លោះថ្នាក់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមរូបមន្តមេដ្យាន តើ <span class=\"mi\">\\(c_i - c_{i-1}\\)<\/span> តំណាងឲ្យអ្វី?", "options": ["ប្រវែងចន្លោះថ្នាក់", "ប្រេកង់នៃថ្នាក់", "ផ្ចិតនៃថ្នាក់", "គោលក្រោមនៃថ្នាក់មេដ្យាន"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងតារាងបំណែងចែកប្រេកង់ បើ <span class=\"mi\">\\(\\frac{N}{2} = 45\\)<\/span> ហើយថ្នាក់មេដ្យានគឺ <span class=\"mi\">\\(128-134\\)<\/span> ដែលមាន <span class=\"mi\">\\(f_i = 12\\)<\/span> និង <span class=\"mi\">\\(F_{i-1} = 36\\)<\/span> នោះ <span class=\"mi\">\\(M_e\\)<\/span> ស្មើនឹង៖", "options": ["<span class=\"mi\">\\(132.5\\)<\/span>", "<span class=\"mi\">\\(133.5\\)<\/span>", "<span class=\"mi\">\\(131.2\\)<\/span>", "<span class=\"mi\">\\(132\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មេដ្យានអាចត្រូវបានរកឃើញតាមរយៈក្រាបដោយប្រើ៖", "options": ["អ៊ីស្តូក្រាម", "ពហុកោណប្រេកង់កើន", "ដ្យាក្រាមរង្វង់", "ដ្យាក្រាមសសរ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងក្រាបពហុកោណប្រេកង់កើន មេដ្យានគឺជាអាប់ស៊ីសនៃចំណុចដែលមានអរដោនេស្មើនឹង៖", "options": ["<span class=\"mi\">\\(N\\)<\/span>", "<span class=\"mi\">\\(\\frac{N}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{N}{4}\\)<\/span>", "<span class=\"mi\">\\(2N\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យមានចំនួន <span class=\"mi\">\\(45\\)<\/span> មេដ្យានត្រូវនឹងប្រេកង់កើនស្មើនឹង៖", "options": ["<span class=\"mi\">\\(22.5\\)<\/span>", "<span class=\"mi\">\\(23\\)<\/span>", "<span class=\"mi\">\\(22\\)<\/span>", "<span class=\"mi\">\\(45\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំពោះអថេរគុណភាព គេមិនអាចគណនា៖", "options": ["ម៉ូត", "ប្រេកង់", "មេដ្យាន និងមធ្យម", "ភាគរយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រកមេដ្យាននៃទិន្នន័យ <span class=\"mi\">\\(1, 3, 3, 6, 7, 8, 9\\)<\/span> ។", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(5.2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តើមេដ្យាននៃទិន្នន័យ <span class=\"mi\">\\(10, 10, 10, 10, 10\\)<\/span> ស្មើនឹងប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(50\\)<\/span>", "មិនអាចកំណត់បាន"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ម៉ូតនៃទិន្នន័យគឺជាតម្លៃដែល៖", "options": ["នៅកណ្តាលគេ", "ជាមធ្យមភាគ", "មានប្រេកង់ធំជាងគេ", "មានតម្លៃធំជាងគេ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រកម៉ូតនៃទិន្នន័យ <span class=\"mi\">\\(2, 4, 4, 5, 6, 6, 6, 7\\)<\/span> ។", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើថ្នាក់ <span class=\"mi\">\\(18-21\\)<\/span> មានប្រេកង់ធំជាងគេនៅក្នុងតារាងទិន្នន័យ នោះម៉ូតរបស់វាប្រហែលជា៖", "options": ["<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(19.5\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(39\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំពោះទិន្នន័យអថេរគុណភាព តើគេអាចរកម៉ូតបានដែរឬទេ?", "options": ["មិនអាចទេ", "អាចរកបាន", "អាចរកបានតែក្នុងករណីខ្លះ", "អាចរកបានតែមធ្យមប៉ុណ្ណោះ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងបញ្ជីលក់អង្ករ ប្រភេទនាងខិញ(<span class=\"mi\">\\(3\\)<\/span>), នាងខុន(<span class=\"mi\">\\(4\\)<\/span>), ផ្កាខ្ញី(<span class=\"mi\">\\(7\\)<\/span>), ផ្ការំដួល(<span class=\"mi\">\\(3\\)<\/span>) ។ តើអ្វីជាម៉ូត?", "options": ["ផ្ការំដួល", "ផ្កាខ្ញី", "នាងខុន", "នាងខិញ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេបោះឡុកឡាក់បានលទ្ធផល <span class=\"mi\">\\(1, 2, 2, 3, 3, 3, 4, 5, 6\\)<\/span> ។ ម៉ូតគឺ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងរយៈពេល ៧ ថ្ងៃ អាវយឺតលក់បានតាមថ្ងៃនីមួយៗគឺ ថ្ងៃទី១(<span class=\"mi\">\\(5\\)<\/span>), ទី២(<span class=\"mi\">\\(7\\)<\/span>), ទី៣(<span class=\"mi\">\\(10\\)<\/span>), ទី៤(<span class=\"mi\">\\(8\\)<\/span>), ទី៥(<span class=\"mi\">\\(11\\)<\/span>), ទី៦(<span class=\"mi\">\\(18\\)<\/span>), ទី៧(<span class=\"mi\">\\(15\\)<\/span>) ។ តើម៉ូតនៃថ្ងៃលក់អាវយឺតគឺថ្ងៃទីប៉ុន្មាន?", "options": ["ទី៥", "ទី៦", "ទី៧", "<span class=\"mi\">\\(18\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យមានតម្លៃ <span class=\"mi\">\\(10\\)<\/span> កើតឡើង ៥ ដង និងតម្លៃ <span class=\"mi\">\\(20\\)<\/span> កើតឡើង ៥ ដងដែរ (ប្រេកង់ធំបំផុតដូចគ្នា) នោះទិន្នន័យនេះ៖", "options": ["មានម៉ូតតែមួយគឺ <span class=\"mi\">\\(15\\)<\/span>", "មានម៉ូតពីរគឺ <span class=\"mi\">\\(10\\)<\/span> និង <span class=\"mi\">\\(20\\)<\/span>", "គ្មានម៉ូតទេ", "ម៉ូតគឺ <span class=\"mi\">\\(5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ម៉ូត មធ្យម និងមេដ្យាន ហៅរួមគ្នាថាអ្វី?", "options": ["រង្វាស់បែកខ្ញែក", "រង្វាស់ទីតាំង", "រង្វាស់រាយប៉ាយ", "ទិន្នន័យស្ថិតិ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងតារាងបំណែងចែកប្រេកង់ ដើម្បីរកម៉ូតគេត្រូវមើលលើ៖", "options": ["ផ្ចិតថ្នាក់ធំជាងគេ", "ប្រេកង់កើនធំជាងគេ", "ប្រេកង់ធំជាងគេ", "ផលបូកប្រេកង់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ការប្រើប្រាស់មធ្យមនព្វន្ធមានតាំងពីសម័យក្រិកបុរាណ ដោយលោកអ្នកប្រាជ្ញណា?", "options": ["ពីតាក័រ", "ញូតុន", "ភៀរសុន", "ហ្គាល់តុង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើអ្នកប្រាជ្ញណាដែលណែនាំឱ្យស្គាល់មេដ្យាននិងម៉ូតច្បាស់លាស់នៅចុងសតវត្សទី១៩?", "options": ["ពីតាក័រ", "អឺគ្លីត", "ភៀរសុន និង ហ្គាល់តុង", "អាញស្តាញ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើប្រេកង់សរុប <span class=\"mi\">\\(N=40\\)<\/span> តើមេដ្យាននិងមធ្យមអាចរកបានឬទេបើទិន្នន័យនោះជាពណ៌?", "options": ["អាចរកបានទាំងពីរ", "រកបានតែមធ្យម", "មិនអាចរកបានទេ", "រកបានតែមេដ្យាន"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យមានតម្លៃ <span class=\"mi\">\\(x_1 = 20, f_1 = 1\\)<\/span> និង <span class=\"mi\">\\(x_2 = 30, f_2 = 2\\)<\/span>, នោះ <span class=\"mi\">\\(\\bar{x}\\)<\/span> គឺ៖", "options": ["<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(26.67\\)<\/span>", "<span class=\"mi\">\\(26\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

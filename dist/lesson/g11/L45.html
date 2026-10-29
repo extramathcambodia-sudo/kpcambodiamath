@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៤៥ : ប្រូបាប — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៤៥ «ប្រូបាប» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៤៥ : ប្រូបាប — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៤៥ «ប្រូបាប» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g11">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li aria-current="page">មេរៀនទី ៤៥</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៤៥</span>
+      <div><span class="ls-kicker">ថ្នាក់វិទ្យាសាស្ត្រសង្គម · ជំពូកទី ៦ ចម្លាស់ បន្សំ និងប្រូបាប · មេរៀនទី ៤៥ · គណិតវិទ្យាថ្នាក់ទី ១១</span><h1>ប្រូបាប</h1><div class="ls-chips"><span class="chip chip-soon">ថ្នាក់វិទ្យាសាស្ត្រសង្គម</span><span class="chip chip-soon">ទំព័រ ២៣៨–២៦៦</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. លំហសំណាកនិងព្រឹត្តិការណ៍</a></li><li class="sub"><a href="#u2">២. ប្រូបាប</a></li><li class="sub"><a href="#u3">៣. គណនាប្រូបាបដោយប្រើចម្លាស់និងបន្សំ</a></li><li class="sub"><a href="#u4">៤. មេរៀនសង្ខេប ជំពូកទី ៦</a></li><li class="sub"><a href="#u5">៥. លំហាត់ជំពូកទី ៦</a></li><li class="sub"><a href="#u6">៦. ទំព័រសៀវភៅដើម</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-11.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white"><header class="bx-h"><b>វត្ថុបំណង</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>កំណត់ន័យរបស់ពាក្យ ពិសោធន៍ចៃដន្យ វិញ្ញាសា លំហសំណាក និងព្រឹត្តិការណ៍</p></li>
+<li><p>បង្ហាញប្រភេទនៃព្រឹត្តិការណ៍ឯកធាតុ ព្រឹត្តិការណ៍សមាស ព្រឹត្តិការណ៍ប្រាកដ ព្រឹត្តិការណ៍មិនអាចមាន ព្រឹត្តិការណ៍ផលបូក ផលគុណ ព្រឹត្តិការណ៍មិនចុះសម្រុងនិងផ្ទុយ</p></li>
+<li><p>កំណត់និយមន័យប្រូបាប រូបមន្ត និងលក្ខណៈនៃប្រូបាប</p></li>
+<li><p>ប្រើរូបមន្តចម្លាស់និងបន្សំ ដើម្បីគណនាប្រូបាបនៃព្រឹត្តិការណ៍មួយ ។</p></li>
+</ol>
+</div></section>
+<h3 id="u1">លំហសំណាកនិងព្រឹត្តិការណ៍</h3>
+<h4>ពិសោធន៍ចៃដន្យ-វិញ្ញាសា</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>នៅពេលដែលគេបោះកាក់មួយ គេមិនអាចដឹងច្បាស់ជាមុនថាកាក់នោះផ្ងារឡើងខាងរូប <span class="mi">\((H)\)</span> ឬមួយក៏ខាងលេខ <span class="mi">\((T)\)</span> នោះទេ ។ នៅពេលដែលគេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ គេក៏មិនអាចដឹងជាមុនថាមុខលើនៃគ្រាប់ឡុកឡាក់ តាងឱ្យលេខណាមួយក្នុងចំណោមលេខពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(6\)</span> ដែរ ។</p>
+</div></section>
+<p>ពិសោធន៍មួយដែលគេធ្វើដោយមិនបានដឹងជាមុនថា មានលទ្ធផលអ្វីមួយប្រាកដកើតឡើង នោះហៅថា <strong>ពិសោធន៍ចៃដន្យ</strong> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>បើគេយកកាក់មួយគ្រាប់មកពិសោធន៍ដោយកំណត់ជាក់លាក់ថា គេបោះកាក់ <span class="mi">\(1\)</span> ដង ឬ <span class="mi">\(2\)</span> ដង ឬ <span class="mi">\(3\)</span> ដង <span class="mi">\(\dots\)</span> នោះគេថា គេធ្វើវិញ្ញាសាបោះកាក់មួយគ្រាប់ចំនួន <span class="mi">\(1\)</span> ដង ឬ <span class="mi">\(2\)</span> ដង ឬ <span class="mi">\(3\)</span> ដង <span class="mi">\(\dots\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ៣</b></header><div class="bx-b">
+<p>បើគេដាក់សន្លឹកប័ណ្ណ <span class="mi">\(4\)</span> សន្លឹកចុះលេខ <span class="mi">\(1, 2, 3\)</span> និង <span class="mi">\(4\)</span> ក្នុងថង់មួយ រួចគេធ្វើពិសោធន៍ដោយកំណត់សកម្មភាពជាក់លាក់ថា គេចាប់យកប័ណ្ណម្ដងមួយៗចំនួន <span class="mi">\(2\)</span> លើកចេញពីថង់ដោយចៃដន្យ ហើយមិនដាក់ប័ណ្ណចូលថង់វិញ ។ គេថាគេធ្វើវិញ្ញាសាមួយ គឺវិញ្ញាសាចាប់យកប័ណ្ណចេញពីថង់ម្ដងមួយចំនួន <span class="mi">\(2\)</span> លើក ដោយមិនដាក់វិញ ។</p>
+</div></section>
+<p>ពិសោធន៍មួយដែលគេកំណត់ធ្វើដោយជាក់លាក់ក្នុងពិសោធន៍ចៃដន្យមួយហៅថា <strong>វិញ្ញាសា</strong> ។</p>
+<h4>លំហសំណាក</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងវិញ្ញាសាបោះកាក់មួយចំនួន <span class="mi">\(2\)</span> ដង បើលើកទី <span class="mi">\(1\)</span> គេបោះបានខាងរូបតាងដោយ <span class="mi">\(H\)</span> និងលើកទី <span class="mi">\(2\)</span> បានខាងលេខតាងដោយ <span class="mi">\(T\)</span> នោះគេថាគេបានលទ្ធផល <span class="mi">\((HT)\)</span> ។ បើលើកទី <span class="mi">\(1\)</span> បោះបានខាង <span class="mi">\(T\)</span> និងលើកទី <span class="mi">\(2\)</span> បានខាង <span class="mi">\(T\)</span> នោះគេបានលទ្ធផល <span class="mi">\((TT)\)</span> ជាលទ្ធផលដែលបោះបានខាង <span class="mi">\(T\)</span> ទាំង <span class="mi">\(2\)</span> លើក ។ តើក្នុងវិញ្ញាសាបោះកាក់មួយ <span class="mi">\(2\)</span> ដងនេះ គេអាចបានលទ្ធផលទាំងអស់ប៉ុន្មានរបៀប?</p>
+</div></section>
+<p>លទ្ធផលដែលអាចកើតឡើងទាំងអស់មាន <span class="mi">\(4\)</span> របៀបគឺ <span class="mi">\((HH)\)</span>, <span class="mi">\((HT)\)</span>, <span class="mi">\((TH)\)</span> និង <span class="mi">\((TT)\)</span> ។</p>
+<ul>
+<li><p>លទ្ធផលទាំងអស់ដែលអាចកើតឡើងក្នុងវិញ្ញាសានេះ បង្កើតបានជាសំណុំមួយហៅថា <strong>លំហសំណាក</strong> ។ គេកំណត់សរសេរ <span class="mi">\(S = \{(HH), (HT), (TH), (TT)\}\)</span> ។ ចំនួនលទ្ធផលទាំងអស់តាងដោយ <span class="mi">\(n(S) = 4\)</span> ។</p></li>
+<li><p>ក្នុងវិញ្ញាសាបោះកាក់មួយគ្រាប់ចំនួន <span class="mi">\(1\)</span> ដង គេបានលំហសំណាក <span class="mi">\(S = \{H, T\}\)</span> ។ ចំនួនលទ្ធផលទាំងអស់តាងដោយ <span class="mi">\(n(S) = 2\)</span> ។</p></li>
+</ul>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p><strong>លំហសំណាក</strong> គឺជាសំណុំលទ្ធផលទាំងអស់ដែលអាចកើតឡើងក្នុងវិញ្ញាសាមួយនៃពិសោធន៍ចៃដន្យ ។ ចំនួនលទ្ធផលក្នុងលំហសំណាកតាងដោយ <span class="mi">\(n(S)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ចំនួន <span class="mi">\(2\)</span> ដង ។</p>
+<ol class="list olka cols1">
+<li><p>តើសកម្មភាពណាជាពិសោធន៍ចៃដន្យ? ជាវិញ្ញាសា?</p></li>
+<li><p>សរសេរលំហសំណាក ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>ពិសោធន៍ចៃដន្យគឺ សកម្មភាពបោះគ្រាប់ឡុកឡាក់ ។ វិញ្ញាសាគឺ សកម្មភាពបោះគ្រាប់ឡុកឡាក់មួយចំនួន <span class="mi">\(2\)</span> ដង ។</p></li>
+<li><p>គេបោះគ្រាប់ឡុកឡាក់មួយចំនួន <span class="mi">\(2\)</span> ដង លទ្ធផលនីមួយៗដែលអាចកើតឡើងជាគូមានលំដាប់ អាចមានលេខច្រំដែល ដែលជាធាតុរបស់ <span class="mi">\(E = \{1, 2, 3, 4, 5, 6\}\)</span> ។ គេបានលំហសំណាក ៖ <span class="mi">\(S = \{(a, b)\)</span> ដែល <span class="mi">\(a \in E, b \in E\}\)</span> <div class="md">\[\begin{aligned}
+S &amp;\\
+&amp;= \{(1, 1), (1, 2), \dots, (2, 3), (2, 4), \dots, (6, 4), (6, 5), (6, 6)\}
+\end{aligned}\]</div> ចំនួនលទ្ធផលដែលអាចកើតឡើងកំណត់ដោយ <span class="mi">\(n(S) = 6\times 6 = 36\)</span> ករណី ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេចាប់យកឃ្លីម្ដង <span class="mi">\(2\)</span> គ្រាប់ចេញពីថង់មួយដោយចៃដន្យ ដែលក្នុងនោះមានឃ្លីក្រហម <span class="mi">\(2\)</span> ឃ្លីលឿង <span class="mi">\(2\)</span> និងឃ្លីខៀវ <span class="mi">\(1\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>តើសកម្មភាពណាជាពិសោធន៍ចៃដន្យ? ជាវិញ្ញាសា?</p></li>
+<li><p>សរសេរលំហសំណាក ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. ពិសោធន៍ចៃដន្យ ៖ ការចាប់យកឃ្លីចេញពីថង់ ។ វិញ្ញាសា ៖ ការចាប់យកឃ្លីម្ដង <span class="mi">\(2\)</span> គ្រាប់ ។ ខ. តាងឃ្លីក្រហម <span class="mi">\(R_1, R_2\)</span> ឃ្លីលឿង <span class="mi">\(Y_1, Y_2\)</span> និងឃ្លីខៀវ <span class="mi">\(B\)</span> ។ លំហសំណាកជាសំណុំនៃគូឃ្លីទាំងអស់ (មិនគិតលំដាប់) ៖ <span class="mi">\(S = \{R_1R_2, R_1Y_1, R_1Y_2, R_1B, R_2Y_1, R_2Y_2, R_2B, Y_1Y_2, Y_1B, Y_2B\}\)</span>, <span class="mi">\(n(S) = {}_5C_2 = 10\)</span> ។</p></details>
+</div></section>
+<h4>ព្រឹត្តិការណ៍</h4>
+<h5>ព្រឹត្តិការណ៍</h5>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>ក្នុងវិញ្ញាសាបោះកាក់មួយចំនួន <span class="mi">\(2\)</span> ដង បើគេកំណត់ថាគេចង់បានខាងរូប <span class="mi">\(H\)</span> កើតឡើងតែ <span class="mi">\(1\)</span> ដងគត់ នោះលទ្ធផលដែលស្របនឹងការចង់បាននេះគឺ <span class="mi">\((HT)\)</span> និង <span class="mi">\((TH)\)</span> ។ បើគេចង់បានខាងរូប <span class="mi">\(H\)</span> កើតឡើងទាំង <span class="mi">\(2\)</span> ដង នោះគេបានលទ្ធផល <span class="mi">\((HH)\)</span> ។</p>
+</div></section>
+<p>សំណុំលទ្ធផលដែលកើតឡើងស្របតាមការប្រាថ្នាចង់បានហៅថា <strong>ព្រឹត្តិការណ៍</strong> ។</p>
+<ul>
+<li><p>បើគេតាង <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍ “បោះកាក់មួយចំនួន <span class="mi">\(2\)</span> ដង បានខាងរូបម្ដងគត់” នោះគេសរសេរ ៖ <span class="mi">\(A = \{(HT), (TH)\} \Rightarrow n(A) = 2\)</span> ។</p></li>
+<li><p>បើគេតាង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ “បោះបានខាងលេខ <span class="mi">\(2\)</span> ដង” ៖ <span class="mi">\(B = \{(TT)\} \Rightarrow n(B) = 1\)</span> ។</p></li>
+</ul>
+<p>ក្នុងវិញ្ញាសានេះ គេឃើញថាលំហសំណាក <span class="mi">\(S = \{(HH), (HT), (TH), (TT)\} \Rightarrow n(S) = 4\)</span> ។ ដូច្នេះ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាសំណុំរងនៃលំហសំណាក ។</p>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<p>ព្រឹត្តិការណ៍ ជាសំណុំរងនៃលំហសំណាក ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានឃ្លីក្រហម <span class="mi">\(1\)</span> ខៀវ <span class="mi">\(1\)</span> និងលឿង <span class="mi">\(1\)</span> ។ គេចាប់យកឃ្លីម្ដងមួយៗដោយចៃដន្យចេញពីថង់ រួចដាក់ចូលថង់វិញចំនួន <span class="mi">\(2\)</span> លើក ។</p>
+</div></section>
+<p>គេតាង ក ជាឃ្លីពណ៌ក្រហម ខ ជាឃ្លីពណ៌ខៀវ និង ល ជាឃ្លីពណ៌លឿង ។ ក្នុងវិញ្ញាសានេះគេបានលំហសំណាក ៖ <span class="mi">\(S = \{(a, b)\)</span> ដែល <span class="mi">\(a, b \in E\}\)</span> ដែល <span class="mi">\(E = \{\)</span> ក <span class="mi">\(, \)</span> ខ <span class="mi">\(, \)</span> ល <span class="mi">\(\}\)</span> <div class="md">\[\begin{aligned}
+S = \{&amp;(\text{កក}), (\text{ខខ}), (\text{លល}), (\text{កខ}), (\text{ខក}),\\
+&amp;(\text{ខល}), (\text{លខ}), (\text{កល}), (\text{លក})\} \Rightarrow n(S) = 9
+\end{aligned}\]</div></p>
+<ul>
+<li><p>បើតាង <span class="mi">\(A_1\)</span> ជាព្រឹត្តិការណ៍ “ចាប់បានឃ្លីខៀវទាំង <span class="mi">\(2\)</span> លើក” គេបាន <span class="mi">\(A_1 = \{(\)</span> ខខ <span class="mi">\()\} \Rightarrow n(A_1) = 1\)</span> ។</p></li>
+<li><p><span class="mi">\(A_2\)</span> ជាព្រឹត្តិការណ៍ “ចាប់បានឃ្លីខ្មៅលើកទី <span class="mi">\(1\)</span> ឃ្លីក្រហមលើកទី <span class="mi">\(2\)</span>” គេបាន <span class="mi">\(A_2 = \varnothing\)</span> ព្រោះក្នុងថង់គ្មានឃ្លីខ្មៅទេ <span class="mi">\(\Rightarrow n(A_2) = 0\)</span> ។</p></li>
+<li><p><span class="mi">\(A_3\)</span> ជាព្រឹត្តិការណ៍ “ចាប់បានឃ្លី <span class="mi">\(2\)</span> ពណ៌ដូចគ្នា ឬ <span class="mi">\(2\)</span> ពណ៌ខុសគ្នា” គេបាន <span class="mi">\(A_3 = S \Rightarrow n(A_3) = 9\)</span> ។</p></li>
+</ul>
+<p>គេឃើញថា ៖</p>
+<ul>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(A_1\)</span> មានលទ្ធផលតែមួយគត់ ។ ព្រឹត្តិការណ៍ <span class="mi">\(A_1\)</span> ហៅថា <strong>ព្រឹត្តិការណ៍ឯកធាតុ</strong> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(A_2\)</span> ហៅថា <strong>ព្រឹត្តិការណ៍មិនអាចមាន</strong> ព្រោះគ្មានលទ្ធផលណាមួយកើតឡើងក្នុងព្រឹត្តិការណ៍ <span class="mi">\(A_2\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(A_3\)</span> មានគ្រប់លទ្ធផលទាំងអស់ដែលអាចកើតឡើង ដូចក្នុងលំហសំណាក ។ ព្រឹត្តិការណ៍ <span class="mi">\(A_3\)</span> ហៅថា <strong>ព្រឹត្តិការណ៍ប្រាកដ</strong> ។</p></li>
+</ul>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គេធ្វើវិញ្ញាសាបោះគ្រាប់ឡុកឡាក់ <span class="mi">\(2\)</span> គ្រាប់ មួយតូចមួយធំ ។</p>
+<ol class="list olka cols1">
+<li><p>កំណត់លទ្ធផលនៃព្រឹត្តិការណ៍ខាងក្រោម ៖<br/>
+<span class="mi">\(B_1\)</span> : “គ្រាប់ឡុកឡាក់ធំចេញលេខ <span class="mi">\(4\)</span>”<br/>
+<span class="mi">\(B_2\)</span> : “គ្រាប់ឡុកឡាក់ធំចេញលេខសេស”<br/>
+<span class="mi">\(B_3\)</span> : “គ្រាប់ឡុកឡាក់តូចចេញលេខ <span class="mi">\(3\)</span> គ្រាប់ឡុកឡាក់ធំចេញលេខ <span class="mi">\(5\)</span>”<br/>
+<span class="mi">\(B_4\)</span> : “គ្រាប់ឡុកឡាក់តូចចេញលេខ <span class="mi">\(1\)</span> គ្រាប់ឡុកឡាក់ធំចេញលេខ <span class="mi">\(7\)</span>”</p></li>
+<li><p>តើព្រឹត្តិការណ៍ណាជាព្រឹត្តិការណ៍ឯកធាតុ?</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>គេបោះគ្រាប់ឡុកឡាក់ <span class="mi">\(2\)</span> គ្រាប់ មួយតូចមួយធំ គេបានលទ្ធផលនីមួយៗជាគូ <span class="mi">\((a, b)\)</span> ដែល <span class="mi">\(a\)</span> ជាលេខរបស់គ្រាប់ធំ និង <span class="mi">\(b\)</span> ជាលេខរបស់គ្រាប់តូច ។ គេបានលទ្ធផលនៃព្រឹត្តិការណ៍ដូចខាងក្រោម ៖ <div class="md">\[\begin{aligned}
+B_1 &amp;= \{(4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6)\}\\
+&amp;\Rightarrow n(B_1) = 6
+\end{aligned}\]</div> <div class="md">\[\begin{aligned}
+  B_2 = \{&amp;(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6),\\
+  &amp;(3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6),\\
+  &amp;(5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6)\} \Rightarrow n(B_2) = 18
+  \end{aligned}\]</div> <span class="mi">\(B_3 = \{(5, 3)\} \Rightarrow n(B_3) = 1\)</span> ។ <span class="mi">\(B_4\)</span> ជាព្រឹត្តិការណ៍មិនអាចមាន <span class="mi">\(\Rightarrow n(B_4) = 0\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(B_3\)</span> ជាព្រឹត្តិការណ៍ឯកធាតុ ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានសន្លឹកបណ្ណ <span class="mi">\(4\)</span> សន្លឹកដែលចុះលេខ <span class="mi">\(1, 2, 3\)</span> និង <span class="mi">\(4\)</span> ។ គេហូតយកម្ដងមួយ ចំនួន <span class="mi">\(2\)</span> លើកដោយមិនដាក់វិញ ។ ចូរកំណត់លទ្ធផលនៃព្រឹត្តិការណ៍ខាងក្រោម ៖<br/>
+<span class="mi">\(C_1\)</span> : “ហូតបានលេខគូនៅលើកទី <span class="mi">\(1\)</span>”<br/>
+<span class="mi">\(C_2\)</span> : “ហូតបានលេខសេសទាំង <span class="mi">\(2\)</span> លើក”<br/>
+<span class="mi">\(C_3\)</span> : “ហូតលើកទី <span class="mi">\(1\)</span> បានលេខគូ លើកទី <span class="mi">\(2\)</span> បានលេខធំជាង <span class="mi">\(3\)</span>”<br/>
+<span class="mi">\(C_4\)</span> : “លើកទី <span class="mi">\(1\)</span> បានលេខ <span class="mi">\(1\)</span> លើកទី <span class="mi">\(2\)</span> បានលេខតូចជាង <span class="mi">\(2\)</span>” ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(C_1 = \{(2, 1), (2, 3), (2, 4), (4, 1), (4, 2), (4, 3)\}\)</span>, <span class="mi">\(C_2 = \{(1, 3), (3, 1)\}\)</span>, <span class="mi">\(C_3 = \{(2, 4)\}\)</span> (ឯកធាតុ), <span class="mi">\(C_4 = \varnothing\)</span> (មិនអាចមាន ព្រោះប័ណ្ណលេខ <span class="mi">\(1\)</span> មិនបានដាក់វិញ) ។</p></details>
+</div></section>
+<h5>ព្រឹត្តិការណ៍សមាស</h5>
+<p>គេឃើញថាព្រឹត្តិការណ៍ជាសំណុំរងនៃលំហសំណាក ដូច្នេះគេអាចប្រើសញ្ញាប្រសព្វ និងប្រជុំ ដើម្បីបង្កើតព្រឹត្តិការណ៍បន្ថែមទៀតដែលជាព្រឹត្តិការណ៍សមាស ហៅថា <strong>ព្រឹត្តិការណ៍ផលគុណ</strong> និង<strong>ព្រឹត្តិការណ៍ផលបូក</strong> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេធ្វើវិញ្ញាសាចាប់យកឃ្លីម្ដងមួយចំនួន <span class="mi">\(2\)</span> លើកចេញពីថង់ដែលមានឃ្លី <span class="mi">\(3\)</span> គ្រាប់មានពណ៌ខុសគ្នា ក្រហម ខៀវ និងលឿងដោយដាក់វិញ ។ ចូរកំណត់លំហសំណាក <span class="mi">\(S\)</span> និងព្រឹត្តិការណ៍ ៖<br/>
+<span class="mi">\(A\)</span> : “ចាប់បានឃ្លី <span class="mi">\(2\)</span> ពណ៌ខុសគ្នា” <span class="mi">\(B\)</span> : “ចាប់បានឃ្លីពណ៌ខៀវនៅលើកទី <span class="mi">\(1\)</span>”<br/>
+<span class="mi">\(C\)</span> : “ចាប់បានឃ្លី <span class="mi">\(2\)</span> ពណ៌ដូចគ្នា” <span class="mi">\(D\)</span> : “ចាប់បានឃ្លីពណ៌ក្រហមនៅលើកទី <span class="mi">\(1\)</span>”</p>
+</div></section>
+<p>តាង ខ ជាឃ្លីពណ៌ខៀវ ក ជាឃ្លីពណ៌ក្រហម និង ល ជាឃ្លីពណ៌លឿង ។ <div class="md">\[\begin{aligned}
+S &amp;= \{(\text{ខខ}), (\text{កក}), (\text{លល}), (\text{ខក}), (\text{ខល}), (\text{កល}), (\text{កខ}), (\text{លខ}), (\text{លក})\}\\
+A &amp;= \{(\text{ខក}), (\text{ខល}), (\text{កល}), (\text{កខ}), (\text{លខ}), (\text{លក})\}\\
+B &amp;= \{(\text{ខក}), (\text{ខល}), (\text{ខខ})\}\\
+C &amp;= \{(\text{ខខ}), (\text{កក}), (\text{លល})\}\\
+D &amp;= \{(\text{កខ}), (\text{កល}), (\text{កក})\}
+\end{aligned}\]</div> គេឃើញថាព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> មានលទ្ធផលរួម <span class="mi">\((\)</span> ខក <span class="mi">\(), (\)</span> ខល <span class="mi">\()\)</span> ។ លទ្ធផលរួមនេះបង្កើតបានព្រឹត្តិការណ៍មួយហៅថា ព្រឹត្តិការណ៍ផលគុណនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(A \cap B = \{(\)</span> ខក <span class="mi">\(), (\)</span> ខល <span class="mi">\()\}\)</span> ។ ព្រឹត្តិការណ៍ផលគុណនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ “ឃ្លីទាំង <span class="mi">\(2\)</span> ពណ៌ខុសគ្នា និងចាប់លើកទី <span class="mi">\(1\)</span> បានពណ៌ខៀវ” ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p><strong>ព្រឹត្តិការណ៍ផលគុណ</strong>នៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាប្រសព្វនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> មានន័យថា <span class="mi">\(A \cap B\)</span> ។</p>
+</div></section>
+<p>គេឃើញថា គ្រប់លទ្ធផលទាំងអស់នៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងគ្រប់លទ្ធផលនៃព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> បង្កើតបានព្រឹត្តិការណ៍មួយហៅថា ព្រឹត្តិការណ៍ផលបូកនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។ <div class="md">\[A \cup B = \{(\text{ខក}), (\text{ខល}), (\text{កល}), (\text{កខ}), (\text{លខ}), (\text{លក}), (\text{ខខ})\}\]</div> ព្រឹត្តិការណ៍ផលបូកនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ “ចាប់ឃ្លីទាំង <span class="mi">\(2\)</span> បានពណ៌ខុសគ្នា ឬបានពណ៌ខៀវនៅលើកទី <span class="mi">\(1\)</span>” ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p><strong>ព្រឹត្តិការណ៍ផលបូក</strong>នៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាប្រជុំនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(A\)</span> ឬ <span class="mi">\(B\)</span> មានន័យថា <span class="mi">\(A \cup B\)</span> ។</p>
+</div></section>
+<p>ព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(D\)</span> គ្មានលទ្ធផលណាមួយដូចគ្នាទេ ។ គេថាព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(D\)</span> ជាព្រឹត្តិការណ៍ <strong>មិនចុះសម្រុងគ្នា</strong> ។ គេបាន <span class="mi">\(B \cap D = \varnothing\)</span> និង <span class="mi">\(n(B \cap D) = 0\)</span> ។</p>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>ព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(D\)</span> ជាព្រឹត្តិការណ៍<strong>មិនចុះសម្រុងគ្នា</strong> កាលណាព្រឹត្តិការណ៍ផលគុណនៃ <span class="mi">\(B\)</span> និង <span class="mi">\(D\)</span> ជាព្រឹត្តិការណ៍មិនអាចមាន ៖ <span class="mi">\(B \cap D = \varnothing\)</span> (មិនមានធាតុរួម) ។ គេបាន <span class="mi">\(n(B \cap D) = 0\)</span> ។</p>
+</div></section>
+<p>គេឃើញថា <span class="mi">\(A \cap C = \varnothing\)</span> និង <span class="mi">\(A \cup C = S\)</span> ។ គេថាព្រឹត្តិការណ៍ <span class="mi">\(C\)</span> ជា<strong>ព្រឹត្តិការណ៍ផ្ទុយ</strong>នឹង <span class="mi">\(A\)</span> ឬ <span class="mi">\(C\)</span> ជា<strong>ព្រឹត្តិការណ៍បំពេញ</strong>នៃ <span class="mi">\(A\)</span> ។ គេកំណត់សរសេរព្រឹត្តិការណ៍ផ្ទុយនៃ <span class="mi">\(A\)</span> ឬព្រឹត្តិការណ៍បំពេញនៃ <span class="mi">\(A\)</span> ដោយ <span class="mi">\(\bar{A}\)</span> ។</p>
+<p>ព្រឹត្តិការណ៍ <span class="mi">\(2\)</span> ជាព្រឹត្តិការណ៍បំពេញគ្នា កាលណាផលគុណនៃព្រឹត្តិការណ៍ទាំង <span class="mi">\(2\)</span> ជាព្រឹត្តិការណ៍មិនអាចមាន និងព្រឹត្តិការណ៍ផលបូកនៃព្រឹត្តិការណ៍ទាំង <span class="mi">\(2\)</span> ជាព្រឹត្តិការណ៍ប្រាកដ ៖ <span class="mi">\(A \cap \bar{A} = \varnothing\)</span>, <span class="mi">\(A \cup \bar{A} = S\)</span> ។ គេបានព្រឹត្តិការណ៍ <span class="mi">\(2\)</span> បំពេញគ្នាជាព្រឹត្តិការណ៍មិនចុះសម្រុង ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ ។ គេតាង <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍ដែលគ្រាប់ឡុកឡាក់ចេញលេខគូ <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ដែលគ្រាប់ឡុកឡាក់ចេញលេខជាពហុគុណនៃ <span class="mi">\(3\)</span> និង <span class="mi">\(C\)</span> ជាព្រឹត្តិការណ៍ដែលគ្រាប់ឡុកឡាក់ចេញលេខតូចជាង ឬស្មើនឹង <span class="mi">\(2\)</span> ។ ចូរកំណត់ ៖</p>
+<ol class="list olka cols1">
+<li><p>លំហសំណាក <span class="mi">\(S\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(A, B, C\)</span></p></li>
+<li><p>ព្រឹត្តិការណ៍ផលគុណ <span class="mi">\(A \cap B\)</span>, <span class="mi">\(A \cap C\)</span>, <span class="mi">\(B \cap C\)</span></p></li>
+<li><p>ព្រឹត្តិការណ៍ផលបូក <span class="mi">\(A \cup B\)</span>, <span class="mi">\(B \cup C\)</span></p></li>
+<li><p>ព្រឹត្តិការណ៍បំពេញនៃព្រឹត្តិការណ៍ <span class="mi">\(A, B, C\)</span></p></li>
+<li><p>តើព្រឹត្តិការណ៍ណាជាព្រឹត្តិការណ៍មិនចុះសម្រុងគ្នា?</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>គេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ គេបានលទ្ធផលអាចកើតឡើងមានលេខ <span class="mi">\(1, 2, 3, 4, 5\)</span> និង <span class="mi">\(6\)</span> ។ គេបានលំហសំណាក <span class="mi">\(S = \{1, 2, 3, 4, 5, 6\}\)</span> ។ ព្រឹត្តិការណ៍ <span class="mi">\(A = \{2, 4, 6\}\)</span>, <span class="mi">\(B = \{3, 6\}\)</span>, <span class="mi">\(C = \{1, 2\}\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ផលគុណ ៖ <span class="mi">\(A \cap B = \{6\}\)</span>, <span class="mi">\(A \cap C = \{2\}\)</span>, <span class="mi">\(B \cap C = \varnothing\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ផលបូក ៖ <span class="mi">\(A \cup B = \{2, 3, 4, 6\}\)</span>, <span class="mi">\(B \cup C = \{1, 2, 3, 6\}\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍បំពេញនៃព្រឹត្តិការណ៍ <span class="mi">\(A, B, C\)</span> គឺ ៖ <span class="mi">\(\bar{A} = \{1, 3, 5\}\)</span>, <span class="mi">\(\bar{B} = \{1, 2, 4, 5\}\)</span>, <span class="mi">\(\bar{C} = \{3, 4, 5, 6\}\)</span> ។</p></li>
+<li><p>ដោយ <span class="mi">\(B \cap C = \varnothing\)</span> នោះ <span class="mi">\(B\)</span> និង <span class="mi">\(C\)</span> ជាព្រឹត្តិការណ៍មិនចុះសម្រុង ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេធ្វើវិញ្ញាសាចាប់យកបណ្ណមួយសន្លឹកចំនួន <span class="mi">\(2\)</span> លើក ដោយចៃដន្យនិងមិនដាក់វិញ ចេញពីថង់មួយ ដែលមានប័ណ្ណ <span class="mi">\(4\)</span> សន្លឹកគឺ ប័ណ្ណលេខ <span class="mi">\(1\)</span> លេខ <span class="mi">\(2\)</span> លេខ <span class="mi">\(3\)</span> និងលេខ <span class="mi">\(4\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>កំណត់លំហសំណាក <span class="mi">\(S\)</span> និងព្រឹត្តិការណ៍ ៖<br/>
+<span class="mi">\(A\)</span> : “ចាប់ទាំង <span class="mi">\(2\)</span> លើកបានបណ្ណមានលេខតូចជាង <span class="mi">\(4\)</span>”<br/>
+<span class="mi">\(B\)</span> : “ចាប់លើកទី <span class="mi">\(1\)</span> បានលេខតូចជាង <span class="mi">\(2\)</span> និងលើកទី <span class="mi">\(2\)</span> បានលេខសេស”<br/>
+<span class="mi">\(C\)</span> : “ចាប់ទាំង <span class="mi">\(2\)</span> លើកបានលេខខុសគ្នា”<br/>
+<span class="mi">\(D\)</span> : “ចាប់លើកទី <span class="mi">\(1\)</span> បានលេខធំជាង <span class="mi">\(4\)</span>”<br/>
+<span class="mi">\(E\)</span> : “ចាប់ទាំង <span class="mi">\(2\)</span> លើកបានលេខដូចគ្នា”</p></li>
+<li><p>តើមួយណាជាព្រឹត្តិការណ៍ឯកធាតុ ព្រឹត្តិការណ៍មិនអាចមាន ព្រឹត្តិការណ៍ប្រាកដ ។</p></li>
+<li><p>តើព្រឹត្តិការណ៍ណា ជាព្រឹត្តិការណ៍មិនចុះសម្រុង ។</p></li>
+<li><p>រកព្រឹត្តិការណ៍ផលគុណ <span class="mi">\(A \cap B\)</span>, <span class="mi">\(B \cap E\)</span> និងព្រឹត្តិការណ៍ផលបូក <span class="mi">\(A \cup B\)</span>, <span class="mi">\(B \cup E\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(S\)</span> មាន <span class="mi">\({}_4P_2 = 12\)</span> គូ ៖ <span class="mi">\((1,2), (1,3), (1,4), (2,1), (2,3), (2,4), (3,1), (3,2), (3,4), (4,1), (4,2), (4,3)\)</span> ។ <span class="mi">\(A = \{(1,2), (1,3), (2,1), (2,3), (3,1), (3,2)\}\)</span>, <span class="mi">\(B = \{(1,3)\}\)</span>, <span class="mi">\(C = S\)</span>, <span class="mi">\(D = \varnothing\)</span>, <span class="mi">\(E = \varnothing\)</span> ។ ខ. <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ឯកធាតុ, <span class="mi">\(D\)</span> និង <span class="mi">\(E\)</span> ជាព្រឹត្តិការណ៍មិនអាចមាន, <span class="mi">\(C\)</span> ជាព្រឹត្តិការណ៍ប្រាកដ ។ គ. <span class="mi">\(D\)</span> និង <span class="mi">\(E\)</span> មិនចុះសម្រុងជាមួយគ្រប់ព្រឹត្តិការណ៍ ។ ឃ. <span class="mi">\(A \cap B = \{(1,3)\}\)</span>, <span class="mi">\(B \cap E = \varnothing\)</span>, <span class="mi">\(A \cup B = A\)</span>, <span class="mi">\(B \cup E = B\)</span> ។</p></details>
+</div></section>
+<h3 id="u2">ប្រូបាប</h3>
+<h4>និយមន័យប្រូបាប</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>គេមានគ្រាប់ឡុកឡាក់ស្មើសាច់ល្អមួយគ្រាប់ ។ បើគេបោះគ្រាប់ឡុកឡាក់នេះ គេឃើញថាមុខនីមួយៗមានឱកាស (ឬសំណាង) អាចកើតឡើងដូចៗគ្នា ។ សំណាងដែលអាចកើតឡើងនេះមានមួយដងក្នុងចំណោម <span class="mi">\(6\)</span> ដងគឺមានសំណាង <span class="mi">\(\dfrac{1}{6}\)</span> ។</p>
+</div></section>
+<p>បើគេធ្វើពិសោធន៍បោះដដែលៗជាច្រើនដង នោះប្រេកង់ដែលអាចកើតឡើងចំពោះមុខនីមួយៗស្ទើរតែស្មើគ្នា ។ គេកត់ត្រាលទ្ធផលពិសោធន៍បោះគ្រាប់ឡុកឡាក់ស្មើសាច់ល្អមួយគ្រាប់ចំនួន <span class="mi">\(n\)</span> ដង <span class="mi">\(r\)</span> ជាប្រេកង់ដែលមុខណាមួយអាចកើតឡើង <span class="mi">\(\dfrac{r}{n}\)</span> ជាប្រេកង់ធៀប ៖ <div class="md">\[\begin{array}{|c|c|c|c|c|c|c|c|c|}\hline
+n &amp; 10 &amp; 30 &amp; 50 &amp; 60 &amp; 90 &amp; 100 &amp; 200 &amp; 500\\ \hline
+r &amp; 2 &amp; 4 &amp; 8 &amp; 11 &amp; 16 &amp; 16 &amp; 33 &amp; 83\\ \hline
+\dfrac{r}{n} &amp; 0.20 &amp; 0.133 &amp; 0.160 &amp; 0.183 &amp; 0.177 &amp; 0.160 &amp; 0.165 &amp; 0.166\\ \hline
+\end{array}\]</div> គេឃើញថា បើចំនួនដង <span class="mi">\(n\)</span> នៃការបោះកាន់តែច្រើនដង នោះប្រេកង់ធៀបខិតទៅរកចំនួនថេរមួយគឺ <span class="mi">\(\dfrac{1}{6} = 0.1666\dots\)</span> ។ <span class="mi">\(\dfrac{1}{6}\)</span> ហៅថាប្រូបាបនៃព្រឹត្តិការណ៍ ដែលគ្រាប់ឡុកឡាក់ចេញលេខណាមួយក្នុងវិញ្ញាសា ។ គេសរសេរ ៖ <span class="mi">\(P(\{1\}) = P(\{2\}) = \dots = P(\{6\}) = \dfrac{1}{6}\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>គ្រូធ្វើសំណួរផ្ទាល់មាត់ដោយឱ្យសិស្សចាប់ឆ្នោតយកសំណួរមួយក្នុងចំណោម សំណួរពីជគណិត <span class="mi">\(3\)</span> សំណួរ និងធរណីមាត្រ <span class="mi">\(2\)</span> សំណួរ ។ សុខជាសិស្សចូលចិត្តរៀនតែពីជគណិត ។ តើសុខមានសំណាង (ឬឱកាស) ប៉ុន្មានភាគរយចាប់បានសំណួរពីជគណិត? ចាប់បានសំណួរធរណីមាត្រ?</p>
+</div></section>
+<p>ក្នុងវិញ្ញាសានេះ គេអាចសរសេរលំហសំណាក <span class="mi">\(S = \{\)</span>ពីជគណិត <span class="mi">\(1\)</span> - ពីជគណិត <span class="mi">\(2\)</span> - ពីជគណិត <span class="mi">\(3\)</span> - ធរណីមាត្រ <span class="mi">\(1\)</span> - ធរណីមាត្រ <span class="mi">\(2\}\)</span> ។ សន្លឹកឆ្នោតមួយសន្លឹកៗមានសំណាងក្នុងការចាប់បានស្មើគ្នា ។ ដូច្នេះ ការចាប់បានសំណួរពីជគណិត សុខមានសំណាង <span class="mi">\(\dfrac{3}{5}\)</span> ត្រូវនឹង <span class="mi">\(60\%\)</span> និងឱកាសចាប់បានសំណួរធរណីមាត្រមាន <span class="mi">\(\dfrac{2}{5}\)</span> ត្រូវនឹង <span class="mi">\(40\%\)</span> ។</p>
+<ul>
+<li><p>គេថា <span class="mi">\(\dfrac{3}{5} = 0.6\)</span> ជាប្រូបាបនៃព្រឹត្តិការណ៍សុខចាប់បានសំណួរពីជគណិត ហើយ <span class="mi">\(\dfrac{2}{5} = 0.4\)</span> ជាប្រូបាបនៃព្រឹត្តិការណ៍សុខចាប់បានសំណួរធរណីមាត្រ ។</p></li>
+</ul>
+<p>បើគេតាង <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍សុខចាប់បានសំណួរពីជគណិត នោះ <span class="mi">\(n(A) = 3\)</span> ហៅថាចំនួនករណីស្រប ។ <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍សុខចាប់បានសំណួរធរណីមាត្រ នោះ <span class="mi">\(n(B) = 2\)</span> ហៅថា ចំនួនករណីស្រប ។ លំហសំណាក <span class="mi">\(S\)</span> មាន <span class="mi">\(5\)</span> ធាតុ ។ គេបាន <span class="mi">\(n(S) = 5\)</span> ហៅថាចំនួនករណីអាច ។ គេកំណត់សរសេរ ប្រូបាបនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> គឺ <span class="mi">\(P(A) = 0.6\)</span> ប្រូបាបនៃព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> គឺ <span class="mi">\(P(B) = 0.4\)</span> ។</p>
+<ul>
+<li><p>គេឃើញថា ៖ <span class="mi">\(P(A) = \dfrac{n(A)}{n(S)} = \dfrac{3}{5} = 0.6\)</span> និង <span class="mi">\(P(B) = \dfrac{n(B)}{n(S)} = \dfrac{2}{5} = 0.4\)</span> ដែល <span class="mi">\(n(A) = 3\)</span> ឬ <span class="mi">\(n(B) = 2\)</span> ជាចំនួនករណីស្រប និង <span class="mi">\(n(S) = 5\)</span> ជាចំនួនករណីអាច ។</p></li>
+</ul>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p><strong>ប្រូបាប</strong>នៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> មួយ ជាផលធៀបនៃចំនួនករណីស្រប <span class="mi">\(n(A)\)</span> និងចំនួនករណីអាច <span class="mi">\(n(S)\)</span> គឺ <div class="md">\[P(A) = \frac{\text{ចំនួនករណីស្រប}}{\text{ចំនួនករណីអាច}} = \frac{n(A)}{n(S)}\]</div></p>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<p>បើការរើសយកធាតុនីមួយៗ ជាការរើសដោយចៃដន្យនោះ ធាតុនីមួយៗមានឱកាសដូចគ្នាក្នុងការជ្រើសរើស ។ ដូច្នេះ ប្រូបាបដែលយកបានធាតុនីមួយៗជាសមប្រូបាប ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គេរើសសិស្សម្នាក់ឱ្យធ្វើជាប្រធានក្រុម ក្នុងចំណោមសិស្សស្រី <span class="mi">\(5\)</span> នាក់ និងសិស្សប្រុស <span class="mi">\(3\)</span> នាក់ ។ រកប្រូបាបដែលប្រធានក្រុមជាសិស្សស្រី និងរកប្រូបាបសិស្សប្រុសជាប្រធានក្រុម ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាង <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍ដែលសិស្សស្រីធ្វើជាប្រធានក្រុម និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ដែលសិស្សប្រុសធ្វើជាប្រធានក្រុម ។ សិស្សទាំងអស់មាន <span class="mi">\(5 + 3 = 8\)</span> នាក់ គេបាន <span class="mi">\(n(S) = 8\)</span> ។ សិស្សស្រីមាន <span class="mi">\(5\)</span> នាក់ គេបាន <span class="mi">\(n(A) = 5\)</span> និងសិស្សប្រុសមាន <span class="mi">\(3\)</span> នាក់ គេបាន <span class="mi">\(n(B) = 3\)</span> ។</p>
+<p>គេបាន ៖ ប្រូបាបដែលសិស្សស្រីជាប្រធានគឺ <span class="mi">\(P(A) = \dfrac{5}{8}\)</span> ។ ប្រូបាបដែលសិស្សប្រុសជាប្រធានគឺ <span class="mi">\(P(B) = \dfrac{3}{8}\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេធ្វើវិញ្ញាសាហូតប័ណ្ណម្ដងមួយសន្លឹកចំនួន <span class="mi">\(2\)</span> ដងចេញពីថង់មួយដែលមានប័ណ្ណលេខ <span class="mi">\(1\)</span> លេខ <span class="mi">\(2\)</span> និងលេខ <span class="mi">\(3\)</span> ដោយហូតហើយដាក់វិញ ។</p>
+<ol class="list olka cols1">
+<li><p>សរសេរលំហសំណាក <span class="mi">\(S\)</span> ព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> ដែលហូតលើកទី <span class="mi">\(1\)</span> បានលេខគូ និងព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ដែលហូតទាំង <span class="mi">\(2\)</span> លើកបានប័ណ្ណមានផលបូកលេខស្មើនឹង <span class="mi">\(5\)</span> ។</p></li>
+<li><p>រកប្រូបាបនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងប្រូបាបនៃព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(S = \{(1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3)\}\)</span>, <span class="mi">\(n(S) = 9\)</span> ។ <span class="mi">\(A = \{(2,1), (2,2), (2,3)\}\)</span>, <span class="mi">\(B = \{(2,3), (3,2)\}\)</span> ។ ខ. <span class="mi">\(P(A) = \dfrac{3}{9} = \dfrac{1}{3}\)</span>, <span class="mi">\(P(B) = \dfrac{2}{9}\)</span> ។</p></details>
+</div></section>
+<h4>លក្ខណៈនៃប្រូបាប</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងវិញ្ញាសាបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ ។</p>
+</div></section>
+<p>លទ្ធផលដែលអាចកើតឡើងទាំងអស់ក្នុងលំហសំណាកគឺ លទ្ធផលបោះបានលេខ <span class="mi">\(1\)</span> លេខ <span class="mi">\(2\)</span> លេខ <span class="mi">\(3\)</span> លេខ <span class="mi">\(4\)</span> លេខ <span class="mi">\(5\)</span> និងលេខ <span class="mi">\(6\)</span> ។ គេបានប្រូបាបនៃព្រឹត្តិការណ៍នីមួយៗស្មើនឹង <span class="mi">\(\dfrac{1}{6}\)</span> គឺ <div class="md">\[\begin{aligned}
+P(\{1\}) &amp;= P(\{2\}) = P(\{3\}) = P(\{4\})\\
+&amp;= P(\{5\}) = P(\{6\}) = \frac{1}{6}
+\end{aligned}\]</div> ផលបូកប្រូបាបនៃព្រឹត្តិការណ៍ឯកធាតុទាំងអស់ដែលអាចកើតឡើងក្នុងលំហសំណាក <span class="mi">\(S\)</span> ស្មើនឹង <span class="mi">\(1\)</span> គឺ <span class="mi">\(\dfrac{1}{6} + \dfrac{1}{6} + \dfrac{1}{6} + \dfrac{1}{6} + \dfrac{1}{6} + \dfrac{1}{6} = 1\)</span> ។ គេបាន <span class="mi">\(P(S) = 1\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើគេតាង <span class="mi">\(e_i\)</span> ជាព្រឹត្តិការណ៍ឯកធាតុនៃលំហសំណាក <span class="mi">\(S\)</span> នោះគេបាន ៖ <div class="md">\[\begin{aligned}
+P(e_1) + P(e_2) + \dots + P(e_n) &amp;= \sum_{i = 1}^{n} P(e_i)\\
+&amp;= P(S) = 1
+\end{aligned}\]</div> បើ <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍មិនអាចកើតឡើងគឺ <span class="mi">\(A = \varnothing\)</span> នោះ <span class="mi">\(n(A) = 0\)</span> ហើយ <span class="mi">\(P(A) = 0\)</span> ។<br/>
+បើ <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍មួយនៃលំហសំណាក <span class="mi">\(S\)</span> នោះ <span class="mi">\(n(A) \le n(S)\)</span> ហើយ <span class="mi">\(P(A) \le P(S)\)</span> ។</p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>សន្និដ្ឋាន</b></header><div class="bx-b">
+<ul>
+<li><p>ប្រូបាបនៃលំហសំណាក <span class="mi">\(S\)</span> ស្មើនឹង <span class="mi">\(1\)</span> គឺ <span class="mi">\(P(S) = 1\)</span> ។</p></li>
+<li><p>ប្រូបាបនៃព្រឹត្តិការណ៍មិនអាចមានស្មើនឹង <span class="mi">\(0\)</span> គឺ <span class="mi">\(P(\varnothing) = 0\)</span> ។</p></li>
+<li><p>ប្រូបាបនៃព្រឹត្តិការណ៍មួយក្នុងលំហសំណាក ជាចំនួនដែលនៅចន្លោះ <span class="mi">\([0, 1]\)</span> ៖ <span class="mi">\(0 \le P(A) \le 1\)</span> ។</p></li>
+</ul>
+</div></section>
+<h4>ប្រូបាបនៃព្រឹត្តិការណ៍សមាស</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេធ្វើវិញ្ញាសាបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ ។ តាង <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍បោះបានលេខគូ និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍បោះបានលេខជាពហុគុណនៃ <span class="mi">\(3\)</span> ។</p>
+</div></section>
+<p>គេបានលំហសំណាក <span class="mi">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>, <span class="mi">\(A = \{2, 4, 6\}\)</span>, <span class="mi">\(B = \{3, 6\}\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>ព្រឹត្តិការណ៍ផលគុណនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍បោះបានលេខគូ និងជាពហុគុណនៃ <span class="mi">\(3\)</span> គឺ <span class="mi">\(A \cap B = \{6\}\)</span> ។ ដូច្នេះ ប្រូបាបនៃព្រឹត្តិការណ៍ផលគុណនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ <span class="mi">\(P(A \cap B) = \dfrac{1}{6}\)</span> ។ ម្យ៉ាងទៀតប្រូបាបបោះបានលេខគូគឺ <span class="mi">\(P(A) = \dfrac{3}{6}\)</span> ប្រូបាបបោះបានលេខជាពហុគុណនៃ <span class="mi">\(3\)</span> គឺ <span class="mi">\(P(B) = \dfrac{2}{6}\)</span> ។ ដោយ <span class="mi">\(P(A \cap B) = \dfrac{1}{6}\)</span> និង <span class="mi">\(P(A)\times P(B) = \dfrac{1}{6}\)</span> នោះគេបាន <div class="md">\[\begin{gathered}
+P(A \cap B) = P(A)\times P(B)\\
+(\text{ព្រឹត្តិការណ៍ } A \text{ និង } B \text{ មិនអាស្រ័យគ្នា})
+\end{gathered}\]</div></p></li>
+<li><p>ព្រឹត្តិការណ៍ផលបូកនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍បោះបានលេខគូ ឬលេខជាពហុគុណនៃ <span class="mi">\(3\)</span> គឺ <span class="mi">\(A \cup B = \{2, 3, 4, 6\}\)</span> ។ ប្រូបាបនៃព្រឹត្តិការណ៍ផលបូកនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ <span class="mi">\(P(A \cup B) = \dfrac{n(A \cup B)}{n(S)} = \dfrac{4}{6}\)</span> ។ គេដឹងថា បើ <span class="mi">\(A \cap B \ne \varnothing\)</span> នោះ <span class="mi">\(n(A \cup B) = n(A) + n(B) - n(A \cap B)\)</span> <div class="md">\[\begin{aligned}
+P(A \cup B) &amp;= \frac{n(A) + n(B) - n(A \cap B)}{n(S)}\\
+&amp;= \frac{n(A)}{n(S)} + \frac{n(B)}{n(S)} - \frac{n(A \cap B)}{n(S)}\\
+&amp;= \frac{3}{6} + \frac{2}{6} - \frac{1}{6} = \frac{4}{6}
+\end{aligned}\]</div> ដូច្នេះ <span class="mi">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span> ។<br/>
+<strong>សម្គាល់ ៖</strong> បើ <span class="mi">\(A \cap B\)</span> ជាព្រឹត្តិការណ៍មិនអាចកើតឡើង <span class="mi">\(P(A \cap B) = 0\)</span> នោះ <span class="mi">\(P(A \cup B) = P(A) + P(B)\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍បំពេញនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> គឺ <span class="mi">\(\bar{A}\)</span> ។ គេបាន <span class="mi">\(\bar{A} = \{1, 3, 5\}\)</span>, <span class="mi">\(P(\bar{A}) = \dfrac{3}{6}\)</span> ។ ដោយ <span class="mi">\(A \cap \bar{A} = \varnothing\)</span>, <span class="mi">\(A \cup \bar{A} = S\)</span> នោះ <span class="mi">\(P(A \cup \bar{A}) = P(A) + P(\bar{A}) = 1\)</span> ។ ដូច្នេះ <span class="mi">\(P(\bar{A}) = 1 - P(A)\)</span> (<span class="mi">\(\bar{A}\)</span> ជាព្រឹត្តិការណ៍បំពេញនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span>) ។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានឃ្លីក្រហម <span class="mi">\(2\)</span> និងឃ្លីខៀវ <span class="mi">\(3\)</span> ។ គេចាប់យកឃ្លី <span class="mi">\(2\)</span> ចេញពីថង់ម្ដងមួយៗដោយចៃដន្យ ។</p>
+<ol class="list olka cols1">
+<li><p>ក្នុងករណីយកហើយដាក់វិញ ចូររកប្រូបាបដែលចាប់បាន ៖ ឃ្លីក្រហមមុន និងខៀវក្រោយ ។ ឃ្លីក្រហមមុន ឬក្រហមក្រោយតែ <span class="mi">\(1\)</span> គ្រាប់គត់ ។</p></li>
+<li><p>ក្នុងករណីយកហើយមិនដាក់វិញ ចូររកប្រូបាបដែលចាប់បាន ៖ ឃ្លីក្រហមមុន និងខៀវក្រោយ ។ ឃ្លីក្រហមមុន ឬក្រហមក្រោយតែមួយ <span class="mi">\(1\)</span> គ្រាប់គត់ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាងព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> : “ចាប់បានឃ្លីក្រហមមុន” និង <span class="mi">\(B\)</span> : “ចាប់បានឃ្លីខៀវក្រោយ” ។</p>
+<ol class="list olka cols1">
+<li><p>ក្នុងវិញ្ញាសាយកហើយដាក់វិញ គេបានចំនួនឃ្លីនៅក្នុងថង់សម្រាប់ចាប់មុននិងក្រោយស្មើគ្នា ។ ដូច្នេះ ការចាប់យកឃ្លីទី <span class="mi">\(1\)</span> និងឃ្លីទី <span class="mi">\(2\)</span> ជាព្រឹត្តិការណ៍ <span class="mi">\(2\)</span> មិនទាក់ទងគ្នាទេ ។ គេបាន <span class="mi">\(P(A) = \dfrac{2}{5}\)</span>, <span class="mi">\(P(B) = \dfrac{3}{5}\)</span> ។ ព្រឹត្តិការណ៍ចាប់បានឃ្លីក្រហមមុន និងឃ្លីខៀវក្រោយ ជាព្រឹត្តិការណ៍ផលគុណ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> កំណត់ដោយ <span class="mi">\(A \cap B\)</span> ។ <div class="md">\[P(A \cap B) = P(A)\times P(B) = \frac{2}{5}\times\frac{3}{5} = \frac{6}{25}\]</div> <strong>វិធីផ្សេង ៖</strong> <span class="mi">\(A \cap B = \{(\)</span> ក <span class="mi">\(_1\)</span> ខ <span class="mi">\(_1), (\)</span> ក <span class="mi">\(_1\)</span> ខ <span class="mi">\(_2), (\)</span> ក <span class="mi">\(_1\)</span> ខ <span class="mi">\(_3), (\)</span> ក <span class="mi">\(_2\)</span> ខ <span class="mi">\(_1), (\)</span> ក <span class="mi">\(_2\)</span> ខ <span class="mi">\(_2), (\)</span> ក <span class="mi">\(_2\)</span> ខ <span class="mi">\(_3)\} \Rightarrow n(A \cap B) = 6\)</span> ។ <span class="mi">\(n(S) = 5\times 5 = 25\)</span> គេបាន <span class="mi">\(P(A \cap B) = \dfrac{n(A \cap B)}{n(S)} = \dfrac{6}{25}\)</span> ។</p>
+<p>ព្រឹត្តិការណ៍ចាប់បានឃ្លីក្រហមមុន ឬក្រហមក្រោយតែ <span class="mi">\(1\)</span> គ្រាប់គត់ <span class="mi">\(=\)</span> (ក្រហមនិងខៀវ) ឬ (ខៀវនិងក្រហម) <div class="md">\[= \frac{2}{5}\times\frac{3}{5} + \frac{3}{5}\times\frac{2}{5} = \frac{12}{25}\]</div></p></li>
+<li><p>ក្នុងវិញ្ញាសាយកហើយមិនដាក់វិញ ចំនួនឃ្លីក្នុងថង់សម្រាប់ចាប់លើកទី <span class="mi">\(1\)</span> មាន <span class="mi">\(5\)</span> ។ ក្រោយពីយកមួយចេញហើយមិនដាក់វិញ ចំនួនឃ្លីក្នុងថង់សម្រាប់ចាប់លើកទី <span class="mi">\(2\)</span> មានតែ <span class="mi">\(4\)</span> ។</p>
+<ul>
+<li><p>បើលើកទី <span class="mi">\(1\)</span> ចាប់បានឃ្លីក្រហម នោះចំនួនឃ្លីចាប់លើកទី <span class="mi">\(2\)</span> មានតែក្រហម <span class="mi">\(1\)</span> និងខៀវ <span class="mi">\(2\)</span> ។</p></li>
+<li><p>បើលើកទី <span class="mi">\(1\)</span> ចាប់បានឃ្លីខៀវ នោះចំនួនឃ្លីចាប់លើកទី <span class="mi">\(2\)</span> មានខៀវតែ <span class="mi">\(2\)</span> និងឃ្លីក្រហម <span class="mi">\(2\)</span> ។ គេថាព្រឹត្តិការណ៍ដែលកើតលើកទី <span class="mi">\(2\)</span> ទាក់ទងនឹងព្រឹត្តិការណ៍កើតលើកទី <span class="mi">\(1\)</span> ។</p></li>
+<li><p>បើលើកទី <span class="mi">\(1\)</span> ចាប់បានឃ្លីក្រហម និងលើកទី <span class="mi">\(2\)</span> ចាប់បានឃ្លីខៀវ នោះប្រូបាបដែលចាប់បានឃ្លីក្រហមមុនគឺ <span class="mi">\(\dfrac{2}{5}\)</span> និងប្រូបាបចាប់បានឃ្លីខៀវក្រោយគឺ <span class="mi">\(\dfrac{3}{4}\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(P(A) = \dfrac{2}{5}\)</span> និង <span class="mi">\(P(B \)</span> ដែល <span class="mi">\( A \)</span> កើតមុន <span class="mi">\() = P(B/A) = \dfrac{3}{4}\)</span> ។ ដូច្នេះ ប្រូបាបនៃព្រឹត្តិការណ៍ផលគុណ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ <div class="md">\[P(A \cap B) = P(A)\times P(B/A) = \frac{2}{5}\times\frac{3}{4} = \frac{3}{10}\]</div></p></li>
+<li><p>ព្រឹត្តិការណ៍ចាប់បានឃ្លីក្រហមមុន ឬក្រហមក្រោយតែ <span class="mi">\(1\)</span> គ្រាប់គត់ <div class="md">\[= \frac{2}{5}\times\frac{3}{4} + \frac{3}{5}\times\frac{2}{4} = \frac{12}{20} = \frac{3}{5}\]</div></p></li>
+</ul></li>
+</ol>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>សម្គាល់</b></header><div class="bx-b">
+<ul>
+<li><p>ក្នុងវិញ្ញាសាហូតហើយដាក់វិញ ប្រូបាបនៃព្រឹត្តិការណ៍កើតមុន ឬព្រឹត្តិការណ៍កើតក្រោយរក្សាដដែល ។</p></li>
+<li><p>ក្នុងវិញ្ញាសាហូតហើយមិនដាក់វិញ ប្រូបាបនៃព្រឹត្តិការណ៍កើតក្រោយប្រែប្រួលទៅតាមព្រឹត្តិការណ៍កើតមុន ។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>សន្និដ្ឋាន</b></header><div class="bx-b">
+<p>ប្រូបាបនៃព្រឹត្តិការណ៍ផលគុណ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ ៖ <div class="md">\[\begin{aligned}
+P(A \cap B) &amp;= P(A)\times P(B) &amp;&amp; \text{បើ } A \text{ និង } B \text{ មិនទាក់ទងគ្នា}\\
+P(A \cap B) &amp;= P(A)\times P(B/A) &amp;&amp; \text{បើ } A \text{ និង } B \text{ ទាក់ទងគ្នា}
+\end{aligned}\]</div> ប្រូបាបនៃព្រឹត្តិការណ៍ផលបូក <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ ៖ <div class="md">\[\begin{aligned}
+P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B)\\
+P(A \cup B) &amp;= P(A)\\
+&amp;\quad{} + P(B) \quad{} \text{បើ } A \text{ និង } B \text{ ជាព្រឹត្តិការណ៍មិនចុះសម្រុង}
+\end{aligned}\]</div> ប្រូបាបនៃព្រឹត្តិការណ៍ផ្ទុយនឹង <span class="mi">\(A\)</span> គឺ <span class="mi">\(P(\bar{A}) = 1 - P(A)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>គេសរសេរតួអក្សរមួយដាក់លើសន្លឹកកាតមួយ ក្នុងចំណោមតួអក្សរនៃឈ្មោះបុរសម្នាក់ <span class="mi">\(ALGEBRO\)</span> រួចដាក់ចូលក្នុងថង់ ។ គេចាប់សន្លឹកកាតម្ដងមួយចេញពីថង់ <span class="mi">\(2\)</span> ដងដោយចៃដន្យ ដោយយកហើយដាក់វិញ ។ តាង <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍ដែលចាប់បានស្រៈនៅលើកទី <span class="mi">\(1\)</span>, <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ចាប់បានព្យញ្ជនៈនៅលើកទី <span class="mi">\(1\)</span> និង <span class="mi">\(C\)</span> ជាព្រឹត្តិការណ៍ចាប់បានព្យញ្ជនៈនៅលើកទី <span class="mi">\(2\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>តើព្រឹត្តិការណ៍ណាជាព្រឹត្តិការណ៍បំពេញគ្នា ។</p></li>
+<li><p>រកប្រូបាបដែលចាប់យកបាន ស្រៈនៅលើកទី <span class="mi">\(1\)</span> ព្យញ្ជនៈនៅលើកទី <span class="mi">\(1\)</span> ព្យញ្ជនៈនៅលើកទី <span class="mi">\(2\)</span> ស្រៈមុននិងព្យញ្ជនៈក្រោយ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាង ស <span class="mi">\(=\)</span> ស្រៈ និង ព <span class="mi">\(=\)</span> ព្យញ្ជនៈ ។ លំហសំណាក <span class="mi">\(S = \{(\)</span> សស <span class="mi">\(), (\)</span> សព <span class="mi">\(), (\)</span> ពស <span class="mi">\(), (\)</span> ពព <span class="mi">\()\}\)</span> ។ ព្រឹត្តិការណ៍ <span class="mi">\(A = \{(\)</span> សព <span class="mi">\(), (\)</span> សស <span class="mi">\()\}\)</span>, <span class="mi">\(B = \{(\)</span> ពស <span class="mi">\(), (\)</span> ពព <span class="mi">\()\}\)</span>, <span class="mi">\(C = \{(\)</span> សព <span class="mi">\(), (\)</span> ពព <span class="mi">\()\}\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍បំពេញគ្នា ព្រោះ <span class="mi">\(A \cap B = \varnothing\)</span> និង <span class="mi">\(A \cup B = S\)</span> ។</p></li>
+<li><p>ក្នុងឈ្មោះ <span class="mi">\(ALGEBRO\)</span> មានតួអក្សរ <span class="mi">\(7\)</span> ដែលមានស្រៈ <span class="mi">\(3\)</span> (<span class="mi">\(A, E, O\)</span>) និងព្យញ្ជនៈ <span class="mi">\(4\)</span> (<span class="mi">\(L, G, B, R\)</span>) ។</p>
+<ul>
+<li><p>ស្រៈនៅលើកទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(P(A) = P(\)</span> សស <span class="mi">\() + P(\)</span> សព <span class="mi">\() = \dfrac{3}{7}\times\dfrac{3}{7} + \dfrac{3}{7}\times\dfrac{4}{7} = \dfrac{9 + 12}{49} = \dfrac{21}{49} = \dfrac{3}{7}\)</span> ។</p></li>
+<li><p>ព្យញ្ជនៈនៅលើកទី <span class="mi">\(1\)</span> គឺ <span class="mi">\(P(B) = P(\)</span> ពស <span class="mi">\() + P(\)</span> ពព <span class="mi">\() = \dfrac{4}{7}\times\dfrac{3}{7} + \dfrac{4}{7}\times\dfrac{4}{7} = \dfrac{12 + 16}{49} = \dfrac{28}{49} = \dfrac{4}{7}\)</span> ។</p></li>
+<li><p>ព្យញ្ជនៈនៅលើកទី <span class="mi">\(2\)</span> គឺ <span class="mi">\(P(C)\)</span> ។ ដោយវិញ្ញាសានេះជាវិញ្ញាសាហូតហើយដាក់វិញ នោះចំនួនកាតត្រូវហូតយកលើកទី <span class="mi">\(1\)</span> និងលើកទី <span class="mi">\(2\)</span> ស្មើគ្នា ។ ដូច្នេះ ព្រឹត្តិការណ៍ចាប់យកលើកទី <span class="mi">\(1\)</span> មិនទាក់ទងនឹងព្រឹត្តិការណ៍ចាប់យកលើកទី <span class="mi">\(2\)</span> ទេ ។ គេបាន <span class="mi">\(P(C) = P(\)</span> សព <span class="mi">\() + P(\)</span> ពព <span class="mi">\() = \dfrac{3}{7}\times\dfrac{4}{7} + \dfrac{4}{7}\times\dfrac{4}{7} = \dfrac{12 + 16}{49} = \dfrac{28}{49} = \dfrac{4}{7}\)</span> ។</p></li>
+<li><p>ស្រៈមុននិងព្យញ្ជនៈក្រោយ ៖ <span class="mi">\(P(A \cap C) = P(A)\times P(C) = \dfrac{3}{7}\times\dfrac{4}{7} = \dfrac{12}{49} \approx 0.245\)</span> ។</p></li>
+</ul></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>គេជ្រើសរើសសិស្ស <span class="mi">\(2\)</span> នាក់ ក្នុងចំណោមសិស្សស្រី <span class="mi">\(4\)</span> នាក់ និងសិស្សប្រុស <span class="mi">\(5\)</span> នាក់ ជាតំណាងក្រុមដែលមានប្រធាន និងអនុប្រធាន ។ រកប្រូបាបដែលសិស្ស ៖</p>
+<ol class="list olka cols1">
+<li><p>ស្រីជាប្រធានក្រុម</p></li>
+<li><p>ប្រុសទាំង <span class="mi">\(2\)</span> ជាតំណាងក្រុម</p></li>
+<li><p>ស្រីជាប្រធាន និងប្រុសជាអនុប្រធាន</p></li>
+<li><p>យ៉ាងតិចមានសិស្សស្រីម្នាក់ជាតំណាងក្រុម ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាង ប <span class="mi">\(=\)</span> ប្រុស និង ស <span class="mi">\(=\)</span> ស្រី (តួទី <span class="mi">\(1\)</span> ជាប្រធាន តួទី <span class="mi">\(2\)</span> ជាអនុប្រធាន) ។<br/>
+<span class="mi">\(M\)</span> ជាព្រឹត្តិការណ៍ដែលសិស្សប្រុសជាប្រធានក្រុមគឺ <span class="mi">\(M = (\)</span> បប <span class="mi">\()\)</span> ឬ <span class="mi">\((\)</span> បស <span class="mi">\()\)</span><br/>
+<span class="mi">\(W\)</span> ជាព្រឹត្តិការណ៍ដែលសិស្សស្រីជាប្រធានក្រុមគឺ <span class="mi">\(W = (\)</span> សស <span class="mi">\()\)</span> ឬ <span class="mi">\((\)</span> សប <span class="mi">\()\)</span><br/>
+<span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ដែលសិស្សប្រុសជាអនុប្រធានគឺ <span class="mi">\(B = (\)</span> សប <span class="mi">\()\)</span> ឬ <span class="mi">\((\)</span> បប <span class="mi">\()\)</span><br/>
+<span class="mi">\(G\)</span> ជាព្រឹត្តិការណ៍ដែលសិស្សស្រីជាអនុប្រធានគឺ <span class="mi">\(G = (\)</span> សស <span class="mi">\()\)</span> ឬ <span class="mi">\((\)</span> បស <span class="mi">\()\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>ដោយសិស្សទាំងអស់មាន <span class="mi">\(9\)</span> នាក់ និងសិស្សស្រីមាន <span class="mi">\(4\)</span> នាក់ នោះឱកាសដែលរើសបានសិស្សស្រីជាប្រធានមាន <span class="mi">\(4\)</span> ដងក្នុង <span class="mi">\(9\)</span> ដង ។ <div class="md">\[\begin{aligned}
+  P(W) &amp;= P(\text{សស}) + P(\text{សប}) = \frac{4}{9}\times\frac{3}{8} + \frac{4}{9}\times\frac{5}{8}\\
+  &amp;= \frac{3 + 5}{18} = \frac{8}{18} = \frac{4}{9}
+  \end{aligned}\]</div></p></li>
+<li><p>ឱកាសដែលរើសបានសិស្សប្រុសធ្វើជាប្រធានក្រុមមាន <span class="mi">\(5\)</span> ដងក្នុង <span class="mi">\(9\)</span> ដង និងសិស្សប្រុសម្នាក់ទៀតធ្វើជាអនុប្រធានមាន <span class="mi">\(4\)</span> ដងក្នុង <span class="mi">\(8\)</span> ដង ។ ដូច្នេះ <span class="mi">\(P(M \cap B) = \dfrac{5}{9}\times\dfrac{4}{8} = \dfrac{5}{18} \approx 0.278\)</span> ។</p></li>
+<li><p>ឱកាសដែលរើសសិស្សស្រីម្នាក់ជាប្រធានមាន <span class="mi">\(4\)</span> ដងក្នុង <span class="mi">\(9\)</span> ដង ។ បន្ទាប់មកនៅសល់សិស្ស <span class="mi">\(8\)</span> នាក់ ដើម្បីរើសយកម្នាក់ជាអនុប្រធានក្រុម ព្រោះសិស្សស្រីដែលជាប្រធានមិនអាចរើសធ្វើជាអនុប្រធានបានទៀតទេ គឺជាវិញ្ញាសាយកហើយមិនដាក់វិញ ។ ដូច្នេះ ព្រឹត្តិការណ៍ដែលកើតក្រោយអាស្រ័យនឹងព្រឹត្តិការណ៍កើតមុន ។ ដោយអនុប្រធានជាសិស្សប្រុស នោះឱកាសរើសសិស្សប្រុសមាន <span class="mi">\(5\)</span> ដងក្នុង <span class="mi">\(8\)</span> ដង ។ <div class="md">\[P(W \cap B) = P(W)\times P(B/W) = \frac{4}{9}\times\frac{5}{8} = \frac{5}{18} \approx 0.278\]</div></p></li>
+<li><p>ព្រឹត្តិការណ៍ដែលយ៉ាងតិចមានស្រីម្នាក់ ជាព្រឹត្តិការណ៍បំពេញនៃព្រឹត្តិការណ៍គ្មានស្រីសោះ ។ ព្រឹត្តិការណ៍គ្មានស្រីសោះ គឺជាព្រឹត្តិការណ៍ដែលសិស្សប្រុសទាំង <span class="mi">\(2\)</span> ជាតំណាងក្រុម ។ ដូច្នេះ <div class="md">\[\begin{aligned}
+P(\text{យ៉ាងតិចមានស្រីម្នាក់}) &amp;= 1 - P(\text{គ្មានសិស្សស្រី})\\
+&amp;= 1 - P(M \cap B)\\
+&amp;= 1 - \frac{5}{9}\times\frac{4}{8} = 1 - \frac{5}{18} = \frac{13}{18} \approx 0.722
+\end{aligned}\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានឃ្លីក្រហម <span class="mi">\(4\)</span> និងឃ្លីខៀវ <span class="mi">\(6\)</span> ។ គេចាប់យកឃ្លី <span class="mi">\(2\)</span> ព្រមគ្នាដោយចៃដន្យ ។</p>
+<ol class="list olka cols1">
+<li><p>រកប្រូបាបដែលចាប់បានឃ្លីក្រហមទាំង <span class="mi">\(2\)</span> ។</p></li>
+<li><p>រកប្រូបាបដែលចាប់បានឃ្លីខៀវទាំង <span class="mi">\(2\)</span> ។</p></li>
+<li><p>រកប្រូបាបដែលចាប់បានឃ្លី <span class="mi">\(2\)</span> មានពណ៌ដូចគ្នា ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(\dfrac{2}{15}\)</span> ខ. <span class="mi">\(\dfrac{1}{3}\)</span> គ. <span class="mi">\(\dfrac{7}{15}\)</span> ។</p></details>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ក្នុងប្រអប់ <span class="mi">\(A\)</span> មានសំបុត្រ <span class="mi">\(5\)</span> សន្លឹក ចុះលេខពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(5\)</span> ។ ប្រអប់ <span class="mi">\(B\)</span> មានសំបុត្រ <span class="mi">\(3\)</span> សន្លឹក ចុះលេខពី <span class="mi">\(4\)</span> ដល់ <span class="mi">\(6\)</span> ។ គេចាប់យកសំបុត្រ <span class="mi">\(1\)</span> សន្លឹកចេញពីប្រអប់នីមួយៗដោយចៃដន្យ ។ រកប្រូបាបដែលសំបុត្រទាំង <span class="mi">\(2\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p>មានលេខដូចគ្នា</p></li>
+<li><p>មានលេខខុសគ្នា</p></li>
+<li><p>មានផលបូកលេខជាចំនួនសេស ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(\dfrac{2}{15}\)</span> ខ. <span class="mi">\(\dfrac{13}{15}\)</span> គ. <span class="mi">\(\dfrac{8}{15}\)</span> ។</p></details>
+</div></section>
+<h3 id="u3">គណនាប្រូបាបដោយប្រើចម្លាស់និងបន្សំ</h3>
+<h4>គណនាប្រូបាបដោយប្រើចម្លាស់</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ <span class="mi">\(2\)</span> ដង ។</p>
+<ol class="list olka cols1">
+<li><p>រកប្រូបាបដែលបោះបានលេខទាំងពីរលើកខុសគ្នា ។</p></li>
+<li><p>រកប្រូបាបដែលបោះបានលេខទាំងពីរលើកជាលេខគូ ។</p></li>
+<li><p>រកប្រូបាបដែលបោះបានលេខទាំងពីរលើកខុសគ្នា និងជាលេខគូ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ការបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ពីរដងជាចម្លាស់ច្រំដែលនៃ <span class="mi">\(2\)</span> ធាតុយកពី <span class="mi">\(6\)</span> ធាតុ ព្រោះលេខដែលអាចចេញលើកទី <span class="mi">\(1\)</span> មាន <span class="mi">\(6\)</span> ជម្រើស និងលេខអាចចេញលើកទី <span class="mi">\(2\)</span> ក៏មាន <span class="mi">\(6\)</span> ជម្រើសដែរ ។ ដូច្នេះ លទ្ធផលដែលអាចកើតឡើងទាំងអស់មានចំនួន <span class="mi">\(6^2 = 36\)</span> ។ <span class="mi">\(36\)</span> ជាចំនួនករណីអាច ។</p>
+<ol class="list olka cols1">
+<li><p>តាង <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍ដែលបោះបានលេខខុសគ្នាទាំងពីរលើក ។ បើគេចង់បានតែលទ្ធផលណាដែលមានលេខទាំង <span class="mi">\(2\)</span> ខុសគ្នា នោះលទ្ធផលទាំងនេះជាចម្លាស់នៃ <span class="mi">\(2\)</span> ធាតុយកពី <span class="mi">\(6\)</span> ធាតុ ។ លទ្ធផលទាំងអស់មានចំនួន <span class="mi">\({}_6P_2 = 6\times 5 = 30\)</span> ។ ដោយ <span class="mi">\(30\)</span> ជាចំនួនករណីស្រប និង <span class="mi">\(36\)</span> ជាចំនួនករណីអាច ។ គេបាន <span class="mi">\(P(A) = \dfrac{30}{36} = \dfrac{5}{6} \approx 0.833\)</span> ។</p></li>
+<li><p>តាង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍បោះបានលេខទាំងពីរជាលេខគូ ។ លទ្ធផលដែលមានលេខទាំងពីរជាលេខគូ គឺលទ្ធផលនៃចម្លាស់ច្រំដែលនៃ <span class="mi">\(2\)</span> ធាតុយកចេញពី <span class="mi">\(3\)</span> ធាតុ ដែលជាលេខ <span class="mi">\(2, 4, 6\)</span> ។ លទ្ធផលដែលគេចង់បាននេះមានចំនួន <span class="mi">\(3^2 = 9\)</span> ។ គេបាន <span class="mi">\(P(B) = \dfrac{9}{36} = \dfrac{1}{4} = 0.25\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ដែលបោះបានលេខទាំងពីរខុសគ្នា និងជាលេខគូគឺជាព្រឹត្តិការណ៍ <span class="mi">\(A \cap B\)</span> ។ សំណុំលទ្ធផលដែលមានលេខទាំងពីរខុសគ្នា និងជាលេខគូគឺ <div class="md">\[\begin{aligned}
+A \cap B &amp;\\
+&amp;= \{(2, 4), (2, 6), (4, 2), (4, 6), (6, 2), (6, 4)\}
+\end{aligned}\]</div> <span class="mi">\(n(A \cap B) = 6\)</span> ជាចំនួនករណីស្រប ។ ដូច្នេះ <span class="mi">\(P(A \cap B) = \dfrac{6}{36} = \dfrac{1}{6} \approx 0.167\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>គេបង្កើតលេខសម្ងាត់របស់សោដោយចំនួនដែលមានលេខ <span class="mi">\(4\)</span> ខ្ទង់ខុសពីលេខ <span class="mi">\(0\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>តើគេអាចបង្កើតលេខសម្ងាត់នេះបានប៉ុន្មានរបៀប?</p></li>
+<li><p>គេរើសយកលេខសម្ងាត់មួយដោយចៃដន្យ ។ រកប្រូបាបនៃព្រឹត្តិការណ៍ ៖<br/>
+<span class="mi">\(A\)</span> : “លេខសម្ងាត់ជាចំនួនគូ”<br/>
+<span class="mi">\(B\)</span> : “លេខសម្ងាត់ទាំង <span class="mi">\(4\)</span> ខ្ទង់ជាលេខគូ”<br/>
+<span class="mi">\(C\)</span> : “លេខសម្ងាត់ទាំង <span class="mi">\(4\)</span> ខ្ទង់មានលេខ <span class="mi">\(1\)</span> តែម្ដងគត់”<br/>
+<span class="mi">\(D\)</span> : “លេខសម្ងាត់ទាំង <span class="mi">\(4\)</span> ខ្ទង់ខុសៗគ្នា” ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>លេខសម្ងាត់នេះជាចម្លាស់ <span class="mi">\(4\)</span> លេខយកចេញពី <span class="mi">\(9\)</span> លេខ <span class="mi">\((1, 2, 3, \dots, 9)\)</span> ហើយអាចមានលេខច្រំដែល ។ <div class="md">\[\begin{array}{cccc}
+  \boxed{9} &amp; \boxed{9} &amp; \boxed{9} &amp; \boxed{9}\\
+  \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow\\
+  9 \times &amp; 9 \times &amp; 9 \times &amp; 9
+  \end{array}\]</div> ចំនួនចម្លាស់ច្រំដែល <span class="mi">\(4\)</span> ធាតុយកពី <span class="mi">\(9\)</span> ធាតុគឺ <span class="mi">\(9^4 = 6561\)</span> ។</p></li>
+<li><p>ការរើសយកលេខសម្ងាត់នីមួយៗ មានឱកាសដូចគ្នាព្រោះគេរើសដោយចៃដន្យ គេថាប្រូបាបនៃការយកបានលេខនីមួយៗជាសមប្រូបាប ។</p>
+<ul>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> ជាព្រឹត្តិការណ៍យកបានលេខសម្ងាត់ជាចំនួនគូ គឺជាចំនួនដែលមានលេខ <span class="mi">\(2, 4, 6, 8\)</span> នៅខាងចុង ។ លេខនីមួយៗក្នុងចំណោម <span class="mi">\(3\)</span> លេខខាងដើមរបស់លេខសម្ងាត់ត្រូវរើសចេញពី <span class="mi">\(9\)</span> លេខ ហើយលេខចុងក្រោយរើសចេញពី <span class="mi">\(4\)</span> លេខ ដែលជាលេខគូ ។ <div class="md">\[\begin{array}{cccc}
+    \boxed{9} &amp; \boxed{9} &amp; \boxed{9} &amp; \boxed{4}\\
+    \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow\\
+    9 \times &amp; 9 \times &amp; 9 \times &amp; 4
+    \end{array}\]</div> គេអាចបង្កើតលេខសម្ងាត់តាមរបៀបនេះបានចំនួន <span class="mi">\(9^3\times 4\)</span> របៀប ដោយចំនួនករណីអាចមាន <span class="mi">\(9^4\)</span> និងចំនួនករណីស្របមាន <span class="mi">\(9^3\times 4\)</span> នោះ <span class="mi">\(P(A) = \dfrac{9^3\times 4}{9^4} = \dfrac{4}{9} \approx 0.444\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍មានលេខទាំង <span class="mi">\(4\)</span> ខ្ទង់ជាលេខគូ នោះលេខមួយខ្ទង់ៗត្រូវរើសយកពី <span class="mi">\(4\)</span> លេខ <span class="mi">\(2, 4, 6\)</span> និង <span class="mi">\(8\)</span> ហើយអាចច្រំដែល ។ គេបានចំនួនចម្លាស់ច្រំដែលនៃ <span class="mi">\(4\)</span> ធាតុគឺ <span class="mi">\(4^4 = 256\)</span> ។ <div class="md">\[P(B) = \frac{256}{6561} \approx 0.039\]</div></p></li>
+<li><p><span class="mi">\(C\)</span> ជាព្រឹត្តិការណ៍លេខសម្ងាត់មានលេខ <span class="mi">\(1\)</span> តែម្ដងគត់ ។ លេខ <span class="mi">\(1\)</span> អាចមានទីតាំង <span class="mi">\(4\)</span> បែប ៖ <span class="mi">\(1{*}{*}{*}\)</span>, <span class="mi">\({*}1{*}{*}\)</span>, <span class="mi">\({*}{*}1{*}\)</span>, <span class="mi">\({*}{*}{*}1\)</span> ។ ឯលេខនីមួយៗក្នុងចំណោមលេខនៅត្រង់ <span class="mi">\(3\)</span> កន្លែងទៀតត្រូវមាន <span class="mi">\(8\)</span> ជម្រើស ។ ចំនួនលេខសម្ងាត់ដែលកើតឡើងទាំងអស់មាន <span class="mi">\(4\times 8^3\)</span> ។ <div class="md">\[P(C) = \frac{4\times 8^3}{9^4} = \frac{2048}{6561} \approx 0.312\]</div></p></li>
+<li><p><span class="mi">\(D\)</span> ជាព្រឹត្តិការណ៍ដែលលេខទាំង <span class="mi">\(4\)</span> ខ្ទង់របស់លេខសម្ងាត់ ជាលេខខុសៗគ្នា ។ ចំនួននៃលេខសម្ងាត់ជាចំនួនចម្លាស់នៃ <span class="mi">\(4\)</span> ធាតុយកពី <span class="mi">\(9\)</span> ធាតុ ៖ <span class="mi">\({}_9P_4 = 9\times 8\times 7\times 6 = 3024\)</span> ។ <div class="md">\[P(D) = \frac{3024}{6561} \approx 0.461\]</div></p></li>
+</ul></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេមានកាស <span class="mi">\(9\)</span> ដែលចុះតាមលេខរៀងពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(9\)</span> ។ គេរៀបកាសមួយៗដាក់ទៅក្នុងការេមួយដែលមាន <span class="mi">\(9\)</span> ក្រឡា (ការេ <span class="mi">\(3\times 3\)</span>) ។</p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22216.71%22 height=%2291.98%22 viewBox=%220 0 216.71 91.98%22%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 2.92 -6.37 C 2.92 -6.60 2.92 -6.62 2.70 -6.62 C 2.07 -5.98 1.20 -5.98 0.89 -5.98 L 0.89 -5.68 C 1.07 -5.68 1.67 -5.68 2.18 -5.93 L 2.18 -0.78 C 2.18 -0.42 2.15 -0.31 1.26 -0.31 L 0.95 -0.31 L 0.95 0 C 1.29 -0.03 2.15 -0.03 2.56 -0.03 C 2.95 -0.03 3.82 -0.03 4.17 0 L 4.17 -0.31 L 3.85 -0.31 C 2.95 -0.31 2.92 -0.42 2.92 -0.78 Z M 2.92 -6.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 1.26 -0.76 L 2.31 -1.79 C 3.87 -3.17 4.46 -3.70 4.46 -4.70 C 4.46 -5.82 3.57 -6.62 2.35 -6.62 C 1.23 -6.62 0.5 -5.71 0.5 -4.82 C 0.5 -4.26 1 -4.26 1.03 -4.26 C 1.18 -4.26 1.54 -4.39 1.54 -4.79 C 1.54 -5.06 1.35 -5.31 1.01 -5.31 C 0.93 -5.31 0.92 -5.31 0.89 -5.31 C 1.10 -5.95 1.65 -6.31 2.23 -6.31 C 3.14 -6.31 3.56 -5.51 3.56 -4.70 C 3.56 -3.90 3.06 -3.10 2.51 -2.5 L 0.60 -0.37 C 0.5 -0.26 0.5 -0.23 0.5 0 L 4.18 0 L 4.46 -1.73 L 4.21 -1.73 C 4.17 -1.43 4.09 -1 4 -0.84 C 3.93 -0.76 3.28 -0.76 3.06 -0.76 Z M 1.26 -0.76 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-2%22%3E%3Cpath d=%22M 2.89 -3.5 C 3.70 -3.76 4.28 -4.46 4.28 -5.25 C 4.28 -6.07 3.40 -6.62 2.45 -6.62 C 1.43 -6.62 0.68 -6.03 0.68 -5.28 C 0.68 -4.95 0.90 -4.75 1.18 -4.75 C 1.5 -4.75 1.70 -4.96 1.70 -5.26 C 1.70 -5.76 1.23 -5.76 1.07 -5.76 C 1.39 -6.25 2.04 -6.37 2.40 -6.37 C 2.81 -6.37 3.35 -6.15 3.35 -5.26 C 3.35 -5.14 3.34 -4.56 3.07 -4.12 C 2.78 -3.65 2.45 -3.62 2.20 -3.60 C 2.12 -3.60 1.87 -3.57 1.81 -3.57 C 1.73 -3.57 1.65 -3.56 1.65 -3.46 C 1.65 -3.35 1.73 -3.35 1.90 -3.35 L 2.34 -3.35 C 3.15 -3.35 3.51 -2.67 3.51 -1.70 C 3.51 -0.34 2.84 -0.06 2.40 -0.06 C 1.96 -0.06 1.21 -0.23 0.87 -0.81 C 1.21 -0.76 1.53 -0.98 1.53 -1.35 C 1.53 -1.71 1.26 -1.92 0.96 -1.92 C 0.73 -1.92 0.42 -1.78 0.42 -1.34 C 0.42 -0.43 1.34 0.21 2.42 0.21 C 3.64 0.21 4.54 -0.68 4.54 -1.70 C 4.54 -2.51 3.92 -3.29 2.89 -3.5 Z M 2.89 -3.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-3%22%3E%3Cpath d=%22M 2.92 -1.64 L 2.92 -0.78 C 2.92 -0.42 2.90 -0.31 2.17 -0.31 L 1.95 -0.31 L 1.95 0 C 2.37 -0.03 2.89 -0.03 3.29 -0.03 C 3.71 -0.03 4.25 -0.03 4.65 0 L 4.65 -0.31 L 4.45 -0.31 C 3.71 -0.31 3.68 -0.42 3.68 -0.78 L 3.68 -1.64 L 4.68 -1.64 L 4.68 -1.95 L 3.68 -1.95 L 3.68 -6.48 C 3.68 -6.67 3.68 -6.73 3.53 -6.73 C 3.43 -6.73 3.40 -6.73 3.32 -6.62 L 0.28 -1.95 L 0.28 -1.64 Z M 2.98 -1.95 L 0.56 -1.95 L 2.98 -5.65 Z M 2.98 -1.95 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-4%22%3E%3Cpath d=%22M 4.46 -2 C 4.46 -3.18 3.65 -4.18 2.57 -4.18 C 2.09 -4.18 1.67 -4.01 1.31 -3.67 L 1.31 -5.60 C 1.51 -5.54 1.84 -5.48 2.15 -5.48 C 3.39 -5.48 4.07 -6.39 4.07 -6.51 C 4.07 -6.57 4.04 -6.62 3.98 -6.62 C 3.96 -6.62 3.95 -6.62 3.90 -6.59 C 3.70 -6.51 3.21 -6.31 2.54 -6.31 C 2.15 -6.31 1.68 -6.37 1.21 -6.59 C 1.14 -6.62 1.12 -6.62 1.10 -6.62 C 1 -6.62 1 -6.54 1 -6.37 L 1 -3.43 C 1 -3.25 1 -3.17 1.14 -3.17 C 1.21 -3.17 1.23 -3.20 1.28 -3.26 C 1.39 -3.42 1.75 -3.96 2.56 -3.96 C 3.07 -3.96 3.32 -3.5 3.40 -3.32 C 3.56 -2.95 3.57 -2.56 3.57 -2.06 C 3.57 -1.71 3.57 -1.12 3.34 -0.70 C 3.10 -0.31 2.73 -0.06 2.28 -0.06 C 1.54 -0.06 0.98 -0.59 0.81 -1.17 C 0.84 -1.17 0.87 -1.15 0.98 -1.15 C 1.31 -1.15 1.48 -1.40 1.48 -1.64 C 1.48 -1.87 1.31 -2.12 0.98 -2.12 C 0.84 -2.12 0.5 -2.06 0.5 -1.60 C 0.5 -0.75 1.18 0.21 2.29 0.21 C 3.45 0.21 4.46 -0.73 4.46 -2 Z M 4.46 -2 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-5%22%3E%3Cpath d=%22M 1.31 -3.26 L 1.31 -3.5 C 1.31 -6.01 2.54 -6.37 3.06 -6.37 C 3.29 -6.37 3.71 -6.31 3.93 -5.98 C 3.78 -5.98 3.39 -5.98 3.39 -5.53 C 3.39 -5.21 3.62 -5.07 3.84 -5.07 C 4 -5.07 4.29 -5.17 4.29 -5.54 C 4.29 -6.15 3.85 -6.62 3.03 -6.62 C 1.76 -6.62 0.42 -5.34 0.42 -3.14 C 0.42 -0.48 1.57 0.21 2.5 0.21 C 3.60 0.21 4.54 -0.71 4.54 -2.03 C 4.54 -3.29 3.65 -4.25 2.56 -4.25 C 1.87 -4.25 1.51 -3.75 1.31 -3.26 Z M 2.5 -0.06 C 1.87 -0.06 1.57 -0.65 1.51 -0.81 C 1.32 -1.28 1.32 -2.06 1.32 -2.25 C 1.32 -3.03 1.65 -4.01 2.54 -4.01 C 2.70 -4.01 3.17 -4.01 3.46 -3.40 C 3.65 -3.03 3.65 -2.53 3.65 -2.04 C 3.65 -1.56 3.65 -1.06 3.48 -0.70 C 3.18 -0.10 2.73 -0.06 2.5 -0.06 Z M 2.5 -0.06 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-6%22%3E%3Cpath d=%22M 4.73 -6.06 C 4.82 -6.18 4.82 -6.20 4.82 -6.40 L 2.40 -6.40 C 1.18 -6.40 1.17 -6.54 1.14 -6.73 L 0.89 -6.73 L 0.56 -4.67 L 0.81 -4.67 C 0.84 -4.84 0.92 -5.46 1.06 -5.57 C 1.12 -5.64 1.90 -5.64 2.03 -5.64 L 4.09 -5.64 C 3.98 -5.48 3.18 -4.40 2.96 -4.07 C 2.07 -2.73 1.75 -1.34 1.75 -0.32 C 1.75 -0.23 1.75 0.21 2.20 0.21 C 2.67 0.21 2.67 -0.23 2.67 -0.32 L 2.67 -0.84 C 2.67 -1.39 2.70 -1.93 2.78 -2.46 C 2.81 -2.70 2.95 -3.54 3.39 -4.17 Z M 4.73 -6.06 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-7%22%3E%3Cpath d=%22M 1.62 -4.54 C 1.17 -4.84 1.12 -5.18 1.12 -5.35 C 1.12 -5.96 1.76 -6.37 2.48 -6.37 C 3.20 -6.37 3.84 -5.85 3.84 -5.14 C 3.84 -4.57 3.45 -4.09 2.85 -3.75 Z M 3.07 -3.60 C 3.79 -3.96 4.28 -4.48 4.28 -5.14 C 4.28 -6.06 3.39 -6.62 2.48 -6.62 C 1.5 -6.62 0.68 -5.89 0.68 -4.96 C 0.68 -4.78 0.70 -4.34 1.12 -3.87 C 1.23 -3.75 1.60 -3.5 1.84 -3.32 C 1.28 -3.04 0.42 -2.48 0.42 -1.5 C 0.42 -0.45 1.43 0.21 2.48 0.21 C 3.60 0.21 4.54 -0.60 4.54 -1.67 C 4.54 -2.03 4.43 -2.48 4.06 -2.89 C 3.87 -3.10 3.71 -3.20 3.07 -3.60 Z M 2.07 -3.18 L 3.29 -2.40 C 3.57 -2.21 4.04 -1.92 4.04 -1.31 C 4.04 -0.57 3.29 -0.06 2.48 -0.06 C 1.62 -0.06 0.92 -0.67 0.92 -1.5 C 0.92 -2.07 1.23 -2.71 2.07 -3.18 Z M 2.07 -3.18 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-8%22%3E%3Cpath d=%22M 3.65 -3.17 L 3.65 -2.84 C 3.65 -0.51 2.62 -0.06 2.04 -0.06 C 1.87 -0.06 1.32 -0.07 1.06 -0.42 C 1.5 -0.42 1.57 -0.70 1.57 -0.87 C 1.57 -1.18 1.34 -1.32 1.12 -1.32 C 0.96 -1.32 0.67 -1.25 0.67 -0.85 C 0.67 -0.18 1.20 0.21 2.04 0.21 C 3.32 0.21 4.54 -1.14 4.54 -3.28 C 4.54 -5.95 3.40 -6.62 2.51 -6.62 C 1.96 -6.62 1.48 -6.45 1.06 -6 C 0.64 -5.54 0.42 -5.14 0.42 -4.39 C 0.42 -3.14 1.29 -2.17 2.40 -2.17 C 3.01 -2.17 3.42 -2.59 3.65 -3.17 Z M 2.42 -2.40 C 2.26 -2.40 1.79 -2.40 1.5 -3.03 C 1.31 -3.39 1.31 -3.89 1.31 -4.37 C 1.31 -4.92 1.31 -5.39 1.51 -5.75 C 1.79 -6.25 2.17 -6.37 2.51 -6.37 C 2.96 -6.37 3.29 -6.04 3.46 -5.59 C 3.59 -5.28 3.64 -4.64 3.64 -4.18 C 3.64 -3.35 3.29 -2.40 2.42 -2.40 Z M 2.42 -2.40 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 2.73 -4.25 C 2.75 -4.39 2.75 -4.62 2.48 -4.62 C 2.32 -4.62 2.20 -4.5 2.23 -4.37 L 2.23 -4.23 L 2.37 -2.70 L 1.09 -3.62 C 1 -3.67 0.98 -3.68 0.92 -3.68 C 0.78 -3.68 0.64 -3.54 0.64 -3.40 C 0.64 -3.25 0.75 -3.21 0.84 -3.17 L 2.26 -2.48 L 0.89 -1.82 C 0.73 -1.73 0.64 -1.70 0.64 -1.54 C 0.64 -1.40 0.78 -1.28 0.92 -1.28 C 0.98 -1.28 1 -1.28 1.25 -1.46 L 2.37 -2.26 L 2.21 -0.59 C 2.21 -0.39 2.40 -0.34 2.48 -0.34 C 2.59 -0.34 2.75 -0.40 2.75 -0.59 L 2.59 -2.26 L 3.87 -1.34 C 3.96 -1.29 3.98 -1.28 4.04 -1.28 C 4.18 -1.28 4.31 -1.40 4.31 -1.54 C 4.31 -1.70 4.23 -1.75 4.10 -1.81 C 3.51 -2.10 3.5 -2.10 2.70 -2.48 L 4.07 -3.14 C 4.23 -3.21 4.31 -3.26 4.31 -3.40 C 4.31 -3.56 4.18 -3.68 4.04 -3.68 C 3.98 -3.68 3.96 -3.68 3.71 -3.5 L 2.59 -2.70 Z M 2.73 -4.25 %22/%3E%3C/g%3E%3C/g%3E%3CclipPath id=%22clip-0%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 183 2 L 216.42 2 L 216.42 38 L 183 38 Z M 183 2 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-1%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 183 31 L 216.42 31 L 216.42 67 L 183 67 Z M 183 31 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-2%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 127 59 L 163 59 L 163 91.91 L 127 91.91 Z M 127 59 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-3%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 155 59 L 191 59 L 191 91.91 L 155 91.91 Z M 155 59 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-4%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 183 59 L 216.42 59 L 216.42 91.91 L 183 91.91 Z M 183 59 %22/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -0.00 L 85.03 -0.00 M -0.00 28.34 L 85.03 28.34 M -0.00 56.69 L 85.03 56.69 M -0.00 85.03 L 85.03 85.03 M -0.00 -0.00 L -0.00 85.04 M 28.34 -0.00 L 28.34 85.04 M 56.69 -0.00 L 56.69 85.04 M 85.03 -0.00 L 85.03 85.04 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2214.85%22 y=%2220.59%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2214.85%22 y=%2248.01%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2214.85%22 y=%2277.21%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 153.63 68.03 C 153.63 74.60 148.31 79.93 141.73 79.93 C 135.15 79.93 129.82 74.60 129.82 68.03 C 129.82 61.45 135.15 56.12 141.73 56.12 C 148.31 56.12 153.63 61.45 153.63 68.03 Z M 153.63 68.03 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22142.24%22 y=%2223.42%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 181.98 68.03 C 181.98 74.60 176.65 79.93 170.08 79.93 C 163.50 79.93 158.17 74.60 158.17 68.03 C 158.17 61.45 163.50 56.12 170.08 56.12 C 176.65 56.12 181.98 61.45 181.98 68.03 Z M 181.98 68.03 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22170.54%22 y=%2223.42%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-0)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 210.33 68.03 C 210.33 74.60 205.00 79.93 198.42 79.93 C 191.85 79.93 186.52 74.60 186.52 68.03 C 186.52 61.45 191.85 56.12 198.42 56.12 C 205.00 56.12 210.33 61.45 210.33 68.03 Z M 210.33 68.03 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%22198.85%22 y=%2223.42%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 153.63 39.68 C 153.63 46.25 148.31 51.59 141.73 51.59 C 135.15 51.59 129.82 46.25 129.82 39.68 C 129.82 33.10 135.15 27.78 141.73 27.78 C 148.31 27.78 153.63 33.10 153.63 39.68 Z M 153.63 39.68 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%22142.24%22 y=%2251.73%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 181.98 39.68 C 181.98 46.25 176.65 51.59 170.08 51.59 C 163.50 51.59 158.17 46.25 158.17 39.68 C 158.17 33.10 163.50 27.78 170.08 27.78 C 176.65 27.78 181.98 33.10 181.98 39.68 Z M 181.98 39.68 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%22170.54%22 y=%2251.73%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-1)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 210.33 39.68 C 210.33 46.25 205.00 51.59 198.42 51.59 C 191.85 51.59 186.52 46.25 186.52 39.68 C 186.52 33.10 191.85 27.78 198.42 27.78 C 205.00 27.78 210.33 33.10 210.33 39.68 Z M 210.33 39.68 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-5%22 x=%22198.85%22 y=%2251.73%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-2)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 153.63 11.33 C 153.63 17.91 148.31 23.24 141.73 23.24 C 135.15 23.24 129.82 17.91 129.82 11.33 C 129.82 4.76 135.15 -0.56 141.73 -0.56 C 148.31 -0.56 153.63 4.76 153.63 11.33 Z M 153.63 11.33 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-6%22 x=%22142.24%22 y=%2280.04%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-3)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 181.98 11.33 C 181.98 17.91 176.65 23.24 170.08 23.24 C 163.50 23.24 158.17 17.91 158.17 11.33 C 158.17 4.76 163.50 -0.56 170.08 -0.56 C 176.65 -0.56 181.98 4.76 181.98 11.33 Z M 181.98 11.33 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-7%22 x=%22170.54%22 y=%2280.04%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-4)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 210.33 11.33 C 210.33 17.91 205.00 23.24 198.42 23.24 C 191.85 23.24 186.52 17.91 186.52 11.33 C 186.52 4.76 191.85 -0.56 198.42 -0.56 C 205.00 -0.56 210.33 4.76 210.33 11.33 Z M 210.33 11.33 %22 transform=%22matrix(0.99, 0, 0, -0.99, 3.18, 88.15)%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-8%22 x=%22198.85%22 y=%2280.04%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+<ol class="list olka cols1">
+<li><p>តើគេអាចរៀបកាសទាំង <span class="mi">\(9\)</span> បានប៉ុន្មានរបៀប?</p></li>
+<li><p>រកប្រូបាបដែលកាសលេខ <span class="mi">\(1\)</span> និងលេខ <span class="mi">\(2\)</span> នៅក្នុងជួរឈរទី <span class="mi">\(1\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(9! = 362\,880\)</span> ខ. <span class="mi">\(\dfrac{3\times 2\times 7!}{9!} = \dfrac{1}{12} \approx 0.083\)</span> ។</p></details>
+</div></section>
+<h4>គណនាប្រូបាបដោយប្រើបន្សំ</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>គេរើសសិស្ស <span class="mi">\(8\)</span> នាក់ដោយចៃដន្យក្នុងចំណោមសិស្សប្រុស <span class="mi">\(9\)</span> នាក់ និងសិស្សស្រី <span class="mi">\(11\)</span> នាក់ទៅសម្ភាសន៍ ។</p>
+<ol class="list olka cols1">
+<li><p>តើគេអាចរៀបសិស្សបានប៉ុន្មានរបៀបខុសៗគ្នា?</p></li>
+<li><p>រកប្រូបាបនៃព្រឹត្តិការណ៍ ៖<br/>
+<span class="mi">\(A\)</span> : “ក្រុមសិស្សទាំង <span class="mi">\(8\)</span> នាក់មានសុទ្ធតែសិស្សស្រី”<br/>
+<span class="mi">\(B\)</span> : “ក្នុងក្រុមមានសិស្សស្រី <span class="mi">\(5\)</span> នាក់ និងប្រុស <span class="mi">\(3\)</span> នាក់” ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>សកម្មភាពនេះ គឺគេរើសសិស្ស <span class="mi">\(8\)</span> នាក់ក្នុងចំណោមសិស្ស <span class="mi">\(20\)</span> នាក់ដោយគ្មានលំដាប់ ហើយសិស្សម្នាក់មិនអាចមានឈ្មោះ <span class="mi">\(2\)</span> ដងក្នុងក្រុមតែមួយ ។ ចំនួនករណីដែលអាចកើតឡើងជាបន្សំ <span class="mi">\(8\)</span> ធាតុយកពី <span class="mi">\(20\)</span> ធាតុ ។ ចំនួនករណីអាចគឺ <span class="mi">\({}_{20}C_8 = \dfrac{20!}{12!8!} = 125\,970\)</span> ។</p></li>
+<li><p>គេរើសសិស្សដោយចៃដន្យ ដូច្នេះធាតុនីមួយៗមានសមប្រូបាប ។</p>
+<ul>
+<li><p>សិស្ស <span class="mi">\(8\)</span> នាក់ដែលត្រូវជ្រើសរើសសុទ្ធតែស្រី គឺគេរើស <span class="mi">\(8\)</span> នាក់ក្នុងចំណោម <span class="mi">\(11\)</span> នាក់ ។ ចំនួនករណីស្របជាចំនួនបន្សំ <span class="mi">\({}_{11}C_8 = 165\)</span> ។ ប្រូបាបនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> គឺ <div class="md">\[P(A) = \frac{{}_{11}C_8}{{}_{20}C_8} = \frac{165}{125\,970} \approx 0.0013\]</div></p></li>
+<li><p>គេរើសសិស្សស្រី <span class="mi">\(5\)</span> នាក់ និងសិស្សប្រុស <span class="mi">\(3\)</span> នាក់ចេញពីសិស្សស្រី <span class="mi">\(11\)</span> នាក់ និងប្រុស <span class="mi">\(9\)</span> នាក់ ។ ចំនួនរបៀបដែលរើសសិស្សស្រី <span class="mi">\(5\)</span> នាក់គឺ <span class="mi">\({}_{11}C_5\)</span> និងចំនួនរបៀបដែលរើសសិស្សប្រុស <span class="mi">\(3\)</span> នាក់គឺ <span class="mi">\({}_9C_3\)</span> ។ ដូច្នេះ ចំនួនករណីស្របនៃព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> គឺ <span class="mi">\({}_{11}C_5\times{}_9C_3\)</span> ។ <div class="md">\[P(B) = \frac{{}_{11}C_5\times{}_9C_3}{{}_{20}C_8} = \frac{462\times 84}{125\,970} \approx 0.308\]</div></p></li>
+</ul></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>គេរៀបចំឆ្នោត <span class="mi">\(150\)</span> សន្លឹកដើម្បីលក់ឱ្យអស់មុនពេលចេញផ្សាយ ដែលក្នុងនោះមានឆ្នោតត្រូវរង្វាន់ <span class="mi">\(5\)</span> សន្លឹក ។ មនុស្សម្នាក់ទិញឆ្នោត <span class="mi">\(10\)</span> សន្លឹក ។ រកប្រូបាបដែល ៖</p>
+<ol class="list olka cols1">
+<li><p>គ្មានត្រូវរង្វាន់សោះ</p></li>
+<li><p>ត្រូវរង្វាន់យ៉ាងតិច <span class="mi">\(1\)</span> សន្លឹក</p></li>
+<li><p>ត្រូវរង្វាន់ <span class="mi">\(3\)</span> សន្លឹកគត់ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាង <span class="mi">\(A\)</span> : “ជាព្រឹត្តិការណ៍គ្មានត្រូវរង្វាន់សោះ” និង <span class="mi">\(B\)</span> : “ត្រូវរង្វាន់ <span class="mi">\(3\)</span> សន្លឹក” ។</p>
+<ol class="list olka cols1">
+<li><p>ចំនួនរបៀបដែលអាចទិញឆ្នោតបាន <span class="mi">\(10\)</span> សន្លឹកគឺ <span class="mi">\(n(S) = {}_{150}C_{10}\)</span> ជាចំនួនករណីអាច ។ ចំនួនឆ្នោតដែលគ្មានរង្វាន់មាន <span class="mi">\(150 - 5 = 145\)</span> សន្លឹក ។ ចំនួនរបៀបដែលជ្រើសរើសឆ្នោតគ្មានរង្វាន់ <span class="mi">\(10\)</span> សន្លឹកគឺ <span class="mi">\(n(A) = {}_{145}C_{10}\)</span> ជាចំនួនករណីស្រប ។ ដូច្នេះ <div class="md">\[P(A) = \frac{n(A)}{n(S)} = \frac{{}_{145}C_{10}}{{}_{150}C_{10}} \approx 0.7048\]</div></p></li>
+<li><p>ព្រឹត្តិការណ៍ត្រូវរង្វាន់យ៉ាងតិច <span class="mi">\(1\)</span> សន្លឹក ជាព្រឹត្តិការណ៍ផ្ទុយនឹងគ្មានត្រូវរង្វាន់សោះ ។ ប្រូបាបដែលត្រូវរង្វាន់យ៉ាងតិច <span class="mi">\(1\)</span> សន្លឹកគឺ <span class="mi">\(P(\bar{A}) = 1 - P(A) \approx 1 - 0.7048 = 0.2952\)</span> ។</p></li>
+<li><p>ចំនួនរបៀបដែលជ្រើសរើសបានឆ្នោតត្រូវរង្វាន់ <span class="mi">\(3\)</span> សន្លឹក ក្នុងចំណោមឆ្នោតត្រូវរង្វាន់ <span class="mi">\(5\)</span> សន្លឹកគឺ <span class="mi">\({}_5C_3\)</span> ។ ឯឆ្នោតដែលទិញ <span class="mi">\(7\)</span> សន្លឹកទៀតជាឆ្នោតគ្មានរង្វាន់ រើសចេញពីឆ្នោត <span class="mi">\(145\)</span> សន្លឹកដែលគ្មានរង្វាន់ ។ ចំនួនរបៀបដែលជ្រើសរើសបានឆ្នោត <span class="mi">\(7\)</span> សន្លឹកនេះគឺ <span class="mi">\({}_{145}C_7\)</span> ។ គេបាន <div class="md">\[P(B) = \frac{n(B)}{n(S)} = \frac{{}_5C_3\times{}_{145}C_7}{{}_{150}C_{10}} \approx 0.002\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ក្នុងថង់មួយមានអក្សរ <span class="mi">\(10\)</span> តួ <span class="mi">\(a, b, c, d, e, f, g, h, i, j\)</span> ។ គេចាប់យកអក្សរ <span class="mi">\(4\)</span> តួព្រមគ្នាចេញពីថង់ដោយចៃដន្យ ។ រកប្រូបាបដែល ៖</p>
+<ol class="list olka cols1">
+<li><p>គ្មានបានស្រៈមួយសោះ</p></li>
+<li><p>បានស្រៈតែមួយគត់</p></li>
+<li><p>បានស្រៈតែ <span class="mi">\(2\)</span> គត់</p></li>
+<li><p>យ៉ាងតិចណាស់បានស្រៈមួយ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><p>ក. <span class="mi">\(\dfrac{{}_7C_4}{{}_{10}C_4} = \dfrac{1}{6} \approx 0.167\)</span> ខ. <span class="mi">\(0.5\)</span> គ. <span class="mi">\(0.3\)</span> ឃ. <span class="mi">\(\dfrac{5}{6} \approx 0.833\)</span> ។</p></details>
+</div></section>
+<h3 id="u4">មេរៀនសង្ខេប ជំពូកទី ៦</h3>
+<section class="bx bx-green"><header class="bx-h"><b>មេរៀនសង្ខេប</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p><strong>គោលការណ៍ផលបូក</strong> ៖ <span class="mi">\(m\)</span> ជាចំនួនធាតុក្នុងព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និង <span class="mi">\(n\)</span> ជាចំនួនធាតុក្នុងព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ។</p>
+<ul>
+<li><p>បើ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍មិនចុះសម្រុងគ្នា (គ្មានធាតុរួម) នោះព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> ឬ <span class="mi">\(B\)</span> មានធាតុ <span class="mi">\(n(A \cup B) = m + n\)</span> ។</p></li>
+<li><p>បើ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍ចុះសម្រុងគ្នា (មាន <span class="mi">\(p\)</span> ធាតុរួម) នោះព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> ឬ <span class="mi">\(B\)</span> មានធាតុ <span class="mi">\(n(A \cup B) = n(A) + n(B) - n(A \cap B) = m + n - p\)</span> ។</p></li>
+</ul></li>
+<li><p><strong>គោលការណ៍ផលគុណ</strong></p>
+<ul>
+<li><p>បើ <span class="mi">\(m\)</span> ជាចំនួនធាតុនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និង <span class="mi">\(n\)</span> ជាចំនួនធាតុនៃព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> កើតឡើងបន្ទាប់ពីព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> កើតឡើង នោះព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> កើតឡើងមាន <span class="mi">\(n(A \cap B) = m\times n\)</span> របៀប ។</p></li>
+<li><p>ចម្លាស់នៃ <span class="mi">\(n\)</span> ធាតុ គឺជាការតម្រៀប <span class="mi">\(n\)</span> វត្ថុខុសៗគ្នាជាជួរមានលំដាប់ ។ ចំនួនចម្លាស់នៃ <span class="mi">\(n\)</span> ធាតុ មាន <span class="mi">\({}_nP_n = n!\)</span> របៀប ៖ <span class="mi">\(n! = n(n - 1)(n - 2)\cdots 3\times 2\times 1\)</span> ។</p></li>
+<li><p>ចម្លាស់នៃ <span class="mi">\(r\)</span> ធាតុយកពី <span class="mi">\(n\)</span> ធាតុ គឺជាការតម្រៀប <span class="mi">\(r\)</span> វត្ថុខុសៗគ្នាជាជួរតាមលំដាប់ដែលធាតុនីមួយៗយកចេញពី <span class="mi">\(n\)</span> ធាតុខុសគ្នា ។ ចំនួនចម្លាស់នៃ <span class="mi">\(r\)</span> ធាតុយកពី <span class="mi">\(n\)</span> ធាតុមាន <span class="mi">\({}_nP_r = n(n - 1)(n - 2)\cdots(n - r + 1)\)</span> ឬ <span class="mi">\({}_nP_r = \dfrac{n!}{(n - r)!}\)</span> <span class="mi">\((n \in \mathbb{N}, r \in \mathbb{N}, r \le n)\)</span> ។</p></li>
+<li><p>ចម្លាស់ច្រំដែលនៃ <span class="mi">\(r\)</span> ធាតុយកពី <span class="mi">\(n\)</span> គឺជាការតម្រៀប <span class="mi">\(r\)</span> ធាតុដែលធាតុនីមួយៗអាចជាធាតុដដែលយកចេញពី <span class="mi">\(n\)</span> ធាតុខុសគ្នា ។ ចំនួនចម្លាស់ច្រំដែលនៃ <span class="mi">\(r\)</span> ធាតុយកពី <span class="mi">\(n\)</span> ធាតុមាន <span class="mi">\(n^r\)</span> ។</p></li>
+<li><p>ចំនួនចម្លាស់រង្វង់នៃ <span class="mi">\(n\)</span> ធាតុមាន <span class="mi">\((n - 1)!\)</span> របៀប ។</p></li>
+</ul></li>
+<li><p><strong>បន្សំ</strong>នៃ <span class="mi">\(r\)</span> ធាតុយកពី <span class="mi">\(n\)</span> ធាតុ គឺជាការយក <span class="mi">\(r\)</span> វត្ថុចេញពី <span class="mi">\(n\)</span> វត្ថុដោយមិនគិតលំដាប់ ។ ចំនួនបន្សំនៃ <span class="mi">\(r\)</span> ធាតុយកពី <span class="mi">\(n\)</span> ធាតុគឺ <span class="mi">\({}_nC_r = \dfrac{n!}{(n - r)!r!} = \dfrac{n(n - 1)\cdots(n - r + 1)}{r!}\)</span> ។</p></li>
+<li><p><strong>ទ្រឹស្ដីបទទ្វេធា</strong> ៖ <span class="mi">\((a + b)^n = {}_nC_0 a^n + {}_nC_1 a^{n-1}b + {}_nC_2 a^{n-2}b^2 + \dots + {}_nC_n b^n\)</span></p>
+<ul>
+<li><p>ផលបូកនេះមាន <span class="mi">\((n + 1)\)</span> តួ ។</p></li>
+<li><p>ចំពោះតួបន្តបន្ទាប់គ្នា ស្វ័យគុណរបស់ <span class="mi">\(a\)</span> ចុះតាមលំដាប់នៅពេលដែលស្វ័យគុណរបស់ <span class="mi">\(b\)</span> កើនតាមលំដាប់ ។</p></li>
+<li><p>ក្នុងតួនីមួយៗផលបូកនៃស្វ័យគុណ <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ស្មើនឹង <span class="mi">\(n\)</span> ។</p></li>
+<li><p>មេគុណរបស់ <span class="mi">\(a^{n-k}b^k\)</span> គឺ <span class="mi">\({}_nC_k\)</span> ។</p></li>
+<li><p>ករណី <span class="mi">\(b = 1\)</span> គេបាន <span class="mi">\((1 + a)^n = {}_nC_0 + {}_nC_1 a + {}_nC_2 a^2 + \dots + {}_nC_n a^n\)</span> ហើយមេគុណរបស់ <span class="mi">\(a^k\)</span> គឺ <span class="mi">\({}_nC_k\)</span> ។</p></li>
+</ul></li>
+<li><p><strong>ប្រូបាប</strong></p>
+<ul>
+<li><p>ព្រឹត្តិការណ៍ផលគុណនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាប្រសព្វនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ផលបូកនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាប្រជុំនៃព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(B\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(D\)</span> ជាព្រឹត្តិការណ៍មិនចុះសម្រុង កាលណាព្រឹត្តិការណ៍ផលគុណនៃ <span class="mi">\(B\)</span> និង <span class="mi">\(D\)</span> ជាព្រឹត្តិការណ៍មិនអាចមានគឺ <span class="mi">\(B \cap D = \varnothing\)</span> ។</p></li>
+<li><p>ព្រឹត្តិការណ៍ <span class="mi">\(2\)</span> ជាព្រឹត្តិការណ៍ផ្ទុយគ្នា ឬជាព្រឹត្តិការណ៍បំពេញគ្នា កាលណាព្រឹត្តិការណ៍ផលគុណនៃព្រឹត្តិការណ៍ទាំង <span class="mi">\(2\)</span> ជាព្រឹត្តិការណ៍មិនអាចមាន និងព្រឹត្តិការណ៍ផលបូកនៃព្រឹត្តិការណ៍ទាំង <span class="mi">\(2\)</span> ជាព្រឹត្តិការណ៍ប្រាកដដែល <span class="mi">\(A \cap \bar{A} = \varnothing\)</span>, <span class="mi">\(A \cup \bar{A} = S\)</span> ។ គេបានព្រឹត្តិការណ៍ <span class="mi">\(2\)</span> បំពេញគ្នាជាព្រឹត្តិការណ៍មិនចុះសម្រុង ។</p></li>
+<li><p>ប្រូបាបនៃព្រឹត្តិការណ៍មួយ ជាផលធៀបនៃចំនួនករណីស្រប និងចំនួនករណីអាច ៖ <span class="mi">\(P(A) = \dfrac{\text{ចំនួនករណីស្រប}}{\text{ចំនួនករណីអាច}} = \dfrac{n(A)}{n(S)}\)</span> ។</p></li>
+<li><p>ប្រូបាបនៃលំហសំណាក <span class="mi">\(S\)</span> ស្មើនឹង <span class="mi">\(1\)</span> គឺ <span class="mi">\(P(S) = 1\)</span> ។ ប្រូបាបនៃព្រឹត្តិការណ៍មិនអាចមានស្មើនឹង <span class="mi">\(0\)</span> គឺ <span class="mi">\(P(\varnothing) = 0\)</span> ។</p></li>
+<li><p>ប្រូបាបនៃព្រឹត្តិការណ៍មួយក្នុងលំហសំណាក ជាចំនួនដែលនៅចន្លោះ <span class="mi">\([0, 1]\)</span> ៖ <span class="mi">\(0 \le P(A) \le 1\)</span> ។</p></li>
+<li><p>ប្រូបាបនៃព្រឹត្តិការណ៍ផលគុណ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ <span class="mi">\(P(A \cap B) = P(A)\times P(B)\)</span> បើ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> មិនទាក់ទងគ្នា ។ <span class="mi">\(P(A \cap B) = P(A)\times P(B/A)\)</span> បើ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ទាក់ទងគ្នា ។</p></li>
+<li><p>ប្រូបាបនៃព្រឹត្តិការណ៍ផលបូក <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> គឺ <span class="mi">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span> ។ <span class="mi">\(P(A \cup B) = P(A) + P(B)\)</span> កាលណា <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ជាព្រឹត្តិការណ៍មិនចុះសម្រុង ។</p></li>
+<li><p>ប្រូបាបនៃព្រឹត្តិការណ៍បំពេញនៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(P(\bar{A}) = 1 - P(A)\)</span> ។</p></li>
+</ul></li>
+</ol>
+</div></section>
+<h3 id="u5">លំហាត់ជំពូកទី ៦</h3>
+<ol class="list olnum cols1">
+<li><p>គណនា ៖</p>
+<ol class="list olka cols5">
+<li><p><span class="mi">\(8!\)</span></p></li>
+<li><p><span class="mi">\(10!\)</span></p></li>
+<li><p><span class="mi">\(0!\)</span></p></li>
+<li><p><span class="mi">\(1!\)</span></p></li>
+<li><p><span class="mi">\({}_7P_5\)</span></p></li>
+<li><p><span class="mi">\({}_{12}P_4\)</span></p></li>
+<li><p><span class="mi">\({}_5P_3\)</span></p></li>
+<li><p><span class="mi">\({}_6P_0\)</span></p></li>
+<li><p><span class="mi">\({}_5P_5\)</span></p></li>
+<li><p><span class="mi">\({}_6P_2\)</span></p></li>
+</ol></li>
+<li><p>គណនា ៖</p>
+<ol class="list olka cols5">
+<li><p><span class="mi">\({}_5C_2\)</span></p></li>
+<li><p><span class="mi">\({}_8C_3\)</span></p></li>
+<li><p><span class="mi">\({}_6C_2\)</span></p></li>
+<li><p><span class="mi">\({}_6C_4\)</span></p></li>
+<li><p><span class="mi">\({}_3C_3\)</span></p></li>
+<li><p><span class="mi">\({}_9C_7\)</span></p></li>
+<li><p><span class="mi">\({}_4C_3\)</span></p></li>
+<li><p><span class="mi">\({}_{12}C_2\)</span></p></li>
+<li><p><span class="mi">\({}_7C_4\)</span></p></li>
+<li><p><span class="mi">\({}_3C_0\)</span></p></li>
+</ol></li>
+<li><p>ដោះស្រាយសមីការ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\({}_nP_2 = 56\)</span></p></li>
+<li><p><span class="mi">\({}_nP_2 = 60\)</span></p></li>
+<li><p><span class="mi">\({}_nP_2 = 30\)</span></p></li>
+<li><p><span class="mi">\({}_nP_3 = 990\)</span></p></li>
+<li><p><span class="mi">\(2({}_nP_2) = 60\)</span></p></li>
+</ol></li>
+<li><p>ដោះស្រាយសមីការ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\({}_8P_r = 3!\)</span></p></li>
+<li><p><span class="mi">\({}_7P_r = 7!\)</span></p></li>
+<li><p><span class="mi">\({}_nP_2 = 4({}_{n-1}P_2)\)</span></p></li>
+<li><p><span class="mi">\(n({}_nP_3) = {}_nP_6\)</span></p></li>
+</ol></li>
+<li><p>សម្រួលកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{3!(n + 2)!}{4!(n - 1)!}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{7!(r - 1)!}{6!(r + 1)!} + \dfrac{5!r!}{3!(r + 1)!}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{{}_nC_5}{{}_{n-1}C_3}\)</span></p></li>
+<li><p><span class="mi">\(({}_{n-1}C_3)\left(\dfrac{1}{{}_{n-2}C_3}\right)\)</span></p></li>
+</ol></li>
+<li><p>ដោះស្រាយសមីការ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2({}_nC_2) = {}_{n+1}C_3\)</span></p></li>
+<li><p><span class="mi">\({}_nC_1 = 10\)</span></p></li>
+<li><p><span class="mi">\({}_nC_2 = 21\)</span></p></li>
+<li><p><span class="mi">\({}_nC_2 = 28\)</span></p></li>
+<li><p><span class="mi">\({}_{n+1}C_{n-1} = 15\)</span></p></li>
+<li><p><span class="mi">\({}_nC_{n-2} = 6\)</span></p></li>
+<li><p><span class="mi">\(720({}_nC_5) = {}_{n+1}P_5\)</span></p></li>
+<li><p><span class="mi">\({}_nC_3 = 4({}_nP_2)\)</span></p></li>
+</ol></li>
+<li><p>នៅអាហារដ្ឋានមានរៀបឈុតអាហារសម្រាប់បម្រើសេចក្ដីត្រូវការរបស់ភ្ញៀវមួយពេល ។ មួយឈុតអាហារមាន បាយ សាច់ បន្លែ និងភេសជ្ជៈ ។ សម្រាប់បាយមានបីប្រភេទគឺ បាយ មី និងដំឡូងបារាំង សម្រាប់សាច់មាន សាច់គោ ជ្រូក ត្រី មាន់ សម្រាប់បន្លែមាន សណ្ដែក ការ៉ុត ប៉េងប៉ោះ និងភេសជ្ជៈមាន កូកាកូឡា សាស៊ី ទឹកផ្លែឈើ ស្រាបៀរ ។ តើគេអាចបង្កើតឈុតម្ហូបបានប៉ុន្មានរបៀប?</p></li>
+<li><p>រកចំនួនពាក្យ (ពាក្យមានន័យឬពាក្យគ្មានន័យ) ដែលកើតឡើងពីតួអក្សរនៃពាក្យ ៖ ក. <span class="mi">\(SIMPLE\)</span> ខ. <span class="mi">\(SECONDARY\)</span> ។</p></li>
+<li><p>ក្នុងចំណោមសិស្សប្រុស <span class="mi">\(5\)</span> នាក់ និងស្រី <span class="mi">\(8\)</span> នាក់ ដែលមានស្នាដៃល្អក្នុងការតែងកំណាព្យ គ្រូជ្រើសរើសសិស្សប្រុស <span class="mi">\(3\)</span> នាក់ និងស្រី <span class="mi">\(4\)</span> នាក់ឡើងបង្ហាញស្នាដៃតាមលំដាប់មុនក្រោយ ។ តើគ្រូអាចជ្រើសរើសសិស្សទាំងនេះបានប៉ុន្មានរបៀប?</p></li>
+<li><p>បងប្អូនប្រុស <span class="mi">\(3\)</span> នាក់ និងស្រី <span class="mi">\(2\)</span> នាក់ឈរជាជួរថតរូប ។ តើគេឈរបានប៉ុន្មានរបៀប បើមានក្មេងប្រុស <span class="mi">\(2\)</span> នាក់ឈរចុងសងខាង ។</p></li>
+<li><p>រកចំនួននៃការតម្រៀបតួអក្សររបស់ពាក្យ <span class="mi">\(INCLUDE\)</span> បើ ៖</p>
+<ol class="list olka cols1">
+<li><p>គ្រប់ព្យញ្ជនៈនៅជាប់គ្នា</p></li>
+<li><p>គ្មានព្យញ្ជនៈ <span class="mi">\(2\)</span> ណានៅជាប់គ្នា</p></li>
+<li><p>ការតម្រៀបនីមួយៗ ចាប់ផ្ដើមដោយព្យញ្ជនៈ និងបញ្ចប់ដោយស្រៈ ។</p></li>
+</ol></li>
+<li><p>រកចំនួននៃចំនួនដែលនៅចន្លោះ <span class="mi">\(2000\)</span> និង <span class="mi">\(5000\)</span> ហើយមានលេខខុសៗគ្នា ដោយប្រើលេខ <span class="mi">\(1, 2, 4, 5, 7\)</span> និង <span class="mi">\(8\)</span> ។</p></li>
+<li><p>នៅលើថតទូមួយមានតម្រៀបសៀវភៅ គណិតវិទ្យា <span class="mi">\(4\)</span> រូបវិទ្យា <span class="mi">\(3\)</span> និងគីមីវិទ្យា <span class="mi">\(2\)</span> ។ តើគេអាចរៀបបានប៉ុន្មានរបៀបបើ ៖</p>
+<ol class="list olka cols1">
+<li><p>សៀវភៅរូបវិទ្យា <span class="mi">\(3\)</span> នៅជាប់គ្នា</p></li>
+<li><p>សៀវភៅគីមីវិទ្យាមិននៅជាប់គ្នា</p></li>
+<li><p>សៀវភៅរូបវិទ្យាមិននៅជាប់គ្នា ។</p></li>
+</ol></li>
+<li><p>ក្មេងប្រុស <span class="mi">\(4\)</span> នាក់ និងក្មេងស្រី <span class="mi">\(5\)</span> នាក់ឈរតម្រៀបគ្នាជាជួរ ។</p>
+<ol class="list olka cols1">
+<li><p>រកចំនួនរបៀបដែលអាចឈរបាន</p></li>
+<li><p>រកចំនួនរបៀបឈរ បើ ៖ <span class="mi">\(2\)</span> នាក់ដំបូងជាក្មេងស្រី ។ ម្នាក់ដំបូងជាក្មេងប្រុស និងម្នាក់ខាងចុងជាក្មេងស្រី ។ ក្មេងប្រុសនៅឈរជិតគ្នា ។ គ្មានក្មេងស្រីណាឈរជិតគ្នា ។</p></li>
+</ol></li>
+<li><p>ហាងមួយមានអាវយឺត <span class="mi">\(7\)</span> ពណ៌សុទ្ធតែជាពណ៌ដែលសុខចូលចិត្តទាំងអស់ ប៉ុន្តែសុខមានប្រាក់ទិញបានត្រឹមតែអាវយឺត <span class="mi">\(3\)</span> ប៉ុណ្ណោះ ។ តើសុខមានជម្រើសប៉ុន្មានរបៀប ដើម្បីយកអាវយឺត <span class="mi">\(3\)</span> នេះ?</p></li>
+<li><p>ក្រុមកីឡាករមានមនុស្ស <span class="mi">\(10\)</span> នាក់ ដែលមានស្ត្រី <span class="mi">\(4\)</span> នាក់ និងបុរស <span class="mi">\(6\)</span> នាក់ ។ គេរើសកីឡាករ <span class="mi">\(4\)</span> នាក់ ដើម្បីធ្វើការប្រកួតគ្នា ។ រកចំនួនរបៀបដែលជ្រើសរើស បើ ៖</p>
+<ol class="list olka cols1">
+<li><p>កីឡាករត្រូវប្រកួតមានភេទដូចគ្នា</p></li>
+<li><p>កីឡាករត្រូវប្រកួតមានចំនួនស្រីស្មើនឹងបុរស ។</p></li>
+<li><p>ក្រុមប្រកួតមានបុរសឈ្មោះ <span class="mi">\(A\)</span> ឬក្រុមមានបុរសឈ្មោះ <span class="mi">\(B\)</span> ប៉ុន្តែមិនមែនជាក្រុមមានបុរសឈ្មោះ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។</p></li>
+</ol></li>
+<li><p>មានសិស្ស <span class="mi">\(10\)</span> នាក់ស្ម័គ្រចិត្តចូលរួមក្នុងការងារសង្គមរបស់សហគមន៍ ។ ប្រធានសហគមន៍ចែកសិស្ស <span class="mi">\(5\)</span> នាក់ ចុះតាមភូមិដើម្បីផ្ដល់ប្រឹក្សាដល់ប្រជាជន <span class="mi">\(3\)</span> នាក់ជួយកិច្ចការរដ្ឋបាល និង <span class="mi">\(2\)</span> នាក់ចុះស្រង់ពត៌មាន ។ តើប្រធានអាចចែកសិស្សតាមក្រុមបានប៉ុន្មានរបៀប?</p></li>
+<li><p>គេជ្រើសរើសសិស្ស <span class="mi">\(5\)</span> នាក់ក្នុងចំណោមសិស្សស្រី <span class="mi">\(7\)</span> នាក់ និងសិស្សប្រុស <span class="mi">\(10\)</span> នាក់ឱ្យចូលរួមប្រជុំការងារ ។ តើគេអាចរើសសិស្ស <span class="mi">\(5\)</span> នាក់នេះបានប៉ុន្មានរបៀបបើ ៖</p>
+<ol class="list olka cols1">
+<li><p>គ្មានលក្ខខណ្ឌ?</p></li>
+<li><p>មានសិស្សស្រី <span class="mi">\(3\)</span> នាក់ និងប្រុស <span class="mi">\(2\)</span> នាក់?</p></li>
+<li><p>មានសិស្សស្រីយ៉ាងតិចម្នាក់?</p></li>
+</ol></li>
+<li><p>ក្នុងកម្រងសំណួរពហុជ្រើសរើសមាន <span class="mi">\(5\)</span> សំណួរដែលសំណួរនីមួយៗមានចម្លើយ <span class="mi">\(3\)</span> ។ គេអាចជ្រើសរើសយកចម្លើយបានតែមួយគត់ក្នុងមួយសំណួរ ។ តើគេអាចបានកម្រងចម្លើយប៉ុន្មានរបៀបខុសគ្នា?</p></li>
+<li><p>រកមេគុណរបស់ <span class="mi">\(x^4\)</span> និង <span class="mi">\(x^5\)</span> ក្នុងការពន្លាតទ្វេធានៃ <span class="mi">\(\left(1 - \dfrac{x}{2}\right)^{12}\)</span> ។</p></li>
+<li><p>រកមេគុណរបស់ <span class="mi">\(x^2\)</span> ក្នុងការពន្លាតកន្សោម <span class="mi">\((1 - 2x)^5(1 + 3x)^9\)</span> ។</p></li>
+<li><p>បង្ហាញថា <span class="mi">\({}_nC_0 - {}_nC_1 + {}_nC_2 - {}_nC_3 + \dots + (-1)^n{}_nC_n = 0\)</span> ។</p></li>
+<li><p>សរសេរ <span class="mi">\(4\)</span> តួដំបូងតាមស្វ័យគុណកើននៃ <span class="mi">\(y\)</span> ក្នុងការពន្លាតទ្វេធានៃកន្សោម ៖ ក. <span class="mi">\((1 - 3y)^8\)</span> ខ. <span class="mi">\(\left(1 + \dfrac{3y}{3}\right)^8\)</span> ។</p></li>
+<li><p>គេពន្លាតទ្វេធានៃកន្សោមនីមួយៗខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p>រកតួដែលមាន <span class="mi">\(x^{12}\)</span> ក្នុងលទ្ធផលពន្លាតកន្សោម <span class="mi">\((1 + 2x^2)^8\)</span> ។</p></li>
+<li><p>រកតួដែលមាន <span class="mi">\(x^3\)</span> ក្នុងលទ្ធផលពន្លាតកន្សោម <span class="mi">\(\left(x - \dfrac{2}{x^2}\right)^{12}\)</span> ។</p></li>
+</ol></li>
+<li><p>រកមេគុណនៃ <span class="mi">\(x^6\)</span> និង <span class="mi">\(x^8\)</span> ក្នុងលទ្ធផលពន្លាតទ្វេធា <span class="mi">\(\left(1 + \dfrac{1}{2}x^2\right)^{10}\)</span> ។ ទាញរកមេគុណនៃ <span class="mi">\(x^8\)</span> ក្នុងលទ្ធផលពន្លាតទ្វេធានៃ <span class="mi">\((2x^2 + 3)\left(1 + \dfrac{1}{2}x^2\right)^{10}\)</span> ។</p></li>
+<li><p>ក្នុងការពន្លាតទ្វេធាខាងក្រោមនេះ ចូរសរសេរតួទី <span class="mi">\(7\)</span> រាប់តាមលំដាប់ស្វ័យគុណកើននៃ <span class="mi">\(x\)</span> ៖ ក. <span class="mi">\(\left(2 + \dfrac{x^2}{2}\right)^{11}\)</span> ខ. <span class="mi">\(\left(2x - \dfrac{1}{x^2}\right)^{12}\)</span> ។</p></li>
+<li><p>ក្នុងកម្រងបទចម្រៀង <span class="mi">\(10\)</span> បទ ដែល <span class="mi">\(5\)</span> បទជាចម្រៀងរបស់លោកស៊ីន ស៊ីសាមុត <span class="mi">\(3\)</span> បទជារបស់លោកស្រីរស់ សេរីសុទ្ធា និង <span class="mi">\(2\)</span> បទជាចម្រៀងរបស់អ្នកនាងហួយ មាស ។ គេចង់ជ្រើសរើសចម្រៀង <span class="mi">\(4\)</span> បទ ដើម្បីច្រៀងកំដរអារម្មណ៍ក្នុងពិធីជប់លៀងមួយ ។ តើគេអាចជ្រើសរើសចម្រៀង <span class="mi">\(4\)</span> បទនេះបានប៉ុន្មានរបៀបបើ ៖</p>
+<ol class="list olka cols1">
+<li><p>មិនប្រកាន់ជាបទរបស់អ្នកណា?</p></li>
+<li><p><span class="mi">\(2\)</span> បទជារបស់លោកស៊ីន ស៊ីសាមុត <span class="mi">\(1\)</span> បទជារបស់លោកស្រីរស់ សេរីសុទ្ធា និង <span class="mi">\(1\)</span> បទជារបស់អ្នកនាងហួយ មាស?</p></li>
+<li><p>យ៉ាងតិចមានមួយបទម្នាក់?</p></li>
+<li><p>ជាបទចម្រៀងរបស់ម្ចាស់ដើមតែ <span class="mi">\(2\)</span> នាក់គត់?</p></li>
+</ol></li>
+<li><p>រកប្រូបាបនៃការបោះគ្រាប់ឡុកឡាក់ពីរគ្រាប់តាមករណីដែលគេទទួលបានដូចខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p>ផលបូកស្មើ <span class="mi">\(6\)</span> ឬ <span class="mi">\(7\)</span></p></li>
+<li><p>ផលបូកធំជាង <span class="mi">\(8\)</span></p></li>
+<li><p>ផលបូកតូចជាង <span class="mi">\(3\)</span> ឬធំជាង <span class="mi">\(8\)</span></p></li>
+<li><p>ផលបូកស្មើ <span class="mi">\(16\)</span></p></li>
+<li><p>ផលបូកតិចជាង <span class="mi">\(11\)</span> ។</p></li>
+</ol></li>
+<li><p>គ្រាប់ឡុកឡាក់ <span class="mi">\(1\)</span> គ្រាប់មានមុខ <span class="mi">\(6\)</span> ដែលមុខនីមួយៗមានចុះលេខ <span class="mi">\(1, 2, 3, 5, 8\)</span> និង <span class="mi">\(13\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>បើគេបោះគ្រាប់ឡុកឡាក់មួយដង តើប្រូបាបដែលគេទទួលបានលេខសេសស្មើប៉ុន្មាន?</p></li>
+<li><p>បើគេបោះគ្រាប់ឡុកឡាក់ពីរដង និងគេបូកលេខវា តើប្រូបាបដែលគេទទួលបានផលបូកជាចំនួនគូស្មើប៉ុន្មាន?</p></li>
+</ol></li>
+<li><p>គេបោះកាក់មួយគ្រាប់ និងហូតបៀមួយសន្លឹកចេញពីបៀមួយហ៊ូ ។ រកប្រូបាបដែលគេអាចទទួលបាន ៖</p>
+<ol class="list olka cols2">
+<li><p>ក្បាលនិងសន្លឹកលេខ <span class="mi">\(6\)</span></p></li>
+<li><p>កន្ទុយនិងសន្លឹកក្រហម</p></li>
+<li><p>ក្បាលនិងសន្លឹកជួង</p></li>
+<li><p>កន្ទុយនិងសន្លឹករូប ។</p></li>
+</ol></li>
+<li><p>រកប្រូបាបដែលគេហូតបានសន្លឹករូបពីរសន្លឹក ពេលដែលគេហូតសន្លឹកបៀពីរសន្លឹកចេញពីបៀមួយហ៊ូដោយមិនដាក់ទៅវិញ ។</p></li>
+<li><p>គេបានលក់សំបុត្រចំនួន <span class="mi">\(50\)</span> សន្លឹក ដែលមានសន្លឹករង្វាន់ចំនួនពីរសន្លឹក ។ ចូររកប្រូបាបដែលបុរសម្នាក់នឹងឈ្នះពីររង្វាន់ បើបុរសនោះបានទិញសំបុត្រពីរសន្លឹក ។</p></li>
+<li><p>គេបង្កើតគណៈកម្មការគ្រូនិងមាតាបិតាសិស្សមួយ ដែលមានគ្នា <span class="mi">\(4\)</span> នាក់ ដោយរើសចេញពីគ្រូ <span class="mi">\(5\)</span> នាក់ និងមាតាបិតាសិស្សចំនួន <span class="mi">\(20\)</span> នាក់ ។ ចូររកប្រូបាបដែលគេអាចរើសគណៈកម្មការមានសមាសភាពតាមករណីដូចខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>គ្រូទាំងអស់</p></li>
+<li><p>គ្រូ <span class="mi">\(2\)</span> នាក់និងមាតាបិតា <span class="mi">\(2\)</span> នាក់</p></li>
+<li><p>មាតាបិតាទាំងអស់</p></li>
+<li><p>គ្រូម្នាក់និងមាតាបិតា <span class="mi">\(3\)</span> នាក់ ។</p></li>
+</ol></li>
+<li><p>ក្រុមហ៊ុនមួយមានអ្នកគ្រប់គ្រងចំនួន <span class="mi">\(7\)</span> នាក់ក្នុងនោះមានស្ត្រីចំនួន <span class="mi">\(4\)</span> នាក់ ។ គេរើសអ្នកគ្រប់គ្រងចំនួន <span class="mi">\(3\)</span> នាក់មកចូលរួមក្នុងវគ្គបណ្ដុះបណ្ដាល ។ ចូររកប្រូបាបដែលគេអាចរើសបានតាមករណីដូចខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>ស្ត្រីទាំងអស់</p></li>
+<li><p>បុរសទាំងអស់</p></li>
+<li><p>បុរស <span class="mi">\(2\)</span> នាក់និងស្ត្រី <span class="mi">\(1\)</span> នាក់</p></li>
+<li><p>យ៉ាងហោចណាស់មានស្ត្រី <span class="mi">\(2\)</span> នាក់</p></li>
+<li><p>យ៉ាងច្រើនមានបុរស <span class="mi">\(2\)</span> នាក់ ។</p></li>
+</ol></li>
+</ol>
+<h3 id="u6">ទំព័រសៀវភៅដើម</h3><details class="ans sol-all"><summary>បើកមើលទំព័រសៀវភៅពុម្ព</summary><div class="pdf-note">មេរៀននេះបង្ហាញជាទំព័រពីសៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី ១១ (ថ្នាក់វិទ្យាសាស្ត្រសង្គម) ទំព័រ ២៣៨–២៦៦។</div><figure class="bk-page" id="p238"><img src="pages/ss-p238.webp" alt="ទំព័រ ២៣៨" loading="lazy" width="1100"><figcaption>ទំព័រ ២៣៨</figcaption></figure><figure class="bk-page" id="p239"><img src="pages/ss-p239.webp" alt="ទំព័រ ២៣៩" loading="lazy" width="1100"><figcaption>ទំព័រ ២៣៩</figcaption></figure><figure class="bk-page" id="p240"><img src="pages/ss-p240.webp" alt="ទំព័រ ២៤០" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤០</figcaption></figure><figure class="bk-page" id="p241"><img src="pages/ss-p241.webp" alt="ទំព័រ ២៤១" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤១</figcaption></figure><figure class="bk-page" id="p242"><img src="pages/ss-p242.webp" alt="ទំព័រ ២៤២" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤២</figcaption></figure><figure class="bk-page" id="p243"><img src="pages/ss-p243.webp" alt="ទំព័រ ២៤៣" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤៣</figcaption></figure><figure class="bk-page" id="p244"><img src="pages/ss-p244.webp" alt="ទំព័រ ២៤៤" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤៤</figcaption></figure><figure class="bk-page" id="p245"><img src="pages/ss-p245.webp" alt="ទំព័រ ២៤៥" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤៥</figcaption></figure><figure class="bk-page" id="p246"><img src="pages/ss-p246.webp" alt="ទំព័រ ២៤៦" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤៦</figcaption></figure><figure class="bk-page" id="p247"><img src="pages/ss-p247.webp" alt="ទំព័រ ២៤៧" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤៧</figcaption></figure><figure class="bk-page" id="p248"><img src="pages/ss-p248.webp" alt="ទំព័រ ២៤៨" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤៨</figcaption></figure><figure class="bk-page" id="p249"><img src="pages/ss-p249.webp" alt="ទំព័រ ២៤៩" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤៩</figcaption></figure><figure class="bk-page" id="p250"><img src="pages/ss-p250.webp" alt="ទំព័រ ២៥០" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥០</figcaption></figure><figure class="bk-page" id="p251"><img src="pages/ss-p251.webp" alt="ទំព័រ ២៥១" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥១</figcaption></figure><figure class="bk-page" id="p252"><img src="pages/ss-p252.webp" alt="ទំព័រ ២៥២" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥២</figcaption></figure><figure class="bk-page" id="p253"><img src="pages/ss-p253.webp" alt="ទំព័រ ២៥៣" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥៣</figcaption></figure><figure class="bk-page" id="p254"><img src="pages/ss-p254.webp" alt="ទំព័រ ២៥៤" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥៤</figcaption></figure><figure class="bk-page" id="p255"><img src="pages/ss-p255.webp" alt="ទំព័រ ២៥៥" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥៥</figcaption></figure><figure class="bk-page" id="p256"><img src="pages/ss-p256.webp" alt="ទំព័រ ២៥៦" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥៦</figcaption></figure><figure class="bk-page" id="p257"><img src="pages/ss-p257.webp" alt="ទំព័រ ២៥៧" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥៧</figcaption></figure><figure class="bk-page" id="p258"><img src="pages/ss-p258.webp" alt="ទំព័រ ២៥៨" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥៨</figcaption></figure><figure class="bk-page" id="p259"><img src="pages/ss-p259.webp" alt="ទំព័រ ២៥៩" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥៩</figcaption></figure><figure class="bk-page" id="p260"><img src="pages/ss-p260.webp" alt="ទំព័រ ២៦០" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦០</figcaption></figure><figure class="bk-page" id="p261"><img src="pages/ss-p261.webp" alt="ទំព័រ ២៦១" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦១</figcaption></figure><figure class="bk-page" id="p262"><img src="pages/ss-p262.webp" alt="ទំព័រ ២៦២" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦២</figcaption></figure><figure class="bk-page" id="p263"><img src="pages/ss-p263.webp" alt="ទំព័រ ២៦៣" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦៣</figcaption></figure><figure class="bk-page" id="p264"><img src="pages/ss-p264.webp" alt="ទំព័រ ២៦៤" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦៤</figcaption></figure><figure class="bk-page" id="p265"><img src="pages/ss-p265.webp" alt="ទំព័រ ២៦៥" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦៥</figcaption></figure><figure class="bk-page" id="p266"><img src="pages/ss-p266.webp" alt="ទំព័រ ២៦៦" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦៦</figcaption></figure></details><h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>គេបោះកាក់មួយ និងគ្រាប់ឡុកឡាក់មួយគ្រាប់ព្រមគ្នា ។ ចូរកំណត់ ៖ ក. សកម្មភាពដែលជាពិសោធន៍ចៃដន្យ និងជាវិញ្ញាសា ។ ខ. លំហសំណាក <span class="mi">\(S\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> : “បោះកាក់បានខាងរូប <span class="mi">\(H\)</span>” និង <span class="mi">\(B\)</span> : “បោះគ្រាប់ឡុកឡាក់បានលេខ <span class="mi">\(4\)</span>” ។ គ. រកប្រូបាបព្រឹត្តិការណ៍ផ្ទុយនឹង <span class="mi">\(A\)</span> ព្រឹត្តិការណ៍ផ្ទុយនឹង <span class="mi">\(B\)</span> និងព្រឹត្តិការណ៍ផលគុណ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. ពិសោធន៍ចៃដន្យ ៖ ការបោះកាក់ និងគ្រាប់ឡុកឡាក់ ។ វិញ្ញាសា ៖ ការបោះកាក់មួយ និងគ្រាប់ឡុកឡាក់មួយព្រមគ្នាម្ដង ។ ខ. <span class="mi">\(S = \{H1, H2, H3, H4, H5, H6, T1, T2, T3, T4, T5, T6\}\)</span>, <span class="mi">\(n(S) = 12\)</span> ។ <span class="mi">\(A = \{H1, \dots, H6\}\)</span>, <span class="mi">\(B = \{H4, T4\}\)</span> ។ គ. <span class="mi">\(P(\bar{A}) = \dfrac{1}{2}\)</span>, <span class="mi">\(P(\bar{B}) = \dfrac{5}{6}\)</span>, <span class="mi">\(P(A \cap B) = \dfrac{1}{12}\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គេហូតបៀមួយសន្លឹកដោយចៃដន្យចេញពីហ៊ូបៀរ <span class="mi">\(52\)</span> សន្លឹក ។ រកប្រូបាបដែលហូតបាន ៖ ក. សន្លឹកអាត់ ខ. សន្លឹកក្រហម គ. សន្លឹកអាត់ឬក្រហម ឃ. មិនមែនអាត់និងមិនមែនក្រហម ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. <span class="mi">\(\dfrac{4}{52} = \dfrac{1}{13}\)</span> ខ. <span class="mi">\(\dfrac{26}{52} = \dfrac{1}{2}\)</span> គ. <span class="mi">\(\dfrac{4 + 26 - 2}{52} = \dfrac{7}{13}\)</span> ឃ. <span class="mi">\(1 - \dfrac{7}{13} = \dfrac{6}{13}\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ថង់មួយមានឃ្លី <span class="mi">\(10\)</span> ចុះលេខពី <span class="mi">\(0\)</span> ដល់ <span class="mi">\(9\)</span> ។ គេចាប់យកឃ្លីមួយដោយចៃដន្យ ។ ចូរកំណត់ ៖ ក. លំហសំណាក <span class="mi">\(S\)</span> និងព្រឹត្តិការណ៍ <span class="mi">\(A\)</span> : “ចាប់បានឃ្លីមានលេខជាពហុគុណនៃ <span class="mi">\(3\)</span>” និង <span class="mi">\(B\)</span> : “ចាប់បានឃ្លីមានលេខធំជាង <span class="mi">\(5\)</span>” ។ ខ. រកប្រូបាបនៃព្រឹត្តិការណ៍ <span class="mi">\(A, B, A \cap B\)</span> និង <span class="mi">\(A \cup B\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. <span class="mi">\(S = \{0, 1, 2, \dots, 9\}\)</span>, <span class="mi">\(A = \{0, 3, 6, 9\}\)</span> (<span class="mi">\(0\)</span> ក៏ជាពហុគុណនៃ <span class="mi">\(3\)</span>), <span class="mi">\(B = \{6, 7, 8, 9\}\)</span> ។ ខ. <span class="mi">\(P(A) = \dfrac{2}{5}\)</span>, <span class="mi">\(P(B) = \dfrac{2}{5}\)</span>, <span class="mi">\(A \cap B = \{6, 9\}\)</span> ៖ <span class="mi">\(P(A \cap B) = \dfrac{1}{5}\)</span>, <span class="mi">\(P(A \cup B) = \dfrac{2}{5} + \dfrac{2}{5} - \dfrac{1}{5} = \dfrac{3}{5}\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ថង់មួយមានឃ្លីខៀវ <span class="mi">\(7\)</span> និងឃ្លីស <span class="mi">\(3\)</span> ។ គេចាប់យកឃ្លីម្ដង <span class="mi">\(3\)</span> ដោយចៃដន្យតែម្ដងគត់ ។ រកប្រូបាបដែលចាប់បាន ៖ ក. ឃ្លីខៀវ <span class="mi">\(2\)</span> និងឃ្លីស <span class="mi">\(1\)</span> ខ. ឃ្លីខៀវទាំង <span class="mi">\(3\)</span> គ. ឃ្លីសទាំង <span class="mi">\(3\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(n(S) = {}_{10}C_3 = 120\)</span> ។ ក. <span class="mi">\(\dfrac{{}_7C_2\times 3}{120} = \dfrac{63}{120} = \dfrac{21}{40}\)</span> ខ. <span class="mi">\(\dfrac{{}_7C_3}{120} = \dfrac{35}{120} = \dfrac{7}{24}\)</span> គ. <span class="mi">\(\dfrac{1}{120}\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គេបោះគ្រាប់ឡុកឡាក់ <span class="mi">\(2\)</span> ព្រមគ្នា មួយពណ៌ខៀវ មួយទៀតពណ៌ក្រហម ។ រកប្រូបាបដែល ៖ ក. លេខចេញលើគ្រាប់ខៀវ ស្មើនឹង <span class="mi">\(2\)</span> ដងនៃលេខចេញលើគ្រាប់ក្រហម ខ. ផលបូកលេខគ្រាប់ឡុកឡាក់ទាំង <span class="mi">\(2\)</span> ស្មើនឹង <span class="mi">\(5\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(n(S) = 36\)</span> ។ ក. (ខៀវ, ក្រហម) <span class="mi">\(= (2, 1), (4, 2), (6, 3)\)</span> ៖ <span class="mi">\(P = \dfrac{3}{36} = \dfrac{1}{12}\)</span> ខ. <span class="mi">\((1,4), (2,3), (3,2), (4,1)\)</span> ៖ <span class="mi">\(P = \dfrac{4}{36} = \dfrac{1}{9}\)</span> ។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ក្នុងប្រអប់ <span class="mi">\(1\)</span> មានក្រដាសបត់ជាសន្លឹកឆ្នោតចាប់យករង្វាន់ ។ សន្លឹកឆ្នោតមាន <span class="mi">\(20\)</span> សន្លឹកដែលឆ្នោតត្រូវរង្វាន់មាន <span class="mi">\(12\)</span> សន្លឹកសម្រាប់សិស្ស <span class="mi">\(20\)</span> នាក់ចាប់យកមួយសន្លឹកម្នាក់បន្តបន្ទាប់គ្នា ដើម្បីផ្ទៀងមើលរង្វាន់រៀងៗខ្លួន ។ សុខជាអ្នកចាប់បានមុនគេ បន្ទាប់មកសោចាប់ទី <span class="mi">\(2\)</span> និងសនចាប់ទី <span class="mi">\(3\)</span> និងសិស្សឯទៀតចាប់ម្នាក់មួយបន្តបន្ទាប់គ្នារហូតអស់ឆ្នោត ។ រកប្រូបាបដែល ៖ ក. សុខចាប់បានឆ្នោតត្រូវរង្វាន់ ខ. សោចាប់បានឆ្នោតត្រូវរង្វាន់ គ. សនចាប់បានឆ្នោតត្រូវរង្វាន់ ឃ. តើអ្នកចាប់មុននិងអ្នកចាប់ក្រោយអ្នកណាមានសំណាងជាងអ្នកណា?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ក. <span class="mi">\(\dfrac{12}{20} = \dfrac{3}{5}\)</span> ខ. <span class="mi">\(\dfrac{12}{20}\times\dfrac{11}{19} + \dfrac{8}{20}\times\dfrac{12}{19} = \dfrac{3}{5}\)</span> គ. <span class="mi">\(\dfrac{3}{5}\)</span> ឃ. សំណាងស្មើគ្នា (<span class="mi">\(\dfrac{3}{5}\)</span> ដូចគ្នា) មិនអាស្រ័យនឹងលំដាប់ចាប់ទេ ។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៤៥ ប្រូបាប (វិទ្យាសាស្ត្រសង្គម)</b> — ២០ សំណួរ · ៣៥ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=bk_g11_L45">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L44.html"><small>← មេរៀនមុន</small><b>បន្សំ</b></a><a class="next" href="L46.html"><small>មេរៀនបន្ទាប់ →</small><b>រង្វាស់ទីតាំងនៃទិន្នន័យ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេបោះគ្រាប់ឡុកឡាក់មួយគ្រាប់ ។ លំហសំណាកមានធាតុចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(S = \\{1, 2, 3, 4, 5, 6\\}\\)<\/span> ។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេបោះកាក់ <span class=\"mi\">\\(2\\)<\/span> ដង ។ លំហសំណាកមានធាតុចំនួន ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\{FF, FP, PF, PP\\}\\)<\/span> ។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រូបាបនៃព្រឹត្តិការណ៍ <span class=\"mi\">\\(A\\)<\/span> ក្នុងលំហសំណាកដែលធាតុមានឱកាសស្មើគ្នា ៖", "options": ["<span class=\"mi\">\\(P(A) = n(S) - n(A)\\)<\/span>", "<span class=\"mi\">\\(P(A) = n(A)\\)<\/span>", "<span class=\"mi\">\\(P(A) = \\dfrac{n(S)}{n(A)}\\)<\/span>", "<span class=\"mi\">\\(P(A) = \\dfrac{n(A)}{n(S)}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "និយមន័យប្រូបាប ។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃប្រូបាប <span class=\"mi\">\\(P(A)\\)<\/span> ស្ថិតក្នុងចន្លោះ ៖", "options": ["<span class=\"mi\">\\(P(A) > 0\\)<\/span>", "<span class=\"mi\">\\(-1 \\le P(A) \\le 1\\)<\/span>", "<span class=\"mi\">\\(0 \\le P(A) \\le 1\\)<\/span>", "<span class=\"mi\">\\(0 < P(A) < 100\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "លក្ខណៈប្រូបាប ។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បោះគ្រាប់ឡុកឡាក់មួយ ។ ប្រូបាបដែលចេញលេខគូ គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{2}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{2}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\{2, 4, 6\\}\\)<\/span> ៖ <span class=\"mi\">\\(\\dfrac{3}{6}\\)<\/span> ។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បោះគ្រាប់ឡុកឡាក់ពីរ ។ ប្រូបាបដែលផលបូកស្មើ <span class=\"mi\">\\(7\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{7}{36}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{12}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{5}{36}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(6\\)<\/span> ករណីក្នុងចំណោម <span class=\"mi\">\\(36\\)<\/span> ។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(P(\\bar{A})\\)<\/span> (ព្រឹត្តិការណ៍ផ្ទុយ) ស្មើ ៖", "options": ["<span class=\"mi\">\\(1 - P(A)\\)<\/span>", "<span class=\"mi\">\\(P(A)\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{P(A)}\\)<\/span>", "<span class=\"mi\">\\(-P(A)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(P(A) + P(\\bar{A}) = 1\\)<\/span> ។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(P(A \\cup B)\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(P(A) + P(B)\\)<\/span>", "<span class=\"mi\">\\(P(A) + P(B) + P(A \\cap B)\\)<\/span>", "<span class=\"mi\">\\(P(A) + P(B) - P(A \\cap B)\\)<\/span>", "<span class=\"mi\">\\(P(A)P(B)\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "រូបមន្តផលបូកប្រូបាប ។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ព្រឹត្តិការណ៍ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> មិនចុះសម្រុងគ្នា (មិនជួបគ្នា) មានន័យថា ៖", "options": ["<span class=\"mi\">\\(A \\cup B = S\\)<\/span>", "<span class=\"mi\">\\(A \\cap B = \\varnothing\\)<\/span>", "<span class=\"mi\">\\(P(A) = P(B)\\)<\/span>", "<span class=\"mi\">\\(A = B\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "វាមិនអាចកើតព្រមគ្នាបាន ។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> មិនអាស្រ័យគ្នា នោះ <span class=\"mi\">\\(P(A \\cap B)\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(P(A) - P(B)\\)<\/span>", "<span class=\"mi\">\\(P(A) + P(B)\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(P(A) \\times P(B)\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "និយមន័យព្រឹត្តិការណ៍មិនអាស្រ័យគ្នា ។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បោះកាក់ <span class=\"mi\">\\(3\\)<\/span> ដង ។ ប្រូបាបដែលចេញផ្កាទាំងបីដង គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{3}{8}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{8}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\left(\\dfrac{1}{2}\\right)^3\\)<\/span> ។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បោះកាក់ <span class=\"mi\">\\(3\\)<\/span> ដង ។ ប្រូបាបដែលចេញផ្កាយ៉ាងតិចម្ដង គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{8}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{7}{8}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{8}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1 - P(\\text{គ្មានផ្កាសោះ}) = 1 - \\dfrac{1}{8}\\)<\/span> ។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ហូតបៀមួយសន្លឹកពីហ៊ូ <span class=\"mi\">\\(52\\)<\/span> សន្លឹក ។ ប្រូបាបដែលបានអាត់ គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{52}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{13}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{13}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{4}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{4}{52}\\)<\/span> ។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ថង់មានឃ្លីក្រហម <span class=\"mi\">\\(3\\)<\/span> និងខៀវ <span class=\"mi\">\\(5\\)<\/span> ។ ចាប់មួយគ្រាប់ ។ ប្រូបាបបានឃ្លីក្រហម គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{5}{8}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{8}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{3}{3 + 5}\\)<\/span> ។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ថង់មានឃ្លីក្រហម <span class=\"mi\">\\(3\\)<\/span> និងខៀវ <span class=\"mi\">\\(5\\)<\/span> ។ ចាប់ <span class=\"mi\">\\(2\\)<\/span> គ្រាប់ព្រមគ្នា ។ ប្រូបាបបានក្រហមទាំងពីរ គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{9}{64}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{8}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{8}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{28}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{{}_3C_2}{{}_8C_2} = \\dfrac{3}{28}\\)<\/span> ។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ថង់មានឃ្លីក្រហម <span class=\"mi\">\\(3\\)<\/span> និងខៀវ <span class=\"mi\">\\(5\\)<\/span> ។ ចាប់ <span class=\"mi\">\\(2\\)<\/span> គ្រាប់ព្រមគ្នា ។ ប្រូបាបបានពណ៌ខុសគ្នា គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{15}{28}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{13}{28}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{15}{64}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{3 \\times 5}{28}\\)<\/span> ។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(P(S)\\)<\/span> (ព្រឹត្តិការណ៍ប្រាកដ) ស្មើ ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(n(S)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "លក្ខណៈប្រូបាប ។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(P(\\varnothing)\\)<\/span> (ព្រឹត្តិការណ៍មិនអាចកើត) ស្មើ ៖", "options": ["មិនកំណត់", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "លក្ខណៈប្រូបាប ។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(P(A) = 0.5\\)<\/span>, <span class=\"mi\">\\(P(B) = 0.4\\)<\/span> និង <span class=\"mi\">\\(P(A \\cap B) = 0.2\\)<\/span> នោះ <span class=\"mi\">\\(P(A \\cup B)\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(0.7\\)<\/span>", "<span class=\"mi\">\\(0.2\\)<\/span>", "<span class=\"mi\">\\(0.5\\)<\/span>", "<span class=\"mi\">\\(0.9\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(0.5 + 0.4 - 0.2\\)<\/span> ។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ជ្រើសសិស្ស <span class=\"mi\">\\(3\\)<\/span> នាក់ពីប្រុស <span class=\"mi\">\\(6\\)<\/span> ស្រី <span class=\"mi\">\\(4\\)<\/span> ។ ប្រូបាបបានប្រុស <span class=\"mi\">\\(2\\)<\/span> ស្រី <span class=\"mi\">\\(1\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{2}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{10}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{2}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{{}_6C_2 \\times {}_4C_1}{{}_{10}C_3} = \\dfrac{60}{120}\\)<\/span> ។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

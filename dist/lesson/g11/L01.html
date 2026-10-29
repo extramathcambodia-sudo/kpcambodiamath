@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១ : ស៊ីតចំនួនពិត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១ «ស៊ីតចំនួនពិត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១ : ស៊ីតចំនួនពិត — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១ «ស៊ីតចំនួនពិត» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g11">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li aria-current="page">មេរៀនទី ១</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១</span>
+      <div><span class="ls-kicker">ថ្នាក់វិទ្យាសាស្ត្រ · ជំពូកទី ១ ស៊ីតនិងអនុមានរួមគណិតវិទ្យា · មេរៀនទី ១ · គណិតវិទ្យាថ្នាក់ទី ១១</span><h1>ស៊ីតចំនួនពិត</h1><div class="ls-chips"><span class="chip chip-soon">ថ្នាក់វិទ្យាសាស្ត្រ</span><span class="chip chip-soon">ទំព័រ ១–៧</span><a class="chip chip-live" href="../../studio.html?deck=g11-sequences#slides">▶ ស្លាយបង្រៀន</a></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណស៊ីត</a></li><li class="sub"><a href="#u2">២. តួទី <span class="mi">\(n\)</span> នៃស៊ីត</a></li><li class="sub"><a href="#u3">៣. អថេរភាពនៃស៊ីត</a></li><li class="sub"><a href="#u4">៤. ទំព័រសៀវភៅដើម</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-11.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white"><header class="bx-h"><b>វត្ថុបំណង</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>បង្ហាញសញ្ញាណស៊ីតចំនួនពិត ស៊ីតរាប់អស់ និងស៊ីតអនន្តតួ</p></li>
+<li><p>សរសេរតួនៃស៊ីតនិងកំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត</p></li>
+<li><p>បង្ហាញថាស៊ីតមួយជាស៊ីតកើនឬស៊ីតចុះ</p></li>
+<li><p>បង្ហាញស៊ីតម៉ូណូតូន ។</p></li>
+</ol>
+</div></section>
+<h3 id="u1">សញ្ញាណស៊ីត</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>គេមានចំនួនគត់ធម្មជាតិ <span class="mi">\(1, 2, 3, 4, 5, \ldots\)</span> ។<br/>
+គេមានចំនួនគត់គូ <span class="mi">\(2, 4, 6, 8, 10, \ldots\)</span> ។<br/>
+គេមានចំនួនគត់សេសតូចជាង <span class="mi">\(16\)</span> គឺ <span class="mi">\(1, 3, 5, 7, 9, 11, 13, 15\)</span> ។<br/>
+គេមានចំនួនសនិទាន <span class="mi">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}\)</span> ។</p>
+</div></section>
+<p>ចំនួនដែលរៀបតាមលំដាប់នេះហៅថា <strong>ស៊ីតនៃចំនួនពិត</strong> ។ ស៊ីតនៃចំនួនពិត <span class="mi">\(1, 2, 3, 4, 5, \ldots\)</span> ហៅថា <strong>ស៊ីតអនន្តតួ</strong> ។ ស៊ីតអនន្តតួ គឺជាស៊ីតដែលមានចំនួនតួច្រើនរាប់មិនអស់ ។</p>
+<p>ម្យ៉ាងទៀត ស៊ីតនៃចំនួនពិត <span class="mi">\(1, 3, 5, 7, 9, 11, 13, 15\)</span> និងស៊ីតនៃចំនួនសនិទាន <span class="mi">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}\)</span> ហៅថា <strong>ស៊ីតរាប់អស់</strong> ។ ស៊ីតរាប់អស់គឺជាស៊ីតដែលគេរាប់ចំនួនតួបាន ។ ក្នុងស៊ីតរាប់អស់គេអាចស្គាល់ចំនួនតួនិងតួចុងក្រោយនៃស៊ីត ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>គេមានអនុគមន៍ <span class="mi">\(f : \mathbb{N} \to \mathbb{R}\)</span>, <span class="mi">\(n \mapsto f(n) = 2n + 1\)</span> គេសង្កេតឃើញថា <div class="md">\[\begin{aligned}
+&amp;\text{បើ } n = 1 \text{ នោះ } f(1) = 2 \times 1 + 1 = 3\\
+&amp;\text{បើ } n = 2 \text{ នោះ } f(2) = 2 \times 2 + 1 = 5\\
+&amp;\text{បើ } n = 3 \text{ នោះ } f(3) = 2 \times 3 + 1 = 7\\
+&amp;\text{បើ } n = 4 \text{ នោះ } f(4) = 2 \times 4 + 1 = 9\\
+&amp;\ldots\ldots
+\end{aligned}\]</div> គេបានចំនួនរៀបតាមលំដាប់ <span class="mi">\(3, 5, 7, 9, \ldots\)</span> បង្កើតបានជាស៊ីតនៃចំនួនពិត ។ ចំនួននីមួយៗនៃស៊ីតហៅថា <strong>តួ</strong> ។ ចំនួន <span class="mi">\(3\)</span> ហៅថាតួទី <span class="mi">\(1\)</span>, <span class="mi">\(5\)</span> តួទី <span class="mi">\(2\)</span>, <span class="mi">\(7\)</span> តួទី <span class="mi">\(3\)</span> …រៀងគ្នា ។</p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>ស៊ីតចំនួនពិតគឺជាអនុគមន៍លេខដែលកំណត់ពី <span class="mi">\(\mathbb{N}\)</span> ទៅ <span class="mi">\(\mathbb{R}\)</span> ។</p>
+</div></section>
+<p>ជាទូទៅគេប្រើអក្សរ <span class="mi">\(a_1, a_2, a_3, \ldots, a_n\)</span> សម្រាប់តាងឱ្យតួនៃស៊ីតដែល <span class="mi">\(a_1\)</span> ជាតួទី <span class="mi">\(1\)</span>, <span class="mi">\(a_2\)</span> ជាតួទី <span class="mi">\(2\)</span>, <span class="mi">\(\ldots\)</span>, <span class="mi">\(a_n\)</span> ជាតួទី <span class="mi">\(n\)</span> ។</p>
+<p>គេតាងស៊ីតនោះដោយនិមិត្តសញ្ញា <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(n \in \mathbb{N}\)</span>, <span class="mi">\(\mathbb{N} = \{1, 2, 3, \ldots\}\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>បំពេញតួនៃស៊ីតខាងក្រោមនេះឱ្យបានបីតួទៀត</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(1, 5, 9, \ldots\)</span></p></li>
+<li><p><span class="mi">\(1, 8, 27, \ldots\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(1, 5, 9, 13, 17, 21\)</span></p></li>
+<li><p><span class="mi">\(1, 8, 27, 64, 125, 216\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>សរសេរគ្រប់តួនៃស៊ីតរាប់អស់ <span class="mi">\(a_n = \dfrac{(-1)^{n+1}}{n+1}\)</span>, <span class="mi">\(1 \le n \le 5\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ជំនួសចំនួនគត់ធម្មជាតិពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(5\)</span> ក្នុង <span class="mi">\(a_n\)</span> ។ គេបាន <div class="md">\[\begin{gathered}
+a_1 = \frac{(-1)^2}{2} = \frac{1}{2},\\
+a_2 = \frac{(-1)^3}{3} = -\frac{1}{3},\\ a_3 = \frac{(-1)^4}{4} = \frac{1}{4},\\
+a_4 = \frac{(-1)^5}{5} = -\frac{1}{5}
+\end{gathered}\]</div> <div class="md">\[a_5 = \frac{(-1)^6}{6} = \frac{1}{6}\]</div> ដូច្នេះប្រាំតួនៃស៊ីតគឺ <span class="mi">\(\frac{1}{2}, -\frac{1}{3}, \frac{1}{4}, -\frac{1}{5}, \frac{1}{6}\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>គេឱ្យស៊ីត <span class="mi">\(3, 8, 15, \ldots\)</span> ។ បន្តសរសេរស៊ីតនេះឱ្យបានបីតួទៀត ។</p></li>
+<li><p>សរសេរតួនៃស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយ <span class="mi">\(a_n = \dfrac{1}{n+2}\)</span> ដែល <span class="mi">\(1 \le n \le 4\)</span> ។</p></li>
+<li><p>សរសេរតួនៃស៊ីតតាមលំដាប់តគ្នា <span class="mi">\(a_n = 2 + \dfrac{1}{2^n}\)</span> ដែល <span class="mi">\(n \in \mathbb{N}\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols1">
+<li><p><span class="mi">\(24, 35, 48\)</span></p></li>
+<li><p><span class="mi">\(\frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}\)</span></p></li>
+<li><p><span class="mi">\(\frac{5}{2}, \frac{9}{4}, \frac{17}{8}, \ldots, 2 + \frac{1}{2^n}\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u2">តួទី <span class="mi">\(n\)</span> នៃស៊ីត</h3>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីតចំនួនគត់ <span class="mi">\(1, 2, 3, 4, 5, \ldots\)</span> ដែលតួចុងក្រោយរបស់វាតាងដោយ <span class="mi">\(n\)</span> ។ ក្នុងករណីគេថា <span class="mi">\(a_1 = 1\)</span> ជាតួទី <span class="mi">\(1\)</span>, <span class="mi">\(a_2 = 2\)</span> ជាតួទី <span class="mi">\(2\)</span>, <span class="mi">\(a_3 = 3\)</span> ជាតួទី <span class="mi">\(3\)</span>, <span class="mi">\(\ldots\)</span>, <span class="mi">\(a_n = n\)</span> ជាតួទី <span class="mi">\(n\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>ចំពោះស៊ីតនៃចំនួន <span class="mi">\(2, 4, 6, 8, 10, \ldots\)</span> ។ គេឃើញថា <div class="md">\[\begin{gathered}
+a_1 = 2 = 2 \times 1, \quad{} a_2 = 4 = 2 \times 2,\\
+a_3 = 6 = 2 \times 3,\\ a_4 = 8 = 2 \times 4,\ \ldots,\ a_n = 2 \times n
+\end{gathered}\]</div> ដូច្នេះ គេបានតួទី <span class="mi">\(n\)</span> នៃស៊ីតគឺ <span class="mi">\(a_n = 2 \times n\)</span> ។</p>
+</div></section>
+<p>តាមឧទាហរណ៍ខាងលើ បើគេស្គាល់តួដំបូង និងតួបន្តបន្ទាប់នៃស៊ីត ដើម្បីសរសេររូបមន្តតួទី <span class="mi">\(n\)</span> នៃស៊ីតគេពិនិត្យមើលតួនីមួយៗនៃស៊ីត រួចរកមើលលំនាំគំរូរបស់វា ។ តួនីមួយៗជាអនុគមន៍នៃចំនួនតួ ។ តួទី <span class="mi">\(1\)</span> ត្រូវនឹង <span class="mi">\(n = 1\)</span> តួទី <span class="mi">\(2\)</span> ត្រូវនឹង <span class="mi">\(n = 2\)</span>, <span class="mi">\(\ldots\)</span>, តួទី <span class="mi">\(n\)</span> ត្រូវនឹង <span class="mi">\(n = n\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(3, 5, 7, 11, \ldots\)</span> ចំពោះគ្រប់ <span class="mi">\(n \in \mathbb{N}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>គេសង្កេតឃើញថា <div class="md">\[\begin{aligned}
+a_1 &amp;= 3 = 2 \times 1 + 1\\
+a_2 &amp;= 5 = 2 \times 2 + 1\\
+a_3 &amp;= 7 = 2 \times 3 + 1\\
+a_4 &amp;= 9 = 2 \times 4 + 1\\
+a_5 &amp;= 11 = 2 \times 5 + 1\\
+&amp;\ \,\vdots\\
+a_n &amp;= 2n + 1
+\end{aligned}\]</div> ដូច្នេះគេបានតួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(a_n = 2n + 1\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>បាល់មួយត្រូវបានទម្លាក់ពីកម្ពស់ <span class="mi">\(6\text{ m}\)</span> ។ ដោយដឹងថា បាល់នោះធ្លាក់ដល់ដីតែងតែលោតឡើងលើវិញបាន <span class="mi">\(\frac{2}{3}\)</span> នៃកម្ពស់ដែលបាល់នោះធ្លាក់ចុះ ។ ចូរកំណត់កម្ពស់ នៃបាល់ជាបន្តបន្ទាប់ដោយសរសេរជាស៊ីតមួយ រួចកំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីតនេះ ។</p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22143.47%22 height=%22114.26%22 viewBox=%220 0 143.47 114.26%22%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M -3.25 -1.31 L -3.48 -1.31 C -6 -1.31 -6.34 -2.53 -6.34 -3.04 C -6.34 -3.28 -6.29 -3.68 -5.95 -3.90 C -5.95 -3.76 -5.95 -3.37 -5.51 -3.37 C -5.20 -3.37 -5.04 -3.60 -5.04 -3.82 C -5.04 -3.98 -5.14 -4.28 -5.53 -4.28 C -6.12 -4.28 -6.59 -3.84 -6.59 -3.01 C -6.59 -1.75 -5.31 -0.42 -3.12 -0.42 C -0.48 -0.42 0.21 -1.56 0.21 -2.48 C 0.21 -3.59 -0.71 -4.53 -2.01 -4.53 C -3.28 -4.53 -4.23 -3.64 -4.23 -2.54 C -4.23 -1.87 -3.71 -1.5 -3.25 -1.31 Z M -0.06 -2.48 C -0.06 -1.85 -0.65 -1.56 -0.79 -1.5 C -1.26 -1.32 -2.06 -1.32 -2.23 -1.32 C -3.01 -1.32 -4 -1.64 -4 -2.53 C -4 -2.68 -4 -3.15 -3.39 -3.45 C -3.01 -3.64 -2.51 -3.64 -2.03 -3.64 C -1.56 -3.64 -1.06 -3.64 -0.70 -3.46 C -0.10 -3.17 -0.06 -2.71 -0.06 -2.48 Z M -0.06 -2.48 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M -3.39 -4.57 L 0 -4.57 L 0 -3.84 L -3.43 -3.84 C -4.33 -3.84 -4.78 -3.48 -4.78 -2.78 C -4.78 -2.34 -4.58 -2.00 -4.20 -1.78 C -3.81 -1.55 -3.54 -1.43 -3.39 -1.43 L 0 -1.43 L 0 -0.70 L -5.51 -0.70 L -5.51 -1.43 L -4.56 -1.43 C -5.19 -1.87 -5.51 -2.37 -5.51 -2.93 C -5.51 -3.72 -5.14 -4.23 -4.39 -4.45 L -4.56 -4.57 C -5.19 -5.01 -5.51 -5.51 -5.51 -6.07 C -5.51 -7.17 -4.80 -7.71 -3.39 -7.71 L 0 -7.71 L 0 -7 L -3.43 -7 C -4.33 -7 -4.78 -6.64 -4.78 -5.93 C -4.78 -5.48 -4.58 -5.14 -4.20 -4.92 C -3.81 -4.69 -3.54 -4.57 -3.39 -4.57 Z M -3.39 -4.57 %22/%3E%3C/g%3E%3C/g%3E%3CclipPath id=%22clip-0%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 25 43 L 57 43 L 57 113.52 L 25 113.52 Z M 25 43 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-1%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 66 63 L 93 63 L 93 113.52 L 66 113.52 Z M 66 63 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-2%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 97 77 L 119 77 L 119 113.52 L 97 113.52 Z M 97 77 %22/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 0%25, 59.99%25)%22 fill-opacity=%221%22 d=%22M 17.40 110.55 L 17.40 108.69 L 139.77 108.69 L 139.77 110.55 Z M 17.40 110.55 %22/%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -4.67 0.00 L -4.67 93.54 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2212.84%22 y=%2270.33%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2212.84%22 y=%2262.48%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 9.35 93.54 L 9.35 1.99 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 31.34 108.69 L 32.92 105.52 L 31.34 106.71 L 29.75 105.52 %22/%3E%3Cg clip-path=%22url(%23clip-0)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 9.35 0.00 L 29.00 60.46 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 51.48 46.73 L 48.99 49.25 L 50.86 48.61 L 52.00 50.23 %22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 29.62 62.36 L 49.27 1.89 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 71.61 108.69 L 72.14 105.19 L 71.00 106.81 L 69.13 106.17 %22/%3E%3Cg clip-path=%22url(%23clip-1)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 49.88 0.00 L 64.78 39.76 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 87.10 67.33 L 84.51 69.74 L 86.41 69.19 L 87.48 70.85 %22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 65.48 41.62 L 80.37 1.86 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 102.59 108.69 L 102.97 105.17 L 101.90 106.84 L 100.00 106.28 %22/%3E%3Cg clip-path=%22url(%23clip-2)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 81.07 0.00 L 91.25 25.89 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 113.44 81.12 L 110.80 83.49 L 112.71 82.96 L 113.75 84.64 %22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(100%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 91.98 27.75 L 102.17 1.85 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 124.28 108.69 L 124.60 105.16 L 123.56 106.85 L 121.65 106.32 %22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 100%25, 100%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 15.59 99.77 C 15.59 103.22 12.79 106.01 9.35 106.01 C 5.91 106.01 3.11 103.22 3.11 99.77 C 3.11 96.33 5.91 93.54 9.35 93.54 C 12.79 93.54 15.59 96.33 15.59 99.77 Z M 15.59 99.77 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 100%25, 100%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 35.85 68.59 C 35.85 72.04 33.06 74.83 29.62 74.83 C 26.17 74.83 23.38 72.04 23.38 68.59 C 23.38 65.15 26.17 62.36 29.62 62.36 C 33.06 62.36 35.85 65.15 35.85 68.59 Z M 35.85 68.59 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 100%25, 100%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 71.71 47.86 C 71.71 51.30 68.92 54.09 65.48 54.09 C 62.03 54.09 59.24 51.30 59.24 47.86 C 59.24 44.41 62.03 41.62 65.48 41.62 C 68.92 41.62 71.71 44.41 71.71 47.86 Z M 71.71 47.86 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 100%25, 100%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 98.22 33.98 C 98.22 37.43 95.42 40.22 91.98 40.22 C 88.54 40.22 85.74 37.43 85.74 33.98 C 85.74 30.54 88.54 27.75 91.98 27.75 C 95.42 27.75 98.22 30.54 98.22 33.98 Z M 98.22 33.98 %22 transform=%22matrix(0.99, 0, 0, -0.99, 22.04, 108.69)%22/%3E%3C/svg%3E%0A"/></div></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>លើកដំបូងបាល់ធ្លាក់ពីកម្ពស់ <span class="mi">\(6\text{ m}\)</span> ដូចបង្ហាញក្នុងរូប រួចលោតឡើងលើវិញបាន <span class="mi">\(\frac{2}{3}\)</span> នៃ <span class="mi">\(6\text{ m}\)</span> ឬ <span class="mi">\(6\left(\frac{2}{3}\right)\text{ m}\)</span> មានកម្ពស់ <span class="mi">\(4\text{ m}\)</span> ។ លើកទី <span class="mi">\(2\)</span> បាល់ធ្លាក់ពីកម្ពស់ <span class="mi">\(6\left(\frac{2}{3}\right)\text{ m}\)</span> ហើយលោតឡើងលើវិញបាន <span class="mi">\(6\left(\frac{2}{3}\right)\left(\frac{2}{3}\right)\)</span> ឬ <span class="mi">\(6\left(\frac{2}{3}\right)^2\)</span> ។</p>
+<p>ដូច្នេះ កម្ពស់បាល់ជាបន្តបន្ទាប់គឺ <div class="md">\[6 \times \left(\frac{2}{3}\right)^1,\ 6 \times \left(\frac{2}{3}\right)^2,\ 6 \times \left(\frac{2}{3}\right)^3,\ 6 \times \left(\frac{2}{3}\right)^4,\ \ldots\]</div> ហើយតួទី <span class="mi">\(n\)</span> គឺ <span class="mi">\(a_n = 6 \times \left(\dfrac{2}{3}\right)^{n-1}\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> ចំពោះ គ្រប់ <span class="mi">\(n \in \mathbb{N}\)</span> នៃស៊ីតខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(-1, 2, 7, 14, 23, \ldots\)</span></p></li>
+<li><p><span class="mi">\(\frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \frac{5}{6}, \ldots\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols1">
+<li><p><span class="mi">\(a_n = n^2 - 2\)</span></p></li>
+<li><p><span class="mi">\(a_n = \dfrac{n+1}{n+2}\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u3">អថេរភាពនៃស៊ីត</h3>
+<h4>ស៊ីតកើន ស៊ីតចុះ</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ដែល <span class="mi">\(a_n = n\)</span> ។</p>
+<p>គេបានតួនៃស៊ីតគឺ <span class="mi">\(1, 2, 3, 4, \ldots, n\)</span> ។ តាមលំដាប់តួនៃស៊ីត គេសង្កេតឃើញថា <span class="mi">\(1 &lt; 2 &lt; 3 &lt; 4 &lt; 5 &lt; \ldots\)</span> ឬ <span class="mi">\(a_1 &lt; a_2 &lt; a_3 &lt; \ldots &lt; a_n &lt; a_{n+1} &lt; \ldots\)</span> នោះគេបានស៊ីត <span class="mi">\((a_n)\)</span> ហៅថាស៊ីតកើនដាច់ខាត ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ដែលមានតួ <span class="mi">\(1, 1, 2, 3, 4, 5, \ldots\)</span> ឬ <span class="mi">\(a_1 \le a_2 \le a_3 \le \ldots \le a_n \le a_{n+1} \le \ldots\)</span> នោះគេបានស៊ីត <span class="mi">\((a_n)\)</span> ហៅថាស៊ីតកើន ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ៣</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ដែល <span class="mi">\(a_n = \dfrac{1}{n}\)</span> ។</p>
+<p>គេបានតួនៃស៊ីតគឺ <span class="mi">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \ldots\)</span> ។ តាមលំដាប់តួនៃស៊ីត គេសង្កេតឃើញថា <span class="mi">\(1 &gt; \frac{1}{2} &gt; \frac{1}{3} &gt; \frac{1}{4} &gt; \frac{1}{5}, \ldots\)</span> ឬ <span class="mi">\(a_1 &gt; a_2 &gt; a_3 &gt; \ldots &gt; a_n &gt; a_{n+1} &gt; \ldots\)</span> ឬ <span class="mi">\(a_1 \ge a_2 \ge a_3 \ge \ldots \ge a_n \ge a_{n+1} \ge \ldots\)</span> នោះគេបានស៊ីត <span class="mi">\((a_n)\)</span> ហៅថាស៊ីតចុះ ។</p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<ul>
+<li><p>ស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតកើន លុះត្រាតែចំពោះគ្រប់ចំនួនគត់ធម្មជាតិ <span class="mi">\(n \in \mathbb{N}\)</span>, <span class="mi">\(a_{n+1} \ge a_n\)</span> ។</p></li>
+<li><p>ស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតចុះ លុះត្រាតែចំពោះគ្រប់ចំនួនគត់ធម្មជាតិ <span class="mi">\(n \in \mathbb{N}\)</span>, <span class="mi">\(a_{n+1} \le a_n\)</span> ។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>បង្ហាញថាស៊ីត <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(a_n = 3n + 1\)</span> ជាស៊ីតកើន ។</p></li>
+<li><p>បង្ហាញថាស៊ីត <span class="mi">\((b_n)\)</span> ដែល <span class="mi">\(b_n = 12 - 2n\)</span> ជាស៊ីតចុះ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>គេមាន <span class="mi">\(a_n = 3n + 1\)</span>, <span class="mi">\(a_{n+1} = 3(n+1) + 1 = 3n + 4\)</span><br/>
+នោះគេបាន <span class="mi">\(a_{n+1} - a_n = 3n + 4 - (3n + 1) = 3 &gt; 0\)</span> នាំឱ្យ <span class="mi">\(a_{n+1} &gt; a_n\)</span> ។<br/>
+ដូច្នេះ ស៊ីត <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(a_n = 3n + 1\)</span> ជាស៊ីតកើន ។</p></li>
+<li><p>គេមាន <span class="mi">\(b_n = 12 - 2n\)</span>, <span class="mi">\(b_{n+1} = 12 - 2(n+1) = 10 - 2n\)</span><br/>
+នោះគេបាន <span class="mi">\(b_{n+1} - b_n = 10 - 2n - (12 - 2n) = -2 &lt; 0\)</span> នាំឱ្យ <span class="mi">\(b_{n+1} &lt; b_n\)</span> ។<br/>
+ដូច្នេះ ស៊ីត <span class="mi">\((b_n)\)</span> ដែល <span class="mi">\(b_n = 12 - 2n\)</span> ជាស៊ីតចុះ ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>តើស៊ីតខាងក្រោមមួយណាជាស៊ីតកើន មួយណាជាស៊ីតចុះ ។</p>
+<ol class="list olka cols1">
+<li><p>ស៊ីត <span class="mi">\((a_n)_{n \ge 5}\)</span> ដែល <span class="mi">\(a_n = \dfrac{3n}{2}\)</span></p></li>
+<li><p>ស៊ីត <span class="mi">\((a_n)_{n \ge 3}\)</span> ដែល <span class="mi">\(a_n = \dfrac{2}{n}\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols1">
+<li><p>ស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតកើន</p></li>
+<li><p>ស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតចុះ ។</p></li>
+</ol></details>
+</div></section>
+<h4>ស៊ីតម៉ូណូតូន</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ដែល <span class="mi">\(a_n = \dfrac{n}{n+1}\)</span> ។</p>
+<p>គេបានតួនៃស៊ីតគឺ <span class="mi">\(\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \ldots\)</span> ។ តាមលំដាប់តួនៃស៊ីត គេសង្កេតឃើញថា <span class="mi">\(\frac{1}{2} &lt; \frac{2}{3} &lt; \frac{3}{4} &lt; \frac{4}{5} &lt; \ldots\)</span> ឬ <span class="mi">\(a_1 &lt; a_2 &lt; a_3 &lt; a_4 &lt; \ldots &lt; a_n &lt; a_{n+1} &lt; \ldots\)</span> ។</p>
+<p>ដូច្នេះ ស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតកើន នោះគេថាស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> នេះជាស៊ីតម៉ូណូតូន ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>គេឱ្យស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ដែល <span class="mi">\(a_n = 1 + \dfrac{1}{n}\)</span> ។</p>
+<p>គេបានតួនៃស៊ីតគឺ <span class="mi">\(2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \ldots\)</span> ។ តាមលំដាប់តួនៃស៊ីត គេសង្កេតឃើញថា <span class="mi">\(2 &gt; \frac{3}{2} &gt; \frac{4}{3} &gt; \frac{5}{4} &gt; \ldots\)</span> ឬ <span class="mi">\(a_1 &gt; a_2 &gt; a_3 &gt; a_4 &gt; \ldots &gt; a_n &gt; a_{n+1} &gt; \ldots\)</span> ។</p>
+<p>ដូច្នេះ ស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតចុះ នោះគេថាស៊ីតនេះជា <strong>ស៊ីតម៉ូណូតូន</strong> ។</p>
+</div></section>
+<section class="bx bx-teal"><header class="bx-h"><b>និយមន័យ</b></header><div class="bx-b">
+<p>ស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតម៉ូណូតូន កាលណាស៊ីត <span class="mi">\((a_n)\)</span> ជាស៊ីតកើនឬជាស៊ីតចុះ ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>បង្ហាញថាស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ជាស៊ីតម៉ូណូតូន <span class="mi">\(a_n = \dfrac{n}{n+1}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>របៀបទី ១</strong> ៖ គេមាន <span class="mi">\(a_n = \dfrac{n}{n+1}\)</span> គេបាន <span class="mi">\(a_{n+1} = \dfrac{n+1}{(n+1)+1} = \dfrac{n+1}{n+2}\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(\forall n \ge 1\)</span> គេបាន <div class="md">\[\begin{aligned} a_{n+1} - a_n &amp;= \frac{n+1}{n+2} - \frac{n}{n+1} = \frac{(n+1)^2 - n(n+2)}{(n+2)(n+1)}\\ &amp;= \frac{1}{(n+1)(n+2)} &gt; 0 \end{aligned}\]</div> នោះ <span class="mi">\(a_{n+1} &gt; a_n\)</span> ដូច្នេះ ស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ជាស៊ីតម៉ូណូតូន ។</p>
+<p><strong>របៀបទី ២</strong> ៖ ដោយ <span class="mi">\(a_n = \dfrac{n}{n+1} &gt; 0\)</span>, <span class="mi">\(\forall n \in \mathbb{N}\)</span> គេបាន <div class="md">\[a_{n+1} = \frac{n+1}{(n+1)+1} = \frac{n+1}{n+2} &gt; 0,\quad{} \forall n \in \mathbb{N}\]</div> <div class="md">\[\frac{a_{n+1}}{a_n} = \frac{\dfrac{n+1}{n+2}}{\dfrac{n}{n+1}} = \frac{n+1}{n+2} \times \frac{n+1}{n} = \frac{n^2 + 2n + 1}{n^2 + 2n} &gt; 1\]</div> ព្រោះ <span class="mi">\(\forall n \ge 1\)</span> ឬ <span class="mi">\(n^2 + 2n + 1 &gt; n^2 + 2n\)</span> នោះ <span class="mi">\(a_{n+1} &gt; a_n\)</span> ។</p>
+<p>ដូច្នេះ ស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ជាស៊ីតម៉ូណូតូន ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>តើស៊ីតខាងក្រោម ស៊ីតណាជាស៊ីតម៉ូណូតូន ។</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \ldots, \frac{1}{n}, \ldots\)</span></p></li>
+<li><p><span class="mi">\(a_n = \dfrac{2^n}{n}\)</span>, <span class="mi">\(n \ge 1\)</span></p></li>
+<li><p><span class="mi">\(1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \ldots, (-1)^{n+1}\frac{1}{n}, \ldots\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols1">
+<li><p><span class="mi">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \ldots, \frac{1}{n}, \ldots\)</span> ជាស៊ីតម៉ូណូតូន</p></li>
+<li><p><span class="mi">\((a_n)\)</span> ជាស៊ីតម៉ូណូតូន</p></li>
+<li><p><span class="mi">\(1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \ldots, (-1)^{n+1} \times \frac{1}{n}\)</span> មិនមែនជាស៊ីតម៉ូណូតូន ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u4">ទំព័រសៀវភៅដើម</h3><details class="ans sol-all"><summary>បើកមើលទំព័រសៀវភៅពុម្ព</summary><div class="pdf-note">មេរៀននេះបង្ហាញជាទំព័រពីសៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី ១១ (ថ្នាក់វិទ្យាសាស្ត្រ) ទំព័រ ១–៧។</div><figure class="bk-page" id="p1"><img src="pages/sc1-p001.webp" alt="ទំព័រ ១" loading="lazy" width="1100"><figcaption>ទំព័រ ១</figcaption></figure><figure class="bk-page" id="p2"><img src="pages/sc1-p002.webp" alt="ទំព័រ ២" loading="lazy" width="1100"><figcaption>ទំព័រ ២</figcaption></figure><figure class="bk-page" id="p3"><img src="pages/sc1-p003.webp" alt="ទំព័រ ៣" loading="lazy" width="1100"><figcaption>ទំព័រ ៣</figcaption></figure><figure class="bk-page" id="p4"><img src="pages/sc1-p004.webp" alt="ទំព័រ ៤" loading="lazy" width="1100"><figcaption>ទំព័រ ៤</figcaption></figure><figure class="bk-page" id="p5"><img src="pages/sc1-p005.webp" alt="ទំព័រ ៥" loading="lazy" width="1100"><figcaption>ទំព័រ ៥</figcaption></figure><figure class="bk-page" id="p6"><img src="pages/sc1-p006.webp" alt="ទំព័រ ៦" loading="lazy" width="1100"><figcaption>ទំព័រ ៦</figcaption></figure><figure class="bk-page" id="p7"><img src="pages/sc1-p007.webp" alt="ទំព័រ ៧" loading="lazy" width="1100"><figcaption>ទំព័រ ៧</figcaption></figure></details><h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>សរសេរបីតួបន្ទាប់នៃស៊ីតខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(5, 10, 15, 20, \ldots\)</span></p></li>
+<li><p><span class="mi">\(1, 5, 14, 30, 55, \ldots\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>សរសេរតួនៃស៊ីតរាប់អស់ខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(a_n = \dfrac{(-1)^n}{n}\)</span> ចំពោះ <span class="mi">\(1 \le n \le 8\)</span></p></li>
+<li><p><span class="mi">\(b_n = (2)^{-n+2}\)</span> ចំពោះ <span class="mi">\(1 \le n \le 5\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>សរសេរបួនតួដំបូងនៃស៊ីតរាប់អស់ខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(a_n = \dfrac{(-1)^n}{n^2}\)</span></p></li>
+<li><p><span class="mi">\(b_n = \dfrac{1}{n^2 + n}\)</span></p></li>
+<li><p><span class="mi">\(c_n = (-1)^n (n-2)^2\)</span></p></li>
+<li><p><span class="mi">\(d_n = (-1)^n 2^{n-1}\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> ចំពោះគ្រប់ <span class="mi">\(n \in \mathbb{N}\)</span> នៃស៊ីតខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(5, 7, 9, 11, 13, \ldots\)</span></p></li>
+<li><p><span class="mi">\(-3, -1, 1, 3, 5, \ldots\)</span></p></li>
+<li><p><span class="mi">\(16, 13, 10, 7, 4, \ldots\)</span></p></li>
+<li><p><span class="mi">\(\frac{2}{3}, \frac{3}{5}, \frac{4}{7}, \frac{5}{9}, \ldots\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>បង្ហាញថាស៊ីត <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(a_n = \dfrac{1}{n+3}\)</span> ជាស៊ីតចុះ ។</p>
+</div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>បង្ហាញថាស៊ីត <span class="mi">\((b_n)\)</span> ដែល <span class="mi">\(b_n = \dfrac{2n+1}{n+3}\)</span> ជាស៊ីតកើន ។</p>
+</div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>សិក្សាភាពម៉ូណូតូននៃស៊ីតដែលកំណត់ដូចខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p>ស៊ីត <span class="mi">\((a_n)_{n \in \mathbb{N}}\)</span> ដែល <span class="mi">\(a_n = \dfrac{1}{n}\)</span></p></li>
+<li><p>ស៊ីត <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(a_n = n^3 + 4n - 5\)</span></p></li>
+<li><p>ស៊ីត <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(a_{n+1} = a_n^2\)</span> និង <span class="mi">\(a_1 = 2\)</span> ។</p></li>
+</ol>
+</div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(n\)</span> ជាចំនួនគត់ធម្មជាតិ ហើយ <span class="mi">\(a_1 = 1\)</span> និង <span class="mi">\(a_{n+1} = a_n^2 + a_n + 1\)</span> ។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថាស៊ីត <span class="mi">\((a_n)\)</span> ដែល <span class="mi">\(n\)</span> ជាចំនួនគត់ធម្មជាតិ ជាស៊ីតកើន ។</p></li>
+<li><p>បង្ហាញថាចំពោះគ្រប់ <span class="mi">\(n\)</span>, <span class="mi">\(a_n \ge n\)</span> ។</p></li>
+</ol>
+</div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១ ស៊ីតចំនួនពិត (វិទ្យាសាស្ត្រ)</b> — ២០ សំណួរ · ៣៥ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=bk_g11_L01">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="next" href="L02.html"><small>មេរៀនបន្ទាប់ →</small><b>ស៊ីតនព្វន្ត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីតចំនួនពិតជាអនុគមន៍មួយកំណត់ពីសំណុំណាទៅ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span>?", "options": ["<span class=\"mi\">\\(\\mathbb{R}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{N}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{Z}^-\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{Q}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ស៊ីតចំនួនពិតជាអនុគមន៍ដែលកំណត់ពី <span class=\"mi\">\\(\\mathbb{N}\\)<\/span> (ឬផ្នែកមួយនៃ <span class=\"mi\">\\(\\mathbb{N}\\)<\/span>) ទៅ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> ។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យស៊ីត <span class=\"mi\">\\(a_n = 2n + 3\\)<\/span> ។ តួទី <span class=\"mi\">\\(5\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_5 = 2(5) + 3 = 13\\)<\/span> ។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យស៊ីត <span class=\"mi\">\\(a_n = n^2 - 1\\)<\/span> ។ តួទី <span class=\"mi\">\\(4\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(17\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_4 = 16 - 1 = 15\\)<\/span> ។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យស៊ីត <span class=\"mi\">\\(a_n = \\dfrac{n}{n + 1}\\)<\/span> ។ តួទី <span class=\"mi\">\\(3\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{4}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3}{4}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_3 = \\dfrac{3}{3 + 1} = \\dfrac{3}{4}\\)<\/span> ។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "គេឱ្យស៊ីត <span class=\"mi\">\\(a_n = (-1)^n n\\)<\/span> ។ តួទី <span class=\"mi\">\\(7\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(-7\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_7 = (-1)^7 \\times 7 = -7\\)<\/span> ។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តួទូទៅនៃស៊ីត <span class=\"mi\">\\(2, 4, 6, 8, \\ldots\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a_n = 2^n\\)<\/span>", "<span class=\"mi\">\\(a_n = n + 2\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n - 1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តួនីមួយៗជាពហុគុណនៃ <span class=\"mi\">\\(2\\)<\/span> ដូច្នេះ <span class=\"mi\">\\(a_n = 2n\\)<\/span> ។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តួទូទៅនៃស៊ីត <span class=\"mi\">\\(1, 3, 5, 7, \\ldots\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a_n = 2n + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = n + 2\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចំនួនសេសតួទី <span class=\"mi\">\\(n\\)<\/span> គឺ <span class=\"mi\">\\(2n - 1\\)<\/span> ។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តួទូទៅនៃស៊ីត <span class=\"mi\">\\(1, 4, 9, 16, \\ldots\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a_n = 2^n\\)<\/span>", "<span class=\"mi\">\\(a_n = n^2\\)<\/span>", "<span class=\"mi\">\\(a_n = n^2 + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 3n - 2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តួនីមួយៗជាការេនៃលេខរៀង <span class=\"mi\">\\(n\\)<\/span> ។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តួទូទៅនៃស៊ីត <span class=\"mi\">\\(\\dfrac{1}{2}, \\dfrac{1}{4}, \\dfrac{1}{8}, \\dfrac{1}{16}, \\ldots\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a_n = \\dfrac{1}{2^n}\\)<\/span>", "<span class=\"mi\">\\(a_n = \\dfrac{1}{n + 1}\\)<\/span>", "<span class=\"mi\">\\(a_n = \\dfrac{1}{2n}\\)<\/span>", "<span class=\"mi\">\\(a_n = \\dfrac{n}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ភាគបែងជាស្វ័យគុណនៃ <span class=\"mi\">\\(2\\)<\/span> ៖ <span class=\"mi\">\\(2^1, 2^2, 2^3, \\ldots\\)<\/span> ។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\((a_n)\\)<\/span> ហៅថាស៊ីតកើន កាលណាគ្រប់ <span class=\"mi\">\\(n\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(a_{n+1} = a_n\\)<\/span>", "<span class=\"mi\">\\(a_{n+1} - a_n < 0\\)<\/span>", "<span class=\"mi\">\\(a_{n+1}\\,a_n > 0\\)<\/span>", "<span class=\"mi\">\\(a_{n+1} - a_n > 0\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ស៊ីតកើនលុះត្រាតែ <span class=\"mi\">\\(a_{n+1} > a_n\\)<\/span> ឬ <span class=\"mi\">\\(a_{n+1} - a_n > 0\\)<\/span> ។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\((a_n)\\)<\/span> ហៅថាស៊ីតចុះ កាលណាគ្រប់ <span class=\"mi\">\\(n\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(a_{n+1} < a_n\\)<\/span>", "<span class=\"mi\">\\(a_n > 0\\)<\/span>", "<span class=\"mi\">\\(a_{n+1} > a_n\\)<\/span>", "<span class=\"mi\">\\(a_{n+1} = a_n + 1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ស៊ីតចុះលុះត្រាតែតួបន្ទាប់តូចជាងតួមុន ។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតណាខាងក្រោមជាស៊ីតកើន?", "options": ["<span class=\"mi\">\\(a_n = \\dfrac{1}{n}\\)<\/span>", "<span class=\"mi\">\\(a_n = 5 - 2n\\)<\/span>", "<span class=\"mi\">\\(a_n = 3n - 5\\)<\/span>", "<span class=\"mi\">\\(a_n = (-1)^n\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_{n+1} - a_n = 3 > 0\\)<\/span> ដូច្នេះ <span class=\"mi\">\\(a_n = 3n - 5\\)<\/span> ជាស៊ីតកើន ។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតណាខាងក្រោមជាស៊ីតចុះ?", "options": ["<span class=\"mi\">\\(a_n = n + 7\\)<\/span>", "<span class=\"mi\">\\(a_n = n^2\\)<\/span>", "<span class=\"mi\">\\(a_n = 2^n\\)<\/span>", "<span class=\"mi\">\\(a_n = \\dfrac{1}{n + 2}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ភាគបែង <span class=\"mi\">\\(n + 2\\)<\/span> កើន ដូច្នេះ <span class=\"mi\">\\(\\dfrac{1}{n + 2}\\)<\/span> ចុះ ។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(a_n = (-1)^n\\)<\/span> ជាស៊ីត ៖", "options": ["ចុះ", "មិនម៉ូណូតូន", "កើន", "ថេរ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តួឆ្លាស់គ្នា <span class=\"mi\">\\(-1, 1, -1, 1, \\ldots\\)<\/span> ដូច្នេះមិនកើន មិនចុះ ។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សម្រាប់ <span class=\"mi\">\\(a_n = \\dfrac{n}{n + 1}\\)<\/span> ផលសង <span class=\"mi\">\\(a_{n+1} - a_n\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{n}{n + 2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{n + 1}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{(n + 1)(n + 2)}\\)<\/span>", "<span class=\"mi\">\\(-\\dfrac{1}{(n + 1)(n + 2)}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{n + 1}{n + 2} - \\dfrac{n}{n + 1} = \\dfrac{(n + 1)^2 - n(n + 2)}{(n + 1)(n + 2)} = \\dfrac{1}{(n + 1)(n + 2)} > 0\\)<\/span> ។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតកំណត់ដោយ <span class=\"mi\">\\(a_1 = 2\\)<\/span> និង <span class=\"mi\">\\(a_{n+1} = a_n + 3\\)<\/span> ។ តម្លៃ <span class=\"mi\">\\(a_4\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(a_2 = 5\\)<\/span>, <span class=\"mi\">\\(a_3 = 8\\)<\/span>, <span class=\"mi\">\\(a_4 = 11\\)<\/span> ។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតកំណត់ដោយ <span class=\"mi\">\\(a_1 = 1\\)<\/span> និង <span class=\"mi\">\\(a_{n+1} = 2a_n\\)<\/span> ។ តម្លៃ <span class=\"mi\">\\(a_5\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(32\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1, 2, 4, 8, 16\\)<\/span> ដូច្នេះ <span class=\"mi\">\\(a_5 = 16\\)<\/span> ។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីតកំណត់ដោយ <span class=\"mi\">\\(a_1 = 1\\)<\/span>, <span class=\"mi\">\\(a_2 = 1\\)<\/span> និង <span class=\"mi\">\\(a_{n+2} = a_{n+1} + a_n\\)<\/span> ។ តម្លៃ <span class=\"mi\">\\(a_6\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1, 1, 2, 3, 5, 8\\)<\/span> ដូច្នេះ <span class=\"mi\">\\(a_6 = 8\\)<\/span> ។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេឱ្យស៊ីត <span class=\"mi\">\\(a_n = 3n + 1\\)<\/span> ។ តើ <span class=\"mi\">\\(100\\)<\/span> ជាតួទីប៉ុន្មាន?", "options": ["មិនមែនជាតួ", "តួទី <span class=\"mi\">\\(34\\)<\/span>", "តួទី <span class=\"mi\">\\(33\\)<\/span>", "តួទី <span class=\"mi\">\\(30\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(3n + 1 = 100 \\Rightarrow n = 33\\)<\/span> ។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\((a_n)\\)<\/span> ដែល <span class=\"mi\">\\(a_{n+1} - a_n = 0\\)<\/span> គ្រប់ <span class=\"mi\">\\(n\\)<\/span> ហៅថា ៖", "options": ["ស៊ីតកើន", "ស៊ីតចុះ", "ស៊ីតឆ្លាស់", "ស៊ីតថេរ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "តួទាំងអស់ស្មើគ្នា ដូច្នេះជាស៊ីតថេរ ។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

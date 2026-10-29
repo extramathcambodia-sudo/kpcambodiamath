@@ -2,8 +2,10 @@
 (function () {
   'use strict';
   var paper = document.querySelector('.ls-paper') || document.querySelector('.legend');
-  if (window.renderMathInElement && paper) {
-    window.renderMathInElement(paper, {
+  var mathRoots = [paper].concat(Array.prototype.slice.call(document.querySelectorAll('.ls-toc')));
+  if (window.renderMathInElement) mathRoots.forEach(function (root) {
+    if (!root) return;
+    window.renderMathInElement(root, {
       delimiters: [
         { left: '\\[', right: '\\]', display: true },
         { left: '\\(', right: '\\)', display: false },
@@ -12,7 +14,7 @@
       throwOnError: false,
       strict: 'ignore',
     });
-  }
+  });
 
   
   // Toggle answer/solution details summary between «មើល...» and «លាក់...»

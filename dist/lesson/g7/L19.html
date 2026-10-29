@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៩ : ភាពឆ្លុះ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៩ «ភាពឆ្លុះ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៩ : ភាពឆ្លុះ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៩ «ភាពឆ្លុះ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ១៩</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៩</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៩ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>ភាពឆ្លុះ</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. ភាពឆ្លុះធៀបនឹងចំណុច (ផ្ចិតឆ្លុះ)</a></li><li class="sub"><a href="#u2">២. រូបឆ្លុះធៀបនឹងចំណុច និងលក្ខណៈ</a></li><li class="sub"><a href="#u3">៣. ភាពឆ្លុះធៀបនឹងបន្ទាត់ (អ័ក្សឆ្លុះ)</a></li><li class="sub"><a href="#u4">៤. រូបដែលមានអ័ក្សឆ្លុះ និងចំនួនអ័ក្សឆ្លុះ</a></li><li class="sub"><a href="#u5">៥. បំប្លែងកិល (Translation)</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃភាពស៊ីមេទ្រី និងភាពឆ្លុះ</b></header><div class="bx-b">
+<p>«<strong>ភាពស៊ីមេទ្រី និងភាពឆ្លុះ</strong>» (Symmetry and Reflection) គឺជាគោលការណ៍គ្រឹះនៃសោភ័ណភាព និងតុល្យភាពនៅក្នុងសកលលោក។ នៅក្នុងធម្មជាតិ យើងអាចសង្កេតឃើញភាពឆ្លុះស្ទើរគ្រប់ទីកន្លែង ចាប់តាំងពីរូបរាងស្លាបមេអំបៅ ផ្កាឈូក ស្លឹកឈើ ក្រឡាព្រិលទឹកកក រហូតដល់ទម្រង់រាងកាយមនុស្ស និងសត្វ។ តាំងពីសម័យបុរាណ ជនជាតិក្រិក និងរ៉ូមបានចាត់ទុកភាពស៊ីមេទ្រីថាជាមូលដ្ឋានគ្រឹះនៃសិល្បៈដ៏ល្អឥតខ្ចោះ។ ក្នុងគណិតវិទ្យា ភាពឆ្លុះគឺជាបំប្លែងធរណីមាត្រមួយប្រភេទ (Isometry) ដែលរក្សាទំហំ ប្រវែង មុំ និងក្រឡាផ្ទៃរបស់រូបធរណីមាត្រឱ្យនៅដដែល ដោយគ្រាន់តែផ្លាស់ប្ដូរទីតាំង ឬទិសដៅប៉ុណ្ណោះ។</p>
+<p>នៅក្នុងប្រវត្តិសាស្ត្រ និងសិល្បៈស្ថាបត្យកម្មខ្មែរ ភាពស៊ីមេទ្រីត្រូវបានបុព្វបុរសខ្មែរយកមកប្រើប្រាស់ប្រកបដោយភាពច្នៃប្រឌិត និងទេពកោសល្យកំពូល។ ប្លង់មេនៃ<strong>ប្រាសាទអង្គរវត្ត</strong> <strong>ប្រាសាទបាគង</strong> និង<strong>ប្រាសាទបាយ័ន</strong> សុទ្ធសឹងតែត្រូវបានរៀបចំឡើងតាមអ័ក្សស៊ីមេទ្រីដ៏អស្ចារ្យពីកើតទៅលិច និងពីជើងទៅត្បូង។ លើសពីនេះ ក្បាច់ចម្លាក់ផ្ដែរ ហោជាង ស្លាបនាគ និងចម្លាក់ទេវតាទាញព្រ័ត្រជាមួយយក្សនៅលើស្ពាននាគ ឆ្លុះបញ្ចាំងពីតុល្យភាពស៊ីមេទ្រីយ៉ាងល្អប្រណីត។ ក្នុងវិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យាទំនើប ភាពឆ្លុះជាគោលការណ៍ចម្បងក្នុងការរចនាយានយន្ត យន្តហោះ កញ្ចក់អុបទិក ក្រាហ្វិកកុំព្យូទ័រ និងការសិក្សាអំពីរចនាសម្ព័ន្ធគ្រីស្តាល់ និងម៉ូលេគុល DNA។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃភាពឆ្លុះ និងបំប្លែងធរណីមាត្រ</b></header><div class="bx-b">
+<p>នៅក្នុងធរណីមាត្រប្លង់ គេបែងចែកភាពឆ្លុះជាបីទម្រង់សំខាន់ៗ ៖</p>
+<ul>
+<li><p><strong>ភាពឆ្លុះធៀបនឹងចំណុច (Central Symmetry) ៖</strong> ជាបំប្លែងដែលបង្វែរគ្រប់ចំណុចកាត់តាមចំណុចនឹងមួយហៅថា <strong>ផ្ចិតឆ្លុះ</strong> (<span class="mi">\(O\)</span>) ដោយផ្ចិតឆ្លុះជាចំណុចកណ្ដាលនៃអង្កត់ភ្ជាប់រវាងចំណុចដើម និងចំណុចរូបភាព។</p></li>
+<li><p><strong>ភាពឆ្លុះធៀបនឹងបន្ទាត់ (Axial Reflection) ៖</strong> ជាបំប្លែងឆ្លុះធៀបនឹងបន្ទាត់នឹងមួយហៅថា <strong>អ័ក្សឆ្លុះ</strong> (<span class="mi">\(d\)</span>) ដោយបន្ទាត់នោះជាមេដ្យាទ័រនៃអង្កត់ភ្ជាប់រវាងចំណុចដើម និងចំណុចរូបភាព។</p></li>
+<li><p><strong>បំប្លែងកិល (Translation) ៖</strong> ជាការរំកិលរូបទាំងមូលទៅតាមទិស ទិសដៅ និងប្រវែងនៃវ៉ិចទ័រមួយកំណត់។</p></li>
+<li><p><strong>លក្ខណៈរួម ៖</strong> រាល់បំប្លែងឆ្លុះ និងបំប្លែងកិល រក្សាប្រវែងអង្កត់ រង្វាស់មុំ ភាពត្រង់ជួរនៃចំណុច និងក្រឡាផ្ទៃ (រូបភាពប៉ុនរូបដើមជានិច្ច)។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">ភាពឆ្លុះធៀបនឹងចំណុច (ផ្ចិតឆ្លុះ)</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំណុចឆ្លុះធៀបនឹងចំណុចមួយ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ចំណុច <span class="mi">\(M'\)</span> ឆ្លុះនឹងចំណុច <span class="mi">\(M\)</span> ធៀបនឹងចំណុច <span class="mi">\(O\)</span> កាលណា <span class="mi">\(O\)</span> ជាចំណុចកណ្ដាលនៃអង្កត់ <span class="mi">\([MM']\)</span>។</p></li>
+<li><p><strong>ផ្ចិតឆ្លុះ ៖</strong> ចំណុច <span class="mi">\(O\)</span> ហៅថា <strong>ផ្ចិតឆ្លុះ</strong> នៃភាពឆ្លុះ។</p></li>
+<li><p><strong>លក្ខណៈ ៖</strong> <span class="mi">\(M, O, M'\)</span> រត់ត្រង់ជួរគ្នា និង <span class="mi">\(OM = OM'\)</span>។</p></li>
+<li><p><strong>ចំណុចនៅនឹង ៖</strong> ចំណុចឆ្លុះនៃផ្ចិតឆ្លុះ <span class="mi">\(O\)</span> ធៀបនឹង <span class="mi">\(O\)</span> គឺខ្លួនវាផ្ទាល់ (<span class="mi">\(O' \equiv O\)</span>)។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>នៅលើបន្ទាត់មួយ គេមានចំណុច <span class="mi">\(A\)</span> និង <span class="mi">\(O\)</span> ដោយ <span class="mi">\(OA = 4\text{ cm}\)</span>។<br/>
+ក. សង់ចំណុច <span class="mi">\(A'\)</span> ឆ្លុះនឹង <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\(O\)</span>។ គណនាប្រវែង <span class="mi">\(AA'\)</span>។<br/>
+ខ. បើ <span class="mi">\(I\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([OA]\)</span> តើចំណុចឆ្លុះ <span class="mi">\(I'\)</span> នៃ <span class="mi">\(I\)</span> ធៀបនឹង <span class="mi">\(O\)</span> នៅត្រង់ណា? គណនា <span class="mi">\(OI'\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ដោយ <span class="mi">\(A'\)</span> ឆ្លុះនឹង <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\(O\)</span> នោះ <span class="mi">\(O\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([AA'] \implies OA' = OA = 4\text{ cm}\)</span>។<br/>
+ប្រវែង <span class="mi">\(AA' = OA + OA' = 4 + 4 = 8\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{AA' = 8\text{ cm}}\)</span><br/>
+ ដោយ <span class="mi">\(I\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([OA]\)</span> នោះ <span class="mi">\(OI = \frac{OA}{2} = 2\text{ cm}\)</span>។ ចំណុចឆ្លុះ <span class="mi">\(I'\)</span> ធៀបនឹង <span class="mi">\(O\)</span> ស្ថិតនៅលើកាំរស្មីផ្ទុយនឹង <span class="mi">\([OI)\)</span> ដោយ <span class="mi">\(OI' = OI = 2\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{OI' = 2\text{ cm}}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ភាពឆ្លុះធៀបនឹងចំណុច</b></header><div class="bx-b">
+<p>១. គេមានអង្កត់ <span class="mi">\([AB]\)</span> ប្រវែង <span class="mi">\(6\text{ cm}\)</span> និងចំណុច <span class="mi">\(O\)</span> មួយនៅក្រៅអង្កត់នោះ។ ចូរសង់ចំណុច <span class="mi">\(A'\)</span> និង <span class="mi">\(B'\)</span> ឆ្លុះនឹង <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> រៀងគ្នាធៀបនឹង <span class="mi">\(O\)</span>។<br/>
+២. ប្រសិនបើ <span class="mi">\(O\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([AB]\)</span> តើចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\(O\)</span> គឺជាចំណុចណា?</p>
+</div></section>
+<h3 id="u2">រូបឆ្លុះធៀបនឹងចំណុច និងលក្ខណៈ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>លក្ខណៈនៃរូបឆ្លុះធៀបនឹងចំណុច</b></header><div class="bx-b">
+<ul>
+<li><p><strong>អង្កត់ឆ្លុះ ៖</strong> អង្កត់ពីរឆ្លុះគ្នាធៀបនឹងចំណុចមួយ ជាអង្កត់ស្របគ្នា និងប៉ុនគ្នា (<span class="mi">\(AB \parallel A'B'\)</span> និង <span class="mi">\(AB = A'B'\)</span>)។</p></li>
+<li><p><strong>មុំឆ្លុះ ៖</strong> មុំពីរឆ្លុះគ្នាធៀបនឹងចំណុចមួយ ជាមុំប៉ុនគ្នា (<span class="mi">\(\widehat{A'B'C'} = \widehat{ABC}\)</span>)។</p></li>
+<li><p><strong>ត្រីកោណឆ្លុះ ៖</strong> ត្រីកោណពីរឆ្លុះគ្នាធៀបនឹងចំណុចមួយ ជាត្រីកោណប៉ុនគ្នា (<span class="mi">\(\triangle A'B'C' \cong \triangle ABC\)</span>) និងមានផ្ទៃស្មើគ្នា។</p></li>
+<li><p><strong>ផ្ចិតឆ្លុះនៃរូប ៖</strong> ប្រលេឡូក្រាម ចតុកោណកែង ការ៉េ ចតុកោណស្មើ មានផ្ចិតឆ្លុះត្រង់ចំណុចប្រសព្វអង្កត់ទ្រូង។ រង្វង់មានផ្ចិតឆ្លុះត្រង់ផ្ចិតរបស់វា។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> មាន <span class="mi">\(AB = 5\text{ cm}, BC = 6\text{ cm}, AC = 4\text{ cm}\)</span> និងចំណុច <span class="mi">\(O\)</span> មួយ។<br/>
+ក. រកប្រវែងជ្រុងទាំងបីនៃ <span class="mi">\(\triangle A'B'C'\)</span> ដែលជារូបឆ្លុះនៃ <span class="mi">\(\triangle ABC\)</span> ធៀបនឹង <span class="mi">\(O\)</span>។ ខ. ប្រៀបធៀបក្រឡាផ្ទៃ និងទិសដៅ <span class="mi">\((AB)\)</span> និង <span class="mi">\((A'B')\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ដោយភាពឆ្លុះរក្សាប្រវែង ៖ <span class="mi">\(A'B'=5\text{ cm}, B'C'=6\text{ cm}, A'C'=4\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{(AB) \parallel (A'B')}\)</span> និង <span class="mi">\(\boxed{S_{A'B'C'} = S_{ABC}}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>រូបឆ្លុះធៀបនឹងចំណុច</b></header><div class="bx-b">
+<p>១. ចតុកោណកែង <span class="mi">\(ABCD\)</span> មួយមានក្រឡាផ្ទៃ <span class="mi">\(24\text{ cm}^2\)</span>។ រកក្រឡាផ្ទៃនៃរូបភាពឆ្លុះ <span class="mi">\(A'B'C'D'\)</span> របស់វាធៀបនឹងចំណុច <span class="mi">\(O\)</span> មួយ។<br/>
+២. តើត្រីកោណសម័ង្សមានផ្ចិតឆ្លុះដែរឬទេ? ចុះរង្វង់មួយមានផ្ចិតឆ្លុះនៅត្រង់ណា?</p>
+</div></section>
+<h3 id="u3">ភាពឆ្លុះធៀបនឹងបន្ទាត់ (អ័ក្សឆ្លុះ)</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ចំណុចឆ្លុះធៀបនឹងបន្ទាត់មួយ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ចំណុច <span class="mi">\(M'\)</span> ឆ្លុះនឹងចំណុច <span class="mi">\(M\)</span> ធៀបនឹងបន្ទាត់ <span class="mi">\((\Delta)\)</span> កាលណា <span class="mi">\((\Delta)\)</span> ជាមេដ្យាទ័រនៃអង្កត់ <span class="mi">\([MM']\)</span>។</p></li>
+<li><p><strong>អ័ក្សឆ្លុះ ៖</strong> បន្ទាត់ <span class="mi">\((\Delta)\)</span> ហៅថា <strong>អ័ក្សឆ្លុះ</strong> នៃភាពឆ្លុះ។</p></li>
+<li><p><strong>លក្ខណៈ ៖</strong> <span class="mi">\((\Delta) \perp [MM']\)</span> ត្រង់ចំណុចកណ្ដាល <span class="mi">\(H\)</span> នៃ <span class="mi">\([MM']\)</span> (<span class="mi">\(MH = M'H\)</span>)។</p></li>
+<li><p><strong>ចំណុចលើអ័ក្ស ៖</strong> បើ <span class="mi">\(M \in (\Delta)\)</span> នោះរូបភាពឆ្លុះរបស់វាគឺខ្លួនវាផ្ទាល់ (<span class="mi">\(M' \equiv M\)</span>)។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\((\Delta)\)</span> មួយ និងចំណុច <span class="mi">\(A\)</span> នៅក្រៅ <span class="mi">\((\Delta)\)</span> ដោយចម្ងាយពី <span class="mi">\(A\)</span> ទៅ <span class="mi">\((\Delta)\)</span> ស្មើនឹង <span class="mi">\(3\text{ cm}\)</span>។<br/>
+ក. សង់ចំណុច <span class="mi">\(A'\)</span> ឆ្លុះនឹង <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span>។ ខ. គណនា <span class="mi">\(AA'\)</span>។ បើ <span class="mi">\(B \in (\Delta)\)</span> រកចំណុចឆ្លុះ <span class="mi">\(B'\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ទម្លាក់កែងពី <span class="mi">\(A\)</span> មក <span class="mi">\((\Delta)\)</span> ត្រង់ <span class="mi">\(H \implies AH = 3\text{ cm}\)</span>។ ពន្យារ <span class="mi">\([AH)\)</span> ឱ្យបាន <span class="mi">\(HA' = AH = 3\text{ cm}\)</span>។<br/>
+ ប្រវែង <span class="mi">\(AA' = AH + HA' = 3 + 3 = 6\text{ cm}\)</span> នាំឱ្យ <span class="mi">\(\boxed{AA' = 6\text{ cm}}\)</span>។ ដោយ <span class="mi">\(B \in (\Delta)\)</span> នោះ <span class="mi">\(\boxed{B' \equiv B}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ភាពឆ្លុះធៀបនឹងបន្ទាត់</b></header><div class="bx-b">
+<p>១. គេមានបន្ទាត់ <span class="mi">\((\Delta)\)</span> និងអង្កត់ <span class="mi">\([AB]\)</span> ស្របនឹង <span class="mi">\((\Delta)\)</span> ដោយមានចម្ងាយ <span class="mi">\(2\text{ cm}\)</span> ពី <span class="mi">\((\Delta)\)</span>។ តើអង្កត់ឆ្លុះ <span class="mi">\([A'B']\)</span> មានប្រវែង និងទីតាំងយ៉ាងដូចម្ដេចធៀបនឹង <span class="mi">\([AB]\)</span>?<br/>
+២. បើ <span class="mi">\((\Delta)\)</span> កាត់តាមចំណុច <span class="mi">\(A\)</span> តើចំណុចឆ្លុះ <span class="mi">\(A'\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span> នៅត្រង់ណា?</p>
+</div></section>
+<h3 id="u4">រូបដែលមានអ័ក្សឆ្លុះ និងចំនួនអ័ក្សឆ្លុះ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>រូបដែលមានអ័ក្សឆ្លុះ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> រូបមួយមានអ័ក្សឆ្លុះ កាលណារូបឆ្លុះរបស់វាធៀបនឹងបន្ទាត់នោះត្រួតស៊ីគ្នាទាំងស្រុងជាមួយរូបដើម។</p></li>
+<li><p><strong>ចំនួនអ័ក្សឆ្លុះនៃរូបធរណីមាត្រ ៖</strong></p>
+<ul>
+<li><p>ត្រីកោណសមបាត (<span class="mi">\(1\)</span>)  ត្រីកោណសម័ង្ស (<span class="mi">\(3\)</span>)  ចតុកោណកែង (<span class="mi">\(2\)</span>)</p></li>
+<li><p>ចតុកោណស្មើ (<span class="mi">\(2\)</span>)  ការ៉េ (<span class="mi">\(4\)</span>)  រង្វង់ (រាប់មិនអស់ កាត់តាមផ្ចិត)</p></li>
+</ul></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យរូបចតុកោណកែង <span class="mi">\(ABCD\)</span> មួយ។<br/>
+ក. តើចតុកោណកែងមានអ័ក្សឆ្លុះប៉ុន្មាន? ចូររៀបរាប់ពីអ័ក្សឆ្លុះទាំងនោះ។<br/>
+ខ. តើបន្ទាត់ផ្ទុកអង្កត់ទ្រូងនៃចតុកោណកែងជាអ័ក្សឆ្លុះរបស់វាដែរឬទេ? ព្រោះអ្វី?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ចតុកោណកែងមានអ័ក្សឆ្លុះចំនួន <span class="mi">\(\boxed{2}\)</span> គឺបន្ទាត់កាត់តាមចំណុចកណ្ដាលនៃជ្រុងឈមទាំងពីរគូ (មេដ្យាទ័រជ្រុងឈម)។<br/>
+ បន្ទាត់ផ្ទុកអង្កត់ទ្រូងមិនមែនជាអ័ក្សឆ្លុះនៃចតុកោណកែងទេ ពីព្រោះនៅពេលបត់រូបតាមអង្កត់ទ្រូង កំពូលទាំងពីរសងខាងមិនត្រួតស៊ីគ្នាឡើយ (លើកលែងតែករណីការ៉េ)។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ចំនួនអ័ក្សឆ្លុះ</b></header><div class="bx-b">
+<p>១. រកចំនួនអ័ក្សឆ្លុះនៃរូបខាងក្រោម ៖ ក. មុំស្រួចមួយ ខ. ចតុកោណស្មើ គ. ប៉ង់តាកោណនិយ័ត (៥ ជ្រុងស្មើ)។<br/>
+២. តើត្រីកោណកែងមិនសមបាតមានអ័ក្សឆ្លុះដែរឬទេ?</p>
+</div></section>
+<h3 id="u5">បំប្លែងកិល (Translation)</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>បំប្លែងកិល និងលក្ខណៈរូបភាព</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> បំប្លែងកិលតាមវ៉ិចទ័រ <span class="mi">\(\vec{u}\)</span> គឺជាបំប្លែងដែលរំកិលគ្រប់ចំណុច <span class="mi">\(M\)</span> ទៅ <span class="mi">\(M'\)</span> ដោយ <span class="mi">\(\vec{MM'} = \vec{u}\)</span>។</p></li>
+<li><p><strong>លក្ខណៈ ៖</strong> អង្កត់ភ្ជាប់ចំណុចដើមទៅចំណុចរូបភាពមានទិសស្របគ្នា ទិសដៅដូចគ្នា និងមានប្រវែងស្មើគ្នា <span class="mi">\(MM' = u\)</span>។</p></li>
+<li><p><strong>ការរក្សាទំហំ ៖</strong> បំប្លែងកិលរក្សាប្រវែងអង្កត់ (<span class="mi">\(AB = A'B'\)</span>), រក្សារង្វាស់មុំ, រក្សាភាពត្រង់ជួរ និងរក្សាក្រឡាផ្ទៃ។</p></li>
+<li><p><strong>រូបភាពនៃរូបធរណីមាត្រ ៖</strong> រូបភាពនៃបន្ទាត់មួយជាបន្ទាត់ស្របនឹងវា, រូបភាពនៃត្រីកោណមួយជាត្រីកោណប៉ុនគ្នាដែលមានទិសដូចគ្នា។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>នៅលើប្លង់ក្រឡាកូអរដោនេ គេរំកិលចំណុច <span class="mi">\(A(2, 3)\)</span> ទៅស្ដាំ ៤ ឯកតា និងឡើងលើ ២ ឯកតា បានចំណុច <span class="mi">\(A'\)</span>។<br/>
+ក. រកកូអរដោនេនៃចំណុចរូបភាព <span class="mi">\(A'\)</span>។<br/>
+ខ. បើអង្កត់ <span class="mi">\([AB]\)</span> មានប្រវែង <span class="mi">\(5\text{ cm}\)</span> តើអង្កត់រូបភាព <span class="mi">\([A'B']\)</span> តាមបំប្លែងកិលនេះមានប្រវែងប៉ុន្មាន?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ រំកិលទៅស្ដាំ ៤ ឯកតា ៖ <span class="mi">\(x' = x + 4 = 2 + 4 = 6\)</span><br/>
+រំកិលឡើងលើ ២ ឯកតា ៖ <span class="mi">\(y' = y + 2 = 3 + 2 = 5 \implies\)</span> <span class="mi">\(\boxed{A'(6, 5)}\)</span><br/>
+ ដោយបំប្លែងកិលរក្សាប្រវែងអង្កត់ នោះប្រវែងអង្កត់រូបភាពគឺ <span class="mi">\(\boxed{A'B' = AB = 5\text{ cm}}\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បំប្លែងកិល</b></header><div class="bx-b">
+<p>១. គេរំកិលត្រីកោណ <span class="mi">\(ABC\)</span> ដែលមានក្រឡាផ្ទៃ <span class="mi">\(18\text{ cm}^2\)</span> តាមវ៉ិចទ័រមួយ។ រកក្រឡាផ្ទៃនៃត្រីកោណរូបភាព <span class="mi">\(A'B'C'\)</span>។<br/>
+២. ចំណុច <span class="mi">\(M(5, 7)\)</span> ត្រូវរំកិលទៅឆ្វេង ៣ ឯកតា និងចុះក្រោម ៤ ឯកតា។ រកកូអរដោនេនៃចំណុចរូបភាព <span class="mi">\(M'\)</span>។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>គេមានអង្កត់ <span class="mi">\([AB]\)</span> មួយប្រវែង <span class="mi">\(8\text{ cm}\)</span> និង <span class="mi">\(O\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([AB]\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>រកចំណុចឆ្លុះនៃ <span class="mi">\(O\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\(O\)</span> គឺ ចំណុច <span class="mi">\(B\)</span>។</p></li>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\(O\)</span> ធៀបនឹង <span class="mi">\(O\)</span> គឺ ខ្លួនវាផ្ទាល់ (<span class="mi">\(O\)</span>)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(O\)</span> និងចំណុច <span class="mi">\(M\)</span> មួយដោយ <span class="mi">\(OM = 4.5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់ចំណុច <span class="mi">\(M'\)</span> ឆ្លុះនឹង <span class="mi">\(M\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>គណនាប្រវែងអង្កត់ <span class="mi">\([MM']\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បន្លាយ <span class="mi">\(MO\)</span> ឱ្យបាន <span class="mi">\(M'\)</span> ដោយ <span class="mi">\(OM' = OM = 4.5\text{ cm}\)</span>។</p></li>
+<li><p><span class="mi">\(MM' = 2 \times 4.5 = 9\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ <span class="mi">\([AB] = 6\text{ cm}\)</span> និងចំណុច <span class="mi">\(O\)</span> មួយស្ថិតនៅលើ <span class="mi">\([AB]\)</span> ដោយ <span class="mi">\(OA = 2\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់ចំណុចឆ្លុះ <span class="mi">\(A'\)</span> នៃ <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>គណនាប្រវែង <span class="mi">\(A'B\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(A'\)</span> លើកន្លះបន្ទាត់ផ្ទុយនៃ <span class="mi">\([OA)\)</span> ដោយ <span class="mi">\(OA' = OA = 2\text{ cm}\)</span>។</p></li>
+<li><p><span class="mi">\(OB = 6 - 2 = 4\text{ cm}\)</span>។<br/>
+<span class="mi">\(A'B = OA' + OB = 2 + 4 = 6\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A, B\)</span> និងចំណុច <span class="mi">\(O\)</span> មិនរត់ត្រង់ជួរគ្នា ដោយ <span class="mi">\(OA = 3\text{ cm}, OB = 4\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់ចំណុចឆ្លុះ <span class="mi">\(A'\)</span> និង <span class="mi">\(B'\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>ប្រៀបធៀបប្រវែង <span class="mi">\(AB\)</span> និង <span class="mi">\(A'B'\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(A', B'\)</span> ដោយ <span class="mi">\(O\)</span> ជាចំណុចកណ្ដាលនៃ <span class="mi">\([AA']\)</span> និង <span class="mi">\([BB']\)</span>។</p></li>
+<li><p>ភាពឆ្លុះរក្សាប្រវែង នាំឱ្យ <span class="mi">\(A'B' = AB\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ចំណុច <span class="mi">\(P\)</span> និង <span class="mi">\(P'\)</span> ឆ្លុះគ្នាធៀបនឹងចំណុច <span class="mi">\(I\)</span> ដោយ <span class="mi">\(PP' = 15\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែង <span class="mi">\(IP\)</span> និង <span class="mi">\(IP'\)</span></p></li>
+<li><p>បញ្ជាក់ទីតាំងនៃចំណុច <span class="mi">\(I\)</span> ធៀបនឹង <span class="mi">\([PP']\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(I\)</span> ជាចំណុចកណ្ដាល <span class="mi">\(\Rightarrow IP = IP' = \frac{15}{2} = 7.5\text{ cm}\)</span></p></li>
+<li><p>ចំណុច <span class="mi">\(I\)</span> ជា ចំណុចកណ្ដាល នៃ <span class="mi">\([PP']\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>គេមានមុំ <span class="mi">\(\widehat{xOy} = 50^\circ\)</span> និងចំណុច <span class="mi">\(I\)</span> មួយនៅខាងក្រៅមុំ ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់មុំ <span class="mi">\(\widehat{x'O'y'}\)</span> ឆ្លុះនឹង <span class="mi">\(\widehat{xOy}\)</span> ធៀបនឹង <span class="mi">\(I\)</span></p></li>
+<li><p>រករង្វាស់នៃមុំ <span class="mi">\(\widehat{x'O'y'}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់កំពូល <span class="mi">\(O'\)</span> និងកាំរស្មី <span class="mi">\(O'x', O'y'\)</span> ឆ្លុះនឹង <span class="mi">\(O, x, y\)</span> ធៀបនឹង <span class="mi">\(I\)</span>។</p></li>
+<li><p>ភាពឆ្លុះរក្សារង្វាស់មុំ នាំឱ្យ <span class="mi">\(\widehat{x'O'y'} = 50^\circ\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេមានចំណុចបី <span class="mi">\(A, B, C\)</span> រត់ត្រង់ជួរគ្នាដោយ <span class="mi">\(B\)</span> នៅចន្លោះ <span class="mi">\(A\)</span> និង <span class="mi">\(C\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់ចំណុចឆ្លុះ <span class="mi">\(A', B', C'\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>តើ <span class="mi">\(A', B', C'\)</span> រត់ត្រង់ជួរគ្នាដែរឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(A', B', C'\)</span> ដោយ <span class="mi">\(O\)</span> ជាចំណុចកណ្ដាលរៀងគ្នា។</p></li>
+<li><p>បាទ/ចាស <span class="mi">\(A', B', C'\)</span> រត់ត្រង់ជួរគ្នា ព្រោះភាពឆ្លុះរក្សាភាពត្រង់ជួរ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>គេឱ្យអង្កត់ <span class="mi">\([MN] = 7\text{ cm}\)</span> និងចំណុច <span class="mi">\(O\)</span> មួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់អង្កត់ <span class="mi">\([M'N']\)</span> ឆ្លុះនឹង <span class="mi">\([MN]\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>បញ្ជាក់ពីទំនាក់ទំនងរវាង <span class="mi">\((MN)\)</span> និង <span class="mi">\((M'N')\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(M', N'\)</span> ជាចំណុចឆ្លុះនៃ <span class="mi">\(M, N\)</span> ធៀបនឹង <span class="mi">\(O\)</span>។</p></li>
+<li><p>បន្ទាត់ទាំងពីរស្របគ្នា ៖ <span class="mi">\((MN) \parallel (M'N')\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>លើបន្ទាត់មួយមានចំណុច <span class="mi">\(A, B, C\)</span> ដោយ <span class="mi">\(AB = 3\text{ cm}, BC = 5\text{ cm}\)</span> និង <span class="mi">\(O\)</span> ជាផ្ចិតឆ្លុះ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែង <span class="mi">\(A'B'\)</span> នៃរូបភាពឆ្លុះ</p></li>
+<li><p>គណនាប្រវែង <span class="mi">\(A'C'\)</span> នៃរូបភាពឆ្លុះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាពឆ្លុះរក្សាប្រវែង ៖ <span class="mi">\(A'B' = AB = 3\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(A'C' = AC = 3 + 5 = 8\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គេមានរង្វង់ <span class="mi">\(\mathcal{C}(O, 3\text{ cm})\)</span> និងចំណុច <span class="mi">\(I\)</span> នៅក្រៅរង្វង់ដោយ <span class="mi">\(OI = 5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់រង្វង់ <span class="mi">\(\mathcal{C}'\)</span> ឆ្លុះនឹង <span class="mi">\(\mathcal{C}\)</span> ធៀបនឹង <span class="mi">\(I\)</span></p></li>
+<li><p>កំណត់កាំនៃរង្វង់រូបភាព <span class="mi">\(\mathcal{C}'\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(O'\)</span> ឆ្លុះនឹង <span class="mi">\(O\)</span> ធៀបនឹង <span class="mi">\(I\)</span> រួចគូសរង្វង់ផ្ចិត <span class="mi">\(O'\)</span>។</p></li>
+<li><p>កាំរង្វង់រូបភាព ៖ <span class="mi">\(R' = R = 3\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> មាន <span class="mi">\(AB = 6\text{ cm}, BC = 8\text{ cm}, AC = 7\text{ cm}\)</span> និងចំណុច <span class="mi">\(O\)</span> មួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់ត្រីកោណ <span class="mi">\(A'B'C'\)</span> ឆ្លុះនឹង <span class="mi">\(\triangle ABC\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>រកបរិមាត្រនៃត្រីកោណ <span class="mi">\(A'B'C'\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់កំពូល <span class="mi">\(A', B', C'\)</span> ឆ្លុះនឹង <span class="mi">\(A, B, C\)</span> ធៀបនឹង <span class="mi">\(O\)</span>។</p></li>
+<li><p>បរិមាត្រ ៖ <span class="mi">\(P = 6 + 8 + 7 = 21\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ត្រីកោណ <span class="mi">\(ABC\)</span> មួយមានក្រឡាផ្ទៃ <span class="mi">\(28\text{ cm}^2\)</span> និងចំណុច <span class="mi">\(I\)</span> មួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកក្រឡាផ្ទៃនៃត្រីកោណរូបភាព <span class="mi">\(A'B'C'\)</span></p></li>
+<li><p>បញ្ជាក់ពីមូលហេតុតាមលក្ខណៈភាពឆ្លុះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក្រឡាផ្ទៃ <span class="mi">\(\triangle A'B'C' = 28\text{ cm}^2\)</span></p></li>
+<li><p>ព្រោះភាពឆ្លុះធៀបនឹងចំណុចរក្សាក្រឡាផ្ទៃ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ប្រលេឡូក្រាម <span class="mi">\(ABCD\)</span> មានចំណុចប្រសព្វអង្កត់ទ្រូង <span class="mi">\(O\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>បង្ហាញថា <span class="mi">\(O\)</span> ជាផ្ចិតឆ្លុះនៃប្រលេឡូក្រាម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(C\)</span> និងនៃ <span class="mi">\(B\)</span> គឺ <span class="mi">\(D\)</span>។</p></li>
+<li><p><span class="mi">\(O\)</span> ជាចំណុចកណ្ដាលនៃអង្កត់ទ្រូងទាំងពីរ នាំឱ្យ <span class="mi">\(O\)</span> ជាផ្ចិតឆ្លុះនៃប្រលេឡូក្រាម។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ចតុកោណកែង <span class="mi">\(ABCD\)</span> មាន <span class="mi">\(AB = 8\text{ cm}, BC = 5\text{ cm}\)</span> និង <span class="mi">\(O\)</span> ជាផ្ចិតឆ្លុះរបស់វា ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណុចឆ្លុះនៃកំពូលទាំង ៤ ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>គណនាក្រឡាផ្ទៃនៃចតុកោណកែង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\(A, B, C, D\)</span> គឺ <span class="mi">\(C, D, A, B\)</span> រៀងគ្នា។</p></li>
+<li><p>ក្រឡាផ្ទៃ ៖ <span class="mi">\(S = 8 \times 5 = 40\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គេឱ្យការ៉េ <span class="mi">\(ABCD\)</span> មានទ្រនុងប្រវែង <span class="mi">\(4\text{ cm}\)</span> និងចំណុច <span class="mi">\(O\)</span> ជាផ្ចិតឆ្លុះ ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថាអង្កត់ <span class="mi">\([AC]\)</span> និង <span class="mi">\([BD]\)</span> កាត់គ្នាត្រង់ <span class="mi">\(O\)</span></p></li>
+<li><p>រកចំណុចឆ្លុះនៃត្រីកោណ <span class="mi">\(OAB\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ការ៉េជាប្រលេឡូក្រាម នាំឱ្យអង្កត់ទ្រូងកាត់គ្នាត្រង់ចំណុចកណ្ដាល <span class="mi">\(O\)</span>។</p></li>
+<li><p>រូបភាពឆ្លុះនៃ <span class="mi">\(\triangle OAB\)</span> គឺ <span class="mi">\(\triangle OCD\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ពីរស្របគ្នា <span class="mi">\((d_1) \parallel (d_2)\)</span> និងចំណុច <span class="mi">\(O\)</span> នៅចន្លោះបន្ទាត់ទាំងពីរ ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់បន្ទាត់ឆ្លុះ <span class="mi">\((d_1')\)</span> នៃ <span class="mi">\((d_1)\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>បញ្ជាក់ពីទំនាក់ទំនងរវាង <span class="mi">\((d_1')\)</span> និង <span class="mi">\((d_2)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\((d_1')\)</span> ជាបន្ទាត់ឆ្លុះនៃ <span class="mi">\((d_1)\)</span> ធៀបនឹង <span class="mi">\(O\)</span>។</p></li>
+<li><p>ដោយ <span class="mi">\((d_1') \parallel (d_1)\)</span> និង <span class="mi">\((d_1) \parallel (d_2)\)</span> នាំឱ្យ <span class="mi">\((d_1') \parallel (d_2)\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គេមានត្រីកោណកែង <span class="mi">\(ABC\)</span> ត្រង់ <span class="mi">\(A\)</span> ដោយ <span class="mi">\(AB = 3\text{ cm}, AC = 4\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃនៃត្រីកោណ <span class="mi">\(ABC\)</span></p></li>
+<li><p>រកក្រឡាផ្ទៃរូបភាពឆ្លុះ <span class="mi">\(A'B'C'\)</span> ធៀបនឹង <span class="mi">\(O\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្ទៃ <span class="mi">\(\triangle ABC\)</span> ៖ <span class="mi">\(S = \frac{3 \times 4}{2} = 6\text{ cm}^2\)</span></p></li>
+<li><p>ផ្ទៃរូបភាព ៖ <span class="mi">\(S' = S = 6\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ចតុកោណស្មើ <span class="mi">\(ABCD\)</span> មានអង្កត់ទ្រូងកាត់គ្នាត្រង់ <span class="mi">\(I\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថា <span class="mi">\(I\)</span> ជាផ្ចិតឆ្លុះនៃចតុកោណស្មើ</p></li>
+<li><p>រកចំណុចឆ្លុះនៃជ្រុង <span class="mi">\([AB]\)</span> ធៀបនឹង <span class="mi">\(I\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>អង្កត់ទ្រូងកាត់គ្នាត្រង់ចំណុចកណ្ដាល <span class="mi">\(I\)</span> នាំឱ្យ <span class="mi">\(I\)</span> ជាផ្ចិតឆ្លុះ។</p></li>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\([AB]\)</span> គឺជ្រុង <span class="mi">\([CD]\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គេមានមុំទល់កំពូលពីរ <span class="mi">\(\widehat{xOy}\)</span> និង <span class="mi">\(\widehat{x'Oy'}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថាមុំទាំងពីរឆ្លុះគ្នាធៀបនឹង <span class="mi">\(O\)</span></p></li>
+<li><p>ទាញបញ្ជាក់ថាមុំទល់កំពូលជាមុំប៉ុនគ្នា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កាំរស្មីឈមគ្នា នាំឱ្យមុំទាំងពីរឆ្លុះគ្នាធៀបនឹង <span class="mi">\(O\)</span>។</p></li>
+<li><p>ភាពឆ្លុះរក្សារង្វាស់មុំ នាំឱ្យ <span class="mi">\(\widehat{xOy} = \widehat{x'Oy'}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គេមានរង្វង់ពីរ <span class="mi">\(\mathcal{C}_1(O_1, R)\)</span> និង <span class="mi">\(\mathcal{C}_2(O_2, R)\)</span> ប៉ុនគ្នា ៖</p>
+<ol class="list olka cols2">
+<li><p>កំណត់ចំណុច <span class="mi">\(I\)</span> ដើម្បីឱ្យរង្វង់ទាំងពីរឆ្លុះគ្នាធៀបនឹង <span class="mi">\(I\)</span></p></li>
+<li><p>បញ្ជាក់ទីតាំងនៃ <span class="mi">\(I\)</span> ធៀបនឹង <span class="mi">\([O_1 O_2]\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(I\)</span> ជាចំណុចកណ្ដាលនៃអង្កត់ <span class="mi">\([O_1O_2]\)</span>។</p></li>
+<li><p><span class="mi">\(I\)</span> ស្ថិតនៅលើ <span class="mi">\([O_1O_2]\)</span> ដោយ <span class="mi">\(IO_1 = IO_2\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\((\Delta)\)</span> និងចំណុច <span class="mi">\(A\)</span> នៅក្រៅបន្ទាត់នោះដោយចម្ងាយពី <span class="mi">\(A\)</span> ទៅ <span class="mi">\((\Delta)\)</span> គឺ <span class="mi">\(3.5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់ចំណុច <span class="mi">\(A'\)</span> ឆ្លុះនឹង <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+<li><p>គណនាប្រវែងអង្កត់ <span class="mi">\([AA']\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>គូស <span class="mi">\(AH \perp (\Delta)\)</span> បន្លាយបាន <span class="mi">\(A'\)</span> ដោយ <span class="mi">\(HA' = HA = 3.5\text{ cm}\)</span>។</p></li>
+<li><p><span class="mi">\(AA' = 2 \times 3.5 = 7\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គេឱ្យបន្ទាត់ <span class="mi">\((d)\)</span> និងអង្កត់ <span class="mi">\([AB]\)</span> ស្របនឹង <span class="mi">\((d)\)</span> ដោយ <span class="mi">\(AB = 6\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់អង្កត់ <span class="mi">\([A'B']\)</span> ឆ្លុះនឹង <span class="mi">\([AB]\)</span> ធៀបនឹង <span class="mi">\((d)\)</span></p></li>
+<li><p>រកប្រវែង <span class="mi">\(A'B'\)</span> និងបញ្ជាក់ទីតាំងធៀបនឹង <span class="mi">\((d)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(A', B'\)</span> ឆ្លុះនឹង <span class="mi">\(A, B\)</span> ធៀបនឹង <span class="mi">\((d)\)</span>។</p></li>
+<li><p><span class="mi">\(A'B' = AB = 6\text{ cm}\)</span> និង <span class="mi">\([A'B'] \parallel (d)\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គេឱ្យត្រីកោណ <span class="mi">\(ABC\)</span> និងបន្ទាត់ <span class="mi">\((\Delta)\)</span> មួយនៅក្រៅត្រីកោណ ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់ត្រីកោណ <span class="mi">\(A'B'C'\)</span> ឆ្លុះនឹង <span class="mi">\(\triangle ABC\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+<li><p>ប្រៀបធៀបរង្វាស់មុំ <span class="mi">\(\widehat{B}\)</span> និង <span class="mi">\(\widehat{B'}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់កំពូល <span class="mi">\(A', B', C'\)</span> ឆ្លុះធៀបនឹង <span class="mi">\((\Delta)\)</span> រួចភ្ជាប់ត្រីកោណ។</p></li>
+<li><p>ភាពឆ្លុះរក្សារង្វាស់មុំ នាំឱ្យ <span class="mi">\(\widehat{B'} = \widehat{B}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>អង្កត់ <span class="mi">\([MM']\)</span> កាត់បន្ទាត់ <span class="mi">\((\Delta)\)</span> ត្រង់ <span class="mi">\(H\)</span> ដោយ <span class="mi">\(MM' = 10\text{ cm}\)</span> និង <span class="mi">\((\Delta) \perp [MM']\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រវែង <span class="mi">\(HM\)</span> និង <span class="mi">\(HM'\)</span></p></li>
+<li><p>បញ្ជាក់ថា <span class="mi">\(M'\)</span> ជាចំណុចឆ្លុះនៃ <span class="mi">\(M\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(HM = HM' = \frac{10}{2} = 5\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\((\Delta) \perp [MM']\)</span> ត្រង់ <span class="mi">\(H\)</span> នាំឱ្យ <span class="mi">\((\Delta)\)</span> ជាមេដ្យាទ័រ ហេតុនេះ <span class="mi">\(M'\)</span> ឆ្លុះនឹង <span class="mi">\(M\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ស្ថិតនៅលើបន្ទាត់ <span class="mi">\((\Delta)\)</span> តែមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណុចឆ្លុះ <span class="mi">\(A'\)</span> និង <span class="mi">\(B'\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+<li><p>សន្និដ្ឋានអំពីចំណុចដែលនៅលើអ័ក្សឆ្លុះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(A' \equiv A\)</span> និង <span class="mi">\(B' \equiv B\)</span> (ត្រួតលើគ្នា)</p></li>
+<li><p>គ្រប់ចំណុចលើអ័ក្សឆ្លុះមានចំណុចឆ្លុះជាខ្លួនវាផ្ទាល់ (ចំណុចអចល័ត)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គេឱ្យមុំ <span class="mi">\(\widehat{xOy} = 70^\circ\)</span> និងបន្ទាត់ <span class="mi">\((\Delta)\)</span> ជាកន្លះបន្ទាត់ពុះមុំនេះ ៖</p>
+<ol class="list olka cols2">
+<li><p>យក <span class="mi">\(M \in [Ox)\)</span> រួចសង់ចំណុចឆ្លុះ <span class="mi">\(M'\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+<li><p>បង្ហាញថា <span class="mi">\(M' \in [Oy)\)</span> និង <span class="mi">\(OM = OM'\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(M'\)</span> ឆ្លុះនឹង <span class="mi">\(M\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span>។</p></li>
+<li><p>ពុះមុំ <span class="mi">\((\Delta)\)</span> បំប្លែងកាំរស្មី <span class="mi">\([Ox)\)</span> ទៅ <span class="mi">\([Oy)\)</span> នាំឱ្យ <span class="mi">\(M' \in [Oy)\)</span> និង <span class="mi">\(OM' = OM\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ត្រីកោណសមបាត <span class="mi">\(ABC\)</span> មានកំពូល <span class="mi">\(A\)</span> និងបន្ទាត់ <span class="mi">\((AH)\)</span> ជាកម្ពស់ ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថា <span class="mi">\((AH)\)</span> ជាអ័ក្សឆ្លុះនៃត្រីកោណ <span class="mi">\(ABC\)</span></p></li>
+<li><p>រកចំណុចឆ្លុះនៃកំពូល <span class="mi">\(B\)</span> ធៀបនឹង <span class="mi">\((AH)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\((AH)\)</span> ជាមេដ្យាទ័រនៃ <span class="mi">\([BC]\)</span> នាំឱ្យ <span class="mi">\((AH)\)</span> ជាអ័ក្សឆ្លុះនៃ <span class="mi">\(\triangle ABC\)</span>។</p></li>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\(B\)</span> គឺ កំពូល <span class="mi">\(C\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គេឱ្យរង្វង់ <span class="mi">\(\mathcal{C}(O, R)\)</span> និងបន្ទាត់ <span class="mi">\((\Delta)\)</span> កាត់តាមផ្ចិត <span class="mi">\(O\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>យកចំណុច <span class="mi">\(M \in \mathcal{C}\)</span> រួចសង់ចំណុចឆ្លុះ <span class="mi">\(M'\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+<li><p>បង្ហាញថា <span class="mi">\(M'\)</span> ក៏ស្ថិតនៅលើរង្វង់ <span class="mi">\(\mathcal{C}\)</span> ដែរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សង់ <span class="mi">\(M'\)</span> ឆ្លុះនឹង <span class="mi">\(M\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span>។</p></li>
+<li><p><span class="mi">\(O \in (\Delta) \Rightarrow OM' = OM = R\)</span> នាំឱ្យ <span class="mi">\(M' \in \mathcal{C}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គេឱ្យចតុកោណកែង <span class="mi">\(ABCD\)</span> និង <span class="mi">\((\Delta)\)</span> ជាមេដ្យាទ័រនៃជ្រុង <span class="mi">\([AB]\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> និង <span class="mi">\(D\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+<li><p>បង្ហាញថា <span class="mi">\((\Delta)\)</span> ជាអ័ក្សឆ្លុះនៃចតុកោណកែង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(B\)</span> និងនៃ <span class="mi">\(D\)</span> គឺ <span class="mi">\(C\)</span>។</p></li>
+<li><p><span class="mi">\((\Delta)\)</span> ជាអ័ក្សឆ្លុះនៃចតុកោណកែង។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>អង្កត់ <span class="mi">\([AB]\)</span> មានប្រវែង <span class="mi">\(8\text{ cm}\)</span> និង <span class="mi">\((\Delta)\)</span> ជាមេដ្យាទ័រនៃ <span class="mi">\([AB]\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> ធៀបនឹង <span class="mi">\((\Delta)\)</span></p></li>
+<li><p>យក <span class="mi">\(M \in (\Delta)\)</span> បង្ហាញថា <span class="mi">\(MA = MB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណុចឆ្លុះនៃ <span class="mi">\(A\)</span> គឺ <span class="mi">\(B\)</span>។</p></li>
+<li><p>គ្រប់ចំណុចលើមេដ្យាទ័រស្មើចម្ងាយពីចុងទាំងសងខាង នាំឱ្យ <span class="mi">\(MA = MB\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ចូរកំណត់ចំនួនអ័ក្សឆ្លុះនៃរូបធរណីមាត្រខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>ត្រីកោណសមបាត</p></li>
+<li><p>ត្រីកោណសម័ង្ស</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនអ័ក្សឆ្លុះ ៖</p>
+<ul>
+<li><p>ត្រីកោណសមបាត ៖ មាន <span class="mi">\(1\)</span> អ័ក្សឆ្លុះ។</p></li>
+<li><p>ត្រីកោណសម័ង្ស ៖ មាន <span class="mi">\(3\)</span> អ័ក្សឆ្លុះ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>ចូរកំណត់ចំនួនអ័ក្សឆ្លុះនៃរូបធរណីមាត្រខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>ចតុកោណកែង</p></li>
+<li><p>ការ៉េ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនអ័ក្សឆ្លុះ ៖</p>
+<ul>
+<li><p>ចតុកោណកែង ៖ មាន <span class="mi">\(2\)</span> អ័ក្សឆ្លុះ។</p></li>
+<li><p>ការ៉េ ៖ មាន <span class="mi">\(4\)</span> អ័ក្សឆ្លុះ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>ចូរកំណត់ចំនួនអ័ក្សឆ្លុះនៃរូបធរណីមាត្រខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>ចតុកោណស្មើ</p></li>
+<li><p>ប្រលេឡូក្រាមមិនមែនចតុកោណកែង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនអ័ក្សឆ្លុះ ៖</p>
+<ul>
+<li><p>ចតុកោណស្មើ ៖ មាន <span class="mi">\(2\)</span> អ័ក្សឆ្លុះ (អង្កត់ទ្រូងទាំងពីរ)។</p></li>
+<li><p>ប្រលេឡូក្រាមទូទៅ ៖ គ្មានអ័ក្សឆ្លុះទេ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>ចូរកំណត់ចំនួនអ័ក្សឆ្លុះនៃរូបធរណីមាត្រខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>រង្វង់មួយ</p></li>
+<li><p>កន្លះរង្វង់មួយ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនអ័ក្សឆ្លុះ ៖</p>
+<ul>
+<li><p>រង្វង់ ៖ មានអ័ក្សឆ្លុះរាប់មិនអស់។</p></li>
+<li><p>កន្លះរង្វង់ ៖ មាន <span class="mi">\(1\)</span> អ័ក្សឆ្លុះ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ចូរកំណត់ចំនួនអ័ក្សឆ្លុះនៃពហុកោណនិយ័តខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>ប៉ង់តាកោណនិយ័ត (៥ ជ្រុងស្មើ)</p></li>
+<li><p>ឆកោណនិយ័ត (៦ ជ្រុងស្មើ)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ប៉ង់តាកោណនិយ័ត ៖ មាន <span class="mi">\(5\)</span> អ័ក្សឆ្លុះ។</p></li>
+<li><p>ឆកោណនិយ័ត ៖ មាន <span class="mi">\(6\)</span> អ័ក្សឆ្លុះ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>ត្រីកោណកែងមួយមានជ្រុងមុំកែង <span class="mi">\(3\text{ cm}\)</span> និង <span class="mi">\(4\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើត្រីកោណនេះមានអ័ក្សឆ្លុះដែរឬទេ?</p></li>
+<li><p>បើជាត្រីកោណកែងសមបាត តើមានអ័ក្សឆ្លុះប៉ុន្មាន?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ត្រីកោណកែងជ្រុង <span class="mi">\(3, 4, 5\)</span> គ្មានអ័ក្សឆ្លុះទេ។</p></li>
+<li><p>ត្រីកោណកែងសមបាតមាន <span class="mi">\(1\)</span> អ័ក្សឆ្លុះ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>ចតុកោណព្នាយសមបាតមួយមានបាតតូច <span class="mi">\(4\text{ cm}\)</span> និងបាតធំ <span class="mi">\(8\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>តើចតុកោណព្នាយសមបាតមានអ័ក្សឆ្លុះប៉ុន្មាន?</p></li>
+<li><p>ចូររៀបរាប់ពីអ័ក្សឆ្លុះនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចតុកោណព្នាយសមបាតមាន <span class="mi">\(1\)</span> អ័ក្សឆ្លុះ។</p></li>
+<li><p>អ័ក្សឆ្លុះជាបន្ទាត់កាត់តាមចំណុចកណ្ដាលនៃបាតទាំងពីរ។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ពិនិត្យមើលអក្សរពុម្ពឡាតាំងខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>រកអក្សរដែលមានអ័ក្សឆ្លុះបញ្ឈរ (H, M, V)</p></li>
+<li><p>រកអក្សរដែលមានអ័ក្សឆ្លុះផ្ដេក (B, E, K)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>អ័ក្សឆ្លុះបញ្ឈរ ៖ H, M, V</p></li>
+<li><p>អ័ក្សឆ្លុះផ្ដេក ៖ B, E, K (និង H)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ពិនិត្យមើលអក្សរ H និង X ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនអ័ក្សឆ្លុះនៃអក្សរនីមួយៗ</p></li>
+<li><p>តើអក្សរទាំងពីរមានផ្ចិតឆ្លុះដែរឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>H មាន <span class="mi">\(2\)</span> អ័ក្សឆ្លុះ; X មាន <span class="mi">\(2\)</span> អ័ក្សឆ្លុះ។</p></li>
+<li><p>បាទ/ចាស អក្សរទាំងពីរមានផ្ចិតឆ្លុះចំចំណុចកណ្ដាល។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>រូបផ្កាយ ៥ ជ្រុងនិយ័តមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនអ័ក្សឆ្លុះនៃផ្កាយ ៥ ជ្រុង</p></li>
+<li><p>តើវាមានផ្ចិតឆ្លុះដែរឬទេ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្កាយ ៥ ជ្រុងនិយ័តមាន <span class="mi">\(5\)</span> អ័ក្សឆ្លុះ។</p></li>
+<li><p>គ្មានផ្ចិតឆ្លុះទេ (ព្រោះចំនួនកំពូលសេស)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>គេរំកិលចំណុច <span class="mi">\(A(3, 4)\)</span> ទៅស្ដាំ ៥ ឯកតា ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកូអរដោនេនៃចំណុចរូបភាព <span class="mi">\(A'\)</span></p></li>
+<li><p>គណនាប្រវែង <span class="mi">\(AA'\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(A'(3 + 5, 4) = A'(8, 4)\)</span></p></li>
+<li><p><span class="mi">\(AA' = 5\)</span> ឯកតា</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>គេរំកិលចំណុច <span class="mi">\(B(6, 2)\)</span> ទៅឆ្វេង ៤ ឯកតា និងឡើងលើ ៣ ឯកតា ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកូអរដោនេនៃចំណុចរូបភាព <span class="mi">\(B'\)</span></p></li>
+<li><p>សរសេរវ៉ិចទ័រនៃការរំកិល</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(B'(6 - 4, 2 + 3) = B'(2, 5)\)</span></p></li>
+<li><p>វ៉ិចទ័ររំកិល ៖ <span class="mi">\(\vec{u}(-4, 3)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>អង្កត់ <span class="mi">\([AB]\)</span> មានប្រវែង <span class="mi">\(7.5\text{ cm}\)</span> ត្រូវបានរំកិលតាមវ៉ិចទ័រ <span class="mi">\(\vec{u}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រវែងនៃអង្កត់រូបភាព <span class="mi">\([A'B']\)</span></p></li>
+<li><p>បញ្ជាក់ពីទំនាក់ទំនងរវាង <span class="mi">\((AB)\)</span> និង <span class="mi">\((A'B')\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(A'B' = AB = 7.5\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\((AB) \parallel (A'B')\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>ត្រីកោណ <span class="mi">\(ABC\)</span> មានមុំ <span class="mi">\(\widehat{A} = 60^\circ, \widehat{B} = 70^\circ\)</span> ត្រូវបានរំកិលទៅជា <span class="mi">\(\triangle A'B'C'\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំ <span class="mi">\(\widehat{C}\)</span> នៃត្រីកោណ <span class="mi">\(ABC\)</span></p></li>
+<li><p>រករង្វាស់មុំទាំងបីនៃ <span class="mi">\(\triangle A'B'C'\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\widehat{C} = 180^\circ - (60^\circ + 70^\circ) = 50^\circ\)</span></p></li>
+<li><p><span class="mi">\(\widehat{A'} = 60^\circ, \widehat{B'} = 70^\circ, \widehat{C'} = 50^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ចតុកោណកែងមួយមានបណ្ដោយ <span class="mi">\(8\text{ cm}\)</span> និងទទឹង <span class="mi">\(5\text{ cm}\)</span> ត្រូវបានរំកិលតាមវ៉ិចទ័រមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃនៃចតុកោណកែងដើម</p></li>
+<li><p>រកក្រឡាផ្ទៃនៃរូបភាពចតុកោណកែងថ្មី</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផ្ទៃដើម ៖ <span class="mi">\(S = 8 \times 5 = 40\text{ cm}^2\)</span></p></li>
+<li><p>ផ្ទៃថ្មី ៖ <span class="mi">\(S' = S = 40\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គេមានចំណុច <span class="mi">\(M(1, 2)\)</span> និងរូបភាពរបស់វា <span class="mi">\(M'(5, 6)\)</span> តាមបំប្លែងកិល ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចម្ងាយរំកិលតាមអ័ក្សដេក និងអ័ក្សឈរ</p></li>
+<li><p>រកកូអរដោនេនៃរូបភាព <span class="mi">\(N'\)</span> បើ <span class="mi">\(N(3, 1)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចម្ងាយដេក <span class="mi">\(5 - 1 = 4\)</span>; ចម្ងាយឈរ <span class="mi">\(6 - 2 = 4\)</span></p></li>
+<li><p><span class="mi">\(N'(3 + 4, 1 + 4) = N'(7, 5)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>រង្វង់មួយមានសមីការកាំ <span class="mi">\(R = 5\text{ cm}\)</span> ត្រូវបានរំកិលទៅទីតាំងថ្មី ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកាំនៃរង្វង់រូបភាពថ្មី</p></li>
+<li><p>គណនាក្រឡាផ្ទៃថាសនៃរង្វង់ថ្មី (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R' = R = 5\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(S = 3.14 \times 25 = 78.5\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>គេរំកិលត្រីកោណ <span class="mi">\(ABC\)</span> តាមវ៉ិចទ័រ <span class="mi">\(\vec{AA'} = \vec{u}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បង្ហាញថាចតុកោណ <span class="mi">\(ABB'A'\)</span> ជាប្រលេឡូក្រាម</p></li>
+<li><p>ទាញបញ្ជាក់ថា <span class="mi">\(A'B' = AB\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\vec{AA'} = \vec{BB'} \Rightarrow AA' \parallel BB'\)</span> និង <span class="mi">\(AA' = BB'\)</span> នាំឱ្យ <span class="mi">\(ABB'A'\)</span> ជាប្រលេឡូក្រាម។</p></li>
+<li><p>ជ្រុងឈមប្រលេឡូក្រាមស្មើគ្នា នាំឱ្យ <span class="mi">\(A'B' = AB\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>គេមានចំណុច <span class="mi">\(P(-2, 3)\)</span> ត្រូវរំកិលទៅស្ដាំ ៣ ឯកតា និងចុះក្រោម ៥ ឯកតា ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកូអរដោនេនៃរូបភាព <span class="mi">\(P'\)</span></p></li>
+<li><p>តើ <span class="mi">\(P'\)</span> ស្ថិតនៅក្នុងកាដ្រង់ណា?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(P'(-2 + 3, 3 - 5) = P'(1, -2)\)</span></p></li>
+<li><p><span class="mi">\(x &gt; 0, y &lt; 0 \Rightarrow P'\)</span> នៅ កាដ្រង់ទី ៤។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គេមានបន្ទាត់ <span class="mi">\((d)\)</span> មួយត្រូវបានរំកិលតាមវ៉ិចទ័រ <span class="mi">\(\vec{u}\)</span> ទៅជាបន្ទាត់ <span class="mi">\((d')\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>បញ្ជាក់ពីទីតាំងធៀបរវាង <span class="mi">\((d)\)</span> និង <span class="mi">\((d')\)</span></p></li>
+<li><p>តើនៅពេលណាដែល <span class="mi">\((d') \equiv (d)\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\((d') \parallel (d)\)</span> (ស្របគ្នា)</p></li>
+<li><p><span class="mi">\((d') \equiv (d)\)</span> នៅពេល <span class="mi">\(\vec{u}\)</span> ស្របនឹង <span class="mi">\((d)\)</span> ឬ <span class="mi">\(\vec{u} = \vec{0}\)</span>។</p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៩ ភាពឆ្លុះ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c19">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L18.html"><small>← មេរៀនមុន</small><b>មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត</b></a><a class="next" href="L20.html"><small>មេរៀនបន្ទាប់ →</small><b>ប្រូបាប</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុច <span class=\"mi\">\\(M'\\)<\/span> ឆ្លុះនឹង <span class=\"mi\">\\(M\\)<\/span> ធៀបនឹងចំណុច <span class=\"mi\">\\(O\\)<\/span> កាលណា ៖", "options": ["<span class=\"mi\">\\(O\\)<\/span> ជាចំណុចកណ្ដាលនៃ <span class=\"mi\">\\([MM']\\)<\/span>", "<span class=\"mi\">\\(M\\)<\/span> ជាចំណុចកណ្ដាលនៃ <span class=\"mi\">\\([OM']\\)<\/span>", "<span class=\"mi\">\\(M'\\)<\/span> ជាចំណុចកណ្ដាលនៃ <span class=\"mi\">\\([OM]\\)<\/span>", "<span class=\"mi\">\\(OM + OM' = MM'\\)<\/span> ដោយ <span class=\"mi\">\\(O\\)<\/span> មិននៅកណ្ដាល"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុច <span class=\"mi\">\\(O\\)<\/span> នៅក្នុងភាពឆ្លុះធៀបនឹងចំណុច <span class=\"mi\">\\(O\\)<\/span> ហៅថា ៖", "options": ["អ័ក្សឆ្លុះ", "ផ្ចិតឆ្លុះ", "កំពូលឆ្លុះ", "ចំណុចកាត់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុចឆ្លុះនៃផ្ចិតឆ្លុះ <span class=\"mi\">\\(O\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> គឺ ៖", "options": ["ចំណុច <span class=\"mi\">\\(M\\)<\/span>", "ចំណុច <span class=\"mi\">\\(M'\\)<\/span>", "ខ្លួនវាផ្ទាល់ (<span class=\"mi\">\\(O\\)<\/span>)", "គ្មានរូបភាព"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(M'\\)<\/span> ឆ្លុះនឹង <span class=\"mi\">\\(M\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> ហើយ <span class=\"mi\">\\(OM = 5\\text{ cm}\\)<\/span> នោះប្រវែង <span class=\"mi\">\\(MM'\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(7.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(15\\text{ cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(MM' = 12\\text{ cm}\\)<\/span> ហើយ <span class=\"mi\">\\(M'\\)<\/span> ឆ្លុះនឹង <span class=\"mi\">\\(M\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> នោះ <span class=\"mi\">\\(OM\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(12\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(24\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមលក្ខណៈខាងក្រោម តើមួយណាត្រឹមត្រូវសម្រាប់ភាពឆ្លុះធៀបនឹងចំណុច?", "options": ["<span class=\"mi\">\\(M, O, M'\\)<\/span> បង្កើតបានត្រីកោណកែង", "<span class=\"mi\">\\(M, O, M'\\)<\/span> រត់ត្រង់ជួរគ្នា និង <span class=\"mi\">\\(OM = OM'\\)<\/span>", "<span class=\"mi\">\\(OM\\)<\/span> កែងនឹង <span class=\"mi\">\\(OM'\\)<\/span>", "<span class=\"mi\">\\(OM'\\)<\/span> វែងជាង <span class=\"mi\">\\(OM\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A'\\)<\/span> និង <span class=\"mi\">\\(B'\\)<\/span> ជាចំណុចឆ្លុះនៃ <span class=\"mi\">\\(A\\)<\/span> និង <span class=\"mi\">\\(B\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> នោះអង្កត់ <span class=\"mi\">\\([A'B']\\)<\/span> ៖", "options": ["កែងនឹង <span class=\"mi\">\\([AB]\\)<\/span>", "ស្រប និងប៉ុន <span class=\"mi\">\\([AB]\\)<\/span>", "ខ្លីជាង <span class=\"mi\">\\([AB]\\)<\/span>", "កាត់កែងនឹង <span class=\"mi\">\\([AB]\\)<\/span> ត្រង់ <span class=\"mi\">\\(O\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\widehat{A'B'C'}\\)<\/span> ជាមុំឆ្លុះនៃ <span class=\"mi\">\\(\\widehat{ABC} = 65^\\circ\\)<\/span> ធៀបនឹងចំណុច <span class=\"mi\">\\(O\\)<\/span> នោះ <span class=\"mi\">\\(\\widehat{A'B'C'}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(25^\\circ\\)<\/span>", "<span class=\"mi\">\\(65^\\circ\\)<\/span>", "<span class=\"mi\">\\(115^\\circ\\)<\/span>", "<span class=\"mi\">\\(130^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\triangle A'B'C'\\)<\/span> ឆ្លុះនឹង <span class=\"mi\">\\(\\triangle ABC\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> នោះត្រីកោណទាំងពីរ ៖", "options": ["មានរាងដូចគ្នាតែទំហំខុសគ្នា", "ជាត្រីកោណប៉ុនគ្នា", "ត្រីកោណមួយធំជាងមួយទៀត", "គ្មានទំនាក់ទំនងគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំណុចបី <span class=\"mi\">\\(A, B, C\\)<\/span> រត់ត្រង់ជួរគ្នា។ រូបភាពឆ្លុះ <span class=\"mi\">\\(A', B', C'\\)<\/span> របស់វាធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> ៖", "options": ["រត់ត្រង់ជួរគ្នាដែរ", "បង្កើតបានជាត្រីកោណ", "បង្កើតបានជាមុំកែង", "មិនអាចកំណត់បាន"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបធរណីមាត្រណាខាងក្រោមនេះដែលមានផ្ចិតឆ្លុះ?", "options": ["ត្រីកោណសមបាត", "ត្រីកោណសម័ង្ស", "ប្រលេឡូក្រាម", "ត្រីកោណកែង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផ្ចិតឆ្លុះនៃប្រលេឡូក្រាមគឺជា ៖", "options": ["កំពូលមួយរបស់វា", "ចំណុចកណ្ដាលនៃជ្រុងមួយ", "ចំណុចប្រសព្វអង្កត់ទ្រូងទាំងពីរ", "ចំណុចណាមួយនៅខាងក្នុង"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផ្ចិតឆ្លុះនៃរង្វង់ <span class=\"mi\">\\(\\mathcal{C}(O, R)\\)<\/span> គឺ ៖", "options": ["ចំណុចលើរង្វង់", "ផ្ចិត <span class=\"mi\">\\(O\\)<\/span> នៃរង្វង់", "ចុងនៃអង្កត់ផ្ចិត", "គ្មានផ្ចិតឆ្លុះទេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបណាខាងក្រោមនេះដែល<strong>គ្មាន<\/strong>ផ្ចិតឆ្លុះ?", "options": ["ការ៉េ", "ចតុកោណកែង", "ត្រីកោណសម័ង្ស", "ចតុកោណស្មើ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចតុកោណកែងមួយមានផ្ចិតឆ្លុះត្រង់ ៖", "options": ["ចំណុចប្រសព្វអង្កត់ទ្រូង", "កំពូលណាមួយ", "ចំណុចកណ្ដាលជ្រុងវែង", "គ្មានផ្ចិតឆ្លុះ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(S\\)<\/span> ជាក្រឡាផ្ទៃនៃពហុកោណមួយ ហើយ <span class=\"mi\">\\(S'\\)<\/span> ជាក្រឡាផ្ទៃរូបឆ្លុះរបស់វាធៀបនឹងចំណុច នោះ ៖", "options": ["<span class=\"mi\">\\(S' = 2S\\)<\/span>", "<span class=\"mi\">\\(S' = S\\)<\/span>", "<span class=\"mi\">\\(S' = \\frac{S}{2}\\)<\/span>", "<span class=\"mi\">\\(S' = S^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពឆ្លុះនៃបន្ទាត់ <span class=\"mi\">\\((d)\\)<\/span> កាត់តាមផ្ចិតឆ្លុះ <span class=\"mi\">\\(O\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> គឺ ៖", "options": ["បន្ទាត់កែងនឹង <span class=\"mi\">\\((d)\\)<\/span>", "បន្ទាត់ <span class=\"mi\">\\((d)\\)<\/span> ខ្លួនឯង", "បន្ទាត់ស្របនឹង <span class=\"mi\">\\((d)\\)<\/span>", "ចំណុច <span class=\"mi\">\\(O\\)<\/span> តែមួយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបភាពឆ្លុះនៃបន្ទាត់ <span class=\"mi\">\\((d)\\)<\/span> មិនកាត់តាមផ្ចិត <span class=\"mi\">\\(O\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(O\\)<\/span> ជាបន្ទាត់ <span class=\"mi\">\\((d')\\)<\/span> ដែល ៖", "options": ["<span class=\"mi\">\\((d') \\perp (d)\\)<\/span>", "<span class=\"mi\">\\((d') \\parallel (d)\\)<\/span>", "<span class=\"mi\">\\((d')\\)<\/span> កាត់ <span class=\"mi\">\\((d)\\)<\/span>", "<span class=\"mi\">\\((d') \\equiv (d)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចំណុចកណ្ដាលនៃអង្កត់មួយ ៖", "options": ["ជាផ្ចិតឆ្លុះនៃអង្កត់នោះ", "ជាអ័ក្សឆ្លុះនៃអង្កត់នោះ", "មិនមែនជាផ្ចិតឆ្លុះទេ", "ជាកំពូលនៃអង្កត់នោះ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "អក្សរឡាតាំងណាខាងក្រោមនេះដែលមានផ្ចិតឆ្លុះ?", "options": ["A", "M", "H", "T"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំណុច <span class=\"mi\">\\(M'\\)<\/span> ឆ្លុះនឹង <span class=\"mi\">\\(M\\)<\/span> ធៀបនឹងបន្ទាត់ <span class=\"mi\">\\((\\Delta)\\)<\/span> កាលណា <span class=\"mi\">\\((\\Delta)\\)<\/span> ជា ៖", "options": ["បន្ទាត់ស្របនឹង <span class=\"mi\">\\([MM']\\)<\/span>", "មេដ្យាទ័រនៃអង្កត់ <span class=\"mi\">\\([MM']\\)<\/span>", "បន្ទាត់កាត់តាម <span class=\"mi\">\\(M\\)<\/span>", "កន្លះបន្ទាត់ពុះមុំ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ <span class=\"mi\">\\((\\Delta)\\)<\/span> នៅក្នុងភាពឆ្លុះធៀបនឹងបន្ទាត់ ហៅថា ៖", "options": ["ផ្ចិតឆ្លុះ", "អ័ក្សឆ្លុះ", "បន្ទាត់ប៉ះ", "អង្កត់ទ្រូង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(M\\)<\/span> ស្ថិតនៅលើអ័ក្សឆ្លុះ <span class=\"mi\">\\((\\Delta)\\)<\/span> នោះរូបភាពឆ្លុះ <span class=\"mi\">\\(M'\\)<\/span> របស់វាគឺ ៖", "options": ["នៅក្រៅបន្ទាត់ <span class=\"mi\">\\((\\Delta)\\)<\/span>", "ត្រួតស៊ីគ្នានឹង <span class=\"mi\">\\(M\\)<\/span> (<span class=\"mi\">\\(M' \\equiv M\\)<\/span>)", "គ្មានរូបភាព", "នៅត្រង់គល់កូអរដោនេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើចម្ងាយពី <span class=\"mi\">\\(M\\)<\/span> ទៅអ័ក្សឆ្លុះ <span class=\"mi\">\\((\\Delta)\\)<\/span> ស្មើនឹង <span class=\"mi\">\\(4\\text{ cm}\\)<\/span> នោះប្រវែង <span class=\"mi\">\\(MM'\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(8\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(16\\text{ cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(MM' = 14\\text{ cm}\\)<\/span> នោះចម្ងាយពី <span class=\"mi\">\\(M\\)<\/span> ទៅអ័ក្សឆ្លុះ <span class=\"mi\">\\((\\Delta)\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(3.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(7\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(14\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(28\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បន្ទាត់ <span class=\"mi\">\\((\\Delta)\\)<\/span> កាត់អង្កត់ <span class=\"mi\">\\([MM']\\)<\/span> ត្រង់ <span class=\"mi\">\\(H\\)<\/span>។ លក្ខខណ្ឌដើម្បីឱ្យ <span class=\"mi\">\\((\\Delta)\\)<\/span> ជាអ័ក្សឆ្លុះគឺ ៖", "options": ["<span class=\"mi\">\\((\\Delta) \\perp [MM']\\)<\/span> និង <span class=\"mi\">\\(HM = HM'\\)<\/span>", "<span class=\"mi\">\\((\\Delta) \\parallel [MM']\\)<\/span>", "<span class=\"mi\">\\(HM = 2HM'\\)<\/span>", "<span class=\"mi\">\\((\\Delta)\\)<\/span> បង្កើតមុំ <span class=\"mi\">\\(45^\\circ\\)<\/span> ជាមួយ <span class=\"mi\">\\([MM']\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពឆ្លុះនៃអង្កត់ <span class=\"mi\">\\([AB]\\)<\/span> ធៀបនឹងបន្ទាត់ <span class=\"mi\">\\((\\Delta)\\)<\/span> គឺជាអង្កត់ <span class=\"mi\">\\([A'B']\\)<\/span> ដែល ៖", "options": ["<span class=\"mi\">\\(A'B' = AB\\)<\/span>", "<span class=\"mi\">\\(A'B' &gt; AB\\)<\/span>", "<span class=\"mi\">\\(A'B' &lt; AB\\)<\/span>", "<span class=\"mi\">\\(A'B' = 2AB\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\triangle A'B'C'\\)<\/span> ឆ្លុះនឹង <span class=\"mi\">\\(\\triangle ABC\\)<\/span> ធៀបនឹងបន្ទាត់ <span class=\"mi\">\\((\\Delta)\\)<\/span> នោះ ៖", "options": ["<span class=\"mi\">\\(\\triangle A'B'C' \\cong \\triangle ABC\\)<\/span>", "<span class=\"mi\">\\(\\triangle A'B'C'\\)<\/span> ធំជាង <span class=\"mi\">\\(\\triangle ABC\\)<\/span>", "ក្រឡាផ្ទៃទាំងពីរខុសគ្នា", "មុំទាំងបីប្រែប្រួលទំហំ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបភាពឆ្លុះនៃរង្វង់ <span class=\"mi\">\\(\\mathcal{C}(O, R)\\)<\/span> ធៀបនឹងបន្ទាត់ <span class=\"mi\">\\((\\Delta)\\)<\/span> គឺជារង្វង់ <span class=\"mi\">\\(\\mathcal{C}'(O', R')\\)<\/span> ដែល ៖", "options": ["<span class=\"mi\">\\(R' = 2R\\)<\/span>", "<span class=\"mi\">\\(R' = R\\)<\/span>", "<span class=\"mi\">\\(R' = \\frac{R}{2}\\)<\/span>", "<span class=\"mi\">\\(R' = R^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "អក្សរឡាតាំងណាខាងក្រោមនេះដែលមានអ័ក្សឆ្លុះបញ្ឈរ?", "options": ["B", "E", "A", "P"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ត្រីកោណសមបាត (មិនសម័ង្ស) មានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "គ្មានទេ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ត្រីកោណសម័ង្សមានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចតុកោណកែង (មិនមែនការ៉េ) មានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "គ្មានទេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ការ៉េមួយមានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចតុកោណស្មើ (មិនមែនការ៉េ) មានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "គ្មានទេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រង្វង់មួយមានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "រាប់មិនអស់"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "អង្កត់មួយមានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "គ្មានទេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំមួយមានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span> (កន្លះបន្ទាត់ពុះមុំ)", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "គ្មានទេ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបធរណីមាត្រណាខាងក្រោមនេះដែល<strong>គ្មាន<\/strong>អ័ក្សឆ្លុះ?", "options": ["ត្រីកោណសម័ង្ស", "ត្រីកោណសមបាត", "ប្រលេឡូក្រាមទូទៅ", "ការ៉េ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ឆកោណនិយ័ត (៦ ជ្រុងស្មើ និងមុំស្មើ) មានអ័ក្សឆ្លុះចំនួន ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បំប្លែងកិលតាមវ៉ិចទ័រ <span class=\"mi\">\\(\\vec{u}\\)<\/span> រំកិលចំណុច <span class=\"mi\">\\(M\\)<\/span> ទៅ <span class=\"mi\">\\(M'\\)<\/span> ដោយ ៖", "options": ["<span class=\"mi\">\\(\\vec{MM'} = \\vec{u}\\)<\/span>", "<span class=\"mi\">\\(\\vec{M'M} = \\vec{u}\\)<\/span>", "<span class=\"mi\">\\(MM' \\perp \\vec{u}\\)<\/span>", "<span class=\"mi\">\\(MM' = 2u\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងបំប្លែងកិល អង្កត់ភ្ជាប់ចំណុចដើម និងចំណុចរូបភាពនីមួយៗ ៖", "options": ["កាត់គ្នាត្រង់ចំណុចមួយ", "ស្របគ្នា និងមានប្រវែងស្មើគ្នា", "កែងគ្នាទៅវិញទៅមក", "មានប្រវែងខុសៗគ្នា"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បំប្លែងកិលរក្សា ៖", "options": ["តែប្រវែងអង្កត់ប៉ុណ្ណោះ", "តែរង្វាស់មុំប៉ុណ្ណោះ", "ប្រវែង រង្វាស់មុំ និងក្រឡាផ្ទៃ", "តែទីតាំងចំណុចប៉ុណ្ណោះ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃបន្ទាត់មួយតាមបំប្លែងកិល គឺជា ៖", "options": ["បន្ទាត់កែងនឹងបន្ទាត់ដើម", "បន្ទាត់ស្របនឹងបន្ទាត់ដើម", "ខ្សែកោងមួយ", "ចំណុចមួយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេរំកិលចំណុច <span class=\"mi\">\\(A(1, 2)\\)<\/span> ទៅស្ដាំ ៣ ឯកតា។ កូអរដោនេថ្មីនៃ <span class=\"mi\">\\(A'\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\((4, 2)\\)<\/span>", "<span class=\"mi\">\\((1, 5)\\)<\/span>", "<span class=\"mi\">\\((4, 5)\\)<\/span>", "<span class=\"mi\">\\((-2, 2)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេរំកិលចំណុច <span class=\"mi\">\\(B(4, 5)\\)<\/span> ចុះក្រោម ២ ឯកតា។ កូអរដោនេថ្មីនៃ <span class=\"mi\">\\(B'\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\((2, 5)\\)<\/span>", "<span class=\"mi\">\\((4, 3)\\)<\/span>", "<span class=\"mi\">\\((4, 7)\\)<\/span>", "<span class=\"mi\">\\((6, 5)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គេរំកិលចំណុច <span class=\"mi\">\\(C(2, 3)\\)<\/span> ទៅស្ដាំ ៣ ឯកតា និងឡើងលើ ៤ ឯកតា។ កូអរដោនេថ្មីនៃ <span class=\"mi\">\\(C'\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\((5, 7)\\)<\/span>", "<span class=\"mi\">\\((5, 1)\\)<\/span>", "<span class=\"mi\">\\((-1, 7)\\)<\/span>", "<span class=\"mi\">\\((6, 12)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ត្រីកោណមួយមានក្រឡាផ្ទៃ <span class=\"mi\">\\(15\\text{ cm}^2\\)<\/span>។ ក្រោយពេលកិលតាមវ៉ិចទ័រមួយ ក្រឡាផ្ទៃរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(15\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(30\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(45\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(7.5\\text{ cm}^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបភាពនៃរង្វង់កាំ <span class=\"mi\">\\(R = 4\\text{ cm}\\)<\/span> តាមបំប្លែងកិល គឺជារង្វង់ដែលមានកាំ ៖", "options": ["<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(8\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(16\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បំប្លែងធរណីមាត្រដែលរក្សារូបរាង និងទំហំនៃរូបដើមឱ្យនៅដដែល ហៅថា ៖", "options": ["អ៊ីសូមេទ្រី (Isometry)", "អូម៉ូតេទី (Homothety)", "ចំណោល (Projection)", "បង្រួម (Reduction)"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

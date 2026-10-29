@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២ : ស្វ័យគុណ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២ «ស្វ័យគុណ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២ : ស្វ័យគុណ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២ «ស្វ័យគុណ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g8">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li aria-current="page">មេរៀនទី ២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២</span>
+      <div><span class="ls-kicker">មេរៀនទី ២ · គណិតវិទ្យាថ្នាក់ទី ៨</span><h1>ស្វ័យគុណ</h1><div class="ls-chips"><span class="chip chip-soon">ពីជគណិត</span><span class="chip chip-soon">៤ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណនៃស្វ័យគុណ</a></li><li class="sub"><a href="#u2">២. លក្ខណៈ និងរូបមន្តនៃស្វ័យគុណ</a></li><li class="sub"><a href="#u3">៣. ស្វ័យគុណនៃចំនួនដប់ និងទម្រង់វិទ្យាសាស្ត្រ</a></li><li class="sub"><a href="#u4">៤. ឫសការ៉េ និងឫសគូប</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-8.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃស្វ័យគុណ និងការកត់ត្រាចំនួនមហាសាល</b></header><div class="bx-b">
+<p><strong>ស្វ័យគុណ (Powers or Exponents)</strong> គឺជាភាសាគណិតវិទ្យាដ៏មានឥទ្ធិពលបំផុតមួយដែលត្រូវបានបង្កើតឡើងដើម្បីកត់ត្រា និងគណនាចំនួនដែលធំមហាសាល ឬតូចល្អិតបំផុតក្នុងសកលលោក ៖</p>
+<ul>
+<li><p><strong>Archimedes នៃ Syracuse (២៨៧–២១២ មុន គ.ស.)៖</strong> ក្នុងស្នាដៃដ៏ល្បីល្បាញឈ្មោះថា <strong>"The Sand Reckoner"</strong> (អ្នករាប់គ្រាប់ខ្សាច់) គណិតវិទូក្រិកបុរាណ Archimedes បានបង្កើតប្រព័ន្ធរបាប់ស្វ័យគុណនៃគោល <span class="mi">\(10\)</span> លើកដំបូង ដើម្បីប៉ាន់ប្រមាណចំនួនគ្រាប់ខ្សាច់ដែលអាចបំពេញពិភពចក្រវាលទាំងមូល ដោយលោកបានគណនាឃើញរហូតដល់ <span class="mi">\(10^{63}\)</span> គ្រាប់! លោកក៏ជាមនុស្សដំបូងដែលបានរកឃើញលក្ខណៈនៃស្វ័យគុណ <span class="mi">\(10^a \times 10^b = 10^{a+b}\)</span>។</p></li>
+<li><p><strong>Nicolas Chuquet (១៤៤៥–១៤៨៨)៖</strong> គណិតវិទូជនជាតិបារាំង បានប្រើប្រាស់និទស្សន្តដើម្បីតាងស្វ័យគុណនៅក្នុងសៀវភៅ <em>"Triparty en la science des nombres"</em>។</p></li>
+<li><p><strong>René Descartes (១៥៩៦–១៦៥០)៖</strong> គណិតវិទូ និងទស្សនវិទូជនជាតិបារាំង បានបង្កើតនិមិត្តសញ្ញានិទស្សន្តទំនើបដូចដែលយើងប្រើប្រាស់សព្វថ្ងៃ (<span class="mi">\(a^2, a^3, x^n\)</span>) នៅក្នុងសៀវភៅធរណីមាត្រ <strong>"La Géométrie"</strong> ក្នុងឆ្នាំ ១៦៣៧។</p></li>
+<li><p><strong>John Wallis (១៦១៦–១៧០៣) និង Sir Isaac Newton (១៦៤៣–១៧២៧)៖</strong> បានពង្រីកសញ្ញាណនៃស្វ័យគុណពីនិទស្សន្តជាចំនួនគត់វិជ្ជមាន ទៅជានិទស្សន្តអវិជ្ជមាន (<span class="mi">\(a^{-n} = \frac{1}{a^n}\)</span>) និងនិទស្សន្តជាប្រភាគ (<span class="mi">\(a^{m/n} = \sqrt[n]{a^m}\)</span>)។</p></li>
+<li><p><strong>សារសំខាន់ក្នុងវិទ្យាសាស្ត្រទំនើប៖</strong> សព្វថ្ងៃនេះ ស្វ័យគុណត្រូវបានប្រើក្នុងទម្រង់ស្តង់ដារវិទ្យាសាស្ត្រ (Scientific Notation) ដើម្បីវាស់ចម្ងាយពីផែនដីទៅកាន់កាឡាក់ស៊ីនានា (គិតជាឆ្នាំពន្លឺ <span class="mi">\(9.46 \times 10^{12}\,\text{km}\)</span>), វាស់ម៉ាសអាតូម និងទំហំវីរុស (<span class="mi">\(10^{-9}\,\text{m}\)</span>)។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សញ្ញាណនៃស្វ័យគុណ</h3>
+<h4>ស្វ័យគុណដែលមាននិទស្សន្តជាចំនួនគត់វិជ្ជមាន</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ស្វ័យគុណ</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(a\)</span> ជាចំនួនសនិទាន និង <span class="mi">\(n\)</span> ជាចំនួនគត់វិជ្ជមាន (<span class="mi">\(n \ge 1\)</span>) នោះ <strong>ស្វ័យគុណទី <span class="mi">\(n\)</span> នៃ <span class="mi">\(a\)</span></strong> គឺជាផលគុណនៃ <span class="mi">\(n\)</span> កត្តាស្មើៗគ្នានឹង <span class="mi">\(a\)</span> ៖ <div class="md">\[a^n = \underbrace{a \times a \times a \times \dots \times a}_{n \text{ កត្តា}}\]</div></p>
+<ul>
+<li><p><span class="mi">\(a\)</span> ហៅថា <strong>គោល</strong> (Base)</p></li>
+<li><p><span class="mi">\(n\)</span> ហៅថា <strong>និទស្សន្ត</strong> (Exponent or Index)</p></li>
+<li><p><span class="mi">\(a^n\)</span> អានថា «<span class="mi">\(a\)</span> ស្វ័យគុណ <span class="mi">\(n\)</span>» ឬ «<span class="mi">\(a\)</span> លើកជាស្វ័យគុណ <span class="mi">\(n\)</span>»</p></li>
+</ul>
+</div></section>
+<p><em>ករណីពិសេស៖</em></p>
+<ul>
+<li><p><span class="mi">\(a^1 = a\)</span></p></li>
+<li><p><span class="mi">\(a^2 = a \times a\)</span> (អានថា «<span class="mi">\(a\)</span> ការ៉េ»)</p></li>
+<li><p><span class="mi">\(a^3 = a \times a \times a\)</span> (អានថា «<span class="mi">\(a\)</span> គូប»)</p></li>
+</ul>
+<section class="bx bx-green"><header class="bx-h"><b>សញ្ញានៃស្វ័យគុណ</b></header><div class="bx-b">
+<ul>
+<li><p>ចំនួនវិជ្ជមានលើកជាស្វ័យគុណគូ ឬសេស តែងតែទទួលបានលទ្ធផល <strong>វិជ្ជមាន</strong> (<span class="mi">\(&gt; 0\)</span>)។</p></li>
+<li><p>ចំនួនអវិជ្ជមានលើកជាស្វ័យគុណគូ ទទួលបានលទ្ធផល <strong>វិជ្ជមាន</strong> ៖ <span class="mi">\((-a)^{2k} &gt; 0\)</span>។<br/>
+<em>ឧទាហរណ៍ ៖</em> <span class="mi">\((-3)^2 = (-3) \times (-3) = +9\)</span></p></li>
+<li><p>ចំនួនអវិជ្ជមានលើកជាស្វ័យគុណសេស ទទួលបានលទ្ធផល <strong>អវិជ្ជមាន</strong> ៖ <span class="mi">\((-a)^{2k+1} &lt; 0\)</span>។<br/>
+<em>ឧទាហរណ៍ ៖</em> <span class="mi">\((-2)^3 = (-2) \times (-2) \times (-2) = -8\)</span></p></li>
+<li><p><strong>ប្រយ័ត្ន ៖</strong> <span class="mi">\((-a)^n \ne -a^n\)</span> (លើកលែងតែ <span class="mi">\(n\)</span> ជាចំនួនសេស)។<br/>
+<em>ឧទាហរណ៍ ៖</em> <span class="mi">\((-4)^2 = 16\)</span> រីឯ <span class="mi">\(-4^2 = -(4 \times 4) = -16\)</span>។</p></li>
+</ul>
+</div></section>
+<h4>ស្វ័យគុណដែលមាននិទស្សន្តសូន្យ និងអវិជ្ជមាន</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>និទស្សន្តសូន្យ និងអវិជ្ជមាន</b></header><div class="bx-b">
+<p>ចំពោះគ្រប់ចំនួនសនិទាន <span class="mi">\(a \ne 0\)</span> និងគ្រប់ចំនួនគត់វិជ្ជមាន <span class="mi">\(n\)</span> ៖</p>
+<ol class="list oldef cols1">
+<li><p>ស្វ័យគុណដែលមាននិទស្សន្តសូន្យ ស្មើនឹង <span class="mi">\(1\)</span> ជានិច្ច ៖ <div class="md">\[a^0 = 1 \quad{} (a \ne 0)\]</div></p></li>
+<li><p>ស្វ័យគុណដែលមាននិទស្សន្តអវិជ្ជមាន គឺជាចម្រាសនៃស្វ័យគុណដែលមាននិទស្សន្តវិជ្ជមាន ៖ <div class="md">\[a^{-n} = \frac{1}{a^n} \quad{}\text{និង}\quad{} \frac{1}{a^{-n}} = a^n \quad{} (a \ne 0)\]</div></p></li>
+<li><p>ចំពោះប្រភាគ ៖ <div class="md">\[\left(\frac{a}{b}\right)^{-n} = \left(\frac{b}{a}\right)^n = \frac{b^n}{a^n} \quad{} (a \ne 0, b \ne 0)\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃស្វ័យគុណខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2^{-3}\)</span></p></li>
+<li><p><span class="mi">\((-5)^0 + 3^{-1}\)</span></p></li>
+<li><p><span class="mi">\(\left(\dfrac{2}{3}\right)^{-2}\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(2^{-3} = \dfrac{1}{2^3} = \dfrac{1}{8}\)</span></p></li>
+<li><p><span class="mi">\((-5)^0 + 3^{-1} = 1 + \dfrac{1}{3} = \dfrac{4}{3}\)</span></p></li>
+<li><p><span class="mi">\(\left(\dfrac{2}{3}\right)^{-2} = \left(\dfrac{3}{2}\right)^2 = \dfrac{3^2}{2^2} = \dfrac{9}{4}\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាស្វ័យគុណនិទស្សន្តអវិជ្ជមាន</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = 4^{-2} \times 2^5 - 10^0\)</span></p></li>
+<li><p><span class="mi">\(B = \left(\dfrac{1}{3}\right)^{-3} + \left(\dfrac{2}{5}\right)^{-1} \times \dfrac{4}{5}\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u2">លក្ខណៈ និងរូបមន្តនៃស្វ័យគុណ</h3>
+<section class="bx bx-amber"><header class="bx-h"><b>រូបមន្តគ្រឹះនៃស្វ័យគុណ</b></header><div class="bx-b">
+<p>ចំពោះគ្រប់ចំនួនសនិទាន <span class="mi">\(a, b\)</span> និងគ្រប់ចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(m, n\)</span> (ដោយចៀសវាងការចែកនឹងសូន្យ) ៖</p>
+<ol class="list oldef cols1">
+<li><p><strong>ផលគុណស្វ័យគុណគោលដូចគ្នា ៖</strong> <span class="mi">\(a^m \times a^n = a^{m+n}\)</span></p></li>
+<li><p><strong>ផលចែកស្វ័យគុណគោលដូចគ្នា ៖</strong> <span class="mi">\(\dfrac{a^m}{a^n} = a^{m-n}\)</span></p></li>
+<li><p><strong>ស្វ័យគុណនៃស្វ័យគុណ ៖</strong> <span class="mi">\((a^m)^n = a^{m \times n}\)</span></p></li>
+<li><p><strong>ស្វ័យគុណនៃផលគុណ ៖</strong> <span class="mi">\((a \times b)^n = a^n \times b^n\)</span></p></li>
+<li><p><strong>ស្វ័យគុណនៃផលចែក ៖</strong> <span class="mi">\(\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}\)</span> (<span class="mi">\(b \ne 0\)</span>)</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សរសេរកន្សោមខាងក្រោមជាទម្រង់ស្វ័យគុណសម្រួលរួច ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(P = \dfrac{2^3 \times 2^5 \times (2^2)^4}{2^7 \times 2^4}\)</span></p></li>
+<li><p><span class="mi">\(Q = \dfrac{12^4 \times 15^3}{18^3 \times 10^4}\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><div class="md">\[\begin{aligned}
+    P &amp;= \frac{2^{3+5} \times 2^{2 \times 4}}{2^{7+4}} = \frac{2^8 \times 2^8}{2^{11}} = \frac{2^{16}}{2^{11}} = 2^{16-11} = 2^5 = 32
+    
+\end{aligned}\]</div></p></li>
+<li><p>បំបែកគោលជាកត្តាបឋម (<span class="mi">\(12 = 2^2 \times 3\)</span>, <span class="mi">\(15 = 3 \times 5\)</span>, <span class="mi">\(18 = 2 \times 3^2\)</span>, <span class="mi">\(10 = 2 \times 5\)</span>) ៖ <div class="md">\[\begin{aligned}
+    Q &amp;= \frac{(2^2 \times 3)^4 \times (3 \times 5)^3}{(2 \times 3^2)^3 \times (2 \times 5)^4} \\
+      &amp;= \frac{(2^8 \times 3^4) \times (3^3 \times 5^3)}{(2^3 \times 3^6) \times (2^4 \times 5^4)} = \frac{2^8 \times 3^7 \times 5^3}{2^7 \times 3^6 \times 5^4} \\
+      &amp;= 2^{8-7} \times 3^{7-6} \times 5^{3-4} = 2^1 \times 3^1 \times 5^{-1} = \frac{6}{5} = 1.2
+    
+\end{aligned}\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>សម្រួលកន្សោមស្វ័យគុណ</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(M = \dfrac{a^4 \cdot b^7 \cdot (a^2 b)^3}{(a \cdot b^2)^4}\)</span></p></li>
+<li><p><span class="mi">\(N = \dfrac{25^2 \times 8^3}{10^5 \times 2^{-1}}\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u3">ស្វ័យគុណនៃចំនួនដប់ និងទម្រង់វិទ្យាសាស្ត្រ</h3>
+<h4>ស្វ័យគុណនៃចំនួនដប់</h4>
+<ul>
+<li><p>និទស្សន្តវិជ្ជមាន ៖ <span class="mi">\(10^1 = 10 \;,\; 10^2 = 100 \;,\; 10^3 = 1000 \;,\dots,\; 10^n = 1\underbrace{00\dots0}_{n \text{ លេខសូន្យ}}\)</span></p></li>
+<li><p>និទស្សន្តអវិជ្ជមាន ៖ <span class="mi">\(10^{-1} = 0.1 \;,\; 10^{-2} = 0.01 \;,\; 10^{-3} = 0.001 \;,\dots,\; 10^{-n} = \underbrace{0.00\dots0}_{n \text{ ខ្ទង់ទសភាគ}}1\)</span></p></li>
+</ul>
+<h4>ទម្រង់ស្តង់ដារវិទ្យាសាស្ត្រ (Scientific Notation)</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>ទម្រង់វិទ្យាសាស្ត្រ</b></header><div class="bx-b">
+<p><strong>ទម្រង់វិទ្យាសាស្ត្រ</strong> ឬ <strong>ទម្រង់ស្តង់ដារ</strong> នៃចំនួនមួយ គឺការសរសេរចំនួននោះក្រោមរាង ៖ <div class="md">\[A \times 10^n\]</div> ដែល <span class="mi">\(1 \le A &lt; 10\)</span> (<span class="mi">\(A\)</span> ជាចំនួនទសភាគដែលមានមួយខ្ទង់មិនសូន្យនៅមុខក្បៀស) និង <span class="mi">\(n\)</span> ជាចំនួនគត់រ៉ឺឡាទីប (<span class="mi">\(n \in \mathbb{Z}\)</span>)។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សរសេរចំនួនខាងក្រោមជាទម្រង់វិទ្យាសាស្ត្រ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(149\,600\,000\,\text{km}\)</span> (ចម្ងាយពីផែនដីទៅព្រះអាទិត្យ)</p></li>
+<li><p><span class="mi">\(0.000\,000\,025\,\text{m}\)</span> (ទំហំនៃភាគល្អិត)</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>រំកិលក្បៀសទៅឆ្វេង <span class="mi">\(8\)</span> ខ្ទង់ ៖ <span class="mi">\(149\,600\,000 = 1.496 \times 10^8\,\text{km}\)</span>។</p></li>
+<li><p>រំកិលក្បៀសទៅស្ដាំ <span class="mi">\(8\)</span> ខ្ទង់ ៖ <span class="mi">\(0.000\,000\,025 = 2.5 \times 10^{-8}\,\text{m}\)</span>។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ទម្រង់វិទ្យាសាស្ត្រ</b></header><div class="bx-b">
+<p>សរសេរជាទម្រង់វិទ្យាសាស្ត្រ <span class="mi">\(A \times 10^n\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(54\,000\,000\)</span></p></li>
+<li><p><span class="mi">\(0.000\,385\)</span></p></li>
+<li><p><span class="mi">\((3 \times 10^4) \times (5 \times 10^7)\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{8.4 \times 10^9}{2.1 \times 10^3}\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u4">ឫសការ៉េ និងឫសគូប</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ឫសការ៉េ និងឫសគូប</b></header><div class="bx-b">
+<ul>
+<li><p>បើ <span class="mi">\(a \ge 0\)</span> នោះ <strong>ឫសការ៉េ</strong> នៃ <span class="mi">\(a\)</span> តាងដោយ <span class="mi">\(\sqrt{a}\)</span> គឺជាចំនួនមិនអវិជ្ជមាន <span class="mi">\(x\)</span> ដែល <span class="mi">\(x^2 = a\)</span>។ <div class="md">\[\sqrt{a} = x \iff x^2 = a \quad{} (x \ge 0)\]</div></p></li>
+<li><p><strong>ឫសគូប</strong> នៃចំនួន <span class="mi">\(a\)</span> តាងដោយ <span class="mi">\(\sqrt[3]{a}\)</span> គឺជាចំនួន <span class="mi">\(y\)</span> ដែល <span class="mi">\(y^3 = a\)</span>។ <div class="md">\[\sqrt[3]{a} = y \iff y^3 = a\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>លក្ខណៈរ៉ាឌីកាល់</b></header><div class="bx-b">
+<p>ចំពោះ <span class="mi">\(a \ge 0, b &gt; 0\)</span> ៖ <div class="md">\[\sqrt{a \times b} = \sqrt{a} \times \sqrt{b} \quad{};\quad{} \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}} \quad{};\quad{} \sqrt{a^2} = |a|\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោម ៖ <span class="mi">\(E = \sqrt{144} - \sqrt[3]{-125} + \sqrt{\dfrac{49}{16}}\)</span>។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{aligned}
+E &amp;= 12 - (-5) + \frac{\sqrt{49}}{\sqrt{16}} \\
+  &amp;= 12 + 5 + \frac{7}{4} = 17 + 1.75 = 18.75 = \frac{75}{4}
+\end{aligned}\]</div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គណនាកន្សោមរ៉ាឌីកាល់</b></header><div class="bx-b">
+<p>គណនា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(F = \sqrt{81} \times \sqrt[3]{64} - \sqrt{225} \div \sqrt{25}\)</span></p></li>
+<li><p><span class="mi">\(G = \sqrt{3^2 + 4^2} + \sqrt{13^2 - 12^2}\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>សរសេរផលគុណខាងក្រោមជាទម្រង់ស្វ័យគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(4 \times 4 \times 4 \times 4 \times 4\)</span></p></li>
+<li><p><span class="mi">\((-7) \times (-7) \times (-7)\)</span></p></li>
+<li><p><span class="mi">\(\left(\dfrac{2}{3}\right) \times \left(\dfrac{2}{3}\right) \times \left(\dfrac{2}{3}\right) \times \left(\dfrac{2}{3}\right)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(4 \times 4 \times 4 \times 4 \times 4 = 4^5\)</span></p></li>
+<li><p>b. <span class="mi">\((-7) \times (-7) \times (-7) = (-7)^3\)</span></p></li>
+<li><p>c. <span class="mi">\(\left(\dfrac{2}{3}\right)^4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃស្វ័យគុណ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(3^4\)</span></p></li>
+<li><p><span class="mi">\((-2)^6\)</span></p></li>
+<li><p><span class="mi">\(-2^6\)</span></p></li>
+<li><p><span class="mi">\((-5)^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃនៃស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(3^4 = 81\)</span></p></li>
+<li><p>b. <span class="mi">\((-2)^6 = 64\)</span></p></li>
+<li><p>c. <span class="mi">\(-2^6 = -64\)</span></p></li>
+<li><p>d. <span class="mi">\((-5)^3 = -125\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃស្វ័យគុណប្រភាគ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(\left(\dfrac{1}{2}\right)^5\)</span></p></li>
+<li><p><span class="mi">\(\left(-\dfrac{3}{4}\right)^3\)</span></p></li>
+<li><p><span class="mi">\(\left(-\dfrac{2}{5}\right)^4\)</span></p></li>
+<li><p><span class="mi">\(-\left(\dfrac{3}{2}\right)^4\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាស្វ័យគុណប្រភាគ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\left(\dfrac{1}{2}\right)^5 = \dfrac{1}{32}\)</span></p></li>
+<li><p>b. <span class="mi">\(\left(-\dfrac{3}{4}\right)^3 = -\dfrac{27}{64}\)</span></p></li>
+<li><p>c. <span class="mi">\(\left(-\dfrac{2}{5}\right)^4 = \dfrac{16}{625}\)</span></p></li>
+<li><p>d. <span class="mi">\(-\left(\dfrac{3}{2}\right)^4 = -\dfrac{81}{16}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃស្វ័យគុណនិទស្សន្តសូន្យ និងអវិជ្ជមាន ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(7^0\)</span></p></li>
+<li><p><span class="mi">\((-15)^0\)</span></p></li>
+<li><p><span class="mi">\(4^{-3}\)</span></p></li>
+<li><p><span class="mi">\((-2)^{-5}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនានិទស្សន្តសូន្យ និងអវិជ្ជមាន ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(7^0 = 1\)</span></p></li>
+<li><p>b. <span class="mi">\((-15)^0 = 1\)</span></p></li>
+<li><p>c. <span class="mi">\(4^{-3} = \dfrac{1}{4^3} = \dfrac{1}{64}\)</span></p></li>
+<li><p>d. <span class="mi">\((-2)^{-5} = \dfrac{1}{(-2)^5} = -\dfrac{1}{32}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>សរសេរកន្សោមខាងក្រោមដោយប្រើនិទស្សន្តវិជ្ជមាន ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(x^{-4}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{y^{-6}}\)</span></p></li>
+<li><p><span class="mi">\(\left(\dfrac{a}{b}\right)^{-3}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3 x^{-2}}{y^{-5}}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរដោយនិទស្សន្តវិជ្ជមាន ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x^{-4} = \dfrac{1}{x^4}\)</span></p></li>
+<li><p>b. <span class="mi">\(\dfrac{1}{y^{-6}} = y^6\)</span></p></li>
+<li><p>c. <span class="mi">\(\left(\dfrac{a}{b}\right)^{-3} = \left(\dfrac{b}{a}\right)^3 = \dfrac{b^3}{a^3}\)</span></p></li>
+<li><p>d. <span class="mi">\(\dfrac{3 x^{-2}}{y^{-5}} = \dfrac{3 y^5}{x^2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>សរសេរចំនួនខាងក្រោមជាស្វ័យគុណនៃគោល <span class="mi">\(2\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(16\)</span></p></li>
+<li><p><span class="mi">\(128\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{32}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{64}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាស្វ័យគុណគោល <span class="mi">\(2\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(16 = 2^4\)</span></p></li>
+<li><p>b. <span class="mi">\(128 = 2^7\)</span></p></li>
+<li><p>c. <span class="mi">\(\dfrac{1}{32} = 2^{-5}\)</span></p></li>
+<li><p>d. <span class="mi">\(\dfrac{1}{64} = 2^{-6}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>សរសេរចំនួនខាងក្រោមជាស្វ័យគុណនៃគោល <span class="mi">\(3\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(243\)</span></p></li>
+<li><p><span class="mi">\(729\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{27}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{81}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាស្វ័យគុណគោល <span class="mi">\(3\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(243 = 3^5\)</span></p></li>
+<li><p>b. <span class="mi">\(729 = 3^6\)</span></p></li>
+<li><p>c. <span class="mi">\(\dfrac{1}{27} = 3^{-3}\)</span></p></li>
+<li><p>d. <span class="mi">\(\dfrac{1}{81} = 3^{-4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>សរសេរចំនួនខាងក្រោមជាស្វ័យគុណនៃគោល <span class="mi">\(5\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(125\)</span></p></li>
+<li><p><span class="mi">\(625\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1}{25}\)</span></p></li>
+<li><p><span class="mi">\(0.04\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាស្វ័យគុណគោល <span class="mi">\(5\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(125 = 5^3\)</span></p></li>
+<li><p>b. <span class="mi">\(625 = 5^4\)</span></p></li>
+<li><p>c. <span class="mi">\(\dfrac{1}{25} = 5^{-2}\)</span></p></li>
+<li><p>d. <span class="mi">\(0.04 = \dfrac{4}{100} = \dfrac{1}{25} = 5^{-2}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>គណនាផលគុណស្វ័យគុណគោលដូចគ្នា ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(2^3 \times 2^4\)</span></p></li>
+<li><p><span class="mi">\(5^7 \times 5^{-3}\)</span></p></li>
+<li><p><span class="mi">\(x^5 \times x^8\)</span></p></li>
+<li><p><span class="mi">\(y^{-4} \times y^9\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលគុណស្វ័យគុណគោលដូចគ្នា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2^{3+4} = 2^7 = 128\)</span></p></li>
+<li><p>b. <span class="mi">\(5^{7-3} = 5^4 = 625\)</span></p></li>
+<li><p>c. <span class="mi">\(x^{5+8} = x^{13}\)</span></p></li>
+<li><p>d. <span class="mi">\(y^{-4+9} = y^5\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>គណនាផលចែកស្វ័យគុណគោលដូចគ្នា ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(\dfrac{3^9}{3^4}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{7^4}{7^6}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{a^{12}}{a^5}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{b^{-3}}{b^4}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលចែកស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(3^{9-4} = 3^5 = 243\)</span></p></li>
+<li><p>b. <span class="mi">\(7^{4-6} = 7^{-2} = \dfrac{1}{49}\)</span></p></li>
+<li><p>c. <span class="mi">\(a^{12-5} = a^7\)</span></p></li>
+<li><p>d. <span class="mi">\(b^{-3-4} = b^{-7} = \dfrac{1}{b^7}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គណនាស្វ័យគុណនៃស្វ័យគុណ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\((2^3)^2\)</span></p></li>
+<li><p><span class="mi">\((3^4)^{-2}\)</span></p></li>
+<li><p><span class="mi">\((x^5)^3\)</span></p></li>
+<li><p><span class="mi">\((y^{-2})^{-4}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្វ័យគុណនៃស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2^{3 \times 2} = 2^6 = 64\)</span></p></li>
+<li><p>b. <span class="mi">\(3^{4 \times (-2)} = 3^{-8} = \dfrac{1}{3^8}\)</span></p></li>
+<li><p>c. <span class="mi">\(x^{5 \times 3} = x^{15}\)</span></p></li>
+<li><p>d. <span class="mi">\(y^{(-2) \times (-4)} = y^8\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គណនាស្វ័យគុណនៃផលគុណ និងផលចែក ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\((2 \times 3)^3\)</span></p></li>
+<li><p><span class="mi">\((3x^2)^4\)</span></p></li>
+<li><p><span class="mi">\(\left(\dfrac{2a}{b^3}\right)^3\)</span></p></li>
+<li><p><span class="mi">\(\left(-\dfrac{3x^3}{2y^2}\right)^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស្វ័យគុណនៃផលគុណ និងផលចែក ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(6^3 = 216\)</span></p></li>
+<li><p>b. <span class="mi">\(3^4 \cdot (x^2)^4 = 81 x^8\)</span></p></li>
+<li><p>c. <span class="mi">\(\dfrac{2^3 a^3}{(b^3)^3} = \dfrac{8 a^3}{b^9}\)</span></p></li>
+<li><p>d. <span class="mi">\(\dfrac{(-3)^2 (x^3)^2}{2^2 (y^2)^2} = \dfrac{9 x^6}{4 y^4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមស្វ័យគុណ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = \dfrac{2^5 \times 2^7 \times 2^{-3}}{2^4 \times 2^2}\)</span></p></li>
+<li><p><span class="mi">\(B = \dfrac{3^8 \times (3^2)^3}{3^5 \times 3^7}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(A = \dfrac{2^{5+7-3}}{2^{4+2}} = \dfrac{2^9}{2^6} = 2^{9-6} = 2^3 = 8\)</span></p></li>
+<li><p>b. <span class="mi">\(B = \dfrac{3^8 \times 3^6}{3^{5+7}} = \dfrac{3^{14}}{3^{12}} = 3^2 = 9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមស្វ័យគុណអញ្ញាត ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(M = \dfrac{x^4 y^6 \cdot (x y^2)^3}{x^5 y^8}\)</span></p></li>
+<li><p><span class="mi">\(N = \dfrac{(2a^2 b^3)^4}{8 a^5 b^9}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោមអញ្ញាត ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(M = \dfrac{x^4 y^6 \cdot x^3 y^6}{x^5 y^8} = \dfrac{x^7 y^{12}}{x^5 y^8} = x^2 y^4\)</span></p></li>
+<li><p>b. <span class="mi">\(N = \dfrac{16 a^8 b^{12}}{8 a^5 b^9} = 2 a^{8-5} b^{12-9} = 2 a^3 b^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមដោយបំបែកគោលជាកត្តាបឋម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(P = \dfrac{6^4 \times 10^3}{15^2 \times 2^6}\)</span></p></li>
+<li><p><span class="mi">\(Q = \dfrac{14^3 \times 15^4}{21^3 \times 10^3}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកគោលជាកត្តាបឋម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(P = \dfrac{(2 \times 3)^4 \times (2 \times 5)^3}{(3 \times 5)^2 \times 2^6} = \dfrac{2^7 \times 3^4 \times 5^3}{2^6 \times 3^2 \times 5^2} = 2 \times 3^2 \times 5 = 90\)</span></p></li>
+<li><p>b. <span class="mi">\(Q = \dfrac{(2 \times 7)^3 \times (3 \times 5)^4}{(3 \times 7)^3 \times (2 \times 5)^3} = \dfrac{2^3 \times 3^4 \times 5^4 \times 7^3}{2^3 \times 3^3 \times 5^3 \times 7^3} = 3 \times 5 = 15\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>សម្រួលកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(R = \dfrac{4^3 \times 9^2 \times 25}{6^4 \times 10^2}\)</span></p></li>
+<li><p><span class="mi">\(S = \dfrac{8^2 \times 27^3 \times 5^4}{12^3 \times 30^2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(R = \dfrac{(2^2)^3 \times (3^2)^2 \times 5^2}{(2 \times 3)^4 \times (2 \times 5)^2} = \dfrac{2^6 \times 3^4 \times 5^2}{2^6 \times 3^4 \times 5^2} = 1\)</span></p></li>
+<li><p>b. <span class="mi">\(S = \dfrac{(2^3)^2 \times (3^3)^3 \times 5^4}{(2^2 \times 3)^3 \times (2 \times 3 \times 5)^2} = \dfrac{2^6 \times 3^9 \times 5^4}{2^8 \times 3^5 \times 5^2} = \dfrac{3^4 \times 5^2}{2^2} = \dfrac{81 \times 25}{4} = \dfrac{2025}{4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមលេខ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2^4 + 3^2 - 4^2\)</span></p></li>
+<li><p><span class="mi">\(5^2 - 2^3 \times 3 + 10^0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកន្សោមលេខ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(16 + 9 - 16 = 9\)</span></p></li>
+<li><p>b. <span class="mi">\(25 - 8 \times 3 + 1 = 25 - 24 + 1 = 2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមលេខ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((-2)^4 - (-3)^3 + (-1)^{50}\)</span></p></li>
+<li><p><span class="mi">\(4 \times 3^2 - 2^3 \times 5 + 6^0\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាកន្សោមលេខ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(16 - (-27) + 1 = 16 + 27 + 1 = 44\)</span></p></li>
+<li><p>b. <span class="mi">\(4 \times 9 - 8 \times 5 + 1 = 36 - 40 + 1 = -3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោមនិទស្សន្តអវិជ្ជមាន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(E = 2^{-1} + 3^{-1} + 6^{-1}\)</span></p></li>
+<li><p><span class="mi">\(F = \left(\dfrac{1}{2}\right)^{-2} + \left(\dfrac{1}{3}\right)^{-2} + \left(\dfrac{1}{4}\right)^{-2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនានិទស្សន្តអវិជ្ជមាន ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(E = \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{6} = \dfrac{3+2+1}{6} = \dfrac{6}{6} = 1\)</span></p></li>
+<li><p>b. <span class="mi">\(F = 2^2 + 3^2 + 4^2 = 4 + 9 + 16 = 29\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(G = \dfrac{2^{-2} + 3^{-1}}{2^{-1} - 3^{-2}}\)</span></p></li>
+<li><p><span class="mi">\(H = \left( 2^0 + 2^{-1} \right) \div \left( 2^0 - 2^{-1} \right)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃកន្សោម ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(G = \dfrac{\dfrac{1}{4} + \dfrac{1}{3}}{\dfrac{1}{2} - \dfrac{1}{9}} = \dfrac{\dfrac{7}{12}}{\dfrac{7}{18}} = \dfrac{7}{12} \times \dfrac{18}{7} = \dfrac{18}{12} = \dfrac{3}{2} = 1.5\)</span></p></li>
+<li><p>b. <span class="mi">\(H = \left(1 + \dfrac{1}{2}\right) \div \left(1 - \dfrac{1}{2}\right) = \dfrac{3}{2} \div \dfrac{1}{2} = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>សរសេរចំនួនខាងក្រោមជាទម្រង់វិទ្យាសាស្ត្រ (<span class="mi">\(A \times 10^n\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(85\,000\)</span></p></li>
+<li><p><span class="mi">\(3\,400\,000\)</span></p></li>
+<li><p><span class="mi">\(720\,000\,000\)</span></p></li>
+<li><p><span class="mi">\(9\,000\,000\,000\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទម្រង់វិទ្យាសាស្ត្រ (<span class="mi">\(A \times 10^n\)</span>) ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(85\,000 = 8.5 \times 10^4\)</span></p></li>
+<li><p>b. <span class="mi">\(3\,400\,000 = 3.4 \times 10^6\)</span></p></li>
+<li><p>c. <span class="mi">\(720\,000\,000 = 7.2 \times 10^8\)</span></p></li>
+<li><p>d. <span class="mi">\(9\,000\,000\,000 = 9 \times 10^9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>សរសេរចំនួនខាងក្រោមជាទម្រង់វិទ្យាសាស្ត្រ (<span class="mi">\(A \times 10^n\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(0.005\)</span></p></li>
+<li><p><span class="mi">\(0.000\,64\)</span></p></li>
+<li><p><span class="mi">\(0.000\,008\,1\)</span></p></li>
+<li><p><span class="mi">\(0.000\,000\,045\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទម្រង់វិទ្យាសាស្ត្រ (<span class="mi">\(A \times 10^n\)</span>) ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(0.005 = 5 \times 10^{-3}\)</span></p></li>
+<li><p>b. <span class="mi">\(0.000\,64 = 6.4 \times 10^{-4}\)</span></p></li>
+<li><p>c. <span class="mi">\(0.000\,008\,1 = 8.1 \times 10^{-6}\)</span></p></li>
+<li><p>d. <span class="mi">\(0.000\,000\,045 = 4.5 \times 10^{-8}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>សរសេរចំនួនខាងក្រោមជាចំនួនធម្មតា (ទម្រង់ទសភាគ) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(4.2 \times 10^5\)</span></p></li>
+<li><p><span class="mi">\(8.05 \times 10^7\)</span></p></li>
+<li><p><span class="mi">\(3.6 \times 10^{-4}\)</span></p></li>
+<li><p><span class="mi">\(1.25 \times 10^{-6}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរជាចំនួនទសភាគ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(4.2 \times 10^5 = 420\,000\)</span></p></li>
+<li><p>b. <span class="mi">\(8.05 \times 10^7 = 80\,500\,000\)</span></p></li>
+<li><p>c. <span class="mi">\(3.6 \times 10^{-4} = 0.000\,36\)</span></p></li>
+<li><p>d. <span class="mi">\(1.25 \times 10^{-6} = 0.000\,001\,25\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គណនា និងសរសេរលទ្ធផលជាទម្រង់វិទ្យាសាស្ត្រ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((3.2 \times 10^5) \times (2.5 \times 10^4)\)</span></p></li>
+<li><p><span class="mi">\((4.8 \times 10^{-3}) \times (1.5 \times 10^8)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាជាទម្រង់វិទ្យាសាស្ត្រ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((3.2 \times 2.5) \times 10^{5+4} = 8 \times 10^9\)</span></p></li>
+<li><p>b. <span class="mi">\((4.8 \times 1.5) \times 10^{-3+8} = 7.2 \times 10^5\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គណនា និងសរសេរលទ្ធផលជាទម្រង់វិទ្យាសាស្ត្រ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{7.5 \times 10^8}{1.5 \times 10^3}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{1.44 \times 10^4}{1.2 \times 10^{-2}}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាជាទម្រង់វិទ្យាសាស្ត្រ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\dfrac{7.5}{1.5} \times 10^{8-3} = 5 \times 10^5\)</span></p></li>
+<li><p>b. <span class="mi">\(\dfrac{1.44}{1.2} \times 10^{4 - (-2)} = 1.2 \times 10^6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គណនាផលបូក និងដកជាទម្រង់វិទ្យាសាស្ត្រ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((4.5 \times 10^5) + (3.2 \times 10^5)\)</span></p></li>
+<li><p><span class="mi">\((6.4 \times 10^6) - (2.1 \times 10^5)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បូកដកជាទម្រង់វិទ្យាសាស្ត្រ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((4.5 + 3.2) \times 10^5 = 7.7 \times 10^5\)</span></p></li>
+<li><p>b. <span class="mi">\((64 \times 10^5) - (2.1 \times 10^5) = 61.9 \times 10^5 = 6.19 \times 10^6\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>គណនាការ៉េ និងឫសការ៉េនៃចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(15^2\)</span></p></li>
+<li><p><span class="mi">\(25^2\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{324}\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{400}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការ៉េ និងឫសការ៉េ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(15^2 = 225\)</span></p></li>
+<li><p>b. <span class="mi">\(25^2 = 625\)</span></p></li>
+<li><p>c. <span class="mi">\(\sqrt{324} = 18\)</span></p></li>
+<li><p>d. <span class="mi">\(\sqrt{400} = 20\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គណនាគូប និងឫសគូបនៃចំនួនខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(6^3\)</span></p></li>
+<li><p><span class="mi">\(10^3\)</span></p></li>
+<li><p><span class="mi">\(\sqrt[3]{343}\)</span></p></li>
+<li><p><span class="mi">\(\sqrt[3]{729}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គូប និងឫសគូប ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(6^3 = 216\)</span></p></li>
+<li><p>b. <span class="mi">\(10^3 = 1000\)</span></p></li>
+<li><p>c. <span class="mi">\(\sqrt[3]{343} = 7\)</span></p></li>
+<li><p>d. <span class="mi">\(\sqrt[3]{729} = 9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមរ៉ាឌីកាល់ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(A = \sqrt{121} + \sqrt{144} - \sqrt{169}\)</span></p></li>
+<li><p><span class="mi">\(B = \sqrt{25 \times 36} + \sqrt[3]{8 \times 27}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កន្សោមរ៉ាឌីកាល់ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(A = 11 + 12 - 13 = 10\)</span></p></li>
+<li><p>b. <span class="mi">\(B = (5 \times 6) + (2 \times 3) = 30 + 6 = 36\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃកន្សោមរ៉ាឌីកាល់ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(C = \sqrt{\dfrac{64}{225}} \times \sqrt{\dfrac{81}{16}}\)</span></p></li>
+<li><p><span class="mi">\(D = \sqrt{0.09} + \sqrt{0.64} - \sqrt[3]{0.008}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កន្សោមរ៉ាឌីកាល់ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(C = \dfrac{8}{15} \times \dfrac{9}{4} = \dfrac{2 \times 3}{5 \times 1} = \dfrac{6}{5} = 1.2\)</span></p></li>
+<li><p>d. <span class="mi">\(D = 0.3 + 0.8 - 0.2 = 0.9\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គណនាតម្លៃកន្សោមរ៉ាឌីកាល់ជាប់គ្នា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(P = \sqrt{21 + \sqrt{13 + \sqrt{7 + \sqrt{4}}}}\)</span></p></li>
+<li><p><span class="mi">\(Q = \sqrt{40 + \sqrt{77 + \sqrt{16}}}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រ៉ាឌីកាល់ជាប់គ្នា ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(\sqrt{4}=2 \to \sqrt{7+2}=3 \to \sqrt{13+3}=4 \to P = \sqrt{21+4} = \sqrt{25} = 5\)</span></p></li>
+<li><p>b. <span class="mi">\(\sqrt{16}=4 \to \sqrt{77+4}=9 \to Q = \sqrt{40+9} = \sqrt{49} = 7\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ពីសមីការស្វ័យគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2^x = 64\)</span></p></li>
+<li><p><span class="mi">\(3^x = 243\)</span></p></li>
+<li><p><span class="mi">\(5^x = 125\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2^x = 2^6 \implies x = 6\)</span></p></li>
+<li><p>b. <span class="mi">\(3^x = 3^5 \implies x = 5\)</span></p></li>
+<li><p>c. <span class="mi">\(5^x = 5^3 \implies x = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ពីសមីការស្វ័យគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2^{x+2} = 128\)</span></p></li>
+<li><p><span class="mi">\(3^{2x-1} = 81\)</span></p></li>
+<li><p><span class="mi">\(7^{x-3} = 1\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2^{x+2} = 2^7 \implies x+2 = 7 \implies x = 5\)</span></p></li>
+<li><p>b. <span class="mi">\(3^{2x-1} = 3^4 \implies 2x-1 = 4 \implies 2x = 5 \implies x = 2.5\)</span></p></li>
+<li><p>c. <span class="mi">\(7^{x-3} = 7^0 \implies x-3 = 0 \implies x = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ពីសមីការស្វ័យគុណ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(4^x = 32\)</span></p></li>
+<li><p><span class="mi">\(9^x = 27\)</span></p></li>
+<li><p><span class="mi">\(8^{x+1} = 16\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\((2^2)^x = 2^5 \implies 2^{2x} = 2^5 \implies 2x = 5 \implies x = 2.5\)</span></p></li>
+<li><p>b. <span class="mi">\((3^2)^x = 3^3 \implies 2x = 3 \implies x = 1.5\)</span></p></li>
+<li><p>c. <span class="mi">\((2^3)^{x+1} = 2^4 \implies 3(x+1) = 4 \implies 3x+3 = 4 \implies x = \dfrac{1}{3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ពីសមីការស្វ័យគុណនិទស្សន្តអវិជ្ជមាន ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2^x = \dfrac{1}{8}\)</span></p></li>
+<li><p><span class="mi">\(5^{x+1} = \dfrac{1}{25}\)</span></p></li>
+<li><p><span class="mi">\(3^{-x} = 81\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2^x = 2^{-3} \implies x = -3\)</span></p></li>
+<li><p>b. <span class="mi">\(5^{x+1} = 5^{-2} \implies x+1 = -2 \implies x = -3\)</span></p></li>
+<li><p>c. <span class="mi">\(3^{-x} = 3^4 \implies -x = 4 \implies x = -4\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ពីសមីការរ៉ាឌីកាល់ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\sqrt{x} = 9\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{x+5} = 6\)</span></p></li>
+<li><p><span class="mi">\(\sqrt[3]{x} = -4\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការរ៉ាឌីកាល់ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(x = 9^2 = 81\)</span></p></li>
+<li><p>b. <span class="mi">\(x+5 = 6^2 = 36 \implies x = 31\)</span></p></li>
+<li><p>c. <span class="mi">\(x = (-4)^3 = -64\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ពីសមីការ ៖ <span class="mi">\(x^2 = 289\)</span> (រកគ្រប់តម្លៃ <span class="mi">\(x\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖ <span class="mi">\(x^2 = 289 \implies x = \pm \sqrt{289} = \pm 17\)</span>។<br/>
+ដូចនេះ <span class="mi">\(x = 17\)</span> ឬ <span class="mi">\(x = -17\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ពីសមីការ ៖ <span class="mi">\((x-1)^2 = 196\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ ៖ <span class="mi">\((x-1)^2 = 196 \implies x-1 = \pm 14\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(x-1 = 14 \implies x = 15\)</span></p></li>
+<li><p><span class="mi">\(x-1 = -14 \implies x = -13\)</span></p></li>
+</ul>
+<p>ដូចនេះ <span class="mi">\(x \in \{15, -13\}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ប្រៀបធៀបគូនៃចំនួនខាងក្រោមដោយមិនគណនាតម្លៃពិត ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(2^{30}\)</span> និង <span class="mi">\(3^{20}\)</span></p></li>
+<li><p><span class="mi">\(5^{20}\)</span> និង <span class="mi">\(2^{50}\)</span></p></li>
+<li><p><span class="mi">\(4^{15}\)</span> និង <span class="mi">\(8^{10}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រៀបធៀបស្វ័យគុណ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2^{30} = (2^3)^{10} = 8^{10}\)</span> និង <span class="mi">\(3^{20} = (3^2)^{10} = 9^{10}\)</span>។ ដោយ <span class="mi">\(8 &lt; 9\)</span> នោះ <span class="mi">\(2^{30} &lt; 3^{20}\)</span>។</p></li>
+<li><p>b. <span class="mi">\(5^{20} = (5^2)^{10} = 25^{10}\)</span> និង <span class="mi">\(2^{50} = (2^5)^{10} = 32^{10}\)</span>។ ដោយ <span class="mi">\(25 &lt; 32\)</span> នោះ <span class="mi">\(5^{20} &lt; 2^{50}\)</span>។</p></li>
+<li><p>c. <span class="mi">\(4^{15} = (2^2)^{15} = 2^{30}\)</span> និង <span class="mi">\(8^{10} = (2^3)^{10} = 2^{30}\)</span>។ ដូចនេះ <span class="mi">\(4^{15} = 8^{10}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ប្រៀបធៀប <span class="mi">\(A = 2^{100}\)</span> និង <span class="mi">\(B = 3^{75}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រៀបធៀប <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ៖ <span class="mi">\(A = 2^{100} = (2^4)^{25} = 16^{25}\)</span>។<br/>
+<span class="mi">\(B = 3^{75} = (3^3)^{25} = 27^{25}\)</span>។<br/>
+ដោយ <span class="mi">\(16 &lt; 27\)</span> នាំឱ្យ <span class="mi">\(16^{25} &lt; 27^{25}\)</span> ដូចនេះ <span class="mi">\(2^{100} &lt; 3^{75}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ពន្លឺធ្វើដំណើរក្នុងល្បឿនប្រមាណ <span class="mi">\(3 \times 10^5\,\text{km/s}\)</span>។ គណនាចម្ងាយដែលពន្លឺធ្វើដំណើរបានក្នុងរយៈពេល ១ នាទី (<span class="mi">\(60\,\text{s}\)</span>) ដោយសរសេរលទ្ធផលជាទម្រង់វិទ្យាសាស្ត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចម្ងាយធ្វើដំណើរនៃពន្លឺ ៖ <div class="md">\[d = v \times t = (3 \times 10^5) \times 60 = 180 \times 10^5 = 1.8 \times 10^7\,\text{km}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>ចម្ងាយពីផែនដីទៅកាន់ភពព្រះអង្គារជាមធ្យមគឺប្រហែល <span class="mi">\(2.25 \times 10^8\,\text{km}\)</span>។ បើយានអវកាសមួយធ្វើដំណើរក្នុងល្បឿន <span class="mi">\(2.5 \times 10^4\,\text{km/h}\)</span> តើត្រូវចំណាយពេលប៉ុន្មានម៉ោងទើបទៅដល់?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពេលវេលាធ្វើដំណើរ ៖ <div class="md">\[t = \frac{d}{v} = \frac{2.25 \times 10^8}{2.5 \times 10^4} = \frac{2.25}{2.5} \times 10^4 = 0.9 \times 10^4 = 9\,000\text{ ម៉ោង}\]</div> (ស្មើនឹង <span class="mi">\(375\)</span> ថ្ងៃ)។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>បាក់តេរីមួយប្រភេទកើនឡើងទ្វេដងរៀងរាល់ <span class="mi">\(30\)</span> នាទីម្ដង។ ប្រសិនបើនៅពេលចាប់ផ្ដើមមានបាក់តេរីចំនួន <span class="mi">\(100\)</span> កោសិកា ៖</p>
+<ol class="list olka cols1">
+<li><p>សរសេរកន្សោមស្វ័យគុណតាងចំនួនបាក់តេរីបន្ទាប់ពី <span class="mi">\(n\)</span> ម៉ោង។</p></li>
+<li><p>រកចំនួនបាក់តេរីបន្ទាប់ពីរយៈពេល <span class="mi">\(4\)</span> ម៉ោង។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណើនបាក់តេរី ៖</p>
+<ul>
+<li><p>a. រៀងរាល់ <span class="mi">\(1\)</span> ម៉ោង បាក់តេរីកើនឡើងទ្វេដង ២ លើក (កត្តា <span class="mi">\(2^2 = 4\)</span>)។ កន្សោមបន្ទាប់ពី <span class="mi">\(n\)</span> ម៉ោង ៖ <div class="md">\[N = 100 \times 2^{2n}\]</div></p></li>
+<li><p>b. រយៈពេល <span class="mi">\(4\)</span> ម៉ោង (<span class="mi">\(n=4\)</span>) ៖ <div class="md">\[N = 100 \times 2^8 = 100 \times 256 = 25\,600\text{ កោសិកា}\]</div></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>ក្រដាសមួយសន្លឹកមានកម្រាស់ <span class="mi">\(0.1\,\text{mm}\)</span>។ ប្រសិនបើគេបត់ក្រដាសនោះជាពីរចំនួន <span class="mi">\(10\)</span> ដងបន្តបន្ទាប់គ្នា តើកម្រាស់ក្រដាសបន្ទាប់ពីបត់រួចមានរង្វាស់ប៉ុន្មានមីលីម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កម្រាស់ក្រដាសបន្ទាប់ពីបត់ ១០ ដង ៖ <div class="md">\[h = 0.1 \times 2^{10} = 0.1 \times 1024 = 102.4\,\text{mm} = 10.24\,\text{cm}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖ <div class="md">\[S = 1 + 2 + 2^2 + 2^3 + \dots + 2^9 + 2^{10}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកធរណីមាត្រ ៖ <span class="mi">\(2S = 2 + 2^2 + \dots + 2^{11}\)</span>។<br/>
+<span class="mi">\(2S - S = 2^{11} - 1 \implies S = 2^{11} - 1 = 2048 - 1 = 2047\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖ <div class="md">\[T = 1 + 3 + 3^2 + 3^3 + \dots + 3^7\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូកធរណីមាត្រ ៖ <span class="mi">\(3T = 3 + 3^2 + \dots + 3^8\)</span>។<br/>
+<span class="mi">\(3T - T = 3^8 - 1 \implies 2T = 6561 - 1 = 6560 \implies T = 3280\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>រកលេខខ្ទង់ចុងក្រោយ (ខ្ទង់រាយ) នៃចំនួន <span class="mi">\(2^{2027}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ខ្ទង់ចុងក្រោយនៃ <span class="mi">\(2^{2027}\)</span> ៖ វដ្តនៃខ្ទង់រាយនៃ <span class="mi">\(2^n\)</span> មាន ៤ តួ ៖ <span class="mi">\(\{2, 4, 8, 6\}\)</span>។<br/>
+យក <span class="mi">\(2027 \div 4 = 506\)</span> សំណល់ <span class="mi">\(3\)</span>។<br/>
+ដូចនេះ ខ្ទង់ចុងក្រោយនៃ <span class="mi">\(2^{2027}\)</span> គឺ <span class="mi">\(8\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>រកលេខខ្ទង់ចុងក្រោយ (ខ្ទង់រាយ) នៃចំនួន <span class="mi">\(3^{2027} + 7^{2027}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ខ្ទង់ចុងក្រោយនៃ <span class="mi">\(3^{2027} + 7^{2027}\)</span> ៖</p>
+<ul>
+<li><p>វដ្តនៃ <span class="mi">\(3^n\)</span> ៖ <span class="mi">\(\{3, 9, 7, 1\}\)</span>។ <span class="mi">\(2027 \div 4\)</span> សំណល់ <span class="mi">\(3 \implies\)</span> ខ្ទង់ចុងក្រោយគឺ <span class="mi">\(7\)</span>។</p></li>
+<li><p>វដ្តនៃ <span class="mi">\(7^n\)</span> ៖ <span class="mi">\(\{7, 9, 3, 1\}\)</span>។ <span class="mi">\(2027 \div 4\)</span> សំណល់ <span class="mi">\(3 \implies\)</span> ខ្ទង់ចុងក្រោយគឺ <span class="mi">\(3\)</span>។</p></li>
+</ul>
+<p>ផលបូកខ្ទង់រាយ ៖ <span class="mi">\(7 + 3 = 10 \implies\)</span> ខ្ទង់រាយគឺ <span class="mi">\(0\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>បង្ហាញថា ចំពោះគ្រប់ចំនួនគត់ធម្មជាតិ <span class="mi">\(n\)</span> កន្សោម <span class="mi">\(A = 5^{n+2} - 5^n\)</span> តែងតែចែកដាច់នឹង <span class="mi">\(24\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញភាពចែកដាច់ ៖ <div class="md">\[A = 5^n (5^2 - 1) = 5^n (25 - 1) = 24 \times 5^n\]</div> ដោយកន្សោមមានកត្តា <span class="mi">\(24\)</span> ដូចនេះ <span class="mi">\(A\)</span> តែងតែចែកដាច់នឹង <span class="mi">\(24\)</span> ចំពោះគ្រប់ <span class="mi">\(n \in \mathbb{N}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>រកចំនួនគត់វិជ្ជមាន <span class="mi">\(n\)</span> ដែលផ្ទៀងផ្ទាត់សមភាព ៖ <div class="md">\[2^{n-1} + 2^n + 2^{n+1} = 224\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(n\)</span> ៖ ដាក់ <span class="mi">\(2^{n-1}\)</span> ជាកត្តារួម ៖ <div class="md">\[2^{n-1} (1 + 2^1 + 2^2) = 224\]</div> <div class="md">\[2^{n-1} (1 + 2 + 4) = 224 \implies 7 \times 2^{n-1} = 224\]</div> <div class="md">\[2^{n-1} = \frac{224}{7} = 32 = 2^5\]</div> <div class="md">\[n - 1 = 5 \implies n = 6\]</div></p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ២ ស្វ័យគុណ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g08_c02">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L01.html"><small>← មេរៀនមុន</small><b>ចំនួនសនិទាន</b></a><a class="next" href="L03.html"><small>មេរៀនបន្ទាប់ →</small><b>ទំហំសមាមាត្រ និងភាគរយ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងកន្សោម <span class=\"mi\">\\(5^4\\)<\/span> លេខ <span class=\"mi\">\\(5\\)<\/span> ហៅថាអ្វី និងលេខ <span class=\"mi\">\\(4\\)<\/span> ហៅថាអ្វី?", "options": ["<span class=\"mi\">\\(5\\)<\/span> ជានិទស្សន្ត, <span class=\"mi\">\\(4\\)<\/span> ជាគោល", "ទាំងពីរជាគោល", "ទាំងពីរជានិទស្សន្ត", "<span class=\"mi\">\\(5\\)<\/span> ជាគោល, <span class=\"mi\">\\(4\\)<\/span> ជានិទស្សន្ត"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(2^5\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(32\\)<\/span>", "<span class=\"mi\">\\(64\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-3)^4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(81\\)<\/span>", "<span class=\"mi\">\\(-81\\)<\/span>", "<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(-3^4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(81\\)<\/span>", "<span class=\"mi\">\\(-81\\)<\/span>", "<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(64\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-2)^5\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(32\\)<\/span>", "<span class=\"mi\">\\(-10\\)<\/span>", "<span class=\"mi\">\\(-32\\)<\/span>", "<span class=\"mi\">\\(64\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(2027^0\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2027\\)<\/span>", "គ្មានន័យ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(0^5\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "មិនកំណត់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(3^{-2}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-6\\)<\/span>", "<span class=\"mi\">\\(-9\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{9}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{6}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\left(\\dfrac{2}{5}\\right)^{-1}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(-\\dfrac{2}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{2}{5}\\)<\/span>", "<span class=\"mi\">\\(-\\dfrac{5}{2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{5}{2}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\left(\\dfrac{1}{4}\\right)^{-2}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{16}\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(-\\dfrac{1}{16}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(3^4 \\times 3^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3^7\\)<\/span>", "<span class=\"mi\">\\(3^{12}\\)<\/span>", "<span class=\"mi\">\\(9^7\\)<\/span>", "<span class=\"mi\">\\(9^{12}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\(2^5 \\times 2^{-2}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2^{-10}\\)<\/span>", "<span class=\"mi\">\\(2^7\\)<\/span>", "<span class=\"mi\">\\(2^3\\)<\/span>", "<span class=\"mi\">\\(4^3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(\\dfrac{5^8}{5^3}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5^{11}\\)<\/span>", "<span class=\"mi\">\\(1^5\\)<\/span>", "<span class=\"mi\">\\(5^5\\)<\/span>", "<span class=\"mi\">\\(5^{24}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(\\dfrac{7^2}{7^5}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(7^{-3}\\)<\/span>", "<span class=\"mi\">\\(7^3\\)<\/span>", "<span class=\"mi\">\\(7^7\\)<\/span>", "<span class=\"mi\">\\(1^{-3}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\((2^3)^4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2^7\\)<\/span>", "<span class=\"mi\">\\(6^4\\)<\/span>", "<span class=\"mi\">\\(2^{81}\\)<\/span>", "<span class=\"mi\">\\(2^{12}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\((a \\times b)^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(a b^3\\)<\/span>", "<span class=\"mi\">\\(a^3 b^3\\)<\/span>", "<span class=\"mi\">\\(a^3 b\\)<\/span>", "<span class=\"mi\">\\(3ab\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\((2x)^4\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(16x^4\\)<\/span>", "<span class=\"mi\">\\(8x^4\\)<\/span>", "<span class=\"mi\">\\(2x^4\\)<\/span>", "<span class=\"mi\">\\(16x\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\(\\left(\\dfrac{x}{3}\\right)^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\dfrac{x^3}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{x^3}{9}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{x^3}{27}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{3x}{27}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-1)^{100} + (-1)^{101}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\((-1)^{2027}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2027\\)<\/span>", "<span class=\"mi\">\\(-1\\)<\/span>", "<span class=\"mi\">\\(-2027\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំនួន <span class=\"mi\">\\(64\\)<\/span> សរសេរជាស្វ័យគុណគោល <span class=\"mi\">\\(2\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2^5\\)<\/span>", "<span class=\"mi\">\\(2^7\\)<\/span>", "<span class=\"mi\">\\(2^6\\)<\/span>", "<span class=\"mi\">\\(2^8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំនួន <span class=\"mi\">\\(81\\)<\/span> សរសេរជាស្វ័យគុណគោល <span class=\"mi\">\\(3\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(3^4\\)<\/span>", "<span class=\"mi\">\\(3^3\\)<\/span>", "<span class=\"mi\">\\(3^5\\)<\/span>", "<span class=\"mi\">\\(3^6\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំនួន <span class=\"mi\">\\(1000\\,000\\)<\/span> សរសេរជាស្វ័យគុណគោល <span class=\"mi\">\\(10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(10^6\\)<\/span>", "<span class=\"mi\">\\(10^5\\)<\/span>", "<span class=\"mi\">\\(10^7\\)<\/span>", "<span class=\"mi\">\\(10^8\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំនួន <span class=\"mi\">\\(0.001\\)<\/span> សរសេរជាស្វ័យគុណគោល <span class=\"mi\">\\(10\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(10^{-2}\\)<\/span>", "<span class=\"mi\">\\(10^3\\)<\/span>", "<span class=\"mi\">\\(10^{-4}\\)<\/span>", "<span class=\"mi\">\\(10^{-3}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំនួន <span class=\"mi\">\\(45\\,000\\,000\\)<\/span> សរសេរជាទម្រង់វិទ្យាសាស្ត្រគឺ ៖", "options": ["<span class=\"mi\">\\(45 \\times 10^6\\)<\/span>", "<span class=\"mi\">\\(4.5 \\times 10^6\\)<\/span>", "<span class=\"mi\">\\(4.5 \\times 10^7\\)<\/span>", "<span class=\"mi\">\\(0.45 \\times 10^8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ចំនួន <span class=\"mi\">\\(0.000\\,72\\)<\/span> សរសេរជាទម្រង់វិទ្យាសាស្ត្រគឺ ៖", "options": ["<span class=\"mi\">\\(0.72 \\times 10^{-3}\\)<\/span>", "<span class=\"mi\">\\(7.2 \\times 10^{-3}\\)<\/span>", "<span class=\"mi\">\\(72 \\times 10^{-5}\\)<\/span>", "<span class=\"mi\">\\(7.2 \\times 10^{-4}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃពិតនៃ <span class=\"mi\">\\(3.6 \\times 10^4\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(360\\)<\/span>", "<span class=\"mi\">\\(3\\,600\\)<\/span>", "<span class=\"mi\">\\(360\\,000\\)<\/span>", "<span class=\"mi\">\\(36\\,000\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃពិតនៃ <span class=\"mi\">\\(5.2 \\times 10^{-3}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(0.052\\)<\/span>", "<span class=\"mi\">\\(0.0052\\)<\/span>", "<span class=\"mi\">\\(0.00052\\)<\/span>", "<span class=\"mi\">\\(520\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((2 \\times 10^3) \\times (4 \\times 10^5)\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(8 \\times 10^2\\)<\/span>", "<span class=\"mi\">\\(8 \\times 10^{15}\\)<\/span>", "<span class=\"mi\">\\(6 \\times 10^8\\)<\/span>", "<span class=\"mi\">\\(8 \\times 10^8\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផលចែក <span class=\"mi\">\\(\\dfrac{6 \\times 10^7}{2 \\times 10^3}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3 \\times 10^{10}\\)<\/span>", "<span class=\"mi\">\\(4 \\times 10^4\\)<\/span>", "<span class=\"mi\">\\(3 \\times 10^4\\)<\/span>", "<span class=\"mi\">\\(3 \\times 10^{-4}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{169}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{256}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt[3]{64}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt[3]{-27}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(-3\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "គ្មានន័យ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{0.04}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.2\\)<\/span>", "<span class=\"mi\">\\(0.02\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(0.002\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{\\dfrac{49}{81}}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\dfrac{49}{9}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{9}{7}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{7}{81}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{7}{9}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{36 + 64}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(48\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(\\sqrt{100 - 36}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(64\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(2^x = 32\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(3^{x-1} = 27\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(5^{2x} = 625\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(4^x = \\dfrac{1}{16}\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(-2\\)<\/span>", "<span class=\"mi\">\\(-4\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\(\\dfrac{2^3 \\times 3^4}{2 \\times 3^2}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(108\\)<\/span>", "<span class=\"mi\">\\(72\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\(\\dfrac{10^5 \\times 10^{-2}}{10^2}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(1000\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(2^3 + 2^2 + 2^1 + 2^0\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(3^3 - 3^2 + 3^1 - 3^0\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កន្សោម <span class=\"mi\">\\(\\left(2^{-1} + 3^{-1}\\right)^{-1}\\)<\/span> មានតម្លៃស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{6}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{5}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{5}{6}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(a = 3 \\times 10^4\\)<\/span> និង <span class=\"mi\">\\(b = 2 \\times 10^3\\)<\/span> នោះ <span class=\"mi\">\\(a + b\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3.2 \\times 10^4\\)<\/span>", "<span class=\"mi\">\\(5 \\times 10^7\\)<\/span>", "<span class=\"mi\">\\(5 \\times 10^4\\)<\/span>", "<span class=\"mi\">\\(3.2 \\times 10^3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផ្ទៃក្រឡានៃការ៉េមួយមានរង្វាស់ <span class=\"mi\">\\(144\\,\\text{cm}^2\\)<\/span>។ ប្រវែងជ្រុងនៃការ៉េនោះគឺ ៖", "options": ["<span class=\"mi\">\\(11\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(12\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(14\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(16\\,\\text{cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មាឌនៃគូបមួយស្មើនឹង <span class=\"mi\">\\(216\\,\\text{cm}^3\\)<\/span>។ ប្រវែងទ្រនុងនៃគូបនោះគឺ ៖", "options": ["<span class=\"mi\">\\(4\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(6\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(8\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(12\\,\\text{cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

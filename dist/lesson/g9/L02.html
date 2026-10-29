@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២ : សមាមាត្រ — គណិតវិទ្យាថ្នាក់ទី ៩ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២ «សមាមាត្រ» គណិតវិទ្យាថ្នាក់ទី ៩៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២ : សមាមាត្រ — គណិតវិទ្យាថ្នាក់ទី ៩ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២ «សមាមាត្រ» គណិតវិទ្យាថ្នាក់ទី ៩៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g9">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li aria-current="page">មេរៀនទី ២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២</span>
+      <div><span class="ls-kicker">មេរៀនទី ២ · គណិតវិទ្យាថ្នាក់ទី ៩</span><h1>សមាមាត្រ</h1><div class="ls-chips"><span class="chip chip-soon">ពីជគណិត</span><span class="chip chip-soon">៤ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សមាមាត្រ និងលក្ខណៈគ្រឹះ</a></li><li class="sub"><a href="#u2">២. ចំណោទសមាមាត្រ និងការប្តូរខ្នាត</a></li><li class="sub"><a href="#u3">៣. ចំណោទភាគរយ កំណើន និងតំហយ</a></li><li class="sub"><a href="#u4">៤. ការប្រាក់ទោល និងការប្រាក់សមាស</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-9.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃសមាមាត្រ និងផលធៀបក្នុងអរិយធម៌មនុស្សជាតិ</b></header><div class="bx-b">
+<p><strong>សមាមាត្រ (Proportion)</strong> និង <strong>ផលធៀប (Ratio)</strong> គឺជាឧបករណ៍គណិតវិទ្យាដ៏ចំណាស់បំផុតមួយ ដែលមនុស្សជាតិបានប្រើប្រាស់តាំងពីរាប់ពាន់ឆ្នាំមុនគ្រិស្តសករាជ ៖</p>
+<ul>
+<li><p><strong>ទ្រឹស្តីសមាមាត្ររបស់អឺដុកស៊ុស (Eudoxus of Cnidus, ៤០៨-៣៥៥ មុន គ.ស.) ៖</strong> គណិតវិទូក្រិក Eudoxus បានបង្កើតទ្រឹស្តីផលធៀប និងសមាមាត្រដ៏ល្អឥតខ្ចោះ ដែលត្រូវបាន Euclid ចងក្រងទុកក្នុងសៀវភៅទី ៥ នៃ <em>Elements</em>។ ទ្រឹស្តីនេះអាចអនុវត្តបានទាំងលើចំនួនសនិទាន និងចំនួនអសនិទាន ដែលជាមូលដ្ឋានគ្រឹះនៃធរណីមាត្រ និងការវាស់វែង។</p></li>
+<li><p><strong>ប្រភពនៃនិមិត្តសញ្ញាភាគរយ <span class="mi">\(\%\)</span> ៖</strong> ពាក្យ «ភាគរយ» មកពីភាសាឡាតាំង <em>"Per Centum"</em> មានន័យថា «ក្នុងចំណោមមួយរយ»។ និមិត្តសញ្ញា <span class="mi">\(\%\)</span> បានវិវត្តបន្តិចម្តងៗនៅប្រទេសអ៊ីតាលីក្នុងសតវត្សទី ១៥ ពីពាក្យកាត់ <em>"per 100"</em> ទៅជា <em>"p 100"</em> ហើយក្លាយជាសញ្ញា <span class="mi">\(\%\)</span> នៅសតវត្សទី ១៧។</p></li>
+<li><p><strong>ការគណនាការប្រាក់ និងពាណិជ្ជកម្មបុរាណ ៖</strong> នៅបាប៊ីឡូនបុរាណ (ប្រហែល ២០០០ មុន គ.ស.) ផ្ទាំងដីឥដ្ឋគ្លីនិកបានកត់ត្រាការគណនាការប្រាក់សមាសលើប្រាក់កម្ចីស្រូវ និងប្រាក់។ ក្រោយមក គណិតវិទូអារ៉ាប់ Al-Khwarizmi បានសរសេរបញ្ចូលក្បួនសមាមាត្រត្រីគុណ (Rule of Three) ក្នុងសៀវភៅពិជគណិតរបស់លោក។</p></li>
+<li><p><strong>ស្ថាបត្យកម្មប្រាសាទអង្គរវត្ត ៖</strong> ក្នុងការរៀបចំផែនទី និងសំណង់ប្រាសាទអង្គរវត្ត បុព្វបុរសខ្មែរបានប្រើប្រាស់ប្រព័ន្ធមាត្រដ្ឋានសមាមាត្រយ៉ាងតឹងរ៉ឹង ដូចជាផលធៀប <span class="mi">\(1 : 2\)</span>, <span class="mi">\(2 : 3\)</span>, <span class="mi">\(3 : 4\)</span> និងផលធៀបមាស ដើម្បីកំណត់ទំហំខឿន កម្ពស់កំពូល និងចម្ងាយរវាងគូទឹកនិងកំពែងប្រាសាទ ធ្វើឱ្យសំណង់ទាំងមូលមានតុល្យភាពស្ថាបត្យកម្មដ៏អស្ចារ្យ។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សមាមាត្រ និងលក្ខណៈគ្រឹះ</h3>
+<h4>និយមន័យសមាមាត្រ</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>សមាមាត្រ</b></header><div class="bx-b">
+<p><strong>សមាមាត្រ</strong> គឺជាសមភាពរវាងពីរផលធៀប ៖ <div class="md">\[\frac{a}{b} = \frac{c}{d} \quad{} \text{ឬ} \quad{} a : b = c : d \quad{} (b \ne 0, d \ne 0)\]</div></p>
+<ul>
+<li><p><span class="mi">\(a\)</span> និង <span class="mi">\(d\)</span> ហៅថា <strong>តួចុង</strong> (Extremes)</p></li>
+<li><p><span class="mi">\(b\)</span> និង <span class="mi">\(c\)</span> ហៅថា <strong>តួកណ្ដាល</strong> (Means)</p></li>
+</ul>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>លក្ខណៈគ្រឹះនៃសមាមាត្រ</b></header><div class="bx-b">
+<p>ក្នុងគ្រប់សមាមាត្រ ផលគុណតួចុងស្មើនឹងផលគុណតួកណ្ដាល (ផលគុណខ្វែង) ៖ <div class="md">\[\frac{a}{b} = \frac{c}{d} \iff a \times d = b \times c\]</div> ពីសមាមាត្រនេះ គេអាចទាញបានសមាមាត្រសមមូលដទៃទៀត ៖ <div class="md">\[\frac{a}{c} = \frac{b}{d} \quad{} ; \quad{} \frac{d}{b} = \frac{c}{a} \quad{} ; \quad{} \frac{b}{a} = \frac{d}{c}\]</div></p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>លក្ខណៈនៃផលធៀបស្មើគ្នា</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(\dfrac{a}{b} = \dfrac{c}{d} = k\)</span> នោះចំពោះគ្រប់ចំនួន <span class="mi">\(m, n\)</span> (ដែលភាគបែងមិនសូន្យ) គេបាន ៖ <div class="md">\[\frac{a}{b} = \frac{c}{d} = \frac{a + c}{b + d} = \frac{a - c}{b - d} = \frac{ma + nc}{mb + nd} = k\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រកតម្លៃ <span class="mi">\(x\)</span> ក្នុងសមាមាត្រ ៖ <span class="mi">\(\dfrac{x+2}{6} = \dfrac{5}{3}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាមលក្ខណៈផលគុណខ្វែង ៖ <div class="md">\[3(x + 2) = 6 \times 5 \implies 3x + 6 = 30 \implies 3x = 24 \implies x = 8\]</div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ចែកប្រាក់ <span class="mi">\(300\,\$\)</span> ទៅឱ្យមនុស្សពីរនាក់តាមផលធៀប <span class="mi">\(2 : 3\)</span>។</p>
+</div></section>
+<h3 id="u2">ចំណោទសមាមាត្រ និងការប្តូរខ្នាត</h3>
+<section class="bx bx-green"><header class="bx-h"><b>ខ្នាតរង្វាស់អន្តរជាតិដែលត្រូវចងចាំ</b></header><div class="bx-b">
+<ul>
+<li><p><span class="mi">\(1\,\)</span> inch (អ៊ីញ) <span class="mi">\( \approx 2.54\,\text{cm}\)</span></p></li>
+<li><p><span class="mi">\(1\,\)</span> foot (ហ្វឺត) <span class="mi">\( \approx 0.3048\,\text{m} = 30.48\,\text{cm}\)</span> (<span class="mi">\(1\,\text{ft} = 12\,\text{in}\)</span>)</p></li>
+<li><p><span class="mi">\(1\,\)</span> mile (ម៉ាយ) <span class="mi">\( \approx 1.609\,\text{km}\)</span></p></li>
+<li><p><span class="mi">\(1\,\)</span> pound (ផោន/lb) <span class="mi">\( \approx 0.453\,\text{kg}\)</span></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រថយន្តមួយបើកបរដោយល្បឿនថេរ ចំណាយសាំង <span class="mi">\(6\,\text{L}\)</span> សម្រាប់ចម្ងាយ <span class="mi">\(90\,\text{km}\)</span>។ តើរថយន្តនោះត្រូវចំណាយសាំងប៉ុន្មានលីត្រ ប្រសិនបើធ្វើដំណើរចម្ងាយ <span class="mi">\(240\,\text{km}\)</span>?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p>តាង <span class="mi">\(x\)</span> ជាបរិមាណសាំងដែលត្រូវចំណាយ (គិតជា <span class="mi">\(\text{L}\)</span>)។</p></li>
+<li><p>ដោយបរិមាណសាំង និងចម្ងាយចរជាសមាមាត្រផ្ទាល់ ៖ <div class="md">\[\frac{x}{240} = \frac{6}{90} \iff x = \frac{6 \times 240}{90} = 16\,\text{L}\]</div></p></li>
+<li><p>ដូចនេះ រថយន្តត្រូវចំណាយសាំង <span class="mi">\(16\,\text{L}\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ម៉ាស៊ីនបោះពុម្ពមួយអាចព្រីនបាន <span class="mi">\(150\)</span> សន្លឹកក្នុងរយៈពេល <span class="mi">\(5\)</span> នាទី។ តើម៉ាស៊ីននោះត្រូវការពេលប៉ុន្មាននាទី ដើម្បីព្រីនបាន <span class="mi">\(480\)</span> សន្លឹក?</p>
+</div></section>
+<h3 id="u3">ចំណោទភាគរយ កំណើន និងតំហយ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ភាគរយ</b></header><div class="bx-b">
+<p><strong>ភាគរយ</strong> គឺជាផលធៀបដែលមានភាគបែងស្មើ <span class="mi">\(100\)</span>។ ភាគរយនៃ <span class="mi">\(a\)</span> ធៀបនឹង <span class="mi">\(b\)</span> គិតជា ៖ <div class="md">\[P = \frac{a}{b} \times 100\%\]</div></p>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>រូបមន្តភាគរយកំណើន និងតំហយ</b></header><div class="bx-b">
+<p>បើបរិមាណមួយប្រែប្រួលពីតម្លៃដើម <span class="mi">\(V_1\)</span> ទៅតម្លៃថ្មី <span class="mi">\(V_2\)</span> ៖</p>
+<ul>
+<li><p><strong>បើ <span class="mi">\(V_2 &gt; V_1\)</span> (កំណើន) ៖</strong> <div class="md">\[\text{ភាគរយកំណើន} = \frac{V_2 - V_1}{V_1} \times 100\%\]</div></p></li>
+<li><p><strong>បើ <span class="mi">\(V_2 &lt; V_1\)</span> (តំហយ/បញ្ចុះតម្លៃ) ៖</strong> <div class="md">\[\text{ភាគរយតំហយ} = \frac{V_1 - V_2}{V_1} \times 100\%\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>អាវមួយមានតម្លៃដើម <span class="mi">\(25\,\$\)</span>។ ហាងបានបញ្ចុះតម្លៃ <span class="mi">\(20\%\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រាក់ដែលបានបញ្ចុះ។</p></li>
+<li><p>គណនាតម្លៃអាវក្រោយពេលបញ្ចុះ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p>ប្រាក់ដែលបានបញ្ចុះ ៖ <span class="mi">\(25 \times 20\% = 25 \times \dfrac{20}{100} = 5\,\$\)</span></p></li>
+<li><p>តម្លៃអាវក្រោយពេលបញ្ចុះ ៖ <span class="mi">\(25 - 5 = 20\,\$\)</span></p></li>
+<li><p>ដូចនេះ ប្រាក់បញ្ចុះគឺ <span class="mi">\(5\,\$\)</span> និងតម្លៃលក់គឺ <span class="mi">\(20\,\$\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កុំព្យូទ័រមួយគ្រឿងមានតម្លៃដើម <span class="mi">\(600\,\$\)</span>។ ក្នុងឱកាសបុណ្យចូលឆ្នាំ ហាងបានបញ្ចុះតម្លៃ <span class="mi">\(15\%\)</span>។ គណនាតម្លៃលក់ថ្មីនៃកុំព្យូទ័រនោះ។</p>
+</div></section>
+<h3 id="u4">ការប្រាក់ទោល និងការប្រាក់សមាស</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ការប្រាក់ទោល និងការប្រាក់សមាស</b></header><div class="bx-b">
+<p>តាង <span class="mi">\(P_0\)</span> ជាប្រាក់ដើម, <span class="mi">\(r\)</span> ជាអត្រាការប្រាក់ប្រចាំឆ្នាំ (គិតជាទសភាគ), <span class="mi">\(t\)</span> ជារយៈពេលគិតជាឆ្នាំ ៖</p>
+<ol class="list olnum cols1">
+<li><p><strong>ការប្រាក់ទោល (Simple Interest) ៖</strong> ការប្រាក់គិតតែលើប្រាក់ដើមប៉ុណ្ណោះ ៖ <div class="md">\[I = P_0 \times r \times t \quad{} ; \quad{} \text{ប្រាក់សរុប } A = P_0 + I = P_0(1 + rt)\]</div></p></li>
+<li><p><strong>ការប្រាក់សមាស (Compound Interest) ៖</strong> ការប្រាក់នៃឆ្នាំនីមួយៗត្រូវបានបូកបញ្ចូលក្នុងប្រាក់ដើមដើម្បីបង្កើតជាប្រាក់ដើមថ្មីសម្រាប់ឆ្នាំបន្ទាប់ ៖ <div class="md">\[P_t = P_0(1 + r)^t\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>លោកសុខបានយកប្រាក់ <span class="mi">\(2000\,\$\)</span> ទៅផ្ញើធនាគារដោយទទួលបានអត្រាការប្រាក់ទោល <span class="mi">\(6\%\)</span> ក្នុងមួយឆ្នាំ។ រកការប្រាក់ និងប្រាក់សរុបដែលគាត់ទទួលបានក្រោយពេលផ្ញើរយៈពេល <span class="mi">\(3\)</span> ឆ្នាំ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ul>
+<li><p>ប្រាក់ដើម <span class="mi">\(P_0 = 2000\,\$\)</span>, អត្រាការប្រាក់ <span class="mi">\(r = 6\% = 0.06\)</span>, រយៈពេល <span class="mi">\(t = 3\)</span> ឆ្នាំ។</p></li>
+<li><p>ការប្រាក់ទោល ៖ <span class="mi">\(I = P_0 \times r \times t = 2000 \times 0.06 \times 3 = 360\,\$\)</span></p></li>
+<li><p>ប្រាក់សរុប ៖ <span class="mi">\(A = P_0 + I = 2000 + 360 = 2360\,\$\)</span></p></li>
+<li><p>ដូចនេះ គាត់ទទួលបានការប្រាក់ <span class="mi">\(360\,\$\)</span> និងប្រាក់សរុប <span class="mi">\(2360\,\$\)</span>។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេយកប្រាក់ <span class="mi">\(5000\,\$\)</span> ទៅផ្ញើធនាគារក្នុងអត្រាការប្រាក់ទោល <span class="mi">\(5\%\)</span> ក្នុងមួយឆ្នាំ។ រកប្រាក់សរុបដែលទទួលបានក្រោយរយៈពេល <span class="mi">\(4\)</span> ឆ្នាំ។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>រកតម្លៃនៃ <span class="mi">\(x\)</span> ក្នុងសមាមាត្រខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\dfrac{x}{15} = \dfrac{4}{5}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{24}{x} = \dfrac{6}{7}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{x+1}{8} = \dfrac{3}{4}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{5}{x-2} = \dfrac{2}{3}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2x-1}{3} = \dfrac{x+4}{2}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3x+2}{5} = \dfrac{2x-1}{3}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកតម្លៃ <span class="mi">\(x\)</span> តាមផលគុណខ្វែង ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(5x = 60 \implies x = 12\)</span></p></li>
+<li><p>b. <span class="mi">\(6x = 168 \implies x = 28\)</span></p></li>
+<li><p>c. <span class="mi">\(4(x+1) = 24 \implies 4x = 20 \implies x = 5\)</span></p></li>
+<li><p>d. <span class="mi">\(2(x-2) = 15 \implies 2x = 19 \implies x = 9.5\)</span></p></li>
+<li><p>e. <span class="mi">\(2(2x-1) = 3(x+4) \implies 4x-2 = 3x+12 \implies x = 14\)</span></p></li>
+<li><p>f. <span class="mi">\(3(3x+2) = 5(2x-1) \implies 9x+6 = 10x-5 \implies x = 11\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ចូរប្តូរឯកតារង្វាស់តាមប្រព័ន្ធខ្នាតអន្តរជាតិ (<span class="mi">\(1\,\text{in} \approx 2.54\,\text{cm}, 1\,\text{ft} \approx 0.3048\,\text{m}, 1\,\text{mi} \approx 1.609\,\text{km}, 1\,\text{lb} \approx 0.453\,\text{kg}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>ប្តូរ <span class="mi">\(2.5\,\text{m}\)</span> ទៅជា <span class="mi">\(\text{inches}\)</span></p></li>
+<li><p>ប្តូរ <span class="mi">\(50\,\text{miles}\)</span> ទៅជា <span class="mi">\(\text{km}\)</span></p></li>
+<li><p>ប្តូរ <span class="mi">\(12\,\text{feet}\)</span> ទៅជា <span class="mi">\(\text{m}\)</span></p></li>
+<li><p>ប្តូរ <span class="mi">\(10\,\text{kg}\)</span> ទៅជា <span class="mi">\(\text{lb}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្តូរឯកតារង្វាស់ ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(2.5\,\text{m} = 250\,\text{cm} \approx \frac{250}{2.54} \approx 98.43\,\text{in}\)</span></p></li>
+<li><p>b. <span class="mi">\(50\,\text{mi} \approx 50 \times 1.609 = 80.45\,\text{km}\)</span></p></li>
+<li><p>c. <span class="mi">\(12\,\text{ft} \approx 12 \times 0.3048 = 3.658\,\text{m}\)</span></p></li>
+<li><p>d. <span class="mi">\(10\,\text{kg} \approx \frac{10}{0.453} \approx 22.08\,\text{lb}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>អាងទឹកមួយមានចំណុះ <span class="mi">\(9000\,\text{L}\)</span>។ បើគេបង្ហូរទឹកចូលក្នុងល្បឿន <span class="mi">\(150\,\text{L}\)</span> ក្នុងរយៈពេល <span class="mi">\(2\)</span> នាទី តើត្រូវចំណាយពេលប៉ុន្មាននាទីទើបទឹកពេញអាង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនារយៈពេលបញ្ចូលទឹក ៖ ល្បឿនបញ្ចូលទឹកគឺ <span class="mi">\(\frac{150\,\text{L}}{2\,\text{mn}} = 75\,\text{L/mn}\)</span>។ រយៈពេលបំពេញទឹកពេញអាង ៖ <div class="md">\[t = \frac{9000}{75} = 120\,\text{នាទី} = 2\,\text{ម៉ោង}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>រថយន្តមួយធ្វើដំណើរដោយល្បឿនថេរ បើកបរបានចម្ងាយ <span class="mi">\(210\,\text{km}\)</span> ក្នុងរយៈពេល <span class="mi">\(3\)</span> ម៉ោង។</p>
+<ol class="list olka cols1">
+<li><p>គណនាចម្ងាយផ្លូវដែលរថយន្តបើកបរបានក្នុងរយៈពេល <span class="mi">\(5\)</span> ម៉ោង។</p></li>
+<li><p>តើរថយន្តត្រូវចំណាយពេលប៉ុន្មានម៉ោង ដើម្បីធ្វើដំណើរបានចម្ងាយ <span class="mi">\(490\,\text{km}\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចម្ងាយនិងពេលវេលារថយន្ត ៖ ល្បឿនរថយន្ត <span class="mi">\(v = \frac{210}{3} = 70\,\text{km/h}\)</span>។</p>
+<ul>
+<li><p>a. ក្នុងរយៈពេល <span class="mi">\(5\,\text{h}\)</span> ៖ <span class="mi">\(d = 70 \times 5 = 350\,\text{km}\)</span></p></li>
+<li><p>b. រយៈពេលធ្វើដំណើរ <span class="mi">\(490\,\text{km}\)</span> ៖ <span class="mi">\(t = \frac{490}{70} = 7\,\)</span> ម៉ោង </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>កង់ម៉ាស៊ីនមួយវិលបាន <span class="mi">\(2400\)</span> ជុំក្នុងរយៈពេល <span class="mi">\(8\)</span> វិនាទី។ តើក្នុងរយៈពេល <span class="mi">\(1\)</span> នាទី កង់នោះវិលបានប៉ុន្មានជុំ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចំនួនជុំនៃកង់ម៉ាស៊ីន ៖ ក្នុងរយៈពេល <span class="mi">\(1\,\text{s}\)</span> វិលបាន <span class="mi">\(\frac{2400}{8} = 300\,\)</span> ជុំ ។ ក្នុងរយៈពេល <span class="mi">\(1\,\text{mn} = 60\,\text{s}\)</span> វិលបាន ៖ <div class="md">\[N = 300 \times 60 = 18\,000\,\text{ជុំ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>បើជាងសំណង់ <span class="mi">\(6\)</span> នាក់សង់ជញ្ជាំងមួយរួចរាល់ក្នុងរយៈពេល <span class="mi">\(12\)</span> ថ្ងៃ។ បើគេបង្កើនជាងដល់ <span class="mi">\(9\)</span> នាក់ តើការងារនោះត្រូវចំណាយពេលប៉ុន្មានថ្ងៃទើបរួចរាល់ (សមាមាត្រច្រាស)?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមាមាត្រច្រាស ៖ កម្លាំងពលកម្ម <span class="mi">\(6\)</span> នាក់ធ្វើការ <span class="mi">\(12\)</span> ថ្ងៃ <span class="mi">\(\implies\)</span> បរិមាណការងារ <span class="mi">\(6 \times 12 = 72\)</span> នាក់-ថ្ងៃ។ បើមានជាង <span class="mi">\(9\)</span> នាក់ រយៈពេលចំណាយគឺ ៖ <div class="md">\[t = \frac{72}{9} = 8\,\text{ថ្ងៃ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ចែកប្រាក់ចំនួន <span class="mi">\(450\,\$\)</span> ទៅឱ្យមនុស្សពីរនាក់តាមផលធៀប <span class="mi">\(4 : 5\)</span>។ រកប្រាក់ដែលម្នាក់ៗទទួលបាន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកប្រាក់តាមផលធៀប <span class="mi">\(4 : 5\)</span> ៖ ផលបូកភាគ <span class="mi">\(4 + 5 = 9\)</span> ភាគ។ តម្លៃមួយភាគ <span class="mi">\(\frac{450}{9} = 50\,\$\)</span>។</p>
+<ul>
+<li><p>អ្នកទីមួយ ៖ <span class="mi">\(4 \times 50 = 200\,\$\)</span></p></li>
+<li><p>អ្នកទីពីរ ៖ <span class="mi">\(5 \times 50 = 250\,\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ចែកប្រាក់ចំនួន <span class="mi">\(1200\,\$\)</span> ទៅឱ្យកូនបីនាក់តាមផលធៀប <span class="mi">\(2 : 3 : 5\)</span>។ រកប្រាក់ដែលកូនម្នាក់ៗទទួលបាន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកប្រាក់តាមផលធៀប <span class="mi">\(2 : 3 : 5\)</span> ៖ ផលបូកភាគ <span class="mi">\(2 + 3 + 5 = 10\)</span> ភាគ។ តម្លៃមួយភាគ <span class="mi">\(\frac{1200}{10} = 120\,\$\)</span>។</p>
+<ul>
+<li><p>កូនទីមួយ ៖ <span class="mi">\(2 \times 120 = 240\,\$\)</span></p></li>
+<li><p>កូនទីពីរ ៖ <span class="mi">\(3 \times 120 = 360\,\$\)</span></p></li>
+<li><p>កូនទីបី ៖ <span class="mi">\(5 \times 120 = 600\,\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ត្រីកោណមួយមានមុំទាំងបីសមាមាត្រនឹងចំនួន <span class="mi">\(2, 3, 4\)</span>។ គណនារង្វាស់មុំនីមួយៗនៃត្រីកោណនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រង្វាស់មុំត្រីកោណ ៖ ផលបូកមុំក្នុងត្រីកោណគឺ <span class="mi">\(180^\circ\)</span>។ ផលបូកភាគ <span class="mi">\(2 + 3 + 4 = 9\)</span> ភាគ។ តម្លៃមួយភាគ <span class="mi">\(\frac{180^\circ}{9} = 20^\circ\)</span>។</p>
+<ul>
+<li><p>មុំទីមួយ ៖ <span class="mi">\(2 \times 20^\circ = 40^\circ\)</span></p></li>
+<li><p>មុំទីពីរ ៖ <span class="mi">\(3 \times 20^\circ = 60^\circ\)</span></p></li>
+<li><p>មុំទីបី ៖ <span class="mi">\(4 \times 20^\circ = 80^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ចតុកោណកែងមួយមានបរិមាត្រ <span class="mi">\(64\,\text{cm}\)</span> ហើយផលធៀបរវាងបណ្ដោយ និងទទឹងគឺ <span class="mi">\(5 : 3\)</span>។ គណនាផ្ទៃក្រឡានៃចតុកោណកែងនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចតុកោណកែង ៖ កន្លះបរិមាត្រ <span class="mi">\(L + W = 32\,\text{cm}\)</span>។ ផលបូកភាគ <span class="mi">\(5 + 3 = 8\)</span> ភាគ។ មួយភាគ <span class="mi">\(\frac{32}{8} = 4\,\text{cm}\)</span>។</p>
+<ul>
+<li><p>បណ្ដោយ <span class="mi">\(L = 5 \times 4 = 20\,\text{cm}\)</span></p></li>
+<li><p>ទទឹង <span class="mi">\(W = 3 \times 4 = 12\,\text{cm}\)</span></p></li>
+<li><p>ផ្ទៃក្រឡា <span class="mi">\(S = L \times W = 20 \times 12 = 240\,\text{cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គណនាតម្លៃនៃ <span class="mi">\(n\)</span> ក្នុងករណីនីមួយៗខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(25\%\)</span> នៃ <span class="mi">\(n\)</span> ស្មើនឹង <span class="mi">\(60\)</span></p></li>
+<li><p><span class="mi">\(n\%\)</span> នៃ <span class="mi">\(180\)</span> ស្មើនឹង <span class="mi">\(45\)</span></p></li>
+<li><p><span class="mi">\(35\%\)</span> នៃ <span class="mi">\(240\)</span> ស្មើនឹង <span class="mi">\(n\)</span></p></li>
+<li><p><span class="mi">\(12.5\%\)</span> នៃ <span class="mi">\(n\)</span> ស្មើនឹង <span class="mi">\(25\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃ <span class="mi">\(n\)</span> ៖</p>
+<ul>
+<li><p>a. <span class="mi">\(0.25n = 60 \implies n = 240\)</span></p></li>
+<li><p>b. <span class="mi">\(\frac{n}{100} \times 180 = 45 \implies 1.8n = 45 \implies n = 25\)</span></p></li>
+<li><p>c. <span class="mi">\(n = 0.35 \times 240 = 84\)</span></p></li>
+<li><p>d. <span class="mi">\(0.125n = 25 \implies n = 200\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>តេស្តគណិតវិទ្យាមួយមាន <span class="mi">\(40\)</span> សំណួរ។ វិបុលឆ្លើយត្រូវចំនួន <span class="mi">\(34\)</span> សំណួរ។ គណនាភាគរយនៃសំណួរដែលវិបុលឆ្លើយត្រូវ និងភាគរយដែលឆ្លើយខុស។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ភាគរយនៃសំណួរ ៖</p>
+<ul>
+<li><p>ភាគរយឆ្លើយត្រូវ ៖ <span class="mi">\(\frac{34}{40} \times 100\% = 85\%\)</span></p></li>
+<li><p>ភាគរយឆ្លើយខុស ៖ <span class="mi">\(100\% - 85\% = 15\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ក្នុងចំណោមសិស្ស <span class="mi">\(500\)</span> នាក់នៃសាលារៀនមួយ មានសិស្សស្រី <span class="mi">\(260\)</span> នាក់។</p>
+<ol class="list olka cols1">
+<li><p>រកភាគរយនៃសិស្សស្រីក្នុងសាលា។</p></li>
+<li><p>រកភាគរយនៃសិស្សប្រុសក្នុងសាលា។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ភាគរយសិស្ស ៖</p>
+<ul>
+<li><p>a. សិស្សស្រី ៖ <span class="mi">\(\frac{260}{500} \times 100\% = 52\%\)</span></p></li>
+<li><p>b. សិស្សប្រុស ៖ <span class="mi">\(100\% - 52\% = 48\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ទឹកអំបិលមួយកែវមានទម្ងន់ <span class="mi">\(400\,\text{g}\)</span> ដែលមានផ្ទុកអំបិលសុទ្ធ <span class="mi">\(24\,\text{g}\)</span>។ គណនាកំហាប់ភាគរយនៃអំបិលក្នុងទឹកនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំហាប់ភាគរយអំបិល ៖ <div class="md">\[C = \frac{24}{400} \times 100\% = 6\%\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>លោហៈផ្សំមួយដុំទម្ងន់ <span class="mi">\(850\,\text{g}\)</span> មានផ្ទុកទង់ដែង <span class="mi">\(68\%\)</span>។ គណនាទម្ងន់ទង់ដែងសុទ្ធដែលមានក្នុងដុំលោហៈនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទម្ងន់ទង់ដែងសុទ្ធ ៖ <div class="md">\[m = 850 \times 68\% = 850 \times 0.68 = 578\,\text{g}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>បណ្ណាល័យមួយមានសៀវភៅសរុប <span class="mi">\(3500\)</span> ក្បាល។ ក្នុងនោះសៀវភៅវិទ្យាសាស្ត្រមាន <span class="mi">\(32\%\)</span> សៀវភៅអក្សរសាស្ត្រមាន <span class="mi">\(45\%\)</span> និងសៀវភៅដែលនៅសល់ជាសៀវភៅប្រវត្តិវិទ្យា។ រកចំនួនសៀវភៅប្រភេទនីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនសៀវភៅតាមប្រភេទ ៖</p>
+<ul>
+<li><p>សៀវភៅវិទ្យាសាស្ត្រ ៖ <span class="mi">\(3500 \times 32\% = 1120\)</span> ក្បាល</p></li>
+<li><p>សៀវភៅអក្សរសាស្ត្រ ៖ <span class="mi">\(3500 \times 45\% = 1575\)</span> ក្បាល</p></li>
+<li><p>សៀវភៅប្រវត្តិវិទ្យា ៖ <span class="mi">\(3500 - (1120 + 1575) = 805\)</span> ក្បាល (ឬ <span class="mi">\(23\%\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ក្នុងដំណើរការបោះឆ្នោតមួយ មានអ្នកចុះឈ្មោះបោះឆ្នោត <span class="mi">\(12\,000\)</span> នាក់។ នៅថ្ងៃបោះឆ្នោត មានអ្នកមកបោះឆ្នោត <span class="mi">\(92\%\)</span>។ គណនាចំនួនអ្នកដែលមិនបានមកបោះឆ្នោត។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនអ្នកមិនបានមកបោះឆ្នោត ៖ ភាគរយអ្នកមិនមកគឺ <span class="mi">\(100\% - 92\% = 8\%\)</span>។ <div class="md">\[N = 12\,000 \times 8\% = 960\,\text{នាក់}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនមួយមានបុគ្គលិក <span class="mi">\(250\)</span> នាក់។ ក្រុមហ៊ុនបានសម្រេចចិត្តកាត់បន្ថយបុគ្គលិក <span class="mi">\(8\%\)</span>។ រកចំនួនបុគ្គលិកដែលនៅសល់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនបុគ្គលិកនៅសល់ ៖ ភាគរយនៅសល់គឺ <span class="mi">\(100\% - 8\% = 92\%\)</span>។ <div class="md">\[N = 250 \times 92\% = 250 \times 0.92 = 230\,\text{នាក់}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>កសិករម្នាក់ប្រមូលផលស្រូវបាន <span class="mi">\(15\)</span> តោន។ គាត់លក់ចេញ <span class="mi">\(60\%\)</span> ទុកសម្រាប់បរិភោគ <span class="mi">\(25\%\)</span> និងនៅសល់ទុកធ្វើពូជ។ គណនាទម្ងន់ស្រូវទុកធ្វើពូជជាគីឡូក្រាម។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទម្ងន់ស្រូវទុកធ្វើពូជ ៖ ភាគរយទុកធ្វើពូជគឺ <span class="mi">\(100\% - (60\% + 25\%) = 15\%\)</span>។ <div class="md">\[m = 15\,\text{តោន} \times 15\% = 2.25\,\text{តោន} = 2250\,\text{kg}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>សិស្សម្នាក់ចំណាយពេល <span class="mi">\(24\)</span> ម៉ោងក្នុងមួយថ្ងៃ ៖ ដេក <span class="mi">\(33\frac{1}{3}\%\)</span>, រៀននៅសាលា <span class="mi">\(25\%\)</span>, ស្វ័យសិក្សា <span class="mi">\(16\frac{2}{3}\%\)</span> និងពេលនៅសល់សម្រាប់កីឡានិងសម្រាក។ គណនាចំនួនម៉ោងនៃសកម្មភាពនីមួយៗ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ម៉ោងនៃសកម្មភាព ៖</p>
+<ul>
+<li><p>ដេក ៖ <span class="mi">\(24 \times \frac{1}{3} = 8\)</span> ម៉ោង</p></li>
+<li><p>រៀននៅសាលា ៖ <span class="mi">\(24 \times 25\% = 6\)</span> ម៉ោង</p></li>
+<li><p>ស្វ័យសិក្សា ៖ <span class="mi">\(24 \times \frac{1}{6} = 4\)</span> ម៉ោង</p></li>
+<li><p>កីឡានិងសម្រាក ៖ <span class="mi">\(24 - (8 + 6 + 4) = 6\)</span> ម៉ោង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>គណនាភាគរយកំណើន ឬតំហយក្នុងករណីខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p>តម្លៃកើនពី <span class="mi">\(50\,\$\)</span> ដល់ <span class="mi">\(65\,\$\)</span></p></li>
+<li><p>តម្លៃកើនពី <span class="mi">\(120\,\$\)</span> ដល់ <span class="mi">\(150\,\$\)</span></p></li>
+<li><p>តម្លៃថយពី <span class="mi">\(80\,\$\)</span> មកត្រឹម <span class="mi">\(60\,\$\)</span></p></li>
+<li><p>តម្លៃថយពី <span class="mi">\(200\,\$\)</span> មកត្រឹម <span class="mi">\(170\,\$\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាភាគរយកំណើន ឬតំហយ ៖</p>
+<ul>
+<li><p>a. កំណើន ៖ <span class="mi">\(\frac{65-50}{50} \times 100\% = 30\%\)</span></p></li>
+<li><p>b. កំណើន ៖ <span class="mi">\(\frac{150-120}{120} \times 100\% = 25\%\)</span></p></li>
+<li><p>c. តំហយ ៖ <span class="mi">\(\frac{80-60}{80} \times 100\% = 25\%\)</span></p></li>
+<li><p>d. តំហយ ៖ <span class="mi">\(\frac{200-170}{200} \times 100\% = 15\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ទំនិញមួយមានតម្លៃដើម <span class="mi">\(180\,\$\)</span>។ ហាងបានបិទស្លាកលក់បញ្ចុះតម្លៃ <span class="mi">\(15\%\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាប្រាក់ដែលបានបញ្ចុះតម្លៃ។</p></li>
+<li><p>គណនាតម្លៃលក់ជាក់ស្ដែងនៃទំនិញនោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការបញ្ចុះតម្លៃ ៖</p>
+<ul>
+<li><p>a. ប្រាក់បញ្ចុះ ៖ <span class="mi">\(180 \times 15\% = 27\,\$\)</span></p></li>
+<li><p>b. តម្លៃលក់ ៖ <span class="mi">\(180 - 27 = 153\,\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>អាវមួយត្រូវបានលក់ក្នុងតម្លៃ <span class="mi">\(34\,\$\)</span> ក្រោយពេលបញ្ចុះតម្លៃ <span class="mi">\(15\%\)</span>។ គណនាតម្លៃដើមនៃអាវនោះមុនពេលបញ្ចុះតម្លៃ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្លៃដើមមុនបញ្ចុះតម្លៃ ៖ តាង <span class="mi">\(P\)</span> ជាតម្លៃដើម ៖ <span class="mi">\(P(1 - 0.15) = 34 \implies 0.85P = 34 \implies P = \frac{34}{0.85} = 40\,\$\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>អ្នកលក់ម្នាក់ទិញទូរទស្សន៍មួយគ្រឿងថ្លៃ <span class="mi">\(350\,\$\)</span> រួចលក់បន្តដោយយកចំណេញ <span class="mi">\(20\%\)</span>។ គណនាតម្លៃលក់នៃទូរទស្សន៍នោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្លៃលក់យកចំណេញ <span class="mi">\(20\%\)</span> ៖ <div class="md">\[P_{\text{sell}} = 350 \times (1 + 0.20) = 350 \times 1.2 = 420\text{ ដុល្លារ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>ម៉ូតូមួយគ្រឿងលក់ក្នុងតម្លៃ <span class="mi">\(1320\,\$\)</span> ដោយទទួលបានប្រាក់ចំណេញ <span class="mi">\(10\%\)</span> លើតម្លៃដើម។ រកតម្លៃដើមនៃម៉ូតូនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្លៃដើមម៉ូតូ ៖ <div class="md">\[P_{\text{cost}} = \frac{1320}{1 + 0.10} = \frac{1320}{1.1} = 1200\text{ ដុល្លារ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ទូរស័ព្ទមួយគ្រឿងលក់ខាត <span class="mi">\(12\%\)</span> ក្នុងតម្លៃ <span class="mi">\(264\,\$\)</span>។ គណនាតម្លៃដើមនៃទូរស័ព្ទនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>តម្លៃដើមទូរស័ព្ទលក់ខាត <span class="mi">\(12\%\)</span> ៖ <div class="md">\[P_{\text{cost}} = \frac{264}{1 - 0.12} = \frac{264}{0.88} = 300\text{ ដុល្លារ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ប្រាក់ខែបុគ្គលិកម្នាក់កាលពីឆ្នាំមុនគឺ <span class="mi">\(320\,\$\)</span> ក្នុងមួយខែ។ ឆ្នាំនេះគាត់ទទួលបានការដំឡើងប្រាក់ខែ <span class="mi">\(12.5\%\)</span>។ គណនាប្រាក់ខែថ្មីរបស់គាត់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រាក់ខែថ្មីក្រោយដំឡើង <span class="mi">\(12.5\%\)</span> ៖ <div class="md">\[P_{\text{new}} = 320 \times (1 + 0.125) = 320 \times 1.125 = 360\text{ ដុល្លារ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>សាលារៀនមួយកាលពីឆ្នាំមុនមានសិស្ស <span class="mi">\(960\)</span> នាក់។ ឆ្នាំនេះចំនួនសិស្សកើនឡើងដល់ <span class="mi">\(1080\)</span> នាក់។ គណនាភាគរយនៃកំណើនសិស្ស។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ភាគរយកំណើនសិស្ស ៖ <div class="md">\[\text{កំណើន} = \frac{1080 - 960}{960} \times 100\% = \frac{120}{960} \times 100\% = 12.5\%\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ប្រេងសាំងចុះថ្លៃពី <span class="mi">\(4600\)</span> រៀល ក្នុងមួយលីត្រ មកត្រឹម <span class="mi">\(4140\)</span> រៀល ក្នុងមួយលីត្រ។ គណនាភាគរយនៃការចុះថ្លៃប្រេងសាំង។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ភាគរយចុះថ្លៃប្រេងសាំង ៖ <div class="md">\[\text{តំហយ} = \frac{4600 - 4140}{4600} \times 100\% = \frac{460}{4600} \times 100\% = 10\%\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ហាងមួយបានបញ្ចុះតម្លៃទំនិញពីរដងបន្តបន្ទាប់គ្នា ៖ លើកទីមួយបញ្ចុះ <span class="mi">\(10\%\)</span> ហើយលើកទីពីរលើតម្លៃថ្មីបញ្ចុះថែម <span class="mi">\(20\%\)</span> ទៀត។ បើតម្លៃដើមគឺ <span class="mi">\(100\,\$\)</span> តើតម្លៃចុងក្រោយស្មើនឹងប៉ុន្មាន? តើស្មើនឹងការបញ្ចុះតម្លៃតែម្តងប៉ុន្មានភាគរយ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បញ្ចុះតម្លៃពីរដងបន្តបន្ទាប់ ៖ លើកទី ១ ៖ <span class="mi">\(100 \times (1 - 0.10) = 90\,\$\)</span>។ លើកទី ២ ៖ <span class="mi">\(90 \times (1 - 0.20) = 72\,\$\)</span>។ ស្មើនឹងការបញ្ចុះតម្លៃតែម្តងគឺ <span class="mi">\(100 - 72 = 28\%\)</span> (មិនមែន <span class="mi">\(30\%\)</span> ទេ)។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ពូសុខផ្ញើប្រាក់ <span class="mi">\(2000\,\$\)</span> នៅធនាគារមួយដោយទទួលបានអត្រាការប្រាក់ទោល <span class="mi">\(6\%\)</span> ក្នុងមួយឆ្នាំ។</p>
+<ol class="list olka cols1">
+<li><p>គណនាការប្រាក់ដែលគាត់ទទួលបានក្រោយរយៈពេល <span class="mi">\(3\)</span> ឆ្នាំ។</p></li>
+<li><p>គណនាប្រាក់សរុប (ប្រាក់ដើម + ការប្រាក់) ក្រោយរយៈពេល <span class="mi">\(3\)</span> ឆ្នាំ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការប្រាក់ទោល ៖</p>
+<ul>
+<li><p>a. ការប្រាក់ <span class="mi">\(I = 2000 \times 0.06 \times 3 = 360\,\$\)</span></p></li>
+<li><p>b. ប្រាក់សរុប <span class="mi">\(A = 2000 + 360 = 2360\,\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>អ្នកស្រីចិន្តាបានខ្ចីប្រាក់ពីធនាគារចំនួន <span class="mi">\(5000\,\$\)</span> ក្នុងអត្រាការប្រាក់ទោល <span class="mi">\(8\%\)</span> ក្នុងមួយឆ្នាំ។ ក្រោយរយៈពេល <span class="mi">\(2\)</span> ឆ្នាំកន្លះ តើគាត់ត្រូវសងប្រាក់សរុបទៅធនាគារវិញចំនួនប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សងប្រាក់កម្ចី ៖ ការប្រាក់ <span class="mi">\(I = 5000 \times 0.08 \times 2.5 = 1000\,\$\)</span>។ ប្រាក់សរុបត្រូវសង <span class="mi">\(A = 5000 + 1000 = 6000\,\$\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>មីងម៉ៅបានផ្ញើប្រាក់ <span class="mi">\(1500\,\$\)</span> ក្នុងគណនីសន្សំមួយ។ ក្រោយរយៈពេល <span class="mi">\(4\)</span> ឆ្នាំ គាត់ទទួលបានការប្រាក់សរុប <span class="mi">\(360\,\$\)</span>។ រកអត្រាការប្រាក់ប្រចាំឆ្នាំនៃគណនីនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកអត្រាការប្រាក់ ៖ <span class="mi">\(I = P_0 \times r \times t \implies 360 = 1500 \times r \times 4 \implies 6000r = 360 \implies r = \frac{360}{6000} = 0.06 = 6\%\)</span> ក្នុងមួយឆ្នាំ។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>តើត្រូវផ្ញើប្រាក់ដើមចំនួនប៉ុន្មាន ដើម្បីទទួលបានការប្រាក់ <span class="mi">\(450\,\$\)</span> ក្នុងរយៈពេល <span class="mi">\(3\)</span> ឆ្នាំ តាមអត្រាការប្រាក់ទោល <span class="mi">\(5\%\)</span> ក្នុងមួយឆ្នាំ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកប្រាក់ដើម ៖ <span class="mi">\(I = P_0 \times r \times t \implies 450 = P_0 \times 0.05 \times 3 \implies 0.15P_0 = 450 \implies P_0 = \frac{450}{0.15} = 3000\,\$\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>លោកវិចិត្រដាក់ប្រាក់ <span class="mi">\(3000\,\$\)</span> នៅធនាគារតាមអត្រាការប្រាក់សមាស <span class="mi">\(5\%\)</span> ក្នុងមួយឆ្នាំ។ គណនាប្រាក់សរុបដែលគាត់ទទួលបាននៅដំណាច់ឆ្នាំទី ៣ (<span class="mi">\(P_3 = P_0(1+r)^3\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការប្រាក់សមាស ៖ <div class="md">\[\begin{aligned}
+P_3 &amp;= 3000 \times (1 + 0.05)^3 = 3000 \times (1.05)^3 \\
+    &amp;= 3000 \times 1.157625 = 3472.875\text{ ដុល្លារ}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>ពូហេងបានផ្ញើប្រាក់ <span class="mi">\(10\,000\,\$\)</span> នៅធនាគារមួយក្នុងអត្រាការប្រាក់សមាស <span class="mi">\(8\%\)</span> ក្នុងមួយឆ្នាំ។</p>
+<ol class="list olka cols1">
+<li><p>គណនាប្រាក់សរុបនៅដំណាច់ឆ្នាំទី ១ និងឆ្នាំទី ២។</p></li>
+<li><p>គណនាផលដកនៃការប្រាក់សមាស និងការប្រាក់ទោលក្រោយរយៈពេល <span class="mi">\(2\)</span> ឆ្នាំ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ការប្រាក់សមាសធៀបនឹងការប្រាក់ទោល ៖</p>
+<ul>
+<li><p>a. ឆ្នាំទី ១ ៖ <span class="mi">\(P_1 = 10\,000(1.08) = 10\,800\,\$\)</span><br/>
+ឆ្នាំទី ២ ៖ <span class="mi">\(P_2 = 10\,800(1.08) = 11\,664\,\$\)</span></p></li>
+<li><p>b. ការប្រាក់សមាស <span class="mi">\(2\)</span> ឆ្នាំគឺ <span class="mi">\(1664\,\$\)</span>។ ការប្រាក់ទោលគឺ <span class="mi">\(10\,000 \times 0.08 \times 2 = 1600\,\$\)</span>។ ផលដកគឺ <span class="mi">\(1664 - 1600 = 64\,\$\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>យុវជនម្នាក់អាយុ ២០ ឆ្នាំ បានផ្ញើប្រាក់ <span class="mi">\(1000\,\$\)</span> នៅធនាគារក្នុងអត្រាការប្រាក់សមាស <span class="mi">\(10\%\)</span> ក្នុងមួយឆ្នាំ។ តើគាត់នឹងទទួលបានប្រាក់សរុបប៉ុន្មាននៅពេលគាត់មានអាយុ ២៣ ឆ្នាំ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រាក់សរុបអាយុ ២៣ ឆ្នាំ (<span class="mi">\(3\)</span> ឆ្នាំក្រោយ) ៖ <div class="md">\[P_3 = 1000 \times (1 + 0.10)^3 = 1000 \times 1.331 = 1331\text{ ដុល្លារ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>កសិករម្នាក់ខ្ចីប្រាក់ <span class="mi">\(4000\,\$\)</span> ពីគ្រឹះស្ថានមីក្រូហិរញ្ញវត្ថុក្នុងអត្រាការប្រាក់សមាស <span class="mi">\(12\%\)</span> ក្នុងមួយឆ្នាំ។ រកចំនួនប្រាក់ដែលត្រូវសងសរុបនៅដំណាច់ឆ្នាំទី ២។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្រាក់សងសរុប ៖ <div class="md">\[\begin{aligned}
+P_2 &amp;= 4000 \times (1 + 0.12)^2 \\
+    &amp;= 4000 \times 1.2544 = 5017.6\text{ ដុល្លារ}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>តើប្រាក់ដើម <span class="mi">\(P_0\)</span> ត្រូវចំណាយពេលប៉ុន្មានឆ្នាំ ដើម្បីកើនឡើងទ្វេដង (<span class="mi">\(2P_0\)</span>) តាមអត្រាការប្រាក់ទោល <span class="mi">\(10\%\)</span> ក្នុងមួយឆ្នាំ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពេលកើនឡើងទ្វេដង (ការប្រាក់ទោល <span class="mi">\(10\%\)</span>) ៖ <span class="mi">\(I = P_0 \implies P_0 \times 0.10 \times t = P_0 \implies 0.10t = 1 \implies t = 10\,\)</span> ឆ្នាំ ។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>តើប្រាក់ដើម <span class="mi">\(P_0\)</span> ត្រូវចំណាយពេលប៉ុន្មានឆ្នាំ ដើម្បីកើនឡើងទ្វេដងតាមអត្រាការប្រាក់ទោល <span class="mi">\(8\%\)</span> ក្នុងមួយឆ្នាំ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពេលកើនឡើងទ្វេដង (ការប្រាក់ទោល <span class="mi">\(8\%\)</span>) ៖ <span class="mi">\(P_0 \times 0.08 \times t = P_0 \implies 0.08t = 1 \implies t = \frac{1}{0.08} = 12.5\,\)</span> ឆ្នាំ  (១២ ឆ្នាំ ៦ ខែ)។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>គេមានសូលុយស្យុងអាស៊ីតពីរកែវ ៖ កែវទីមួយមានកំហាប់ <span class="mi">\(20\%\)</span> និងកែវទីពីរមានកំហាប់ <span class="mi">\(50\%\)</span>។ តើត្រូវយកសូលុយស្យុងពីកែវនីមួយៗប៉ុន្មានលីត្រ ដើម្បីលាយបញ្ចូលគ្នាឱ្យបានសូលុយស្យុងថ្មីចំណុះ <span class="mi">\(60\,\text{L}\)</span> ដែលមានកំហាប់ <span class="mi">\(30\%\)</span>?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ល្បាយសូលុយស្យុងអាស៊ីត ៖ តាង <span class="mi">\(x\)</span> ជាចំណុះកែវទីមួយ និង <span class="mi">\(y = 60 - x\)</span> ជាចំណុះកែវទីពីរ ៖ <div class="md">\[\begin{aligned}
+0.20x + 0.50(60 - x) &amp;= 0.30 \times 60 \\
+0.20x + 30 - 0.50x &amp;= 18 \implies -0.30x = -12
+\end{aligned}\]</div> <div class="md">\[x = 40\,\text{L} \quad{} ; \quad{} y = 20\,\text{L}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>ទឹកអំបិល <span class="mi">\(300\,\text{g}\)</span> មានកំហាប់អំបិល <span class="mi">\(6\%\)</span>។ តើគេត្រូវបន្ថែមទឹកសុទ្ធប៉ុន្មានក្រាមទៀត ដើម្បីឱ្យកំហាប់អំបិលធ្លាក់ចុះមកត្រឹម <span class="mi">\(4\%\)</span>?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បន្ថែមទឹកសុទ្ធ ៖ បរិមាណអំបិលថេរ <span class="mi">\(300 \times 0.06 = 18\,\text{g}\)</span>។ ទម្ងន់ទឹកអំបិលថ្មី <span class="mi">\(M = \frac{18}{0.04} = 450\,\text{g}\)</span>។ ទឹកសុទ្ធត្រូវបន្ថែម <span class="mi">\(450 - 300 = 150\,\text{g}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ទឹកផ្លែឈើ <span class="mi">\(500\,\text{mL}\)</span> មានជាតិស្ករ <span class="mi">\(12\%\)</span>។ តើគេត្រូវរម្ងួតទឹកឱ្យហួតអស់ប៉ុន្មាន <span class="mi">\(\text{mL}\)</span> ទើបកំហាប់ស្ករកើនឡើងដល់ <span class="mi">\(15\%\)</span>?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រម្ងួតទឹក ៖ បរិមាណស្ករថេរ <span class="mi">\(500 \times 0.12 = 60\,\text{g}\)</span>។ ចំណុះទឹកថ្មី <span class="mi">\(V = \frac{60}{0.15} = 400\,\text{mL}\)</span>។ ទឹកត្រូវរម្ងួតឱ្យហួត <span class="mi">\(500 - 400 = 100\,\text{mL}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>មនុស្សបីនាក់ <span class="mi">\(A, B, C\)</span> ចូលទុនរកស៊ីជាមួយគ្នា ៖ <span class="mi">\(A\)</span> ចូលទុន <span class="mi">\(3000\,\$\)</span> រយៈពេល <span class="mi">\(12\)</span> ខែ, <span class="mi">\(B\)</span> ចូលទុន <span class="mi">\(4000\,\$\)</span> រយៈពេល <span class="mi">\(9\)</span> ខែ និង <span class="mi">\(C\)</span> ចូលទុន <span class="mi">\(5000\,\$\)</span> រយៈពេល <span class="mi">\(6\)</span> ខែ។ នៅដំណាច់ឆ្នាំ ក្រុមហ៊ុនទទួលបានប្រាក់ចំណេញ <span class="mi">\(5100\,\$\)</span>។ រកប្រាក់ចំណេញដែលម្នាក់ៗទទួលបានស្របតាមសមាមាត្រនៃទុននិងពេលវេលា។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកប្រាក់ចំណេញតាមទុននិងពេលវេលា ៖</p>
+<ul>
+<li><p><span class="mi">\(A\)</span> ៖ <span class="mi">\(3000 \times 12 = 36\,000\)</span> ភាគ</p></li>
+<li><p><span class="mi">\(B\)</span> ៖ <span class="mi">\(4000 \times 9 = 36\,000\)</span> ភាគ</p></li>
+<li><p><span class="mi">\(C\)</span> ៖ <span class="mi">\(5000 \times 6 = 30\,000\)</span> ភាគ</p></li>
+</ul>
+<p>ផលធៀប <span class="mi">\(36 : 36 : 30 = 6 : 6 : 5\)</span> (សរុប <span class="mi">\(17\)</span> ភាគ)។ មួយភាគ <span class="mi">\(\frac{5100}{17} = 300\,\$\)</span>។</p>
+<ul>
+<li><p><span class="mi">\(A\)</span> ទទួលបាន ៖ <span class="mi">\(6 \times 300 = 1800\,\$\)</span></p></li>
+<li><p><span class="mi">\(B\)</span> ទទួលបាន ៖ <span class="mi">\(6 \times 300 = 1800\,\$\)</span></p></li>
+<li><p><span class="mi">\(C\)</span> ទទួលបាន ៖ <span class="mi">\(5 \times 300 = 1500\,\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(x, y, z\)</span> ផ្ទៀងផ្ទាត់សមាមាត្រ <span class="mi">\(\dfrac{x}{2} = \dfrac{y}{3} = \dfrac{z}{4}\)</span> និង <span class="mi">\(2x^2 + 3y^2 - z^2 = 76\)</span>។ រកតម្លៃនៃ <span class="mi">\(x, y, z\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រក <span class="mi">\(x, y, z\)</span> ៖ តាង <span class="mi">\(\frac{x}{2} = \frac{y}{3} = \frac{z}{4} = k \implies x = 2k, y = 3k, z = 4k\)</span>។ ជំនួស ៖ <span class="mi">\(2(4k^2) + 3(9k^2) - 16k^2 = 76 \implies 19k^2 = 76 \implies k^2 = 4 \implies k = \pm 2\)</span>។</p>
+<ul>
+<li><p>បើ <span class="mi">\(k = 2\)</span> ៖ <span class="mi">\((x, y, z) = (4, 6, 8)\)</span></p></li>
+<li><p>បើ <span class="mi">\(k = -2\)</span> ៖ <span class="mi">\((x, y, z) = (-4, -6, -8)\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>បង្ហាញថា ប្រសិនបើ <span class="mi">\(\dfrac{a}{b} = \dfrac{c}{d}\)</span> នោះគេបាន ៖ <div class="md">\[\frac{a^2 + c^2}{b^2 + d^2} = \frac{ac}{bd}\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញសមភាព ៖ តាង <span class="mi">\(\frac{a}{b} = \frac{c}{d} = k \implies a = bk, c = dk\)</span>។ អង្គខាងឆ្វេង ៖ <span class="mi">\(\frac{b^2k^2 + d^2k^2}{b^2 + d^2} = \frac{k^2(b^2 + d^2)}{b^2 + d^2} = k^2\)</span>។ អង្គខាងស្តាំ ៖ <span class="mi">\(\frac{ac}{bd} = \frac{(bk)(dk)}{bd} = k^2\)</span>។ អង្គទាំងពីរស្មើគ្នា។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>បង្ហាញថា ប្រសិនបើ <span class="mi">\(\dfrac{a}{b} = \dfrac{c}{d}\)</span> នោះគេបាន ៖ <div class="md">\[\frac{a+b}{a-b} = \frac{c+d}{c-d} \quad{} (a \ne b, c \ne d)\]</div></p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញសមភាព ៖ តាង <span class="mi">\(\frac{a}{b} = \frac{c}{d} = k \implies a = bk, c = dk\)</span>។ <span class="mi">\(\frac{a+b}{a-b} = \frac{bk+b}{bk-b} = \frac{k+1}{k-1}\)</span> <span class="mi">\(\frac{c+d}{c-d} = \frac{dk+d}{dk-d} = \frac{k+1}{k-1}\)</span>។ ដូចនេះ <span class="mi">\(\frac{a+b}{a-b} = \frac{c+d}{c-d}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>កសិករម្នាក់មានចំណីសត្វល្មមសម្រាប់ចិញ្ចឹមគោ <span class="mi">\(20\)</span> ក្បាលក្នុងរយៈពេល <span class="mi">\(30\)</span> ថ្ងៃ។ ក្រោយចិញ្ចឹមបាន <span class="mi">\(10\)</span> ថ្ងៃ គាត់បានទិញគោបន្ថែមចំនួន <span class="mi">\(5\)</span> ក្បាលទៀត។ តើចំណីដែលនៅសល់អាចចិញ្ចឹមគោទាំងអស់បានប៉ុន្មានថ្ងៃទៀត?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណីសត្វដែលនៅសល់ ៖ ក្រោយ <span class="mi">\(10\)</span> ថ្ងៃ ចំណីដែលនៅសល់ល្មមសម្រាប់គោ <span class="mi">\(20\)</span> ក្បាលស៊ីបាន <span class="mi">\(20\)</span> ថ្ងៃទៀត (<span class="mi">\(20 \times 20 = 400\)</span> គោ-ថ្ងៃ)។ ពេលមានគោ <span class="mi">\(25\)</span> ក្បាល ចំនួនថ្ងៃស៊ីបានគឺ ៖ <div class="md">\[t = \frac{400}{25} = 16\,\text{ថ្ងៃ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ជាងកាត់ដេរ <span class="mi">\(5\)</span> នាក់ កាត់អាវបាន <span class="mi">\(60\)</span> ក្នុងរយៈពេល <span class="mi">\(4\)</span> ថ្ងៃ។ តើជាងកាត់ដេរ <span class="mi">\(8\)</span> នាក់ អាចកាត់អាវបានប៉ុន្មានក្នុងរយៈពេល <span class="mi">\(6\)</span> ថ្ងៃ (សមាមាត្រចម្រុះ)?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមាមាត្រចម្រុះ ៖ កម្លាំង <span class="mi">\(1\)</span> នាក់ក្នុង <span class="mi">\(1\)</span> ថ្ងៃកាត់បាន <span class="mi">\(\frac{60}{5 \times 4} = 3\)</span> អាវ។ ជាង <span class="mi">\(8\)</span> នាក់ក្នុងរយៈពេល <span class="mi">\(6\)</span> ថ្ងៃ កាត់បាន ៖ <div class="md">\[N = 8 \times 6 \times 3 = 144\,\text{អាវ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនមួយលក់ដីមួយកន្លែងបានប្រាក់កម្រៃជើងសារ <span class="mi">\(3\%\)</span> ដែលស្មើនឹង <span class="mi">\(2700\,\$\)</span>។ ក្រោយមក ក្រុមហ៊ុនយកប្រាក់កម្រៃនេះទៅទិញភាគហ៊ុន ហើយទទួលបានចំណេញ <span class="mi">\(15\%\)</span> បន្ថែមទៀត។ គណនាតម្លៃលក់នៃដី និងប្រាក់សរុបចុងក្រោយដែលក្រុមហ៊ុនទទួលបាន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដីនិងប្រាក់កម្រៃ ៖</p>
+<ul>
+<li><p>តម្លៃដី ៖ <span class="mi">\(\frac{2700}{0.03} = 90\,000\,\$\)</span></p></li>
+<li><p>ប្រាក់កម្រៃចំណេញបន្ថែម <span class="mi">\(15\%\)</span> ៖ <span class="mi">\(2700 \times (1 + 0.15) = 3105\,\$\)</span></p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ២ សមាមាត្រ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g09_c02">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L01.html"><small>← មេរៀនមុន</small><b>ចំនួនអសនិទាន</b></a><a class="next" href="L03.html"><small>មេរៀនបន្ទាប់ →</small><b>កន្សោមពីជគណិត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងសមាមាត្រ <span class=\"mi\">\\(\\dfrac{a}{b} = \\dfrac{c}{d}\\)<\/span> ផលគុណខ្វែងស្មើគ្នាគឺ ៖", "options": ["<span class=\"mi\">\\(a \\times d = b \\times c\\)<\/span>", "<span class=\"mi\">\\(a \\times b = c \\times d\\)<\/span>", "<span class=\"mi\">\\(a \\times c = b \\times d\\)<\/span>", "<span class=\"mi\">\\(a + d = b + c\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{x}{6} = \\dfrac{10}{15}\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{12}{x} = \\dfrac{3}{4}\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលធៀបនៃ <span class=\"mi\">\\(25\\,\\text{cm}\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(1\\,\\text{m}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{25}\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{40}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{4}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បំប្លែងប្រភាគ <span class=\"mi\">\\(\\dfrac{3}{5}\\)<\/span> ទៅជាភាគរយ គេបាន ៖", "options": ["<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>", "<span class=\"mi\">\\(75\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(20\\%\\)<\/span> នៃ <span class=\"mi\">\\(150\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(35\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(40\\%\\)<\/span> នៃចំនួន <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង <span class=\"mi\">\\(80\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(320\\)<\/span>", "<span class=\"mi\">\\(160\\)<\/span>", "<span class=\"mi\">\\(200\\)<\/span>", "<span class=\"mi\">\\(120\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចំនួន <span class=\"mi\">\\(15\\)<\/span> ត្រូវជាប៉ុន្មានភាគរយនៃចំនួន <span class=\"mi\">\\(60\\)<\/span>?", "options": ["<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សិស្សម្នាក់ប្រឡងបានពិន្ទុ <span class=\"mi\">\\(18\\)<\/span> លើពិន្ទុសរុប <span class=\"mi\">\\(20\\)<\/span>។ ភាគរយនៃពិន្ទុដែលទទួលបានគឺ ៖", "options": ["<span class=\"mi\">\\(90\\%\\)<\/span>", "<span class=\"mi\">\\(85\\%\\)<\/span>", "<span class=\"mi\">\\(95\\%\\)<\/span>", "<span class=\"mi\">\\(80\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ទំនិញមួយថ្លៃ <span class=\"mi\">\\(50\\,\\$\\)<\/span> ត្រូវបានបញ្ចុះតម្លៃ <span class=\"mi\">\\(10\\%\\)<\/span>។ តម្លៃថ្មីក្រោយបញ្ចុះគឺ ៖", "options": ["<span class=\"mi\">\\(40\\,\\$\\)<\/span>", "<span class=\"mi\">\\(45\\,\\$\\)<\/span>", "<span class=\"mi\">\\(48\\,\\$\\)<\/span>", "<span class=\"mi\">\\(35\\,\\$\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃទំនិញមួយពីមុន <span class=\"mi\">\\(40\\,\\$\\)<\/span> ឡើងថ្លៃដល់ <span class=\"mi\">\\(50\\,\\$\\)<\/span>។ ភាគរយនៃកំណើនថ្លៃគឺ ៖", "options": ["<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(10\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តម្លៃទំនិញមួយពីមុន <span class=\"mi\">\\(80\\,\\$\\)<\/span> ចុះមកនៅត្រឹម <span class=\"mi\">\\(60\\,\\$\\)<\/span>។ ភាគរយនៃតំហយគឺ ៖", "options": ["<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ប្រាក់ដើម <span class=\"mi\">\\(1000\\,\\$\\)<\/span> ផ្ញើក្នុងអត្រាការប្រាក់ទោល <span class=\"mi\">\\(5\\%\\)<\/span> ក្នុងមួយឆ្នាំ។ រយៈពេល <span class=\"mi\">\\(2\\)<\/span> ឆ្នាំ ទទួលបានការប្រាក់ ៖", "options": ["<span class=\"mi\">\\(100\\,\\$\\)<\/span>", "<span class=\"mi\">\\(50\\,\\$\\)<\/span>", "<span class=\"mi\">\\(200\\,\\$\\)<\/span>", "<span class=\"mi\">\\(150\\,\\$\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ប្រាក់ដើម <span class=\"mi\">\\(P_0\\)<\/span> ដាក់ក្នុងអត្រាការប្រាក់សមាស <span class=\"mi\">\\(r\\)<\/span> ក្នុងមួយឆ្នាំ។ រយៈពេល <span class=\"mi\">\\(t\\)<\/span> ឆ្នាំ ប្រាក់សរុបគឺ ៖", "options": ["<span class=\"mi\">\\(P_t = P_0(1+rt)\\)<\/span>", "<span class=\"mi\">\\(P_t = P_0(1+r)^t\\)<\/span>", "<span class=\"mi\">\\(P_t = P_0 + rt\\)<\/span>", "<span class=\"mi\">\\(P_t = P_0(1+r)t\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(1\\,\\text{inch} \\approx 2.54\\,\\text{cm}\\)<\/span> នោះប្រវែង <span class=\"mi\">\\(10\\,\\text{inches}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2.54\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(254\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(25.4\\,\\text{cm}\\)<\/span>", "<span class=\"mi\">\\(0.254\\,\\text{cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(1\\,\\text{mile} \\approx 1.6\\,\\text{km}\\)<\/span> នោះចម្ងាយ <span class=\"mi\">\\(5\\,\\text{miles}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6.4\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(9.6\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(5\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(8\\,\\text{km}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលធៀប <span class=\"mi\">\\(\\dfrac{a}{b} = \\dfrac{2}{3}\\)<\/span> និង <span class=\"mi\">\\(a + b = 25\\)<\/span>។ តម្លៃ <span class=\"mi\">\\(a\\)<\/span> និង <span class=\"mi\">\\(b\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(a = 10, b = 15\\)<\/span>", "<span class=\"mi\">\\(a = 8, b = 17\\)<\/span>", "<span class=\"mi\">\\(a = 12, b = 13\\)<\/span>", "<span class=\"mi\">\\(a = 5, b = 20\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{x}{2} = \\dfrac{y}{3} = \\dfrac{z}{5}\\)<\/span> និង <span class=\"mi\">\\(x + y + z = 40\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(z\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រថយន្តមួយបើកបរបានចម្ងាយ <span class=\"mi\">\\(180\\,\\text{km}\\)<\/span> ក្នុងរយៈពេល <span class=\"mi\">\\(3\\)<\/span> ម៉ោង។ ក្នុងល្បឿនដដែល រយៈពេល <span class=\"mi\">\\(5\\)<\/span> ម៉ោង បើកបាន ៖", "options": ["<span class=\"mi\">\\(250\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(360\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(300\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(280\\,\\text{km}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "កម្មករ <span class=\"mi\">\\(4\\)<\/span> នាក់ធ្វើការងារមួយចប់ក្នុងរយៈពេល <span class=\"mi\">\\(6\\)<\/span> ថ្ងៃ។ បើមានកម្មករ <span class=\"mi\">\\(8\\)<\/span> នាក់ ការងារនោះចប់ក្នុងរយៈពេល ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span> ថ្ងៃ", "<span class=\"mi\">\\(2\\)<\/span> ថ្ងៃ", "<span class=\"mi\">\\(5\\)<\/span> ថ្ងៃ", "<span class=\"mi\">\\(3\\)<\/span> ថ្ងៃ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(12.5\\%\\)<\/span> សរសេរជាប្រភាគសម្រួលរួចគឺ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{8}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{16}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{5}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{x-1}{4} = \\dfrac{3}{2}\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{2x+3}{5} = \\dfrac{x-1}{2}\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(13\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងថ្នាក់មួយមានសិស្សប្រុស <span class=\"mi\">\\(15\\)<\/span> នាក់ និងសិស្សស្រី <span class=\"mi\">\\(25\\)<\/span> នាក់។ ភាគរយនៃសិស្សស្រីគឺ ៖", "options": ["<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(65\\%\\)<\/span>", "<span class=\"mi\">\\(37.5\\%\\)<\/span>", "<span class=\"mi\">\\(62.5\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ទំនិញមួយមានតម្លៃដើម <span class=\"mi\">\\(200\\,\\$\\)<\/span>។ គេលក់យកចំណេញ <span class=\"mi\">\\(15\\%\\)<\/span>។ តម្លៃលក់គឺ ៖", "options": ["<span class=\"mi\">\\(230\\,\\$\\)<\/span>", "<span class=\"mi\">\\(215\\,\\$\\)<\/span>", "<span class=\"mi\">\\(220\\,\\$\\)<\/span>", "<span class=\"mi\">\\(240\\,\\$\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ទំនិញមួយលក់ក្នុងតម្លៃ <span class=\"mi\">\\(85\\,\\$\\)<\/span> ក្រោយពេលបញ្ចុះតម្លៃ <span class=\"mi\">\\(15\\%\\)<\/span>។ តម្លៃដើមនៃទំនិញគឺ ៖", "options": ["<span class=\"mi\">\\(95\\,\\$\\)<\/span>", "<span class=\"mi\">\\(100\\,\\$\\)<\/span>", "<span class=\"mi\">\\(105\\,\\$\\)<\/span>", "<span class=\"mi\">\\(110\\,\\$\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ដីមួយកន្លែងមានផលធៀបបណ្ដោយ និងទទឹងស្មើ <span class=\"mi\">\\(5 : 3\\)<\/span>។ បើទទឹងមានប្រវែង <span class=\"mi\">\\(18\\,\\text{m}\\)<\/span> នោះបណ្ដោយគឺ ៖", "options": ["<span class=\"mi\">\\(25\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(35\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(30\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(27\\,\\text{m}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "មាត្រដ្ឋានផែនទីមួយគឺ <span class=\"mi\">\\(1 : 50\\,000\\)<\/span>។ ចម្ងាយ <span class=\"mi\">\\(4\\,\\text{cm}\\)<\/span> លើផែនទី ត្រូវនឹងចម្ងាយពិត ៖", "options": ["<span class=\"mi\">\\(20\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(0.2\\,\\text{km}\\)<\/span>", "<span class=\"mi\">\\(200\\,\\text{m}\\)<\/span>", "<span class=\"mi\">\\(2\\,\\text{km}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ប្រាក់ចំណេញ <span class=\"mi\">\\(150\\,\\$\\)<\/span> លើតម្លៃដើម <span class=\"mi\">\\(600\\,\\$\\)<\/span>។ ភាគរយនៃប្រាក់ចំណេញគឺ ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ប្រាក់ <span class=\"mi\">\\(500\\,\\$\\)<\/span> ដាក់ក្នុងធនាគារអត្រាការប្រាក់សមាស <span class=\"mi\">\\(10\\%\\)<\/span> ក្នុងមួយឆ្នាំ។ រយៈពេល <span class=\"mi\">\\(2\\)<\/span> ឆ្នាំ ប្រាក់សរុបគឺ ៖", "options": ["<span class=\"mi\">\\(600\\,\\$\\)<\/span>", "<span class=\"mi\">\\(605\\,\\$\\)<\/span>", "<span class=\"mi\">\\(550\\,\\$\\)<\/span>", "<span class=\"mi\">\\(610\\,\\$\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផលធៀបស្មើគ្នា <span class=\"mi\">\\(\\dfrac{a}{b} = \\dfrac{c}{d}\\)<\/span> នាំឱ្យ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{a+b}{a} = \\dfrac{c-d}{c}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{a}{c} = \\dfrac{d}{b}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{a+b}{b} = \\dfrac{c+d}{d}\\)<\/span>", "<span class=\"mi\">\\(a+d = b+c\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{a}{3} = \\dfrac{b}{4} = \\dfrac{c}{5}\\)<\/span> និង <span class=\"mi\">\\(2a + b - c = 15\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(a\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ទឹកអំបិលមួយកែវមានទម្ងន់ <span class=\"mi\">\\(200\\,\\text{g}\\)<\/span> ដែលមានកំហាប់អំបិល <span class=\"mi\">\\(5\\%\\)<\/span>។ បរិមាណអំបិលសុទ្ធគឺ ៖", "options": ["<span class=\"mi\">\\(10\\,\\text{g}\\)<\/span>", "<span class=\"mi\">\\(5\\,\\text{g}\\)<\/span>", "<span class=\"mi\">\\(15\\,\\text{g}\\)<\/span>", "<span class=\"mi\">\\(20\\,\\text{g}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើគេបន្ថែមកំហាប់អំបិលពី <span class=\"mi\">\\(10\\,\\text{g}\\)<\/span> ទៅ <span class=\"mi\">\\(15\\,\\text{g}\\)<\/span> ក្នុងសូលុយស្យុង ភាគរយកំណើនអំបិលគឺ ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(33.3\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រាក់ខែបុគ្គលិកម្នាក់ត្រូវបានដំឡើង <span class=\"mi\">\\(10\\%\\)<\/span> ហើយបន្ទាប់មកត្រូវបានកាត់បន្ថយ <span class=\"mi\">\\(10\\%\\)<\/span>។ ប្រាក់ខែចុងក្រោយធៀបនឹងដើម ៖", "options": ["ស្មើដើម", "កើនឡើង <span class=\"mi\">\\(1\\%\\)<\/span>", "ថយចុះ <span class=\"mi\">\\(1\\%\\)<\/span>", "ថយចុះ <span class=\"mi\">\\(2\\%\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ចំនួនសិស្សសាលាមួយកើនពី <span class=\"mi\">\\(800\\)<\/span> នាក់ ដល់ <span class=\"mi\">\\(920\\)<\/span> នាក់។ ភាគរយកំណើនសិស្សគឺ ៖", "options": ["<span class=\"mi\">\\(12\\%\\)<\/span>", "<span class=\"mi\">\\(10\\%\\)<\/span>", "<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "កង់វិលបាន <span class=\"mi\">\\(120\\)<\/span> ជុំក្នុងរយៈពេល <span class=\"mi\">\\(10\\)<\/span> វិនាទី។ ក្នុងរយៈពេល <span class=\"mi\">\\(1\\)<\/span> នាទី កង់វិលបាន ៖", "options": ["<span class=\"mi\">\\(720\\)<\/span> ជុំ", "<span class=\"mi\">\\(600\\)<\/span> ជុំ", "<span class=\"mi\">\\(800\\)<\/span> ជុំ", "<span class=\"mi\">\\(500\\)<\/span> ជុំ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(x\\)<\/span> និង <span class=\"mi\">\\(y\\)<\/span> ជាពីរបរិមាណសមាមាត្រច្រាស ហើយ <span class=\"mi\">\\(x = 4\\)<\/span> ពេល <span class=\"mi\">\\(y = 6\\)<\/span> នោះពេល <span class=\"mi\">\\(x = 8\\)<\/span> តម្លៃ <span class=\"mi\">\\(y\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(x\\)<\/span> និង <span class=\"mi\">\\(y\\)<\/span> ជាពីរបរិមាណសមាមាត្រផ្ទាល់ ហើយ <span class=\"mi\">\\(x = 3\\)<\/span> ពេល <span class=\"mi\">\\(y = 12\\)<\/span> នោះពេល <span class=\"mi\">\\(x = 7\\)<\/span> តម្លៃ <span class=\"mi\">\\(y\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(35\\)<\/span>", "<span class=\"mi\">\\(28\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តេស្តមួយមាន <span class=\"mi\">\\(50\\)<\/span> សំណួរ សិស្សម្នាក់ឆ្លើយខុស <span class=\"mi\">\\(6\\)<\/span> សំណួរ។ ភាគរយនៃសំណួរឆ្លើយត្រូវគឺ ៖", "options": ["<span class=\"mi\">\\(86\\%\\)<\/span>", "<span class=\"mi\">\\(90\\%\\)<\/span>", "<span class=\"mi\">\\(92\\%\\)<\/span>", "<span class=\"mi\">\\(88\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តម្លៃនៃ <span class=\"mi\">\\(0.4\\%\\)<\/span> សរសេរជាទសភាគគឺ ៖", "options": ["<span class=\"mi\">\\(0.004\\)<\/span>", "<span class=\"mi\">\\(0.04\\)<\/span>", "<span class=\"mi\">\\(0.4\\)<\/span>", "<span class=\"mi\">\\(0.0004\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{3}{x+2} = \\dfrac{2}{x-1}\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រុមហ៊ុនមួយផ្តល់កម្រៃជើងសារ <span class=\"mi\">\\(5\\%\\)<\/span> លើការលក់។ បើលក់បាន <span class=\"mi\">\\(12\\,000\\,\\$\\)<\/span> ប្រាក់កម្រៃគឺ ៖", "options": ["<span class=\"mi\">\\(500\\,\\$\\)<\/span>", "<span class=\"mi\">\\(700\\,\\$\\)<\/span>", "<span class=\"mi\">\\(600\\,\\$\\)<\/span>", "<span class=\"mi\">\\(450\\,\\$\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ប្រាក់ <span class=\"mi\">\\(2000\\,\\$\\)<\/span> ដាក់ការប្រាក់ទោល <span class=\"mi\">\\(6\\%\\)<\/span> ក្នុងមួយឆ្នាំ រយៈពេល <span class=\"mi\">\\(3\\)<\/span> ឆ្នាំ។ ប្រាក់សរុប (ដើម+ការ) គឺ ៖", "options": ["<span class=\"mi\">\\(2120\\,\\$\\)<\/span>", "<span class=\"mi\">\\(2400\\,\\$\\)<\/span>", "<span class=\"mi\">\\(2280\\,\\$\\)<\/span>", "<span class=\"mi\">\\(2360\\,\\$\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចែកប្រាក់ <span class=\"mi\">\\(180\\,\\$\\)<\/span> តាមផលធៀប <span class=\"mi\">\\(2 : 3 : 4\\)<\/span>។ ចំណែកធំជាងគេគឺ ៖", "options": ["<span class=\"mi\">\\(80\\,\\$\\)<\/span>", "<span class=\"mi\">\\(60\\,\\$\\)<\/span>", "<span class=\"mi\">\\(40\\,\\$\\)<\/span>", "<span class=\"mi\">\\(90\\,\\$\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ចែកប្រាក់ <span class=\"mi\">\\(180\\,\\$\\)<\/span> តាមផលធៀប <span class=\"mi\">\\(2 : 3 : 4\\)<\/span>។ ចំណែកតូចជាងគេគឺ ៖", "options": ["<span class=\"mi\">\\(60\\,\\$\\)<\/span>", "<span class=\"mi\">\\(40\\,\\$\\)<\/span>", "<span class=\"mi\">\\(80\\,\\$\\)<\/span>", "<span class=\"mi\">\\(30\\,\\$\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(\\dfrac{a}{b} = \\dfrac{3}{5}\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(\\dfrac{2a+b}{a+2b}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\dfrac{9}{13}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{11}{15}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{11}{13}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{2}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ដបទឹកមួយមានចំណុះ <span class=\"mi\">\\(750\\,\\text{mL}\\)<\/span>។ ទឹកក្នុងដបត្រូវបានញ៉ាំអស់ <span class=\"mi\">\\(40\\%\\)<\/span>។ ទឹកដែលនៅសល់គឺ ៖", "options": ["<span class=\"mi\">\\(300\\,\\text{mL}\\)<\/span>", "<span class=\"mi\">\\(400\\,\\text{mL}\\)<\/span>", "<span class=\"mi\">\\(500\\,\\text{mL}\\)<\/span>", "<span class=\"mi\">\\(450\\,\\text{mL}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រថយន្តមួយស៊ីសាំង <span class=\"mi\">\\(8\\,\\text{L}\\)<\/span> ក្នុងចម្ងាយ <span class=\"mi\">\\(100\\,\\text{km}\\)<\/span>។ ដើម្បីធ្វើដំណើរ <span class=\"mi\">\\(350\\,\\text{km}\\)<\/span> ត្រូវអស់សាំង ៖", "options": ["<span class=\"mi\">\\(28\\,\\text{L}\\)<\/span>", "<span class=\"mi\">\\(24\\,\\text{L}\\)<\/span>", "<span class=\"mi\">\\(30\\,\\text{L}\\)<\/span>", "<span class=\"mi\">\\(32\\,\\text{L}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តួលេខលក់កើនពី <span class=\"mi\">\\(500\\)<\/span> ដល់ <span class=\"mi\">\\(650\\)<\/span> គ្រឿង។ ភាគរយកំណើនគឺ ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>", "<span class=\"mi\">\\(35\\%\\)<\/span>", "<span class=\"mi\">\\(20\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

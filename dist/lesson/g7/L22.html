@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២២ : ក្រាបផ្លិត — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២២ «ក្រាបផ្លិត» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២២ : ក្រាបផ្លិត — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២២ «ក្រាបផ្លិត» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ២២</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២២</span>
+      <div><span class="ls-kicker">មេរៀនទី ២២ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>ក្រាបផ្លិត</h1><div class="ls-chips"><span class="chip chip-soon">ស្ថិតិ-ប្រូបាប</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណទូទៅ និងការអានក្រាបផ្លិត</a></li><li class="sub"><a href="#u2">២. ការគណនាមុំផ្ចិតនៃចម្រៀកថាស</a></li><li class="sub"><a href="#u3">៣. ការគណនាភាគរយ និងប្រេកង់ពីក្រាបផ្លិត</a></li><li class="sub"><a href="#u4">៤. ជំហាននៃការសង់ក្រាបផ្លិត</a></li><li class="sub"><a href="#u5">៥. ការវិភាគទិន្នន័យ និងដោះស្រាយចំណោទជាក់ស្ដែង</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិ និងការវិវត្តនៃក្រាបផ្លិត</b></header><div class="bx-b">
+<p>«<strong>ក្រាបផ្លិត</strong>» ឬ «<strong>ក្រាបរង្វង់</strong>» (Pie Chart ឬ Circle Graph) គឺជាគំនូសតាងស្ថិតិដ៏ពេញនិយមបំផុតមួយ ដែលប្រើប្រាស់ផ្ទៃនៃចម្រៀកថាសរង្វង់ ដើម្បីបង្ហាញពីទំនាក់ទំនងរវាងផ្នែកនីមួយៗធៀបនឹងចំនួនសរុបទាំងមូល (Parts-to-Whole Relationship)។ ក្រាបផ្លិតត្រូវបានបង្កើតឡើងជាលើកដំបូងក្នុងប្រវត្តិសាស្ត្រដោយលោក <strong>វីលៀម ផ្លេយហ្វ៊ែរ</strong> (William Playfair, 1759–1823) នៅក្នុងសៀវភៅ «<em>Statistical Breviary</em>» បោះពុម្ពនៅឆ្នាំ ១៨០១ នៅទីក្រុងឡុងដ៍ ប្រទេសអង់គ្លេស។</p>
+<p>ក្រោយមក នៅពាក់កណ្ដាលសតវត្សទី ១៩ លោកស្រី <strong>ហ្វ្លរិនស៍ ណាយធីងហ្គេល</strong> (Florence Nightingale, 1820–1910) ដែលជាគិលានុបដ្ឋាយិកា និងជាអ្នកស្ថិតិវិទូដ៏ឆ្នើម បានច្នៃប្រឌិតក្រាបផ្លិតទម្រង់ថ្មីហៅថា «ក្រាបតំបន់ប៉ូល» (Polar Area Diagram ឬ Coxcomb) ដើម្បីបង្ហាញពីមូលហេតុនៃការស្លាប់របស់កងទ័ពក្នុងសង្គ្រាមគ្រីមៀ (Crimean War) ដោយបង្ហាញថាកងទ័ពភាគច្រើនស្លាប់ដោយសារជំងឺឆ្លង និងអនាម័យខ្វះខាត មិនមែនដោយសាររបួសសង្គ្រាមឡើយ។ ក្រាបស្ថិតិនេះបានបញ្ចុះបញ្ចូលរដ្ឋាភិបាលអង់គ្លេសឱ្យធ្វើកំណែទម្រង់ប្រព័ន្ធសុខាភិបាលយ៉ាងជោគជ័យ។ សព្វថ្ងៃ ក្រាបផ្លិតជាឧបករណ៍មិនអាចខ្វះបានក្នុងសេដ្ឋកិច្ច ធុរកិច្ច ថវិកាជាតិ និងការផ្សព្វផ្សាយព័ត៌មានទូទាំងសកលលោក។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃក្រាបផ្លិត</b></header><div class="bx-b">
+<p>នៅក្នុងការសិក្សាអំពីក្រាបផ្លិតថ្នាក់ទី ៧ យើងត្រូវស្វែងយល់នូវចំណុចគ្រឹះសំខាន់ៗ ៖</p>
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ក្រាបផ្លិតជាគំនូសតាងរាងរង្វង់ដែលផ្ទៃរង្វង់ទាំងមូលតាងទិន្នន័យសរុប (<span class="mi">\(100\%\)</span> ឬ <span class="mi">\(360^\circ\)</span>)។</p></li>
+<li><p><strong>ចម្រៀកថាស (ផ្លិត) ៖</strong> ផ្នែកនីមួយៗនៃរង្វង់តាងប្រភេទទិន្នន័យ ដោយទំហំមុំផ្ចិតសមាមាត្រនឹងប្រេកង់។</p></li>
+<li><p><strong>រូបមន្តមុំផ្ចិត ៖</strong> មុំផ្ចិតនៃចម្រៀកថាសនីមួយៗកំណត់ដោយ <span class="mi">\(\theta = \frac{f_i}{N} \times 360^\circ\)</span> ដោយ <span class="mi">\(\sum \theta_i = 360^\circ\)</span>។</p></li>
+<li><p><strong>ការប្រើប្រាស់ ៖</strong> ស័ក្ដិសមបំផុតសម្រាប់បង្ហាញភាគរយ បំណែងចែកថវិកា ដីកសិកម្ម និងការស្ទង់មតិ។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សញ្ញាណទូទៅ និងការអានក្រាបផ្លិត</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>សញ្ញាណទូទៅ និងលក្ខណៈគ្រឹះនៃក្រាបផ្លិត</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ក្រាបផ្លិត (Pie Chart) គឺជាការតាងទិន្នន័យស្ថិតិតាមរយៈចម្រៀកថាសនៃរង្វង់មួយ។</p></li>
+<li><p><strong>លក្ខណៈគ្រឹះ ៖</strong></p>
+<ul>
+<li><p>រង្វង់ទាំងមូលតាងទិន្នន័យសរុប (<span class="mi">\(100\%\)</span> ឬ មុំផ្ចិត <span class="mi">\(360^\circ\)</span>)</p></li>
+<li><p>ចម្រៀកថាសនីមួយៗមានមុំផ្ចិត និងផ្ទៃសមាមាត្រទៅនឹងប្រេកង់ ឬភាគរយនៃប្រភេទនោះ</p></li>
+<li><p>ផលបូកមុំផ្ចិតទាំងអស់ស្មើ <span class="mi">\(360^\circ\)</span> ជានិច្ច ៖ <span class="mi">\(\theta_1 + \theta_2 + \dots + \theta_k = 360^\circ\)</span></p></li>
+</ul></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>កសិដ្ឋានមួយមានសត្វសរុប <span class="mi">\(120\)</span> ក្បាល (មាន់ <span class="mi">\(60\)</span>, ទា <span class="mi">\(40\)</span>, ក្ងាន <span class="mi">\(20\)</span>) តាមក្រាបខាងលើ ៖<br/>
+ក. តើសត្វណាមានចំនួនច្រើនជាងគេ? ស្មើនឹងប៉ុន្មានភាគរយនៃសត្វសរុប?<br/>
+ខ. រកផលធៀបរវាងចំនួនសត្វទា និងចំនួនសត្វមាន់។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. សត្វច្រើនជាងគេគឺ <span class="kfbox">មាន់ (<span class="mi">\(60\)</span> ក្បាល)</span>។ ភាគរយ ៖ <span class="mi">\(\dfrac{60}{120} \times 100\% = 50\%\)</span>។ ដូចនេះ <span class="mi">\(\boxed{50\%}\)</span><br/>
+ ខ. ផលធៀបរវាងទា និងមាន់គឺ ៖ <span class="mi">\(\dfrac{40}{60} = \dfrac{2}{3}\)</span>។ ដូចនេះ <span class="kfbox">ផលធៀបគឺ <span class="mi">\(\dfrac{2}{3}\)</span></span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការអានក្រាបផ្លិត</b></header><div class="bx-b">
+<p>១. ក្រាបផ្លិតមួយមាន ៣ ចម្រៀកថាសដែលមានមុំផ្ចិត <span class="mi">\(90^\circ, 120^\circ\)</span> និង <span class="mi">\(\theta\)</span>។ គណនាមុំ <span class="mi">\(\theta\)</span>។<br/>
+២. បើរង្វង់ទាំងមូលតាងមនុស្ស <span class="mi">\(200\)</span> នាក់ តើមុំកែង <span class="mi">\(90^\circ\)</span> តាងមនុស្សប៉ុន្មាននាក់?</p>
+</div></section>
+<h3 id="u2">ការគណនាមុំផ្ចិតនៃចម្រៀកថាស</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>រូបមន្តគណនាមុំផ្ចិត</b></header><div class="bx-b">
+<ul>
+<li><p><strong>រូបមន្តមុំផ្ចិត ៖</strong> បើទិន្នន័យសរុបគឺ <span class="mi">\(N\)</span> និងប្រភេទនីមួយៗមានប្រេកង់ <span class="mi">\(f_i\)</span> នោះមុំផ្ចិត <span class="mi">\(\theta_i\)</span> គឺ ៖</p>
+<p><strong><span class="mi">\(\theta_i = \dfrac{f_i}{N} \times 360^\circ\)</span> ឬ <span class="mi">\(\theta_i = \)</span> ភាគរយ <span class="mi">\( \times 3.6^\circ\)</span></strong></p></li>
+<li><p><strong>លក្ខណៈ ៖</strong> ផលបូកមុំផ្ចិតនៃគ្រប់ចម្រៀកថាសទាំងអស់ស្មើនឹង <span class="mi">\(360^\circ\)</span> ជានិច្ច ៖ <span class="mi">\(\sum \theta_i = 360^\circ\)</span>។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្នុងថ្នាក់មួយមានសិស្សចូលចិត្តពណ៌ ៖ ខៀវ (<span class="mi">\(15\)</span>), ក្រហម (<span class="mi">\(10\)</span>), បៃតង (<span class="mi">\(5\)</span>) នាក់។<br/>
+ក. គណនាចំនួនសិស្សសរុប <span class="mi">\(N\)</span>។ ខ. គណនាមុំផ្ចិតនៃចម្រៀកថាសនីមួយៗ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. ចំនួនសិស្សសរុប ៖ <span class="mi">\(N = 15 + 10 + 5 = 30\)</span> នាក់។ ដូចនេះ <span class="mi">\(\boxed{N = 30\text{ នាក់}}\)</span><br/>
+ ខ. មុំផ្ចិតពណ៌ខៀវ ៖ <span class="mi">\(\theta_1 = \dfrac{15}{30} \times 360^\circ = 180^\circ\)</span> , មុំពណ៌ក្រហម ៖ <span class="mi">\(\theta_2 = \dfrac{10}{30} \times 360^\circ = 120^\circ\)</span><br/>
+មុំពណ៌បៃតង ៖ <span class="mi">\(\theta_3 = \dfrac{5}{30} \times 360^\circ = 60^\circ\)</span>។ ផ្ទៀងផ្ទាត់ ៖ <span class="mi">\(180^\circ + 120^\circ + 60^\circ = 360^\circ\)</span> (ពិត)</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការគណនាមុំផ្ចិត</b></header><div class="bx-b">
+<p>១. គេមានទិន្នន័យ ៖ <span class="mi">\(A\)</span> (<span class="mi">\(8\)</span>), <span class="mi">\(B\)</span> (<span class="mi">\(12\)</span>), <span class="mi">\(C\)</span> (<span class="mi">\(20\)</span>)។ គណនាមុំផ្ចិតនៃប្រភេទនីមួយៗ។<br/>
+២. បើចម្រៀកថាសមួយមានទំហំស្មើ <span class="mi">\(\frac{1}{4}\)</span> នៃរង្វង់ តើមុំផ្ចិតរបស់វាមានរង្វាស់ប៉ុន្មានដឺក្រេ?</p>
+</div></section>
+<h3 id="u3">ការគណនាភាគរយ និងប្រេកង់ពីក្រាបផ្លិត</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>រូបមន្តបំប្លែងរវាងមុំ ភាគរយ និងប្រេកង់</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ពីមុំទៅភាគរយ ៖</strong>  ភាគរយ <span class="mi">\( = \dfrac{\theta}{360^\circ} \times 100\%\)</span></p></li>
+<li><p><strong>ពីភាគរយទៅប្រេកង់ ៖</strong> <span class="mi">\(f_i = \dfrac{\%}{100} \times N\)</span>  <strong>ពីមុំទៅប្រេកង់ ៖</strong> <span class="mi">\(f_i = \dfrac{\theta}{360^\circ} \times N\)</span></p></li>
+</ul>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22253.94%22 height=%22102.22%22 viewBox=%220 0 253.94 102.22%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo2NGQzYmRiZi03MjkxLTRmYTYtOWRhZC0wYTA4MTljZTNjOTcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaCQpSDcFo82B8kBMRN7%2BDfIAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpmNTM4MGE4Yi1jMWI0LTQzYWQtODZkZC1kYTliYjJhNjNmMzdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNohAXEwJSWEUQ%2BmSwV81zMewAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggwI/Aa3C/NXris0fhE1oYpVCqx%2By7t6WHmLvev4ZdE8ukZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaBVLMv73psYtYsp/ThGrl9kAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCDLdCgbqaakICxIFTGZ3g7J352p25%2BY/iCSNhBVitGaPmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj0Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjY0ZDNiZGJmLTcyOTEtNGZhNi05ZGFkLTBhMDgxOWNlM2M5Ny9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjJkODA3NGNkLTg3ZDktNGJiYS1hNmFiLWJlYjE3ODYyYTQ5NHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDAj8BrcL81euKzR%2BETWhilUKrH7Lu3pYeYu96/hl0Ty6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggNXgzliXrTaMy0BOY4Jgn2uQrk4c2DZr/JiSsRx7CVQ6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggXtRpSkDq3SEn6nH9zrl/a%2B8dWS0IBgAJ/2UzNK/Y8Kd0Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQDQnLlDq/Dnh/mg/b3GOM%2BOPyFTgnK5RAaFSMmo9jl4nbluS6Fe/yOkFw4S86Dbdde6IqPrI1vlqo6hT%2B%2BrxncQ=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 2.90 -1.62 L 2.90 -0.76 C 2.90 -0.42 2.89 -0.31 2.15 -0.31 L 1.95 -0.31 L 1.95 0 C 2.35 -0.03 2.87 -0.03 3.28 -0.03 C 3.70 -0.03 4.21 -0.03 4.62 0 L 4.62 -0.31 L 4.42 -0.31 C 3.68 -0.31 3.67 -0.42 3.67 -0.76 L 3.67 -1.62 L 4.65 -1.62 L 4.65 -1.93 L 3.67 -1.93 L 3.67 -6.43 C 3.67 -6.64 3.67 -6.70 3.51 -6.70 C 3.42 -6.70 3.39 -6.70 3.31 -6.57 L 0.28 -1.93 L 0.28 -1.62 Z M 2.96 -1.93 L 0.54 -1.93 L 2.96 -5.62 Z M 2.96 -1.93 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 4.54 -3.17 C 4.54 -3.95 4.5 -4.75 4.15 -5.48 C 3.70 -6.42 2.89 -6.59 2.46 -6.59 C 1.87 -6.59 1.15 -6.32 0.75 -5.40 C 0.43 -4.73 0.39 -3.95 0.39 -3.17 C 0.39 -2.42 0.42 -1.53 0.82 -0.78 C 1.25 0.01 1.98 0.21 2.46 0.21 C 3 0.21 3.75 0.01 4.18 -0.93 C 4.5 -1.60 4.54 -2.39 4.54 -3.17 Z M 2.46 0 C 2.07 0 1.5 -0.25 1.31 -1.20 C 1.20 -1.79 1.20 -2.70 1.20 -3.28 C 1.20 -3.92 1.20 -4.56 1.28 -5.10 C 1.46 -6.28 2.21 -6.37 2.46 -6.37 C 2.79 -6.37 3.43 -6.18 3.62 -5.21 C 3.73 -4.65 3.73 -3.90 3.73 -3.28 C 3.73 -2.54 3.73 -1.87 3.62 -1.23 C 3.46 -0.29 2.90 0 2.46 0 Z M 2.46 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-2%22%3E%3Cpath d=%22M 2.87 -3.48 C 3.67 -3.75 4.25 -4.43 4.25 -5.21 C 4.25 -6.03 3.37 -6.59 2.43 -6.59 C 1.43 -6.59 0.68 -6 0.68 -5.23 C 0.68 -4.92 0.90 -4.73 1.18 -4.73 C 1.5 -4.73 1.68 -4.93 1.68 -5.23 C 1.68 -5.73 1.21 -5.73 1.07 -5.73 C 1.39 -6.21 2.03 -6.34 2.39 -6.34 C 2.79 -6.34 3.34 -6.12 3.34 -5.23 C 3.34 -5.10 3.32 -4.54 3.06 -4.10 C 2.76 -3.62 2.43 -3.59 2.18 -3.59 C 2.10 -3.57 1.87 -3.56 1.79 -3.56 C 1.71 -3.54 1.65 -3.54 1.65 -3.43 C 1.65 -3.32 1.71 -3.32 1.89 -3.32 L 2.32 -3.32 C 3.14 -3.32 3.5 -2.65 3.5 -1.68 C 3.5 -0.34 2.81 -0.06 2.39 -0.06 C 1.95 -0.06 1.21 -0.23 0.87 -0.81 C 1.21 -0.76 1.51 -0.98 1.51 -1.35 C 1.51 -1.71 1.25 -1.90 0.96 -1.90 C 0.73 -1.90 0.42 -1.76 0.42 -1.32 C 0.42 -0.43 1.32 0.21 2.40 0.21 C 3.62 0.21 4.51 -0.68 4.51 -1.68 C 4.51 -2.5 3.89 -3.28 2.87 -3.48 Z M 2.87 -3.48 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-3%22%3E%3Cpath d=%22M 1.25 -0.76 L 2.29 -1.78 C 3.84 -3.14 4.43 -3.67 4.43 -4.67 C 4.43 -5.79 3.54 -6.59 2.34 -6.59 C 1.21 -6.59 0.5 -5.67 0.5 -4.79 C 0.5 -4.25 0.98 -4.25 1.01 -4.25 C 1.18 -4.25 1.53 -4.35 1.53 -4.76 C 1.53 -5.03 1.35 -5.28 1.01 -5.28 C 0.93 -5.28 0.90 -5.28 0.87 -5.26 C 1.10 -5.92 1.64 -6.28 2.21 -6.28 C 3.10 -6.28 3.54 -5.48 3.54 -4.67 C 3.54 -3.87 3.04 -3.09 2.5 -2.48 L 0.60 -0.35 C 0.5 -0.25 0.5 -0.23 0.5 0 L 4.15 0 L 4.43 -1.71 L 4.18 -1.71 C 4.14 -1.42 4.07 -0.98 3.96 -0.84 C 3.90 -0.76 3.25 -0.76 3.03 -0.76 Z M 1.25 -0.76 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-4%22%3E%3Cpath d=%22M 2.90 -6.32 C 2.90 -6.56 2.90 -6.59 2.68 -6.59 C 2.06 -5.95 1.20 -5.95 0.87 -5.95 L 0.87 -5.64 C 1.07 -5.64 1.65 -5.64 2.17 -5.90 L 2.17 -0.78 C 2.17 -0.42 2.14 -0.31 1.25 -0.31 L 0.93 -0.31 L 0.93 0 C 1.28 -0.03 2.14 -0.03 2.54 -0.03 C 2.93 -0.03 3.79 -0.03 4.14 0 L 4.14 -0.31 L 3.82 -0.31 C 2.93 -0.31 2.90 -0.42 2.90 -0.78 Z M 2.90 -6.32 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-5%22%3E%3Cpath d=%22M 1.60 -4.51 C 1.15 -4.81 1.12 -5.15 1.12 -5.32 C 1.12 -5.92 1.76 -6.34 2.46 -6.34 C 3.18 -6.34 3.81 -5.82 3.81 -5.10 C 3.81 -4.54 3.43 -4.07 2.84 -3.73 Z M 3.06 -3.57 C 3.76 -3.95 4.25 -4.45 4.25 -5.10 C 4.25 -6.01 3.37 -6.59 2.46 -6.59 C 1.48 -6.59 0.68 -5.85 0.68 -4.93 C 0.68 -4.75 0.70 -4.31 1.12 -3.84 C 1.21 -3.73 1.59 -3.48 1.84 -3.31 C 1.26 -3.03 0.42 -2.46 0.42 -1.5 C 0.42 -0.43 1.42 0.21 2.46 0.21 C 3.57 0.21 4.51 -0.60 4.51 -1.65 C 4.51 -2.01 4.40 -2.46 4.03 -2.87 C 3.84 -3.07 3.68 -3.18 3.06 -3.57 Z M 2.06 -3.17 L 3.28 -2.39 C 3.56 -2.20 4.03 -1.90 4.03 -1.31 C 4.03 -0.57 3.28 -0.06 2.46 -0.06 C 1.62 -0.06 0.90 -0.67 0.90 -1.5 C 0.90 -2.06 1.21 -2.70 2.06 -3.17 Z M 2.06 -3.17 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-6%22%3E%3Cpath d=%22M 1.31 -3.25 L 1.31 -3.48 C 1.31 -5.98 2.53 -6.34 3.03 -6.34 C 3.28 -6.34 3.68 -6.28 3.90 -5.93 C 3.76 -5.93 3.35 -5.93 3.35 -5.5 C 3.35 -5.18 3.59 -5.04 3.81 -5.04 C 3.96 -5.04 4.26 -5.14 4.26 -5.51 C 4.26 -6.10 3.84 -6.59 3.01 -6.59 C 1.75 -6.59 0.42 -5.31 0.42 -3.12 C 0.42 -0.48 1.56 0.21 2.48 0.21 C 3.57 0.21 4.51 -0.71 4.51 -2.01 C 4.51 -3.28 3.64 -4.21 2.54 -4.21 C 1.87 -4.21 1.5 -3.71 1.31 -3.25 Z M 2.48 -0.06 C 1.85 -0.06 1.56 -0.65 1.5 -0.79 C 1.32 -1.26 1.32 -2.06 1.32 -2.23 C 1.32 -3 1.64 -4 2.53 -4 C 2.68 -4 3.14 -4 3.45 -3.37 C 3.62 -3.01 3.62 -2.51 3.62 -2.03 C 3.62 -1.54 3.62 -1.06 3.46 -0.70 C 3.17 -0.10 2.70 -0.06 2.48 -0.06 Z M 2.48 -0.06 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-7%22%3E%3Cpath d=%22M 4.70 -6.01 C 4.79 -6.14 4.79 -6.15 4.79 -6.37 L 2.39 -6.37 C 1.18 -6.37 1.17 -6.5 1.12 -6.68 L 0.87 -6.68 L 0.54 -4.65 L 0.79 -4.65 C 0.82 -4.81 0.92 -5.43 1.04 -5.54 C 1.12 -5.60 1.89 -5.60 2.01 -5.60 L 4.06 -5.60 C 3.95 -5.45 3.17 -4.37 2.95 -4.04 C 2.06 -2.70 1.73 -1.32 1.73 -0.32 C 1.73 -0.23 1.73 0.21 2.20 0.21 C 2.65 0.21 2.65 -0.23 2.65 -0.32 L 2.65 -0.82 C 2.65 -1.37 2.68 -1.92 2.76 -2.45 C 2.79 -2.68 2.93 -3.53 3.37 -4.14 Z M 4.70 -6.01 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 1.71 0 L 5.78 -6.53 L 6.45 -6.53 L 2.37 0 Z M 1.90 -6.60 C 2.21 -6.60 2.48 -6.53 2.71 -6.37 C 2.94 -6.22 3.11 -6.01 3.23 -5.75 C 3.35 -5.48 3.42 -5.18 3.42 -4.84 C 3.42 -4.48 3.35 -4.17 3.23 -3.90 C 3.11 -3.63 2.94 -3.42 2.71 -3.28 C 2.48 -3.13 2.21 -3.06 1.90 -3.06 C 1.59 -3.06 1.32 -3.13 1.09 -3.28 C 0.87 -3.42 0.70 -3.63 0.57 -3.90 C 0.45 -4.17 0.39 -4.48 0.39 -4.84 C 0.39 -5.18 0.45 -5.48 0.57 -5.75 C 0.70 -6.01 0.87 -6.22 1.09 -6.37 C 1.32 -6.53 1.59 -6.60 1.90 -6.60 Z M 1.90 -6.04 C 1.71 -6.04 1.55 -5.99 1.42 -5.89 C 1.28 -5.79 1.18 -5.66 1.12 -5.48 C 1.06 -5.30 1.03 -5.09 1.03 -4.84 C 1.03 -4.58 1.06 -4.36 1.12 -4.18 C 1.18 -4.00 1.28 -3.86 1.42 -3.76 C 1.55 -3.67 1.71 -3.62 1.90 -3.62 C 2.10 -3.62 2.26 -3.67 2.39 -3.76 C 2.52 -3.86 2.62 -4.00 2.68 -4.18 C 2.75 -4.36 2.79 -4.58 2.79 -4.84 C 2.79 -5.09 2.75 -5.30 2.68 -5.48 C 2.62 -5.66 2.52 -5.79 2.39 -5.89 C 2.26 -5.99 2.10 -6.04 1.90 -6.04 Z M 6.26 -3.46 C 6.56 -3.46 6.83 -3.39 7.06 -3.25 C 7.28 -3.10 7.46 -2.89 7.59 -2.62 C 7.71 -2.35 7.78 -2.03 7.78 -1.68 C 7.78 -1.34 7.71 -1.03 7.59 -0.76 C 7.46 -0.49 7.28 -0.28 7.06 -0.12 C 6.83 0.01 6.56 0.09 6.26 0.09 C 5.95 0.09 5.67 0.01 5.45 -0.12 C 5.22 -0.28 5.04 -0.49 4.92 -0.76 C 4.80 -1.03 4.75 -1.34 4.75 -1.68 C 4.75 -2.03 4.80 -2.35 4.92 -2.62 C 5.04 -2.89 5.22 -3.10 5.45 -3.25 C 5.67 -3.39 5.95 -3.46 6.26 -3.46 Z M 6.26 -2.92 C 6.06 -2.92 5.89 -2.86 5.76 -2.76 C 5.64 -2.67 5.53 -2.53 5.46 -2.34 C 5.40 -2.15 5.37 -1.93 5.37 -1.68 C 5.37 -1.44 5.40 -1.23 5.46 -1.04 C 5.53 -0.85 5.64 -0.71 5.76 -0.60 C 5.89 -0.51 6.06 -0.46 6.26 -0.46 C 6.45 -0.46 6.60 -0.51 6.73 -0.60 C 6.86 -0.71 6.96 -0.85 7.03 -1.04 C 7.10 -1.23 7.14 -1.44 7.14 -1.68 C 7.14 -1.93 7.10 -2.15 7.03 -2.34 C 6.96 -2.53 6.86 -2.67 6.73 -2.76 C 6.60 -2.86 6.45 -2.92 6.26 -2.92 Z M 6.26 -2.92 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M 1.81 -3.78 C 1.53 -3.78 1.29 -3.86 1.10 -4.03 C 0.92 -4.20 0.84 -4.44 0.84 -4.73 C 0.84 -5.01 0.92 -5.23 1.10 -5.40 C 1.29 -5.58 1.53 -5.67 1.81 -5.67 C 2.08 -5.67 2.30 -5.58 2.48 -5.40 C 2.67 -5.23 2.76 -5.01 2.76 -4.73 C 2.76 -4.44 2.67 -4.20 2.48 -4.03 C 2.30 -3.86 2.08 -3.78 1.81 -3.78 Z M 1.81 -4.26 C 1.93 -4.26 2.03 -4.30 2.10 -4.39 C 2.17 -4.47 2.21 -4.58 2.21 -4.73 C 2.21 -4.86 2.17 -4.97 2.10 -5.06 C 2.03 -5.14 1.93 -5.18 1.81 -5.18 C 1.68 -5.18 1.58 -5.14 1.51 -5.06 C 1.44 -4.97 1.40 -4.86 1.40 -4.73 C 1.40 -4.58 1.44 -4.47 1.51 -4.39 C 1.58 -4.30 1.68 -4.26 1.81 -4.26 Z M 1.81 -0.20 C 1.53 -0.20 1.29 -0.28 1.10 -0.45 C 0.92 -0.62 0.84 -0.85 0.84 -1.14 C 0.84 -1.42 0.92 -1.66 1.10 -1.82 C 1.29 -2.00 1.53 -2.09 1.81 -2.09 C 2.08 -2.09 2.30 -2.00 2.48 -1.82 C 2.67 -1.66 2.76 -1.42 2.76 -1.14 C 2.76 -0.85 2.67 -0.62 2.48 -0.45 C 2.30 -0.28 2.08 -0.20 1.81 -0.20 Z M 1.81 -0.68 C 1.93 -0.68 2.03 -0.72 2.10 -0.81 C 2.17 -0.89 2.21 -1.00 2.21 -1.14 C 2.21 -1.28 2.17 -1.39 2.10 -1.48 C 2.03 -1.56 1.93 -1.60 1.81 -1.60 C 1.68 -1.60 1.58 -1.56 1.51 -1.48 C 1.44 -1.39 1.40 -1.28 1.40 -1.14 C 1.40 -1.00 1.44 -0.89 1.51 -0.81 C 1.58 -0.72 1.68 -0.68 1.81 -0.68 Z M 0.17 -2.67 L 0.17 -3.20 L 3.43 -3.20 L 3.43 -2.67 Z M 0.17 -2.67 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-2%22%3E%3Cpath d=%22M 2.67 -7.42 L 3.07 -7 C 2.42 -6.41 1.97 -5.78 1.71 -5.09 C 1.45 -4.40 1.32 -3.64 1.32 -2.79 C 1.32 -1.94 1.45 -1.17 1.71 -0.48 C 1.97 0.20 2.42 0.84 3.07 1.43 L 2.67 1.84 C 1.98 1.25 1.46 0.56 1.10 -0.20 C 0.76 -0.98 0.59 -1.84 0.59 -2.79 C 0.59 -3.73 0.76 -4.58 1.10 -5.35 C 1.46 -6.14 1.98 -6.82 2.67 -7.42 Z M 2.67 -7.42 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-3%22%3E%3Cpath d=%22M 1.25 -1.09 C 1.46 -1.09 1.64 -1.00 1.76 -0.84 C 1.89 -0.67 1.95 -0.45 1.95 -0.18 C 1.95 0.01 1.91 0.22 1.84 0.42 C 1.76 0.61 1.65 0.80 1.5 0.96 C 1.35 1.13 1.16 1.27 0.93 1.39 L 0.54 1.04 C 0.72 0.98 0.87 0.89 1 0.79 C 1.13 0.69 1.23 0.57 1.31 0.43 C 1.39 0.30 1.44 0.17 1.46 0.04 L 1.43 0.01 C 1.40 0.03 1.36 0.05 1.32 0.06 C 1.29 0.08 1.24 0.09 1.17 0.09 C 1.06 0.09 0.95 0.04 0.82 -0.04 C 0.71 -0.14 0.65 -0.28 0.65 -0.48 C 0.65 -0.64 0.71 -0.78 0.82 -0.90 C 0.95 -1.03 1.09 -1.09 1.25 -1.09 Z M 1.25 -1.09 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-4%22%3E%3Cpath d=%22M 0.90 0 L 0.90 -7.21 L 1.62 -7.21 L 1.62 -4.14 C 1.78 -4.44 2 -4.66 2.28 -4.81 C 2.56 -4.96 2.87 -5.04 3.21 -5.04 C 3.55 -5.04 3.85 -4.97 4.12 -4.84 C 4.40 -4.70 4.62 -4.5 4.78 -4.21 C 4.94 -3.94 5.03 -3.59 5.03 -3.17 L 5.03 0 L 4.32 0 L 4.32 -2.93 C 4.32 -3.48 4.20 -3.87 3.96 -4.09 C 3.73 -4.31 3.45 -4.42 3.10 -4.42 C 2.87 -4.42 2.64 -4.35 2.40 -4.23 C 2.17 -4.11 1.98 -3.92 1.84 -3.67 C 1.69 -3.42 1.62 -3.08 1.62 -2.67 L 1.62 0 Z M 0.90 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-5%22%3E%3Cpath d=%22M 3.70 -3.21 C 3.70 -3.59 3.60 -3.88 3.40 -4.09 C 3.20 -4.31 2.92 -4.42 2.56 -4.42 C 2.22 -4.42 1.94 -4.34 1.71 -4.18 C 1.48 -4.03 1.31 -3.78 1.20 -3.45 L 0.62 -3.81 C 0.75 -4.18 0.99 -4.48 1.32 -4.70 C 1.67 -4.92 2.08 -5.04 2.57 -5.04 C 2.92 -5.04 3.24 -4.98 3.51 -4.85 C 3.78 -4.73 4 -4.54 4.15 -4.29 C 4.32 -4.04 4.40 -3.73 4.40 -3.35 L 4.40 -0.93 C 4.40 -0.66 4.53 -0.53 4.78 -0.53 C 4.83 -0.53 4.89 -0.53 4.95 -0.54 C 5.02 -0.55 5.08 -0.57 5.14 -0.59 L 5.09 -0.03 C 5.03 0 4.97 0.01 4.89 0.03 C 4.80 0.05 4.71 0.06 4.60 0.06 C 4.44 0.06 4.28 0.03 4.14 -0.03 C 3.99 -0.10 3.87 -0.21 3.79 -0.35 C 3.71 -0.50 3.67 -0.69 3.67 -0.92 L 3.67 -1.06 L 3.85 -1.03 C 3.78 -0.78 3.65 -0.56 3.46 -0.39 C 3.28 -0.22 3.08 -0.09 2.84 -0.01 C 2.61 0.05 2.37 0.09 2.14 0.09 C 1.71 0.09 1.34 -0.01 1.04 -0.23 C 0.74 -0.45 0.59 -0.78 0.59 -1.21 C 0.59 -1.58 0.70 -1.88 0.93 -2.12 C 1.16 -2.36 1.5 -2.53 1.93 -2.62 L 3.82 -3.01 L 3.82 -2.42 L 2.28 -2.09 C 1.95 -2.01 1.71 -1.92 1.54 -1.79 C 1.39 -1.67 1.31 -1.49 1.31 -1.26 C 1.31 -1.04 1.39 -0.86 1.54 -0.73 C 1.71 -0.59 1.94 -0.53 2.25 -0.53 C 2.42 -0.53 2.59 -0.55 2.76 -0.59 C 2.94 -0.64 3.09 -0.72 3.23 -0.82 C 3.37 -0.92 3.49 -1.06 3.57 -1.21 C 3.66 -1.38 3.70 -1.58 3.70 -1.81 Z M 3.70 -3.21 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-6%22%3E%3Cpath d=%22M 0.67 1.84 L 0.26 1.43 C 0.91 0.84 1.36 0.20 1.62 -0.48 C 1.88 -1.17 2.01 -1.93 2.01 -2.78 C 2.01 -3.62 1.88 -4.39 1.62 -5.07 C 1.36 -5.77 0.91 -6.41 0.26 -7 L 0.67 -7.42 C 1.35 -6.82 1.87 -6.14 2.21 -5.35 C 2.57 -4.57 2.75 -3.71 2.75 -2.78 C 2.75 -1.84 2.57 -0.98 2.21 -0.20 C 1.87 0.56 1.35 1.25 0.67 1.84 Z M 0.67 1.84 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-0%22%3E%3Cpath d=%22M 7.31 -4.31 C 7.31 -5.90 6.26 -6.96 4.79 -6.96 C 2.65 -6.96 0.48 -4.73 0.48 -2.42 C 0.48 -0.78 1.59 0.21 3.01 0.21 C 5.10 0.21 7.31 -1.95 7.31 -4.31 Z M 3.07 -0.04 C 2.09 -0.04 1.40 -0.84 1.40 -2.14 C 1.40 -2.57 1.54 -4.03 2.29 -5.18 C 2.98 -6.21 3.95 -6.71 4.73 -6.71 C 5.54 -6.71 6.43 -6.17 6.43 -4.70 C 6.43 -3.98 6.17 -2.43 5.18 -1.21 C 4.71 -0.62 3.90 -0.04 3.07 -0.04 Z M 3.07 -0.04 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-0%22%3E%3Cpath d=%22M 3.18 2.65 C 2.41 2.65 1.81 2.48 1.39 2.15 C 0.96 1.83 0.75 1.36 0.75 0.76 L 0.75 -3.64 C 0.75 -3.80 0.71 -3.92 0.65 -4.01 C 0.60 -4.09 0.53 -4.16 0.43 -4.20 L 0.43 -4.92 C 0.43 -5.27 0.51 -5.53 0.68 -5.71 C 0.86 -5.90 1.11 -6 1.45 -6 L 2.5 -6 L 2.5 -4.73 L 2.01 -4.73 C 1.89 -4.73 1.84 -4.66 1.84 -4.53 L 1.84 -4.43 C 2.05 -4.35 2.20 -4.25 2.29 -4.12 C 2.39 -4.00 2.43 -3.83 2.43 -3.59 L 2.43 0.76 C 2.43 0.98 2.5 1.15 2.62 1.28 C 2.75 1.40 2.94 1.46 3.18 1.46 C 3.42 1.46 3.60 1.40 3.73 1.28 C 3.86 1.15 3.93 0.98 3.93 0.76 L 3.93 0.5 L 5.62 0.5 L 5.62 0.76 C 5.62 1.36 5.40 1.83 4.96 2.15 C 4.53 2.48 3.94 2.65 3.18 2.65 Z M 3.18 2.65 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-1%22%3E%3Cpath d=%22M 6.29 0.09 C 5.53 0.09 4.94 -0.06 4.51 -0.39 C 4.09 -0.71 3.89 -1.17 3.89 -1.78 L 3.89 -2.5 C 3.89 -2.69 3.82 -2.85 3.68 -2.96 C 3.56 -3.08 3.39 -3.14 3.17 -3.14 C 2.94 -3.14 2.75 -3.08 2.62 -2.96 C 2.5 -2.85 2.43 -2.69 2.43 -2.5 L 2.43 -1.35 L 2.03 -1.73 L 2.15 -1.73 C 2.48 -1.73 2.73 -1.66 2.89 -1.51 C 3.05 -1.37 3.14 -1.16 3.14 -0.85 C 3.14 -0.55 3.04 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.53 0.06 1.22 0.00 1.03 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -2.5 C 0.75 -3.07 0.96 -3.51 1.39 -3.82 C 1.81 -4.14 2.41 -4.31 3.17 -4.31 C 3.92 -4.31 4.50 -4.14 4.93 -3.82 C 5.36 -3.51 5.57 -3.07 5.57 -2.5 L 5.57 -1.78 C 5.57 -1.56 5.64 -1.39 5.76 -1.26 C 5.89 -1.14 6.06 -1.09 6.29 -1.09 C 6.51 -1.09 6.68 -1.14 6.81 -1.26 C 6.93 -1.39 7 -1.56 7 -1.78 L 7 -3.64 C 7 -3.80 6.96 -3.92 6.90 -4.01 C 6.85 -4.09 6.78 -4.16 6.68 -4.20 L 6.68 -4.92 C 6.68 -5.27 6.76 -5.53 6.93 -5.71 C 7.11 -5.90 7.36 -6 7.70 -6 L 8.75 -6 L 8.75 -4.73 L 8.26 -4.73 C 8.14 -4.73 8.09 -4.66 8.09 -4.53 L 8.09 -4.43 C 8.30 -4.35 8.45 -4.25 8.54 -4.12 C 8.64 -4.00 8.68 -3.83 8.68 -3.59 L 8.68 -1.78 C 8.68 -1.17 8.47 -0.71 8.04 -0.39 C 7.62 -0.06 7.04 0.09 6.29 0.09 Z M 2.20 -0.5 C 2.41 -0.5 2.51 -0.61 2.51 -0.84 C 2.51 -1.07 2.41 -1.18 2.20 -1.18 Z M 2.04 -3.37 L 1.06 -4.29 L 1.06 -4.92 C 1.06 -5.27 1.14 -5.53 1.31 -5.71 C 1.48 -5.90 1.75 -6 2.09 -6 L 4.96 -6 L 4.96 -4.73 L 2.65 -4.73 C 2.60 -4.73 2.55 -4.71 2.51 -4.67 C 2.48 -4.64 2.46 -4.59 2.46 -4.53 L 2.46 -4.43 L 3.07 -3.87 Z M 2.04 -3.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-2%22%3E%3Cpath d=%22M -2.70 2.65 C -3.23 2.65 -3.62 2.55 -3.89 2.35 C -4.16 2.17 -4.29 1.88 -4.29 1.5 L -4.29 0.5 L -3.04 0.5 L -3.04 1.5 C -3.04 1.60 -3.01 1.67 -2.96 1.73 C -2.91 1.78 -2.83 1.81 -2.73 1.81 C -2.64 1.81 -2.56 1.78 -2.51 1.73 C -2.46 1.67 -2.43 1.60 -2.43 1.5 L -2.43 0.5 L -0.98 0.5 L -0.98 1.5 C -0.98 1.88 -1.12 2.17 -1.40 2.35 C -1.69 2.55 -2.12 2.65 -2.70 2.65 Z M -2.70 2.65 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-3%22%3E%3Cpath d=%22M 1.57 0.06 C 1.16 0.06 0.85 -0.01 0.65 -0.17 C 0.46 -0.32 0.37 -0.55 0.37 -0.85 C 0.37 -1.16 0.45 -1.37 0.60 -1.51 C 0.77 -1.66 1.01 -1.73 1.34 -1.73 L 1.46 -1.73 L 1.09 -1.35 L 1.09 -3.59 C 1.09 -3.70 1.06 -3.80 1.01 -3.87 C 0.96 -3.94 0.89 -4.00 0.79 -4.06 C 0.70 -4.11 0.59 -4.14 0.46 -4.17 L 0.46 -5.32 C 0.46 -5.77 0.65 -6 1.03 -6 L 1.39 -6 L 1.98 -5.62 L 1.68 -5.57 L 1.68 -6.34 L 3.10 -6.34 L 3.10 -5.18 C 3.10 -5.00 3.05 -4.87 2.95 -4.78 C 2.85 -4.69 2.72 -4.65 2.56 -4.65 L 2.46 -4.65 L 2.06 -4.75 L 2 -4.75 C 1.89 -4.75 1.84 -4.69 1.84 -4.57 L 1.84 -4.45 C 2.15 -4.37 2.38 -4.26 2.53 -4.10 C 2.68 -3.96 2.76 -3.77 2.76 -3.54 L 2.76 -0.60 C 2.76 -0.16 2.36 0.06 1.57 0.06 Z M 1.40 -1.18 C 1.19 -1.18 1.09 -1.07 1.09 -0.84 C 1.09 -0.61 1.19 -0.5 1.40 -0.5 Z M 1.40 -1.18 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-4%22%3E%3Cpath d=%22M 1.92 0.06 C 1.53 0.06 1.25 0.00 1.06 -0.10 C 0.88 -0.22 0.79 -0.39 0.79 -0.60 L 0.79 -3.64 C 0.79 -3.80 0.75 -3.92 0.67 -4.01 C 0.59 -4.09 0.49 -4.16 0.35 -4.20 L 0.35 -4.92 C 0.35 -5.27 0.44 -5.53 0.60 -5.71 C 0.78 -5.90 1.03 -6 1.37 -6 L 2.54 -6 L 2.54 -4.73 L 1.93 -4.73 C 1.82 -4.73 1.76 -4.66 1.76 -4.53 L 1.76 -4.43 C 2.01 -4.35 2.19 -4.25 2.29 -4.12 C 2.41 -4.00 2.46 -3.83 2.46 -3.59 L 2.46 -1.35 L 1.98 -1.73 L 2.10 -1.73 C 2.42 -1.73 2.67 -1.66 2.82 -1.51 C 2.99 -1.37 3.07 -1.16 3.07 -0.85 C 3.07 -0.24 2.69 0.06 1.92 0.06 Z M 2.15 -0.5 C 2.36 -0.5 2.46 -0.61 2.46 -0.84 C 2.46 -1.07 2.36 -1.18 2.15 -1.18 Z M 2.15 -0.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-5%22%3E%3Cpath d=%22M 7.14 -4.34 C 7.14 -4.5 7.10 -4.60 7.03 -4.65 C 6.96 -4.70 6.87 -4.73 6.75 -4.73 L 6.34 -4.73 L 5.18 -4.07 L 4.96 -5.21 L 6.34 -6 L 7.18 -6 C 7.73 -6 8.14 -5.87 8.42 -5.64 C 8.69 -5.39 8.82 -5.03 8.82 -4.56 L 8.82 0 L 7.14 0 Z M 3.95 0 L 3.95 -4.45 L 3.67 -4.70 L 3.21 -4.34 L 3.17 -4.34 L 2.70 -4.70 L 2.43 -4.45 L 2.43 -1.35 L 2.03 -1.73 L 2.15 -1.73 C 2.48 -1.73 2.73 -1.66 2.89 -1.51 C 3.05 -1.37 3.14 -1.16 3.14 -0.85 C 3.14 -0.55 3.04 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.53 0.06 1.22 0.00 1.03 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -4.84 L 2.20 -6.09 L 2.31 -6.09 L 3.18 -5.45 L 4.07 -6.09 L 4.18 -6.09 L 5.64 -4.84 L 5.64 0 Z M 2.20 -0.5 C 2.41 -0.5 2.51 -0.61 2.51 -0.84 C 2.51 -1.07 2.41 -1.18 2.20 -1.18 Z M 2.20 -0.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-6%22%3E%3C/g%3E%3Cg id=%22glyph-3-7%22%3E%3Cpath d=%22M 3.95 -2.32 C 3.95 -2.54 3.88 -2.71 3.75 -2.84 C 3.61 -2.96 3.42 -3.03 3.18 -3.03 C 2.96 -3.03 2.78 -2.96 2.64 -2.84 C 2.50 -2.71 2.43 -2.54 2.43 -2.32 L 2.43 -1.35 L 2.03 -1.73 L 2.15 -1.73 C 2.48 -1.73 2.73 -1.66 2.89 -1.51 C 3.05 -1.37 3.14 -1.16 3.14 -0.85 C 3.14 -0.55 3.04 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.53 0.06 1.22 0.00 1.03 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -2.32 C 0.75 -2.92 0.96 -3.39 1.40 -3.71 C 1.84 -4.05 2.43 -4.21 3.18 -4.21 C 3.95 -4.21 4.55 -4.05 4.98 -3.71 C 5.42 -3.39 5.64 -2.92 5.64 -2.32 L 5.64 0 L 3.95 0 Z M 2.20 -0.5 C 2.41 -0.5 2.51 -0.61 2.51 -0.84 C 2.51 -1.07 2.41 -1.18 2.20 -1.18 Z M 0.71 -4.73 L 0.71 -6 L 5.67 -6 L 5.67 -4.73 Z M 0.71 -4.73 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-8%22%3E%3Cpath d=%22M 1.51 -6.26 C 1.16 -6.26 0.89 -6.33 0.70 -6.48 C 0.51 -6.62 0.42 -6.82 0.42 -7.06 C 0.42 -7.19 0.44 -7.31 0.48 -7.42 L 1.29 -7.42 C 1.26 -7.35 1.25 -7.29 1.25 -7.23 C 1.25 -7.16 1.26 -7.10 1.31 -7.07 C 1.35 -7.05 1.40 -7.04 1.46 -7.04 C 1.53 -7.04 1.59 -7.06 1.64 -7.10 C 1.67 -7.16 1.70 -7.23 1.70 -7.34 C 1.70 -7.5 1.65 -7.61 1.56 -7.70 C 1.46 -7.78 1.30 -7.82 1.06 -7.82 L 0.54 -7.82 L 0.54 -8.90 L 1.35 -8.90 C 1.89 -8.90 2.27 -8.78 2.48 -8.53 C 2.70 -8.28 2.81 -7.96 2.81 -7.56 C 2.81 -7.07 2.69 -6.73 2.45 -6.54 C 2.21 -6.35 1.89 -6.26 1.51 -6.26 Z M 1.92 0.06 C 1.53 0.06 1.25 0.00 1.06 -0.10 C 0.88 -0.22 0.79 -0.39 0.79 -0.60 L 0.79 -3.64 C 0.79 -3.80 0.75 -3.92 0.67 -4.01 C 0.59 -4.09 0.49 -4.16 0.35 -4.20 L 0.35 -4.92 C 0.35 -5.27 0.44 -5.53 0.60 -5.71 C 0.78 -5.90 1.03 -6 1.37 -6 L 2.54 -6 L 2.54 -4.73 L 1.93 -4.73 C 1.82 -4.73 1.76 -4.66 1.76 -4.53 L 1.76 -4.43 C 2.01 -4.35 2.19 -4.25 2.29 -4.12 C 2.41 -4.00 2.46 -3.83 2.46 -3.59 L 2.46 -1.35 L 1.98 -1.73 L 2.10 -1.73 C 2.42 -1.73 2.67 -1.66 2.82 -1.51 C 2.99 -1.37 3.07 -1.16 3.07 -0.85 C 3.07 -0.24 2.69 0.06 1.92 0.06 Z M 2.15 -0.5 C 2.36 -0.5 2.46 -0.61 2.46 -0.84 C 2.46 -1.07 2.36 -1.18 2.15 -1.18 Z M 2.15 -0.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-9%22%3E%3Cpath d=%22M 3.79 -4.26 C 3.79 -4.46 3.73 -4.61 3.60 -4.73 C 3.49 -4.84 3.32 -4.90 3.10 -4.90 C 2.91 -4.90 2.75 -4.84 2.62 -4.73 C 2.5 -4.61 2.43 -4.46 2.43 -4.26 L 2.43 -1.35 L 2.03 -1.73 L 2.15 -1.73 C 2.48 -1.73 2.73 -1.66 2.89 -1.51 C 3.05 -1.37 3.14 -1.16 3.14 -0.85 C 3.14 -0.55 3.04 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.53 0.06 1.22 0.00 1.03 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -4.26 C 0.75 -4.81 0.95 -5.25 1.37 -5.59 C 1.78 -5.92 2.36 -6.09 3.10 -6.09 C 3.85 -6.09 4.44 -5.92 4.85 -5.59 C 5.27 -5.25 5.48 -4.81 5.48 -4.26 L 5.48 -1.48 L 6.18 -2.20 L 6.90 -1.48 L 6.90 -4.26 C 6.90 -4.81 7.10 -5.25 7.51 -5.59 C 7.92 -5.92 8.50 -6.09 9.25 -6.09 C 9.98 -6.09 10.56 -5.92 10.98 -5.59 C 11.41 -5.25 11.62 -4.81 11.62 -4.26 L 11.62 0 L 9.95 0 L 9.95 -4.26 C 9.95 -4.46 9.88 -4.61 9.75 -4.73 C 9.62 -4.84 9.45 -4.90 9.25 -4.90 C 9.05 -4.90 8.89 -4.84 8.76 -4.73 C 8.64 -4.61 8.57 -4.46 8.57 -4.26 L 8.57 0 L 7.04 0 L 6.18 -0.90 L 5.34 0 L 3.79 0 Z M 2.20 -0.5 C 2.41 -0.5 2.51 -0.61 2.51 -0.84 C 2.51 -1.07 2.41 -1.18 2.20 -1.18 Z M 2.20 -0.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-10%22%3E%3Cpath d=%22M -4.25 2.60 C -4.71 2.60 -5.03 2.56 -5.18 2.46 C -5.35 2.37 -5.43 2.25 -5.43 2.09 L -5.43 1.65 C -5.43 1.42 -5.37 1.21 -5.25 1.01 C -5.12 0.82 -4.89 0.67 -4.56 0.56 C -4.23 0.44 -3.78 0.39 -3.18 0.39 C -2.59 0.39 -2.13 0.44 -1.81 0.56 C -1.48 0.67 -1.26 0.82 -1.14 1.01 C -1.01 1.21 -0.95 1.42 -0.95 1.65 L -0.95 2.54 L -2.46 2.54 L -2.46 1.68 C -2.46 1.56 -2.51 1.45 -2.60 1.37 C -2.71 1.28 -2.90 1.25 -3.18 1.25 C -3.47 1.25 -3.68 1.28 -3.81 1.34 C -3.93 1.40 -4 1.51 -4 1.68 L -4.03 1.46 L -3.96 1.46 C -3.73 1.46 -3.56 1.50 -3.45 1.59 C -3.33 1.68 -3.28 1.83 -3.28 2.03 C -3.28 2.21 -3.35 2.35 -3.5 2.45 C -3.65 2.55 -3.90 2.60 -4.25 2.60 Z M -4.01 2.23 C -3.92 2.23 -3.85 2.21 -3.82 2.17 C -3.79 2.14 -3.78 2.09 -3.78 2.03 C -3.78 1.95 -3.79 1.89 -3.82 1.85 C -3.85 1.82 -3.92 1.81 -4.01 1.81 Z M -4.01 2.23 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-11%22%3E%3Cpath d=%22M 0.75 -2.32 C 0.75 -2.92 0.96 -3.39 1.40 -3.71 C 1.84 -4.05 2.44 -4.21 3.20 -4.21 C 3.96 -4.21 4.55 -4.05 4.98 -3.71 C 5.42 -3.39 5.64 -2.92 5.64 -2.32 L 5.64 0 L 3.95 0 L 3.95 -2.32 C 3.95 -2.55 3.88 -2.72 3.75 -2.84 C 3.61 -2.96 3.42 -3.03 3.18 -3.03 C 2.96 -3.03 2.78 -2.96 2.64 -2.84 C 2.50 -2.72 2.43 -2.55 2.43 -2.32 L 2.43 0 L 0.75 0 Z M 0.71 -4.73 L 0.71 -6 L 5.67 -6 L 5.67 -4.73 Z M 0.71 -4.73 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-12%22%3E%3Cpath d=%22M 6.29 0.09 C 5.53 0.09 4.94 -0.06 4.51 -0.39 C 4.09 -0.71 3.89 -1.17 3.89 -1.78 L 3.89 -4.21 C 3.89 -4.43 3.82 -4.60 3.68 -4.71 C 3.56 -4.84 3.39 -4.90 3.17 -4.90 C 2.94 -4.90 2.75 -4.84 2.62 -4.71 C 2.5 -4.60 2.43 -4.43 2.43 -4.21 L 2.43 -1.35 L 2.03 -1.73 L 2.15 -1.73 C 2.48 -1.73 2.73 -1.66 2.89 -1.51 C 3.05 -1.37 3.14 -1.16 3.14 -0.85 C 3.14 -0.55 3.04 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.53 0.06 1.22 0.00 1.03 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -4.21 C 0.75 -4.81 0.96 -5.26 1.39 -5.59 C 1.81 -5.92 2.41 -6.09 3.17 -6.09 C 3.92 -6.09 4.50 -5.92 4.93 -5.59 C 5.36 -5.26 5.57 -4.81 5.57 -4.21 L 5.57 -1.78 C 5.57 -1.56 5.64 -1.39 5.76 -1.26 C 5.89 -1.14 6.06 -1.09 6.29 -1.09 C 6.51 -1.09 6.68 -1.14 6.81 -1.26 C 6.93 -1.39 7 -1.56 7 -1.78 L 7 -3.64 C 7 -3.80 6.96 -3.92 6.90 -4.01 C 6.85 -4.09 6.78 -4.16 6.68 -4.20 L 6.68 -4.92 C 6.68 -5.27 6.76 -5.53 6.93 -5.71 C 7.11 -5.90 7.36 -6 7.70 -6 L 8.75 -6 L 8.75 -4.73 L 8.26 -4.73 C 8.14 -4.73 8.09 -4.66 8.09 -4.53 L 8.09 -4.43 C 8.30 -4.35 8.45 -4.25 8.54 -4.12 C 8.64 -4.00 8.68 -3.83 8.68 -3.59 L 8.68 -1.78 C 8.68 -1.17 8.47 -0.71 8.04 -0.39 C 7.62 -0.06 7.04 0.09 6.29 0.09 Z M 2.20 -0.5 C 2.41 -0.5 2.51 -0.61 2.51 -0.84 C 2.51 -1.07 2.41 -1.18 2.20 -1.18 Z M 2.20 -0.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-13%22%3E%3Cpath d=%22M -3.62 2.65 C -4.19 2.65 -4.64 2.56 -4.96 2.37 C -5.28 2.18 -5.45 1.89 -5.45 1.51 C -5.45 1.16 -5.32 0.89 -5.06 0.73 C -4.81 0.57 -4.45 0.5 -4 0.5 C -3.86 0.5 -3.75 0.50 -3.65 0.51 C -3.56 0.52 -3.49 0.53 -3.45 0.54 L -3.45 1.31 C -3.47 1.30 -3.50 1.28 -3.54 1.26 C -3.59 1.25 -3.64 1.25 -3.68 1.25 C -3.76 1.25 -3.83 1.26 -3.87 1.31 C -3.92 1.36 -3.95 1.41 -3.95 1.46 C -3.95 1.55 -3.91 1.61 -3.84 1.65 C -3.76 1.69 -3.66 1.71 -3.53 1.71 C -3.32 1.71 -3.14 1.67 -2.98 1.57 C -2.83 1.49 -2.71 1.36 -2.62 1.20 C -2.53 1.03 -2.5 0.83 -2.5 0.60 L -2.5 0.5 L -0.95 0.5 L -0.95 0.62 C -0.95 1.21 -1.17 1.70 -1.64 2.07 C -2.09 2.46 -2.75 2.65 -3.62 2.65 Z M -3.62 2.65 %22/%3E%3C/g%3E%3Cg id=%22glyph-4-0%22%3E%3Cpath d=%22M 3.51 -1.73 C 3.51 -2.56 2.84 -3.21 2.01 -3.21 C 1.18 -3.21 0.53 -2.54 0.53 -1.73 C 0.53 -0.90 1.20 -0.25 2.01 -0.25 C 2.85 -0.25 3.51 -0.92 3.51 -1.73 Z M 2.01 -0.59 C 1.37 -0.59 0.87 -1.10 0.87 -1.73 C 0.87 -2.37 1.39 -2.87 2.01 -2.87 C 2.67 -2.87 3.17 -2.35 3.17 -1.73 C 3.17 -1.09 2.65 -0.59 2.01 -0.59 Z M 2.01 -0.59 %22/%3E%3C/g%3E%3C/g%3E%3CclipPath id=%22clip-0%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 0.93 10 L 64 10 L 64 101.44 L 0.93 101.44 Z M 0.93 10 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-1%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 27 37 L 101 37 L 101 101.44 L 27 101.44 Z M 27 37 %22/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(75%25, 87.5%25, 87.5%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 39.99%25, 39.99%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -0.00 L 45.77 -0.00 C 45.77 25.28 25.28 45.77 -0.00 45.77 C -14.65 45.77 -28.42 38.76 -37.03 26.91 Z M -0.00 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2251.50%22 y=%2227.03%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2256.44%22 y=%2227.03%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2261.39%22 y=%2227.03%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 98.21%25, 65.00%25)%22 fill-opacity=%221%22 d=%22M 52.39 48.79 L 15.64 22.08 C 6.10 35.21 4.29 52.44 10.89 67.27 C 16.12 79.03 26.11 88.02 38.35 92.00 Z M 52.39 48.79 %22/%3E%3Cg clip-path=%22url(%23clip-0)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(79.99%25, 39.99%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -0.00 L -37.03 26.91 C -46.65 13.67 -48.47 -3.68 -41.82 -18.62 C -36.54 -30.47 -26.48 -39.53 -14.14 -43.54 Z M -0.00 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3C/g%3E%3Cg fill=%22rgb(89.99%25, 44.99%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%2218.35%22 y=%2260.18%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2223.30%22 y=%2260.18%22/%3E%3C/g%3E%3Cg fill=%22rgb(89.99%25, 44.99%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2228.24%22 y=%2260.18%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 84.99%25, 69.99%25)%22 fill-opacity=%221%22 d=%22M 52.39 48.79 L 38.35 92.00 C 57.07 98.08 77.58 91.42 89.15 75.49 Z M 52.39 48.79 %22/%3E%3Cg clip-path=%22url(%23clip-1)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(79.99%25, 39.99%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -0.00 L -14.14 -43.54 C 4.71 -49.66 25.37 -42.95 37.03 -26.90 Z M -0.00 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3C/g%3E%3Cg fill=%22rgb(89.99%25, 44.99%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%2251.50%22 y=%2277.07%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2256.44%22 y=%2277.07%22/%3E%3C/g%3E%3Cg fill=%22rgb(89.99%25, 44.99%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2261.39%22 y=%2277.07%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(93.75%25, 75%25, 81.25%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(59.99%25, 0%25, 19.99%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -0.00 -0.00 L 37.03 -26.90 C 42.71 -19.09 45.77 -9.66 45.77 -0.00 Z M -0.00 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3Cg fill=%22rgb(67.49%25, 0%25, 22.49%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%2271.80%22 y=%2261.29%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%2276.74%22 y=%2261.29%22/%3E%3C/g%3E%3Cg fill=%22rgb(67.49%25, 0%25, 22.49%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2281.69%22 y=%2261.29%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(3.79%25, 31.99%25, 30.69%25)%22 fill-opacity=%221%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(3.79%25, 31.99%25, 30.69%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 1.69 -0.00 C 1.69 0.93 0.93 1.69 -0.00 1.69 C -0.93 1.69 -1.69 0.93 -1.69 -0.00 C -1.69 -0.93 -0.93 -1.69 -0.00 -1.69 C 0.93 -1.69 1.69 -0.93 1.69 -0.00 Z M 1.69 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3Cg fill=%22rgb(3.79%25, 31.99%25, 30.69%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2241.08%22 y=%2259.04%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(75%25, 87.5%25, 87.5%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 39.99%25, 39.99%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 62.64 20.27 L 62.64 26.71 C 62.64 27.26 63.09 27.70 63.64 27.70 L 73.69 27.70 C 74.24 27.70 74.69 27.26 74.69 26.71 L 74.69 20.27 C 74.69 19.72 74.24 19.27 73.69 19.27 L 63.64 19.27 C 63.09 19.27 62.64 19.72 62.64 20.27 Z M 62.64 20.27 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-0%22 x=%22132.41%22 y=%2227.74%22/%3E%3Cuse xlink:href=%22%23glyph-3-1%22 x=%22135.59%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-2%22 x=%22145.16%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-3%22 x=%22145.03%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22151.91%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22158.83%22 y=%2227.74%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22163.77%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22168.71%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%22180.17%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%22183.51%22 y=%2227.74%22/%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22188.46%22 y=%2227.74%22/%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22193.40%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-0%22 x=%22198.35%22 y=%2224.15%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22202.89%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-5%22 x=%22208.70%22 y=%2227.74%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22213.65%22 y=%2227.74%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22221.89%22 y=%2227.74%22/%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%22227.78%22 y=%2227.74%22/%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22232.96%22 y=%2227.74%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 98.21%25, 65.00%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(79.99%25, 39.99%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 62.64 5.81 L 62.64 12.25 C 62.64 12.80 63.09 13.25 63.64 13.25 L 73.69 13.25 C 74.24 13.25 74.69 12.80 74.69 12.25 L 74.69 5.81 C 74.69 5.26 74.24 4.81 73.69 4.81 L 63.64 4.81 C 63.09 4.81 62.64 5.26 62.64 5.81 Z M 62.64 5.81 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-4%22 x=%22132.41%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-3-5%22 x=%22135.73%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-3-6%22 x=%22145.30%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-3-7%22 x=%22145.30%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22154.99%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%22161.91%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22166.85%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22171.80%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%22183.26%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%22186.60%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22191.54%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-0-5%22 x=%22196.49%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-0%22 x=%22201.43%22 y=%2238.90%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22205.98%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-6%22 x=%22211.79%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22216.73%22 y=%2242.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22224.98%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%22230.86%22 y=%2242.48%22/%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22236.04%22 y=%2242.48%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(100%25, 84.99%25, 69.99%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(79.99%25, 39.99%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 62.64 -8.63 L 62.64 -2.20 C 62.64 -1.64 63.09 -1.20 63.64 -1.20 L 73.69 -1.20 C 74.24 -1.20 74.69 -1.64 74.69 -2.20 L 74.69 -8.63 C 74.69 -9.19 74.24 -9.63 73.69 -9.63 L 63.64 -9.63 C 63.09 -9.63 62.64 -9.19 62.64 -8.63 Z M 62.64 -8.63 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-1%22 x=%22132.41%22 y=%2257.19%22/%3E%3Cuse xlink:href=%22%23glyph-3-8%22 x=%22141.84%22 y=%2257.19%22/%3E%3Cuse xlink:href=%22%23glyph-3-9%22 x=%22145.16%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-10%22 x=%22154.55%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-11%22 x=%22157.54%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22167.23%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%22174.15%22 y=%2257.19%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22179.10%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22184.04%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%22195.50%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-7%22 x=%22198.84%22 y=%2257.19%22/%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%22203.78%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-0%22 x=%22208.73%22 y=%2253.60%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22213.27%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22219.09%22 y=%2257.19%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22224.03%22 y=%2257.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22232.28%22 y=%2257.19%22/%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%22238.16%22 y=%2257.19%22/%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22243.34%22 y=%2257.19%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(93.75%25, 75%25, 81.25%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(59.99%25, 0%25, 19.99%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 62.64 -23.09 L 62.64 -16.65 C 62.64 -16.10 63.09 -15.66 63.64 -15.66 L 73.69 -15.66 C 74.24 -15.66 74.69 -16.10 74.69 -16.65 L 74.69 -23.09 C 74.69 -23.64 74.24 -24.09 73.69 -24.09 L 63.64 -24.09 C 63.09 -24.09 62.64 -23.64 62.64 -23.09 Z M 62.64 -23.09 %22 transform=%22matrix(0.99, 0, 0, -0.99, 52.39, 48.79)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-12%22 x=%22132.41%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-13%22 x=%22141.88%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22145.14%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%22152.06%22 y=%2270.78%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22157.01%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22161.95%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%22173.40%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%22176.75%22 y=%2270.78%22/%3E%3Cuse xlink:href=%22%23glyph-0-6%22 x=%22181.70%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-0%22 x=%22186.64%22 y=%2267.19%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22191.18%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%22197.00%22 y=%2270.78%22/%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22201.94%22 y=%2270.78%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22210.19%22 y=%2270.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%22216.07%22 y=%2270.78%22/%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22221.25%22 y=%2270.78%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតខាងលើបង្ហាញពីការដាំដំណាំលើផ្ទៃដីសរុប <span class="mi">\(N = 200\text{ ha}\)</span> ៖<br/>
+ក. គណនាផ្ទៃដីដាំដុះដំណាំស្រូវ និងដំណាំពោត។<br/>
+ខ. គណនាមុំផ្ចិតនៃចម្រៀកថាសដំណាំសណ្ដែក (<span class="mi">\(20\%\)</span>)។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. ផ្ទៃដីស្រូវ (<span class="mi">\(40\%\)</span>) ៖ <span class="mi">\(S_1 = 200 \times \dfrac{40}{100} = 80\text{ ha}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{S_1 = 80\text{ ha}}\)</span><br/>
+ផ្ទៃដីពោត (<span class="mi">\(30\%\)</span>) ៖ <span class="mi">\(S_2 = 200 \times \dfrac{30}{100} = 60\text{ ha}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{S_2 = 60\text{ ha}}\)</span><br/>
+ ខ. មុំផ្ចិតដំណាំសណ្ដែក ៖ <span class="mi">\(\theta = 20\% \times 3.6^\circ = 72^\circ\)</span> (ឬ <span class="mi">\(\frac{20}{100} \times 360^\circ = 72^\circ\)</span>)។ ដូចនេះ <span class="mi">\(\boxed{\theta = 72^\circ}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ភាគរយ និងប្រេកង់</b></header><div class="bx-b">
+<p>១. ចម្រៀកថាសមួយមានមុំផ្ចិត <span class="mi">\(54^\circ\)</span>។ គណនាភាគរយនៃចម្រៀកថាសនោះ។<br/>
+២. បើសិស្សសរុបមាន <span class="mi">\(60\)</span> នាក់ ហើយចម្រៀកថាសមួយមានមុំ <span class="mi">\(90^\circ\)</span> តើមានសិស្សប៉ុន្មាននាក់?</p>
+</div></section>
+<h3 id="u4">ជំហាននៃការសង់ក្រាបផ្លិត</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ជំហានទាំង ៥ នៃការសង់ក្រាបផ្លិត</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ជំហាន ១ ៖</strong> គណនាផលបូកទិន្នន័យសរុប <span class="mi">\(N = f_1 + f_2 + \dots + f_k\)</span>។</p></li>
+<li><p><strong>ជំហាន ២ ៖</strong> គណនាមុំផ្ចិតនៃប្រភេទនីមួយៗតាមរូបមន្ត <span class="mi">\(\theta_i = \dfrac{f_i}{N} \times 360^\circ\)</span>។</p></li>
+<li><p><strong>ជំហាន ៣ ៖</strong> គូសរង្វង់មួយដែលមានផ្ចិត <span class="mi">\(O\)</span> និងកាំ <span class="mi">\(R\)</span> សមស្របដោយប្រើដែកឈាន។</p></li>
+<li><p><strong>ជំហាន ៤ ៖</strong> ប្រើរ៉ាប់ប៉ូទ័រដើម្បីវាស់ និងគូសមុំផ្ចិតបន្តបន្ទាប់គ្នាចាប់ពីកាំដើមមួយ។</p></li>
+<li><p><strong>ជំហាន ៥ ៖</strong> ផាត់ពណ៌ និងសរសេរឈ្មោះប្រភេទ ភាគរយ ឬតម្លៃលើចម្រៀកថាសនីមួយៗ។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេស្រង់ចំនួនយានជំនិះ ៖ ម៉ូតូ (<span class="mi">\(50\)</span>), កង់ (<span class="mi">\(30\)</span>), ឡាន (<span class="mi">\(20\)</span>) គ្រឿង។<br/>
+ក. គណនាមុំផ្ចិតសម្រាប់យានជំនិះនីមួយៗ។ ខ. រៀបរាប់លំដាប់នៃការសង់ក្រាបផ្លិត។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. ចំនួនសរុប ៖ <span class="mi">\(N = 50 + 30 + 20 = 100\)</span> គ្រឿង។<br/>
+មុំម៉ូតូ ៖ <span class="mi">\(\theta_1 = \dfrac{50}{100} \times 360^\circ = 180^\circ\)</span> , មុំកង់ ៖ <span class="mi">\(\theta_2 = \dfrac{30}{100} \times 360^\circ = 108^\circ\)</span><br/>
+មុំឡាន ៖ <span class="mi">\(\theta_3 = \dfrac{20}{100} \times 360^\circ = 72^\circ\)</span>។ ដូចនេះ <span class="mi">\(\boxed{180^\circ, 108^\circ, 72^\circ}\)</span><br/>
+ ខ. គូសរង្វង់ផ្ចិត <span class="mi">\(O\)</span> រួចវាស់មុំ <span class="mi">\(180^\circ\)</span> (កន្លះរង្វង់) បន្ទាប់មកវាស់មុំ <span class="mi">\(108^\circ\)</span> និងនៅសល់ <span class="mi">\(72^\circ\)</span>។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការសង់ក្រាបផ្លិត</b></header><div class="bx-b">
+<p>១. តើឧបករណ៍អ្វីខ្លះដែលចាំបាច់ត្រូវប្រើដើម្បីសង់ក្រាបផ្លិតឱ្យបានត្រឹមត្រូវ?<br/>
+២. បើទិន្នន័យមាន ២ ប្រភេទស្មើគ្នា តើក្រាបផ្លិតត្រូវបានចែកជាប៉ុន្មានផ្នែក? មុំផ្ចិតប៉ុន្មាន?</p>
+</div></section>
+<h3 id="u5">ការវិភាគទិន្នន័យ និងដោះស្រាយចំណោទជាក់ស្ដែង</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ការវិភាគទិន្នន័យពីក្រាបផ្លិត</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ការប្រៀបធៀប ៖</strong> រកប្រភេទដែលមានចំណែកធំជាងគេ និងតូចជាងគេ តាមរយៈមុំផ្ចិត។</p></li>
+<li><p><strong>ការគណនាផលធៀប ៖</strong> ផលធៀបរវាងពីរប្រភេទស្មើនឹងផលធៀបនៃមុំផ្ចិតរបស់វា ៖ <span class="mi">\(\frac{f_1}{f_2} = \frac{\theta_1}{\theta_2}\)</span>។</p></li>
+<li><p><strong>ការដោះស្រាយចំណោទ ៖</strong> អនុវត្តលើថវិកាគ្រួសារ ការបោះឆ្នោត ការលក់ និងស្ថិតិសាលារៀន។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គ្រួសារមួយមានប្រាក់ចំណូលប្រចាំខែ <span class="mi">\(\$800\)</span> ដោយបែងចែកការចំណាយតាមក្រាបផ្លិតខាងលើ ៖<br/>
+ក. គណនាប្រាក់ចំណាយលើម្ហូបអាហារ និងការស្នាក់នៅ។<br/>
+ខ. តើគ្រួសារនោះសន្សំប្រាក់បានប៉ុន្មានដុល្លារក្នុងមួយខែ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. ប្រាក់ចំណាយលើម្ហូប (<span class="mi">\(40\%\)</span>) ៖ <span class="mi">\(800 \times \dfrac{40}{100} = \$320\)</span>។ ដូចនេះ <span class="kfbox">ម្ហូបអាហារ <span class="mi">\(\$320\)</span></span><br/>
+ប្រាក់ចំណាយលើការស្នាក់នៅ (<span class="mi">\(25\%\)</span>) ៖ <span class="mi">\(800 \times \dfrac{25}{100} = \$200\)</span>។ ដូចនេះ <span class="kfbox">ស្នាក់នៅ <span class="mi">\(\$200\)</span></span><br/>
+ ខ. ប្រាក់សន្សំ (<span class="mi">\(15\%\)</span>) ៖ <span class="mi">\(800 \times \dfrac{15}{100} = \$120\)</span>។ ដូចនេះ <span class="kfbox">សន្សំបាន <span class="mi">\(\$120/\)</span> ខែ </span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការវិភាគទិន្នន័យ</b></header><div class="bx-b">
+<p>១. តាមទិន្នន័យខាងលើ តើប្រាក់ចំណាយលើម្ហូបច្រើនជាងការសិក្សាប៉ុន្មានដុល្លារ?<br/>
+២. គណនាមុំផ្ចិតនៃចម្រៀកថាសតាងប្រាក់សន្សំ (<span class="mi">\(15\%\)</span>)។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ក្រាបផ្លិតមួយបង្ហាញចំណូលចិត្តសត្វចិញ្ចឹម ៖ ឆ្កែ (<span class="mi">\(50\%\)</span>), ឆ្មា (<span class="mi">\(30\%\)</span>), បក្សី (<span class="mi">\(20\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសនីមួយៗ</p></li>
+<li><p>បើមានមនុស្សសរុប <span class="mi">\(60\)</span> នាក់ រកចំនួនអ្នកចូលចិត្តឆ្កែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ ឆ្កែ <span class="mi">\(180^\circ\)</span>, ឆ្មា <span class="mi">\(108^\circ\)</span>, បក្សី <span class="mi">\(72^\circ\)</span></p></li>
+<li><p>ចូលចិត្តឆ្កែ ៖ <span class="mi">\(60 \times 50\% = 30\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ក្នុងថ្នាក់រៀនមួយមានសិស្ស <span class="mi">\(40\)</span> នាក់ ៖ សិស្សស្រី <span class="mi">\(24\)</span> នាក់ និងសិស្សប្រុស <span class="mi">\(16\)</span> នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃសិស្សស្រី និងសិស្សប្រុស</p></li>
+<li><p>គណនាមុំផ្ចិតសម្រាប់សិស្សស្រី និងសិស្សប្រុស</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ស្រី ៖ <span class="mi">\(\frac{24}{40} = 60\%\)</span>; ប្រុស ៖ <span class="mi">\(\frac{16}{40} = 40\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ ស្រី <span class="mi">\(216^\circ\)</span>, ប្រុស <span class="mi">\(144^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>កសិដ្ឋានមួយមានផ្ទៃដីសរុប <span class="mi">\(300\text{ ha}\)</span> ៖ ស្រូវ (<span class="mi">\(150\text{ ha}\)</span>), ពោត (<span class="mi">\(90\text{ ha}\)</span>), សណ្ដែក (<span class="mi">\(60\text{ ha}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកភាគរយនៃដំណាំនីមួយៗធៀបនឹងផ្ទៃដីសរុប</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសដំណាំនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ ស្រូវ <span class="mi">\(50\%\)</span>, ពោត <span class="mi">\(30\%\)</span>, សណ្ដែក <span class="mi">\(20\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ ស្រូវ <span class="mi">\(180^\circ\)</span>, ពោត <span class="mi">\(108^\circ\)</span>, សណ្ដែក <span class="mi">\(72^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតមួយមាន ៤ ចម្រៀកថាសដែលមានមុំផ្ចិត ៖ <span class="mi">\(90^\circ, 120^\circ, 80^\circ\)</span> និង <span class="mi">\(\theta\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនារង្វាស់មុំផ្ចិត <span class="mi">\(\theta\)</span></p></li>
+<li><p>រកភាគរយនៃចម្រៀកថាសដែលមានមុំ <span class="mi">\(90^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\theta = 360^\circ - (90^\circ + 120^\circ + 80^\circ) = 70^\circ\)</span></p></li>
+<li><p>ភាគរយ <span class="mi">\(90^\circ\)</span> ៖ <span class="mi">\(\frac{90}{360} \times 100\% = 25\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គ្រួសារមួយមានប្រាក់ចំណូល <span class="mi">\(\$600/\)</span> ខែ  ដោយចំណាយ ៖ ម្ហូប (<span class="mi">\(45\%\)</span>), ផ្ទះ (<span class="mi">\(25\%\)</span>), សិក្សា (<span class="mi">\(20\%\)</span>), សន្សំ (<span class="mi">\(10\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំនួនប្រាក់ចំណាយលើម្ហូបអាហារ</p></li>
+<li><p>គណនាប្រាក់សន្សំប្រចាំខែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ម្ហូប ៖ <span class="mi">\(600 \times 45\% = \$270\)</span></p></li>
+<li><p>សន្សំ ៖ <span class="mi">\(600 \times 10\% = \$60\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៥ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសចំណាយលើម្ហូបអាហារ</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសប្រាក់សន្សំ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំម្ហូប ៖ <span class="mi">\(45\% \times 360^\circ = 162^\circ\)</span></p></li>
+<li><p>មុំសន្សំ ៖ <span class="mi">\(10\% \times 360^\circ = 36^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ការបោះឆ្នោតមួយមានសន្លឹកឆ្នោតសរុប <span class="mi">\(1200\)</span> សន្លឹក ៖ បេក្ខជន A (<span class="mi">\(600\)</span>), B (<span class="mi">\(360\)</span>), C (<span class="mi">\(240\)</span>) សន្លឹក ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃសន្លឹកឆ្នោតរបស់បេក្ខជននីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតសម្រាប់បេក្ខជននីមួយៗក្នុងក្រាបផ្លិត</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ A: <span class="mi">\(50\%\)</span>, B: <span class="mi">\(30\%\)</span>, C: <span class="mi">\(20\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ A: <span class="mi">\(180^\circ\)</span>, B: <span class="mi">\(108^\circ\)</span>, C: <span class="mi">\(72^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញមធ្យោបាយធ្វើដំណើរ ៖ ម៉ូតូ (<span class="mi">\(144^\circ\)</span>), កង់ (<span class="mi">\(108^\circ\)</span>), ដើរ (<span class="mi">\(72^\circ\)</span>), ឡាន (<span class="mi">\(36^\circ\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃមធ្យោបាយធ្វើដំណើរនីមួយៗ</p></li>
+<li><p>បើមានមនុស្ស <span class="mi">\(200\)</span> នាក់ រកចំនួនអ្នកធ្វើដំណើរដោយកង់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ ម៉ូតូ <span class="mi">\(40\%\)</span>, កង់ <span class="mi">\(30\%\)</span>, ដើរ <span class="mi">\(20\%\)</span>, ឡាន <span class="mi">\(10\%\)</span></p></li>
+<li><p>អ្នកជិះកង់ ៖ <span class="mi">\(200 \times 30\% = 60\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ហាងមួយលក់ផ្លែឈើបានសរុប <span class="mi">\(80\text{ kg}\)</span> ៖ ក្រូច (<span class="mi">\(30\text{ kg}\)</span>), ចេក (<span class="mi">\(20\text{ kg}\)</span>), ស្វាយ (<span class="mi">\(30\text{ kg}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃផ្លែឈើនីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសផ្លែឈើនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ ក្រូច <span class="mi">\(37.5\%\)</span>, ចេក <span class="mi">\(25\%\)</span>, ស្វាយ <span class="mi">\(37.5\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ ក្រូច <span class="mi">\(135^\circ\)</span>, ចេក <span class="mi">\(90^\circ\)</span>, ស្វាយ <span class="mi">\(135^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ចម្រៀកថាសមួយមានមុំផ្ចិត <span class="mi">\(54^\circ\)</span> ក្នុងចំណោមទិន្នន័យសរុប <span class="mi">\(N = 400\)</span> នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកភាគរយនៃចម្រៀកថាសនោះ</p></li>
+<li><p>រកចំនួនមនុស្សដែលត្រូវនឹងចម្រៀកថាសនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ <span class="mi">\(\frac{54^\circ}{360^\circ} \times 100\% = 15\%\)</span></p></li>
+<li><p>ចំនួនមនុស្ស ៖ <span class="mi">\(400 \times 15\% = 60\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>សាលារៀនមួយមានសិស្ស <span class="mi">\(500\)</span> នាក់ ៖ ថ្នាក់ទី ៧ (<span class="mi">\(150\)</span>), ទី ៨ (<span class="mi">\(125\)</span>), ទី ៩ (<span class="mi">\(125\)</span>), ទី ១០ (<span class="mi">\(100\)</span>) នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃសិស្សតាមកម្រិតថ្នាក់នីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតសម្រាប់ថ្នាក់នីមួយៗក្នុងក្រាបផ្លិត</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ ទី ៧ (<span class="mi">\(30\%\)</span>), ទី ៨ (<span class="mi">\(25\%\)</span>), ទី ៩ (<span class="mi">\(25\%\)</span>), ទី ១០ (<span class="mi">\(20\%\)</span>)</p></li>
+<li><p>មុំផ្ចិត ៖ ទី ៧ (<span class="mi">\(108^\circ\)</span>), ទី ៨ (<span class="mi">\(90^\circ\)</span>), ទី ៩ (<span class="mi">\(90^\circ\)</span>), ទី ១០ (<span class="mi">\(72^\circ\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតមួយបង្ហាញការបែងចែកថវិកាគម្រោង ៖ សម្ភារ (<span class="mi">\(40\%\)</span>), ពលកម្ម (<span class="mi">\(35\%\)</span>), គ្រប់គ្រង (<span class="mi">\(25\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃផ្នែកនីមួយៗ</p></li>
+<li><p>បើថវិកាសរុបគឺ <span class="mi">\(\$10\,000\)</span> រកប្រាក់ចំណាយលើសម្ភារ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ សម្ភារ <span class="mi">\(144^\circ\)</span>, ពលកម្ម <span class="mi">\(126^\circ\)</span>, គ្រប់គ្រង <span class="mi">\(90^\circ\)</span></p></li>
+<li><p>ចំណាយសម្ភារ ៖ <span class="mi">\(10\,000 \times 40\% = \$4000\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ក្នុងកន្ត្រកមួយមានបាល់ ៖ ក្រហម (<span class="mi">\(12\)</span>), ខៀវ (<span class="mi">\(18\)</span>), លឿង (<span class="mi">\(10\)</span>) គ្រាប់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនបាល់សរុប និងភាគរយនៃបាល់ពណ៌នីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសបាល់ពណ៌នីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៤០ គ្រាប់ ៖ ក្រហម <span class="mi">\(30\%\)</span>, ខៀវ <span class="mi">\(45\%\)</span>, លឿង <span class="mi">\(25\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ ក្រហម <span class="mi">\(108^\circ\)</span>, ខៀវ <span class="mi">\(162^\circ\)</span>, លឿង <span class="mi">\(90^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញលទ្ធផលប្រឡង ៖ និទ្ទេស A (<span class="mi">\(10\%\)</span>), B (<span class="mi">\(20\%\)</span>), C (<span class="mi">\(40\%\)</span>), D (<span class="mi">\(30\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃនិទ្ទេសនីមួយៗ</p></li>
+<li><p>បើសិស្សប្រឡងមាន <span class="mi">\(80\)</span> នាក់ រកចំនួនសិស្សបាននិទ្ទេស C</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ A (<span class="mi">\(36^\circ\)</span>), B (<span class="mi">\(72^\circ\)</span>), C (<span class="mi">\(144^\circ\)</span>), D (<span class="mi">\(108^\circ\)</span>)</p></li>
+<li><p>និទ្ទេស C ៖ <span class="mi">\(80 \times 40\% = 32\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ១៤ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សដែលទទួលបាននិទ្ទេស A</p></li>
+<li><p>រកផលធៀបរវាងសិស្សនិទ្ទេស A និងសិស្សនិទ្ទេស D</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>និទ្ទេស A ៖ <span class="mi">\(80 \times 10\% = 8\)</span> នាក់</p></li>
+<li><p>ផលធៀប A/D ៖ <span class="mi">\(\frac{8}{24} = \frac{1}{3}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនមួយមានការលក់តាមត្រីមាស ៖ ត្រីមាស ១ (<span class="mi">\(\$30\,000\)</span>), ២ (<span class="mi">\(\$40\,000\)</span>), ៣ (<span class="mi">\(\$50\,000\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកការលក់សរុបក្នុង ៣ ត្រីមាស</p></li>
+<li><p>គណនាមុំផ្ចិតនៃត្រីមាសនីមួយៗក្នុងក្រាបផ្លិត</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(\$120\,000\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ ត្រីមាស ១ (<span class="mi">\(90^\circ\)</span>), ២ (<span class="mi">\(120^\circ\)</span>), ៣ (<span class="mi">\(150^\circ\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញការប្រើប្រាស់ដី ៖ ព្រៃឈើ (<span class="mi">\(180^\circ\)</span>), កសិកម្ម (<span class="mi">\(90^\circ\)</span>), ទីក្រុង (<span class="mi">\(54^\circ\)</span>), ទឹក (<span class="mi">\(36^\circ\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកភាគរយនៃប្រភេទដីនីមួយៗ</p></li>
+<li><p>បើផ្ទៃដីសរុបគឺ <span class="mi">\(1000\text{ km}^2\)</span> រកផ្ទៃដីព្រៃឈើ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ ព្រៃឈើ <span class="mi">\(50\%\)</span>, កសិកម្ម <span class="mi">\(25\%\)</span>, ទីក្រុង <span class="mi">\(15\%\)</span>, ទឹក <span class="mi">\(10\%\)</span></p></li>
+<li><p>ដីព្រៃឈើ ៖ <span class="mi">\(1000 \times 50\% = 500\text{ km}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ១៧ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកផ្ទៃដីកសិកម្មគិតជា <span class="mi">\(\text{km}^2\)</span></p></li>
+<li><p>រកផ្ទៃដីទីក្រុងគិតជា <span class="mi">\(\text{km}^2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កសិកម្ម ៖ <span class="mi">\(1000 \times 25\% = 250\text{ km}^2\)</span></p></li>
+<li><p>ទីក្រុង ៖ <span class="mi">\(1000 \times 15\% = 150\text{ km}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គេស្ទង់មតិសិស្ស <span class="mi">\(120\)</span> នាក់អំពីភេសជ្ជៈ ៖ ទឹកផ្លែឈើ (<span class="mi">\(50\%\)</span>), ទឹកដោះគោ (<span class="mi">\(30\%\)</span>), តែ (<span class="mi">\(20\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សដែលចូលចិត្តភេសជ្ជៈនីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសភេសជ្ជៈនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សិស្ស ៖ ផ្លែឈើ <span class="mi">\(60\)</span>, ដោះគោ <span class="mi">\(36\)</span>, តែ <span class="mi">\(24\)</span> នាក់</p></li>
+<li><p>មុំផ្ចិត ៖ ផ្លែឈើ <span class="mi">\(180^\circ\)</span>, ដោះគោ <span class="mi">\(108^\circ\)</span>, តែ <span class="mi">\(72^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតមួយមាន ៣ ចម្រៀកថាសដែលមានមុំ <span class="mi">\(x^\circ, 2x^\circ, 3x^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាតម្លៃនៃ <span class="mi">\(x\)</span></p></li>
+<li><p>រកភាគរយនៃចម្រៀកថាសធំជាងគេ (<span class="mi">\(3x^\circ\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(6x = 360^\circ \Rightarrow x = 60^\circ\)</span></p></li>
+<li><p>ភាគរយចម្រៀកធំ (<span class="mi">\(180^\circ\)</span>) ៖ <span class="mi">\(50\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>កសិករម្នាក់ចិញ្ចឹមសត្វ <span class="mi">\(240\)</span> ក្បាល ៖ មាន់ (<span class="mi">\(120\)</span>), ទា (<span class="mi">\(60\)</span>), ជ្រូក (<span class="mi">\(40\)</span>), គោ (<span class="mi">\(20\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃសត្វនីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសសត្វនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ មាន់ <span class="mi">\(50\%\)</span>, ទា <span class="mi">\(25\%\)</span>, ជ្រូក <span class="mi">\(16.67\%\)</span>, គោ <span class="mi">\(8.33\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ មាន់ <span class="mi">\(180^\circ\)</span>, ទា <span class="mi">\(90^\circ\)</span>, ជ្រូក <span class="mi">\(60^\circ\)</span>, គោ <span class="mi">\(30^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញការបែងចែកពេលវេលា ២៤ ម៉ោង ៖ ដេក (<span class="mi">\(8\text{ h}\)</span>), រៀន (<span class="mi">\(8\text{ h}\)</span>), ហាត់ប្រាណ (<span class="mi">\(2\text{ h}\)</span>), ផ្សេងៗ (<span class="mi">\(6\text{ h}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃសកម្មភាពនីមួយៗ</p></li>
+<li><p>គណនាភាគរយនៃពេលវេលាគេងក្នុងមួយថ្ងៃ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ ដេក <span class="mi">\(120^\circ\)</span>, រៀន <span class="mi">\(120^\circ\)</span>, ហាត់ប្រាណ <span class="mi">\(30^\circ\)</span>, ផ្សេងៗ <span class="mi">\(90^\circ\)</span></p></li>
+<li><p>ភាគរយគេង ៖ <span class="mi">\(\frac{8}{24} \times 100\% \approx 33.33\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>បណ្ណាល័យមួយមានសៀវភៅ <span class="mi">\(600\)</span> ក្បាល ៖ គណិត (<span class="mi">\(180\)</span>), វិទ្យាសាស្ត្រ (<span class="mi">\(150\)</span>), អក្សរសាស្ត្រ (<span class="mi">\(120\)</span>), ប្រវត្តិ (<span class="mi">\(150\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃសៀវភៅប្រភេទនីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសសៀវភៅនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ គណិត <span class="mi">\(30\%\)</span>, វិទ្យាសាស្ត្រ <span class="mi">\(25\%\)</span>, អក្សរ <span class="mi">\(20\%\)</span>, ប្រវត្តិ <span class="mi">\(25\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ គណិត <span class="mi">\(108^\circ\)</span>, វិទ្យាសាស្ត្រ <span class="mi">\(90^\circ\)</span>, អក្សរ <span class="mi">\(72^\circ\)</span>, ប្រវត្តិ <span class="mi">\(90^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញការលក់សម្លៀកបំពាក់ ៖ អាវយឺត (<span class="mi">\(40\%\)</span>), ខោខូវប៊យ (<span class="mi">\(30\%\)</span>), រ៉ូប (<span class="mi">\(20\%\)</span>), មួក (<span class="mi">\(10\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃទំនិញនីមួយៗ</p></li>
+<li><p>បើលក់បានសរុប <span class="mi">\(500\)</span> កំប្លេ រកចំនួនអាវយឺត</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ អាវយឺត <span class="mi">\(144^\circ\)</span>, ខូវប៊យ <span class="mi">\(108^\circ\)</span>, រ៉ូប <span class="mi">\(72^\circ\)</span>, មួក <span class="mi">\(36^\circ\)</span></p></li>
+<li><p>ចំនួនអាវយឺត ៖ <span class="mi">\(500 \times 40\% = 200\)</span> កំប្លេ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ២៤ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនខោខូវប៊យដែលលក់បាន</p></li>
+<li><p>រកភាពខុសគ្នារវាងចំនួនអាវយឺត និងរ៉ូបដែលលក់បាន</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ខោខូវប៊យ ៖ <span class="mi">\(500 \times 30\% = 150\)</span> កំប្លេ</p></li>
+<li><p>ភាពខុសគ្នា (អាវយឺត និង រ៉ូប) ៖<br/>
+<span class="mi">\(200 - 100 = 100\)</span> កំប្លេ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតមួយមាន ៥ ចម្រៀកថាសស្មើគ្នា។ បើទិន្នន័យសរុបគឺ <span class="mi">\(150\)</span> នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិត និងភាគរយនៃចម្រៀកថាសនីមួយៗ</p></li>
+<li><p>រកចំនួនមនុស្សក្នុងចម្រៀកថាសនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ <span class="mi">\(72^\circ\)</span>; ភាគរយ ៖ <span class="mi">\(20\%\)</span></p></li>
+<li><p>មនុស្សក្នុងមួយចម្រៀក ៖ <span class="mi">\(\frac{150}{5} = 30\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ក្នុងថ្នាក់រៀនមួយមានសិស្ស <span class="mi">\(36\)</span> នាក់។ ក្រាបផ្លិតបង្ហាញសិស្សពូកែមានមុំផ្ចិត <span class="mi">\(60^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកភាគរយនៃសិស្សពូកែក្នុងថ្នាក់</p></li>
+<li><p>រកចំនួនសិស្សពូកែជាក់ស្ដែង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ <span class="mi">\(\frac{60}{360} \times 100\% \approx 16.67\%\)</span></p></li>
+<li><p>សិស្សពូកែ ៖ <span class="mi">\(36 \times \frac{1}{6} = 6\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ហាងមួយចំណាយដើមទុន ៖ ទិញទំនិញ (<span class="mi">\(\$4000\)</span>), ជួលទីតាំង (<span class="mi">\(\$2000\)</span>), បុគ្គលិក (<span class="mi">\(\$2000\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃចំណាយនីមួយៗធៀបនឹងសរុប</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសចំណាយនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ ទំនិញ <span class="mi">\(50\%\)</span>, ជួល <span class="mi">\(25\%\)</span>, បុគ្គលិក <span class="mi">\(25\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ ទំនិញ <span class="mi">\(180^\circ\)</span>, ជួល <span class="mi">\(90^\circ\)</span>, បុគ្គលិក <span class="mi">\(90^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតមួយបង្ហាញចំណូលតាមសាខា ៖ សាខា A (<span class="mi">\(150^\circ\)</span>), B (<span class="mi">\(120^\circ\)</span>), C (<span class="mi">\(90^\circ\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកភាគរយនៃចំណូលសាខានីមួយៗ</p></li>
+<li><p>បើចំណូលសរុបគឺ <span class="mi">\(\$36\,000\)</span> រកចំណូលសាខា A</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ A: <span class="mi">\(41.67\%\)</span>, B: <span class="mi">\(33.33\%\)</span>, C: <span class="mi">\(25\%\)</span></p></li>
+<li><p>ចំណូល A ៖ <span class="mi">\(36\,000 \times \frac{150}{360} = \$15\,000\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ២៩ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណូលរបស់សាខា B</p></li>
+<li><p>រកចំណូលរបស់សាខា C</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណូល B ៖ <span class="mi">\(36\,000 \times \frac{120}{360} = \$12\,000\)</span></p></li>
+<li><p>ចំណូល C ៖ <span class="mi">\(36\,000 \times \frac{90}{360} = \$9000\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញការបោះឆ្នោតប្រធានថ្នាក់ ៖ សុខ (<span class="mi">\(180^\circ\)</span>), តារា (<span class="mi">\(120^\circ\)</span>), ចិន្តា (<span class="mi">\(60^\circ\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃសំឡេងឆ្នោតបេក្ខជននីមួយៗ</p></li>
+<li><p>បើសិស្សបោះឆ្នោតមាន <span class="mi">\(36\)</span> នាក់ រកសំឡេងឆ្នោតសុខ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ សុខ <span class="mi">\(50\%\)</span>, តារា <span class="mi">\(33.33\%\)</span>, ចិន្តា <span class="mi">\(16.67\%\)</span></p></li>
+<li><p>សំឡេងឆ្នោតសុខ ៖ <span class="mi">\(36 \times 50\% = 18\)</span> សំឡេង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៣១ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកសំឡេងឆ្នោតរបស់តារា និងចិន្តា</p></li>
+<li><p>តើសុខឈ្នះតារាចំនួនប៉ុន្មានសំឡេង?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>តារា ៖ <span class="mi">\(12\)</span> សំឡេង, ចិន្តា ៖ <span class="mi">\(6\)</span> សំឡេង</p></li>
+<li><p>សុខឈ្នះតារា ៖ <span class="mi">\(18 - 12 = 6\)</span> សំឡេង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>កសិដ្ឋានមួយផលិតទឹកដោះគោបាន ៖ ចន្ទ (<span class="mi">\(30\%\)</span>), អង្គារ (<span class="mi">\(25\%\)</span>), ពុធ (<span class="mi">\(25\%\)</span>), ព្រហ (<span class="mi">\(20\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃថ្ងៃនីមួយៗ</p></li>
+<li><p>បើផលិតបានសរុប <span class="mi">\(800\text{ L}\)</span> រកបរិមាណទឹកដោះគោថ្ងៃចន្ទ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ ចន្ទ <span class="mi">\(108^\circ\)</span>, អង្គារ <span class="mi">\(90^\circ\)</span>, ពុធ <span class="mi">\(90^\circ\)</span>, ព្រហ <span class="mi">\(72^\circ\)</span></p></li>
+<li><p>ថ្ងៃចន្ទ ៖ <span class="mi">\(800 \times 30\% = 240\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញការបែងចែកថវិកាសាលា ៖ ជួសជុល (<span class="mi">\(30\%\)</span>), បណ្ណាល័យ (<span class="mi">\(25\%\)</span>), កីឡា (<span class="mi">\(25\%\)</span>), រង្វាន់ (<span class="mi">\(20\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃផ្នែកនីមួយៗ</p></li>
+<li><p>បើថវិកាសរុបគឺ <span class="mi">\(\$4000\)</span> រកប្រាក់ចំណាយលើការជួសជុល</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ ជួសជុល <span class="mi">\(108^\circ\)</span>, បណ្ណាល័យ <span class="mi">\(90^\circ\)</span>, កីឡា <span class="mi">\(90^\circ\)</span>, រង្វាន់ <span class="mi">\(72^\circ\)</span></p></li>
+<li><p>ចំណាយជួសជុល ៖ <span class="mi">\(4000 \times 30\% = \$1200\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៣៤ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រាក់ចំណាយលើបណ្ណាល័យ និងកីឡា</p></li>
+<li><p>រកប្រាក់រង្វាន់សិស្សគិតជាដុល្លារ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បណ្ណាល័យ និងកីឡា ៖ <span class="mi">\(\$1000 + \$1000 = \$2000\)</span></p></li>
+<li><p>ប្រាក់រង្វាន់ ៖ <span class="mi">\(4000 \times 20\% = \$800\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតមួយមានចម្រៀកថាស ៣ ដែលមានមុំ <span class="mi">\(90^\circ, 150^\circ, 120^\circ\)</span>។ បើចម្រៀកតូចបំផុតតាងមនុស្ស <span class="mi">\(15\)</span> នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនមនុស្សសរុប <span class="mi">\(N\)</span></p></li>
+<li><p>រកចំនួនមនុស្សក្នុងចម្រៀកថាសធំជាងគេ (<span class="mi">\(150^\circ\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំនួនមនុស្សសរុប ៖ <span class="mi">\(N = 4 \times 15 = 60\)</span> នាក់</p></li>
+<li><p>ចម្រៀកធំ (<span class="mi">\(150^\circ\)</span>) ៖ <span class="mi">\(60 \times \frac{5}{12} = 25\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>សិស្សម្នាក់ចំណាយប្រាក់ឧបត្ថម្ភ ៖ សៀវភៅ (<span class="mi">\(40\%\)</span>), អាហារ (<span class="mi">\(35\%\)</span>), សន្សំ (<span class="mi">\(25\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសនីមួយៗ</p></li>
+<li><p>បើប្រាក់ឧបត្ថម្ភគឺ <span class="mi">\(\$50\)</span> រកប្រាក់សន្សំ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ សៀវភៅ <span class="mi">\(144^\circ\)</span>, អាហារ <span class="mi">\(126^\circ\)</span>, សន្សំ <span class="mi">\(90^\circ\)</span></p></li>
+<li><p>ប្រាក់សន្សំ ៖ <span class="mi">\(50 \times 25\% = \$12.5\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញប្រភពថាមពល ៖ វារីអគ្គិសនី (<span class="mi">\(50\%\)</span>), ព្រះអាទិត្យ (<span class="mi">\(25\%\)</span>), ធ្យូងថ្ម (<span class="mi">\(25\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃប្រភពថាមពលនីមួយៗ</p></li>
+<li><p>បើថាមពលសរុបគឺ <span class="mi">\(1000\text{ MW}\)</span> រកថាមពលព្រះអាទិត្យ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ វារី <span class="mi">\(180^\circ\)</span>, ព្រះអាទិត្យ <span class="mi">\(90^\circ\)</span>, ធ្យូងថ្ម <span class="mi">\(90^\circ\)</span></p></li>
+<li><p>ថាមពលព្រះអាទិត្យ ៖ <span class="mi">\(1000 \times 25\% = 250\text{ MW}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>គេស្ទង់មតិមនុស្ស <span class="mi">\(300\)</span> នាក់អំពីការចូលចិត្តភាពយន្ត ៖ កំប្លែង (<span class="mi">\(108^\circ\)</span>), សកម្មភាព (<span class="mi">\(144^\circ\)</span>), មនោសញ្ចេតនា (<span class="mi">\(108^\circ\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកភាគរយនៃប្រភេទភាពយន្តនីមួយៗ</p></li>
+<li><p>រកចំនួនមនុស្សដែលចូលចិត្តភាពយន្តសកម្មភាព</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ កំប្លែង <span class="mi">\(30\%\)</span>, សកម្មភាព <span class="mi">\(40\%\)</span>, មនោសញ្ចេតនា <span class="mi">\(30\%\)</span></p></li>
+<li><p>ភាពយន្តសកម្មភាព ៖ <span class="mi">\(300 \times 40\% = 120\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៣៩ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនមនុស្សចូលចិត្តភាពយន្តកំប្លែង</p></li>
+<li><p>ប្រៀបធៀបចំនួនអ្នកចូលចិត្តកំប្លែង និងមនោសញ្ចេតនា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចូលចិត្តកំប្លែង ៖ <span class="mi">\(300 \times 30\% = 90\)</span> នាក់</p></li>
+<li><p>ចំនួនអ្នកចូលចិត្តកំប្លែង និងមនោសញ្ចេតនាគឺស្មើគ្នា (<span class="mi">\(90\)</span> នាក់)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញដំណាំលើដី <span class="mi">\(450\text{ ha}\)</span> ៖ ស្រូវ (<span class="mi">\(160^\circ\)</span>), សណ្ដែក (<span class="mi">\(100^\circ\)</span>), ពោត (<span class="mi">\(60^\circ\)</span>), ល្ង (<span class="mi">\(40^\circ\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃដំណាំនីមួយៗ</p></li>
+<li><p>រកក្រឡាផ្ទៃដីដំណាំស្រូវគិតជាហិកតា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ ស្រូវ <span class="mi">\(44.44\%\)</span>, សណ្ដែក <span class="mi">\(27.78\%\)</span>, ពោត <span class="mi">\(16.67\%\)</span>, ល្ង <span class="mi">\(11.11\%\)</span></p></li>
+<li><p>ដីស្រូវ ៖ <span class="mi">\(450 \times \frac{4}{9} = 200\text{ ha}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤១ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកក្រឡាផ្ទៃដីដំណាំសណ្ដែកគិតជាហិកតា</p></li>
+<li><p>រកក្រឡាផ្ទៃដីដំណាំពោត និងល្ងគិតជាហិកតា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ដីសណ្ដែក ៖ <span class="mi">\(450 \times \frac{5}{18} = 125\text{ ha}\)</span></p></li>
+<li><p>ដីពោត ៖ <span class="mi">\(75\text{ ha}\)</span>, ដីល្ង ៖ <span class="mi">\(50\text{ ha}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនមួយមានបុគ្គលិក <span class="mi">\(200\)</span> នាក់ ៖ ផ្នែកលក់ (<span class="mi">\(30\%\)</span>), ផលិតកម្ម (<span class="mi">\(40\%\)</span>), រដ្ឋបាល (<span class="mi">\(20\%\)</span>), ហិរញ្ញវត្ថុ (<span class="mi">\(10\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃផ្នែកនីមួយៗ</p></li>
+<li><p>រកចំនួនបុគ្គលិកផ្នែកផលិតកម្ម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ លក់ <span class="mi">\(108^\circ\)</span>, ផលិត <span class="mi">\(144^\circ\)</span>, រដ្ឋបាល <span class="mi">\(72^\circ\)</span>, ហិរញ្ញ <span class="mi">\(36^\circ\)</span></p></li>
+<li><p>ផលិតកម្ម ៖ <span class="mi">\(200 \times 40\% = 80\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤៣ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនបុគ្គលិកផ្នែកលក់ និងរដ្ឋបាល</p></li>
+<li><p>រកផលធៀបរវាងបុគ្គលិកផ្នែកលក់ និងហិរញ្ញវត្ថុ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>លក់ ៖ <span class="mi">\(60\)</span> នាក់, រដ្ឋបាល ៖ <span class="mi">\(40\)</span> នាក់</p></li>
+<li><p>ផលធៀបលក់/ហិរញ្ញ ៖ <span class="mi">\(\frac{60}{20} = 3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតបង្ហាញការនាំចេញកសិផល ៖ អង្ករ (<span class="mi">\(45\%\)</span>), កៅស៊ូ (<span class="mi">\(25\%\)</span>), ដំឡូងមី (<span class="mi">\(20\%\)</span>), ស្វាយចន្ទី (<span class="mi">\(10\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃកសិផលនីមួយៗ</p></li>
+<li><p>បើតម្លៃនាំចេញសរុបគឺ <span class="mi">\(\$100\)</span> លាន  រកតម្លៃនាំចេញអង្ករ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ អង្ករ <span class="mi">\(162^\circ\)</span>, កៅស៊ូ <span class="mi">\(90^\circ\)</span>, ដំឡូងមី <span class="mi">\(72^\circ\)</span>, ស្វាយចន្ទី <span class="mi">\(36^\circ\)</span></p></li>
+<li><p>តម្លៃអង្ករ ៖ <span class="mi">\(100 \times 45\% = \$45\)</span> លាន </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤៥ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកតម្លៃនាំចេញកៅស៊ូគិតជាលានដុល្លារ</p></li>
+<li><p>រកភាពខុសគ្នានៃតម្លៃនាំចេញរវាងអង្ករ និងកៅស៊ូ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កៅស៊ូ ៖ <span class="mi">\(100 \times 25\% = \$25\)</span> លាន </p></li>
+<li><p>ភាពខុសគ្នា ៖ <span class="mi">\(45 - 25 = \$20\)</span> លាន </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>គេស្ទង់មតិសិស្ស <span class="mi">\(50\)</span> នាក់អំពីចំណូលចិត្តភាសាបរទេស ៖ អង់គ្លេស (<span class="mi">\(25\)</span>), បារាំង (<span class="mi">\(15\)</span>), ចិន (<span class="mi">\(10\)</span>) នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃភាសានីមួយៗ</p></li>
+<li><p>គណនាមុំផ្ចិតនៃចម្រៀកថាសភាសានីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយ ៖ អង់គ្លេស <span class="mi">\(50\%\)</span>, បារាំង <span class="mi">\(30\%\)</span>, ចិន <span class="mi">\(20\%\)</span></p></li>
+<li><p>មុំផ្ចិត ៖ អង់គ្លេស <span class="mi">\(180^\circ\)</span>, បារាំង <span class="mi">\(108^\circ\)</span>, ចិន <span class="mi">\(72^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>ក្រាបផ្លិតមួយមាន ៣ ចម្រៀកថាសដែលមានមុំ <span class="mi">\(90^\circ, 120^\circ\)</span> និង <span class="mi">\(150^\circ\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកផលធៀបសម្រួលនៃមុំទាំងបី</p></li>
+<li><p>បើទិន្នន័យសរុបគឺ <span class="mi">\(72\)</span> នាក់ រកទិន្នន័យនៃចម្រៀកថាសនីមួយៗ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផលធៀប ៖ <span class="mi">\(90 : 120 : 150 = 3 : 4 : 5\)</span></p></li>
+<li><p>ចម្រៀកនីមួយៗ ៖ <span class="mi">\(18, 24, 30\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>គ្រួសារមួយចំណាយប្រចាំខែ <span class="mi">\(\$500\)</span> ៖ ម្ហូប (<span class="mi">\(50\%\)</span>), ថ្លៃទឹកភ្លើង (<span class="mi">\(20\%\)</span>), ថ្នាំសង្កូវ (<span class="mi">\(10\%\)</span>), សន្សំ (<span class="mi">\(20\%\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមុំផ្ចិតនៃចំណាយនីមួយៗ</p></li>
+<li><p>រកប្រាក់សន្សំក្នុងមួយឆ្នាំ (១២ ខែ) របស់គ្រួសារនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មុំផ្ចិត ៖ ម្ហូប <span class="mi">\(180^\circ\)</span>, ទឹកភ្លើង <span class="mi">\(72^\circ\)</span>, ថ្នាំ <span class="mi">\(36^\circ\)</span>, សន្សំ <span class="mi">\(72^\circ\)</span></p></li>
+<li><p>សន្សំ ១ ឆ្នាំ ៖ <span class="mi">\(12 \times 100 = \$1200\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤៩ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រាក់ចំណាយលើម្ហូបអាហារក្នុងមួយឆ្នាំ</p></li>
+<li><p>រកផលធៀបរវាងប្រាក់សន្សំ និងប្រាក់ចំណាយលើម្ហូបអាហារ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណាយម្ហូប ១ ឆ្នាំ ៖ <span class="mi">\(12 \times 250 = \$3000\)</span></p></li>
+<li><p>ផលធៀបសន្សំ/ម្ហូប ៖ <span class="mi">\(\frac{100}{250} = \frac{2}{5}\)</span></p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ២២ ក្រាបផ្លិត</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c22">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L21.html"><small>← មេរៀនមុន</small><b>ក្រាបសសរ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើអ្នកណាជាអ្នកបង្កើតក្រាបផ្លិត (Pie Chart) ដំបូងគេបង្អស់នៅឆ្នាំ ១៨០១?", "options": ["William Playfair", "Florence Nightingale", "René Descartes", "Pierre de Fermat"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផ្ទៃរង្វង់ទាំងមូលនៃក្រាបផ្លិតតំណាងឱ្យប៉ុន្មានភាគរយ?", "options": ["<span class=\"mi\">\\(100\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(360\\%\\)<\/span>", "<span class=\"mi\">\\(180\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលបូកនៃមុំផ្ចិតទាំងអស់នៃចម្រៀកថាសក្នុងក្រាបផ្លិតស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(100^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើប្រភេទមួយតាងដោយកន្លះរង្វង់ នោះមុំផ្ចិតរបស់វាមានរង្វាស់ ៖", "options": ["<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មុំផ្ចិតកែង <span class=\"mi\">\\(90^\\circ\\)<\/span> នៃចម្រៀកថាសត្រូវនឹងភាគរយ ៖", "options": ["<span class=\"mi\">\\(10\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាមុំផ្ចិត <span class=\"mi\">\\(\\theta_i\\)<\/span> នៃប្រភេទដែលមានប្រេកង់ <span class=\"mi\">\\(f_i\\)<\/span> ក្នុងចំណោមទិន្នន័យសរុប <span class=\"mi\">\\(N\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\theta_i = \\dfrac{N}{f_i} \\times 360^\\circ\\)<\/span>", "<span class=\"mi\">\\(\\theta_i = \\dfrac{f_i}{N} \\times 360^\\circ\\)<\/span>", "<span class=\"mi\">\\(\\theta_i = \\dfrac{f_i}{N} \\times 100^\\circ\\)<\/span>", "<span class=\"mi\">\\(\\theta_i = f_i \\times 360^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ដើម្បីបំប្លែងពីភាគរយទៅជាមុំផ្ចិត គេត្រូវយកភាគរយគុណនឹង ៖", "options": ["<span class=\"mi\">\\(3.6^\\circ\\)<\/span>", "<span class=\"mi\">\\(36^\\circ\\)<\/span>", "<span class=\"mi\">\\(1.8^\\circ\\)<\/span>", "<span class=\"mi\">\\(10^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចម្រៀកថាសមួយមានមុំផ្ចិត <span class=\"mi\">\\(72^\\circ\\)<\/span>។ ភាគរយនៃចម្រៀកថាសនោះគឺ ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្រាបផ្លិតស័ក្ដិសមបំផុតសម្រាប់បង្ហាញទិន្នន័យប្រភេទណា?", "options": ["សមីការបន្ទាត់ត្រង់", "សមាមាត្រនៃផ្នែកធៀបនឹងសរុប", "ទិន្នន័យផ្លាស់ប្ដូរតាមពេលវេលា", "រូបភាពធរណីមាត្រក្នុងលំហ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឧបករណ៍សំខាន់សម្រាប់វាស់មុំផ្ចិតក្នុងការសង់ក្រាបផ្លិតគឺ ៖", "options": ["មាត្រដ្ឋាន", "បន្ទាត់ត្រង់", "រ៉ាប់ប៉ូទ័រ (Protractor)", "ដែកកណ្ដៀវ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើក្រាបផ្លិតមួយចែកជា ៤ ចម្រៀកថាសស្មើៗគ្នា នោះមុំផ្ចិតនីមួយៗស្មើ ៖", "options": ["<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើក្រាបផ្លិតមួយចែកជា ៣ ចម្រៀកថាសស្មើៗគ្នា នោះមុំផ្ចិតនីមួយៗស្មើ ៖", "options": ["<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(100^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើក្រាបផ្លិតមួយចែកជា ៦ ចម្រៀកថាសស្មើៗគ្នា នោះមុំផ្ចិតនីមួយៗស្មើ ៖", "options": ["<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ចម្រៀកថាសដែលមានមុំផ្ចិត <span class=\"mi\">\\(108^\\circ\\)<\/span> ត្រូវនឹងភាគរយ ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>", "<span class=\"mi\">\\(35\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមសិស្ស <span class=\"mi\">\\(120\\)<\/span> នាក់ បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(90^\\circ\\)<\/span> នោះចំនួនសិស្សគឺ ៖", "options": ["<span class=\"mi\">\\(25\\)<\/span> នាក់", "<span class=\"mi\">\\(40\\)<\/span> នាក់", "<span class=\"mi\">\\(30\\)<\/span> នាក់", "<span class=\"mi\">\\(60\\)<\/span> នាក់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមមនុស្ស <span class=\"mi\">\\(200\\)<\/span> នាក់ បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(180^\\circ\\)<\/span> នោះចំនួនមនុស្សគឺ ៖", "options": ["<span class=\"mi\">\\(80\\)<\/span> នាក់", "<span class=\"mi\">\\(50\\)<\/span> នាក់", "<span class=\"mi\">\\(150\\)<\/span> នាក់", "<span class=\"mi\">\\(100\\)<\/span> នាក់"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្រាបផ្លិតមួយមាន ៣ ចម្រៀកថាស ៖ <span class=\"mi\">\\(120^\\circ, 150^\\circ\\)<\/span> និង <span class=\"mi\">\\(\\theta\\)<\/span>។ តម្លៃនៃ <span class=\"mi\">\\(\\theta\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(100^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>", "<span class=\"mi\">\\(70^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើភាគរយនៃប្រភេទទាំងបីគឺ <span class=\"mi\">\\(40\\%, 35\\%\\)<\/span> និង <span class=\"mi\">\\(x\\%\\)<\/span> នោះតម្លៃ <span class=\"mi\">\\(x\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(30\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "លោកស្រី Florence Nightingale បានប្រើប្រាស់ក្រាបស្ថិតិទម្រង់រង្វង់ដើម្បីអ្វី?", "options": ["បង្រៀនគណិតវិទ្យាបុរាណ", "គណនាកម្ពស់ភ្នំ", "រចនាស្ពាន និងផ្លូវថ្នល់", "បង្ហាញមូលហេតុនៃការស្លាប់របស់កងទ័ព"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យសរុបគឺ <span class=\"mi\">\\(N = 360\\)<\/span> នាក់ នោះមនុស្សម្នាក់ត្រូវនឹងមុំផ្ចិត ៖", "options": ["<span class=\"mi\">\\(1^\\circ\\)<\/span>", "<span class=\"mi\">\\(10^\\circ\\)<\/span>", "<span class=\"mi\">\\(0.1^\\circ\\)<\/span>", "<span class=\"mi\">\\(2^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យសរុបគឺ <span class=\"mi\">\\(N = 720\\)<\/span> នាក់ នោះមនុស្សម្នាក់ត្រូវនឹងមុំផ្ចិត ៖", "options": ["<span class=\"mi\">\\(1^\\circ\\)<\/span>", "<span class=\"mi\">\\(0.5^\\circ\\)<\/span>", "<span class=\"mi\">\\(2^\\circ\\)<\/span>", "<span class=\"mi\">\\(0.2^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រាបផ្លិតបង្ហាញការចំណាយ ៖ ម្ហូប <span class=\"mi\">\\(50\\%\\)<\/span>, សំលៀកបំពាក់ <span class=\"mi\">\\(20\\%\\)<\/span>, ផ្សេងៗ <span class=\"mi\">\\(30\\%\\)<\/span>។ មុំផ្ចិតនៃម្ហូបគឺ ៖", "options": ["<span class=\"mi\">\\(150^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមសំណួរទី ២២ មុំផ្ចិតនៃសំលៀកបំពាក់ (<span class=\"mi\">\\(20\\%\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(80^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(72^\\circ\\)<\/span>", "<span class=\"mi\">\\(54^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមសំណួរទី ២២ មុំផ្ចិតនៃចំណាយផ្សេងៗ (<span class=\"mi\">\\(30\\%\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(100^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(108^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើក្រឡាផ្ទៃថាសទាំងមូលស្មើ <span class=\"mi\">\\(100\\text{ cm}^2\\)<\/span> នោះចម្រៀកថាសមុំ <span class=\"mi\">\\(90^\\circ\\)<\/span> មានផ្ទៃ ៖", "options": ["<span class=\"mi\">\\(50\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(25\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(20\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(30\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(36^\\circ\\)<\/span> នោះវាស្មើនឹងប៉ុន្មានភាគរយនៃរង្វង់?", "options": ["<span class=\"mi\">\\(10\\%\\)<\/span>", "<span class=\"mi\">\\(5\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>", "<span class=\"mi\">\\(20\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រាបផ្លិតបង្ហាញសិស្សស្រី <span class=\"mi\">\\(60\\%\\)<\/span> និងសិស្សប្រុស <span class=\"mi\">\\(40\\%\\)<\/span>។ ផលធៀបសិស្សស្រីធៀបសិស្សប្រុសគឺ ៖", "options": ["<span class=\"mi\">\\(1 : 2\\)<\/span>", "<span class=\"mi\">\\(2 : 3\\)<\/span>", "<span class=\"mi\">\\(3 : 2\\)<\/span>", "<span class=\"mi\">\\(4 : 3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(144^\\circ\\)<\/span> នោះវាត្រូវនឹងភាគរយ ៖", "options": ["<span class=\"mi\">\\(35\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(45\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងកសិដ្ឋានមួយមានគោ <span class=\"mi\">\\(25\\%\\)<\/span>, ជ្រូក <span class=\"mi\">\\(35\\%\\)<\/span>, មាន់ <span class=\"mi\">\\(40\\%\\)<\/span>។ មុំផ្ចិតតាងសត្វគោគឺ ៖", "options": ["<span class=\"mi\">\\(72^\\circ\\)<\/span>", "<span class=\"mi\">\\(100^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមសំណួរទី ២៩ មុំផ្ចិតតាងសត្វមាន់ (<span class=\"mi\">\\(40\\%\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(150^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(144^\\circ\\)<\/span>", "<span class=\"mi\">\\(135^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើក្រាបផ្លិតមួយមាន ៥ ចម្រៀកថាសស្មើៗគ្នា នោះមុំផ្ចិតនីមួយៗគឺ ៖", "options": ["<span class=\"mi\">\\(70^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(72^\\circ\\)<\/span>", "<span class=\"mi\">\\(80^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តាមសំណួរទី ៣១ ភាគរយនៃចម្រៀកថាសនីមួយៗគឺ ៖", "options": ["<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>", "<span class=\"mi\">\\(10\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ហេតុអ្វីបានជាក្រាបផ្លិតមិនស័ក្ដិសមសម្រាប់ទិន្នន័យដែលមានប្រភេទច្រើនពេក (លើសពី ៧)?", "options": ["ព្រោះមុំសរុបលើសពី <span class=\"mi\">\\(360^\\circ\\)<\/span>", "ព្រោះចម្រៀកថាសតូចពេកពិបាកអាន", "ព្រោះមិនអាចគូរជារង្វង់បាន", "ព្រោះគណនាមិនកើត"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(45^\\circ\\)<\/span> នោះវាស្មើនឹងប្រភាគ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{8}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(60^\\circ\\)<\/span> នោះវាស្មើនឹងប្រភាគ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{6}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{5}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(120^\\circ\\)<\/span> នោះវាស្មើនឹងប្រភាគ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{2}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(30^\\circ\\)<\/span> នោះវាស្មើនឹងប្រភាគ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{8}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{12}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{6}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(30^\\circ\\)<\/span> នោះវាត្រូវនឹងភាគរយ ៖", "options": ["<span class=\"mi\">\\(12\\%\\)<\/span>", "<span class=\"mi\">\\(10\\%\\)<\/span>", "<span class=\"mi\">\\(8.33\\%\\)<\/span>", "<span class=\"mi\">\\(7.5\\%\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើប្រាក់ចំណូលសរុបគឺ <span class=\"mi\">\\(\\$1200\\)<\/span> ហើយចម្រៀកថាសសន្សំមានមុំ <span class=\"mi\">\\(60^\\circ\\)<\/span> នោះប្រាក់សន្សំគឺ ៖", "options": ["<span class=\"mi\">\\(\\$200\\)<\/span>", "<span class=\"mi\">\\(\\$300\\)<\/span>", "<span class=\"mi\">\\(\\$150\\)<\/span>", "<span class=\"mi\">\\(\\$250\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើដីសរុបមានទំហំ <span class=\"mi\">\\(400\\text{ ha}\\)<\/span> ហើយដីស្រូវមានមុំ <span class=\"mi\">\\(180^\\circ\\)<\/span> នោះផ្ទៃដីស្រូវគឺ ៖", "options": ["<span class=\"mi\">\\(100\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(200\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(300\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(150\\text{ ha}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសពីរមានមុំ <span class=\"mi\">\\(80^\\circ\\)<\/span> និង <span class=\"mi\">\\(100^\\circ\\)<\/span> នោះផលបូកមុំទាំងពីរត្រូវនឹងភាគរយ ៖", "options": ["<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(45\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(216^\\circ\\)<\/span> នោះវាត្រូវនឹងភាគរយ ៖", "options": ["<span class=\"mi\">\\(65\\%\\)<\/span>", "<span class=\"mi\">\\(55\\%\\)<\/span>", "<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(70\\%\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងចំណោមមនុស្ស <span class=\"mi\">\\(500\\)<\/span> នាក់ បើចម្រៀកថាសមួយមានមុំ <span class=\"mi\">\\(72^\\circ\\)<\/span> នោះចំនួនមនុស្សគឺ ៖", "options": ["<span class=\"mi\">\\(150\\)<\/span> នាក់", "<span class=\"mi\">\\(120\\)<\/span> នាក់", "<span class=\"mi\">\\(80\\)<\/span> នាក់", "<span class=\"mi\">\\(100\\)<\/span> នាក់"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើក្រាបផ្លិតមួយមានមុំ ៖ <span class=\"mi\">\\(90^\\circ, 90^\\circ, 90^\\circ\\)<\/span> និង <span class=\"mi\">\\(\\theta\\)<\/span> នោះ <span class=\"mi\">\\(\\theta\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើគេដឹងថាមុំផ្ចិតពីរស្មើគ្នា នោះប្រេកង់នៃប្រភេទទាំងពីរនោះ ៖", "options": ["មួយធំជាងមួយទៀត", "ស្មើគ្នាជានិច្ច", "មិនអាចប្រៀបធៀបបាន", "ស្មើនឹងសូន្យ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ដើម្បីសង់ចម្រៀកថាសមុំ <span class=\"mi\">\\(135^\\circ\\)<\/span> គេត្រូវប្រើប្រាស់ ៖", "options": ["ជញ្ជីង", "បន្ទាត់ត្រង់ធម្មតា", "ទែម៉ូម៉ែត្រ", "រ៉ាប់ប៉ូទ័រ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើភាគរយមួយកើនឡើងពី <span class=\"mi\">\\(10\\%\\)<\/span> ទៅ <span class=\"mi\">\\(20\\%\\)<\/span> នោះមុំផ្ចិតរបស់វាកើនឡើងចំនួន ៖", "options": ["<span class=\"mi\">\\(10^\\circ\\)<\/span>", "<span class=\"mi\">\\(18^\\circ\\)<\/span>", "<span class=\"mi\">\\(72^\\circ\\)<\/span>", "<span class=\"mi\">\\(36^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រាបផ្លិត និងក្រាបសសរ ៖", "options": ["អាចប្រើតាងទិន្នន័យស្ថិតិតែមួយបានដូចគ្នា", "មិនអាចប្រើជាមួយទិន្នន័យដូចគ្នាបានទេ", "ក្រាបផ្លិតល្អជាងក្រាបសសរជានិច្ច", "ក្រាបសសរល្អជាងក្រាបផ្លិតជានិច្ច"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "នៅក្នុងក្រាបផ្លិត ផលបូកភាគរយនៃគ្រប់ចម្រៀកថាសទាំងអស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(360\\%\\)<\/span>", "<span class=\"mi\">\\(100\\%\\)<\/span>", "<span class=\"mi\">\\(180\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "សៀវភៅគណិតវិទ្យាថ្នាក់ទី ៧ ឆ្នាំ ២០២៧ មានមេរៀនសរុបចំនួន ៖", "options": ["២២ មេរៀន", "២០ មេរៀន", "២១ មេរៀន", "២៤ មេរៀន"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៨ : មាត្រដ្ឋាន និងទិសដៅ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៨ «មាត្រដ្ឋាន និងទិសដៅ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៨ : មាត្រដ្ឋាន និងទិសដៅ — គណិតវិទ្យាថ្នាក់ទី ៨ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៨ «មាត្រដ្ឋាន និងទិសដៅ» គណិតវិទ្យាថ្នាក់ទី ៨៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g8">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li aria-current="page">មេរៀនទី ១៨</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៨</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៨ · គណិតវិទ្យាថ្នាក់ទី ៨</span><h1>មាត្រដ្ឋាន និងទិសដៅ</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ-រង្វាស់</span><span class="chip chip-soon">២ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. មាត្រដ្ឋាន (Scale)</a></li><li class="sub"><a href="#u2">២. ទិសដៅ និងត្រីវិស័យ (Bearings and Directions)</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-8.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃផែនទីវិទ្យា មាត្រដ្ឋាន និងវិទ្យាសាស្ត្រនាវាចរណ៍</b></header><div class="bx-b">
+<p>ការគូរផែនទី និងការកំណត់ទិសដៅ គឺជាសមិទ្ធផលដ៏អស្ចារ្យនៃការរួមបញ្ចូលគ្នារវាងគណិតវិទ្យា និងភូមិសាស្ត្រ ៖</p>
+<ul>
+<li><p><strong>ផែនទីដំបូងបង្អស់ ៖</strong> ផ្ទាំងដីឥដ្ឋនៅបាប៊ីឡូន (ប្រហែល ២៣០០ មុន គ.ស.) បង្ហាញពីប្លង់ដីកសិកម្ម និងដងទន្លេ។ ជនជាតិអេស៊ីបបុរាណបានគូរផែនទីរ៉ែមាសនៅលើក្រដាសផាពីរុស។</p></li>
+<li><p><strong>ក្លូដ្យូស តូលេមី (Claudius Ptolemy, c. 100–170 នៃ គ.ស.) ៖</strong> ក្នុងស្នាដៃ <em>Geographia</em> បានបង្កើតប្រព័ន្ធកូអរដោនេរយៈទទឹង និងរយៈបណ្តោយ និងបានកំណត់ក្បួនខ្នាតមាត្រដ្ឋានដំបូងដើម្បីបង្រួមផ្ទៃផែនដីមកលើសន្លឹកក្រដាស។</p></li>
+<li><p><strong>ហ្សឺរ៉ាឌូស មែរកាទ័រ (Gerardus Mercator, 1512–1594) ៖</strong> បានបង្កើតចំណោលផែនទី Mercator ដែលជួយឱ្យអ្នកបើកបរកប៉ាល់អាចធ្វើដំណើរតាមទិសដៅត្រីវិស័យថេរលើបន្ទាត់ត្រង់។</p></li>
+<li><p><strong>វិទ្យាសាស្ត្រនាវាចរណ៍ទំនើប ៖</strong> ការប្រើប្រាស់ <strong>មុំទិសដៅ (Bearings)</strong> ដែលវាស់ចាប់ពីទិសខាងជើងតាមទិសទ្រនិចនាឡិកា (ពី <span class="mi">\(000^\circ\)</span> ដល់ <span class="mi">\(360^\circ\)</span>) គឺជាស្នូលនៃការគ្រប់គ្រងជើងហោះហើរ នាវាសមុទ្រ និងបច្ចេកវិទ្យាកំណត់ទីតាំង GPS សកល។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">មាត្រដ្ឋាន (Scale)</h3>
+<h4>និយមន័យ និងរូបមន្តគ្រឹះ</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>មាត្រដ្ឋាន</b></header><div class="bx-b">
+<p>មាត្រដ្ឋាន គឺជាផលធៀបរវាងប្រវែងនៅលើប្លង់ (ឬផែនទី) និងប្រវែងជាក់ស្តែងនៅលើដី ដែលប្រវែងទាំងពីរត្រូវគិតជាឯកតាដូចគ្នា ៖ <div class="md">\[\text{មាត្រដ្ឋាន } = \frac{d}{D} = \frac{\text{ប្រវែងលើប្លង់}}{\text{ប្រវែងជាក់ស្តែង}}\]</div></p>
+</div></section>
+<section class="bx bx-green"><header class="bx-h"><b>ក្បួនគណនា និងការប្តូរឯកតា</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ប្រវែងលើប្លង់ ៖</strong> <span class="mi">\(d = D \times \)</span> មាត្រដ្ឋាន </p></li>
+<li><p><strong>ប្រវែងជាក់ស្តែង ៖</strong> <span class="mi">\(D = \frac{d}{\text{មាត្រដ្ឋាន}} = d \times (\)</span> ភាគបែងនៃមាត្រដ្ឋាន <span class="mi">\()\)</span></p></li>
+<li><p><strong>ការប្តូរខ្នាតប្រវែង ៖</strong> <div class="md">\[1\text{ km} = 1\,000\text{ m} = 100\,000\text{ cm} = 1\,000\,000\text{ mm}\]</div> <div class="md">\[1\text{ m} = 10\text{ dm} = 100\text{ cm} = 1\,000\text{ mm}\]</div></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>នៅលើផែនទីដែលមានមាត្រដ្ឋាន <span class="mi">\(\frac{1}{200\,000}\)</span> ចម្ងាយរវាងក្រុងពីរគឺ <span class="mi">\(4.5\text{ cm}\)</span>។ គណនាចម្ងាយជាក់ស្តែងរវាងក្រុងទាំងពីរគិតជាគីឡូម៉ែត្រ (<span class="mi">\(\text{km}\)</span>)។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>ចម្ងាយជាក់ស្តែងនៅលើដីគឺ ៖ <div class="md">\[D = d \times 200\,000 = 4.5\text{ cm} \times 200\,000 = 900\,000\text{ cm}\]</div> ប្តូរទៅជាគីឡូម៉ែត្រ ៖ <div class="md">\[D = \frac{900\,000}{100\,000} = 9\text{ km}\]</div></p>
+</div></section>
+<h4>មាត្រដ្ឋានផ្ទៃក្រឡា និងមាត្រដ្ឋានមាឌ</h4>
+<section class="bx bx-amber"><header class="bx-h"><b>មាត្រដ្ឋានផ្ទៃក្រឡា និងមាឌ</b></header><div class="bx-b">
+<p>បើមាត្រដ្ឋានប្រវែងស្មើ <span class="mi">\(k = \frac{1}{n}\)</span> នោះ ៖</p>
+<ul>
+<li><p><strong>មាត្រដ្ឋានផ្ទៃក្រឡា ៖</strong> <span class="mi">\(\frac{s}{S} = k^2 = \frac{1}{n^2}\)</span></p></li>
+<li><p><strong>មាត្រដ្ឋានមាឌ ៖</strong> <span class="mi">\(\frac{v}{V} = k^3 = \frac{1}{n^3}\)</span></p></li>
+</ul>
+</div></section>
+<h3 id="u2">ទិសដៅ និងត្រីវិស័យ (Bearings and Directions)</h3>
+<h4>ទិសទាំង ៨ នៃត្រីវិស័យ</h4>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<h4>មុំទិសដៅ (Three-Figure Bearings)</h4>
+<section class="bx bx-teal"><header class="bx-h"><b>មុំទិសដៅ</b></header><div class="bx-b">
+<p>មុំទិសដៅនៃចំណុច <span class="mi">\(B\)</span> ធៀបនឹងចំណុច <span class="mi">\(A\)</span> គឺជាមុំរង្វាស់ដែល ៖</p>
+<ol class="list oldef cols1">
+<li><p>ចាប់ផ្តើមរាប់ចេញពី <strong>ទិសខាងជើង (North)</strong> ត្រង់ចំណុច <span class="mi">\(A\)</span>។</p></li>
+<li><p>វិលតាម <strong>ទិសទ្រនិចនាឡិកា (Clockwise)</strong>។</p></li>
+<li><p>ត្រូវសរសេរជាចំនួន <strong>៣ ខ្ទង់</strong> ជានិច្ច (ឧទាហរណ៍ ៖ <span class="mi">\(045^\circ, 090^\circ, 240^\circ\)</span>)។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-amber"><header class="bx-h"><b>មុំទិសដៅត្រឡប់ - Back Bearing</b></header><div class="bx-b">
+<p>បើមុំទិសដៅពី <span class="mi">\(A\)</span> ទៅ <span class="mi">\(B\)</span> គឺ <span class="mi">\(\theta\)</span> នោះមុំទិសដៅត្រឡប់ពី <span class="mi">\(B\)</span> មក <span class="mi">\(A\)</span> គឺ ៖ <div class="md">\[\text{Back Bearing} =
+\begin{cases}
+\theta + 180^\circ &amp; \text{បើ } \theta &lt; 180^\circ \\
+\theta - 180^\circ &amp; \text{បើ } \theta \ge 180^\circ
+\end{cases}\]</div></p>
+</div></section>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>បំពេញចន្លោះដោយប្រើពាក្យ ឬចំនួនសមស្រប ៖</p>
+<ol class="list olka cols1">
+<li><p>បើប្រវែង <span class="mi">\(1\text{ cm}\)</span> នៅលើផែនទីតាងឱ្យប្រវែងជាក់ស្តែង <span class="mi">\(1\,000\text{ cm}\)</span> នោះផែនទីមានមាត្រដ្ឋាន <span class="mi">\(\dots\)</span></p></li>
+<li><p>បើប្រវែង <span class="mi">\(1\text{ cm}\)</span> នៅលើផែនទីតាងឱ្យប្រវែងជាក់ស្តែង <span class="mi">\(10\,000\text{ cm}\)</span> នោះផែនទីមានមាត្រដ្ឋាន <span class="mi">\(\dots\)</span></p></li>
+<li><p>គេតាងមាត្រដ្ឋានដោយ <span class="mi">\(\dots\)</span> មួយ ដែលភាគយកជា <span class="mi">\(\dots\)</span> រីឯភាគបែងជា <span class="mi">\(\dots\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. មាត្រដ្ឋាន <span class="mi">\(\frac{1}{1\,000}\)</span> ឬ <span class="mi">\(1:1\,000\)</span></p></li>
+<li><p>b. មាត្រដ្ឋាន <span class="mi">\(\frac{1}{10\,000}\)</span> ឬ <span class="mi">\(1:10\,000\)</span></p></li>
+<li><p>c. មាត្រដ្ឋានតាងដោយប្រភាគមួយ ដែលភាគយកជាប្រវែងលើប្លង់ រីឯភាគបែងជាប្រវែងជាក់ស្តែង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>មាត្រដ្ឋានមួយស្មើ <span class="mi">\(\frac{1}{2\,500}\)</span>។ បើចម្ងាយលើផែនទីគឺ <span class="mi">\(1\text{ cm}\)</span> តើចម្ងាយជាក់ស្តែងលើដីគិតជាម៉ែត្រស្មើនឹងប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(D = 1\text{ cm} \times 2\,500 = 2\,500\text{ cm} = 25\text{ m}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ផ្លូវជាតិពីភ្នំពេញទៅស្ទឹងត្រែងមានប្រវែងជាក់ស្តែង <span class="mi">\(455\text{ km}\)</span>។ តើនៅលើផែនទីដែលមានមាត្រដ្ឋាន <span class="mi">\(\frac{1}{2\,000\,000}\)</span> មានប្រវែងប៉ុន្មានសង់ទីម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(455\text{ km} = 45\,500\,000\text{ cm}\)</span>។ <span class="mi">\(d = \frac{45\,500\,000}{2\,000\,000} = 22.75\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>សុខាយករូបថតទំហំ <span class="mi">\(4\text{ cm} \times 5\text{ cm}\)</span> ទៅពង្រីកជាទំហំ <span class="mi">\(16\text{ cm} \times 24\text{ cm}\)</span>។ ចូរសរសេរផលធៀបទំហំរូបថតទាំងពីរ និងបញ្ជាក់ថាតើរូបថតទាំងពីរមានទម្រង់សមាមាត្រគ្នាដែរឬទេ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលធៀបបណ្តោយ ៖ <span class="mi">\(\frac{24}{5} = 4.8\)</span>។ ផលធៀបទទឹង ៖ <span class="mi">\(\frac{16}{4} = 4\)</span>។ ដោយផលធៀបទាំងពីរខុសគ្នា (<span class="mi">\(4.8 \ne 4\)</span>) នាំឱ្យរូបថតទាំងពីរមិនសមាមាត្រគ្នាទេ (រូបភាពត្រូវខូចទ្រង់ទ្រាយ)។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>នៅលើប្លង់ផែនទី បណ្តោយចម្ការអំពៅមួយមានប្រវែង <span class="mi">\(3.5\text{ cm}\)</span> ហើយបណ្តោយជាក់ស្តែងគឺ <span class="mi">\(70\text{ m}\)</span>។ រកមាត្រដ្ឋាននៃផែនទីនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(70\text{ m} = 7\,000\text{ cm}\)</span>។ មាត្រដ្ឋាន ៖ <span class="mi">\(k = \frac{3.5}{7\,000} = \frac{1}{2\,000}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>រូបប្លង់ផ្ទះមួយមានបន្ទប់ទទួលភ្ញៀវប្រវែងលើប្លង់ <span class="mi">\(8\text{ cm}\)</span> និងបណ្តោយពិត <span class="mi">\(16\text{ m}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>រកមាត្រដ្ឋាននៃប្លង់ផ្ទះ។</p></li>
+<li><p>បើទទឹងលើប្លង់គឺ <span class="mi">\(5\text{ cm}\)</span> គណនាទទឹងពិតគិតជាម៉ែត្រ។</p></li>
+<li><p>បន្ទប់គេងមានទំហំលើប្លង់ <span class="mi">\(4\text{ cm} \times 3\text{ cm}\)</span>។ គណនាផ្ទៃក្រឡាពិតគិតជា <span class="mi">\(\text{m}^2\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(16\text{ m} = 1\,600\text{ cm} \implies k = \frac{8}{1\,600} = \frac{1}{200}\)</span></p></li>
+<li><p>b. ទទឹងពិត ៖ <span class="mi">\(5\text{ cm} \times 200 = 1\,000\text{ cm} = 10\text{ m}\)</span></p></li>
+<li><p>c. វិមាត្រពិត ៖ <span class="mi">\(4 \times 2 = 8\text{ m}\)</span> និង <span class="mi">\(3 \times 2 = 6\text{ m}\)</span> <span class="mi">\(\implies S = 8 \times 6 = 48\text{ m}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ផែនទីមួយមានមាត្រដ្ឋាន <span class="mi">\(\frac{1}{80\,000}\)</span>។ គណនាចម្ងាយជាក់ស្តែងលើដីគិតជា <span class="mi">\(\text{km}\)</span> បើចម្ងាយលើផែនទីគឺ <span class="mi">\(343\text{ mm}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(D = 343\text{ mm} \times 80\,000 = 27\,440\,000\text{ mm} = 27.44\text{ km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ចម្ការដូងប្រេងមួយរាងត្រីកោណមានជ្រុងជាក់ស្តែង <span class="mi">\(6\text{ km}, 4.5\text{ km}\)</span> និង <span class="mi">\(3.9\text{ km}\)</span>។ គណនាប្រវែងជ្រុងទាំងបីនៅលើផែនទីដែលមានមាត្រដ្ឋាន <span class="mi">\(\frac{1}{75\,000}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{75\,000}\)</span> ៖ <span class="mi">\(6\text{ km} = 600\,000\text{ cm} \implies d_1 = \frac{600\,000}{75\,000} = 8\text{ cm}\)</span>។ <span class="mi">\(4.5\text{ km} \implies d_2 = \frac{450\,000}{75\,000} = 6\text{ cm}\)</span>។ <span class="mi">\(3.9\text{ km} \implies d_3 = \frac{390\,000}{75\,000} = 5.2\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ផែនទីមួយមានមាត្រដ្ឋាន <span class="mi">\(\frac{1}{2\,500}\)</span> នៃចម្ការចតុកោណកែងមួយដែលមានវិមាត្រលើផែនទី <span class="mi">\(4\text{ cm}\)</span> និង <span class="mi">\(3.5\text{ cm}\)</span>។ បើគេលក់ចម្ការនោះក្នុងតម្លៃ ១ អារ ស្មើ <span class="mi">\(10\,000\,000\)</span> រៀល គណនាថ្លៃលក់ចម្ការនោះសរុប។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>វិមាត្រពិត ៖ <span class="mi">\(4\text{ cm} \times 2\,500 = 100\text{ m}\)</span> និង <span class="mi">\(3.5\text{ cm} \times 2\,500 = 87.5\text{ m}\)</span>។ <span class="mi">\(S = 100 \times 87.5 = 8\,750\text{ m}^2 = 87.5\text{ a}\)</span>។ ថ្លៃលក់ ៖ <span class="mi">\(87.5 \times 10\,000\,000 = 875\,000\,000\)</span> រៀល។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>លើផែនទីភូមិបាលមាត្រដ្ឋាន <span class="mi">\(\frac{1}{2\,500}\)</span> មានចម្ការមួយរាងចតុកោណកែងមានបណ្តោយ <span class="mi">\(52\text{ mm}\)</span> និងទទឹង <span class="mi">\(25\text{ mm}\)</span>។ រកវិមាត្រជាក់ស្តែងគិតជាម៉ែត្រ និងផ្ទៃក្រឡាជាក់ស្តែងគិតជាហិកតា (ha)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បណ្តោយពិត ៖ <span class="mi">\(52\text{ mm} \times 2\,500 = 130\,000\text{ mm} = 130\text{ m}\)</span>។ ទទឹងពិត ៖ <span class="mi">\(25\text{ mm} \times 2\,500 = 62\,500\text{ mm} = 62.5\text{ m}\)</span>។ <span class="mi">\(S = 130 \times 62.5 = 8\,125\text{ m}^2 = 0.8125\text{ ha}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{200\,000}\)</span> ចម្ការដំឡូងមីមួយមានបណ្តោយ <span class="mi">\(10.7\text{ dm}\)</span> និងទទឹង <span class="mi">\(4.7\text{ dm}\)</span>។ គណនាប្រវែងវិមាត្រជាក់ស្តែងគិតជាគីឡូម៉ែត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(10.7\text{ dm} = 1.07\text{ m} \implies D_1 = 1.07 \times 200\,000 = 214\,000\text{ m} = 214\text{ km}\)</span>។ <span class="mi">\(4.7\text{ dm} = 0.47\text{ m} \implies D_2 = 0.47 \times 200\,000 = 94\,000\text{ m} = 94\text{ km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{20\,000}\)</span> ទីក្រុងបី <span class="mi">\(A, B, C\)</span> បង្កើតបានជាត្រីកោណកែងត្រង់ <span class="mi">\(A\)</span> ដែលមាន <span class="mi">\(AB = 4.5\text{ cm}\)</span> និង <span class="mi">\(AC = 6\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាប្រវែង <span class="mi">\(BC\)</span> នៅលើផែនទី។</p></li>
+<li><p>គណនាប្រវែងជាក់ស្តែង <span class="mi">\(AB, AC\)</span> និង <span class="mi">\(BC\)</span> គិតជាម៉ែត្រ និងគីឡូម៉ែត្រ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(BC = \sqrt{4.5^2 + 6^2} = 7.5\text{ cm}\)</span></p></li>
+<li><p>b. <span class="mi">\(AB = 4.5 \times 200 = 900\text{ m} = 0.9\text{ km}\)</span>។ <span class="mi">\(AC = 6 \times 200 = 1\,200\text{ m} = 1.2\text{ km}\)</span>។ <span class="mi">\(BC = 7.5 \times 200 = 1\,500\text{ m} = 1.5\text{ km}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{80\,000}\)</span> ចម្ងាយរវាងខេត្តពីរគឺ <span class="mi">\(66\text{ mm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាចម្ងាយជាក់ស្តែងរវាងខេត្តទាំងពីរ។</p></li>
+<li><p>រកប្រវែងចម្ងាយនោះនៅលើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{200\,000}\)</span> និង <span class="mi">\(\frac{1}{100\,000}\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(D = 66\text{ mm} \times 80\,000 = 5\,280\,000\text{ mm} = 5.28\text{ km}\)</span></p></li>
+<li><p>b. លើមាត្រដ្ឋាន <span class="mi">\(\frac{1}{200\,000}\)</span> ៖ <span class="mi">\(d = \frac{528\,000\text{ cm}}{200\,000} = 2.64\text{ cm}\)</span>។ លើមាត្រដ្ឋាន <span class="mi">\(\frac{1}{100\,000}\)</span> ៖ <span class="mi">\(d = 5.28\text{ cm}\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{1\,000\,000}\)</span> កោះមួយត្រូវបានតាងក្នុងចតុកោណកែងវិមាត្រ <span class="mi">\(15\text{ cm} \times 7\text{ cm}\)</span>។ សិស្សម្នាក់បានចម្លងផែនទីនោះដោយឱ្យទទឹងមានប្រវែង <span class="mi">\(10.5\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>រកប្រវែងបណ្តោយថ្មី។</p></li>
+<li><p>រកមាត្រដ្ឋាននៃផែនទីចម្លងនោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. ផលធៀបពង្រីក ៖ <span class="mi">\(\frac{10.5}{7} = 1.5 \implies\)</span> បណ្តោយថ្មីគឺ <span class="mi">\(15 \times 1.5 = 22.5\text{ cm}\)</span></p></li>
+<li><p>b. មាត្រដ្ឋានថ្មី ៖ <span class="mi">\(\frac{1.5}{1\,000\,000} = \frac{1}{666\,667}\)</span> (ប្រហាក់ប្រហែល)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គូសត្រីកោណ <span class="mi">\(ABC\)</span> លើប្លង់មាត្រដ្ឋាន <span class="mi">\(\frac{1}{15}\)</span>។ បើជ្រុងជាក់ស្តែងមានប្រវែង <span class="mi">\(5.1\text{ dm}, 4.5\text{ dm}, 3.6\text{ dm}\)</span> គណនាប្រវែងជ្រុងនីមួយៗនៅលើប្លង់គិតជាសង់ទីម៉ែត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(5.1\text{ dm} = 51\text{ cm} \implies d_1 = \frac{51}{15} = 3.4\text{ cm}\)</span>។ <span class="mi">\(4.5\text{ dm} = 45\text{ cm} \implies d_2 = \frac{45}{15} = 3\text{ cm}\)</span>។ <span class="mi">\(3.6\text{ dm} = 36\text{ cm} \implies d_3 = \frac{36}{15} = 2.4\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ប្លង់បន្ទប់មួយមានមាត្រដ្ឋាន <span class="mi">\(\frac{1}{200}\)</span> រាងចតុកោណកែងវិមាត្រលើប្លង់ <span class="mi">\(5\text{ cm} \times 4\text{ cm}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>រកមាឌខ្យល់ក្នុងបន្ទប់ បើបន្ទប់មានកម្ពស់ជាក់ស្តែង <span class="mi">\(3.75\text{ m}\)</span>។</p></li>
+<li><p>រកប្រាក់ដែលត្រូវទិញការ៉ូបើការ៉ូ <span class="mi">\(1\text{ m}^2\)</span> ថ្លៃ <span class="mi">\(\$16\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. វិមាត្រពិត ៖ <span class="mi">\(5 \times 2 = 10\text{ m}\)</span> និង <span class="mi">\(4 \times 2 = 8\text{ m}\)</span>។ <span class="mi">\(V = 10 \times 8 \times 3.75 = 300\text{ m}^3\)</span>។</p></li>
+<li><p>b. ផ្ទៃក្រឡា ៖ <span class="mi">\(S = 10 \times 8 = 80\text{ m}^2\)</span>។ ប្រាក់ទិញការ៉ូ ៖ <span class="mi">\(80 \times 16 = \$1\,280\)</span>។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>សរសេរមុំទិសដៅ ៣ ខ្ទង់ (Three-figure Bearings) នៃទិស ៖</p>
+<ol class="list olka cols1">
+<li><p>ជើង (N), កើត (E), ត្បូង (S), លិច (W)</p></li>
+<li><p>ឦសាន (NE), អាគ្នេយ៍ (SE), និរតី (SW), ពាយ័ព្យ (NW)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. N ៖ <span class="mi">\(000^\circ\)</span>, E ៖ <span class="mi">\(090^\circ\)</span>, S ៖ <span class="mi">\(180^\circ\)</span>, W ៖ <span class="mi">\(270^\circ\)</span></p></li>
+<li><p>b. NE ៖ <span class="mi">\(045^\circ\)</span>, SE ៖ <span class="mi">\(135^\circ\)</span>, SW ៖ <span class="mi">\(225^\circ\)</span>, NW ៖ <span class="mi">\(315^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>រកមុំទិសដៅត្រឡប់ (Back Bearing) នៃមុំទិសដៅខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(040^\circ\)</span></p></li>
+<li><p><span class="mi">\(115^\circ\)</span></p></li>
+<li><p><span class="mi">\(230^\circ\)</span></p></li>
+<li><p><span class="mi">\(310^\circ\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(040^\circ + 180^\circ = 220^\circ\)</span></p></li>
+<li><p>b. <span class="mi">\(115^\circ + 180^\circ = 295^\circ\)</span></p></li>
+<li><p>c. <span class="mi">\(230^\circ - 180^\circ = 050^\circ\)</span></p></li>
+<li><p>d. <span class="mi">\(310^\circ - 180^\circ = 130^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>កប៉ាល់មួយចាកចេញពីកំពង់ផែ <span class="mi">\(P\)</span> ឆ្ពោះទៅទិសដៅ <span class="mi">\(090^\circ\)</span> បានចម្ងាយ <span class="mi">\(8\text{ km}\)</span> ទៅដល់ចំណុច <span class="mi">\(Q\)</span> រួចបន្តដំណើរទៅទិសដៅ <span class="mi">\(180^\circ\)</span> បាន <span class="mi">\(6\text{ km}\)</span> ទៅដល់ <span class="mi">\(R\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាចម្ងាយផ្ទាល់ពី <span class="mi">\(P\)</span> ទៅ <span class="mi">\(R\)</span>។</p></li>
+<li><p>គណនាមុំទិសដៅនៃ <span class="mi">\(R\)</span> ធៀបនឹង <span class="mi">\(P\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(PR = \sqrt{8^2 + 6^2} = 10\text{ km}\)</span></p></li>
+<li><p>b. <span class="mi">\(\tan \alpha = \frac{8}{6} \implies \alpha \approx 53^\circ \implies\)</span> មុំទិសដៅគឺ <span class="mi">\(090^\circ + (90^\circ - 53^\circ) = 127^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>យន្តហោះមួយហោះចេញពីព្រលាន <span class="mi">\(A\)</span> ឆ្ពោះទៅទិស <span class="mi">\(000^\circ\)</span> (ជើង) បាន <span class="mi">\(60\text{ km}\)</span> ដល់ <span class="mi">\(B\)</span> រួចហោះទៅទិស <span class="mi">\(270^\circ\)</span> (លិច) បាន <span class="mi">\(80\text{ km}\)</span> ដល់ <span class="mi">\(C\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាចម្ងាយផ្ទាល់ពី <span class="mi">\(A\)</span> ទៅ <span class="mi">\(C\)</span>។</p></li>
+<li><p>រកមុំទិសដៅនៃ <span class="mi">\(C\)</span> ធៀបនឹង <span class="mi">\(A\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(AC = \sqrt{60^2 + 80^2} = 100\text{ km}\)</span></p></li>
+<li><p>b. <span class="mi">\(\tan \angle CAB = \frac{80}{60} = \frac{4}{3} \implies \angle CAB \approx 53^\circ\)</span>។ មុំទិសដៅ ៖ <span class="mi">\(360^\circ - 53^\circ = 307^\circ\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>លើប្លង់មាត្រដ្ឋាន <span class="mi">\(1 : 500\)</span> ដីឡូតិ៍មួយរាងចតុកោណកែងមានទំហំ <span class="mi">\(6\text{ cm} \times 4\text{ cm}\)</span>។ គណនាផ្ទៃក្រឡាជាក់ស្តែងគិតជាម៉ែត្រការេ និងជាអារ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>វិមាត្រពិត ៖ <span class="mi">\(6 \times 5 = 30\text{ m}\)</span> និង <span class="mi">\(4 \times 5 = 20\text{ m}\)</span>។ <span class="mi">\(S = 30 \times 20 = 600\text{ m}^2 = 6\text{ a}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ស្រះចិញ្ចឹមត្រីមួយរាងការេមានផ្ទៃជាក់ស្តែង <span class="mi">\(400\text{ m}^2\)</span>។ តើលើប្លង់មាត្រដ្ឋាន <span class="mi">\(\frac{1}{200}\)</span> ស្រះនោះជាការេមានជ្រុងប្រវែងប៉ុន្មានសង់ទីម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជ្រុងពិត ៖ <span class="mi">\(a = \sqrt{400} = 20\text{ m} = 2\,000\text{ cm}\)</span>។ ជ្រុងលើប្លង់ ៖ <span class="mi">\(d = \frac{2\,000}{200} = 10\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{50\,000}\)</span> បឹងមួយមានផ្ទៃក្រឡា <span class="mi">\(12\text{ cm}^2\)</span>។ គណនាផ្ទៃក្រឡាជាក់ស្តែងនៃបឹងនោះគិតជាហិកតា (ha) និងជាគីឡូម៉ែត្រការេ (<span class="mi">\(\text{km}^2\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(S_{\text{ពិត}} = 12\text{ cm}^2 \times (50\,000)^2 = 12 \times 2.5 \times 10^9\text{ cm}^2 = 3\,000\,000\text{ m}^2 = 300\text{ ha} = 3\text{ km}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ចម្ងាយរវាងភ្នំពេញ និងបាត់ដំបងគឺ <span class="mi">\(290\text{ km}\)</span>។ តើចម្ងាយនេះលើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{500\,000}\)</span> មានប្រវែងប៉ុន្មានសង់ទីម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(290\text{ km} = 29\,000\,000\text{ cm}\)</span>។ <span class="mi">\(d = \frac{29\,000\,000}{500\,000} = 58\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>កំពូលភ្នំ <span class="mi">\(B\)</span> មានមុំទិសដៅ <span class="mi">\(070^\circ\)</span> ពីចំណុចសង្កេត <span class="mi">\(A\)</span>។ តើមុំទិសដៅនៃ <span class="mi">\(A\)</span> ធៀបនឹងកំពូលភ្នំ <span class="mi">\(B\)</span> ស្មើប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មុំទិសដៅត្រឡប់ ៖ <span class="mi">\(070^\circ + 180^\circ = 250^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>បង្គោលភ្លើងហ្វារ <span class="mi">\(L\)</span> ស្ថិតនៅទិសដៅ <span class="mi">\(245^\circ\)</span> ពីកប៉ាល់ <span class="mi">\(S\)</span>។ រកមុំទិសដៅនៃកប៉ាល់ <span class="mi">\(S\)</span> ធៀបនឹងបង្គោលភ្លើងហ្វារ <span class="mi">\(L\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មុំទិសដៅត្រឡប់ ៖ <span class="mi">\(245^\circ - 180^\circ = 065^\circ\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ពីចំណុច <span class="mi">\(O\)</span> រថយន្តមួយបើកទៅទិសឦសានបាន <span class="mi">\(40\text{ km}\)</span> ហើយរថយន្តមួយទៀតបើកទៅទិសនិរតីបាន <span class="mi">\(60\text{ km}\)</span>។ គណនាចម្ងាយរវាងរថយន្តទាំងពីរ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទិសឦសាន និងនិរតីជាទិសផ្ទុយគ្នាស្រឡះ (<span class="mi">\(180^\circ\)</span>) ៖ ចម្ងាយសរុប ៖ <span class="mi">\(40 + 60 = 100\text{ km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ពីចំណុច <span class="mi">\(O\)</span> កប៉ាល់ <span class="mi">\(A\)</span> បើកទៅទិស <span class="mi">\(030^\circ\)</span> បាន <span class="mi">\(15\text{ km}\)</span> ហើយកប៉ាល់ <span class="mi">\(B\)</span> បើកទៅទិស <span class="mi">\(120^\circ\)</span> បាន <span class="mi">\(20\text{ km}\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta OAB\)</span> ជាត្រីកោណកែងត្រង់ <span class="mi">\(O\)</span>។</p></li>
+<li><p>គណនាចម្ងាយរវាងកប៉ាល់ទាំងពីរ <span class="mi">\(AB\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\angle AOB = 120^\circ - 30^\circ = 90^\circ \implies \Delta OAB\)</span> កែងត្រង់ <span class="mi">\(O\)</span></p></li>
+<li><p>b. <span class="mi">\(AB = \sqrt{15^2 + 20^2} = 25\text{ km}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ដីមួយកន្លែងរាងត្រីកោណកែងមានជ្រុងជាក់ស្តែង <span class="mi">\(30\text{ m}, 40\text{ m}, 50\text{ m}\)</span>។ គូរដីនោះលើប្លង់មាត្រដ្ឋាន <span class="mi">\(1 : 200\)</span>។ គណនាផ្ទៃក្រឡាលើប្លង់ និងផ្ទៃជាក់ស្តែង។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជ្រុងលើប្លង់ ៖ <span class="mi">\(15\text{ cm}, 20\text{ cm}, 25\text{ cm}\)</span>។ <span class="mi">\(S_{\text{ប្លង់}} = \frac{1}{2}(15)(20) = 150\text{ cm}^2\)</span>។ <span class="mi">\(S_{\text{ពិត}} = \frac{1}{2}(30)(40) = 600\text{ m}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(1 : 25\,000\)</span> ផ្លូវដែកមួយមានប្រវែង <span class="mi">\(18.4\text{ cm}\)</span>។ គណនាប្រវែងជាក់ស្តែងគិតជាគីឡូម៉ែត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(D = 18.4\text{ cm} \times 25\,000 = 460\,000\text{ cm} = 4.6\text{ km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>បើមាត្រដ្ឋានគំរូរថយន្តមួយគឺ <span class="mi">\(1 : 24\)</span>។ បើរថយន្តពិតមានបណ្តោយ <span class="mi">\(4.8\text{ m}\)</span> តើរថយន្តគំរូមានបណ្តោយប៉ុន្មានសង់ទីម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(d = \frac{480\text{ cm}}{24} = 20\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>ផ្ទៃដី ១ ហិកតា (ha) លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{10\,000}\)</span> ត្រូវតាងដោយផ្ទៃប៉ុន្មានសង់ទីម៉ែត្រការេ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(1\text{ ha} = 10\,000\text{ m}^2 = 10^8\text{ cm}^2\)</span>។ <span class="mi">\(s = \frac{10^8}{(10^4)^2} = \frac{10^8}{10^8} = 1\text{ cm}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>អាងស្តុកទឹកមួយមានមាឌជាក់ស្តែង <span class="mi">\(8\,000\text{ m}^3\)</span>។ លើគំរូមាត្រដ្ឋាន <span class="mi">\(1 : 100\)</span> តើអាងគំរូមានមាឌប៉ុន្មានលីត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(V_{\text{គំរូ}} = \frac{8\,000\text{ m}^3}{100^3} = \frac{8\,000}{1\,000\,000} = 0.008\text{ m}^3 = 8\text{ L}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>អ្នកដើរព្រៃម្នាក់ដើរពីជំរំ <span class="mi">\(A\)</span> ឆ្ពោះទៅទិសដៅ <span class="mi">\(135^\circ\)</span> បាន <span class="mi">\(5\text{ km}\)</span> ដល់ចំណុច <span class="mi">\(B\)</span> រួចបន្តដំណើរទៅទិសដៅ <span class="mi">\(225^\circ\)</span> បាន <span class="mi">\(5\text{ km}\)</span> ដល់ <span class="mi">\(C\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\angle ABC = 90^\circ\)</span>។</p></li>
+<li><p>គណនាចម្ងាយពីជំរំ <span class="mi">\(A\)</span> ទៅចំណុច <span class="mi">\(C\)</span>។</p></li>
+<li><p>កំណត់មុំទិសដៅនៃ <span class="mi">\(C\)</span> ធៀបនឹង <span class="mi">\(A\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(B\)</span> ទៅ <span class="mi">\(A\)</span> គឺ <span class="mi">\(315^\circ\)</span>, <span class="mi">\(B\)</span> ទៅ <span class="mi">\(C\)</span> គឺ <span class="mi">\(225^\circ \implies \angle ABC = 315^\circ - 225^\circ = 90^\circ\)</span></p></li>
+<li><p>b. <span class="mi">\(AC = \sqrt{5^2 + 5^2} = 5\sqrt{2}\text{ km}\)</span></p></li>
+<li><p>c. ទិសដៅនៃ <span class="mi">\(C\)</span> ធៀបនឹង <span class="mi">\(A\)</span> គឺ <span class="mi">\(180^\circ\)</span> (ត្បូង)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ពីកំពូលប៉មសង្កេតការណ៍ គេមើលឃើញភ្លើងសញ្ញាពីរ ៖ ភ្លើង <span class="mi">\(X\)</span> នៅទិស <span class="mi">\(050^\circ\)</span> ចម្ងាយ <span class="mi">\(8\text{ km}\)</span> និងភ្លើង <span class="mi">\(Y\)</span> នៅទិស <span class="mi">\(140^\circ\)</span> ចម្ងាយ <span class="mi">\(15\text{ km}\)</span>។ គណនាចម្ងាយរវាងភ្លើងទាំងពីរ <span class="mi">\(XY\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(\angle XOY = 140^\circ - 50^\circ = 90^\circ\)</span>។ <span class="mi">\(XY = \sqrt{8^2 + 15^2} = 17\text{ km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>លើប្លង់ស្ថាបត្យកម្មមាត្រដ្ឋាន <span class="mi">\(1 : 50\)</span> កម្រាលឥដ្ឋការ៉ូមួយមានវិមាត្រ <span class="mi">\(1.2\text{ cm} \times 1.2\text{ cm}\)</span>។ គណនាផ្ទៃក្រឡាជាក់ស្តែងនៃឥដ្ឋការ៉ូនោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ជ្រុងពិត ៖ <span class="mi">\(1.2\text{ cm} \times 50 = 60\text{ cm} = 0.6\text{ m}\)</span>។ <span class="mi">\(S = 0.6^2 = 0.36\text{ m}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>ផែនទីមួយត្រូវបានបង្រួមពីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{50\,000}\)</span> ទៅជាមាត្រដ្ឋាន <span class="mi">\(\frac{1}{200\,000}\)</span>។ តើចម្ងាយនៅលើផែនទីថ្មីថយចុះប៉ុន្មានដង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចម្ងាយថយចុះ <span class="mi">\(\frac{200\,000}{50\,000} = 4\)</span> ដង។</p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>តាមទិន្នន័យលំហាត់ទី ៣៧ តើផ្ទៃក្រឡានៅលើផែនទីថ្មីថយចុះប៉ុន្មានដង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៃក្រឡាថយចុះ <span class="mi">\(4^2 = 16\)</span> ដង។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>កប៉ាល់មួយចាកចេញពីកំពង់ផែ <span class="mi">\(O\)</span> ឆ្ពោះទៅទិស <span class="mi">\(060^\circ\)</span> បាន <span class="mi">\(20\text{ km}\)</span> ដល់ <span class="mi">\(A\)</span>។ កប៉ាល់ទីពីរចេញពី <span class="mi">\(O\)</span> ទៅទិស <span class="mi">\(240^\circ\)</span> បាន <span class="mi">\(35\text{ km}\)</span> ដល់ <span class="mi">\(B\)</span>។ គណនាចម្ងាយរវាងកប៉ាល់ទាំងពីរ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(240^\circ - 060^\circ = 180^\circ\)</span> (ទិសផ្ទុយគ្នា) ៖ ចម្ងាយរវាងកប៉ាល់ទាំងពីរ ៖ <span class="mi">\(20 + 35 = 55\text{ km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>បង្ហាញថា ចំណុចបី <span class="mi">\(A, O, B\)</span> ក្នុងលំហាត់ទី ៣៩ រត់នៅលើបន្ទាត់ត្រង់តែមួយ (កូលីនេអ៊ែរ)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>មុំ <span class="mi">\(\angle AOB = 180^\circ \implies O\)</span> ស្ថិតនៅលើអង្កត់ <span class="mi">\(AB\)</span> នាំឱ្យ <span class="mi">\(A, O, B\)</span> រត់លើបន្ទាត់ត្រង់តែមួយ។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{100\,000}\)</span> ចម្ងាយរវាងពីរចំណុចគឺ <span class="mi">\(7.2\text{ cm}\)</span>។ បើគូសលើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{25\,000}\)</span> តើចម្ងាយនោះមានប្រវែងប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(D = 7.2\text{ cm} \times 100\,000 = 720\,000\text{ cm}\)</span>។ លើមាត្រដ្ឋាន <span class="mi">\(\frac{1}{25\,000}\)</span> ៖ <span class="mi">\(d = \frac{720\,000}{25\,000} = 28.8\text{ cm}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>រូបថតផ្កាយរណបមួយមានមាត្រដ្ឋាន <span class="mi">\(1 : 10\,000\)</span>។ ព្រលានយន្តហោះមួយមានផ្លូវរត់ប្រវែង <span class="mi">\(35\text{ cm}\)</span> លើរូបថត។ គណនាប្រវែងពិតនៃផ្លូវរត់គិតជាម៉ែត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(D = 35\text{ cm} \times 10\,000 = 350\,000\text{ cm} = 3\,500\text{ m} = 3.5\text{ km}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>កប៉ាល់មួយបើកបរក្នុងទិសដៅ <span class="mi">\(300^\circ\)</span>។ គណនាមុំដែលកប៉ាល់បង្កើតជាមួយនឹងទិសខាងលិច (West)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទិសលិចគឺ <span class="mi">\(270^\circ\)</span> ៖ មុំបង្កើតគឺ <span class="mi">\(300^\circ - 270^\circ = 30^\circ\)</span> (ទៅខាងជើង)។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>កប៉ាល់មួយបើកបរក្នុងទិសដៅ <span class="mi">\(120^\circ\)</span>។ គណនាមុំដែលកប៉ាល់បង្កើតជាមួយនឹងទិសខាងកើត (East)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ទិសកើតគឺ <span class="mi">\(090^\circ\)</span> ៖ មុំបង្កើតគឺ <span class="mi">\(120^\circ - 090^\circ = 30^\circ\)</span> (ទៅខាងត្បូង)។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ដីមួយកន្លែងមានរាងចតុកោណព្នាយមានបាត <span class="mi">\(40\text{ m}, 60\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(30\text{ m}\)</span>។ គណនាផ្ទៃដីជាក់ស្តែង និងផ្ទៃលើប្លង់មាត្រដ្ឋាន <span class="mi">\(1 : 1\,000\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(S_{\text{ពិត}} = \frac{(40 + 60) \times 30}{2} = 1\,500\text{ m}^2\)</span>។ <span class="mi">\(S_{\text{ប្លង់}} = \frac{1\,500\text{ m}^2}{1\,000^2} = \frac{1\,500 \times 10^4\text{ cm}^2}{10^6} = 15\text{ cm}^2\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{250\,000}\)</span> ខេត្តពីរមានចម្ងាយ <span class="mi">\(14.8\text{ cm}\)</span>។ រថយន្តមួយបើកបរចន្លោះខេត្តទាំងពីរក្នុងល្បឿនមធ្យម <span class="mi">\(74\text{ km/h}\)</span>។ តើរថយន្តត្រូវចំណាយពេលប៉ុន្មានម៉ោង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(D = 14.8\text{ cm} \times 250\,000 = 3\,700\,000\text{ cm} = 37\text{ km}\)</span>។ ពេល ៖ <span class="mi">\(t = \frac{37}{74} = 0.5\text{ h} = 30\)</span> នាទី។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ប៉មពីរ <span class="mi">\(A\)</span> និង <span class="mi">\(B\)</span> ស្ថិតនៅចម្ងាយ <span class="mi">\(10\text{ km}\)</span> ពីគ្នា។ មុំទិសដៅនៃ <span class="mi">\(B\)</span> ធៀបនឹង <span class="mi">\(A\)</span> គឺ <span class="mi">\(090^\circ\)</span> (កើត)។ ឧទ្ធម្ភាគចក្រមួយនៅចំណុច <span class="mi">\(C\)</span> ដែលមានមុំទិសដៅពី <span class="mi">\(A\)</span> គឺ <span class="mi">\(045^\circ\)</span> និងពី <span class="mi">\(B\)</span> គឺ <span class="mi">\(315^\circ\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>បង្ហាញថា <span class="mi">\(\Delta ABC\)</span> ជាត្រីកោណកែងសមបាតត្រង់ <span class="mi">\(C\)</span>។</p></li>
+<li><p>គណនាចម្ងាយពីឧទ្ធម្ភាគចក្រទៅកាន់ប៉មទាំងពីរ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(\angle CAB = 90^\circ - 45^\circ = 45^\circ\)</span>, <span class="mi">\(\angle CBA = 315^\circ - 270^\circ = 45^\circ \implies \angle ACB = 90^\circ\)</span> នាំឱ្យ <span class="mi">\(\Delta ABC\)</span> កែងសមបាត</p></li>
+<li><p>b. <span class="mi">\(AC = BC = \frac{10}{\sqrt{2}} = 5\sqrt{2}\text{ km}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>លើផែនទីមាត្រដ្ឋាន <span class="mi">\(\frac{1}{20\,000}\)</span> ព្រៃសហគមន៍មួយមានរាងជាពហុកោណដែលមានផ្ទៃ <span class="mi">\(35\text{ cm}^2\)</span>។ គណនាផ្ទៃដីព្រៃជាក់ស្តែងគិតជាហិកតា (ha)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(S_{\text{ពិត}} = 35\text{ cm}^2 \times (20\,000)^2 = 35 \times 4 \times 10^8\text{ cm}^2 = 140\text{ ha}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>គេសង់គំរូស្ពានមួយដោយប្រើមាត្រដ្ឋាន <span class="mi">\(1 : 200\)</span>។ បើស្ពានគំរូមានប្រវែង <span class="mi">\(1.75\text{ m}\)</span> គណនាប្រវែងពិតនៃស្ពាននោះ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><span class="mi">\(D = 1.75\text{ m} \times 200 = 350\text{ m}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>អ្នករត់ប្រណាំងម្នាក់រត់ពីចំណុច <span class="mi">\(S\)</span> ទៅទិសខាងជើង <span class="mi">\(3\text{ km}\)</span> រួចបត់ទៅទិសខាងកើត <span class="mi">\(4\text{ km}\)</span> ដល់គោលដៅ <span class="mi">\(F\)</span>។</p>
+<ol class="list olka cols1">
+<li><p>គណនាចម្ងាយផ្ទាល់ពី <span class="mi">\(S\)</span> ទៅ <span class="mi">\(F\)</span>។</p></li>
+<li><p>គណនាមុំទិសដៅនៃគោលដៅ <span class="mi">\(F\)</span> ធៀបនឹងចំណុចចេញដំណើរ <span class="mi">\(S\)</span> (យក <span class="mi">\(\tan 53^\circ \approx \frac{4}{3}\)</span>)។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>a. <span class="mi">\(SF = \sqrt{3^2 + 4^2} = 5\text{ km}\)</span></p></li>
+<li><p>b. <span class="mi">\(\tan \theta = \frac{4}{3} \implies \theta \approx 53^\circ \implies\)</span> មុំទិសដៅគឺ <span class="mi">\(053^\circ\)</span></p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៨ មាត្រដ្ឋាន និងទិសដៅ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g08_c18">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L17.html"><small>← មេរៀនមុន</small><b>រូបធរណីមាត្រដែលមានវិមាត្របី</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មាត្រដ្ឋាន គឺជាផលធៀបរវាង ៖", "options": ["ប្រវែងជាក់ស្តែង និងប្រវែងលើប្លង់", "ប្រវែងលើប្លង់ និងប្រវែងជាក់ស្តែង", "ផ្ទៃលើប្លង់ និងផ្ទៃជាក់ស្តែង", "ផលបូកនៃប្រវែងទាំងពីរ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងរូបមន្តមាត្រដ្ឋាន ប្រវែងលើប្លង់ និងប្រវែងជាក់ស្តែងត្រូវតែ ៖", "options": ["គិតជាសង់ទីម៉ែត្រជានិច្ច", "គិតជាម៉ែត្រជានិច្ច", "គិតជាឯកតាដូចគ្នា", "មិនបាច់គិតឯកតាទេ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{1\\,000}\\)<\/span> មានន័យថា <span class=\"mi\">\\(1\\text{ cm}\\)<\/span> លើផែនទីស្មើនឹងប្រវែងជាក់ស្តែង ៖", "options": ["<span class=\"mi\">\\(100\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(1\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\text{ cm} = 10\\text{ m}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{100\\,000}\\)<\/span> មានន័យថា <span class=\"mi\">\\(1\\text{ cm}\\)<\/span> លើផែនទីស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ km}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រវែង <span class=\"mi\">\\(1\\text{ km}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(10\\,000\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(100\\,000\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\,000\\text{ cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រវែង <span class=\"mi\">\\(1\\text{ m}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(0.01\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ cm}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{50\\,000}\\)<\/span> ប្រវែង <span class=\"mi\">\\(4\\text{ cm}\\)<\/span> ត្រូវនឹងប្រវែងជាក់ស្តែង ៖", "options": ["<span class=\"mi\">\\(2\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(20\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(200\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(5\\text{ km}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចម្ងាយជាក់ស្តែង <span class=\"mi\">\\(15\\text{ km}\\)<\/span> លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{300\\,000}\\)<\/span> ត្រូវនឹង ៖", "options": ["<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(50\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(0.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រវែងជាក់ស្តែង <span class=\"mi\">\\(70\\text{ m}\\)<\/span> លើប្លង់មានប្រវែង <span class=\"mi\">\\(3.5\\text{ cm}\\)<\/span>។ មាត្រដ្ឋានប្លង់គឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{20\\,000}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{200}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2\\,000}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{500}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើមាត្រដ្ឋានប្រវែងគឺ <span class=\"mi\">\\(\\frac{1}{100}\\)<\/span> នោះមាត្រដ្ឋានផ្ទៃក្រឡាគឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{200}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{100}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{1\\,000}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{10\\,000}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "លើប្លង់មាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{100}\\)<\/span> បន្ទប់មួយមានផ្ទៃ <span class=\"mi\">\\(20\\text{ cm}^2\\)<\/span>។ ផ្ទៃជាក់ស្តែងគឺ ៖", "options": ["<span class=\"mi\">\\(200\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(20\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(2\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(2\\,000\\text{ m}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិសខាងកើត (East) មានមុំទិសដៅស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(000^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(090^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិសខាងត្បូង (South) មានមុំទិសដៅស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(090^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(360^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិសខាងលិច (West) មានមុំទិសដៅស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(090^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(000^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិសឦសាន (North-East) មានមុំទិសដៅស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(045^\\circ\\)<\/span>", "<span class=\"mi\">\\(135^\\circ\\)<\/span>", "<span class=\"mi\">\\(225^\\circ\\)<\/span>", "<span class=\"mi\">\\(315^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិសអាគ្នេយ៍ (South-East) មានមុំទិសដៅស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(315^\\circ\\)<\/span>", "<span class=\"mi\">\\(045^\\circ\\)<\/span>", "<span class=\"mi\">\\(225^\\circ\\)<\/span>", "<span class=\"mi\">\\(135^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិសនិរតី (South-West) មានមុំទិសដៅស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(225^\\circ\\)<\/span>", "<span class=\"mi\">\\(135^\\circ\\)<\/span>", "<span class=\"mi\">\\(315^\\circ\\)<\/span>", "<span class=\"mi\">\\(045^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ទិសពាយ័ព្យ (North-West) មានមុំទិសដៅស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(135^\\circ\\)<\/span>", "<span class=\"mi\">\\(225^\\circ\\)<\/span>", "<span class=\"mi\">\\(315^\\circ\\)<\/span>", "<span class=\"mi\">\\(045^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុំទិសដៅតែងតែវាស់ចេញពី ៖", "options": ["ទិសខាងជើងច្រាសទ្រនិចនាឡិកា", "ទិសខាងជើងតាមទិសទ្រនិចនាឡិកា", "ទិសខាងកើត", "បន្ទាត់ដេក"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើមុំទិសដៅពី <span class=\"mi\">\\(A\\)<\/span> ទៅ <span class=\"mi\">\\(B\\)<\/span> គឺ <span class=\"mi\">\\(060^\\circ\\)<\/span> នោះមុំទិសដៅត្រឡប់ពី <span class=\"mi\">\\(B\\)<\/span> ទៅ <span class=\"mi\">\\(A\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(060^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(300^\\circ\\)<\/span>", "<span class=\"mi\">\\(240^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើមុំទិសដៅពី <span class=\"mi\">\\(A\\)<\/span> ទៅ <span class=\"mi\">\\(B\\)<\/span> គឺ <span class=\"mi\">\\(210^\\circ\\)<\/span> នោះមុំទិសដៅត្រឡប់ពី <span class=\"mi\">\\(B\\)<\/span> ទៅ <span class=\"mi\">\\(A\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(060^\\circ\\)<\/span>", "<span class=\"mi\">\\(390^\\circ\\)<\/span>", "<span class=\"mi\">\\(120^\\circ\\)<\/span>", "<span class=\"mi\">\\(030^\\circ\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផែនទីមួយមានមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{25\\,000}\\)<\/span>។ ដីចតុកោណកែងលើផែនទីមានទំហំ <span class=\"mi\">\\(2\\text{ cm} \\times 4\\text{ cm}\\)<\/span>។ ផ្ទៃដីជាក់ស្តែងគឺ ៖", "options": ["<span class=\"mi\">\\(500\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(5\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(50\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(20\\text{ ha}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផ្លូវជាតិប្រវែង <span class=\"mi\">\\(455\\text{ km}\\)<\/span> លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{2\\,000\\,000}\\)<\/span> មានប្រវែង ៖", "options": ["<span class=\"mi\">\\(22.75\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(2.275\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(227.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(45.5\\text{ cm}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបថតទំហំ <span class=\"mi\">\\(4\\text{ cm} \\times 5\\text{ cm}\\)<\/span> ពង្រីកទៅជា <span class=\"mi\">\\(16\\text{ cm} \\times 20\\text{ cm}\\)<\/span>។ មេគុណពង្រីកគឺ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span> ដង", "<span class=\"mi\">\\(4\\)<\/span> ដង", "<span class=\"mi\">\\(2\\)<\/span> ដង", "<span class=\"mi\">\\(16\\)<\/span> ដង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{80\\,000}\\)<\/span> ចម្ងាយរវាងក្រុងពីរគឺ <span class=\"mi\">\\(343\\text{ mm}\\)<\/span>។ ចម្ងាយជាក់ស្តែងគឺ ៖", "options": ["<span class=\"mi\">\\(274.4\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(27.44\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(2.744\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(42.8\\text{ km}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "មាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{2\\,500}\\)<\/span> របស់ចម្ការមួយមានទំហំ <span class=\"mi\">\\(4\\text{ cm} \\times 3.5\\text{ cm}\\)<\/span>។ ផ្ទៃជាក់ស្តែងគិតជាអារ (a) គឺ ៖", "options": ["<span class=\"mi\">\\(87.5\\text{ a}\\)<\/span>", "<span class=\"mi\">\\(875\\text{ a}\\)<\/span>", "<span class=\"mi\">\\(8.75\\text{ a}\\)<\/span>", "<span class=\"mi\">\\(14\\text{ a}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរទី ២៦ បើ ១ អារ តម្លៃ <span class=\"mi\">\\(10\\,000\\,000\\)<\/span> រៀល នោះថ្លៃដីសរុបគឺ ៖", "options": ["<span class=\"mi\">\\(140\\,000\\,000\\)<\/span> រៀល", "<span class=\"mi\">\\(87\\,500\\,000\\)<\/span> រៀល", "<span class=\"mi\">\\(8\\,750\\,000\\,000\\)<\/span> រៀល", "<span class=\"mi\">\\(875\\,000\\,000\\)<\/span> រៀល"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{2\\,500}\\)<\/span> ចម្ការមួយមានបណ្តោយ <span class=\"mi\">\\(52\\text{ mm}\\)<\/span> ទទឹង <span class=\"mi\">\\(25\\text{ mm}\\)<\/span>។ ផ្ទៃដីជាក់ស្តែងគឺ ៖", "options": ["<span class=\"mi\">\\(0.8125\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(8.125\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(81.25\\text{ ha}\\)<\/span>", "<span class=\"mi\">\\(0.08125\\text{ ha}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "កប៉ាល់មួយបើកបរក្នុងទិសដៅ <span class=\"mi\">\\(090^\\circ\\)<\/span> ចម្ងាយ <span class=\"mi\">\\(10\\text{ km}\\)<\/span> រួចបត់ទៅទិស <span class=\"mi\">\\(180^\\circ\\)<\/span> ចម្ងាយ <span class=\"mi\">\\(10\\text{ km}\\)<\/span>។ ចម្ងាយពីចំណុចចេញដំណើរគឺ ៖", "options": ["<span class=\"mi\">\\(20\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(10\\sqrt{2}\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(14\\text{ km}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរទី ២៩ មុំទិសដៅនៃកប៉ាល់ធៀបនឹងចំណុចចេញដំណើរគឺ ៖", "options": ["<span class=\"mi\">\\(135^\\circ\\)<\/span>", "<span class=\"mi\">\\(045^\\circ\\)<\/span>", "<span class=\"mi\">\\(225^\\circ\\)<\/span>", "<span class=\"mi\">\\(090^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "មុំទិសដៅនៃបន្ទាត់មួយដែលបែរទៅទិសខាងជើងពិតប្រាកដគឺ ៖", "options": ["<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(090^\\circ\\)<\/span>", "<span class=\"mi\">\\(000^\\circ\\)<\/span> ឬ <span class=\"mi\">\\(360^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "លើប្លង់មាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{200}\\)<\/span> បន្ទប់មួយមានបណ្តោយ <span class=\"mi\">\\(4\\text{ cm}\\)<\/span> និងទទឹង <span class=\"mi\">\\(3\\text{ cm}\\)<\/span>។ ផ្ទៃក្រឡាជាក់ស្តែងគឺ ៖", "options": ["<span class=\"mi\">\\(48\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(24\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(12\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(96\\text{ m}^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "តាមទិន្នន័យសំណួរទី ៣២ បើកម្ពស់បន្ទប់គឺ <span class=\"mi\">\\(3.5\\text{ m}\\)<\/span> នោះមាឌបន្ទប់គឺ ៖", "options": ["<span class=\"mi\">\\(84\\text{ m}^3\\)<\/span>", "<span class=\"mi\">\\(168\\text{ m}^3\\)<\/span>", "<span class=\"mi\">\\(336\\text{ m}^3\\)<\/span>", "<span class=\"mi\">\\(42\\text{ m}^3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{100\\,000}\\)<\/span> ចម្ងាយ <span class=\"mi\">\\(6.6\\text{ cm}\\)<\/span> ត្រូវនឹងចម្ងាយលើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{200\\,000}\\)<\/span> ប្រវែង ៖", "options": ["<span class=\"mi\">\\(1.65\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(13.2\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6.6\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3.3\\text{ cm}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្លង់ផ្ទះមួយមានមាត្រដ្ឋាន <span class=\"mi\">\\(1 : 50\\)<\/span>។ ជញ្ជាំងផ្ទះប្រវែង <span class=\"mi\">\\(6\\text{ m}\\)<\/span> ត្រូវគូរលើប្លង់ប្រវែង ៖", "options": ["<span class=\"mi\">\\(30\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(12\\text{ cm}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើកប៉ាល់មួយបើកបរពី <span class=\"mi\">\\(A\\)<\/span> ទៅ <span class=\"mi\">\\(B\\)<\/span> ក្នុងទិសដៅ <span class=\"mi\">\\(150^\\circ\\)<\/span> នោះទិសដៅពី <span class=\"mi\">\\(B\\)<\/span> ទៅ <span class=\"mi\">\\(A\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(330^\\circ\\)<\/span>", "<span class=\"mi\">\\(030^\\circ\\)<\/span>", "<span class=\"mi\">\\(300^\\circ\\)<\/span>", "<span class=\"mi\">\\(210^\\circ\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើយន្តហោះហោះពីភ្នំពេញទៅសៀមរាបក្នុងទិសដៅ <span class=\"mi\">\\(320^\\circ\\)<\/span> នោះជើងហោះហើរត្រឡប់មកវិញមានទិសដៅ ៖", "options": ["<span class=\"mi\">\\(230^\\circ\\)<\/span>", "<span class=\"mi\">\\(040^\\circ\\)<\/span>", "<span class=\"mi\">\\(140^\\circ\\)<\/span>", "<span class=\"mi\">\\(160^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{50\\,000}\\)<\/span> បឹងមួយមានផ្ទៃ <span class=\"mi\">\\(4\\text{ cm}^2\\)<\/span>។ ផ្ទៃបឹងជាក់ស្តែងគឺ ៖", "options": ["<span class=\"mi\">\\(1\\text{ km}^2\\)<\/span>", "<span class=\"mi\">\\(2\\text{ km}^2\\)<\/span>", "<span class=\"mi\">\\(0.5\\text{ km}^2\\)<\/span>", "<span class=\"mi\">\\(4\\text{ km}^2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផ្ទៃដី <span class=\"mi\">\\(1\\text{ km}^2\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(100\\,000\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\,000\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(10\\,000\\text{ m}^2\\)<\/span>", "<span class=\"mi\">\\(100\\text{ m}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "លើប្លង់មាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{20}\\)<\/span> ទ្វារមួយមានកម្ពស់ <span class=\"mi\">\\(10\\text{ cm}\\)<\/span>។ កម្ពស់ពិតនៃទ្វារគឺ ៖", "options": ["<span class=\"mi\">\\(1.5\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(20\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(0.2\\text{ m}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(A\\)<\/span> នៅទិសខាងកើតនៃ <span class=\"mi\">\\(B\\)<\/span> នោះមុំទិសដៅនៃ <span class=\"mi\">\\(A\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(B\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(000^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(090^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(B\\)<\/span> នៅទិសខាងលិចនៃ <span class=\"mi\">\\(A\\)<\/span> នោះមុំទិសដៅនៃ <span class=\"mi\">\\(B\\)<\/span> ធៀបនឹង <span class=\"mi\">\\(A\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(090^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(000^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{10\\,000}\\)<\/span> មានន័យថា <span class=\"mi\">\\(1\\text{ mm}\\)<\/span> លើផែនទីស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(1\\text{ km}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "លើផែនទីមាត្រដ្ឋាន <span class=\"mi\">\\(\\frac{1}{1\\,000\\,000}\\)<\/span> ចម្ងាយ <span class=\"mi\">\\(8.5\\text{ cm}\\)<\/span> ត្រូវនឹងចម្ងាយជាក់ស្តែង ៖", "options": ["<span class=\"mi\">\\(8.5\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(850\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(85\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(170\\text{ km}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កប៉ាល់មួយចាកចេញពីកំពង់ផែ <span class=\"mi\">\\(O\\)<\/span> ឆ្ពោះទៅទិស <span class=\"mi\">\\(000^\\circ\\)<\/span> បាន <span class=\"mi\">\\(12\\text{ km}\\)<\/span> រួចបត់ទៅទិស <span class=\"mi\">\\(090^\\circ\\)<\/span> បាន <span class=\"mi\">\\(5\\text{ km}\\)<\/span>។ ចម្ងាយពីកំពង់ផែគឺ ៖", "options": ["<span class=\"mi\">\\(25\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(17\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(7\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(13\\text{ km}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំរវាងទិសខាងជើង និងទិសឦសានស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(45^\\circ\\)<\/span>", "<span class=\"mi\">\\(30^\\circ\\)<\/span>", "<span class=\"mi\">\\(60^\\circ\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មុំរវាងទិសពាយ័ព្យ និងទិសអាគ្នេយ៍ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(135^\\circ\\)<\/span>", "<span class=\"mi\">\\(90^\\circ\\)<\/span>", "<span class=\"mi\">\\(180^\\circ\\)<\/span>", "<span class=\"mi\">\\(270^\\circ\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ប្លង់ដីមួយមានមាត្រដ្ឋាន <span class=\"mi\">\\(1 : 500\\)<\/span>។ ស្រះទឹកមួយមានផ្ទៃជាក់ស្តែង <span class=\"mi\">\\(200\\text{ m}^2\\)<\/span>។ ផ្ទៃស្រះលើប្លង់គឺ ៖", "options": ["<span class=\"mi\">\\(4\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(8\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(16\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(2\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "លើផែនទីមួយ ចម្ងាយជាក់ស្តែង <span class=\"mi\">\\(40\\text{ km}\\)<\/span> ត្រូវតាងដោយ <span class=\"mi\">\\(8\\text{ cm}\\)<\/span>។ មាត្រដ្ឋានផែនទីគឺ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{50\\,000}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{500\\,000}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{5\\,000}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{200\\,000}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ការប្រើប្រាស់មាត្រដ្ឋាន និងទិសដៅមានសារៈសំខាន់បំផុតក្នុងវិស័យ ៖", "options": ["តន្ត្រី និងគំនូរ", "វេជ្ជសាស្ត្រ និងឱសថ", "ភាសាវិទ្យា", "នាវាចរណ៍ យោធា ស្ថាបត្យកម្ម និងការរុករកភូមិសាស្ត្រ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

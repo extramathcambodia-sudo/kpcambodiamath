@@ -6,7 +6,7 @@
   <title>KPCambodianmathematics — ប្រព័ន្ធគណិតវិទ្យា ធនាគារសំណួរ និងវិញ្ញាសាប្រឡង</title>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="static/img/logo.png">
+  <link rel="icon" type="image/png" href="static/img/logo-96.png">
 
   <!-- Local Kantumruy Pro Font (100% Offline) -->
   <link rel="stylesheet" href="static/fonts/kantumruy-pro.css">
@@ -19,9 +19,12 @@
   <!-- Local Geometric Constructions CSS -->
   <link rel="stylesheet" href="static/css/site.css">
   <link rel="stylesheet" href="static/css/construct.css">
+  <link rel="stylesheet" href="static/css/slides.css?v=6">
 
   <!-- External Math Data Store -->
   <script src="math_data.js"></script>
+  <script src="static/js/book_tests.js"></script>
+  <script src="static/js/studio_extra.js"></script>
 
   <!-- Tailwind CSS for utility layout -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -438,7 +441,7 @@
     <!-- Top Navigation Bar -->
     <header class="sticky top-0 z-50 border-b px-4 lg:px-10 py-3.5 flex items-center justify-between" style="background: var(--surface); border-color: var(--line);">
       <div class="flex items-center gap-6">
-        <a href="#home" onclick="goToLandingPage()" class="flex items-center gap-3 no-underline">
+        <a href="index.html" title="ទំព័រដើម" class="flex items-center gap-3 no-underline">
           <img src="static/img/logo.png" alt="KPCambodianmathematics" class="w-10 h-10 rounded-full object-cover shadow-sm ring-2 ring-teal-600/30">
           <div>
             <div class="font-bold text-lg leading-tight tracking-tight text-slate-900" style="color: var(--ink);">KPCambodianmathematics</div>
@@ -681,6 +684,8 @@
                 <option>ថ្នាក់ទី ៨</option>
                 <option>ថ្នាក់ទី ៩</option>
                 <option>ថ្នាក់ទី ១០</option>
+                <option>ថ្នាក់ទី ១១</option>
+                <option>ថ្នាក់ទី ១២</option>
               </select>
             </div>
             <div>
@@ -931,7 +936,7 @@
             </div>
             <div>
               <strong class="text-slate-900">ប្រភពឯកសារ ៖</strong>
-              ដំណើរការដោយភាពជាដៃគូរវាង បណ្តុំវិទ្យាសាស្ត្រ និងសមាគមគ្រូគណិតវិទ្យាកម្ពុជា។ អាចចូលរួមសហគមន៍ <a href="https://t.me/pisamathAI" target="_blank" class="text-teal-700 underline font-bold">Telegram @pisamathAI</a>។
+              ដំណើរការដោយភាពជាដៃគូរវាង បណ្តុំវិទ្យាសាស្ត្រ និងសមាគមគ្រូគណិតវិទ្យាកម្ពុជា។ អាចចូលរួមសហគមន៍ <a href="https://t.me/KHEMPUTHY" target="_blank" class="text-teal-700 underline font-bold">Telegram @KHEMPUTHY</a>។
             </div>
           </div>
         </div>
@@ -948,7 +953,7 @@
             <span class="font-bold text-sm text-slate-900">KPCambodianmathematics</span>
           </div>
           <p class="text-[11px] leading-relaxed text-slate-500">
-            គេហទំព័រគណិតវិទ្យាសម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ ទី ១០ ដំណើរការលើកុំព្យូទ័រ Offline ១០០%។
+            គេហទំព័រគណិតវិទ្យាសម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ ទី ១២ ដំណើរការលើកុំព្យូទ័រ Offline ១០០%។
           </p>
         </div>
 
@@ -976,8 +981,8 @@
         <div>
           <h4 class="font-bold text-slate-900 mb-2.5">អំពី</h4>
           <ul class="space-y-1.5 text-[11px] text-slate-500">
-            <li><a href="https://t.me/pisamathAI" target="_blank" class="hover:underline">សហគមន៍ Telegram</a></li>
-            <li><a href="#feedback" onclick="alert('សូមផ្ញើមតិស្ថាបនាតាម Telegram @pisamathAI')" class="hover:underline">ផ្ញើមតិកែលម្អ</a></li>
+            <li><a href="https://t.me/KHEMPUTHY" target="_blank" class="hover:underline">សហគមន៍ Telegram</a></li>
+            <li><a href="#feedback" onclick="alert('សូមផ្ញើមតិស្ថាបនាតាម Telegram @KHEMPUTHY')" class="hover:underline">ផ្ញើមតិកែលម្អ</a></li>
             <li><a href="#credits" class="hover:underline">ក្រសួងអប់រំ និង OECD</a></li>
           </ul>
         </div>
@@ -989,7 +994,7 @@
           <span>អ្នកចូលមើល <strong>៤២,៥០០</strong> នាក់ · ថ្ងៃនេះ <strong>៣៥០</strong> នាក់ · មកពី <strong>១២</strong> ប្រទេស 🇰🇭 🇹🇭 🇻🇳 🇱🇦 🇸🇬 🇲🇾</span>
         </div>
         <div class="flex items-center gap-3">
-          <a href="https://t.me/pisamathAI" target="_blank" class="px-3 py-1 rounded-full border border-slate-200 text-slate-600 hover:bg-slate-50">
+          <a href="https://t.me/KHEMPUTHY" target="_blank" class="px-3 py-1 rounded-full border border-slate-200 text-slate-600 hover:bg-slate-50">
             ឃើញកំហុស? ប្រាប់យើង
           </a>
           <button onclick="alert('សូមអរគុណសម្រាប់ការគាំទ្រ KPCambodianmathematics!')" class="px-3 py-1 rounded-full border border-rose-200 bg-rose-50 text-rose-700 font-bold">
@@ -999,7 +1004,7 @@
       </div>
 
       <div class="max-w-6xl mx-auto mt-4 pt-3 border-t border-slate-50 text-[10px] text-slate-400 text-center">
-        © ២០២៦ KPCambodianmathematics · Mathematics System for Grade 7, 8, 9, 10
+        © ២០២៦ KPCambodianmathematics · Mathematics System for Grade 7–12
       </div>
     </footer>
   </div>
@@ -1017,7 +1022,7 @@
           <img src="static/img/logo.png" alt="KPCambodianmathematics" class="w-10 h-10 rounded-full object-cover shadow-md ring-2 ring-blue-400/50">
           <div>
             <div class="font-bold text-sm leading-snug tracking-wide text-white">KPCambodianmathematics</div>
-            <div class="text-[11px] text-blue-400 font-medium">ថ្នាក់ទី ៧ · ៨ · ៩ · ១០</div>
+            <div class="text-[11px] text-blue-400 font-medium">ថ្នាក់ទី ៧ · ៨ · ៩ · ១០ · ១១ · ១២</div>
           </div>
         </div>
 
@@ -1028,6 +1033,9 @@
             <nav class="space-y-1">
               <div onclick="switchTab('lessons')" id="nav-lessons" class="nav-item active">
                 <span class="text-base">📖</span> <span>ខ្លឹមសារមេរៀន</span>
+              </div>
+              <div onclick="switchTab('slides')" id="nav-slides" class="nav-item">
+                <span class="text-base">🖥</span> <span>ស្លាយបង្រៀន (Slides)</span>
               </div>
               <div onclick="switchTab('geometry')" id="nav-geometry" class="nav-item">
                 <span class="text-base">📐</span> <span>សំណង់ធរណីមាត្រ</span>
@@ -1057,11 +1065,17 @@
               <div onclick="switchTab('schedule')" id="nav-schedule" class="nav-item">
                 <span class="text-base">⏱</span> <span>កំណត់ពេលប្រឡង</span>
               </div>
-              <div onclick="switchTab('classes')" id="nav-classes" class="nav-item">
-                <span class="text-base">🏫</span> <span>ថ្នាក់ និងសិស្ស</span>
+              <div onclick="location.href='exam-builder.html'" id="nav-exam-builder" class="nav-item">
+                <span class="text-base">📝</span> <span>បង្កើតវិញ្ញាសា (MCQ + សរសេរ)</span>
               </div>
-              <div onclick="switchTab('grading')" id="nav-grading" class="nav-item">
+              <div onclick="location.href='classroom.html'" id="nav-classes" class="nav-item">
+                <span class="text-base">🏫</span> <span>បង្កើតថ្នាក់ សិស្ស & Admin</span>
+              </div>
+              <div onclick="location.href='classroom.html'" id="nav-grading" class="nav-item">
                 <span class="text-base">☑️</span> <span>ដាក់ពិន្ទុ និងលទ្ធផល</span>
+              </div>
+              <div onclick="location.href='student.html'" id="nav-student" class="nav-item">
+                <span class="text-base">🧑‍🎓</span> <span>សិស្សចូលប្រឡង</span>
               </div>
             </nav>
           </div>
@@ -1082,7 +1096,7 @@
 
       <!-- Footer Back Button -->
       <div onclick="goToLandingPage()" class="p-4 border-t border-slate-800 text-xs text-slate-400 hover:text-white cursor-pointer flex items-center gap-2 transition-colors">
-        <span>←</span> <span>ចេញទៅទំព័រដើម (Portal)</span>
+        <span>←</span> <span>ទៅទំព័រដើមគេហទំព័រ</span>
       </div>
     </aside>
 
@@ -1094,7 +1108,7 @@
         <div class="flex items-center gap-4">
           <div>
             <h1 id="page-title" class="text-base font-bold text-slate-900 leading-tight">ខ្លឹមសារមេរៀន</h1>
-            <div id="page-subtitle" class="text-xs text-slate-500 font-normal">គណិតវិទ្យាថ្នាក់ទី ៧ · ៨ · ៩ · ១០ (ការបោះពុម្ព ២០២៧)</div>
+            <div id="page-subtitle" class="text-xs text-slate-500 font-normal">គណិតវិទ្យាថ្នាក់ទី ៧ · ៨ · ៩ · ១០ · ១១ · ១២ (ការបោះពុម្ព ២០២៧)</div>
           </div>
         </div>
         
@@ -1106,6 +1120,8 @@
             <button onclick="setGlobalGrade(8)" id="btn-grade-8" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">ថ្នាក់ទី ៨</button>
             <button onclick="setGlobalGrade(9)" id="btn-grade-9" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">ថ្នាក់ទី ៩</button>
             <button onclick="setGlobalGrade(10)" id="btn-grade-10" class="px-3.5 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm transition">ថ្នាក់ទី ១០</button>
+            <button onclick="setGlobalGrade(11)" id="btn-grade-11" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">ថ្នាក់ទី ១១</button>
+            <button onclick="setGlobalGrade(12)" id="btn-grade-12" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">ថ្នាក់ទី ១២</button>
           </div>
 
           <!-- Theme Toggle Button -->
@@ -1135,7 +1151,7 @@
       <main class="flex-1 overflow-y-auto p-6 lg:p-8 space-y-6">
 
         <!-- =========================================================
-             1. ផ្ទាំង «ខ្លឹមសារមេរៀន» (Modeled after lesson-g7-l01.html)
+             1. ផ្ទាំង «ខ្លឹមសារមេរៀន» (Modeled after lesson/g7/L01.html)
         ========================================================== -->
         <section id="view-lessons" class="space-y-5 max-w-7xl mx-auto">
           <!-- Grade Pill Tabs -->
@@ -1153,11 +1169,17 @@
               <button onclick="selectLessonGrade(10)" id="lesson-tab-10" class="px-4 py-2 rounded-xl text-xs font-bold bg-white text-blue-600 border border-slate-200 shadow-sm transition">
                 ថ្នាក់ទី ១០ (៩ ជំពូក)
               </button>
+              <button onclick="selectLessonGrade(11)" id="lesson-tab-11" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-white transition border border-transparent">
+                ថ្នាក់ទី ១១ (៥០ មេរៀន)
+              </button>
+              <button onclick="selectLessonGrade(12)" id="lesson-tab-12" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-white transition border border-transparent">
+                ថ្នាក់ទី ១២ (៣៣ មេរៀន)
+              </button>
             </div>
             
             <div class="flex items-center gap-2">
               <span id="lesson-count-badge" class="text-xs text-slate-500 font-medium">កំពុងបង្ហាញ៖ ៩ ជំពូកធំ</span>
-              <a href="lesson-g7-l01.html" target="_blank" class="text-xs text-blue-600 hover:underline font-bold flex items-center gap-1">
+              <a href="lesson/g7/L01.html" target="_blank" class="text-xs text-blue-600 hover:underline font-bold flex items-center gap-1">
                 <span>📘 បើកគំរូទំព័រពេញលេញ (G7-L01) ↗</span>
               </a>
             </div>
@@ -1181,6 +1203,9 @@
         <!-- =========================================================
              2. ផ្ទាំង «សំណង់ធរណីមាត្រ» (Modeled after geometry-angle-bisector.html)
         ========================================================== -->
+        <!-- ស្លាយបង្រៀន — PowerPoint-style slide maker (static/js/slides.js) -->
+        <div id="view-slides" class="hidden"></div>
+
         <section id="view-geometry" class="space-y-6 max-w-7xl mx-auto hidden">
           <div class="card-modern p-6 flex flex-wrap items-center justify-between gap-4">
             <div>
@@ -1321,7 +1346,7 @@
             <div class="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <h2 class="font-bold text-sm text-slate-900">ធនាគារសំណួរគណិតវិទ្យា (Question Bank)</h2>
-                <p class="text-xs text-slate-500">ស្រង់ចេញពីសៀវភៅពុម្ពក្រសួងអប់រំ និងវិញ្ញាសាថ្នាក់ជាតិ ថ្នាក់ទី ៧, ៨, ៩, ១០</p>
+                <p class="text-xs text-slate-500">ស្រង់ចេញពីសៀវភៅពុម្ពក្រសួងអប់រំ និងវិញ្ញាសាថ្នាក់ជាតិ ថ្នាក់ទី ៧ ដល់ ១២</p>
               </div>
               <div class="flex items-center gap-2">
                 <button onclick="selectAllQuestions(true)" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition">ជ្រើសទាំងអស់</button>
@@ -1343,6 +1368,8 @@
                 <option value="8">ថ្នាក់ទី ៨ (950 សំណួរ)</option>
                 <option value="9">ថ្នាក់ទី ៩ (1,045 សំណួរ)</option>
                 <option value="10">ថ្នាក់ទី ១០ (900 សំណួរ)</option>
+                <option value="11">ថ្នាក់ទី ១១ (1,000 សំណួរ)</option>
+                <option value="12">ថ្នាក់ទី ១២ (2,370 សំណួរ)</option>
               </select>
 
               <select id="qbank-chapter-filter" onchange="filterQBank()" class="px-3.5 py-2 rounded-xl border border-slate-300 text-xs bg-white text-slate-700">
@@ -1637,6 +1664,8 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
+  <script src="static/js/slides.js?v=18"></script>
+  <script src="static/js/slides_templates.js?v=18"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
@@ -1856,7 +1885,9 @@
     }
 
     // Portal vs Dashboard Navigation
-    function goToLandingPage() {
+    // the site home page is index.html; this tool opens straight on its dashboard
+    function goToLandingPage() { window.location.href = 'index.html'; }
+    function showLandingPanel() {
       document.getElementById('app-dashboard').classList.add('hidden'); document.getElementById('app-dashboard').style.display = 'none';
       document.getElementById('app-landing').classList.remove('hidden'); document.getElementById('app-landing').style.display = 'flex';
       window.location.hash = 'home';
@@ -1931,7 +1962,7 @@
 
     // Tab Switching
     function switchTab(tabId) {
-      const tabs = ['lessons', 'geometry', 'exam-player', 'qbank', 'tests', 'monthly', 'exam-studio', 'schedule', 'classes', 'grading', 'wheel', 'group-games'];
+      const tabs = ['lessons', 'slides', 'geometry', 'exam-player', 'qbank', 'tests', 'monthly', 'exam-studio', 'schedule', 'classes', 'grading', 'wheel', 'group-games'];
       tabs.forEach(t => {
         const el = document.getElementById('view-' + t);
         const nav = document.getElementById('nav-' + t);
@@ -1946,6 +1977,7 @@
 
       const titleMap = {
         'lessons': 'ខ្លឹមសារមេរៀន (Lesson System)',
+        'slides': 'ស្លាយបង្រៀន (Teaching Slides)',
         'geometry': 'សំណង់ធរណីមាត្រ (Geometric Studio)',
         'exam-player': 'ប្រព័ន្ធប្រឡងគំរូ (Exam Player)',
         'qbank': 'ធនាគារសំណួរ (Question Bank)',
@@ -1964,13 +1996,17 @@
 
       if (tabId === 'wheel') drawWheel();
       if (tabId === 'geometry') initGeoStudio();
+      if (tabId === 'slides') {
+        KPSlides.open();
+        if (window.currentGrade && window.KPSlides.filterGrade) window.KPSlides.filterGrade(window.currentGrade);
+      }
       if (tabId === 'exam-player' && examQuestions.length === 0) launchQuickExam();
 
       setTimeout(() => renderMath(), 100);
     }
 
     function setGlobalGrade(g) {
-      ['all', 7, 8, 9, 10].forEach(k => {
+      ['all', 7, 8, 9, 10, 11, 12].forEach(k => {
         const btn = document.getElementById('btn-grade-' + k);
         if (btn) {
           if (k == g) {
@@ -1983,15 +2019,18 @@
       if (g !== 'all') {
         currentGrade = g;
         selectLessonGrade(g);
+        if (window.KPSlides && window.KPSlides.filterGrade) {
+          window.KPSlides.filterGrade(g);
+        }
       }
     }
 
     // =========================================================
-    // 1. LESSON VIEWER SYSTEM (Modeled after lesson-g7-l01.html)
+    // 1. LESSON VIEWER SYSTEM (Modeled after lesson/g7/L01.html)
     // =========================================================
     function selectLessonGrade(grade) {
       currentLessonGrade = grade;
-      [7, 8, 9, 10].forEach(g => {
+      [7, 8, 9, 10, 11, 12].forEach(g => {
         const tab = document.getElementById('lesson-tab-' + g);
         if (tab) {
           if (g === grade) {
@@ -2028,14 +2067,54 @@
       if (lessons.length > 0) {
         showLessonDetail(lessons[0]);
       }
+      if (typeof renderChapterTests === 'function') renderChapterTests();
     }
 
     let currentLessonQuizQuestions = [];
+
+    // grades 11–12: lessons come from the textbook pages (lesson/g11, lesson/g12)
+    function showBookLesson(lesson, container) {
+      document.querySelectorAll('#lessons-sidebar-container > div').forEach(el => {
+        el.className = 'p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 cursor-pointer transition bg-white';
+      });
+      const activeEl = document.getElementById(`lesson-item-${lesson.id}`);
+      if (activeEl) activeEl.className = 'p-3 rounded-xl border border-blue-300 bg-blue-50/70 cursor-pointer transition';
+      const toc = (lesson.toc || []).map((t, i) => `<li class="py-1">${formatMathContent(t)}</li>`).join('');
+      const pages = lesson.pages ? `សៀវភៅទំព័រ ${lesson.pages[0]}–${lesson.pages[1]} · ` : '';
+      container.innerHTML = `
+        <div class="ls-paper">
+          <div class="text-xs text-slate-400 mb-2">ទំព័រដើម &gt; ថ្នាក់ទី ${currentLessonGrade} &gt; <strong>មេរៀនទី ${lesson.num}</strong></div>
+          <div class="border-b pb-4 mb-5">
+            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-2">មេរៀនទី ${lesson.num}</span>
+            <h2 class="text-2xl font-extrabold text-slate-900">${lesson.title}</h2>
+            <div class="text-xs text-slate-500 mt-1">${pages}ផ្នែក ៖ <strong class="text-blue-600">${lesson.category || 'គណិតវិទ្យា'}</strong></div>
+          </div>
+          <h3 class="font-bold text-sm text-slate-900 mb-2">📖 ខ្លឹមសារមេរៀន</h3>
+          <ol class="list-decimal list-inside text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200 mb-5">${toc}</ol>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-lg text-xs font-semibold">សំណួរពហុជ្រើសរើស ${lesson.mcqCount}</span>
+            <span class="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-semibold">លំហាត់សរសេរ ${lesson.writtenCount}</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a href="${lesson.url}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-bold no-underline">បើកមេរៀនពេញ</a>
+            ${(() => {
+              const dMap = {'1':'g11-sequences','2':'g11-arith','3':'g11-geom','4':'g11-sums','5':'g11-recur','6':'g11-induction'};
+              const dId = dMap[String(lesson.num)];
+              return dId ? `<a href="studio.html?deck=${dId}#slides" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold no-underline flex items-center gap-1.5 shadow-sm transition"><span>🖥</span> <span>ស្លាយបង្រៀន (Slides)</span></a>` : '';
+            })()}
+            ${lesson.mcqCount ? `<a href="exam.html?id=${lesson.testId}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-bold no-underline">ធ្វើតេស្តមេរៀននេះ</a>` : ''}
+            <a href="exam-builder.html?g=${currentLessonGrade}&kind=lesson" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-bold no-underline">បង្កើតវិញ្ញាសា</a>
+          </div>
+          <iframe src="${lesson.url}" title="${lesson.title}" loading="lazy" class="w-full mt-6 rounded-xl border border-slate-200" style="height:75vh;background:#fff"></iframe>
+        </div>`;
+      setTimeout(() => renderMath(), 50);
+    }
 
     function showLessonDetail(lesson) {
       currentSelectedLesson = lesson;
       const container = document.getElementById('lesson-details-view');
       if (!container) return;
+      if (lesson.url) { showBookLesson(lesson, container); return; }
 
       // Update active highlight in list
       document.querySelectorAll('#lessons-sidebar-container > div').forEach(el => {
@@ -3224,11 +3303,8 @@
     // =========================================================
     window.addEventListener('DOMContentLoaded', () => {
       // Check URL hash
-      if (window.location.hash === '#dashboard') {
-        goToDashboard();
-      } else {
-        goToLandingPage();
-      }
+      const startTab = location.hash === '#slides' ? 'slides' : 'lessons';
+      goToDashboard();
 
       // Populate wheel names input
       const whInput = document.getElementById('wheel-names-input');
@@ -3241,7 +3317,7 @@
       renderClassesSystem();
       previewExamInStudio();
       drawWheel();
-      switchTab('lessons');
+      switchTab(startTab);
 
       setTimeout(() => renderMath(), 200);
     });

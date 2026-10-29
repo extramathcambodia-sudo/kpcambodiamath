@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៤ : ផលបូកតួនៃស៊ីតផ្សេងៗ — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៤ «ផលបូកតួនៃស៊ីតផ្សេងៗ» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៤ : ផលបូកតួនៃស៊ីតផ្សេងៗ — គណិតវិទ្យាថ្នាក់ទី ១១ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៤ «ផលបូកតួនៃស៊ីតផ្សេងៗ» គណិតវិទ្យាថ្នាក់ទី ១១៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g11">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li aria-current="page">មេរៀនទី ៤</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៤</span>
+      <div><span class="ls-kicker">ថ្នាក់វិទ្យាសាស្ត្រ · ជំពូកទី ១ ស៊ីតនិងអនុមានរួមគណិតវិទ្យា · មេរៀនទី ៤ · គណិតវិទ្យាថ្នាក់ទី ១១</span><h1>ផលបូកតួនៃស៊ីតផ្សេងៗ</h1><div class="ls-chips"><span class="chip chip-soon">ថ្នាក់វិទ្យាសាស្ត្រ</span><span class="chip chip-soon">ទំព័រ ២៤–៣៥</span><a class="chip chip-live" href="../../studio.html?deck=g11-sums#slides">▶ ស្លាយបង្រៀន</a></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. របៀបគណនាផលបូក</a></li><li class="sub"><a href="#u2">២. គណនាផលបូកតាមលំនាំគំរូ</a></li><li class="sub"><a href="#u3">៣. និមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> សម្រាប់ផលបូកនៃស៊ីត</a></li><li class="sub"><a href="#u4">៤. របៀបកំណត់តួទី <span class="mi">\(n\)</span> តាមផលសងតួនៃស៊ីត</a></li><li class="sub"><a href="#u5">៥. ទំព័រសៀវភៅដើម</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-11.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white"><header class="bx-h"><b>វត្ថុបំណង</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>គណនាផលបូកតួនៃស៊ីត</p></li>
+<li><p>ចេះប្រើនិមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> សម្រាប់ផលបូកនៃស៊ីត</p></li>
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> តាមផលសងស៊ីតលំដាប់ <span class="mi">\(1\)</span> និងលំដាប់ <span class="mi">\(2\)</span> ។</p></li>
+</ol>
+</div></section>
+<h3 id="u1">របៀបគណនាផលបូក</h3>
+<p>ចំពោះស៊ីតផ្សេងៗ គេពុំអាចប្រើរូបមន្តផលបូកនៃស៊ីតនព្វន្ត ឬស៊ីតធរណីមាត្រមកគណនាផលបូកវាបានឡើយ ក្នុងករណីនេះត្រូវប្រើវិធីផ្សេងៗទៅតាមទម្រង់នៃស៊ីត ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>ចំពោះផលបូក <span class="mi">\(S = 1^2 + 2^2 + 3^2 + \ldots + n^2\)</span> ។</p>
+<p>គេអាចគណនាផលបូកនេះដោយប្រើសមភាព <span class="mi">\((k+1)^3 - k^3 = 3k^2 + 3k + 1\)</span> ដោយឱ្យ <span class="mi">\(k\)</span> យកតម្លៃពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(n\)</span> <div class="md">\[\begin{aligned}
+2^3 - 1^3 &amp;= 3 \times 1^2 + 3 \times 1 + 1\\
+3^3 - 2^3 &amp;= 3 \times 2^2 + 3 \times 2 + 1\\
+4^3 - 3^3 &amp;= 3 \times 3^2 + 3 \times 3 + 1\\
+&amp;\ \,\vdots\\
+n^3 - (n-1)^3 &amp;= 3 \times (n-1)^2 + 3 \times (n-1) + 1 &amp;\quad{} (1)\\
+(n+1)^3 - n^3 &amp;= 3 \times n^2 + 3 \times n + 1 &amp;\quad{} (2)
+\end{aligned}\]</div> បូកអង្គនិងអង្គនៃសមីការ <span class="mi">\((1)\)</span> និង <span class="mi">\((2)\)</span> គេបាន <div class="md">\[\begin{aligned}
+(n+1)^3 - 1^3 &amp;= 3 \times (1^2 + 2^2 + 3^2 + \ldots + n^2)\\
+&amp;\quad{} + 3 \times (1 + 2 + 3 + \ldots + n)\\
+&amp;\quad{} + (1 + 1 + 1 + \ldots + 1)\\
+&amp;= 3 \times S + 3 \times \frac{n(n+1)}{2} + n \text{ ។}
+\end{aligned}\]</div> គណនា <span class="mi">\(S\)</span> គេបាន <span class="mi">\(1^2 + 2^2 + 3^2 + \ldots + n^2 = \dfrac{n(n+1)(2n+1)}{6}\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>ចំពោះផលបូក <span class="mi">\(S = \dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dfrac{1}{3 \cdot 4} + \ldots + \dfrac{1}{n \cdot (n+1)}\)</span> ។</p>
+<p>គេអាចគណនាផលបូកនេះដោយប្រើសមភាព <span class="mi">\(\dfrac{1}{k \cdot (k+1)} = \dfrac{1}{k} - \dfrac{1}{k+1}\)</span> ដោយឱ្យ <span class="mi">\(k\)</span> យកតម្លៃពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(n\)</span> <div class="md">\[\begin{aligned}
+\frac{1}{1 \cdot 2} &amp;= \frac{1}{1} - \frac{1}{2}\\
+\frac{1}{2 \cdot 3} &amp;= \frac{1}{2} - \frac{1}{3}\\
+\frac{1}{3 \cdot 4} &amp;= \frac{1}{3} - \frac{1}{4}\\
+&amp;\ \,\vdots\\
+\frac{1}{(n-1) \cdot n} &amp;= \frac{1}{n-1} - \frac{1}{n}\\
+\frac{1}{n \cdot (n+1)} &amp;= \frac{1}{n} - \frac{1}{n+1}
+\end{aligned}\]</div> បូកអង្គនិងអង្គនៃសមីការ គេបាន <span class="mi">\(S = 1 - \dfrac{1}{n+1}\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(\dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dfrac{1}{3 \cdot 4} + \ldots + \dfrac{1}{n \cdot (n+1)} = 1 - \dfrac{1}{n+1} = \dfrac{n}{n+1}\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គណនាផលបូក <span class="mi">\(S = 1^3 + 2^3 + 3^3 + \ldots + n^3\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>គេអាចគណនាផលបូកនេះដោយប្រើសមភាព <span class="mi">\((k+1)^4 - k^4 = 4k^3 + 6k^2 + 4k + 1\)</span> ដោយឱ្យ <span class="mi">\(k\)</span> យកតម្លៃពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(n\)</span> <div class="md">\[\begin{aligned}
+2^4 - 1^4 &amp;= 4 \times 1^3 + 6 \times 1^2 + 4 \times 1 + 1\\
+3^4 - 2^4 &amp;= 4 \times 2^3 + 6 \times 2^2 + 4 \times 2 + 1\\
+4^4 - 3^4 &amp;= 4 \times 3^3 + 6 \times 3^2 + 4 \times 3 + 1\\
+&amp;\ \,\vdots\\
+n^4 - (n-1)^4 &amp;= 4 \times (n-1)^3 + 6 \times (n-1)^2\\
+&amp;\quad{} + 4 \times (n-1) + 1\\
+(n+1)^4 - n^4 &amp;= 4 \times n^3 + 6 \times n^2 + 4 \times n + 1
+\end{aligned}\]</div> បូកអង្គនិងអង្គនៃសមីការ គេបាន <div class="md">\[\begin{aligned}
+(n+1)^4 - 1^4 &amp;= 4 \times (1^3 + 2^3 + 3^3 + \ldots + n^3)\\
+&amp;\quad{} + 6 \times (1^2 + 2^2 + 3^2 + \ldots + n^2)\\
+&amp;\quad{} + 4 \times (1 + 2 + 3 + \ldots + n) + (1 + 1 + 1 + \ldots + 1)\\
+&amp;= 4S\\
+&amp;\quad{} + 6 \times (1^2 + 2^2 + 3^2 + \ldots + n^2)\\
+&amp;\quad{} + 4 \times (1 + 2 + 3 + \ldots + n)\\
+&amp;\quad{} + (1 + 1 + 1 + \ldots + 1)
+\end{aligned}\]</div> គណនា <span class="mi">\(S\)</span> គេបាន <span class="mi">\(1^3 + 2^3 + 3^3 + \ldots + n^3 = \dfrac{n^2(n+1)^2}{4} = \left[\dfrac{n(n+1)}{2}\right]^2\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>គណនា <span class="mi">\(S = 12^3 + 13^3 + 14^3 + \ldots + 50^3\)</span> ។</p></li>
+<li><p>គណនា <span class="mi">\(S = \dfrac{1}{1 \cdot 2 \cdot 3} + \dfrac{1}{2 \cdot 3 \cdot 4} + \dfrac{1}{3 \cdot 4 \cdot 5} + \ldots + \dfrac{1}{n \cdot (n+1) \cdot (n+2)}\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olnum cols1">
+<li><p><span class="mi">\(S = 1621269\)</span></p></li>
+<li><p><span class="mi">\(S = \dfrac{1}{2}\left(\dfrac{1}{2} - \dfrac{1}{(n+1)(n+2)}\right)\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u2">គណនាផលបូកតាមលំនាំគំរូ</h3>
+<p>ចំពោះស៊ីតដែលមានតួជាចំនួនគត់ គេអាចគណនាផលបូកវាតាមការសង្កេតលំនាំគំរូ ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><div class="md">\[\begin{aligned}
+1 &amp;= 1 = 1^2\\
+1 + 3 &amp;= 4 = 2^2\\
+1 + 3 + 5 &amp;= 9 = 3^2\\
+1 + 3 + 5 + 7 &amp;= 16 = 4^2
+\end{aligned}\]</div></p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22137.54%22 height=%2242.3%22 viewBox=%220 0 137.54 42.3%22%3E%3Cdefs%3E%3CclipPath id=%22clip-0%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 0.89 24 L 19 24 L 19 41.61 L 0.89 41.61 Z M 0.89 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-1%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 20 24 L 41 24 L 41 41.61 L 20 41.61 Z M 20 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-2%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 29 24 L 50 24 L 50 41.61 L 29 41.61 Z M 29 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-3%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 52 24 L 72 24 L 72 41.61 L 52 41.61 Z M 52 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-4%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 60 24 L 81 24 L 81 41.61 L 60 41.61 Z M 60 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-5%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 69 24 L 90 24 L 90 41.61 L 69 41.61 Z M 69 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-6%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 92 24 L 112 24 L 112 41.61 L 92 41.61 Z M 92 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-7%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 101 24 L 121 24 L 121 41.61 L 101 41.61 Z M 101 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-8%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 110 24 L 130 24 L 130 41.61 L 110 41.61 Z M 110 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-9%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 118 24 L 136.19 24 L 136.19 41.61 L 118 41.61 Z M 118 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-10%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 118 15 L 136.19 15 L 136.19 36 L 118 36 Z M 118 15 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-11%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 118 6 L 136.19 6 L 136.19 27 L 118 27 Z M 118 6 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-12%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 118 0 L 136.19 0 L 136.19 18 L 118 18 Z M 118 0 %22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path=%22url(%23clip-0)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 13.42 9.07 C 13.42 11.47 11.47 13.42 9.07 13.42 C 6.66 13.42 4.71 11.47 4.71 9.07 C 4.71 6.66 6.66 4.71 9.07 4.71 C 11.47 4.71 13.42 6.66 13.42 9.07 Z M 13.42 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-1)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 36.10 9.07 C 36.10 11.47 34.15 13.42 31.74 13.42 C 29.34 13.42 27.39 11.47 27.39 9.07 C 27.39 6.66 29.34 4.71 31.74 4.71 C 34.15 4.71 36.10 6.66 36.10 9.07 Z M 36.10 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 36.10 18.14 C 36.10 20.54 34.15 22.49 31.74 22.49 C 29.34 22.49 27.39 20.54 27.39 18.14 C 27.39 15.73 29.34 13.78 31.74 13.78 C 34.15 13.78 36.10 15.73 36.10 18.14 Z M 36.10 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-2)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 45.17 9.07 C 45.17 11.47 43.22 13.42 40.82 13.42 C 38.41 13.42 36.46 11.47 36.46 9.07 C 36.46 6.66 38.41 4.71 40.82 4.71 C 43.22 4.71 45.17 6.66 45.17 9.07 Z M 45.17 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 45.17 18.14 C 45.17 20.54 43.22 22.49 40.82 22.49 C 38.41 22.49 36.46 20.54 36.46 18.14 C 36.46 15.73 38.41 13.78 40.82 13.78 C 43.22 13.78 45.17 15.73 45.17 18.14 Z M 45.17 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-3)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 67.85 9.07 C 67.85 11.47 65.90 13.42 63.50 13.42 C 61.09 13.42 59.14 11.47 59.14 9.07 C 59.14 6.66 61.09 4.71 63.50 4.71 C 65.90 4.71 67.85 6.66 67.85 9.07 Z M 67.85 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 67.85 18.14 C 67.85 20.54 65.90 22.49 63.50 22.49 C 61.09 22.49 59.14 20.54 59.14 18.14 C 59.14 15.73 61.09 13.78 63.50 13.78 C 65.90 13.78 67.85 15.73 67.85 18.14 Z M 67.85 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 67.85 27.21 C 67.85 29.61 65.90 31.56 63.50 31.56 C 61.09 31.56 59.14 29.61 59.14 27.21 C 59.14 24.80 61.09 22.85 63.50 22.85 C 65.90 22.85 67.85 24.80 67.85 27.21 Z M 67.85 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-4)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 76.92 9.07 C 76.92 11.47 74.97 13.42 72.56 13.42 C 70.16 13.42 68.21 11.47 68.21 9.07 C 68.21 6.66 70.16 4.71 72.56 4.71 C 74.97 4.71 76.92 6.66 76.92 9.07 Z M 76.92 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 76.92 18.14 C 76.92 20.54 74.97 22.49 72.56 22.49 C 70.16 22.49 68.21 20.54 68.21 18.14 C 68.21 15.73 70.16 13.78 72.56 13.78 C 74.97 13.78 76.92 15.73 76.92 18.14 Z M 76.92 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 76.92 27.21 C 76.92 29.61 74.97 31.56 72.56 31.56 C 70.16 31.56 68.21 29.61 68.21 27.21 C 68.21 24.80 70.16 22.85 72.56 22.85 C 74.97 22.85 76.92 24.80 76.92 27.21 Z M 76.92 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-5)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 85.99 9.07 C 85.99 11.47 84.04 13.42 81.63 13.42 C 79.23 13.42 77.28 11.47 77.28 9.07 C 77.28 6.66 79.23 4.71 81.63 4.71 C 84.04 4.71 85.99 6.66 85.99 9.07 Z M 85.99 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 85.99 18.14 C 85.99 20.54 84.04 22.49 81.63 22.49 C 79.23 22.49 77.28 20.54 77.28 18.14 C 77.28 15.73 79.23 13.78 81.63 13.78 C 84.04 13.78 85.99 15.73 85.99 18.14 Z M 85.99 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 85.99 27.21 C 85.99 29.61 84.04 31.56 81.63 31.56 C 79.23 31.56 77.28 29.61 77.28 27.21 C 77.28 24.80 79.23 22.85 81.63 22.85 C 84.04 22.85 85.99 24.80 85.99 27.21 Z M 85.99 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-6)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 108.67 9.07 C 108.67 11.47 106.72 13.42 104.31 13.42 C 101.91 13.42 99.96 11.47 99.96 9.07 C 99.96 6.66 101.91 4.71 104.31 4.71 C 106.72 4.71 108.67 6.66 108.67 9.07 Z M 108.67 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 108.67 18.14 C 108.67 20.54 106.72 22.49 104.31 22.49 C 101.91 22.49 99.96 20.54 99.96 18.14 C 99.96 15.73 101.91 13.78 104.31 13.78 C 106.72 13.78 108.67 15.73 108.67 18.14 Z M 108.67 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 108.67 27.21 C 108.67 29.61 106.72 31.56 104.31 31.56 C 101.91 31.56 99.96 29.61 99.96 27.21 C 99.96 24.80 101.91 22.85 104.31 22.85 C 106.72 22.85 108.67 24.80 108.67 27.21 Z M 108.67 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 108.67 36.28 C 108.67 38.69 106.72 40.64 104.31 40.64 C 101.91 40.64 99.96 38.69 99.96 36.28 C 99.96 33.88 101.91 31.93 104.31 31.93 C 106.72 31.93 108.67 33.88 108.67 36.28 Z M 108.67 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-7)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 117.74 9.07 C 117.74 11.47 115.79 13.42 113.39 13.42 C 110.98 13.42 109.03 11.47 109.03 9.07 C 109.03 6.66 110.98 4.71 113.39 4.71 C 115.79 4.71 117.74 6.66 117.74 9.07 Z M 117.74 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 117.74 18.14 C 117.74 20.54 115.79 22.49 113.39 22.49 C 110.98 22.49 109.03 20.54 109.03 18.14 C 109.03 15.73 110.98 13.78 113.39 13.78 C 115.79 13.78 117.74 15.73 117.74 18.14 Z M 117.74 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 117.74 27.21 C 117.74 29.61 115.79 31.56 113.39 31.56 C 110.98 31.56 109.03 29.61 109.03 27.21 C 109.03 24.80 110.98 22.85 113.39 22.85 C 115.79 22.85 117.74 24.80 117.74 27.21 Z M 117.74 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 117.74 36.28 C 117.74 38.69 115.79 40.64 113.39 40.64 C 110.98 40.64 109.03 38.69 109.03 36.28 C 109.03 33.88 110.98 31.93 113.39 31.93 C 115.79 31.93 117.74 33.88 117.74 36.28 Z M 117.74 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-8)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 126.81 9.07 C 126.81 11.47 124.86 13.42 122.45 13.42 C 120.05 13.42 118.10 11.47 118.10 9.07 C 118.10 6.66 120.05 4.71 122.45 4.71 C 124.86 4.71 126.81 6.66 126.81 9.07 Z M 126.81 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 126.81 18.14 C 126.81 20.54 124.86 22.49 122.45 22.49 C 120.05 22.49 118.10 20.54 118.10 18.14 C 118.10 15.73 120.05 13.78 122.45 13.78 C 124.86 13.78 126.81 15.73 126.81 18.14 Z M 126.81 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 126.81 27.21 C 126.81 29.61 124.86 31.56 122.45 31.56 C 120.05 31.56 118.10 29.61 118.10 27.21 C 118.10 24.80 120.05 22.85 122.45 22.85 C 124.86 22.85 126.81 24.80 126.81 27.21 Z M 126.81 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 126.81 36.28 C 126.81 38.69 124.86 40.64 122.45 40.64 C 120.05 40.64 118.10 38.69 118.10 36.28 C 118.10 33.88 120.05 31.93 122.45 31.93 C 124.86 31.93 126.81 33.88 126.81 36.28 Z M 126.81 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-9)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 9.07 C 135.88 11.47 133.93 13.42 131.53 13.42 C 129.12 13.42 127.17 11.47 127.17 9.07 C 127.17 6.66 129.12 4.71 131.53 4.71 C 133.93 4.71 135.88 6.66 135.88 9.07 Z M 135.88 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-10)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 18.14 C 135.88 20.54 133.93 22.49 131.53 22.49 C 129.12 22.49 127.17 20.54 127.17 18.14 C 127.17 15.73 129.12 13.78 131.53 13.78 C 133.93 13.78 135.88 15.73 135.88 18.14 Z M 135.88 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-11)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 27.21 C 135.88 29.61 133.93 31.56 131.53 31.56 C 129.12 31.56 127.17 29.61 127.17 27.21 C 127.17 24.80 129.12 22.85 131.53 22.85 C 133.93 22.85 135.88 24.80 135.88 27.21 Z M 135.88 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-12)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 36.28 C 135.88 38.69 133.93 40.64 131.53 40.64 C 129.12 40.64 127.17 38.69 127.17 36.28 C 127.17 33.88 129.12 31.93 131.53 31.93 C 133.93 31.93 135.88 33.88 135.88 36.28 Z M 135.88 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.61, 43.11)%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+<p>ដូច្នេះ <span class="mi">\(1 + 3 + 5 + \ldots + (2n - 1) = n^2\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គណនាផលបូក <span class="mi">\(n\)</span> តួនៃចំនួនគូ <span class="mi">\(S = 2 + 4 + 6 + \ldots + 2n\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><div class="md">\[\begin{aligned}
+2 &amp;= 2 = 1 \times 2\\
+2 + 4 &amp;= 6 = 2 \times 3\\
+2 + 4 + 6 &amp;= 12 = 3 \times 4\\
+2 + 4 + 6 + 8 &amp;= 20 = 4 \times 5
+\end{aligned}\]</div></p>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22173.83%22 height=%2242.3%22 viewBox=%220 0 173.83 42.3%22%3E%3Cdefs%3E%3CclipPath id=%22clip-0%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 1.33 24 L 19 24 L 19 41.61 L 1.33 41.61 Z M 1.33 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-1%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 7 24 L 28 24 L 28 41.61 L 7 41.61 Z M 7 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-2%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 30 24 L 50 24 L 50 41.61 L 30 41.61 Z M 30 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-3%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 39 24 L 59 24 L 59 41.61 L 39 41.61 Z M 39 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-4%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 48 24 L 68 24 L 68 41.61 L 48 41.61 Z M 48 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-5%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 70 24 L 90 24 L 90 41.61 L 70 41.61 Z M 70 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-6%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 79 24 L 99 24 L 99 41.61 L 79 41.61 Z M 79 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-7%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 88 24 L 108 24 L 108 41.61 L 88 41.61 Z M 88 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-8%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 97 24 L 117 24 L 117 41.61 L 97 41.61 Z M 97 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-9%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 119 24 L 140 24 L 140 41.61 L 119 41.61 Z M 119 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-10%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 128 24 L 148 24 L 148 41.61 L 128 41.61 Z M 128 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-11%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 137 24 L 157 24 L 157 41.61 L 137 41.61 Z M 137 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-12%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 146 24 L 166 24 L 166 41.61 L 146 41.61 Z M 146 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-13%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 155 24 L 172.33 24 L 172.33 41.61 L 155 41.61 Z M 155 24 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-14%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 155 15 L 172.33 15 L 172.33 36 L 155 36 Z M 155 15 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-15%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 155 6 L 172.33 6 L 172.33 27 L 155 27 Z M 155 6 %22/%3E%3C/clipPath%3E%3CclipPath id=%22clip-16%22%3E%3Cpath clip-rule=%22nonzero%22 d=%22M 155 0 L 172.33 0 L 172.33 18 L 155 18 Z M 155 0 %22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path=%22url(%23clip-0)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 13.42 9.07 C 13.42 11.47 11.47 13.42 9.07 13.42 C 6.66 13.42 4.71 11.47 4.71 9.07 C 4.71 6.66 6.66 4.71 9.07 4.71 C 11.47 4.71 13.42 6.66 13.42 9.07 Z M 13.42 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-1)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 22.49 9.07 C 22.49 11.47 20.54 13.42 18.14 13.42 C 15.73 13.42 13.78 11.47 13.78 9.07 C 13.78 6.66 15.73 4.71 18.14 4.71 C 20.54 4.71 22.49 6.66 22.49 9.07 Z M 22.49 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-2)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 45.17 9.07 C 45.17 11.47 43.22 13.42 40.82 13.42 C 38.41 13.42 36.46 11.47 36.46 9.07 C 36.46 6.66 38.41 4.71 40.82 4.71 C 43.22 4.71 45.17 6.66 45.17 9.07 Z M 45.17 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-3)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 54.24 9.07 C 54.24 11.47 52.29 13.42 49.89 13.42 C 47.48 13.42 45.53 11.47 45.53 9.07 C 45.53 6.66 47.48 4.71 49.89 4.71 C 52.29 4.71 54.24 6.66 54.24 9.07 Z M 54.24 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-4)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 63.31 9.07 C 63.31 11.47 61.36 13.42 58.96 13.42 C 56.55 13.42 54.60 11.47 54.60 9.07 C 54.60 6.66 56.55 4.71 58.96 4.71 C 61.36 4.71 63.31 6.66 63.31 9.07 Z M 63.31 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 45.17 18.14 C 45.17 20.54 43.22 22.49 40.82 22.49 C 38.41 22.49 36.46 20.54 36.46 18.14 C 36.46 15.73 38.41 13.78 40.82 13.78 C 43.22 13.78 45.17 15.73 45.17 18.14 Z M 45.17 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 54.24 18.14 C 54.24 20.54 52.29 22.49 49.89 22.49 C 47.48 22.49 45.53 20.54 45.53 18.14 C 45.53 15.73 47.48 13.78 49.89 13.78 C 52.29 13.78 54.24 15.73 54.24 18.14 Z M 54.24 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 63.31 18.14 C 63.31 20.54 61.36 22.49 58.96 22.49 C 56.55 22.49 54.60 20.54 54.60 18.14 C 54.60 15.73 56.55 13.78 58.96 13.78 C 61.36 13.78 63.31 15.73 63.31 18.14 Z M 63.31 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-5)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 85.99 9.07 C 85.99 11.47 84.04 13.42 81.64 13.42 C 79.23 13.42 77.28 11.47 77.28 9.07 C 77.28 6.66 79.23 4.71 81.64 4.71 C 84.04 4.71 85.99 6.66 85.99 9.07 Z M 85.99 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-6)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 95.06 9.07 C 95.06 11.47 93.11 13.42 90.71 13.42 C 88.30 13.42 86.35 11.47 86.35 9.07 C 86.35 6.66 88.30 4.71 90.71 4.71 C 93.11 4.71 95.06 6.66 95.06 9.07 Z M 95.06 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-7)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 104.13 9.07 C 104.13 11.47 102.18 13.42 99.78 13.42 C 97.37 13.42 95.42 11.47 95.42 9.07 C 95.42 6.66 97.37 4.71 99.78 4.71 C 102.18 4.71 104.13 6.66 104.13 9.07 Z M 104.13 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-8)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 113.20 9.07 C 113.20 11.47 111.25 13.42 108.85 13.42 C 106.44 13.42 104.49 11.47 104.49 9.07 C 104.49 6.66 106.44 4.71 108.85 4.71 C 111.25 4.71 113.20 6.66 113.20 9.07 Z M 113.20 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 85.99 18.14 C 85.99 20.54 84.04 22.49 81.64 22.49 C 79.23 22.49 77.28 20.54 77.28 18.14 C 77.28 15.73 79.23 13.78 81.64 13.78 C 84.04 13.78 85.99 15.73 85.99 18.14 Z M 85.99 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 95.06 18.14 C 95.06 20.54 93.11 22.49 90.71 22.49 C 88.30 22.49 86.35 20.54 86.35 18.14 C 86.35 15.73 88.30 13.78 90.71 13.78 C 93.11 13.78 95.06 15.73 95.06 18.14 Z M 95.06 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 104.13 18.14 C 104.13 20.54 102.18 22.49 99.78 22.49 C 97.37 22.49 95.42 20.54 95.42 18.14 C 95.42 15.73 97.37 13.78 99.78 13.78 C 102.18 13.78 104.13 15.73 104.13 18.14 Z M 104.13 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 113.20 18.14 C 113.20 20.54 111.25 22.49 108.85 22.49 C 106.44 22.49 104.49 20.54 104.49 18.14 C 104.49 15.73 106.44 13.78 108.85 13.78 C 111.25 13.78 113.20 15.73 113.20 18.14 Z M 113.20 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 85.99 27.21 C 85.99 29.61 84.04 31.56 81.64 31.56 C 79.23 31.56 77.28 29.61 77.28 27.21 C 77.28 24.80 79.23 22.85 81.64 22.85 C 84.04 22.85 85.99 24.80 85.99 27.21 Z M 85.99 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 95.06 27.21 C 95.06 29.61 93.11 31.56 90.71 31.56 C 88.30 31.56 86.35 29.61 86.35 27.21 C 86.35 24.80 88.30 22.85 90.71 22.85 C 93.11 22.85 95.06 24.80 95.06 27.21 Z M 95.06 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 104.13 27.21 C 104.13 29.61 102.18 31.56 99.78 31.56 C 97.37 31.56 95.42 29.61 95.42 27.21 C 95.42 24.80 97.37 22.85 99.78 22.85 C 102.18 22.85 104.13 24.80 104.13 27.21 Z M 104.13 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 113.20 27.21 C 113.20 29.61 111.25 31.56 108.85 31.56 C 106.44 31.56 104.49 29.61 104.49 27.21 C 104.49 24.80 106.44 22.85 108.85 22.85 C 111.25 22.85 113.20 24.80 113.20 27.21 Z M 113.20 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-9)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 9.07 C 135.88 11.47 133.93 13.42 131.53 13.42 C 129.12 13.42 127.17 11.47 127.17 9.07 C 127.17 6.66 129.12 4.71 131.53 4.71 C 133.93 4.71 135.88 6.66 135.88 9.07 Z M 135.88 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-10)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 144.95 9.07 C 144.95 11.47 143.00 13.42 140.60 13.42 C 138.19 13.42 136.25 11.47 136.25 9.07 C 136.25 6.66 138.19 4.71 140.60 4.71 C 143.00 4.71 144.95 6.66 144.95 9.07 Z M 144.95 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-11)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 154.02 9.07 C 154.02 11.47 152.07 13.42 149.67 13.42 C 147.26 13.42 145.31 11.47 145.31 9.07 C 145.31 6.66 147.26 4.71 149.67 4.71 C 152.07 4.71 154.02 6.66 154.02 9.07 Z M 154.02 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-12)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 163.10 9.07 C 163.10 11.47 161.15 13.42 158.74 13.42 C 156.34 13.42 154.39 11.47 154.39 9.07 C 154.39 6.66 156.34 4.71 158.74 4.71 C 161.15 4.71 163.10 6.66 163.10 9.07 Z M 163.10 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cg clip-path=%22url(%23clip-13)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 172.17 9.07 C 172.17 11.47 170.22 13.42 167.81 13.42 C 165.41 13.42 163.46 11.47 163.46 9.07 C 163.46 6.66 165.41 4.71 167.81 4.71 C 170.22 4.71 172.17 6.66 172.17 9.07 Z M 172.17 9.07 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 18.14 C 135.88 20.54 133.93 22.49 131.53 22.49 C 129.12 22.49 127.17 20.54 127.17 18.14 C 127.17 15.73 129.12 13.78 131.53 13.78 C 133.93 13.78 135.88 15.73 135.88 18.14 Z M 135.88 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 144.95 18.14 C 144.95 20.54 143.00 22.49 140.60 22.49 C 138.19 22.49 136.25 20.54 136.25 18.14 C 136.25 15.73 138.19 13.78 140.60 13.78 C 143.00 13.78 144.95 15.73 144.95 18.14 Z M 144.95 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 154.02 18.14 C 154.02 20.54 152.07 22.49 149.67 22.49 C 147.26 22.49 145.31 20.54 145.31 18.14 C 145.31 15.73 147.26 13.78 149.67 13.78 C 152.07 13.78 154.02 15.73 154.02 18.14 Z M 154.02 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 163.10 18.14 C 163.10 20.54 161.15 22.49 158.74 22.49 C 156.34 22.49 154.39 20.54 154.39 18.14 C 154.39 15.73 156.34 13.78 158.74 13.78 C 161.15 13.78 163.10 15.73 163.10 18.14 Z M 163.10 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-14)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 172.17 18.14 C 172.17 20.54 170.22 22.49 167.81 22.49 C 165.41 22.49 163.46 20.54 163.46 18.14 C 163.46 15.73 165.41 13.78 167.81 13.78 C 170.22 13.78 172.17 15.73 172.17 18.14 Z M 172.17 18.14 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 27.21 C 135.88 29.61 133.93 31.56 131.53 31.56 C 129.12 31.56 127.17 29.61 127.17 27.21 C 127.17 24.80 129.12 22.85 131.53 22.85 C 133.93 22.85 135.88 24.80 135.88 27.21 Z M 135.88 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 144.95 27.21 C 144.95 29.61 143.00 31.56 140.60 31.56 C 138.19 31.56 136.25 29.61 136.25 27.21 C 136.25 24.80 138.19 22.85 140.60 22.85 C 143.00 22.85 144.95 24.80 144.95 27.21 Z M 144.95 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 154.02 27.21 C 154.02 29.61 152.07 31.56 149.67 31.56 C 147.26 31.56 145.31 29.61 145.31 27.21 C 145.31 24.80 147.26 22.85 149.67 22.85 C 152.07 22.85 154.02 24.80 154.02 27.21 Z M 154.02 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 163.10 27.21 C 163.10 29.61 161.15 31.56 158.74 31.56 C 156.34 31.56 154.39 29.61 154.39 27.21 C 154.39 24.80 156.34 22.85 158.74 22.85 C 161.15 22.85 163.10 24.80 163.10 27.21 Z M 163.10 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-15)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 172.17 27.21 C 172.17 29.61 170.22 31.56 167.81 31.56 C 165.41 31.56 163.46 29.61 163.46 27.21 C 163.46 24.80 165.41 22.85 167.81 22.85 C 170.22 22.85 172.17 24.80 172.17 27.21 Z M 172.17 27.21 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 135.88 36.28 C 135.88 38.69 133.93 40.64 131.53 40.64 C 129.12 40.64 127.17 38.69 127.17 36.28 C 127.17 33.88 129.12 31.93 131.53 31.93 C 133.93 31.93 135.88 33.88 135.88 36.28 Z M 135.88 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 144.95 36.28 C 144.95 38.69 143.00 40.64 140.60 40.64 C 138.19 40.64 136.25 38.69 136.25 36.28 C 136.25 33.88 138.19 31.93 140.60 31.93 C 143.00 31.93 144.95 33.88 144.95 36.28 Z M 144.95 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 154.02 36.28 C 154.02 38.69 152.07 40.64 149.67 40.64 C 147.26 40.64 145.31 38.69 145.31 36.28 C 145.31 33.88 147.26 31.93 149.67 31.93 C 152.07 31.93 154.02 33.88 154.02 36.28 Z M 154.02 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 163.10 36.28 C 163.10 38.69 161.15 40.64 158.74 40.64 C 156.34 40.64 154.39 38.69 154.39 36.28 C 154.39 33.88 156.34 31.93 158.74 31.93 C 161.15 31.93 163.10 33.88 163.10 36.28 Z M 163.10 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3Cg clip-path=%22url(%23clip-16)%22%3E%3Cpath fill=%22none%22 stroke-width=%220.39%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 172.17 36.28 C 172.17 38.69 170.22 40.64 167.81 40.64 C 165.41 40.64 163.46 38.69 163.46 36.28 C 163.46 33.88 165.41 31.93 167.81 31.93 C 170.22 31.93 172.17 33.88 172.17 36.28 Z M 172.17 36.28 %22 transform=%22matrix(0.98, 0, 0, -0.98, -0.17, 43.11)%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+<p>ដូច្នេះ <span class="mi">\(2 + 4 + 6 + \ldots + 2n = n \cdot (n + 1)\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គេឱ្យលំនាំគំរូនៃស៊ីតខាងក្រោម ៖ <div class="md">\[\begin{aligned}
+1 &amp;= 1\\
+1 + 7 &amp;= 8\\
+1 + 7 + 19 &amp;= 27\\
+1 + 7 + 19 + 37 &amp;= 64\\
+1 + 7 + 19 + 37 + 61 &amp;= 125
+\end{aligned}\]</div> គណនាផលបូកនៃស៊ីតនេះដែលមាន <span class="mi">\(10\)</span> តួ ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(S = 1000\)</span> ។</p></details>
+</div></section>
+<h3 id="u3">និមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> សម្រាប់ផលបូកនៃស៊ីត</h3>
+<h4>សញ្ញាណ <span class="mi">\(\Sigma\)</span></h4>
+<p>ក្នុងការសរសេរផលបូកតួនៃស៊ីត <span class="mi">\(a_1, a_2, a_3, \ldots, a_n\)</span> គេប្រើនិមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> អានថា <strong>ស៊ិចម៉ា</strong> សម្រាប់តាងផលបូក <span class="mi">\(n\)</span> តួនៃស៊ីត ។ គេកំណត់សរសេរ <div class="md">\[\sum_{k=1}^{n} a_k = a_1 + a_2 + a_3 + \ldots + a_n \text{ ។}\]</div> ក្នុងនោះ <span class="mi">\(k\)</span> យកតម្លៃពី <span class="mi">\(1, 2, 3, \ldots\)</span> រហូតដល់ <span class="mi">\(n\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><div class="md">\[\begin{gathered}
+1 + 2 + 3 + \ldots + n = \sum_{k=1}^{n} k = \frac{n(n+1)}{2} \text{ ។}\\
+\begin{aligned}
+1^2 + 2^2 + 3^2 + \ldots + n^2 &amp;= \sum_{k=1}^{n} k^2\\
+&amp;= \frac{n(n+1)(2n+1)}{6} \text{ ។}
+\end{aligned}
+\end{gathered}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>សរសេរផលបូកខាងក្រោមដោយប្រើនិមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(1^3 + 2^3 + 3^3 + \ldots + n^3\)</span></p></li>
+<li><p><span class="mi">\(2 + 4 + 6 + 8 + \ldots + 100\)</span></p></li>
+<li><p><span class="mi">\(\frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \ldots + \frac{1}{50}\)</span> ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(1^3 + 2^3 + 3^3 + \ldots + n^3 = \displaystyle\sum_{k=1}^{n} k^3 = \left[\frac{n(n+1)}{2}\right]^2\)</span> ។</p></li>
+<li><p><span class="mi">\(2 + 4 + 6 + 8 + \ldots + 100 = 2 \times 1 + 2 \times 2 + 2 \times 3 + \ldots + 2 \times 50\)</span><br/>
+ផលបូកស៊ីតនេះមានតួទូទៅ <span class="mi">\(2n\)</span> ហើយ <span class="mi">\(n\)</span> យកតម្លៃពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(50\)</span> ។ គេបាន <span class="mi">\(2 + 4 + 6 + 8 + \ldots + 100 = \displaystyle\sum_{n=1}^{50} 2n\)</span> ។</p></li>
+<li><p><span class="mi">\(\frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \ldots + \frac{1}{50}\)</span> ផលបូកស៊ីតនេះមានតួទូទៅនៃស៊ីត <span class="mi">\(\dfrac{(-1)^n}{n}\)</span> ចំពោះ <span class="mi">\(n\)</span> យកតម្លៃពី <span class="mi">\(2\)</span> ដល់ <span class="mi">\(50\)</span> ។<br/>
+គេបាន <span class="mi">\(\dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{4} - \dfrac{1}{5} + \ldots + \dfrac{1}{50} = \displaystyle\sum_{n=2}^{50} \frac{(-1)^n}{n}\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>សរសេរគ្រប់តួទាំងអស់នៃផលបូកដោយមិនប្រើនិមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span></p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{6} 2\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{n=2}^{5} (2n + 1)\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{j=1}^{5} j(j+1)\)</span> ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{6} 2 = 2 + 2 + 2 + 2 + 2 + 2\)</span> ។</p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{n=2}^{5} (2n + 1) = 5 + 7 + 9 + 11\)</span> ។</p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{j=1}^{5} j(j+1) = 2 + 6 + 12 + 20 + 30\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>សរសេរផលបូកខាងក្រោមដោយប្រើនិមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(2 + 5 + 8 + \ldots + (3n - 1)\)</span></p></li>
+<li><p><span class="mi">\(3 + 6 + 12 + \ldots + 3(2)^{n-1}\)</span></p></li>
+<li><p><span class="mi">\(1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \ldots + \frac{1}{100}\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols3">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (3k - 1)\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} 3 \times 2^{k-1}\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{100} \frac{1}{k}\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h4>លក្ខណៈនៃស៊ិចម៉ា</h4>
+<section class="bx bx-rule"><header class="bx-h"><b>លក្ខណៈ</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} c = nc\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} c a_k = c \sum_{k=1}^{n} a_k\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (a_k + b_k) = \sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (a_k - b_k) = \sum_{k=1}^{n} a_k - \sum_{k=1}^{n} b_k\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (a_k + b_k)^2 = \sum_{k=1}^{n} a_k^2 + 2\sum_{k=1}^{n} a_k b_k + \sum_{k=1}^{n} b_k^2\)</span> ។</p></li>
+</ol>
+</div></section>
+<p><strong>សម្រាយបញ្ជាក់</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} c = c + c + c + \ldots + c = nc\)</span> ។</p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} c a_k = c a_1 + c a_2 + c a_3 + \ldots + c a_n = c(a_1 + a_2 + a_3 + \ldots + a_n) = c \sum_{k=1}^{n} a_k\)</span> ។</p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (a_k + b_k) = (a_1 + b_1) + (a_2 + b_2) + \ldots + (a_n + b_n) = (a_1 + a_2 + \ldots + a_n) + (b_1 + b_2 + \ldots + b_n) = \sum_{k=1}^{n} a_k + \sum_{k=1}^{n} b_k\)</span> ។</p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (a_k - b_k) = (a_1 - b_1) + (a_2 - b_2) + \ldots + (a_n - b_n) = (a_1 + a_2 + \ldots + a_n) - (b_1 + b_2 + \ldots + b_n) = \sum_{k=1}^{n} a_k - \sum_{k=1}^{n} b_k\)</span> ។</p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (a_k + b_k)^2 = \sum_{k=1}^{n} (a_k^2 + 2a_k b_k + b_k^2) = \sum_{k=1}^{n} a_k^2 + 2\sum_{k=1}^{n} a_k b_k + \sum_{k=1}^{n} b_k^2\)</span> ។</p></li>
+</ol>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<p>គណនា ក. <span class="mi">\(\displaystyle\sum_{k=1}^{15} (4k + 3)\)</span> ខ. <span class="mi">\(\displaystyle\sum_{k=1}^{20} (k + 3)k\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p><div class="md">\[\begin{aligned}
+\sum_{k=1}^{15} (4k + 3) &amp;= \sum_{k=1}^{15} 4k\\
+&amp;\quad{} + \sum_{k=1}^{15} 3\\
+&amp;= 4\sum_{k=1}^{15} k\\
+&amp;\quad{} + \sum_{k=1}^{15} 3\\
+&amp;= 4(1 + 2 + 3 + \ldots + 15)\\
+&amp;\quad{} + 15 \times 3\\
+&amp;= 4 \times \frac{(1 + 15) \times 15}{2} + 45\\
+&amp;= 2 \times 16 \times 15 + 45 = 525 \text{ ។}
+\end{aligned}\]</div></p></li>
+<li><p><div class="md">\[\begin{aligned}
+\sum_{k=1}^{20} (k + 3)k &amp;= \sum_{k=1}^{20} (k^2 + 3k)\\
+&amp;= \sum_{k=1}^{20} k^2\\
+&amp;\quad{} + 3\sum_{k=1}^{20} k\\
+&amp;= \frac{20 \times 21 \times 41}{6} + 3\,\frac{21 \times 20}{2}\\
+&amp;= 10 \times 7 \times 41 + 3 \times 21 \times 10\\
+&amp;= 2870 + 630 = 3500 \text{ ។}
+\end{aligned}\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គណនា</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{20} (3k + 1)\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{7} 2^k\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=4}^{14} (4k - 3)\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (3 + k)^2\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{30} k(k+1)\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olka cols3">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{20} (3k + 1) = 650\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{7} 2^k = 254\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=4}^{14} (4k - 3) = 363\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} (3 + k)^2 = \frac{n}{6}(2n^2 + 21n + 73)\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{30} k(k+1) = 9920\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h3 id="u4">របៀបកំណត់តួទី <span class="mi">\(n\)</span> តាមផលសងតួនៃស៊ីត</h3>
+<p>គេអាចកំណត់តួទី <span class="mi">\(n\)</span> របស់ស៊ីត <span class="mi">\((a_n)\)</span> ដែលពុំមែនជាស៊ីតនព្វន្ត ឬជាស៊ីតធរណីមាត្រតាមរបៀបដូចខាងក្រោម ៖</p>
+<h4>ផលសងតួលំដាប់ទី ១ នៃស៊ីត</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ១</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(1, 3, 7, 13, 21, 31, \ldots\)</span> ។</p>
+<p>គេសង្កេតឃើញថាស៊ីតនេះមិនមែនជាស៊ីតនព្វន្ត ហើយក៏មិនមែនជាស៊ីតធរណីមាត្រ ។ នោះគេត្រូវធ្វើផលសងនៃតួបន្តបន្ទាប់គ្នានៃស៊ីត <span class="mi">\(1, 3, 7, 13, 21, 31, \ldots\)</span> ។ គេបានលំនាំគំរូដូចជា</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(n\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(6\ldots\)</span></td>
+</tr>
+<tr>
+<td>ស៊ីត <span class="mi">\((a_n)\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(13\)</span></td>
+<td><span class="mi">\(21\)</span></td>
+<td><span class="mi">\(31\ldots\)</span></td>
+</tr>
+<tr>
+<td>ផលសងតួលំដាប់ទី ១ នៃស៊ីត</td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(10\ldots\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>ផលសងតួនៃស៊ីតអាចជួយឱ្យគេរកលំនាំគំរូ ដែលអាចកំណត់តួទូទៅនៃស៊ីតបានដូចជា <div class="md">\[\begin{aligned}
+a_2 - a_1 &amp;= 3 - 1 = 2 \times 1\\
+a_3 - a_2 &amp;= 7 - 3 = 4 = 2 \times 2\\
+a_4 - a_3 &amp;= 13 - 7 = 6 = 2 \times 3\\
+&amp;\ \,\vdots\\
+a_{n-1} - a_{n-2} &amp;= 2 \times (n - 2)\\
+a_n - a_{n-1} &amp;= 2 \times (n - 1)
+\end{aligned}\]</div> បូកអង្គនិងអង្គទាំងអស់ គេបាន <div class="md">\[\begin{aligned}
+a_n - a_1 = a_n - 1 &amp;= 2 \times 1 + 2 \times 2 + 2 \times 3 + \ldots\\
+&amp;\quad{} + 2 \times (n - 2) + 2 \times (n - 1)\\
+a_n &amp;= 2 \times 1 + 2 \times 2 + 2 \times 3 + \ldots\\
+&amp;\quad{} + 2 \times (n - 2) + 2 \times (n - 1)\\
+&amp;\quad{} + 1\\
+&amp;= 2 \times [1 + 2 + 3 + \ldots + (n - 2) + (n - 1)]\\
+&amp;\quad{} + 1\\
+&amp;= 2 \times \frac{[1 + (n - 1)](n - 1)}{2}\\
+&amp;\quad{} + 1\\
+&amp;= n(n - 1) + 1 = n^2 - n + 1
+\end{aligned}\]</div> ដូច្នេះតួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(1, 3, 7, 13, 21, 31, \ldots\)</span> កំណត់ដោយ <span class="mi">\(a_n = n^2 - n + 1\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(a_1, a_2, a_3, \ldots, a_n\)</span> ហើយ <span class="mi">\(b_1 = a_2 - a_1\)</span>, <span class="mi">\(b_2 = a_3 - a_2\)</span>, <span class="mi">\(b_3 = a_4 - a_3\)</span>, <span class="mi">\(\ldots\)</span>, <span class="mi">\(b_{n-1} = a_n - a_{n-1}\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((b_n)\)</span> ៖ <span class="mi">\(b_1, b_2, b_3, \ldots, b_{n-1}\)</span> ហៅថាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍ ២</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\(a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k\)</span> ចំពោះ <span class="mi">\(n \ge 2\)</span> ។ <div class="md">\[\begin{cases}
+a_2 - a_1 = b_1\\
+a_3 - a_2 = b_2\\
+a_4 - a_3 = b_3\\
+\quad{}\vdots\\
+a_{n-1} - a_{n-2} = b_{n-2}\\
+a_n - a_{n-1} = b_{n-1}
+\end{cases}\]</div> បូកអង្គនិងអង្គ គេបាន <span class="mi">\(a_n - a_1 = b_1 + b_2 + b_3 + \ldots + b_{n-1}\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <span class="mi">\(a_n = a_1 + (b_1 + b_2 + b_3 + \ldots + b_{n-1}) = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n = 1\)</span> គេបាន <span class="mi">\(b_{n-1} = b_0\)</span> មិនមាន ។ ដូច្នេះ <span class="mi">\(a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k\)</span> ចំពោះ <span class="mi">\(n \ge 2\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\((a_n)\)</span> និងស៊ីត <span class="mi">\((b_n)\)</span> ដែលកំណត់ដោយ <span class="mi">\(b_n = a_{n+1} - a_n\)</span>, <span class="mi">\(n = 1, 2, 3, \ldots\)</span> តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> កំណត់ដោយ <span class="mi">\(a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k\)</span> ចំពោះ <span class="mi">\(n \ge 2\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(2, 4, 8, 14, 22, 32, \ldots\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p>តាង <span class="mi">\(a_n\)</span> ជាតួទី <span class="mi">\(n\)</span> នៃស៊ីតដែលគេឱ្យ ។ ស៊ីត <span class="mi">\((b_n)\)</span> ជាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ដែលមានតួ <span class="mi">\(b_n\)</span> កំណត់ដោយ <span class="mi">\(b_n = a_{n+1} - a_n\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((b_n)\)</span> ៖ <span class="mi">\(2, 4, 6, 8, \ldots\)</span> ។ ស៊ីត <span class="mi">\((b_n)\)</span> ជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> ស្មើនឹង <span class="mi">\(2\)</span> និងផលសងរួមស្មើនឹង <span class="mi">\(2\)</span> នោះ <span class="mi">\(b_n = 2 + 2(n - 1) = 2n\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <div class="md">\[\begin{aligned}
+a_n &amp;= a_1 + \sum_{k=1}^{n-1} b_k = 2 + \sum_{k=1}^{n-1} 2k\\
+&amp;= 2 + 2 \cdot \frac{1}{2}n(n - 1) = 2 + n^2 - n = n^2 - n + 2
+\end{aligned}\]</div> នោះ <span class="mi">\(a_n = n^2 - n + 2\)</span> ។ ចំពោះ <span class="mi">\(n = 1\)</span>, <span class="mi">\(a_1 = 1^2 - 1 + 2 = 2\)</span> ពិត ។</p>
+<p>ដូច្នេះស៊ីត <span class="mi">\((a_n)\)</span> មានតួទី <span class="mi">\(n\)</span> កំណត់ដោយ <span class="mi">\(a_n = n^2 - n + 2\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(1, 2, 5, 10, 17, \ldots\)</span> ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនេះ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(1, 2, 5, 10, 17, \ldots\)</span> ។ តាង <span class="mi">\(a_n\)</span> ជាតួទី <span class="mi">\(n\)</span> នៃស៊ីតដែលគេឱ្យ <span class="mi">\((a_n)\)</span> ។ ស៊ីត <span class="mi">\((b_n)\)</span> ជាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ដែលមានតួ <span class="mi">\(b_n\)</span> កំណត់ដោយ <span class="mi">\(b_n = a_{n+1} - a_n\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((b_n)\)</span> ៖ <span class="mi">\(1, 3, 5, 7, \ldots\)</span> ។ ស៊ីត <span class="mi">\((b_n)\)</span> ជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> ស្មើនឹង <span class="mi">\(1\)</span> និងផលសងរួមស្មើនឹង <span class="mi">\(2\)</span> នោះ <span class="mi">\(b_n = 1 + 2(n - 1) = 2n - 1\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <div class="md">\[\begin{aligned}
+a_n &amp;= a_1 + \sum_{k=1}^{n-1} b_k\\
+&amp;= 1 + \sum_{k=1}^{n-1} (2k - 1)\\
+&amp;= 1 + 2\sum_{k=1}^{n-1} k - (n - 1)\\
+&amp;= 1 + 2 \cdot \frac{1}{2}n(n - 1) - (n - 1)\\
+&amp;= 1 + n^2 - n - n + 1 = 2 - 2n + n^2
+\end{aligned}\]</div> នោះ <span class="mi">\(a_n = 2 - 2n + n^2\)</span> ។ ចំពោះ <span class="mi">\(n = 1\)</span> គេបាន <span class="mi">\(a_1 = 2 - 2 + 1 = 1\)</span> ពិត ។ ដូច្នេះ <span class="mi">\(a_n = 2 - 2n + n^2\)</span> ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> ។ តាង <span class="mi">\(S_n\)</span> ជាផលបូកនៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <div class="md">\[\begin{aligned}
+S_n &amp;= a_1 + a_2 + a_3 + \ldots + a_n = \sum_{k=1}^{n} (2 - 2k + k^2)\\
+&amp;= 2n - 2\sum_{k=1}^{n} k + \sum_{k=1}^{n} k^2\\
+&amp;= 2n - 2 \cdot \frac{1}{2}n(n + 1)\\
+&amp;\quad{} + \frac{1}{6}n(n + 1)(2n + 1)\\
+&amp;= \frac{12n}{6} - \frac{6}{6}n(n + 1)\\
+&amp;\quad{} + \frac{1}{6}n(n + 1)(2n + 1)\\
+&amp;= \frac{1}{6}n(12 - 6n - 6 + 2n^2 + n + 2n + 1)\\
+&amp;= \frac{1}{6}n(7 - 3n + 2n^2)
+\end{aligned}\]</div> ដូច្នេះ <span class="mi">\(S_n = \dfrac{1}{6}n(2n^2 - 3n + 7)\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<ol class="list olnum cols1">
+<li><p>ក. កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(4, 5, 7, 10, 14, \ldots\)</span> ។<br/>
+ខ. គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនេះ ។</p></li>
+<li><p>ក. កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(3, 5, 8, 12, 17, 23, \ldots\)</span> ។<br/>
+ខ. គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនេះ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលចម្លើយ</summary><ol class="list olnum cols1">
+<li><p>ក. <span class="mi">\(a_n = 4 - \dfrac{n}{2} + \dfrac{n^2}{2}\)</span> ខ. <span class="mi">\(S_n = \dfrac{n(23 + n^2)}{6}\)</span> ។</p></li>
+<li><p>ក. <span class="mi">\(a_n = 3 + \dfrac{(n - 1)(n + 2)}{2}\)</span> ខ. <span class="mi">\(S_n = \dfrac{n}{6}(n^2 + 3n + 14)\)</span> ។</p></li>
+</ol></details>
+</div></section>
+<h4>ផលសងតួលំដាប់ទី ២ នៃស៊ីត</h4>
+<p>បើសិនជាស៊ីត <span class="mi">\((b_n)\)</span> នៅតែមិនអាចកំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> បានទៀត នោះគេត្រូវធ្វើផលសងលំដាប់តួនៃស៊ីត <span class="mi">\((b_n)\)</span> បន្តទៀត ដែលគេហៅថា ផលសងតួលំដាប់ទី <span class="mi">\(2\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(1, 2, 6, 15, 31, 56, \ldots\)</span> ។</p>
+<p><strong>របៀបទី ១</strong></p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(n\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(6\ldots\)</span></td>
+</tr>
+<tr>
+<td>ស៊ីត <span class="mi">\((a_n)\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(31\)</span></td>
+<td><span class="mi">\(56\ldots\)</span></td>
+</tr>
+<tr>
+<td>ផលសងតួលំដាប់ទី ១</td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(9\)</span></td>
+<td><span class="mi">\(16\)</span></td>
+<td><span class="mi">\(25\ldots\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>តាង <span class="mi">\(a_n\)</span> ជាតួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។ ស៊ីត <span class="mi">\((b_n)\)</span> ជាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(1, 4, 9, 16, 25, \ldots\)</span> នោះ <span class="mi">\(b_n = n^2\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <span class="mi">\(a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} k^2 = 1 + \frac{1}{6}(2n - 1)(n - 1)n\)</span> នោះ <span class="mi">\(a_n = \dfrac{1}{6}(2n - 1)(n - 1)n + 1\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n = 1\)</span>, <span class="mi">\(a_1 = 1\)</span> ពិត ។ ដូច្នេះ <span class="mi">\(a_n = \dfrac{1}{6}(2n - 1)(n - 1)n + 1\)</span> ។</p>
+<p><strong>របៀបទី ២</strong></p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(n\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(6\ldots\)</span></td>
+</tr>
+<tr>
+<td>ស៊ីត <span class="mi">\((a_n)\)</span></td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(2\)</span></td>
+<td><span class="mi">\(6\)</span></td>
+<td><span class="mi">\(15\)</span></td>
+<td><span class="mi">\(31\)</span></td>
+<td><span class="mi">\(56\ldots\)</span></td>
+</tr>
+<tr>
+<td>ផលសងតួលំដាប់ទី ១</td>
+<td><span class="mi">\(1\)</span></td>
+<td><span class="mi">\(4\)</span></td>
+<td><span class="mi">\(9\)</span></td>
+<td><span class="mi">\(16\)</span></td>
+<td><span class="mi">\(25\ldots\)</span></td>
+<td></td>
+</tr>
+<tr>
+<td>ផលសងតួលំដាប់ទី ២</td>
+<td><span class="mi">\(3\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(7\)</span></td>
+<td><span class="mi">\(9\ldots\)</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>តាង <span class="mi">\(a_n\)</span> ជាតួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។ ស៊ីត <span class="mi">\((b_n)\)</span> ជាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ដែលមានតួទី <span class="mi">\(n\)</span> នៃស៊ីតគឺ <span class="mi">\(b_n = a_{n+1} - a_n\)</span> ។</p>
+<p>តាង <span class="mi">\(c_n\)</span> ជាផលសងតួនៃស៊ីត <span class="mi">\((b_n)\)</span> ហៅថា ផលសងតួលំដាប់ទី <span class="mi">\(2\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ។ គេបានស៊ីត <span class="mi">\((c_n)\)</span> ៖ <span class="mi">\(3, 5, 7, 9, \ldots\)</span> ។ ស៊ីត <span class="mi">\((c_n)\)</span> ជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> ស្មើនឹង <span class="mi">\(3\)</span> និងផលសងរួមស្មើនឹង <span class="mi">\(2\)</span> និង <span class="mi">\(c_n = 3 + 2(n - 1) = 2n + 1\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <div class="md">\[\begin{aligned}
+b_n &amp;= b_1 + \sum_{k=1}^{n-1} c_k\\
+&amp;= b_1 + \sum_{k=1}^{n-1} (2k + 1)\\
+&amp;= 1 + 2\sum_{k=1}^{n-1} k + (n - 1) = n + 2 \cdot \frac{1}{2}(n - 1)n\\
+&amp;= n^2
+\end{aligned}\]</div> នោះ <span class="mi">\(b_n = n^2\)</span> ។ ចំពោះ <span class="mi">\(n = 1\)</span>, <span class="mi">\(b_1 = 1\)</span> ពិត ។ ដូច្នេះ <span class="mi">\(b_n = n^2\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <span class="mi">\(a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k = 1 + \sum_{k=1}^{n-1} k^2 = 1 + \frac{1}{6}(2n - 1)(n - 1)n\)</span> នោះ <span class="mi">\(a_n = \dfrac{1}{6}(2n - 1)(n - 1)n + 1\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n = 1\)</span>, <span class="mi">\(a_1 = 1\)</span> ពិត ។ ដូច្នេះ <span class="mi">\(a_n = \dfrac{1}{6}(2n - 1)(n - 1)n + 1\)</span> ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>គេមានស៊ីត <span class="mi">\((a_n)\)</span> ។ ស៊ីត <span class="mi">\((b_n)\)</span> កំណត់ដោយ <span class="mi">\(b_n = a_{n+1} - a_n\)</span>, <span class="mi">\(n = 1, 2, 3, \ldots\)</span> ហៅថាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ដែលមានតួទី <span class="mi">\(n\)</span> កំណត់ដោយ <span class="mi">\(a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} b_k\)</span> ចំពោះ <span class="mi">\(n \ge 2\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((c_n)\)</span> ជាផលសងតួលំដាប់ទី <span class="mi">\(2\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> គឺជាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((b_n)\)</span> កំណត់ដោយ <span class="mi">\(c_n = b_{n+1} - b_n\)</span>, <span class="mi">\(n = 1, 2, 3, \ldots\)</span> ដែលមានតួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((b_n)\)</span> កំណត់ដោយ <span class="mi">\(b_n = b_1 + \displaystyle\sum_{k=1}^{n-1} c_k\)</span> ចំពោះ <span class="mi">\(n \ge 2\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>លំហាត់គំរូ</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(4, 18, 48, 100, 180, 294, \ldots\)</span> ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនេះ ។</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<ol class="list olka cols1">
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(4, 18, 48, 100, 180, 294, \ldots\)</span> ។ តាង <span class="mi">\(a_n\)</span> ជាតួទី <span class="mi">\(n\)</span> នៃស៊ីតដែលគេឱ្យ <span class="mi">\((a_n)\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((b_n)\)</span> ជាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ដែលមានតួ <span class="mi">\(b_n\)</span> នៃស៊ីតកំណត់ដោយ <span class="mi">\(b_n = a_{n+1} - a_n\)</span> ។ ស៊ីត <span class="mi">\((b_n)\)</span> ៖ <span class="mi">\(14, 30, 52, 80, 114, \ldots\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((c_n)\)</span> ជាផលសងតួលំដាប់ទី <span class="mi">\(1\)</span> នៃស៊ីត <span class="mi">\((b_n)\)</span> ដែលមានតួ <span class="mi">\(c_n\)</span> ជាតួទី <span class="mi">\(n\)</span> នៃស៊ីត កំណត់ដោយ <span class="mi">\(c_n = b_{n+1} - b_n\)</span> ។ គេបានស៊ីត <span class="mi">\((c_n)\)</span> ៖ <span class="mi">\(16, 22, 28, 34, \ldots\)</span> ។</p>
+<p>ស៊ីត <span class="mi">\((c_n)\)</span> ជាស៊ីតនព្វន្តដែលមានតួទី <span class="mi">\(1\)</span> ស្មើនឹង <span class="mi">\(16\)</span> និងផលសងរួមស្មើនឹង <span class="mi">\(6\)</span> ៖ <span class="mi">\(c_n = 16 + 6(n - 1) = 16 + 6n - 6 = 6n + 10\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <div class="md">\[\begin{aligned}
+b_n &amp;= b_1 + \sum_{k=1}^{n-1} c_k\\
+&amp;= 14 + \sum_{k=1}^{n-1} (6k + 10)\\
+&amp;= 14 + 6\sum_{k=1}^{n-1} k + 10(n - 1)\\
+&amp;= 14 + 6 \cdot \frac{1}{2}n(n - 1) + 10(n - 1) = 3n^2 + 7n + 4 \text{ ។}
+\end{aligned}\]</div> ចំពោះ <span class="mi">\(n = 1\)</span> គេបាន <span class="mi">\(b_1 = 4 + 7 + 3 = 14\)</span> ពិត ។ ដូច្នេះ <span class="mi">\(b_n = 3n^2 + 7n + 4\)</span> ។</p>
+<p>ចំពោះ <span class="mi">\(n \ge 2\)</span> គេបាន <div class="md">\[\begin{aligned}
+a_n &amp;= a_1 + \sum_{k=1}^{n-1} b_k\\
+&amp;= 4 + \sum_{k=1}^{n-1} (3k^2 + 7k + 4)\\
+&amp;= 4 + 3\sum_{k=1}^{n-1} k^2 + 7\sum_{k=1}^{n-1} k\\
+&amp;\quad{} + 4(n - 1)\\
+&amp;= 4 + 3 \cdot \frac{1}{6}n(n - 1)(2n - 1)\\
+&amp;\quad{} + 7 \cdot \frac{1}{2}(n - 1)n + 4n - 4\\
+&amp;= \frac{1}{2}(n - 1)(7n + 2n^2 - n) + 4n\\
+&amp;= (n - 1)(3n + n^2) + 4n\\
+&amp;= n^3 + 2n^2 + n \text{ ។}
+\end{aligned}\]</div> ដូច្នេះ <span class="mi">\(a_n = n^3 + 2n^2 + n\)</span> ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីត <span class="mi">\((a_n)\)</span> ។ តាង <span class="mi">\(S_n\)</span> ជាផលបូកនៃស៊ីត <span class="mi">\((a_n)\)</span> គឺ <div class="md">\[\begin{aligned}
+S_n &amp;= a_1 + a_2 + a_3 + \ldots + a_n\\
+&amp;= \sum_{k=1}^{n} a_k = \sum_{k=1}^{n} (k^3 + 2k^2 + k)\\
+&amp;= \sum_{k=1}^{n} k^3 + 2\sum_{k=1}^{n} k^2 + \sum_{k=1}^{n} k\\
+&amp;= \frac{1}{4}n^2(1 + n)^2\\
+&amp;\quad{} + 2 \cdot \frac{1}{6}n(n + 1)(2n + 1) + \frac{1}{2}n(n + 1)\\
+&amp;= \frac{1}{12}n(n + 1)(3n + 3n^2 + 4 + 8n + 6)\\
+&amp;= \frac{1}{12}n(n + 1)(3n^2 + 11n + 10) \text{ ។}
+\end{aligned}\]</div> ចំពោះ <span class="mi">\(n = 1\)</span>, <span class="mi">\(a_1 = 1\)</span> ពិត ។ ដូច្នេះ <span class="mi">\(S_n = \dfrac{1}{12}n(n + 1)(3n^2 + 11n + 10)\)</span> ។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(1, 2, 5, 12, 27, 58, 121, \ldots\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><span class="mi">\(a_n = 2^n - n\)</span> ។</p></details>
+</div></section>
+<h3 id="u5">ទំព័រសៀវភៅដើម</h3><details class="ans sol-all"><summary>បើកមើលទំព័រសៀវភៅពុម្ព</summary><div class="pdf-note">មេរៀននេះបង្ហាញជាទំព័រពីសៀវភៅពុម្ពគណិតវិទ្យាថ្នាក់ទី ១១ (ថ្នាក់វិទ្យាសាស្ត្រ) ទំព័រ ២៤–៣៥។</div><figure class="bk-page" id="p24"><img src="pages/sc1-p024.webp" alt="ទំព័រ ២៤" loading="lazy" width="1100"><figcaption>ទំព័រ ២៤</figcaption></figure><figure class="bk-page" id="p25"><img src="pages/sc1-p025.webp" alt="ទំព័រ ២៥" loading="lazy" width="1100"><figcaption>ទំព័រ ២៥</figcaption></figure><figure class="bk-page" id="p26"><img src="pages/sc1-p026.webp" alt="ទំព័រ ២៦" loading="lazy" width="1100"><figcaption>ទំព័រ ២៦</figcaption></figure><figure class="bk-page" id="p27"><img src="pages/sc1-p027.webp" alt="ទំព័រ ២៧" loading="lazy" width="1100"><figcaption>ទំព័រ ២៧</figcaption></figure><figure class="bk-page" id="p28"><img src="pages/sc1-p028.webp" alt="ទំព័រ ២៨" loading="lazy" width="1100"><figcaption>ទំព័រ ២៨</figcaption></figure><figure class="bk-page" id="p29"><img src="pages/sc1-p029.webp" alt="ទំព័រ ២៩" loading="lazy" width="1100"><figcaption>ទំព័រ ២៩</figcaption></figure><figure class="bk-page" id="p30"><img src="pages/sc1-p030.webp" alt="ទំព័រ ៣០" loading="lazy" width="1100"><figcaption>ទំព័រ ៣០</figcaption></figure><figure class="bk-page" id="p31"><img src="pages/sc1-p031.webp" alt="ទំព័រ ៣១" loading="lazy" width="1100"><figcaption>ទំព័រ ៣១</figcaption></figure><figure class="bk-page" id="p32"><img src="pages/sc1-p032.webp" alt="ទំព័រ ៣២" loading="lazy" width="1100"><figcaption>ទំព័រ ៣២</figcaption></figure><figure class="bk-page" id="p33"><img src="pages/sc1-p033.webp" alt="ទំព័រ ៣៣" loading="lazy" width="1100"><figcaption>ទំព័រ ៣៣</figcaption></figure><figure class="bk-page" id="p34"><img src="pages/sc1-p034.webp" alt="ទំព័រ ៣៤" loading="lazy" width="1100"><figcaption>ទំព័រ ៣៤</figcaption></figure><figure class="bk-page" id="p35"><img src="pages/sc1-p035.webp" alt="ទំព័រ ៣៥" loading="lazy" width="1100"><figcaption>ទំព័រ ៣៥</figcaption></figure></details><h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>សរសេរផលបូកខាងក្រោមដោយប្រើនិមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(1 + 2 + 3 + \ldots + 100\)</span></p></li>
+<li><p><span class="mi">\(1 + 4 + 9 + 16 + \ldots + 484\)</span></p></li>
+<li><p><span class="mi">\(1 + 8 + 27 + 64 + \ldots + 3375\)</span></p></li>
+<li><p><span class="mi">\(1 \times 3 + 2 \times 4 + 3 \times 5 + \ldots + 20 \times 22\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(1 + 2 + 3 + \ldots + 100 = \displaystyle\sum_{k=1}^{100} k\)</span> (ផលបូកចំនួនគត់រាប់ពី <span class="mi">\(1\)</span> ដល់ <span class="mi">\(100\)</span>)</p></li>
+<li><p><span class="mi">\(1 + 4 + 9 + 16 + \ldots + 484 = 1^2 + 2^2 + 3^2 + \ldots + 22^2 = \displaystyle\sum_{k=1}^{22} k^2\)</span> (ព្រោះ <span class="mi">\(484 = 22^2\)</span>)</p></li>
+<li><p><span class="mi">\(1 + 8 + 27 + 64 + \ldots + 3375 = 1^3 + 2^3 + 3^3 + \ldots + 15^3 = \displaystyle\sum_{k=1}^{15} k^3\)</span> (ព្រោះ <span class="mi">\(3375 = 15^3\)</span>)</p></li>
+<li><p><span class="mi">\(1 \times 3 + 2 \times 4 + 3 \times 5 + \ldots + 20 \times 22 = \displaystyle\sum_{k=1}^{20} k(k + 2)\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>សរសេរគ្រប់តួទាំងអស់នៃផលបូកដោយមិនប្រើនិមិត្តសញ្ញា <span class="mi">\(\Sigma\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{6} k\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{5} k^2\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=4}^{9} (3k - 1)\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=2}^{7} (-1)^k k\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{6} k = 1 + 2 + 3 + 4 + 5 + 6 = 21\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 1 + 4 + 9 + 16 + 25 = 55\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=4}^{9} (3k - 1) = 11 + 14 + 17 + 20 + 23 + 26 = 111\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=2}^{7} (-1)^k k = 2 - 3 + 4 - 5 + 6 - 7 = -3\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គណនា</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{11} k^2\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{24} k^2\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=12}^{24} k^2\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{11} k^2 = \dfrac{11(12)(23)}{6} = 11 \times 2 \times 23 = 506\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{24} k^2 = \dfrac{24(25)(49)}{6} = 4 \times 25 \times 49 = 4900\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=12}^{24} k^2 = \sum_{k=1}^{24} k^2 - \sum_{k=1}^{11} k^2 = 4900 - 506 = 4394\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>គណនា</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{24} k^3\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{15} k^3\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=16}^{24} k^3\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{24} k^3 = \left[\dfrac{24(25)}{2}\right]^2 = (300)^2 = 90000\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{15} k^3 = \left[\dfrac{15(16)}{2}\right]^2 = (120)^2 = 14400\)</span></p></li>
+<li><p><span class="mi">\(\displaystyle\sum_{k=16}^{24} k^3 = \sum_{k=1}^{24} k^3 - \sum_{k=1}^{15} k^3 = 90000 - 14400 = 75600\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>សម្រួលកន្សោម <span class="mi">\(\displaystyle\sum_{k=1}^{n} k(k+1)\)</span></p></li>
+<li><p>ដោយប្រើចម្លើយ គណនាផលបូក <span class="mi">\(1 \times 2 + 2 \times 3 + 3 \times 4 + \ldots + 28 \times 29\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} k(k+1) = \sum_{k=1}^{n} (k^2 + k) = \sum_{k=1}^{n} k^2 + \sum_{k=1}^{n} k = \dfrac{n(n+1)(2n+1)}{6} + \dfrac{n(n+1)}{2} = \dfrac{n(n+1)}{6}(2n + 1 + 3) = \dfrac{n(n+1)(n+2)}{3}\)</span></p></li>
+<li><p>គណនា <span class="mi">\(1 \times 2 + 2 \times 3 + \ldots + 28 \times 29 = \displaystyle\sum_{k=1}^{28} k(k+1) = \dfrac{28(29)(30)}{3} = 28 \times 29 \times 10 = 8120\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>សម្រួលកន្សោម <span class="mi">\(\displaystyle\sum_{k=1}^{n} k(k+1)(k+2)\)</span></p></li>
+<li><p>ដោយប្រើចម្លើយ គណនាផលបូក <span class="mi">\(1 \times 2 \times 3 + 2 \times 3 \times 4 + 3 \times 4 \times 5 + \ldots + 20 \times 21 \times 22\)</span> ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(\displaystyle\sum_{k=1}^{n} k(k+1)(k+2) = \dfrac{n(n+1)(n+2)(n+3)}{4}\)</span></p>
+<p>សម្រាយបញ្ជាក់៖ ប្រើរូបមន្ត <span class="mi">\(k(k+1)(k+2) = \dfrac{k(k+1)(k+2)(k+3) - (k-1)k(k+1)(k+2)}{4}\)</span></p></li>
+<li><p>ជំនួស <span class="mi">\(n = 20\)</span> ៖ <span class="mi">\(S = \dfrac{20 \times 21 \times 22 \times 23}{4} = 5 \times 21 \times 22 \times 23 = 53130\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(1, 2, 5, 10, 17, \ldots\)</span> ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនេះ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p>ផលសងលំដាប់ទី ១ ៖ <span class="mi">\(b_n = a_{n+1} - a_n\)</span> គឺ <span class="mi">\(1, 3, 5, 7, \ldots\)</span> ជាស៊ីតនព្វន្តដែលមាន <span class="mi">\(b_1 = 1, d = 2 \Rightarrow b_n = 2n - 1\)</span> ។<br>
+ចំពោះ <span class="mi">\(n \ge 2\)</span> ៖ <span class="mi">\(a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} (2k - 1) = 1 + n(n-1) - (n-1) = n^2 - 2n + 2\)</span> ។ (ពិតចំពោះ <span class="mi">\(n = 1\)</span>)</p></li>
+<li><p><span class="mi">\(S_n = \displaystyle\sum_{k=1}^{n} (k^2 - 2k + 2) = \dfrac{n(n+1)(2n+1)}{6} - n(n+1) + 2n = \dfrac{n}{6}(2n^2 - 3n + 7)\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<ol class="list olka cols1">
+<li><p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\(1, 5, 14, 30, 55, 91, \ldots\)</span> ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(n\)</span> តួដំបូងនៃស៊ីតនេះ ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ol class="list olka cols1">
+<li><p>ផលសងលំដាប់ទី ១ ៖ <span class="mi">\(4, 9, 16, 25, 36, \ldots\)</span> មានតួទូទៅ <span class="mi">\(b_k = (k+1)^2\)</span> ។<br>
+ចំពោះ <span class="mi">\(n \ge 2\)</span> ៖ <span class="mi">\(a_n = 1 + \displaystyle\sum_{k=1}^{n-1} (k+1)^2 = 1 + \left(\sum_{j=1}^{n} j^2 - 1\right) = \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}\)</span> ។<br>
+ដូចនេះ <span class="mi">\(a_n = \dfrac{n(n+1)(2n+1)}{6}\)</span> ។</p></li>
+<li><p><span class="mi">\(S_n = \displaystyle\sum_{k=1}^{n} \dfrac{k(k+1)(2k+1)}{6} = \dfrac{1}{6}\sum_{k=1}^n (2k^3 + 3k^2 + k) = \dfrac{n(n+1)^2(n+2)}{12}\)</span></p></li>
+</ol>
+</details>
+</div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>កំណត់តួទី <span class="mi">\(n\)</span> នៃស៊ីត <span class="mi">\((a_n)\)</span> ៖ <span class="mi">\(p, q, p, q, p, q, \ldots\)</span> ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ស៊ីតនេះមានតម្លៃឆ្លាស់គ្នារវាង <span class="mi">\(p\)</span> (កាលណា <span class="mi">\(n\)</span> សេស) និង <span class="mi">\(q\)</span> (កាលណា <span class="mi">\(n\)</span> គូ) ៖</p>
+<div class="md">\[a_n = \frac{p + q}{2} + \frac{p - q}{2}(-1)^{n-1} \quad\text{ឬ}\quad a_n = \begin{cases} p & \text{បើ } n \text{ ជាចំនួនសេស}\\ q & \text{បើ } n \text{ ជាចំនួនគូ} \end{cases}\]</div>
+<p>ផ្ទៀងផ្ទាត់៖ ចំពោះ <span class="mi">\(n = 1 \Rightarrow a_1 = \dfrac{p+q}{2} + \dfrac{p-q}{2} = p\)</span>, ចំពោះ <span class="mi">\(n = 2 \Rightarrow a_2 = \dfrac{p+q}{2} - \dfrac{p-q}{2} = q\)</span> ។</p>
+</details>
+</div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៤ ផលបូកតួនៃស៊ីតផ្សេងៗ (វិទ្យាសាស្ត្រ)</b> — ២០ សំណួរ · ៣៥ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=bk_g11_L04">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L03.html"><small>← មេរៀនមុន</small><b>ស៊ីតធរណីមាត្រ</b></a><a class="next" href="L05.html"><small>មេរៀនបន្ទាប់ →</small><b>ទំនាក់ទំនងតួនៃស៊ីត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "និមិត្តសញ្ញា <span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} a_k\\)<\/span> មានន័យថា ៖", "options": ["<span class=\"mi\">\\(n \\times a_k\\)<\/span>", "<span class=\"mi\">\\(a_1 \\times a_2 \\times \\ldots \\times a_n\\)<\/span>", "<span class=\"mi\">\\(a_n - a_1\\)<\/span>", "<span class=\"mi\">\\(a_1 + a_2 + \\ldots + a_n\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\Sigma\\)<\/span> តាងផលបូកនៃតួពី <span class=\"mi\">\\(k = 1\\)<\/span> ដល់ <span class=\"mi\">\\(k = n\\)<\/span> ។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} k\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{n(n - 1)}{2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n(n + 1)}{2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n(n + 1)(2n + 1)}{6}\\)<\/span>", "<span class=\"mi\">\\(n^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលបូកចំនួនគត់ពី <span class=\"mi\">\\(1\\)<\/span> ដល់ <span class=\"mi\">\\(n\\)<\/span> ។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} k^2\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{n(n + 1)(2n + 1)}{6}\\)<\/span>", "<span class=\"mi\">\\(\\left[\\dfrac{n(n + 1)}{2}\\right]^2\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n(n + 1)}{2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n^2(n + 1)}{3}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "រូបមន្តផលបូកការេ ។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} k^3\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{n(n + 1)(2n + 1)}{6}\\)<\/span>", "<span class=\"mi\">\\(n^4\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n^3(n + 1)}{4}\\)<\/span>", "<span class=\"mi\">\\(\\left[\\dfrac{n(n + 1)}{2}\\right]^2\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលបូកគូបស្មើការេនៃផលបូកចំនួនគត់ ។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{10} k\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(50\\)<\/span>", "<span class=\"mi\">\\(45\\)<\/span>", "<span class=\"mi\">\\(55\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{10 \\times 11}{2} = 55\\)<\/span> ។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{5} k^2\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(55\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1 + 4 + 9 + 16 + 25 = 55\\)<\/span> ។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{4} k^3\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(64\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\left(\\dfrac{4 \\times 5}{2}\\right)^2 = 100\\)<\/span> ។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} c\\)<\/span> (<span class=\"mi\">\\(c\\)<\/span> ថេរ) ស្មើ ៖", "options": ["<span class=\"mi\">\\(c^n\\)<\/span>", "<span class=\"mi\">\\(c\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{nc}{2}\\)<\/span>", "<span class=\"mi\">\\(nc\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "បូក <span class=\"mi\">\\(c\\)<\/span> ចំនួន <span class=\"mi\">\\(n\\)<\/span> ដង ។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{20} 3\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(60\\)<\/span>", "<span class=\"mi\">\\(23\\)<\/span>", "<span class=\"mi\">\\(630\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(20 \\times 3 = 60\\)<\/span> ។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} (2k + 1)\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(2n^2 + 1\\)<\/span>", "<span class=\"mi\">\\(n^2 + 2n\\)<\/span>", "<span class=\"mi\">\\(n^2\\)<\/span>", "<span class=\"mi\">\\(n^2 + n\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(2\\dfrac{n(n + 1)}{2} + n = n^2 + 2n\\)<\/span> ។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{10} (2k - 1)\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(99\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(90\\)<\/span>", "<span class=\"mi\">\\(110\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលបូកចំនួនសេស <span class=\"mi\">\\(n\\)<\/span> ដំបូង <span class=\"mi\">\\(= n^2 = 100\\)<\/span> ។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "លក្ខណៈណាខាងក្រោមពិត?", "options": ["<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} \\dfrac{1}{a_k} = \\dfrac{1}{\\sum a_k}\\)<\/span>", "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} a_k b_k = \\sum_{k=1}^{n} a_k \\times \\sum_{k=1}^{n} b_k\\)<\/span>", "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} a_k^2 = \\left(\\sum_{k=1}^{n} a_k\\right)^2\\)<\/span>", "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} (a_k + b_k) = \\sum_{k=1}^{n} a_k + \\sum_{k=1}^{n} b_k\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ស៊ិចម៉ាបំបែកបានលើផលបូក មិនមែនលើផលគុណ ។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} \\dfrac{1}{k(k + 1)}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{n + 1}{n}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{1}{n + 1}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n}{n + 1}\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\dfrac{1}{k(k + 1)} = \\dfrac{1}{k} - \\dfrac{1}{k + 1}\\)<\/span> ផលបូកសល់ <span class=\"mi\">\\(1 - \\dfrac{1}{n + 1}\\)<\/span> ។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\dfrac{1}{1 \\cdot 2} + \\dfrac{1}{2 \\cdot 3} + \\ldots + \\dfrac{1}{9 \\cdot 10}\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{1}{10}\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{9}{10}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{10}{11}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(1 - \\dfrac{1}{10} = \\dfrac{9}{10}\\)<\/span> ។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1 \\cdot 2 + 2 \\cdot 3 + \\ldots + n(n + 1)\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(\\dfrac{n(n + 1)(n + 2)}{3}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n(n + 1)}{2}\\)<\/span>", "<span class=\"mi\">\\(\\dfrac{n(n + 1)(2n + 1)}{6}\\)<\/span>", "<span class=\"mi\">\\(n^2(n + 1)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(\\sum k^2 + \\sum k = \\dfrac{n(n + 1)(2n + 1)}{6} + \\dfrac{n(n + 1)}{2} = \\dfrac{n(n + 1)(n + 2)}{3}\\)<\/span> ។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(1, 2, 4, 7, 11, \\ldots\\)<\/span> មានស៊ីតផលសងតួលំដាប់ទី ១ គឺ ៖", "options": ["<span class=\"mi\">\\(2, 4, 8, \\ldots\\)<\/span>", "<span class=\"mi\">\\(1, 2, 3, 4, \\ldots\\)<\/span>", "<span class=\"mi\">\\(1, 1, 1, \\ldots\\)<\/span>", "<span class=\"mi\">\\(1, 3, 5, 7, \\ldots\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(2 - 1 = 1\\)<\/span>, <span class=\"mi\">\\(4 - 2 = 2\\)<\/span>, <span class=\"mi\">\\(7 - 4 = 3\\)<\/span>, <span class=\"mi\">\\(11 - 7 = 4\\)<\/span> ។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(1, 2, 4, 7, 11, \\ldots\\)<\/span> ។ តួបន្ទាប់គឺ ៖", "options": ["<span class=\"mi\">\\(17\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលសងបន្ទាប់គឺ <span class=\"mi\">\\(5\\)<\/span> ៖ <span class=\"mi\">\\(11 + 5 = 16\\)<\/span> ។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(b_k = a_{k+1} - a_k\\)<\/span> នោះ <span class=\"mi\">\\(a_n\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(a_1 \\displaystyle\\sum_{k=1}^{n-1} b_k\\)<\/span>", "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{n} b_k\\)<\/span>", "<span class=\"mi\">\\(a_1 + \\displaystyle\\sum_{k=1}^{n} b_k\\)<\/span>", "<span class=\"mi\">\\(a_1 + \\displaystyle\\sum_{k=1}^{n-1} b_k\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "បូកផលសងពី <span class=\"mi\">\\(k = 1\\)<\/span> ដល់ <span class=\"mi\">\\(n - 1\\)<\/span> រួចបូក <span class=\"mi\">\\(a_1\\)<\/span> ។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ស៊ីត <span class=\"mi\">\\(2, 5, 10, 17, 26, \\ldots\\)<\/span> មានតួទូទៅ ៖", "options": ["<span class=\"mi\">\\(a_n = 3n - 1\\)<\/span>", "<span class=\"mi\">\\(a_n = 2n^2\\)<\/span>", "<span class=\"mi\">\\(a_n = n^2 + 1\\)<\/span>", "<span class=\"mi\">\\(a_n = n^2 + 2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ផលសង <span class=\"mi\">\\(3, 5, 7, 9\\)<\/span> ជាស៊ីតនព្វន្ត ៖ <span class=\"mi\">\\(a_n = 2 + \\sum_{k=1}^{n-1}(2k + 1) = n^2 + 1\\)<\/span> ។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(\\displaystyle\\sum_{k=1}^{15} (4k + 3)\\)<\/span> ស្មើ ៖", "options": ["<span class=\"mi\">\\(540\\)<\/span>", "<span class=\"mi\">\\(480\\)<\/span>", "<span class=\"mi\">\\(525\\)<\/span>", "<span class=\"mi\">\\(495\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "<span class=\"mi\">\\(4 \\times \\dfrac{15 \\times 16}{2} + 15 \\times 3 = 480 + 45 = 525\\)<\/span> ។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

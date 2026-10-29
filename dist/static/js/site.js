@@ -125,7 +125,7 @@
         '</div>' +
         '<div class="app-toast-body">' +
         'កម្មវិធីទូរស័ព្ទដៃសម្រាប់ <b>iOS (App Store)</b> និង <b>Android (Google Play)</b> កំពុងស្ថិតក្នុងការរៀបចំចុងក្រោយ និងត្រៀមដាក់ឱ្យទាញយកដោយឥតគិតថ្លៃក្នុងពេលឆាប់ៗនេះ!' +
-        '<div style="margin-top:8px"><a href="https://t.me/pisamathAI" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">ចូលរួម Telegram @pisamathAI ដើម្បីដឹងមុនគេ ›</a></div>' +
+        '<div style="margin-top:8px"><a href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">ចូលរួម Telegram @KHEMPUTHY ដើម្បីដឹងមុនគេ ›</a></div>' +
         '</div>';
       document.body.appendChild(toast);
       toast.querySelector('.app-toast-close').addEventListener('click', function () {

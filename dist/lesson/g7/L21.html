@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ២១ : ក្រាបសសរ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ២១ «ក្រាបសសរ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ២១ : ក្រាបសសរ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ២១ «ក្រាបសសរ» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ២១</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">២១</span>
+      <div><span class="ls-kicker">មេរៀនទី ២១ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>ក្រាបសសរ</h1><div class="ls-chips"><span class="chip chip-soon">ស្ថិតិ-ប្រូបាប</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណ និងធាតុផ្សំនៃក្រាបសសរ</a></li><li class="sub"><a href="#u2">២. ការសង់ក្រាបសសរបញ្ឈរ</a></li><li class="sub"><a href="#u3">៣. ការសង់ក្រាបសសរផ្ដេក</a></li><li class="sub"><a href="#u4">៤. ក្រាបសសរភ្លោះ</a></li><li class="sub"><a href="#u5">៥. ការវិភាគទិន្នន័យ និងដោះស្រាយចំណោទ</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិ និងការវិវត្តនៃក្រាបសសរ</b></header><div class="bx-b">
+<p>«<strong>ក្រាបសសរ</strong>» (Bar Graph ឬ Bar Chart) គឺជាឧបករណ៍ទិន្នន័យរូបភាពដ៏មានឥទ្ធិពលបំផុតមួយក្នុងស្ថិតិវិទ្យាទំនើប ដែលជួយសម្រួលដល់ការបកស្រាយ ការប្រៀបធៀប និងការទំនាក់ទំនងទិន្នន័យយ៉ាងរហ័ស និងច្បាស់លាស់។ ក្រាបសសរត្រូវបានបង្កើតឡើងជាលើកដំបូងដោយវិស្វករ និងសេដ្ឋវិទូជនជាតិស្កុតឡែនលោក <strong>វីលៀម ផ្លេយហ្វ៊ែរ</strong> (William Playfair, 1759–1823) នៅក្នុងសៀវភៅដ៏ល្បីរបស់លោកឈ្មោះ «<em>The Commercial and Political Atlas</em>» បោះពុម្ពនៅឆ្នាំ ១៧៨៦។ លោក Playfair បានបង្ហាញថា គំនូសបំព្រួញរូបភាពអាចផ្ដល់នូវការយល់ដឹងអំពីបរិមាណទិន្នន័យសេដ្ឋកិច្ចបានលឿន និងច្បាស់ជាងតារាងលេខសុទ្ធសាធ។</p>
+<p>នៅក្នុងយុគសម័យព័ត៌មានវិទ្យាបច្ចុប្បន្ន ក្រាបសសរបានក្លាយជាភាសាសកលក្នុងការបង្ហាញព័ត៌មាន ៖ ពីការបង្ហាញទិន្នន័យជំរឿនប្រជាជន របាយការណ៍សេដ្ឋកិច្ចពាណិជ្ជកម្ម ព័ត៌មានឧតុនិយម ការស្រាវជ្រាវវេជ្ជសាស្ត្រ រហូតដល់ផ្ទាំងព័ត៌មាន (Dashboards) នៃបច្ចេកវិទ្យាឌីជីថល។ ក្រាបសសរជួយឱ្យភ្នែកមនុស្សចាប់យកគំរូ (Patterns) និងការប្រៀបធៀបរវាងក្រុមទិន្នន័យបានភ្លាមៗ ដោយមិនចាំបាច់គិតលេខស្មុគស្មាញ។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃក្រាបសសរ</b></header><div class="bx-b">
+<p>នៅក្នុងការសិក្សាអំពីក្រាបសសរថ្នាក់ទី ៧ យើងត្រូវស្វែងយល់នូវចំណុចគ្រឹះសំខាន់ៗ ៖</p>
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ក្រាបសសរជាគំនូសតាងដែលប្រើប្រាស់សសររាងចតុកោណកែង ដើម្បីតាងទិន្នន័យដាច់ៗពីគ្នា។</p></li>
+<li><p><strong>ធាតុផ្សំសំខាន់ៗ ៖</strong> ចំណងជើងក្រាប, អ័ក្សដេក (ប្រភេទ), អ័ក្សឈរ (ប្រេកង់/បរិមាណ), មាត្រដ្ឋាន។</p></li>
+<li><p><strong>លក្ខណៈបច្ចេកទេស ៖</strong> ទទឹងសសរទាំងអស់ត្រូវមានទំហំស្មើគ្នា និងចន្លោះរវាងសសរជាប់គ្នាត្រូវមានគម្លាតស្មើគ្នា។</p></li>
+<li><p><strong>ប្រភេទក្រាបសសរ ៖</strong> ក្រាបសសរបញ្ឈរ (Vertical), ក្រាបសសរផ្ដេក (Horizontal), និងក្រាបសសរភ្លោះ (Double)។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សញ្ញាណ និងធាតុផ្សំនៃក្រាបសសរ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>សញ្ញាណ និងធាតុផ្សំសំខាន់ៗនៃក្រាបសសរ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ក្រាបសសរ គឺជាគំនូសតាងស្ថិតិដែលប្រើប្រាស់សសររាងចតុកោណកែងដើម្បីបង្ហាញ និងប្រៀបធៀបទិន្នន័យ។</p></li>
+<li><p><strong>ធាតុផ្សំ ៤ យ៉ាង ៖</strong></p>
+<ul>
+<li><p><strong>ចំណងជើង ៖</strong> បញ្ជាក់ពីខ្លឹមសារទិន្នន័យ  <strong>មាត្រដ្ឋាន ៖</strong> កំណត់តម្លៃឯកតានៅលើអ័ក្ស</p></li>
+<li><p><strong>អ័ក្សទាំងពីរ ៖</strong> អ័ក្សប្រភេទ និងអ័ក្សប្រេកង់  <strong>សសរ ៖</strong> ទទឹងស្មើគ្នា និងគម្លាតស្មើគ្នា</p></li>
+</ul></li>
+<li><p><strong>កម្ពស់សសរ ៖</strong> សមាមាត្រទៅនឹងតម្លៃ ឬប្រេកង់នៃទិន្នន័យនីមួយៗ។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>តាមក្រាបសសរខាងលើ ចូរឆ្លើយសំណួរខាងក្រោម ៖<br/>
+ក. តើអ័ក្សដេក និងអ័ក្សឈរតាងអ្វី? រកមាត្រដ្ឋាននៃអ័ក្សឈរ។<br/>
+ខ. តើផ្លែឈើណាដែលសិស្សចូលចិត្តជាងគេ? ចូលចិត្តតិចជាងគេ? រកចំនួនសិស្សសរុប។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. អ័ក្សដេកតាង <span class="kfbox">ប្រភេទផ្លែឈើ</span>។ អ័ក្សឈរតាង <span class="kfbox">ចំនួនសិស្ស</span> (មាត្រដ្ឋាន <span class="mi">\(1\)</span> ឯកតា <span class="mi">\( = 5\)</span> នាក់ )។<br/>
+ ខ. ច្រើនជាងគេគឺ <span class="kfbox">ក្រូច (<span class="mi">\(18\)</span>)</span> តិចជាងគេគឺ <span class="kfbox">ប៉ោម (<span class="mi">\(8\)</span>)</span>។ សរុប ៖ <span class="mi">\(12 + 18 + 15 + 8 = 53\)</span> នាក់ (<span class="mi">\(\boxed{53\text{ នាក់}}\)</span>)។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ធាតុផ្សំនៃក្រាបសសរ</b></header><div class="bx-b">
+<p>១. ចូររៀបរាប់ពីធាតុផ្សំសំខាន់ៗទាំង ៤ នៃក្រាបសសរ។<br/>
+២. ហេតុអ្វីបានជាទទឹងសសរ និងចន្លោះរវាងសសរត្រូវតែមានទំហំស្មើៗគ្នា?</p>
+</div></section>
+<h3 id="u2">ការសង់ក្រាបសសរបញ្ឈរ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ជំហាននៃការសង់ក្រាបសសរបញ្ឈរ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>គូសអ័ក្ស និងមាត្រដ្ឋាន ៖</strong> អ័ក្សដេក (តាងប្រភេទ), អ័ក្សឈរ (តាងប្រេកង់), ជ្រើសរើសមាត្រដ្ឋានសមស្រប។</p></li>
+<li><p><strong>សង់សសរ និងកំណត់សម្គាល់ ៖</strong> សសរទទឹងស្មើគ្នា កម្ពស់តាមប្រេកង់ និងដាក់ចំណងជើងច្បាស់លាស់។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេស្រង់ពិន្ទុតេស្តគណិតវិទ្យា ៖ ពិន្ទុ <span class="mi">\(6\)</span> (<span class="mi">\(5\)</span> នាក់), <span class="mi">\(7\)</span> (<span class="mi">\(10\)</span> នាក់), <span class="mi">\(8\)</span> (<span class="mi">\(12\)</span> នាក់), <span class="mi">\(9\)</span> (<span class="mi">\(8\)</span> នាក់), <span class="mi">\(10\)</span> (<span class="mi">\(5\)</span> នាក់)។<br/>
+ក. បង្កើតតារាងបំណែងចែកប្រេកង់។ ខ. រកពិន្ទុដែលសិស្សទទួលបានច្រើនជាងគេ និងសិស្សសរុប។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. តារាងប្រេកង់ ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ពិន្ទុ</th>
+<th><span class="mi">\(6\)</span></th>
+<th><span class="mi">\(7\)</span></th>
+<th><span class="mi">\(8\)</span></th>
+<th><span class="mi">\(9\)</span></th>
+<th><span class="mi">\(10\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ចំនួនសិស្ស</td>
+<td><span class="mi">\(5\)</span></td>
+<td><span class="mi">\(10\)</span></td>
+<td><span class="mi">\(12\)</span></td>
+<td><span class="mi">\(8\)</span></td>
+<td><span class="mi">\(5\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><br/>
+ ខ. ពិន្ទុច្រើនជាងគេ ៖ <span class="kfbox">ពិន្ទុ <span class="mi">\(8\)</span> (<span class="mi">\(12\)</span> នាក់)</span>។ ចំនួនសិស្សសរុប ៖ <span class="mi">\(5+10+12+8+5 = 40\)</span> នាក់។ ដូចនេះ <span class="kfbox"><span class="mi">\(N = 40\)</span> នាក់</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការសង់ក្រាបសសរបញ្ឈរ</b></header><div class="bx-b">
+<p>១. ក្នុងថ្នាក់មានសិស្សជិះកង់ <span class="mi">\(15\)</span>, ម៉ូតូ <span class="mi">\(10\)</span>, ដើរ <span class="mi">\(8\)</span>, ឡាន <span class="mi">\(7\)</span> នាក់។ ចូរកំណត់មាត្រដ្ឋានសមស្របដើម្បីសង់ក្រាប។<br/>
+២. គណនាភាគរយនៃសិស្សដែលធ្វើដំណើរដោយជិះកង់។</p>
+</div></section>
+<h3 id="u3">ការសង់ក្រាបសសរផ្ដេក</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>លក្ខណៈ និងការសង់ក្រាបសសរផ្ដេក</b></header><div class="bx-b">
+<ul>
+<li><p><strong>លក្ខណៈ ៖</strong> ក្រាបសសរផ្ដេក (Horizontal Bar Graph) មានសសររត់តាមទិសដេកពីឆ្វេងទៅស្ដាំ។</p></li>
+<li><p><strong>ការរៀបចំអ័ក្ស ៖</strong> អ័ក្សឈរតាងប្រភេទ (ឈ្មោះ) ហើយអ័ក្សដេកតាងប្រេកង់ ឬបរិមាណ។</p></li>
+<li><p><strong>គុណសម្បត្តិ ៖</strong> ងាយស្រួលសរសេរ និងអាននៅពេលដែលឈ្មោះប្រភេទវែងៗ ឬមានចំនួនច្រើន។</p></li>
+<li><p><strong>ប្រវែងសសរ ៖</strong> ប្រវែងនៃសសរផ្ដេកសមាមាត្រនឹងទំហំ ឬប្រេកង់នៃទិន្នន័យ។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ផ្អែកលើក្រាបសសរផ្ដេកខាងលើ ចូរឆ្លើយសំណួរខាងក្រោម ៖<br/>
+ក. តើសិស្សចូលចិត្តកីឡាបាល់ទាត់ច្រើនជាងបាល់បោះប៉ុន្មាននាក់?<br/>
+ខ. រកផលធៀបរវាងចំនួនសិស្សចូលចិត្តបាល់ទះ និងចំនួនសិស្សសរុប។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. សិស្សចូលចិត្តបាល់ទាត់មាន <span class="mi">\(20\)</span> នាក់ និងបាល់បោះមាន <span class="mi">\(10\)</span> នាក់។<br/>
+ចំនួនសិស្សលើស ៖ <span class="mi">\(20 - 10 = 10\)</span> នាក់។ ដូចនេះ <span class="kfbox">ច្រើនជាង <span class="mi">\(10\)</span> នាក់</span><br/>
+ ខ. សិស្សសរុប ៖ <span class="mi">\(N = 20 + 14 + 10 + 8 = 52\)</span> នាក់។<br/>
+ផលធៀបបាល់ទះធៀបសរុប ៖ <span class="mi">\(\dfrac{14}{52} = \dfrac{7}{26}\)</span>។ ដូចនេះ <span class="kfbox">ផលធៀបគឺ <span class="mi">\(\dfrac{7}{26}\)</span></span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ក្រាបសសរផ្ដេក</b></header><div class="bx-b">
+<p>១. ពេលណាដែលគេគួរប្រើក្រាបសសរផ្ដេកជំនួសឱ្យក្រាបសសរបញ្ឈរ?<br/>
+២. បើគេចង់សង់ក្រាបសសរផ្ដេកតាងទិន្នន័យដែលមានតម្លៃអតិបរមា <span class="mi">\(100\)</span> តើគួរយកមាត្រដ្ឋានប៉ុន្មាន?</p>
+</div></section>
+<h3 id="u4">ក្រាបសសរភ្លោះ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>សញ្ញាណ និងការសង់ក្រាបសសរភ្លោះ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ក្រាបសសរភ្លោះ (Double Bar Graph) បង្ហាញសសរពីរជាប់គ្នាសម្រាប់ប្រភេទនីមួយៗ ដើម្បីប្រៀបធៀបសំណុំទិន្នន័យពីរ។</p></li>
+<li><p><strong>កំណត់សម្គាល់ពណ៌ (Legend) ៖</strong> ចាំបាច់ត្រូវមានប្រអប់ពណ៌សម្គាល់ប្រភេទក្រុមនីមួយៗ។</p></li>
+<li><p><strong>លក្ខណៈបច្ចេកទេស ៖</strong> សសរក្នុងគូនីមួយៗត្រូវនៅជាប់គ្នា រីឯគម្លាតរវាងគូត្រូវស្មើគ្នា។</p></li>
+<li><p><strong>ការប្រើប្រាស់ ៖</strong> ប្រៀបធៀបប្រុស–ស្រី, ឆ្នាំចាស់–ឆ្នាំថ្មី, ឆមាសទី១–ឆមាសទី២។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>តាមក្រាបសសរភ្លោះខាងលើ ចូរឆ្លើយសំណួរ ៖<br/>
+ក. តើថ្នាក់ណាខ្លះដែលមានចំនួនសិស្សស្រីច្រើនជាងសិស្សប្រុស? ខ. គណនាសិស្សប្រុសសរុប និងស្រីសរុប។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. ថ្នាក់ដែលស្រីច្រើនជាងប្រុស ៖ <span class="kfbox">៧A, ៧C និង ៧D</span> (សសរផ្កាឈូកខ្ពស់ជាង)។<br/>
+ ខ. ប្រុសសរុប ៖ <span class="mi">\(25 + 28 + 32 + 22 = 107\)</span> (<span class="kfbox"><span class="mi">\(107\)</span> នាក់</span>) ; ស្រីសរុប ៖ <span class="mi">\(30 + 26 + 35 + 28 = 119\)</span> (<span class="kfbox"><span class="mi">\(119\)</span> នាក់</span>)។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ក្រាបសសរភ្លោះ</b></header><div class="bx-b">
+<p>១. តើក្រាបសសរភ្លោះខុសពីក្រាបសសរទោលដូចម្ដេចខ្លះ?<br/>
+២. ហេតុអ្វីបានជាក្រាបសសរភ្លោះចាំបាច់ត្រូវមានកំណត់សម្គាល់ពណ៌ (Legend)?</p>
+</div></section>
+<h3 id="u5">ការវិភាគទិន្នន័យ និងដោះស្រាយចំណោទ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ការវិភាគទិន្នន័យ និងការបកស្រាយ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ផលបូកសរុប ៖</strong> <span class="mi">\(N = f_1 + f_2 + \dots + f_k\)</span> (បូកប្រេកង់នៃគ្រប់សសរទាំងអស់)។</p></li>
+<li><p><strong>ការប្រៀបធៀប ៖</strong> រកភាពខុសគ្នារវាងសសរខ្ពស់បំផុត និងទាបបំផុត <span class="mi">\(\Delta = f_{\max} - f_{\min}\)</span>។</p></li>
+<li><p><strong>ភាគរយនៃប្រភេទ ៖</strong>  ភាគរយ <span class="mi">\( = \dfrac{f_i}{N} \times 100\%\)</span>។</p></li>
+<li><p><strong>ការទាញសេចក្ដីសន្និដ្ឋាន ៖</strong> វាយតម្លៃនិន្នាការ និងធ្វើការសម្រេចចិត្តផ្អែកលើភស្ដុតាងជាក់ស្ដែង។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញចំនួនសៀវភៅដែលបណ្ណាល័យបានឱ្យខ្ចីក្នុងមួយសប្តាហ៍ ៖ ចន្ទ (<span class="mi">\(40\)</span>), អង្គារ (<span class="mi">\(50\)</span>), ពុធ (<span class="mi">\(35\)</span>), ព្រហស្បតិ៍ (<span class="mi">\(45\)</span>), សុក្រ (<span class="mi">\(60\)</span>) ក្បាល។<br/>
+ក. គណនាចំនួនសៀវភៅសរុបដែលបានឱ្យខ្ចី និងរកមធ្យមភាគក្នុងមួយថ្ងៃ។<br/>
+ខ. គណនាភាគរយនៃសៀវភៅដែលបានឱ្យខ្ចីនៅថ្ងៃសុក្រ ធៀបនឹងសរុបប្រចាំសប្តាហ៍។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក. ចំនួនសៀវភៅសរុប ៖ <span class="mi">\(N = 40 + 50 + 35 + 45 + 60 = 230\)</span> ក្បាល។ ដូចនេះ <span class="mi">\(\boxed{N = 230\text{ ក្បាល}}\)</span><br/>
+មធ្យមភាគក្នុងមួយថ្ងៃ ៖ <span class="mi">\(\overline{x} = \dfrac{230}{5} = 46\)</span> ក្បាល។ ដូចនេះ <span class="mi">\(\boxed{\overline{x} = 46\text{ ក្បាល/ថ្ងៃ}}\)</span><br/>
+ ខ. ភាគរយថ្ងៃសុក្រ ៖ <span class="mi">\(\% = \dfrac{60}{230} \times 100\% \approx 26.09\%\)</span>។ ដូចនេះ <span class="mi">\(\boxed{\% \approx 26.09\%}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ការវិភាគទិន្នន័យ</b></header><div class="bx-b">
+<p>១. តាមទិន្នន័យខាងលើ តើថ្ងៃណាដែលសិស្សខ្ចីសៀវភៅតិចជាងគេ? តិចជាងថ្ងៃសុក្រប៉ុន្មានក្បាល?<br/>
+២. បើបណ្ណាល័យកំណត់គោលដៅឱ្យខ្ចីយ៉ាងតិច <span class="mi">\(50\)</span> ក្បាលក្នុងមួយថ្ងៃ តើមានប៉ុន្មានថ្ងៃដែលសម្រេចគោលដៅ?</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ក្រាបសសរបង្ហាញចំនួនសិស្សចូលចិត្តកីឡា ៖ បាល់ទាត់ (<span class="mi">\(24\)</span>), បាល់ទះ (<span class="mi">\(16\)</span>), បាល់បោះ (<span class="mi">\(12\)</span>), រត់ (<span class="mi">\(8\)</span>) នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សសរុបដែលបានចូលរួមស្ទង់មតិ</p></li>
+<li><p>រកភាគរយនៃសិស្សដែលចូលចិត្តកីឡាបាល់ទាត់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(24 + 16 + 12 + 8 = 60\)</span> នាក់</p></li>
+<li><p>ភាគរយបាល់ទាត់ ៖<br/>
+<span class="mi">\(\frac{24}{60} \times 100\% = 40\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>តារាងខាងក្រោមបង្ហាញចំនួនសៀវភៅដែលហាងមួយលក់បាន ៖ ចន្ទ (<span class="mi">\(15\)</span>), អង្គារ (<span class="mi">\(20\)</span>), ពុធ (<span class="mi">\(25\)</span>), ព្រហ (<span class="mi">\(18\)</span>), សុក្រ (<span class="mi">\(32\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>កំណត់មាត្រដ្ឋានសមស្របដើម្បីសង់ក្រាបសសរ</p></li>
+<li><p>គណនាចំនួនសៀវភៅសរុបប្រចាំសប្តាហ៍</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មាត្រដ្ឋានសមស្រប ៖ <span class="mi">\(1\text{ cm} = 5\)</span> ក្បាល</p></li>
+<li><p>សរុប ៖ <span class="mi">\(15 + 20 + 25 + 18 + 32 = 110\)</span> ក្បាល</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>គេមានទិន្នន័យនៃការស្រង់មធ្យោបាយធ្វើដំណើររបស់សិស្ស ៖ កង់ (<span class="mi">\(30\)</span>), ម៉ូតូ (<span class="mi">\(15\)</span>), ដើរ (<span class="mi">\(10\)</span>), ឡានក្រុង (<span class="mi">\(5\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកផលធៀបសិស្សជិះកង់ធៀបនឹងសិស្សសរុប</p></li>
+<li><p>គណនាភាគរយនៃសិស្សដែលធ្វើដំណើរដោយថ្មើរជើង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរុប ៖ <span class="mi">\(30 + 15 + 10 + 5 = 60\)</span> នាក់</p>
+<ul>
+<li><p>ផលធៀបកង់ ៖ <span class="mi">\(\frac{30}{60} = \frac{1}{2}\)</span></p></li>
+<li><p>ភាគរយដើរ ៖ <span class="mi">\(\frac{10}{60} \times 100\% \approx 16.67\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ក្រាបសសរមួយមានមាត្រដ្ឋាន <span class="mi">\(1\text{ cm} = 10\)</span> នាក់ ។ សសរទាំងបួនមានកម្ពស់ <span class="mi">\(3\text{ cm}, 4.5\text{ cm}, 2\text{ cm}, 5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាតម្លៃទិន្នន័យនៃសសរនីមួយៗ</p></li>
+<li><p>រកផលបូកតម្លៃទិន្នន័យនៃសសរទាំងបួន</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ទិន្នន័យ ៖ <span class="mi">\(30, 45, 20, 50\)</span> នាក់</p></li>
+<li><p>ផលបូក ៖ <span class="mi">\(30 + 45 + 20 + 50 = 145\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ក្នុងកសិដ្ឋានមួយមានសត្វ ៖ គោ (<span class="mi">\(25\)</span>), ជ្រូក (<span class="mi">\(40\)</span>), មាន់ (<span class="mi">\(60\)</span>), ទា (<span class="mi">\(35\)</span>) ក្បាល ៖</p>
+<ol class="list olka cols2">
+<li><p>រកសត្វដែលមានចំនួនច្រើនជាងគេ និងតិចជាងគេ</p></li>
+<li><p>រកគម្លាតរវាងចំនួនសត្វមាន់ និងចំនួនសត្វគោ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ច្រើនបំផុត ៖ មាន់ (<span class="mi">\(60\)</span>); តិចបំផុត ៖ គោ (<span class="mi">\(25\)</span>)</p></li>
+<li><p>គម្លាត ៖ <span class="mi">\(60 - 25 = 35\)</span> ក្បាល</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ក្រាបសសរផ្ដេកបង្ហាញពិន្ទុសិស្ស ៤ នាក់ ៖ កុម្ភៈ (<span class="mi">\(75\)</span>), មីនា (<span class="mi">\(85\)</span>), មេសា (<span class="mi">\(90\)</span>), ឧសភា (<span class="mi">\(80\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកពិន្ទុមធ្យមនៃសិស្សទាំងបួនខែ</p></li>
+<li><p>តើខែណាខ្លះដែលមានពិន្ទុលើសពីមធ្យម?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ពិន្ទុមធ្យម ៖ <span class="mi">\(\frac{75 + 85 + 90 + 80}{4} = 82.5\)</span> ពិន្ទុ</p></li>
+<li><p>លើសពីមធ្យម ៖ ខែមីនា (<span class="mi">\(85\)</span>) និងខែមេសា (<span class="mi">\(90\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>គេស្ទង់មតិសិស្ស <span class="mi">\(50\)</span> នាក់អំពីពណ៌ដែលចូលចិត្ត ៖ ខៀវ (<span class="mi">\(20\)</span>), ក្រហម (<span class="mi">\(15\)</span>), បៃតង (<span class="mi">\(10\)</span>), លឿង (<span class="mi">\(5\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>សរសេរតារាងបំណែងចែកប្រេកង់នៃពណ៌នីមួយៗ</p></li>
+<li><p>គណនាភាគរយនៃសិស្សដែលចូលចិត្តពណ៌ខៀវ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ប្រេកង់ ៖ ខៀវ (<span class="mi">\(20\)</span>), ក្រហម (<span class="mi">\(15\)</span>), បៃតង (<span class="mi">\(10\)</span>), លឿង (<span class="mi">\(5\)</span>), សរុប (<span class="mi">\(50\)</span>)</p></li>
+<li><p>ភាគរយខៀវ ៖ <span class="mi">\(\frac{20}{50} \times 100\% = 40\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញចំនួនដើមឈើដាំបាន ៖ ឆ្នាំ២០២៣ (<span class="mi">\(150\)</span>), ឆ្នាំ២០២៤ (<span class="mi">\(200\)</span>), ឆ្នាំ២០២៥ (<span class="mi">\(250\)</span>) ដើម ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនដើមឈើដាំបានសរុបក្នុងរយៈពេល ៣ ឆ្នាំ</p></li>
+<li><p>គណនាភាគរយកំណើនពីឆ្នាំ២០២៣ ដល់ ២០២៤</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(150 + 200 + 250 = 600\)</span> ដើម</p></li>
+<li><p>កំណើន ៖ <span class="mi">\(\frac{200 - 150}{150} \times 100\% \approx 33.33\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ក្នុងថ្នាក់រៀនមួយមានសិស្ស <span class="mi">\(36\)</span> នាក់។ ក្រាបសសរបង្ហាញថាសិស្សប្រុសមាន <span class="mi">\(16\)</span> នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សស្រីក្នុងថ្នាក់នោះ</p></li>
+<li><p>រកផលធៀបសម្រួលរវាងសិស្សប្រុស និងសិស្សស្រី</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សិស្សស្រី ៖ <span class="mi">\(36 - 16 = 20\)</span> នាក់</p></li>
+<li><p>ផលធៀបប្រុស/ស្រី ៖ <span class="mi">\(\frac{16}{20} = \frac{4}{5}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ក្រាបសសរមួយបង្ហាញទិន្នន័យចំនួន ៥ ប្រភេទ ដែលមានកម្ពស់សសររៀងគ្នា <span class="mi">\(8, 12, 16, 14, 10\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកតម្លៃទិន្នន័យសរុបនៃប្រភេទទាំង ៥</p></li>
+<li><p>រកតម្លៃមធ្យមនៃទិន្នន័យទាំង ៥</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(8 + 12 + 16 + 14 + 10 = 60\)</span></p></li>
+<li><p>មធ្យម ៖ <span class="mi">\(\frac{60}{5} = 12\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>ក្រាបសសរភ្លោះបង្ហាញការចូលចិត្តមុខវិជ្ជា (ប្រុស និង ស្រី) ៖ គណិត (ប្រុស <span class="mi">\(18\)</span>, ស្រី <span class="mi">\(14\)</span>), រូប (ប្រុស <span class="mi">\(12\)</span>, ស្រី <span class="mi">\(16\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សចូលចិត្តគណិតវិទ្យាសរុប</p></li>
+<li><p>ប្រៀបធៀបចំនួនសិស្សប្រុស និងស្រីក្នុងមុខវិជ្ជារូបវិទ្យា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>គណិតសរុប ៖ <span class="mi">\(18 + 14 = 32\)</span> នាក់</p></li>
+<li><p>រូបវិទ្យា ៖ សិស្សស្រី (<span class="mi">\(16\)</span>) ច្រើនជាងប្រុស (<span class="mi">\(12\)</span>) ចំនួន <span class="mi">\(4\)</span> នាក់។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ១១ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សប្រុសសរុបនៃមុខវិជ្ជាទាំងពីរ</p></li>
+<li><p>រកចំនួនសិស្សស្រីសរុបនៃមុខវិជ្ជាទាំងពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ប្រុសសរុប ៖ <span class="mi">\(18 + 12 = 30\)</span> នាក់</p></li>
+<li><p>ស្រីសរុប ៖ <span class="mi">\(14 + 16 = 30\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>ហាងមួយលក់កង្ហារបាន ៖ មេសា (<span class="mi">\(45\)</span>), ឧសភា (<span class="mi">\(60\)</span>), មិថុនា (<span class="mi">\(35\)</span>), កក្កដា (<span class="mi">\(30\)</span>) គ្រឿង ៖</p>
+<ol class="list olka cols2">
+<li><p>តើខែណាដែលលក់បានច្រើនជាងគេ? ចំនួនប៉ុន្មាន?</p></li>
+<li><p>គណនាចំនួនកង្ហារលក់បានសរុបទាំង ៤ ខែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ច្រើនជាងគេ ៖ ខែឧសភា (<span class="mi">\(60\)</span> គ្រឿង)</p></li>
+<li><p>សរុប ៖ <span class="mi">\(45 + 60 + 35 + 30 = 170\)</span> គ្រឿង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>ក្រាបសសរផ្ដេកតាងការផលិតស្រូវរបស់ខេត្ត ៤ ៖ ខេត្ត A (<span class="mi">\(120\text{ t}\)</span>), B (<span class="mi">\(90\text{ t}\)</span>), C (<span class="mi">\(150\text{ t}\)</span>), D (<span class="mi">\(80\text{ t}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកខេត្តដែលផលិតបានស្រូវច្រើនជាងគេបំផុត</p></li>
+<li><p>រកផលបូកបរិមាណស្រូវនៃខេត្តទាំង ៤</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ច្រើនជាងគេ ៖ ខេត្ត C (<span class="mi">\(150\text{ t}\)</span>)</p></li>
+<li><p>សរុប ៖ <span class="mi">\(120 + 90 + 150 + 80 = 440\text{ t}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ១៤ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាភាគរយនៃស្រូវខេត្ត C ធៀបនឹងសរុប</p></li>
+<li><p>រកគម្លាតផលិតកម្មរវាងខេត្ត C និងខេត្ត D</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយខេត្ត C ៖ <span class="mi">\(\frac{150}{440} \times 100\% \approx 34.09\%\)</span></p></li>
+<li><p>គម្លាត C និង D ៖ <span class="mi">\(150 - 80 = 70\text{ t}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ក្រាបសសរភ្លោះបង្ហាញការលក់ទូរស័ព្ទម៉ាក X និង Y ក្នុង ៣ ខែ ៖ មករា (X: <span class="mi">\(40\)</span>, Y: <span class="mi">\(30\)</span>), កុម្ភៈ (X: <span class="mi">\(50\)</span>, Y: <span class="mi">\(45\)</span>), មីនា (X: <span class="mi">\(60\)</span>, Y: <span class="mi">\(55\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនទូរស័ព្ទម៉ាក X លក់បានសរុបក្នុង ៣ ខែ</p></li>
+<li><p>រកចំនួនទូរស័ព្ទម៉ាក Y លក់បានសរុបក្នុង ៣ ខែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ម៉ាក X ៖ <span class="mi">\(40 + 50 + 60 = 150\)</span> គ្រឿង</p></li>
+<li><p>ម៉ាក Y ៖ <span class="mi">\(30 + 45 + 55 = 130\)</span> គ្រឿង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ១៦ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>តើម៉ាកណាដែលលក់បានច្រើនជាងសរុប?</p></li>
+<li><p>រកភាពខុសគ្នានៃការលក់សរុបរវាងម៉ាកទាំងពីរ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ម៉ាក X លក់បានច្រើនជាង (<span class="mi">\(150 &gt; 130\)</span>)</p></li>
+<li><p>ភាពខុសគ្នា ៖ <span class="mi">\(150 - 130 = 20\)</span> គ្រឿង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គេស្ទង់មតិសិស្ស <span class="mi">\(80\)</span> នាក់អំពីប្រភេទភេសជ្ជៈ ៖ ទឹកក្រូច (<span class="mi">\(25\)</span>), ទឹកដោះគោ (<span class="mi">\(35\)</span>), តែបៃតង (<span class="mi">\(20\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>សង់តារាងបំណែងចែកប្រេកង់នៃភេសជ្ជៈនីមួយៗ</p></li>
+<li><p>គណនាភាគរយនៃសិស្សដែលចូលចិត្តទឹកដោះគោ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ប្រេកង់ ៖ ទឹកក្រូច (<span class="mi">\(25\)</span>), ទឹកដោះគោ (<span class="mi">\(35\)</span>), តែបៃតង (<span class="mi">\(20\)</span>), សរុប (<span class="mi">\(80\)</span>)</p></li>
+<li><p>ភាគរយទឹកដោះគោ ៖ <span class="mi">\(\frac{35}{80} \times 100\% = 43.75\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>ក្រាបសសរមួយបង្ហាញពិន្ទុតេស្ត ៖ លេខ <span class="mi">\(10\)</span> (<span class="mi">\(4\)</span> នាក់), លេខ <span class="mi">\(9\)</span> (<span class="mi">\(8\)</span> នាក់), លេខ <span class="mi">\(8\)</span> (<span class="mi">\(12\)</span> នាក់), លេខ <span class="mi">\(7\)</span> (<span class="mi">\(6\)</span> នាក់) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សសរុបដែលបានធ្វើតេស្ត</p></li>
+<li><p>គណនាភាគរយនៃសិស្សដែលបានពិន្ទុចាប់ពី ៨ ឡើងទៅ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សិស្សសរុប ៖ <span class="mi">\(4 + 8 + 12 + 6 = 30\)</span> នាក់</p></li>
+<li><p>ចាប់ពី ៨ ឡើង ៖ <span class="mi">\(\frac{24}{30} \times 100\% = 80\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>ក្រាបសសរមួយមានមាត្រដ្ឋានអ័ក្សឈរ <span class="mi">\(1\text{ cm} = 25\)</span> នាក់  ៖</p>
+<ol class="list olka cols2">
+<li><p>បើសសរមួយមានកម្ពស់ <span class="mi">\(4.8\text{ cm}\)</span> តើវាស្មើនឹងមនុស្សប៉ុន្មាននាក់?</p></li>
+<li><p>បើមនុស្សមានចំនួន <span class="mi">\(175\)</span> នាក់ តើសសរត្រូវមានកម្ពស់ប៉ុន្មាន <span class="mi">\(\text{cm}\)</span>?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(4.8 \times 25 = 120\)</span> នាក់</p></li>
+<li><p>កម្ពស់ ៖ <span class="mi">\(\frac{175}{25} = 7\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញវត្តមានសិស្សប្រចាំសប្តាហ៍ ៖ ចន្ទ (<span class="mi">\(38\)</span>), អង្គារ (<span class="mi">\(40\)</span>), ពុធ (<span class="mi">\(36\)</span>), ព្រហ (<span class="mi">\(39\)</span>), សុក្រ (<span class="mi">\(37\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកមធ្យមភាគវត្តមានសិស្សក្នុងមួយថ្ងៃ</p></li>
+<li><p>រកថ្ងៃដែលមានវត្តមានទាបជាងមធ្យមភាគ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មធ្យមភាគ ៖ <span class="mi">\(\frac{190}{5} = 38\)</span> នាក់/ថ្ងៃ</p></li>
+<li><p>ទាបជាងមធ្យម ៖ ថ្ងៃពុធ (<span class="mi">\(36\)</span>) និងថ្ងៃសុក្រ (<span class="mi">\(37\)</span>)</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>បណ្ណាល័យមួយឱ្យសិស្សខ្ចីសៀវភៅ ៖ គណិត (<span class="mi">\(50\)</span>), វិទ្យាសាស្ត្រ (<span class="mi">\(40\)</span>), ប្រវត្តិវិទ្យា (<span class="mi">\(30\)</span>), អក្សរសាស្ត្រ (<span class="mi">\(60\)</span>) ក្បាល ៖</p>
+<ol class="list olka cols2">
+<li><p>រកសៀវភៅដែលសិស្សខ្ចីច្រើនបំផុត និងតិចបំផុត</p></li>
+<li><p>គណនាភាគរយនៃសៀវភៅអក្សរសាស្ត្រធៀបសរុប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរុប ៖ <span class="mi">\(50 + 40 + 30 + 60 = 180\)</span> ក្បាល</p>
+<ul>
+<li><p>ច្រើនបំផុត ៖ អក្សរសាស្ត្រ (<span class="mi">\(60\)</span>); តិចបំផុត ៖ ប្រវត្តិ (<span class="mi">\(30\)</span>)</p></li>
+<li><p>ភាគរយអក្សរសាស្ត្រ ៖ <span class="mi">\(\frac{60}{180} \times 100\% \approx 33.33\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ក្រាបសសរភ្លោះបង្ហាញការសន្សំប្រាក់របស់សុខ និងតារា ៖ ខែមករា (សុខ: <span class="mi">\(\$30\)</span>, តារា: <span class="mi">\(\$25\)</span>), កុម្ភៈ (សុខ: <span class="mi">\(\$40\)</span>, តារា: <span class="mi">\(\$35\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រាក់សន្សrouteំសរុបរបស់សុខក្នុង ២ ខែ</p></li>
+<li><p>រកប្រាក់សន្សrouteំសរុបរបស់តារាក្នុង ២ ខែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សុខ ៖ <span class="mi">\(30 + 40 = \$70\)</span></p></li>
+<li><p>តារា ៖ <span class="mi">\(25 + 35 = \$60\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ២៣ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>តើអ្នកណាសន្សំប្រាក់បានច្រើនជាង? ច្រើនជាងប៉ុន្មាន?</p></li>
+<li><p>រកប្រាក់សន្សំសរុបរបស់អ្នកទាំងពីរក្នុង ២ ខែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សុខសន្សំបានច្រើនជាង ចំនួន <span class="mi">\(70 - 60 = \$10\)</span></p></li>
+<li><p>សរុបទាំងពីរ ៖ <span class="mi">\(70 + 60 = \$130\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>សាលារៀនមួយមានចំនួនសិស្សថ្នាក់ទី ៧ តាមបន្ទប់ ៖ ៧A (<span class="mi">\(42\)</span>), ៧B (<span class="mi">\(45\)</span>), ៧C (<span class="mi">\(40\)</span>), ៧D (<span class="mi">\(43\)</span>) នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំនួនសិស្សថ្នាក់ទី ៧ សរុបទាំងអស់</p></li>
+<li><p>រកមធ្យមភាគសិស្សក្នុងមួយបន្ទប់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(42 + 45 + 40 + 43 = 170\)</span> នាក់</p></li>
+<li><p>មធ្យមក្នុងបន្ទប់ ៖ <span class="mi">\(\frac{170}{4} = 42.5\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ក្រាបសសរផ្ដេកបង្ហាញការប្រើប្រាស់អ៊ីនធឺណិតប្រចាំថ្ងៃ ៖ សិក្សា (<span class="mi">\(3\text{ h}\)</span>), លេងហ្គេម (<span class="mi">\(2\text{ h}\)</span>), មើលវីដេអូ (<span class="mi">\(2.5\text{ h}\)</span>), ព័ត៌មាន (<span class="mi">\(0.5\text{ h}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកពេលវេលាសរុបដែលប្រើប្រាស់អ៊ីនធឺណិត</p></li>
+<li><p>គណនាភាគរយនៃពេលប្រើប្រាស់សម្រាប់ការសិក្សា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(3 + 2 + 2.5 + 0.5 = 8\text{ h}\)</span></p></li>
+<li><p>ភាគរយសិក្សា ៖ <span class="mi">\(\frac{3}{8} \times 100\% = 37.5\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញចំនួនឡានឆ្លងកាត់ស្ពាន ៖ ម៉ោង ៧-៨ (<span class="mi">\(120\)</span>), ៨-៩ (<span class="mi">\(80\)</span>), ៩-១០ (<span class="mi">\(60\)</span>), ១០-១១ (<span class="mi">\(50\)</span>) គ្រឿង ៖</p>
+<ol class="list olka cols2">
+<li><p>តើចន្លោះម៉ោងណាដែលមានឡានឆ្លងកាត់ច្រើនបំផុត?</p></li>
+<li><p>រកចំនួនឡានសរុបដែលឆ្លងកាត់ពីម៉ោង ៧ ដល់ ១១</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ច្រើនបំផុត ៖ ម៉ោង ៧-៨ (<span class="mi">\(120\)</span> គ្រឿង)</p></li>
+<li><p>សរុប ៖ <span class="mi">\(120 + 80 + 60 + 50 = 310\)</span> គ្រឿង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>កសិករម្នាក់ប្រមូលផលផ្លែឈើបាន ៖ ស្វាយ (<span class="mi">\(500\text{ kg}\)</span>), ចេក (<span class="mi">\(300\text{ kg}\)</span>), ក្រូច (<span class="mi">\(200\text{ kg}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកទម្ងន់ផ្លែឈើសរុបទាំងអស់ដែលប្រមូលបាន</p></li>
+<li><p>គណនាភាគរយនៃទម្ងន់ផ្លែស្វាយធៀបនឹងសរុប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(500 + 300 + 200 = 1000\text{ kg}\)</span></p></li>
+<li><p>ភាគរយស្វាយ ៖ <span class="mi">\(\frac{500}{1000} \times 100\% = 50\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ក្រាបសសរមួយមានមាត្រដ្ឋាន <span class="mi">\(1\text{ cm} = 50\)</span> នាក់ ។ បើទិន្នន័យមាន <span class="mi">\(125\)</span> នាក់, <span class="mi">\(200\)</span> នាក់, <span class="mi">\(350\)</span> នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកម្ពស់សសរនីមួយៗជាសង់ទីម៉ែត្រ</p></li>
+<li><p>រកកម្ពស់សរុបនៃសសរទាំងបីបូកបញ្ចូលគ្នា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កម្ពស់ ៖ <span class="mi">\(2.5\text{ cm}, 4\text{ cm}, 7\text{ cm}\)</span></p></li>
+<li><p>កម្ពស់សរុប ៖ <span class="mi">\(2.5 + 4 + 7 = 13.5\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ក្រាបសសរភ្លោះបង្ហាញការប្រឡងឆមាសទី១ និងទី២ របស់សិស្សម្នាក់ ៖ គណិត (ឆ១: <span class="mi">\(75\)</span>, ឆ២: <span class="mi">\(85\)</span>), រូប (ឆ១: <span class="mi">\(80\)</span>, ឆ២: <span class="mi">\(80\)</span>), គីមី (ឆ១: <span class="mi">\(70\)</span>, ឆ២: <span class="mi">\(90\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកពិន្ទុមធ្យមនៃឆមាសទី១ ក្នុងមុខវិជ្ជាទាំងបី</p></li>
+<li><p>រកពិន្ទុមធ្យមនៃឆមាសទី២ ក្នុងមុខវិជ្ជាទាំងបី</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មធ្យម ឆ១ ៖ <span class="mi">\(\frac{75 + 80 + 70}{3} = 75\)</span> ពិន្ទុ</p></li>
+<li><p>មធ្យម ឆ២ ៖ <span class="mi">\(\frac{85 + 80 + 90}{3} = 85\)</span> ពិន្ទុ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញចំនួនគ្រួសារតាមភូមិ ៖ ភូមិ A (<span class="mi">\(80\)</span>), ភូមិ B (<span class="mi">\(120\)</span>), ភូមិ C (<span class="mi">\(100\)</span>), ភូមិ D (<span class="mi">\(60\)</span>) គ្រួសារ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនគ្រួសារសរុបនៃភូមិទាំងបួន</p></li>
+<li><p>គណនាភាគរយនៃគ្រួសារក្នុងភូមិ B ធៀបនឹងសរុប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(80 + 120 + 100 + 60 = 360\)</span> គ្រួសារ</p></li>
+<li><p>ភាគរយភូមិ B ៖ <span class="mi">\(\frac{120}{360} \times 100\% \approx 33.33\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៣១ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកគម្លាតរវាងភូមិដែលមានគ្រួសារច្រើនបំផុត និងតិចបំផុត</p></li>
+<li><p>រកផលធៀបចំនួនគ្រួសារភូមិ A ធៀបនឹងភូមិ C</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>គម្លាត ៖ <span class="mi">\(120 - 60 = 60\)</span> គ្រួសារ</p></li>
+<li><p>ផលធៀប A/C ៖ <span class="mi">\(\frac{80}{100} = \frac{4}{5}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>ហាងលក់សម្ភារសិក្សាមួយលក់ប៊ិចបាន ៖ ខៀវ (<span class="mi">\(150\)</span>), ក្រហម (<span class="mi">\(80\)</span>), ខ្មៅ (<span class="mi">\(70\)</span>) ដើម ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំនួនប៊ិចសរុបដែលលក់បាន</p></li>
+<li><p>រកភាគរយនៃប៊ិចពណ៌ខៀវដែលលក់បាន</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ប៊ិចសរុប ៖ <span class="mi">\(150 + 80 + 70 = 300\)</span> ដើម</p></li>
+<li><p>ភាគរយខៀវ ៖ <span class="mi">\(\frac{150}{300} \times 100\% = 50\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>ក្រាបសសរផ្ដេកបង្ហាញពិន្ទុកីឡាករ ៤ នាក់ ៖ សុភា (<span class="mi">\(18\)</span>), ចន្ថា (<span class="mi">\(24\)</span>), វិបុល (<span class="mi">\(16\)</span>), រ៉ាវី (<span class="mi">\(22\)</span>) ពិន្ទុ ៖</p>
+<ol class="list olka cols2">
+<li><p>តើកីឡាករណាទទួលបានពិន្ទុខ្ពស់បំផុត? ទាបបំផុត?</p></li>
+<li><p>គណនាពិន្ទុមធ្យមរបស់កីឡាករទាំងបួននាក់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ខ្ពស់បំផុត ៖ ចន្ថា (<span class="mi">\(24\)</span>); ទាបបំផុត ៖ វិបុល (<span class="mi">\(16\)</span>)</p></li>
+<li><p>ពិន្ទុមធ្យម ៖ <span class="mi">\(\frac{80}{4} = 20\)</span> ពិន្ទុ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ក្រាបសសរភ្លោះបង្ហាញការចូលទស្សនាសារមន្ទីរ (ជាតិ និង អន្តរជាតិ) ៖ ចន្ទ (ជាតិ <span class="mi">\(200\)</span>, អន្តរជាតិ <span class="mi">\(150\)</span>), អង្គារ (ជាតិ <span class="mi">\(250\)</span>, អន្តរជាតិ <span class="mi">\(180\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនភ្ញៀវជាតិសរុបក្នុងរយៈពេល ២ ថ្ងៃ</p></li>
+<li><p>រកចំនួនភ្ញៀវអន្តរជាតិសរុបក្នុងរយៈពេល ២ ថ្ងៃ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភ្ញៀវជាតិ ៖ <span class="mi">\(200 + 250 = 450\)</span> នាក់</p></li>
+<li><p>អន្តរជាតិ ៖ <span class="mi">\(150 + 180 = 330\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៣៥ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនភ្ញៀវទេសចរសរុបទាំងអស់ទាំងពីរថ្ងៃ</p></li>
+<li><p>រកភាពខុសគ្នារវាងភ្ញៀវជាតិ និងអន្តរជាតិសរុប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ទេសចរសរុប ៖ <span class="mi">\(450 + 330 = 780\)</span> នាក់</p></li>
+<li><p>ភាពខុសគ្នា ៖ <span class="mi">\(450 - 330 = 120\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញពិន្ទុតេស្តកាយវិភាគវិទ្យា ៖ ពិន្ទុ ៥ (<span class="mi">\(2\)</span> នាក់), ៦ (<span class="mi">\(6\)</span> នាក់), ៧ (<span class="mi">\(10\)</span> នាក់), ៨ (<span class="mi">\(14\)</span> នាក់), ៩ (<span class="mi">\(8\)</span> នាក់) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សសរុបដែលបានចូលរួមតេស្ត</p></li>
+<li><p>គណនាភាគរយនៃសិស្សដែលទទួលបានពិន្ទុ ៨</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សិស្សសរុប ៖ <span class="mi">\(2 + 6 + 10 + 14 + 8 = 40\)</span> នាក់</p></li>
+<li><p>ភាគរយពិន្ទុ ៨ ៖ <span class="mi">\(\frac{14}{40} \times 100\% = 35\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ក្រុមហ៊ុនមួយមានបុគ្គលិកតាមផ្នែក ៖ គណនេយ្យ (<span class="mi">\(8\)</span>), ទីផ្សារ (<span class="mi">\(15\)</span>), ផលិតកម្ម (<span class="mi">\(25\)</span>), បច្ចេកវិទ្យា (<span class="mi">\(12\)</span>) នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំនួនបុគ្គលិកសរុបនៃក្រុមហ៊ុននោះ</p></li>
+<li><p>រកផលធៀបបុគ្គលិកទីផ្សារធៀបនឹងបុគ្គលិកផលិតកម្ម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>បុគ្គលិកសរុប ៖ <span class="mi">\(8 + 15 + 25 + 12 = 60\)</span> នាក់</p></li>
+<li><p>ផលធៀបទីផ្សារ/ផលិតកម្ម ៖ <span class="mi">\(\frac{15}{25} = \frac{3}{5}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ក្រាបសសរមួយបង្ហាញទិន្នន័យទឹកភ្លៀងប្រចាំខែ ៖ ឧសភា (<span class="mi">\(120\text{ mm}\)</span>), មិថុនា (<span class="mi">\(180\text{ mm}\)</span>), កក្កដា (<span class="mi">\(250\text{ mm}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាកម្ពស់ទឹកភ្លៀងសរុបនៃខែទាំងបី</p></li>
+<li><p>រកកម្ពស់ទឹកភ្លៀងមធ្យមក្នុងមួយខែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ទឹកភ្លៀងសរុប ៖ <span class="mi">\(120 + 180 + 250 = 550\text{ mm}\)</span></p></li>
+<li><p>មធ្យមក្នុងខែ ៖ <span class="mi">\(\frac{550}{3} \approx 183.33\text{ mm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៣៩ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាកំណើនទឹកភ្លៀងពីខែឧសភាដល់ខែកក្កដា</p></li>
+<li><p>រកភាគរយកំណើនទឹកភ្លៀងពីខែឧសភាដល់ខែមិថុនា</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>កំណើន ឧសភា-កក្កដា ៖ <span class="mi">\(250 - 120 = 130\text{ mm}\)</span></p></li>
+<li><p>ភាគរយកំណើន ឧសភា-មិថុនា ៖ <span class="mi">\(\frac{60}{120} \times 100\% = 50\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញចំនួនម៉ោងស្វ័យសិក្សារបស់សិស្ស ៖ ចន្ទ (<span class="mi">\(2\text{ h}\)</span>), អង្គារ (<span class="mi">\(3\text{ h}\)</span>), ពុធ (<span class="mi">\(2.5\text{ h}\)</span>), ព្រហ (<span class="mi">\(3.5\text{ h}\)</span>), សុក្រ (<span class="mi">\(4\text{ h}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនម៉ោងស្វ័យសិក្សាសរុបក្នុងមួយសប្តាហ៍</p></li>
+<li><p>រកចំនួនម៉ោងស្វ័យសិក្សាមធ្យមក្នុងមួយថ្ងៃ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុប ៖ <span class="mi">\(2 + 3 + 2.5 + 3.5 + 4 = 15\text{ h}\)</span></p></li>
+<li><p>មធ្យម ៖ <span class="mi">\(\frac{15}{5} = 3\text{ h}\)</span>/ថ្ងៃ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>ក្រាបសសរភ្លោះបង្ហាញការផលិតស្រូវ និងពោតរបស់កសិដ្ឋាន ៖ ឆ្នាំទី១ (ស្រូវ <span class="mi">\(40\text{ t}\)</span>, ពោត <span class="mi">\(25\text{ t}\)</span>), ឆ្នាំទី២ (ស្រូវ <span class="mi">\(50\text{ t}\)</span>, ពោត <span class="mi">\(30\text{ t}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកទិន្នផលស្រូវសរុបក្នុងរយៈពេល ២ ឆ្នាំ</p></li>
+<li><p>រកទិន្នផលពោតសរុបក្នុងរយៈពេល ២ ឆ្នាំ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ស្រូវសរុប ៖ <span class="mi">\(40 + 50 = 90\text{ t}\)</span></p></li>
+<li><p>ពោតសរុប ៖ <span class="mi">\(25 + 30 = 55\text{ t}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤២ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកទិន្នផលដំណាំសរុបទាំងអស់ក្នុងរយៈពេល ២ ឆ្នាំ</p></li>
+<li><p>គណនាភាគរយទិន្នផលស្រូវធៀបនឹងទិន្នផលសរុប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ដំណាំសរុប ៖ <span class="mi">\(90 + 55 = 145\text{ t}\)</span></p></li>
+<li><p>ភាគរយស្រូវ ៖ <span class="mi">\(\frac{90}{145} \times 100\% \approx 62.07\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>សាលារៀនមួយមានសិស្សពូកែតាមកម្រិត ៖ ថ្នាក់ទី ៧ (<span class="mi">\(12\)</span>), ទី ៨ (<span class="mi">\(15\)</span>), ទី ៩ (<span class="mi">\(18\)</span>), ទី ១០ (<span class="mi">\(15\)</span>) នាក់ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សពូកែសរុបនៃសាលារៀននោះ</p></li>
+<li><p>គណនាភាគរយនៃសិស្សពូកែថ្នាក់ទី ៩ ធៀបនឹងសរុប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សិស្សពូកែសរុប ៖ <span class="mi">\(12 + 15 + 18 + 15 = 60\)</span> នាក់</p></li>
+<li><p>ភាគរយថ្នាក់ទី ៩ ៖ <span class="mi">\(\frac{18}{60} \times 100\% = 30\%\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ក្រាបសសរផ្ដេកបង្ហាញចំនួនទំព័រសៀវភៅដែលសិស្ស ៤ នាក់អានបាន ៖ A (<span class="mi">\(120\)</span>), B (<span class="mi">\(180\)</span>), C (<span class="mi">\(150\)</span>), D (<span class="mi">\(90\)</span>) ទំព័រ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនទំព័រសៀវភៅដែលសិស្សទាំងបួនអានបានសរុប</p></li>
+<li><p>រកមធ្យមភាគនៃចំនួនទំព័រដែលសិស្សម្នាក់ៗអានបាន</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ទំព័រសរុប ៖ <span class="mi">\(120 + 180 + 150 + 90 = 540\)</span> ទំព័រ</p></li>
+<li><p>មធ្យម ៖ <span class="mi">\(\frac{540}{4} = 135\)</span> ទំព័រ</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤៥ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>តើសិស្ស B អានបានច្រើនជាងសិស្ស D ប៉ុន្មានទំព័រ?</p></li>
+<li><p>រកផលធៀបសម្រួលរវាងទំព័ររបស់ D និង A</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>B ច្រើនជាង D ៖ <span class="mi">\(180 - 90 = 90\)</span> ទំព័រ</p></li>
+<li><p>ផលធៀប D/A ៖ <span class="mi">\(\frac{90}{120} = \frac{3}{4}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ក្រាបសសរបង្ហាញចំណូលរបស់ហាងមួយ ៖ មករា (<span class="mi">\(\$1200\)</span>), កុម្ភៈ (<span class="mi">\(\$1500\)</span>), មីនា (<span class="mi">\(\$1800\)</span>), មេសា (<span class="mi">\(\$1500\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំណូលសរុបក្នុងរយៈពេល ៤ ខែ</p></li>
+<li><p>រកចំណូលមធ្យមក្នុងមួយខែ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណូលសរុប ៖ <span class="mi">\(1200 + 1500 + 1800 + 1500 = \$6000\)</span></p></li>
+<li><p>មធ្យមក្នុងខែ ៖ <span class="mi">\(\frac{6000}{4} = \$1500\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤៧ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកភាគរយកំណើនចំណូលពីខែមករាដល់ខែកុម្ភៈ</p></li>
+<li><p>រកខែណាខ្លះដែលមានចំណូលស្មើនឹងចំណូលមធ្យម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ភាគរយកំណើន មករា-កុម្ភៈ ៖ <span class="mi">\(\frac{300}{1200} \times 100\% = 25\%\)</span></p></li>
+<li><p>ខែស្មើនឹងមធ្យម (<span class="mi">\(\$1500\)</span>) ៖ កុម្ភៈ និងមេសា</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ក្រាបសសរភ្លោះបង្ហាញការចូលរៀនក្លឹបសិក្សា ៖ ក្លឹបគណិត (ប្រុស <span class="mi">\(25\)</span>, ស្រី <span class="mi">\(20\)</span>), ក្លឹបអង់គ្លេស (ប្រុស <span class="mi">\(20\)</span>, ស្រី <span class="mi">\(30\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សសរុបក្នុងក្លឹបគណិតវិទ្យា</p></li>
+<li><p>រកចំនួនសិស្សសរុបក្នុងក្លឹបភាសាអង់គ្លេស</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ក្លឹបគណិត ៖ <span class="mi">\(25 + 20 = 45\)</span> នាក់</p></li>
+<li><p>ក្លឹបអង់គ្លេស ៖ <span class="mi">\(20 + 30 = 50\)</span> នាក់</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>តាមទិន្នន័យនៃលំហាត់ទី ៤៩ ខាងលើ ៖</p>
+<ol class="list olka cols2">
+<li><p>រកចំនួនសិស្សសរុបក្នុងក្លឹបទាំងពីររួមបញ្ចូលគ្នា</p></li>
+<li><p>គណនាភាគរយនៃសិស្សស្រីសរុបធៀបនឹងសិស្សសរុបទាំងអស់</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សរុបទាំងពីរ ៖ <span class="mi">\(45 + 50 = 95\)</span> នាក់</p></li>
+<li><p>ភាគរយស្រី ៖ <span class="mi">\(\frac{50}{95} \times 100\% \approx 52.63\%\)</span></p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ២១ ក្រាបសសរ</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c21">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L20.html"><small>← មេរៀនមុន</small><b>ប្រូបាប</b></a><a class="next" href="L22.html"><small>មេរៀនបន្ទាប់ →</small><b>ក្រាបផ្លិត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើអ្នកណាជាអ្នកបង្កើតក្រាបសសរដំបូងគេបង្អស់នៅឆ្នាំ ១៧៨៦?", "options": ["René Descartes", "William Playfair", "Blaise Pascal", "Isaac Newton"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរត្រូវបានគេប្រើប្រាស់ជាចម្បងដើម្បីអ្វី?", "options": ["បង្ហាញ និងប្រៀបធៀបទិន្នន័យ", "គណនាក្រឡាផ្ទៃរង្វង់", "ដោះស្រាយសមីការដឺក្រេទី២", "បង្ហាញរូបភាពធរណីមាត្រ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "នៅក្នុងក្រាបសសរបញ្ឈរ តើអ័ក្សដេកជាទូទៅតាងអ្វី?", "options": ["មាត្រដ្ឋាន", "ប្រេកង់ ឬចំនួន", "ប្រភេទ ឬក្រុមទិន្នន័យ", "ភាគរយសរុប"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "នៅក្នុងក្រាបសសរបញ្ឈរ តើអ័ក្សឈរជាទូទៅតាងអ្វី?", "options": ["ប្រេកង់ ឬបរិមាណ", "ឈ្មោះប្រភេទ", "ថ្ងៃខែ", "ចំណងជើង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "លក្ខណៈត្រឹមត្រូវនៃសសរក្នុងក្រាបសសរគឺ ៖", "options": ["កម្ពស់សសរទាំងអស់ត្រូវស្មើគ្នា", "ទទឹងសសរប្រែប្រួលតាមទិន្នន័យ", "ទទឹងសសរទាំងអស់ត្រូវស្មើគ្នា", "ចន្លោះរវាងសសរមិនបាច់ស្មើគ្នាទេ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ចន្លោះរវាងសសរពីរជាប់គ្នាក្នុងក្រាបសសរត្រូវតែ ៖", "options": ["មានគម្លាតស្មើៗគ្នា", "គ្មានគម្លាតសោះ", "ធំជាងទទឹងសសរ", "ប្រែប្រួលតាមចិត្ត"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "កម្ពស់នៃសសរនីមួយៗក្នុងក្រាបសសរបញ្ឈរសមាមាត្រទៅនឹង ៖", "options": ["ប្រេកង់នៃទិន្នន័យ", "ទទឹងនៃសសរ", "ប្រវែងអ័ក្សដេក", "ចំណងជើងក្រាប"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើ <span class=\"mi\">\\(1\\text{ cm}\\)<\/span> នៅលើអ័ក្សឈរតាងសិស្ស <span class=\"mi\">\\(5\\)<\/span> នាក់ នោះសសរកម្ពស់ <span class=\"mi\">\\(4\\text{ cm}\\)<\/span> តាងសិស្សចំនួន ៖", "options": ["<span class=\"mi\">\\(25\\)<\/span> នាក់", "<span class=\"mi\">\\(15\\)<\/span> នាក់", "<span class=\"mi\">\\(9\\)<\/span> នាក់", "<span class=\"mi\">\\(20\\)<\/span> នាក់"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បើសសរមួយមានកម្ពស់តាងចំនួន <span class=\"mi\">\\(35\\)<\/span> នាក់ ហើយមាត្រដ្ឋានគឺ <span class=\"mi\">\\(1\\)<\/span> ឯកតា <span class=\"mi\">\\( = 7\\)<\/span> នាក់ នោះកម្ពស់សសរគឺ ៖", "options": ["<span class=\"mi\">\\(28\\)<\/span> ឯកតា", "<span class=\"mi\">\\(6\\)<\/span> ឯកតា", "<span class=\"mi\">\\(7\\)<\/span> ឯកតា", "<span class=\"mi\">\\(5\\)<\/span> ឯកតា"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ធាតុផ្សំដែលប្រាប់ឱ្យដឹងពីអត្ថន័យនៃតម្លៃនៅលើអ័ក្សហៅថា ៖", "options": ["មាត្រដ្ឋាន (Scale)", "ផ្ចិតឆ្លុះ", "លំហសំណាក", "ប្រូបាប"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "នៅក្នុងក្រាបសសរផ្ដេក តើអ័ក្សណាសម្រាប់តាងប្រេកង់ ឬបរិមាណ?", "options": ["អ័ក្សឆ្លុះ", "អ័ក្សឈរ", "អ័ក្សទ្រេត", "អ័ក្សដេក"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "នៅក្នុងក្រាបសសរផ្ដេក តើអ័ក្សណាសម្រាប់តាងឈ្មោះប្រភេទ?", "options": ["អ័ក្សកូអរដោនេ", "អ័ក្សដេក", "អ័ក្សឈរ", "អ័ក្សអាប់ស៊ីស"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គេនិយមប្រើក្រាបសសរផ្ដេកនៅពេលណា?", "options": ["ទិន្នន័យមានតែមួយចំណុច", "ឈ្មោះប្រភេទមានប្រវែងវែង", "ទិន្នន័យជាលេខសុទ្ធ", "គ្មានចន្លោះទំនេរ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរដែលមានសសរពីរជាប់គ្នាសម្រាប់ប្រភេទនីមួយៗហៅថា ៖", "options": ["ក្រាបផ្លិត", "ក្រាបសសរភ្លោះ", "ក្រាបខ្សែ", "ក្រាបបំណែងចែក"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គោលបំណងចម្បងនៃក្រាបសសរភ្លោះគឺដើម្បី ៖", "options": ["ប្រៀបធៀបសំណុំទិន្នន័យពីរ", "គណនាមធ្យមភាគតែមួយ", "បង្ហាញទិន្នន័យមួយប្រភេទ", "រកក្រឡាផ្ទៃចតុកោណ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "នៅក្នុងក្រាបសសរភ្លោះ តើអ្វីដែលជួយឱ្យគេស្គាល់ថាសសរណាជារបស់ទិន្នន័យណា?", "options": ["មាត្រដ្ឋានអ័ក្ស", "ចំណុចប្រសព្វ <span class=\"mi\">\\(O\\)<\/span>", "កំណត់សម្គាល់ពណ៌ (Legend)", "បន្ទាត់ក្រឡា"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរបង្ហាញចំនួនសិស្ស ៖ ចន្ទ (<span class=\"mi\">\\(30\\)<\/span>), អង្គារ (<span class=\"mi\">\\(35\\)<\/span>), ពុធ (<span class=\"mi\">\\(40\\)<\/span>)។ ចំនួនសិស្សសរុបទាំង ៣ ថ្ងៃគឺ ៖", "options": ["<span class=\"mi\">\\(110\\)<\/span> នាក់", "<span class=\"mi\">\\(100\\)<\/span> នាក់", "<span class=\"mi\">\\(95\\)<\/span> នាក់", "<span class=\"mi\">\\(105\\)<\/span> នាក់"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើសសរខ្ពស់បំផុតមានតម្លៃ <span class=\"mi\">\\(50\\)<\/span> និងទាបបំផុតមានតម្លៃ <span class=\"mi\">\\(20\\)<\/span> នោះគម្លាតរវាងសសរទាំងពីរគឺ ៖", "options": ["<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(70\\)<\/span>", "<span class=\"mi\">\\(30\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ក្នុងថ្នាក់មួយមានសិស្ស <span class=\"mi\">\\(40\\)<\/span> នាក់។ បើក្រាបសសរបង្ហាញសិស្សស្រី <span class=\"mi\">\\(24\\)<\/span> នាក់ នោះសិស្សប្រុសមាន ៖", "options": ["<span class=\"mi\">\\(20\\)<\/span> នាក់", "<span class=\"mi\">\\(16\\)<\/span> នាក់", "<span class=\"mi\">\\(14\\)<\/span> នាក់", "<span class=\"mi\">\\(18\\)<\/span> នាក់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តាមសំណួរទី ១៩ ភាគរយនៃសិស្សស្រីក្នុងថ្នាក់គឺ ៖", "options": ["<span class=\"mi\">\\(60\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(65\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើក្រាបសសរមាន ៥ សសរ ដែលមានកម្ពស់ <span class=\"mi\">\\(4, 6, 8, 10, 12\\)<\/span> នោះតម្លៃមធ្យមគឺ ៖", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរបង្ហាញការលក់សៀវភៅ ៖ មករា (<span class=\"mi\">\\(120\\)<\/span>), កុម្ភៈ (<span class=\"mi\">\\(150\\)<\/span>), មីនា (<span class=\"mi\">\\(180\\)<\/span>)។ ការលក់កើនឡើងពីមករាដល់មីនាចំនួន ៖", "options": ["<span class=\"mi\">\\(60\\)<\/span> ក្បាល", "<span class=\"mi\">\\(50\\)<\/span> ក្បាល", "<span class=\"mi\">\\(70\\)<\/span> ក្បាល", "<span class=\"mi\">\\(30\\)<\/span> ក្បាល"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរភ្លោះបង្ហាញសិស្សប្រុស <span class=\"mi\">\\(15\\)<\/span> នាក់ និងស្រី <span class=\"mi\">\\(20\\)<\/span> នាក់។ ផលធៀបសិស្សប្រុសធៀបសិស្សស្រីគឺ ៖", "options": ["<span class=\"mi\">\\(4 : 3\\)<\/span>", "<span class=\"mi\">\\(3 : 4\\)<\/span>", "<span class=\"mi\">\\(3 : 5\\)<\/span>", "<span class=\"mi\">\\(2 : 3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ប្រភេទនៃទិន្នន័យដែលស័ក្ដិសមបំផុតសម្រាប់បង្ហាញដោយក្រាបសសរគឺ ៖", "options": ["ទិន្នន័យបន្តបន្ទាប់គ្មានដែនកំណត់", "ទិន្នន័យដាច់ៗពីគ្នា (Discrete/Categorical)", "សមីការត្រីកោណមាត្រ", "អនុគមន៍អិចស្បូណង់ស្យែល"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើមាត្រដ្ឋានអ័ក្សឈរគឺ <span class=\"mi\">\\(1\\)<\/span> ឯកតា <span class=\"mi\">\\( = 50\\text{ kg}\\)<\/span> នោះទម្ងន់ <span class=\"mi\">\\(350\\text{ kg}\\)<\/span> ត្រូវនឹងកម្ពស់សសរ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span> ឯកតា", "<span class=\"mi\">\\(6\\)<\/span> ឯកតា", "<span class=\"mi\">\\(8\\)<\/span> ឯកតា", "<span class=\"mi\">\\(7\\)<\/span> ឯកតា"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើអ្វីជាគុណសម្បត្តិចម្បងនៃក្រាបសសរធៀបនឹងតារាងស្ថិតិ?", "options": ["ប្រើតែសម្រាប់គណិតវិទូប៉ុណ្ណោះ", "មិនបាច់ប្រើលេខសោះ", "មើលឃើញការប្រៀបធៀបបានលឿន និងច្បាស់", "មិនអាចគណនាលេខបាន"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរមួយបង្ហាញពិន្ទុ ៖ A (<span class=\"mi\">\\(5\\)<\/span>), B (<span class=\"mi\">\\(12\\)<\/span>), C (<span class=\"mi\">\\(18\\)<\/span>), D (<span class=\"mi\">\\(5\\)<\/span>)។ សិស្សទទួលបានពិន្ទុ C មានភាគរយ ៖", "options": ["<span class=\"mi\">\\(45\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(35\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បើផលបូកកម្ពស់សសរទាំងអស់ស្មើនឹង <span class=\"mi\">\\(100\\)<\/span> នោះកម្ពស់សសរនីមួយៗតំណាងឱ្យ ៖", "options": ["ប្រូបាបមិនអាចកើតមាន", "មធ្យមភាគ", "គម្លាតស្ដង់ដា", "ភាគរយនៃប្រភេទនីមួយៗ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងក្រាបសសរភ្លោះ បើសសរទាំងពីរនៃប្រភេទមួយមានកម្ពស់ស្មើគ្នា មានន័យថា ៖", "options": ["គូរក្រាបខុសបច្ចេកទេស", "គ្មានទិន្នន័យកើតឡើងទេ", "ទិន្នន័យមួយធំជាងមួយទៀត", "ទិន្នន័យទាំងពីរក្រុមមានតម្លៃស្មើគ្នា"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តើក្រាបសសរប្រភេទណាដែលល្អបំផុតសម្រាប់ប្រៀបធៀបសីតុណ្ហភាពអតិបរមា និងអប្បបរមានៃបណ្ដាខែ?", "options": ["ក្រាបសសរទោល", "ក្រាបសសរភ្លោះ", "ក្រាបរូបភាព", "តារាងទទេ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងក្រាបសសរ ទទឹងនៃសសរនីមួយៗ ៖", "options": ["តំណាងឱ្យប្រេកង់ទិន្នន័យ", "មិនតំណាងឱ្យបរិមាណទិន្នន័យឡើយ", "ត្រូវតែធំជាងកម្ពស់សសរជានិច្ច", "ត្រូវតែស្មើនឹង <span class=\"mi\">\\(1\\text{ cm}\\)<\/span> ជានិច្ច"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើក្រាបសសរមួយមានកម្ពស់សសរគឺ <span class=\"mi\">\\(15, 25, 20, 40\\)<\/span> នោះសសរខ្ពស់បំផុតតំណាងឱ្យ ៖", "options": ["<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(40\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផលបូកសរុបនៃទិន្នន័យពីក្រាបសសរក្នុងសំណួរទី ៣២ គឺ ៖", "options": ["<span class=\"mi\">\\(110\\)<\/span>", "<span class=\"mi\">\\(90\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(95\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ភាគរយនៃសសរទាបបំផុត (<span class=\"mi\">\\(15\\)<\/span>) ធៀបនឹងផលបូកសរុប (<span class=\"mi\">\\(100\\)<\/span>) គឺ ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(15\\%\\)<\/span>", "<span class=\"mi\">\\(20\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើគេចង់បង្ហាញទិន្នន័យដែលមានប្រភេទឈ្មោះវែងៗដូចជា «វិទ្យាល័យព្រះស៊ីសុវត្ថិ» គេគួរប្រើ ៖", "options": ["បន្ទាត់កាត់កែង", "ក្រាបសសរបញ្ឈរ", "ក្រាបសសរផ្ដេក", "រង្វង់មូល"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "នៅក្នុងក្រាបសសរភ្លោះ បើសសរពណ៌ខៀវតាងប្រុស និងពណ៌ផ្កាឈូកតាងស្រី ផ្នែកនោះហៅថា ៖", "options": ["គល់កូអរដោនេ", "កំណត់សម្គាល់ពណ៌ (Legend)", "មាត្រដ្ឋានដេក", "ចំណងជើងរង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរបង្ហាញការផលិតស្រូវ ៖ ឆ្នាំទី១ (<span class=\"mi\">\\(4\\)<\/span> តោន ), ឆ្នាំទី២ (<span class=\"mi\">\\(6\\)<\/span> តោន )។ អត្រាកំណើនគឺ ៖", "options": ["<span class=\"mi\">\\(50\\%\\)<\/span>", "<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(40\\%\\)<\/span>", "<span class=\"mi\">\\(60\\%\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើអ័ក្សឈរចាប់ផ្ដើមពីលេខ <span class=\"mi\">\\(0\\)<\/span> ដល់ <span class=\"mi\">\\(50\\)<\/span> ដោយចែកជា ៥ ចន្លោះស្មើគ្នា នោះប្រវែងមួយចន្លោះស្មើ ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើសសរមួយមានកម្ពស់ <span class=\"mi\">\\(3.5\\)<\/span> ចន្លោះ ហើយមួយចន្លោះស្មើ <span class=\"mi\">\\(10\\)<\/span> នាក់ នោះតម្លៃសសរគឺ ៖", "options": ["<span class=\"mi\">\\(40\\)<\/span> នាក់", "<span class=\"mi\">\\(30\\)<\/span> នាក់", "<span class=\"mi\">\\(35\\)<\/span> នាក់", "<span class=\"mi\">\\(25\\)<\/span> នាក់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរមិនអាចប្រើប្រាស់សម្រាប់តាងអ្វីបានឡើយ?", "options": ["ចំនួនសិស្សតាមកម្រិតថ្នាក់", "សមីការបន្ទាត់ <span class=\"mi\">\\(y = ax + b\\)<\/span> ក្នុងប្លង់", "បរិមាណផលដំណាំប្រចាំឆ្នាំ", "ចំណូលចំណាយប្រចាំខែ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើក្រាបសសរភ្លោះបង្ហាញពិន្ទុតេស្តទី១ (<span class=\"mi\">\\(70\\)<\/span>) និងតេស្តទី២ (<span class=\"mi\">\\(85\\)<\/span>) នោះពិន្ទុកើនឡើងចំនួន ៖", "options": ["<span class=\"mi\">\\(25\\)<\/span> ពិន្ទុ", "<span class=\"mi\">\\(10\\)<\/span> ពិន្ទុ", "<span class=\"mi\">\\(20\\)<\/span> ពិន្ទុ", "<span class=\"mi\">\\(15\\)<\/span> ពិន្ទុ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើគេស្ទង់មតិមនុស្ស <span class=\"mi\">\\(200\\)<\/span> នាក់ ហើយសសរបង្ហាញអ្នកគាំទ្រមានកម្ពស់ស្មើ <span class=\"mi\">\\(65\\%\\)<\/span> នោះចំនួនអ្នកគាំទ្រគឺ ៖", "options": ["<span class=\"mi\">\\(140\\)<\/span> នាក់", "<span class=\"mi\">\\(120\\)<\/span> នាក់", "<span class=\"mi\">\\(130\\)<\/span> នាក់", "<span class=\"mi\">\\(150\\)<\/span> នាក់"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងក្រាបសសរមួយ បើគ្រប់សសរទាំងអស់មានកម្ពស់ស្មើគ្នា មានន័យថា ៖", "options": ["គ្រប់ប្រភេទមានប្រេកង់ស្មើៗគ្នា", "ក្រាបនោះគ្មានទិន្នន័យ", "គណនាមធ្យមភាគមិនកើត", "សសរទាំងអស់គ្មានប្រេកង់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើទិន្នន័យមានតម្លៃ ៖ <span class=\"mi\">\\(100, 250, 400, 550\\)<\/span> តើមាត្រដ្ឋានលើអ័ក្សឈរណាដែលសមស្របបំផុត?", "options": ["<span class=\"mi\">\\(1\\)<\/span> ឯកតា <span class=\"mi\">\\( = 100\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span> ឯកតា <span class=\"mi\">\\( = 1\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span> ឯកតា <span class=\"mi\">\\( = 2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span> ឯកតា <span class=\"mi\">\\( = 1000\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្រាបសសរផ្ដេក និងក្រាបសសរបញ្ឈរ ៖", "options": ["បង្ហាញទិន្នន័យខុសគ្នាទាំងស្រុង", "ផ្ដល់ព័ត៌មាន និងតម្លៃទិន្នន័យដូចគ្នា", "ក្រាបផ្ដេកត្រឹមត្រូវជាងក្រាបបញ្ឈរ", "ក្រាបបញ្ឈរត្រឹមត្រូវជាងក្រាបផ្ដេក"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើក្រាបសសរមាន ៤ សសរ ដែលមានប្រេកង់ <span class=\"mi\">\\(12, 18, 14, 16\\)<\/span> នោះប្រេកង់សរុបគឺ ៖", "options": ["<span class=\"mi\">\\(58\\)<\/span>", "<span class=\"mi\">\\(50\\)<\/span>", "<span class=\"mi\">\\(60\\)<\/span>", "<span class=\"mi\">\\(62\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តាមសំណួរទី ៤៦ មធ្យមភាគនៃប្រេកង់សសរទាំង ៤ គឺ ៖", "options": ["<span class=\"mi\">\\(15.5\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើសសរមួយកើនឡើងពី <span class=\"mi\">\\(20\\)<\/span> ដល់ <span class=\"mi\">\\(30\\)<\/span> នោះភាគរយកំណើនស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(25\\%\\)<\/span>", "<span class=\"mi\">\\(10\\%\\)<\/span>", "<span class=\"mi\">\\(33.3\\%\\)<\/span>", "<span class=\"mi\">\\(50\\%\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ហេតុអ្វីបានជាក្រាបសសរត្រូវបានគេចាត់ទុកជា «ភាសាសកល» នៃស្ថិតិ?", "options": ["ព្រោះងាយយល់ និងអានបានលឿនគ្រប់ភាសា", "ព្រោះពិបាកយល់ជាងតារាង", "ព្រោះប្រើតែនៅប្រទេសអភិវឌ្ឍន៍", "ព្រោះមិនបាច់ប្រើខ្នាតរង្វាស់"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្នុងសៀវភៅ «<em>The Commercial and Political Atlas<\/em>» (1786) តើលោក William Playfair បានបង្ហាញអ្វី?", "options": ["រូបមន្តគណនាក្រឡាផ្ទៃត្រីកោណ", "ទ្រឹស្ដីប្រូបាបដំបូងបង្អស់", "ក្រាបសសរ និងក្រាបខ្សែដំបូងគេបង្អស់", "ច្បាប់ទំនាញផែនដី"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ១៨ : មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ១៨ «មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ១៨ : មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ១៨ «មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ១៨</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">១៨</span>
+      <div><span class="ls-kicker">មេរៀនទី ១៨ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត</h1><div class="ls-chips"><span class="chip chip-soon">ធរណីមាត្រ</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. សញ្ញាណសូលីត និងប្រលេពីប៉ែតកែង</a></li><li class="sub"><a href="#u2">២. គូប</a></li><li class="sub"><a href="#u3">៣. ស៊ីឡាំង និងក្រឡាផ្ទៃខាងនៃស៊ីឡាំង</a></li><li class="sub"><a href="#u4">៤. មាឌនៃស៊ីឡាំង</a></li><li class="sub"><a href="#u5">៥. ឯកតារង្វាស់មាឌ ចំណុះ និងរូបផ្គុំសូលីត</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃធរណីមាត្រលំហ និងរង្វាស់មាឌ</b></header><div class="bx-b">
+<p>«<strong>សូលីត</strong>» (Solids) គឺជារូបធរណីមាត្រដែលមានវិមាត្របី (បណ្ដោយ ទទឹង និងកម្ពស់) នៅក្នុងលំហដែលយើងរស់នៅ។ តាំងពីសម័យបុរាណ មនុស្សជាតិនៅតំបន់ទន្លេនីល (អេស៊ីបបុរាណ) និងមេសូប៉ូតាមី បានសិក្សាពីរូបរាងសូលីត ដើម្បីគណនាទំហំដី មាឌស្ដុកស្រូវ និងកសាងសំណង់ស្ថាបត្យកម្មដ៏អស្ចារ្យដូចជា មហាកំពែង និងពីរ៉ាមីត។ គណិតវិទូក្រិកបុរាណលោក <strong>អាស៊ីម៉ែត</strong> (Archimedes, ២៨៧–២១២ មុន គ.ស.) បានរកឃើញរូបមន្តគណនាមាឌ និងក្រឡាផ្ទៃស៊ីឡាំង និងស្វ៊ែរ ព្រមទាំងបានចាត់ទុករបកគំហើញស៊ីឡាំងចារឹកក្រៅស្វ៊ែរថាជាស្នាដៃដ៏ឧត្តុង្គឧត្តមបំផុតក្នុងជីវិតរបស់លោក។</p>
+<p>នៅក្នុងប្រវត្តិសាស្ត្រ និងស្ថាបត្យកម្មខ្មែរ បុព្វបុរសខ្មែរនាសម័យអង្គរបានបង្ហាញពីទេពកោសល្យដ៏មហស្ចារ្យក្នុងការប្រើប្រាស់ធរណីមាត្រលំហ។ ដុំថ្មបាយក្រៀម និងថ្មភក់រាប់លានដុំត្រូវបានកាត់ និងរចនាជារាងប្រលេពីប៉ែតកែង និងគូបយ៉ាងស្មើស្អាត ដើម្បីផ្គុំគ្នាកសាងប្រាសាទអង្គរវត្ត ប្រាសាទបាយ័ន និងប្រាសាទបុរាណជាច្រើនទៀត។ លើសពីនេះ បុព្វបុរសខ្មែរបានគណនាមាឌទឹក និងចំណុះយ៉ាងច្បាស់លាស់ក្នុងការជីកកសាងអាងស្ដុកទឹកដ៏ធំសម្បើម (បារាយណ៍ខាងលិច និងបារាយណ៍ខាងកើត) ដែលស្ដុកទឹកបានរាប់សិបលានម៉ែត្រគូបសម្រាប់បម្រើដល់កសិកម្ម។ ក្នុងយុគសម័យទំនើប ការគណនាមាឌ និងក្រឡាផ្ទៃសូលីតគឺជាមូលដ្ឋានគ្រឹះនៃវិស្វកម្មសំណង់ ឧស្សាហកម្មវេចខ្ចប់ និងការរចនាផលិតផល។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>សញ្ញាណទូទៅនៃសូលីត និងការបែងចែក</b></header><div class="bx-b">
+<p>សូលីតគឺជាផ្នែកមួយនៃលំហដែលព័ទ្ធជុំវិញដោយផ្ទៃបិទជិត។ គេបែងចែកសូលីតជាពីរប្រភេទធំៗ ៖</p>
+<ul>
+<li><p><strong>ពហុមុខ (Polyhedra) ៖</strong> ជាសូលីតដែលព័ទ្ធជុំវិញដោយពហុកោណប្លង់ (មុខនីមួយៗជាពហុកោណ) ដូចជា ព្រីសត្រង់, ប្រលេពីប៉ែតកែង, គូប, ពីរ៉ាមីត។</p></li>
+<li><p><strong>សូលីតបង្វិល (Solids of Revolution) ៖</strong> ជាសូលីតដែលកើតឡើងពីការបង្វិលរូបធរណីមាត្រប្លង់ជុំវិញអ័ក្សមួយ ដូចជា ស៊ីឡាំង (បង្វិលចតុកោណកែង), កោន (បង្វិលត្រីកោណកែង), ស្វ៊ែរ (បង្វិលកន្លះរង្វង់)។</p></li>
+<li><p><strong>ធាតុគ្រឹះ ៖</strong> មុខ (Face), កំពូល (Vertex), ទ្រនុង (Edge), កម្ពស់ (Height), ក្រឡាផ្ទៃខាង (<span class="mi">\(S_L\)</span>), ក្រឡាផ្ទៃទាំងអស់ (<span class="mi">\(S_T\)</span>) និងមាឌ (<span class="mi">\(V\)</span>)។</p></li>
+</ul>
+</div></section>
+<h3 id="u1">សញ្ញាណសូលីត និងប្រលេពីប៉ែតកែង</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ប្រលេពីប៉ែតកែង ៖ ធាតុ ក្រឡាផ្ទៃ និងមាឌ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ប្រលេពីប៉ែតកែង (Cuboid) គឺជាសូលីតដែលមានមុខទាំង ៦ ជាចតុកោណកែង។</p></li>
+<li><p><strong>ធាតុគ្រឹះ ៖</strong> មានកំពូល ៨, ទ្រនុង ១២, មុខ ៦ និងវិមាត្រ ៣ គឺ បណ្ដោយ <span class="mi">\(a\)</span>, ទទឹង <span class="mi">\(b\)</span>, កម្ពស់ <span class="mi">\(h\)</span>។</p></li>
+<li><p><strong>ក្រឡាផ្ទៃ ៖</strong> ផ្ទៃបាត <span class="mi">\(B = a \times b\)</span>, ផ្ទៃខាង <span class="mi">\(S_L = 2(a + b)h\)</span>, ផ្ទៃទាំងអស់ <span class="mi">\(S_T = S_L + 2B\)</span></p></li>
+<li><p><strong>មាឌប្រលេពីប៉ែតកែង ៖</strong> <span class="mi">\(V = a \times b \times h = B \times h\)</span></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ប្រលេពីប៉ែតកែងមួយមានបណ្ដោយ <span class="mi">\(a = 8\text{ cm}\)</span>, ទទឹង <span class="mi">\(b = 5\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 4\text{ cm}\)</span>។<br/>
+ក. គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span> និងក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span> នៃប្រលេពីប៉ែតកែង។<br/>
+ខ. គណនាមាឌ <span class="mi">\(V\)</span> នៃប្រលេពីប៉ែតកែងនោះ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ផ្ទៃខាង ៖ <span class="mi">\(S_L = 2(8 + 5) \times 4 = 104\text{ cm}^2\)</span>  ផ្ទៃទាំងអស់ ៖ <span class="mi">\(S_T = 104 + 2(8 \times 5) = 184\text{ cm}^2\)</span><br/>
+ មាឌ ៖ <span class="mi">\(V = 8 \times 5 \times 4 = 160\text{ cm}^3\)</span>។ ដូចនេះ <span class="mi">\(\boxed{S_L = 104\text{ cm}^2}\)</span>, <span class="mi">\(\boxed{S_T = 184\text{ cm}^2}\)</span>, <span class="mi">\(\boxed{V = 160\text{ cm}^3}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រលេពីប៉ែតកែង</b></header><div class="bx-b">
+<p>១. ប្រលេពីប៉ែតកែងមួយមានវិមាត្រ <span class="mi">\(10\text{ dm}, 6\text{ dm}, 4\text{ dm}\)</span>។ គណនាក្រឡាផ្ទៃខាង និងមាឌរបស់វា។<br/>
+២. ធុងមួយរាងប្រលេពីប៉ែតកែងមានមាឌ <span class="mi">\(240\text{ cm}^3\)</span> និងផ្ទៃបាត <span class="mi">\(30\text{ cm}^2\)</span>។ គណនាកម្ពស់នៃធុងនោះ។</p>
+</div></section>
+<h3 id="u2">គូប</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>គូប ៖ ធាតុ ក្រឡាផ្ទៃ និងមាឌ</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> គូប (Cube) គឺជាប្រលេពីប៉ែតកែងពិសេសដែលមានវិមាត្រទាំងបីស្មើគ្នា (<span class="mi">\(a = b = h\)</span>)។</p></li>
+<li><p><strong>លក្ខណៈ ៖</strong> មុខទាំង ៦ ជាការ៉េប៉ុនៗគ្នា, មានទ្រនុង ១២ ប្រវែងស្មើគ្នា <span class="mi">\(a\)</span> និងមានកំពូល ៨។</p></li>
+<li><p><strong>ក្រឡាផ្ទៃ ៖</strong> ផ្ទៃបាត <span class="mi">\(B = a^2\)</span>, ផ្ទៃខាង <span class="mi">\(S_L = 4a^2\)</span>, ផ្ទៃទាំងអស់ <span class="mi">\(S_T = 6a^2\)</span></p></li>
+<li><p><strong>មាឌគូប ៖</strong> <span class="mi">\(V = a \times a \times a = a^3 \quad{} \implies \quad{} a = \sqrt[3]{V}\)</span></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គូបមួយមានប្រវែងទ្រនុង <span class="mi">\(a = 6\text{ cm}\)</span>។<br/>
+ក. គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span> និងក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span> នៃគូបនោះ។<br/>
+ខ. គណនាមាឌ <span class="mi">\(V\)</span> នៃគូប។ បើគូបមួយទៀតមានមាឌ <span class="mi">\(V' = 125\text{ cm}^3\)</span> រកទ្រនុង <span class="mi">\(a'\)</span> របស់វា។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ផ្ទៃខាង ៖ <span class="mi">\(S_L = 4a^2 = 4 \times 6^2 = 144\text{ cm}^2\)</span>  ផ្ទៃទាំងអស់ ៖ <span class="mi">\(S_T = 6a^2 = 6 \times 6^2 = 216\text{ cm}^2\)</span><br/>
+ មាឌគូប ៖ <span class="mi">\(V = a^3 = 6^3 = 216\text{ cm}^3\)</span>  ទ្រនុងគូបទីពីរ ៖ <span class="mi">\(a' = \sqrt[3]{125} = 5\text{ cm}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>គូប</b></header><div class="bx-b">
+<p>១. គណនាក្រឡាផ្ទៃទាំងអស់ និងមាឌនៃគូបមួយដែលមានទ្រនុង <span class="mi">\(a = 4.5\text{ dm}\)</span>។<br/>
+២. គូបមួយមានក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T = 150\text{ cm}^2\)</span>។ រកប្រវែងទ្រនុង និងមាឌនៃគូបនោះ។</p>
+</div></section>
+<h3 id="u3">ស៊ីឡាំង និងក្រឡាផ្ទៃខាងនៃស៊ីឡាំង</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ស៊ីឡាំង និងក្រឡាផ្ទៃខាង ផ្ទៃសរុប</b></header><div class="bx-b">
+<ul>
+<li><p><strong>និយមន័យ ៖</strong> ស៊ីឡាំង (Cylinder) ជាសូលីតដែលមានបាតពីរជារង្វង់ស្របនិងប៉ុនគ្នា (កាំ <span class="mi">\(R\)</span>) និងផ្ទៃខាងជាផ្ទៃកោង។</p></li>
+<li><p><strong>រូបពន្លាត ៖</strong> ផ្ទៃខាងពន្លាតជារាងចតុកោណកែងដែលមានបណ្ដោយជាបរិមាត្របាត (<span class="mi">\(p = 2\pi R\)</span>) និងទទឹងជាកម្ពស់ (<span class="mi">\(h\)</span>)។</p></li>
+<li><p><strong>ក្រឡាផ្ទៃខាង ៖</strong> <span class="mi">\(S_L = p \times h = 2\pi R h = \pi d h\)</span></p></li>
+<li><p><strong>ក្រឡាផ្ទៃទាំងអស់ ៖</strong> <span class="mi">\(S_T = S_L + 2B = 2\pi R h + 2\pi R^2 = 2\pi R (h + R)\)</span></p></li>
+</ul>
+<p><div class="center"><img alt="" class="fig" loading="lazy" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml version=%221.0%22 encoding=%22UTF-8%22%3F%3E%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22273.42%22 height=%22144.59%22 viewBox=%220 0 273.42 144.59%22 xmlns:c2pa=%22http://c2pa.org/manifest%22%3E%3Cmetadata%3E%3Cc2pa:manifest%3EAAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToxZDlkMjdjZS00MGVkLTQwMjYtYmU1OS1lOGFhMjZjNTNkZTUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaI5cDwPuesKMInfx5HCTrBcAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo3YTQzMWQ2MS1lNzc0LTRjMjAtYTA1OS1iOWU3YTFiZDRhMWVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNozxQW9IQymaujjr6fjJMHLAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggJkYuE36MKIOD4htQcJ/qJRwjC5p/Ck9aS0ukEMlGqNekZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaIZf0ST%2BUfoSUtOkIw3aI7oAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCBzSlhFLyF19xj79dWGZCpVPJr1sQanrueY3sYk0Am8mWRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj0Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjFkOWQyN2NlLTQwZWQtNDAyNi1iZTU5LWU4YWEyNmM1M2RlNS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjUzZjQ5NzViLWQzOTMtNDMzOS04NjZmLTIxYzk3NmMxODM5YXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAmRi4Tfowog4PiG1Bwn%2BolHCMLmn8KT1pLS6QQyUao16JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggAmbAengu2Mj/zQzjsl5SL6B5g%2BtTPgatA082D4aqDkOiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg5H/Ud48heP2/8lZe/i%2B5euviHFH%2BI9RNPMbIgoEjLyJ0Y2xhaW1fZ2VuZXJhdG9yX2luZm%2BjZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj%2BOPEz5o%2BnMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1%2BUCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9%2B1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQA%2BsCUB8uDS%2BS8fBeCd82oy88jn7cJYAwEoorFeE92/yX4HG5O3sYXSYQ7VoJGT3UnPjfAZd52zSurIUaefck44=%3C/c2pa:manifest%3E%3C/metadata%3E%3Cdefs%3E%3Cg%3E%3Cg id=%22glyph-0-0%22%3E%3Cpath d=%22M 3.73 -6.10 C 3.78 -6.34 3.81 -6.43 4 -6.46 C 4.09 -6.48 4.40 -6.48 4.60 -6.48 C 5.31 -6.48 6.42 -6.48 6.42 -5.5 C 6.42 -5.15 6.26 -4.46 5.87 -4.07 C 5.60 -3.82 5.09 -3.51 4.18 -3.51 L 3.07 -3.51 Z M 5.15 -3.37 C 6.15 -3.59 7.34 -4.29 7.34 -5.29 C 7.34 -6.15 6.45 -6.78 5.14 -6.78 L 2.31 -6.78 C 2.10 -6.78 2.03 -6.78 2.03 -6.59 C 2.03 -6.48 2.10 -6.48 2.31 -6.48 C 2.32 -6.48 2.51 -6.48 2.68 -6.45 C 2.85 -6.43 2.95 -6.42 2.95 -6.29 C 2.95 -6.26 2.93 -6.23 2.90 -6.10 L 1.57 -0.78 C 1.48 -0.39 1.45 -0.31 0.67 -0.31 C 0.5 -0.31 0.40 -0.31 0.40 -0.10 C 0.40 0 0.53 0 0.54 0 C 0.82 0 1.51 -0.03 1.79 -0.03 C 2.07 -0.03 2.78 0 3.06 0 C 3.14 0 3.26 0 3.26 -0.20 C 3.26 -0.31 3.17 -0.31 2.98 -0.31 C 2.60 -0.31 2.32 -0.31 2.32 -0.48 C 2.32 -0.54 2.35 -0.59 2.35 -0.65 L 3.01 -3.29 L 4.20 -3.29 C 5.10 -3.29 5.28 -2.73 5.28 -2.39 C 5.28 -2.23 5.20 -1.92 5.14 -1.70 C 5.07 -1.42 4.98 -1.04 4.98 -0.85 C 4.98 0.21 6.18 0.21 6.31 0.21 C 7.15 0.21 7.5 -0.78 7.5 -0.92 C 7.5 -1.04 7.39 -1.04 7.39 -1.04 C 7.29 -1.04 7.28 -0.96 7.25 -0.90 C 7 -0.17 6.57 0 6.34 0 C 6.01 0 5.95 -0.21 5.95 -0.60 C 5.95 -0.92 6.01 -1.42 6.04 -1.73 C 6.07 -1.87 6.09 -2.06 6.09 -2.20 C 6.09 -2.96 5.42 -3.28 5.15 -3.37 Z M 5.15 -3.37 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-1%22%3E%3Cpath d=%22M 2.85 -6.78 C 2.85 -6.79 2.85 -6.89 2.71 -6.89 C 2.5 -6.89 1.76 -6.81 1.51 -6.79 C 1.43 -6.78 1.32 -6.78 1.32 -6.59 C 1.32 -6.48 1.40 -6.48 1.56 -6.48 C 2.03 -6.48 2.06 -6.40 2.06 -6.31 L 2.03 -6.10 L 0.59 -0.39 C 0.54 -0.25 0.54 -0.23 0.54 -0.17 C 0.54 0.06 0.75 0.10 0.82 0.10 C 1 0.10 1.15 -0.01 1.20 -0.15 L 1.39 -0.90 L 1.60 -1.79 C 1.67 -2.01 1.73 -2.23 1.78 -2.46 C 1.79 -2.53 1.87 -2.85 1.89 -2.90 C 1.92 -3 2.21 -3.56 2.56 -3.82 C 2.78 -3.98 3.09 -4.17 3.51 -4.17 C 3.93 -4.17 4.04 -3.82 4.04 -3.48 C 4.04 -2.93 3.67 -1.85 3.43 -1.25 C 3.35 -1.03 3.31 -0.90 3.31 -0.70 C 3.31 -0.23 3.65 0.10 4.12 0.10 C 5.06 0.10 5.42 -1.34 5.42 -1.42 C 5.42 -1.51 5.34 -1.51 5.31 -1.51 C 5.20 -1.51 5.20 -1.48 5.15 -1.34 C 5.01 -0.81 4.68 -0.10 4.14 -0.10 C 3.96 -0.10 3.90 -0.20 3.90 -0.43 C 3.90 -0.68 4 -0.92 4.07 -1.14 C 4.25 -1.56 4.68 -2.75 4.68 -3.32 C 4.68 -3.96 4.29 -4.39 3.54 -4.39 C 2.92 -4.39 2.43 -4.07 2.07 -3.62 Z M 2.85 -6.78 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-2%22%3E%3Cpath d=%22M 6.40 -6.90 C 6.40 -6.93 6.39 -7 6.29 -7 C 6.25 -7 6.23 -7 6.12 -6.85 L 5.64 -6.29 C 5.39 -6.75 4.87 -7 4.21 -7 C 2.96 -7 1.76 -5.85 1.76 -4.65 C 1.76 -3.85 2.29 -3.40 2.79 -3.25 L 3.85 -2.96 C 4.23 -2.87 4.78 -2.73 4.78 -1.92 C 4.78 -1.03 3.96 -0.09 2.98 -0.09 C 2.35 -0.09 1.25 -0.31 1.25 -1.54 C 1.25 -1.78 1.29 -2.01 1.31 -2.07 C 1.32 -2.10 1.32 -2.12 1.32 -2.14 C 1.32 -2.25 1.26 -2.25 1.21 -2.25 C 1.15 -2.25 1.14 -2.25 1.10 -2.21 C 1.07 -2.17 0.51 0.09 0.51 0.12 C 0.51 0.17 0.56 0.21 0.62 0.21 C 0.67 0.21 0.68 0.20 0.81 0.06 L 1.29 -0.5 C 1.71 0.07 2.39 0.21 2.96 0.21 C 4.32 0.21 5.5 -1.10 5.5 -2.32 C 5.5 -3.01 5.15 -3.35 5.01 -3.5 C 4.78 -3.73 4.62 -3.76 3.75 -4 C 3.53 -4.04 3.17 -4.15 3.07 -4.17 C 2.81 -4.26 2.46 -4.54 2.46 -5.07 C 2.46 -5.89 3.26 -6.73 4.21 -6.73 C 5.03 -6.73 5.64 -6.29 5.64 -5.18 C 5.64 -4.87 5.60 -4.68 5.60 -4.62 C 5.60 -4.62 5.60 -4.53 5.71 -4.53 C 5.82 -4.53 5.82 -4.56 5.87 -4.73 Z M 6.40 -6.90 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-3%22%3E%3Cpath d=%22M 2.64 -3.70 L 3.75 -3.70 C 3.42 -2.23 3.34 -1.81 3.34 -1.14 C 3.34 -1 3.34 -0.71 3.42 -0.39 C 3.51 0.04 3.62 0.10 3.78 0.10 C 3.96 0.10 4.18 -0.06 4.18 -0.26 C 4.18 -0.32 4.18 -0.34 4.12 -0.48 C 3.82 -1.20 3.82 -1.84 3.82 -2.12 C 3.82 -2.65 3.90 -3.18 4.01 -3.70 L 5.14 -3.70 C 5.28 -3.70 5.64 -3.70 5.64 -4.04 C 5.64 -4.28 5.42 -4.28 5.23 -4.28 L 1.90 -4.28 C 1.68 -4.28 1.31 -4.28 0.87 -3.81 C 0.53 -3.42 0.26 -2.96 0.26 -2.92 C 0.26 -2.90 0.26 -2.82 0.39 -2.82 C 0.46 -2.82 0.48 -2.85 0.54 -2.93 C 1.03 -3.70 1.60 -3.70 1.81 -3.70 L 2.37 -3.70 C 2.06 -2.5 1.51 -1.29 1.10 -0.39 C 1.03 -0.25 1.03 -0.23 1.03 -0.15 C 1.03 0.03 1.18 0.10 1.31 0.10 C 1.60 0.10 1.68 -0.17 1.81 -0.53 C 1.95 -1 1.95 -1.01 2.07 -1.51 Z M 2.64 -3.70 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-4%22%3E%3Cpath d=%22M 0.45 1.21 C 0.37 1.54 0.34 1.62 -0.09 1.62 C -0.20 1.62 -0.31 1.62 -0.31 1.81 C -0.31 1.89 -0.26 1.92 -0.18 1.92 C 0.07 1.92 0.37 1.89 0.64 1.89 C 0.96 1.89 1.31 1.92 1.62 1.92 C 1.67 1.92 1.81 1.92 1.81 1.73 C 1.81 1.62 1.70 1.62 1.56 1.62 C 1.07 1.62 1.07 1.54 1.07 1.45 C 1.07 1.34 1.48 -0.28 1.56 -0.53 C 1.68 -0.23 1.96 0.10 2.46 0.10 C 3.62 0.10 4.87 -1.34 4.87 -2.79 C 4.87 -3.73 4.29 -4.39 3.54 -4.39 C 3.04 -4.39 2.57 -4.03 2.25 -3.64 C 2.14 -4.18 1.71 -4.39 1.34 -4.39 C 0.89 -4.39 0.70 -4 0.60 -3.82 C 0.43 -3.48 0.31 -2.89 0.31 -2.85 C 0.31 -2.76 0.40 -2.76 0.42 -2.76 C 0.53 -2.76 0.53 -2.76 0.59 -2.98 C 0.76 -3.70 0.96 -4.17 1.32 -4.17 C 1.48 -4.17 1.62 -4.09 1.62 -3.71 C 1.62 -3.48 1.59 -3.37 1.56 -3.20 Z M 2.20 -3.09 C 2.26 -3.37 2.53 -3.64 2.71 -3.79 C 3.06 -4.10 3.34 -4.17 3.51 -4.17 C 3.92 -4.17 4.15 -3.82 4.15 -3.23 C 4.15 -2.65 3.82 -1.51 3.64 -1.14 C 3.31 -0.43 2.82 -0.10 2.46 -0.10 C 1.81 -0.10 1.67 -0.93 1.67 -1 C 1.67 -1.01 1.67 -1.03 1.70 -1.15 Z M 2.20 -3.09 %22/%3E%3C/g%3E%3Cg id=%22glyph-0-5%22%3E%3Cpath d=%22M 1.59 -0.78 C 1.48 -0.39 1.46 -0.31 0.68 -0.31 C 0.51 -0.31 0.42 -0.31 0.42 -0.10 C 0.42 0 0.5 0 0.68 0 L 4.23 0 C 5.79 0 6.96 -1.17 6.96 -2.14 C 6.96 -2.85 6.40 -3.43 5.43 -3.54 C 6.46 -3.73 7.51 -4.46 7.51 -5.42 C 7.51 -6.15 6.85 -6.78 5.67 -6.78 L 2.32 -6.78 C 2.14 -6.78 2.03 -6.78 2.03 -6.59 C 2.03 -6.48 2.12 -6.48 2.31 -6.48 C 2.32 -6.48 2.53 -6.48 2.68 -6.45 C 2.87 -6.43 2.96 -6.42 2.96 -6.29 C 2.96 -6.26 2.95 -6.23 2.92 -6.10 Z M 3.09 -3.64 L 3.70 -6.10 C 3.79 -6.45 3.81 -6.48 4.25 -6.48 L 5.53 -6.48 C 6.40 -6.48 6.60 -5.89 6.60 -5.45 C 6.60 -4.57 5.75 -3.64 4.54 -3.64 Z M 2.64 -0.31 C 2.5 -0.31 2.48 -0.31 2.42 -0.31 C 2.32 -0.32 2.29 -0.34 2.29 -0.42 C 2.29 -0.45 2.29 -0.46 2.34 -0.64 L 3.03 -3.42 L 4.90 -3.42 C 5.85 -3.42 6.04 -2.68 6.04 -2.25 C 6.04 -1.26 5.17 -0.31 4 -0.31 Z M 2.64 -0.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-0%22%3E%3Cpath d=%22M 6.21 0.09 C 5.59 0.09 5.10 -0.07 4.76 -0.40 C 4.42 -0.75 4.26 -1.22 4.26 -1.84 L 4.26 -2.75 C 4.26 -3.14 4.15 -3.45 3.93 -3.68 C 3.72 -3.91 3.42 -4.03 3.01 -4.03 C 2.60 -4.03 2.29 -3.91 2.07 -3.68 C 1.85 -3.45 1.75 -3.14 1.75 -2.75 L 1.75 -1.37 L 1.56 -1.62 L 1.73 -1.62 C 1.97 -1.62 2.17 -1.56 2.32 -1.43 C 2.49 -1.31 2.57 -1.09 2.57 -0.79 C 2.57 -0.51 2.50 -0.30 2.35 -0.15 C 2.21 -0.00 1.99 0.06 1.70 0.06 C 1.48 0.06 1.31 0.01 1.20 -0.06 C 1.09 -0.14 1.04 -0.26 1.04 -0.43 L 1.04 -2.75 C 1.04 -3.33 1.21 -3.78 1.56 -4.10 C 1.90 -4.44 2.39 -4.60 3.01 -4.60 C 3.64 -4.60 4.11 -4.44 4.45 -4.10 C 4.79 -3.78 4.96 -3.33 4.96 -2.75 L 4.96 -1.84 C 4.96 -1.42 5.07 -1.09 5.29 -0.85 C 5.51 -0.61 5.82 -0.5 6.21 -0.5 C 6.60 -0.5 6.90 -0.61 7.12 -0.85 C 7.34 -1.09 7.45 -1.42 7.45 -1.84 L 7.45 -4.25 C 7.45 -4.39 7.41 -4.50 7.32 -4.57 C 7.25 -4.64 7.14 -4.71 7.01 -4.78 L 7.01 -5.17 C 7.01 -5.41 7.07 -5.59 7.20 -5.71 C 7.32 -5.84 7.50 -5.90 7.73 -5.90 L 8.34 -5.90 L 8.34 -5.26 L 7.82 -5.26 C 7.67 -5.26 7.60 -5.19 7.60 -5.04 L 7.60 -4.96 C 7.77 -4.89 7.90 -4.80 8 -4.70 C 8.10 -4.59 8.15 -4.44 8.15 -4.25 L 8.15 -1.84 C 8.15 -1.22 7.98 -0.75 7.64 -0.40 C 7.30 -0.07 6.83 0.09 6.21 0.09 Z M 1.71 -0.39 C 1.95 -0.39 2.07 -0.52 2.07 -0.79 C 2.07 -1.05 1.95 -1.18 1.71 -1.18 Z M 2.01 -4.18 L 1.39 -4.87 L 1.39 -5.17 C 1.39 -5.41 1.45 -5.59 1.57 -5.71 C 1.70 -5.84 1.87 -5.90 2.10 -5.90 L 4.43 -5.90 L 4.43 -5.26 L 2.17 -5.26 C 2.11 -5.26 2.07 -5.25 2.03 -5.21 C 2 -5.18 1.98 -5.13 1.98 -5.06 L 1.98 -4.98 L 2.54 -4.37 Z M 2.01 -4.18 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-1%22%3E%3Cpath d=%22M -1.67 2.56 L -1.67 0.59 L -1 0.59 L -1 2.56 Z M -1.67 2.56 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-2%22%3E%3Cpath d=%22M -3.65 -6.65 C -4 -6.65 -4.26 -6.72 -4.45 -6.87 C -4.64 -7.03 -4.73 -7.24 -4.73 -7.51 C -4.73 -7.81 -4.61 -8.06 -4.37 -8.25 C -4.14 -8.43 -3.80 -8.53 -3.35 -8.53 C -3.03 -8.53 -2.75 -8.48 -2.53 -8.39 C -2.31 -8.30 -2.12 -8.19 -1.96 -8.06 C -1.82 -7.93 -1.70 -7.81 -1.62 -7.68 L -1.59 -7.68 L -1.59 -8.71 L -1 -8.71 L -1 -6.65 Z M -3.64 -7.15 L -1.75 -7.15 C -1.84 -7.33 -1.97 -7.48 -2.14 -7.60 C -2.31 -7.73 -2.50 -7.82 -2.71 -7.89 C -2.93 -7.95 -3.14 -7.98 -3.34 -7.98 C -3.58 -7.98 -3.76 -7.94 -3.89 -7.85 C -4.01 -7.77 -4.07 -7.66 -4.07 -7.51 C -4.07 -7.41 -4.03 -7.32 -3.95 -7.25 C -3.87 -7.18 -3.77 -7.15 -3.64 -7.15 Z M -3.64 -7.15 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-3%22%3E%3Cpath d=%22M 9.56 -4.40 C 9.56 -4.97 9.30 -5.26 8.78 -5.26 L 7.01 -5.26 L 7.01 -5.90 L 8.78 -5.90 C 9.75 -5.90 10.25 -5.40 10.25 -4.40 L 10.25 0 L 9.56 0 Z M 3.57 2.56 L 3.57 0.59 L 4.26 0.59 L 4.26 1.84 L 5.32 1 L 6.37 1.84 L 6.37 -4.25 C 6.37 -4.39 6.33 -4.50 6.26 -4.57 C 6.19 -4.64 6.08 -4.71 5.93 -4.78 L 5.93 -5.17 C 5.93 -5.41 6 -5.59 6.12 -5.71 C 6.25 -5.84 6.42 -5.90 6.67 -5.90 L 7.28 -5.90 L 7.28 -5.26 L 6.75 -5.26 C 6.60 -5.26 6.53 -5.19 6.53 -5.04 L 6.53 -4.96 C 6.69 -4.89 6.82 -4.80 6.92 -4.70 C 7.02 -4.59 7.07 -4.44 7.07 -4.25 L 7.07 2.56 L 6.37 2.56 L 5.32 1.70 L 4.26 2.56 Z M 3.62 -2.03 C 3.25 -2.05 2.90 -2.10 2.56 -2.18 C 2.21 -2.28 1.91 -2.41 1.64 -2.57 C 1.37 -2.74 1.17 -2.95 1.01 -3.21 C 0.85 -3.47 0.78 -3.79 0.78 -4.17 C 0.78 -4.74 0.96 -5.19 1.34 -5.51 C 1.71 -5.83 2.21 -6 2.84 -6 C 3.25 -6 3.59 -5.92 3.89 -5.79 C 4.17 -5.66 4.40 -5.47 4.56 -5.25 C 4.71 -5.01 4.79 -4.75 4.79 -4.46 C 4.79 -4.34 4.77 -4.22 4.73 -4.12 C 4.70 -4.01 4.66 -3.92 4.62 -3.85 L 3.92 -3.85 C 3.95 -3.95 3.98 -4.05 4.01 -4.15 C 4.05 -4.26 4.07 -4.37 4.07 -4.46 C 4.07 -4.73 3.96 -4.96 3.75 -5.14 C 3.53 -5.31 3.23 -5.40 2.85 -5.40 C 2.44 -5.40 2.10 -5.29 1.85 -5.07 C 1.60 -4.86 1.48 -4.55 1.48 -4.14 C 1.48 -3.60 1.67 -3.22 2.07 -3 C 2.48 -2.76 3.04 -2.61 3.76 -2.54 Z M 2.73 0.09 C 2.25 0.09 1.88 -0.03 1.62 -0.28 C 1.36 -0.53 1.23 -0.90 1.23 -1.37 L 1.23 -1.82 L 1.90 -1.82 L 1.90 -1.37 C 1.90 -1.08 1.97 -0.85 2.10 -0.70 C 2.25 -0.55 2.46 -0.48 2.73 -0.48 C 2.99 -0.48 3.19 -0.55 3.34 -0.70 C 3.48 -0.85 3.56 -1.08 3.56 -1.37 L 3.56 -2.78 C 3.56 -2.95 3.60 -3.08 3.70 -3.15 C 3.80 -3.23 3.95 -3.28 4.15 -3.28 C 4.41 -3.28 4.60 -3.21 4.71 -3.07 C 4.84 -2.95 4.90 -2.77 4.90 -2.54 C 4.90 -2.31 4.83 -2.14 4.68 -2.01 C 4.53 -1.89 4.36 -1.84 4.15 -1.84 L 4.06 -1.84 L 4.23 -2.10 L 4.23 -1.35 C 4.23 -0.89 4.10 -0.53 3.84 -0.28 C 3.58 -0.03 3.21 0.09 2.73 0.09 Z M 4.15 -2.26 C 4.35 -2.26 4.45 -2.35 4.45 -2.54 C 4.45 -2.74 4.35 -2.84 4.15 -2.84 Z M 4.15 -2.26 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-4%22%3E%3C/g%3E%3Cg id=%22glyph-1-5%22%3E%3Cpath d=%22M -3.01 -6.56 C -3.28 -6.56 -3.50 -6.64 -3.68 -6.81 C -3.87 -6.98 -3.96 -7.22 -3.96 -7.51 C -3.96 -7.80 -3.87 -8.03 -3.68 -8.20 C -3.50 -8.37 -3.28 -8.46 -3.01 -8.46 C -2.73 -8.46 -2.5 -8.37 -2.31 -8.20 C -2.13 -8.03 -2.04 -7.80 -2.04 -7.51 C -2.04 -7.22 -2.13 -6.98 -2.31 -6.81 C -2.5 -6.64 -2.73 -6.56 -3.01 -6.56 Z M -3.01 -7.06 C -2.89 -7.06 -2.78 -7.09 -2.71 -7.17 C -2.64 -7.25 -2.60 -7.36 -2.60 -7.51 C -2.60 -7.64 -2.64 -7.75 -2.71 -7.84 C -2.78 -7.92 -2.89 -7.96 -3.01 -7.96 C -3.14 -7.96 -3.23 -7.92 -3.31 -7.84 C -3.38 -7.75 -3.42 -7.64 -3.42 -7.51 C -3.42 -7.36 -3.38 -7.25 -3.31 -7.17 C -3.23 -7.09 -3.14 -7.06 -3.01 -7.06 Z M -3.01 -7.06 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-6%22%3E%3Cpath d=%22M 1.04 0 L 1.04 -2.67 L 0.59 -2.67 L 0.59 -3.20 L 1.75 -3.20 L 1.75 -0.82 L 3.09 -2.04 L 4.45 -0.82 L 4.45 -3.37 C 4.45 -3.60 4.41 -3.78 4.34 -3.92 C 4.28 -4.06 4.12 -4.19 3.89 -4.29 L 4.35 -4.57 C 4.66 -4.44 4.86 -4.28 4.96 -4.09 C 5.08 -3.90 5.14 -3.66 5.14 -3.37 L 5.14 0 L 4.45 0 L 3.09 -1.25 L 1.75 0 Z M 2.56 -3.75 C 2.11 -3.75 1.74 -3.84 1.45 -4.03 C 1.17 -4.21 1.03 -4.47 1.03 -4.79 C 1.03 -4.97 1.05 -5.11 1.10 -5.23 C 1.16 -5.34 1.18 -5.46 1.18 -5.59 C 1.18 -5.65 1.17 -5.70 1.14 -5.73 C 1.11 -5.76 1.07 -5.78 1 -5.78 L 0.87 -5.78 L 0.87 -6.29 L 1.18 -6.29 C 1.42 -6.29 1.59 -6.25 1.70 -6.15 C 1.80 -6.06 1.85 -5.92 1.85 -5.76 C 1.85 -5.61 1.83 -5.47 1.78 -5.32 C 1.72 -5.17 1.70 -5.03 1.70 -4.89 C 1.70 -4.71 1.77 -4.56 1.92 -4.45 C 2.06 -4.34 2.31 -4.29 2.65 -4.29 C 2.93 -4.29 3.16 -4.33 3.34 -4.40 C 3.53 -4.47 3.70 -4.57 3.85 -4.70 L 3.89 -4.43 C 3.71 -4.45 3.55 -4.53 3.42 -4.67 C 3.29 -4.80 3.23 -4.97 3.23 -5.17 C 3.23 -5.41 3.31 -5.59 3.46 -5.73 C 3.62 -5.87 3.82 -5.95 4.07 -5.95 C 4.33 -5.95 4.53 -5.87 4.68 -5.73 C 4.84 -5.59 4.92 -5.41 4.92 -5.17 C 4.92 -5.03 4.88 -4.91 4.81 -4.79 C 4.73 -4.67 4.64 -4.58 4.53 -4.5 C 4.42 -4.42 4.31 -4.37 4.18 -4.34 C 4.10 -4.25 3.98 -4.15 3.82 -4.06 C 3.67 -3.96 3.5 -3.89 3.28 -3.82 C 3.07 -3.77 2.83 -3.75 2.56 -3.75 Z M 4.07 -4.84 C 4.17 -4.84 4.24 -4.87 4.29 -4.93 C 4.34 -5 4.37 -5.07 4.37 -5.15 C 4.37 -5.25 4.34 -5.32 4.29 -5.37 C 4.24 -5.43 4.17 -5.46 4.07 -5.46 C 3.98 -5.46 3.90 -5.43 3.84 -5.37 C 3.78 -5.32 3.76 -5.25 3.76 -5.15 C 3.76 -5.07 3.78 -5 3.84 -4.93 C 3.90 -4.87 3.98 -4.84 4.07 -4.84 Z M 4.07 -4.84 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-7%22%3E%3Cpath d=%22M 3.09 0.09 C 2.44 0.09 1.94 -0.07 1.57 -0.42 C 1.22 -0.76 1.04 -1.25 1.04 -1.89 L 1.04 -4.25 C 1.04 -4.39 1.00 -4.50 0.93 -4.57 C 0.86 -4.64 0.75 -4.71 0.60 -4.78 L 0.60 -5.17 C 0.60 -5.41 0.67 -5.59 0.79 -5.71 C 0.92 -5.84 1.10 -5.90 1.34 -5.90 L 1.95 -5.90 L 1.95 -5.26 L 1.42 -5.26 C 1.28 -5.26 1.21 -5.19 1.21 -5.04 L 1.21 -4.96 C 1.37 -4.89 1.5 -4.80 1.59 -4.70 C 1.69 -4.59 1.75 -4.44 1.75 -4.25 L 1.75 -1.89 C 1.75 -1.45 1.86 -1.10 2.09 -0.85 C 2.33 -0.61 2.66 -0.5 3.09 -0.5 C 3.51 -0.5 3.84 -0.61 4.07 -0.85 C 4.31 -1.10 4.43 -1.45 4.43 -1.89 L 4.43 -4.25 C 4.43 -4.39 4.39 -4.50 4.31 -4.57 C 4.23 -4.64 4.13 -4.71 4 -4.78 L 4 -5.17 C 4 -5.41 4.05 -5.59 4.17 -5.71 C 4.29 -5.84 4.47 -5.90 4.71 -5.90 L 5.32 -5.90 L 5.32 -5.26 L 4.79 -5.26 C 4.66 -5.26 4.59 -5.19 4.59 -5.04 L 4.59 -4.96 C 4.75 -4.89 4.89 -4.80 4.98 -4.70 C 5.07 -4.59 5.12 -4.44 5.12 -4.25 L 5.12 -1.89 C 5.12 -1.25 4.94 -0.76 4.59 -0.42 C 4.23 -0.07 3.73 0.09 3.09 0.09 Z M 3.09 0.09 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-8%22%3E%3Cpath d=%22M 1.73 0.06 C 1.51 0.06 1.34 0.01 1.23 -0.06 C 1.12 -0.14 1.07 -0.26 1.07 -0.43 L 1.07 -4.25 C 1.07 -4.39 1.05 -4.50 1 -4.57 C 0.94 -4.66 0.87 -4.73 0.78 -4.79 L 0.78 -5.17 C 0.78 -5.41 0.83 -5.59 0.95 -5.71 C 1.07 -5.84 1.25 -5.90 1.5 -5.90 L 2.17 -5.90 L 2.17 -5.26 L 1.57 -5.26 C 1.44 -5.26 1.37 -5.19 1.37 -5.04 L 1.37 -4.96 C 1.48 -4.89 1.58 -4.80 1.65 -4.70 C 1.72 -4.59 1.76 -4.44 1.76 -4.25 L 1.76 -1.46 L 1.59 -1.75 L 1.73 -1.75 C 1.98 -1.75 2.18 -1.67 2.34 -1.53 C 2.5 -1.39 2.57 -1.16 2.57 -0.84 C 2.57 -0.23 2.29 0.06 1.73 0.06 Z M 1.73 -0.39 C 1.97 -0.39 2.09 -0.53 2.09 -0.84 C 2.09 -1.14 1.97 -1.29 1.73 -1.29 Z M 1.73 -0.39 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-9%22%3E%3Cpath d=%22M 13.28 -4.46 C 13.28 -4.73 13.21 -4.94 13.09 -5.07 C 12.97 -5.21 12.79 -5.28 12.54 -5.28 L 11.81 -5.28 L 10.48 -4.71 L 10.25 -5.25 L 11.75 -5.90 L 12.54 -5.90 C 13.02 -5.90 13.37 -5.78 13.60 -5.54 C 13.84 -5.30 13.96 -4.94 13.96 -4.46 L 13.96 0 L 13.28 0 Z M 4.15 -4.17 C 4.15 -4.56 4.05 -4.86 3.84 -5.07 C 3.63 -5.29 3.33 -5.40 2.95 -5.40 C 2.57 -5.40 2.28 -5.29 2.06 -5.07 C 1.85 -4.86 1.75 -4.56 1.75 -4.17 L 1.75 -1.37 L 1.56 -1.62 L 1.73 -1.62 C 1.97 -1.62 2.17 -1.56 2.32 -1.43 C 2.49 -1.31 2.57 -1.09 2.57 -0.79 C 2.57 -0.51 2.50 -0.30 2.35 -0.15 C 2.21 -0.00 1.99 0.06 1.70 0.06 C 1.48 0.06 1.31 0.01 1.20 -0.06 C 1.09 -0.14 1.04 -0.26 1.04 -0.43 L 1.04 -4.17 C 1.04 -4.75 1.21 -5.20 1.54 -5.51 C 1.89 -5.83 2.35 -6 2.95 -6 C 3.55 -6 4.01 -5.83 4.34 -5.51 C 4.67 -5.20 4.84 -4.75 4.84 -4.17 L 4.84 -0.81 L 5.92 -1.98 L 7 -0.81 L 7 -4.17 C 7 -4.75 7.16 -5.20 7.48 -5.51 C 7.81 -5.83 8.28 -6 8.89 -6 C 9.48 -6 9.94 -5.83 10.28 -5.51 C 10.62 -5.20 10.79 -4.75 10.79 -4.17 L 10.79 0 L 10.09 0 L 10.09 -4.17 C 10.09 -4.56 9.98 -4.86 9.76 -5.07 C 9.55 -5.29 9.26 -5.40 8.89 -5.40 C 8.50 -5.40 8.20 -5.29 8 -5.07 C 7.78 -4.86 7.68 -4.56 7.68 -4.17 L 7.68 0 L 7 0 L 5.92 -1.15 L 4.84 0 L 4.15 0 Z M 1.71 -0.39 C 1.95 -0.39 2.07 -0.52 2.07 -0.79 C 2.07 -1.05 1.95 -1.18 1.71 -1.18 Z M 1.71 -0.39 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-10%22%3E%3Cpath d=%22M -4.15 2.62 C -4.36 2.62 -4.51 2.58 -4.62 2.51 C -4.73 2.45 -4.79 2.34 -4.79 2.20 L -4.79 1.67 C -4.79 1.41 -4.72 1.19 -4.59 1.01 C -4.46 0.83 -4.26 0.70 -4 0.62 C -3.72 0.53 -3.37 0.5 -2.93 0.5 C -2.5 0.5 -2.14 0.53 -1.87 0.62 C -1.60 0.70 -1.40 0.83 -1.28 1.01 C -1.15 1.19 -1.09 1.41 -1.09 1.67 L -1.09 2.56 L -1.75 2.56 L -1.75 1.67 C -1.75 1.47 -1.83 1.31 -2.01 1.20 C -2.19 1.09 -2.5 1.04 -2.93 1.04 C -3.39 1.04 -3.71 1.09 -3.89 1.20 C -4.06 1.31 -4.15 1.47 -4.15 1.67 L -4.18 1.46 L -4.10 1.46 C -3.92 1.46 -3.78 1.51 -3.68 1.60 C -3.60 1.70 -3.56 1.84 -3.56 2.03 C -3.56 2.22 -3.60 2.37 -3.70 2.46 C -3.79 2.57 -3.94 2.62 -4.15 2.62 Z M -4.18 2.31 C -4.10 2.31 -4.03 2.28 -4 2.23 C -3.95 2.19 -3.93 2.12 -3.93 2.03 C -3.93 1.93 -3.95 1.86 -4 1.82 C -4.03 1.78 -4.10 1.76 -4.18 1.76 Z M -4.18 2.31 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-11%22%3E%3Cpath d=%22M 2.96 0.09 C 2.36 0.09 1.89 -0.06 1.54 -0.39 C 1.21 -0.71 1.04 -1.16 1.04 -1.75 L 1.04 -5.46 C 1.04 -5.58 1.07 -5.67 1.12 -5.75 C 1.17 -5.82 1.25 -5.87 1.34 -5.90 C 1.43 -5.94 1.55 -5.96 1.70 -5.96 C 2.27 -5.96 2.56 -5.67 2.56 -5.10 C 2.56 -4.80 2.48 -4.58 2.32 -4.45 C 2.17 -4.32 1.97 -4.26 1.73 -4.26 L 1.67 -4.26 L 1.75 -4.32 L 1.75 -1.75 C 1.75 -1.35 1.85 -1.04 2.07 -0.82 C 2.30 -0.60 2.61 -0.5 3.01 -0.5 C 3.42 -0.5 3.75 -0.60 3.96 -0.82 C 4.18 -1.04 4.29 -1.35 4.29 -1.75 L 4.29 -4.25 C 4.29 -4.39 4.25 -4.50 4.17 -4.57 C 4.09 -4.64 3.99 -4.71 3.85 -4.78 L 3.85 -5.17 C 3.85 -5.41 3.91 -5.59 4.03 -5.71 C 4.15 -5.84 4.33 -5.90 4.57 -5.90 L 5.18 -5.90 L 5.18 -5.26 L 4.65 -5.26 C 4.51 -5.26 4.45 -5.19 4.45 -5.04 L 4.45 -4.96 C 4.61 -4.89 4.75 -4.80 4.84 -4.70 C 4.93 -4.59 4.98 -4.44 4.98 -4.25 L 4.98 -1.75 C 4.98 -1.35 5.09 -1.04 5.31 -0.82 C 5.53 -0.60 5.83 -0.5 6.21 -0.5 C 6.61 -0.5 6.91 -0.60 7.12 -0.82 C 7.34 -1.04 7.45 -1.35 7.45 -1.75 L 7.45 -4.25 C 7.45 -4.39 7.41 -4.50 7.32 -4.57 C 7.25 -4.64 7.14 -4.71 7.01 -4.78 L 7.01 -5.17 C 7.01 -5.41 7.07 -5.59 7.20 -5.71 C 7.32 -5.84 7.50 -5.90 7.73 -5.90 L 8.34 -5.90 L 8.34 -5.26 L 7.82 -5.26 C 7.67 -5.26 7.60 -5.19 7.60 -5.04 L 7.60 -4.96 C 7.77 -4.89 7.90 -4.80 8 -4.70 C 8.10 -4.59 8.15 -4.44 8.15 -4.25 L 8.15 -1.75 C 8.15 -1.16 7.98 -0.71 7.65 -0.39 C 7.33 -0.06 6.87 0.09 6.28 0.09 C 5.84 0.09 5.48 0 5.20 -0.18 C 4.92 -0.38 4.72 -0.66 4.59 -1.03 L 4.68 -1.03 C 4.56 -0.67 4.35 -0.39 4.06 -0.20 C 3.78 -0.00 3.41 0.09 2.96 0.09 Z M 1.71 -4.70 C 1.95 -4.70 2.07 -4.83 2.07 -5.10 C 2.07 -5.36 1.95 -5.5 1.71 -5.5 Z M 1.71 -4.70 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-12%22%3E%3Cpath d=%22M 7.62 -4.40 C 7.62 -4.97 7.36 -5.26 6.84 -5.26 L 5.09 -5.26 L 5.09 -5.90 L 6.84 -5.90 C 7.83 -5.90 8.32 -5.40 8.32 -4.40 L 8.32 0 L 7.62 0 Z M 2.53 0.09 C 2.03 0.09 1.67 -0.05 1.42 -0.35 C 1.17 -0.67 1.04 -1.10 1.04 -1.67 L 1.04 -4.26 C 1.04 -4.41 1.02 -4.51 0.98 -4.59 C 0.94 -4.67 0.87 -4.75 0.78 -4.81 L 0.78 -5.12 C 0.78 -5.38 0.84 -5.57 0.98 -5.70 C 1.12 -5.83 1.33 -5.90 1.60 -5.90 L 5.18 -5.90 L 5.18 -5.26 L 1.62 -5.26 C 1.55 -5.26 1.48 -5.24 1.43 -5.20 C 1.39 -5.16 1.37 -5.10 1.37 -5.03 L 1.37 -4.96 C 1.48 -4.89 1.57 -4.80 1.64 -4.70 C 1.71 -4.59 1.75 -4.45 1.75 -4.26 L 1.75 -1.73 C 1.75 -1.33 1.81 -1.03 1.95 -0.81 C 2.09 -0.59 2.33 -0.48 2.65 -0.48 C 2.90 -0.48 3.14 -0.53 3.35 -0.65 C 3.58 -0.78 3.79 -0.94 3.98 -1.15 C 4.17 -1.36 4.32 -1.59 4.43 -1.85 C 4.55 -2.12 4.61 -2.40 4.64 -2.68 L 4.95 -2.48 C 4.92 -2.00 4.78 -1.56 4.56 -1.17 C 4.33 -0.78 4.03 -0.47 3.68 -0.25 C 3.33 -0.01 2.94 0.09 2.53 0.09 Z M 4.45 0 L 4.45 -3.96 L 5.14 -3.96 L 5.14 0 Z M 4.45 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-13%22%3E%3Cpath d=%22M 4.45 -2.62 C 4.45 -3.06 4.33 -3.39 4.09 -3.64 C 3.86 -3.89 3.53 -4.01 3.09 -4.01 C 2.67 -4.01 2.34 -3.89 2.10 -3.64 C 1.86 -3.39 1.75 -3.06 1.75 -2.62 L 1.75 -1.37 L 1.56 -1.62 L 1.73 -1.62 C 1.97 -1.62 2.17 -1.56 2.32 -1.43 C 2.49 -1.31 2.57 -1.09 2.57 -0.79 C 2.57 -0.51 2.50 -0.30 2.35 -0.15 C 2.21 -0.00 1.99 0.06 1.70 0.06 C 1.48 0.06 1.31 0.01 1.20 -0.06 C 1.09 -0.14 1.04 -0.26 1.04 -0.43 L 1.04 -2.62 C 1.04 -3.25 1.22 -3.73 1.57 -4.07 C 1.94 -4.42 2.44 -4.60 3.09 -4.60 C 3.75 -4.60 4.25 -4.42 4.60 -4.07 C 4.96 -3.73 5.14 -3.25 5.14 -2.62 L 5.14 0 L 4.45 0 Z M 1.71 -0.39 C 1.95 -0.39 2.07 -0.52 2.07 -0.79 C 2.07 -1.05 1.95 -1.18 1.71 -1.18 Z M 1.01 -5.26 L 1.01 -5.90 L 5.18 -5.90 L 5.18 -5.26 Z M 1.01 -5.26 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-14%22%3E%3Cpath d=%22M 3.62 -2.03 C 3.25 -2.05 2.90 -2.10 2.56 -2.18 C 2.21 -2.28 1.91 -2.41 1.64 -2.57 C 1.37 -2.74 1.17 -2.95 1.01 -3.21 C 0.85 -3.47 0.78 -3.79 0.78 -4.17 C 0.78 -4.74 0.96 -5.19 1.34 -5.51 C 1.71 -5.83 2.21 -6 2.84 -6 C 3.25 -6 3.59 -5.92 3.89 -5.79 C 4.17 -5.66 4.40 -5.47 4.56 -5.25 C 4.71 -5.01 4.79 -4.75 4.79 -4.46 C 4.79 -4.34 4.77 -4.22 4.73 -4.12 C 4.70 -4.01 4.66 -3.92 4.62 -3.85 L 3.92 -3.85 C 3.95 -3.95 3.98 -4.05 4.01 -4.15 C 4.05 -4.26 4.07 -4.37 4.07 -4.46 C 4.07 -4.73 3.96 -4.96 3.75 -5.14 C 3.53 -5.31 3.23 -5.40 2.85 -5.40 C 2.44 -5.40 2.10 -5.29 1.85 -5.07 C 1.60 -4.86 1.48 -4.55 1.48 -4.14 C 1.48 -3.60 1.67 -3.22 2.07 -3 C 2.48 -2.76 3.04 -2.61 3.76 -2.54 Z M 2.73 0.09 C 2.25 0.09 1.88 -0.03 1.62 -0.28 C 1.36 -0.53 1.23 -0.90 1.23 -1.37 L 1.23 -1.82 L 1.90 -1.82 L 1.90 -1.37 C 1.90 -1.08 1.97 -0.85 2.10 -0.70 C 2.25 -0.55 2.46 -0.48 2.73 -0.48 C 2.99 -0.48 3.19 -0.55 3.34 -0.70 C 3.48 -0.85 3.56 -1.08 3.56 -1.37 L 3.56 -2.78 C 3.56 -2.95 3.60 -3.08 3.70 -3.15 C 3.80 -3.23 3.95 -3.28 4.15 -3.28 C 4.41 -3.28 4.60 -3.21 4.71 -3.07 C 4.84 -2.95 4.90 -2.77 4.90 -2.54 C 4.90 -2.31 4.83 -2.14 4.68 -2.01 C 4.53 -1.89 4.36 -1.84 4.15 -1.84 L 4.06 -1.84 L 4.23 -2.10 L 4.23 -1.35 C 4.23 -0.89 4.10 -0.53 3.84 -0.28 C 3.58 -0.03 3.21 0.09 2.73 0.09 Z M 4.15 -2.26 C 4.35 -2.26 4.45 -2.35 4.45 -2.54 C 4.45 -2.74 4.35 -2.84 4.15 -2.84 Z M 4.15 -2.26 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-15%22%3E%3Cpath d=%22M -3.65 -6.65 C -4 -6.65 -4.26 -6.72 -4.45 -6.87 C -4.64 -7.03 -4.73 -7.24 -4.73 -7.51 C -4.73 -7.81 -4.61 -8.06 -4.39 -8.25 C -4.16 -8.43 -3.84 -8.53 -3.45 -8.53 C -3.21 -8.53 -2.97 -8.48 -2.75 -8.40 C -2.53 -8.32 -2.32 -8.21 -2.14 -8.07 L -2.04 -7.85 C -2.08 -7.85 -2.14 -7.87 -2.20 -7.90 C -2.27 -7.93 -2.31 -7.98 -2.31 -8.04 C -2.31 -8.25 -2.23 -8.42 -2.09 -8.54 C -1.94 -8.67 -1.76 -8.75 -1.54 -8.75 C -1.31 -8.75 -1.12 -8.67 -0.96 -8.51 C -0.81 -8.35 -0.73 -8.16 -0.73 -7.93 C -0.73 -7.71 -0.81 -7.53 -0.96 -7.39 C -1.13 -7.25 -1.29 -7.18 -1.45 -7.18 C -1.49 -7.18 -1.51 -7.21 -1.53 -7.26 C -1.53 -7.31 -1.54 -7.35 -1.54 -7.39 L -1.37 -7.39 C -1.28 -7.32 -1.21 -7.26 -1.15 -7.21 C -1.09 -7.16 -1.03 -7.10 -1 -7.03 L -1 -6.65 Z M -3.64 -7.15 L -1.75 -7.15 C -1.78 -7.19 -1.83 -7.24 -1.89 -7.29 C -1.95 -7.35 -2.03 -7.42 -2.15 -7.51 C -2.34 -7.64 -2.53 -7.75 -2.75 -7.84 C -2.96 -7.93 -3.19 -7.98 -3.42 -7.98 C -3.62 -7.98 -3.78 -7.94 -3.90 -7.85 C -4.01 -7.77 -4.07 -7.66 -4.07 -7.51 C -4.07 -7.41 -4.03 -7.32 -3.95 -7.25 C -3.87 -7.18 -3.77 -7.15 -3.64 -7.15 Z M -1.54 -7.60 C -1.45 -7.60 -1.37 -7.64 -1.31 -7.70 C -1.25 -7.76 -1.23 -7.84 -1.23 -7.93 C -1.23 -8.03 -1.25 -8.10 -1.31 -8.17 C -1.37 -8.23 -1.45 -8.26 -1.54 -8.26 C -1.62 -8.26 -1.70 -8.23 -1.76 -8.17 C -1.83 -8.10 -1.87 -8.03 -1.87 -7.93 C -1.87 -7.84 -1.83 -7.76 -1.76 -7.70 C -1.70 -7.64 -1.62 -7.60 -1.54 -7.60 Z M -1.54 -7.60 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-16%22%3E%3Cpath d=%22M 1.5 0.06 C 1.23 0.06 1.03 -0.00 0.89 -0.14 C 0.74 -0.28 0.67 -0.5 0.67 -0.78 C 0.67 -1.07 0.74 -1.28 0.89 -1.42 C 1.04 -1.55 1.24 -1.62 1.48 -1.62 L 1.60 -1.62 L 1.43 -1.37 L 1.43 -4.15 C 1.43 -4.31 1.37 -4.42 1.26 -4.51 C 1.16 -4.60 1.00 -4.68 0.79 -4.75 L 0.79 -5.17 C 0.79 -5.41 0.85 -5.59 0.96 -5.71 C 1.09 -5.84 1.27 -5.90 1.51 -5.90 L 2.20 -5.90 L 2.20 -5.26 L 1.59 -5.26 C 1.45 -5.26 1.39 -5.19 1.39 -5.04 L 1.39 -4.96 C 1.64 -4.90 1.82 -4.80 1.93 -4.67 C 2.06 -4.53 2.12 -4.36 2.12 -4.15 L 2.12 -0.43 C 2.12 -0.10 1.91 0.06 1.5 0.06 Z M 1.48 -1.17 C 1.25 -1.17 1.14 -1.03 1.14 -0.78 C 1.14 -0.51 1.25 -0.39 1.48 -0.39 Z M 1.48 -1.17 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-17%22%3E%3Cpath d=%22M -2.17 2.65 C -2.53 2.65 -2.82 2.56 -3.03 2.37 C -3.23 2.18 -3.34 1.93 -3.34 1.62 L -3.34 0.59 L -2.68 0.59 L -2.68 1.59 C -2.68 1.75 -2.63 1.89 -2.53 1.98 C -2.43 2.07 -2.31 2.12 -2.17 2.12 C -2.01 2.12 -1.89 2.07 -1.79 1.98 C -1.70 1.89 -1.65 1.75 -1.65 1.59 L -1.65 0.59 L -1 0.59 L -1 1.62 C -1 1.93 -1.09 2.18 -1.29 2.37 C -1.50 2.56 -1.79 2.65 -2.17 2.65 Z M -2.17 2.65 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-18%22%3E%3Cpath d=%22M 4.45 0 L 4.45 -4.68 L 3.95 -5.18 L 3.12 -4.46 L 3.07 -4.46 L 2.25 -5.18 L 1.75 -4.68 L 1.75 -1.37 L 1.56 -1.62 L 1.73 -1.62 C 1.97 -1.62 2.17 -1.56 2.32 -1.43 C 2.49 -1.31 2.57 -1.09 2.57 -0.79 C 2.57 -0.51 2.50 -0.30 2.35 -0.15 C 2.21 -0.00 1.99 0.06 1.70 0.06 C 1.48 0.06 1.31 0.01 1.20 -0.06 C 1.09 -0.14 1.04 -0.26 1.04 -0.43 L 1.04 -4.84 L 2.17 -6 L 2.21 -6 L 3.09 -5.18 L 3.98 -6 L 4.03 -6 L 5.14 -4.84 L 5.14 0 Z M 1.71 -0.39 C 1.95 -0.39 2.07 -0.52 2.07 -0.79 C 2.07 -1.05 1.95 -1.18 1.71 -1.18 Z M 1.71 -0.39 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-19%22%3E%3Cpath d=%22M 7.35 -4.46 C 7.35 -4.73 7.29 -4.94 7.17 -5.07 C 7.05 -5.21 6.87 -5.28 6.62 -5.28 L 6.07 -5.28 L 4.93 -4.71 L 4.70 -5.25 L 6.01 -5.90 L 6.62 -5.90 C 7.10 -5.90 7.45 -5.78 7.68 -5.54 C 7.92 -5.30 8.04 -4.94 8.04 -4.46 L 8.04 0 L 7.35 0 Z M 3.31 0.09 C 2.95 0.09 2.65 0.03 2.40 -0.09 C 2.15 -0.21 1.94 -0.38 1.78 -0.59 C 1.62 -0.81 1.48 -1.04 1.37 -1.29 L 1.60 -1.81 C 1.67 -1.61 1.76 -1.41 1.90 -1.20 C 2.03 -0.99 2.21 -0.82 2.43 -0.68 C 2.65 -0.55 2.91 -0.48 3.21 -0.48 C 3.55 -0.48 3.80 -0.55 3.96 -0.70 C 4.14 -0.85 4.23 -1.07 4.23 -1.35 L 4.23 -2.09 C 3.82 -2.14 3.42 -2.21 3.01 -2.31 C 2.61 -2.40 2.25 -2.53 1.92 -2.68 C 1.59 -2.85 1.33 -3.06 1.14 -3.32 C 0.95 -3.59 0.85 -3.92 0.85 -4.31 C 0.85 -4.83 1.05 -5.24 1.43 -5.54 C 1.82 -5.84 2.33 -6 2.98 -6 C 3.60 -6 4.09 -5.86 4.45 -5.59 C 4.80 -5.32 4.98 -4.96 4.98 -4.53 C 4.98 -4.19 4.87 -3.92 4.67 -3.73 C 4.46 -3.53 4.19 -3.43 3.85 -3.43 C 3.73 -3.43 3.62 -3.44 3.54 -3.46 C 3.46 -3.5 3.39 -3.51 3.34 -3.53 L 3.34 -4.09 C 3.39 -4.06 3.46 -4.03 3.54 -4.01 C 3.62 -4.00 3.71 -4 3.79 -4 C 3.95 -4 4.07 -4.04 4.15 -4.14 C 4.23 -4.23 4.28 -4.36 4.28 -4.54 C 4.28 -4.81 4.16 -5.02 3.93 -5.17 C 3.70 -5.32 3.39 -5.40 2.98 -5.40 C 2.54 -5.40 2.19 -5.30 1.93 -5.10 C 1.68 -4.91 1.56 -4.62 1.56 -4.26 C 1.56 -3.86 1.70 -3.56 1.98 -3.35 C 2.26 -3.16 2.65 -3.00 3.15 -2.89 C 3.66 -2.78 4.25 -2.67 4.92 -2.57 L 4.92 -1.34 C 4.92 -0.88 4.77 -0.53 4.48 -0.28 C 4.20 -0.03 3.81 0.09 3.31 0.09 Z M 0.96 0 L 0.96 -2.06 L 1.65 -2.06 L 1.65 -1.01 L 1.62 0 Z M 0.96 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-20%22%3E%3Cpath d=%22M -3.62 2.62 C -3.92 2.62 -4.17 2.53 -4.35 2.34 C -4.55 2.16 -4.65 1.92 -4.65 1.62 C -4.65 1.28 -4.55 1.00 -4.34 0.79 C -4.13 0.59 -3.85 0.5 -3.5 0.5 C -3.23 0.5 -3.03 0.54 -2.87 0.64 C -2.72 0.73 -2.60 0.85 -2.5 1 C -2.40 1.15 -2.32 1.32 -2.25 1.51 C -2.16 1.71 -2.09 1.85 -2.03 1.95 C -1.97 2.05 -1.90 2.10 -1.81 2.10 C -1.71 2.10 -1.64 2.06 -1.59 1.98 C -1.55 1.91 -1.50 1.75 -1.46 1.53 C -1.42 1.30 -1.37 0.96 -1.32 0.53 L -0.70 0.64 C -0.76 1.14 -0.83 1.54 -0.90 1.82 C -0.98 2.11 -1.09 2.32 -1.23 2.43 C -1.36 2.56 -1.56 2.62 -1.82 2.62 C -2.01 2.62 -2.16 2.58 -2.28 2.5 C -2.40 2.42 -2.50 2.32 -2.59 2.18 C -2.67 2.05 -2.75 1.89 -2.82 1.71 C -2.89 1.53 -2.97 1.38 -3.06 1.25 C -3.15 1.11 -3.29 1.04 -3.48 1.04 C -3.62 1.04 -3.74 1.09 -3.82 1.18 C -3.92 1.28 -3.96 1.42 -3.96 1.60 C -3.96 1.76 -3.92 1.89 -3.84 1.98 C -3.76 2.07 -3.67 2.12 -3.54 2.12 C -3.50 2.12 -3.44 2.11 -3.37 2.09 C -3.30 2.08 -3.22 2.05 -3.15 2.01 L -3.15 2.53 C -3.20 2.55 -3.26 2.57 -3.34 2.59 C -3.41 2.61 -3.50 2.62 -3.62 2.62 Z M -3.62 2.62 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-21%22%3E%3Cpath d=%22M 1.53 -6.56 C 1.25 -6.56 1.03 -6.61 0.85 -6.73 C 0.69 -6.85 0.60 -7.03 0.60 -7.26 C 0.60 -7.31 0.61 -7.36 0.62 -7.40 C 0.63 -7.44 0.64 -7.48 0.64 -7.51 L 1.25 -7.51 C 1.23 -7.50 1.22 -7.48 1.21 -7.45 C 1.21 -7.42 1.21 -7.39 1.21 -7.35 C 1.21 -7.27 1.25 -7.20 1.31 -7.15 C 1.37 -7.10 1.45 -7.07 1.54 -7.07 C 1.67 -7.07 1.76 -7.11 1.82 -7.20 C 1.89 -7.28 1.92 -7.39 1.92 -7.54 C 1.92 -7.70 1.86 -7.82 1.76 -7.90 C 1.67 -7.98 1.51 -8.03 1.31 -8.03 L 0.67 -8.03 L 0.46 -9.04 L 1.07 -9.04 L 1.15 -8.54 L 1.37 -8.54 C 1.72 -8.54 2.00 -8.46 2.21 -8.29 C 2.42 -8.12 2.53 -7.87 2.53 -7.54 C 2.53 -7.22 2.44 -6.97 2.26 -6.81 C 2.08 -6.64 1.84 -6.56 1.53 -6.56 Z M 1.73 0.06 C 1.51 0.06 1.34 0.01 1.23 -0.06 C 1.12 -0.14 1.07 -0.26 1.07 -0.43 L 1.07 -4.25 C 1.07 -4.39 1.05 -4.50 1 -4.57 C 0.94 -4.66 0.87 -4.73 0.78 -4.79 L 0.78 -5.17 C 0.78 -5.41 0.83 -5.59 0.95 -5.71 C 1.07 -5.84 1.25 -5.90 1.5 -5.90 L 2.17 -5.90 L 2.17 -5.26 L 1.57 -5.26 C 1.44 -5.26 1.37 -5.19 1.37 -5.04 L 1.37 -4.96 C 1.48 -4.89 1.58 -4.80 1.65 -4.70 C 1.72 -4.59 1.76 -4.44 1.76 -4.25 L 1.76 -1.46 L 1.59 -1.75 L 1.73 -1.75 C 1.98 -1.75 2.18 -1.67 2.34 -1.53 C 2.5 -1.39 2.57 -1.16 2.57 -0.84 C 2.57 -0.23 2.29 0.06 1.73 0.06 Z M 1.73 -0.39 C 1.97 -0.39 2.09 -0.53 2.09 -0.84 C 2.09 -1.14 1.97 -1.29 1.73 -1.29 Z M 1.73 -0.39 %22/%3E%3C/g%3E%3Cg id=%22glyph-1-22%22%3E%3Cpath d=%22M 3.31 0.09 C 2.95 0.09 2.65 0.03 2.40 -0.09 C 2.15 -0.21 1.94 -0.38 1.78 -0.59 C 1.62 -0.81 1.48 -1.04 1.37 -1.29 L 1.60 -1.81 C 1.67 -1.61 1.76 -1.41 1.90 -1.20 C 2.03 -0.99 2.21 -0.82 2.43 -0.68 C 2.65 -0.55 2.91 -0.48 3.21 -0.48 C 3.55 -0.48 3.80 -0.55 3.96 -0.70 C 4.14 -0.85 4.23 -1.07 4.23 -1.35 L 4.23 -2.09 C 3.82 -2.14 3.42 -2.21 3.01 -2.31 C 2.61 -2.40 2.25 -2.53 1.92 -2.68 C 1.59 -2.85 1.33 -3.06 1.14 -3.32 C 0.95 -3.59 0.85 -3.92 0.85 -4.31 C 0.85 -4.83 1.05 -5.24 1.43 -5.54 C 1.82 -5.84 2.33 -6 2.98 -6 C 3.60 -6 4.09 -5.86 4.45 -5.59 C 4.80 -5.32 4.98 -4.96 4.98 -4.53 C 4.98 -4.19 4.87 -3.92 4.67 -3.73 C 4.46 -3.53 4.19 -3.43 3.85 -3.43 C 3.73 -3.43 3.62 -3.44 3.54 -3.46 C 3.46 -3.5 3.39 -3.51 3.34 -3.53 L 3.34 -4.09 C 3.39 -4.06 3.46 -4.03 3.54 -4.01 C 3.62 -4.00 3.71 -4 3.79 -4 C 3.95 -4 4.07 -4.04 4.15 -4.14 C 4.23 -4.23 4.28 -4.36 4.28 -4.54 C 4.28 -4.81 4.16 -5.02 3.93 -5.17 C 3.70 -5.32 3.39 -5.40 2.98 -5.40 C 2.54 -5.40 2.19 -5.30 1.93 -5.10 C 1.68 -4.91 1.56 -4.62 1.56 -4.26 C 1.56 -3.86 1.70 -3.56 1.98 -3.35 C 2.26 -3.16 2.65 -3.00 3.15 -2.89 C 3.66 -2.78 4.25 -2.67 4.92 -2.57 L 4.92 -1.34 C 4.92 -0.88 4.77 -0.53 4.48 -0.28 C 4.20 -0.03 3.81 0.09 3.31 0.09 Z M 0.96 0 L 0.96 -2.06 L 1.65 -2.06 L 1.65 -1.01 L 1.62 0 Z M 0.96 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-0%22%3E%3Cpath d=%22M 3.96 0 L 3.96 -4.46 L 3.70 -4.71 L 3.23 -4.35 L 3.18 -4.35 L 2.71 -4.71 L 2.43 -4.46 L 2.43 -1.37 L 2.03 -1.75 L 2.17 -1.75 C 2.49 -1.75 2.73 -1.67 2.90 -1.53 C 3.07 -1.38 3.15 -1.16 3.15 -0.85 C 3.15 -0.55 3.05 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.54 0.06 1.24 0.00 1.04 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -4.85 L 2.20 -6.12 L 2.32 -6.12 L 3.20 -5.48 L 4.09 -6.12 L 4.21 -6.12 L 5.67 -4.85 L 5.67 0 Z M 2.20 -0.5 C 2.42 -0.5 2.53 -0.61 2.53 -0.84 C 2.53 -1.07 2.42 -1.18 2.20 -1.18 Z M 2.20 -0.5 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-1%22%3E%3Cpath d=%22M 6.81 -4.37 C 6.81 -4.53 6.78 -4.64 6.71 -4.68 C 6.65 -4.73 6.55 -4.76 6.42 -4.76 L 6.21 -4.76 L 5.06 -4.25 L 4.82 -5.39 L 6.21 -6.01 L 6.85 -6.01 C 7.41 -6.01 7.82 -5.89 8.09 -5.65 C 8.36 -5.42 8.5 -5.07 8.5 -4.59 L 8.5 0 L 6.81 0 Z M 3.70 0.09 C 3.37 0.09 3.09 0.04 2.85 -0.04 C 2.62 -0.14 2.44 -0.27 2.29 -0.45 C 2.14 -0.62 2.04 -0.83 1.98 -1.07 L 2.25 -1.62 C 2.26 -1.55 2.31 -1.46 2.39 -1.37 C 2.47 -1.28 2.57 -1.21 2.70 -1.15 C 2.82 -1.10 2.96 -1.07 3.12 -1.07 C 3.30 -1.07 3.44 -1.11 3.56 -1.20 C 3.67 -1.29 3.73 -1.42 3.73 -1.57 L 3.73 -1.93 C 3.24 -2.00 2.80 -2.10 2.42 -2.21 C 2.03 -2.33 1.70 -2.47 1.42 -2.64 C 1.14 -2.80 0.94 -3.01 0.79 -3.26 C 0.64 -3.52 0.57 -3.83 0.57 -4.18 C 0.57 -4.85 0.80 -5.34 1.26 -5.65 C 1.72 -5.96 2.32 -6.12 3.07 -6.12 C 3.82 -6.12 4.41 -5.98 4.82 -5.71 C 5.24 -5.45 5.45 -5.07 5.45 -4.57 C 5.45 -4.17 5.32 -3.86 5.06 -3.67 C 4.80 -3.47 4.44 -3.37 4 -3.37 C 3.85 -3.37 3.71 -3.37 3.57 -3.39 C 3.44 -3.41 3.33 -3.43 3.26 -3.46 L 3.26 -4.29 C 3.29 -4.29 3.33 -4.28 3.37 -4.26 C 3.42 -4.25 3.47 -4.25 3.51 -4.25 C 3.59 -4.25 3.66 -4.27 3.71 -4.32 C 3.76 -4.37 3.79 -4.44 3.79 -4.51 C 3.79 -4.64 3.73 -4.74 3.60 -4.82 C 3.48 -4.91 3.31 -4.95 3.09 -4.95 C 2.84 -4.95 2.64 -4.87 2.48 -4.73 C 2.32 -4.59 2.25 -4.40 2.25 -4.15 C 2.25 -3.84 2.37 -3.59 2.64 -3.42 C 2.91 -3.24 3.28 -3.10 3.75 -3.01 C 4.21 -2.92 4.76 -2.85 5.39 -2.79 L 5.39 -1.34 C 5.39 -0.88 5.23 -0.53 4.93 -0.28 C 4.63 -0.03 4.22 0.09 3.70 0.09 Z M 0.70 0 L 0.70 -1.89 L 2.28 -1.89 L 2.28 -0.92 L 2.14 0 Z M 0.70 0 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-2%22%3E%3Cpath d=%22M -4.26 2.62 C -4.66 2.62 -4.97 2.52 -5.20 2.32 C -5.42 2.12 -5.54 1.85 -5.54 1.51 C -5.54 1.16 -5.42 0.88 -5.18 0.68 C -4.94 0.48 -4.62 0.39 -4.21 0.39 C -3.92 0.39 -3.69 0.42 -3.53 0.5 C -3.36 0.58 -3.22 0.68 -3.12 0.81 C -3.01 0.93 -2.92 1.08 -2.84 1.25 C -2.78 1.36 -2.72 1.44 -2.68 1.5 C -2.65 1.56 -2.61 1.59 -2.57 1.59 C -2.53 1.59 -2.5 1.56 -2.46 1.5 C -2.44 1.43 -2.42 1.31 -2.39 1.14 C -2.36 0.97 -2.34 0.72 -2.31 0.39 L -0.87 0.56 C -0.95 1.09 -1.04 1.50 -1.14 1.79 C -1.24 2.09 -1.36 2.31 -1.51 2.43 C -1.67 2.56 -1.87 2.62 -2.14 2.62 C -2.35 2.62 -2.53 2.58 -2.68 2.5 C -2.84 2.41 -2.97 2.30 -3.07 2.15 C -3.17 2.01 -3.28 1.86 -3.37 1.70 C -3.44 1.57 -3.51 1.47 -3.57 1.40 C -3.64 1.33 -3.73 1.29 -3.82 1.29 C -3.89 1.29 -3.95 1.31 -4 1.35 C -4.05 1.41 -4.07 1.47 -4.07 1.56 C -4.07 1.64 -4.05 1.71 -4 1.78 C -3.95 1.84 -3.90 1.87 -3.84 1.87 C -3.82 1.87 -3.78 1.86 -3.73 1.85 C -3.69 1.84 -3.64 1.82 -3.60 1.79 L -3.60 2.53 C -3.67 2.55 -3.75 2.57 -3.87 2.59 C -4 2.61 -4.12 2.62 -4.26 2.62 Z M -4.26 2.62 %22/%3E%3C/g%3E%3Cg id=%22glyph-2-3%22%3E%3C/g%3E%3Cg id=%22glyph-2-4%22%3E%3Cpath d=%22M 3.96 -2.34 C 3.96 -2.56 3.89 -2.73 3.76 -2.85 C 3.62 -2.98 3.44 -3.04 3.20 -3.04 C 2.98 -3.04 2.80 -2.98 2.65 -2.85 C 2.50 -2.73 2.43 -2.56 2.43 -2.34 L 2.43 -1.37 L 2.03 -1.75 L 2.17 -1.75 C 2.49 -1.75 2.73 -1.67 2.90 -1.53 C 3.07 -1.38 3.15 -1.16 3.15 -0.85 C 3.15 -0.55 3.05 -0.32 2.85 -0.17 C 2.67 -0.01 2.36 0.06 1.95 0.06 C 1.54 0.06 1.24 0.00 1.04 -0.10 C 0.84 -0.22 0.75 -0.39 0.75 -0.60 L 0.75 -2.34 C 0.75 -2.94 0.96 -3.41 1.40 -3.73 C 1.84 -4.06 2.44 -4.23 3.20 -4.23 C 3.97 -4.23 4.57 -4.06 5.01 -3.73 C 5.45 -3.41 5.67 -2.94 5.67 -2.34 L 5.67 0 L 3.96 0 Z M 2.20 -0.5 C 2.42 -0.5 2.53 -0.61 2.53 -0.84 C 2.53 -1.07 2.42 -1.18 2.20 -1.18 Z M 0.71 -4.75 L 0.71 -6.01 L 5.70 -6.01 L 5.70 -4.75 Z M 0.71 -4.75 %22/%3E%3C/g%3E%3Cg id=%22glyph-3-0%22%3E%3Cpath d=%22M 2.85 -4.17 C 2.92 -4.42 2.95 -4.5 3.59 -4.5 C 3.79 -4.5 3.87 -4.5 3.87 -4.65 C 3.87 -4.65 3.85 -4.75 3.75 -4.75 C 3.59 -4.75 3.40 -4.73 3.23 -4.73 C 3.06 -4.71 2.85 -4.71 2.68 -4.71 C 2.53 -4.71 2.34 -4.73 2.20 -4.73 C 2.06 -4.73 1.89 -4.75 1.75 -4.75 C 1.70 -4.75 1.60 -4.75 1.60 -4.59 C 1.60 -4.5 1.68 -4.5 1.82 -4.5 C 1.82 -4.5 1.96 -4.5 2.09 -4.48 C 2.23 -4.46 2.25 -4.45 2.25 -4.39 C 2.25 -4.37 2.25 -4.34 2.21 -4.23 L 1.29 -0.54 C 1.23 -0.31 1.21 -0.25 0.68 -0.25 C 0.56 -0.25 0.48 -0.25 0.48 -0.10 C 0.48 0 0.56 0 0.68 0 L 4.18 0 C 4.35 0 4.35 0 4.42 -0.14 C 4.48 -0.32 5.01 -1.67 5.01 -1.73 C 5.01 -1.75 5 -1.82 4.89 -1.82 C 4.81 -1.82 4.79 -1.79 4.75 -1.68 C 4.48 -1.01 4.18 -0.25 2.90 -0.25 L 2.12 -0.25 C 1.90 -0.25 1.90 -0.25 1.90 -0.31 C 1.90 -0.32 1.90 -0.35 1.93 -0.46 Z M 2.85 -4.17 %22/%3E%3C/g%3E%3Cg id=%22glyph-4-0%22%3E%3Cpath d=%22M 6.82 -3.25 C 6.96 -3.25 7.17 -3.25 7.17 -3.45 C 7.17 -3.64 6.96 -3.64 6.84 -3.64 L 0.89 -3.64 C 0.75 -3.64 0.56 -3.64 0.56 -3.45 C 0.56 -3.25 0.75 -3.25 0.89 -3.25 Z M 6.84 -1.32 C 6.96 -1.32 7.17 -1.32 7.17 -1.51 C 7.17 -1.71 6.96 -1.71 6.82 -1.71 L 0.89 -1.71 C 0.75 -1.71 0.56 -1.71 0.56 -1.51 C 0.56 -1.32 0.75 -1.32 0.89 -1.32 Z M 6.84 -1.32 %22/%3E%3C/g%3E%3Cg id=%22glyph-4-1%22%3E%3Cpath d=%22M 1.26 -0.76 L 2.31 -1.78 C 3.85 -3.15 4.46 -3.70 4.46 -4.68 C 4.46 -5.82 3.56 -6.62 2.35 -6.62 C 1.23 -6.62 0.5 -5.70 0.5 -4.81 C 0.5 -4.26 1 -4.26 1.03 -4.26 C 1.18 -4.26 1.54 -4.37 1.54 -4.79 C 1.54 -5.04 1.35 -5.31 1.01 -5.31 C 0.93 -5.31 0.92 -5.31 0.89 -5.29 C 1.10 -5.93 1.65 -6.31 2.21 -6.31 C 3.12 -6.31 3.56 -5.5 3.56 -4.68 C 3.56 -3.89 3.06 -3.10 2.51 -2.5 L 0.60 -0.37 C 0.5 -0.26 0.5 -0.23 0.5 0 L 4.18 0 L 4.46 -1.73 L 4.21 -1.73 C 4.15 -1.43 4.09 -1 4 -0.84 C 3.92 -0.76 3.26 -0.76 3.04 -0.76 Z M 1.26 -0.76 %22/%3E%3C/g%3E%3C/g%3E%3C/defs%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(88.00%25, 96.13%25, 99.24%25)%22 fill-opacity=%221%22 d=%22M 22.60 89.30 C 22.60 94.30 34.75 98.35 49.74 98.35 C 64.72 98.35 76.87 94.30 76.87 89.30 L 76.87 32.77 C 76.87 27.77 64.72 23.72 49.74 23.72 C 34.75 23.72 22.60 27.77 22.60 32.77 Z M 22.60 89.30 %22/%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -27.21 -0.00 C -27.21 -5.00 -15.02 -9.07 0.00 -9.07 C 15.02 -9.07 27.21 -5.00 27.21 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(42.79%25, 63.99%25, 63.09%25)%22 stroke-opacity=%221%22 stroke-dasharray=%222.98 2.98%22 stroke-miterlimit=%2210%22 d=%22M -27.21 -0.00 C -27.21 5.00 -15.02 9.07 0.00 9.07 C 15.02 9.07 27.21 5.00 27.21 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(70.00%25, 90.35%25, 98.11%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 27.21 56.69 C 27.21 61.70 15.02 65.76 0.00 65.76 C -15.02 65.76 -27.21 61.70 -27.21 56.69 C -27.21 51.68 -15.02 47.62 0.00 47.62 C 15.02 47.62 27.21 51.68 27.21 56.69 Z M 27.21 56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -27.21 -0.00 L -27.21 56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 27.21 -0.00 L 27.21 56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 0%25, 100%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 0.00 56.69 L 24.62 56.69 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(0%25, 0%25, 100%25)%22 fill-opacity=%221%22 d=%22M 76.87 32.77 L 72.74 30.70 L 74.29 32.77 L 72.74 34.83 %22/%3E%3Cg fill=%22rgb(0%25, 0%25, 100%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%2259.49%22 y=%2229.06%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(79.99%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M -34.01 2.59 L -34.01 54.10 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 15.82 89.30 L 17.88 85.17 L 15.82 86.72 L 13.75 85.17 %22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 15.82 32.77 L 13.75 36.90 L 15.82 35.35 L 17.88 36.90 %22/%3E%3Cg fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%226.38%22 y=%2264.48%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%2236.45%22 y=%22114.55%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%2245.50%22 y=%22114.55%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%2245.59%22 y=%22114.55%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%2245.65%22 y=%22114.55%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%2257.02%22 y=%22114.55%22/%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%2257.02%22 y=%22114.55%22/%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%2257.02%22 y=%22114.55%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%221.49%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(78.03%25, 16.48%25, 51.63%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 40.82 28.34 L 62.12 28.34 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(78.03%25, 16.48%25, 51.63%25)%22 fill-opacity=%221%22 d=%22M 115.32 61.03 L 109.51 58.14 L 111.69 61.03 L 109.51 63.94 %22/%3E%3Cg fill=%22rgb(78.03%25, 16.48%25, 51.63%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-0%22 x=%2291.83%22 y=%2253.36%22/%3E%3Cuse xlink:href=%22%23glyph-2-1%22 x=%2298.25%22 y=%2253.36%22/%3E%3C/g%3E%3Cg fill=%22rgb(78.03%25, 16.48%25, 51.63%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-2%22 x=%22104.44%22 y=%2253.36%22/%3E%3C/g%3E%3Cg fill=%22rgb(78.03%25, 16.48%25, 51.63%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-2-3%22 x=%22107.51%22 y=%2253.36%22/%3E%3Cuse xlink:href=%22%23glyph-2-4%22 x=%22107.51%22 y=%2253.36%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(87.99%25, 93.99%25, 93.99%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(0%25, 39.99%25, 39.99%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 77.10 -0.00 L 77.10 56.69 L 181.42 56.69 L 181.42 -0.00 Z M 77.10 -0.00 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-2%22 x=%22153.82%22 y=%2258.09%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-3-0%22 x=%22159.92%22 y=%2259.58%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-0%22 x=%22168.62%22 y=%2258.09%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-1%22 x=%22179.09%22 y=%2258.09%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%22184.08%22 y=%2258.09%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22190.09%22 y=%2258.09%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 44.99%25, 44.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22197.71%22 y=%2258.09%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-7%22 x=%22141.79%22 y=%2272.16%22/%3E%3Cuse xlink:href=%22%23glyph-1-8%22 x=%22147.97%22 y=%2272.16%22/%3E%3Cuse xlink:href=%22%23glyph-1-9%22 x=%22151.03%22 y=%2272.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-10%22 x=%22159.90%22 y=%2272.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22166.11%22 y=%2272.16%22/%3E%3Cuse xlink:href=%22%23glyph-1-11%22 x=%22166.11%22 y=%2272.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-4%22 x=%22178.63%22 y=%2272.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-0%22 x=%22186.38%22 y=%2272.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-4-1%22 x=%22196.85%22 y=%2272.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-3%22 x=%22201.84%22 y=%2272.16%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 89.99%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-0%22 x=%22207.85%22 y=%2272.16%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(70.00%25, 90.35%25, 98.11%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 144.00 71.43 C 144.00 79.57 137.40 86.17 129.26 86.17 C 121.12 86.17 114.52 79.57 114.52 71.43 C 114.52 63.29 121.12 56.69 129.26 56.69 C 137.40 56.69 144.00 63.29 144.00 71.43 Z M 144.00 71.43 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-12%22 x=%22165.14%22 y=%2221.41%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22174.58%22 y=%2221.41%22/%3E%3Cuse xlink:href=%22%23glyph-1-13%22 x=%22174.58%22 y=%2221.41%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-5%22 x=%22184.09%22 y=%2221.41%22/%3E%3C/g%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(70.00%25, 90.35%25, 98.11%25)%22 fill-opacity=%221%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(4.69%25, 39.99%25, 38.39%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 144.00 -14.73 C 144.00 -6.59 137.40 -0.00 129.26 -0.00 C 121.12 -0.00 114.52 -6.59 114.52 -14.73 C 114.52 -22.88 121.12 -29.47 129.26 -29.47 C 137.40 -29.47 144.00 -22.88 144.00 -14.73 Z M 144.00 -14.73 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-12%22 x=%22165.14%22 y=%22107.34%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22174.58%22 y=%22107.34%22/%3E%3Cuse xlink:href=%22%23glyph-1-13%22 x=%22174.58%22 y=%22107.34%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-5%22 x=%22184.09%22 y=%22107.34%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke-width=%220.79%22 stroke-linecap=%22butt%22 stroke-linejoin=%22miter%22 stroke=%22rgb(79.99%25, 0%25, 0%25)%22 stroke-opacity=%221%22 stroke-miterlimit=%2210%22 d=%22M 187.08 2.59 L 187.08 54.10 %22 transform=%22matrix(0.99, 0, 0, -0.99, 49.74, 89.30)%22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 236.30 89.30 L 238.36 85.17 L 236.30 86.72 L 234.23 85.17 %22/%3E%3Cpath fill-rule=%22nonzero%22 fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22 d=%22M 236.30 32.77 L 234.23 36.90 L 236.30 35.35 L 238.36 36.90 %22/%3E%3Cg fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-14%22 x=%22240.01%22 y=%2265.36%22/%3E%3Cuse xlink:href=%22%23glyph-1-14%22 x=%22245.71%22 y=%2265.36%22/%3E%3C/g%3E%3Cg fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-15%22 x=%22251.43%22 y=%2265.36%22/%3E%3C/g%3E%3Cg fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22251.42%22 y=%2265.36%22/%3E%3C/g%3E%3Cg fill=%22rgb(79.99%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-0-1%22 x=%22260.73%22 y=%2265.36%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-16%22 x=%22145.44%22 y=%22135.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-17%22 x=%22149.06%22 y=%22135.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-7%22 x=%22148.63%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-18%22 x=%22154.81%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-19%22 x=%22161.01%22 y=%22135.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-20%22 x=%22166.63%22 y=%22135.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22170.16%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-13%22 x=%22170.16%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-21%22 x=%22176.36%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-22%22 x=%22179.42%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-0%22 x=%22185.26%22 y=%22135.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-1%22 x=%22194.31%22 y=%22135.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-2%22 x=%22194.40%22 y=%22135.22%22/%3E%3C/g%3E%3Cg fill=%22rgb(0%25, 0%25, 0%25)%22 fill-opacity=%221%22%3E%3Cuse xlink:href=%22%23glyph-1-3%22 x=%22194.46%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-4%22 x=%22205.82%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-5%22 x=%22205.82%22 y=%22135.22%22/%3E%3Cuse xlink:href=%22%23glyph-1-6%22 x=%22205.82%22 y=%22135.22%22/%3E%3C/g%3E%3C/svg%3E%0A"/></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានកាំបាត <span class="mi">\(R = 7\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 10\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)។<br/>
+ក. គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span> នៃស៊ីឡាំង។<br/>
+ខ. គណនាក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span> នៃស៊ីឡាំងនោះ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ ក្រឡាផ្ទៃខាង ៖ <span class="mi">\(S_L = 2\pi R h = 2 \times \frac{22}{7} \times 7 \times 10 = 440\text{ cm}^2\)</span>។ ដូចនេះ <span class="mi">\(\boxed{S_L = 440\text{ cm}^2}\)</span><br/>
+ ផ្ទៃបាតទាំងពីរ ៖ <span class="mi">\(2B = 2\pi R^2 = 2 \times \frac{22}{7} \times 7^2 = 308\text{ cm}^2 \implies S_T = 440 + 308 = 748\text{ cm}^2\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ក្រឡាផ្ទៃស៊ីឡាំង</b></header><div class="bx-b">
+<p>១. គណនាផ្ទៃខាងនៃបំពង់រាងស៊ីឡាំងដែលមានអង្កត់ផ្ចិតបាត <span class="mi">\(d = 14\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 20\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)។<br/>
+២. ធុងស៊ីឡាំងបិទជិតមួយមានកាំ <span class="mi">\(R = 3\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(h = 5\text{ m}\)</span>។ គណនាក្រឡាផ្ទៃទាំងអស់នៃធុងនោះ (យក <span class="mi">\(\pi \approx 3.14\)</span>)។</p>
+</div></section>
+<h3 id="u4">មាឌនៃស៊ីឡាំង</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>រូបមន្តមាឌស៊ីឡាំង និងស៊ីឡាំងប្រហោង</b></header><div class="bx-b">
+<ul>
+<li><p><strong>មាឌស៊ីឡាំង ៖</strong> ស្មើនឹងក្រឡាផ្ទៃបាតគុណនឹងកម្ពស់ ៖ <span class="mi">\(V = B \times h = \pi R^2 h\)</span></p></li>
+<li><p><strong>រូបមន្តទាញ ៖</strong> កម្ពស់ <span class="mi">\(h = \dfrac{V}{\pi R^2}\)</span> និង កាំ <span class="mi">\(R = \sqrt{\dfrac{V}{\pi h}}\)</span></p></li>
+<li><p><strong>ស៊ីឡាំងប្រហោង ៖</strong> <span class="mi">\(V = \pi R^2 h - \pi r^2 h = \pi (R^2 - r^2) h\)</span></p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានកាំបាត <span class="mi">\(R = 5\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 14\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)។<br/>
+ក. គណនាមាឌ <span class="mi">\(V\)</span> នៃស៊ីឡាំងនោះ។<br/>
+ខ. បើស៊ីឡាំងមួយទៀតមានមាឌ <span class="mi">\(V' = 628\text{ cm}^3\)</span> និងកម្ពស់ <span class="mi">\(h' = 8\text{ cm}\)</span> ចូររកកាំបាត <span class="mi">\(R'\)</span> របស់វា។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ មាឌស៊ីឡាំង ៖ <span class="mi">\(V = \pi R^2 h = 3.14 \times 5^2 \times 14 = 1099\text{ cm}^3\)</span>។ ដូចនេះ <span class="mi">\(\boxed{V = 1099\text{ cm}^3}\)</span><br/>
+ កាំបាតស៊ីឡាំងទីពីរ ៖ <span class="mi">\(R'^2 = \dfrac{628}{3.14 \times 8} = 25 \implies R' = 5\text{ cm}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{R' = 5\text{ cm}}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>មាឌស៊ីឡាំង</b></header><div class="bx-b">
+<p>១. គណនាមាឌនៃធុងស៊ីឡាំងមួយដែលមានកាំ <span class="mi">\(R = 3.5\text{ dm}\)</span> និងកម្ពស់ <span class="mi">\(h = 10\text{ dm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)។<br/>
+២. បំពង់ទីបដែកប្រហោងមួយមានកម្ពស់ <span class="mi">\(h = 1\text{ m}\)</span>, កាំក្រៅ <span class="mi">\(R = 10\text{ cm}\)</span> និងកាំក្នុង <span class="mi">\(r = 8\text{ cm}\)</span>។ គណនាមាឌសាច់ដែកនៃបំពង់នោះ (យក <span class="mi">\(\pi \approx 3.14\)</span>)។</p>
+</div></section>
+<h3 id="u5">ឯកតារង្វាស់មាឌ ចំណុះ និងរូបផ្គុំសូលីត</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ឯកតារង្វាស់មាឌ ចំណុះ និងរូបផ្គុំសូលីត</b></header><div class="bx-b">
+<ul>
+<li><p><strong>ឯកតារង្វាស់មាឌ ៖</strong> ម៉ែត្រគូប (<span class="mi">\(\text{m}^3\)</span>) ជាខ្នាតគោល ៖ <span class="mi">\(1\text{ m}^3 = 1\,000\text{ dm}^3 = 1\,000\,000\text{ cm}^3\)</span></p></li>
+<li><p><strong>ចំណុះ ៖</strong> <span class="mi">\(1\text{ L} = 1\text{ dm}^3, \quad{} 1\text{ mL} = 1\text{ cm}^3, \quad{} 1\text{ m}^3 = 1\,000\text{ L} = 1\text{ kL}\)</span></p></li>
+<li><p><strong>ទម្ងន់ទឹកបរិសុទ្ធ ៖</strong> <span class="mi">\(1\)</span> L ទឹក <span class="mi">\( = 1\text{ kg} \implies 1\text{ m}^3\)</span> ទឹក <span class="mi">\( = 1\,000\text{ kg} = 1\)</span> តោន </p></li>
+<li><p><strong>រូបផ្គុំសូលីត ៖</strong> មាឌនៃរូបផ្គុំស្មើនឹងផលបូក ឬផលដកនៃមាឌសូលីតគ្រឹះនីមួយៗ។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>អាងទឹកមួយរាងប្រលេពីប៉ែតកែងមានបណ្ដោយ <span class="mi">\(3\text{ m}\)</span>, ទទឹង <span class="mi">\(2\text{ m}\)</span> និងជម្រៅ <span class="mi">\(1.5\text{ m}\)</span>។<br/>
+ក. គណនាមាឌអាងទឹកនោះគិតជាម៉ែត្រគូប (<span class="mi">\(\text{m}^3\)</span>)។<br/>
+ខ. តើអាងនោះអាចស្ដុកទឹកបានប៉ុន្មានលីត្រ (<span class="mi">\(\text{L}\)</span>)? បើគេចាក់ទឹកចូល <span class="mi">\(7\,200\text{ L}\)</span> តើទឹកឡើងបានកម្ពស់ប៉ុន្មាន?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong><br/>
+ មាឌអាង ៖ <span class="mi">\(V = 3 \times 2 \times 1.5 = 9\text{ m}^3\)</span>  ចំណុះ ៖ <span class="mi">\(9 \times 1\,000 = 9\,000\text{ L}\)</span><br/>
+ កម្ពស់ទឹក ៖ មាឌទឹក <span class="mi">\(7\,200\text{ L} = 7.2\text{ m}^3 \implies h_{\text{ទឹក}} = \dfrac{7.2}{3 \times 2} = 1.2\text{ m}\)</span>។ ដូចនេះ <span class="mi">\(\boxed{h_{\text{ទឹក}} = 1.2\text{ m}}\)</span></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ឯកតារង្វាស់ និងរូបផ្គុំ</b></header><div class="bx-b">
+<p>១. បំបែកខ្នាត ៖ ក. <span class="mi">\(4.5\text{ m}^3 = \dots\dots\text{ dm}^3\)</span> ខ. <span class="mi">\(2\,500\text{ cm}^3 = \dots\dots\text{ L}\)</span><br/>
+២. ធុងស៊ីឡាំងមួយមានកាំបាត <span class="mi">\(R = 1\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(h = 2\text{ m}\)</span>។ រកចំណុះធុងនោះគិតជាលីត្រ (យក <span class="mi">\(\pi \approx 3.14\)</span>)។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ប្រលេពីប៉ែតកែងមួយមានបណ្ដោយ <span class="mi">\(a = 12\text{ cm}\)</span>, ទទឹង <span class="mi">\(b = 8\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span></p></li>
+<li><p>គណនាមាឌ <span class="mi">\(V\)</span> នៃប្រលេពីប៉ែតកែង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_L = 2(a+b)h = 2(12 + 8) \times 5 = 200\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(V = a \times b \times h = 12 \times 8 \times 5 = 480\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>ប្រលេពីប៉ែតកែងមួយមានវិមាត្រ <span class="mi">\(15\text{ dm}, 10\text{ dm}, 6\text{ dm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span></p></li>
+<li><p>គណនាមាឌគិតជាដេស៊ីម៉ែត្រគូប (<span class="mi">\(\text{dm}^3\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_T = 2(15 \times 10 + 10 \times 6 + 15 \times 6) = 600\text{ dm}^2\)</span></p></li>
+<li><p><span class="mi">\(V = 15 \times 10 \times 6 = 900\text{ dm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>ប្រអប់មួយរាងប្រលេពីប៉ែតកែងមានផ្ទៃបាត <span class="mi">\(B = 48\text{ cm}^2\)</span> និងកម្ពស់ <span class="mi">\(h = 7.5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌនៃប្រអប់នោះ</p></li>
+<li><p>បើបណ្ដោយ <span class="mi">\(a = 8\text{ cm}\)</span> រកទទឹង <span class="mi">\(b\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = B \times h = 48 \times 7.5 = 360\text{ cm}^3\)</span></p></li>
+<li><p><span class="mi">\(b = \frac{B}{a} = \frac{48}{8} = 6\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>បន្ទប់រៀនមួយមានបណ្ដោយ <span class="mi">\(9\text{ m}\)</span>, ទទឹង <span class="mi">\(6\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(3.5\text{ m}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃជញ្ជាំងទាំង ៤ (ផ្ទៃខាង)</p></li>
+<li><p>គណនាមាឌខ្យល់នៅក្នុងបន្ទប់នោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_L = 2(9 + 6) \times 3.5 = 105\text{ m}^2\)</span></p></li>
+<li><p><span class="mi">\(V = 9 \times 6 \times 3.5 = 189\text{ m}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ប្រលេពីប៉ែតកែងមួយមានមាឌ <span class="mi">\(V = 720\text{ cm}^3\)</span> និងផ្ទៃបាត <span class="mi">\(B = 60\text{ cm}^2\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាកម្ពស់នៃប្រលេពីប៉ែតកែង</p></li>
+<li><p>បើទទឹង <span class="mi">\(b = 6\text{ cm}\)</span> រកបណ្ដោយ <span class="mi">\(a\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(h = \frac{V}{B} = \frac{720}{60} = 12\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(a = \frac{B}{b} = \frac{60}{6} = 10\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>ធុងប្រេងមួយរាងប្រលេពីប៉ែតកែងមានបណ្ដោយ <span class="mi">\(80\text{ cm}\)</span>, ទទឹង <span class="mi">\(50\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(60\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌធុងគិតជា <span class="mi">\(\text{cm}^3\)</span></p></li>
+<li><p>គណនាចំណុះធុងគិតជាលីត្រ (<span class="mi">\(\text{L}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = 80 \times 50 \times 60 = 240\,000\text{ cm}^3\)</span></p></li>
+<li><p>ចំណុះគិតជាលីត្រ ៖<br/>
+<span class="mi">\(\frac{240\,000}{1000} = 240\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ដុំឥដ្ឋមួយរាងប្រលេពីប៉ែតកែងមានវិមាត្រ <span class="mi">\(20\text{ cm}, 10\text{ cm}, 5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌដុំឥដ្ឋមួយដុំ</p></li>
+<li><p>រកមាឌឥដ្ឋចំនួន <span class="mi">\(1\,000\)</span> ដុំ គិតជា <span class="mi">\(\text{m}^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មាឌ ១ ដុំ ៖ <span class="mi">\(20 \times 10 \times 5 = 1000\text{ cm}^3\)</span></p></li>
+<li><p>មាឌ ១០០០ ដុំ ៖<br/>
+<span class="mi">\(1000 \times 1000 = 1\,000\,000\text{ cm}^3 = 1\text{ m}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ប្រលេពីប៉ែតកែងមួយមានផលបូកវិមាត្រទាំងបី <span class="mi">\(a + b + h = 24\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផលបូកប្រវែងទ្រនុងទាំង ១២</p></li>
+<li><p>បើ <span class="mi">\(a = 10\text{ cm}, b = 8\text{ cm}\)</span> រកមាឌ <span class="mi">\(V\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ផលបូក ១២ ទ្រនុង ៖ <span class="mi">\(4 \times 24 = 96\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(h = 24 - (10 + 8) = 6\text{ cm}\)</span>។<br/>
+មាឌ ៖ <span class="mi">\(V = 10 \times 8 \times 6 = 480\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>ប្រអប់ក្រដាសមួយគ្មានគម្របលើ មានបណ្ដោយ <span class="mi">\(25\text{ cm}\)</span>, ទទឹង <span class="mi">\(15\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(10\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផ្ទៃក្រដាសដែលត្រូវប្រើធ្វើប្រអប់</p></li>
+<li><p>គណនាមាឌនៃប្រអប់នោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>គ្មានគម្រប ៖<br/>
+<span class="mi">\(S = 2(25 + 15) \times 10 + 25 \times 15 = 1175\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(V = 25 \times 15 \times 10 = 3750\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ប្រលេពីប៉ែតកែងមួយមាន <span class="mi">\(a = 4\text{ dm}, b = 2.5\text{ dm}, h = 1.2\text{ dm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span></p></li>
+<li><p>គណនាមាឌ <span class="mi">\(V\)</span> គិតជាលីត្រ (<span class="mi">\(\text{L}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_T = 2(10 + 3 + 4.8) = 35.6\text{ dm}^2\)</span></p></li>
+<li><p><span class="mi">\(V = 4 \times 2.5 \times 1.2 = 12\text{ dm}^3 = 12\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>គូបមួយមានប្រវែងទ្រនុង <span class="mi">\(a = 8\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span></p></li>
+<li><p>គណនាមាឌ <span class="mi">\(V\)</span> នៃគូបនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_L = 4a^2 = 4 \times 64 = 256\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(V = a^3 = 8^3 = 512\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>គូបមួយមានទ្រនុង <span class="mi">\(a = 10\text{ dm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span></p></li>
+<li><p>គណនាមាឌគិតជា <span class="mi">\(\text{m}^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_T = 6a^2 = 6 \times 100 = 600\text{ dm}^2\)</span></p></li>
+<li><p><span class="mi">\(V = 10^3 = 1000\text{ dm}^3 = 1\text{ m}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គូបមួយមានក្រឡាផ្ទៃមុខមួយ <span class="mi">\(B = 49\text{ cm}^2\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រវែងទ្រនុង <span class="mi">\(a\)</span> នៃគូប</p></li>
+<li><p>គណនាក្រឡាផ្ទៃទាំងអស់ និងមាឌនៃគូប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ទ្រនុង ៖ <span class="mi">\(a = \sqrt{49} = 7\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(S_T = 6 \times 49 = 294\text{ cm}^2\)</span>។<br/>
+<span class="mi">\(V = 7^3 = 343\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គូបមួយមានក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T = 96\text{ cm}^2\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រវែងទ្រនុង <span class="mi">\(a\)</span> នៃគូប</p></li>
+<li><p>គណនាមាឌ <span class="mi">\(V\)</span> នៃគូបនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(6a^2 = 96 \Rightarrow a^2 = 16 \Rightarrow a = 4\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(V = 4^3 = 64\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គូបមួយមានមាឌ <span class="mi">\(V = 343\text{ cm}^3\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រវែងទ្រនុង <span class="mi">\(a\)</span> នៃគូប</p></li>
+<li><p>គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span> នៃគូប</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(a = \sqrt[3]{343} = 7\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(S_L = 4 \times 7^2 = 196\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ធុងទឹកមួយរាងគូបមានទ្រនុងប្រវែង <span class="mi">\(1.2\text{ m}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌធុងគិតជា <span class="mi">\(\text{m}^3\)</span></p></li>
+<li><p>រកចំណុះទឹកអតិបរមាគិតជាលីត្រ (<span class="mi">\(\text{L}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = 1.2^3 = 1.728\text{ m}^3\)</span></p></li>
+<li><p>ចំណុះ ៖ <span class="mi">\(1.728\text{ m}^3 = 1728\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ដុំស្ករសូកូឡារាងគូបមានទ្រនុង <span class="mi">\(3\text{ cm}\)</span> ចំនួន ២៤ ដុំ ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌស្ករមួយដុំ</p></li>
+<li><p>គណនាមាឌស្ករសរុបទាំង ២៤ ដុំ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មាឌ ១ ដុំ ៖ <span class="mi">\(3^3 = 27\text{ cm}^3\)</span></p></li>
+<li><p>មាឌ ២៤ ដុំ ៖ <span class="mi">\(24 \times 27 = 648\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គូបមួយមានផលបូកប្រវែងទ្រនុងទាំង ១២ ស្មើនឹង <span class="mi">\(84\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកប្រវែងទ្រនុង <span class="mi">\(a\)</span> មួយៗ</p></li>
+<li><p>គណនាមាឌ <span class="mi">\(V\)</span> នៃគូបនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(12a = 84 \Rightarrow a = 7\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(V = 7^3 = 343\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>គូបដែកមួយមានទ្រនុង <span class="mi">\(a = 5\text{ cm}\)</span> ហើយដង់ស៊ីតេដែកគឺ <span class="mi">\(7.8\text{ g/cm}^3\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌនៃដុំដែកនោះ</p></li>
+<li><p>គណនាម៉ាសនៃដុំដែកគិតជាក្រាម (<span class="mi">\(\text{g}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = 5^3 = 125\text{ cm}^3\)</span></p></li>
+<li><p>ម៉ាស ៖ <span class="mi">\(m = 7.8 \times 125 = 975\text{ g}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>គេមានគូបពីរ ៖ គូប <span class="mi">\(A\)</span> មានទ្រនុង <span class="mi">\(2\text{ cm}\)</span> និងគូប <span class="mi">\(B\)</span> មានទ្រនុង <span class="mi">\(6\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>រកផលធៀបនៃផ្ទៃទាំងអស់ <span class="mi">\(\frac{S_T(A)}{S_T(B)}\)</span></p></li>
+<li><p>រកផលធៀបនៃមាឌ <span class="mi">\(\frac{V(A)}{V(B)}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\frac{S_T(A)}{S_T(B)} = \left(\frac{2}{6}\right)^2 = \frac{1}{9}\)</span></p></li>
+<li><p><span class="mi">\(\frac{V(A)}{V(B)} = \left(\frac{2}{6}\right)^3 = \frac{1}{27}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានកាំបាត <span class="mi">\(R = 5\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 14\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាបរិមាត្ររង្វង់បាត <span class="mi">\(p\)</span></p></li>
+<li><p>គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(p = 2 \times 3.14 \times 5 = 31.4\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(S_L = 31.4 \times 14 = 439.6\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានកាំ <span class="mi">\(R = 7\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 15\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span></p></li>
+<li><p>គណនាក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_L = 2 \times \frac{22}{7} \times 7 \times 15 = 660\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S_T = 660 + 2\left(\frac{22}{7} \times 49\right) = 968\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានអង្កត់ផ្ចិតបាត <span class="mi">\(d = 20\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 25\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកាំបាត <span class="mi">\(R\)</span> និងផ្ទៃបាត <span class="mi">\(B\)</span></p></li>
+<li><p>គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R = 10\text{ cm}\)</span>, <span class="mi">\(B = 3.14 \times 100 = 314\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S_L = 2 \times 3.14 \times 10 \times 25 = 1570\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>បំពង់ទឹកដែកមួយមានកាំ <span class="mi">\(R = 0.5\text{ m}\)</span> និងប្រវែង <span class="mi">\(h = 10\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផ្ទៃខាងក្រៅនៃបំពង់ទឹក</p></li>
+<li><p>គណនាថ្លៃលាបថ្នាំបើ <span class="mi">\(1\text{ m}^2\)</span> តម្លៃ <span class="mi">\(2\)</span> ដុល្លារ </p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(S_L = 2 \times 3.14 \times 0.5 \times 10 = 31.4\text{ m}^2\)</span></p></li>
+<li><p>ថ្លៃលាប ៖ <span class="mi">\(31.4 \times 2 = 62.8\$\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានក្រឡាផ្ទៃខាង <span class="mi">\(S_L = 314\text{ cm}^2\)</span> និងកម្ពស់ <span class="mi">\(h = 10\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកាំបាត <span class="mi">\(R\)</span> នៃស៊ីឡាំង</p></li>
+<li><p>គណនាក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(314 = 2 \times 3.14 \times R \times 10 \Rightarrow R = 5\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(S_T = 314 + 2(3.14 \times 25) = 471\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>កំប៉ុងទឹកដោះគោរាងស៊ីឡាំងមានអង្កត់ផ្ចិត <span class="mi">\(8\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(12\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃស្លាកបិទជុំវិញកំប៉ុង</p></li>
+<li><p>គណនាផ្ទៃសន្លឹកលោហៈធ្វើកំប៉ុងទាំងមូល</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R = 4\text{ cm} \Rightarrow S_L = 2 \times 3.14 \times 4 \times 12 = 301.44\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S_T = 301.44 + 2(3.14 \times 16) = 401.92\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T = 462\text{ cm}^2\)</span> និងកាំ <span class="mi">\(R = 7\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផ្ទៃបាតទាំងពីរ <span class="mi">\(2B\)</span></p></li>
+<li><p>រកផ្ទៃខាង <span class="mi">\(S_L\)</span> និងកម្ពស់ <span class="mi">\(h\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(2B = 2 \times \frac{22}{7} \times 49 = 308\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S_L = 462 - 308 = 154\text{ cm}^2\)</span>។<br/>
+<span class="mi">\(h = \frac{154}{44} = 3.5\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានកម្ពស់ <span class="mi">\(h\)</span> ស្មើនឹងអង្កត់ផ្ចិតបាត <span class="mi">\(d = 2R\)</span> ដោយ <span class="mi">\(R = 4\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃខាង <span class="mi">\(S_L\)</span></p></li>
+<li><p>គណនាក្រឡាផ្ទៃទាំងអស់ <span class="mi">\(S_T\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(h = 2(4) = 8\text{ cm} \Rightarrow S_L = 2 \times 3.14 \times 4 \times 8 = 200.96\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(S_T = 200.96 + 2(3.14 \times 16) = 301.44\text{ cm}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>សសរផ្ទះរាងស៊ីឡាំងចំនួន ៤ ដើម មានអង្កត់ផ្ចិត <span class="mi">\(0.4\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(3.5\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផ្ទៃខាងនៃសសរមួយដើម</p></li>
+<li><p>គណនាផ្ទៃខាងសរុបនៃសសរទាំង ៤ ដើម</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>សសរ ១ ដើម ៖<br/>
+<span class="mi">\(S_L = 3.14 \times 0.4 \times 3.5 = 4.396\text{ m}^2\)</span></p></li>
+<li><p>៤ ដើម ៖ <span class="mi">\(4 \times 4.396 = 17.584\text{ m}^2\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានកាំ <span class="mi">\(R = 6\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 10\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផលធៀប <span class="mi">\(\frac{S_L}{2B}\)</span></p></li>
+<li><p>គណនាផលធៀប <span class="mi">\(\frac{S_L}{S_T}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(\frac{S_L}{2B} = \frac{2\pi(6)(10)}{2\pi(6^2)} = \frac{10}{6} = \frac{5}{3}\)</span></p></li>
+<li><p><span class="mi">\(\frac{S_L}{S_T} = \frac{120\pi}{192\pi} = \frac{5}{8}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានកាំបាត <span class="mi">\(R = 4\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 10\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃបាត <span class="mi">\(B\)</span></p></li>
+<li><p>គណនាមាឌ <span class="mi">\(V\)</span> នៃស៊ីឡាំង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(B = 3.14 \times 16 = 50.24\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(V = 50.24 \times 10 = 502.4\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានអង្កត់ផ្ចិតបាត <span class="mi">\(d = 14\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 20\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>រកកាំបាត <span class="mi">\(R\)</span> នៃស៊ីឡាំង</p></li>
+<li><p>គណនាមាឌ <span class="mi">\(V\)</span> នៃស៊ីឡាំង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R = \frac{14}{2} = 7\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(V = \frac{22}{7} \times 49 \times 20 = 3080\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានមាឌ <span class="mi">\(V = 628\text{ cm}^3\)</span> និងកាំបាត <span class="mi">\(R = 5\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃបាត <span class="mi">\(B\)</span></p></li>
+<li><p>គណនាកម្ពស់ <span class="mi">\(h\)</span> នៃស៊ីឡាំង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(B = 3.14 \times 25 = 78.5\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(h = \frac{628}{78.5} = 8\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>ស៊ីឡាំងមួយមានមាឌ <span class="mi">\(V = 1\,540\text{ cm}^3\)</span> និងកម្ពស់ <span class="mi">\(h = 10\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាក្រឡាផ្ទៃបាត <span class="mi">\(B\)</span></p></li>
+<li><p>រកកាំបាត <span class="mi">\(R\)</span> នៃស៊ីឡាំង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(B = \frac{1540}{10} = 154\text{ cm}^2\)</span></p></li>
+<li><p><span class="mi">\(\frac{22}{7}R^2 = 154 \Rightarrow R^2 = 49 \Rightarrow R = 7\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>ធុងស្ដុកប្រេងរាងស៊ីឡាំងមានកាំបាត <span class="mi">\(R = 2\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(h = 5\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌធុងគិតជា <span class="mi">\(\text{m}^3\)</span></p></li>
+<li><p>គណនាចំណុះប្រេងគិតជាលីត្រ (<span class="mi">\(\text{L}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = 3.14 \times 4 \times 5 = 62.8\text{ m}^3\)</span></p></li>
+<li><p>ចំណុះ ៖ <span class="mi">\(62.8 \times 1000 = 62\,800\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>កែវទឹកមួយរាងស៊ីឡាំងមានកាំ <span class="mi">\(R = 3\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 12\text{ cm}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌទឹកពេញកែវគិតជា <span class="mi">\(\text{cm}^3\)</span></p></li>
+<li><p>បើគេចាក់ទឹកចូលកម្ពស់ <span class="mi">\(8\text{ cm}\)</span> រកមាឌទឹក</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ពេញកែវ ៖ <span class="mi">\(3.14 \times 9 \times 12 = 339.12\text{ cm}^3\)</span></p></li>
+<li><p>កម្ពស់ <span class="mi">\(8\text{ cm}\)</span> ៖ <span class="mi">\(3.14 \times 9 \times 8 = 226.08\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>បំពង់ទីបដែកប្រហោងមួយមានកាំក្រៅ <span class="mi">\(R = 6\text{ cm}\)</span>, កាំក្នុង <span class="mi">\(r = 4\text{ cm}\)</span> និងកម្ពស់ <span class="mi">\(h = 20\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាផ្ទៃមុខកាត់ដែក <span class="mi">\(B_{\text{ដែក}}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+<li><p>គណនាមាឌសាច់ដែកនៃបំពង់នោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(B_{\text{ដែក}} = 3.14(36 - 16) = 62.8\text{ cm}^2\)</span></p></li>
+<li><p>មាឌសាច់ដែក ៖ <span class="mi">\(62.8 \times 20 = 1256\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ស៊ីឡាំងដែកមួយមាន <span class="mi">\(R = 7\text{ cm}, h = 10\text{ cm}\)</span> ត្រូវយកទៅស្លរំលាយធ្វើជាគូប ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌស៊ីឡាំងដែក (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>)</p></li>
+<li><p>តើគូបដែលទទួលបានមានមាឌប៉ុន្មាន?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = \frac{22}{7} \times 49 \times 10 = 1540\text{ cm}^3\)</span></p></li>
+<li><p>មាឌគូបដែលបានគឺ <span class="mi">\(1540\text{ cm}^3\)</span> (មិនប្រែប្រួល)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>គេមានស៊ីឡាំងពីរ ៖ ស៊ីឡាំងទីមួយមាន <span class="mi">\(R_1 = 3\text{ cm}, h_1 = 8\text{ cm}\)</span> និងទីពីរមាន <span class="mi">\(R_2 = 6\text{ cm}, h_2 = 2\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌ <span class="mi">\(V_1\)</span> នៃស៊ីឡាំងទីមួយ</p></li>
+<li><p>ប្រៀបធៀបមាឌ <span class="mi">\(V_1\)</span> និង <span class="mi">\(V_2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V_1 = \pi \times 3^2 \times 8 = 72\pi\text{ cm}^3\)</span></p></li>
+<li><p><span class="mi">\(V_2 = \pi \times 6^2 \times 2 = 72\pi\text{ cm}^3\)</span>។<br/>
+ដូចនេះ <span class="mi">\(V_1 = V_2\)</span> (មាឌស្មើគ្នា)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>អណ្ដូងទឹកមួយរាងស៊ីឡាំងមានអង្កត់ផ្ចិត <span class="mi">\(1.4\text{ m}\)</span> និងជម្រៅ <span class="mi">\(8\text{ m}\)</span> (យក <span class="mi">\(\pi \approx \frac{22}{7}\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌដីដែលត្រូវជីកចេញ</p></li>
+<li><p>បើទឹកក្នុងអណ្ដូងមានកម្ពស់ <span class="mi">\(3\text{ m}\)</span> រកមាឌទឹក</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(R = 0.7\text{ m} \Rightarrow V = \frac{22}{7} \times 0.49 \times 8 = 12.32\text{ m}^3\)</span></p></li>
+<li><p>មាឌទឹក (<span class="mi">\(3\text{ m}\)</span>) ៖ <span class="mi">\(1.54 \times 3 = 4.62\text{ m}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>បំបែកខ្នាតមាឌ និងចំណុះខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(5.8\text{ m}^3 = \dots\dots\text{ dm}^3\)</span></p></li>
+<li><p><span class="mi">\(4\,200\text{ cm}^3 = \dots\dots\text{ L}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកខ្នាត ៖</p>
+<ul>
+<li><p><span class="mi">\(5.8\text{ m}^3 = 5800\text{ dm}^3\)</span></p></li>
+<li><p><span class="mi">\(4200\text{ cm}^3 = 4.2\text{ dm}^3 = 4.2\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>បំបែកខ្នាតមាឌ និងចំណុះខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(0.75\text{ m}^3 = \dots\dots\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ mL} = \dots\dots\text{ cm}^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបែកខ្នាត ៖</p>
+<ul>
+<li><p><span class="mi">\(0.75\text{ m}^3 = 750\text{ dm}^3 = 750\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ mL} = 850\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>អាងហែលទឹកមួយមានបណ្ដោយ <span class="mi">\(25\text{ m}\)</span>, ទទឹង <span class="mi">\(10\text{ m}\)</span> និងជម្រៅមធ្យម <span class="mi">\(1.8\text{ m}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌទឹកពេញអាងគិតជា <span class="mi">\(\text{m}^3\)</span></p></li>
+<li><p>រកចំណុះទឹកគិតជាលីត្រ (<span class="mi">\(\text{L}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = 25 \times 10 \times 1.8 = 450\text{ m}^3\)</span></p></li>
+<li><p>ចំណុះ ៖ <span class="mi">\(450\,000\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>ធុងស៊ីឡាំងមួយផ្ទុកទឹកបាន <span class="mi">\(6\,280\text{ L}\)</span> ហើយមានកម្ពស់ <span class="mi">\(h = 2\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>បំប្លែងចំណុះទឹកទៅជាម៉ែត្រគូប (<span class="mi">\(\text{m}^3\)</span>)</p></li>
+<li><p>គណនាកាំបាត <span class="mi">\(R\)</span> នៃធុងនោះ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(6280\text{ L} = 6.28\text{ m}^3\)</span></p></li>
+<li><p><span class="mi">\(6.28 = 3.14 \times R^2 \times 2 \Rightarrow R = 1\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>ធុងប្រេងរាងប្រលេពីប៉ែតកែងមួយមានបណ្ដោយ <span class="mi">\(1.5\text{ m}\)</span>, ទទឹង <span class="mi">\(0.8\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(1\text{ m}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំណុះធុងគិតជាលីត្រ</p></li>
+<li><p>បើប្រេងក្នុងធុងមាន <span class="mi">\(960\text{ L}\)</span> រកកម្ពស់ប្រេង</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>ចំណុះធុង ៖ <span class="mi">\(1.5 \times 0.8 \times 1 = 1.2\text{ m}^3 = 1200\text{ L}\)</span></p></li>
+<li><p>កម្ពស់ប្រេង ៖ <span class="mi">\(\frac{0.96}{1.5 \times 0.8} = 0.8\text{ m} = 80\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>រូបផ្គុំមួយកើតពីការយកគូបទ្រនុង <span class="mi">\(4\text{ cm}\)</span> មកចោះជាស៊ីឡាំងកាត់តាមកណ្ដាលមានកាំ <span class="mi">\(R = 1\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌគូបមុនពេលចោះ</p></li>
+<li><p>គណនាមាឌសាច់ដែលនៅសល់ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មាឌគូប ៖ <span class="mi">\(4^3 = 64\text{ cm}^3\)</span></p></li>
+<li><p>មាឌសល់ ៖ <span class="mi">\(64 - 3.14 \times 1 \times 4 = 51.44\text{ cm}^3\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>ដុំបេតុងមួយមានរាងជាប្រលេពីប៉ែតកែងទ្រពីលើដោយស៊ីឡាំងមួយ ៖</p>
+<ol class="list olka cols2">
+<li><p>រៀបរាប់វិធីគណនាមាឌសរុបនៃដុំបេតុង</p></li>
+<li><p>រៀបរាប់វិធីគណនាក្រឡាផ្ទៃខាងក្រៅដែលត្រូវលាបថ្នាំ</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មាឌសរុប = មាឌប្រលេពីប៉ែតកែង + មាឌស៊ីឡាំង។</p></li>
+<li><p>ក្រឡាផ្ទៃលាបថ្នាំ = ផ្ទៃខាងប្រលេពីប៉ែត + បាតក្រោម + ផ្ទៃខាងស៊ីឡាំង + គម្របលើ + (បាតលើ - បាតស៊ីឡាំង)។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>ម៉ាស៊ីនបូមទឹកមួយអាចបូមទឹកបាន <span class="mi">\(50\text{ L}\)</span> ក្នុងមួយនាទី ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌទឹកដែលបូមបានក្នុងរយៈពេល ១ ម៉ោង (គិតជា <span class="mi">\(\text{m}^3\)</span>)</p></li>
+<li><p>រករយៈពេលដើម្បីបូមទឹកឱ្យពេញអាងចំណុះ <span class="mi">\(6\text{ m}^3\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>១ ម៉ោង ៖ <span class="mi">\(50 \times 60 = 3000\text{ L} = 3\text{ m}^3\)</span></p></li>
+<li><p>រយៈពេល ៖ <span class="mi">\(\frac{6}{3} = 2\)</span> ម៉ោង</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ធុងទឹកស៊ីឡាំងមួយមានកាំ <span class="mi">\(R = 0.6\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(h = 1.5\text{ m}\)</span> (យក <span class="mi">\(\pi \approx 3.14\)</span>) ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាចំណុះទឹកពេញធុងគិតជាលីត្រ</p></li>
+<li><p>គណនាម៉ាសទឹកពេញធុងគិតជាគីឡូក្រាម (<span class="mi">\(\text{kg}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p><span class="mi">\(V = 3.14 \times 0.36 \times 1.5 = 1.6956\text{ m}^3 = 1695.6\text{ L}\)</span></p></li>
+<li><p>ម៉ាសទឹក ៖ <span class="mi">\(1695.6\text{ kg}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គេទម្លាក់ដុំដែករាងគូបទ្រនុង <span class="mi">\(6\text{ cm}\)</span> ចូលក្នុងកែវទឹកស៊ីឡាំងដែលមានកាំ <span class="mi">\(R = 5\text{ cm}\)</span> ៖</p>
+<ol class="list olka cols2">
+<li><p>គណនាមាឌដុំដែកដែលទម្លាក់ចូល</p></li>
+<li><p>គណនាកម្ពស់ទឹកដែលហក់ឡើងក្នុងកែវ (យក <span class="mi">\(\pi \approx 3.14\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<ul>
+<li><p>មាឌដែក ៖ <span class="mi">\(6^3 = 216\text{ cm}^3\)</span></p></li>
+<li><p>កម្ពស់ទឹកហក់ឡើង ៖<br/>
+<span class="mi">\(\Delta h = \frac{216}{3.14 \times 25} = \frac{216}{78.5} \approx 2.75\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ១៨ មាឌ និងក្រឡាផ្ទៃខាងនៃសូលីត</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c18">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L17.html"><small>← មេរៀនមុន</small><b>រង្វង់</b></a><a class="next" href="L19.html"><small>មេរៀនបន្ទាប់ →</small><b>ភាពឆ្លុះ</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សូលីតដែលមានមុខទាំងអស់ជាពហុកោណប្លង់ ហៅថា ៖", "options": ["ពហុមុខ", "សូលីតបង្វិល", "ស៊ីឡាំង", "ស្វ៊ែរ"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រលេពីប៉ែតកែងមួយមានចំនួនកំពូលទាំងអស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រលេពីប៉ែតកែងមួយមានចំនួនទ្រនុងទាំងអស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រលេពីប៉ែតកែងមួយមានចំនួនមុខទាំងអស់ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "មុខនីមួយៗនៃប្រលេពីប៉ែតកែងជារូបអ្វី?", "options": ["ការ៉េ", "ចតុកោណកែង", "ត្រីកោណ", "ព្នាយ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាក្រឡាផ្ទៃខាងនៃប្រលេពីប៉ែតកែងគឺ ៖", "options": ["<span class=\"mi\">\\(S_L = 2(a+b)h\\)<\/span>", "<span class=\"mi\">\\(S_L = abh\\)<\/span>", "<span class=\"mi\">\\(S_L = 2(ab+ah)\\)<\/span>", "<span class=\"mi\">\\(S_L = 4ah\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាមាឌប្រលេពីប៉ែតកែងដែលមានវិមាត្រ <span class=\"mi\">\\(a, b, h\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(V = a+b+h\\)<\/span>", "<span class=\"mi\">\\(V = 2(a+b)h\\)<\/span>", "<span class=\"mi\">\\(V = a \\times b \\times h\\)<\/span>", "<span class=\"mi\">\\(V = a^2 h\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រលេពីប៉ែតកែងមាន <span class=\"mi\">\\(a = 5\\text{ cm}, b = 4\\text{ cm}, h = 3\\text{ cm}\\)<\/span>។ មាឌរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(60\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(50\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(40\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(30\\text{ cm}^3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ប្រលេពីប៉ែតកែងមានផ្ទៃបាត <span class=\"mi\">\\(B = 25\\text{ cm}^2\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h = 6\\text{ cm}\\)<\/span>។ មាឌរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(100\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(125\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(150\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(175\\text{ cm}^3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ផលបូកប្រវែងទ្រនុងទាំងអស់នៃប្រលេពីប៉ែតកែងដែលមានវិមាត្រ <span class=\"mi\">\\(a, b, h\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2(a+b+h)\\)<\/span>", "<span class=\"mi\">\\(4(a+b+h)\\)<\/span>", "<span class=\"mi\">\\(6(a+b+h)\\)<\/span>", "<span class=\"mi\">\\(12(a+b+h)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គូបគឺជាប្រលេពីប៉ែតកែងដែលមាន ៖", "options": ["វិមាត្រទាំងបីស្មើគ្នា", "មុខ ៤ ជាការ៉េ និងមុខ ២ ជាចតុកោណកែង", "ទ្រនុងទាំងអស់ប្រវែងខុសគ្នា", "កំពូលចំនួន ១២"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "មុខនីមួយៗនៃគូបជារូបអ្វី?", "options": ["ចតុកោណកែង", "ការ៉េ", "ត្រីកោណ", "ចតុកោណស្មើ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាក្រឡាផ្ទៃខាងនៃគូបដែលមានទ្រនុង <span class=\"mi\">\\(a\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(S_L = 2a^2\\)<\/span>", "<span class=\"mi\">\\(S_L = 4a^2\\)<\/span>", "<span class=\"mi\">\\(S_L = 6a^2\\)<\/span>", "<span class=\"mi\">\\(S_L = a^3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាក្រឡាផ្ទៃទាំងអស់នៃគូបដែលមានទ្រនុង <span class=\"mi\">\\(a\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(S_T = 4a^2\\)<\/span>", "<span class=\"mi\">\\(S_T = 6a^2\\)<\/span>", "<span class=\"mi\">\\(S_T = 8a^2\\)<\/span>", "<span class=\"mi\">\\(S_T = a^3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាមាឌនៃគូបដែលមានទ្រនុង <span class=\"mi\">\\(a\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(V = 3a\\)<\/span>", "<span class=\"mi\">\\(V = 4a^2\\)<\/span>", "<span class=\"mi\">\\(V = 6a^2\\)<\/span>", "<span class=\"mi\">\\(V = a^3\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គូបមួយមានទ្រនុង <span class=\"mi\">\\(a = 4\\text{ cm}\\)<\/span>។ មាឌរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(16\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(32\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(64\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(96\\text{ cm}^3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គូបមួយមានទ្រនុង <span class=\"mi\">\\(a = 5\\text{ cm}\\)<\/span>។ ក្រឡាផ្ទៃទាំងអស់របស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(100\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(125\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(150\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(175\\text{ cm}^2\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គូបមួយមានមាឌ <span class=\"mi\">\\(V = 27\\text{ cm}^3\\)<\/span>។ ប្រវែងទ្រនុងរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(9\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គូបមួយមានក្រឡាផ្ទៃខាង <span class=\"mi\">\\(S_L = 36\\text{ cm}^2\\)<\/span>។ ប្រវែងទ្រនុងរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "បើទ្រនុងគូបកើនឡើង ២ ដង នោះមាឌរបស់វានឹងកើនឡើង ៖", "options": ["២ ដង", "៤ ដង", "៦ ដង", "៨ ដង"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងកើតឡើងពីការបង្វិលរូបអ្វីជុំវិញជ្រុងមួយរបស់វា?", "options": ["ត្រីកោណកែង", "ចតុកោណកែង", "ការ៉េ", "រង្វង់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បាតទាំងពីរនៃស៊ីឡាំងជារូបអ្វី?", "options": ["ការ៉េ", "ចតុកោណកែង", "រង្វង់ប៉ុនគ្នា", "ពងក្រពើ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ផ្ទៃខាងនៃស៊ីឡាំងនៅពេលពន្លាតចេញជារូបអ្វី?", "options": ["ការ៉េ", "ចតុកោណកែង", "ត្រីកោណ", "រង្វង់"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាក្រឡាផ្ទៃខាងនៃស៊ីឡាំងគឺ ៖", "options": ["<span class=\"mi\">\\(S_L = \\pi Rh\\)<\/span>", "<span class=\"mi\">\\(S_L = 2\\pi Rh\\)<\/span>", "<span class=\"mi\">\\(S_L = \\pi R^2 h\\)<\/span>", "<span class=\"mi\">\\(S_L = 2\\pi R^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាក្រឡាផ្ទៃទាំងអស់នៃស៊ីឡាំងគឺ ៖", "options": ["<span class=\"mi\">\\(S_T = 2\\pi Rh + \\pi R^2\\)<\/span>", "<span class=\"mi\">\\(S_T = 2\\pi Rh + 2\\pi R^2\\)<\/span>", "<span class=\"mi\">\\(S_T = \\pi Rh + 2\\pi R^2\\)<\/span>", "<span class=\"mi\">\\(S_T = 2\\pi R^2 h\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមាន <span class=\"mi\">\\(R = 7\\text{ cm}\\)<\/span> និង <span class=\"mi\">\\(h = 10\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx \\frac{22}{7}\\)<\/span>)។ ផ្ទៃខាងរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(220\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(440\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(660\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(880\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមានអង្កត់ផ្ចិតបាត <span class=\"mi\">\\(d = 10\\text{ cm}\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h = 12\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ ផ្ទៃខាងគឺ ៖", "options": ["<span class=\"mi\">\\(314\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(376.8\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(412\\text{ cm}^2\\)<\/span>", "<span class=\"mi\">\\(450\\text{ cm}^2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមានកាំ <span class=\"mi\">\\(R = 2\\text{ cm}\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h = 3\\text{ cm}\\)<\/span>។ ផលធៀប <span class=\"mi\">\\(\\frac{S_L}{S_T}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(\\frac{2}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{2}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{4}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមានផ្ទៃខាង <span class=\"mi\">\\(S_L = 62.8\\text{ cm}^2\\)<\/span> និងកាំ <span class=\"mi\">\\(R = 2\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ កម្ពស់ <span class=\"mi\">\\(h\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(8\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "បំពង់រាងស៊ីឡាំងបើកចំហសងខាង មានកាំ <span class=\"mi\">\\(R\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h\\)<\/span>។ ក្រឡាផ្ទៃដែលត្រូវលាបថ្នាំគឺ ៖", "options": ["<span class=\"mi\">\\(S_L = 2\\pi Rh\\)<\/span>", "<span class=\"mi\">\\(S_T = 2\\pi Rh + 2\\pi R^2\\)<\/span>", "<span class=\"mi\">\\(S = \\pi R^2 h\\)<\/span>", "<span class=\"mi\">\\(S = \\pi Rh\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "រូបមន្តគណនាមាឌនៃស៊ីឡាំងគឺ ៖", "options": ["<span class=\"mi\">\\(V = 2\\pi Rh\\)<\/span>", "<span class=\"mi\">\\(V = \\pi R^2 h\\)<\/span>", "<span class=\"mi\">\\(V = \\frac{1}{3}\\pi R^2 h\\)<\/span>", "<span class=\"mi\">\\(V = 2\\pi R^2 h\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ទំនាក់ទំនងរវាងមាឌស៊ីឡាំង <span class=\"mi\">\\(V\\)<\/span>, ផ្ទៃបាត <span class=\"mi\">\\(B\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(V = B + h\\)<\/span>", "<span class=\"mi\">\\(V = \\frac{B \\times h}{2}\\)<\/span>", "<span class=\"mi\">\\(V = B \\times h\\)<\/span>", "<span class=\"mi\">\\(V = 2B \\times h\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមានកាំបាត <span class=\"mi\">\\(R = 3\\text{ cm}\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h = 7\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx \\frac{22}{7}\\)<\/span>)។ មាឌរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(198\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(154\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(132\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(99\\text{ cm}^3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមានផ្ទៃបាត <span class=\"mi\">\\(B = 50\\text{ cm}^2\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h = 8\\text{ cm}\\)<\/span>។ មាឌរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(200\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(300\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(400\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(500\\text{ cm}^3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមានមាឌ <span class=\"mi\">\\(V = 314\\text{ cm}^3\\)<\/span> និងកាំ <span class=\"mi\">\\(R = 5\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ កម្ពស់ <span class=\"mi\">\\(h\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(2\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងមួយមានមាឌ <span class=\"mi\">\\(V = 157\\text{ cm}^3\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h = 2\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ កាំ <span class=\"mi\">\\(R\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(3\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(6\\text{ cm}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើកាំបាតស៊ីឡាំងកើន ២ ដង ហើយកម្ពស់នៅដដែល នោះមាឌរបស់វានឹងកើន ៖", "options": ["២ ដង", "៤ ដង", "៦ ដង", "៨ ដង"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បើកម្ពស់ស៊ីឡាំងកើន ២ ដង ហើយកាំបាតនៅដដែល នោះមាឌរបស់វានឹងកើន ៖", "options": ["២ ដង", "៤ ដង", "៦ ដង", "៨ ដង"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងប្រហោងមានកាំក្រៅ <span class=\"mi\">\\(R\\)<\/span>, កាំក្នុង <span class=\"mi\">\\(r\\)<\/span> និងកម្ពស់ <span class=\"mi\">\\(h\\)<\/span>។ មាឌរបស់វាគឺ ៖", "options": ["<span class=\"mi\">\\(V = \\pi (R - r)^2 h\\)<\/span>", "<span class=\"mi\">\\(V = \\pi (R^2 - r^2) h\\)<\/span>", "<span class=\"mi\">\\(V = 2\\pi (R - r) h\\)<\/span>", "<span class=\"mi\">\\(V = \\pi (R^2 + r^2) h\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ស៊ីឡាំងប្រហោងមាន <span class=\"mi\">\\(R = 5\\text{ cm}, r = 3\\text{ cm}, h = 10\\text{ cm}\\)<\/span> (យក <span class=\"mi\">\\(\\pi \\approx 3.14\\)<\/span>)។ មាឌគឺ ៖", "options": ["<span class=\"mi\">\\(502.4\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(450\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(314\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(251.2\\text{ cm}^3\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ m}^3\\)<\/span> ស្មើនឹងប៉ុន្មាន <span class=\"mi\">\\(\\text{dm}^3\\)<\/span>?", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\)<\/span>", "<span class=\"mi\">\\(10\\,000\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ dm}^3\\)<\/span> ស្មើនឹងប៉ុន្មាន <span class=\"mi\">\\(\\text{cm}^3\\)<\/span>?", "options": ["<span class=\"mi\">\\(10\\)<\/span>", "<span class=\"mi\">\\(100\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\)<\/span>", "<span class=\"mi\">\\(10\\,000\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ទំនាក់ទំនងត្រឹមត្រូវរវាងឯកតាមាឌ និងចំណុះគឺ ៖", "options": ["<span class=\"mi\">\\(1\\text{ L} = 1\\text{ m}^3\\)<\/span>", "<span class=\"mi\">\\(1\\text{ L} = 1\\text{ dm}^3\\)<\/span>", "<span class=\"mi\">\\(1\\text{ L} = 1\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(1\\text{ mL} = 1\\text{ dm}^3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ m}^3\\)<\/span> ស្មើនឹងប៉ុន្មានលីត្រ (<span class=\"mi\">\\(\\text{L}\\)<\/span>)?", "options": ["<span class=\"mi\">\\(10\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(10\\,000\\text{ L}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ cm}^3\\)<\/span> ស្មើនឹងប៉ុន្មានមីលីលីត្រ (<span class=\"mi\">\\(\\text{mL}\\)<\/span>)?", "options": ["<span class=\"mi\">\\(0.1\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(1\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ mL}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មាឌទឹក <span class=\"mi\">\\(3.5\\text{ m}^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(350\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(3\\,500\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(35\\,000\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(35\\text{ L}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ទឹកចំណុះ <span class=\"mi\">\\(4\\,500\\text{ mL}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4.5\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(45\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(450\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(0.45\\text{ L}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ទឹកសុទ្ធ <span class=\"mi\">\\(1\\text{ L}\\)<\/span> មានម៉ាសស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(100\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(500\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(1\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ kg}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ទឹកសុទ្ធ <span class=\"mi\">\\(1\\text{ m}^3\\)<\/span> មានម៉ាសស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(100\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(500\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(1\\,000\\text{ kg}\\)<\/span> (១ តោន)", "<span class=\"mi\">\\(10\\,000\\text{ kg}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រូបផ្គុំមួយកើតពីគូបទ្រនុង <span class=\"mi\">\\(2\\text{ cm}\\)<\/span> ចំនួន ៥ ផ្គុំគ្នា។ មាឌនៃរូបផ្គុំនោះគឺ ៖", "options": ["<span class=\"mi\">\\(20\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(30\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(40\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(50\\text{ cm}^3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

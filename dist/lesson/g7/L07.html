@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៧ : រង្វាស់រង្វាល់ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៧ «រង្វាស់រង្វាល់» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៧ : រង្វាស់រង្វាល់ — គណិតវិទ្យាថ្នាក់ទី ៧ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៧ «រង្វាស់រង្វាល់» គណិតវិទ្យាថ្នាក់ទី ៧៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g7">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li aria-current="page">មេរៀនទី ៧</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៧</span>
+      <div><span class="ls-kicker">មេរៀនទី ៧ · គណិតវិទ្យាថ្នាក់ទី ៧</span><h1>រង្វាស់រង្វាល់</h1><div class="ls-chips"><span class="chip chip-soon">រង្វាស់</span><span class="chip chip-soon">៥ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. រង្វាស់ប្រវែង</a></li><li class="sub"><a href="#u2">២. រង្វាស់ម៉ាស</a></li><li class="sub"><a href="#u3">៣. រង្វាស់ចំណុះ ឬមាឌអង្គធាតុរាវ</a></li><li class="sub"><a href="#u4">៤. ពេលវេលា និងប្រមាណវិធីលើពេលវេលា</a></li><li class="sub"><a href="#u5">៥. ចំណោទអនុវត្តជាក់ស្ដែងលើរង្វាស់រង្វាល់</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-7.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃប្រព័ន្ធរង្វាស់រង្វាល់ និងប្រព័ន្ធម៉ែត្រ (SI)</b></header><div class="bx-b">
+<p>តាំងពីសម័យបុរេប្រវត្តិ មនុស្សជាតិបានស្វែងរកវិធីវាស់វែងទំហំ ប្រវែង ទម្ងន់ និងពេលវេលា ដើម្បីបម្រើឱ្យការដោះដូរទំនិញ និងការសាងសង់។ នាសម័យបុរាណ មនុស្សបានប្រើប្រាស់ផ្នែកផ្សេងៗនៃរាងកាយជាខ្នាតរង្វាស់ ដូចជា ៖ <strong>ចំអាម</strong> (Span), <strong>ហត្ថ</strong> (Cubit - ចម្ងាយពីកែងដៃដល់ចុងម្រាមកណ្ដាល ដែលប្រើក្នុងការសាងសង់ពីរ៉ាមីតអេស៊ីប), <strong>ជំហាន</strong> (Pace) និង <strong>ហ្វីត</strong> (Foot - ប្រវែងប្រអប់ជើង)។</p>
+<p>ប៉ុន្តែ ដោយសាររាងកាយមនុស្សម្នាក់ៗមានទំហំខុសៗគ្នា រង្វាស់ទាំងនោះពុំមានភាពសុក្រឹតឡើយ។ លុះដល់ចុងសតវត្សទី១៨ ក្នុងកំឡុងបដិវត្តន៍បារាំង (ឆ្នាំ ១៧៩៩) បណ្ឌិតសភាវិទ្យាសាស្ត្របារាំងបានបង្កើត <strong>ប្រព័ន្ធម៉ែត្រ (Metric System)</strong> ដែលជាប្រព័ន្ធរង្វាស់តាមគោលដប់ (<span class="mi">\(10\)</span>) ដ៏មានភាពជាក់លាក់ខ្ពស់ ដោយកំណត់យកប្រវែង <strong><span class="mi">\(1\)</span> ម៉ែត្រ </strong> ស្មើនឹងមួយភាគដប់លាននៃចម្ងាយពីប៉ូលខាងជើងទៅខ្សែអេក្វាទ័រ ហើយកំណត់ <strong><span class="mi">\(1\)</span> គីឡូក្រាម </strong> ជាម៉ាសនៃទឹកសុទ្ធចំណុះ <span class="mi">\(1\)</span> លីត្រ ។</p>
+<p>នៅឆ្នាំ ១៩៦០ សន្និសីទទូទៅស្ដីពីរង្វាស់រង្វាល់ (CGPM) បានបង្កើត <strong>ប្រព័ន្ធខ្នាតអន្តរជាតិ (Système International d’Unités - SI)</strong> ជាផ្លូវការ។ សព្វថ្ងៃនេះ ប្រព័ន្ធ SI ត្រូវបានប្រើប្រាស់ជាសកលក្នុងវិទ្យាសាស្ត្រ ឧស្សាហកម្ម ពាណិជ្ជកម្ម និងការអប់រំនៅទូទាំងពិភពលោក។</p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>បុព្វបទនៃប្រព័ន្ធខ្នាតអន្តរជាតិ (SI Prefixes)</b></header><div class="bx-b">
+<p>ក្នុងប្រព័ន្ធខ្នាតអន្តរជាតិ (SI) គេប្រើបុព្វបទខាងមុខឯកតាមូលដ្ឋាន (ដូចជា ម៉ែត្រ ក្រាម លីត្រ) ដើម្បីបង្កើតពហុគុណ និងអនុពហុគុណ ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><strong>បុព្វបទ</strong></th>
+<th><strong>និមិត្តសញ្ញា</strong></th>
+<th><strong>តម្លៃស្វ័យគុណ</strong></th>
+<th><strong>បុព្វបទ</strong></th>
+<th><strong>និមិត្តសញ្ញា</strong></th>
+<th><strong>តម្លៃស្វ័យគុណ</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>គីឡូ (kilo)</td>
+<td><span class="mi">\(\text{k}\)</span></td>
+<td><span class="mi">\(10^3 = 1~000\)</span></td>
+<td>ដេស៊ី (deci)</td>
+<td><span class="mi">\(\text{d}\)</span></td>
+<td><span class="mi">\(10^{-1} = 0.1\)</span></td>
+</tr>
+<tr>
+<td>ហិចតូ (hecto)</td>
+<td><span class="mi">\(\text{h}\)</span></td>
+<td><span class="mi">\(10^2 = 100\)</span></td>
+<td>សង់ទី (centi)</td>
+<td><span class="mi">\(\text{c}\)</span></td>
+<td><span class="mi">\(10^{-2} = 0.01\)</span></td>
+</tr>
+<tr>
+<td>ដេកា (deca)</td>
+<td><span class="mi">\(\text{da}\)</span></td>
+<td><span class="mi">\(10^1 = 10\)</span></td>
+<td>មីលី (milli)</td>
+<td><span class="mi">\(\text{m}\)</span></td>
+<td><span class="mi">\(10^{-3} = 0.001\)</span></td>
+</tr>
+</tbody>
+</table></div>
+</div></section>
+<h3 id="u1">រង្វាស់ប្រវែង</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ឯកតារង្វាស់ប្រវែង</b></header><div class="bx-b">
+<p>ឯកតាមូលដ្ឋាននៃរង្វាស់ប្រវែងក្នុងប្រព័ន្ធអន្តរជាតិគឺ <strong>ម៉ែត្រ</strong> (និមិត្តសញ្ញា ៖ <span class="mi">\(\text{m}\)</span>)។<br/>
+ដើម្បីវាស់ប្រវែងដែលធំជាង ឬតូចជាងម៉ែត្រ គេប្រើ<strong>ពហុគុណ</strong> និង<strong>អនុពហុគុណ</strong>នៃម៉ែត្រ ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th><strong>ពហុគុណនៃម៉ែត្រ (ធំជាង <span class="mi">\(m\)</span>)</strong></th>
+<th><strong>ឯកតាមូលដ្ឋាន</strong></th>
+<th><strong>អនុពហុគុណនៃម៉ែត្រ (តូចជាង <span class="mi">\(m\)</span>)</strong></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>គីឡូម៉ែត្រ</td>
+<td>ហិចតូម៉ែត្រ</td>
+<td>ដេកាម៉ែត្រ</td>
+<td><strong>ម៉ែត្រ</strong></td>
+<td>ដេស៊ីម៉ែត្រ</td>
+<td>សង់ទីម៉ែត្រ</td>
+<td>មីលីម៉ែត្រ</td>
+</tr>
+<tr>
+<td><span class="mi">\(\text{km}\)</span></td>
+<td><span class="mi">\(\text{hm}\)</span></td>
+<td><span class="mi">\(\text{dam}\)</span></td>
+<td><span class="mi">\(\textbf{m}\)</span></td>
+<td><span class="mi">\(\text{dm}\)</span></td>
+<td><span class="mi">\(\text{cm}\)</span></td>
+<td><span class="mi">\(\text{mm}\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(1~000\text{ m}\)</span></td>
+<td><span class="mi">\(100\text{ m}\)</span></td>
+<td><span class="mi">\(10\text{ m}\)</span></td>
+<td><span class="mi">\(1\text{ m}\)</span></td>
+<td><span class="mi">\(0.1\text{ m}\)</span></td>
+<td><span class="mi">\(0.01\text{ m}\)</span></td>
+<td><span class="mi">\(0.001\text{ m}\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>វិធាននៃការបំប្លែង ៖</strong></p>
+<ul>
+<li><p>ពីឯកតាធំទៅឯកតាតូចបន្ទាប់ជាប់គ្នា ៖ <strong>គុណនឹង <span class="mi">\(10\)</span></strong> (រំកិលក្បៀសទៅស្ដាំ ១ ខ្ទង់)។</p></li>
+<li><p>ពីឯកតាតូចទៅឯកតាធំបន្ទាប់ជាប់គ្នា ៖ <strong>ចែកនឹង <span class="mi">\(10\)</span></strong> (រំកិលក្បៀសទៅឆ្វេង ១ ខ្ទង់)។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(4.5\text{ km} = \dots\dots\dots\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(350\text{ cm} = \dots\dots\dots\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(0.85\text{ dam} = \dots\dots\dots\text{ dm}\)</span></p></li>
+<li><p><span class="mi">\(12~500\text{ mm} = \dots\dots\dots\text{ m}\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(4.5\text{ km} = 4.5 \times 1~000 = 4~500\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(350\text{ cm} = 350 \div 100 = 3.5\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(0.85\text{ dam} = 0.85 \times 100 = 85\text{ dm}\)</span></p></li>
+<li><p><span class="mi">\(12~500\text{ mm} = 12~500 \div 1~000 = 12.5\text{ m}\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បំប្លែងរង្វាស់ប្រវែង</b></header><div class="bx-b">
+<p>១. ចូរបំពេញចន្លោះខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(7.2\text{ km} = \dots\dots\dots\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(450\text{ m} = \dots\dots\dots\text{ km}\)</span></p></li>
+<li><p><span class="mi">\(85\text{ dm} = \dots\dots\dots\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(3.4\text{ m} = \dots\dots\dots\text{ mm}\)</span></p></li>
+</ol>
+<p>២. ខ្សែភ្លើងប្រវែង <span class="mi">\(25\text{ m}\)</span> គេកាត់យក <span class="mi">\(3\)</span> កំណាត់ដែលមួយកំណាត់ៗមានប្រវែង <span class="mi">\(450\text{ cm}\)</span>។ រកប្រវែងខ្សែភ្លើងដែលនៅសល់គិតជាម៉ែត្រ។</p>
+</div></section>
+<h3 id="u2">រង្វាស់ម៉ាស</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ឯកតារង្វាស់ម៉ាស</b></header><div class="bx-b">
+<p>ឯកតាមូលដ្ឋាននៃរង្វាស់ម៉ាសគឺ <strong>គីឡូក្រាម</strong> (និមិត្តសញ្ញា ៖ <span class="mi">\(\text{kg}\)</span>) និង <strong>ក្រាម</strong> (និមិត្តសញ្ញា ៖ <span class="mi">\(\text{g}\)</span>)។</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>តោន</strong></td>
+<td><strong>កង់តាល់</strong></td>
+<td><strong>គីឡូក្រាម</strong></td>
+<td><strong>ហិចតូក្រាម</strong></td>
+<td><strong>ដេកាក្រាម</strong></td>
+<td><strong>ក្រាម</strong></td>
+<td><strong>ដេស៊ីក្រាម</strong></td>
+<td><strong>សង់ទីក្រាម</strong></td>
+<td><strong>មីលីក្រាម</strong></td>
+</tr>
+<tr>
+<td><span class="mi">\(\text{t}\)</span></td>
+<td><span class="mi">\(\text{q}\)</span></td>
+<td><span class="mi">\(\textbf{kg}\)</span></td>
+<td><span class="mi">\(\text{hg}\)</span></td>
+<td><span class="mi">\(\text{dag}\)</span></td>
+<td><span class="mi">\(\textbf{g}\)</span></td>
+<td><span class="mi">\(\text{dg}\)</span></td>
+<td><span class="mi">\(\text{cg}\)</span></td>
+<td><span class="mi">\(\text{mg}\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(1~000\text{ kg}\)</span></td>
+<td><span class="mi">\(100\text{ kg}\)</span></td>
+<td><span class="mi">\(1\text{ kg}\)</span></td>
+<td><span class="mi">\(0.1\text{ kg}\)</span></td>
+<td><span class="mi">\(10\text{ g}\)</span></td>
+<td><span class="mi">\(1\text{ g}\)</span></td>
+<td><span class="mi">\(0.1\text{ g}\)</span></td>
+<td><span class="mi">\(0.01\text{ g}\)</span></td>
+<td><span class="mi">\(0.001\text{ g}\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>ចំណាំ ៖</strong> <span class="mi">\(1\text{ t} = 10\text{ q} = 1~000\text{ kg}\)</span> និង <span class="mi">\(1\text{ kg} = 1~000\text{ g}\)</span>។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតម៉ាសខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(3.25\text{ t} = \dots\dots\dots\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ g} = \dots\dots\dots\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(4.5\text{ kg} = \dots\dots\dots\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(2~400\text{ mg} = \dots\dots\dots\text{ g}\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(3.25\text{ t} = 3.25 \times 1~000 = 3~250\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ g} = 850 \div 1~000 = 0.85\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(4.5\text{ kg} = 4.5 \times 1~000 = 4~500\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(2~400\text{ mg} = 2~400 \div 1~000 = 2.4\text{ g}\)</span></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បំប្លែងរង្វាស់ម៉ាស</b></header><div class="bx-b">
+<p>១. ចូរបំពេញចន្លោះខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(5.8\text{ t} = \dots\dots\dots\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(1~750\text{ kg} = \dots\dots\dots\text{ t}\)</span></p></li>
+<li><p><span class="mi">\(350\text{ mg} = \dots\dots\dots\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(0.65\text{ kg} = \dots\dots\dots\text{ g}\)</span></p></li>
+</ol>
+<p>២. ឡានដឹកទំនិញមួយមានទម្ងន់ទទេ <span class="mi">\(2.5\)</span> តោន ។ គេផ្ទុកស្រូវចំនួន <span class="mi">\(80\)</span> បាវ  ដែលក្នុងមួយបាវៗមានទម្ងន់ <span class="mi">\(50\text{ kg}\)</span>។ រកទម្ងន់សរុបនៃឡាននិងស្រូវគិតជាតោន។</p>
+</div></section>
+<h3 id="u3">រង្វាស់ចំណុះ ឬមាឌអង្គធាតុរាវ</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ឯកតារង្វាស់ចំណុះ និងទំនាក់ទំនងជាមួយមាឌ</b></header><div class="bx-b">
+<p>ឯកតាមូលដ្ឋាននៃចំណុះ (មាឌអង្គធាតុរាវ) គឺ <strong>លីត្រ</strong> (និមិត្តសញ្ញា ៖ <span class="mi">\(\text{L}\)</span> ឬ <span class="mi">\(\text{l}\)</span>)។</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>គីឡូលីត្រ</strong></td>
+<td><strong>ហិចតូលីត្រ</strong></td>
+<td><strong>ដេកាលីត្រ</strong></td>
+<td><strong>លីត្រ</strong></td>
+<td><strong>ដេស៊ីលីត្រ</strong></td>
+<td><strong>សង់ទីលីត្រ</strong></td>
+<td><strong>មីលីលីត្រ</strong></td>
+</tr>
+<tr>
+<td><span class="mi">\(\text{kL}\)</span></td>
+<td><span class="mi">\(\text{hL}\)</span></td>
+<td><span class="mi">\(\text{daL}\)</span></td>
+<td><span class="mi">\(\textbf{L}\)</span></td>
+<td><span class="mi">\(\text{dL}\)</span></td>
+<td><span class="mi">\(\text{cL}\)</span></td>
+<td><span class="mi">\(\text{mL}\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(1~000\text{ L}\)</span></td>
+<td><span class="mi">\(100\text{ L}\)</span></td>
+<td><span class="mi">\(10\text{ L}\)</span></td>
+<td><span class="mi">\(1\text{ L}\)</span></td>
+<td><span class="mi">\(0.1\text{ L}\)</span></td>
+<td><span class="mi">\(0.01\text{ L}\)</span></td>
+<td><span class="mi">\(0.001\text{ L}\)</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>ទំនាក់ទំនងរវាងឯកតាមាឌ និងឯកតាចំណុះ ៖</strong> <div class="md">\[1\text{ L} = 1\text{ dm}^3 = 1~000\text{ cm}^3, \qquad{} 1\text{ mL} = 1\text{ cm}^3, \qquad{} 1\text{ m}^3 = 1~000\text{ L} = 1\text{ kL}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ក. ប្ដូរ <span class="mi">\(2.5\text{ L}\)</span> ជា <span class="mi">\(\text{mL}\)</span>។<br/>
+ខ. ប្ដូរ <span class="mi">\(750\text{ mL}\)</span> ជា <span class="mi">\(\text{L}\)</span>។<br/>
+គ. អាងទឹកមួយមានរាងជាប្រលេពីប៉ែតកែងដែលមានមាឌ <span class="mi">\(4.2\text{ m}^3\)</span>។ តើអាងនោះអាចផ្ទុកទឹកបានប៉ុន្មានលីត្រ?</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\(2.5\text{ L} = 2.5 \times 1~000 = 2~500\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(750\text{ mL} = 750 \div 1~000 = 0.75\text{ L}\)</span></p></li>
+<li><p>ដោយ <span class="mi">\(1\text{ m}^3 = 1~000\text{ L}\)</span> ដូច្នេះមាឌ <span class="mi">\(4.2\text{ m}^3\)</span> ផ្ទុកទឹកបាន ៖ <div class="md">\[4.2 \times 1~000 = 4~200\text{ L}\]</div></p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>បំប្លែងរង្វាស់ចំណុះ</b></header><div class="bx-b">
+<p>១. ចូរបំពេញចន្លោះខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3.75\text{ L} = \dots\dots\dots\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(1~800\text{ mL} = \dots\dots\dots\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(0.45\text{ m}^3 = \dots\dots\dots\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(2~500\text{ cm}^3 = \dots\dots\dots\text{ L}\)</span></p></li>
+</ol>
+<p>២. ធុងមួយមានទឹកចំណុះ <span class="mi">\(20\text{ L}\)</span>។ គេដងទឹកចេញចំនួន ៨ ដង ដោយក្នុងមួយដងៗដងបាន <span class="mi">\(650\text{ mL}\)</span>។ តើទឹកដែលនៅសល់ក្នុងធុងមានប៉ុន្មានលីត្រ?</p>
+</div></section>
+<h3 id="u4">ពេលវេលា និងប្រមាណវិធីលើពេលវេលា</h3>
+<section class="bx bx-teal"><header class="bx-h"><b>ឯកតាពេលវេលា</b></header><div class="bx-b">
+<p>ឯកតាមូលដ្ឋាននៃពេលវេលាគឺ <strong>វិនាទី</strong> (និមិត្តសញ្ញា ៖ <span class="mi">\(\text{s}\)</span> ឬ វិ.)។</p>
+<ul>
+<li><p><span class="mi">\(1\)</span> នាទី (min) <span class="mi">\( = 60\)</span> វិនាទី (s) </p></li>
+<li><p><span class="mi">\(1\)</span> ម៉ោង (h) <span class="mi">\( = 60\)</span> នាទី <span class="mi">\( = 3~600\)</span> វិនាទី </p></li>
+<li><p><span class="mi">\(1\)</span> ថ្ងៃ <span class="mi">\( = 24\)</span> ម៉ោង , <span class="mi">\(1\)</span> សប្តាហ៍ <span class="mi">\( = 7\)</span> ថ្ងៃ </p></li>
+<li><p><span class="mi">\(1\)</span> ឆ្នាំធម្មតា <span class="mi">\( = 365\)</span> ថ្ងៃ <span class="mi">\( = 12\)</span> ខែ <span class="mi">\( = 52\)</span> សប្តាហ៍  (ឆ្នាំបង្គ្រប់មាន <span class="mi">\(366\)</span> ថ្ងៃ )</p></li>
+<li><p><span class="mi">\(1\)</span> ទសវត្សរ៍ <span class="mi">\( = 10\)</span> ឆ្នាំ , <span class="mi">\(1\)</span> សតវត្ស <span class="mi">\( = 100\)</span> ឆ្នាំ , <span class="mi">\(1\)</span> សហសវត្សរ៍ <span class="mi">\( = 1~000\)</span> ឆ្នាំ </p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាប្រមាណវិធីលើពេលវេលាខាងក្រោម ៖</p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\((3\text{ h } 45\text{ mn}) + (2\text{ h } 35\text{ mn})\)</span></p></li>
+<li><p><span class="mi">\((5\text{ h } 15\text{ mn}) - (2\text{ h } 40\text{ mn})\)</span></p></li>
+<li><p><span class="mi">\((1\text{ h } 25\text{ mn } 15\text{ s}) \times 4\)</span></p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p><span class="mi">\((3 + 2)\text{ h} + (45 + 35)\text{ mn} = 5\text{ h } 80\text{ mn} = 5\text{ h } + 1\text{ h } 20\text{ mn} = 6\text{ h } 20\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\(4\text{ h } 75\text{ mn} - 2\text{ h } 40\text{ mn} = 2\text{ h } 35\text{ mn}\)</span> (ខ្ចី <span class="mi">\(1\text{ h} = 60\text{ mn}\)</span> ពី <span class="mi">\(5\text{ h}\)</span>)</p></li>
+<li><p><span class="mi">\(4\text{ h } 100\text{ mn } 60\text{ s} = 4\text{ h } 101\text{ mn} = 5\text{ h } 41\text{ mn}\)</span> (ព្រោះ <span class="mi">\(60\text{ s} = 1\text{ mn}\)</span>)</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រមាណវិធីលើពេលវេលា</b></header><div class="bx-b">
+<p>គណនា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((4\text{ h } 38\text{ mn}) + (3\text{ h } 45\text{ mn})\)</span></p></li>
+<li><p><span class="mi">\((7\text{ h } 12\text{ mn}) - (4\text{ h } 35\text{ mn})\)</span></p></li>
+<li><p><span class="mi">\((2\text{ h } 15\text{ mn } 20\text{ s}) \times 3\)</span></p></li>
+<li><p><span class="mi">\((9\text{ h } 36\text{ mn}) \div 4\)</span></p></li>
+</ol>
+</div></section>
+<h3 id="u5">ចំណោទអនុវត្តជាក់ស្ដែងលើរង្វាស់រង្វាល់</h3>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធីសាស្ត្រដោះស្រាយចំណោទរង្វាស់រង្វាល់</b></header><div class="bx-b">
+<p>ដើម្បីដោះស្រាយចំណោទរង្វាស់រង្វាល់ឱ្យបានត្រឹមត្រូវ ៖</p>
+<ol class="list olnum cols1">
+<li><p>អានប្រធានចំណោទឱ្យយល់ច្បាស់ និងកំណត់រកអ្វីដែលគេប្រាប់ និងអ្វីដែលគេសួររក។</p></li>
+<li><p><strong>បំប្លែងខ្នាតរង្វាស់ទាំងអស់ឱ្យទៅជាឯកតាដូចគ្នា</strong> មុននឹងធ្វើប្រមាណវិធីគណនា។</p></li>
+<li><p>ផ្ទៀងផ្ទាត់ចម្លើយ និងដាក់ឯកតាសម្គាល់ឱ្យបានត្រឹមត្រូវនៅចុងបញ្ចប់។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>រថយន្តក្រុងមួយចេញដំណើរពីរាជធានីភ្នំពេញនៅវេលាម៉ោង <span class="mi">\(7:15\)</span> ព្រឹក  ឆ្ពោះទៅក្រុងសៀមរាបដែលមានចម្ងាយ <span class="mi">\(314\text{ km}\)</span>។ រថយន្តបើកបរក្នុងល្បឿនមធ្យម <span class="mi">\(60\text{ km/h}\)</span> និងបានឈប់សម្រាកតាមផ្លូវអស់រយៈពេល <span class="mi">\(45\)</span> នាទី ។</p>
+<ol class="list olka cols1">
+<li><p>រករយៈពេលដែលរថយន្តកំពុងបើកបរលើផ្លូវ (ជាម៉ោង និងនាទី)។</p></li>
+<li><p>តើរថយន្តទៅដល់ក្រុងសៀមរាបនៅវេលាម៉ោងប៉ុន្មាន?</p></li>
+</ol>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><strong>ដំណោះស្រាយលម្អិត៖</strong></p>
+<ol class="list olka cols1">
+<li><p>រយៈពេលបើកបរគឺ <span class="mi">\(t = \dfrac{d}{v} = \dfrac{314}{60} \approx 5\text{ h } 14\text{ mn}\)</span>។</p></li>
+<li><p>រយៈពេលធ្វើដំណើរសរុប ៖ <span class="mi">\(5\text{ h } 14\text{ mn} + 45\text{ mn} = 5\text{ h } 59\text{ mn}\)</span>។<br/>
+ពេលទៅដល់គឺ ៖ <span class="mi">\(7\text{ h } 15\text{ mn} + 5\text{ h } 59\text{ mn} = 12\text{ h } 74\text{ mn} = 13\text{ h } 14\text{ mn}\)</span> (ម៉ោង <span class="mi">\(1:14\)</span> រសៀល )។</p></li>
+</ol>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ដោះស្រាយចំណោទ</b></header><div class="bx-b">
+<p>១. ជាងសំណង់ម្នាក់ចាក់បេតុងផ្លូវមួយខ្សែប្រវែង <span class="mi">\(1.2\text{ km}\)</span> ទទឹង <span class="mi">\(6\text{ m}\)</span> និងកម្រាស់ <span class="mi">\(0.15\text{ m}\)</span>។ រកមាឌបេតុងដែលត្រូវប្រើគិតជាម៉ែត្រគូប (<span class="mi">\(m^3\)</span>)។<br/>
+២. កីឡាករម្នាក់រត់ប្រណាំងចម្ងាយ <span class="mi">\(10~000\text{ m}\)</span> ដោយប្រើថិរវេលា <span class="mi">\(32\)</span> នាទី <span class="mi">\( 45\)</span> វិនាទី ។ រកល្បឿនមធ្យមរបស់គាត់គិតជាម៉ែត្រក្នុងមួយវិនាទី (<span class="mi">\(m/s\)</span>)។</p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>បំប្លែងខ្នាតប្រវែងខាងក្រោមជាម៉ែត្រ (<span class="mi">\(\text{m}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(6.5\text{ km}\)</span></p></li>
+<li><p><span class="mi">\(28\text{ hm}\)</span></p></li>
+<li><p><span class="mi">\(0.75\text{ dam}\)</span></p></li>
+<li><p><span class="mi">\(450\text{ dm}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាម៉ែត្រ (<span class="mi">\(\text{m}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(6.5\text{ km} = 6.5 \times 1\,000 = 6\,500\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(28\text{ hm} = 28 \times 100 = 2\,800\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(0.75\text{ dam} = 0.75 \times 10 = 7.5\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(450\text{ dm} = 450 \div 10 = 45\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតប្រវែងខាងក្រោមជាម៉ែត្រ (<span class="mi">\(\text{m}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(3~250\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(18~000\text{ mm}\)</span></p></li>
+<li><p><span class="mi">\(0.05\text{ km}\)</span></p></li>
+<li><p><span class="mi">\(4.2\text{ dam}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាម៉ែត្រ (<span class="mi">\(\text{m}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(3\,250\text{ cm} = 3\,250 \div 100 = 32.5\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(18\,000\text{ mm} = 18\,000 \div 1\,000 = 18\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(0.05\text{ km} = 0.05 \times 1\,000 = 50\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(4.2\text{ dam} = 4.2 \times 10 = 42\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតខាងក្រោមជាសង់ទីម៉ែត្រ (<span class="mi">\(\text{cm}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(2.4\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(35\text{ dm}\)</span></p></li>
+<li><p><span class="mi">\(480\text{ mm}\)</span></p></li>
+<li><p><span class="mi">\(0.03\text{ m}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាសង់ទីម៉ែត្រ (<span class="mi">\(\text{cm}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(2.4\text{ m} = 2.4 \times 100 = 240\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(35\text{ dm} = 35 \times 10 = 350\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(480\text{ mm} = 480 \div 10 = 48\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(0.03\text{ m} = 0.03 \times 100 = 3\text{ cm}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតខាងក្រោមជាគីឡូម៉ែត្រ (<span class="mi">\(\text{km}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(4~500\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ dam}\)</span></p></li>
+<li><p><span class="mi">\(120\text{ hm}\)</span></p></li>
+<li><p><span class="mi">\(75~000\text{ dm}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាគីឡូម៉ែត្រ (<span class="mi">\(\text{km}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(4\,500\text{ m} = 4\,500 \div 1\,000 = 4.5\text{ km}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ dam} = 850 \div 100 = 8.5\text{ km}\)</span></p></li>
+<li><p><span class="mi">\(120\text{ hm} = 120 \div 10 = 12\text{ km}\)</span></p></li>
+<li><p><span class="mi">\(75\,000\text{ dm} = 75\,000 \div 10\,000 = 7.5\text{ km}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>គណនាផលបូក និងផលដកខ្នាតប្រវែងខាងក្រោម រួចសរសេរលទ្ធផលជាម៉ែត្រ ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3.5\text{ km} + 450\text{ m} + 12\text{ dam}\)</span></p></li>
+<li><p><span class="mi">\(800\text{ m} - 35~000\text{ cm}\)</span></p></li>
+<li><p><span class="mi">\(1.2\text{ hm} + 45\text{ m} - 250\text{ dm}\)</span></p></li>
+<li><p><span class="mi">\(4\text{ km} - (1~500\text{ m} + 80\text{ dam})\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនារួចសរសេរជាម៉ែត្រ (<span class="mi">\(\text{m}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(3\,500 + 450 + 120 = 4\,070\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(800 - 350 = 450\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(120 + 45 - 25 = 140\text{ m}\)</span></p></li>
+<li><p><span class="mi">\(4\,000 - (1\,500 + 800) = 1\,700\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>បន្ទប់រាងចតុកោណកែងមួយមានបណ្ដោយ <span class="mi">\(6.8\text{ m}\)</span> និងទទឹង <span class="mi">\(450\text{ cm}\)</span>។ រកបរិមាត្រនៃបន្ទប់នោះគិតជាម៉ែត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកបរិមាត្របន្ទប់ ៖ ទទឹង <span class="mi">\(450\text{ cm} = 4.5\text{ m}\)</span>។<br/>
+បរិមាត្រនៃបន្ទប់ ៖ <div class="md">\[P = 2 \times (6.8 + 4.5) = 2 \times 11.3 = 22.6\text{ m}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>ដីចម្ការរាងចតុកោណកែងមួយមានបណ្ដោយ <span class="mi">\(120\text{ m}\)</span> និងទទឹង <span class="mi">\(85\text{ m}\)</span>។ គេធ្វើរបងព័ទ្ធជុំវិញដោយទុកច្រកចេញចូលប្រវែង <span class="mi">\(4\text{ m}\)</span>។ រកប្រវែងរបងត្រូវសាងសង់។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកប្រវែងរបងត្រូវសាងសង់ ៖</p>
+<ul>
+<li><p>បរិមាត្រដី ៖<br/>
+<span class="mi">\(P = 2 \times (120 + 85) = 410\text{ m}\)</span></p></li>
+<li><p>ប្រវែងរបង (ដកច្រក <span class="mi">\(4\text{ m}\)</span>) ៖<br/>
+<span class="mi">\(410 - 4 = 406\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>ខ្សែលួសមួយដុំប្រវែង <span class="mi">\(50\text{ m}\)</span>។ គេកាត់យក ៥ កំណាត់ស្មើៗគ្នា ដោយក្នុងមួយកំណាត់ៗប្រវែង <span class="mi">\(7.8\text{ m}\)</span>។ តើខ្សែលួសដែលនៅសល់មានប្រវែងប៉ុន្មានម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកប្រវែងខ្សែលួសនៅសល់ ៖</p>
+<ul>
+<li><p>ប្រវែង ៥ កំណាត់ ៖ <span class="mi">\(5 \times 7.8 = 39\text{ m}\)</span></p></li>
+<li><p>ប្រវែងខ្សែនៅសល់ ៖ <span class="mi">\(50 - 39 = 11\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>បង្គោលតង់មួយត្រូវបានបោះភ្ជាប់ទៅដីដោយខ្សែ ៤ ខ្សែ ដែលខ្សែនីមួយៗមានប្រវែង <span class="mi">\(3.75\text{ m}\)</span>។ តើគេត្រូវប្រើខ្សែសរុបប្រវែងប៉ុន្មានម៉ែត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកប្រវែងខ្សែសរុប ៖ ប្រវែងខ្សែ ៤ ខ្សែ ៖ <div class="md">\[4 \times 3.75 = 15\text{ m}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>ផ្លូវជាតិមួយខ្សែមានប្រវែង <span class="mi">\(48\text{ km}\)</span>។ គេក្រាលកៅស៊ូបាន <span class="mi">\(32~500\text{ m}\)</span> រួចហើយ។ តើនៅសល់ផ្លូវប្រវែងប៉ុន្មានគីឡូម៉ែត្រទៀតដែលមិនទាន់ក្រាលកៅស៊ូ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកប្រវែងផ្លូវមិនទាន់ក្រាលកៅស៊ូ ៖</p>
+<ul>
+<li><p>ប្រវែងផ្លូវ ៖ <span class="mi">\(48\text{ km} = 48\,000\text{ m}\)</span></p></li>
+<li><p>នៅសល់មិនទាន់ក្រាល ៖<br/>
+<span class="mi">\(48\,000 - 32\,500 = 15\,500\text{ m} = 15.5\text{ km}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតម៉ាសខាងក្រោមជាគីឡូក្រាម (<span class="mi">\(\text{kg}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(4.8\text{ t}\)</span></p></li>
+<li><p><span class="mi">\(25\text{ q}\)</span></p></li>
+<li><p><span class="mi">\(3~500\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ dag}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាគីឡូក្រាម (<span class="mi">\(\text{kg}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(4.8\text{ t} = 4.8 \times 1\,000 = 4\,800\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(25\text{ q} = 25 \times 100 = 2\,500\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(3\,500\text{ g} = 3\,500 \div 1\,000 = 3.5\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(850\text{ dag} = 850 \div 100 = 8.5\text{ kg}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតម៉ាសខាងក្រោមជាក្រាម (<span class="mi">\(\text{g}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(3.5\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(0.45\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(12~500\text{ mg}\)</span></p></li>
+<li><p><span class="mi">\(48\text{ hg}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាក្រាម (<span class="mi">\(\text{g}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(3.5\text{ kg} = 3.5 \times 1\,000 = 3\,500\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(0.45\text{ kg} = 0.45 \times 1\,000 = 450\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(12\,500\text{ mg} = 12\,500 \div 1\,000 = 12.5\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(48\text{ hg} = 48 \times 100 = 4\,800\text{ g}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតម៉ាសខាងក្រោមជាតោន (<span class="mi">\(\text{t}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(6~500\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(85\text{ q}\)</span></p></li>
+<li><p><span class="mi">\(12~000\text{ hg}\)</span></p></li>
+<li><p><span class="mi">\(450~000\text{ g}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាតោន (<span class="mi">\(\text{t}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(6\,500\text{ kg} = 6\,500 \div 1\,000 = 6.5\text{ t}\)</span></p></li>
+<li><p><span class="mi">\(85\text{ q} = 85 \div 10 = 8.5\text{ t}\)</span></p></li>
+<li><p><span class="mi">\(12\,000\text{ hg} = 12\,000 \div 10\,000 = 1.2\text{ t}\)</span></p></li>
+<li><p><span class="mi">\(450\,000\text{ g} = 450\,000 \div 10^6 = 0.45\text{ t}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គណនាផលបូក និងផលដកខ្នាតម៉ាសខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(2.4\text{ t} + 650\text{ kg}\)</span> (ជា <span class="mi">\(\text{kg}\)</span>)</p></li>
+<li><p><span class="mi">\(5\text{ kg} - 1~850\text{ g}\)</span> (ជា <span class="mi">\(\text{g}\)</span>)</p></li>
+<li><p><span class="mi">\(3\text{ q} + 140\text{ kg} - 80~000\text{ g}\)</span> (ជា <span class="mi">\(\text{kg}\)</span>)</p></li>
+<li><p><span class="mi">\(1.5\text{ t} - (800\text{ kg} + 4\text{ q})\)</span> (ជា <span class="mi">\(\text{kg}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូក ដកខ្នាតម៉ាស ៖</p>
+<ul>
+<li><p><span class="mi">\(2\,400 + 650 = 3\,050\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(5\,000 - 1\,850 = 3\,150\text{ g}\)</span></p></li>
+<li><p><span class="mi">\(300 + 140 - 80 = 360\text{ kg}\)</span></p></li>
+<li><p><span class="mi">\(1\,500 - (800 + 400) = 300\text{ kg}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>កសិករម្នាក់ប្រមូលផលស្រូវបាន <span class="mi">\(3.6\)</span> តោន ។ គាត់លក់ចេញ <span class="mi">\(2~400\text{ kg}\)</span> និងទុកបរិភោគ <span class="mi">\(450\text{ kg}\)</span>។ តើស្រូវដែលនៅសល់មានប៉ុន្មានគីឡូក្រាម?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកស្រូវដែលនៅសល់ ៖</p>
+<ul>
+<li><p>ទិន្នផលស្រូវ ៖ <span class="mi">\(3.6\text{ t} = 3\,600\text{ kg}\)</span></p></li>
+<li><p>ស្រូវនៅសល់ ៖<br/>
+<span class="mi">\(3\,600 - (2\,400 + 450) = 750\text{ kg}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>ឡានមួយផ្ទុកស្ករស <span class="mi">\(120\)</span> បាវ  ដែលក្នុងមួយបាវៗមានទម្ងន់ <span class="mi">\(50\text{ kg}\)</span>។ រកទម្ងន់ស្ករសសរុបគិតជាតោន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកទម្ងន់ស្ករសសរុបគិតជាតោន ៖ <div class="md">\[120 \times 50\text{ kg} = 6\,000\text{ kg} = 6\text{ តោន}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>ប្រអប់មួយមានទម្ងន់ <span class="mi">\(450\text{ g}\)</span>។ គេដាក់សៀវភៅចំនួន <span class="mi">\(25\)</span> ក្បាល  ចូលក្នុងប្រអប់នោះ ដោយសៀវភៅមួយក្បាលៗមានទម្ងន់ <span class="mi">\(320\text{ g}\)</span>។ រកទម្ងន់សរុបនៃប្រអប់និងសៀវភៅគិតជាគីឡូក្រាម។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកទម្ងន់សរុបនៃប្រអប់ និងសៀវភៅ ៖</p>
+<ul>
+<li><p>ទម្ងន់សៀវភៅ ៖ <span class="mi">\(25 \times 320 = 8\,000\text{ g}\)</span></p></li>
+<li><p>ទម្ងន់សរុប ៖<br/>
+<span class="mi">\(8\,000 + 450 = 8\,450\text{ g} = 8.45\text{ kg}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>ស្ពានមួយអាចទ្រទម្ងន់បានអតិបរមា <span class="mi">\(15\)</span> តោន ។ ឡានដឹកទំនិញមួយមានទម្ងន់ទទេ <span class="mi">\(4.5\text{ t}\)</span> និងផ្ទុកដែកទម្ងន់ <span class="mi">\(9~800\text{ kg}\)</span>។ តើឡាននោះអាចឆ្លងកាត់ស្ពានបានដោយសុវត្ថិភាពដែរឬទេ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផ្ទៀងផ្ទាត់ទម្ងន់ឆ្លងកាត់ស្ពាន ៖</p>
+<ul>
+<li><p>ទម្ងន់ឡាននិងដែក ៖<br/>
+<span class="mi">\(4.5\text{ t} + 9.8\text{ t} = 14.3\)</span> តោន </p></li>
+<li><p>ព្រោះ <span class="mi">\(14.3\text{ t} \le 15\text{ t}\)</span> នាំឱ្យឡានអាចឆ្លងកាត់ស្ពានបានដោយសុវត្ថិភាព។</p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតចំណុះខាងក្រោមជាលីត្រ (<span class="mi">\(\text{L}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(4.5\text{ kL}\)</span></p></li>
+<li><p><span class="mi">\(3~800\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(25\text{ dL}\)</span></p></li>
+<li><p><span class="mi">\(650\text{ cL}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាលីត្រ (<span class="mi">\(\text{L}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(4.5\text{ kL} = 4.5 \times 1\,000 = 4\,500\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(3\,800\text{ mL} = 3\,800 \div 1\,000 = 3.8\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(25\text{ dL} = 25 \div 10 = 2.5\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(650\text{ cL} = 650 \div 100 = 6.5\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>បំប្លែងខ្នាតចំណុះខាងក្រោមជាមីលីលីត្រ (<span class="mi">\(\text{mL}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(2.8\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(0.65\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(12\text{ cL}\)</span></p></li>
+<li><p><span class="mi">\(0.05\text{ L}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងខ្នាតជាមីលីលីត្រ (<span class="mi">\(\text{mL}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(2.8\text{ L} = 2.8 \times 1\,000 = 2\,800\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(0.65\text{ L} = 0.65 \times 1\,000 = 650\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(12\text{ cL} = 12 \times 10 = 120\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(0.05\text{ L} = 0.05 \times 1\,000 = 50\text{ mL}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>បំប្លែងរវាងឯកតាមាឌ និងឯកតាចំណុះ ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(3\text{ dm}^3 = \dots\dots\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(4.5\text{ m}^3 = \dots\dots\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(2~500\text{ cm}^3 = \dots\dots\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(1~200\text{ cm}^3 = \dots\dots\text{ L}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងរវាងមាឌ និងចំណុះ ៖</p>
+<ul>
+<li><p><span class="mi">\(3\text{ dm}^3 = 3\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(4.5\text{ m}^3 = 4\,500\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(2\,500\text{ cm}^3 = 2\,500\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(1\,200\text{ cm}^3 = 1.2\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>គណនា ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(3.5\text{ L} + 1~250\text{ mL}\)</span> (ជា <span class="mi">\(\text{mL}\)</span>)</p></li>
+<li><p><span class="mi">\(8\text{ L} - 3~400\text{ mL}\)</span> (ជា <span class="mi">\(\text{L}\)</span>)</p></li>
+<li><p><span class="mi">\(2.4\text{ m}^3 + 800\text{ L}\)</span> (ជា <span class="mi">\(\text{L}\)</span>)</p></li>
+<li><p><span class="mi">\(5\text{ L} - (1~200\text{ mL} + 150\text{ cL})\)</span> (ជា <span class="mi">\(\text{L}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា ៖</p>
+<ul>
+<li><p><span class="mi">\(3\,500 + 1\,250 = 4\,750\text{ mL}\)</span></p></li>
+<li><p><span class="mi">\(8 - 3.4 = 4.6\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(2\,400 + 800 = 3\,200\text{ L}\)</span></p></li>
+<li><p><span class="mi">\(5 - (1.2 + 1.5) = 2.3\text{ L}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>ធុងទឹកមួយមានរាងជាប្រលេពីប៉ែតកែងដែលមានបណ្ដោយ <span class="mi">\(1.5\text{ m}\)</span> ទទឹង <span class="mi">\(1.2\text{ m}\)</span> និងកម្ពស់ <span class="mi">\(0.8\text{ m}\)</span>។ រកចំណុះទឹកអតិបរមាដែលធុងនោះអាចផ្ទុកបានគិតជាលីត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំណុះទឹកអតិបរមា ៖</p>
+<ul>
+<li><p>មាឌធុង ៖<br/>
+<span class="mi">\(V = 1.5 \times 1.2 \times 0.8 = 1.44\text{ m}^3\)</span></p></li>
+<li><p>ចំណុះគិតជាលីត្រ ៖<br/>
+<span class="mi">\(1.44 \times 1\,000 = 1\,440\)</span> លីត្រ </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>ដបទឹកមួយមានចំណុះ <span class="mi">\(500\text{ mL}\)</span>។ តើគេត្រូវប្រើដបទឹកបែបនេះចំនួនប៉ុន្មានដប ដើម្បីច្រកទឹកចំណុះ <span class="mi">\(12\)</span> លីត្រ  ឱ្យអស់?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនដបទឹក ៖ <span class="mi">\(12\text{ L} = 12\,000\text{ mL}\)</span>។<br/>
+ចំនួនដបត្រូវប្រើ ៖ <div class="md">\[12\,000 \div 500 = 24\text{ ដប}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>អាងហែលទឹកមួយមានចំណុះ <span class="mi">\(120\text{ m}^3\)</span>។ ម៉ាស៊ីនបូមទឹកមួយអាចបូមទឹកបញ្ចូលអាងបាន <span class="mi">\(400\text{ L}\)</span> ក្នុងមួយនាទី។ តើត្រូវចំណាយពេលប៉ុន្មានម៉ោងទើបទឹកពេញអាង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកពេលវេលាទឹកពេញអាង ៖</p>
+<ul>
+<li><p>ចំណុះអាង ៖ <span class="mi">\(120\text{ m}^3 = 120\,000\text{ L}\)</span></p></li>
+<li><p>រយៈពេលគិតជានាទី ៖<br/>
+<span class="mi">\(120\,000 \div 400 = 300\text{ mn}\)</span></p></li>
+<li><p>គិតជាម៉ោង ៖ <span class="mi">\(300 \div 60 = 5\)</span> ម៉ោង </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>ពេទ្យសត្វម្នាក់ត្រូវចាក់ថ្នាំឱ្យគោមួយក្បាលចំនួន <span class="mi">\(15\text{ mL}\)</span> ក្នុងមួយថ្ងៃ រយៈពេល <span class="mi">\(5\)</span> ថ្ងៃ  ជាប់គ្នា។ តើត្រូវប្រើថ្នាំសរុបប៉ុន្មានមីលីលីត្រ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំណុះថ្នាំក្នុងរយៈពេល <span class="mi">\(5\)</span> ថ្ងៃ  ៖ <div class="md">\[15\text{ mL} \times 5 = 75\text{ mL}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ប្ដូរខ្នាតពេលវេលាខាងក្រោមជានាទី (<span class="mi">\(\text{mn}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(3\)</span> ម៉ោង </p></li>
+<li><p><span class="mi">\(4.5\)</span> ម៉ោង </p></li>
+<li><p><span class="mi">\(360\)</span> វិនាទី </p></li>
+<li><p><span class="mi">\(2\)</span> ម៉ោង <span class="mi">\( 25\)</span> នាទី </p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្ដូរជា <span class="mi">\(\text{mn}\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(3\)</span> ម៉ោង <span class="mi">\( = 3 \times 60 = 180\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\(4.5\)</span> ម៉ោង <span class="mi">\( = 4.5 \times 60 = 270\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\(360\)</span> វិនាទី <span class="mi">\( = 360 \div 60 = 6\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\(2\)</span> ម៉ោង <span class="mi">\( 25\)</span> នាទី <span class="mi">\( = 2 \times 60 + 25 = 145\text{ mn}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>ប្ដូរខ្នាតពេលវេលាខាងក្រោមជាវិនាទី (<span class="mi">\(\text{s}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(12\)</span> នាទី </p></li>
+<li><p><span class="mi">\(1.5\)</span> ម៉ោង </p></li>
+<li><p><span class="mi">\(4\)</span> នាទី <span class="mi">\( 35\)</span> វិនាទី </p></li>
+<li><p><span class="mi">\(0.5\)</span> ម៉ោង </p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្ដូរជា <span class="mi">\(\text{s}\)</span> ៖</p>
+<ul>
+<li><p><span class="mi">\(12\)</span> នាទី <span class="mi">\( = 12 \times 60 = 720\text{ s}\)</span></p></li>
+<li><p><span class="mi">\(1.5\)</span> ម៉ោង <span class="mi">\( = 1.5 \times 3\,600 = 5\,400\text{ s}\)</span></p></li>
+<li><p><span class="mi">\(4\)</span> នាទី <span class="mi">\( 35\)</span> វិនាទី <span class="mi">\( = 4 \times 60 + 35 = 275\text{ s}\)</span></p></li>
+<li><p><span class="mi">\(0.5\)</span> ម៉ោង <span class="mi">\( = 0.5 \times 3\,600 = 1\,800\text{ s}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>ប្ដូរខ្នាតពេលវេលាខាងក្រោមជាម៉ោង (<span class="mi">\(\text{h}\)</span>) ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(240\)</span> នាទី </p></li>
+<li><p><span class="mi">\(150\)</span> នាទី </p></li>
+<li><p><span class="mi">\(3\)</span> ថ្ងៃ </p></li>
+<li><p><span class="mi">\(7~200\)</span> វិនាទី </p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ប្ដូរជាម៉ោង (<span class="mi">\(\text{h}\)</span>) ៖</p>
+<ul>
+<li><p><span class="mi">\(240\)</span> នាទី <span class="mi">\( = 240 \div 60 = 4\text{ h}\)</span></p></li>
+<li><p><span class="mi">\(150\)</span> នាទី <span class="mi">\( = 150 \div 60 = 2.5\text{ h}\)</span></p></li>
+<li><p><span class="mi">\(3\)</span> ថ្ងៃ <span class="mi">\( = 3 \times 24 = 72\text{ h}\)</span></p></li>
+<li><p><span class="mi">\(7~200\)</span> វិនាទី <span class="mi">\( = 7~200 \div 3\,600 = 2\text{ h}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>គណនាផលបូកពេលវេលាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((2\text{ h } 35\text{ mn}) + (3\text{ h } 40\text{ mn})\)</span></p></li>
+<li><p><span class="mi">\((4\text{ h } 48\text{ mn } 30\text{ s}) + (2\text{ h } 25\text{ mn } 45\text{ s})\)</span></p></li>
+<li><p><span class="mi">\((5\)</span> ថ្ងៃ <span class="mi">\( 14\)</span> ម៉ោង <span class="mi">\() + (3\)</span> ថ្ងៃ <span class="mi">\( 18\)</span> ម៉ោង <span class="mi">\()\)</span></p></li>
+<li><p><span class="mi">\((1\text{ h } 55\text{ mn}) + (45\text{ mn})\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូកពេលវេលា ៖</p>
+<ul>
+<li><p><span class="mi">\((2\text{ h } 35\text{ mn}) + (3\text{ h } 40\text{ mn}) = 5\text{ h } 75\text{ mn} = 6\text{ h } 15\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\((4\text{ h } 48\text{ mn } 30\text{ s}) + (2\text{ h } 25\text{ mn } 45\text{ s}) = 6\text{ h } 73\text{ mn } 75\text{ s} = 7\text{ h } 14\text{ mn } 15\text{ s}\)</span></p></li>
+<li><p><span class="mi">\((5\)</span> ថ្ងៃ <span class="mi">\( 14\)</span> ម៉ោង <span class="mi">\() + (3\)</span> ថ្ងៃ <span class="mi">\( 18\)</span> ម៉ោង <span class="mi">\() = 8\)</span> ថ្ងៃ <span class="mi">\( 32\)</span> ម៉ោង <span class="mi">\( = 9\)</span> ថ្ងៃ <span class="mi">\( 8\)</span> ម៉ោង </p></li>
+<li><p><span class="mi">\((1\text{ h } 55\text{ mn}) + (45\text{ mn}) = 1\text{ h } 100\text{ mn} = 2\text{ h } 40\text{ mn}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>គណនាផលដកពេលវេលាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((5\text{ h } 20\text{ mn}) - (2\text{ h } 45\text{ mn})\)</span></p></li>
+<li><p><span class="mi">\((8\text{ h } 15\text{ mn } 10\text{ s}) - (3\text{ h } 30\text{ mn } 40\text{ s})\)</span></p></li>
+<li><p><span class="mi">\((6\)</span> ថ្ងៃ <span class="mi">\( 8\)</span> ម៉ោង <span class="mi">\() - (2\)</span> ថ្ងៃ <span class="mi">\( 15\)</span> ម៉ោង <span class="mi">\()\)</span></p></li>
+<li><p><span class="mi">\((3\text{ h } 10\text{ mn}) - (55\text{ mn})\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលដកពេលវេលា ៖</p>
+<ul>
+<li><p><span class="mi">\(5\text{ h } 20\text{ mn} - 2\text{ h } 45\text{ mn} = 4\text{ h } 80\text{ mn} - 2\text{ h } 45\text{ mn} = 2\text{ h } 35\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\(8\text{ h } 15\text{ mn } 10\text{ s} - 3\text{ h } 30\text{ mn } 40\text{ s} = 7\text{ h } 74\text{ mn } 70\text{ s} - 3\text{ h } 30\text{ mn } 40\text{ s} = 4\text{ h } 44\text{ mn } 30\text{ s}\)</span></p></li>
+<li><p><span class="mi">\(6\)</span> ថ្ងៃ <span class="mi">\( 8\)</span> ម៉ោង <span class="mi">\( - 2\)</span> ថ្ងៃ <span class="mi">\( 15\)</span> ម៉ោង <span class="mi">\( = 5\)</span> ថ្ងៃ <span class="mi">\( 32\)</span> ម៉ោង <span class="mi">\( - 2\)</span> ថ្ងៃ <span class="mi">\( 15\)</span> ម៉ោង <span class="mi">\( = 3\)</span> ថ្ងៃ <span class="mi">\( 17\)</span> ម៉ោង </p></li>
+<li><p><span class="mi">\(3\text{ h } 10\text{ mn} - 55\text{ mn} = 2\text{ h } 70\text{ mn} - 55\text{ mn} = 2\text{ h } 15\text{ mn}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>គណនាផលគុណពេលវេលាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((1\text{ h } 25\text{ mn}) \times 4\)</span></p></li>
+<li><p><span class="mi">\((2\text{ h } 15\text{ mn } 30\text{ s}) \times 3\)</span></p></li>
+<li><p><span class="mi">\((3\text{ h } 45\text{ mn}) \times 2\)</span></p></li>
+<li><p><span class="mi">\((45\text{ mn } 20\text{ s}) \times 5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលគុណពេលវេលា ៖</p>
+<ul>
+<li><p><span class="mi">\((1\text{ h } 25\text{ mn}) \times 4 = 4\text{ h } 100\text{ mn} = 5\text{ h } 40\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\((2\text{ h } 15\text{ mn } 30\text{ s}) \times 3 = 6\text{ h } 46\text{ mn } 30\text{ s}\)</span></p></li>
+<li><p><span class="mi">\((3\text{ h } 45\text{ mn}) \times 2 = 7\text{ h } 30\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\((45\text{ mn } 20\text{ s}) \times 5 = 3\text{ h } 46\text{ mn } 40\text{ s}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>គណនាផលចែកពេលវេលាខាងក្រោម ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((5\text{ h } 20\text{ mn}) \div 4\)</span></p></li>
+<li><p><span class="mi">\((7\text{ h } 30\text{ mn}) \div 3\)</span></p></li>
+<li><p><span class="mi">\((9\text{ h } 15\text{ mn}) \div 5\)</span></p></li>
+<li><p><span class="mi">\((3\text{ h } 45\text{ mn } 24\text{ s}) \div 6\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែកពេលវេលា ៖</p>
+<ul>
+<li><p><span class="mi">\(320\text{ mn} \div 4 = 80\text{ mn} = 1\text{ h } 20\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\((7\text{ h } 30\text{ mn}) \div 3 = 2\text{ h } 30\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\(555\text{ mn} \div 5 = 111\text{ mn} = 1\text{ h } 51\text{ mn}\)</span></p></li>
+<li><p><span class="mi">\(13\,524\text{ s} \div 6 = 2\,254\text{ s} = 37\text{ mn } 34\text{ s}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>សិស្សម្នាក់ចាប់ផ្ដើមធ្វើកិច្ចការផ្ទះនៅម៉ោង <span class="mi">\(18:45\)</span> ហើយបញ្ចប់នៅម៉ោង <span class="mi">\(20:15\)</span>។ តើគាត់ចំណាយពេលធ្វើកិច្ចការផ្ទះអស់ប៉ុន្មានម៉ោង និងប៉ុន្មាននាទី?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកពេលវេលាធ្វើកិច្ចការផ្ទះ ៖ <div class="md">\[20:15 - 18:45 = 19:75 - 18:45 = 1\text{ ម៉ោង } 30\text{ នាទី}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>កម្មវិធីប្រគំតន្ត្រីមួយចាប់ផ្ដើមនៅម៉ោង <span class="mi">\(19:30\)</span> និងមានរយៈពេល <span class="mi">\(2\)</span> ម៉ោង <span class="mi">\( 45\)</span> នាទី ។ តើកម្មវិធីនោះបញ្ចប់នៅម៉ោងប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកពេលបញ្ចប់កម្មវិធី ៖ <div class="md">\[19:30 + 2\text{ h } 45\text{ mn} = 21:75 = 22:15\]</div> បញ្ចប់នៅម៉ោង <span class="mi">\(22:15\)</span> (ម៉ោង <span class="mi">\(10:15\)</span> យប់)។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>រថយន្តមួយធ្វើដំណើរពីភ្នំពេញទៅបាត់ដំបងដោយចេញដំណើរនៅម៉ោង <span class="mi">\(6:30\)</span> ព្រឹក ។ រថយន្តបើកបរអស់រយៈពេល <span class="mi">\(5\)</span> ម៉ោង <span class="mi">\( 20\)</span> នាទី  និងឈប់សម្រាកបាយថ្ងៃត្រង់អស់ <span class="mi">\(40\)</span> នាទី ។ តើរថយន្តទៅដល់បាត់ដំបងនៅម៉ោងប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកពេលទៅដល់បាត់ដំបង ៖</p>
+<ul>
+<li><p>រយៈពេលសរុប ៖<br/>
+<span class="mi">\(5\text{ h } 20\text{ mn} + 40\text{ mn} = 6\)</span> ម៉ោង </p></li>
+<li><p>ពេលទៅដល់ ៖<br/>
+<span class="mi">\(6:30 + 6:00 = 12:30\)</span> រសៀល </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>កីឡាករម្នាក់រត់បាន ៤ ជុំទីលាន។ ជុំទី១ ប្រើពេល <span class="mi">\(1\text{ mn } 25\text{ s}\)</span>, ជុំទី២ ប្រើពេល <span class="mi">\(1\text{ mn } 30\text{ s}\)</span>, ជុំទី៣ ប្រើពេល <span class="mi">\(1\text{ mn } 28\text{ s}\)</span>, និងជុំទី៤ ប្រើពេល <span class="mi">\(1\text{ mn } 35\text{ s}\)</span>។ រករយៈពេលសរុបដែលគាត់រត់ទាំង ៤ ជុំ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រករយៈពេលសរុប ៤ ជុំ ៖ <div class="md">\[\begin{aligned}
+t &amp;= 1\text{m } 25\text{s} + 1\text{m } 30\text{s} + 1\text{m } 28\text{s} + 1\text{m } 35\text{s} \\
+  &amp;= 4\text{ mn } 118\text{ s} = 5\text{ នាទី } 58\text{ វិនាទី}
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>ក្នុងមួយថ្ងៃ សុខាធ្វើការ <span class="mi">\(7\)</span> ម៉ោង <span class="mi">\( 30\)</span> នាទី ។ គាត់ធ្វើការ ៥ ថ្ងៃក្នុងមួយសប្តាហ៍។ តើក្នុងមួយសប្តាហ៍គាត់ធ្វើការសរុបបានប៉ុន្មានម៉ោង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រករយៈពេលធ្វើការក្នុងមួយសប្តាហ៍ ៖ <div class="md">\[\begin{aligned}
+(7\text{ h } 30\text{ mn}) \times 5 &amp;= 35\text{ h } 150\text{ mn} \\
+  &amp;= 37\text{ ម៉ោង } 30\text{ នាទី} \ (37.5\text{ h})
+\end{aligned}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>រថយន្តមួយបើកបរក្នុងល្បឿនមធ្យម <span class="mi">\(75\text{ km/h}\)</span> ក្នុងរយៈពេល <span class="mi">\(3\)</span> ម៉ោង <span class="mi">\( 20\)</span> នាទី ។ គណនាចម្ងាយចរដែលរថយន្តនោះសម្រេចបាន។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចម្ងាយចរ ៖ <span class="mi">\(3\text{ h } 20\text{ mn} = \dfrac{10}{3}\text{ h}\)</span>។<br/>
+ចម្ងាយចរ ៖ <div class="md">\[d = 75 \times \frac{10}{3} = 250\text{ km}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>អ្នកជិះកង់ម្នាក់ជិះបានចម្ងាយ <span class="mi">\(45\text{ km}\)</span> ដោយប្រើរយៈពេល <span class="mi">\(2\)</span> ម៉ោង <span class="mi">\( 15\)</span> នាទី ។ គណនាល្បឿនមធ្យមរបស់អ្នកជិះកង់នោះគិតជា <span class="mi">\(\text{km/h}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាល្បឿនមធ្យម ៖ <span class="mi">\(2\text{ h } 15\text{ mn} = 2.25\text{ h}\)</span>។<br/>
+ល្បឿនមធ្យម ៖ <div class="md">\[v = \frac{d}{t} = \frac{45}{2.25} = 20\text{ km/h}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>យន្តហោះមួយហោះហើរក្នុងល្បឿនមធ្យម <span class="mi">\(720\text{ km/h}\)</span>។ តើយន្តហោះនោះត្រូវចំណាយពេលប៉ុន្មានម៉ោង និងប៉ុន្មាននាទី ដើម្បីហោះហើរបានចម្ងាយ <span class="mi">\(1~800\text{ km}\)</span>?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រករយៈពេលហោះហើរ ៖ <div class="md">\[t = \frac{1\,800}{720} = 2.5\text{ ម៉ោង} = 2\text{ ម៉ោង } 30\text{ នាទី}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>រថភ្លើងមួយចេញដំណើរពីភ្នំពេញទៅខេត្តព្រះសីហនុដែលមានចម្ងាយ <span class="mi">\(264\text{ km}\)</span> នៅម៉ោង <span class="mi">\(7:00\)</span> ព្រឹក  ក្នុងល្បឿន <span class="mi">\(60\text{ km/h}\)</span>។ តើរថភ្លើងទៅដល់ខេត្តព្រះសីហនុនៅម៉ោងប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកពេលរថភ្លើងទៅដល់ ៖</p>
+<ul>
+<li><p>រយៈពេល ៖ <span class="mi">\(264 \div 60 = 4.4\text{ h} = 4\text{ h } 24\text{ mn}\)</span></p></li>
+<li><p>ពេលទៅដល់ ៖<br/>
+<span class="mi">\(7:00 + 4:24 = 11:24\)</span> ព្រឹក </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>ជាងកាត់ដេរម្នាក់មានក្រណាត់មួយដុំប្រវែង <span class="mi">\(36\text{ m}\)</span>។ គាត់កាត់ដេរសម្លៀកបំពាក់មួយកំប្លេដោយប្រើក្រណាត់ <span class="mi">\(2.8\text{ m}\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>តើគាត់អាចកាត់ដេរសម្លៀកបំពាក់បានចំនួនប៉ុន្មានកំប្លេ?</p></li>
+<li><p>តើក្រណាត់ដែលនៅសល់មានប្រវែងប៉ុន្មានម៉ែត្រ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចំនួនកំប្លេ និងក្រណាត់នៅសល់ ៖</p>
+<ul>
+<li><p><span class="mi">\(36 \div 2.8 \approx 12.857 \Rightarrow\)</span> កាត់បាន <span class="mi">\(12\)</span> កំប្លេ</p></li>
+<li><p>ក្រណាត់ប្រើអស់ ៖ <span class="mi">\(12 \times 2.8 = 33.6\text{ m}\)</span></p></li>
+<li><p>នៅសល់ ៖ <span class="mi">\(36 - 33.6 = 2.4\text{ m}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេចាក់ទឹកផ្លែឈើ <span class="mi">\(4.5\text{ L}\)</span> ចូលទៅក្នុងកែវចំណុះ <span class="mi">\(180\text{ mL}\)</span> ឱ្យបានច្រើនបំផុត។</p>
+<ol class="list olka cols2">
+<li><p>តើគេចាក់បានចំនួនប៉ុន្មានកែវពេញ?</p></li>
+<li><p>តើទឹកផ្លែឈើដែលនៅសល់មានប៉ុន្មានមីលីលីត្រ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនកែវ និងទឹកផ្លែឈើនៅសល់ ៖</p>
+<ul>
+<li><p>ចំណុះ <span class="mi">\(4.5\text{ L} = 4\,500\text{ mL}\)</span></p></li>
+<li><p>ចំនួនកែវពេញ ៖ <span class="mi">\(4\,500 \div 180 = 25\)</span> កែវ </p></li>
+<li><p>ទឹកនៅសល់ ៖ <span class="mi">\(0\text{ mL}\)</span></p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>កសិករម្នាក់មានស្រូវ <span class="mi">\(5.2\)</span> តោន ។ គាត់ច្រកចូលក្នុងបាវធំៗ ដោយក្នុងមួយបាវៗផ្ទុកបាន <span class="mi">\(65\text{ kg}\)</span>។ តើគាត់ត្រូវការបាវសរុបចំនួនប៉ុន្មាន?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនបាវស្រូវ ៖ <span class="mi">\(5.2\text{ t} = 5\,200\text{ kg}\)</span>។<br/>
+ចំនួនបាវត្រូវប្រើ ៖ <div class="md">\[5\,200 \div 65 = 80\text{ បាវ}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>ឡានដឹកដីមួយអាចផ្ទុកដីបាន <span class="mi">\(8\text{ m}^3\)</span> ក្នុងមួយជើង។ ដើម្បីដឹកដីចំនួន <span class="mi">\(120\text{ m}^3\)</span> ទៅចាក់បំពេញទីធ្លាមួយ តើឡាននោះត្រូវដឹកប៉ុន្មានជើង?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនជើងឡានដឹកដី ៖ ចំនួនជើងត្រូវដឹក ៖ <div class="md">\[120 \div 8 = 15\text{ ជើង}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p>បំពង់ទឹកមួយបង្ហូរទឹកបាន <span class="mi">\(25\)</span> លីត្រ  ក្នុងមួយនាទី។ តើត្រូវចំណាយពេលប៉ុន្មានម៉ោង និងប៉ុន្មាននាទី ដើម្បីបង្ហូរទឹកឱ្យបាន <span class="mi">\(4~500\)</span> លីត្រ ?</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រករយៈពេលបង្ហូរទឹក ៖</p>
+<ul>
+<li><p>គិតជានាទី ៖ <span class="mi">\(4\,500 \div 25 = 180\text{ mn}\)</span></p></li>
+<li><p>គិតជាម៉ោង ៖ <span class="mi">\(180 \div 60 = 3\)</span> ម៉ោង </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p>មនុស្សម្នាក់ដកដង្ហើមជាមធ្យម <span class="mi">\(16\)</span> ដង  ក្នុងមួយនាទី។ តើគាត់ដកដង្ហើមបានប៉ុន្មានដងក្នុងរយៈពេល ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(1\)</span> ម៉ោង </p></li>
+<li><p><span class="mi">\(1\)</span> ថ្ងៃ  (<span class="mi">\(24\text{ h}\)</span>)</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកចំនួនដង្ហើម ៖</p>
+<ul>
+<li><p>ក្នុង <span class="mi">\(1\text{ h}\)</span> ៖ <span class="mi">\(16 \times 60 = 960\)</span> ដង </p></li>
+<li><p>ក្នុង <span class="mi">\(1\)</span> ថ្ងៃ  ៖ <span class="mi">\(960 \times 24 = 23\,040\)</span> ដង </p></li>
+</ul>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p>ពន្លឺធ្វើដំណើរក្នុងល្បឿនប្រហែល <span class="mi">\(300~000\text{ km/s}\)</span>។ ពន្លឺព្រះអាទិត្យធ្វើដំណើរមកកាន់ផែនដីប្រើរយៈពេល <span class="mi">\(8\)</span> នាទី <span class="mi">\( 20\)</span> វិនាទី ។ គណនាចម្ងាយពីព្រះអាទិត្យមកផែនដីគិតជាគីឡូម៉ែត្រ។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាចម្ងាយពីព្រះអាទិត្យមកផែនដី ៖ <span class="mi">\(t = 8\text{ mn } 20\text{ s} = 500\text{ s}\)</span>។<br/>
+ចម្ងាយ ៖ <div class="md">\[d = 300\,000 \times 500 = 150\,000\,000\text{ km}\]</div></p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p>គ្រួសារមួយប្រើប្រាស់ទឹកជាមធ្យម <span class="mi">\(850\)</span> លីត្រ  ក្នុងមួយថ្ងៃ។</p>
+<ol class="list olka cols2">
+<li><p>គណនាបរិមាណទឹកដែលគ្រួសារនោះប្រើក្នុងខែមិថុនា (<span class="mi">\(30\)</span> ថ្ងៃ ) គិតជាម៉ែត្រគូប (<span class="mi">\(m^3\)</span>)</p></li>
+<li><p>បើតម្លៃទឹកគឺ <span class="mi">\(1~200\)</span> ៛  ក្នុងមួយម៉ែត្រគូប តើគ្រួសារនោះត្រូវបង់ប្រាក់ថ្លៃទឹកប៉ុន្មានរៀលក្នុងខែនោះ?</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាបរិមាណទឹក និងថ្លៃទឹក ៖</p>
+<ul>
+<li><p>បរិមាណទឹកខែមិថុនា (<span class="mi">\(30\)</span> ថ្ងៃ ) ៖<br/>
+<span class="mi">\(850 \times 30 = 25\,500\text{ L} = 25.5\text{ m}^3\)</span></p></li>
+<li><p>ថ្លៃទឹកត្រូវបង់ ៖<br/>
+<span class="mi">\(25.5 \times 1\,200 = 30\,600\)</span> ៛ </p></li>
+</ul>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ មេរៀនទី ៧ រង្វាស់រង្វាល់</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g07_c07">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L06.html"><small>← មេរៀនមុន</small><b>ភាគរយ</b></a><a class="next" href="L08.html"><small>មេរៀនបន្ទាប់ →</small><b>កន្សោមពីជគណិត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ឯកតាមូលដ្ឋាននៃរង្វាស់ប្រវែងក្នុងប្រព័ន្ធអន្តរជាតិ (SI) គឺ ៖", "options": ["គីឡូម៉ែត្រ", "ម៉ែត្រ", "សង់ទីម៉ែត្រ", "មីលីម៉ែត្រ"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ km}\\)<\/span> ស្មើនឹងប៉ុន្មានម៉ែត្រ?", "options": ["<span class=\"mi\">\\(10\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(1~000\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(10~000\\text{ m}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ m}\\)<\/span> ស្មើនឹងប៉ុន្មានសង់ទីម៉ែត្រ?", "options": ["<span class=\"mi\">\\(10\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(1~000\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(0.1\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(3.5\\text{ m}\\)<\/span> សរសេរជាសង់ទីម៉ែត្រស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(35\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(350\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3~500\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(0.35\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(450\\text{ mm}\\)<\/span> សរសេរជាដេស៊ីម៉ែត្រស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(45\\text{ dm}\\)<\/span>", "<span class=\"mi\">\\(4.5\\text{ dm}\\)<\/span>", "<span class=\"mi\">\\(0.45\\text{ dm}\\)<\/span>", "<span class=\"mi\">\\(450\\text{ dm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(0.08\\text{ km}\\)<\/span> សរសេរជាម៉ែត្រស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(8\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(80\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(800\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(0.8\\text{ m}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "បង្គោលគីឡូម៉ែត្របង្ហាញលេខ <span class=\"mi\">\\(125\\text{ km}\\)<\/span>។ ប្រវែងនេះស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1~250\\text{ hm}\\)<\/span>", "<span class=\"mi\">\\(125~000\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(12~500\\text{ dam}\\)<\/span>", "ត្រូវទាំងអស់"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "ក្នុងខ្នាតប្រពៃណីខ្មែរ <span class=\"mi\">\\(1\\)<\/span> ព្យាម  មានប្រវែងប្រហែល ៖", "options": ["<span class=\"mi\">\\(1\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(0.5\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ m}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> ហត្ថ  ស្មើនឹងប៉ុន្មានចំអាម?", "options": ["<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> អ៊ីញ (inch)  ស្មើនឹងប្រហែល ៖", "options": ["<span class=\"mi\">\\(2.54\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(25.4\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(1.5\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3.14\\text{ cm}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\(2\\text{ m } 40\\text{ cm} + 1\\text{ m } 80\\text{ cm}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\text{ m } 20\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ m } 20\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ m } 10\\text{ cm}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ m } 80\\text{ cm}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(5\\text{ km} - 3~200\\text{ m}\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(1~800\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(2~800\\text{ m}\\)<\/span>", "<span class=\"mi\">\\(1.8\\text{ km}\\)<\/span>", "ក និង គ ត្រូវ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ឯកតាមូលដ្ឋាននៃរង្វាស់ម៉ាសក្នុងប្រព័ន្ធ SI គឺ ៖", "options": ["ក្រាម", "គីឡូក្រាម", "តោន", "មីលីក្រាម"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> តោន (t)  ស្មើនឹងប៉ុន្មានគីឡូក្រាម?", "options": ["<span class=\"mi\">\\(100\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(500\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(1~000\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(10~000\\text{ kg}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> កង់តាល់ (q)  ស្មើនឹងប៉ុន្មានគីឡូក្រាម?", "options": ["<span class=\"mi\">\\(10\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(50\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(1~000\\text{ kg}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ kg}\\)<\/span> ស្មើនឹងប៉ុន្មានក្រាម?", "options": ["<span class=\"mi\">\\(10\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(1~000\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(10~000\\text{ g}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(2~500\\text{ g}\\)<\/span> សរសេរជាគីឡូក្រាមស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(25\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(2.5\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(0.25\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(250\\text{ kg}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(0.75\\text{ kg}\\)<\/span> សរសេរជាក្រាមស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(75\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(750\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(7.5\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(7~500\\text{ g}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(4.2\\text{ t}\\)<\/span> សរសេរជាគីឡូក្រាមស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(420\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(4~200\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(42~000\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(42\\text{ kg}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(500\\text{ mg}\\)<\/span> សរសេរជាក្រាមស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(0.5\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(0.05\\text{ g}\\)<\/span>", "<span class=\"mi\">\\(50\\text{ g}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ក្នុងខ្នាតមាសបុរាណខ្មែរ <span class=\"mi\">\\(1\\)<\/span> តម្លឹង  ស្មើនឹងប៉ុន្មានជី?", "options": ["<span class=\"mi\">\\(5\\)<\/span> ជី ", "<span class=\"mi\">\\(10\\)<\/span> ជី ", "<span class=\"mi\">\\(100\\)<\/span> ជី ", "<span class=\"mi\">\\(12\\)<\/span> ជី "], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> ជី  ស្មើនឹងប៉ុន្មានហ៊ុន?", "options": ["<span class=\"mi\">\\(5\\)<\/span> ហ៊ុន ", "<span class=\"mi\">\\(10\\)<\/span> ហ៊ុន ", "<span class=\"mi\">\\(20\\)<\/span> ហ៊ុន ", "<span class=\"mi\">\\(100\\)<\/span> ហ៊ុន "], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ឯកតាមូលដ្ឋាននៃចំណុះគឺ ៖", "options": ["ម៉ែត្រគូប", "លីត្រ", "មីលីលីត្រ", "ក្រាម"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ L}\\)<\/span> ស្មើនឹងប៉ុន្មានមីលីលីត្រ (<span class=\"mi\">\\(\\text{mL}\\)<\/span>)?", "options": ["<span class=\"mi\">\\(10\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(100\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(1~000\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(10~000\\text{ mL}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ L}\\)<\/span> ស្មើនឹងមាឌ ៖", "options": ["<span class=\"mi\">\\(1\\text{ m}^3\\)<\/span>", "<span class=\"mi\">\\(1\\text{ dm}^3\\)<\/span>", "<span class=\"mi\">\\(1\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(10\\text{ dm}^3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ mL}\\)<\/span> ស្មើនឹងមាឌ ៖", "options": ["<span class=\"mi\">\\(1\\text{ dm}^3\\)<\/span>", "<span class=\"mi\">\\(1\\text{ cm}^3\\)<\/span>", "<span class=\"mi\">\\(1\\text{ mm}^3\\)<\/span>", "<span class=\"mi\">\\(10\\text{ cm}^3\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\text{ m}^3\\)<\/span> ស្មើនឹងប៉ុន្មានលីត្រ?", "options": ["<span class=\"mi\">\\(100\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(500\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(1~000\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(10~000\\text{ L}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(3~500\\text{ mL}\\)<\/span> សរសេរជាលីត្រស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(35\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(3.5\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(0.35\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(350\\text{ L}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(0.4\\text{ L}\\)<\/span> សរសេរជាមីលីលីត្រស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(4\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(40\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(400\\text{ mL}\\)<\/span>", "<span class=\"mi\">\\(4~000\\text{ mL}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ទឹកដោះគោមួយកំប៉ុងចំណុះ <span class=\"mi\">\\(330\\text{ mL}\\)<\/span> ចំនួន ៣ កំប៉ុង មានចំណុះសរុប ៖", "options": ["<span class=\"mi\">\\(0.99\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(9.9\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(990\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(0.33\\text{ L}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "អាងទឹកមួយចំណុះ <span class=\"mi\">\\(2.5\\text{ m}^3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(250\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(2~500\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(25~000\\text{ L}\\)<\/span>", "<span class=\"mi\">\\(25\\text{ L}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ដបទឹកមួយចំណុះ <span class=\"mi\">\\(1.5\\text{ L}\\)<\/span> គេចាក់ទឹកចូលកែវចំណុះ <span class=\"mi\">\\(250\\text{ mL}\\)<\/span> បានចំនួន ៖", "options": ["៤ កែវ", "៥ កែវ", "៦ កែវ", "៨ កែវ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ឯកតាមូលដ្ឋាននៃពេលវេលាក្នុងប្រព័ន្ធ SI គឺ ៖", "options": ["ម៉ោង", "នាទី", "វិនាទី", "ថ្ងៃ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> ម៉ោង  ស្មើនឹងប៉ុន្មានវិនាទី?", "options": ["<span class=\"mi\">\\(60\\text{ s}\\)<\/span>", "<span class=\"mi\">\\(360\\text{ s}\\)<\/span>", "<span class=\"mi\">\\(3~600\\text{ s}\\)<\/span>", "<span class=\"mi\">\\(6~000\\text{ s}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> ថ្ងៃ  មានចំនួនប៉ុន្មានម៉ោង?", "options": ["<span class=\"mi\">\\(12\\text{ h}\\)<\/span>", "<span class=\"mi\">\\(24\\text{ h}\\)<\/span>", "<span class=\"mi\">\\(48\\text{ h}\\)<\/span>", "<span class=\"mi\">\\(60\\text{ h}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> ទសវត្សរ៍  ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(10\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(50\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(100\\)<\/span> ឆ្នាំ "], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> សតវត្ស  ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(10\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(50\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(100\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(1~000\\)<\/span> ឆ្នាំ "], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(1\\)<\/span> សហសវត្សរ៍  ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(100\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(500\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(1~000\\)<\/span> ឆ្នាំ ", "<span class=\"mi\">\\(10~000\\)<\/span> ឆ្នាំ "], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(2\\)<\/span> ម៉ោង <span class=\"mi\">\\( 15\\)<\/span> នាទី  ស្មើនឹងប៉ុន្មាននាទី?", "options": ["<span class=\"mi\">\\(125\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(135\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(145\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(215\\text{ mn}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "<span class=\"mi\">\\(180\\)<\/span> វិនាទី  ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(1.8\\text{ mn}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលបូក <span class=\"mi\">\\((1\\text{ h } 40\\text{ mn}) + (2\\text{ h } 35\\text{ mn})\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\text{ h } 75\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ h } 15\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ h } 25\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ h } 15\\text{ mn}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលដក <span class=\"mi\">\\((4\\text{ h } 20\\text{ mn}) - (1\\text{ h } 45\\text{ mn})\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(2\\text{ h } 35\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ h } 45\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ h } 25\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ h } 25\\text{ mn}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ផលគុណ <span class=\"mi\">\\((1\\text{ h } 20\\text{ mn}) \\times 3\\)<\/span> ស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(3\\text{ h } 60\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ h}\\)<\/span>", "<span class=\"mi\">\\(3.6\\text{ h}\\)<\/span>", "ក និង ខ ត្រូវ"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រថយន្តមួយបើកបរក្នុងល្បឿន <span class=\"mi\">\\(80\\text{ km/h}\\)<\/span> រយៈពេល <span class=\"mi\">\\(2.5\\)<\/span> ម៉ោង ។ ចម្ងាយចរគឺ ៖", "options": ["<span class=\"mi\">\\(160\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(180\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(200\\text{ km}\\)<\/span>", "<span class=\"mi\">\\(240\\text{ km}\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "មនុស្សម្នាក់ដើរបានចម្ងាយ <span class=\"mi\">\\(6\\text{ km}\\)<\/span> ក្នុងរយៈពេល <span class=\"mi\">\\(1\\)<\/span> ម៉ោង <span class=\"mi\">\\( 30\\)<\/span> នាទី ។ ល្បឿនមធ្យមគឺ ៖", "options": ["<span class=\"mi\">\\(3\\text{ km/h}\\)<\/span>", "<span class=\"mi\">\\(4\\text{ km/h}\\)<\/span>", "<span class=\"mi\">\\(5\\text{ km/h}\\)<\/span>", "<span class=\"mi\">\\(4.5\\text{ km/h}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កីឡាករម្នាក់រត់បាន <span class=\"mi\">\\(400\\text{ m}\\)<\/span> ក្នុងពេល <span class=\"mi\">\\(50\\text{ s}\\)<\/span>។ ល្បឿនមធ្យមគិតជា <span class=\"mi\">\\(\\text{m/s}\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(6\\text{ m/s}\\)<\/span>", "<span class=\"mi\">\\(8\\text{ m/s}\\)<\/span>", "<span class=\"mi\">\\(10\\text{ m/s}\\)<\/span>", "<span class=\"mi\">\\(12\\text{ m/s}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ក្បួនរថភ្លើងចេញដំណើរនៅម៉ោង <span class=\"mi\">\\(8:30\\)<\/span> ទៅដល់គោលដៅនៅម៉ោង <span class=\"mi\">\\(11:15\\)<\/span>។ រយៈពេលធ្វើដំណើរគឺ ៖", "options": ["<span class=\"mi\">\\(2\\text{ h } 45\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ h } 15\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(2\\text{ h } 15\\text{ mn}\\)<\/span>", "<span class=\"mi\">\\(3\\text{ h } 45\\text{ mn}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កញ្ចប់ទំនិញមួយមានទម្ងន់ <span class=\"mi\">\\(3\\text{ kg } 250\\text{ g}\\)<\/span>។ កញ្ចប់ ៤ បែបនេះមានទម្ងន់សរុប ៖", "options": ["<span class=\"mi\">\\(12\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(13\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(14\\text{ kg}\\)<\/span>", "<span class=\"mi\">\\(13.5\\text{ kg}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "កុងតឺន័រមួយផ្ទុកទំនិញបានអតិបរមា <span class=\"mi\">\\(24\\)<\/span> តោន ។ បើទំនិញមួយកេសទម្ងន់ <span class=\"mi\">\\(40\\text{ kg}\\)<\/span> នោះកុងតឺន័រអាចផ្ទុកបាន ៖", "options": ["<span class=\"mi\">\\(60\\)<\/span> កេស", "<span class=\"mi\">\\(600\\)<\/span> កេស", "<span class=\"mi\">\\(6~000\\)<\/span> កេស", "<span class=\"mi\">\\(400\\)<\/span> កេស"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ឆ្នាំ ២០២៤ ជាឆ្នាំបង្គ្រប់ (Leap Year)។ តើឆ្នាំនោះមានប៉ុន្មានថ្ងៃ?", "options": ["<span class=\"mi\">\\(364\\)<\/span>", "<span class=\"mi\">\\(365\\)<\/span>", "<span class=\"mi\">\\(366\\)<\/span>", "<span class=\"mi\">\\(360\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>

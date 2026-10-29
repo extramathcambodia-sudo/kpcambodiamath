@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>មេរៀនទី ៥ : ចំនួន — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics</title>
+<meta name="description" content="មេរៀនទី ៥ «ចំនួន» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta name="author" content="ខែម ពុទ្ធី">
+<meta name="theme-color" content="#2a1659">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KPCambodianmathematics">
+<meta property="og:title" content="មេរៀនទី ៥ : ចំនួន — គណិតវិទ្យាថ្នាក់ទី ១០ — KPCambodianmathematics">
+<meta property="og:description" content="មេរៀនទី ៥ «ចំនួន» គណិតវិទ្យាថ្នាក់ទី ១០៖ ទ្រឹស្តី ឧទាហរណ៍ លំហាត់មានដំណោះស្រាយ និងសំណួរពហុជ្រើសរើស។">
+<meta property="og:image" content="../../static/img/icon-512.png">
+<meta property="og:locale" content="km_KH">
+<link rel="icon" href="../../static/img/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preload" href="../../static/fonts/kantumruy-pro-khmer.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../static/fonts/kantumruy-pro.css">
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/khmer-art.css">
+<script>try{var t=localStorage.getItem('km-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../../static/katex/katex.min.css">
+<link rel="stylesheet" href="../../static/css/lesson.css">
+<style>
+.ls-paper .katex-display{overflow-x:auto;overflow-y:hidden;padding:3px 0;max-width:100%}
+.ls-paper ol.list.olka{list-style:none;padding-left:0;counter-reset:kpa}
+.ls-paper ol.list.olka>li{counter-increment:kpa;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olka>li::before{content:counter(kpa,kp-khmer-alpha);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#d6336c;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olnum{list-style:none;padding-left:0;counter-reset:kpn}
+.ls-paper ol.list.olnum>li{counter-increment:kpn;position:relative;padding-left:2.1em}
+.ls-paper ol.list.olnum>li::before{content:counter(kpn,khmer);position:absolute;left:0;top:.15em;display:grid;place-items:center;width:1.45em;height:1.45em;border-radius:50%;background:#1c7ed6;color:#fff;font-weight:700;font-size:.82em}
+.ls-paper ol.list.olroman{list-style:upper-roman}
+@counter-style kp-khmer-alpha{system:alphabetic;symbols:"ក" "ខ" "គ" "ឃ" "ង" "ច" "ឆ" "ជ" "ឈ" "ញ" "ដ" "ឋ" "ឌ" "ឍ" "ណ" "ត" "ថ" "ទ" "ធ" "ន";}
+@media(min-width:640px){.ls-paper ol.list.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ls-paper ol.list.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}
+.ls-paper ol.list.cols4,.ls-paper ol.list.cols5{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5em,1fr));column-gap:14px}}
+.ls-paper img.fig{max-width:100%;height:auto}
+.ls-paper .kfbox{display:inline-block;border:1px solid currentColor;padding:0 6px;border-radius:4px}
+.bx-hist{border-left:3px solid #a9762a}
+.qz-lv{display:none}
+.ex-list .bx{margin:14px 0}
+.bk-page{margin:0 0 22px;text-align:center}.bk-page img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bk-page figcaption{font-size:13px;color:var(--ink-3);margin-top:6px}
+.pdf-note{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:var(--teal-soft);font-size:15px}
+</style>
+<style>
+.fig-ph{margin:10px 0;padding:10px 14px;border:1px dashed #c9d6d4;border-radius:10px;color:#7b8a89;font-size:14px;text-align:center}
+.bx-note{font-weight:600;opacity:.8}
+.ls-toc .km-done{display:none}
+.ls-paper .md{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ls-paper .tbl{overflow-x:auto}
+.sol-all{margin:12px 0 24px}.sol-all>summary{font-weight:700}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2z"/><path d="M12 9v5M12 17h.01"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2.5 5.5c3-1.6 6.2-1.6 9.5.8 3.3-2.4 6.5-2.4 9.5-.8v13.2c-3-1.5-6.2-1.5-9.5.8-3.3-2.3-6.5-2.3-9.5-.8z"/><path d="M12 6.3v13.2"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.3-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.8c1.8.8 2.9 2.5 3.3 5.2"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.6v.2"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M21.2 3.6 3 10.6c-.8.3-.8 1.5.1 1.7l4.5 1.4 1.7 5.5c.2.8 1.2 1 1.8.4l2.5-2.4 4.7 3.4c.6.5 1.6.1 1.8-.7L22.6 5c.2-.9-.6-1.7-1.4-1.4z"/><path d="m7.6 13.7 9.3-6.2-6.8 7.6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="M8 16v-4M12 16V8M16 16v-6.5"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M16.3 3.7a2.3 2.3 0 0 1 3.3 3.3L8.2 18.4 3.6 19.9l1.5-4.6z"/><path d="m14.5 5.5 3.3 3.3"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="2"/><path d="M9 4V2.6h6V4M8.8 10.5h6.4M8.8 14.5h6.4M8.8 18h3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9.5 4.7-9.5 4.8-9.5-4.8z"/><path d="m2.5 12.2 9.5 4.8 9.5-4.8"/><path d="m2.5 16.8 9.5 4.7 9.5-4.7"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.6"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18.5 14v4.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7a1.5 1.5 0 0 1 1.5-1.5H10"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9.3 5 2.7-5 2.7z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.4 2"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8.3 11h.1M12 11h.1M15.7 11h.1M8.3 14.6h.1M12 14.6h.1M15.7 14.6h.1M8.3 18.2h.1M12 18.2h3.8"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.7 5.9 6.4.7-4.8 4.3 1.4 6.4L12 16.9l-5.7 3.2 1.4-6.4-4.8-4.3 6.4-.7z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.8 3.8 6 3.8 9.5s-1.3 6.7-3.8 9.5c-2.5-2.8-3.8-6-3.8-9.5S9.5 5.3 12 2.5z"/></symbol><symbol id="i-plan" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4M7.5 13.5h4M7.5 17h6.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M11 18.5h2"/></symbol><symbol id="i-free" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.6-7.6V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.8" cy="7.8" r="1.4"/></symbol><symbol id="i-school" viewBox="0 0 24 24"><path d="m12 3.5 10 5-10 5-10-5z"/><path d="M6 10.5v5c1.6 1.6 3.6 2.4 6 2.4s4.4-.8 6-2.4v-5M21.5 8.8v5.5"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11.5l-2 4 2 4H5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20.5 20.5-4.8-4.8"/></symbol><symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 4.5H6.5l6 7.5-6 7.5H18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.6-4.6-9.3-9.4C1.5 7.6 3.6 4.3 7.1 4.3c2 0 3.7 1.1 4.9 2.9 1.2-1.8 2.9-2.9 4.9-2.9 3.5 0 5.6 3.3 4.4 6.6-1.7 4.8-9.3 9.4-9.3 9.4z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 12.5a8 8 0 0 1-11.7 7.1L3.5 21l1.4-5a8 8 0 1 1 15.6-3.5z"/><path d="M8.5 11h7M8.5 14.5h4.5"/></symbol></svg>
+<a class="skip" href="#content">រំលងទៅខ្លឹមសារ</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="KPCambodianmathematics — ទំព័រដើម">
+      <img src="../../static/img/logo-96.png" alt="" width="40" height="40">
+      <span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យា ថ្នាក់ទី ៧–១២</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="ម៉ឺនុយមេ">
+      <ul class="nav-list">
+        <li class="nav-item has-menu current"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-grades">រៀន <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu menu-grades" id="menu-grades"><a href="../../grade-7.html" class="g7"><span class="grade-num">៧</span><span><span class="mt">ថ្នាក់ទី ៧</span><span class="md">២២ មេរៀន</span></span></a><a href="../../grade-8.html" class="g8"><span class="grade-num">៨</span><span><span class="mt">ថ្នាក់ទី ៨</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-9.html" class="g9"><span class="grade-num">៩</span><span><span class="mt">ថ្នាក់ទី ៩</span><span class="md">១៨ មេរៀន</span></span></a><a href="../../grade-10.html" class="g10"><span class="grade-num">១០</span><span><span class="mt">ថ្នាក់ទី ១០</span><span class="md">៩ មេរៀន</span></span></a><a href="../../grade-11.html" class="g11"><span class="grade-num">១១</span><span><span class="mt">ថ្នាក់ទី ១១</span><span class="md">៥០ មេរៀន</span></span></a><a href="../../grade-12.html" class="g12"><span class="grade-num">១២</span><span><span class="mt">ថ្នាក់ទី ១២</span><span class="md">៣៣ មេរៀន</span></span></a></div></li>
+        <li class="nav-item"><a class="nav-link" href="../../practice.html">តេស្ត និងវិញ្ញាសា</a></li>
+        <li class="nav-item has-menu"><button class="nav-link" type="button" aria-expanded="false" aria-controls="menu-teach">សម្រាប់គ្រូ <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu" id="menu-teach">
+            <a href="../../exam-builder.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg></span><span><span class="mt">បង្កើតវិញ្ញាសា</span><span class="md">ជ្រើសចំនួន MCQ និងលំហាត់សរសេរ ទាញយក PDF LaTeX Word</span></span></a>
+            <a href="../../classroom.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
+            <a href="../../studio.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
+            <a href="../../geometry-angle-bisector.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="../../admin.html"><span class="mi"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
+            <a href="../../teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
+          </div></li>
+        <li class="nav-item"><a class="nav-link" href="../../books.html">សៀវភៅ</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../about.html">អំពីយើង</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-gold" href="../../student.html">សិស្សចូលប្រឡង</a></div>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត" title="ប្ដូរផ្ទៃភ្លឺ ឬងងឹត"><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-gold btn-sm hide-sm" href="../../student.html">សិស្សចូលប្រឡង</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="ម៉ឺនុយ"><svg class="ic i-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ic i-close" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<section class="page-hero ls-hero g10">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="../../index.html">ទំព័រដើម</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li aria-current="page">មេរៀនទី ៥</li></ol>
+    <div class="ls-head">
+      <span class="ls-badge">៥</span>
+      <div><span class="ls-kicker">ជំពូកទី ២ តក្កវិទ្យា សំណុំ និងចំនួន · មេរៀនទី ៥ · គណិតវិទ្យាថ្នាក់ទី ១០</span><h1>ចំនួន</h1><div class="ls-chips"><span class="chip chip-soon">តក្កវិទ្យា សំណុំ និងចំនួន</span><span class="chip chip-soon">៤ ផ្នែក</span><span class="chip chip-soon">លំហាត់ ៥០</span><span class="chip chip-soon">សំណួរពហុជ្រើសរើស ៥០</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="ls">
+  <div class="wrap ls-layout">
+    <aside class="ls-side">
+      <div class="ls-side-box">
+        <div class="ls-side-t">ក្នុងមេរៀននេះ</div>
+        <ol class="ls-toc"><li class="sub"><a href="#u1">១. ចំនួនពិត</a></li><li class="sub"><a href="#u2">២. ចំណែកថ្នាក់នៃចំនួនពិត</a></li><li class="sub"><a href="#u3">៣. ការគណនាកន្សោមដែលមានរ៉ាឌីកាល់</a></li><li class="sub"><a href="#u4">៤. ប្រព័ន្ធរាប់</a></li><li><a href="#s1">លំហាត់អនុវត្តន៍</a></li><li><a href="#qz">សំណួរពហុជ្រើសរើស</a></li></ol>
+        <a class="ls-fx" href="../../grade-10.html"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-grid"/></svg> មេរៀនទាំងអស់</a>
+      </div>
+    </aside>
+    <article class="ls-paper">
+<section class="bx bx-white bx-hist"><header class="bx-h"><b>ប្រវត្តិនៃប្រព័ន្ធចំនួន និងចំនួនកុំផ្លិច</b></header><div class="bx-b">
+<p>ប្រព័ន្ធចំនួនបានវិវត្តជាបន្តបន្ទាប់ពីចំនួនគត់ធម្មជាតិ <span class="mi">\(\mathbb{N}\)</span> ចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(\mathbb{Z}\)</span> ចំនួនសនិទាន <span class="mi">\(\mathbb{Q}\)</span> រហូតដល់ចំនួនពិត <span class="mi">\(\mathbb{R}\)</span>។ ប៉ុន្តែសមីការដឺក្រេទីពីរងាយៗដូចជា <span class="mi">\(x^2 + 1 = 0\)</span> គ្មានឫសក្នុង <span class="mi">\(\mathbb{R}\)</span> ឡើយ។</p>
+<p>នៅសតវត្សទី១៦ គណិតវិទូអ៊ីតាលី Girolamo Cardano និង Rafael Bombelli បានបង្កើតគំនិតដំបូងអំពី «ចំនួននិម្មិត» ដើម្បីដោះស្រាយសមីការដឺក្រេទីបី។ លុះដល់សតវត្សទី១៨ គណិតវិទូស្វីស Leonhard Euler បានបង្កើតនិមិត្តសញ្ញា <span class="mi">\(i\)</span> សម្រាប់តំណាងឱ្យ <span class="mi">\(\sqrt{-1}\)</span> (<span class="mi">\(i^2 = -1\)</span>) ហើយ Carl Friedrich Gauss បានដាក់ឈ្មោះថា <strong>«ចំនួនកុំផ្លិច (Complex Numbers)»</strong> និងបានបង្ហាញប្លង់កុំផ្លិច (Argand-Gauss Plane)។</p>
+<p>សព្វថ្ងៃ ចំនួនកុំផ្លិចមានសារៈសំខាន់បំផុតក្នុងរូបវិទ្យាទំនើប រលកអេឡិចត្រូម៉ាញ៉េទិច មេកានិចកង់ទិច និងវិស្វកម្មអគ្គិសនីចរន្តឆ្លាស់។</p>
+</div></section>
+<section class="bx bx-white"><header class="bx-h"><b>មុនចូលមេរៀននេះ ត្រូវចេះអ្វីខ្លះ?</b></header><div class="bx-b">
+<p>រំលឹកចំណេះដឹងពីថ្នាក់ក្រោម៖<br/>
+១. ប្រមាណវិធីបូក ដក គុណ ចែក ចំនួនទសភាគ និងប្រភាគ<br/>
+២. ការគណនាស្វ័យគុណនិងឫសការ៉េ</p>
+</div></section>
+<h3 id="u1">ចំនួនពិត</h3>
+<h4>បន្ទាត់ចំនួន</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេឱ្យចំណុច <span class="mi">\(O\)</span> និងចំណុច <span class="mi">\(E\)</span> មួយផ្សេងទៀតនៅលើបន្ទាត់ <span class="mi">\(L\)</span> ។ បើគេមិនរាប់បញ្ចូលចំណុច <span class="mi">\(O\)</span> ទេ នោះគេអាចចែកបន្ទាត់ <span class="mi">\(L\)</span> ជាពីរផ្នែកនៅសងខាងនៃចំណុច <span class="mi">\(O\)</span> ។ ផ្នែកដែលមានចំណុច <span class="mi">\(E\)</span> ហៅថា <strong>ផ្នែកវិជ្ជមាន</strong> និងផ្នែកដែលគ្មានចំណុច <span class="mi">\(E\)</span> ហៅថា <strong>ផ្នែកអវិជ្ជមាន</strong> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>ចំពោះគ្រប់ចំណុចនៅលើបន្ទាត់ <span class="mi">\(L\)</span> ដែលមានអង្កត់ <span class="mi">\(OE\)</span> ជាឯកតាប្រវែង ត្រូវគ្នានឹងចំនួនតាមរបៀបដូចខាងក្រោម ៖</p>
+<ul>
+<li><p>ចំណុច <span class="mi">\(O\)</span> ត្រូវនឹងចំនួន <span class="mi">\(0\)</span> ។</p></li>
+<li><p>គ្រប់ចំណុចនៅផ្នែកវិជ្ជមាន ហើយមានចម្ងាយ <span class="mi">\(s\)</span> ពីចំណុច <span class="mi">\(O\)</span> ត្រូវគ្នានឹងចំនួនវិជ្ជមាន <span class="mi">\(s\)</span> ។</p></li>
+<li><p>គ្រប់ចំណុចនៅផ្នែកអវិជ្ជមាន ហើយមានចម្ងាយ <span class="mi">\(s\)</span> ពីចំណុច <span class="mi">\(O\)</span> ត្រូវគ្នានឹងចំនួនអវិជ្ជមាន <span class="mi">\((-s)\)</span> ។</p></li>
+</ul>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>តាមរបៀបនេះ គ្រប់ចំណុច <span class="mi">\(M\)</span> នៅលើ <span class="mi">\(L\)</span> ត្រូវគ្នានឹងចំនួនតែមួយគត់ មានន័យថា ចំណុចផ្សេងគ្នាត្រូវគ្នានឹងចំនួនផ្សេងគ្នា ។ ចំនួន <span class="mi">\(x\)</span> ដែលត្រូវនឹងចំណុច <span class="mi">\(M\)</span> ហៅថា<strong>អាប់ស៊ីស</strong> នៃចំណុច <span class="mi">\(M\)</span> ។ គេកំណត់សរសេរ <span class="mi">\(M(x)\)</span> ។</p>
+<p>ក្នុងករណីនេះបន្ទាត់ <span class="mi">\(L\)</span> ហៅថាបន្ទាត់ចំនួនដែលមានចំណុច <span class="mi">\(O\)</span> ជាគល់ និង <span class="mi">\(E\)</span> ជាចំណុចឯកតា ។ អាប់ស៊ីសនៃចំណុចគល់ស្មើនឹង <span class="mi">\(0\)</span> និងអាប់ស៊ីសនៃចំណុចឯកតាស្មើនឹង <span class="mi">\(1\)</span> ។</p>
+<p>គ្រប់ចំនួនដែលត្រូវគ្នានឹងគ្រប់ចំណុចនៅលើបន្ទាត់ចំនួន ហៅថា <strong>ចំនួនពិត</strong> ។ បើគេគូសបន្ទាត់ចំនួនជាបន្ទាត់ដេក នោះផ្នែកវិជ្ជមានត្រូវនៅខាងស្តាំ និងផ្នែកអវិជ្ជមាននៅខាងឆ្វេង ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ដៅចំនួនដូចខាងក្រោមនៅលើបន្ទាត់ចំនួន<br/>
+<strong>ក.</strong>  <span class="mi">\(4\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(-3\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(2.5\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\(-1.5\)</span><br/>
+<strong>ង.</strong>  <span class="mi">\(-\frac{3}{4}\)</span> ។</p>
+</div></section>
+<h4>ការប្រៀបធៀបចំនួនពិត</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គេដៅចំនួនវិជ្ជមាននៅលើបន្ទាត់ចំនួនដោយចំណុចជាច្រើននៅផ្នែកខាងស្តាំនៃគល់ និងដៅចំនួនអវិជ្ជមានដោយចំណុចជាច្រើននៅផ្នែកខាងឆ្វេងនៃគល់ ។ បើគេនិយាយថា ចំនួនពិត <span class="mi">\(b\)</span> ធំជាងចំនួនពិត <span class="mi">\(a\)</span> ឬ <span class="mi">\(a\)</span> តូចជាង <span class="mi">\(b\)</span> នោះគេថាចំណុច <span class="mi">\(b\)</span> នៅខាងស្តាំនៃចំណុច <span class="mi">\(a\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេកំណត់សរសេរ <span class="mi">\(a &lt; b\)</span> ឬ <span class="mi">\(b &lt; a\)</span> ។</p>
+<ul>
+<li><p>បើ <span class="mi">\(a\)</span> វិជ្ជមាន គេសរសេរ <span class="mi">\(a &gt; 0\)</span> ។</p></li>
+<li><p>បើ <span class="mi">\(a\)</span> អវិជ្ជមាន គេសរសេរ <span class="mi">\(a &lt; 0\)</span> ។</p></li>
+</ul>
+<p>គេអាចប្រៀបធៀបចំនួនពិតតាមលក្ខណៈខាងក្រោម ៖<br/>
+<strong>ក.</strong>  ចំពោះគ្រប់ចំនួនពិត <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> គេអាចបានទំនាក់ទំនងមួយក្នុងចំណោមទំនាក់ទំនង <div class="md">\[a &lt; b , \quad{} a = b \quad{} \text{និង} \quad{} a &gt; b \text{~។}\]</div> <strong>ខ.</strong>  <div class="md">\[(a &lt; b \quad{} \text{និង} \quad{} b &lt; c) \Rightarrow a &lt; c \text{~។}\]</div> <strong>គ.</strong>  <div class="md">\[a &gt; b \Leftrightarrow a - b &gt; 0 \text{~។}\]</div></p>
+</div></section>
+<h4>តម្លៃដាច់ខាតនៃចំនួនពិត</h4>
+<p>ចម្ងាយពីគល់ <span class="mi">\(O\)</span> ទៅចំណុច <span class="mi">\(a\)</span> នៅលើបន្ទាត់ចំនួនហៅថា<strong>តម្លៃដាច់ខាត</strong> នៃចំនួន <span class="mi">\(a\)</span> ។ តម្លៃដាច់ខាតនៃចំនួនពិត <span class="mi">\(a\)</span> កំណត់ដោយ <span class="mi">\(|a|\)</span> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><span class="mi">\(|3| = 3 , \quad{} |-3| = 3 \quad{} \)</span> និង <span class="mi">\( \quad{} |0| = 0\)</span> ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>១.</strong>  គណនាតម្លៃខាងក្រោម ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(|8|\)</span> <strong>ខ.</strong>  <span class="mi">\(|-10|\)</span> <strong>គ.</strong>  <span class="mi">\(|2.5|\)</span> <strong>ឃ.</strong>  <span class="mi">\(\left|-\frac{1}{3}\right|\)</span> ។<br/>
+<strong>២.</strong>  កំណត់ចំនួនពិត <span class="mi">\(x\)</span> ដែលផ្ទៀងផ្ទាត់ <span class="mi">\(|x| = 7\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>១.</strong>  <strong>ក.</strong>  <span class="mi">\(8\)</span> <strong>ខ.</strong>  <span class="mi">\(10\)</span> <strong>គ.</strong>  <span class="mi">\(2.5\)</span> <strong>ឃ.</strong>  <span class="mi">\(\frac{1}{3}\)</span> <strong>២.</strong>  <span class="mi">\(x = \pm 7\)</span> ។</p></details>
+</div></section>
+<p>តាមនិយមន័យនៃតម្លៃដាច់ខាត គេទាញបានលក្ខណៈខាងក្រោម ៖</p>
+<ul>
+<li><p><span class="mi">\(|a| = a\)</span> បើ <span class="mi">\(a \geq 0\)</span></p></li>
+<li><p><span class="mi">\(|a| = -a\)</span> បើ <span class="mi">\(a &lt; 0\)</span></p></li>
+<li><p>ចំពោះគ្រប់ចំនួនពិត <span class="mi">\(a\)</span> គេបាន <span class="mi">\(|a| \geq 0\)</span></p></li>
+<li><p><span class="mi">\(|a| = 0\)</span> លុះត្រាតែ <span class="mi">\(a = 0\)</span> ។</p></li>
+</ul>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">១</span><b>លំហាត់គំរូ ១</b></header><div class="bx-b">
+<p>បង្ហាញថាសមភាព <span class="mi">\(|-a| = |a|\)</span> ពិត ចំពោះគ្រប់ចំនួនពិត <span class="mi">\(a\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ពិនិត្យសមភាពនេះចំពោះ <span class="mi">\(a \geq 0\)</span> និង <span class="mi">\(a &lt; 0\)</span> ។ <span class="mi">\((i)\)</span> ចំពោះ <span class="mi">\(a \geq 0\)</span> គេបាន <span class="mi">\(|a| = a\)</span> និង <span class="mi">\(-a \leq 0\)</span> នោះ <span class="mi">\(|-a| = -(-a) = a = |a|\)</span></p>
+<p><span class="mi">\((ii)\)</span> ចំពោះ <span class="mi">\(a &lt; 0\)</span> គេបាន <span class="mi">\(|a| = -a\)</span> និង <span class="mi">\(-a &gt; 0\)</span> នោះ <span class="mi">\(|-a| = -a = |a|\)</span></p>
+<p>តាម <span class="mi">\((i)\)</span> និង <span class="mi">\((ii)\)</span> ចំពោះគ្រប់ចំនួនពិតនៃ <span class="mi">\(a\)</span> គេបាន <span class="mi">\(|-a| = |a|\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>បង្ហាញថា <span class="mi">\(a^2 = |a|^2\)</span> ពិត ចំពោះគ្រប់ចំនួនពិត <span class="mi">\(a\)</span> ។</p>
+</div></section>
+<h3 id="u2">ចំណែកថ្នាក់នៃចំនួនពិត</h3>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេតាងសំណុំចំនួនគត់ធម្មជាតិ <span class="mi">\(1, 2, 3, \dots\)</span> ដោយ <span class="mi">\(\mathbb{N}\)</span> ។ គេបាន <span class="mi">\(\mathbb{N} = \{1, 2, 3, \dots\}\)</span> ។ ផលបូក និងផលគុណនៃចំនួនគត់ធម្មជាតិជាចំនួនគត់ធម្មជាតិ ។ គ្រប់ចំនួនគត់វិជ្ជមាន <span class="mi">\(1, 2, 3, \dots\)</span> គ្រប់ចំនួនគត់អវិជ្ជមាន <span class="mi">\(-1, -2, -3, \dots\)</span> និង <span class="mi">\(0\)</span> បង្កើតបានជាសំណុំនៃចំនួនគត់រ៉ឺឡាទីបដែលតាងដោយ <span class="mi">\(\mathbb{Z}\)</span> ។ ផលបូក ផលដក និងផលគុណនៃចំនួនគត់រ៉ឺឡាទីបជាចំនួនគត់រ៉ឺឡាទីប ។</p>
+<p>គ្រប់ចំនួនដែលមានទម្រង់ <span class="mi">\(\frac{m}{n}\)</span> ដែល <span class="mi">\(m\)</span> និង <span class="mi">\(n\)</span> ជាចំនួនគត់រ៉ឺឡាទីប ហើយ <span class="mi">\(n \neq 0\)</span> ហៅថា <strong>ចំនួនសនិទាន</strong> ។ គេតាងសំណុំនៃចំនួនសនិទានដោយ <span class="mi">\(\mathbb{Q}\)</span> ។</p>
+<p>គ្រប់ចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(m\)</span> អាចសរសេរជារាងប្រភាគ <span class="mi">\(\frac{m}{1}\)</span> នោះវាក៏ជាចំនួនសនិទានដែរ ។ ផលបូក ផលដក ផលគុណ និងផលចែកចំនួនសនិទាន ក៏ជាចំនួនសនិទានផងដែរ ។</p>
+<p>មានចំណុចជាច្រើននៅលើបន្ទាត់ចំនួន ដែលមិនមែនជាចំនួនសនិទាន ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ការេដែលមានប្រវែងជ្រុងស្មើនឹង 1 មានប្រវែងអង្កត់ទ្រូងស្មើនឹង <span class="mi">\(\sqrt{2}\)</span> ។ គេអាចដៅចំនួន <span class="mi">\(\sqrt{2}\)</span> នៅលើបន្ទាត់ចំនួនបាន ។ ចំនួន <span class="mi">\(\sqrt{2}\)</span> មិនមែនជាចំនួនសនិទានទេ ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+</div></section>
+<p>ចំនួនពិតដែលមិនមែនជាចំនួនសនិទានហៅថា <strong>ចំនួនអសនិទាន</strong> ។ <span class="mi">\(\sqrt{2}\)</span> ជាចំនួនអសនិទាន និងចំនួនថេរ <span class="mi">\(\pi\)</span> ក៏ជាចំនួនអសនិទានដែរ ។</p>
+<p><strong>សម្គាល់ :</strong> គេអាចសរសេរចំនួនសនិទាន ដែលមិនមែនជាចំនួនគត់ឱ្យទៅចំនួនទសភាគ កំណត់ ឬចំនួនទសភាគខួប ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><span class="mi">\(\frac{1}{8} = 0.125\)</span> ជាចំនួនទសភាគកំណត់ ។ <span class="mi">\(\frac{4}{3} = 1.333\dots\)</span> ជាចំនួនទសភាគខួប ដែលមាន <span class="mi">\(3\)</span> ជាខួប ។ <span class="mi">\(\frac{9}{74} = 0.1216216216\dots\)</span> ជាចំនួនទសភាគខួប ដែលមាន <span class="mi">\(216\)</span> ជាខួប ។</p>
+<p>គេអាចសរសេរចំនួនអសនិទានឱ្យទៅជាចំនួនទសភាគអនន្តដែលគ្មានខួប ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><span class="mi">\(\sqrt{2} = 1.41421356237\dots\)</span> ជាចំនួនទសភាគអនន្តដែលគ្មានខួប ។ <span class="mi">\(\pi = 3.14159\dots\)</span> ជាចំនួនទសភាគអនន្តដែលគ្មានខួប ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>តើចំនួនណាខ្លះជាចំនួនសនិទាន ចំនួនអសនិទាន ក្នុងចំណោមចំនួនទាំងនេះ <span class="mi">\(0, 3, \pi, -5, \frac{2}{7}, -\frac{9}{4}, \sqrt{8}, \sqrt{0.16}, \sqrt{3}+1\)</span> ។</p>
+</div></section>
+<h3 id="u3">ការគណនាកន្សោមដែលមានរ៉ាឌីកាល់</h3>
+<h4>ឫសការេនៃចំនួនពិតវិជ្ជមាន ឬសូន្យ</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>ឫសការេនៃ <span class="mi">\(4\)</span> គឺ <span class="mi">\(\sqrt{4} = 2\)</span> និង <span class="mi">\(-\sqrt{4} = -2\)</span> ។ ឫសការេនៃ <span class="mi">\(0\)</span> គឺ <span class="mi">\(0\)</span> ហើយកំណត់ដោយ <span class="mi">\(\sqrt{0} = 0\)</span> ។ ចំនួនអវិជ្ជមាន គ្មានឫសការេនៅក្នុងសំណុំចំនួនពិតទេ ។</p>
+<p>គេថាចំនួនពិត <span class="mi">\(x\)</span> ជាឫសការេនៃចំនួនពិតវិជ្ជមាន ឬសូន្យ <span class="mi">\(a\)</span> កាលណា <span class="mi">\(x^2 = a\)</span> ។ ចំនួនវិជ្ជមាន <span class="mi">\(a\)</span> មានឫសការេពីរដែលជាចំនួនផ្ទុយគ្នា ។ គេតាងឫសការេវិជ្ជមាននៃ <span class="mi">\(a\)</span> ដោយ <span class="mi">\(\sqrt{a}\)</span> និងឫសការេអវិជ្ជមាននៃ <span class="mi">\(a\)</span> ដោយ <span class="mi">\(-\sqrt{a}\)</span> ។ ដូច្នេះ <span class="mi">\((\sqrt{a})^2 = a , \quad{} (-\sqrt{a})^2 = a\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ចូរឱ្យឧទាហរណ៍នៃចំនួនពិត <span class="mi">\(a\)</span> មួយដែលមិនផ្ទៀងផ្ទាត់សមភាព <span class="mi">\(\sqrt{a^2} = a\)</span> រួចបង្ហាញថា <span class="mi">\(\sqrt{a^2} = |a|\)</span> ពិតចំពោះគ្រប់ចំនួនពិត <span class="mi">\(a\)</span> ។</p>
+</div></section>
+<h4>ផលគុណនិងផលចែកនៃឫសការេ</h4>
+<p>ចំពោះ <span class="mi">\(a &gt; 0\)</span> និង <span class="mi">\(b &gt; 0\)</span> គេបាន <div class="md">\[\sqrt{a} \times \sqrt{b} = \sqrt{ab} , \quad{} \frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}} \quad{} \text{និង} \quad{} \sqrt{a^2b} = a\sqrt{b} \text{~។}\]</div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">២</span><b>លំហាត់គំរូ ២</b></header><div class="bx-b">
+<p>គណនា <span class="mi">\(\sqrt{20} , \quad{} \sqrt{10} \times \sqrt{45} , \quad{} \sqrt{0.03} , \quad{} \frac{\sqrt{27}}{\sqrt{3}}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><span class="mi">\(\sqrt{20} = \sqrt{2^2 \times 5} = 2\sqrt{5}\)</span></td>
+<td><span class="mi">\(\sqrt{10}\sqrt{45} = \sqrt{2 \times 5 \times 3^2 \times 5} = 15\sqrt{2}\)</span></td>
+</tr>
+<tr>
+<td><span class="mi">\(\sqrt{0.03} = \sqrt{\dfrac{3}{100}} = \dfrac{\sqrt{3}}{10}\)</span></td>
+<td><span class="mi">\(\dfrac{\sqrt{27}}{\sqrt{3}} = \sqrt{\dfrac{27}{3}} = \sqrt{9} = 3\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់គំរូ ៣</b></header><div class="bx-b">
+<p>គណនាកន្សោមខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\sqrt{12} - \sqrt{27} + \sqrt{\dfrac{3}{4}}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\((2\sqrt{2} + 5\sqrt{3})(3\sqrt{2} - \sqrt{3})\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<strong>ក.</strong>  <span class="mi">\(\sqrt{12} - \sqrt{27} + \sqrt{\dfrac{3}{4}} = 2\sqrt{3} - 3\sqrt{3} + \dfrac{\sqrt{3}}{2} = -\dfrac{\sqrt{3}}{2}\)</span> ។<br/>
+<strong>ខ.</strong>  <span class="mi">\((2\sqrt{2} + 5\sqrt{3})(3\sqrt{2} - \sqrt{3}) = 12 - 2\sqrt{6} + 15\sqrt{6} - 15 = -3 + 13\sqrt{6}\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>គណនាកន្សោមខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\sqrt{8} - \sqrt{18} + \sqrt{72}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\sqrt{20} - 3\sqrt{2} - \sqrt{\dfrac{5}{9}} + \sqrt{50}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\((\sqrt{3} - \sqrt{2})^2\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\((3\sqrt{2} + \sqrt{3})(2\sqrt{3} - \sqrt{2})\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(5\sqrt{2}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{5}{3}\sqrt{5} + 2\sqrt{2}\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(5 - 2\sqrt{6}\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(5\sqrt{6}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h4>ការប្រៀបធៀបឫសការេនៃចំនួនវិជ្ជមានពីរ</h4>
+<p>ចំពោះចំនួនវិជ្ជមាន <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> គេមាន <span class="mi">\(a &lt; b \Leftrightarrow a - b &lt; 0 \quad{} (1)\)</span></p>
+<p>តែ <span class="mi">\(a - b = \sqrt{a^2} - \sqrt{b^2} = (\sqrt{a})^2 - (\sqrt{b})^2 = (\sqrt{a} + \sqrt{b})(\sqrt{a} - \sqrt{b})\)</span></p>
+<p>តាម <span class="mi">\((1)\)</span> គេបាន <div class="md">\[a &lt; b \Leftrightarrow (\sqrt{a} + \sqrt{b})(\sqrt{a} - \sqrt{b}) &lt; 0\]</div> <div class="md">\[a &lt; b \Leftrightarrow (\sqrt{a} - \sqrt{b}) &lt; 0 \quad{} \text{ព្រោះ } \sqrt{a} + \sqrt{b} &gt; 0\]</div> <div class="md">\[a &lt; b \Leftrightarrow \sqrt{a} &lt; \sqrt{b}\]</div></p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់គំរូ ៤</b></header><div class="bx-b">
+<p>ប្រៀបធៀប <span class="mi">\(1 + \sqrt{3}\)</span> និង <span class="mi">\(\sqrt{7}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+ដោយចំនួនទាំងពីរជាចំនួនវិជ្ជមាន នោះគេអាចប្រៀបធៀបតម្លៃរបស់វា ដោយលើកអង្គទាំងពីរជាការេ ហើយគេគណនាផលដក ៖</p>
+<p><span class="mi">\((1 + \sqrt{3})^2 - (\sqrt{7})^2 = (4 + 2\sqrt{3}) - 7 = 2\sqrt{3} - 3 = \sqrt{12} - \sqrt{9} &gt; 0\)</span> ព្រោះ <span class="mi">\(\sqrt{12} &gt; \sqrt{9}\)</span> គេបាន <span class="mi">\((1 + \sqrt{3})^2 &gt; (\sqrt{7})^2\)</span> តាមលក្ខណៈ <span class="mi">\(a &gt; b \Leftrightarrow \sqrt{a} &gt; \sqrt{b}\)</span> ចំពោះករណី <span class="mi">\(a &gt; 0 , \quad{} b &gt; 0\)</span> ដូច្នេះ <span class="mi">\(1 + \sqrt{3} &gt; \sqrt{7}\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>ប្រៀបធៀប ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(2\sqrt{7}\)</span> និង <span class="mi">\(3\sqrt{3}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(2 + \sqrt{6}\)</span> និង <span class="mi">\(2\sqrt{5}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(2\sqrt{7} &gt; 3\sqrt{3}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(2 + \sqrt{6} &lt; 2\sqrt{5}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h4>ការបំបាត់រ៉ាឌីកាល់ពីភាគបែង</h4>
+<p>គេអាចបំប្លែងប្រភាគដែលមានភាគបែងជារ៉ាឌីកាល់ ទៅជាប្រភាគដែលគ្មានរ៉ាឌីកាល់នៅភាគបែង ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់គំរូ ៥</b></header><div class="bx-b">
+<p>ចូរបំបាត់រ៉ាឌីកាល់ពីភាគបែងនៃប្រភាគខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{1}{\sqrt{12}}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{\sqrt{5}}{\sqrt{5} - \sqrt{2}}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+<strong>ក.</strong>  <span class="mi">\(\dfrac{1}{\sqrt{12}} = \dfrac{1}{2\sqrt{3}} = \dfrac{\sqrt{3}}{2(\sqrt{3})^2} = \dfrac{\sqrt{3}}{6}\)</span> ។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\dfrac{\sqrt{5}}{\sqrt{5} - \sqrt{2}} = \dfrac{\sqrt{5}(\sqrt{5} + \sqrt{2})}{(\sqrt{5} - \sqrt{2})(\sqrt{5} + \sqrt{2})} = \dfrac{5 + \sqrt{10}}{(\sqrt{5})^2 - (\sqrt{2})^2} = \dfrac{5 + \sqrt{10}}{3}\)</span> ។</p>
+</div></section><section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>១.</strong>  ចូរបំបាត់រ៉ាឌីកាល់ពីភាគបែងនៃប្រភាគខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\dfrac{1}{\sqrt{28}}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\dfrac{\sqrt{3}}{\sqrt{3} + \sqrt{2}}\)</span></td>
+<td><strong>គ.</strong>  <span class="mi">\(\dfrac{\sqrt{3} + \sqrt{5}}{\sqrt{3} - \sqrt{5}}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>២.</strong>  រកតម្លៃប្រហែលនៃ <span class="mi">\(\dfrac{3}{\sqrt{7} - 2}\)</span> ដោយដឹងថា <span class="mi">\(\sqrt{7} \approx 2.6458\)</span> ។</p>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>១.</strong>  <strong>ក.</strong>  <span class="mi">\(\dfrac{\sqrt{7}}{14}\)</span> <strong>ខ.</strong>  <span class="mi">\(3 - \sqrt{6}\)</span> <strong>គ.</strong>  <span class="mi">\(-4 - \sqrt{15}\)</span><br/>
+<strong>២.</strong>  <span class="mi">\(\dfrac{3}{\sqrt{7} - 2} \approx 4.65\)</span> ។</p></details>
+</div></section>
+<h4>ការសម្រួលកន្សោមដែលមានរ៉ាឌីកាល់ពីរជាន់</h4>
+<p><span class="mi">\((\sqrt{3} + \sqrt{2})^2 = 3 + 2\sqrt{3 \times 2} + 2 = 5 + 2\sqrt{6}\)</span></p>
+<p><span class="mi">\(\sqrt{5 + 2\sqrt{6}}\)</span> អាចបំប្លែង <span class="mi">\(\sqrt{5 + 2\sqrt{6}} = \sqrt{(\sqrt{3} + \sqrt{2})^2} = \sqrt{3} + \sqrt{2}\)</span> ។</p>
+<p>គេហៅការបំប្លែងបែបនេះហៅថា <strong>ការសម្រួលកន្សោមដែលមានរ៉ាឌីកាល់ពីរជាន់</strong> ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់គំរូ ៦</b></header><div class="bx-b">
+<p>កំណត់ចំនួនពិត <span class="mi">\(a\)</span> និង <span class="mi">\(b\)</span> ដែល <span class="mi">\(a &gt; b\)</span> ដោយដឹងថា <span class="mi">\(a + b = 7\)</span> និង <span class="mi">\(ab = 10\)</span> ។ សម្រួលកន្សោម <span class="mi">\(\sqrt{7 + 2\sqrt{10}}\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+គេមាន <span class="mi">\(\begin{cases} a + b = 7 = 5 + 2 \\ ab = 10 = 5 \times 2 \end{cases}\)</span> នោះ <span class="mi">\(a = 5 , b = 2\)</span></p>
+<p>គេបាន <span class="mi">\(\sqrt{7 + 2\sqrt{10}} = \sqrt{5 + 2 + 2\sqrt{5 \times 2}} = \sqrt{\sqrt{5}^2 + \sqrt{2}^2 + 2 \times \sqrt{5} \times \sqrt{2}}\)</span></p>
+<p><span class="mi">\(= \sqrt{(\sqrt{5} + \sqrt{2})^2} = \sqrt{5} + \sqrt{2}\)</span> ។</p>
+<p>ដូច្នេះ <span class="mi">\(\sqrt{7 + 2\sqrt{10}} = \sqrt{5} + \sqrt{2}\)</span> ។</p>
+</div></section><section class="bx bx-gray bx-ex"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់គំរូ ៧</b></header><div class="bx-b">
+<p>សម្រួលកន្សោម <span class="mi">\(\sqrt{8 - 2\sqrt{15}}\)</span></p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+យក <span class="mi">\(\begin{cases} a + b = 8 = 5 + 3 \\ ab = 15 = 5 \times 3 \end{cases}\)</span> នោះ <span class="mi">\(a = 5 , b = 3\)</span></p>
+<p>គេបាន <span class="mi">\(\sqrt{8 - 2\sqrt{15}} = \sqrt{5 + 3 - 2\sqrt{5 \times 3}}\)</span></p>
+<p><span class="mi">\(= \sqrt{\sqrt{5}^2 + \sqrt{3}^2 + (-2) \times \sqrt{5} \times \sqrt{3}}\)</span></p>
+<p><span class="mi">\(= \sqrt{(\sqrt{5} - \sqrt{3})^2} = \sqrt{5} - \sqrt{3}\)</span></p>
+<p>ដូច្នេះ <span class="mi">\(\sqrt{8 - 2\sqrt{15}} = \sqrt{5} - \sqrt{3}\)</span> ។</p>
+</div></section><section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p><span class="mi">\(\sqrt{\sqrt{a}^2 \pm 2\sqrt{a}\sqrt{b} + \sqrt{b}^2} = \sqrt{(\sqrt{a} \pm \sqrt{b})^2} = |\sqrt{a} \pm \sqrt{b}|\)</span> ចំពោះ <span class="mi">\(a &gt; 0 , \quad{} b &gt; 0\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(\sqrt{4 + 2\sqrt{3}}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(\sqrt{6 - 2\sqrt{8}}\)</span></td>
+<td><strong>គ.</strong>  <span class="mi">\(\sqrt{7 + \sqrt{24}}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(1 + \sqrt{3}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(2 - \sqrt{2}\)</span></td>
+<td><strong>គ.</strong>  <span class="mi">\(1 + \sqrt{6}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h3 id="u4">ប្រព័ន្ធរាប់</h3>
+<h4>ប្រព័ន្ធរាប់គោល 10</h4>
+<p>ដើមឡើយគេប្រើម្រាមដៃនិងម្រាមជើងទាំងអស់ ដើម្បីរាប់ចំនួន ។ ពេលគេមិនអាចរាប់ចំនួនដែលធំជាងចំនួនម្រាមដៃនិងម្រាមជើង គេចាប់ផ្តើមយកដុំថ្ម ឬបំណែកឈើសម្រាប់រាប់ចំនួន ។</p>
+<p>បន្ទាប់មកទើបគេបង្កើតលេខដែលមាននិមិត្តសញ្ញា <span class="mi">\(0, 1, 2, 3, 4, 5, 6, 8\)</span> និងលេខ <span class="mi">\(9\)</span> ។ សំណុំនៃលេខទាំងនេះគេហៅថា <strong>ប្រព័ន្ធរាប់គោល 10</strong> រកឃើញដោយជនជាតិហិណ្ឌូ និងយកទៅប្រើប្រាស់នៅអឺរ៉ុបតាមរយៈជនជាតិអារ៉ាប់ ។</p>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សុភីមានស្ករគ្រាប់ចំនួន <span class="mi">\(n = 147\)</span> គ្រាប់ ហើយនាងចង់ច្រកស្ករគ្រាប់ទាំងនោះចូលក្នុងថង់តាមជំហានដូចខាងក្រោម ៖</p>
+<p>ជំហានទី 1 : នាងច្រកស្ករគ្រាប់ <span class="mi">\(10\)</span> គ្រាប់ចូលក្នុងថង់តូចៗបានចំនួន <span class="mi">\(14\)</span> ថង់ និងសល់ <span class="mi">\(7\)</span> គ្រាប់រាយ ។</p>
+<p>ជំហានទី 2 : នាងច្រកថង់ស្ករគ្រាប់តូចៗចំនួន <span class="mi">\(10\)</span> ថង់ចូលក្នុងថង់ធំមួយ នាងបានថង់ធំ <span class="mi">\(1\)</span> ថង់តូច <span class="mi">\(4\)</span> និង <span class="mi">\(7\)</span> គ្រាប់រាយ ។ គេបាន</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><div class="md">\[\begin{aligned}
+                     &amp; \text{1 ថង់ធំ} \quad{}  &amp; + \quad{} &amp; \text{4 ថង់តូច} \quad{} &amp; + \quad{} &amp; \text{7 គ្រាប់រាយ} \\
+                     &amp; 1 \times 10^2 \quad{} &amp; + \quad{} &amp; 4 \times 10 \quad{}   &amp; + \quad{} &amp; 7              \\
+        n = 147 = \; &amp; 1 \times 10^2 \quad{} &amp; + \quad{} &amp; 4 \times 10 \quad{}   &amp; + \quad{} &amp; 7
+    
+\end{aligned}\]</div></p>
+</div></section>
+<p><strong>សម្គាល់ :</strong> ក្នុងប្រព័ន្ធគោល <span class="mi">\(10\)</span> គេមិនចាំបាច់សរសេរសន្ទស្សន៍ <span class="mi">\(10\)</span> ទេ ។ គេអាចសរសេរ <span class="mi">\(147_{10}\)</span> ឬ <span class="mi">\(147_{10}\)</span> ដោយងាយថា <span class="mi">\(147\)</span> ។</p>
+<p>កំណត់សរសេរ <span class="mi">\(147 = 100 + 40 + 7\)</span> ឬ <span class="mi">\(147 = 1 \times 10^2 + 4 \times 10 + 7\)</span> ហៅថាទម្រង់ពន្លាតនៃចំនួន <span class="mi">\(147\)</span> ក្នុងប្រព័ន្ធរាប់គោល <span class="mi">\(10\)</span> ។</p>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>បើ <span class="mi">\(n\)</span> ជាចំនួនគត់ដែលមាន <span class="mi">\(4\)</span> ខ្ទង់នោះ ទម្រង់ពន្លាតនៃ <span class="mi">\(n\)</span> កំណត់ដោយ <div class="md">\[n = \overline{abcd}_{10} = a \times 10^3 + b \times 10^2 + c \times 10 + d \text{~។}\]</div></p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p><strong>ក.</strong>  <span class="mi">\(1234 = 1000 + 200 + 30 + 4\)</span><br/>
+<span class="mi">\(= 1 \times 10^3 + 2 \times 10^2 + 3 \times 10^1 + 4\)</span> (ជាទម្រង់ពន្លាតនៃចំនួន <span class="mi">\(1234\)</span>) ។<br/>
+<strong>ខ.</strong>  <span class="mi">\(27003 = 20000 + 7000 + 3 = 2 \times 10^4 + 7 \times 10^3 + 3\)</span> (ជាទម្រង់ពន្លាតនៃចំនួន <span class="mi">\(27003\)</span>) ។</p>
+<p><strong>របៀបហៅចំនួន :</strong> ឧបមាថាគេមានចំនួន <span class="mi">\(341 \; 213 \; 679 \; 821\)</span> នោះគេហៅថាឈ្មោះខ្ទង់នីមួយៗដូចខាងក្រោម ៖</p>
+<div class="tbl"><table class="booktabs">
+<thead>
+<tr>
+<th>ម៉ឺនកោដិ</th>
+<th>ពាន់កោដិ</th>
+<th>រយកោដិ</th>
+<th>ដប់កោដិ</th>
+<th>កោដិ</th>
+<th>លាន</th>
+<th>សែន</th>
+<th>ម៉ឺន</th>
+<th>ពាន់</th>
+<th>រយ</th>
+<th>ដប់</th>
+<th>រាយ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>6</td>
+<td>7</td>
+<td>9</td>
+<td>8</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>ដូច្នេះ គេហៅចំនួន <span class="mi">\(341 \; 213 \; 679 \; 821\)</span> ថាបីម៉ឺនបួនពាន់មួយរយម្ភៃមួយកោដិបីលានប្រាំមួយសែនប្រាំពីរម៉ឺនប្រាំបួនពាន់ប្រាំបីរយម្ភៃមួយ ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p><strong>១.</strong>  សរសេរទម្រង់ពន្លាតខាងក្រោមនេះជាចំនួនក្នុងប្រព័ន្ធរាប់គោល <span class="mi">\(10\)</span> ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(3 \times 10^6 + 5 \times 10^4 + 7 \times 10\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(9 \times 10^7 + 1 \times 10^6 + 7 \times 10^3 + 2\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(8 \times 10^8 + 1 \times 10^5 + 2 \times 10^2 + 1\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(1 \times 10^9 + 2 \times 10^8 + 5 \times 10^5 + 9 \times 10\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>២.</strong>  ហៅឈ្មោះតាមឈ្មោះខ្ទង់ ហើយសរសេរជាទម្រង់ពន្លាតនៃចំនួនខាងក្រោម ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(123 \; 345 \; 456\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(987 \; 098 \; 678 \; 002\)</span></td>
+</tr>
+<tr>
+<td><strong>គ.</strong>  <span class="mi">\(987 \; 654 \; 321 \; 001\)</span></td>
+<td><strong>ឃ.</strong>  <span class="mi">\(100 \; 700 \; 800 \; 123\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+<strong>១.</strong> <br/>
+</p><div class="tabular">
+<p>[t]<span>@X@X@</span> <strong>ក.</strong>  <span class="mi">\(3 \; 050 \; 070\)</span> &amp; <strong>ខ.</strong>  <span class="mi">\(91 \; 007 \; 002\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(800 \; 100 \; 201\)</span> &amp; <strong>ឃ.</strong>  <span class="mi">\(200 \; 500 \; 090\)</span> ។</p>
+</div><p><br/>
+<strong>២.</strong> <br/>
+<strong>ក.</strong>  <span class="mi">\(123 \; 345 \; 456 = 1\times 10^8 + 2\times 10^7 + 3\times 10^6 + 3\times 10^5\)</span><br/>
+<span class="mi">\(+ 4\times 10^4 + 5\times 10^3 + 4\times 10^2 + 5\times 10 + 6\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(987 \; 098 \; 678 \; 002 = 9\times 10^{11} + 8\times 10^{10} + 7\times 10^9 + 9\times 10^7 + 8\times 10^6\)</span><br/>
+<span class="mi">\(+ 6\times 10^5 + 7\times 10^4 + 8\times 10^3 + 2\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(987 \; 654 \; 321 \; 001 = 9\times 10^{11} + 8\times 10^{10} + 7\times 10^9 + 6\times 10^8 + 5\times 10^7\)</span><br/>
+<span class="mi">\(+ 4\times 10^6 + 3\times 10^5 + 2\times 10^4 + 1\times 10^3 + 1\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\(100 \; 700 \; 800 \; 123 = 1\times 10^{11} + 7\times 10^8 + 8\times 10^5\)</span><br/>
+<span class="mi">\(+ 1\times 10^2 + 2\times 10 + 3\)</span> ។</p></details>
+</div></section>
+<h4>ប្រព័ន្ធរាប់គោល 2</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សុភាពរាប់ប៊ិចចំនួន <span class="mi">\(n = 13\)</span> ដើម ។ នាងចង់រៀបប៊ិចដាក់ក្នុងប្រអប់តាមជំហាននីមួយៗដូចខាងក្រោម ៖</p>
+<p>ជំហានទី 1 : នាងរៀបប៊ិចដាក់ក្នុងប្រអប់តូចៗដែលក្នុងប្រអប់នីមួយៗមានប៊ិច <span class="mi">\(2\)</span> ដើម ។ នាងបាន <span class="mi">\(6\)</span> ប្រអប់តូចនិងសល់ប៊ិចរាយ <span class="mi">\(1\)</span> (ដូចរូបខាងស្តាំ) ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>ជំហានទី 2 : នាងយកប្រអប់តូចៗ <span class="mi">\(2\)</span> ប្រអប់ដាក់ក្នុងប្រអប់មធ្យមនាងបាន <span class="mi">\(3\)</span> ប្រអប់មធ្យមនិងនៅសល់ប៊ិចរាយ <span class="mi">\(1\)</span> (ដូចរូបខាងស្តាំ) ។</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>ជំហានទី 3 : នាងយកប្រអប់មធ្យម <span class="mi">\(2\)</span> ប្រអប់ដាក់ក្នុងប្រអប់ធំ <span class="mi">\(1\)</span> ។ នាងបាន <span class="mi">\(1\)</span> ប្រអប់ធំ <span class="mi">\(1\)</span> ប្រអប់មធ្យម និងសល់ប៊ិចរាយ <span class="mi">\(1\)</span> (ដូចរូបខាងក្រោម) ។ គេបាន</p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p><div class="md">\[\begin{aligned}
+                               &amp; 1 \times 2^3 \quad{} &amp; + \quad{} &amp; 1 \times 2^2 \quad{} &amp; + \quad{} &amp; 0 \times 2^1 \quad{} &amp; + \quad{} &amp; 1                                                   \\
+        \text{ហើយ} \quad{} n = \; &amp; 1 \times 2^3 \quad{} &amp; + \quad{} &amp; 1 \times 2^2 \quad{} &amp; + \quad{} &amp; 0 \times 2 \quad{}   &amp; + \quad{} &amp; 1 \quad{} \text{ជាទម្រង់ពន្លាតនៃ } n \text{ ក្នុងប្រព័ន្ធរាប់គោល 2}
+    
+\end{aligned}\]</div></p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេកំណត់សរសេរ <span class="mi">\(n = 1101_2 \quad{} (\)</span> អានថា : មួយ មួយ សូន្យ មួយ ក្នុងប្រព័ន្ធរាប់គោលពីរ <span class="mi">\()\)</span> ។ ‘</p>
+</div></section>
+<h4>ការបំប្លែងពីប្រព័ន្ធរាប់គោល 10 ទៅជាប្រព័ន្ធរាប់គោល 2</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សរសេរចំនួន <span class="mi">\(n = 13_{10}\)</span> ទៅជាប្រព័ន្ធរាប់គោល 2 ។</p>
+<p>គេមាន <span class="mi">\(n = 13\)</span> <div class="md">\[\begin{aligned}
+        13 &amp; = 2 \times 6 + 1 \quad{} \text{សំណល់ } 1 \\
+        6  &amp; = 2 \times 3 + 0 \quad{} \text{សំណល់ } 0 \\
+        3  &amp; = 2 \times 1 + 1 \quad{} \text{សំណល់ } 1 \\
+        1  &amp; = 2 \times 0 + 1 \quad{} \text{សំណល់ } 1
+    
+\end{aligned}\]</div></p>
+<p><div class="center"><span class="fig-ph">រូបភាពនេះកំពុងរៀបចំ</span></div></p>
+<p>គេបាន <span class="mi">\(n = 13_{10} = 1101_2\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សរសេរ <span class="mi">\(25\)</span> ក្នុងប្រព័ន្ធរាប់គោល <span class="mi">\(2\)</span></p>
+<ul>
+<li><p>ចែក <span class="mi">\(25\)</span> នឹង <span class="mi">\(2\)</span> គេបានផលចែក <span class="mi">\(12\)</span> សំណល់ <span class="mi">\(1\)</span></p></li>
+<li><p>ចែក <span class="mi">\(12\)</span> នឹង <span class="mi">\(2\)</span> គេបានផលចែក <span class="mi">\(6\)</span> សំណល់ <span class="mi">\(0\)</span></p></li>
+<li><p>ចែក <span class="mi">\(6\)</span> នឹង <span class="mi">\(2\)</span> គេបានផលចែក <span class="mi">\(3\)</span> សំណល់ <span class="mi">\(0\)</span></p></li>
+<li><p>ចែក <span class="mi">\(3\)</span> នឹង <span class="mi">\(2\)</span> គេបានផលចែក <span class="mi">\(1\)</span> សំណល់ <span class="mi">\(1\)</span></p></li>
+<li><p>ចែក <span class="mi">\(1\)</span> នឹង <span class="mi">\(2\)</span> គេបានផលចែក <span class="mi">\(0\)</span> សំណល់ <span class="mi">\(1\)</span></p></li>
+</ul>
+<p>គេបាន <span class="mi">\(25_{10} = 11001_2\)</span></p>
+</div></section>
+<section class="bx bx-rule"><header class="bx-h"><b>ជាទូទៅ</b></header><div class="bx-b">
+<p>ដើម្បីបំប្លែងចំនួនមួយពីប្រព័ន្ធរាប់គោល <span class="mi">\(10\)</span> ទៅជាប្រព័ន្ធរាប់គោល <span class="mi">\(2\)</span> គេត្រូវ ៖</p>
+<ul>
+<li><p>ចែកចំនួននោះនឹង <span class="mi">\(2\)</span> បន្តបន្ទាប់រហូតដល់ផលចែកស្មើនឹង <span class="mi">\(0\)</span></p></li>
+<li><p>សំណល់ទី 1 ជាខ្ទង់ទី 1 សំណល់ទី 2 ជាខ្ទង់ទី 2 សំណល់ទី 3 ជាខ្ទង់ទី 3 ... នៃចំនួនក្នុងប្រព័ន្ធរាប់គោល 2 រាប់ពីស្តាំទៅឆ្វេង ។</p></li>
+</ul>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>បំប្លែងចំនួនខាងក្រោមទៅជាប្រព័ន្ធរាប់គោល <span class="mi">\(2\)</span> ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(n = 14_{10}\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(n = 29_{10}\)</span></td>
+<td><strong>គ.</strong>  <span class="mi">\(n = 127_{10}\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(n = 1110_2\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(n = 11101_2\)</span></td>
+<td><strong>គ.</strong>  <span class="mi">\(n = 1111111_2\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h4>ការបំប្លែងពីប្រព័ន្ធរាប់គោល 2 ទៅជាប្រព័ន្ធរាប់គោល 10</h4>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>បំប្លែងចំនួន <span class="mi">\(1011_2\)</span> ទៅជាប្រព័ន្ធរាប់គោល <span class="mi">\(10\)</span><br/>
+គេមាន <span class="mi">\(1011_2\)</span> សរសេរជាទម្រង់ពន្លាត <div class="md">\[\begin{aligned}
+        1011_2 &amp; = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \\
+               &amp; = 8 + 0 + 2 + 1 = 11
+    
+\end{aligned}\]</div> ដូច្នេះ <span class="mi">\(1011_2 = 11_{10}\)</span> ។</p>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>សរសេរ <span class="mi">\(110110_2\)</span> ក្នុងប្រព័ន្ធរាប់គោល <span class="mi">\(10\)</span><br/>
+គេមាន <div class="md">\[\begin{aligned}
+        110110_2 &amp; = 1 \times 2^5 + 1 \times 2^4 + 0 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 0 \\
+                 &amp; = 32 + 16 + 0 + 4 + 2 + 0                                                      \\
+                 &amp; = 54
+    
+\end{aligned}\]</div> ដូច្នេះ <span class="mi">\(110110_2 = 54_{10}\)</span> ។</p>
+</div></section>
+<section class="bx bx-try"><header class="bx-h"><b>ប្រតិបត្តិ</b></header><div class="bx-b">
+<p>បំប្លែងចំនួនខាងក្រោមទៅជាប្រព័ន្ធរាប់គោល <span class="mi">\(10\)</span> ៖<br/>
+</p>
+<div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(1111_2\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(101101_2\)</span></td>
+<td><strong>គ.</strong>  <span class="mi">\(1010111_2\)</span> ។</td>
+</tr>
+</tbody>
+</table></div>
+<details class="ans"><summary>មើលចម្លើយ</summary><p><br/>
+</p><div class="tbl"><table class="booktabs">
+<tbody>
+<tr>
+<td><strong>ក.</strong>  <span class="mi">\(15\)</span></td>
+<td><strong>ខ.</strong>  <span class="mi">\(45\)</span></td>
+<td><strong>គ.</strong>  <span class="mi">\(87\)</span> ។</td>
+</tr>
+</tbody>
+</table></div></details>
+</div></section>
+<h4>ប្រមាណវិធីបូកនិងគុណក្នុងប្រព័ន្ធរាប់គោល 2</h4>
+<p><strong>១. ប្រមាណវិធីបូក</strong></p>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាន</b></header><div class="bx-b">
+<p><strong>វិធាន ៖</strong> ការបូកចំនួនក្នុងប្រព័ន្ធរាប់គោល 2 គេត្រូវអនុវត្តតាមវិធានខាងក្រោម ៖</p>
+<ul>
+<li><p><span class="mi">\(0_2 + 0_2 = 0_2\)</span></p></li>
+<li><p><span class="mi">\(0_2 + 1_2 = 1_2\)</span></p></li>
+<li><p><span class="mi">\(1_2 + 0_2 = 1_2\)</span></p></li>
+<li><p><span class="mi">\(1_2 + 1_2 = 10_2\)</span> (សរសេរលេខ <span class="mi">\(0\)</span> ត្រាទុក <span class="mi">\(1\)</span>)</p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(101_2 + 11_2\)</span> <strong>ខ.</strong>  <span class="mi">\(1101_2 + 1011_2\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+</p>
+<p><strong>ក.</strong>  <span class="mi">\(\begin{array}{r}
+                101_2        \\
+                + \quad{} 11_2 \\
+                \hline
+                1000_2
+            \end{array}\)</span> <strong>ខ.</strong>  <span class="mi">\(\begin{array}{r}
+                1101_2         \\
+                + \quad{} 1011_2 \\
+                \hline
+                11000_2
+            \end{array}\)</span></p>
+</div></section>
+<p><strong>២. ប្រមាណវិធីគុណ</strong></p>
+<section class="bx bx-rule"><header class="bx-h"><b>វិធាន</b></header><div class="bx-b">
+<p><strong>វិធាន ៖</strong> ការគុណចំនួនក្នុងប្រព័ន្ធរាប់គោល 2 គេត្រូវអនុវត្តតាមវិធានខាងក្រោម ៖</p>
+<ul>
+<li><p><span class="mi">\(0_2 \times 0_2 = 0_2\)</span></p></li>
+<li><p><span class="mi">\(0_2 \times 1_2 = 0_2\)</span></p></li>
+<li><p><span class="mi">\(1_2 \times 0_2 = 0_2\)</span></p></li>
+<li><p><span class="mi">\(1_2 \times 1_2 = 1_2\)</span></p></li>
+</ul>
+</div></section>
+<section class="bx bx-gray bx-ex"><header class="bx-h"><b>ឧទាហរណ៍</b></header><div class="bx-b">
+<p>គណនាផលគុណ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(101_2 \times 11_2\)</span> <strong>ខ.</strong>  <span class="mi">\(110_2 \times 101_2\)</span> ។</p>
+<div class="ans-h">ដំណោះស្រាយ</div>
+<p><br/>
+</p>
+<p><strong>ក.</strong>  <span class="mi">\(\begin{array}{r}
+                101_2             \\
+                \times \quad{} 11_2 \\
+                \hline
+                101   \\
+                1010  \\
+                \hline
+                1111_2
+            \end{array}\)</span> <strong>ខ.</strong>  <span class="mi">\(\begin{array}{r}
+                110_2              \\
+                \times \quad{} 101_2 \\
+                \hline
+                110    \\
+                0000   \\
+                11000  \\
+                \hline
+                11110_2
+            \end{array}\)</span></p>
+</div></section>
+<h3 id="s1">លំហាត់អនុវត្តន៍</h3><div class="ex-list"><section class="bx bx-try" id="ex1"><header class="bx-h"><span class="pill">១</span><b>លំហាត់ទី ១</b></header><div class="bx-b"><p>ចាត់ថ្នាក់ចំនួនខាងក្រោមទៅតាមសំណុំ <span class="mi">\(\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}\)</span> ៖ <span class="mi">\(-5 \;,\; \sqrt{7} \;,\; \frac{3}{4} \;,\; 0 \;,\; 12 \;,\; -\frac{16}{4} \;,\; 0.\overline{3} \;,\; \pi\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចាត់ថ្នាក់បណ្តាចំនួន ៖ <span class="mi">\(-5, \sqrt{7}, \frac{3}{4}, 0, 12, -\frac{16}{4}, 0.\overline{3}, \pi\)</span>។<br/>
+សម្គាល់ ៖ <span class="mi">\(-\frac{16}{4} = -4 \in \mathbb{Z}\)</span> និង <span class="mi">\(0.\overline{3} = \frac{1}{3} \in \mathbb{Q}\)</span> ៖<br/>
+- សំណុំចំនួនគត់ធម្មជាតិ <span class="mi">\(\mathbb{N}\)</span> ៖ <span class="mi">\(\mathbf{0, 12}\)</span><br/>
+- សំណុំចំនួនគត់រ៉ឺឡាទីប <span class="mi">\(\mathbb{Z}\)</span> ៖ <span class="mi">\(\mathbf{-5, -\frac{16}{4}, 0, 12}\)</span><br/>
+- សំណុំចំនួនសនិទាន <span class="mi">\(\mathbb{Q}\)</span> ៖ <span class="mi">\(\mathbf{-5, -\frac{16}{4}, 0, \frac{3}{4}, 0.\overline{3}, 12}\)</span><br/>
+- សំណុំចំនួនអសនិទាន (<span class="mi">\(\mathbb{R} \setminus \mathbb{Q}\)</span>) ៖ <span class="mi">\(\mathbf{\sqrt{7}, \pi}\)</span><br/>
+- គ្រប់ចំនួនខាងលើសុទ្ធតែជាចំនួនពិត <span class="mi">\(\mathbb{R}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex2"><header class="bx-h"><span class="pill">២</span><b>លំហាត់ទី ២</b></header><div class="bx-b">
+<p>គណនាតម្លៃដាច់ខាតខាងក្រោម ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(|-7|\)</span></p></li>
+<li><p><span class="mi">\(|3.14 - \pi|\)</span></p></li>
+<li><p><span class="mi">\(|\sqrt{3} - 2|\)</span></p></li>
+<li><p><span class="mi">\(|5 - \sqrt{5}|\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាតម្លៃដាច់ខាត (ចម្ងាយពីគល់ <span class="mi">\(0\)</span> មិនអវិជ្ជមាន) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(|-7| = \mathbf{7}\)</span>។<br/>
+<strong>ខ.</strong>  ដោយ <span class="mi">\(\pi \approx 3.14159\dots &gt; 3.14 \implies 3.14 - \pi &lt; 0\)</span> នាំឱ្យ ៖<br/>
+<span class="mi">\(|3.14 - \pi| = -(3.14 - \pi) = \mathbf{\pi - 3.14}\)</span>។<br/>
+<strong>គ.</strong>  ដោយ <span class="mi">\(\sqrt{3} \approx 1.732 &lt; 2 \implies \sqrt{3} - 2 &lt; 0\)</span> នាំឱ្យ ៖<br/>
+<span class="mi">\(|\sqrt{3} - 2| = -( \sqrt{3} - 2 ) = \mathbf{2 - \sqrt{3}}\)</span>។<br/>
+<strong>ឃ.</strong>  ដោយ <span class="mi">\(5 = \sqrt{25} &gt; \sqrt{5} \implies 5 - \sqrt{5} &gt; 0\)</span> នាំឱ្យ ៖<br/>
+<span class="mi">\(|5 - \sqrt{5}| = \mathbf{5 - \sqrt{5}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex3"><header class="bx-h"><span class="pill">៣</span><b>លំហាត់ទី ៣</b></header><div class="bx-b">
+<p>សរសេរកន្សោមខាងក្រោមដោយគ្មានសញ្ញាតម្លៃដាច់ខាត ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|x - 3|\)</span> ចំពោះ <span class="mi">\(x \geq 3\)</span></p></li>
+<li><p><span class="mi">\(|2x + 1|\)</span> ចំពោះ <span class="mi">\(x &lt; -\frac{1}{2}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរកន្សោមដោយគ្មានសញ្ញាតម្លៃដាច់ខាត ៖<br/>
+<strong>ក.</strong>  ចំពោះ <span class="mi">\(x \geq 3 \implies x - 3 \geq 0\)</span> នាំឱ្យ ៖<br/>
+<span class="mi">\(|x - 3| = \mathbf{x - 3}\)</span>។<br/>
+<strong>ខ.</strong>  ចំពោះ <span class="mi">\(x &lt; -\frac{1}{2} \implies 2x &lt; -1 \implies 2x + 1 &lt; 0\)</span> នាំឱ្យ ៖<br/>
+<span class="mi">\(|2x + 1| = -(2x + 1) = \mathbf{-2x - 1}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex4"><header class="bx-h"><span class="pill">៤</span><b>លំហាត់ទី ៤</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការតម្លៃដាច់ខាត ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|x - 4| = 7\)</span></p></li>
+<li><p><span class="mi">\(|2x + 3| = 5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការតម្លៃដាច់ខាត <span class="mi">\(|A| = c\)</span> (<span class="mi">\(c \geq 0 \iff A = c \lor A = -c\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(|x - 4| = 7 \iff x - 4 = 7 \lor x - 4 = -7\)</span><br/>
+<span class="mi">\(\implies x = 11 \lor x = -3\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{S = \{-3, 11\}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(|2x + 3| = 5 \iff 2x + 3 = 5 \lor 2x + 3 = -5\)</span><br/>
+<span class="mi">\(\implies 2x = 2 \lor 2x = -8 \implies x = 1 \lor x = -4\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{S = \{-4, 1\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex5"><header class="bx-h"><span class="pill">៥</span><b>លំហាត់ទី ៥</b></header><div class="bx-b">
+<p>ដោះស្រាយវិសមីការតម្លៃដាច់ខាត ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(|x - 2| \leq 3\)</span></p></li>
+<li><p><span class="mi">\(|2x + 1| &gt; 5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយវិសមីការតម្លៃដាច់ខាត ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(|x - 2| \leq 3 \iff -3 \leq x - 2 \leq 3\)</span><br/>
+បូក <span class="mi">\(2\)</span> គ្រប់អង្គ ៖ <span class="mi">\(-3 + 2 \leq x \leq 3 + 2 \iff -1 \leq x \leq 5\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{x \in [-1, 5]}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(|2x + 1| &gt; 5 \iff 2x + 1 &gt; 5 \lor 2x + 1 &lt; -5\)</span><br/>
+<span class="mi">\(\implies 2x &gt; 4 \lor 2x &lt; -6 \implies x &gt; 2 \lor x &lt; -3\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{x \in (-\infty, -3) \cup (2, +\infty)}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex6"><header class="bx-h"><span class="pill">៦</span><b>លំហាត់ទី ៦</b></header><div class="bx-b">
+<p>រកចម្ងាយរវាងចំណុចពីរ <span class="mi">\(A(x_A)\)</span> និង <span class="mi">\(B(x_B)\)</span> លើបន្ទាត់ចំនួន ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(x_A = -3\)</span> និង <span class="mi">\(x_B = 5\)</span></p></li>
+<li><p><span class="mi">\(x_A = 2.5\)</span> និង <span class="mi">\(x_B = -4.5\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រូបមន្តចម្ងាយរវាងចំណុចពីរលើបន្ទាត់ចំនួន ៖ <span class="mi">\(d(A, B) = |x_B - x_A|\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(x_A = -3, x_B = 5 \implies d(A, B) = |5 - (-3)| = |8| = \mathbf{8}\)</span> ឯកតា។<br/>
+<strong>ខ.</strong>  <span class="mi">\(x_A = 2.5, x_B = -4.5 \implies d(A, B) = |-4.5 - 2.5| = |-7| = \mathbf{7}\)</span> ឯកតា។</p>
+</details></div></section><section class="bx bx-try" id="ex7"><header class="bx-h"><span class="pill">៧</span><b>លំហាត់ទី ៧</b></header><div class="bx-b">
+<p>សម្រួលកន្សោមរ៉ាឌីកាល់ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\sqrt{75}\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{32} - \sqrt{18}\)</span></p></li>
+<li><p><span class="mi">\(2\sqrt{27} + 3\sqrt{12} - \sqrt{48}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សម្រួលកន្សោមរ៉ាឌីកាល់ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\sqrt{75} = \sqrt{25 \times 3} = \sqrt{5^2 \times 3} = \mathbf{5\sqrt{3}}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\sqrt{32} - \sqrt{18} = \sqrt{16 \times 2} - \sqrt{9 \times 2} = 4\sqrt{2} - 3\sqrt{2} = \mathbf{\sqrt{2}}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(2\sqrt{27} + 3\sqrt{12} - \sqrt{48} = 2(3\sqrt{3}) + 3(2\sqrt{3}) - 4\sqrt{3} = 6\sqrt{3} + 6\sqrt{3} - 4\sqrt{3} = \mathbf{8\sqrt{3}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex8"><header class="bx-h"><span class="pill">៨</span><b>លំហាត់ទី ៨</b></header><div class="bx-b">
+<p>បំបាត់រ៉ាឌីកាល់ពីភាគបែង ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(\dfrac{6}{\sqrt{3}}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{2}{\sqrt{5} - 1}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{\sqrt{3} + 1}{\sqrt{3} - 1}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំបាត់រ៉ាឌីកាល់ពីភាគបែង ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\dfrac{6}{\sqrt{3}} = \dfrac{6\sqrt{3}}{(\sqrt{3})^2} = \dfrac{6\sqrt{3}}{3} = \mathbf{2\sqrt{3}}\)</span>។<br/>
+<strong>ខ.</strong>  គុណនឹងកន្សោមឆ្លាស់ <span class="mi">\((\sqrt{5} + 1)\)</span> ៖<br/>
+<span class="mi">\(\dfrac{2}{\sqrt{5} - 1} = \dfrac{2(\sqrt{5} + 1)}{(\sqrt{5}-1)(\sqrt{5}+1)} = \dfrac{2(\sqrt{5} + 1)}{5 - 1} = \dfrac{\mathbf{\sqrt{5} + 1}}{\mathbf{2}}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\dfrac{\sqrt{3} + 1}{\sqrt{3} - 1} = \dfrac{(\sqrt{3} + 1)^2}{(\sqrt{3}-1)(\sqrt{3}+1)} = \dfrac{3 + 2\sqrt{3} + 1}{3 - 1} = \dfrac{4 + 2\sqrt{3}}{2} = \mathbf{2 + \sqrt{3}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex9"><header class="bx-h"><span class="pill">៩</span><b>លំហាត់ទី ៩</b></header><div class="bx-b">
+<p>បង្ហាញថាកន្សោមខាងក្រោមជាចំនួនសនិទាន ៖ <span class="mi">\(A = \dfrac{1}{2 + \sqrt{3}} + \dfrac{1}{2 - \sqrt{3}}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(A = \dfrac{1}{2 + \sqrt{3}} + \dfrac{1}{2 - \sqrt{3}}\)</span> ជាចំនួនសនិទាន ៖<br/>
+តម្រូវភាគបែងរួម <span class="mi">\((2 + \sqrt{3})(2 - \sqrt{3}) = 2^2 - (\sqrt{3})^2 = 4 - 3 = 1\)</span> ៖<br/>
+<span class="mi">\(A = \dfrac{(2 - \sqrt{3}) + (2 + \sqrt{3})}{(2 + \sqrt{3})(2 - \sqrt{3})} = \dfrac{4}{1} = \mathbf{4}\)</span>។<br/>
+ដោយ <span class="mi">\(4 = \frac{4}{1} \in \mathbb{Q}\)</span> នាំឱ្យ <span class="mi">\(A\)</span> ជាចំនួនសនិទាន។</p>
+</details></div></section><section class="bx bx-try" id="ex10"><header class="bx-h"><span class="pill">១០</span><b>លំហាត់ទី ១០</b></header><div class="bx-b">
+<p>បង្ហាញសមភាព ៖ <span class="mi">\(\sqrt{7 + 4\sqrt{3}} = 2 + \sqrt{3}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញសមភាព <span class="mi">\(\sqrt{7 + 4\sqrt{3}} = 2 + \sqrt{3}\)</span> ៖<br/>
+គណនាការ៉េនៃកន្សោមខាងស្តាំ ៖<br/>
+<span class="mi">\((2 + \sqrt{3})^2 = 2^2 + 2(2)(\sqrt{3}) + (\sqrt{3})^2 = 4 + 4\sqrt{3} + 3 = 7 + 4\sqrt{3}\)</span>។<br/>
+ដោយសារ <span class="mi">\(2 + \sqrt{3} &gt; 0\)</span> នាំឱ្យបំពាក់ឫសការ៉េ ៖<br/>
+<span class="mi">\(\sqrt{7 + 4\sqrt{3}} = \sqrt{(2 + \sqrt{3})^2} = \mathbf{2 + \sqrt{3}}\)</span> ពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex11"><header class="bx-h"><span class="pill">១១</span><b>លំហាត់ទី ១១</b></header><div class="bx-b">
+<p>បំប្លែងចំនួនក្នុងប្រព័ន្ធគោលដប់ទៅជាប្រព័ន្ធគោលពីរ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(13\)</span></p></li>
+<li><p><span class="mi">\(25\)</span></p></li>
+<li><p><span class="mi">\(42\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងពីគោលដប់ទៅជាគោលពីរ (វិធីចែកនឹង ២ បន្តបន្ទាប់) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(13\)</span> ៖<br/>
+<span class="mi">\(13 = 2 \times 6 + 1\)</span><br/>
+<span class="mi">\(6 = 2 \times 3 + 0\)</span><br/>
+<span class="mi">\(3 = 2 \times 1 + 1\)</span><br/>
+<span class="mi">\(1 = 2 \times 0 + 1\)</span><br/>
+យកសំណល់បញ្ច្រាសពីក្រោមឡើងលើ ៖ <span class="mi">\(13 = \mathbf{1101_2}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(25 = 16 + 8 + 1 = 1\cdot 2^4 + 1\cdot 2^3 + 0\cdot 2^2 + 0\cdot 2^1 + 1\cdot 2^0 = \mathbf{11001_2}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(42 = 32 + 8 + 2 = 1\cdot 2^5 + 0\cdot 2^4 + 1\cdot 2^3 + 0\cdot 2^2 + 1\cdot 2^1 + 0\cdot 2^0 = \mathbf{101010_2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex12"><header class="bx-h"><span class="pill">១២</span><b>លំហាត់ទី ១២</b></header><div class="bx-b">
+<p>បំប្លែងចំនួនក្នុងប្រព័ន្ធគោលពីរទៅជាប្រព័ន្ធគោលដប់ ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(1011_2\)</span></p></li>
+<li><p><span class="mi">\(11010_2\)</span></p></li>
+<li><p><span class="mi">\(111111_2\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បំប្លែងពីគោលពីរទៅជាគោលដប់ ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(1011_2 = 1\cdot 2^3 + 0\cdot 2^2 + 1\cdot 2^1 + 1\cdot 2^0 = 8 + 0 + 2 + 1 = \mathbf{11}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(11010_2 = 1\cdot 2^4 + 1\cdot 2^3 + 0\cdot 2^2 + 1\cdot 2^1 + 0\cdot 2^0 = 16 + 8 + 0 + 2 + 0 = \mathbf{26}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(111111_2 = 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0 = 32 + 16 + 8 + 4 + 2 + 1 = \mathbf{63}\)</span> (ឬ <span class="mi">\(2^6 - 1 = 63\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex13"><header class="bx-h"><span class="pill">១៣</span><b>លំហាត់ទី ១៣</b></header><div class="bx-b">
+<p>គណនាផលបូកក្នុងប្រព័ន្ធគោលពីរ ៖ <span class="mi">\(1011_2 + 110_2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូកក្នុងប្រព័ន្ធគោលពីរ <span class="mi">\(1011_2 + 110_2\)</span> ៖<br/>
+បូកតាមជួរឈរ (រាប់ទាំងត្រាទុក) ៖</p>
+
+<p><span class="mi">\(\begin{array}{rl}
+  &amp; 1011_2 \quad{} (= 11) \\
++ &amp; 110_2 \quad{} (= 6) \\
+\hline
+  &amp; \mathbf{10001_2} \quad{} (= 17)
+\end{array}\)</span></p>
+
+<p>លទ្ធផលផលបូកគឺ <span class="mi">\(\mathbf{10001_2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex14"><header class="bx-h"><span class="pill">១៤</span><b>លំហាត់ទី ១៤</b></header><div class="bx-b">
+<p>គណនាស្វ័យគុណនៃឯកតានិម្មិត <span class="mi">\(i\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(i^3\)</span></p></li>
+<li><p><span class="mi">\(i^4\)</span></p></li>
+<li><p><span class="mi">\(i^7\)</span></p></li>
+<li><p><span class="mi">\(i^{10}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាស្វ័យគុណនៃឯកតានិម្មិត <span class="mi">\(i\)</span> (ដែល <span class="mi">\(i^2 = -1\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(i^3 = i^2 \cdot i = (-1)\cdot i = \mathbf{-i}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(i^4 = (i^2)^2 = (-1)^2 = \mathbf{1}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(i^7 = i^4 \cdot i^3 = 1 \cdot (-i) = \mathbf{-i}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(i^{10} = (i^4)^2 \cdot i^2 = 1^2 \cdot (-1) = \mathbf{-1}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex15"><header class="bx-h"><span class="pill">១៥</span><b>លំហាត់ទី ១៥</b></header><div class="bx-b">
+<p>គណនាស្វ័យគុណនៃ <span class="mi">\(i\)</span> ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(i^{25}\)</span></p></li>
+<li><p><span class="mi">\(i^{48}\)</span></p></li>
+<li><p><span class="mi">\(i^{102}\)</span></p></li>
+<li><p><span class="mi">\(i^{2027}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាស្វ័យគុណនៃ <span class="mi">\(i\)</span> ដោយចែកស្វ័យគុណនឹង ៤ (<span class="mi">\(i^{4k+r} = i^r\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(25 = 4 \times 6 + 1 \implies i^{25} = i^1 = \mathbf{i}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(48 = 4 \times 12 \implies i^{48} = (i^4)^{12} = 1^{12} = \mathbf{1}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(102 = 4 \times 25 + 2 \implies i^{102} = i^2 = \mathbf{-1}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(2027 = 4 \times 506 + 3 \implies i^{2027} = i^3 = \mathbf{-i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex16"><header class="bx-h"><span class="pill">១៦</span><b>លំហាត់ទី ១៦</b></header><div class="bx-b">
+<p>គណនាផលបូក ៖ <span class="mi">\(S = 1 + i + i^2 + i^3 + i^4 + \dots + i^{100}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលបូក <span class="mi">\(S = 1 + i + i^2 + i^3 + \dots + i^{100}\)</span> ៖<br/>
+សម្គាល់ឃើញថាផលបូក ៤ តួជាប់គ្នាស្មើ <span class="mi">\(0\)</span> ជានិច្ច ៖<br/>
+<span class="mi">\(1 + i + i^2 + i^3 = 1 + i - 1 - i = 0\)</span>។<br/>
+ចំនួនតួសរុបមាន <span class="mi">\(101\)</span> តួ (ពីស្វ័យគុណ <span class="mi">\(0\)</span> ដល់ <span class="mi">\(100\)</span>)។<br/>
+ដោយ <span class="mi">\(101 = 4 \times 25 + 1\)</span> នាំឱ្យមាន ២៥ ក្រុមស្មើ ០ និងសល់ ១ តួចុងក្រោយ ៖<br/>
+<span class="mi">\(S = 25 \times 0 + i^{100} = (i^4)^{25} = 1^{25} = \mathbf{1}\)</span>។<br/>
+(ឬប្រើរូបមន្តផលបូកស្វ័យគុណធរណីមាត្រ ៖ <span class="mi">\(S = \dfrac{1 - i^{101}}{1 - i} = \dfrac{1 - i}{1 - i} = 1\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex17"><header class="bx-h"><span class="pill">១៧</span><b>លំហាត់ទី ១៧</b></header><div class="bx-b">
+<p>សរសេរកន្សោមរ៉ាឌីកាល់អវិជ្ជមានជាចំនួនកុំផ្លិច ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(\sqrt{-16}\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{-25}\)</span></p></li>
+<li><p><span class="mi">\(\sqrt{-12}\)</span></p></li>
+<li><p><span class="mi">\(-\sqrt{-49}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរកន្សោមរ៉ាឌីកាល់អវិជ្ជមានជាចំនួនកុំផ្លិច (<span class="mi">\(\sqrt{-a} = i\sqrt{a}\)</span> ចំពោះ <span class="mi">\(a &gt; 0\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\sqrt{-16} = \sqrt{16} \cdot \sqrt{-1} = \mathbf{4i}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\sqrt{-25} = \sqrt{25} \cdot i = \mathbf{5i}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(\sqrt{-12} = \sqrt{4 \times 3} \cdot i = \mathbf{2i\sqrt{3}}\)</span>។<br/>
+<strong>ឃ.</strong>  <span class="mi">\(-\sqrt{-49} = -(\sqrt{49}\cdot i) = \mathbf{-7i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex18"><header class="bx-h"><span class="pill">១៨</span><b>លំហាត់ទី ១៨</b></header><div class="bx-b">
+<p>គណនា <span class="mi">\(\sqrt{-4} \times \sqrt{-9}\)</span> (ប្រយ័ត្នកុំច្រឡំវិធានរ៉ាឌីកាល់វិជ្ជមាន)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនា <span class="mi">\(\sqrt{-4} \times \sqrt{-9}\)</span> ៖<br/>
+បំប្លែងទៅជាចំនួនកុំផ្លិចជាមុនសិន ៖<br/>
+<span class="mi">\(\sqrt{-4} = 2i\)</span> និង <span class="mi">\(\sqrt{-9} = 3i\)</span>។<br/>
+<span class="mi">\(\implies \sqrt{-4} \times \sqrt{-9} = (2i) \times (3i) = 6i^2 = 6(-1) = \mathbf{-6}\)</span>។<br/>
+<strong>ការព្រមាន</strong> ៖ មិនអាចយក <span class="mi">\(\sqrt{(-4)(-9)} = \sqrt{36} = 6\)</span> បានឡើយ ពីព្រោះវិធាន <span class="mi">\(\sqrt{a}\cdot\sqrt{b} = \sqrt{ab}\)</span> ពិតតែចំពោះ <span class="mi">\(a \geq 0\)</span> ឬ <span class="mi">\(b \geq 0\)</span> ប៉ុណ្ណោះ។</p>
+</details></div></section><section class="bx bx-try" id="ex19"><header class="bx-h"><span class="pill">១៩</span><b>លំហាត់ទី ១៩</b></header><div class="bx-b">
+<p>កំណត់ផ្នែកពិត <span class="mi">\(\text{Re}(z)\)</span> និងផ្នែកនិម្មិត <span class="mi">\(\text{Im}(z)\)</span> នៃចំនួនកុំផ្លិចខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(z = 3 + 4i\)</span></p></li>
+<li><p><span class="mi">\(z = -2 - 5i\)</span></p></li>
+<li><p><span class="mi">\(z = 7i\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>កំណត់ផ្នែកពិត <span class="mi">\(\text{Re}(z)\)</span> និងផ្នែកនិម្មិត <span class="mi">\(\text{Im}(z)\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(z = 3 + 4i \implies \mathbf{\text{Re}(z) = 3,\; \text{Im}(z) = 4}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(z = -2 - 5i \implies \mathbf{\text{Re}(z) = -2,\; \text{Im}(z) = -5}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(z = 7i = 0 + 7i \implies \mathbf{\text{Re}(z) = 0,\; \text{Im}(z) = 7}\)</span> (ចំនួននិម្មិតសុទ្ធ)។</p>
+</details></div></section><section class="bx bx-try" id="ex20"><header class="bx-h"><span class="pill">២០</span><b>លំហាត់ទី ២០</b></header><div class="bx-b">
+<p>រកតម្លៃនៃ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> បើដឹងថា <span class="mi">\(2x + 3yi = 6 - 9i\)</span> (<span class="mi">\(x, y \in \mathbb{R}\)</span>)។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមភាពពីរចំនួនកុំផ្លិច <span class="mi">\(2x + 3yi = 6 - 9i\)</span> (<span class="mi">\(x, y \in \mathbb{R}\)</span>) ៖<br/>
+ផ្ទឹមផ្នែកពិត និងផ្នែកនិម្មិត ៖<br/>
+<span class="mi">\(\begin{cases} 2x = 6 \\ 3y = -9 \end{cases} \implies \mathbf{x = 3,\; y = -3}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex21"><header class="bx-h"><span class="pill">២១</span><b>លំហាត់ទី ២១</b></header><div class="bx-b">
+<p>រកតម្លៃនៃ <span class="mi">\(x\)</span> និង <span class="mi">\(y\)</span> បើដឹងថា <span class="mi">\((x + y) + (2x - y)i = 5 + 4i\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សមភាព <span class="mi">\((x + y) + (2x - y)i = 5 + 4i\)</span> ៖<br/>
+ផ្ទឹមផ្នែកពិត និងផ្នែកនិម្មិត ៖<br/>
+<span class="mi">\(\begin{cases} x + y = 5 \quad{} (1) \\ 2x - y = 4 \quad{} (2) \end{cases}\)</span><br/>
+បូកសមីការ <span class="mi">\((1)\)</span> និង <span class="mi">\((2)\)</span> ៖ <span class="mi">\(3x = 9 \implies x = 3\)</span>។<br/>
+ជំនួស <span class="mi">\(x = 3\)</span> ចូល <span class="mi">\((1)\)</span> ៖ <span class="mi">\(3 + y = 5 \implies y = 2\)</span>។<br/>
+ដូចនេះ <span class="mi">\(\mathbf{x = 3,\; y = 2}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex22"><header class="bx-h"><span class="pill">២២</span><b>លំហាត់ទី ២២</b></header><div class="bx-b">
+<p>សរសេរចំនួនកុំផ្លិចឆ្លាស់ <span class="mi">\(\bar{z}\)</span> នៃចំនួនកុំផ្លិចខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(z = 4 + 3i\)</span></p></li>
+<li><p><span class="mi">\(z = -2 - 7i\)</span></p></li>
+<li><p><span class="mi">\(z = 5i\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំនួនកុំផ្លិចឆ្លាស់ <span class="mi">\(\bar{z}\)</span> នៃ <span class="mi">\(z = a + bi\)</span> គឺ <span class="mi">\(\bar{z} = a - bi\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(z = 4 + 3i \implies \mathbf{\bar{z} = 4 - 3i}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(z = -2 - 7i \implies \mathbf{\bar{z} = -2 + 7i}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(z = 5i = 0 + 5i \implies \mathbf{\bar{z} = -5i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex23"><header class="bx-h"><span class="pill">២៣</span><b>លំហាត់ទី ២៣</b></header><div class="bx-b">
+<p>គណនាផលបូក និងផលដកចំនួនកុំផ្លិច ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((3 + 2i) + (4 - 5i)\)</span></p></li>
+<li><p><span class="mi">\((-2 + 7i) - (5 - 3i)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលបូក និងផលដកចំនួនកុំផ្លិច ៖<br/>
+<strong>ក.</strong>  <span class="mi">\((3 + 2i) + (4 - 5i) = (3 + 4) + (2 - 5)i = \mathbf{7 - 3i}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\((-2 + 7i) - (5 - 3i) = (-2 - 5) + [7 - (-3)]i = \mathbf{-7 + 10i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex24"><header class="bx-h"><span class="pill">២៤</span><b>លំហាត់ទី ២៤</b></header><div class="bx-b">
+<p>គណនាផលគុណចំនួនកុំផ្លិច ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\((2 + 3i)(4 - i)\)</span></p></li>
+<li><p><span class="mi">\((3 - 2i)(3 + 2i)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ផលគុណចំនួនកុំផ្លិច ៖<br/>
+<strong>ក.</strong>  <span class="mi">\((2 + 3i)(4 - i) = 8 - 2i + 12i - 3i^2 = 8 + 10i + 3 = \mathbf{11 + 10i}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\((3 - 2i)(3 + 2i) = 3^2 - (2i)^2 = 9 - 4i^2 = 9 + 4 = \mathbf{13}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex25"><header class="bx-h"><span class="pill">២៥</span><b>លំហាត់ទី ២៥</b></header><div class="bx-b">
+<p>គណនាផលគុណ <span class="mi">\((1 + i)^2\)</span> និង <span class="mi">\((1 - i)^2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាការ៉េទ្វេធា ៖<br/>
+- <span class="mi">\((1 + i)^2 = 1^2 + 2i + i^2 = 1 + 2i - 1 = \mathbf{2i}\)</span>។<br/>
+- <span class="mi">\((1 - i)^2 = 1^2 - 2i + i^2 = 1 - 2i - 1 = \mathbf{-2i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex26"><header class="bx-h"><span class="pill">២៦</span><b>លំហាត់ទី ២៦</b></header><div class="bx-b">
+<p>គណនាស្វ័យគុណ <span class="mi">\((1 + i)^4\)</span> និង <span class="mi">\((1 + i)^8\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាស្វ័យគុណខ្ពស់នៃ <span class="mi">\((1 + i)\)</span> ៖<br/>
+- <span class="mi">\((1 + i)^4 = [(1 + i)^2]^2 = (2i)^2 = 4i^2 = \mathbf{-4}\)</span>។<br/>
+- <span class="mi">\((1 + i)^8 = [(1 + i)^4]^2 = (-4)^2 = \mathbf{16}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex27"><header class="bx-h"><span class="pill">២៧</span><b>លំហាត់ទី ២៧</b></header><div class="bx-b">
+<p>ពន្លាតកន្សោម <span class="mi">\((2 - 3i)^2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ពន្លាតកន្សោម <span class="mi">\((2 - 3i)^2\)</span> ៖<br/>
+<span class="mi">\((2 - 3i)^2 = 2^2 - 2(2)(3i) + (3i)^2\)</span><br/>
+<span class="mi">\(= 4 - 12i + 9i^2 = 4 - 12i - 9 = \mathbf{-5 - 12i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex28"><header class="bx-h"><span class="pill">២៨</span><b>លំហាត់ទី ២៨</b></header><div class="bx-b">
+<p>គណនាផលចែកចំនួនកុំផ្លិច (គុណនឹងកុំផ្លិចឆ្លាស់នៃភាគបែង) ៖</p>
+<ol class="list olka cols2">
+<li><p><span class="mi">\(\dfrac{1}{i}\)</span></p></li>
+<li><p><span class="mi">\(\dfrac{3 + 2i}{i}\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចែកនឹង <span class="mi">\(i\)</span> (គុណភាគយក និងភាគបែងនឹង <span class="mi">\(-i\)</span> ឬ <span class="mi">\(i\)</span>) ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(\dfrac{1}{i} = \dfrac{i}{i^2} = \dfrac{i}{-1} = \mathbf{-i}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(\dfrac{3 + 2i}{i} = \dfrac{(3 + 2i)(-i)}{-i^2} = \dfrac{-3i - 2i^2}{1} = \mathbf{2 - 3i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex29"><header class="bx-h"><span class="pill">២៩</span><b>លំហាត់ទី ២៩</b></header><div class="bx-b">
+<p>គណនាផលចែកចំនួនកុំផ្លិច ៖ <span class="mi">\(\dfrac{2 + 3i}{1 - 2i}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែក <span class="mi">\(\dfrac{2 + 3i}{1 - 2i}\)</span> ៖<br/>
+គុណភាគយក និងភាគបែងនឹងកុំផ្លិចឆ្លាស់នៃភាគបែង <span class="mi">\((1 + 2i)\)</span> ៖<br/>
+<span class="mi">\(\dfrac{2 + 3i}{1 - 2i} = \dfrac{(2 + 3i)(1 + 2i)}{(1 - 2i)(1 + 2i)} = \dfrac{2 + 4i + 3i + 6i^2}{1^2 - (2i)^2}\)</span><br/>
+<span class="mi">\(= \dfrac{2 + 7i - 6}{1 + 4} = \dfrac{-4 + 7i}{5} = \mathbf{-\dfrac{4}{5} + \dfrac{7}{5}i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex30"><header class="bx-h"><span class="pill">៣០</span><b>លំហាត់ទី ៣០</b></header><div class="bx-b">
+<p>គណនាផលចែកចំនួនកុំផ្លិច ៖ <span class="mi">\(\dfrac{4 - i}{2 + 3i}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាផលចែក <span class="mi">\(\dfrac{4 - i}{2 + 3i}\)</span> ៖<br/>
+គុណភាគយក និងភាគបែងនឹងកុំផ្លិចឆ្លាស់ <span class="mi">\((2 - 3i)\)</span> ៖<br/>
+<span class="mi">\(\dfrac{4 - i}{2 + 3i} = \dfrac{(4 - i)(2 - 3i)}{(2 + 3i)(2 - 3i)} = \dfrac{8 - 12i - 2i + 3i^2}{2^2 - (3i)^2}\)</span><br/>
+<span class="mi">\(= \dfrac{8 - 14i - 3}{4 + 9} = \dfrac{5 - 14i}{13} = \mathbf{\dfrac{5}{13} - \dfrac{14}{13}i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex31"><header class="bx-h"><span class="pill">៣១</span><b>លំហាត់ទី ៣១</b></header><div class="bx-b">
+<p>សរសេរកន្សោម <span class="mi">\(z = \dfrac{1 + 3i}{2 - i} + \dfrac{2 - i}{1 + i}\)</span> ជាទម្រង់ពីជគណិត <span class="mi">\(a + bi\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>សរសេរ <span class="mi">\(z = \dfrac{1 + 3i}{2 - i} + \dfrac{2 - i}{1 + i}\)</span> ជាទម្រង់ពីជគណិត <span class="mi">\(a + bi\)</span> ៖<br/>
+- សម្រួលតួទីមួយ ៖<br/>
+<span class="mi">\(\dfrac{1 + 3i}{2 - i} = \dfrac{(1 + 3i)(2 + i)}{2^2 + (-1)^2} = \dfrac{2 + i + 6i - 3}{5} = \dfrac{-1 + 7i}{5}\)</span>។<br/>
+- សម្រួលតួទីពីរ ៖<br/>
+<span class="mi">\(\dfrac{2 - i}{1 + i} = \dfrac{(2 - i)(1 - i)}{1^2 + 1^2} = \dfrac{2 - 2i - i - 1}{2} = \dfrac{1 - 3i}{2}\)</span>។<br/>
+- បូកបញ្ចូលគ្នាដោយតម្រូវភាគបែងរួម <span class="mi">\(10\)</span> ៖<br/>
+<span class="mi">\(z = \dfrac{2(-1 + 7i) + 5(1 - 3i)}{10} = \dfrac{-2 + 14i + 5 - 15i}{10}\)</span><br/>
+<span class="mi">\(= \dfrac{3 - i}{10} = \mathbf{\dfrac{3}{10} - \dfrac{1}{10}i}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex32"><header class="bx-h"><span class="pill">៣២</span><b>លំហាត់ទី ៣២</b></header><div class="bx-b">
+<p>គណនាម៉ូឌុលនៃចំនួនកុំផ្លិចខាងក្រោម ៖</p>
+<ol class="list olka cols3">
+<li><p><span class="mi">\(|3 + 4i|\)</span></p></li>
+<li><p><span class="mi">\(|1 - i|\)</span></p></li>
+<li><p><span class="mi">\(|-5 + 12i|\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាម៉ូឌុលនៃចំនួនកុំផ្លិច <span class="mi">\(|z| = \sqrt{a^2 + b^2}\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(|3 + 4i| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = \mathbf{5}\)</span>។<br/>
+<strong>ខ.</strong>  <span class="mi">\(|1 - i| = \sqrt{1^2 + (-1)^2} = \sqrt{1 + 1} = \mathbf{\sqrt{2}}\)</span>។<br/>
+<strong>គ.</strong>  <span class="mi">\(|-5 + 12i| = \sqrt{(-5)^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = \mathbf{13}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex33"><header class="bx-h"><span class="pill">៣៣</span><b>លំហាត់ទី ៣៣</b></header><div class="bx-b">
+<p>គណនាម៉ូឌុលនៃ <span class="mi">\(z = \dfrac{1 + i\sqrt{3}}{2}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>គណនាម៉ូឌុលនៃ <span class="mi">\(z = \dfrac{1 + i\sqrt{3}}{2} = \dfrac{1}{2} + \dfrac{\sqrt{3}}{2}i\)</span> ៖<br/>
+<span class="mi">\(|z| = \sqrt{\left(\dfrac{1}{2}\right)^2 + \left(\dfrac{\sqrt{3}}{2}\right)^2} = \sqrt{\dfrac{1}{4} + \dfrac{3}{4}} = \sqrt{\dfrac{4}{4}} = \mathbf{1}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex34"><header class="bx-h"><span class="pill">៣៤</span><b>លំហាត់ទី ៣៤</b></header><div class="bx-b">
+<p>បង្ហាញថាចំពោះគ្រប់ចំនួនកុំផ្លិច <span class="mi">\(z\)</span>, <span class="mi">\(z \cdot \bar{z} = |z|^2\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថា <span class="mi">\(z \cdot \bar{z} = |z|^2\)</span> ចំពោះគ្រប់ចំនួនកុំផ្លិច <span class="mi">\(z\)</span> ៖<br/>
+តាង <span class="mi">\(z = a + bi\)</span> (<span class="mi">\(a, b \in \mathbb{R}\)</span>) នាំឱ្យ <span class="mi">\(\bar{z} = a - bi\)</span>។<br/>
+- គណនាអង្គខាងឆ្វេង ៖<br/>
+<span class="mi">\(z \cdot \bar{z} = (a + bi)(a - bi) = a^2 - (bi)^2 = a^2 - b^2 i^2 = a^2 + b^2\)</span>។<br/>
+- គណនាអង្គខាងស្តាំ ៖<br/>
+តាមនិយមន័យម៉ូឌុល <span class="mi">\(|z| = \sqrt{a^2 + b^2} \implies |z|^2 = a^2 + b^2\)</span>។<br/>
+ដូចនេះ <span class="mi">\(z \cdot \bar{z} = |z|^2\)</span> ពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex35"><header class="bx-h"><span class="pill">៣៥</span><b>លំហាត់ទី ៣៥</b></header><div class="bx-b">
+<p>បង្ហាញថាម៉ូឌុលនៃផលគុណស្មើផលគុណម៉ូឌុល ៖ <span class="mi">\(|(3 + 4i)(1 - i)| = |3 + 4i| \cdot |1 - i|\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថាម៉ូឌុលនៃផលគុណស្មើផលគុណម៉ូឌុល ៖<br/>
+<span class="mi">\(|(3 + 4i)(1 - i)| = |3 + 4i| \cdot |1 - i|\)</span> ៖<br/>
+- អង្គខាងស្តាំ ៖<br/>
+<span class="mi">\(|3 + 4i| = \sqrt{3^2 + 4^2} = 5\)</span> និង <span class="mi">\(|1 - i| = \sqrt{1^2 + (-1)^2} = \sqrt{2}\)</span><br/>
+<span class="mi">\(\implies |3 + 4i| \cdot |1 - i| = 5\sqrt{2}\)</span>។<br/>
+- អង្គខាងឆ្វេង ៖<br/>
+<span class="mi">\((3 + 4i)(1 - i) = 3 - 3i + 4i - 4i^2 = 7 + i\)</span><br/>
+<span class="mi">\(\implies |7 + i| = \sqrt{7^2 + 1^2} = \sqrt{50} = 5\sqrt{2}\)</span>។<br/>
+អង្គទាំងពីរស្មើគ្នា ដូចនេះសមភាពពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex36"><header class="bx-h"><span class="pill">៣៦</span><b>លំហាត់ទី ៣៦</b></header><div class="bx-b">
+<p>បង្ហាញថាម៉ូឌុលនៃផលចែកស្មើផលចែកម៉ូឌុល ៖ <span class="mi">\(\left|\dfrac{4 + 3i}{1 + i\sqrt{3}}\right| = \dfrac{|4 + 3i|}{|1 + i\sqrt{3}|}\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>បង្ហាញថាម៉ូឌុលនៃផលចែកស្មើផលចែកម៉ូឌុល ៖<br/>
+<span class="mi">\(\left|\dfrac{4 + 3i}{1 + i\sqrt{3}}\right| = \dfrac{|4 + 3i|}{|1 + i\sqrt{3}|}\)</span> ៖<br/>
+- អង្គខាងស្តាំ ៖<br/>
+<span class="mi">\(|4 + 3i| = \sqrt{16 + 9} = 5\)</span> និង <span class="mi">\(|1 + i\sqrt{3}| = \sqrt{1 + 3} = 2\)</span><br/>
+<span class="mi">\(\implies \dfrac{|4 + 3i|}{|1 + i\sqrt{3}|} = \dfrac{5}{2} = \mathbf{2.5}\)</span>។<br/>
+- អង្គខាងឆ្វេង ៖<br/>
+<span class="mi">\(\dfrac{4 + 3i}{1 + i\sqrt{3}} = \dfrac{(4 + 3i)(1 - i\sqrt{3})}{1 + 3} = \dfrac{(4 + 3\sqrt{3}) + (3 - 4\sqrt{3})i}{4}\)</span><br/>
+ម៉ូឌុលការ៉េ ៖<br/>
+<span class="mi">\(|z|^2 = \dfrac{(4 + 3\sqrt{3})^2 + (3 - 4\sqrt{3})^2}{16}\)</span><br/>
+<span class="mi">\(= \dfrac{43 + 24\sqrt{3} + 57 - 24\sqrt{3}}{16} = \dfrac{100}{16} = \dfrac{25}{4}\)</span><br/>
+<span class="mi">\(\implies |z| = \sqrt{\dfrac{25}{4}} = \dfrac{5}{2}\)</span>។<br/>
+ដូចនេះ សមភាពពិត។</p>
+</details></div></section><section class="bx bx-try" id="ex37"><header class="bx-h"><span class="pill">៣៧</span><b>លំហាត់ទី ៣៧</b></header><div class="bx-b">
+<p>តាងចំណុចរូបភាពនៃចំនួនកុំផ្លិចខាងក្រោមក្នុងប្លង់កុំផ្លិច ៖</p>
+<ol class="list olka cols4">
+<li><p><span class="mi">\(A(2 + 3i)\)</span></p></li>
+<li><p><span class="mi">\(B(-3 + 2i)\)</span></p></li>
+<li><p><span class="mi">\(C(-1 - 4i)\)</span></p></li>
+<li><p><span class="mi">\(D(4 - i)\)</span></p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចំណុចរូបភាពក្នុងប្លង់កុំផ្លិច (Argand-Gauss) ៖<br/>
+ចំនួនកុំផ្លិច <span class="mi">\(z = a + bi\)</span> ត្រូវគ្នានឹងចំណុចកូអរដោនេ <span class="mi">\((a, b)\)</span> ៖<br/>
+<strong>ក.</strong>  <span class="mi">\(A(2 + 3i) \implies \mathbf{A(2, 3)}\)</span><br/>
+<strong>ខ.</strong>  <span class="mi">\(B(-3 + 2i) \implies \mathbf{B(-3, 2)}\)</span><br/>
+<strong>គ.</strong>  <span class="mi">\(C(-1 - 4i) \implies \mathbf{C(-1, -4)}\)</span><br/>
+<strong>ឃ.</strong>  <span class="mi">\(D(4 - i) \implies \mathbf{D(4, -1)}\)</span></p>
+</details></div></section><section class="bx bx-try" id="ex38"><header class="bx-h"><span class="pill">៣៨</span><b>លំហាត់ទី ៣៨</b></header><div class="bx-b">
+<p>រកចម្ងាយរវាងចំណុចរូបភាពនៃចំនួនកុំផ្លិច <span class="mi">\(z_1 = 1 + 2i\)</span> និង <span class="mi">\(z_2 = 4 + 6i\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ចម្ងាយរវាងចំណុចរូបភាព <span class="mi">\(z_1 = 1 + 2i\)</span> និង <span class="mi">\(z_2 = 4 + 6i\)</span> ៖<br/>
+<span class="mi">\(d = |z_2 - z_1| = |(4 + 6i) - (1 + 2i)| = |3 + 4i|\)</span><br/>
+<span class="mi">\(= \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = \mathbf{5}\)</span> ឯកតា។</p>
+</details></div></section><section class="bx bx-try" id="ex39"><header class="bx-h"><span class="pill">៣៩</span><b>លំហាត់ទី ៣៩</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការដឺក្រេទី ២ ក្នុងសំណុំចំនួនកុំផ្លិច <span class="mi">\(\mathbb{C}\)</span> ៖ <span class="mi">\(x^2 + 9 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការក្នុង <span class="mi">\(\mathbb{C}\)</span> ៖ <span class="mi">\(x^2 + 9 = 0\)</span> ៖<br/>
+<span class="mi">\(x^2 = -9 \iff x^2 = 9i^2 \implies x = \pm\sqrt{9i^2} = \pm 3i\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{S = \{-3i, 3i\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex40"><header class="bx-h"><span class="pill">៤០</span><b>លំហាត់ទី ៤០</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការក្នុងសំណុំចំនួនកុំផ្លិច <span class="mi">\(\mathbb{C}\)</span> ៖ <span class="mi">\(x^2 + 2x + 5 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ <span class="mi">\(x^2 + 2x + 5 = 0\)</span> ក្នុង <span class="mi">\(\mathbb{C}\)</span> ៖<br/>
+មេគុណ ៖ <span class="mi">\(a = 1, b' = 1, c = 5\)</span> ៖<br/>
+<span class="mi">\(\Delta' = b'^2 - ac = 1^2 - 1(5) = -4 = 4i^2 = (2i)^2\)</span>។<br/>
+ឫសនៃសមីការ ៖<br/>
+<span class="mi">\(x = \dfrac{-b' \pm \sqrt{\Delta'}}{a} = \dfrac{-1 \pm 2i}{1} = \mathbf{-1 \pm 2i}\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{S = \{-1 - 2i, -1 + 2i\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex41"><header class="bx-h"><span class="pill">៤១</span><b>លំហាត់ទី ៤១</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការក្នុងសំណុំចំនួនកុំផ្លិច <span class="mi">\(\mathbb{C}\)</span> ៖ <span class="mi">\(x^2 - 4x + 13 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ <span class="mi">\(x^2 - 4x + 13 = 0\)</span> ក្នុង <span class="mi">\(\mathbb{C}\)</span> ៖<br/>
+មេគុណ ៖ <span class="mi">\(a = 1, b' = -2, c = 13\)</span> ៖<br/>
+<span class="mi">\(\Delta' = (-2)^2 - 1(13) = 4 - 13 = -9 = (3i)^2\)</span>។<br/>
+ឫសនៃសមីការ ៖<br/>
+<span class="mi">\(x = \dfrac{2 \pm 3i}{1} = \mathbf{2 \pm 3i}\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{S = \{2 - 3i, 2 + 3i\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex42"><header class="bx-h"><span class="pill">៤២</span><b>លំហាត់ទី ៤២</b></header><div class="bx-b">
+<p>ដោះស្រាយសមីការក្នុងសំណុំចំនួនកុំផ្លិច <span class="mi">\(\mathbb{C}\)</span> ៖ <span class="mi">\(2x^2 - 3x + 4 = 0\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>ដោះស្រាយសមីការ <span class="mi">\(2x^2 - 3x + 4 = 0\)</span> ក្នុង <span class="mi">\(\mathbb{C}\)</span> ៖<br/>
+មេគុណ ៖ <span class="mi">\(a = 2, b = -3, c = 4\)</span> ៖<br/>
+<span class="mi">\(\Delta = b^2 - 4ac = (-3)^2 - 4(2)(4) = 9 - 32 = -23 = 23i^2\)</span>។<br/>
+ឫសនៃសមីការ ៖<br/>
+<span class="mi">\(x = \dfrac{-b \pm \sqrt{\Delta}}{2a} = \mathbf{\dfrac{3 \pm i\sqrt{23}}{4}}\)</span>។<br/>
+សំណុំចម្លើយ ៖ <span class="mi">\(\mathbf{S = \left\{\dfrac{3 - i\sqrt{23}}{4}, \dfrac{3 + i\sqrt{23}}{4}\right\}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex43"><header class="bx-h"><span class="pill">៤៣</span><b>លំហាត់ទី ៤៣</b></header><div class="bx-b">
+<p>រកសមីការដឺក្រេទី ២ ដែលមានឫសជា <span class="mi">\(z_1 = 2 + 3i\)</span> និង <span class="mi">\(z_2 = 2 - 3i\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសមីការដឺក្រេទី ២ ដែលមានឫស <span class="mi">\(z_1 = 2 + 3i\)</span> និង <span class="mi">\(z_2 = 2 - 3i\)</span> ៖<br/>
+- ផលបូកឫស ៖ <span class="mi">\(S = z_1 + z_2 = (2 + 3i) + (2 - 3i) = 4\)</span><br/>
+- ផលគុណឫស ៖ <span class="mi">\(P = z_1 z_2 = (2 + 3i)(2 - 3i) = 2^2 + 3^2 = 13\)</span><br/>
+សមីការដឺក្រេទីពីរមានទម្រង់ <span class="mi">\(x^2 - Sx + P = 0\)</span> ៖<br/>
+<span class="mi">\(\mathbf{x^2 - 4x + 13 = 0}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex44"><header class="bx-h"><span class="pill">៤៤</span><b>លំហាត់ទី ៤៤</b></header><div class="bx-b">
+<p>គេឱ្យចំនួនកុំផ្លិច <span class="mi">\(z = x + yi\)</span> (<span class="mi">\(x, y \in \mathbb{R}\)</span>)។ រកសំណុំចំណុច <span class="mi">\(M(x,y)\)</span> ក្នុងប្លង់កុំផ្លិចដែលផ្ទៀងផ្ទាត់ <span class="mi">\(|z| = 3\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសំណុំចំណុច <span class="mi">\(M(x, y)\)</span> ដែល <span class="mi">\(|z| = 3\)</span> ៖<br/>
+តាង <span class="mi">\(z = x + yi\)</span> (<span class="mi">\(x, y \in \mathbb{R}\)</span>) ៖<br/>
+<span class="mi">\(|z| = 3 \iff \sqrt{x^2 + y^2} = 3 \iff \mathbf{x^2 + y^2 = 9}\)</span>។<br/>
+<strong>សេចក្តីសន្និដ្ឋាន</strong> ៖ សំណុំចំណុច <span class="mi">\(M(x, y)\)</span> គឺជា<strong>រង្វង់</strong>ដែលមានផ្ចិតត្រង់គល់កូអរដោនេ <span class="mi">\(O(0, 0)\)</span> និងកាំ <span class="mi">\(R = 3\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex45"><header class="bx-h"><span class="pill">៤៥</span><b>លំហាត់ទី ៤៥</b></header><div class="bx-b">
+<p>រកសំណុំចំណុច <span class="mi">\(M(x,y)\)</span> ក្នុងប្លង់កុំផ្លិចដែលផ្ទៀងផ្ទាត់ <span class="mi">\(|z - 2 + i| = 4\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសំណុំចំណុច <span class="mi">\(M(x, y)\)</span> ដែល <span class="mi">\(|z - 2 + i| = 4\)</span> ៖<br/>
+សរសេរជាទម្រង់ <span class="mi">\(|z - z_0| = R\)</span> ៖<br/>
+<span class="mi">\(|z - (2 - i)| = 4\)</span>។<br/>
+ជំនួស <span class="mi">\(z = x + yi\)</span> ៖<br/>
+<span class="mi">\(|(x - 2) + (y + 1)i| = 4 \iff \mathbf{(x - 2)^2 + (y + 1)^2 = 16}\)</span>។<br/>
+<strong>សេចក្តីសន្និដ្ឋាន</strong> ៖ សំណុំចំណុច <span class="mi">\(M(x, y)\)</span> គឺជា<strong>រង្វង់</strong>ដែលមានផ្ចិតត្រង់ចំណុច <span class="mi">\(I(2, -1)\)</span> និងកាំ <span class="mi">\(R = 4\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex46"><header class="bx-h"><span class="pill">៤៦</span><b>លំហាត់ទី ៤៦</b></header><div class="bx-b">
+<p>រកសំណុំចំណុច <span class="mi">\(M(x,y)\)</span> ដែលផ្ទៀងផ្ទាត់ <span class="mi">\(|z - 1| = |z - i|\)</span>។</p>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p>រកសំណុំចំណុច <span class="mi">\(M(x, y)\)</span> ដែលផ្ទៀងផ្ទាត់ <span class="mi">\(|z - 1| = |z - i|\)</span> ៖<br/>
+ជំនួស <span class="mi">\(z = x + yi\)</span> ៖<br/>
+<span class="mi">\(|(x - 1) + yi| = |x + (y - 1)i|\)</span><br/>
+<span class="mi">\(\iff (x - 1)^2 + y^2 = x^2 + (y - 1)^2\)</span><br/>
+<span class="mi">\(\iff x^2 - 2x + 1 + y^2 = x^2 + y^2 - 2y + 1\)</span><br/>
+<span class="mi">\(\iff -2x = -2y \iff \mathbf{y = x}\)</span>។<br/>
+<strong>សេចក្តីសន្និដ្ឋាន</strong> ៖ សំណុំចំណុច <span class="mi">\(M\)</span> គឺជា<strong>បន្ទាត់ពុះមុំទីមួយ</strong> <span class="mi">\(y = x\)</span> (មេដ្យាទ័រនៃអង្កត់ភ្ជាប់រូបភាព <span class="mi">\(A(1, 0)\)</span> និង <span class="mi">\(B(0, 1)\)</span>)។</p>
+</details></div></section><section class="bx bx-try" id="ex47"><header class="bx-h"><span class="pill">៤៧</span><b>លំហាត់ទី ៤៧</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - សៀគ្វីអគ្គិសនីចរន្តឆ្លាស់ ៖</strong> ក្នុងវិស្វកម្មអគ្គិសនី អ៊ីំពែដង់សរុប (Impedance) នៃសៀគ្វីមួយត្រូវបានតាងដោយចំនួនកុំផ្លិច <span class="mi">\(Z = R + X i\)</span> ដែល <span class="mi">\(R\)</span> ជារេស៊ីស្តង់ និង <span class="mi">\(X\)</span> ជារីអាក់តង់។</p>
+<ol class="list olka cols2">
+<li><p>ប្រសិនបើសៀគ្វីទីមួយមាន <span class="mi">\(Z_1 = 4 + 3i\ \Omega\)</span> និងសៀគ្វីទីពីរមាន <span class="mi">\(Z_2 = 2 - 5i\ \Omega\)</span> តជាស៊េរី ចូរគណនា <span class="mi">\(Z = Z_1 + Z_2\)</span>។</p></li>
+<li><p>គណនាម៉ូឌុលនៃអ៊ីំពែដង់សរុប <span class="mi">\(|Z|\)</span> នោះ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - សៀគ្វីអគ្គិសនីចរន្តឆ្លាស់ ៖</strong><br/>
+គេមាន <span class="mi">\(Z_1 = 4 + 3i\ \Omega\)</span> និង <span class="mi">\(Z_2 = 2 - 5i\ \Omega\)</span> តជាស៊េរី ៖<br/>
+<strong>ក.</strong>  អ៊ីំពែដង់សរុបនៃសៀគ្វី ៖<br/>
+<span class="mi">\(Z = Z_1 + Z_2 = (4 + 3i) + (2 - 5i) = (4 + 2) + (3 - 5)i\)</span><br/>
+<span class="mi">\(\implies \mathbf{Z = 6 - 2i\ \Omega}\)</span>។<br/>
+<strong>ខ.</strong>  ម៉ូឌុលអ៊ីំពែដង់សរុប ៖<br/>
+<span class="mi">\(|Z| = \sqrt{6^2 + (-2)^2} = \sqrt{36 + 4} = \sqrt{40} = \mathbf{2\sqrt{10} \approx 6.32\ \Omega}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex48"><header class="bx-h"><span class="pill">៤៨</span><b>លំហាត់ទី ៤៨</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - កម្លាំង និងវ៉ិចទ័រក្នុងប្លង់កុំផ្លិច ៖</strong> កម្លាំងពីរត្រូវបានតំណាងដោយចំនួនកុំផ្លិច <span class="mi">\(F_1 = 10 + 5i\)</span> (N) និង <span class="mi">\(F_2 = -4 + 3i\)</span> (N)។</p>
+<ol class="list olka cols2">
+<li><p>គណនាកម្លាំងផ្គួប <span class="mi">\(F = F_1 + F_2\)</span>។</p></li>
+<li><p>គណនាទំហំនៃកម្លាំងផ្គួប <span class="mi">\(|F|\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - កម្លាំង និងវ៉ិចទ័រក្នុងប្លង់កុំផ្លិច ៖</strong><br/>
+គេមាន <span class="mi">\(F_1 = 10 + 5i\)</span> (N) និង <span class="mi">\(F_2 = -4 + 3i\)</span> (N) ៖<br/>
+<strong>ក.</strong>  កម្លាំងផ្គួប ៖<br/>
+<span class="mi">\(F = F_1 + F_2 = (10 - 4) + (5 + 3)i = \mathbf{6 + 8i\text{ N}}\)</span>។<br/>
+<strong>ខ.</strong>  ទំហំនៃកម្លាំងផ្គួប (ម៉ូឌុល) ៖<br/>
+<span class="mi">\(|F| = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = \mathbf{10\text{ N}}\)</span>។</p>
+</details></div></section><section class="bx bx-try" id="ex49"><header class="bx-h"><span class="pill">៤៩</span><b>លំហាត់ទី ៤៩</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - ការគណនាកូដគោលពីរក្នុងកុំព្យូទ័រ ៖</strong> កាតមេម៉ូរីកុំព្យូទ័រមួយកត់ត្រាអាសយដ្ឋានអង្គចងចាំជាលេខគោលពីរ <span class="mi">\(A = 110110_2\)</span> និង <span class="mi">\(B = 10101_2\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>បំប្លែង <span class="mi">\(A, B\)</span> ជាចំនួនទសភាគ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(A + B\)</span> ជាលេខគោលពីរ។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - ការគណនាកូដគោលពីរក្នុងកុំព្យូទ័រ ៖</strong><br/>
+<strong>ក.</strong>  បំប្លែង <span class="mi">\(A, B\)</span> ជាចំនួនទសភាគ (គោលដប់) ៖<br/>
+- <span class="mi">\(A = 110110_2 = 1\cdot 2^5 + 1\cdot 2^4 + 0\cdot 2^3 + 1\cdot 2^2 + 1\cdot 2^1 + 0\cdot 2^0\)</span><br/>
+<span class="mi">\(= 32 + 16 + 0 + 4 + 2 + 0 = \mathbf{54}\)</span>។<br/>
+- <span class="mi">\(B = 10101_2 = 1\cdot 2^4 + 0\cdot 2^3 + 1\cdot 2^2 + 0\cdot 2^1 + 1\cdot 2^0\)</span><br/>
+<span class="mi">\(= 16 + 0 + 4 + 0 + 1 = \mathbf{21}\)</span>។<br/>
+<strong>ខ.</strong>  ផលបូក <span class="mi">\(A + B\)</span> ជាលេខគោលពីរ ៖<br/>
+<span class="mi">\(A + B = 110110_2 + 10101_2 = \mathbf{1001011_2}\)</span>។<br/>
+(ផ្ទៀងផ្ទាត់ ៖ <span class="mi">\(54 + 21 = 75 = 64 + 8 + 2 + 1 = 1001011_2\)</span> ពិត)។</p>
+</details></div></section><section class="bx bx-try" id="ex50"><header class="bx-h"><span class="pill">៥០</span><b>លំហាត់ទី ៥០</b></header><div class="bx-b">
+<p><strong>លំហាត់ PISA - គំរូសេដ្ឋកិច្ច និងប្រាក់ចំណេញកើន ៖</strong> ក្រុមហ៊ុនមួយមានប្រាក់ចំណេញសុទ្ធក្នុងរយៈពេល ៤ ត្រីមាស (គិតជាពាន់ដុល្លារ) ៖ <span class="mi">\(Q_1 = -12\)</span>, <span class="mi">\(Q_2 = 25\)</span>, <span class="mi">\(Q_3 = -8\)</span>, <span class="mi">\(Q_4 = 45\)</span>។</p>
+<ol class="list olka cols2">
+<li><p>គណនាប្រាក់ចំណេញសរុបប្រចាំឆ្នាំ។</p></li>
+<li><p>គណនាផលបូក <span class="mi">\(|Q_1| + |Q_2| + |Q_3| + |Q_4|\)</span>។</p></li>
+</ol>
+<details class="ans"><summary>មើលដំណោះស្រាយ</summary>
+<p><strong>លំហាត់ PISA - គំរូសេដ្ឋកិច្ច និងប្រាក់ចំណេញកើន ៖</strong><br/>
+ទិន្នន័យ ៤ ត្រីមាស ៖ <span class="mi">\(Q_1 = -12, Q_2 = 25, Q_3 = -8, Q_4 = 45\)</span> (ពាន់ដុល្លារ) ៖<br/>
+<strong>ក.</strong>  ប្រាក់ចំណេញសរុបប្រចាំឆ្នាំ ៖<br/>
+<span class="mi">\(Q = Q_1 + Q_2 + Q_3 + Q_4 = -12 + 25 - 8 + 45 = \mathbf{50}\)</span> (ពាន់ដុល្លារ)<br/>
+ពោលគឺក្រុមហ៊ុនទទួលបានប្រាក់ចំណេញសុទ្ធចំនួន <strong><span class="mi">\(50\,000\$\)</span></strong> ក្នុងមួយឆ្នាំ។<br/>
+<strong>ខ.</strong>  ផលបូកតម្លៃដាច់ខាត (ទំហំប្រែប្រួលសរុប) ៖<br/>
+<span class="mi">\(|-12| + |25| + |-8| + |45| = 12 + 25 + 8 + 45 = \mathbf{90}\)</span> (ពាន់ដុល្លារ)<br/>
+ពោលគឺទំហំប្រែប្រួលលំហូរសរុបស្មើនឹង <strong><span class="mi">\(90\,000\$\)</span></strong>។</p>
+</details></div></section></div><h3 id="qz">សំណួរពហុជ្រើសរើស</h3><p class="qz-intro">ជ្រើសរើសចម្លើយត្រឹមត្រូវតែមួយ រួចចុច «ពិនិត្យ»។ ចម្លើយរបស់អ្នកត្រូវបានរក្សាទុកក្នុងកុំព្យូទ័រនេះ។</p><section class="qz" data-sec="q1"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១–១០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q2"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ១១–២០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q3"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ២១–៣០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q4"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៣១–៤០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><section class="qz" data-sec="q5"><div class="qz-head"><h3 class="qz-title">✎ សំណួរទី ៤១–៥០</h3><span class="qz-score"></span></div><div class="qz-list"></div><div class="qz-foot"><button type="button" class="qz-reset">លុបចម្លើយ ធ្វើឡើងវិញ</button></div></section><div class="callout"><div><p><b>តេស្តសមត្ថភាព ៖ ជំពូកទី ២ តក្កវិទ្យា សំណុំ និងចំនួន</b> — ៥០ សំណួរ · ៩០ នាទី</p></div><a class="btn btn-primary btn-sm" href="../../exam.html?id=ct_g10_c02">ចាប់ផ្ដើមតេស្ត</a></div>
+<nav class="ls-pager"><a class="prev" href="L04.html"><small>← មេរៀនមុន</small><b>សំណុំ</b></a><a class="next" href="L06.html"><small>មេរៀនបន្ទាប់ →</small><b>សមីការដឺក្រេទី 2 មានមួយអញ្ញាត</b></a></nav>
+    </article>
+  </div>
+</section>
+</main>
+<script type="application/json" id="qz-data">[{"no": 1, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើទំនាក់ទំនងមួយណាខាងក្រោមរវាងសំណុំចំនួនត្រឹមត្រូវ?", "options": ["<span class=\"mi\">\\(\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{Z} \\subset \\mathbb{N} \\subset \\mathbb{Q} \\subset \\mathbb{R}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{Q} \\subset \\mathbb{Z} \\subset \\mathbb{N} \\subset \\mathbb{R}\\)<\/span>", "<span class=\"mi\">\\(\\mathbb{R} \\subset \\mathbb{Q} \\subset \\mathbb{Z} \\subset \\mathbb{N}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 2, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនមួយណាខាងក្រោមនេះជាចំនួនគត់រ៉ឺឡាទីប (<span class=\"mi\">\\(\\in \\mathbb{Z}\\)<\/span>)?", "options": ["<span class=\"mi\">\\(\\sqrt{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{4}\\)<\/span>", "<span class=\"mi\">\\(-\\sqrt{16}\\)<\/span>", "<span class=\"mi\">\\(\\pi\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 3, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនមួយណាខាងក្រោមនេះជាចំនួនអសនិទាន?", "options": ["<span class=\"mi\">\\(\\sqrt{9}\\)<\/span>", "<span class=\"mi\">\\(\\frac{22}{7}\\)<\/span>", "<span class=\"mi\">\\(0.125\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{7}\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 4, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនមួយណាខាងក្រោមនេះជាចំនួនសនិទាន?", "options": ["<span class=\"mi\">\\(\\sqrt{2}\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{3}\\)<\/span>", "<span class=\"mi\">\\(0.\\overline{3}\\)<\/span>", "<span class=\"mi\">\\(\\pi\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 5, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សរសេរចំនួនទសភាគខួប <span class=\"mi\">\\(0.\\overline{6}\\)<\/span> ជាប្រភាគសាមញ្ញ ៖", "options": ["<span class=\"mi\">\\(\\frac{6}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{2}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{6}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 6, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សរសេរចំនួនទសភាគខួប <span class=\"mi\">\\(0.\\overline{3}\\)<\/span> ជាប្រភាគសាមញ្ញ ៖", "options": ["<span class=\"mi\">\\(\\frac{1}{3}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{30}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{100}\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 7, "sec": "q1", "type": "mcq", "level": "medium", "stem": "សរសេរចំនួនទសភាគកំណត់ <span class=\"mi\">\\(0.75\\)<\/span> ជាប្រភាគសម្រួលរួច ៖", "options": ["<span class=\"mi\">\\(\\frac{75}{10}\\)<\/span>", "<span class=\"mi\">\\(\\frac{3}{4}\\)<\/span>", "<span class=\"mi\">\\(\\frac{7}{5}\\)<\/span>", "<span class=\"mi\">\\(\\frac{1}{4}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 8, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនបឋមតូចជាងគេបង្អស់គឺលេខប៉ុន្មាន?", "options": ["<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>", "<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 9, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនមួយណាខាងក្រោមនេះជាចំនួនបឋម?", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(29\\)<\/span>"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 10, "sec": "q1", "type": "mcq", "level": "medium", "stem": "តើចំនួនមួយណាខាងក្រោមនេះជាចំនួនកុបកម្ម (Composite number)?", "options": ["<span class=\"mi\">\\(2\\)<\/span>", "<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(25\\)<\/span>", "<span class=\"mi\">\\(17\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 11, "sec": "q2", "type": "mcq", "level": "medium", "stem": "តើតម្លៃដាច់ខាតនៃចំនួនពិត <span class=\"mi\">\\(x\\)<\/span> (<span class=\"mi\">\\(|x|\\)<\/span>) កំណត់ស្មើ <span class=\"mi\">\\(-x\\)<\/span> កាលណា ៖", "options": ["<span class=\"mi\">\\(x &gt; 0\\)<\/span>", "<span class=\"mi\">\\(x &lt; 0\\)<\/span>", "<span class=\"mi\">\\(x = 0\\)<\/span>", "<span class=\"mi\">\\(x \\ge 1\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 12, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គណនាតម្លៃនៃ <span class=\"mi\">\\(|-12|\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(-12\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>", "<span class=\"mi\">\\(\\pm 12\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 13, "sec": "q2", "type": "mcq", "level": "medium", "stem": "គណនាតម្លៃនៃ <span class=\"mi\">\\(|5 - 9|\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(-4\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(-14\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 14, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សម្រួលកន្សោម <span class=\"mi\">\\(|3.14 - \\pi|\\)<\/span> (ដោយដឹងថា <span class=\"mi\">\\(\\pi \\approx 3.14159\\dots\\)<\/span>) ៖", "options": ["<span class=\"mi\">\\(3.14 - \\pi\\)<\/span>", "<span class=\"mi\">\\(\\pi - 3.14\\)<\/span>", "<span class=\"mi\">\\(\\pi + 3.14\\)<\/span>", "<span class=\"mi\">\\(0\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 15, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សម្រួលកន្សោម <span class=\"mi\">\\(|1 - \\sqrt{2}|\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(1 - \\sqrt{2}\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{2} - 1\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{2} + 1\\)<\/span>", "<span class=\"mi\">\\(-1 - \\sqrt{2}\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 16, "sec": "q2", "type": "mcq", "level": "medium", "stem": "សម្រួលកន្សោម <span class=\"mi\">\\(|\\sqrt{5} - 2|\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(\\sqrt{5} - 2\\)<\/span>", "<span class=\"mi\">\\(2 - \\sqrt{5}\\)<\/span>", "<span class=\"mi\">\\(\\sqrt{5} + 2\\)<\/span>", "<span class=\"mi\">\\(1\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 17, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ដោះស្រាយសមីការ <span class=\"mi\">\\(|x| = 7\\)<\/span> លើ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(x = 7\\)<\/span>", "<span class=\"mi\">\\(x = -7\\)<\/span>", "<span class=\"mi\">\\(x = 7\\)<\/span> ឬ <span class=\"mi\">\\(x = -7\\)<\/span>", "គ្មានចម្លើយ"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 18, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ដោះស្រាយសមីការ <span class=\"mi\">\\(|x - 3| = 5\\)<\/span> លើ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(x = 8\\)<\/span> ឬ <span class=\"mi\">\\(x = -2\\)<\/span>", "<span class=\"mi\">\\(x = 8\\)<\/span> ឬ <span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = -8\\)<\/span> ឬ <span class=\"mi\">\\(x = 2\\)<\/span>", "<span class=\"mi\">\\(x = 2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 19, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ដោះស្រាយសមីការ <span class=\"mi\">\\(|2x + 1| = 9\\)<\/span> លើ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(x = 4\\)<\/span> ឬ <span class=\"mi\">\\(x = -5\\)<\/span>", "<span class=\"mi\">\\(x = 5\\)<\/span> ឬ <span class=\"mi\">\\(x = -4\\)<\/span>", "<span class=\"mi\">\\(x = 4\\)<\/span> ឬ <span class=\"mi\">\\(x = 5\\)<\/span>", "<span class=\"mi\">\\(x = -5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 20, "sec": "q2", "type": "mcq", "level": "medium", "stem": "ដោះស្រាយសមីការ <span class=\"mi\">\\(|x + 4| = -3\\)<\/span> លើ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(x = -7\\)<\/span>", "<span class=\"mi\">\\(x = -1\\)<\/span>", "<span class=\"mi\">\\(x = -7\\)<\/span> ឬ <span class=\"mi\">\\(x = -1\\)<\/span>", "គ្មានចម្លើយ (សំណុំចម្លើយ <span class=\"mi\">\\(S = \\emptyset\\)<\/span>)"], "answer": 3, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ឃ)។"}, {"no": 21, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ដោះស្រាយវិសមីការ <span class=\"mi\">\\(|x| \\leq 5\\)<\/span> លើ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(x \\leq 5\\)<\/span>", "<span class=\"mi\">\\(x \\geq -5\\)<\/span>", "<span class=\"mi\">\\(-5 \\leq x \\leq 5\\)<\/span>", "<span class=\"mi\">\\(x \\leq -5\\)<\/span> ឬ <span class=\"mi\">\\(x \\geq 5\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 22, "sec": "q3", "type": "mcq", "level": "medium", "stem": "ដោះស្រាយវិសមីការ <span class=\"mi\">\\(|x - 2| &lt; 3\\)<\/span> លើ <span class=\"mi\">\\(\\mathbb{R}\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(-1 &lt; x &lt; 5\\)<\/span>", "<span class=\"mi\">\\(1 &lt; x &lt; 5\\)<\/span>", "<span class=\"mi\">\\(-5 &lt; x &lt; 1\\)<\/span>", "<span class=\"mi\">\\(x &lt; 5\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 23, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាងសំណុំ <span class=\"mi\">\\(\\{x \\in \\mathbb{R} \\mid -2 \\leq x \\leq 4\\}\\)<\/span> ជាចន្លោះ ៖", "options": ["<span class=\"mi\">\\((-2, 4)\\)<\/span>", "<span class=\"mi\">\\([-2, 4]\\)<\/span>", "<span class=\"mi\">\\([-2, 4)\\)<\/span>", "<span class=\"mi\">\\((-2, 4]\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 24, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាងសំណុំ <span class=\"mi\">\\(\\{x \\in \\mathbb{R} \\mid 1 &lt; x &lt; 8\\}\\)<\/span> ជាចន្លោះ ៖", "options": ["<span class=\"mi\">\\([1, 8]\\)<\/span>", "<span class=\"mi\">\\((1, 8)\\)<\/span>", "<span class=\"mi\">\\([1, 8)\\)<\/span>", "<span class=\"mi\">\\((1, 8]\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 25, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាងសំណុំ <span class=\"mi\">\\(\\{x \\in \\mathbb{R} \\mid x \\ge 3\\}\\)<\/span> ជាចន្លោះ ៖", "options": ["<span class=\"mi\">\\((3, +\\infty)\\)<\/span>", "<span class=\"mi\">\\([3, +\\infty)\\)<\/span>", "<span class=\"mi\">\\((-\\infty, 3]\\)<\/span>", "<span class=\"mi\">\\((-\\infty, 3)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 26, "sec": "q3", "type": "mcq", "level": "medium", "stem": "តាងសំណុំ <span class=\"mi\">\\(\\{x \\in \\mathbb{R} \\mid x &lt; -1\\}\\)<\/span> ជាចន្លោះ ៖", "options": ["<span class=\"mi\">\\((-\\infty, -1)\\)<\/span>", "<span class=\"mi\">\\((-\\infty, -1]\\)<\/span>", "<span class=\"mi\">\\((-1, +\\infty)\\)<\/span>", "<span class=\"mi\">\\([-1, +\\infty)\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 27, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គណនាប្រសព្វនៃពីរចន្លោះ <span class=\"mi\">\\([1, 5] \\cap [3, 7]\\)<\/span> ៖", "options": ["<span class=\"mi\">\\([1, 7]\\)<\/span>", "<span class=\"mi\">\\([3, 5]\\)<\/span>", "<span class=\"mi\">\\([1, 3]\\)<\/span>", "<span class=\"mi\">\\([5, 7]\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 28, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គណនាប្រជុំនៃពីរចន្លោះ <span class=\"mi\">\\([1, 5] \\cup [3, 7]\\)<\/span> ៖", "options": ["<span class=\"mi\">\\([1, 7]\\)<\/span>", "<span class=\"mi\">\\([3, 5]\\)<\/span>", "<span class=\"mi\">\\([1, 3]\\)<\/span>", "<span class=\"mi\">\\([3, 7]\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 29, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គណនាប្រសព្វ <span class=\"mi\">\\((-\\infty, 4) \\cap [2, +\\infty)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\((2, 4)\\)<\/span>", "<span class=\"mi\">\\([2, 4)\\)<\/span>", "<span class=\"mi\">\\([2, 4]\\)<\/span>", "<span class=\"mi\">\\((-\\infty, +\\infty)\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 30, "sec": "q3", "type": "mcq", "level": "medium", "stem": "គណនាផលដកនៃចន្លោះ <span class=\"mi\">\\([1, 6] \\setminus [4, 9]\\)<\/span> ៖", "options": ["<span class=\"mi\">\\([1, 4)\\)<\/span>", "<span class=\"mi\">\\([1, 4]\\)<\/span>", "<span class=\"mi\">\\((4, 6]\\)<\/span>", "<span class=\"mi\">\\([6, 9]\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 31, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ប្រវែងនៃចន្លោះ <span class=\"mi\">\\([2, 9]\\)<\/span> គឺស្មើនឹង ៖", "options": ["<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 32, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ផ្ចិត (តម្លៃកណ្តាល) នៃចន្លោះ <span class=\"mi\">\\([3, 11]\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span>", "<span class=\"mi\">\\(4\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 33, "sec": "q4", "type": "mcq", "level": "medium", "stem": "ក្នុងប្រព័ន្ធរបាប់គោល ២ (Binary) គេប្រើប្រាស់លេខសញ្ញាណាខ្លះ?", "options": ["<span class=\"mi\">\\(0, 1, 2\\)<\/span>", "<span class=\"mi\">\\(1, 2\\)<\/span>", "<span class=\"mi\">\\(0, 1\\)<\/span>", "<span class=\"mi\">\\(0, 1, 2, 3\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 34, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បំប្លែងលេខ <span class=\"mi\">\\(10\\)<\/span> ពីប្រព័ន្ធគោល <span class=\"mi\">\\(10\\)<\/span> ទៅជាប្រព័ន្ធគោល <span class=\"mi\">\\(2\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(1010_2\\)<\/span>", "<span class=\"mi\">\\(1100_2\\)<\/span>", "<span class=\"mi\">\\(1001_2\\)<\/span>", "<span class=\"mi\">\\(1110_2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 35, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បំប្លែងលេខ <span class=\"mi\">\\(13\\)<\/span> ពីប្រព័ន្ធគោល <span class=\"mi\">\\(10\\)<\/span> ទៅជាប្រព័ន្ធគោល <span class=\"mi\">\\(2\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(1101_2\\)<\/span>", "<span class=\"mi\">\\(1011_2\\)<\/span>", "<span class=\"mi\">\\(1110_2\\)<\/span>", "<span class=\"mi\">\\(1001_2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 36, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បំប្លែងលេខ <span class=\"mi\">\\(25\\)<\/span> ពីប្រព័ន្ធគោល <span class=\"mi\">\\(10\\)<\/span> ទៅជាប្រព័ន្ធគោល <span class=\"mi\">\\(2\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(11001_2\\)<\/span>", "<span class=\"mi\">\\(10101_2\\)<\/span>", "<span class=\"mi\">\\(11101_2\\)<\/span>", "<span class=\"mi\">\\(10011_2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 37, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បំប្លែងលេខ <span class=\"mi\">\\(111_2\\)<\/span> ពីប្រព័ន្ធគោល <span class=\"mi\">\\(2\\)<\/span> ទៅជាប្រព័ន្ធគោល <span class=\"mi\">\\(10\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(5\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(7\\)<\/span>", "<span class=\"mi\">\\(8\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 38, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បំប្លែងលេខ <span class=\"mi\">\\(1011_2\\)<\/span> ពីប្រព័ន្ធគោល <span class=\"mi\">\\(2\\)<\/span> ទៅជាប្រព័ន្ធគោល <span class=\"mi\">\\(10\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(11\\)<\/span>", "<span class=\"mi\">\\(13\\)<\/span>", "<span class=\"mi\">\\(15\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 39, "sec": "q4", "type": "mcq", "level": "medium", "stem": "បំប្លែងលេខ <span class=\"mi\">\\(11000_2\\)<\/span> ពីប្រព័ន្ធគោល <span class=\"mi\">\\(2\\)<\/span> ទៅជាប្រព័ន្ធគោល <span class=\"mi\">\\(10\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(20\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>", "<span class=\"mi\">\\(28\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 40, "sec": "q4", "type": "mcq", "level": "medium", "stem": "គណនាផលបូកក្នុងប្រព័ន្ធគោល ២ ៖ <span class=\"mi\">\\(1_2 + 1_2 =\\)<\/span>", "options": ["<span class=\"mi\">\\(2_2\\)<\/span>", "<span class=\"mi\">\\(10_2\\)<\/span>", "<span class=\"mi\">\\(11_2\\)<\/span>", "<span class=\"mi\">\\(0_2\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 41, "sec": "q5", "type": "mcq", "level": "medium", "stem": "គណនាផលបូកក្នុងប្រព័ន្ធគោល ២ ៖ <span class=\"mi\">\\(101_2 + 011_2 =\\)<\/span>", "options": ["<span class=\"mi\">\\(1000_2\\)<\/span>", "<span class=\"mi\">\\(1100_2\\)<\/span>", "<span class=\"mi\">\\(1010_2\\)<\/span>", "<span class=\"mi\">\\(1110_2\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 42, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើលេខ <span class=\"mi\">\\(17_8\\)<\/span> ក្នុងប្រព័ន្ធគោល ៨ ស្មើនឹងប៉ុន្មានក្នុងប្រព័ន្ធគោល ១០?", "options": ["<span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(17\\)<\/span>", "<span class=\"mi\">\\(23\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 43, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បំបែកចំនួន <span class=\"mi\">\\(60\\)<\/span> ជាផលគុណកត្តាបឋម ៖", "options": ["<span class=\"mi\">\\(2 \\times 3 \\times 10\\)<\/span>", "<span class=\"mi\">\\(2^2 \\times 3 \\times 5\\)<\/span>", "<span class=\"mi\">\\(4 \\times 3 \\times 5\\)<\/span>", "<span class=\"mi\">\\(2^3 \\times 3 \\times 5\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 44, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រកតួចែករួមធំបំផុត <span class=\"mi\">\\(\\text{PGCD}(24, 36)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(18\\)<\/span>", "<span class=\"mi\">\\(72\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 45, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រកពហុគុណរួមតូចបំផុត <span class=\"mi\">\\(\\text{PPCM}(12, 18)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>", "<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(72\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}, {"no": 46, "sec": "q5", "type": "mcq", "level": "medium", "stem": "តើគូនៃចំនួនណាខាងក្រោមនេះជាចំនួនបឋមរវាងគ្នា (Coprime numbers)?", "options": ["<span class=\"mi\">\\(8\\)<\/span> និង <span class=\"mi\">\\(15\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span> និង <span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(14\\)<\/span> និង <span class=\"mi\">\\(21\\)<\/span>", "<span class=\"mi\">\\(10\\)<\/span> និង <span class=\"mi\">\\(25\\)<\/span>"], "answer": 0, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ក)។"}, {"no": 47, "sec": "q5", "type": "mcq", "level": "medium", "stem": "ទំនាក់ទំនងរវាង <span class=\"mi\">\\(\\text{PGCD}(a, b)\\)<\/span> និង <span class=\"mi\">\\(\\text{PPCM}(a, b)\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(\\text{PGCD} + \\text{PPCM} = a + b\\)<\/span>", "<span class=\"mi\">\\(\\text{PGCD} \\times \\text{PPCM} = a \\times b\\)<\/span>", "<span class=\"mi\">\\(\\text{PGCD} \\times \\text{PPCM} = a + b\\)<\/span>", "<span class=\"mi\">\\(\\frac{\\text{PPCM}}{\\text{PGCD}} = a \\times b\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 48, "sec": "q5", "type": "mcq", "level": "medium", "stem": "បើគេដឹងថា <span class=\"mi\">\\(\\text{PGCD}(a, b) = 6\\)<\/span> និង <span class=\"mi\">\\(a \\times b = 432\\)<\/span> នោះ <span class=\"mi\">\\(\\text{PPCM}(a, b)\\)<\/span> គឺ ៖", "options": ["<span class=\"mi\">\\(36\\)<\/span>", "<span class=\"mi\">\\(72\\)<\/span>", "<span class=\"mi\">\\(108\\)<\/span>", "<span class=\"mi\">\\(144\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 49, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រកតួចែករួមធំបំផុត <span class=\"mi\">\\(\\text{PGCD}(18, 30, 42)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(3\\)<\/span>", "<span class=\"mi\">\\(6\\)<\/span>", "<span class=\"mi\">\\(9\\)<\/span>", "<span class=\"mi\">\\(12\\)<\/span>"], "answer": 1, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (ខ)។"}, {"no": 50, "sec": "q5", "type": "mcq", "level": "medium", "stem": "រកពហុគុណរួមតូចបំផុត <span class=\"mi\">\\(\\text{PPCM}(4, 6, 8)\\)<\/span> ៖", "options": ["<span class=\"mi\">\\(12\\)<\/span>", "<span class=\"mi\">\\(16\\)<\/span>", "<span class=\"mi\">\\(24\\)<\/span>", "<span class=\"mi\">\\(48\\)<\/span>"], "answer": 2, "hint": "អានមេរៀនខាងលើឡើងវិញ ហើយលុបជម្រើសដែលមិនត្រឹមត្រូវចោល។", "sol": "ចម្លើយត្រឹមត្រូវគឺជម្រើស (គ)។"}]</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html"><img src="../../static/img/logo-96.png" alt="" width="40" height="40"><span class="brand-text"><b>KPCambodianmathematics</b><small>គណិតវិទ្យាខ្មែរ</small></span></a>
+        <p>មេរៀន លំហាត់ និងតេស្តគណិតវិទ្យាជាភាសាខ្មែរ សម្រាប់សិស្ស និងគ្រូ ថ្នាក់ទី ៧ ដល់ទី ១២ ។ ប្រើបានដោយឥតគិតថ្លៃ ទាំងលើកុំព្យូទ័រ និងទូរស័ព្ទ ។</p>
+        <a class="tg-link" href="https://t.me/KHEMPUTHY" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram @KHEMPUTHY</a>
+      </div>
+      <div class="footer-col"><h4>រៀន</h4><ul><li><a href="../../grade-7.html">ថ្នាក់ទី ៧</a></li><li><a href="../../grade-8.html">ថ្នាក់ទី ៨</a></li><li><a href="../../grade-9.html">ថ្នាក់ទី ៩</a></li><li><a href="../../grade-10.html">ថ្នាក់ទី ១០</a></li><li><a href="../../grade-11.html">ថ្នាក់ទី ១១</a></li><li><a href="../../grade-12.html">ថ្នាក់ទី ១២</a></li></ul></div>
+      <div class="footer-col"><h4>តេស្ត និងវិញ្ញាសា</h4><ul><li><a href="../../practice.html">តេស្តតាមមេរៀន</a></li><li><a href="../../practice.html#monthly">វិញ្ញាសាប្រចាំខែ</a></li><li><a href="../../exams9/index.html">ត្រៀមប្រឡងថ្នាក់ទី ៩</a></li><li><a href="../../student.html">សិស្សចូលប្រឡង</a></li></ul></div>
+      <div class="footer-col"><h4>សម្រាប់គ្រូ</h4><ul><li><a href="../../exam-builder.html">បង្កើតវិញ្ញាសា</a></li><li><a href="../../classroom.html">ថ្នាក់រៀនរបស់ខ្ញុំ</a></li><li><a href="../../studio.html">Exam Studio</a></li><li><a href="../../geometry-angle-bisector.html">សំណង់ធរណីមាត្រ</a></li></ul></div>
+      <div class="footer-col"><h4>អំពី</h4><ul><li><a href="../../about.html">អំពីយើង</a></li><li><a href="../../about.html#contact">ទំនាក់ទំនង</a></li><li><a href="../../privacy.html">គោលការណ៍ឯកជនភាព</a></li><li><a href="../../admin.html">Admin</a></li><li><a href="../../sitemap.html">ផែនទីគេហទំព័រ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ២០២៦ KPCambodianmathematics · រៀបរៀងដោយ ខែម ពុទ្ធី</p>
+      <p>ខ្លឹមសារតាមកម្មវិធីសិក្សាគណិតវិទ្យា ថ្នាក់ទី ៧–១២</p>
+    </div>
+  </div>
+</footer>
+<script src="../../static/js/site.js" defer></script>
+<script src="../../static/js/progress.js" defer></script>
+<script src="../../static/katex/katex.min.js" defer></script>
+<script src="../../static/katex/contrib/auto-render.min.js" defer></script>
+<script src="../../static/js/lesson.js" defer></script>
+<script src="../../static/js/quiz.js" defer></script>
+</body>
+</html>
