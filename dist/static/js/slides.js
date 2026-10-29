@@ -148,7 +148,7 @@
       box.style.fontSize = fs + 'px';
       box.style.color = el.color ? resolveFill(el.color) : roleColor(el.role);
       if (el.color) box.style.setProperty('--sl-math', resolveFill(el.color));
-      box.style.fontWeight = el.bold && !display ? '700' : '400';
+      box.style.fontWeight = (el.bold === false) ? '400' : '700';
       box.style.fontStyle = el.italic ? 'italic' : 'normal';
       box.style.textAlign = el.align;
       box.style.justifyContent = el.valign === 'middle' ? 'center' : el.valign === 'bottom' ? 'flex-end' : 'flex-start';
