@@ -3156,8 +3156,8 @@ $$N(120) = 100 \cdot 2^{\frac{120}{30}} = 100 \cdot 2^4 = 1\,600$$`, { size: 21 
         l(60, 155, 1180, R`ដោះស្រាយវិសមីការ  $\left(\dfrac{1}{2}\right)^x < \dfrac{1}{8}$  ។ សំណុំចម្លើយគឺ ៖`, { size: 28 }),
         card(100, 230, 480, 100, 'A', '$x < 3$', { size: 26, align: 'center' }),
         card(640, 230, 480, 100, 'B', '$x > 3$', { size: 26, align: 'center' }),
-        card(100, 350, 480, 100, 'C', '$x \le 3$', { size: 26, align: 'center' }),
-        card(640, 350, 480, 100, 'D', '$x \ge 3$', { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$x \le 3$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$x \ge 3$`, { size: 26, align: 'center' }),
         S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះគោល $\frac{1}{2} < 1$ ត្រូវប្តូរទិសដៅវិសមភាព $(\frac{1}{2})^x < (\frac{1}{2})^3 \Rightarrow x > 3$)`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -3540,10 +3540,10 @@ $$2 < x \le 5$$
       /* 21 MCQ 1 */ page([
         sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
         l(60, 155, 1180, R`តើដែនកំណត់នៃអនុគមន៍  $y = \log_3(x - 5)$  ជាចន្លោះណា?`, { size: 28 }),
-        card(100, 230, 480, 100, 'A', '$D = \mathbb{R}$', { size: 26, align: 'center' }),
-        card(640, 230, 480, 100, 'B', '$D = (5, +\infty)$', { size: 26, align: 'center' }),
-        card(100, 350, 480, 100, 'C', '$D = [5, +\infty)$', { size: 26, align: 'center' }),
-        card(640, 350, 480, 100, 'D', '$D = (0, +\infty)$', { size: 26, align: 'center' }),
+        card(100, 230, 480, 100, 'A', R`$D = \mathbb{R}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$D = (5, +\infty)$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$D = [5, +\infty)$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$D = (0, +\infty)$`, { size: 26, align: 'center' }),
         S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះលក្ខខណ្ឌកន្សោមក្នុងលោការីតគឺ $x - 5 > 0 \iff x > 5$)`, { size: 25, align: 'center', anim: true })
       ]),
 
@@ -3570,10 +3570,10 @@ $$2 < x \le 5$$
       /* 24 MCQ 4 */ page([
         sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៤)'),
         l(60, 155, 1180, R`ដោះស្រាយវិសមីការ  $\log_{1/2}(x - 3) \ge -2$  ។ សំណុំចម្លើយគឺ ៖`, { size: 28 }),
-        card(100, 230, 480, 100, 'A', '$x \le 7$', { size: 26, align: 'center' }),
-        card(640, 230, 480, 100, 'B', '$3 < x \le 7$', { size: 26, align: 'center' }),
+        card(100, 230, 480, 100, 'A', R`$x \le 7$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$3 < x \le 7$`, { size: 26, align: 'center' }),
         card(100, 350, 480, 100, 'C', '$x > 3$', { size: 26, align: 'center' }),
-        card(640, 350, 480, 100, 'D', '$x \ge 7$', { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$x \ge 7$`, { size: 26, align: 'center' }),
         S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (លក្ខខណ្ឌ $x > 3$ ; គោល $\frac{1}{2} < 1$ ប្តូរទិស $x - 3 \le (\frac{1}{2})^{-2} = 4 \Rightarrow 3 < x \le 7$)`, { size: 23, align: 'center', anim: true })
       ]),
 
@@ -3749,7 +3749,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-exponential',
-      ver: 2,
+      ver: 3,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',
@@ -3770,7 +3770,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-logarithm',
-      ver: 1,
+      ver: 2,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',
