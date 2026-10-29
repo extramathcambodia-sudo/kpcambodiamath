@@ -253,8 +253,11 @@
   // templates with an id/ver open by themselves once per version; an older copy is replaced only if never edited
   function seedTemplates() {
     var seeded = S.store.seeded || (S.store.seeded = {}), first = null;
-    (window.KPSlideTemplates || []).forEach(function (t) {
-      if (!t.id || seeded[t.id] === t.ver) return;
+    var tpls = window.KPSlideTemplates || [];
+    tpls.forEach(function (t) {
+      if (!t.id) return;
+      var hasDeck = Object.keys(S.store.decks).some(function (k) { return S.store.decks[k].tpl === t.id; });
+      if (hasDeck && seeded[t.id] === t.ver) return;
       Object.keys(S.store.decks).forEach(function (k) {
         var o = S.store.decks[k];
         // Only replace unedited template copies; user-created or edited decks are NEVER deleted
@@ -269,9 +272,16 @@
       if (t.sections) d.sections = t.sections;
       addDeck(d); seeded[t.id] = t.ver; first = first || d;
     });
-    if (!first) return;
-    S.store.current = first.id;  // open the first new deck in list order, not the last one added
+    if (first && !S.store.current) S.store.current = first.id;
     try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
+  }
+  function reloadTemplates() {
+    if (!S.store) return;
+    S.store.seeded = {};
+    seedTemplates();
+    if (root) syncRibbon();
+    renderAll();
+    status('✓ បានផ្ទុកមេរៀនឡើងវិញទាំងអស់រួចរាល់');
   }
   // studio.html?deck=<template id> (the lesson page's «ស្លាយបង្រៀន» button) opens the newest copy of that deck
   function openLinkedDeck() {
@@ -692,6 +702,7 @@
           '<span style="white-space:nowrap">📑 ចំណុច៖</span>' +
           '<select class="sl-sel-in sl-top-section" title="រំលងទៅចំណុចតូចក្នុងមេរៀន" style="background:#ffffff;color:#002060;font-weight:700;font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid #ced4da;max-width:280px;cursor:pointer;outline:none;"></select>' +
           '</label>' +
+          '<button class="sl-btn-reload" data-act="reload-tpl" title="ផ្ទុកមេរៀនទាំងអស់ឡើងវិញ (Reload all lesson decks)" style="background:#495057;color:#fff;font-weight:700;font-size:12px;padding:4px 10px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;">🔄 ផ្ទុកមេរៀន</button>' +
           '<span class="sl-title" style="display:none"></span>' +
           '<button class="sl-play" data-act="show-cur" title="បញ្ចាំងពីស្លាយនេះ">▶ បញ្ចាំង</button></div>' +
         '</div>' +
@@ -979,6 +990,7 @@
       case 'bg-all': change(function () { var bg = s.bg; S.deck.slides.forEach(function (x) { x.bg = bg; }); }); renderThumbs(); break;
       case 'bg-reset': change(function () { s.bg = null; }); break;
       case 'show-start': present(0); break;
+      case 'reload-tpl': reloadTemplates(); break;
       case 'show-cur': present(S.cur); break;
       case 'new-deck': commitEdit(); addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: S.deck.theme, updated: Date.now(), slides: [layoutSlide(S.deck && S.deck.theme === 'school' ? 's_cover' : 'title')] }); renderAll(); save(); break;
       case 'del-deck':
@@ -1337,6 +1349,7 @@
   window.KPSlides = {
     // building blocks for template decks (static/js/slides_templates.js)
     api: { T: T, shape: shp, timer: timerEl, slide: SCHOOL.page, school: SCHOOL, kh: kh, uid: uid },
+    reloadTemplates: reloadTemplates,
     filterGrade: function (g) {
       if (!S.store || !S.store.decks) return;
       var gStr = String(g);

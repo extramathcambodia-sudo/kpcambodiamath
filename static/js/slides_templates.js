@@ -2884,7 +2884,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
     },
     {
       id: 'g11-sums',
-      ver: 7,
+      ver: 8,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -2904,7 +2904,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
     },
     {
       id: 'g11-recur',
-      ver: 3,
+      ver: 4,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -2923,7 +2923,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
     },
     {
       id: 'g11-induction',
-      ver: 1,
+      ver: 2,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -2944,7 +2944,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
     },
     {
       id: 'g11-trig',
-      ver: 1,
+      ver: 2,
       grade: '11',
       chapterNum: 3,
       chapter: 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ',
@@ -2965,7 +2965,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
     },
     {
       id: 'g11-limits',
-      ver: 1,
+      ver: 2,
       grade: '11',
       chapterNum: 5,
       chapter: 'ជំពូកទី ៥ ៖ លីមីត និងដេរីវេ',
@@ -2985,7 +2985,7 @@ $$y = f'(x_0)(x - x_0) + y_0$$
     },
     {
       id: 'g11-derivatives',
-      ver: 1,
+      ver: 2,
       grade: '11',
       chapterNum: 5,
       chapter: 'ជំពូកទី ៥ ៖ លីមីត និងដេរីវេ',
