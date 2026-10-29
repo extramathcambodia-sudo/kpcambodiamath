@@ -3370,7 +3370,7 @@ $$A = 50\,000 \times 1.191016 = 59\,550.8 \text{ ៛}$$
   // ថ្នាក់ទី១១ ជំពូកទី២ មេរៀនទី២ ៖ អនុគមន៍លោការីត — book pages 72–89
   function logarithm(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
-        title = K.title, tip = K.tip, card = K.card;
+        title = K.title, tip = K.tip, card = K.card, expGraph = K.expGraph, logGraph = K.logGraph;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
     var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
@@ -3879,7 +3879,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-induction',
-      ver: 6,
+      ver: 7,
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
@@ -3900,7 +3900,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-exponential',
-      ver: 8,
+      ver: 9,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',
@@ -3921,7 +3921,7 @@ $$2 < x \le 5$$
     },
     {
       id: 'g11-logarithm',
-      ver: 7,
+      ver: 8,
       grade: '11',
       chapterNum: 2,
       chapter: 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត',
