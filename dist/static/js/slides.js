@@ -274,9 +274,14 @@
       if (t.lesson) d.lesson = t.lesson;
       if (t.lessonNum != null) d.lessonNum = t.lessonNum;
       if (t.sections) d.sections = t.sections;
-      addDeck(d); seeded[t.id] = t.ver; first = first || d;
+      deckDefaults(d);
+      S.store.decks[d.id] = d;
+      seeded[t.id] = t.ver;
+      if (!first) first = d;
     });
-    if (first && !S.store.current) S.store.current = first.id;
+    if (!S.store.current || !S.store.decks[S.store.current]) {
+      if (first) S.store.current = first.id;
+    }
     try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
   }
   function reloadTemplates() {
@@ -295,7 +300,7 @@
       var d = S.store.decks[k];
       if (d.tpl === want && (!best || (d.seededAt || d.updated || 0) >= (best.seededAt || best.updated || 0))) best = d;
     });
-    if (best) { S.store.current = best.id; return; }
+    if (best) { S.store.current = best.id; S.deck = best; return; }
     (window.KPSlideTemplates || []).forEach(function (t) {
       if (t.id !== want || best) return;
       best = t.build(window.KPSlides.api);
@@ -305,7 +310,10 @@
       if (t.lesson) best.lesson = t.lesson;
       if (t.lessonNum != null) best.lessonNum = t.lessonNum;
       if (t.sections) best.sections = t.sections;
-      addDeck(best);
+      deckDefaults(best);
+      S.store.decks[best.id] = best;
+      S.store.current = best.id;
+      S.deck = best;
       try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
     });
   }
@@ -1356,8 +1364,15 @@
     reloadTemplates: reloadTemplates,
     filterGrade: function (g) {
       if (!S.store || !S.store.decks) return;
+      if (new URLSearchParams(location.search).get('deck')) return;
       var gStr = String(g);
       var gKh = kh(g);
+      if (S.deck) {
+        var curN = (S.deck.name || '') + ' ' + (S.deck.tpl || '');
+        if (S.deck.grade === gStr || curN.indexOf('g' + gStr) !== -1 || curN.indexOf('ថ្នាក់ទី' + gKh) !== -1 || curN.indexOf('ថ្នាក់ទី ' + gKh) !== -1 || curN.indexOf('ថ្នាក់ទី' + gStr) !== -1) {
+          return;
+        }
+      }
       var match = null;
       var keys = Object.keys(S.store.decks);
       for (var i = 0; i < keys.length; i++) {
