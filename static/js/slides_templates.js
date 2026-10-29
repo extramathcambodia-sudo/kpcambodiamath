@@ -341,6 +341,163 @@
       });
       return els;
     };
+    
+    // SVG Trigonometric Unit Circle: circle, axes (cos, sin), angle theta, point P, projections, quadrants
+    K.trigCircle = function (x, y, w, h, opts) {
+      w = w || 480; h = h || 380;
+      opts = opts || {};
+      var cx = Math.round(w / 2), cy = Math.round(h / 2);
+      var r = opts.r || Math.min(cx, cy) - 45;
+      var s = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">';
+      s += '<rect width="' + w + '" height="' + h + '" rx="16" fill="#ffffff" stroke="#c5d3e8" stroke-width="2"/>';
+
+      // Axes cos (horizontal) and sin (vertical)
+      s += '<line x1="20" y1="' + cy + '" x2="' + (w - 18) + '" y2="' + cy + '" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + (w - 10) + ',' + cy + ' ' + (w - 20) + ',' + (cy - 5) + ' ' + (w - 20) + ',' + (cy + 5) + '" fill="#495057"/>';
+      s += '<text x="' + (w - 16) + '" y="' + (cy + 22) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1971c2">cos</text>';
+
+      s += '<line x1="' + cx + '" y1="' + (h - 20) + '" x2="' + cx + '" y2="18" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + cx + ',10 ' + (cx - 5) + ',20 ' + (cx + 5) + ',20" fill="#495057"/>';
+      s += '<text x="' + (cx + 12) + '" y="20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#e03131">sin</text>';
+      s += '<text x="' + (cx - 15) + '" y="' + (cy + 16) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#868e96">O</text>';
+
+      // Unit Circle
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#2b8a3e" stroke-width="2.5"/>';
+
+      // Axis labels: 1, -1, 1, -1
+      s += '<text x="' + (cx + r + 4) + '" y="' + (cy - 6) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057">1</text>';
+      s += '<text x="' + (cx - r - 14) + '" y="' + (cy - 6) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057">-1</text>';
+      s += '<text x="' + (cx - 14) + '" y="' + (cy - r + 14) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057">1</text>';
+      s += '<text x="' + (cx - 18) + '" y="' + (cy + r - 6) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057">-1</text>';
+
+      // Quadrants labels
+      s += '<text x="' + (cx + r * 0.55) + '" y="' + (cy - r * 0.55) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#868e96">កាដ្រង់ I (+,+)</text>';
+      s += '<text x="' + (cx - r * 0.95) + '" y="' + (cy - r * 0.55) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#868e96">កាដ្រង់ II (-,+)</text>';
+      s += '<text x="' + (cx - r * 0.95) + '" y="' + (cy + r * 0.65) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#868e96">កាដ្រង់ III (-,-)</text>';
+      s += '<text x="' + (cx + r * 0.55) + '" y="' + (cy + r * 0.65) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#868e96">កាដ្រង់ IV (+,-)</text>';
+
+      // Angle ray and point P if requested (default 45 deg or angle in rad)
+      var angDeg = opts.deg != null ? opts.deg : 45;
+      var angRad = angDeg * Math.PI / 180;
+      var px = cx + r * Math.cos(angRad);
+      var py = cy - r * Math.sin(angRad);
+
+      // Arc for angle
+      var arcR = 30;
+      var largeArc = (angDeg > 180) ? 1 : 0;
+      var sweep = 0; // counter-clockwise in SVG coordinates
+      s += '<path d="M ' + (cx + arcR) + ',' + cy + ' A ' + arcR + ' ' + arcR + ' 0 ' + largeArc + ' ' + sweep + ' ' + (cx + arcR * Math.cos(angRad)).toFixed(1) + ',' + (cy - arcR * Math.sin(angRad)).toFixed(1) + '" fill="none" stroke="#f08c00" stroke-width="2"/>';
+      s += '<text x="' + (cx + arcR + 4) + '" y="' + (cy - 8) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f08c00">θ</text>';
+
+      // Ray OP
+      s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + px.toFixed(1) + '" y2="' + py.toFixed(1) + '" stroke="#2b8a3e" stroke-width="2.5"/>';
+
+      // Projections
+      s += '<line x1="' + px.toFixed(1) + '" y1="' + py.toFixed(1) + '" x2="' + px.toFixed(1) + '" y2="' + cy + '" stroke="#e03131" stroke-width="1.5" stroke-dasharray="3,3"/>';
+      s += '<line x1="' + px.toFixed(1) + '" y1="' + py.toFixed(1) + '" x2="' + cx + '" y2="' + py.toFixed(1) + '" stroke="#1971c2" stroke-width="1.5" stroke-dasharray="3,3"/>';
+
+      // Cos and Sin segments
+      s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + px.toFixed(1) + '" y2="' + cy + '" stroke="#1971c2" stroke-width="3"/>';
+      s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + cx + '" y2="' + py.toFixed(1) + '" stroke="#e03131" stroke-width="3"/>';
+
+      s += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="5" fill="#2b8a3e"/>';
+      s += '<text x="' + (px + 6).toFixed(1) + '" y="' + (py - 6).toFixed(1) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2b8a3e">M(cos θ, sin θ)</text>';
+
+      s += '</svg>';
+      return shape('custom', x, y, w, h, { svg: s });
+    };
+
+    // SVG Trigonometric wave graph: sin, cos, both
+    K.trigGraph = function (x, y, w, h, gtype) {
+      w = w || 480; h = h || 370;
+      gtype = gtype || 'sin';
+      var cx = Math.round(w * 0.38), cy = Math.round(h * 0.50);
+      var sx = (w - 60) / 7.2;
+      var sy = (h - 80) / 2.6;
+      var s = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">';
+      s += '<rect width="' + w + '" height="' + h + '" rx="16" fill="#ffffff" stroke="#c5d3e8" stroke-width="2"/>';
+
+      // Horizontal grid lines: 1, 0, -1
+      [-1, 0, 1].forEach(function (v) {
+        var gy = cy - v * sy;
+        s += '<line x1="25" y1="' + gy.toFixed(1) + '" x2="' + (w - 25) + '" y2="' + gy.toFixed(1) + '" stroke="#edf2f7" stroke-width="1.2" stroke-dasharray="3,3"/>';
+      });
+
+      // Axis Ox
+      s += '<line x1="18" y1="' + cy + '" x2="' + (w - 16) + '" y2="' + cy + '" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + (w - 10) + ',' + cy + ' ' + (w - 20) + ',' + (cy - 5) + ' ' + (w - 20) + ',' + (cy + 5) + '" fill="#495057"/>';
+      s += '<text x="' + (w - 14) + '" y="' + (cy + 20) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#495057">x</text>';
+
+      // Axis Oy
+      s += '<line x1="' + cx + '" y1="' + (h - 18) + '" x2="' + cx + '" y2="18" stroke="#495057" stroke-width="2"/>';
+      s += '<polygon points="' + cx + ',10 ' + (cx - 5) + ',20 ' + (cx + 5) + ',20" fill="#495057"/>';
+      s += '<text x="' + (cx - 18) + '" y="20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#495057">y</text>';
+      s += '<text x="' + (cx - 14) + '" y="' + (cy + 16) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#868e96">O</text>';
+
+      var ticks = [
+        { v: -Math.PI, label: '-π' },
+        { v: -Math.PI / 2, label: '-π/2' },
+        { v: Math.PI / 2, label: 'π/2' },
+        { v: Math.PI, label: 'π' },
+        { v: 3 * Math.PI / 2, label: '3π/2' },
+        { v: 2 * Math.PI, label: '2π' }
+      ];
+      var xStep = sx / (Math.PI / 2);
+
+      ticks.forEach(function (tk) {
+        var gx = cx + tk.v * xStep;
+        if (gx > 20 && gx < w - 20) {
+          s += '<line x1="' + gx.toFixed(1) + '" y1="' + (cy - 4) + '" x2="' + gx.toFixed(1) + '" y2="' + (cy + 4) + '" stroke="#495057" stroke-width="1.5"/>';
+          s += '<text x="' + gx.toFixed(1) + '" y="' + (cy + 18) + '" font-family="sans-serif" font-size="11" font-weight="bold" fill="#495057" text-anchor="middle">' + tk.label + '</text>';
+        }
+      });
+
+      s += '<text x="' + (cx - 8) + '" y="' + (cy - sy + 5).toFixed(1) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057" text-anchor="end">1</text>';
+      s += '<text x="' + (cx - 8) + '" y="' + (cy + sy + 5).toFixed(1) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#495057" text-anchor="end">-1</text>';
+
+      if (gtype === 'sin' || gtype === 'both') {
+        var pts = [];
+        for (var i = 0; i <= 100; i++) {
+          var xv = -Math.PI * 1.1 + i * (2.2 * Math.PI - (-Math.PI * 1.1)) / 100.0;
+          var yv = Math.sin(xv);
+          pts.push((cx + xv * xStep).toFixed(1) + ',' + (cy - yv * sy).toFixed(1));
+        }
+        s += '<path d="M ' + pts.join(' L ') + '" fill="none" stroke="#1971c2" stroke-width="3.5" stroke-linecap="round"/>';
+        s += '<text x="' + (cx + 2 * Math.PI * xStep - 10).toFixed(1) + '" y="' + (cy - 1.15 * sy).toFixed(1) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1971c2">y = sin x</text>';
+
+        [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI].forEach(function (v) {
+          var px = cx + v * xStep, py = cy - Math.sin(v) * sy;
+          s += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="4.5" fill="#1971c2"/>';
+        });
+      }
+
+      if (gtype === 'cos' || gtype === 'both') {
+        var pts = [];
+        for (var i = 0; i <= 100; i++) {
+          var xv = -Math.PI * 1.1 + i * (2.2 * Math.PI - (-Math.PI * 1.1)) / 100.0;
+          var yv = Math.cos(xv);
+          pts.push((cx + xv * xStep).toFixed(1) + ',' + (cy - yv * sy).toFixed(1));
+        }
+        var strokeC = gtype === 'cos' ? '#e03131' : '#f08c00';
+        s += '<path d="M ' + pts.join(' L ') + '" fill="none" stroke="' + strokeC + '" stroke-width="3.5" stroke-linecap="round"/>';
+        s += '<text x="' + (cx + 2 * Math.PI * xStep - 10).toFixed(1) + '" y="' + (cy - 0.2 * sy).toFixed(1) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="' + strokeC + '">y = cos x</text>';
+
+        [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI].forEach(function (v) {
+          var px = cx + v * xStep, py = cy - Math.cos(v) * sy;
+          s += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="4.5" fill="' + strokeC + '"/>';
+        });
+      }
+
+      var pStart = cx, pEnd = cx + 2 * Math.PI * xStep;
+      s += '<line x1="' + pStart.toFixed(1) + '" y1="' + (h - 26) + '" x2="' + pEnd.toFixed(1) + '" y2="' + (h - 26) + '" stroke="#2b8a3e" stroke-width="1.8"/>';
+      s += '<line x1="' + pStart.toFixed(1) + '" y1="' + (h - 32) + '" x2="' + pStart.toFixed(1) + '" y2="' + (h - 20) + '" stroke="#2b8a3e" stroke-width="1.8"/>';
+      s += '<line x1="' + pEnd.toFixed(1) + '" y1="' + (h - 32) + '" x2="' + pEnd.toFixed(1) + '" y2="' + (h - 20) + '" stroke="#2b8a3e" stroke-width="1.8"/>';
+      s += '<text x="' + ((pStart + pEnd) / 2).toFixed(1) + '" y="' + (h - 10) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#2b8a3e" text-anchor="middle">ខួប T = 2π</text>';
+
+      s += '</svg>';
+      return shape('custom', x, y, w, h, { svg: s });
+    };
+
     return K;
   }
 
@@ -2788,88 +2945,966 @@ $$\Rightarrow \text{ផលបូកតួគូ} = \text{ផលបូកតួ�
     };
   }
 
-  function trigEquations(A) {
-    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, info = K.info, kids = K.kids, line = K.line,
-        step = K.step, solTitle = K.solTitle, title = K.title, card = K.card;
+  
+  // =========================================================================
+  // ថ្នាក់ទី១១ ជំពូកទី៣ មេរៀនទី១ ៖ អនុគមន៍ត្រីកោណមាត្រ — book pages 90–113
+  // =========================================================================
+  function trigFunctions(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, trigCircle = K.trigCircle, trigGraph = K.trigGraph, expGraph = K.expGraph, logGraph = K.logGraph;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var R = String.raw;
+
     var slides = [
-      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៣==        មេរៀនទី១២', 'សមីការនិងវិសមីការត្រីកោណមាត្រ'),
-      /* 2 */ S.objective([
-        R`ដោះស្រាយសមីការត្រីកោណមាត្រគ្រឹះ $\sin x = a,\ \cos x = a,\ \tan x = a$`,
-        R`ដោះស្រាយសមីការលីនេអ៊ែរទម្រង់ $a\sin x + b\cos x = c$`,
-        R`ដោះស្រាយវិសមីការត្រីកោណមាត្រលើរង្វង់ត្រីកោណមាត្រ`
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៣==        មេរៀនទី១', 'អនុគមន៍ត្រីកោណមាត្រ', K.info),
+
+      /* 2 */ K.toc([
+        '==១. រង្វាស់មុំ & រង្វង់ត្រីកោណមាត្រ==',
+        '២. និយមន័យអនុគមន៍ & តារាងមុំពិសេស',
+        '==៣. ទំនាក់ទំនងគ្រឹះ & មុំផ្តុំ==',
+        '៤. អថេរភាព និងក្រាបរលក sin, cos, tan',
+        '==៥. សំណួរ MCQ & កិច្ចការផ្ទះ=='
       ]),
-      /* 3 */ page([
-        title('១. សមីការត្រីកោណមាត្រគ្រឹះ'),
-        S.box(60, 180, 1160, 260, R`!!__១. សមីការស៊ីនុស__!! ៖
-• $\sin x = \sin \alpha \iff \begin{cases} x = \alpha + 2k\pi \\ x = \pi - \alpha + 2k\pi \end{cases} \quad (k \in \mathbb{Z})$
-• បើ $|a| > 1$ នោះសមីការ $\sin x = a$ គ្មានចម្លើយទេព្រោះ $-1 \le \sin x \le 1$ ។`, { size: 26, lh: '1.6' }),
-        kids(1100, 526, 150)
+
+      /* 3 */ S.objective([
+        R`ប្តូររង្វាស់មុំពីដឺក្រេទៅជារ៉ាដ្យង់ និងពីរ៉ាដ្យង់ទៅជាដឺក្រេ ($1\text{ rad} = \frac{180^\circ}{\pi}$)`,
+        R`កំណត់ចំណុច និងសញ្ញានៃអនុគមន៍ត្រីកោណមាត្រតាមកាដ្រង់លើរង្វង់ត្រីកោណមាត្រ`,
+        R`ប្រើប្រាស់ទំនាក់ទំនងគ្រឹះ $\sin^2 x + \cos^2 x = 1$ និងរូបមន្តមុំផ្តុំក្នុងការសម្រួលកន្សោម`,
+        R`យល់ដឹងពីខួប ភាពគូ-សេស និងសង់ក្រាបរលកនៃអនុគមន៍ $y = \sin x, y = \cos x, y = \tan x$`
       ]),
+
       /* 4 */ page([
-        title('ឧទាហរណ៍ទី១ ៖ សមីការស៊ីនុស'),
-        S.box(60, 170, 1160, 80, R`ដោះស្រាយសមីការ $\sin x = \dfrac{1}{2}$ លើ $\mathbb{R}$ ។`, { size: 28 }),
-        solTitle(440, 270),
-        S.box(160, 340, 960, 260, R`យើងមាន $\dfrac{1}{2} = \sin\dfrac{\pi}{6}$ នោះ $\sin x = \sin\dfrac{\pi}{6}$
-នាំឲ្យ $\begin{cases} x = \dfrac{\pi}{6} + 2k\pi \\ x = \pi - \dfrac{\pi}{6} + 2k\pi = \dfrac{5\pi}{6} + 2k\pi \end{cases} \quad (k \in \mathbb{Z})$
-!!ដូចនេះ!!  $x \in \left\{ \dfrac{\pi}{6} + 2k\pi, \dfrac{5\pi}{6} + 2k\pi \right\}, k \in \mathbb{Z}$`, { size: 26, lh: '1.6', align: 'center', anim: true })
+        sec('១.១ រង្វាស់មុំគិតជាដឺក្រេ និងរ៉ាដ្យង់'),
+        card(60, 160, 560, 360, 'និយមន័យ & រូបមន្តបម្លែងរង្វាស់មុំ', R`• **រ៉ាដ្យង់ (Radian)** ៖ ជារង្វាស់មុំផ្ចិតដែលស្កាត់ធ្នូមានប្រវែងស្មើនឹងកាំរង្វង់ ($r$) ។
+• **ទំនាក់ទំនងដឺក្រេ & រ៉ាដ្យង់** ៖
+$$\pi \text{ rad} = 180^\circ \iff 1\text{ rad} = \frac{180^\circ}{\pi} \approx 57^\circ 17'45''$$
+$$1^\circ = \frac{\pi}{180} \text{ rad} \approx 0.0175 \text{ rad}$$
+• **ប្រវែងធ្នូរង្វង់** ៖ $\ell = r \cdot \theta$ (ដែល $\theta$ គិតជារ៉ាដ្យង់)`, { size: 24 }),
+        card(660, 160, 560, 360, 'តារាងបម្លែងមុំសំខាន់ៗដែលជួបញឹកញាប់', R`$$\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+\text{ដឺក្រេ} & 0^\circ & 30^\circ & 45^\circ & 60^\circ & 90^\circ & 180^\circ \\
+\hline
+\text{រ៉ាដ្យង់} & 0 & \frac{\pi}{6} & \frac{\pi}{4} & \frac{\pi}{3} & \frac{\pi}{2} & \pi \\
+\hline
+\end{array}$$
+• $120^\circ = \dfrac{2\pi}{3}, \quad 135^\circ = \dfrac{3\pi}{4}, \quad 150^\circ = \dfrac{5\pi}{6}$
+• $270^\circ = \dfrac{3\pi}{2}, \quad 360^\circ = 2\pi$ (មួយជុំពេញ)`, { size: 24 }),
+        S.box(60, 545, 1160, 75, R`!!ក្បួនចងចាំ!! ៖ ប្តូរពីដឺក្រេ $\to$ រ៉ាដ្យង់ គុណនឹង $\dfrac{\pi}{180}$ ; ប្តូរពីរ៉ាដ្យង់ $\to$ ដឺក្រេ ជំនួស $\pi = 180^\circ$ ។`, { size: 25, align: 'center', anim: true })
       ]),
+
       /* 5 */ page([
-        title('២. សមីការកូស៊ីនុស'),
-        S.box(60, 180, 1160, 260, R`!!__២. សមីការកូស៊ីនុស__!! ៖
-• $\cos x = \cos \alpha \iff x = \pm \alpha + 2k\pi \quad (k \in \mathbb{Z})$
-• សម្គាល់ ៖ បើ $|a| > 1$ នោះសមីការ $\cos x = a$ គ្មានចម្លើយទេ ។`, { size: 26, lh: '1.6' }),
-        kids(1100, 526, 150)
+        sec('ឧទាហរណ៍គំរូ ៖ ការប្តូររង្វាស់មុំ និងប្រវែងធ្នូ'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ១ ៖!!  ក. ប្តូរ $150^\circ$ និង $225^\circ$ ជារ៉ាដ្យង់ ។  ខ. ប្តូរ $\dfrac{5\pi}{3}\text{ rad}$ ជាដឺក្រេ ។`, { size: 27 }),
+        s(100, 220, 1080, R`• $150^\circ = 150 \times \dfrac{\pi}{180} = \dfrac{150\pi}{180} = \dfrac{5\pi}{6}\text{ rad}$`),
+        s(100, 275, 1080, R`• $225^\circ = 225 \times \dfrac{\pi}{180} = \dfrac{225\pi}{180} = \dfrac{5\pi}{4}\text{ rad}$`),
+        s(100, 330, 1080, R`• $\dfrac{5\pi}{3}\text{ rad} = \dfrac{5 \times 180^\circ}{3} = 5 \times 60^\circ = 300^\circ$`),
+        l(60, 395, 1180, R`!!លំហាត់គំរូ ២ ៖!!  រង្វង់មួយមានកាំ $r = 6\text{ cm}$ ។ គណនាប្រវែងធ្នូ $\ell$ ស្កាត់ដោយមុំផ្ចិត $\theta = \dfrac{2\pi}{3}$ ។`, { size: 26 }),
+        s(100, 455, 1080, R`គេមានរូបមន្ត $\ell = r \cdot \theta = 6 \times \dfrac{2\pi}{3} = 4\pi \approx 12.57\text{ cm}$`),
+        S.box(60, 535, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  ប្រវែងធ្នូរង្វង់ $\ell = 4\pi\text{ cm} \approx 12.57\text{ cm}$ ។`, { size: 26, align: 'center', anim: true })
       ]),
+
       /* 6 */ page([
-        title('ឧទាហរណ៍ទី២ ៖ សមីការកូស៊ីនុស'),
-        S.box(60, 170, 1160, 80, R`ដោះស្រាយសមីការ $\cos 2x = \dfrac{\sqrt{3}}{2}$ ។`, { size: 28 }),
-        solTitle(440, 270),
-        S.box(160, 340, 960, 260, R`ដោយ $\dfrac{\sqrt{3}}{2} = \cos\dfrac{\pi}{6}$ នោះ $\cos 2x = \cos\dfrac{\pi}{6}$
-នាំឲ្យ $2x = \pm\dfrac{\pi}{6} + 2k\pi \iff x = \pm\dfrac{\pi}{12} + k\pi \quad (k \in \mathbb{Z})$
-!!ដូចនេះ!!  $x = \pm\dfrac{\pi}{12} + k\pi \quad (k \in \mathbb{Z})$`, { size: 26, lh: '1.6', align: 'center', anim: true })
+        sec('១.២ រង្វង់ត្រីកោណមាត្រ (Trigonometric Unit Circle)'),
+        card(60, 155, 640, 375, 'និយមន័យរង្វង់ត្រីកោណមាត្រ', R`• **និយមន័យ** ៖ ជារង្វង់ដែលមានផ្ចិតត្រង់គល់ $O(0, 0)$ និងមានកាំ $R = 1$ ។
+• **ទិសដៅវិល** ៖
+  - **ទិសដៅវិជ្ជមាន (+)** ៖ ច្រាសទ្រនិចនាឡិកា
+  - **ទិសដៅអវិជ្ជមាន (−)** ៖ ស្របទ្រនិចនាឡិកា
+• **អ័ក្សកូអ័រដោនេ** ៖
+  - អ័ក្សដេក $(Ox)$ ហៅថា **អ័ក្សកូស៊ីនុស (cos)**
+  - អ័ក្សឈរ $(Oy)$ ហៅថា **អ័ក្សស៊ីនុស (sin)**
+• ចំណុច $M$ លើរង្វង់ត្រូវគ្នានឹងមុំ $\theta$ មានកូអ័រដោនេ $M(\cos\theta, \sin\theta)$`, { size: 23 }),
+        trigCircle(720, 155, 500, 375, { deg: 45 }),
+        S.box(60, 545, 1160, 80, R`!!ចំណាំ!! ៖  គ្រប់មុំ $\theta$ ចំណុច $M(\cos\theta, \sin\theta)$ តែងស្ថិតលើរង្វង់ឯកតា នាំឱ្យ $-1 \le \cos\theta \le 1$ និង $-1 \le \sin\theta \le 1$ ។`, { size: 24, align: 'center', anim: true })
       ]),
+
       /* 7 */ page([
-        title('៣. សមីការតង់សង់'),
-        S.box(60, 180, 1160, 260, R`!!__៣. សមីការតង់សង់__!! ៖
-• $\tan x = \tan \alpha \iff x = \alpha + k\pi \quad (k \in \mathbb{Z})$
-• លក្ខខណ្ឌកំណត់ ៖ $x \neq \dfrac{\pi}{2} + k\pi$ ។`, { size: 26, lh: '1.6' }),
-        kids(1100, 526, 150)
+        sec('២.១ និយមន័យនៃអនុគមន៍ត្រីកោណមាត្រទាំង ៤'),
+        card(60, 160, 560, 360, 'អនុគមន៍ស៊ីនុស (sin) និងកូស៊ីនុស (cos)', R`បើ $M(x, y)$ ជាចំណុចចុងនៃធ្នូ $\theta$ លើរង្វង់ឯកតា ៖
+• **កូស៊ីនុស** ៖ $\cos\theta = x$ (អាប់ស៊ីសនៃចំណុច $M$)
+  - ដែនកំណត់ ៖ $D = \mathbb{R}$
+  - សំណុំតម្លៃ ៖ $-1 \le \cos\theta \le 1$
+• **ស៊ីនុស** ៖ $\sin\theta = y$ (អរដោនេនៃចំណុច $M$)
+  - ដែនកំណត់ ៖ $D = \mathbb{R}$
+  - សំណុំតម្លៃ ៖ $-1 \le \sin\theta \le 1$`, { size: 24 }),
+        card(660, 160, 560, 360, 'អនុគមន៍តង់សង់ (tan) និងកូតង់សង់ (cot)', R`• **តង់សង់** ៖ $\tan\theta = \dfrac{\sin\theta}{\cos\theta} = \dfrac{y}{x} \quad (\cos\theta \neq 0)$
+  - ដែនកំណត់ ៖ $\theta \neq \dfrac{\pi}{2} + k\pi \ (k \in \mathbb{Z})$
+  - សំណុំតម្លៃ ៖ $\mathbb{R}$ (គ្មានព្រំដែន)
+• **កូតង់សង់** ៖ $\cot\theta = \dfrac{\cos\theta}{\sin\theta} = \dfrac{x}{y} \quad (\sin\theta \neq 0)$
+  - ដែនកំណត់ ៖ $\theta \neq k\pi \ (k \in \mathbb{Z})$
+  - សំណុំតម្លៃ ៖ $\mathbb{R}$`, { size: 24 }),
+        S.box(60, 545, 1160, 80, R`!!ទំនាក់ទំនងបញ្ច្រាស!! ៖  $\tan\theta \cdot \cot\theta = 1 \iff \cot\theta = \dfrac{1}{\tan\theta}$ ចំពោះគ្រប់មុំដែលកំណត់ ។`, { size: 26, align: 'center', anim: true })
       ]),
+
       /* 8 */ page([
-        title(R`៤. សមីការទម្រង់ $a\sin x + b\cos x = c$`),
-        S.box(60, 180, 1160, 320, R`!!__វិធីដោះស្រាយ__!! ៖
-១. លក្ខខណ្ឌមានចម្លើយ ៖ $a^2 + b^2 \ge c^2$
-២. ចែកអង្គទាំងពីរនឹង $\sqrt{a^2 + b^2}$ ៖
-   $$\dfrac{a}{\sqrt{a^2+b^2}}\sin x + \dfrac{b}{\sqrt{a^2+b^2}}\cos x = \dfrac{c}{\sqrt{a^2+b^2}}$$
-៣. តាង $\cos\varphi = \dfrac{a}{\sqrt{a^2+b^2}}$ និង $\sin\varphi = \dfrac{b}{\sqrt{a^2+b^2}}$
-   សមីការក្លាយជា $\sin(x + \varphi) = \dfrac{c}{\sqrt{a^2+b^2}}$ រួចដោះស្រាយតាមសមីការគ្រឹះ ។`, { size: 24, lh: '1.5' })
+        sec('២.២ សញ្ញានៃអនុគមន៍ត្រីកោណមាត្រតាមកាដ្រង់'),
+        card(60, 155, 640, 375, 'តារាងសញ្ញាតាមកាដ្រង់ទាំង ៤', R`$$\begin{array}{|c|c|c|c|c|}
+\hline
+\text{កាដ្រង់} & \text{កាដ្រង់ I} & \text{កាដ្រង់ II} & \text{កាដ្រង់ III} & \text{កាដ្រង់ IV} \\
+\text{ចន្លោះមុំ} & (0, \frac{\pi}{2}) & (\frac{\pi}{2}, \pi) & (\pi, \frac{3\pi}{2}) & (\frac{3\pi}{2}, 2\pi) \\
+\hline
+\sin\theta & + & + & - & - \\
+\hline
+\cos\theta & + & - & - & + \\
+\hline
+\tan\theta & + & - & + & - \\
+\hline
+\cot\theta & + & - & + & - \\
+\hline
+\end{array}$$
+• **កាដ្រង់ I** ៖ វិជ្ជមានទាំងអស់ (All positive)
+• **កាដ្រង់ II** ៖ មានតែ $\sin$ វិជ្ជមាន
+• **កាដ្រង់ III** ៖ មានតែ $\tan, \cot$ វិជ្ជមាន
+• **កាដ្រង់ IV** ៖ មានតែ $\cos$ វិជ្ជមាន`, { size: 22 }),
+        trigCircle(720, 155, 500, 375, { deg: 135 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ (ASTC)!! ៖  **A**ll $\to$ **S**in $\to$ **T**an $\to$ **C**os វិជ្ជមានតាមលំដាប់កាដ្រង់ I, II, III, IV ។`, { size: 25, align: 'center', anim: true })
       ]),
+
       /* 9 */ page([
-        title('៥. វិសមីការត្រីកោណមាត្រគ្រឹះ'),
-        S.box(60, 180, 1160, 300, R`!!__របៀបដោះស្រាយលើរង្វង់ត្រីកោណមាត្រ__!! ៖
-• ជំហានទី១ ៖ ដោះស្រាយសមីការត្រីកោណមាត្រដែលត្រូវគ្នាដើម្បីរកចំណុចកាត់លើរង្វង់ ។
-• ជំហានទី២ ៖ សម្គាល់ធ្នូដែលផ្ទៀងផ្ទាត់វិសមីការលើរង្វង់ត្រីកោណមាត្រ ។
-• ជំហានទី៣ ៖ សរសេរចន្លោះចម្លើយ និងបន្ថែមខួប $2k\pi$ (ចំពោះ $\sin, \cos$) ឬ $k\pi$ (ចំពោះ $\tan$) ។`, { size: 24, lh: '1.6' }),
-        kids(1100, 526, 150)
+        sec('២.៣ តារាងតម្លៃនៃមុំពិសេស'),
+        card(60, 160, 1160, 360, 'តារាងតម្លៃត្រីកោណមាត្រនៃមុំពិសេសសំខាន់ៗ', R`$$\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\theta\ (\text{ដឺក្រេ}) & 0^\circ & 30^\circ & 45^\circ & 60^\circ & 90^\circ & 180^\circ & 270^\circ & 360^\circ \\
+\hline
+\theta\ (\text{រ៉ាដ្យង់}) & 0 & \frac{\pi}{6} & \frac{\pi}{4} & \frac{\pi}{3} & \frac{\pi}{2} & \pi & \frac{3\pi}{2} & 2\pi \\
+\hline
+\sin\theta & 0 & \frac{1}{2} & \frac{\sqrt{2}}{2} & \frac{\sqrt{3}}{2} & 1 & 0 & -1 & 0 \\
+\hline
+\cos\theta & 1 & \frac{\sqrt{3}}{2} & \frac{\sqrt{2}}{2} & \frac{1}{2} & 0 & -1 & 0 & 1 \\
+\hline
+\tan\theta & 0 & \frac{\sqrt{3}}{3} & 1 & \sqrt{3} & \text{គ្មាន} & 0 & \text{គ្មាន} & 0 \\
+\hline
+\cot\theta & \text{គ្មាន} & \sqrt{3} & 1 & \frac{\sqrt{3}}{3} & 0 & \text{គ្មាន} & 0 & \text{គ្មាន} \\
+\hline
+\end{array}$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំតម្លៃស៊ីនុស!! ៖  $\sin\theta = \dfrac{\sqrt{0}}{2}, \dfrac{\sqrt{1}}{2}, \dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{3}}{2}, \dfrac{\sqrt{4}}{2}$ ចំពោះមុំ $0^\circ, 30^\circ, 45^\circ, 60^\circ, 90^\circ$ ។`, { size: 25, align: 'center', anim: true })
       ]),
+
       /* 10 */ page([
-        title('លំហាត់អនុវត្ត'),
-        S.box(60, 170, 1160, 320, R`ចូរដោះស្រាយសមីការ និងវិសមីការខាងក្រោម ៖
-!!ក.!! $\sin 2x = -\dfrac{1}{2}$
-!!ខ.!! $\cos\left(x - \dfrac{\pi}{3}\right) = \dfrac{\sqrt{2}}{2}$
-!!គ.!! $\sqrt{3}\sin x + \cos x = \sqrt{2}$
-!!ឃ.!! $\cos x > \dfrac{1}{2}$ លើចន្លោះ $[0, 2\pi]$`, { size: 26, lh: '1.7' })
+        sec('៣.១ ទំនាក់ទំនងគ្រឹះរវាងអនុគមន៍ត្រីកោណមាត្រ'),
+        card(60, 160, 560, 360, 'រូបមន្តគ្រឹះទាំង ៤', R`ពីសមីការរង្វង់ឯកតា $x^2 + y^2 = 1$ យើងទាញបាន ៖
+❶ **រូបមន្តគ្រឹះចម្បង** ៖
+$$\sin^2 x + \cos^2 x = 1$$
+❷ **ទំនាក់ទំនងរវាង tan និង cos** ៖
+$$1 + \tan^2 x = \frac{1}{\cos^2 x} \quad (x \neq \frac{\pi}{2} + k\pi)$$
+❸ **ទំនាក់ទំនងរវាង cot និង sin** ៖
+$$1 + \cot^2 x = \frac{1}{\sin^2 x} \quad (x \neq k\pi)$$
+❹ **ទំនាក់ទំនងរវាង tan និង cot** ៖
+$$\tan x \cdot \cot x = 1$$`, { size: 24 }),
+        card(660, 160, 560, 360, 'រូបមន្តទាញចេញសម្រាប់គណនា', R`• ទាញរក $\sin x$ និង $\cos x$ ៖
+  $$\sin x = \pm\sqrt{1 - \cos^2 x}$$
+  $$\cos x = \pm\sqrt{1 - \sin^2 x}$$
+  *(សញ្ញា $\pm$ កំណត់តាមកាដ្រង់នៃមុំ $x$)*
+• ទាញរក $\cos^2 x$ និង $\sin^2 x$ តាម $\tan x$ ៖
+  $$\cos^2 x = \frac{1}{1 + \tan^2 x}$$
+  $$\sin^2 x = \frac{\tan^2 x}{1 + \tan^2 x}$$`, { size: 24 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖  ពេលស្គាល់តម្លៃមួយនៃអនុគមន៍ត្រីកោណមាត្រ និងកាដ្រង់ យើងអាចគណនាតម្លៃ ៣ ទៀតបានជានិច្ច!`, { size: 25, align: 'center', anim: true })
       ]),
-      /* 11 */ S.homework(R`!!១.!! ដោះស្រាយសមីការ $2\cos^2 x - 3\cos x + 1 = 0$ លើ $\mathbb{R}$ ។
-!!២.!! ដោះស្រាយសមីការ $\sin x + \cos x = 1$ ។
-!!៣.!! ដោះស្រាយវិសមីការ $\sin x \le \dfrac{\sqrt{3}}{2}$ លើ $[0, 2\pi]$ ។`),
-      /* 12 */ S.thanks()
+
+      /* 11 */ page([
+        sec('ឧទាហរណ៍គំរូ ៖ គណនាតម្លៃអនុគមន៍ត្រីកោណមាត្រ'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  គេឱ្យ $\sin \alpha = \dfrac{3}{5}$ និង $\dfrac{\pi}{2} < \alpha < \pi$ (កាដ្រង់ទី II) ។ គណនា $\cos\alpha, \tan\alpha, \cot\alpha$ ។`, { size: 27 }),
+        s(100, 225, 1080, R`• តាមរូបមន្តគ្រឹះ $\sin^2\alpha + \cos^2\alpha = 1 \implies \cos^2\alpha = 1 - \sin^2\alpha = 1 - \left(\dfrac{3}{5}\right)^2 = \dfrac{16}{25}$`),
+        s(100, 290, 1080, R`• ដោយ $\dfrac{\pi}{2} < \alpha < \pi$ ($\alpha$ នៅកាដ្រង់ទី II) នោះនាំឱ្យ $\cos\alpha < 0$ ៖  $\cos\alpha = -\sqrt{\dfrac{16}{25}} = -\dfrac{4}{5}$`),
+        s(100, 355, 1080, R`• គណនា $\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha} = \dfrac{3/5}{-4/5} = -\dfrac{3}{4}$`),
+        s(100, 420, 1080, R`• គណនា $\cot\alpha = \dfrac{1}{\tan\alpha} = -\dfrac{4}{3}$`),
+        S.box(60, 505, 1160, 105, R`!!ចម្លើយ!! ៖  $\cos\alpha = -\dfrac{4}{5}, \quad \tan\alpha = -\dfrac{3}{4}, \quad \cot\alpha = -\dfrac{4}{3}$ ។`, { size: 28, align: 'center', anim: true })
+      ]),
+
+      /* 12 */ page([
+        sec('៣.២ រូបមន្តមុំផ្តុំ (Associated Angles)'),
+        card(60, 160, 560, 360, 'មុំផ្ទុយ (−x) និងមុំបន្ថែម (π − x)', R`• **មុំផ្ទុយ ($-x$)** ៖
+  - $\cos(-x) = \cos x$
+  - $\sin(-x) = -\sin x$
+  - $\tan(-x) = -\tan x, \quad \cot(-x) = -\cot x$
+• **មុំបន្ថែម ($\pi - x$)** ៖
+  - $\sin(\pi - x) = \sin x$
+  - $\cos(\pi - x) = -\cos x$
+  - $\tan(\pi - x) = -\tan x, \quad \cot(\pi - x) = -\cot x$`, { size: 24 }),
+        card(660, 160, 560, 360, 'មុំលើសកន្លះរង្វង់ (π + x) និងមុំបំពេញ (π/2 − x)', R`• **មុំលើសកន្លះរង្វង់ ($\pi + x$)** ៖
+  - $\sin(\pi + x) = -\sin x, \quad \cos(\pi + x) = -\cos x$
+  - $\tan(\pi + x) = \tan x, \quad \cot(\pi + x) = \cot x$
+• **មុំបំពេញ ($\frac{\pi}{2} - x$)** ៖
+  - $\sin\left(\frac{\pi}{2} - x\right) = \cos x, \quad \cos\left(\frac{\pi}{2} - x\right) = \sin x$
+  - $\tan\left(\frac{\pi}{2} - x\right) = \cot x, \quad \cot\left(\frac{\pi}{2} - x\right) = \tan x$`, { size: 24 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនទន្ទេញ!! ៖  «កូស៊ីនុសផ្ទុយ ស៊ីនុសបន្ថែម តង់សង់កូតង់សង់លើសកន្លះរង្វង់ មុំបំពេញប្តូរឈ្មោះ» ។`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 13 */ page([
+        sec('ឧទាហរណ៍គំរូ ៖ ការសម្រួលកន្សោមដោយប្រើមុំផ្តុំ'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  សម្រួលកន្សោម $A = \sin(\pi - x) + \cos\left(\dfrac{\pi}{2} - x\right) - \sin(-x) + \cos(\pi + x)$ ។`, { size: 27 }),
+        s(100, 230, 1080, R`• តាមរូបមន្តមុំបន្ថែម ៖  $\sin(\pi - x) = \sin x$`),
+        s(100, 290, 1080, R`• តាមរូបមន្តមុំបំពេញ ៖  $\cos\left(\dfrac{\pi}{2} - x\right) = \sin x$`),
+        s(100, 350, 1080, R`• តាមរូបមន្តមុំផ្ទុយ ៖  $-\sin(-x) = -(-\sin x) = \sin x$`),
+        s(100, 410, 1080, R`• តាមរូបមន្តមុំលើសកន្លះរង្វង់ ៖  $\cos(\pi + x) = -\cos x$`),
+        S.box(60, 495, 1160, 115, R`!!ដំណោះស្រាយ!! ៖  $A = \sin x + \sin x + \sin x - \cos x = 3\sin x - \cos x$ ។`, { size: 28, align: 'center', anim: true })
+      ]),
+
+      /* 14 */ page([
+        sec('៤.១ ដែនកំណត់ ខួប និងភាពគូ-សេស'),
+        card(60, 160, 560, 360, 'ខួបនៃអនុគមន៍ត្រីកោណមាត្រ (Period T)', R`• អនុគមន៍ $f$ មានខួប $T$ បើ $f(x + T) = f(x)$ ចំពោះគ្រប់ $x$ ។
+• **ខួបនៃ sin និង cos** ៖
+  $$y = \sin x, \ y = \cos x \implies T = 2\pi$$
+  $$y = \sin(ax), \ y = \cos(ax) \implies T = \frac{2\pi}{|a|}$$
+• **ខួបនៃ tan និង cot** ៖
+  $$y = \tan x, \ y = \cot x \implies T = \pi$$
+  $$y = \tan(ax), \ y = \cot(ax) \implies T = \frac{\pi}{|a|}$$`, { size: 24 }),
+        card(660, 160, 560, 360, 'ភាពគូ-សេស និងស៊ីមេទ្រីក្រាប', R`• **អនុគមន៍គូ** ៖ $f(-x) = f(x)$
+  - $y = \cos x$ ជាអនុគមន៍គូ
+  - ក្រាបរបស់វាឆ្លុះធៀបនឹង **អ័ក្សអរដោនេ $(Oy)$**
+• **អនុគមន៍សេស** ៖ $f(-x) = -f(x)$
+  - $y = \sin x, \ y = \tan x, \ y = \cot x$ ជាអនុគមន៍សេស
+  - ក្រាបរបស់វាឆ្លុះធៀបនឹង **គល់កូអ័រដោនេ $O(0, 0)$**`, { size: 24 }),
+        S.box(60, 545, 1160, 80, R`!!ឧទាហរណ៍!! ៖  $y = \sin(3x)$ មានខួប $T = \dfrac{2\pi}{3}$ ; $y = \tan(2x)$ មានខួប $T = \dfrac{\pi}{2}$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 15 */ page([
+        sec('៤.២ អថេរភាព និងក្រាបនៃអនុគមន៍ y = sin x'),
+        card(60, 155, 640, 375, 'លក្ខណៈនៃអនុគមន៍ y = sin x', R`• **ដែនកំណត់** ៖ $D = \mathbb{R}$
+• **សំណុំតម្លៃ** ៖ $[-1, 1]$ (តម្លៃអតិបរមា $1$, អប្បបរមា $-1$)
+• **ខួប** ៖ $T = 2\pi$ (សង់លើចន្លោះ $[-\pi, \pi]$ រួចរំកិលតាម $2\pi$)
+• **ភាពសេស** ៖ $\sin(-x) = -\sin x$ (ក្រាបឆ្លុះធៀបនឹងគល់ $O$)
+• **ចំណុចពិសេស** ៖
+  - កាត់អ័ក្ស $Ox$ ត្រង់ $x = k\pi \ (k \in \mathbb{Z})$
+  - អតិបរមា $y = 1$ ត្រង់ $x = \dfrac{\pi}{2} + 2k\pi$
+  - អប្បបរមា $y = -1$ ត្រង់ $x = -\dfrac{\pi}{2} + 2k\pi$`, { size: 23 }),
+        trigGraph(720, 155, 500, 375, 'sin'),
+        S.box(60, 545, 1160, 80, R`!!រូបរាងក្រាប!! ៖  ក្រាបនៃអនុគមន៍ $y = \sin x$ ហៅថា **ខ្សែរលកស៊ីនុយសូអ៊ីត (Sinusoid)** រត់រលកគ្មានទីបញ្ចប់ ។`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 16 */ page([
+        sec('៤.៣ អថេរភាព និងក្រាបនៃអនុគមន៍ y = cos x'),
+        card(60, 155, 640, 375, 'លក្ខណៈនៃអនុគមន៍ y = cos x', R`• **ដែនកំណត់** ៖ $D = \mathbb{R}$
+• **សំណុំតម្លៃ** ៖ $[-1, 1]$ (តម្លៃអតិបរមា $1$, អប្បបរមា $-1$)
+• **ខួប** ៖ $T = 2\pi$ (ក្រាបដដែលៗរៀងរាល់ចន្លោះប្រវែង $2\pi$)
+• **ភាពគូ** ៖ $\cos(-x) = \cos x$ (ក្រាបឆ្លុះធៀបនឹងអ័ក្ស $Oy$)
+• **ចំណុចពិសេស** ៖
+  - កាត់អ័ក្ស $Ox$ ត្រង់ $x = \dfrac{\pi}{2} + k\pi \ (k \in \mathbb{Z})$
+  - អតិបរមា $y = 1$ ត្រង់ $x = 2k\pi$ (រួមទាំង $x = 0$)
+  - អប្បបរមា $y = -1$ ត្រង់ $x = \pi + 2k\pi$`, { size: 23 }),
+        trigGraph(720, 155, 500, 375, 'cos'),
+        S.box(60, 545, 1160, 80, R`!!សម្គាល់!! ៖  ក្រាប $y = \cos x$ កាត់អ័ក្ស $Oy$ ត្រង់ $(0, 1)$ ខណៈដែលក្រាប $y = \sin x$ កាត់ត្រង់គល់ $O(0, 0)$ ។`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 17 */ page([
+        sec('៤.៤ ប្រៀបធៀបក្រាបនៃ y = sin x និង y = cos x'),
+        card(60, 155, 640, 375, 'ទំនាក់ទំនងរំកិលរវាង sin x និង cos x', R`• តាមរូបមន្តមុំបំពេញ ៖
+$$\cos x = \sin\left(x + \frac{\pi}{2}\right)$$
+• **ការបកស្រាយធរណីមាត្រ** ៖
+  - ក្រាបនៃ $y = \cos x$ (បន្ទាត់ក្រហម) គឺបានមកពីការរំកិលក្រាបនៃ $y = \sin x$ (បន្ទាត់ខៀវ) ទៅឆ្វេងចម្ងាយ $\dfrac{\pi}{2}$ ។
+  - ក្រាបទាំងពីរសុទ្ធសឹងជាខ្សែរលកដែលមាន **អំព្លីទុត $A = 1$** និង **ខួប $T = 2\pi$** ដូចគ្នា ។`, { size: 24 }),
+        trigGraph(720, 155, 500, 375, 'both'),
+        S.box(60, 545, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  អនុគមន៍ $\cos x$ នាំមុខអនុគមន៍ $\sin x$ នូវមុំផាស $\dfrac{\pi}{2}$ (Phase difference $\pi/2$) ។`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 18 */ page([
+        sec('៤.៥ អថេរភាព និងក្រាបនៃ y = tan x & y = cot x'),
+        card(60, 160, 560, 360, 'អនុគមន៍ y = tan x', R`• **ដែនកំណត់** ៖ $D = \mathbb{R} \setminus \{\frac{\pi}{2} + k\pi\}$
+• **សំណុំតម្លៃ** ៖ $\mathbb{R}$
+• **ខួប** ៖ $T = \pi$
+• **អថេរភាព** ៖ ជាអនុគមន៍កើនដាច់ខាតលើចន្លោះនីមួយៗ $(-\frac{\pi}{2} + k\pi, \frac{\pi}{2} + k\pi)$
+• **អាស៊ីមតូតឈរ** ៖ បន្ទាត់ $x = \frac{\pi}{2} + k\pi$
+• **ចំណុចពិសេស** ៖ កាត់ $Ox$ ត្រង់ $x = k\pi$`, { size: 23 }),
+        card(660, 160, 560, 360, 'អនុគមន៍ y = cot x', R`• **ដែនកំណត់** ៖ $D = \mathbb{R} \setminus \{k\pi\}$
+• **សំណុំតម្លៃ** ៖ $\mathbb{R}$
+• **ខួប** ៖ $T = \pi$
+• **អថេរភាព** ៖ ជាអនុគមន៍ចុះដាច់ខាតលើចន្លោះនីមួយៗ $(k\pi, (k+1)\pi)$
+• **អាស៊ីមតូតឈរ** ៖ បន្ទាត់ $x = k\pi$
+• **ចំណុចពិសេស** ៖ កាត់ $Ox$ ត្រង់ $x = \frac{\pi}{2} + k\pi$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖  $y = \tan x$ តែងតែកើនជានិច្ច ឯ $y = \cot x$ តែងតែចុះជានិច្ចលើចន្លោះដែនកំណត់របស់វា!`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 19 */ page([
+        sec('សង្ខេបជំពូកទី ៣ មេរៀនទី ១ ៖ រូបមន្តគន្លឹះ'),
+        card(60, 160, 560, 360, '១. រូបមន្តគ្រឹះ & ខួប', R`• $\pi\text{ rad} = 180^\circ \iff \ell = r\theta$
+• $\sin^2 x + \cos^2 x = 1$
+• $1 + \tan^2 x = \dfrac{1}{\cos^2 x}, \quad 1 + \cot^2 x = \dfrac{1}{\sin^2 x}$
+• $\tan x \cdot \cot x = 1$
+• **ខួប** ៖ $\sin(ax), \cos(ax) \to T = \dfrac{2\pi}{|a|}$ ; $\tan(ax), \cot(ax) \to T = \dfrac{\pi}{|a|}$`, { size: 23 }),
+        card(660, 160, 560, 360, '២. មុំផ្តុំ & លក្ខណៈក្រាប', R`• **មុំផ្ទុយ** ៖ $\cos(-x) = \cos x, \ \sin(-x) = -\sin x$
+• **មុំបន្ថែម** ៖ $\sin(\pi - x) = \sin x, \ \cos(\pi - x) = -\cos x$
+• **មុំលើសកន្លះរង្វង់** ៖ $\tan(\pi + x) = \tan x$
+• **មុំបំពេញ** ៖ $\sin(\frac{\pi}{2} - x) = \cos x, \ \cos(\frac{\pi}{2} - x) = \sin x$
+• **ក្រាប** ៖ $\sin x, \cos x$ មានអំព្លីទុត $1$, ខួប $2\pi$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖  សូមបន្តឆ្លើយសំណួរ MCQ ៣ សំណួរខាងក្រោមដើម្បីវាស់ស្ទង់ការយល់ដឹង!`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 20 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`ប្តូររង្វាស់មុំ $150^\circ$ ជារ៉ាដ្យង់ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\dfrac{2\pi}{3}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\dfrac{5\pi}{6}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\dfrac{3\pi}{4}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\dfrac{7\pi}{6}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះ $150^\circ = 150 \times \dfrac{\pi}{180} = \dfrac{5\pi}{6}\text{ rad}$)`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 21 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`តើអនុគមន៍ $y = 3\sin(4x)$ មានខួប $T$ ស្មើនឹងប៉ុន្មាន?`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$T = 2\pi$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$T = \pi$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$T = \dfrac{\pi}{2}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$T = 4\pi$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ C!! (ព្រោះតាមរូបមន្ត $T = \dfrac{2\pi}{|a|} = \dfrac{2\pi}{4} = \dfrac{\pi}{2}$)`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 22 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`គណនាតម្លៃនៃកន្សោម $\cos\left(-\dfrac{5\pi}{3}\right)$ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$-\dfrac{1}{2}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\dfrac{1}{2}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\dfrac{\sqrt{3}}{2}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$-\dfrac{\sqrt{3}}{2}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះ $\cos(-\frac{5\pi}{3}) = \cos(\frac{5\pi}{3}) = \cos(2\pi - \frac{\pi}{3}) = \cos\frac{\pi}{3} = \frac{1}{2}$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 23 */ page([
+        sec('លំហាត់អនុវត្តន៍ពីសៀវភៅពុម្ព (ទំព័រ ១០៨–១១៣)'),
+        S.box(80, 160, 1120, 350, R`!!១.!! ប្តូរមុំពីរ៉ាដ្យង់ទៅជាដឺក្រេ និងពីដឺក្រេទៅជារ៉ាដ្យង់ ៖
+    ក. $75^\circ, \ 135^\circ, \ 315^\circ$
+    ខ. $\dfrac{7\pi}{6}, \ \dfrac{4\pi}{3}, \ -\dfrac{3\pi}{4}$
+!!២.!! គណនាតម្លៃនៃអនុគមន៍ត្រីកោណមាត្រ ៖
+    ក. $\cos\alpha$ និង $\tan\alpha$ បើ $\sin\alpha = -\dfrac{5}{13}$ និង $\pi < \alpha < \dfrac{3\pi}{2}$
+    ខ. $\sin x$ និង $\cos x$ បើ $\tan x = 2$ និង $0 < x < \dfrac{\pi}{2}$
+!!៣.!! សម្រួលកន្សោម $B = \sin(\pi + x) + \cos\left(\dfrac{\pi}{2} + x\right) + \sin(-x) + \cos\left(\dfrac{3\pi}{2} - x\right)$`, { size: 24, lh: '1.6' })
+      ]),
+
+      /* 24 */ S.homework(R`!!១.!! រង្វង់មួយមានកាំ $r = 10\text{ cm}$ ។ គណនាប្រវែងធ្នូដែលស្កាត់ដោយមុំផ្ចិត $\theta = 72^\circ$ ។
+!!២.!! គេឱ្យ $\cos\alpha = -\dfrac{3}{5}$ និង $\dfrac{\pi}{2} < \alpha < \pi$ ។ គណនា $\sin\alpha, \ \tan\alpha, \ \cot\alpha$ ។
+!!៣.!! សិក្សាអថេរភាព និងសង់ក្រាបនៃអនុគមន៍ $y = 2\sin x$ លើចន្លោះ $[0, 2\pi]$ ។`),
+
+      /* 25 */ S.thanks()
     ];
-    return { name: 'ថ្នាក់ទី១១ · មេរៀនទី១២ សមីការនិងវិសមីការត្រីកោណមាត្រ', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
-             teacher: K.info.teacher, slides: slides };
+
+    return {
+      name: 'ថ្នាក់ទី១១ · ជំពូក៣ មេរៀនទី១ អនុគមន៍ត្រីកោណមាត្រ (២៥ ស្លាយ)',
+      grade: '11',
+      chapterNum: 3,
+      chapter: 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ',
+      lessonNum: 1,
+      lesson: 'មេរៀនទី ១ ៖ អនុគមន៍ត្រីកោណមាត្រ',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. រង្វាស់មុំ & រង្វង់ត្រីកោណមាត្រ', slide: 3 },
+        { title: '២. អនុគមន៍ត្រីកោណមាត្រ & តារាងមុំពិសេស', slide: 6 },
+        { title: '៣. ទំនាក់ទំនងគ្រឹះ & មុំផ្តុំ', slide: 9 },
+        { title: '៤. អថេរភាព និងក្រាបរលក sin, cos, tan', slide: 13 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 18 }
+      ],
+      theme: 'school',
+      slides: slides
+    };
   }
 
-  function limits(A) {
+
+
+  // =========================================================================
+  // ថ្នាក់ទី១១ ជំពូកទី៣ មេរៀនទី២ ៖ រូបមន្តត្រីកោណមាត្រ — book pages 114–135
+  // =========================================================================
+  function trigFormulas(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, trigCircle = K.trigCircle, trigGraph = K.trigGraph, expGraph = K.expGraph, logGraph = K.logGraph;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var R = String.raw;
+
+    var slides = [
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៣==        មេរៀនទី២', 'រូបមន្តត្រីកោណមាត្រ', K.info),
+
+      /* 2 */ K.toc([
+        '==១. រូបមន្តផលបូក និងផលដក==',
+        '២. រូបមន្តមុំឌុប & មុំ ៣ គុណ',
+        '==៣. រូបមន្តកន្លះមុំ & បន្ថយដឺក្រេ==',
+        '៤. បម្លែងផលគុណ ↔ ផលបូក',
+        '==៥. សំណួរ MCQ & កិច្ចការផ្ទះ=='
+      ]),
+
+      /* 3 */ S.objective([
+        R`ចងចាំ និងចេះប្រើរូបមន្តផលបូក ផលដកនៃអនុគមន៍ស៊ីនុស កូស៊ីនុស និងតង់សង់`,
+        R`គណនាតម្លៃត្រីកោណមាត្រនៃមុំពិសេស $15^\circ, 75^\circ, 105^\circ, \frac{\pi}{12}, \frac{5\pi}{12}$`,
+        R`អនុវត្តរូបមន្តមុំឌុប $2a$ និងរូបមន្តកន្លះមុំ $\frac{a}{2}$ ព្រមទាំងរូបមន្តអថេរជំនួយ $t = \tan \frac{a}{2}$`,
+        R`បម្លែងកន្សោមត្រីកោណមាត្រពីផលគុណទៅជាផលបូក និងពីផលបូកទៅជាផលគុណយ៉ាងស្ទាត់ជំនាញ`
+      ]),
+
+      /* 4 */ page([
+        sec('១.១ រូបមន្តផលបូក និងផលដកកូស៊ីនុស'),
+        card(60, 160, 560, 360, 'រូបមន្តផលបូក និងផលដកកូស៊ីនុស', R`ចំពោះគ្រប់មុំ $a$ និង $b$ គេបាន ៖
+❶ **រូបមន្តផលដកកូស៊ីនុស** ៖
+$$\cos(a - b) = \cos a \cos b + \sin a \sin b$$
+❷ **រូបមន្តផលបូកកូស៊ីនុស** ៖
+$$\cos(a + b) = \cos a \cos b - \sin a \sin b$$
+
+• **ក្បួនចំណាំ** ៖
+  - កូស៊ីនុសនៃផលបូក ឬផលដក ប្រើ $\cos \cos$ និង $\sin \sin$
+  - សញ្ញាប្តូរផ្ទុយ ៖ បើក្នុងវង់ក្រចកជា $+$ នោះខាងក្រៅជា $-$ ; បើក្នុងវង់ក្រចកជា $-$ ខាងក្រៅជា $+$ ។`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍អនុវត្ត ៖ គណនា cos 15° និង cos 75°', R`• គណនា $\cos 15^\circ = \cos(45^\circ - 30^\circ)$ ៖
+$$\begin{aligned}
+\cos 15^\circ &= \cos 45^\circ \cos 30^\circ + \sin 45^\circ \sin 30^\circ \\
+&= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \frac{\sqrt{6} + \sqrt{2}}{4}
+\end{aligned}$$
+• គណនា $\cos 75^\circ = \cos(45^\circ + 30^\circ)$ ៖
+$$\begin{aligned}
+\cos 75^\circ &= \cos 45^\circ \cos 30^\circ - \sin 45^\circ \sin 30^\circ \\
+&= \frac{\sqrt{6} - \sqrt{2}}{4}
+\end{aligned}$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!លទ្ធផលសំខាន់!! ៖  $\cos 15^\circ = \dfrac{\sqrt{6} + \sqrt{2}}{4}$ និង $\cos 75^\circ = \dfrac{\sqrt{6} - \sqrt{2}}{4}$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 5 */ page([
+        sec('១.២ រូបមន្តផលបូក និងផលដកស៊ីនុស'),
+        card(60, 160, 560, 360, 'រូបមន្តផលបូក និងផលដកស៊ីនុស', R`ចំពោះគ្រប់មុំ $a$ និង $b$ គេបាន ៖
+❸ **រូបមន្តផលបូកស៊ីនុស** ៖
+$$\sin(a + b) = \sin a \cos b + \sin b \cos a$$
+❹ **រូបមន្តផលដកស៊ីនុស** ៖
+$$\sin(a - b) = \sin a \cos b - \sin b \cos a$$
+
+• **ក្បួនចំណាំ** ៖
+  - ស៊ីនុសនៃផលបូក ឬផលដក ប្រើឆ្លាស់គ្នារវាង $\sin$ និង $\cos$
+  - សញ្ញារក្សាដដែល ៖ បើ $+$ នៅតែ $+$ ; បើ $-$ នៅតែ $-$ ។`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍អនុវត្ត ៖ គណនា sin 75° និង sin 15°', R`• គណនា $\sin 75^\circ = \sin(45^\circ + 30^\circ)$ ៖
+$$\begin{aligned}
+\sin 75^\circ &= \sin 45^\circ \cos 30^\circ + \cos 45^\circ \sin 30^\circ \\
+&= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \frac{\sqrt{6} + \sqrt{2}}{4}
+\end{aligned}$$
+• គណនា $\sin 15^\circ = \sin(45^\circ - 30^\circ)$ ៖
+$$\sin 15^\circ = \frac{\sqrt{6} - \sqrt{2}}{4}$$
+• សម្គាល់ ៖ $\sin 75^\circ = \cos 15^\circ$ និង $\sin 15^\circ = \cos 75^\circ$ (មុំបំពេញ)`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ទំនាក់ទំនងមុំបំពេញ!! ៖  $\sin 75^\circ = \cos 15^\circ = \dfrac{\sqrt{6} + \sqrt{2}}{4}$ ព្រោះ $75^\circ + 15^\circ = 90^\circ$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 6 */ page([
+        sec('១.៣ រូបមន្តផលបូក និងផលដកតង់សង់'),
+        card(60, 160, 560, 360, 'រូបមន្តផលបូក និងផលដកតង់សង់', R`❺ **ផលបូកតង់សង់** ៖
+$$\tan(a + b) = \frac{\tan a + \tan b}{1 - \tan a \tan b}$$
+❻ **ផលដកតង់សង់** ៖
+$$\tan(a - b) = \frac{\tan a - \tan b}{1 + \tan a \tan b}$$
+
+*(លក្ខខណ្ឌ ៖ គ្រប់មុំដែលធ្វើឱ្យកន្សោមមានន័យ)*
+• ភាគយកមានសញ្ញាដូចវង់ក្រចក
+• ភាគបែងមានសញ្ញាផ្ទុយពីវង់ក្រចក`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍ ៖ គណនា tan 105° និង tan 15°', R`• គណនា $\tan 105^\circ = \tan(60^\circ + 45^\circ)$ ៖
+$$\begin{aligned}
+\tan 105^\circ &= \frac{\tan 60^\circ + \tan 45^\circ}{1 - \tan 60^\circ \tan 45^\circ} = \frac{\sqrt{3} + 1}{1 - \sqrt{3}} \\
+&= \frac{(\sqrt{3} + 1)^2}{1 - 3} = -(2 + \sqrt{3})
+\end{aligned}$$
+• គណនា $\tan 15^\circ = \tan(45^\circ - 30^\circ)$ ៖
+$$\tan 15^\circ = \frac{1 - \frac{\sqrt{3}}{3}}{1 + \frac{\sqrt{3}}{3}} = 2 - \sqrt{3}$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  $\tan 15^\circ = 2 - \sqrt{3}$ និង $\tan 105^\circ = -(2 + \sqrt{3})$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 7 */ page([
+        sec('២.១ រូបមន្តមុំឌុប (Double-Angle Formulas)'),
+        card(60, 160, 560, 360, 'រូបមន្តមុំឌុបទាំង ៣', R`ជំនួស $b = a$ ក្នុងរូបមន្តផលបូក យើងទាញបាន ៖
+❶ **ស៊ីនុសមុំឌុប** ៖
+$$\sin 2a = 2\sin a \cos a$$
+❷ **កូស៊ីនុសមុំឌុប (មាន ៣ ទម្រង់)** ៖
+$$\begin{aligned}
+\cos 2a &= \cos^2 a - \sin^2 a \\
+&= 2\cos^2 a - 1 \\
+&= 1 - 2\sin^2 a
+\end{aligned}$$
+❸ **តង់សង់មុំឌុប** ៖
+$$\tan 2a = \frac{2\tan a}{1 - \tan^2 a}$$`, { size: 24 }),
+        card(660, 160, 560, 360, 'រូបមន្តបន្ថយដឺក្រេ (Power-Reduction)', R`ទាញចេញពី $\cos 2a$ ៖
+• **បន្ថយដឺក្រេស៊ីនុស** ៖
+$$\sin^2 a = \frac{1 - \cos 2a}{2}$$
+• **បន្ថយដឺក្រេកូស៊ីនុស** ៖
+$$\cos^2 a = \frac{1 + \cos 2a}{2}$$
+• **បន្ថយដឺក្រេតង់សង់** ៖
+$$\tan^2 a = \frac{1 - \cos 2a}{1 + \cos 2a}$$
+*(រូបមន្តនេះមានប្រយោជន៍ខ្លាំងក្នុងការគណនាអាំងតេក្រាល និងដោះស្រាយសមីការ)*`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖  $\sin^2 a$ មានសញ្ញាដក ($-$) ; $\cos^2 a$ មានសញ្ញាបូក ($+$) ធៀបនឹង $\cos 2a$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 8 */ page([
+        sec('ឧទាហរណ៍គំរូ ៖ អនុវត្តរូបមន្តមុំឌុប'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  គេឱ្យ $\cos a = -\dfrac{4}{5}$ និង $\dfrac{\pi}{2} < a < \pi$ (កាដ្រង់ទី II) ។ គណនា $\sin 2a, \ \cos 2a, \ \tan 2a$ ។`, { size: 27 }),
+        s(100, 225, 1080, R`• ក្នុងកាដ្រង់ទី II នាំឱ្យ $\sin a > 0$ ៖  $\sin a = \sqrt{1 - \cos^2 a} = \sqrt{1 - \left(-\dfrac{4}{5}\right)^2} = \dfrac{3}{5}$`),
+        s(100, 290, 1080, R`• គណនា $\sin 2a = 2\sin a \cos a = 2 \left(\dfrac{3}{5}\right)\left(-\dfrac{4}{5}\right) = -\dfrac{24}{25}$`),
+        s(100, 355, 1080, R`• គណនា $\cos 2a = 2\cos^2 a - 1 = 2\left(-\dfrac{4}{5}\right)^2 - 1 = 2\left(\dfrac{16}{25}\right) - 1 = \dfrac{7}{25}$`),
+        s(100, 420, 1080, R`• គណនា $\tan 2a = \dfrac{\sin 2a}{\cos 2a} = \dfrac{-24/25}{7/25} = -\dfrac{24}{7}$`),
+        S.box(60, 505, 1160, 105, R`!!ចម្លើយ!! ៖  $\sin 2a = -\dfrac{24}{25}, \quad \cos 2a = \dfrac{7}{25}, \quad \tan 2a = -\dfrac{24}{7}$ ។`, { size: 28, align: 'center', anim: true })
+      ]),
+
+      /* 9 */ page([
+        sec('២.២ រូបមន្តមុំ ៣ គុណ (Triple-Angle Formulas)'),
+        card(60, 160, 560, 360, 'រូបមន្ត sin 3a និង cos 3a', R`ដោយសរសេរ $3a = 2a + a$ យើងទាញបាន ៖
+❶ **ស៊ីនុសមុំ ៣ គុណ** ៖
+$$\sin 3a = 3\sin a - 4\sin^3 a$$
+❷ **កូស៊ីនុសមុំ ៣ គុណ** ៖
+$$\cos 3a = 4\cos^3 a - 3\cos a$$
+❸ **តង់សង់មុំ ៣ គុណ** ៖
+$$\tan 3a = \frac{3\tan a - \tan^3 a}{1 - 3\tan^2 a}$$`, { size: 24 }),
+        card(660, 160, 560, 360, 'ក្បួនចងចាំលេខមេគុណ (34 & 43)', R`• **ចំពោះ sin 3a** ៖
+  - លេខមេគុណគឺ **3 - 4**
+  - $\sin 3a = \mathbf{3}\sin a - \mathbf{4}\sin^3 a$
+• **ចំពោះ cos 3a** ៖
+  - លេខមេគុណគឺ **4 - 3**
+  - $\cos 3a = \mathbf{4}\cos^3 a - \mathbf{3}\cos a$
+
+• រូបមន្តទាញចេញ ៖
+  $$\sin^3 a = \frac{3\sin a - \sin 3a}{4}$$
+  $$\cos^3 a = \frac{3\cos a + \cos 3a}{4}$$`, { size: 24 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖  «ស៊ីនុស ៣៤, កូស៊ីនុស ៤៣» (ស្វ័យគុណ ៣ នៅជាប់នឹងមេគុណ ៤ ជានិច្ច)!`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 10 */ page([
+        sec('៣.១ រូបមន្តកន្លះមុំ (Half-Angle Formulas)'),
+        card(60, 160, 560, 360, 'រូបមន្តកន្លះមុំ a/2', R`ជំនួស $a$ ដោយ $\dfrac{a}{2}$ ក្នុងរូបមន្តបន្ថយដឺក្រេ ៖
+❶ **កូស៊ីនុសកន្លះមុំ** ៖
+$$\cos^2\frac{a}{2} = \frac{1 + \cos a}{2} \iff \cos\frac{a}{2} = \pm\sqrt{\frac{1 + \cos a}{2}}$$
+❷ **ស៊ីនុសកន្លះមុំ** ៖
+$$\sin^2\frac{a}{2} = \frac{1 - \cos a}{2} \iff \sin\frac{a}{2} = \pm\sqrt{\frac{1 - \cos a}{2}}$$
+❸ **តង់សង់កន្លះមុំ** ៖
+$$\tan\frac{a}{2} = \frac{\sin a}{1 + \cos a} = \frac{1 - \cos a}{\sin a}$$`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍ ៖ គណនា sin 22°30\' និង cos 22°30\'', R`ដោយ $22^\circ 30' = \dfrac{45^\circ}{2}$ នៅក្នុងកាដ្រង់ទី I ($\sin, \cos > 0$) ៖
+• $\cos 22^\circ 30' = \sqrt{\dfrac{1 + \cos 45^\circ}{2}} = \sqrt{\dfrac{1 + \frac{\sqrt{2}}{2}}{2}} = \dfrac{\sqrt{2 + \sqrt{2}}}{2}$
+• $\sin 22^\circ 30' = \sqrt{\dfrac{1 - \cos 45^\circ}{2}} = \dfrac{\sqrt{2 - \sqrt{2}}}{2}$
+• $\tan 22^\circ 30' = \dfrac{1 - \cos 45^\circ}{\sin 45^\circ} = \dfrac{1 - \frac{\sqrt{2}}{2}}{\frac{\sqrt{2}}{2}} = \sqrt{2} - 1$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  $\tan 22^\circ 30' = \sqrt{2} - 1 \approx 0.4142$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 11 */ page([
+        sec('៣.២ រូបមន្តអថេរជំនួយ t = tan(a/2)'),
+        card(60, 160, 560, 360, 'កន្សោមត្រីកោណមាត្រជាអនុគមន៍នៃ t', R`តាង $t = \tan\dfrac{a}{2}$ យើងអាចសរសេរអនុគមន៍ទាំងអស់តាម $t$ ៖
+❶ **ស៊ីនុស** ៖
+$$\sin a = \frac{2t}{1 + t^2}$$
+❷ **កូស៊ីនុស** ៖
+$$\cos a = \frac{1 - t^2}{1 + t^2}$$
+❸ **តង់សង់** ៖
+$$\tan a = \frac{2t}{1 - t^2}$$`, { size: 24 }),
+        card(660, 160, 560, 360, 'សារៈសំខាន់នៃរូបមន្ត t', R`• **ប្តូរអនុគមន៍ត្រីកោណមាត្រទៅជាប្រភាគសនិទាន** នៃអថេរពីជគណិត $t$ ។
+• ជួយសម្រួលយ៉ាងខ្លាំងក្នុងការ ៖
+  - ដោះស្រាយសមីការត្រីកោណមាត្រលីនេអ៊ែរ $a\sin x + b\cos x = c$
+  - គណនាអាំងតេក្រាលត្រីកោណមាត្រ (Weierstrass Substitution)
+  - ស្រាយបញ្ជាក់សមភាពស្មុគស្មាញ`, { size: 24 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្តសំខាន់!! ៖  $\sin a = \dfrac{2t}{1+t^2}, \quad \cos a = \dfrac{1-t^2}{1+t^2}, \quad \tan a = \dfrac{2t}{1-t^2}$ ចំពោះ $t = \tan\dfrac{a}{2}$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 12 */ page([
+        sec('៤.១ រូបមន្តបម្លែងពីផលគុណទៅជាផលបូក'),
+        card(60, 160, 560, 360, 'រូបមន្តទាំង ៣', R`បូក ឬដករូបមន្តផលបូក និងផលដក យើងបាន ៖
+❶ **ផលគុណកូស៊ីនុស** ៖
+$$\cos a \cos b = \frac{1}{2}[\cos(a + b) + \cos(a - b)]$$
+❷ **ផលគុណស៊ីនុស** ៖
+$$\sin a \sin b = \frac{1}{2}[\cos(a - b) - \cos(a + b)]$$
+❸ **ផលគុណស៊ីនុស និងកូស៊ីនុស** ៖
+$$\sin a \cos b = \frac{1}{2}[\sin(a + b) + \sin(a - b)]$$`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍អនុវត្ត', R`• គណនា $A = \cos 75^\circ \cos 15^\circ$ ៖
+$$\begin{aligned}
+A &= \frac{1}{2}[\cos(75^\circ + 15^\circ) + \cos(75^\circ - 15^\circ)] \\
+&= \frac{1}{2}[\cos 90^\circ + \cos 60^\circ] \\
+&= \frac{1}{2}\left[0 + \frac{1}{2}\right] = \frac{1}{4}
+\end{aligned}$$
+• គណនា $B = \sin\dfrac{5\pi}{12}\sin\dfrac{\pi}{12}$ ៖
+$$B = \frac{1}{2}\left[\cos\frac{\pi}{3} - \cos\frac{\pi}{2}\right] = \frac{1}{2}\left[\frac{1}{2} - 0\right] = \frac{1}{4}$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  $\cos 75^\circ \cos 15^\circ = \dfrac{1}{4}$ និង $\sin\dfrac{5\pi}{12}\sin\dfrac{\pi}{12} = \dfrac{1}{4}$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 13 */ page([
+        sec('៤.២ រូបមន្តបម្លែងពីផលបូកទៅជាផលគុណ'),
+        card(60, 160, 560, 360, 'រូបមន្តបម្លែងផលបូក ↔ ផលគុណ', R`តាង $p = a + b$ និង $q = a - b$ យើងទាញបាន ៖
+❶ **ផលបូកកូស៊ីនុស** ៖
+$$\cos p + \cos q = 2\cos\frac{p + q}{2}\cos\frac{p - q}{2}$$
+❷ **ផលដกกូស៊ីនុស** ៖
+$$\cos p - \cos q = -2\sin\frac{p + q}{2}\sin\frac{p - q}{2}$$
+❸ **ផលបូកស៊ីនុស** ៖
+$$\sin p + \sin q = 2\sin\frac{p + q}{2}\cos\frac{p - q}{2}$$
+❹ **ផលដកស៊ីនុស** ៖
+$$\sin p - \sin q = 2\cos\frac{p + q}{2}\sin\frac{p - q}{2}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍អនុវត្ត', R`• គណនា $A = \sin 105^\circ + \sin 15^\circ$ ៖
+$$\begin{aligned}
+A &= 2\sin\frac{105^\circ + 15^\circ}{2}\cos\frac{105^\circ - 15^\circ}{2} \\
+&= 2\sin 60^\circ \cos 45^\circ \\
+&= 2 \cdot \frac{\sqrt{3}}{2} \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{6}}{2}
+\end{aligned}$$
+• គណនា $B = \cos 50^\circ + \cos 70^\circ - \cos 10^\circ$ ៖
+$$\cos 50^\circ + \cos 70^\circ = 2\cos 60^\circ \cos 10^\circ = \cos 10^\circ$$
+$\implies B = \cos 10^\circ - \cos 10^\circ = 0$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!លទ្ធផលស្រស់ស្អាត!! ៖  $\cos 50^\circ + \cos 70^\circ - \cos 10^\circ = 0$ !`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 14 */ page([
+        sec('៥. ឧទាហរណ៍គំរូ ៖ ត្រីកោណមាត្រក្នុងត្រីកោណ ABC'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  គេមាន $A, B, C$ ជាមុំក្នុងត្រីកោណមួយ ($A + B + C = \pi$) ។
+បង្ហាញថា  $\sin A + \sin B + \sin C = 4\cos\dfrac{A}{2}\cos\dfrac{B}{2}\cos\dfrac{C}{2}$ ។`, { size: 26 }),
+        s(100, 230, 1080, R`• បម្លែង $\sin A + \sin B = 2\sin\dfrac{A+B}{2}\cos\dfrac{A-B}{2} = 2\cos\dfrac{C}{2}\cos\dfrac{A-B}{2}$ (ព្រោះ $\dfrac{A+B}{2} = \dfrac{\pi}{2} - \dfrac{C}{2}$)`),
+        s(100, 300, 1080, R`• បម្លែង $\sin C = 2\sin\dfrac{C}{2}\cos\dfrac{C}{2}$`),
+        s(100, 370, 1080, R`• ដាក់ជាកត្តារួម $2\cos\dfrac{C}{2}$ ៖
+$$\sin A + \sin B + \sin C = 2\cos\frac{C}{2}\left[\cos\frac{A-B}{2} + \sin\frac{C}{2}\right] = 2\cos\frac{C}{2}\left[\cos\frac{A-B}{2} + \cos\frac{A+B}{2}\right]$$`),
+        s(100, 450, 1080, R`• អនុវត្តរូបមន្តផលបូកកូស៊ីនុស ៖  $\cos\dfrac{A-B}{2} + \cos\dfrac{A+B}{2} = 2\cos\dfrac{A}{2}\cos\dfrac{B}{2}$`),
+        S.box(60, 525, 1160, 90, R`!!ដូចនេះ!!  $\sin A + \sin B + \sin C = 4\cos\dfrac{A}{2}\cos\dfrac{B}{2}\cos\dfrac{C}{2}$  ពិត (ស.បញ្ជាក់រួច) ។`, { size: 28, align: 'center', anim: true })
+      ]),
+
+      /* 15 */ page([
+        sec('សង្ខេបជំពូកទី ៣ មេរៀនទី ២ ៖ តារាងរូបមន្តគន្លឹះ'),
+        card(60, 160, 560, 360, 'រូបមន្តផលបូក-ផលដក & មុំឌុប', R`• $\cos(a \pm b) = \cos a \cos b \mp \sin a \sin b$
+• $\sin(a \pm b) = \sin a \cos b \pm \sin b \cos a$
+• $\tan(a \pm b) = \dfrac{\tan a \pm \tan b}{1 \mp \tan a \tan b}$
+• $\sin 2a = 2\sin a \cos a$
+• $\cos 2a = 2\cos^2 a - 1 = 1 - 2\sin^2 a$
+• $\tan 2a = \dfrac{2\tan a}{1 - \tan^2 a}$`, { size: 23 }),
+        card(660, 160, 560, 360, 'រូបមន្តកន្លះមុំ & បម្លែងផល', R`• $\cos^2\dfrac{a}{2} = \dfrac{1 + \cos a}{2}, \ \sin^2\dfrac{a}{2} = \dfrac{1 - \cos a}{2}$
+• $\cos a \cos b = \dfrac{1}{2}[\cos(a+b) + \cos(a-b)]$
+• $\sin a \sin b = \dfrac{1}{2}[\cos(a-b) - \cos(a+b)]$
+• $\cos p + \cos q = 2\cos\dfrac{p+q}{2}\cos\dfrac{p-q}{2}$
+• $\sin p + \sin q = 2\sin\dfrac{p+q}{2}\cos\dfrac{p-q}{2}$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖  សូមបន្តឆ្លើយសំណួរ MCQ ៣ សំណួរខាងក្រោមដើម្បីវាស់ស្ទង់ការយល់ដឹង!`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 16 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`គណនាតម្លៃពិតប្រាកដនៃ $\cos 75^\circ$ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\dfrac{\sqrt{6} + \sqrt{2}}{4}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\dfrac{\sqrt{6} - \sqrt{2}}{4}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\dfrac{\sqrt{3} - 1}{2}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\dfrac{\sqrt{2}}{4}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះ $\cos 75^\circ = \cos(45^\circ + 30^\circ) = \dfrac{\sqrt{6} - \sqrt{2}}{4}$)`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 17 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`បើ $\sin a = \dfrac{3}{5}$ និង $0 < a < \dfrac{\pi}{2}$ នោះ $\sin 2a$ ស្មើនឹងប៉ុន្មាន?`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\dfrac{6}{5}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\dfrac{12}{25}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\dfrac{24}{25}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\dfrac{7}{25}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ C!! (ព្រោះ $\cos a = \frac{4}{5} \implies \sin 2a = 2\sin a \cos a = 2 \cdot \frac{3}{5} \cdot \frac{4}{5} = \frac{24}{25}$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 18 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`គណនាតម្លៃនៃកន្សោម $\sin 105^\circ + \sin 15^\circ$ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\dfrac{\sqrt{6}}{2}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\dfrac{\sqrt{2}}{2}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\dfrac{\sqrt{3}}{2}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\sqrt{6}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះ $\sin 105^\circ + \sin 15^\circ = 2\sin 60^\circ \cos 45^\circ = 2 \cdot \frac{\sqrt{3}}{2} \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{6}}{2}$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 19 */ page([
+        sec('លំហាត់អនុវត្តន៍ពីសៀវភៅពុម្ព (ទំព័រ ១២៨–១៣៥)'),
+        S.box(80, 160, 1120, 350, R`!!១.!! គណនាតម្លៃពិតប្រាកដនៃ ៖
+    ក. $\sin 105^\circ, \quad \cos 105^\circ, \quad \tan 15^\circ$
+    ខ. $\sin\dfrac{7\pi}{12}, \quad \cos\dfrac{\pi}{12}, \quad \tan\dfrac{5\pi}{12}$
+!!២.!! គេឱ្យ $\sin x = \dfrac{1}{3}$ និង $0 < x < \dfrac{\pi}{2}$ ។ គណនា $\sin 2x, \ \cos 2x, \ \sin 3x$ ។
+!!៣.!! សម្រួលកន្សោម ៖
+    ក. $A = \dfrac{\sin 3x - \sin x}{\cos 3x + \cos x}$
+    ខ. $B = \cos 20^\circ \cos 40^\circ \cos 80^\circ$`, { size: 24, lh: '1.6' })
+      ]),
+
+      /* 20 */ S.homework(R`!!១.!! គណនាតម្លៃនៃកន្សោម  $A = \cos\dfrac{\pi}{7}\cos\dfrac{2\pi}{7}\cos\dfrac{4\pi}{7}$  ។
+!!២.!! បង្ហាញថា  $\dfrac{\sin 2a + \sin 4a}{\cos 2a + \cos 4a} = \tan 3a$  ។
+!!៣.!! គេមាន $A, B, C$ ជាមុំក្នុងត្រីកោណ $ABC$ ។ បង្ហាញថា $\cos A + \cos B + \cos C = 1 + 4\sin\dfrac{A}{2}\sin\dfrac{B}{2}\sin\dfrac{C}{2}$ ។`),
+
+      /* 21 */ S.thanks()
+    ];
+
+    return {
+      name: 'ថ្នាក់ទី១១ · ជំពូក៣ មេរៀនទី២ រូបមន្តត្រីកោណមាត្រ (២១ ស្លាយ)',
+      grade: '11',
+      chapterNum: 3,
+      chapter: 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ',
+      lessonNum: 2,
+      lesson: 'មេរៀនទី ២ ៖ រូបមន្តត្រីកោណមាត្រ',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. រូបមន្តផលបូក និងផលដក', slide: 3 },
+        { title: '២. រូបមន្តមុំឌុប & មុំ ៣ គុណ', slide: 6 },
+        { title: '៣. រូបមន្តកន្លះមុំ & អថេរ t', slide: 9 },
+        { title: '៤. បម្លែងផលគុណ ↔ ផលបូក', slide: 11 },
+        { title: '៥. អនុវត្តក្នុងត្រីកោណ ABC', slide: 13 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 14 }
+      ],
+      theme: 'school',
+      slides: slides
+    };
+  }
+
+
+
+  // =========================================================================
+  // ថ្នាក់ទី១១ ជំពូកទី៣ មេរៀនទី៣ ៖ សមីការនិងវិសមីការត្រីកោណមាត្រ — book pages 136–165
+  // =========================================================================
+  function trigEquations(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, trigCircle = K.trigCircle, trigGraph = K.trigGraph, expGraph = K.expGraph, logGraph = K.logGraph;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var R = String.raw;
+
+    var slides = [
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៣==        មេរៀនទី៣', 'សមីការនិងវិសមីការត្រីកោណមាត្រ', K.info),
+
+      /* 2 */ K.toc([
+        '==១. សមីការត្រីកោណមាត្រគ្រឹះ==',
+        '២. សមីការលីនេអ៊ែរ a sin x + b cos x = c',
+        '==៣. សមីការដឺក្រេទី ២ & អូម៉ូសែន==',
+        '៤. វិសមីការត្រីកោណមាត្រ',
+        '==៥. សំណួរ MCQ & កិច្ចការផ្ទះ=='
+      ]),
+
+      /* 3 */ S.objective([
+        R`ដោះស្រាយសមីការត្រីកោណមាត្រគ្រឹះ $\sin x = a, \ \cos x = a, \ \tan x = a, \ \cot x = a$`,
+        R`ដោះស្រាយសមីការលីនេអ៊ែរទម្រង់ $a\sin x + b\cos x = c$ ដោយវិធីចែកនឹង $\sqrt{a^2+b^2}$`,
+        R`ដោះស្រាយសមីការដឺក្រេទី ២ ធៀបនឹងអនុគមន៍ត្រីកោណមាត្រ និងសមីការអូម៉ូសែន`,
+        R`ដោះស្រាយវិសមីការត្រីកោណមាត្រគ្រឹះដោយប្រើរង្វង់ត្រីកោណមាត្រ`
+      ]),
+
+      /* 4 */ page([
+        sec('១.១ សមីការស៊ីនុស ៖ sin x = a'),
+        card(60, 160, 560, 360, 'រូបមន្តដោះស្រាយសមីការ sin x = a', R`• បើ $|a| > 1$ ៖ សមីការ**គ្មានឫស** (ព្រោះ $-1 \le \sin x \le 1$)
+• បើ $|a| \le 1$ ៖ តាង $a = \sin\alpha$
+$$\sin x = \sin\alpha \iff \begin{cases} x = \alpha + 2k\pi \\ x = \pi - \alpha + 2k\pi \end{cases} \quad (k \in \mathbb{Z})$$
+
+• **ករណីពិសេស** ៖
+  - $\sin x = 0 \iff x = k\pi$
+  - $\sin x = 1 \iff x = \dfrac{\pi}{2} + 2k\pi$
+  - $\sin x = -1 \iff x = -\dfrac{\pi}{2} + 2k\pi$`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍អនុវត្ត', R`• ដោះស្រាយ $\sin x = \dfrac{1}{2}$ លើ $\mathbb{R}$ ៖
+  $$\frac{1}{2} = \sin\frac{\pi}{6} \implies \begin{cases} x = \frac{\pi}{6} + 2k\pi \\ x = \pi - \frac{\pi}{6} + 2k\pi = \frac{5\pi}{6} + 2k\pi \end{cases}$$
+• ដោះស្រាយ $\sin 2x = \dfrac{\sqrt{3}}{2}$ ៖
+  $$\sin 2x = \sin\frac{\pi}{3} \implies \begin{cases} 2x = \frac{\pi}{3} + 2k\pi \Rightarrow x = \frac{\pi}{6} + k\pi \\ 2x = \frac{2\pi}{3} + 2k\pi \Rightarrow x = \frac{\pi}{3} + k\pi \end{cases}$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖  សមីការស៊ីនុសមានឫសពីរក្រុម គឺ $\alpha$ និង $\pi - \alpha$ បូកថែមខួប $2k\pi$ !`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 5 */ page([
+        sec('១.២ សមីការកូស៊ីនុស ៖ cos x = a'),
+        card(60, 160, 560, 360, 'រូបមន្តដោះស្រាយសមីការ cos x = a', R`• បើ $|a| > 1$ ៖ សមីការ**គ្មានឫស** (ព្រោះ $-1 \le \cos x \le 1$)
+• បើ $|a| \le 1$ ៖ តាង $a = \cos\alpha$
+$$\cos x = \cos\alpha \iff x = \pm\alpha + 2k\pi \quad (k \in \mathbb{Z})$$
+
+• **ករណីពិសេស** ៖
+  - $\cos x = 0 \iff x = \dfrac{\pi}{2} + k\pi$
+  - $\cos x = 1 \iff x = 2k\pi$
+  - $\cos x = -1 \iff x = \pi + 2k\pi$`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍អនុវត្ត', R`• ដោះស្រាយ $\cos x = -\dfrac{\sqrt{2}}{2}$ លើ $\mathbb{R}$ ៖
+  $$-\frac{\sqrt{2}}{2} = \cos\frac{3\pi}{4} \implies x = \pm\frac{3\pi}{4} + 2k\pi \quad (k \in \mathbb{Z})$$
+• ដោះស្រាយ $\cos\left(x - \dfrac{\pi}{4}\right) = \dfrac{1}{2}$ ៖
+  $$\cos\left(x - \frac{\pi}{4}\right) = \cos\frac{\pi}{3} \implies x - \frac{\pi}{4} = \pm\frac{\pi}{3} + 2k\pi$$
+  - $x = \frac{\pi}{4} + \frac{\pi}{3} + 2k\pi = \frac{7\pi}{12} + 2k\pi$
+  - $x = \frac{\pi}{4} - \frac{\pi}{3} + 2k\pi = -\frac{\pi}{12} + 2k\pi$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖  សមីការកូស៊ីនុសមានឫស $x = \pm\alpha + 2k\pi$ (សញ្ញាបូក-ដកមុំ $\alpha$ ដូចគ្នា)!`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 6 */ page([
+        sec('១.៣ សមីការតង់សង់ និងកូតង់សង់'),
+        card(60, 160, 560, 360, 'សមីការ tan x = a និង cot x = a', R`ចំពោះគ្រប់តម្លៃ $a \in \mathbb{R}$ សមីការតែងមានឫសជានិច្ច ៖
+❶ **សមីការតង់សង់** (តាង $a = \tan\alpha$) ៖
+$$\tan x = \tan\alpha \iff x = \alpha + k\pi \quad (k \in \mathbb{Z})$$
+*(លក្ខខណ្ឌ ៖ $x, \alpha \neq \frac{\pi}{2} + k\pi$)*
+
+❷ **សមីការកូតង់សង់** (តាង $a = \cot\alpha$) ៖
+$$\cot x = \cot\alpha \iff x = \alpha + k\pi \quad (k \in \mathbb{Z})$$
+*(លក្ខខណ្ឌ ៖ $x, \alpha \neq k\pi$)*`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍អនុវត្ត', R`• ដោះស្រាយ $\tan x = \sqrt{3}$ ៖
+  $$\tan x = \tan\frac{\pi}{3} \implies x = \frac{\pi}{3} + k\pi \quad (k \in \mathbb{Z})$$
+• ដោះស្រាយ $\tan 2x = -1$ ៖
+  $$\tan 2x = \tan\left(-\frac{\pi}{4}\right) \implies 2x = -\frac{\pi}{4} + k\pi \implies x = -\frac{\pi}{8} + \frac{k\pi}{2}$$
+• ដោះស្រាយ $\cot x = \dfrac{\sqrt{3}}{3}$ ៖
+  $$\cot x = \cot\frac{\pi}{3} \implies x = \frac{\pi}{3} + k\pi \quad (k \in \mathbb{Z})$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!សម្គាល់ខួប!! ៖  សមីការតង់សង់ និងកូតង់សង់មានខួបត្រឹមតែ $+k\pi$ ប៉ុណ្ណោះ (មិនមែន $+2k\pi$ ទេ)!`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 7 */ page([
+        sec('២.១ សមីការលីនេអ៊ែរ ៖ a sin x + b cos x = c'),
+        card(60, 160, 560, 360, 'លក្ខខណ្ឌ និងវិធីដោះស្រាយ', R`ពិនិត្យសមីការ $a\sin x + b\cos x = c$ ($a^2 + b^2 \neq 0$) ៖
+• **លក្ខខណ្ឌមានឫស** ៖
+$$a^2 + b^2 \ge c^2$$
+*(បើ $a^2 + b^2 < c^2$ សមីការគ្មានឫស)*
+
+• **វិធីសាស្ត្រដោះស្រាយ** ៖
+ចែកអង្គទាំងពីរនឹង $\sqrt{a^2 + b^2}$ ៖
+$$\frac{a}{\sqrt{a^2+b^2}}\sin x + \frac{b}{\sqrt{a^2+b^2}}\cos x = \frac{c}{\sqrt{a^2+b^2}}$$
+តាង $\cos\varphi = \frac{a}{\sqrt{a^2+b^2}}$ និង $\sin\varphi = \frac{b}{\sqrt{a^2+b^2}}$ ៖
+$$\sin(x + \varphi) = \frac{c}{\sqrt{a^2+b^2}}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍ ៖ √3 sin x + cos x = 1', R`• គណនា $\sqrt{a^2 + b^2} = \sqrt{(\sqrt{3})^2 + 1^2} = \sqrt{4} = 2$
+• ចែកសមីការនឹង $2$ ៖
+$$\frac{\sqrt{3}}{2}\sin x + \frac{1}{2}\cos x = \frac{1}{2}$$
+• ដោយ $\cos\frac{\pi}{6} = \frac{\sqrt{3}}{2}$ និង $\sin\frac{\pi}{6} = \frac{1}{2}$ ៖
+$$\sin\left(x + \frac{\pi}{6}\right) = \sin\frac{\pi}{6}$$
+$$\begin{cases} x + \frac{\pi}{6} = \frac{\pi}{6} + 2k\pi \Rightarrow x = 2k\pi \\ x + \frac{\pi}{6} = \pi - \frac{\pi}{6} + 2k\pi \Rightarrow x = \frac{2\pi}{3} + 2k\pi \end{cases}$$`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!ដំណោះស្រាយ!! ៖  $x = 2k\pi$ ឬ $x = \dfrac{2\pi}{3} + 2k\pi \quad (k \in \mathbb{Z})$ ។`, { size: 27, align: 'center', anim: true })
+      ]),
+
+      /* 8 */ page([
+        sec('២.២ ឧទាហរណ៍គំរូបន្ថែម ៖ សមីការលីនេអ៊ែរ'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  ដោះស្រាយសមីការ  $\sin x - \cos x = \sqrt{2}$  លើសំណុំ $\mathbb{R}$ ។`, { size: 27 }),
+        s(100, 225, 1080, R`• គណនា $\sqrt{a^2 + b^2} = \sqrt{1^2 + (-1)^2} = \sqrt{2}$`),
+        s(100, 290, 1080, R`• ចែកអង្គទាំងពីរនឹង $\sqrt{2}$ ៖  $\dfrac{1}{\sqrt{2}}\sin x - \dfrac{1}{\sqrt{2}}\cos x = \dfrac{\sqrt{2}}{\sqrt{2}} = 1$`),
+        s(100, 355, 1080, R`• ជំនួស $\cos\dfrac{\pi}{4} = \dfrac{1}{\sqrt{2}}$ និង $\sin\dfrac{\pi}{4} = \dfrac{1}{\sqrt{2}}$ ៖  $\sin x\cos\dfrac{\pi}{4} - \cos x\sin\dfrac{\pi}{4} = 1$`),
+        s(100, 420, 1080, R`• ទៅជា $\sin\left(x - \dfrac{\pi}{4}\right) = 1 \implies x - \dfrac{\pi}{4} = \dfrac{\pi}{2} + 2k\pi \implies x = \dfrac{3\pi}{4} + 2k\pi$`),
+        S.box(60, 505, 1160, 105, R`!!ដូចនេះ!!  សំណុំឫសនៃសមីការគឺ  $x = \dfrac{3\pi}{4} + 2k\pi \quad (k \in \mathbb{Z})$ ។`, { size: 28, align: 'center', anim: true })
+      ]),
+
+      /* 9 */ page([
+        sec('៣.១ សមីការដឺក្រេទី ២ ធៀបនឹងអនុគមន៍ត្រីកោណមាត្រ'),
+        card(60, 160, 560, 360, 'ទម្រង់ទូទៅ & វិធីដោះស្រាយ', R`• **ទម្រង់សមីការ** ៖
+$$A\sin^2 x + B\sin x + C = 0$$
+$$A\cos^2 x + B\cos x + C = 0$$
+$$A\tan^2 x + B\tan x + C = 0$$
+
+• **វិធីសាស្ត្រដោះស្រាយ** ៖
+  - តាងអថេរជំនួយ $t = \sin x$ ឬ $t = \cos x$ (លក្ខខណ្ឌ $-1 \le t \le 1$)
+  - ដោះស្រាយសមីការដឺក្រេទី ២ រក $t$
+  - យកតម្លៃ $t$ ដែលផ្ទៀងផ្ទាត់លក្ខខណ្ឌមកដោះស្រាយសមីការត្រីកោណមាត្រគ្រឹះ`, { size: 24 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍ ៖ 2 cos²x − 3 cos x + 1 = 0', R`• តាង $t = \cos x$ (លក្ខខណ្ឌ $-1 \le t \le 1$) ៖
+$$2t^2 - 3t + 1 = 0$$
+• ដោយ $a + b + c = 2 - 3 + 1 = 0$ នាំឱ្យ ៖
+  $$t_1 = 1, \quad t_2 = \frac{c}{a} = \frac{1}{2} \quad (\text{យកទាំងពីរ})$$
+• ចំពោះ $t = 1 \iff \cos x = 1 \implies x = 2k\pi$
+• ចំពោះ $t = \frac{1}{2} \iff \cos x = \cos\frac{\pi}{3} \implies x = \pm\frac{\pi}{3} + 2k\pi$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖  $x = 2k\pi$ ឬ $x = \pm\dfrac{\pi}{3} + 2k\pi \quad (k \in \mathbb{Z})$ ។`, { size: 27, align: 'center', anim: true })
+      ]),
+
+      /* 10 */ page([
+        sec('៣.២ ឧទាហរណ៍គំរូ ៖ បម្លែងទៅជាសមីការដឺក្រេទី ២'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  ដោះស្រាយសមីការ  $2\sin^2 x + 3\cos x - 3 = 0$  លើសំណុំ $\mathbb{R}$ ។`, { size: 27 }),
+        s(100, 225, 1080, R`• ជំនួស $\sin^2 x = 1 - \cos^2 x$ ៖  $2(1 - \cos^2 x) + 3\cos x - 3 = 0$`),
+        s(100, 290, 1080, R`• សម្រួលសមីការ ៖  $2 - 2\cos^2 x + 3\cos x - 3 = 0 \iff -2\cos^2 x + 3\cos x - 1 = 0$`),
+        s(100, 355, 1080, R`• គុណនឹង $-1$ ៖  $2\cos^2 x - 3\cos x + 1 = 0 \implies \cos x = 1$ ឬ $\cos x = \dfrac{1}{2}$`),
+        s(100, 420, 1080, R`• $\cos x = 1 \implies x = 2k\pi$ ;  $\cos x = \dfrac{1}{2} \implies x = \pm\dfrac{\pi}{3} + 2k\pi$`),
+        S.box(60, 505, 1160, 105, R`!!ដូចនេះ!!  សំណុំឫសនៃសមីការគឺ  $x = 2k\pi$  ឬ  $x = \pm\dfrac{\pi}{3} + 2k\pi \quad (k \in \mathbb{Z})$ ។`, { size: 28, align: 'center', anim: true })
+      ]),
+
+      /* 11 */ page([
+        sec('៣.៣ សមីការអូម៉ូសែន ៖ a sin²x + b sin x cos x + c cos²x = d'),
+        card(60, 160, 560, 360, 'វិធីសាស្ត្រដោះស្រាយសមីការអូម៉ូសែន', R`• **វិធីទី ១** ៖ សរសេរ $d = d(\sin^2 x + \cos^2 x)$
+$$(a - d)\sin^2 x + b\sin x\cos x + (c - d)\cos^2 x = 0$$
+• ពិនិត្យករណី $\cos x = 0$
+• បើ $\cos x \neq 0$ ចែកអង្គទាំងពីរនឹង $\cos^2 x$ ៖
+$$(a - d)\tan^2 x + b\tan x + (c - d) = 0$$
+• **វិធីទី ២** ៖ ប្រើរូបមន្តបន្ថយដឺក្រេ $\sin^2 x = \frac{1-\cos 2x}{2}$, $\cos^2 x = \frac{1+\cos 2x}{2}$, $\sin x\cos x = \frac{\sin 2x}{2}$ ប្តូរទៅជាសមីការលីនេអ៊ែរនៃ $2x$ ។`, { size: 23 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍ ៖ sin²x − 3 sin x cos x + 2 cos²x = 0', R`• ករណី $\cos x = 0 \implies \sin^2 x = 0$ (មិនអាច ព្រោះ $\sin^2 x + \cos^2 x = 1$)
+• ចែកអង្គទាំងពីរនឹង $\cos^2 x \neq 0$ ៖
+$$\tan^2 x - 3\tan x + 2 = 0$$
+• សមីការមានផលបូកមេគុណ $1 - 3 + 2 = 0$ ៖
+  $$\tan x = 1 \implies x = \frac{\pi}{4} + k\pi$$
+  $$\tan x = 2 \implies x = \arctan(2) + k\pi$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖  $x = \dfrac{\pi}{4} + k\pi$ ឬ $x = \arctan(2) + k\pi \quad (k \in \mathbb{Z})$ ។`, { size: 27, align: 'center', anim: true })
+      ]),
+
+      /* 12 */ page([
+        sec('៤.១ វិសមីការត្រីកោណមាត្រលើរង្វង់ឯកតា'),
+        card(60, 155, 640, 375, 'គោលការណ៍ដោះស្រាយវិសមីការ', R`• **វិសមីការស៊ីនុស** ($\sin x > a$ ឬ $\sin x < a$) ៖
+  - គូសបន្ទាត់ដេក $y = a$ កាត់រង្វង់ឯកតា
+  - រកចំណុចប្រសព្វដែលត្រូវគ្នានឹងមុំ $\alpha$ និង $\pi - \alpha$
+  - កំណត់ធ្នូនីមួយៗដែលស្ថិតនៅខាងលើ (បើ $> a$) ឬខាងក្រោម (បើ $< a$)
+• **វិសមីការកូស៊ីនុស** ($\cos x > a$ ឬ $\cos x < a$) ៖
+  - គូសបន្ទាត់ឈរ $x = a$ កាត់រង្វង់ឯកតា
+  - កំណត់ធ្នូនៅខាងស្តាំ (បើ $> a$) ឬខាងឆ្វេង (បើ $< a$)
+• បូកបន្ថែមខួប $2k\pi$ លើចុងធ្នូនីមួយៗ ។`, { size: 23 }),
+        trigCircle(720, 155, 500, 375, { deg: 30 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួន!! ៖  ស៊ីនុសធៀបនឹងបន្ទាត់ដេក $y = a$ ; កូស៊ីនុសធៀបនឹងបន្ទាត់ឈរ $x = a$ លើរង្វង់ត្រីកោណមាត្រ ។`, { size: 25, align: 'center', anim: true })
+      ]),
+
+      /* 13 */ page([
+        sec('៤.២ ឧទាហរណ៍គំរូ ៖ វិសមីការត្រីកោណមាត្រ'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ១ ៖!!  ដោះស្រាយវិសមីការ  $\sin x > \dfrac{1}{2}$  លើចន្លោះ $[0, 2\pi]$ ។`, { size: 27 }),
+        s(100, 220, 1080, R`• សមីការ $\sin x = \dfrac{1}{2}$ មានឫស $x = \dfrac{\pi}{6}$ និង $x = \dfrac{5\pi}{6}$ លើចន្លោះ $[0, 2\pi]$`),
+        s(100, 275, 1080, R`• ពិនិត្យលើរង្វង់ត្រីកោណមាត្រ ផ្នែកដែល $\sin x > \dfrac{1}{2}$ គឺធ្នូខាងលើបន្ទាត់ $y = \dfrac{1}{2}$`),
+        s(100, 330, 1080, R`$\implies x \in \left(\dfrac{\pi}{6}, \ \dfrac{5\pi}{6}\right)$ ។  លើ $\mathbb{R}$ ៖  $x \in \left(\dfrac{\pi}{6} + 2k\pi, \ \dfrac{5\pi}{6} + 2k\pi\right) \ (k \in \mathbb{Z})$`),
+        l(60, 395, 1180, R`!!លំហាត់គំរូ ២ ៖!!  ដោះស្រាយវិសមីការ  $\cos x \le \dfrac{\sqrt{2}}{2}$  លើចន្លោះ $[0, 2\pi]$ ។`, { size: 26 }),
+        s(100, 455, 1080, R`• $\cos x = \dfrac{\sqrt{2}}{2} \implies x = \dfrac{\pi}{4}$ និង $x = \dfrac{7\pi}{4}$ ។ ផ្នែកដែល $\cos x \le \dfrac{\sqrt{2}}{2}$ គឺធ្នូខាងឆ្វេងបន្ទាត់ $x = \dfrac{\sqrt{2}}{2}$ ៖  $x \in \left[\dfrac{\pi}{4}, \ \dfrac{7\pi}{4}\right]$`),
+        S.box(60, 535, 1160, 80, R`!!សន្និដ្ឋាន!! ៖  $\sin x > \dfrac{1}{2} \iff x \in \left(\dfrac{\pi}{6} + 2k\pi, \ \dfrac{5\pi}{6} + 2k\pi\right)$ ។`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 14 */ page([
+        sec('សង្ខេបជំពូកទី ៣ មេរៀនទី ៣ ៖ វិធីសាស្ត្រដោះស្រាយសមីការ'),
+        card(60, 160, 560, 360, 'សមីការគ្រឹះទាំង ៤', R`• $\sin x = \sin\alpha \iff x = \alpha + 2k\pi$ ឬ $x = \pi - \alpha + 2k\pi$
+• $\cos x = \cos\alpha \iff x = \pm\alpha + 2k\pi$
+• $\tan x = \tan\alpha \iff x = \alpha + k\pi$
+• $\cot x = \cot\alpha \iff x = \alpha + k\pi$
+• **ពិសេស** ៖
+  - $\sin x = 0 \iff x = k\pi$
+  - $\cos x = 0 \iff x = \frac{\pi}{2} + k\pi$`, { size: 23 }),
+        card(660, 160, 560, 360, 'សមីការទម្រង់ពិសេស', R`• **លីនេអ៊ែរ $a\sin x + b\cos x = c$** ៖
+  - លក្ខខណ្ឌ ៖ $a^2 + b^2 \ge c^2$
+  - ចែកនឹង $\sqrt{a^2+b^2} \to \sin(x+\varphi) = \frac{c}{\sqrt{a^2+b^2}}$
+• **ដឺក្រេទី ២** ៖ តាង $t = \sin x$ ឬ $t = \cos x$ ($-1 \le t \le 1$)
+• **អូម៉ូសែន** ៖ ចែកនឹង $\cos^2 x \to$ សមីការដឺក្រេទី ២ នៃ $\tan x$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖  សូមបន្តឆ្លើយសំណួរ MCQ ៣ សំណួរខាងក្រោមដើម្បីវាស់ស្ទង់ការយល់ដឹង!`, { size: 26, align: 'center', anim: true })
+      ]),
+
+      /* 15 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`ដោះស្រាយសមីការ  $\sin x = -\dfrac{1}{2}$  លើចន្លោះ $[0, 2\pi)$ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\left\{\dfrac{7\pi}{6}, \ \dfrac{11\pi}{6}\right\}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\left\{\dfrac{\pi}{6}, \ \dfrac{5\pi}{6}\right\}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\left\{\dfrac{2\pi}{3}, \ \dfrac{4\pi}{3}\right\}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\left\{\dfrac{5\pi}{4}, \ \dfrac{7\pi}{4}\right\}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះ $\sin x = -\frac{1}{2} = \sin(-\frac{\pi}{6}) \implies x = \pi - (-\frac{\pi}{6}) = \frac{7\pi}{6}$ និង $x = 2\pi - \frac{\pi}{6} = \frac{11\pi}{6}$)`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 16 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`តើសមីការ $3\sin x + 4\cos x = m$ មានឫសកាលណា $m$ ស្ថិតក្នុងចន្លោះណា?`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$m \in [-1, 1]$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$m \in [-5, 5]$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$m \in [-7, 7]$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$m \in [0, 5]$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះលក្ខខណ្ឌមានឫសគឺ $a^2 + b^2 \ge m^2 \iff 3^2 + 4^2 = 25 \ge m^2 \iff -5 \le m \le 5$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 17 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`ដោះស្រាយសមីការ  $\tan^2 x - 1 = 0$  លើ $\mathbb{R}$ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$x = \dfrac{\pi}{4} + 2k\pi$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$x = \pm\dfrac{\pi}{4} + 2k\pi$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$x = \dfrac{\pi}{4} + \dfrac{k\pi}{2}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$x = \dfrac{\pi}{4} + k\pi$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ C!! (ព្រោះ $\tan x = \pm 1 \implies x = \frac{\pi}{4} + k\pi$ ឬ $x = -\frac{\pi}{4} + k\pi$ រួមបញ្ចូលគ្នាទៅជា $x = \frac{\pi}{4} + \frac{k\pi}{2}$)`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 18 */ page([
+        sec('លំហាត់អនុវត្តន៍ពីសៀវភៅពុម្ព (ទំព័រ ១៥៨–១៦៥)'),
+        S.box(80, 160, 1120, 350, R`!!១.!! ដោះស្រាយសមីការត្រីកោណមាត្រគ្រឹះ ៖
+    ក. $2\sin\left(2x - \dfrac{\pi}{3}\right) = 1$
+    ខ. $\sqrt{2}\cos\left(3x + \dfrac{\pi}{4}\right) = -1$
+    គ. $\sqrt{3}\tan\left(x - \dfrac{\pi}{6}\right) = 1$
+!!២.!! ដោះស្រាយសមីការលីនេអ៊ែរ និងដឺក្រេទី ២ ៖
+    ក. $\sin x + \sqrt{3}\cos x = \sqrt{2}$
+    ខ. $2\sin^2 x - 5\sin x + 2 = 0$
+    គ. $3\sin^2 x - 2\sqrt{3}\sin x\cos x - \cos^2 x = 0$
+!!៣.!! ដោះស្រាយវិសមីការ $\cos 2x > \dfrac{1}{2}$ លើចន្លោះ $[0, \pi]$ ។`, { size: 24, lh: '1.6' })
+      ]),
+
+      /* 19 */ S.homework(R`!!១.!! ដោះស្រាយសមីការ  $\cos 2x - 3\cos x + 2 = 0$  លើ $\mathbb{R}$ ។
+!!២.!! ដោះស្រាយសមីការ  $\sqrt{3}\sin 2x - \cos 2x = \sqrt{3}$  លើចន្លោះ $[0, 2\pi]$ ។
+!!៣.!! ដោះស្រាយវិសមីការ  $2\sin^2 x - \sin x - 1 \le 0$  លើរង្វង់ត្រីកោណមាត្រ ។`),
+
+      /* 20 */ S.thanks()
+    ];
+
+    return {
+      name: 'ថ្នាក់ទី១១ · ជំពូក៣ មេរៀនទី៣ សមីការនិងវិសមីការត្រីកោណមាត្រ (២០ ស្លាយ)',
+      grade: '11',
+      chapterNum: 3,
+      chapter: 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ',
+      lessonNum: 3,
+      lesson: 'មេរៀនទី ៣ ៖ សមីការនិងវិសមីការត្រីកោណមាត្រ',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. សមីការត្រីកោណមាត្រគ្រឹះ', slide: 3 },
+        { title: '២. សមីការលីនេអ៊ែរ a sin x + b cos x = c', slide: 6 },
+        { title: '៣. សមីការដឺក្រេទី ២ & អូម៉ូសែន', slide: 8 },
+        { title: '៤. វិសមីការត្រីកោណមាត្រ', slide: 11 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 13 }
+      ],
+      theme: 'school',
+      slides: slides
+    };
+  }
+
+
+function limits(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, info = K.info, kids = K.kids, line = K.line,
         step = K.step, solTitle = K.solTitle, title = K.title;
     var slides = [
@@ -3942,23 +4977,63 @@ $$2 < x \le 5$$
       build: logarithm
     },
     {
-      id: 'g11-trig',
-      ver: 2,
+      id: 'g11-trig-functions',
+      ver: 1,
       grade: '11',
       chapterNum: 3,
       chapter: 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ',
-      lessonNum: 12,
-      lesson: 'មេរៀនទី ១២ ៖ សមីការនិងវិសមីការត្រីកោណមាត្រ',
-      name: 'ថ្នាក់ទី១១ · មេរៀនទី១២ សមីការនិងវិសមីការត្រីកោណមាត្រ (១២ ស្លាយ)',
+      lessonNum: 1,
+      lesson: 'មេរៀនទី ១ ៖ អនុគមន៍ត្រីកោណមាត្រ',
+      name: 'ថ្នាក់ទី១១ · ជំពូក៣ មេរៀនទី១ អនុគមន៍ត្រីកោណមាត្រ (២៥ ស្លាយ)',
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
-        { title: 'វត្ថុបំណងមេរៀន', slide: 1 },
-        { title: '១. សមីការស៊ីនុស', slide: 2 },
-        { title: '២. សមីការកូស៊ីនុស', slide: 4 },
-        { title: '៣. សមីការតង់សង់', slide: 6 },
-        { title: '៤. សមីការទម្រង់ a sin x + b cos x = c', slide: 7 },
-        { title: '៥. វិសមីការត្រីកោណមាត្រ', slide: 8 },
-        { title: 'លំហាត់អនុវត្ត & កិច្ចការផ្ទះ', slide: 9 }
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. រង្វាស់មុំ & រង្វង់ត្រីកោណមាត្រ', slide: 3 },
+        { title: '២. អនុគមន៍ត្រីកោណមាត្រ & តារាងមុំពិសេស', slide: 6 },
+        { title: '៣. ទំនាក់ទំនងគ្រឹះ & មុំផ្តុំ', slide: 9 },
+        { title: '៤. អថេរភាព និងក្រាបរលក sin, cos, tan', slide: 13 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 18 }
+      ],
+      build: trigFunctions
+    },
+    {
+      id: 'g11-trig-formulas',
+      ver: 1,
+      grade: '11',
+      chapterNum: 3,
+      chapter: 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ',
+      lessonNum: 2,
+      lesson: 'មេរៀនទី ២ ៖ រូបមន្តត្រីកោណមាត្រ',
+      name: 'ថ្នាក់ទី១១ · ជំពូក៣ មេរៀនទី២ រូបមន្តត្រីកោណមាត្រ (២១ ស្លាយ)',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. រូបមន្តផលបូក និងផលដក', slide: 3 },
+        { title: '២. រូបមន្តមុំឌុប & មុំ ៣ គុណ', slide: 6 },
+        { title: '៣. រូបមន្តកន្លះមុំ & អថេរ t', slide: 9 },
+        { title: '៤. បម្លែងផលគុណ ↔ ផលបូក', slide: 11 },
+        { title: '៥. អនុវត្តក្នុងត្រីកោណ ABC', slide: 13 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 14 }
+      ],
+      build: trigFormulas
+    },
+    {
+      id: 'g11-trig',
+      ver: 5,
+      grade: '11',
+      chapterNum: 3,
+      chapter: 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ',
+      lessonNum: 3,
+      lesson: 'មេរៀនទី ៣ ៖ សមីការនិងវិសមីការត្រីកោណមាត្រ',
+      name: 'ថ្នាក់ទី១១ · ជំពូក៣ មេរៀនទី៣ សមីការនិងវិសមីការត្រីកោណមាត្រ (២០ ស្លាយ)',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. សមីការត្រីកោណមាត្រគ្រឹះ', slide: 3 },
+        { title: '២. សមីការលីនេអ៊ែរ a sin x + b cos x = c', slide: 6 },
+        { title: '៣. សមីការដឺក្រេទី ២ & អូម៉ូសែន', slide: 8 },
+        { title: '៤. វិសមីការត្រីកោណមាត្រ', slide: 11 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 13 }
       ],
       build: trigEquations
     },
