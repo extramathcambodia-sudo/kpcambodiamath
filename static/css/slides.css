@@ -155,3 +155,32 @@
   .sl-th-box .sl-stage { transform: scale(.075); }
   .sl-title { display: none; }
 }
+
+@media (max-width: 900px) {
+  .sl-section-picker-label { display: none !important; }
+}
+
+/* section badges in thumbnail sidebar */
+.sl-th-sec-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 14px 2px 8px;
+  padding: 6px 10px;
+  background: #e7f5ff;
+  border-left: 3px solid #1971c2;
+  border-radius: 6px;
+  color: #1864ab;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: all 0.15s ease;
+}
+.sl-th-sec-badge:hover {
+  background: #d0ebff;
+  border-left-color: #002060;
+  transform: translateX(2px);
+}
+.sl-th-sec-badge .sl-sec-icon { font-size: 11px; flex: none; }
+.sl-th-sec-badge .sl-sec-txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

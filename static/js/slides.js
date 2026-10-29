@@ -21,7 +21,7 @@
     school: { name: 'គំរូសាលា', bg: '#f8f9fb', title: '#002060', text: '#002060', accent: '#c00000', brand: '#f68c1f', head: '#8b0000', card: '#ffffff', math: '#7f0000',
               titleFont: true, bodyFont: "'Battambang', 'Kantumruy Pro', sans-serif", deco: schoolDeco,
               // artwork taken from the sample deck; slide.kind picks one, header/footer text is drawn on top
-              images: { content: 'bg-content', cover: 'bg-cover', toc: 'bg-toc', goal: 'bg-goal', thanks: 'bg-thanks' } }
+              images: { content: 'bg-content', cover: 'bg-cover', toc: 'bg-content', goal: 'bg-goal', thanks: 'bg-thanks' } }
   };
 
   var SCHOOL_IMG = 'static/img/slides/school/';
@@ -29,7 +29,7 @@
   function schoolDeco(deck, sl, idx) {
     var kind = sl.kind || 'content';
     if (sl.plain || kind === 'cover') return '';
-    var n = idx + 1, left = kind === 'content' ? 23 : kind === 'thanks' ? 28 : 48, top = kind === 'thanks' ? 3 : -9;
+    var n = idx + 1, left = (kind === 'content' || kind === 'toc') ? 23 : kind === 'thanks' ? 28 : 48, top = kind === 'thanks' ? 3 : -9;
     return '<div class="sl-deco sl-hdr" style="left:' + left + 'px;top:' + top + 'px">' + schoolName(deck) + '</div>' +
       (kind === 'thanks' ? '' : '<div class="sl-deco sl-badge">' + (n < 10 ? '0' : '') + n + '</div>') +
       '<div class="sl-deco sl-ftr">' + esc(deck.teacher || '') + '</div>';
@@ -232,12 +232,21 @@
   function change(fn, key) { commitEdit(); pushUndo(key); fn(); renderStage(); renderThumb(S.cur); syncRibbon(); save(); }
 
   function load() {
-    try { S.store = JSON.parse(localStorage.getItem(KEY)); } catch (e) { S.store = null; }
-    if (!S.store || !S.store.decks) S.store = { current: null, decks: {} };
+    var v1 = null, v2 = null;
+    try { v1 = JSON.parse(localStorage.getItem('kp-slides-v1')); } catch (e) {}
+    try { v2 = JSON.parse(localStorage.getItem('kp-slides-v2')); } catch (e) {}
+    // Seamless recovery: keep all user decks from v1 and merge any from v2
+    S.store = v1 || v2 || { current: null, decks: {} };
+    if (!S.store.decks) S.store.decks = {};
+    if (v1 && v2 && v2.decks) {
+      Object.keys(v2.decks).forEach(function (k) {
+        if (!S.store.decks[k]) S.store.decks[k] = v2.decks[k];
+      });
+    }
     if (!Object.keys(S.store.decks).length) addDeck(sampleDeck());
     seedTemplates();
     openLinkedDeck();
-    S.deck =S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
+    S.deck = S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
     Object.keys(S.store.decks).forEach(function (k) { deckDefaults(S.store.decks[k]); });
     S.store.current = S.deck.id;
   }
@@ -248,10 +257,16 @@
       if (!t.id || seeded[t.id] === t.ver) return;
       Object.keys(S.store.decks).forEach(function (k) {
         var o = S.store.decks[k];
+        // Only replace unedited template copies; user-created or edited decks are NEVER deleted
         if (o.tpl === t.id && o.updated === o.seededAt) delete S.store.decks[k];
       });
       var d = t.build(window.KPSlides.api);
       d.id = uid(); d.tpl = t.id; d.updated = d.seededAt = Date.now();
+      if (t.chapter) d.chapter = t.chapter;
+      if (t.chapterNum != null) d.chapterNum = t.chapterNum;
+      if (t.lesson) d.lesson = t.lesson;
+      if (t.lessonNum != null) d.lessonNum = t.lessonNum;
+      if (t.sections) d.sections = t.sections;
       addDeck(d); seeded[t.id] = t.ver; first = first || d;
     });
     if (!first) return;
@@ -271,16 +286,90 @@
       if (t.id !== want || best) return;
       best = t.build(window.KPSlides.api);
       best.id = uid(); best.tpl = t.id; best.updated = best.seededAt = Date.now();
+      if (t.chapter) best.chapter = t.chapter;
+      if (t.chapterNum != null) best.chapterNum = t.chapterNum;
+      if (t.lesson) best.lesson = t.lesson;
+      if (t.lessonNum != null) best.lessonNum = t.lessonNum;
+      if (t.sections) best.sections = t.sections;
       addDeck(best);
       try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
     });
   }
+
+  function parseKhmerNum(s) {
+    if (!s) return 0;
+    var kh = '០១២៣៤៥៦៧៨៩';
+    var res = 0, found = false;
+    for (var i = 0; i < s.length; i++) {
+      var idx = kh.indexOf(s[i]);
+      if (idx >= 0) { res = res * 10 + idx; found = true; }
+      else if (!isNaN(parseInt(s[i])) && s[i] >= '0' && s[i] <= '9') { res = res * 10 + parseInt(s[i]); found = true; }
+    }
+    return found ? res : 0;
+  }
+
+  function getDeckSections(deck) {
+    if (!deck || !deck.slides) return [];
+    if (deck.sections && deck.sections.length) return deck.sections;
+    var secs = [];
+    deck.slides.forEach(function (sl, idx) {
+      if (idx === 0) {
+        secs.push({ title: 'ក្របមេរៀន (Cover)', slide: 0 });
+        return;
+      }
+      var found = '';
+      (sl.els || []).forEach(function (el) {
+        if (found || el.type !== 'text' || !el.text) return;
+        var t = el.text.trim();
+        var m = t.match(/^([១២៣៤៥៦៧៨៩០\d]+(\.[១២៣៤៥៦៧៨៩០\d]+)*\s*[\.៖:-]?\s*[^\n]+)/);
+        if (m && m[1].length < 60) {
+          found = m[1].replace(/\n/g, ' ').trim();
+        } else if (/^(វត្ថុបំណង|មាតិកា|កិច្ចការផ្ទះ|សង្ខេប|រំលឹកមេរៀន|សំណួរនាំចូល|ពង្រឹងពុទ្ធិ)/.test(t)) {
+          found = t.split('\n')[0].substring(0, 50).trim();
+        }
+      });
+      if (found) {
+        if (!secs.length || secs[secs.length - 1].title !== found) {
+          secs.push({ title: found, slide: idx });
+        }
+      }
+    });
+    return secs;
+  }
+
   // header / footer text used by the «គំរូសាលា» theme
   function deckDefaults(d) {
     if (d.school == null) d.school = 'KP';
     if (d.school2 == null) d.school2 = 'Cambodian Mathematics';
     if (d.teacher == null) d.teacher = 'បង្រៀនដោយ លោកគ្រូ ...';
     if (d.school3 == null) d.school3 = '';
+    // Auto-detect Chapter and Lesson if not specified
+    if (!d.chapter) {
+      var n = d.name || '';
+      if (n.indexOf('ស៊ីត') >= 0) {
+        d.chapter = 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា';
+        d.chapterNum = 1;
+      } else if (n.indexOf('អិចស្ប៉ូណង់') >= 0 || n.indexOf('លោការីត') >= 0) {
+        d.chapter = 'ជំពូកទី ២ ៖ អនុគមន៍អិចស្ប៉ូណង់ស្យែល និងលោការីត';
+        d.chapterNum = 2;
+      } else if (n.indexOf('ត្រីកោណ') >= 0) {
+        d.chapter = 'ជំពូកទី ៣ ៖ អនុគមន៍ត្រីកោណមាត្រ';
+        d.chapterNum = 3;
+      } else if (n.indexOf('ម៉ាទ្រីស') >= 0 || n.indexOf('ដេទែរមីណង់') >= 0) {
+        d.chapter = 'ជំពូកទី ៤ ៖ ម៉ាទ្រីស និងដេទែរមីណង់';
+        d.chapterNum = 4;
+      } else if (n.indexOf('លីមីត') >= 0 || n.indexOf('ដេរីវេ') >= 0) {
+        d.chapter = 'ជំពូកទី ៥ ៖ លីមីត និងដេរីវេ';
+        d.chapterNum = 5;
+      } else {
+        d.chapter = 'បទបង្ហាញផ្សេងៗ';
+        d.chapterNum = 99;
+      }
+    }
+    if (d.lessonNum == null && d.name) {
+      var lm = d.name.match(/មេរៀនទី\s*([១២៣៤៥៦៧៨៩០\d]+)/);
+      if (lm) d.lessonNum = parseKhmerNum(lm[1]);
+    }
     return d;
   }
   function addDeck(d) { deckDefaults(d); S.store.decks[d.id] = d; S.store.current = d.id; S.deck = d; S.cur = 0; S.sel = null; S.undo = []; S.redo = []; }
@@ -352,9 +441,10 @@
       ], { kind: 'cover' });
     },
     toc: function (items) {
+      var isLong = items.length > 2;
       return SCHOOL.page([
-        T(15, 95, 400, 130, 'មាតិកា', { size: 70, font: 'display', color: '#00398e' }),
-        T(98, 215, 640, 420, items.join('\n'), { size: items.length > 2 ? 54 : 68, font: 'display', color: '#00398e', lh: items.length > 2 ? '1.45' : '1.6' })
+        T(40, 110, 1200, 76, 'មាតិកាមេរៀន', { size: 50, font: 'display', color: 'head', shadow: true }),
+        T(80, 205, 1120, 430, items.join('\n'), { size: isLong ? (items.length > 3 ? 36 : 40) : 48, font: 'display', color: '#00398e', lh: isLong ? '1.5' : '1.7' })
       ], { kind: 'toc' });
     },
     objective: function (items, note) {
@@ -593,7 +683,16 @@
           ['home:ទំព័រដើម', 'insert:បញ្ចូល', 'design:រចនា', 'show:បញ្ចាំង', 'file:ឯកសារ'].map(function (s) {
             s = s.split(':'); return '<button class="sl-tab" data-tab="' + s[0] + '">' + s[1] + '</button>';
           }).join('') +
-          '<div class="sl-tabs-r"><span class="sl-title"></span>' +
+          '<div class="sl-tabs-r">' +
+          '<label class="sl-deck-picker-label" style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:600;">' +
+          '<span style="white-space:nowrap">📖 មេរៀន៖</span>' +
+          '<select class="sl-sel-in sl-top-deck" data-prop="deck" title="ជ្រើសរើសជំពូក និងមេរៀន" style="background:#ffffff;color:#002060;font-weight:700;font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid #ced4da;max-width:320px;cursor:pointer;outline:none;"></select>' +
+          '</label>' +
+          '<label class="sl-section-picker-label" style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:600;">' +
+          '<span style="white-space:nowrap">📑 ចំណុច៖</span>' +
+          '<select class="sl-sel-in sl-top-section" title="រំលងទៅចំណុចតូចក្នុងមេរៀន" style="background:#ffffff;color:#002060;font-weight:700;font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid #ced4da;max-width:280px;cursor:pointer;outline:none;"></select>' +
+          '</label>' +
+          '<span class="sl-title" style="display:none"></span>' +
           '<button class="sl-play" data-act="show-cur" title="បញ្ចាំងពីស្លាយនេះ">▶ បញ្ចាំង</button></div>' +
         '</div>' +
         '<div class="sl-ribbon"></div>' +
@@ -626,7 +725,12 @@
     notes.addEventListener('input', function () { pushUndo('notes'); slide().notes = notes.value; save(); });
     root.querySelector('.sl-f-img').addEventListener('change', function (e) { if (e.target.files[0]) addImageFile(e.target.files[0]); e.target.value = ''; });
     root.querySelector('.sl-f-json').addEventListener('change', function (e) { if (e.target.files[0]) importJSON(e.target.files[0]); e.target.value = ''; });
-    thumbs.addEventListener('click', function (e) { var t = e.target.closest('.sl-th'); if (t) goSlide(+t.dataset.i); });
+    thumbs.addEventListener('click', function (e) {
+      var badge = e.target.closest('.sl-th-sec-badge');
+      if (badge && badge.dataset.jump) { goSlide(+badge.dataset.jump); return; }
+      var t = e.target.closest('.sl-th');
+      if (t) goSlide(+t.dataset.i);
+    });
     thumbs.addEventListener('dragstart', function (e) { var t = e.target.closest('.sl-th'); if (t) { e.dataTransfer.setData('text/plain', t.dataset.i); e.dataTransfer.effectAllowed = 'move'; } });
     thumbs.addEventListener('dragover', function (e) { if (e.target.closest('.sl-th')) e.preventDefault(); });
     thumbs.addEventListener('drop', function (e) {
@@ -663,10 +767,20 @@
   /* ---------------- rendering ---------------- */
   function renderAll() { renderThumbs(); renderStage(); syncRibbon(); }
   function renderThumbs() {
-    thumbs.innerHTML = S.deck.slides.map(function (s, i) {
-      return '<div class="sl-th' + (i === S.cur ? ' on' : '') + '" data-i="' + i + '" draggable="true"><span class="sl-th-n">' + kh(i + 1) + '</span>' +
+    var sections = getDeckSections(S.deck);
+    var secMap = {};
+    sections.forEach(function (sec) { secMap[sec.slide] = sec.title; });
+
+    var html = '';
+    S.deck.slides.forEach(function (s, i) {
+      if (secMap[i] && i > 0) {
+        html += '<div class="sl-th-sec-badge" data-jump="' + i + '" title="រំលងទៅ ' + esc(secMap[i]) + '">' +
+                '<span class="sl-sec-icon">📑</span><span class="sl-sec-txt">' + esc(secMap[i]) + '</span></div>';
+      }
+      html += '<div class="sl-th' + (i === S.cur ? ' on' : '') + '" data-i="' + i + '" draggable="true"><span class="sl-th-n">' + kh(i + 1) + '</span>' +
              '<div class="sl-th-box"><div class="sl-stage"></div></div></div>';
-    }).join('');
+    });
+    thumbs.innerHTML = html;
     thumbs.querySelectorAll('.sl-th').forEach(function (t, i) { paint(S.deck.slides[i], t.querySelector('.sl-stage'), 'thumb', i); });
   }
   function renderThumb(i) {
@@ -718,12 +832,66 @@
     }
     set('bg', hexOr(slide().bg, '#ffffff'));
     set('school', S.deck.school || ''); set('school2', S.deck.school2 || ''); set('school3', S.deck.school3 || ''); set('teacher', S.deck.teacher || '');
-    var ds = q('[data-prop="deck"]');
-    if (ds) {
-      ds.innerHTML = Object.keys(S.store.decks).map(function (k) { return S.store.decks[k]; })
-        .sort(function (a, c) { return (c.updated || 0) - (a.updated || 0); })
-        .map(function (d) { return '<option value="' + d.id + '"' + (d.id === S.deck.id ? ' selected' : '') + '>' + esc(d.name) + '</option>'; }).join('');
+    var dsList = root ? root.querySelectorAll('[data-prop="deck"]') : [];
+    if (dsList.length) {
+      var groups = {};
+      var chapterKeys = [];
+      Object.keys(S.store.decks).forEach(function (k) {
+        var d = S.store.decks[k];
+        deckDefaults(d);
+        var ch = d.chapter || 'បទបង្ហាញផ្សេងៗ';
+        if (!groups[ch]) {
+          groups[ch] = { name: ch, order: (d.chapterNum != null ? d.chapterNum : 99), decks: [] };
+          chapterKeys.push(ch);
+        }
+        groups[ch].decks.push(d);
+      });
+
+      chapterKeys.sort(function (a, b) {
+        if (groups[a].order !== groups[b].order) return groups[a].order - groups[b].order;
+        return a.localeCompare(b, 'km');
+      });
+
+      var opts = '';
+      chapterKeys.forEach(function (chKey) {
+        var grp = groups[chKey];
+        grp.decks.sort(function (a, b) {
+          if (a.lessonNum != null && b.lessonNum != null && a.lessonNum !== b.lessonNum) {
+            return a.lessonNum - b.lessonNum;
+          }
+          return (a.name || '').localeCompare(b.name || '', 'km');
+        });
+        opts += '<optgroup label="' + esc(grp.name) + '">';
+        grp.decks.forEach(function (d) {
+          opts += '<option value="' + d.id + '"' + (d.id === S.deck.id ? ' selected' : '') + '>' + esc(d.name) + '</option>';
+        });
+        opts += '</optgroup>';
+      });
+
+      dsList.forEach(function (ds) { ds.innerHTML = opts; ds.value = S.deck.id; });
       set('deckname', S.deck.name);
+    }
+
+    var secList = root ? root.querySelectorAll('.sl-top-section') : [];
+    if (secList.length) {
+      var sections = getDeckSections(S.deck);
+      var curSecSlide = 0;
+      var secOpts = '';
+      if (!sections.length) {
+        secOpts = '<option value="0">ស្លាយ ១</option>';
+      } else {
+        for (var sIdx = 0; sIdx < sections.length; sIdx++) {
+          if (S.cur >= sections[sIdx].slide) curSecSlide = sections[sIdx].slide;
+        }
+        secOpts = sections.map(function (sec) {
+          var sel = (sec.slide === curSecSlide) ? ' selected' : '';
+          return '<option value="' + sec.slide + '"' + sel + '>' + esc(sec.title) + ' (ស្លាយ ' + kh(sec.slide + 1) + ')</option>';
+        }).join('');
+      }
+      secList.forEach(function (slSel) {
+        slSel.innerHTML = secOpts;
+        slSel.value = String(curSecSlide);
+      });
     }
   }
 
@@ -826,6 +994,13 @@
   }
 
   function onInput(e) {
+    if (e.target.classList.contains('sl-top-section')) {
+      if (e.type === 'change') {
+        var slIdx = +e.target.value;
+        if (!isNaN(slIdx) && slIdx >= 0) goSlide(slIdx);
+      }
+      return;
+    }
     var p = e.target.dataset.prop; if (!p) return;
     var v = e.target.value, el = selEl();
     if (p === 'deck') { if (e.type === 'change') { switchDeck(v); renderAll(); } return; }
@@ -1162,8 +1337,31 @@
   window.KPSlides = {
     // building blocks for template decks (static/js/slides_templates.js)
     api: { T: T, shape: shp, timer: timerEl, slide: SCHOOL.page, school: SCHOOL, kh: kh, uid: uid },
+    filterGrade: function (g) {
+      if (!S.store || !S.store.decks) return;
+      var gStr = String(g);
+      var gKh = kh(g);
+      var match = null;
+      var keys = Object.keys(S.store.decks);
+      for (var i = 0; i < keys.length; i++) {
+        var d = S.store.decks[keys[i]];
+        var n = (d.name || '') + ' ' + (d.tpl || '');
+        if (n.indexOf('g' + gStr) !== -1 || n.indexOf('ថ្នាក់ទី' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី ' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី' + gStr) !== -1) {
+          match = d;
+          break;
+        }
+      }
+      if (match && (!S.deck || S.deck.id !== match.id)) {
+        switchDeck(match.id);
+        renderAll();
+      }
+    },
     open: function () {
       if (!S.built) { load(); build(); setTab('home'); }
+      var g = window.currentGrade;
+      if (g && S.deck && S.deck.theme === 'ocean' && S.deck.name && S.deck.name.indexOf('ពីតាគ័រ') !== -1) {
+        window.KPSlides.filterGrade(g);
+      }
       requestAnimationFrame(function () { fitStage(); renderAll(); });
     }
   };

@@ -19,7 +19,7 @@
   <!-- Local Geometric Constructions CSS -->
   <link rel="stylesheet" href="static/css/site.css">
   <link rel="stylesheet" href="static/css/construct.css">
-  <link rel="stylesheet" href="static/css/slides.css?v=5">
+  <link rel="stylesheet" href="static/css/slides.css?v=6">
 
   <!-- External Math Data Store -->
   <script src="math_data.js"></script>
@@ -1664,8 +1664,8 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
-  <script src="static/js/slides.js?v=9"></script>
-  <script src="static/js/slides_templates.js?v=12"></script>
+  <script src="static/js/slides.js?v=15"></script>
+  <script src="static/js/slides_templates.js?v=15"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
@@ -1996,7 +1996,10 @@
 
       if (tabId === 'wheel') drawWheel();
       if (tabId === 'geometry') initGeoStudio();
-      if (tabId === 'slides') KPSlides.open();
+      if (tabId === 'slides') {
+        KPSlides.open();
+        if (window.currentGrade && window.KPSlides.filterGrade) window.KPSlides.filterGrade(window.currentGrade);
+      }
       if (tabId === 'exam-player' && examQuestions.length === 0) launchQuickExam();
 
       setTimeout(() => renderMath(), 100);
@@ -2016,6 +2019,9 @@
       if (g !== 'all') {
         currentGrade = g;
         selectLessonGrade(g);
+        if (window.KPSlides && window.KPSlides.filterGrade) {
+          window.KPSlides.filterGrade(g);
+        }
       }
     }
 
