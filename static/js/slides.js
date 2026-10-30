@@ -155,8 +155,8 @@
       box.style.fontStyle = el.italic ? 'italic' : 'normal';
       box.style.textAlign = el.align;
       box.style.justifyContent = el.valign === 'middle' ? 'center' : el.valign === 'bottom' ? 'flex-end' : 'flex-start';
-      if (display) { box.style.fontFamily = DISPLAY_FONT; box.style.lineHeight = '1.35'; }
-      if (el.lh) box.style.lineHeight = el.lh;
+      box.style.lineHeight = el.lh || '1.25';
+      if (display) { box.style.fontFamily = DISPLAY_FONT; box.style.lineHeight = el.lh || '1.25'; }
       if (el.shadow) box.style.textShadow = '2px 3px 3px rgba(0,0,0,.35)';
       if (el.fill) { box.style.background = resolveFill(el.fill); box.style.padding = '14px 22px'; }
       if (el.border) { box.style.border = (el.bw || 3) + 'px solid ' + resolveFill(el.border); box.style.padding = '6px 20px'; }
