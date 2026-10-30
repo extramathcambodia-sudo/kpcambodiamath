@@ -1,9 +1,22 @@
-# Netlify (Git deploy): build the dist/ folder and publish it
+# Netlify (Git deploy): publish the pre-built dist/ folder
 [build]
   publish = "dist"
-  command = "python build_dist.py"
+  command = "python3 build_dist.py || python build_dist.py || true"
+
+[build.environment]
+  PYTHON_VERSION = "3.10"
 
 [[headers]]
   for = "/static/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/static/js/slides_templates.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[redirects]]
+  from = "/KPCambodianmathematics"
+  to = "/index.html"
+  status = 301
