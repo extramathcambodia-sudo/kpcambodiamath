@@ -256,6 +256,11 @@
     if (!Object.keys(S.store.decks).length) addDeck(sampleDeck());
     seedTemplates();
     openLinkedDeck();
+    var initG = getActiveGrade();
+    if (initG && initG !== 'all') {
+      var matchGKey = Object.keys(S.store.decks).find(function (k) { return getDeckGrade(S.store.decks[k]) === initG; });
+      if (matchGKey) S.store.current = matchGKey;
+    }
     S.deck = S.store.decks[S.store.current] || S.store.decks[Object.keys(S.store.decks)[0]];
     Object.keys(S.store.decks).forEach(function (k) { deckDefaults(S.store.decks[k]); });
     S.store.current = S.deck.id;
@@ -405,6 +410,35 @@
     }
     return d;
   }
+
+  function getDeckGrade(d) {
+    if (!d) return '';
+    if (d.grade != null && String(d.grade).trim() !== '') return String(d.grade).trim();
+    var tpl = d.tpl || '';
+    var m = tpl.match(/^g(\d+)/i);
+    if (m) return m[1];
+    var n = (d.name || '') + ' ' + (d.chapter || '');
+    if (/ថ្នាក់ទី\s*១០|ថ្នាក់ទី\s*10/i.test(n)) return '10';
+    if (/ថ្នាក់ទី\s*១១|ថ្នាក់ទី\s*11/i.test(n)) return '11';
+    if (/ថ្នាក់ទី\s*១២|ថ្នាក់ទី\s*12/i.test(n)) return '12';
+    if (/ថ្នាក់ទី\s*៩|ថ្នាក់ទី\s*9/i.test(n)) return '9';
+    if (/ថ្នាក់ទី\s*៨|ថ្នាក់ទី\s*8/i.test(n)) return '8';
+    if (/ថ្នាក់ទី\s*៧|ថ្នាក់ទី\s*7/i.test(n)) return '7';
+    return '';
+  }
+
+  function getActiveGrade() {
+    if (S.activeGrade && S.activeGrade !== 'all') return String(S.activeGrade);
+    if (S.activeGrade === 'all') return 'all';
+    if (window.currentGrade && window.currentGrade !== 'all') return String(window.currentGrade);
+    if (window.currentGrade === 'all') return 'all';
+    if (S.deck) {
+      var g = getDeckGrade(S.deck);
+      if (g) return g;
+    }
+    return 'all';
+  }
+
   function addDeck(d) { deckDefaults(d); S.store.decks[d.id] = d; S.store.current = d.id; S.deck = d; S.cur = 0; S.sel = null; S.undo = []; S.redo = []; }
 
   /* ---------------- layouts & sample ---------------- */
@@ -868,9 +902,25 @@
     set('school', S.deck.school || ''); set('school2', S.deck.school2 || ''); set('school3', S.deck.school3 || ''); set('teacher', S.deck.teacher || '');
     var dsList = root ? root.querySelectorAll('[data-prop="deck"]') : [];
     if (dsList.length) {
+      var activeG = getActiveGrade();
+      var allDeckKeys = Object.keys(S.store.decks);
+      var deckKeys = allDeckKeys;
+      if (activeG && activeG !== 'all') {
+        var filteredKeys = allDeckKeys.filter(function (k) {
+          return getDeckGrade(S.store.decks[k]) === activeG;
+        });
+        if (filteredKeys.length > 0) {
+          deckKeys = filteredKeys;
+        }
+      }
+
+      if (S.deck && deckKeys.indexOf(S.deck.id) === -1) {
+        deckKeys.unshift(S.deck.id);
+      }
+
       var groups = {};
       var chapterKeys = [];
-      Object.keys(S.store.decks).forEach(function (k) {
+      deckKeys.forEach(function (k) {
         var d = S.store.decks[k];
         deckDefaults(d);
         var ch = d.chapter || 'បទបង្ហាញផ្សេងៗ';
@@ -1015,7 +1065,7 @@
       case 'show-start': present(0); break;
       case 'reload-tpl': reloadTemplates(); break;
       case 'show-cur': present(S.cur); break;
-      case 'new-deck': commitEdit(); addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', theme: S.deck.theme, updated: Date.now(), slides: [layoutSlide(S.deck && S.deck.theme === 'school' ? 's_cover' : 'title')] }); renderAll(); save(); break;
+      case 'new-deck': commitEdit(); var actG = getActiveGrade(); var newGrade = (actG && actG !== 'all') ? actG : (S.deck && S.deck.grade ? S.deck.grade : undefined); addDeck({ id: uid(), name: 'បទបង្ហាញថ្មី', grade: newGrade, theme: S.deck.theme, updated: Date.now(), slides: [layoutSlide(S.deck && S.deck.theme === 'school' ? 's_cover' : 'title')] }); renderAll(); save(); break;
       case 'del-deck':
         if (!confirm('លុបបទបង្ហាញ «' + S.deck.name + '» ? (មិនអាចត្រឡប់វិញបានទេ)')) break;
         delete S.store.decks[S.deck.id];
@@ -1378,28 +1428,34 @@
       if (window.history && history.replaceState && location.search) {
         try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
       }
-      var gStr = String(g);
-      var gKh = kh(g);
-      if (S.deck) {
-        var curN = (S.deck.name || '') + ' ' + (S.deck.tpl || '');
-        if (S.deck.grade === gStr || curN.indexOf('g' + gStr) !== -1 || curN.indexOf('ថ្នាក់ទី' + gKh) !== -1 || curN.indexOf('ថ្នាក់ទី ' + gKh) !== -1 || curN.indexOf('ថ្នាក់ទី' + gStr) !== -1) {
-          return;
-        }
+      var gStr = (g == null || g === '' || g === 'all') ? 'all' : String(g);
+      S.activeGrade = gStr;
+
+      if (gStr === 'all') {
+        if (root) syncRibbon();
+        return;
       }
+
+      var curGrade = S.deck ? getDeckGrade(S.deck) : '';
+      if (curGrade === gStr) {
+        if (root) syncRibbon();
+        return;
+      }
+
       var match = null;
       var keys = Object.keys(S.store.decks);
       for (var i = 0; i < keys.length; i++) {
         var d = S.store.decks[keys[i]];
-        var n = (d.name || '') + ' ' + (d.tpl || '');
-        if (d.grade === gStr || n.indexOf('g' + gStr) !== -1 || n.indexOf('ថ្នាក់ទី' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី ' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី' + gStr) !== -1) {
+        if (getDeckGrade(d) === gStr) {
           match = d;
           break;
         }
       }
+
       if (!match && window.KPSlideTemplates) {
         for (var j = 0; j < window.KPSlideTemplates.length; j++) {
           var t = window.KPSlideTemplates[j];
-          if (t.grade === gStr || t.id.indexOf('g' + gStr) !== -1) {
+          if (String(t.grade) === gStr || (t.id && t.id.indexOf('g' + gStr) === 0)) {
             var newD = t.build(window.KPSlides.api);
             newD.id = uid(); newD.tpl = t.id; newD.updated = newD.seededAt = Date.now();
             if (t.grade) newD.grade = t.grade;
@@ -1416,16 +1472,20 @@
           }
         }
       }
+
       if (match) {
         switchDeck(match.id);
         if (root) syncRibbon();
         renderAll();
+      } else {
+        if (root) syncRibbon();
       }
     },
-    open: function () {
+    open: function (optG) {
+      var g = optG || window.currentGrade || S.activeGrade;
+      if (g && g !== 'all') S.activeGrade = String(g);
       if (!S.built) { load(); build(); setTab('home'); }
-      var g = window.currentGrade;
-      if (g && S.deck && S.deck.theme === 'ocean' && S.deck.name && S.deck.name.indexOf('ពីតាគ័រ') !== -1) {
+      if (g) {
         window.KPSlides.filterGrade(g);
       }
       requestAnimationFrame(function () { fitStage(); renderAll(); });

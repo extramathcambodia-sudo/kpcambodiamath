@@ -1664,15 +1664,15 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
-  <script src="static/js/slides.js?v=44"></script>
-  <script src="static/js/slides_templates.js?v=44"></script>
+  <script src="static/js/slides.js?v=45"></script>
+  <script src="static/js/slides_templates.js?v=45"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
   ========================================================== -->
   <script>
     // Global State
-    let currentGrade = 10;
+    window.currentGrade = 10; let currentGrade = 10;
     let currentLessonGrade = 10;
     let currentSelectedLesson = null;
     let qbankFiltered = [];
@@ -2001,7 +2001,7 @@
       if (tabId === 'wheel') drawWheel();
       if (tabId === 'geometry') initGeoStudio();
       if (tabId === 'slides') {
-        KPSlides.open();
+        KPSlides.open(currentGrade);
       }
       if (tabId === 'exam-player' && examQuestions.length === 0) launchQuickExam();
 
@@ -2019,12 +2019,10 @@
           }
         }
       });
-      if (g !== 'all') {
-        currentGrade = g;
-        try { selectLessonGrade(g); } catch (err) { console.error('selectLessonGrade error:', err); }
-        if (window.KPSlides && window.KPSlides.filterGrade) {
-          window.KPSlides.filterGrade(g);
-        }
+      window.currentGrade = currentGrade = g;
+      try { selectLessonGrade(g); } catch (err) { console.error('selectLessonGrade error:', err); }
+      if (window.KPSlides && window.KPSlides.filterGrade) {
+        window.KPSlides.filterGrade(g);
       }
     }
 
