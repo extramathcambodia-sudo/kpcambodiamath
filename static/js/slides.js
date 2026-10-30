@@ -183,7 +183,7 @@
     scope.querySelectorAll('.sl-txt').forEach(function (b) {
       var inner = b.firstChild, fs = parseFloat(b.style.fontSize), n = 0;
       var avail = function () { var cs = getComputedStyle(b); return b.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom); };
-      var minFs = 21;
+      var minFs = 19;
       while (inner.offsetHeight > avail() + 1 && fs > minFs && n++ < 80) { fs -= fs > 30 ? 1.5 : 1; b.style.fontSize = fs + 'px'; }
     });
   }
