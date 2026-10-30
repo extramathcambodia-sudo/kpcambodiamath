@@ -964,6 +964,811 @@
       return shape('custom', x, y, w, h, { svg: s });
     };
 
+    
+    // ==========================================
+    // Grade 7 Interactive SVG Visual Drawing Kit
+    // ==========================================
+
+    function _wrapSvg(w, h, body, title) {
+      var s = '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">';
+      s += '<rect width="' + w + '" height="' + h + '" rx="14" fill="#ffffff" stroke="#c5d3e8" stroke-width="2"/>';
+      if (title) {
+        s += '<rect x="14" y="12" width="' + (w - 28) + '" height="32" rx="8" fill="#f0f4f8"/>';
+        s += '<text x="' + (w / 2) + '" y="33" font-family="Khmer OS Battambang, sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a" text-anchor="middle">' + title + '</text>';
+      }
+      s += body;
+      s += '</svg>';
+      return s;
+    }
+
+    // 1. Number Line
+    K.svgNumberLine = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var min = opts.min != null ? opts.min : -5, max = opts.max != null ? opts.max : 5;
+      var title = opts.title || 'បន្ទាត់ចំនួន';
+      var py = Math.round(h * 0.58), left = 50, right = w - 50;
+      var count = max - min, step = (right - left) / count;
+      var body = '';
+      
+      // Main arrow line
+      body += '<line x1="' + (left - 20) + '" y1="' + py + '" x2="' + (right + 20) + '" y2="' + py + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+      body += '<polygon points="' + (right + 25) + ',' + py + ' ' + (right + 15) + ',' + (py - 6) + ' ' + (right + 15) + ',' + (py + 6) + '" fill="#2563eb"/>';
+      body += '<polygon points="' + (left - 25) + ',' + py + ' ' + (left - 15) + ',' + (py - 6) + ' ' + (left - 15) + ',' + (py + 6) + '" fill="#2563eb"/>';
+      body += '<text x="' + (right + 30) + '" y="' + (py + 5) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">x</text>';
+
+      for (var v = min; v <= max; v++) {
+        var vx = left + (v - min) * step;
+        var isOrigin = v === 0;
+        var hl = opts.highlight && opts.highlight.indexOf(v) !== -1;
+        var tickH = isOrigin ? 18 : 12;
+        body += '<line x1="' + vx + '" y1="' + (py - tickH) + '" x2="' + vx + '" y2="' + (py + tickH) + '" stroke="' + (isOrigin ? '#e03131' : '#495057') + '" stroke-width="' + (isOrigin ? '2.5' : '1.5') + '"/>';
+        body += '<text x="' + vx + '" y="' + (py + tickH + 18) + '" font-family="sans-serif" font-size="' + (isOrigin ? '15' : '13') + '" font-weight="' + (isOrigin ? 'bold' : 'normal') + '" fill="' + (isOrigin ? '#e03131' : '#334155') + '" text-anchor="middle">' + v + '</text>';
+        if (hl) {
+          body += '<circle cx="' + vx + '" cy="' + py + '" r="6" fill="#f59f00" stroke="#d97706" stroke-width="2"/>';
+        }
+      }
+      if (opts.interval) {
+        // e.g. [0, 4] arrow arc
+        var x1 = left + (opts.interval[0] - min) * step;
+        var x2 = left + (opts.interval[1] - min) * step;
+        var mx = (x1 + x2) / 2, my = py - 45;
+        body += '<path d="M ' + x1 + ' ' + (py - 8) + ' Q ' + mx + ' ' + my + ' ' + x2 + ' ' + (py - 8) + '" fill="none" stroke="#e03131" stroke-width="2.5" stroke-dasharray="4,4"/>';
+        body += '<polygon points="' + x2 + ',' + (py - 6) + ' ' + (x2 - 8) + ',' + (py - 16) + ' ' + (x2 - 2) + ',' + (py - 18) + '" fill="#e03131"/>';
+        if (opts.intervalLabel) {
+          body += '<text x="' + mx + '" y="' + (my - 8) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#e03131" text-anchor="middle">' + opts.intervalLabel + '</text>';
+        }
+      }
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 2. Factor Tree
+    K.svgFactorTree = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var title = opts.title || 'ដើមឈើតួចែក (Factor Tree នៃ ៦០)';
+      var body = '';
+      
+      // Node 60 at top
+      var cx = w / 2, cy = 90;
+      body += '<circle cx="' + cx + '" cy="' + cy + '" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>';
+      body += '<text x="' + cx + '" y="' + (cy + 7) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e3a8a" text-anchor="middle">60</text>';
+
+      // Branch to 6 and 10
+      var x1 = cx - 90, y1 = cy + 80;
+      var x2 = cx + 90, y2 = cy + 80;
+      body += '<line x1="' + (cx - 15) + '" y1="' + (cy + 18) + '" x2="' + (x1 + 10) + '" y2="' + (y1 - 18) + '" stroke="#64748b" stroke-width="2"/>';
+      body += '<line x1="' + (cx + 15) + '" y1="' + (cy + 18) + '" x2="' + (x2 - 10) + '" y2="' + (y2 - 18) + '" stroke="#64748b" stroke-width="2"/>';
+
+      body += '<circle cx="' + x1 + '" cy="' + y1 + '" r="20" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>';
+      body += '<text x="' + x1 + '" y="' + (y1 + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#991b1b" text-anchor="middle">6</text>';
+
+      body += '<circle cx="' + x2 + '" cy="' + y2 + '" r="20" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>';
+      body += '<text x="' + x2 + '" y="' + (y2 + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#991b1b" text-anchor="middle">10</text>';
+
+      // Leaves: 2, 3 and 2, 5
+      var lx1 = x1 - 45, ly1 = y1 + 80;
+      var lx2 = x1 + 45, ly2 = y1 + 80;
+      var rx1 = x2 - 45, ry1 = y2 + 80;
+      var rx2 = x2 + 45, ry2 = y2 + 80;
+
+      body += '<line x1="' + (x1 - 10) + '" y1="' + (y1 + 18) + '" x2="' + (lx1 + 8) + '" y2="' + (ly1 - 18) + '" stroke="#64748b" stroke-width="2"/>';
+      body += '<line x1="' + (x1 + 10) + '" y1="' + (y1 + 18) + '" x2="' + (lx2 - 8) + '" y2="' + (ly2 - 18) + '" stroke="#64748b" stroke-width="2"/>';
+      body += '<line x1="' + (x2 - 10) + '" y1="' + (y2 + 18) + '" x2="' + (rx1 + 8) + '" y2="' + (ry1 - 18) + '" stroke="#64748b" stroke-width="2"/>';
+      body += '<line x1="' + (x2 + 10) + '" y1="' + (y2 + 18) + '" x2="' + (rx2 - 8) + '" y2="' + (ry2 - 18) + '" stroke="#64748b" stroke-width="2"/>';
+
+      var leaves = [
+        { x: lx1, y: ly1, val: '2' }, { x: lx2, y: ly2, val: '3' },
+        { x: rx1, y: ry1, val: '2' }, { x: rx2, y: ry2, val: '5' }
+      ];
+      leaves.forEach(function (lf) {
+        body += '<circle cx="' + lf.x + '" cy="' + lf.y + '" r="19" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>';
+        body += '<text x="' + lf.x + '" y="' + (lf.y + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#15803d" text-anchor="middle">' + lf.val + '</text>';
+      });
+
+      body += '<rect x="50" y="' + (h - 52) + '" width="' + (w - 100) + '" height="36" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>';
+      body += '<text x="' + (w / 2) + '" y="' + (h - 29) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">60 = 2 × 2 × 3 × 5 = 2² × 3 × 5</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 3. Venn Diagram for 2 Sets
+    K.svgVenn2 = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var title = opts.title || 'ដ្យាក្រាមវ៉ែន (Venn Diagram) ៖ GCD & LCM';
+      var body = '';
+      var cy = Math.round(h * 0.54);
+      var r = 100;
+      var c1x = (w / 2) - 60, c2x = (w / 2) + 60;
+
+      // Circle 1
+      body += '<circle cx="' + c1x + '" cy="' + cy + '" r="' + r + '" fill="rgba(59, 130, 246, 0.22)" stroke="#2563eb" stroke-width="2.5"/>';
+      // Circle 2
+      body += '<circle cx="' + c2x + '" cy="' + cy + '" r="' + r + '" fill="rgba(245, 158, 11, 0.22)" stroke="#f59f00" stroke-width="2.5"/>';
+
+      body += '<text x="' + (c1x - 45) + '" y="' + (cy - 110) + '" font-family="Khmer OS Battambang, sans-serif" font-size="15" font-weight="bold" fill="#1d4ed8">' + (opts.leftLabel || 'សំណុំ A') + '</text>';
+      body += '<text x="' + (c2x + 45) + '" y="' + (cy - 110) + '" font-family="Khmer OS Battambang, sans-serif" font-size="15" font-weight="bold" fill="#b45309">' + (opts.rightLabel || 'សំណុំ B') + '</text>';
+
+      // Left items
+      var lItems = opts.leftItems || ['2', '3'];
+      lItems.forEach(function (it, idx) {
+        body += '<text x="' + (c1x - 45) + '" y="' + (cy - 20 + idx * 35) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e40af" text-anchor="middle">' + it + '</text>';
+      });
+
+      // Mid items (intersection)
+      var mItems = opts.midItems || ['2', '5'];
+      mItems.forEach(function (it, idx) {
+        body += '<text x="' + (w / 2) + '" y="' + (cy - 20 + idx * 35) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b91c1c" text-anchor="middle">' + it + '</text>';
+      });
+
+      // Right items
+      var rItems = opts.rightItems || ['7'];
+      rItems.forEach(function (it, idx) {
+        body += '<text x="' + (c2x + 45) + '" y="' + (cy - 20 + idx * 35) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#b45309" text-anchor="middle">' + it + '</text>';
+      });
+
+      body += '<text x="' + (w / 2) + '" y="' + (cy + 120) + '" font-family="Khmer OS Battambang, sans-serif" font-size="13" font-weight="bold" fill="#64748b" text-anchor="middle">ផ្នែកកណ្ដាល = ធាតុរួម A ∩ B</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 4. Fractions Shape (Pie & Bar)
+    K.svgFraction = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var title = opts.title || 'តំណាងប្រភាគ ៖ ៣/៤';
+      var body = '';
+      var num = opts.num || 3, den = opts.den || 4;
+
+      // Left: Circle pie
+      var pcx = Math.round(w * 0.30), pcy = Math.round(h * 0.55), pr = 80;
+      body += '<circle cx="' + pcx + '" cy="' + pcy + '" r="' + pr + '" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>';
+      var stepRad = (2 * Math.PI) / den;
+      for (var i = 0; i < den; i++) {
+        var a1 = i * stepRad - Math.PI / 2;
+        var a2 = (i + 1) * stepRad - Math.PI / 2;
+        var x1 = pcx + pr * Math.cos(a1), y1 = pcy + pr * Math.sin(a1);
+        var x2 = pcx + pr * Math.cos(a2), y2 = pcy + pr * Math.sin(a2);
+        var isShaded = i < num;
+        var fillColor = isShaded ? '#3b82f6' : '#ffffff';
+        var largeArc = stepRad > Math.PI ? 1 : 0;
+        var pathD = 'M ' + pcx + ' ' + pcy + ' L ' + x1 + ' ' + y1 + ' A ' + pr + ' ' + pr + ' 0 ' + largeArc + ' 1 ' + x2 + ' ' + y2 + ' Z';
+        body += '<path d="' + pathD + '" fill="' + fillColor + '" stroke="#1e40af" stroke-width="1.8"/>';
+      }
+      body += '<text x="' + pcx + '" y="' + (pcy + pr + 28) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e3a8a" text-anchor="middle">' + num + '/' + den + ' នៃរង្វង់</text>';
+
+      // Right: Fraction Bar
+      var bx = Math.round(w * 0.58), by = Math.round(h * 0.38), bw = 190, bh = 54;
+      var segW = bw / den;
+      for (var j = 0; j < den; j++) {
+        var sx = bx + j * segW;
+        var isShadedB = j < num;
+        body += '<rect x="' + sx + '" y="' + by + '" width="' + segW + '" height="' + bh + '" fill="' + (isShadedB ? '#10b981' : '#f8fafc') + '" stroke="#047857" stroke-width="2"/>';
+        body += '<text x="' + (sx + segW / 2) + '" y="' + (by + 33) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="' + (isShadedB ? '#ffffff' : '#94a3b8') + '" text-anchor="middle">1/' + den + '</text>';
+      }
+      body += '<text x="' + (bx + bw / 2) + '" y="' + (by + bh + 30) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#065f46" text-anchor="middle">' + num + '/' + den + ' នៃបន្ទះចតុកោណ</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 5. Percent Grid (10x10)
+    K.svgPercentGrid = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var pct = opts.percent != null ? opts.percent : 25;
+      var title = opts.title || ('ភាគរយ ៖ ' + pct + '%');
+      var body = '';
+      var startX = 60, startY = 75, sz = 20, gap = 2;
+
+      for (var r = 0; r < 10; r++) {
+        for (var c = 0; c < 10; c++) {
+          var idx = r * 10 + c;
+          var shaded = idx < pct;
+          var qx = startX + c * (sz + gap);
+          var qy = startY + r * (sz + gap);
+          body += '<rect x="' + qx + '" y="' + qy + '" width="' + sz + '" height="' + sz + '" rx="2" fill="' + (shaded ? '#f59f00' : '#f1f5f9') + '" stroke="' + (shaded ? '#d97706' : '#cbd5e1') + '" stroke-width="1"/>';
+        }
+      }
+
+      // Legend & explanation on right
+      var rx = startX + 10 * (sz + gap) + 40;
+      body += '<rect x="' + rx + '" y="95" width="180" height="150" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>';
+      body += '<text x="' + (rx + 90) + '" y="130" font-family="sans-serif" font-size="28" font-weight="bold" fill="#d97706" text-anchor="middle">' + pct + '%</text>';
+      body += '<text x="' + (rx + 90) + '" y="165" font-family="sans-serif" font-size="16" font-weight="bold" fill="#334155" text-anchor="middle">= ' + pct + ' / 100</text>';
+      body += '<text x="' + (rx + 90) + '" y="195" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb" text-anchor="middle">= ' + (pct / 100).toFixed(2) + '</text>';
+      body += '<text x="' + (rx + 90) + '" y="222" font-family="Khmer OS Battambang, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">ក្រឡា ' + pct + ' ក្នុងចំណោម ១០០</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 6. Metric Ladder (រង្វាស់រង្វាល់)
+    K.svgMetricLadder = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var title = opts.title || 'ជណ្តើរខ្នាតប្រវែង (Metric Conversion)';
+      var body = '';
+      var units = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
+      var n = units.length;
+      var stepW = (w - 120) / n, stepH = 28;
+      var topY = 70;
+
+      for (var i = 0; i < n; i++) {
+        var sx = 60 + i * stepW;
+        var sy = topY + i * stepH;
+        var isMeter = units[i] === 'm';
+        body += '<rect x="' + sx + '" y="' + sy + '" width="' + (stepW + 4) + '" height="' + stepH + '" fill="' + (isMeter ? '#fed7aa' : '#e0e7ff') + '" stroke="' + (isMeter ? '#ea580c' : '#4338ca') + '" stroke-width="2"/>';
+        body += '<text x="' + (sx + stepW / 2) + '" y="' + (sy + 20) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="' + (isMeter ? '#c2410c' : '#3730a3') + '" text-anchor="middle">' + units[i] + '</text>';
+      }
+
+      // Arrows: Down = multiply by 10, Up = divide by 10
+      body += '<path d="M 70 ' + (topY + 30) + ' Q 160 ' + (topY - 15) + ' ' + (w - 80) + ' ' + (topY + n * stepH - 20) + '" fill="none" stroke="#16a34a" stroke-width="2.5"/>';
+      body += '<polygon points="' + (w - 76) + ',' + (topY + n * stepH - 16) + ' ' + (w - 88) + ',' + (topY + n * stepH - 26) + ' ' + (w - 80) + ',' + (topY + n * stepH - 32) + '" fill="#16a34a"/>';
+      body += '<text x="' + (w / 2 + 30) + '" y="' + (topY + 15) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a" text-anchor="middle">ចុះក្រោម ៖ × 10 ក្នុងមួយកាំ</text>';
+
+      body += '<path d="M ' + (w - 90) + ' ' + (topY + n * stepH + 15) + ' Q ' + (w / 2) + ' ' + (h - 20) + ' 80 ' + (topY + 50) + '" fill="none" stroke="#dc2626" stroke-width="2.5"/>';
+      body += '<polygon points="76,' + (topY + 46) + ' 88,' + (topY + 56) + ' 80,' + (topY + 62) + '" fill="#dc2626"/>';
+      body += '<text x="' + (w / 2) + '" y="' + (h - 32) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">ឡើងលើ ៖ ÷ 10 ក្នុងមួយកាំ</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 7. Balance Scale (ជញ្ជីងសមីការ)
+    K.svgBalanceScale = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var title = opts.title || 'គំរូជញ្ជីងថ្លឹងសមីការ ៖ x + 3 = 7';
+      var body = '';
+      var cx = w / 2, basePy = Math.round(h * 0.82), beamY = Math.round(h * 0.40);
+
+      // Stand & base
+      body += '<polygon points="' + cx + ',' + beamY + ' ' + (cx - 30) + ',' + basePy + ' ' + (cx + 30) + ',' + basePy + '" fill="#94a3b8" stroke="#475569" stroke-width="2"/>';
+      body += '<rect x="' + (cx - 70) + '" y="' + basePy + '" width="140" height="16" rx="4" fill="#64748b"/>';
+
+      // Beam (lever)
+      body += '<line x1="' + (cx - 160) + '" y1="' + beamY + '" x2="' + (cx + 160) + '" y2="' + beamY + '" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>';
+      body += '<circle cx="' + cx + '" cy="' + beamY + '" r="8" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>';
+
+      // Left Pan
+      var lpx = cx - 140, rpx = cx + 140, panY = beamY + 70;
+      body += '<line x1="' + (cx - 140) + '" y1="' + beamY + '" x2="' + (lpx - 35) + '" y2="' + panY + '" stroke="#64748b" stroke-width="1.8"/>';
+      body += '<line x1="' + (cx - 140) + '" y1="' + beamY + '" x2="' + (lpx + 35) + '" y2="' + panY + '" stroke="#64748b" stroke-width="1.8"/>';
+      body += '<path d="M ' + (lpx - 55) + ' ' + panY + ' Q ' + lpx + ' ' + (panY + 22) + ' ' + (lpx + 55) + ' ' + panY + ' Z" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>';
+
+      // Left Weights: [x] box + [3] weight
+      body += '<rect x="' + (lpx - 40) + '" y="' + (panY - 32) + '" width="36" height="32" rx="4" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>';
+      body += '<text x="' + (lpx - 22) + '" y="' + (panY - 11) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">x</text>';
+
+      body += '<circle cx="' + (lpx + 18) + '" cy="' + (panY - 14) + '" r="14" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>';
+      body += '<text x="' + (lpx + 18) + '" y="' + (panY - 9) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>';
+
+      // Right Pan
+      body += '<line x1="' + (cx + 140) + '" y1="' + beamY + '" x2="' + (rpx - 35) + '" y2="' + panY + '" stroke="#64748b" stroke-width="1.8"/>';
+      body += '<line x1="' + (cx + 140) + '" y1="' + beamY + '" x2="' + (rpx + 35) + '" y2="' + panY + '" stroke="#64748b" stroke-width="1.8"/>';
+      body += '<path d="M ' + (rpx - 55) + ' ' + panY + ' Q ' + rpx + ' ' + (panY + 22) + ' ' + (rpx + 55) + ' ' + panY + ' Z" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>';
+
+      // Right Weights: 7
+      body += '<circle cx="' + rpx + '" cy="' + (panY - 16) + '" r="20" fill="#10b981" stroke="#047857" stroke-width="2"/>';
+      body += '<text x="' + rpx + '" y="' + (panY - 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>';
+
+      body += '<text x="' + cx + '" y="' + (basePy + 40) + '" font-family="Khmer OS Battambang, sans-serif" font-size="15" font-weight="bold" fill="#2563eb" text-anchor="middle">សមភាពរក្សាលំនឹង ៖ x + 3 = 7 ⇒ x = 7 - 3 = 4</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 8. Geometric Basics (ចំណុច បន្ទាត់ កាំរស្មី អង្កត់)
+    K.svgGeomBasics = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'segment-midpoint';
+      var title = opts.title || 'ធរណីមាត្រមូលដ្ឋាន';
+      var body = '';
+      var cy = Math.round(h * 0.52);
+
+      if (type === 'line') {
+        title = opts.title || 'បន្ទាត់ត្រង់ (Line (d))';
+        body += '<line x1="60" y1="' + cy + '" x2="' + (w - 60) + '" y2="' + cy + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        body += '<polygon points="' + (w - 55) + ',' + cy + ' ' + (w - 70) + ',' + (cy - 6) + ' ' + (w - 70) + ',' + (cy + 6) + '" fill="#2563eb"/>';
+        body += '<polygon points="55,' + cy + ' 70,' + (cy - 6) + ' 70,' + (cy + 6) + '" fill="#2563eb"/>';
+        body += '<circle cx="' + (w * 0.35) + '" cy="' + cy + '" r="5" fill="#ef4444"/>';
+        body += '<text x="' + (w * 0.35) + '" y="' + (cy - 12) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">A</text>';
+        body += '<circle cx="' + (w * 0.65) + '" cy="' + cy + '" r="5" fill="#ef4444"/>';
+        body += '<text x="' + (w * 0.65) + '" y="' + (cy - 12) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">B</text>';
+        body += '<text x="' + (w - 45) + '" y="' + (cy - 12) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">(d)</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 30) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">បន្ទាត់ត្រង់គ្មានដែនកំណត់សងខាង</text>';
+      } else if (type === 'ray') {
+        title = opts.title || 'កាំរស្មី [Ax) (Ray)';
+        body += '<line x1="100" y1="' + cy + '" x2="' + (w - 70) + '" y2="' + cy + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        body += '<polygon points="' + (w - 65) + ',' + cy + ' ' + (w - 80) + ',' + (cy - 6) + ' ' + (w - 80) + ',' + (cy + 6) + '" fill="#2563eb"/>';
+        body += '<circle cx="100" cy="' + cy + '" r="6" fill="#ef4444"/>';
+        body += '<text x="100" y="' + (cy + 25) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">A (គល់)</text>';
+        body += '<text x="' + (w - 55) + '" y="' + (cy - 10) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">x</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 30) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">កាំរស្មីមានគល់ A និងគ្មានព្រំដែនខាងទិស x</text>';
+      } else if (type === 'plane') {
+        title = opts.title || 'ប្លង់ (P) (Geometric Plane)';
+        body += '<polygon points="80,240 180,90 ' + (w - 80) + ',90 ' + (w - 180) + ',240" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>';
+        body += '<text x="130" y="130" font-family="sans-serif" font-size="20" font-weight="bold" fill="#15803d">(P)</text>';
+        body += '<circle cx="' + (w * 0.40) + '" cy="170" r="5" fill="#2563eb"/>';
+        body += '<text x="' + (w * 0.40 + 12) + '" y="165" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">A</text>';
+        body += '<circle cx="' + (w * 0.60) + '" cy="150" r="5" fill="#2563eb"/>';
+        body += '<text x="' + (w * 0.60 + 12) + '" y="145" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">B</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 30) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">ប្លង់មានវិមាត្រពីរ (ប្រវែង និងទទឹង) រីកសាយគ្មានដែនកំណត់</text>';
+      } else {
+        // Segment & Midpoint
+        title = opts.title || 'អង្កត់ [AB] និង ចំណុចកណ្ដាល M';
+        var ax = 90, bx = w - 90, mx = (ax + bx) / 2;
+        body += '<line x1="' + ax + '" y1="' + cy + '" x2="' + bx + '" y2="' + cy + '" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>';
+        body += '<circle cx="' + ax + '" cy="' + cy + '" r="6" fill="#1e40af"/>';
+        body += '<text x="' + ax + '" y="' + (cy + 25) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e40af" text-anchor="middle">A</text>';
+        body += '<circle cx="' + bx + '" cy="' + cy + '" r="6" fill="#1e40af"/>';
+        body += '<text x="' + bx + '" y="' + (cy + 25) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e40af" text-anchor="middle">B</text>';
+
+        body += '<circle cx="' + mx + '" cy="' + cy + '" r="6" fill="#dc2626"/>';
+        body += '<text x="' + mx + '" y="' + (cy + 25) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">M (កណ្ដាល)</text>';
+
+        // Equal tick marks on AM and MB
+        var t1 = (ax + mx) / 2, t2 = (mx + bx) / 2;
+        body += '<line x1="' + (t1 - 3) + '" y1="' + (cy - 8) + '" x2="' + (t1 + 3) + '" y2="' + (cy + 8) + '" stroke="#dc2626" stroke-width="2"/>';
+        body += '<line x1="' + (t2 - 3) + '" y1="' + (cy - 8) + '" x2="' + (t2 + 3) + '" y2="' + (cy + 8) + '" stroke="#dc2626" stroke-width="2"/>';
+
+        body += '<text x="' + (w / 2) + '" y="' + (h - 30) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" font-weight="bold" fill="#059669" text-anchor="middle">លក្ខណៈ ៖ AM = MB = AB / 2</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 9. Angles (មុំ)
+    K.svgAngle = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'acute';
+      var title = opts.title || 'ប្រភេទមុំ';
+      var body = '';
+      var ox = Math.round(w * 0.40), oy = Math.round(h * 0.65);
+
+      if (type === 'right') {
+        title = opts.title || 'មុំកែង (Right Angle = 90°)';
+        body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + (ox + 160) + '" y2="' + oy + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + ox + '" y2="' + (oy - 160) + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        body += '<rect x="' + ox + '" y="' + (oy - 24) + '" width="24" height="24" fill="none" stroke="#dc2626" stroke-width="2.5"/>';
+        body += '<text x="' + (ox + 175) + '" y="' + (oy + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">x</text>';
+        body += '<text x="' + ox + '" y="' + (oy - 170) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">y</text>';
+        body += '<text x="' + (ox - 15) + '" y="' + (oy + 18) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b">O</text>';
+        body += '<text x="' + (ox + 35) + '" y="' + (oy - 35) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">90°</text>';
+      } else if (type === 'obtuse') {
+        title = opts.title || 'មុំទាល (Obtuse Angle > 90°)';
+        body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + (ox + 150) + '" y2="' + oy + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        // 135 deg line
+        var ex = ox - 110, ey = oy - 110;
+        body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + ex + '" y2="' + ey + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        body += '<path d="M ' + (ox + 40) + ' ' + oy + ' A 40 40 0 0 0 ' + (ox - 28) + ' ' + (oy - 28) + '" fill="none" stroke="#d97706" stroke-width="2.5"/>';
+        body += '<text x="' + (ox + 165) + '" y="' + (oy + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">x</text>';
+        body += '<text x="' + (ex - 12) + '" y="' + (ey - 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">y</text>';
+        body += '<text x="' + (ox - 15) + '" y="' + (oy + 18) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b">O</text>';
+        body += '<text x="' + (ox - 5) + '" y="' + (oy - 48) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#d97706">120°</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 26) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">90° < រង្វាស់មុំ < 180°</text>';
+      } else if (type === 'straight') {
+        title = opts.title || 'មុំរាប (Straight Angle = 180°)';
+        body += '<line x1="80" y1="' + oy + '" x2="' + (w - 80) + '" y2="' + oy + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        body += '<circle cx="' + (w / 2) + '" cy="' + oy + '" r="5" fill="#1e293b"/>';
+        body += '<path d="M ' + (w / 2 + 50) + ' ' + oy + ' A 50 50 0 0 0 ' + (w / 2 - 50) + ' ' + oy + '" fill="none" stroke="#16a34a" stroke-width="2.5"/>';
+        body += '<text x="' + (w / 2) + '" y="' + (oy - 58) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#16a34a" text-anchor="middle">180°</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (oy + 22) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">O</text>';
+        body += '<text x="' + (w - 70) + '" y="' + (oy + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">x</text>';
+        body += '<text x="65" y="' + (oy + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">x\'</text>';
+      } else if (type === 'vertical') {
+        title = opts.title || 'មុំទល់កំពូល (Vertically Opposite Angles)';
+        var cx = w / 2, cy2 = h / 2;
+        body += '<line x1="' + (cx - 150) + '" y1="' + (cy2 - 80) + '" x2="' + (cx + 150) + '" y2="' + (cy2 + 80) + '" stroke="#2563eb" stroke-width="2.5"/>';
+        body += '<line x1="' + (cx - 150) + '" y1="' + (cy2 + 80) + '" x2="' + (cx + 150) + '" y2="' + (cy2 - 80) + '" stroke="#10b981" stroke-width="2.5"/>';
+        body += '<circle cx="' + cx + '" cy="' + cy2 + '" r="5" fill="#1e293b"/>';
+        body += '<text x="' + (cx - 15) + '" y="' + (cy2 + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b">O</text>';
+
+        // Arc 1 and 2
+        body += '<path d="M ' + (cx + 35) + ' ' + (cy2 - 19) + ' A 40 40 0 0 1 ' + (cx + 35) + ' ' + (cy2 + 19) + '" fill="none" stroke="#ef4444" stroke-width="2.5"/>';
+        body += '<path d="M ' + (cx - 35) + ' ' + (cy2 - 19) + ' A 40 40 0 0 0 ' + (cx - 35) + ' ' + (cy2 + 19) + '" fill="none" stroke="#ef4444" stroke-width="2.5"/>';
+        body += '<text x="' + (cx + 52) + '" y="' + (cy2 + 5) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444">α</text>';
+        body += '<text x="' + (cx - 62) + '" y="' + (cy2 + 5) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444">α</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 26) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">មុំទល់កំពូលមានរង្វាស់ស្មើគ្នា</text>';
+      } else {
+        // Acute angle (< 90)
+        title = opts.title || 'មុំស្រួច (Acute Angle < 90°)';
+        body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + (ox + 160) + '" y2="' + oy + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        // 45 deg line
+        body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + (ox + 120) + '" y2="' + (oy - 120) + '" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>';
+        body += '<path d="M ' + (ox + 50) + ' ' + oy + ' A 50 50 0 0 0 ' + (ox + 35) + ' ' + (oy - 35) + '" fill="none" stroke="#2563eb" stroke-width="2.5"/>';
+        body += '<text x="' + (ox + 175) + '" y="' + (oy + 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">x</text>';
+        body += '<text x="' + (ox + 125) + '" y="' + (oy - 125) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">y</text>';
+        body += '<text x="' + (ox - 15) + '" y="' + (oy + 18) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b">O</text>';
+        body += '<text x="' + (ox + 55) + '" y="' + (oy - 22) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">45°</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 26) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">0° < រង្វាស់មុំ < 90°</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 10. Lines (Parallel, Perpendicular, Transversal)
+    K.svgLines = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'transversal';
+      var title = opts.title || 'បន្ទាត់ស្រប និងបន្ទាត់កែង';
+      var body = '';
+
+      if (type === 'perpendicular') {
+        title = opts.title || 'បន្ទាត់កែង (Perpendicular Lines d₁ ⊥ d₂)';
+        var cx = w / 2, cy = h / 2;
+        body += '<line x1="80" y1="' + cy + '" x2="' + (w - 80) + '" y2="' + cy + '" stroke="#2563eb" stroke-width="3"/>';
+        body += '<line x1="' + cx + '" y1="65" x2="' + cx + '" y2="' + (h - 55) + '" stroke="#10b981" stroke-width="3"/>';
+        body += '<rect x="' + cx + '" y="' + (cy - 20) + '" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="2.5"/>';
+        body += '<text x="' + (w - 70) + '" y="' + (cy - 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">(d₁)</text>';
+        body += '<text x="' + (cx + 12) + '" y="85" font-family="sans-serif" font-size="15" font-weight="bold" fill="#10b981">(d₂)</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 26) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">បង្កើតបានមុំកែង ៩០° ទាំងបួន</text>';
+      } else {
+        // Transversal lines cut by transversal (មុំឆ្លាស់ក្នុង / មុំស្រប)
+        title = opts.title || 'បន្ទាត់ស្របកាត់ដោយបន្ទាត់ខ្វែង (Transversal)';
+        var y1 = 125, y2 = 225;
+        body += '<line x1="70" y1="' + y1 + '" x2="' + (w - 70) + '" y2="' + y1 + '" stroke="#2563eb" stroke-width="3"/>';
+        body += '<line x1="70" y1="' + y2 + '" x2="' + (w - 70) + '" y2="' + y2 + '" stroke="#2563eb" stroke-width="3"/>';
+        body += '<text x="' + (w - 60) + '" y="' + (y1 - 8) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">(d₁)</text>';
+        body += '<text x="' + (w - 60) + '" y="' + (y2 - 8) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">(d₂)</text>';
+
+        // Transversal line (secant)
+        body += '<line x1="' + (w * 0.32) + '" y1="65" x2="' + (w * 0.68) + '" y2="' + (h - 45) + '" stroke="#e11d48" stroke-width="3"/>';
+        body += '<text x="' + (w * 0.70) + '" y="' + (h - 50) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#e11d48">(Δ)</text>';
+
+        // Intersections
+        var ix1 = (w * 0.32) + (125 - 65) / ((h - 45) - 65) * ((w * 0.68) - (w * 0.32));
+        var ix2 = (w * 0.32) + (225 - 65) / ((h - 45) - 65) * ((w * 0.68) - (w * 0.32));
+
+        // Alternate interior angles (មុំឆ្លាស់ក្នុង)
+        body += '<path d="M ' + (ix1 + 25) + ' ' + y1 + ' A 25 25 0 0 1 ' + (ix1 + 14) + ' ' + (y1 + 20) + '" fill="none" stroke="#f59e0b" stroke-width="2.5"/>';
+        body += '<text x="' + (ix1 + 28) + '" y="' + (y1 + 22) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#d97706">A₂</text>';
+
+        body += '<path d="M ' + (ix2 - 25) + ' ' + y2 + ' A 25 25 0 0 1 ' + (ix2 - 14) + ' ' + (y2 - 20) + '" fill="none" stroke="#f59e0b" stroke-width="2.5"/>';
+        body += '<text x="' + (ix2 - 38) + '" y="' + (y2 - 12) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#d97706">B₁</text>';
+
+        body += '<text x="' + (w / 2) + '" y="' + (h - 20) + '" font-family="Khmer OS Battambang, sans-serif" font-size="13" font-weight="bold" fill="#0284c7" text-anchor="middle">មុំឆ្លាស់ក្នុងស្មើគ្នា ៖ ∠A₂ = ∠B₁ (ដោយ d₁ ∥ d₂)</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 11. Triangles & Polygons
+    K.svgTriangle = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'equilateral';
+      var title = opts.title || 'ត្រីកោណ';
+      var body = '';
+
+      if (type === 'right') {
+        title = opts.title || 'ត្រីកោណកែង (Right Triangle)';
+        var bx = 110, by = 260, tw = 260, th = 170;
+        body += '<polygon points="' + bx + ',' + by + ' ' + (bx + tw) + ',' + by + ' ' + bx + ',' + (by - th) + '" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>';
+        body += '<rect x="' + bx + '" y="' + (by - 22) + '" width="22" height="22" fill="none" stroke="#dc2626" stroke-width="2"/>';
+        body += '<text x="' + (bx - 18) + '" y="' + (by + 8) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e3a8a">B</text>';
+        body += '<text x="' + (bx + tw + 10) + '" y="' + (by + 8) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e3a8a">C</text>';
+        body += '<text x="' + (bx - 18) + '" y="' + (by - th - 5) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e3a8a">A</text>';
+        body += '<text x="' + (bx + tw / 2) + '" y="' + (by + 26) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#475569" text-anchor="middle">បាត b</text>';
+        body += '<text x="' + (bx - 30) + '" y="' + (by - th / 2) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#475569">កម្ពស់ h</text>';
+        body += '<text x="' + (bx + tw / 2 + 15) + '" y="' + (by - th / 2 - 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">អ៊ីប៉ូតេនុស c</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 22) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="middle">BC² = AB² + AC² (ទ្រឹស្តីបទពីតាករ)</text>';
+      } else {
+        // Equilateral / Isosceles
+        title = opts.title || 'ត្រីកោណសម័ង្ស (Equilateral Triangle)';
+        var cx = w / 2, topY = 90, bY = 260, halfB = 120;
+        body += '<polygon points="' + cx + ',' + topY + ' ' + (cx - halfB) + ',' + bY + ' ' + (cx + halfB) + ',' + bY + '" fill="#fdf4ff" stroke="#a855f7" stroke-width="3"/>';
+        body += '<text x="' + cx + '" y="' + (topY - 10) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#7e22ce" text-anchor="middle">A</text>';
+        body += '<text x="' + (cx - halfB - 15) + '" y="' + (bY + 10) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#7e22ce">B</text>';
+        body += '<text x="' + (cx + halfB + 8) + '" y="' + (bY + 10) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#7e22ce">C</text>';
+
+        // Equal side markers
+        body += '<line x1="' + (cx - halfB / 2 - 5) + '" y1="' + ((topY + bY) / 2 - 5) + '" x2="' + (cx - halfB / 2 + 5) + '" y2="' + ((topY + bY) / 2 + 5) + '" stroke="#a855f7" stroke-width="2.5"/>';
+        body += '<line x1="' + (cx + halfB / 2 - 5) + '" y1="' + ((topY + bY) / 2 + 5) + '" x2="' + (cx + halfB / 2 + 5) + '" y2="' + ((topY + bY) / 2 - 5) + '" stroke="#a855f7" stroke-width="2.5"/>';
+        body += '<line x1="' + (cx - 5) + '" y1="' + (bY - 6) + '" x2="' + (cx - 5) + '" y2="' + (bY + 6) + '" stroke="#a855f7" stroke-width="2.5"/>';
+
+        body += '<text x="' + cx + '" y="' + (h - 22) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" font-weight="bold" fill="#7e22ce" text-anchor="middle">ជ្រុងទាំងបីស្មើគ្នា ៖ AB = BC = CA  និង មុំទាំងបី = ៦០°</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 12. Polygons & Area
+    K.svgAreaShape = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'parallelogram';
+      var title = opts.title || 'ក្រឡាផ្ទៃពហុកោណ';
+      var body = '';
+
+      if (type === 'trapezoid') {
+        title = opts.title || 'ក្រឡាផ្ទៃរូបជើងចង្ក្រាន (Trapezoid)';
+        var bx = 110, by = 250, b1 = 160, b2 = 300, sh = 130;
+        body += '<polygon points="' + (bx + 50) + ',' + (by - sh) + ' ' + (bx + 50 + b1) + ',' + (by - sh) + ' ' + (bx + b2) + ',' + by + ' ' + bx + ',' + by + '" fill="#ecfdf5" stroke="#059669" stroke-width="3"/>';
+        // Altitude dotted line
+        body += '<line x1="' + (bx + 50) + '" y1="' + (by - sh) + '" x2="' + (bx + 50) + '" y2="' + by + '" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,4"/>';
+        body += '<rect x="' + (bx + 50) + '" y="' + (by - 16) + '" width="16" height="16" fill="none" stroke="#dc2626" stroke-width="1.8"/>';
+        body += '<text x="' + (bx + 50 + b1 / 2) + '" y="' + (by - sh - 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#047857" text-anchor="middle">បាតតូច a</text>';
+        body += '<text x="' + (bx + b2 / 2) + '" y="' + (by + 25) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#047857" text-anchor="middle">បាតធំ b</text>';
+        body += '<text x="' + (bx + 26) + '" y="' + (by - sh / 2) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">h</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 22) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#059669" text-anchor="middle">S = (a + b) × h / 2</text>';
+      } else {
+        // Parallelogram
+        title = opts.title || 'ក្រឡាផ្ទៃប្រលេឡូក្រាម (Parallelogram)';
+        var px = 100, py = 250, pw = 260, ph = 130, offset = 60;
+        body += '<polygon points="' + (px + offset) + ',' + (py - ph) + ' ' + (px + offset + pw) + ',' + (py - ph) + ' ' + (px + pw) + ',' + py + ' ' + px + ',' + py + '" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>';
+        body += '<line x1="' + (px + offset) + '" y1="' + (py - ph) + '" x2="' + (px + offset) + '" y2="' + py + '" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,4"/>';
+        body += '<rect x="' + (px + offset) + '" y="' + (py - 16) + '" width="16" height="16" fill="none" stroke="#dc2626" stroke-width="1.8"/>';
+        body += '<text x="' + (px + pw / 2) + '" y="' + (py + 25) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">បាត b</text>';
+        body += '<text x="' + (px + offset - 20) + '" y="' + (py - ph / 2) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">កម្ពស់ h</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 22) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">S = b × h   និង  P = 2(a + b)</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 13. Circle Parts
+    K.svgCircle = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'elements';
+      var title = opts.title || 'ធាតុសំខាន់ៗនៃរង្វង់ (Circle Elements)';
+      var body = '';
+      var cx = Math.round(w * 0.44), cy = Math.round(h * 0.54), r = 95;
+
+      body += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="#f0f9ff" stroke="#0284c7" stroke-width="2.5"/>';
+      body += '<circle cx="' + cx + '" cy="' + cy + '" r="5" fill="#0369a1"/>';
+      body += '<text x="' + (cx - 15) + '" y="' + (cy - 10) + '" font-family="sans-serif" font-size="16" font-weight="bold" fill="#0369a1">O (ផ្ចិត)</text>';
+
+      // Radius r
+      var ra = -30 * Math.PI / 180;
+      var rx = cx + r * Math.cos(ra), ry = cy + r * Math.sin(ra);
+      body += '<line x1="' + cx + '" y1="' + cy + '" x2="' + rx + '" y2="' + ry + '" stroke="#dc2626" stroke-width="2.5"/>';
+      body += '<text x="' + (cx + rx) / 2 + '" y="' + ((cy + ry) / 2 - 8) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">កាំ r</text>';
+
+      // Diameter d
+      body += '<line x1="' + (cx - r) + '" y1="' + cy + '" x2="' + (cx + r) + '" y2="' + cy + '" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,4"/>';
+      body += '<text x="' + (cx - r / 2) + '" y="' + (cy + 18) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">d = 2r</text>';
+
+      // Tangent line at bottom
+      body += '<line x1="' + (cx - 130) + '" y1="' + (cy + r) + '" x2="' + (cx + 130) + '" y2="' + (cy + r) + '" stroke="#16a34a" stroke-width="2.5"/>';
+      body += '<circle cx="' + cx + '" cy="' + (cy + r) + '" r="4" fill="#16a34a"/>';
+      body += '<text x="' + (cx + 80) + '" y="' + (cy + r + 20) + '" font-family="Khmer OS Battambang, sans-serif" font-size="13" font-weight="bold" fill="#16a34a">បន្ទាត់ប៉ះ (Tangent)</text>';
+
+      // Formulas Box on Right
+      body += '<rect x="' + (w - 180) + '" y="80" width="160" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>';
+      body += '<text x="' + (w - 100) + '" y="112" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">បរិមាត្ររង្វង់ ៖</text>';
+      body += '<text x="' + (w - 100) + '" y="136" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">C = 2πr = πd</text>';
+      body += '<text x="' + (w - 100) + '" y="172" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">ក្រឡាផ្ទៃរង្វង់ ៖</text>';
+      body += '<text x="' + (w - 100) + '" y="196" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">S = πr²</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 14. 3D Solids (Cylinder, Cuboid, Cube)
+    K.svgSolid3D = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'cylinder';
+      var title = opts.title || 'សូលីតធរណីមាត្រ';
+      var body = '';
+      var cx = w / 2;
+
+      if (type === 'cuboid') {
+        title = opts.title || 'ប្រលេពីប៉ែតកែង (Rectangular Prism)';
+        var bx = 110, by = 130, cw = 200, ch = 120, cd = 70;
+        body += '<polygon points="' + (bx + cd) + ',' + (by - cd) + ' ' + (bx + cw + cd) + ',' + (by - cd) + ' ' + (bx + cw) + ',' + by + ' ' + bx + ',' + by + '" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>';
+        body += '<polygon points="' + (bx + cw) + ',' + by + ' ' + (bx + cw + cd) + ',' + (by - cd) + ' ' + (bx + cw + cd) + ',' + (by + ch - cd) + ' ' + (bx + cw) + ',' + (by + ch) + '" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>';
+        body += '<rect x="' + bx + '" y="' + by + '" width="' + cw + '" height="' + ch + '" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2.5"/>';
+        body += '<text x="' + (bx + cw / 2) + '" y="' + (by + ch + 25) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e40af" text-anchor="middle">បណ្ដោយ a</text>';
+        body += '<text x="' + (bx - 25) + '" y="' + (by + ch / 2) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e40af">កម្ពស់ c</text>';
+        body += '<text x="' + (bx + cw + cd / 2 + 10) + '" y="' + (by + ch - cd / 2) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e40af">ទទឹង b</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 22) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a" text-anchor="middle">មាឌ ៖ V = a × b × c  |  ផ្ទៃសរុប ៖ S = 2(ab + bc + ca)</text>';
+      } else {
+        // Cylinder
+        title = opts.title || 'ស៊ីឡាំង (Cylinder)';
+        var cyx = cx - 50, cyTop = 95, crx = 80, cry = 25, ch2 = 140;
+        // Body
+        body += '<rect x="' + (cyx - crx) + '" y="' + cyTop + '" width="' + (2 * crx) + '" height="' + ch2 + '" fill="#e0f2fe" stroke="none"/>';
+        body += '<line x1="' + (cyx - crx) + '" y1="' + cyTop + '" x2="' + (cyx - crx) + '" y2="' + (cyTop + ch2) + '" stroke="#0284c7" stroke-width="2.5"/>';
+        body += '<line x1="' + (cyx + crx) + '" y1="' + cyTop + '" x2="' + (cyx + crx) + '" y2="' + (cyTop + ch2) + '" stroke="#0284c7" stroke-width="2.5"/>';
+
+        // Bottom ellipse
+        body += '<ellipse cx="' + cyx + '" cy="' + (cyTop + ch2) + '" rx="' + crx + '" ry="' + cry + '" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/>';
+        // Top ellipse
+        body += '<ellipse cx="' + cyx + '" cy="' + cyTop + '" rx="' + crx + '" ry="' + cry + '" fill="#7dd3fc" stroke="#0284c7" stroke-width="2.5"/>';
+
+        // Radius
+        body += '<line x1="' + cyx + '" y1="' + cyTop + '" x2="' + (cyx + crx) + '" y2="' + cyTop + '" stroke="#dc2626" stroke-width="2"/>';
+        body += '<text x="' + (cyx + crx / 2) + '" y="' + (cyTop - 8) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">r</text>';
+
+        // Height
+        body += '<line x1="' + (cyx + crx + 20) + '" y1="' + cyTop + '" x2="' + (cyx + crx + 20) + '" y2="' + (cyTop + ch2) + '" stroke="#0369a1" stroke-width="2"/>';
+        body += '<text x="' + (cyx + crx + 35) + '" y="' + (cyTop + ch2 / 2 + 5) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0369a1">h</text>';
+
+        // Formulas
+        body += '<text x="' + (w / 2) + '" y="' + (h - 22) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0369a1" text-anchor="middle">មាឌស៊ីឡាំង ៖ V = πr²h  |  ផ្ទៃខាង ៖ S = 2πrh</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 15. Symmetry (ភាពឆ្លុះ)
+    K.svgSymmetry = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'axial';
+      var title = opts.title || 'ភាពឆ្លុះធៀបនឹងបន្ទាត់ (Axial Symmetry)';
+      var body = '';
+      var cx = w / 2;
+
+      // Axis of symmetry line
+      body += '<line x1="' + cx + '" y1="65" x2="' + cx + '" y2="' + (h - 55) + '" stroke="#dc2626" stroke-width="3" stroke-dasharray="6,4"/>';
+      body += '<text x="' + (cx + 12) + '" y="80" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">(Δ) អ័ក្សឆ្លុះ</text>';
+
+      // Left Triangle ABC
+      var ax = cx - 140, ay = 110;
+      var bx = cx - 180, by = 230;
+      var ccx = cx - 60, ccy = 230;
+      body += '<polygon points="' + ax + ',' + ay + ' ' + bx + ',' + by + ' ' + ccx + ',' + ccy + '" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5"/>';
+      body += '<text x="' + (ax - 15) + '" y="' + (ay - 5) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e40af">A</text>';
+      body += '<text x="' + (bx - 18) + '" y="' + (by + 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e40af">B</text>';
+      body += '<text x="' + (ccx - 5) + '" y="' + (by + 18) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e40af">C</text>';
+
+      // Right Symmetrical Triangle A'B'C'
+      var apx = cx + 140, apy = 110;
+      var bpx = cx + 180, bpy = 230;
+      var cpx = cx + 60, cpy = 230;
+      body += '<polygon points="' + apx + ',' + apy + ' ' + bpx + ',' + bpy + ' ' + cpx + ',' + cpy + '" fill="#fee2e2" stroke="#b91c1c" stroke-width="2.5"/>';
+      body += '<text x="' + (apx + 8) + '" y="' + (apy - 5) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#991b1b">A\'</text>';
+      body += '<text x="' + (bpx + 8) + '" y="' + (bpy + 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#991b1b">B\'</text>';
+      body += '<text x="' + (cpx - 5) + '" y="' + (bpy + 18) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#991b1b">C\'</text>';
+
+      // Connecting dotted line between A and A'
+      body += '<line x1="' + ax + '" y1="' + ay + '" x2="' + apx + '" y2="' + apy + '" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3,3"/>';
+      body += '<rect x="' + cx + '" y="' + (ay - 10) + '" width="10" height="10" fill="none" stroke="#dc2626" stroke-width="1.5"/>';
+
+      body += '<text x="' + (w / 2) + '" y="' + (h - 22) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" font-weight="bold" fill="#047857" text-anchor="middle">ភាពឆ្លុះរក្សាប្រវែង ក្រឡាផ្ទៃ និងរង្វាស់មុំ</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 16. Probability Models (Coin, Die, Tree)
+    K.svgProbability = function (x, y, w, h, type, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      type = type || 'coins';
+      var title = opts.title || 'ប្រូបាប ៖ គំរូកាក់ និង គ្រាប់ឡុកឡាក់';
+      var body = '';
+
+      if (type === 'tree') {
+        title = opts.title || 'ដ្យាក្រាមដើមឈើ ៖ បោះកាក់ ២ ដង';
+        var rx = 80, ry = h / 2;
+        body += '<circle cx="' + rx + '" cy="' + ry + '" r="16" fill="#3b82f6"/>';
+        body += '<text x="' + rx + '" y="' + (ry + 5) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">កាក់</text>';
+
+        // 1st toss: H or T
+        var h1x = 220, h1y = ry - 65, t1x = 220, t1y = ry + 65;
+        body += '<line x1="' + (rx + 16) + '" y1="' + ry + '" x2="' + (h1x - 18) + '" y2="' + h1y + '" stroke="#64748b" stroke-width="2"/>';
+        body += '<line x1="' + (rx + 16) + '" y1="' + ry + '" x2="' + (t1x - 18) + '" y2="' + t1y + '" stroke="#64748b" stroke-width="2"/>';
+
+        body += '<circle cx="' + h1x + '" cy="' + h1y + '" r="18" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>';
+        body += '<text x="' + h1x + '" y="' + (h1y + 6) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#854d0e" text-anchor="middle">H</text>';
+        body += '<circle cx="' + t1x + '" cy="' + t1y + '" r="18" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>';
+        body += '<text x="' + t1x + '" y="' + (t1y + 6) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">T</text>';
+
+        // 2nd toss: HH, HT, TH, TT
+        var outs = [
+          { y: h1y - 35, txt: 'H', full: 'HH' }, { y: h1y + 35, txt: 'T', full: 'HT' },
+          { y: t1y - 35, txt: 'H', full: 'TH' }, { y: t1y + 35, txt: 'T', full: 'TT' }
+        ];
+        var outX = 360;
+        outs.forEach(function (o, idx) {
+          var srcY = idx < 2 ? h1y : t1y;
+          body += '<line x1="' + (h1x + 18) + '" y1="' + srcY + '" x2="' + (outX - 16) + '" y2="' + o.y + '" stroke="#94a3b8" stroke-width="1.8"/>';
+          body += '<circle cx="' + outX + '" cy="' + o.y + '" r="15" fill="#f8fafc" stroke="#64748b" stroke-width="1.8"/>';
+          body += '<text x="' + outX + '" y="' + (o.y + 5) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">' + o.txt + '</text>';
+          body += '<text x="' + (outX + 50) + '" y="' + (o.y + 5) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">⇒ ' + o.full + '</text>';
+        });
+
+        body += '<text x="' + (w / 2) + '" y="' + (h - 22) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">លទ្ធផលសរុប = {HH, HT, TH, TT}  (n(S) = 4)</text>';
+      } else {
+        // Coins & Dice visual
+        var coinX = 140, coinY = Math.round(h * 0.50);
+        body += '<circle cx="' + coinX + '" cy="' + coinY + '" r="55" fill="#fef08a" stroke="#ca8a04" stroke-width="3"/>';
+        body += '<circle cx="' + coinX + '" cy="' + coinY + '" r="46" fill="none" stroke="#eab308" stroke-width="1.5" stroke-dasharray="4,3"/>';
+        body += '<text x="' + coinX + '" y="' + (coinY - 6) + '" font-family="Khmer OS Battambang, sans-serif" font-size="18" font-weight="bold" fill="#854d0e" text-anchor="middle">រូបកាក់</text>';
+        body += '<text x="' + coinX + '" y="' + (coinY + 18) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#854d0e" text-anchor="middle">P(H) = 1/2</text>';
+
+        // Die
+        var dieX = 340, dieY = coinY - 50, dsz = 100;
+        body += '<rect x="' + dieX + '" y="' + dieY + '" width="' + dsz + '" height="' + dsz + '" rx="16" fill="#ffffff" stroke="#e11d48" stroke-width="3"/>';
+        // 5 dots on die
+        var ddots = [
+          [dieX + 25, dieY + 25], [dieX + 75, dieY + 25],
+          [dieX + 50, dieY + 50],
+          [dieX + 25, dieY + 75], [dieX + 75, dieY + 75]
+        ];
+        ddots.forEach(function (pt) {
+          body += '<circle cx="' + pt[0] + '" cy="' + pt[1] + '" r="7" fill="#e11d48"/>';
+        });
+        body += '<text x="' + (dieX + dsz / 2) + '" y="' + (dieY + dsz + 28) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" font-weight="bold" fill="#be123c" text-anchor="middle">គ្រាប់ឡុកឡាក់ ៖ P(លេខ៥) = 1/6</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 17. Bar Chart (ក្រាបសសរ)
+    K.svgBarChart = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var title = opts.title || 'ក្រាបសសរ ៖ ផ្លែឈើដែលចូលចិត្ត';
+      var body = '';
+      var data = opts.data || [12, 18, 9, 14];
+      var labels = opts.labels || ['ចេក', 'ស្វាយ', 'ក្រូច', 'ប៉ោម'];
+      var colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'];
+      var maxVal = 20;
+
+      var ox = 70, oy = Math.round(h * 0.78);
+      var chartW = w - 120, chartH = oy - 80;
+
+      // Axes
+      body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + (ox + chartW) + '" y2="' + oy + '" stroke="#475569" stroke-width="2.5"/>';
+      body += '<line x1="' + ox + '" y1="' + oy + '" x2="' + ox + '" y2="70" stroke="#475569" stroke-width="2.5"/>';
+
+      // Y Ticks
+      for (var v = 0; v <= maxVal; v += 5) {
+        var ty = oy - (v / maxVal) * chartH;
+        body += '<line x1="' + (ox - 4) + '" y1="' + ty + '" x2="' + (ox + chartW) + '" y2="' + ty + '" stroke="#e2e8f0" stroke-width="1.2"/>';
+        body += '<text x="' + (ox - 10) + '" y="' + (ty + 5) + '" font-family="sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="end">' + v + '</text>';
+      }
+
+      var n = data.length;
+      var slot = chartW / n, bw = slot * 0.55;
+      data.forEach(function (val, idx) {
+        var bh = (val / maxVal) * chartH;
+        var bx = ox + idx * slot + (slot - bw) / 2;
+        var by = oy - bh;
+        body += '<rect x="' + bx + '" y="' + by + '" width="' + bw + '" height="' + bh + '" rx="4" fill="' + colors[idx % colors.length] + '"/>';
+        body += '<text x="' + (bx + bw / 2) + '" y="' + (by - 6) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">' + val + '</text>';
+        body += '<text x="' + (bx + bw / 2) + '" y="' + (oy + 22) + '" font-family="Khmer OS Battambang, sans-serif" font-size="13" font-weight="bold" fill="#334155" text-anchor="middle">' + labels[idx] + '</text>';
+      });
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 18. Pie Chart (ក្រាបផ្លិត)
+    K.svgPieChart = function (x, y, w, h, opts) {
+      w = w || 560; h = h || 360; opts = opts || {};
+      var title = opts.title || 'ក្រាបផ្លិត ៖ ចំណាយថវិកាគ្រួសារ';
+      var body = '';
+      var slices = opts.slices || [
+        { pct: 50, label: 'ម្ហូបអាហារ', color: '#3b82f6' },
+        { pct: 25, label: 'ការសិក្សា', color: '#10b981' },
+        { pct: 15, label: 'សម្លៀកបំពាក់', color: '#f59e0b' },
+        { pct: 10, label: 'សន្សំ', color: '#ef4444' }
+      ];
+
+      var cx = Math.round(w * 0.36), cy = Math.round(h * 0.54), r = 95;
+      var startDeg = -90;
+
+      slices.forEach(function (sl) {
+        var sweepDeg = (sl.pct / 100) * 360;
+        var endDeg = startDeg + sweepDeg;
+        var a1 = startDeg * Math.PI / 180;
+        var a2 = endDeg * Math.PI / 180;
+        var x1 = cx + r * Math.cos(a1), y1 = cy + r * Math.sin(a1);
+        var x2 = cx + r * Math.cos(a2), y2 = cy + r * Math.sin(a2);
+        var large = sweepDeg > 180 ? 1 : 0;
+        var path = 'M ' + cx + ' ' + cy + ' L ' + x1 + ' ' + y1 + ' A ' + r + ' ' + r + ' 0 ' + large + ' 1 ' + x2 + ' ' + y2 + ' Z';
+        body += '<path d="' + path + '" fill="' + sl.color + '" stroke="#ffffff" stroke-width="2.5"/>';
+
+        // Percentage text inside slice
+        var midDeg = startDeg + sweepDeg / 2;
+        var ma = midDeg * Math.PI / 180;
+        var tx = cx + (r * 0.65) * Math.cos(ma), ty = cy + (r * 0.65) * Math.sin(ma);
+        body += '<text x="' + tx + '" y="' + (ty + 5) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">' + sl.pct + '%</text>';
+
+        startDeg = endDeg;
+      });
+
+      // Legend on right
+      var legX = Math.round(w * 0.64), legY = 100;
+      slices.forEach(function (sl, idx) {
+        var ly = legY + idx * 36;
+        body += '<rect x="' + legX + '" y="' + ly + '" width="18" height="18" rx="4" fill="' + sl.color + '"/>';
+        body += '<text x="' + (legX + 28) + '" y="' + (ly + 14) + '" font-family="Khmer OS Battambang, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">' + sl.label + ' (' + sl.pct + '%)</text>';
+      });
+
+      body += '<text x="' + (w / 2) + '" y="' + (h - 20) + '" font-family="Khmer OS Battambang, sans-serif" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">ផលបូកមុំផ្ចិតសរុប = ៣៦០° (ស្មើនឹង ១០០%)</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
     return K;
   }
 
@@ -19411,7 +20216,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7Integers(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgNumberLine = K.svgNumberLine;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -19465,14 +20270,7 @@ function g10TransReview(A) {
   - ចំនួនកាន់តែទៅស្តាំ កាន់តែមានតម្លៃ **ធំ**
   - ចំនួនកាន់តែទៅឆ្វេង កាន់តែមានតម្លៃ **តូច**
 • **ឧទាហរណ៍** ៖ ចំណុច $A(2)$ ស្ថិតនៅខាងស្តាំគល់ $O$ ចម្ងាយ ២ ឯកតា`, { size: 20 }),
-        card(660, 155, 560, 375, 'ការប្រៀបធៀប & លំដាប់ចំនួនគត់', R`• **វិធានប្រៀបធៀប** ៖
-  - បើចំនួន $a$ នៅខាងស្តាំ $b$ លើបន្ទាត់ចំនួន នោះ $a > b$
-  - បើចំនួន $a$ នៅខាងឆ្វេង $b$ លើបន្ទាត់ចំនួន នោះ $a < b$
-• **ការប្រៀបធៀបតាមខ្ទង់** ៖
-  - ចំនួនដែលមានចំនួនខ្ទង់ច្រើនជាង គឺ **ធំជាង** (ឧ. $102 > 98$)
-  - បើចំនួនខ្ទង់ស្មើគ្នា ត្រូវប្រៀបធៀបពីខ្ទង់ខាងឆ្វេងបំផុតទៅ
-• **ឧទាហរណ៍** ៖
-  - $7452 > 7389$ (ព្រោះខ្ទង់រយ $4 > 3$)`, { size: 20 }),
+        svgNumberLine(660, 155, 560, 375, { min: 0, max: 10, title: 'គំនូសបំព្រួញ ៖ បន្ទាត់ចំនួនគត់ធម្មជាតិ' }),
         S.box(60, 545, 1160, 80, R`!!វិធាន!! ៖ លើបន្ទាត់ចំនួន ៖ ឆ្វេង < ស្តាំ ជានិច្ច! $0 < 1 < 2 < 3 < 4 < \dots$`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -19949,7 +20747,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7DivisorsMultiples(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgFactorTree = K.svgFactorTree, svgVenn2 = K.svgVenn2;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -20043,15 +20841,7 @@ function g10TransReview(A) {
   - $\implies 36 - 24 = 12 \ \vdots \ 6$
 • **ទ្រឹស្តីបទទី ២** ៖
   ប្រសិនបើ $a \ \vdots \ m$ នោះគ្រប់ពហុគុណ $k \times a$ ក៏ចែកដាច់នឹង $m$ ដែរ ($k \in \mathbb{N}$)`, { size: 20 }),
-        card(660, 155, 560, 375, 'ករណីមិនចែកដាច់ & ការទាញសន្និដ្ឋាន', R`• **ទ្រឹស្តីបទទី ៣ (តួមួយមិនចែកដាច់)** ៖
-  ប្រសិនបើ $a$ ចែកដាច់នឹង $m$ ប៉ុន្តែ $b$ **មិនចែកដាច់** នឹង $m$ នោះ ៖
-  $$(a + b) \text{ មិនចែកដាច់នឹង } m$$
-  $$(a - b) \text{ មិនចែកដាច់នឹង } m$$
-• **ឧទាហរណ៍** ៖
-  - $30 \ \vdots \ 5$ តែ $13 \not\vdots \ 5$
-  - $\implies 30 + 13 = 43 \not\vdots \ 5$
-• **ចំណាំ** ៖ បើតួទាំងពីរមិនចែកដាច់ ផលបូកអាចចែកដាច់បាន!
-  (ឧ. $7 \not\vdots \ 5$ និង $8 \not\vdots \ 5$ តែ $7 + 8 = 15 \ \vdots \ 5$)`, { size: 20 }),
+        svgFactorTree(660, 155, 560, 375, { title: 'គំនូសបំព្រួញ ៖ ដើមឈើតួចែកនៃ ៦០' }),
         S.box(60, 545, 1160, 80, R`!!វិធានសំខាន់!! ៖ គ្រប់តួចែកដាច់ $\implies$ ផលបូកចែកដាច់! តួមួយមិនចែកដាច់ $\implies$ ផលបូកមិនចែកដាច់!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -20133,15 +20923,7 @@ function g10TransReview(A) {
   - **ជំហាន ១** ៖ បំបែកចំនួននីមួយៗជាផលគុណកត្តាបឋម
   - **ជំហាន ២** ៖ ជ្រើសរើសយកតែ **កត្តាបឋមរួម** ដែលមាន **និទស្សន្តតូចជាងគេ**
   - **ជំហាន ៣** ៖ ធ្វើផលគុណកត្តាទាំងនោះ`, { size: 20 }),
-        card(660, 155, 560, 375, 'ឧទាហរណ៍រក PGCD', R`• **ឧទាហរណ៍** ៖ រក $\text{PGCD}(72, 120)$
-  - បំបែកជាកត្តាបឋម ៖
-    $$72 = 2^3 \times 3^2$$
-    $$120 = 2^3 \times 3 \times 5$$
-  - កត្តាបឋមរួមគឺ $2$ និង $3$ ៖
-    - ស្វ័យគុណតូចជាងគេនៃ ២ គឺ $2^3$
-    - ស្វ័យគុណតូចជាងគេនៃ ៣ គឺ $3^1$
-    (កត្តា $5$ មិនរួម មិនយកទេ)
-  - $\implies \text{PGCD}(72, 120) = 2^3 \times 3 = 8 \times 3 = \mathbf{24}$`, { size: 20 }),
+        svgVenn2(660, 155, 560, 375, { title: 'គំនូសបំព្រួញ ៖ ដ្យាក្រាមវ៉ែន GCD & LCM' }),
         S.box(60, 545, 1160, 80, R`!!វិធាន PGCD!! ៖ យកតែកត្តារួម + ស្វ័យគុណតូចជាងគេ! $\text{PGCD}(72, 120) = 2^3 \times 3 = 24$ !`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -20477,7 +21259,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7RelativeIntegers(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgNumberLine = K.svgNumberLine;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -20528,15 +21310,7 @@ function g10TransReview(A) {
   - បើ $a > 0 \implies |a| = a$ (ឧ. $|+5| = 5$)
   - បើ $a = 0 \implies |0| = 0$
   - បើ $a < 0 \implies |a| = -a$ (ឧ. $|-7| = -(-7) = 7$)`, { size: 20 }),
-        card(660, 155, 560, 375, 'ចំនួនផ្ទុយ (Opposite Numbers)', R`• **និយមន័យចំនួនផ្ទុយ** ៖
-  - ពីរចំនួនហៅថា **ផ្ទុយគ្នា** កាលណាវាស្ថិតនៅសងខាងគល់ $0$ និងមានចម្ងាយស្មើគ្នាទៅគល់ $0$ (មានតម្លៃដាច់ខាតស្មើគ្នា តែមានសញ្ញាផ្ទុយគ្នា)។
-• **រូបមន្ត** ៖
-  - ចំនួនផ្ទុយនៃ $a$ គឺ $-a$
-  - ចំនួនផ្ទុយនៃ $-a$ គឺ $-(-a) = a$
-• **ឧទាហរណ៍** ៖
-  - ចំនួនផ្ទុយនៃ $+8$ គឺ $-8$
-  - ចំនួនផ្ទុយនៃ $-15$ គឺ $+15$
-  - ចំនួនផ្ទុយនៃ $0$ គឺ $0$ ខ្លួនឯង!`, { size: 20 }),
+        svgNumberLine(660, 155, 560, 375, { min: -5, max: 5, highlight: [-3, 0, 4], title: 'គំនូសបំព្រួញ ៖ បន្ទាត់ចំនួនគត់រ៉ឺឡាទីប' }),
         S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ តម្លៃដាច់ខាតចេញវិជ្ជមាន ឬសូន្យជានិច្ច! $|-9| = |+9| = 9$ ! ចំនួនផ្ទុយមានផលបូកស្មើ ០!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -20598,15 +21372,7 @@ function g10TransReview(A) {
 • **ផលបូកចំនួនផ្ទុយ (Inverse Element)** ៖
   $$a + (-a) = 0$$
   (លក្ខណៈពិសេសជួយលុបតួស្មើគ្នា!)`, { size: 20 }),
-        card(660, 155, 560, 375, 'វិធីដកចំនួនគត់រ៉ឺឡាទីប (Subtraction)', R`• **វិធានបំប្លែងវិធីដកទៅជាវិធីបូក** ៖
-  ដើម្បីដកចំនួន $b$ ចេញពី $a$ គេត្រូវយក $a$ **បូកនឹងចំនួនផ្ទុយ** នៃ $b$ ៖
-  $$a - b = a + (-b)$$
-• **ឧទាហរណ៍សំខាន់ៗ** ៖
-  - $(+8) - (+3) = (+8) + (-3) = \mathbf{+5}$
-  - $(+5) - (+9) = (+5) + (-9) = \mathbf{-4}$
-  - $(-6) - (+4) = (-6) + (-4) = \mathbf{-10}$
-  - $(-7) - (-10) = (-7) + (+10) = \mathbf{+3}$
-• **ចំណាំ** ៖ ដកជួបដក ក្លាយជាបូក ៖ $-(-b) = +b$`, { size: 20 }),
+        svgNumberLine(660, 155, 560, 375, { min: -4, max: 6, interval: [-2, 3], intervalLabel: '(-2) + 5 = +3', title: 'គំនូសបំព្រួញ ៖ ប្រមាណវិធីលើបន្ទាត់ចំនួន' }),
         S.box(60, 545, 1160, 80, R`!!វិធានមាសវិធីដក!! ៖ ដកគឺបូកនឹងចំនួនផ្ទុយ! $a - (-b) = a + b$ ជានិច្ច!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -21011,7 +21777,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7Fractions(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgFraction = K.svgFraction;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -21062,14 +21828,7 @@ function g10TransReview(A) {
   - ភាគយកធំជាង ឬស្មើភាគបែង ៖ $|a| \ge |b|$
   - តម្លៃរបស់វាធំជាង ឬស្មើ ១ ៖ $\left|\frac{a}{b}\right| \ge 1$
   - ឧទាហរណ៍ ៖ $\frac{7}{4}, \; \frac{11}{5}, \; \frac{9}{9} = 1$`, { size: 20 }),
-        card(660, 155, 560, 375, 'ចំនួនចម្រុះ (Mixed Numbers)', R`• **និយមន័យចំនួនចម្រុះ** ៖
-  - ជាចំនួនដែលផ្សំឡើងដោយចំនួនគត់ និងប្រភាគសុទ្ធ ៖
-    $$q \frac{r}{b} = q + \frac{r}{b}$$
-• **ការបំប្លែងប្រភាគមិនសុទ្ធ $\to$ ចំនួនចម្រុះ** ៖
-  - ធ្វើវិធីចែក $a \div b$ បានផលចែក $q$ និងសំណល់ $r$ ៖
-    $$\frac{17}{5} = 3 \frac{2}{5} \quad (17 = 5 \times 3 + 2)$$
-• **ការបំប្លែងចំនួនចម្រុះ $\to$ ប្រភាគមិនសុទ្ធ** ៖
-  $$q \frac{r}{b} = \frac{q \times b + r}{b} \implies 4 \frac{3}{7} = \frac{4 \times 7 + 3}{7} = \mathbf{\frac{31}{7}}$$`, { size: 20 }),
+        svgFraction(660, 155, 560, 375, { num: 3, den: 4, title: 'គំនូសបំព្រួញ ៖ តំណាងប្រភាគ ៣/៤ លើរង្វង់ និងបន្ទះចតុកោណ' }),
         S.box(60, 545, 1160, 80, R`!!បំប្លែងរហ័ស!! ៖ ចំនួនចម្រុះ $q \frac{r}{b} = \frac{q \times b + r}{b}$ ៖ យកផ្នែកគត់គុណភាគបែង បូកភាគយក!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -21505,7 +22264,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7Decimals(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgNumberLine = K.svgNumberLine;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -21557,14 +22316,7 @@ function g10TransReview(A) {
 • **ឧទាហរណ៍** ៖
   - $8.45 > 8.39$ (ព្រោះខ្ទង់ភាគដប់ $4 > 3$)
   - $12.06 < 12.60$ (ព្រោះខ្ទង់ភាគដប់ $0 < 6$)`, { size: 20 }),
-        card(660, 155, 560, 375, 'ការថែមលេខសូន្យខាងចុងផ្នែកទសភាគ', R`• **លក្ខណៈពិសេស** ៖
-  ការថែម ឬលុបលេខ $0$ នៅខាងចុងផ្នែកទសភាគ **មិនធ្វើឱ្យតម្លៃប្រែប្រួលឡើយ** ៖
-  $$3.5 = 3.50 = 3.500$$
-• **បច្ចេកទេសប្រៀបធៀបស្រួល** ៖
-  - ថែមលេខ $0$ ឱ្យមានចំនួនខ្ទង់ទសភាគស្មើគ្នា ៖
-  - ប្រៀបធៀប $0.7$ និង $0.68$ ៖
-    $$0.7 = 0.70 \implies 0.70 > 0.68 \implies \mathbf{0.7 > 0.68}$$
-  - (ជៀសវាងច្រឡំថា $68 > 7$!)`, { size: 20 }),
+        svgNumberLine(660, 155, 560, 375, { min: 0, max: 10, title: 'គំនូសបំព្រួញ ៖ ទីតាំងចំនួនទសភាគលើបន្ទាត់ចំនួន' }),
         S.box(60, 545, 1160, 80, R`!!ក្បួនប្រៀបធៀប!! ៖ ថែមសូន្យឱ្យស្មើខ្ទង់គ្នា ៖ $0.70 > 0.68$ ជួយកុំឱ្យច្រឡំគិតថា ៦៨ ធំជាង ៧!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -22000,7 +22752,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7Percentages(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgPercentGrid = K.svgPercentGrid;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -22053,14 +22805,7 @@ function g10TransReview(A) {
 • **៣. ប្រភាគ ឬទសភាគ $\to$ ភាគរយ** ៖
   - គុណនឹង $100\%$ ៖
     $$0.85 \times 100\% = \mathbf{85\%}, \quad \frac{3}{5} \times 100\% = \mathbf{60\%}$$`, { size: 20 }),
-        card(660, 155, 560, 375, 'តារាងសមមូលដែលត្រូវចងចាំ', R`• **តារាងមាសនៃការបំប្លែង** ៖
-  - $10\% = \frac{1}{10} = 0.1$
-  - $20\% = \frac{1}{5} = 0.2$
-  - $25\% = \frac{1}{4} = 0.25$
-  - $50\% = \frac{1}{2} = 0.5$
-  - $75\% = \frac{3}{4} = 0.75$
-  - $12.5\% = \frac{1}{8} = 0.125$
-  - $33\frac{1}{3}\% = \frac{1}{3} \approx 0.333$`, { size: 20 }),
+        svgPercentGrid(660, 155, 560, 375, { percent: 25, title: 'គំនូសបំព្រួញ ៖ គំរូក្រឡាភាគរយ ២៥% (២៥/១០០ = ០.២៥)' }),
         S.box(60, 545, 1160, 80, R`!!គន្លឹះរហ័ស!! ៖ ចង់ប្តូរលេខអ្វីក៏ដោយទៅជាភាគរយ គ្រាន់តែយកលេខនោះ «គុណនឹង ១០០%»!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -22092,13 +22837,7 @@ function g10TransReview(A) {
 • **ឧទាហរណ៍ទី ១** ៖
   ក្នុងថ្នាក់មួយមានសិស្ស ៤០ នាក់ ក្នុងនោះស្រីមាន ២៤ នាក់។ តើសិស្សស្រីស្មើនឹងប៉ុន្មានភាគរយ?
   $$P = \frac{24}{40} \times 100\% = \frac{3}{5} \times 100\% = \mathbf{60\%}$$`, { size: 20 }),
-        card(660, 155, 560, 375, 'ការស្វែងរកចំនួនដើម (Inverse Problem)', R`• **ស្វែងរកចំនួនដើម $B$ ពេលស្គាល់ $A$ និង $p\%$** ៖
-  បើ $p\%$ នៃ $B$ ស្មើនឹង $A$ នោះចំនួនដើម $B$ គឺ ៖
-  $$B = \frac{A}{p\%} = \frac{A \times 100}{p}$$
-• **ឧទាហរណ៍ទី ២** ៖
-  រកចំនួនមួយដែល $25\%$ របស់វាស្មើនឹង $30$ ៖
-  $$B = \frac{30}{25\%} = \frac{30 \times 100}{25} = 30 \times 4 = \mathbf{120}$$
-  (ផ្ទៀងផ្ទាត់ ៖ $25\% \times 120 = 30$ ត្រឹមត្រូវ!)`, { size: 20 }),
+        svgPercentGrid(660, 155, 560, 375, { percent: 50, title: 'គំនូសបំព្រួញ ៖ គំរូក្រឡាភាគរយ ៥០% (ពាក់កណ្ដាល = ១/២)' }),
         S.box(60, 545, 1160, 80, R`!!រូបមន្ត!! ៖ រកភាគរយ ៖ យក «ចំណែកចែកចំនួនសរុប រួចគុណ ១០០%»! រកចំនួនដើម ៖ យក «ចំណែកចែកភាគរយ»!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -22486,7 +23225,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7Measurements(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgMetricLadder = K.svgMetricLadder;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -22537,15 +23276,7 @@ function g10TransReview(A) {
 • **ឧទាហរណ៍** ៖
   - $3.5\text{ km} = 3.5 \times 1000 = \mathbf{3500\text{ m}}$
   - $480\text{ cm} = 480 \div 100 = \mathbf{4.8\text{ m}}$`, { size: 20 }),
-        card(660, 155, 560, 375, 'រង្វាស់ក្រឡាផ្ទៃ & ផ្ទៃដីកសិកម្ម (Area)', R`• **រង្វាស់ក្រឡាផ្ទៃ ($\text{m}^2$)** ៖
-  - ក្នុងមួយកាំ **គុណ ឬចែកនឹង ១០០** ៖
-    $$1\text{ m}^2 = 100\text{ dm}^2 = 10\,000\text{ cm}^2$$
-    $$1\text{ km}^2 = 1\,000\,000\text{ m}^2$$
-• **ខ្នាតផ្ទៃដីកសិកម្ម** ៖
-  - **ហិកតា (hectare - $\text{ha}$)** ៖
-    $$1\text{ ha} = 1\text{ hm}^2 = \mathbf{10\,000\text{ m}^2}$$
-  - **អា (are - $\text{a}$)** ៖ $1\text{ a} = 1\text{ dam}^2 = 100\text{ m}^2$
-  - $\implies 1\text{ ha} = 100\text{ a}$`, { size: 20 }),
+        svgMetricLadder(660, 155, 560, 375, { title: 'គំនូសបំព្រួញ ៖ ជណ្តើរបំលែងខ្នាតប្រវែង (km ទៅ mm)' }),
         S.box(60, 545, 1160, 80, R`!!ខ្នាតដីស្រែ!! ៖ ១ ហិកតា ($\text{ha}$) ស្មើនឹង ១០,០០០ ម៉ែត្រការ៉េ ($\text{m}^2$) ឬស្មើនឹង ១០០ អា ($\text{a}$)!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -22984,7 +23715,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7AlgebraicExpressions(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgAreaShape = K.svgAreaShape;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -23077,16 +23808,7 @@ function g10TransReview(A) {
 • **ឧទាហរណ៍** ៖
   - $5x + 3x = (5 + 3)x = \mathbf{8x}$
   - $7y - 12y = (7 - 12)y = \mathbf{-5y}$`, { size: 20 }),
-        card(660, 155, 560, 375, 'ការបង្រួមកន្សោមមានច្រើនអថេរ', R`• **ឧទាហរណ៍** ៖ បង្រួមកន្សោម
-  $$M = 4x + 7y - 2x + 3 - 5y + 8$$
-• **ដំណោះស្រាយ** ៖
-  - ផ្គុំតួដូចគ្នា ៖
-    $$M = (4x - 2x) + (7y - 5y) + (3 + 8)$$
-  - គណនាក្នុងក្រុមនីមួយៗ ៖
-    $$4x - 2x = 2x$$
-    $$7y - 5y = 2y$$
-    $$3 + 8 = 11$$
-  - $\implies \mathbf{M = 2x + 2y + 11}$`, { size: 20 }),
+        svgAreaShape(660, 155, 560, 375, 'parallelogram', { title: 'គំនូសបំព្រួញ ៖ គំរូធរណីមាត្រនៃកន្សោមពីជគណិត S = a × b' }),
         S.box(60, 545, 1160, 80, R`!!បច្ចេកទេស!! ៖ គូសបន្ទាត់សម្គាល់តួដូចគ្នា ឬផ្គុំក្រុមតួដូចគ្នាចូលគ្នា ជួយឱ្យការបង្រួមមិនដែលបាត់តួ!`, { size: 24, align: 'center', anim: true })
       ]),
 
@@ -23480,7 +24202,7 @@ function g10TransReview(A) {
      ========================================================================== */
   function g7EquationsLinear(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgBalanceScale = K.svgBalanceScale;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -23534,14 +24256,7 @@ function g10TransReview(A) {
   - សមីការអាចមានឫសមួយគត់ (ករណីទូទៅ $x = -b/a$)
   - សមីការគ្មានឫស (ករណីមិនពិត $0x = b, b \neq 0$)
   - សមីការមានឫសរាប់មិនអស់ ($0x = 0$)`, { size: 20 }),
-        card(660, 155, 560, 375, 'ឧទាហរណ៍ជាក់ស្តែងពីសៀវភៅពុម្ព', R`**ក. ក្នុងចំណោម $2, 3, 4$ តើតម្លៃណាជាឫសនៃ $3x + 5 = 14$?**
-• ចំពោះ $x = 2$ ៖ $3(2) + 5 = 6 + 5 = 11 \neq 14$ (មិនពិត)
-• ចំពោះ $x = 3$ ៖ $3(3) + 5 = 9 + 5 = 14 = 14$ (**ពិត**)
-• ចំពោះ $x = 4$ ៖ $3(4) + 5 = 12 + 5 = 17 \neq 14$ (មិនពិត)
-👉 ដូចនេះ $x = 3$ ជាឫសតែមួយគត់នៃសមីការ។
-
-**ខ. ផ្ទៀងផ្ទាត់ $y = -2$ ក្នុង $4 - 3y = 10$ ៖**
-អង្គទី១ $= 4 - 3(-2) = 4 + 6 = 10 = $ អង្គទី២ (ពិត) 👉 $y = -2$ ជាឫស។`, { size: 19 }),
+        svgBalanceScale(660, 155, 560, 375, { title: 'គំនូសបំព្រួញ ៖ គំរូជញ្ជីងថ្លឹងសមីការ x + 3 = 7 ⇒ x = 4' }),
         S.box(60, 545, 1160, 80, R`!!វិធានផ្ទៀងផ្ទាត់!! ៖ ជំនួសតម្លៃ $x$ ចូលអង្គទាំងសងខាង បើឃើញតម្លៃលេខស្មើគ្នា នោះតម្លៃនោះជាឫសពិតប្រាកដ។`, { bg: '#ecfdf5', border: '#10b981', color: '#065f46' })
       ]),
 
@@ -24027,7 +24742,7 @@ $$2~500x = 900~000 \implies x = \frac{900~000}{2~500} = 360$$
      ========================================================================== */
   function g7Inequalities(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgNumberLine = K.svgNumberLine;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -24077,16 +24792,7 @@ $$A - B = (3x + 5) - (3x + 2) = 5 - 2 = 3 > 0$$
 • លក្ខណៈនេះអនុវត្តដូចគ្នាចំពោះសញ្ញា $\le, >, \ge$។
 • **វិធានលើកតួប្ដូរសញ្ញា ៖**
   គេអាចលើកតួពីអង្គម្ខាងទៅអង្គម្ខាងទៀត ដោយប្ដូរសញ្ញាតួនោះ ($+$ ទៅ $-$, $-$ ទៅ $+$) ដោយរក្សាទិសដៅដដែល។`, { size: 20 }),
-        card(660, 155, 560, 375, 'ឧទាហរណ៍ដោះស្រាយមួយជំហានៗ', R`**ក. ដោះស្រាយ $x - 6 > 9$ ៖**
-លើក $-6$ ទៅអង្គទី២ ប្តូរជា $+6$ ៖
-$$x > 9 + 6 \implies x > 15$$
-
-**ខ. ដោះស្រាយ $x + 8 \le 3$ ៖**
-លើក $+8$ ទៅអង្គទី២ ប្តូរជា $-8$ ៖
-$$x \le 3 - 8 \implies x \le -5$$
-
-**គ. ដោះស្រាយ $y - 2.5 \ge 4.5$ ៖**
-$$y \ge 4.5 + 2.5 \implies y \ge 7$$`, { size: 20 }),
+        svgNumberLine(660, 155, 560, 375, { min: -3, max: 6, interval: [2, 6], intervalLabel: 'x > 2 (គំនូសព្រួញ)', title: 'គំនូសបំព្រួញ ៖ តំណាងវិសមភាព x > 2 លើបន្ទាត់ចំនួន' }),
         S.box(60, 545, 1160, 80, R`!!សម្គាល់!! ៖ វិធីបូក និងវិធីដក មិនធ្វើឱ្យប៉ះពាល់ដល់ទិសដៅនៃវិសមភាពឡើយ (ទិសដៅនៅដដែល)។`, { bg: '#ecfdf5', border: '#10b981', color: '#065f46' })
       ]),
 
@@ -24515,7 +25221,7 @@ $$x \le 50~000\text{ រៀល}$$
      ========================================================================== */
   function g7RatiosProportions(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgFraction = K.svgFraction;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -24566,12 +25272,7 @@ $$\frac{a}{b} = \frac{a \times k}{b \times k} \qquad \text{និង} \qquad \fr
 • **ការសម្រួលផលធៀប ៖**
   - គឺការចែកតួទាំងពីរនឹង PGCD របស់វា ដើម្បីទទួលបានទម្រង់ប្រភាគបង្រួមមិនបាន។
 • បើផលធៀបមានទសភាគ ឬប្រភាគ ត្រូវគុណនឹងកត្តារួមដើម្បីឱ្យក្លាយជាចំនួនគត់ធម្មជាតិ។`, { size: 20 }),
-        card(660, 155, 560, 375, 'ឧទាហរណ៍សម្រួល ៣ ប្រភេទ', R`**១. សម្រួលចំនួនគត់ ៖**
-$$36 : 48 = \frac{36 \div 12}{48 \div 12} = \frac{3}{4} = 3 : 4$$
-**២. សម្រួលប្រភាគ ៖**
-$$\frac{2}{3} : \frac{5}{6} = \frac{2}{3} \times \frac{6}{5} = \frac{12}{15} = \frac{4}{5} = 4 : 5$$
-**៣. សម្រួលទសភាគ ៖**
-$$1.5 : 2.5 = \frac{1.5 \times 10}{2.5 \times 10} = \frac{15}{25} = \frac{3}{5} = 3 : 5$$`, { size: 20 }),
+        svgFraction(660, 155, 560, 375, { num: 2, den: 5, title: 'គំនូសបំព្រួញ ៖ គំរូផលធៀប ២ : ៣ (ផ្នែក ២ ធៀប ៥ ផ្នែកសរុប)' }),
         S.box(60, 545, 1160, 80, R`!!ស្តង់ដារ!! ៖ ផលធៀបចុងក្រោយត្រូវតែជាចំនួនគត់តូចបំផុត និងបង្រួមមិនបាន (a និង b បឋមរវាងគ្នា)។`, { bg: '#ecfdf5', border: '#10b981', color: '#065f46' })
       ]),
 
@@ -25017,7 +25718,7 @@ $$W_2 = 4 \times 32 = 128\text{ m}$$
      ========================================================================== */
   function g7IntroGeometry(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgGeomBasics = K.svgGeomBasics;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -25070,15 +25771,7 @@ $$W_2 = 4 \times 32 = 128\text{ m}$$
   - អក្សរតូចក្នុងវង់ក្រចក ៖ $(d), (L), (\Delta)$
   - ឈ្មោះពីរចំណុចនៅលើបន្ទាត់ ៖ $(AB)$
   - អក្សរពីរនៅចុងសងខាង ៖ $(xy)$`, { size: 20 }),
-        card(660, 155, 560, 375, 'ទំនាក់ទំនង និងអាក់ស្យូមបន្ទាត់', R`• **ទំនាក់ទំនងចំណុច និងបន្ទាត់ ៖**
-  - $A \in (d)$ ៖ ចំណុច $A$ នៅលើបន្ទាត់ $(d)$
-  - $B \notin (d)$ ៖ ចំណុច $B$ មិននៅលើបន្ទាត់ $(d)$
-
-• **អាក់ស្យូមគ្រឹះនៃបន្ទាត់ ៖**
-  - **តាមពីរចំណុចផ្សេងគ្នា គេអាចគូសបានបន្ទាត់តែមួយគត់!**
-
-• **ចំណុចរត់ត្រង់ជួរគ្នា (Collinear points) ៖**
-  - គឺជាចំណុចទាំងឡាយណាដែលស្ថិតនៅលើបន្ទាត់តែមួយ។`, { size: 19 }),
+        svgGeomBasics(660, 155, 560, 375, 'line', { title: 'គំនូសបំព្រួញ ៖ បន្ទាត់ត្រង់ (d) និងចំណុច A, B' }),
         S.box(60, 545, 1160, 80, R`!!ច្បាប់គ្រឹះ!! ៖ ពីរចំណុចកំណត់បានបន្ទាត់ត្រង់មួយគត់ជានិច្ច គ្មានបន្ទាត់ទីពីរឡើយ។`, { bg: '#ecfdf5', border: '#10b981', color: '#065f46' })
       ]),
 
@@ -25104,16 +25797,7 @@ $$N = \frac{n(n - 1)}{2}$$
 • $O$ ហៅថា **គល់** នៃកន្លះបន្ទាត់។
 • កន្លះបន្ទាត់មានគល់កំណត់ច្បាស់លាស់ តែលាតសន្ធឹងគ្មានទីបញ្ចប់ទៅទិសដៅម្ខាងទៀត។
 • គេតាងដោយ ៖ $[Ox)$ ឬ $Ox$ (អក្សរមុខជាគល់ជានិច្ច)។`, { size: 20 }),
-        card(660, 155, 560, 375, 'កន្លះបន្ទាត់ឈមគ្នា (Opposite Rays)', R`• **និយមន័យ ៖** កន្លះបន្ទាត់ពីរហៅថា **ឈមគ្នា** កាលណាវា ៖
-  ១. មាន **គល់រួមតែមួយ** ($O$)
-  ២. ស្ថិតនៅលើ **បន្ទាត់ត្រង់តែមួយ**
-  ៣. មាន **ទិសដៅផ្ទុយគ្នា**
-
-\`\`\`
-     x <────────── O ──────────> y
-            [Ox)       [Oy)
-\`\`\`
-👉 កន្លះបន្ទាត់ $[Ox)$ និង $[Oy)$ ជាគូកន្លះបន្ទាត់ឈមគ្នា។`, { size: 19 }),
+        svgGeomBasics(660, 155, 560, 375, 'ray', { title: 'គំនូសបំព្រួញ ៖ កាំរស្មី [Ax) មានគល់ A កំណត់ច្បាស់' }),
         S.box(60, 545, 1160, 80, R`!!ប្រយ័ត្ន!! ៖ កន្លះបន្ទាត់ [AB) និង [BA) មិនដូចគ្នាទេ! [AB) មានគល់ត្រង់ A, រីឯ [BA) មានគល់ត្រង់ B។`, { bg: '#fee2e2', border: '#ef4444', color: '#991b1b' })
       ]),
 
@@ -25144,16 +25828,7 @@ $$N = \frac{n(n - 1)}{2}$$
   - គឺជាចម្ងាយរវាងចំណុច $A$ និង $B$
   - គេតាងដោយ ៖ $AB$ ឬ $BA$ (គ្មានដង្កៀប)
   - ប្រវែងជាចំនួនវិជ្ជមានដាច់ខាត ($AB > 0$) គិតជា $\text{cm, m, mm...}$។`, { size: 20 }),
-        card(660, 155, 560, 375, 'ការបូកប្រវែងអង្កត់', R`• **លក្ខណៈគ្រឹះ ៖**
-  បើចំណុច $B$ ស្ថិតនៅលើអង្កត់ $[AC]$ (ចំណុច $B$ នៅចន្លោះ $A$ និង $C$) នោះ ៖
-  $$AB + BC = AC$$
-• ផ្ទុយមកវិញ បើ $AB + BC = AC$ នោះចំណុចទាំងបី $A, B, C$ រត់ត្រង់ជួរគ្នា ហើយ $B$ នៅចន្លោះ $A$ និង $C$។
-
-\`\`\`
-    A ──────────── B ────────── C
-    |<─── AB ───>|<─── BC ───>|
-    |<──────────── AC ────────>|
-\`\`\``, { size: 19 }),
+        svgGeomBasics(660, 155, 560, 375, 'plane', { title: 'គំនូសបំព្រួញ ៖ ប្លង់ (P) និងចំណុចក្នុងប្លង់' }),
         S.box(60, 545, 1160, 80, R`!!ភាពខុសគ្នានៃការសរសេរ!! ៖ [AB] ជារូបអង្កត់ធរណីមាត្រ; រីឯ AB = 5 cm គឺជាតម្លៃប្រវែងលេខ។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -25168,15 +25843,7 @@ $$N = \frac{n(n - 1)}{2}$$
 \`\`\`
     A ──────//────── M ──────//────── B
 \`\`\``, { size: 20 }),
-        card(660, 155, 560, 375, 'ឧទាហរណ៍សៀវភៅពុម្ពទំព័រ ៣៧', R`**ប្រធាន ៖** គេឱ្យអង្កត់ $AB = 12\text{ cm}$។
-• $M$ ជាចំណុចកណ្ដាលនៃ $[AB]$។ គណនា $AM$។
-• $C$ ជាចំណុចលើ $[AB]$ ដោយ $AC = 4\text{ cm}$។ គណនា $CB$ និង $MC$។
-
-• **ដំណោះស្រាយ ៖**
-  - $AM = \frac{AB}{2} = \frac{12}{2} = 6\text{ cm}$
-  - $CB = AB - AC = 12 - 4 = 8\text{ cm}$
-  - ដោយ $AC < AM$ ($4 < 6$) នាំឱ្យ $C$ នៅចន្លោះ $A$ និង $M$ ៖
-    $$MC = AM - AC = 6 - 4 = 2\text{ cm}$$`, { size: 19 }),
+        svgGeomBasics(660, 155, 560, 375, 'segment-midpoint', { title: 'គំនូសបំព្រួញ ៖ អង្កត់ [AB] និងចំណុចកណ្ដាល M (AM = MB)' }),
         S.box(60, 545, 1160, 80, R`!!សម្គាល់លើរូប!! ៖ គេប្រើសញ្ញាឆ្នូតដូចគ្នា (// ឬ |) លើផ្នែក AM និង MB ដើម្បីបញ្ជាក់ថាប្រវែងស្មើគ្នា។`, { bg: '#ecfdf5', border: '#10b981', color: '#065f46' })
       ]),
 
@@ -25517,7 +26184,7 @@ $$BC = CD = \frac{BD}{2} = \frac{65}{2} = 32.5\text{ m}$$
      ========================================================================== */
   function g7Angles(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgAngle = K.svgAngle;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -25594,16 +26261,7 @@ $$BC = CD = \frac{BD}{2} = \frac{65}{2} = 32.5\text{ m}$$
 • **៣. មុំទាល (Obtuse Angle)** ៖
   - ជារាល់មុំដែលមានរង្វាស់ធំជាង $90^\circ$ តែតូចជាង $180^\circ$ ៖
   $$90^\circ < \alpha < 180^\circ$$`, { size: 19 }),
-        card(660, 155, 560, 375, 'មុំរាប មុំកោង និងមុំពេញ', R`• **៤. មុំរាប (Straight Angle)** ៖
-  - មានរង្វាស់ស្មើនឹង $180^\circ$ ៖
-  $$\alpha = 180^\circ \quad (\text{ជ្រុងទាំងពីរជាកន្លះបន្ទាត់ឈមគ្នា})$$
-• **៥. មុំកោង (Reflex Angle)** ៖
-  - មានរង្វាស់ធំជាង $180^\circ$ តែតូចជាង $360^\circ$ ៖
-  $$180^\circ < \alpha < 360^\circ$$
-• **៦. មុំពេញ (Complete / Full Angle)** ៖
-  - មានរង្វាស់ស្មើនឹងមួយជុំរង្វង់ពេញ ៖
-  $$\alpha = 360^\circ$$
-• **៧. មុំសូន្យ (Zero Angle)** ៖ $\alpha = 0^\circ$ (ជ្រុងត្រួតស៊ីគ្នា)`, { size: 19 }),
+        svgAngle(660, 155, 560, 375, 'acute', { title: 'គំនូសបំព្រួញ ៖ មុំស្រួច (០° < រង្វាស់មុំ < ៩០°)' }),
         S.box(60, 545, 1160, 80, R`📊 ខ្នាតតម្រៀប ៖ $0^\circ < \text{មុំស្រួច} < 90^\circ (\text{មុំកែង}) < \text{មុំទាល} < 180^\circ (\text{មុំរាប}) < \text{មុំកោង} < 360^\circ (\text{មុំពេញ})$។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -25757,15 +26415,7 @@ $$BC = CD = \frac{BD}{2} = \frac{65}{2} = 32.5\text{ m}$$
   - **គូទី១** ៖ $\angle AOC$ និង $\angle BOD$
   - **គូទី២** ៖ $\angle AOD$ និង $\angle BOC$
 • **ចំណាំ** ៖ មុំទល់កំពូលមានកំពូល $O$ រួមតែមួយ តែជ្រុងរបស់វាស្ថិតនៅលើបន្ទាត់ត្រង់តែមួយរត់ផ្ទុយទិសគ្នា។`, { size: 19 }),
-        card(660, 155, 560, 375, 'ទ្រឹស្ដីបទគ្រឹះ & សម្រាយបញ្ជាក់', R`• **ទ្រឹស្ដីបទ** ៖
-  $$\textbf{មុំទល់កំពូលពីរ តែងតែមានរង្វាស់ស្មើគ្នាជានិច្ច!}$$
-  $$\angle AOC = \angle BOD \quad \text{និង} \quad \angle AOD = \angle BOC$$
-• **សម្រាយបញ្ជាក់** ៖
-  - ពិនិត្យមុំជាប់គ្នាបន្ថែមគ្នាលើបន្ទាត់ $AB$ ៖
-    $$\angle AOC + \angle COB = 180^\circ \implies \angle AOC = 180^\circ - \angle COB \quad (1)$$
-  - ពិនិត្យមុំជាប់គ្នាបន្ថែមគ្នាលើបន្ទាត់ $CD$ ៖
-    $$\angle BOD + \angle COB = 180^\circ \implies \angle BOD = 180^\circ - \angle COB \quad (2)$$
-  - តាម $(1)$ និង $(2) \implies \angle AOC = \angle BOD$ (ពិត)។`, { size: 18 }),
+        svgAngle(660, 155, 560, 375, 'vertical', { title: 'គំនូសបំព្រួញ ៖ មុំទល់កំពូលពីរស្មើគ្នាជានិច្ច' }),
         S.box(60, 545, 1160, 80, R`!!ច្បាប់គ្រឹះ!! ៖ ឱ្យតែបន្ទាត់ពីរកាត់គ្នា នោះមុំឈមមុខគ្នាស្មើគ្នាជានិច្ច ($\text{មុំទល់កំពូល}$)។`, { bg: '#ecfdf5', border: '#10b981', color: '#065f46' })
       ]),
 
@@ -26068,7 +26718,7 @@ $$\angle AOC = 36^\circ \quad \text{និង} \quad \angle BOD = 54^\circ$$
      ========================================================================== */
   function g7ParallelPerpendicular(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgLines = K.svgLines;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -26122,14 +26772,7 @@ $$\angle AOC = 36^\circ \quad \text{និង} \quad \angle BOD = 54^\circ$$
   - គូសបន្ទាត់តាមជ្រុងទីពីរនៃបន្ទាត់កែងកាត់តាម $A$។
 • **លទ្ធផល** ៖
   - គេបានបន្ទាត់ $(d') \perp (d)$ កាត់តាមចំណុច $A$ យ៉ាងសុក្រឹត។`, { size: 19 }),
-        card(660, 155, 560, 375, 'វិធីទី ២ ៖ ប្រើដែកឈាន (Compass)', R`• **ជំហានទី ១** ៖
-  - យកដែកឈានដាក់ត្រង់ $A$ គូសធ្នូរង្វង់កាត់បន្ទាត់ $(d)$ ត្រង់ពីរចំណុច $P$ និង $Q$។
-• **ជំហានទី ២** ៖
-  - ពីចំណុច $P$ និង $Q$ គូសធ្នូរង្វង់ពីរដែលមានកាំដូចគ្នា ($R > \frac{PQ}{2}$) ឱ្យកាត់គ្នាត្រង់ចំណុច $M$ ម្ខាងទៀត។
-• **ជំហានទី ៣** ៖
-  - គូសបន្ទាត់ត្រង់កាត់តាមចំណុច $A$ និង $M$។
-• **លទ្ធផល** ៖
-  - បន្ទាត់ $(AM)$ គឺជាបន្ទាត់កែងនឹង $(d)$ ត្រង់ចំណោលកែង $H$។`, { size: 18 }),
+        svgLines(660, 155, 560, 375, 'perpendicular', { title: 'គំនូសបំព្រួញ ៖ បន្ទាត់កែង d₁ ⊥ d₂ បង្កើតមុំកែង ៩០°' }),
         S.box(60, 545, 1160, 80, R`💡 ចំណាំ ៖ ការសង់ដោយដែកឈានផ្ដល់ភាពសុក្រឹតតាមក្បួនធរណីមាត្រសុទ្ធសាធ ដោយមិនបាច់ពឹងផ្អែកលើលេខរង្វាស់ឡើយ។`, { bg: '#f0fdf4', border: '#22c55e', color: '#14532d' })
       ]),
 
@@ -26183,16 +26826,7 @@ $$\angle AOC = 36^\circ \quad \text{និង} \quad \angle BOD = 54^\circ$$
 • **ខ.** រកប្រវែង $MB$ និងបញ្ជាក់ពីមូលហេតុ។
 • **គ.** គណនាប្រវែង $MI$។
 • **ឃ.** តើ $\triangle MAB$ ជាត្រីកោណអ្វី? គណនាក្រឡាផ្ទៃ $\triangle MAB$។`, { size: 18 }),
-        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត', R`• **ក. ប្រវែង $IA$ និង $IB$** ៖
-  - ដោយ $I$ ជាចំណុចកណ្ដាល $[AB] \implies IA = IB = \frac{10}{2} = 5\text{ cm}$។
-• **ខ. ប្រវែង $MB$** ៖
-  - ដោយ $M \in (\Delta)$ (មេដ្យាទ័រ) $\implies MB = MA = 13\text{ cm}$។
-• **គ. ប្រវែង $MI$** ៖
-  - ក្នុងត្រីកោណកែង $MIA$ កែងត្រង់ $I$ តាមពីតាករ ៖
-  $$MI = \sqrt{MA^2 - IA^2} = \sqrt{13^2 - 5^2} = \sqrt{144} = 12\text{ cm}$$
-• **ឃ. ប្រភេទត្រីកោណ និងក្រឡាផ្ទៃ** ៖
-  - $MA = MB = 13\text{ cm} \implies \triangle MAB$ ជា **ត្រីកោណសមបាត** កំពូល $M$។
-  - ក្រឡាផ្ទៃ ៖ $S = \frac{AB \times MI}{2} = \frac{10 \times 12}{2} = 60\text{ cm}^2$។`, { size: 17 }),
+        svgLines(660, 155, 560, 375, 'transversal', { title: 'គំនូសបំព្រួញ ៖ បន្ទាត់ស្របកាត់ដោយបន្ទាត់ខ្វែង (មុំឆ្លាស់ក្នុង)' }),
         S.box(60, 545, 1160, 80, R`💡 សន្និដ្ឋាន ៖ គ្រប់ចំណុចនៅលើមេដ្យាទ័រនៃបាត បង្កើតបានជាត្រីកោណសមបាតជានិច្ច។`, { bg: '#f0fdf4', border: '#22c55e', color: '#14532d' })
       ]),
 
@@ -26567,7 +27201,7 @@ $$\angle ABE = 40^\circ \quad \text{និង} \quad \angle ECD = 50^\circ$$
      ========================================================================== */
   function g7GeometricFigures2D(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgTriangle = K.svgTriangle;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -26646,15 +27280,7 @@ $$\angle ABE = 40^\circ \quad \text{និង} \quad \angle ECD = 50^\circ$$
 • **លំហាត់ទី ២** ៖
   - ពហុកោណប៉ោងមួយមានចំនួនអង្កត់ទ្រូងសរុបស្មើនឹង $14$។
   - តើពហុកោណនោះមានជ្រុងចំនួនប៉ុន្មាន?`, { size: 19 }),
-        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត', R`• **លំហាត់ទី ១ ($n = 8$)** ៖
-  - ក. ចំនួនអង្កត់ទ្រូង ៖
-    $$D = \frac{8(8 - 3)}{2} = \frac{8 \times 5}{2} = 20 \text{ អង្កត់ទ្រូង}$$
-  - ខ. ផលបូកមុំក្នុង ៖
-    $$S = (8 - 2) \times 180^\circ = 6 \times 180^\circ = 1080^\circ$$
-• **លំហាត់ទី ២** ៖
-  $$\frac{n(n - 3)}{2} = 14 \iff n(n - 3) = 28$$
-  - ដោយ $28 = 7 \times 4 = 7 \times (7 - 3) \implies n = 7$
-  - ដូចនេះ ពហុកោណនោះគឺ **សប្តកោណ** ($7$ ជ្រុង)។`, { size: 18 }),
+        svgTriangle(660, 155, 560, 375, 'right', { title: 'គំនូសបំព្រួញ ៖ ត្រីកោណកែង & ទ្រឹស្តីបទពីតាករ' }),
         S.box(60, 545, 1160, 80, R`គន្លឹះ ៖ ជំនួស $D = 14$ ចូលរូបមន្ត $n(n-3) = 28$ រួចបំបែកជាផលគុណពីរចំនួនខុសគ្នា ៣ ដើម្បីរក $n$ យ៉ាងរហ័ស។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -26668,15 +27294,7 @@ $$\angle ABE = 40^\circ \quad \text{និង} \quad \angle ECD = 50^\circ$$
   - មុំបាតទាំងពីរស្មើគ្នា ៖ $\angle B = \angle C$
 • **៣. ត្រីកោណធម្មតា (Scalene)** ៖
   - ជ្រុងទាំងបីមានប្រវែងខុសៗគ្នា និងមុំទាំងបីខុសគ្នាទាំងអស់។`, { size: 18 }),
-        card(660, 155, 560, 375, 'ចំណាត់ថ្នាក់តាមរង្វាស់មុំ', R`• **១. ត្រីកោណកែង (Right-angled)** ៖
-  - មានមុំមួយជាមុំកែង ($90^\circ$)
-  - ជ្រុងឈមមុំកែងហៅថា **អ៊ីប៉ូតេនុស** (វែងជាងគេ)
-  - មុំស្រួចទាំងពីរជាមុំបំពេញគ្នា ៖ $\angle B + \angle C = 90^\circ$
-• **២. ត្រីកោណស្រួច (Acute-angled)** ៖
-  - មុំក្នុងទាំងបីសុទ្ធតែជាមុំស្រួច ($< 90^\circ$)។
-• **៣. ត្រីកោណទាល (Obtuse-angled)** ៖
-  - មានមុំក្នុងមួយជាមុំទាល ($> 90^\circ$)។
-• **ត្រីកោណកែងសមបាត** ៖ មុំកែងមួយ និងមុំស្រួចពីរស្មើ $45^\circ$។`, { size: 18 }),
+        svgTriangle(660, 155, 560, 375, 'equilateral', { title: 'គំនូសបំព្រួញ ៖ ត្រីកោណសម័ង្ស (ជ្រុង ៣ ស្មើគ្នា & មុំ ៦០°)' }),
         S.box(60, 545, 1160, 80, R`💡 កត់សម្គាល់ ៖ ត្រីកោណមួយអាចជា "កែងផង និងសមបាតផង" (ត្រីកោណកែងសមបាត ដែលមុំស្រួចស្មើ $45^\circ$)។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -27080,7 +27698,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
      ========================================================================== */
   function g7PerimeterAreaPolygons(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgAreaShape = K.svgAreaShape;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -27156,15 +27774,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
   - $1\text{ m}^2 = 100\text{ dm}^2 = 10\,000\text{ cm}^2$
   - $1\text{ cm}^2 = 100\text{ mm}^2$
   - $1\text{ km}^2 = 1\,000\,000\text{ m}^2$`, { size: 18 }),
-        card(660, 155, 560, 375, 'ឯកតាវាស់ដីធ្លីកសិកម្ម (Agrarian Units)', R`• **១. ហិចតា (Hectare, $\text{ha}$)** ៖
-  - ស្មើនឹង ១ ហិកតូម៉ែត្រការ៉េ ($\text{hm}^2$) ៖
-  $$1\text{ ha} = 10\,000\text{ m}^2$$
-• **២. អារ (Are, $a$)** ៖
-  - ស្មើនឹង ១ ដេកាម៉ែត្រការ៉េ ($\text{dam}^2$) ៖
-  $$1\text{ a} = 100\text{ m}^2 \implies 1\text{ ha} = 100\text{ a}$$
-• **៣. សង់ទីអារ (Centiare, $\text{ca}$)** ៖
-  $$1\text{ ca} = 1\text{ m}^2$$
-• **ឧទាហរណ៍** ៖ ដី $3.5\text{ ha} = 35\,000\text{ m}^2$។`, { size: 18 }),
+        svgAreaShape(660, 155, 560, 375, 'parallelogram', { title: 'គំនូសបំព្រួញ ៖ ក្រឡាផ្ទៃប្រលេឡូក្រាម S = b × h' }),
         S.box(60, 545, 1160, 80, R`!!ក្បួនបំប្លែង!! ៖ ប្រវែងគម្លាត ១០, ក្រឡាផ្ទៃគម្លាត ១០០ ($10^2$), មាឌគម្លាត ១០០០ ($10^3$)។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -27198,15 +27808,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
   - ទទឹង ៖ $a = \frac{S}{b}$
   - បណ្ដោយ ៖ $b = \frac{S}{a}$
 • **ឧទាហរណ៍** ៖ ចតុកោណកែងមានទទឹង $6\text{ m}$ បណ្ដោយ $9\text{ m} \implies S = 6 \times 9 = 54\text{ m}^2$។`, { size: 18 }),
-        card(660, 155, 560, 375, 'ក្រឡាផ្ទៃការ៉េ', R`• **រូបមន្តគ្រឹះ** ៖
-  - ស្មើនឹងជ្រុងគុណនឹងជ្រុង (ជ្រុងការ៉េ) ៖
-  $$S = c \times c = c^2$$
-  - $c$ ៖ ប្រវែងជ្រុងនៃការ៉េ (Side)
-• **រូបមន្តទាញរកជ្រុង** ៖
-  $$c = \sqrt{S}$$
-• **ឧទាហរណ៍** ៖
-  - ការ៉េមានជ្រុង $8\text{ cm} \implies S = 8^2 = 64\text{ cm}^2$
-  - ការ៉េមានក្រឡាផ្ទៃ $81\text{ m}^2 \implies$ ជ្រុង $c = \sqrt{81} = 9\text{ m}$។`, { size: 18 }),
+        svgAreaShape(660, 155, 560, 375, 'trapezoid', { title: 'គំនូសបំព្រួញ ៖ ក្រឡាផ្ទៃរូបជើងចង្ក្រាន S = (a+b)h/2' }),
         S.box(60, 545, 1160, 80, R`💡 ចងចាំ ៖ ចតុកោណកែង $S = a \times b$ និង ការ៉េ $S = c^2$ (ខ្នាតប្រវែងដូចគ្នាទើបគុណចេញជាខ្នាតការ៉េ)។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -27569,7 +28171,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
      ========================================================================== */
   function g7Circles(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgCircle = K.svgCircle;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -27623,13 +28225,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
 • **៣. ចំណុចស្ថិតនៅក្រៅរង្វង់** ៖
   $$OM > R \iff M \text{ នៅខាងក្រៅរង្វង់}$$
 • **ថាស (Disk)** ៖ រួមបញ្ចូលទាំងរង្វង់ និងផ្ទៃខាងក្នុង ($OM \le R$)។`, { size: 18 }),
-        card(660, 155, 560, 375, 'ទីតាំងបន្ទាត់ធៀបនឹងរង្វង់', R`តាង $H$ ជាចំណោលកែងនៃ $O$ លើបន្ទាត់ $(d)$ និង $h = OH$ ៖
-• **១. បន្ទាត់នៅក្រៅរង្វង់ (គ្មានចំណុចរួម)** ៖
-  $$OH > R \iff (d) \cap \mathcal{C} = \emptyset$$
-• **២. បន្ទាត់ប៉ះរង្វង់ (មាន ១ ចំណុចរួម)** ៖
-  $$OH = R \iff (d) \text{ ប៉ះរង្វង់ត្រង់ } H$$
-• **៣. បន្ទាត់កាត់រង្វង់ (មាន ២ ចំណុចរួម)** ៖
-  $$OH < R \iff (d) \text{ កាត់រង្វង់ត្រង់ ២ ចំណុច}$$`, { size: 18 }),
+        svgCircle(660, 155, 560, 375, 'elements', { title: 'គំនូសបំព្រួញ ៖ ធាតុសំខាន់ៗនៃរង្វង់ (ផ្ចិត កាំ អង្កត់ផ្ចិត បន្ទាត់ប៉ះ)' }),
         S.box(60, 545, 1160, 80, R`💡 ចំណាំ ៖ ប្រៀបធៀបចម្ងាយពីផ្ចិត $OH$ ជាមួយនឹងកាំ $R$ ដើម្បីកំណត់ទីតាំងបន្ទាត់ធៀបនឹងរង្វង់។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -28044,7 +28640,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
      ========================================================================== */
   function g7SolidsVolumeArea(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgSolid3D = K.svgSolid3D;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -28100,16 +28696,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
 • **ខ.** គណនាក្រឡាផ្ទៃសរុប $S_T$ នៃប្រអប់ក្រដាស។
 • **គ.** គណនាមាឌ $V$ នៃប្រអប់នេះជា $\text{cm}^3$។
 • **ឃ.** តើប្រអប់នេះអាចផ្ទុកទឹកបានចំណុះប៉ុន្មានលីត្រ ($\text{L}$)?`, { size: 18 }),
-        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត', R`• **ក. ក្រឡាផ្ទៃខាង $S_L$** ៖
-  $$S_L = 2(15 + 20) \times 10 = 2 \times 35 \times 10 = 700\text{ cm}^2$$
-• **ខ. ក្រឡាផ្ទៃសរុប $S_T$** ៖
-  $$S_{\text{បាត}} = 15 \times 20 = 300\text{ cm}^2$$
-  $$S_T = 700 + 2(300) = 700 + 600 = 1300\text{ cm}^2$$
-• **គ. មាឌ $V$** ៖
-  $$V = 15 \times 20 \times 10 = 3000\text{ cm}^3$$
-• **ឃ. ចំណុះគិតជាលីត្រ** ៖
-  - ដោយ $1\text{ L} = 1000\text{ cm}^3 \implies \text{ចំណុះ} = \frac{3000}{1000} = 3\text{ L}$
-  - ដូចនេះ ប្រអប់នេះមានចំណុះ $3\text{ លីត្រ}$។`, { size: 17 }),
+        svgSolid3D(660, 155, 560, 375, 'cuboid', { title: 'គំនូសបំព្រួញ ៖ ប្រលេពីប៉ែតកែង (មាឌ V = a × b × c)' }),
         S.box(60, 545, 1160, 80, R`💡 គន្លឹះ ៖ $1\text{ L} = 1\text{ dm}^3 = 1000\text{ cm}^3$ គឺជាស្ពានចម្លងរវាងមាឌ និងចំណុះរាវ!`, { bg: '#f0fdf4', border: '#22c55e', color: '#14532d' })
       ]),
 
@@ -28152,15 +28739,7 @@ $$\angle A = 85^\circ, \quad \angle B = 115^\circ, \quad \angle C = 75^\circ$$
   - ពន្លាតផ្ទៃខាងនៃស៊ីឡាំងចេញជារូប **ចតុកោណកែង** មួយដែលមាន ៖
     - បណ្ដោយ = បរិមាត្ររង្វង់បាត ($2\pi R$)
     - ទទឹង = កម្ពស់ស៊ីឡាំង ($h$)។`, { size: 18 }),
-        card(660, 155, 560, 375, 'រូបមន្តក្រឡាផ្ទៃខាង និងសរុប', R`• **ក្រឡាផ្ទៃខាង ($S_L$)** ៖
-  - ស្មើនឹងបរិមាត្របាត គុណនឹងកម្ពស់ ៖
-  $$S_L = 2\pi R \times h = 2\pi R h$$
-• **ក្រឡាផ្ទៃបាតទាំងពីរ ($2S_B$)** ៖
-  $$2S_B = 2 \times (\pi R^2) = 2\pi R^2$$
-• **ក្រឡាផ្ទៃសរុប ($S_T$)** ៖
-  - ស្មើនឹងក្រឡាផ្ទៃខាង បូកក្រឡាផ្ទៃបាតទាំងពីរ ៖
-  $$S_T = S_L + 2S_B = 2\pi Rh + 2\pi R^2 = 2\pi R (h + R)$$
-• **ចំណាំ** ៖ បើស៊ីឡាំងគ្មានគម្របលើ ៖ $S_T = 2\pi Rh + \pi R^2$។`, { size: 17 }),
+        svgSolid3D(660, 155, 560, 375, 'cylinder', { title: 'គំនូសបំព្រួញ ៖ ស៊ីឡាំង (មាឌ V = πr²h)' }),
         S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖ ក្រឡាផ្ទៃខាងស៊ីឡាំង $S_L = 2\pi Rh$ និង ក្រឡាផ្ទៃសរុប $S_T = 2\pi Rh + 2\pi R^2$។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -28540,7 +29119,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
      ========================================================================== */
   function g7Symmetry(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgSymmetry = K.svgSymmetry;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -28592,12 +29171,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
 • **៤. ការរត់ត្រង់ជួរនៃចំណុច** ៖
   - បើ $A, B, C$ រត់ត្រង់ជួរ នោះរូបភាព $A', B', C'$ ក៏រត់ត្រង់ជួរគ្នាដែរ
 • **៥. ភាពស្របគ្នា និងភាពកែងគ្នា** ៖ ត្រូវបានរក្សាដដែល។`, { size: 18 }),
-        card(660, 155, 560, 375, 'រូបធរណីមាត្រដែលមានផ្ចិតឆ្លុះ', R`រូបធរណីមាត្រមួយមានផ្ចិតឆ្លុះ $I$ កាលណាភាពឆ្លុះធៀបនឹង $I$ បម្លែងរូបនោះឱ្យត្រួតស៊ីនឹងខ្លួនឯងវិញ ($S_I(F) = F$) ៖
-• **១. អង្កត់ $[AB]$** ៖ ផ្ចិតឆ្លុះគឺចំណុចកណ្ដាលនៃអង្កត់
-• **២. ប្រលេឡូក្រាម** ៖ ផ្ចិតឆ្លុះគឺប្រសព្វអង្កត់ទ្រូងទាំងពីរ
-• **៣. ចតុកោណកែង ចតុកោណស្មើ ការ៉េ** ៖ ផ្ចិតឆ្លុះគឺប្រសព្វអង្កត់ទ្រូង
-• **៤. រង្វង់** ៖ ផ្ចិតឆ្លុះគឺ **ផ្ចិតនៃរង្វង់**
-• ⚠️ **ត្រីកោណទូទៅ** គ្មានផ្ចិតឆ្លុះឡើយ!`, { size: 18 }),
+        svgSymmetry(660, 155, 560, 375, 'axial', { title: 'គំនូសបំព្រួញ ៖ ភាពឆ្លុះធៀបនឹងបន្ទាត់ (អ័ក្សឆ្លុះ Δ)' }),
         S.box(60, 545, 1160, 80, R`💡 កត់ចំណាំ ៖ ប្រលេឡូក្រាម ចតុកោណកែង ចតុកោណស្មើ ការ៉េ និងរង្វង់ សុទ្ធតែមានផ្ចិតឆ្លុះមួយគត់។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -28995,7 +29569,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
      ========================================================================== */
   function g7Probability(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgProbability = K.svgProbability;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -29044,14 +29618,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
   - គឺជា **សំណុំនៃរាល់លទ្ធផលដែលអាចកើតមានទាំងអស់** នៃវិញ្ញាសាចៃដន្យមួយ។
 • **ចំនួនករណីអាច ($n(S)$)** ៖
   - ជាចំនួនធាតុសរុបនៃលំហសំណាក $S$។`, { size: 18 }),
-        card(660, 155, 560, 375, 'ឧទាហរណ៍លំហសំណាកទូទៅ', R`• **១. បោះកាក់មួយ** ៖
-  $$S = \{\text{ក្បាល } (H), \text{កន្ទុយ } (T)\} \implies n(S) = 2$$
-• **២. បោះគ្រាប់ឡុកឡាក់មួយ** ៖
-  $$S = \{1, 2, 3, 4, 5, 6\} \implies n(S) = 6$$
-• **៣. បោះកាក់ពីរដំណាលគ្នា** ៖
-  $$S = \{HH, HT, TH, TT\} \implies n(S) = 4$$
-• **៤. ចាប់បៀមួយសន្លឹកពីបៀ ៥២ សន្លឹក** ៖
-  $$n(S) = 52$$`, { size: 18 }),
+        svgProbability(660, 155, 560, 375, 'coins', { title: 'គំនូសបំព្រួញ ៖ គំរូកាក់ និង គ្រាប់ឡុកឡាក់' }),
         S.box(60, 545, 1160, 80, R`💡 ក្បួនចងចាំ ៖ លំហសំណាក $S$ ជាសំណុំមេនៃរាល់លទ្ធផលទាំងអស់ ហើយ $n(S)$ ជាចំនួនករណីអាចសរុប។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -29108,15 +29675,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
   - ធ្វើផលចែក $a \div b$ (តម្លៃនៅចន្លោះ $0$ និង $1$)
 • **៣. ទម្រង់ភាគរយ (Percentage)** ៖
   - យកទសភាគគុណនឹង $100\%$ (ពី $0\%$ ដល់ $100\%$)។`, { size: 18 }),
-        card(660, 155, 560, 375, 'តារាងប្រៀបធៀបទម្រង់ទូទៅ', R`| ឱកាសកើតឡើង | ប្រភាគ | ទសភាគ | ភាគរយ |
-| :--- | :---: | :---: | :---: |
-| **មិនអាចកើតមាន** | $\frac{0}{n}$ | $0$ | $0\%$ |
-| **ឱកាសទាប** | $\frac{1}{10}$ | $0.1$ | $10\%$ |
-| **មួយភាគបួន** | $\frac{1}{4}$ | $0.25$ | $25\%$ |
-| **ឱកាសស្មើគ្នា (កាក់)** | $\frac{1}{2}$ | $0.5$ | $50\%$ |
-| **បីភាគបួន** | $\frac{3}{4}$ | $0.75$ | $75\%$ |
-| **ឱកាសខ្ពស់** | $\frac{9}{10}$ | $0.9$ | $90\%$ |
-| **ប្រាកដជាកើតឡើង** | $\frac{n}{n} = 1$ | $1.0$ | $100\%$ |`, { size: 17 }),
+        svgProbability(660, 155, 560, 375, 'tree', { title: 'គំនូសបំព្រួញ ៖ ដ្យាក្រាមដើមឈើ (Tree Diagram)' }),
         S.box(60, 545, 1160, 80, R`💡 គន្លឹះ ៖ ក្នុងការប្រឡង សិស្សអាចសរសេរប្រូបាបជាប្រភាគសម្រួល ទសភាគ ឬភាគរយ សុទ្ធតែត្រឹមត្រូវទាំងអស់។`, { bg: '#eff6ff', border: '#3b82f6', color: '#1e3a8a' })
       ]),
 
@@ -29481,7 +30040,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
      ========================================================================== */
   function g7BarCharts(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgBarChart = K.svgBarChart;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -29533,15 +30092,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
   - ខ. តើផ្លែឈើណាដែលសិស្សចូលចិត្តតិចជាងគេបំផុត?
   - គ. តើសិស្សចូលចិត្តស្វាយច្រើនជាងទុរេនប៉ុន្មាននាក់?
   - ឃ. គណនាភាគរយនៃសិស្សដែលចូលចិត្តផ្លែក្រូច។`, { size: 18 }),
-        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត', R`• **ក. ផ្លែឈើចូលចិត្តជាងគេ** ៖
-  - គឺ **ផ្លែស្វាយ** ($15$ នាក់) ព្រោះមានសសរខ្ពស់ជាងគេ។
-• **ខ. ផ្លែឈើចូលចិត្តតិចជាងគេ** ៖
-  - គឺ **ផ្លែប៉ោម** ($5$ នាក់) ព្រោះមានសសរទាបជាងគេ។
-• **គ. ភាពខុសគ្នារវាងស្វាយ និងទុរេន** ៖
-  - $15 - 8 = 7$ នាក់ (ច្រើនជាង ៧ នាក់)។
-• **ឃ. ភាគរយចូលចិត្តក្រូច** ៖
-  $$\text{ភាគរយ} = \frac{12}{50} \times 100\% = 24\%$$
-  - ដូចនេះ មានសិស្ស $24\%$ ចូលចិត្តផ្លែក្រូច។`, { size: 18 }),
+        svgBarChart(660, 155, 560, 375, { title: 'គំនូសបំព្រួញ ៖ ក្រាបសសរ (ផ្លែឈើដែលសិស្សចូលចិត្ត)' }),
         S.box(60, 545, 1160, 80, R`💡 គន្លឹះអានក្រាប ៖ ពិនិត្យកម្ពស់សសរធៀបនឹងអ័ក្សឈរដើម្បីដឹងប្រេកង់ពិតប្រាកដនៃប្រភេទនីមួយៗ។`, { bg: '#f0fdf4', border: '#22c55e', color: '#14532d' })
       ]),
 
@@ -29960,7 +30511,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
      ========================================================================== */
   function g7PieCharts(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
-        title = K.title, card = K.card, kids = K.kids;
+        title = K.title, card = K.card, kids = K.kids, svgPieChart = K.svgPieChart;
     var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
     var R = String.raw;
 
@@ -30012,15 +30563,7 @@ $$\textbf{មាឌ (V)} = \textbf{ក្រឡាផ្ទៃបាត } (S_B) 
   - ក. តើសត្វណាមានចំនួនច្រើនជាងគេ? គណនាចំនួនមាន់។
   - ខ. គណនាចំនួនទា និងចំនួនក្ងានក្នុងកសិដ្ឋាន។
   - គ. គណនាមុំផ្ចិតដែលត្រូវនឹងចំណែកនៃសត្វមាន់។`, { size: 18 }),
-        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត', R`• **ក. ចំនួនមាន់** ៖
-  - មាន់មានច្រើនជាងគេ ($50\%$)
-  $$\text{ចំនួនមាន់} = 120 \times 50\% = 120 \times 0.5 = 60 \text{ ក្បាល}$$
-• **ខ. ចំនួនទា និងក្ងាន** ៖
-  - ទា ៖ $120 \times \frac{1}{3} = 40 \text{ ក្បាល}$
-  - ក្ងាន ៖ $120 - (60 + 40) = 20 \text{ ក្បាល}$
-• **គ. មុំផ្ចិតនៃសត្វមាន់** ៖
-  $$\theta = 360^\circ \times 50\% = 360^\circ \times 0.5 = 180^\circ$$
-  - មុំផ្ចិតស្មើ $180^\circ$ (ត្រូវគ្នានឹងកន្លះរង្វង់)។`, { size: 18 }),
+        svgPieChart(660, 155, 560, 375, { title: 'គំនូសបំព្រួញ ៖ ក្រាបផ្លិត (ចំណាយថវិកាគ្រួសារ ៣៦០°)' }),
         S.box(60, 545, 1160, 80, R`💡 គន្លឹះ ៖ $50\%$ ត្រូវនឹងកន្លះរង្វង់ ($180^\circ$) និង $25\%$ ត្រូវនឹងមួយភាគបួនរង្វង់ ($90^\circ$)។`, { bg: '#f0fdf4', border: '#22c55e', color: '#14532d' })
       ]),
 
