@@ -247,9 +247,11 @@
         o = extra || {};
       }
       var sz = (o && o.size) ? o.size : 26;
-      var e = T(x, y, w, h, text, { size: sz, fill: '#f5f8fc', border: '#c5d3e8', bw: 2, radius: 16, valign: (o && o.valign) || 'top' });
+      var clr = (o && o.color) ? o.color : '#002060';
+      var e = T(x, y, w, h, text, { size: sz, fill: '#f5f8fc', border: '#c5d3e8', bw: 2, radius: 16, color: clr, valign: (o && o.valign) || 'top' });
       for (var k in o) e[k] = o[k];
       e.size = (o && o.size) ? o.size : sz;
+      if (!e.color) e.color = clr;
       return e;
     };
     // terms in circles (or rounded boxes with o.box = {w, h}) joined by arrows labelled o.op;
@@ -4745,221 +4747,299 @@ $$\implies x = \arctan(-1 \pm \sqrt{3}) + k\pi$$`, { size: 22 }),
   function trigEquations(A) { return trigBasicEq(A); }
 
   function matrices(A) {
-    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, info = K.info, kids = K.kids,
-        line = K.line, step = K.step, title = K.title, tip = K.tip, rows = K.rows, solTitle = K.solTitle,
-        matrixDiagram = K.matrixDiagram, matrixMultDiagram = K.matrixMultDiagram;
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, matrixDiagram = K.matrixDiagram, matrixMultDiagram = K.matrixMultDiagram;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
     var R = String.raw;
 
     var slides = [
-      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៤==        មេរៀនទី១', 'ម៉ាទ្រីស', info),
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៤==        មេរៀនទី១', 'ម៉ាទ្រីស (Matrices)', K.info),
 
       /* 2 */ K.toc([
-        '==១. សញ្ញាណ និងប្រភេទនៃម៉ាទ្រីស==',
-        '==២. ម៉ាទ្រីសស្មើគ្នា==',
+        '==១. សញ្ញាណ & ប្រភេទនៃម៉ាទ្រីស==',
+        '២. ម៉ាទ្រីសស្មើគ្នា',
         '==៣. ប្រមាណវិធីលើម៉ាទ្រីស (បូក ដក គុណ)==',
-        '==៤. ម៉ាទ្រីសច្រាសលំដាប់ ២ & សមីការម៉ាទ្រីស==',
-        '==៥. ពង្រឹងពុទ្ធិ និងកិច្ចការផ្ទះ=='
-      ], 40),
+        '៤. ម៉ាទ្រីសច្រាសលំដាប់ ២ & សមីការម៉ាទ្រីស',
+        '==៥. សំណួរ MCQ & កិច្ចការផ្ទះ=='
+      ]),
 
       /* 3 */ S.objective([
-        R`យល់ដឹងពីសញ្ញាណ លំដាប់ $m \times n$ ធាតុ និងប្រភេទនៃម៉ាទ្រីស`,
+        R`យល់ដឹងពីសញ្ញាណ លំដាប់ $m \times n$ និងប្រភេទនៃម៉ាទ្រីស (ជួរដេក ជួរឈរ ការ៉េ សូន្យ ឯកតា ឆ្លាស់)`,
         R`កំណត់លក្ខខណ្ឌម៉ាទ្រីសស្មើគ្នា និងគណនាអថេរមិនស្គាល់ក្នុងសមភាពម៉ាទ្រីស`,
-        R`អនុវត្តប្រមាណវិធីបូក ដក គុណស្កាលែ និងគុណពីរម៉ាទ្រីស`,
-        R`គណនាម៉ាទ្រីសច្រាសលំដាប់ $2$ និងដោះស្រាយសមីការម៉ាទ្រីស $AX = B$`
+        R`អនុវត្តប្រមាណវិធីបូក ដក គុណស្កាលែ និងគុណពីរម៉ាទ្រីស ព្រមទាំងលក្ខណៈសំខាន់ៗរបស់វា`,
+        R`គណនាម៉ាទ្រីសច្រាសលំដាប់ $2$ និងដោះស្រាយសមីការម៉ាទ្រីស $AX = B \iff X = A^{-1}B$`
       ]),
 
-      /* 4 warm-up motivation */ page([
-        line(40, 115, 1200, '!!__ការលើកទឹកចិត្ត ៖__!!  តារាងទិន្នន័យនៃការលក់សៀវភៅ ២ ថ្ងៃ តាមមុខវិជ្ជា', { size: 30 }),
-        line(120, 190, 1000, R`$\begin{array}{|c|c|c|c|} \hline \textbf{ថ្ងៃ} & \text{គណិត} & \text{រូបវិទ្យា} & \text{គីមី} \\ \hline \text{ថ្ងៃចន្ទ} & 120 & 85 & 64 \\ \hline \text{ថ្ងៃអង្គារ} & 140 & 90 & 75 \\ \hline \end{array}$`, { size: 28 }),
-        step(60, 340, 1100, R`បើគេដកតារាងចេញ ហើយយកតែចំនួនមកដាក់ក្នុងវង់ក្រចកធំ គេបាន ៖`, { size: 28 }),
-        step(250, 410, 700, R`$A = \begin{bmatrix} 120 & 85 & 64 \\ 140 & 90 & 75 \end{bmatrix}$`, { size: 36 }),
-        step(100, 500, 1000, '!!តារាងចតុកោណកែងនៃចំនួនបែបនេះ គេហៅថា «ម៉ាទ្រីស» (Matrix) ។!!', { size: 32, align: 'center' }),
-        kids()
+      /* 4 */ page([
+        sec('១.១ សញ្ញាណ និងនិយមន័យនៃម៉ាទ្រីស'),
+        card(60, 160, 600, 360, 'និយមន័យ និងលំដាប់នៃម៉ាទ្រីស', R`• **និយមន័យ** ៖ ម៉ាទ្រីស គឺជាការរៀបចំនួនជាជួរដេក និងជួរឈរ ក្នុងរាងចតុកោណកែងដាក់ក្នុងវង់ក្រចកធំ $[ \ ]$ ឬ $( \ )$ ។
+• **ធាតុនៃម៉ាទ្រីស** ៖ ចំនួននីមួយៗក្នុងម៉ាទ្រីសហៅថា ធាតុ តាងដោយ $a_{ij}$ (ជួរដេកទី $i$, ជួរឈរទី $j$) ។
+• **លំដាប់ (វិមាត្រ)** ៖ បើម៉ាទ្រីសមាន $m$ ជួរដេក និង $n$ ជួរឈរ គេថាម៉ាទ្រីសមាន **លំដាប់ $m \times n$** (អានថា $m$ គុណនឹង $n$) ។
+• **និមិត្តសញ្ញា** ៖ $A = [a_{ij}]_{m \times n}$ ឬ $A = (a_{ij})_{m \times n}$`, { size: 23 }),
+        matrixDiagram(680, 160, 540, 360),
+        S.box(60, 545, 1160, 80, R`!!ចំណាំសំខាន់!! ៖ ក្នុងការសរសេរលំដាប់ម៉ាទ្រីស $m \times n$ ត្រូវចងចាំថា **ចំនួនជួរដេក ($m$) សរសេរមុន ចំនួនជួរឈរ ($n$) សរសេរក្រោយ** ជានិច្ច!`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 5 section 1.1 definition */ page([
-        title('១.១ សញ្ញាណ និងនិយមន័យនៃម៉ាទ្រីស'),
-        S.box(40, 160, 680, 175, R`!!__និយមន័យ ៖__!!
-ម៉ាទ្រីស គឺជាការរៀបចំនួនជាជួរដេក និងជួរឈរ ក្នុងរាងចតុកោណកែងដាក់ក្នុងវង់ក្រចក $[ \ ]$ ឬ $( \ )$ ។
-បើម៉ាទ្រីសមាន $m$ ជួរដេក និង $n$ ជួរឈរ ហៅថា !!ម៉ាទ្រីសលំដាប់ $m \times n$!! ។`, { size: 26 }),
-        matrixDiagram(740, 160, 500, 370),
-        step(40, 360, 680, R`• និមិត្តសញ្ញា ៖  $A = [a_{ij}]_{m \times n}$  ($i$ ជួរដេក , $j$ ជួរឈរ)`, { size: 28 }),
-        step(40, 420, 680, R`• $a_{ij}$ ជាធាតុស្ថិតនៅជួរដេកទី $i$ និងជួរឈរទី $j$`, { size: 28 }),
-        tip(40, 490, 680, 75, R`!!ចំណាំ ៖!! ចំនួនជួរដេក ($m$) សរសេរមុន ចំនួនជួរឈរ ($n$) សរសេរក្រោយជានិច្ច!`, { size: 23 })
+      /* 5 */ page([
+        sec('ឧទាហរណ៍ជាក់ស្តែង ៖ ការតាងទិន្នន័យជាម៉ាទ្រីស'),
+        card(60, 160, 560, 360, 'តារាងទិន្នន័យពិន្ទុ និងចំនួនសៀវភៅ', R`ហាងលក់សៀវភៅមួយកត់ត្រាការលក់ក្នុងរយៈពេល ២ ថ្ងៃ ៖
+$$\begin{array}{|c|c|c|c|}
+\hline
+\textbf{ថ្ងៃ} & \text{គណិត} & \text{រូបវិទ្យា} & \text{គីមី} \\
+\hline
+\text{ថ្ងៃចន្ទ} & 120 & 85 & 64 \\
+\hline
+\text{ថ្ងៃអង្គារ} & 140 & 90 & 75 \\
+\hline
+\end{array}$$
+• គេអាចតាងទិន្នន័យនេះជាម៉ាទ្រីស $A$ ទំហំ $2 \times 3$ ៖
+$$A = \begin{bmatrix} 120 & 85 & 64 \\ 140 & 90 & 75 \end{bmatrix}$$`, { size: 22 }),
+        card(660, 160, 560, 360, 'ការកំណត់ធាតុនីមួយៗនៃម៉ាទ្រីស A', R`ពីម៉ាទ្រីស $A = \begin{bmatrix} 120 & 85 & 64 \\ 140 & 90 & 75 \end{bmatrix}$ ខាងឆ្វេង ៖
+• $a_{11} = 120$ (លក់សៀវភៅគណិតថ្ងៃចន្ទ)
+• $a_{12} = 85$ (លក់សៀវភៅរូបវិទ្យាថ្ងៃចន្ទ)
+• $a_{13} = 64$ (លក់សៀវភៅគីមីថ្ងៃចន្ទ)
+• $a_{21} = 140$ (លក់សៀវភៅគណិតថ្ងៃអង្គារ)
+• $a_{22} = 90$ (លក់សៀវភៅរូបវិទ្យាថ្ងៃអង្គារ)
+• $a_{23} = 75$ (លក់សៀវភៅគីមីថ្ងៃអង្គារ)
+• ចំនួនធាតុសរុប ៖ $2 \times 3 = 6$ ធាតុ ។`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!សរុប!! ៖ ម៉ាទ្រីស $A$ មាន $2$ ជួរដេក និង $3$ ជួរឈរ $\implies$ លំដាប់ $2 \times 3$ ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 6 example 1: order & elements */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ១ ៖__!!  គេឱ្យម៉ាទ្រីស  $A = \begin{bmatrix} 2 & -1 & 5 \\ 0 & 4 & -3 \end{bmatrix}$ ។`, { size: 30 }),
-        solTitle(440, 180),
-        step(80, 255, 1100, R`ក. កំណត់លំដាប់នៃ $A$ ៖  មាន $2$ ជួរដេក និង $3$ ជួរឈរ  $\Rightarrow$  លំដាប់ $2 \times 3$`, { size: 28, h: 52 }),
-        step(80, 320, 1100, R`ខ. កំណត់តម្លៃធាតុ ៖  $a_{11} = 2$ ,  $a_{13} = 5$ ,  $a_{22} = 4$ ,  $a_{23} = -3$`, { size: 28, h: 52 }),
-        S.conclude(440, R`ម៉ាទ្រីស $A$ មានលំដាប់ $2 \times 3$ និងមានចំនួនធាតុសរុប $6$ ធាតុ`),
-        kids(1080, 500, 160)
+      /* 6 */ page([
+        sec('១.២ ប្រភេទនៃម៉ាទ្រីសពិសេសៗ'),
+        card(60, 160, 560, 360, 'ម៉ាទ្រីសជួរដេក ជួរឈរ និងសូន្យ', R`• **ម៉ាទ្រីសជួរដេក** ៖ មានតែ $1$ ជួរដេក ($1 \times n$)
+  - ឧទាហរណ៍ ៖ $R = \begin{bmatrix} 1 & -2 & 5 \end{bmatrix}_{1 \times 3}$
+• **ម៉ាទ្រីសជួរឈរ** ៖ មានតែ $1$ ជួរឈរ ($m \times 1$)
+  - ឧទាហរណ៍ ៖ $C = \begin{bmatrix} 4 \\ -1 \\ 3 \end{bmatrix}_{3 \times 1}$
+• **ម៉ាទ្រីសសូន្យ ($O$)** ៖ គ្រប់ធាតុទាំងអស់ស្មើ $0$
+  - ឧទាហរណ៍ ៖ $O_{2 \times 2} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ម៉ាទ្រីសការ៉េ និងម៉ាទ្រីសឯកតា', R`• **ម៉ាទ្រីសការ៉េ** ៖ ចំនួនជួរដេកស្មើចំនួនជួរឈរ ($n \times n$)
+  - ឧទាហរណ៍ ៖ $S = \begin{bmatrix} 1 & 4 \\ -2 & 3 \end{bmatrix}_{2 \times 2}$
+• **ម៉ាទ្រីសឯកតា ($I$)** ៖ ម៉ាទ្រីសការ៉េដែលមានធាតុលើអង្កត់ទ្រូងមេស្មើ $1$ ហើយធាតុផ្សេងទៀតស្មើ $0$ ៖
+  $$I_2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, \quad I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!លក្ខណៈពិសេសនៃ $I$!! ៖ ម៉ាទ្រីសឯកតា $I$ ដើរតួដូចលេខ $1$ ក្នុងវិធីគុណចំនួនពិត ៖ $A \cdot I = I \cdot A = A$ ចំពោះគ្រប់ម៉ាទ្រីសការ៉េ $A$ ។`, { size: 24, align: 'center', anim: true })
       ]),
 
-      /* 7 section 1.2 types of matrices */ page([
-        title('១.២ ប្រភេទនៃម៉ាទ្រីសពិសេសៗ'),
-        line(40, 160, 1100, '!!__ម៉ាទ្រីសសំខាន់ៗដែលត្រូវចងចាំ ៖__!!', { size: 28 }),
-        step(60, 220, 1100, R`• !!ម៉ាទ្រីសជួរដេក!! ៖ មានតែ $1$ ជួរដេក ($1 \times n$) ឧ. $R = \begin{bmatrix} 1 & -2 & 5 \end{bmatrix}_{1 \times 3}$`, { size: 26, h: 48 }),
-        step(60, 280, 1100, R`• !!ម៉ាទ្រីសជួរឈរ!! ៖ មានតែ $1$ ជួរឈរ ($m \times 1$) ឧ. $C = \begin{bmatrix} 3 \\ 0 \\ -1 \end{bmatrix}_{3 \times 1}$`, { size: 26, h: 48 }),
-        step(60, 340, 1100, R`• !!ម៉ាទ្រីសការ៉េ!! ៖ ចំនួនជួរដេកស្មើចំនួនជួរឈរ ($n \times n$) ឧ. $S = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}_{2 \times 2}$`, { size: 26, h: 48 }),
-        step(60, 400, 1100, R`• !!ម៉ាទ្រីសសូន្យ ($O$)!! ៖ គ្រប់ធាតុទាំងអស់ស្មើ $0$  ឧ. $O = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$`, { size: 26, h: 48 }),
-        S.box(60, 480, 1160, 115, R`!!ម៉ាទ្រីសឯកតា ($I$) ៖!! ធាតុលើអង្កត់ទ្រូងមេស្មើ $1$ ធាតុផ្សេងទៀតស្មើ $0$
-$$I_2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \qquad I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \qquad \text{លក្ខណៈ ៖ } A \cdot I = I \cdot A = A$$`, { size: 24, align: 'center', anim: true })
+      /* 7 */ page([
+        sec('១.៣ ម៉ាទ្រីសឆ្លាស់ (Transpose Matrix)'),
+        card(60, 160, 560, 360, 'និយមន័យម៉ាទ្រីសឆ្លាស់', R`• **និយមន័យ** ៖ ម៉ាទ្រីសឆ្លាស់នៃម៉ាទ្រីស $A$ (តាងដោយ $A^T$ ឬ $A^t$) គឺបានមកពីការផ្លាស់ប្តូរ **ជួរដេកទៅជាជួរឈរ** និង **ជួរឈរទៅជាជួរដេក** ។
+• បើ $A$ មានលំដាប់ $m \times n$ នោះ $A^T$ មានលំដាប់ $n \times m$ ។
+• **ឧទាហរណ៍** ៖
+$$A = \begin{bmatrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{bmatrix}_{2 \times 3} \implies A^T = \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix}_{3 \times 2}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'លក្ខណៈសំខាន់ៗនៃម៉ាទ្រីសឆ្លាស់', R`• $(A^T)^T = A$ (ឆ្លាស់ពីរដងបានដើមវិញ)
+• $(A + B)^T = A^T + B^T$
+• $(\alpha A)^T = \alpha A^T$ (ដែល $\alpha$ ជាចំនួនពិត)
+• $(AB)^T = B^T A^T$ (!!ត្រូវប្តូរលំដាប់គុណ!!)
+• **ម៉ាទ្រីសស៊ីមេទ្រី** ៖ បើ $A^T = A$ នោះ $A$ ហៅថាម៉ាទ្រីសស៊ីមេទ្រី ។
+• **ម៉ាទ្រីសឆ្លាស់ស៊ីមេទ្រី** ៖ បើ $A^T = -A$ នោះ $A$ ហៅថាម៉ាទ្រីសឆ្លាស់ស៊ីមេទ្រី ។`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖ ជួរដេកទី $1$ នៃ $A$ ក្លាយជាជួរឈរទី $1$ នៃ $A^T$ ; ជួរដេកទី $2$ នៃ $A$ ក្លាយជាជួរឈរទី $2$ នៃ $A^T$ ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 8 section 1.3 transpose */ page([
-        title('១.៣ ម៉ាទ្រីសឆ្លាស់ (Transpose Matrix)'),
-        S.box(40, 160, 1180, 130, R`!!__និយមន័យ ៖__!!
-ម៉ាទ្រីសឆ្លាស់នៃម៉ាទ្រីស $A$ (តាងដោយ $A^T$) គឺបានមកពីការផ្លាស់ប្តូរ !!ជួរដេកទៅជាជួរឈរ!! និង !!ជួរឈរទៅជាជួរដេក!! ។
-បើ $A$ មានលំដាប់ $m \times n$ នោះ $A^T$ មានលំដាប់ $n \times m$ ។`, { size: 26 }),
-        line(40, 310, 1100, R`!!__ឧទាហរណ៍ ៖__!!  គេមាន  $A = \begin{bmatrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{bmatrix}_{2 \times 3} \implies A^T = \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix}_{3 \times 2}$`, { size: 28 }),
-        step(60, 390, 1100, R`• លក្ខណៈ ៖  $(A^T)^T = A$   ;   $(A + B)^T = A^T + B^T$   ;   $(kA)^T = k A^T$`, { size: 26, h: 46 }),
-        step(60, 450, 1100, R`• !!ប្រយ័ត្ន!! ៖  $(AB)^T = B^T A^T$  (ត្រូវប្តូរលំដាប់គុណ!)`, { size: 26, h: 46 }),
-        tip(40, 520, 1180, 80, R`• ម៉ាទ្រីសស៊ីមេទ្រី $\iff A^T = A$  ;  ម៉ាទ្រីសឆ្លាស់ស៊ីមេទ្រី $\iff A^T = -A$`, { size: 24, anim: true })
+      /* 8 */ page([
+        sec('២. ម៉ាទ្រីសស្មើគ្នា (Equality of Matrices)'),
+        card(60, 160, 560, 360, 'លក្ខខណ្ឌម៉ាទ្រីសពីរស្មើគ្នា', R`• **លក្ខខណ្ឌ** ៖ ម៉ាទ្រីសពីរ $A$ និង $B$ ស្មើគ្នា ($A = B$) លុះត្រាតែ ៖
+  1. ម៉ាទ្រីសទាំងពីរមាន **លំដាប់ដូចគ្នា** ($m \times n$) ។
+  2. ធាតុដែលត្រូវគ្នា **ស្មើគ្នារៀងៗខ្លួន** ៖
+  $$a_{ij} = b_{ij} \quad (\forall i, j)$$
+• **ឧទាហរណ៍** ៖ បើ $\begin{bmatrix} x & 2 \\ -1 & y \end{bmatrix} = \begin{bmatrix} 5 & 2 \\ -1 & -3 \end{bmatrix}$
+  នោះនាំឱ្យ $x = 5$ និង $y = -3$ ។`, { size: 23 }),
+        card(660, 160, 560, 360, 'ករណីមិនអាចស្មើគ្នា', R`• **លំដាប់ខុសគ្នា** ៖
+  $\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}_{2 \times 2} \neq \begin{bmatrix} 1 & 2 & 0 \\ 3 & 4 & 0 \end{bmatrix}_{2 \times 3}$
+  (ទោះបីធាតុភាគច្រើនដូចគ្នាក៏ដោយ)
+• **ធាតុត្រូវគ្នាមិនស្មើគ្នា** ៖
+  $\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \neq \begin{bmatrix} 1 & 2 \\ 5 & 4 \end{bmatrix}$ ព្រោះ $3 \neq 5$ ។`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!សន្និដ្ឋាន!! ៖ ម៉ាទ្រីសពីរស្មើគ្នា លុះត្រាតែមានទំហំដូចគ្នា និងគ្រប់ធាតុត្រូវគ្នាទាំងអស់ស្មើគ្នាទាំងស្រុង ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 9 section 2 equality */ page([
-        title('២. ម៉ាទ្រីសស្មើគ្នា (Equality of Matrices)'),
-        S.box(40, 160, 1180, 150, R`!!__លក្ខខណ្ឌម៉ាទ្រីសពីរស្មើគ្នា ៖__!!
-ម៉ាទ្រីសពីរ $A$ និង $B$ ស្មើគ្នា ($A = B$) លុះត្រាតែ ៖
-  ១. ម៉ាទ្រីសទាំងពីរមាន !!លំដាប់ដូចគ្នា!! ($m \times n$)
-  ២. ធាតុដែលត្រូវគ្នា !!ស្មើគ្នារៀងៗខ្លួន!! ៖  $a_{ij} = b_{ij} \quad (\forall i, j)$`, { size: 26 }),
-        line(40, 335, 1100, R`!!__លំហាត់គំរូ ៖__!!  រកតម្លៃនៃ $x, y$ បើ  $\begin{bmatrix} 2x - 1 & 4 \\ 3 & y + 2 \end{bmatrix} = \begin{bmatrix} 5 & 4 \\ 3 & 7 \end{bmatrix}$`, { size: 28 }),
-        step(80, 405, 1000, R`តាមលក្ខខណ្ឌម៉ាទ្រីសស្មើគ្នា គេបាន ៖`, { size: 26 }),
-        step(120, 460, 1000, R`$\begin{cases} 2x - 1 = 5 \\ y + 2 = 7 \end{cases} \implies \begin{cases} 2x = 6 \implies x = 3 \\ y = 7 - 2 \implies y = 5 \end{cases}$`, { size: 28 }),
-        S.conclude(535, R`$x = 3, \quad y = 5$`),
-        kids(1080, 480, 160)
+      /* 9 */ page([
+        sec('២.១ លំហាត់គំរូ ៖ ម៉ាទ្រីសស្មើគ្នា'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  រកតម្លៃនៃ $x, y, z$ ដោយដឹងថា $\begin{bmatrix} 2x - 1 & y + 3 \\ 4 & z - 2 \end{bmatrix} = \begin{bmatrix} 5 & 2y \\ 4 & 1 \end{bmatrix}$ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• តាមលក្ខខណ្ឌម៉ាទ្រីសពីរស្មើគ្នា ធាតុត្រូវគ្នាត្រូវតែស្មើគ្នា ៖`),
+        s(100, 285, 1080, R`1. ធាតុទីតាំង $(1, 1)$ ៖  $2x - 1 = 5 \implies 2x = 6 \implies x = 3$`),
+        s(100, 345, 1080, R`2. ធាតុទីតាំង $(1, 2)$ ៖  $y + 3 = 2y \implies 2y - y = 3 \implies y = 3$`),
+        s(100, 405, 1080, R`3. ធាតុទីតាំង $(2, 2)$ ៖  $z - 2 = 1 \implies z = 1 + 2 \implies z = 3$`),
+        S.box(60, 495, 1160, 115, R`!!ចម្លើយ!! ៖  $x = 3, \quad y = 3, \quad z = 3$ ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 10 section 3.1 addition / subtraction */ page([
-        title('៣.១ វិធីបូក និងវិធីដកនៃម៉ាទ្រីស'),
-        S.box(40, 160, 1180, 130, R`!!__ក្បួនគណនា ៖__!!
-• ម៉ាទ្រីសពីរអាចបូក ឬដកគ្នាបាន លុះត្រាតែវាមាន !!លំដាប់ដូចគ្នា!! ។
-• យកធាតុដែលត្រូវគ្នាបូក ឬដកគ្នា ៖  $A \pm B = [a_{ij} \pm b_{ij}]$`, { size: 26 }),
-        line(40, 310, 1100, R`!!__ឧទាហរណ៍ ៖__!!  គេឱ្យ $A = \begin{bmatrix} 2 & 3 \\ -1 & 5 \end{bmatrix}$ និង $B = \begin{bmatrix} 4 & -1 \\ 2 & 3 \end{bmatrix}$ ៖`, { size: 28 }),
-        step(60, 375, 1100, R`$A + B = \begin{bmatrix} 2+4 & 3+(-1) \\ -1+2 & 5+3 \end{bmatrix} = \begin{bmatrix} 6 & 2 \\ 1 & 8 \end{bmatrix}$`, { size: 28, h: 54 }),
-        step(60, 440, 1100, R`$A - B = \begin{bmatrix} 2-4 & 3-(-1) \\ -1-2 & 5-3 \end{bmatrix} = \begin{bmatrix} -2 & 4 \\ -3 & 2 \end{bmatrix}$`, { size: 28, h: 54 }),
-        tip(40, 520, 1180, 75, R`!!លក្ខណៈ ៖!!  $A + B = B + A$ (ត្រឡប់)  ;  $(A + B) + C = A + (B + C)$ (ផ្តុំ)  ;  $A + O = A$`, { size: 24, anim: true })
+      /* 10 */ page([
+        sec('៣.១ វិធីបូក និងវិធីដកនៃម៉ាទ្រីស'),
+        card(60, 160, 560, 360, 'និយមន័យវិធីបូក និងដក', R`• **លក្ខខណ្ឌ** ៖ ម៉ាទ្រីសពីរអាចបូក ឬដកគ្នាបាន លុះត្រាតែវាមាន **លំដាប់ដូចគ្នា** ($m \times n$) ។
+• **ក្បួនគណនា** ៖ យកធាតុដែលត្រូវគ្នាបូក ឬដកគ្នា ៖
+  $$A \pm B = [a_{ij} \pm b_{ij}]$$
+• **ឧទាហរណ៍** ៖
+$$\begin{bmatrix} 2 & 3 \\ -1 & 5 \end{bmatrix} + \begin{bmatrix} 4 & -1 \\ 2 & 3 \end{bmatrix} = \begin{bmatrix} 2+4 & 3+(-1) \\ -1+2 & 5+3 \end{bmatrix} = \begin{bmatrix} 6 & 2 \\ 1 & 8 \end{bmatrix}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'លក្ខណៈនៃវិធីបូកម៉ាទ្រីស', R`ចំពោះម៉ាទ្រីស $A, B, C$ មានលំដាប់ដូចគ្នា ៖
+• **លក្ខណៈត្រឡប់** ៖ $A + B = B + A$
+• **លក្ខណៈផ្តុំ** ៖ $(A + B) + C = A + (B + C)$
+• **ធាតុណឺត ($O$)** ៖ $A + O = O + A = A$
+• **ធាតុផ្ទុយ ($-A$)** ៖ $A + (-A) = O$
+• **ចំណាំ** ៖ បើ $A$ និង $B$ មានលំដាប់ខុសគ្នា នោះ $A + B$ និង $A - B$ **គ្មានន័យ (មិនអាចគណនាបាន)** ។`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ បូក/ដកម៉ាទ្រីស គឺបូក/ដកធាតុត្រូវគ្នា! ម៉ាទ្រីសលទ្ធផលមានលំដាប់ដដែលដូចម៉ាទ្រីសដើម ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 11 section 3.2 scalar multiplication */ page([
-        title('៣.២ ផលគុណមួយចំនួនពិតនឹងម៉ាទ្រីស'),
-        S.box(40, 160, 1180, 120, R`!!__និយមន័យ ៖__!!
-ផលគុណនៃចំនួនពិត $k \in \mathbb{R}$ នឹងម៉ាទ្រីស $A$ គឺបានមកពីការយកចំនួនពិត $k$ ទៅគុណនឹង !!គ្រប់ធាតុទាំងអស់!! នៃម៉ាទ្រីស $A$ ៖
-$$k A = k [a_{ij}] = [k \cdot a_{ij}]$$`, { size: 26 }),
-        line(40, 300, 1100, R`!!__ឧទាហរណ៍ ៖__!!  បើ $A = \begin{bmatrix} 2 & -3 \\ 1 & 4 \end{bmatrix}$ នោះ  $3A = \begin{bmatrix} 3(2) & 3(-3) \\ 3(1) & 3(4) \end{bmatrix} = \begin{bmatrix} 6 & -9 \\ 3 & 12 \end{bmatrix}$`, { size: 28 }),
-        step(60, 375, 1100, R`!!__លំហាត់គំរូ ៖__!!  គេឱ្យ $A = \begin{bmatrix} 1 & -2 \\ 3 & 0 \end{bmatrix}$ និង $B = \begin{bmatrix} 4 & 1 \\ -2 & 5 \end{bmatrix}$ ។ គណនា $2A - 3B$ ៖`, { size: 28 }),
-        step(100, 435, 1000, R`$2A - 3B = \begin{bmatrix} 2 & -4 \\ 6 & 0 \end{bmatrix} - \begin{bmatrix} 12 & 3 \\ -6 & 15 \end{bmatrix} = \begin{bmatrix} 2 - 12 & -4 - 3 \\ 6 - (-6) & 0 - 15 \end{bmatrix}$`, { size: 26, h: 54 }),
-        S.conclude(525, R`$2A - 3B = \begin{bmatrix} -10 & -7 \\ 12 & -15 \end{bmatrix}$`),
-        kids(1080, 480, 160)
+      /* 11 */ page([
+        sec('៣.២ ផលគុណមួយចំនួនពិតនឹងម៉ាទ្រីស (Scalar Multiplication)'),
+        card(60, 160, 560, 360, 'និយមន័យផលគុណស្កាលែ', R`• **និយមន័យ** ៖ ផលគុណនៃចំនួនពិត $k \in \mathbb{R}$ នឹងម៉ាទ្រីស $A$ គឺបានមកពីការយកចំនួនពិត $k$ ទៅគុណនឹង **គ្រប់ធាតុទាំងអស់** នៃម៉ាទ្រីស $A$ ៖
+$$k A = k [a_{ij}] = [k \cdot a_{ij}]$$
+• **ឧទាហរណ៍** ៖ គេឱ្យ $A = \begin{bmatrix} 2 & -3 \\ 1 & 4 \end{bmatrix}$ ៖
+$$3 A = 3 \begin{bmatrix} 2 & -3 \\ 1 & 4 \end{bmatrix} = \begin{bmatrix} 3(2) & 3(-3) \\ 3(1) & 3(4) \end{bmatrix} = \begin{bmatrix} 6 & -9 \\ 3 & 12 \end{bmatrix}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'លក្ខណៈនៃផលគុណស្កាលែ', R`ចំពោះគ្រប់ចំនួនពិត $k, p \in \mathbb{R}$ និងម៉ាទ្រីស $A, B$ ៖
+• $k(A + B) = k A + k B$
+• $(k + p)A = k A + p A$
+• $(kp)A = k(p A)$
+• $1 \cdot A = A$ និង $(-1) \cdot A = -A$
+• $0 \cdot A = O$ (ម៉ាទ្រីសសូន្យ)
+• $(kA)^T = k A^T$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!លំហាត់ហ្វឹកហាត់!! ៖ បើ $A = \begin{bmatrix} 1 & -2 \\ 3 & 0 \end{bmatrix}$ និង $B = \begin{bmatrix} 4 & 1 \\ -2 & 5 \end{bmatrix}$ គណនា $2A - 3B = \begin{bmatrix} -10 & -7 \\ 12 & -15 \end{bmatrix}$ ។`, { size: 24, align: 'center', anim: true })
       ]),
 
-      /* 12 section 3.3 matrix multiplication */ page([
-        title('៣.៣ វិធីគុណនៃពីរម៉ាទ្រីស'),
-        S.box(40, 160, 680, 175, R`!!__លក្ខខណ្ឌ និងក្បួនគុណ ៖__!!
-• ម៉ាទ្រីស $A$ អាចគុណនឹង $B$ បាន លុះត្រាតែ ៖
+      /* 12 */ page([
+        sec('៣.៣ វិធីគុណនៃពីរម៉ាទ្រីស (Matrix Multiplication)'),
+        card(60, 160, 600, 360, 'លក្ខខណ្ឌ និងក្បួនគុណ', R`• **លក្ខខណ្ឌគុណកើត** ៖ ម៉ាទ្រីស $A$ អាចគុណនឹង $B$ បាន លុះត្រាតែ ៖
   $$\textbf{ចំនួនជួរឈរនៃ } A = \textbf{ចំនួនជួរដេកនៃ } B$$
-• លំដាប់ផលគុណ ៖  $[m \times \mathbf{p}] \times [\mathbf{p} \times n] = [m \times n]$
-• ក្បួន ៖ !!«ជួរដេកគុណនឹងជួរឈរ» (Row $\times$ Column)!!`, { size: 24 }),
-        matrixMultDiagram(740, 160, 500, 370),
-        step(40, 360, 680, R`• ធាតុ $c_{ij}$ ស្មើផលបូកផលគុណរវាងជួរដេក $i$ និងជួរឈរ $j$`, { size: 26 }),
-        step(40, 420, 680, R`• !!ប្រយ័ត្ន!! ៖ ជាទូទៅ  $AB \ne BA$  (គ្មានលក្ខណៈត្រឡប់!)`, { size: 26 }),
-        tip(40, 490, 680, 80, R`!!ចំណាំ ៖!!  $(AB)C = A(BC)$ (ផ្តុំ)  ;  $A(B+C) = AB + AC$ (បំបែក)`, { size: 23 })
+• **លំដាប់ផលគុណ** ៖ $[m \times \mathbf{p}] \times [\mathbf{p} \times n] = [m \times n]$
+• **ក្បួនគណនា** ៖ ធាតុ $c_{ij}$ នៃម៉ាទ្រីសផលគុណ $C = AB$ បានមកពីផលបូកនៃផលគុណរវាងធាតុនៃ **ជួរដេកទី $i$ នៃ $A$** ជាមួយធាតុនៃ **ជួរឈរទី $j$ នៃ $B$** ៖
+$$c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{ip}b_{pj}$$`, { size: 23 }),
+        matrixMultDiagram(680, 160, 540, 360),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនទន្ទេញ!! ៖ **«ជួរដេកគុណនឹងជួរឈរ»** (Row $\times$ Column) — យកធាតុទី ១ គុណទី ១ + ទី ២ គុណទី ២ + ... បូកបញ្ចូលគ្នា!`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 13 example: multiplication 2x2 */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ៖__!!  គណនា $A \times B$ ដោយ $A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ និង $B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$ ៖`, { size: 28 }),
-        solTitle(440, 180),
-        step(60, 250, 1100, R`$AB = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} (1)(5) + (2)(7) & (1)(6) + (2)(8) \\ (3)(5) + (4)(7) & (3)(6) + (4)(8) \end{bmatrix}$`, { size: 27, h: 58 }),
-        step(60, 325, 1100, R`$AB = \begin{bmatrix} 5 + 14 & 6 + 16 \\ 15 + 28 & 18 + 32 \end{bmatrix} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$`, { size: 28, h: 54 }),
-        step(60, 400, 1100, R`• ផ្ទៀងផ្ទាត់  $BA = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 23 & 34 \\ 31 & 46 \end{bmatrix} \ne AB$`, { size: 27, h: 50 }),
-        S.conclude(495, R`$AB = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix} \quad \text{និង} \quad AB \ne BA$`),
-        kids(1080, 480, 160)
+      /* 13 */ page([
+        sec('ឧទាហរណ៍គំរូ ៖ វិធីគុណម៉ាទ្រីស $2 \times 2$ លម្អិតមួយជំហានម្តង'),
+        l(60, 150, 1180, R`!!គណនា $A \times B$!! ដោយដឹងថា $A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ និង $B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$ ៖`, { size: 27 }),
+        s(80, 225, 1100, R`• ធាតុ $c_{11}$ (ដេក ១ $\times$ ឈរ ១) ៖ $c_{11} = (1)(5) + (2)(7) = 5 + 14 = 19$`),
+        s(80, 285, 1100, R`• ធាតុ $c_{12}$ (ដេក ១ $\times$ ឈរ ២) ៖ $c_{12} = (1)(6) + (2)(8) = 6 + 16 = 22$`),
+        s(80, 345, 1100, R`• ធាតុ $c_{21}$ (ដេក ២ $\times$ ឈរ ១) ៖ $c_{21} = (3)(5) + (4)(7) = 15 + 28 = 43$`),
+        s(80, 405, 1100, R`• ធាតុ $c_{22}$ (ដេក ២ $\times$ ឈរ ២) ៖ $c_{22} = (3)(6) + (4)(8) = 18 + 32 = 50$`),
+        S.box(60, 490, 1160, 125, R`$$AB = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$$
+!!តើ $BA$ ស្មើប៉ុន្មាន?!! $BA = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 23 & 34 \\ 31 & 46 \end{bmatrix} \neq AB$ (គ្មានលក្ខណៈត្រឡប់!)`, { size: 24, align: 'center', anim: true })
       ]),
 
-      /* 14 section 3.4 powers */ page([
-        title('៣.៤ ស្វ័យគុណនៃម៉ាទ្រីសការ៉េ'),
-        S.box(40, 160, 1180, 110, R`!!__និយមន័យ ៖__!!
-ចំពោះម៉ាទ្រីសការ៉េ $A$ ៖   $A^2 = A \cdot A$   ,   $A^3 = A^2 \cdot A$   ,   $A^n = A^{n-1} \cdot A$
-ព្រមទាំងកំណត់យក  $A^0 = I$  (ម៉ាទ្រីសឯកតា) ។`, { size: 26 }),
-        line(40, 290, 1100, R`!!__លំហាត់គំរូ ៖__!!  គេឱ្យ $A = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}$ ។ គណនា $A^2$ និង $A^3$ ៖`, { size: 28 }),
-        step(80, 355, 1000, R`$A^2 = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1+0 & 2+2 \\ 0+0 & 0+1 \end{bmatrix} = \begin{bmatrix} 1 & 4 \\ 0 & 1 \end{bmatrix}$`, { size: 27, h: 54 }),
-        step(80, 425, 1000, R`$A^3 = A^2 \cdot A = \begin{bmatrix} 1 & 4 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 6 \\ 0 & 1 \end{bmatrix}$`, { size: 27, h: 54 }),
-        S.box(100, 510, 950, 75, R`!!ទាញជាទូទៅ ៖!!   $A^n = \begin{bmatrix} 1 & 2n \\ 0 & 1 \end{bmatrix} \quad (\forall n \in \mathbb{N}^*)$`, { size: 28, align: 'center', anim: true }),
-        kids(1080, 490, 160)
+      /* 14 */ page([
+        sec('៣.៤ ស្វ័យគុណនៃម៉ាទ្រីសការ៉េ (Matrix Powers)'),
+        card(60, 160, 560, 360, 'និយមន័យស្វ័យគុណ', R`ចំពោះម៉ាទ្រីសការ៉េ $A$ ($n \times n$) ៖
+• $A^1 = A$
+• $A^2 = A \cdot A$
+• $A^3 = A^2 \cdot A = A \cdot A^2$
+• $A^k = A^{k-1} \cdot A \quad (k \ge 2)$
+• $A^0 = I_n$ (ម៉ាទ្រីសឯកតា)
+• **ចំណាំ** ៖ មានតែម៉ាទ្រីសការ៉េទេ ទើបអាចស្វ័យគុណបាន!`, { size: 23 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍ ៖ រក Aⁿ តាមលំនាំគំរូ', R`គេឱ្យ $A = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}$ ។ គណនា $A^2, A^3$ រួចទាញរក $A^n$ ៖
+• $A^2 = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 4 \\ 0 & 1 \end{bmatrix}$
+• $A^3 = A^2 \cdot A = \begin{bmatrix} 1 & 4 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 6 \\ 0 & 1 \end{bmatrix}$
+• តាមលំនាំ ៖ $A^n = \begin{bmatrix} 1 & 2n \\ 0 & 1 \end{bmatrix} \quad (\forall n \in \mathbb{N}^*)$ ។`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្តទូទៅ!! ៖ $A^n = \begin{bmatrix} 1 & 2n \\ 0 & 1 \end{bmatrix}$ ចំពោះគ្រប់ចំនួនគត់វិជ្ជមាន $n$ ។`, { size: 26, align: 'center', anim: true })
       ]),
 
-      /* 15 section 4.1 inverse matrix */ page([
-        title('៤.១ ម៉ាទ្រីសច្រាសលំដាប់ ២'),
-        S.box(40, 160, 1180, 140, R`!!__និយមន័យ & រូបមន្ត ៖__!!
-ម៉ាទ្រីសច្រាសនៃ $A$ តាងដោយ $A^{-1}$ ដែលផ្ទៀងផ្ទាត់  $A \cdot A^{-1} = A^{-1} \cdot A = I$ ។
-ចំពោះ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ មានដេទែរមីណង់ $\det(A) = ad - bc \ne 0$ ៖
-$$A^{-1} = \dfrac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$$`, { size: 26, align: 'center' }),
-        tip(40, 320, 1180, 75, R`!!ក្បួនចងចាំ ៖!! ដូរទីតាំងធាតុលើអង្កត់ទ្រូងមេ ($a \leftrightarrow d$) ហើយប្តូរសញ្ញាធាតុពីរទៀត ($-b, -c$) រួចចែកនឹង $(ad - bc)$ ។`, { size: 24 }),
-        step(40, 415, 1100, R`• បើ $\det(A) = ad - bc = 0$ នោះម៉ាទ្រីស $A$ !!គ្មានម៉ាទ្រីសច្រាសទេ!! (ម៉ាទ្រីសព្រ័ទ្ធ) ។`, { size: 26 }),
-        step(40, 475, 1100, R`• លក្ខណៈ ៖  $(A^{-1})^{-1} = A$   ;   $(AB)^{-1} = B^{-1} A^{-1}$   ;   $(A^T)^{-1} = (A^{-1})^T$`, { size: 26 }),
-        kids()
+      /* 15 */ page([
+        sec('៤.១ ម៉ាទ្រីសច្រាសលំដាប់ ២ (Inverse Matrix)'),
+        card(60, 160, 560, 360, 'និយមន័យ និងរូបមន្ត', R`• **និយមន័យ** ៖ ម៉ាទ្រីសច្រាសនៃម៉ាទ្រីសការ៉េ $A$ (តាងដោយ $A^{-1}$) ផ្ទៀងផ្ទាត់ ៖
+  $$A \cdot A^{-1} = A^{-1} \cdot A = I$$
+• **រូបមន្តម៉ាទ្រីសច្រាសលំដាប់ ២** ៖
+  បើ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ មានដេទែរមីណង់ $\det(A) = ad - bc \neq 0$ ៖
+  $$A^{-1} = \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$$
+• **លក្ខខណ្ឌមានច្រាស** ៖ $\det(A) = ad - bc \neq 0$ ។`, { size: 23 }),
+        card(660, 160, 560, 360, 'ក្បួនចងចាំ និងករណីគ្មានច្រាស', R`• **ក្បួនអនុវត្ត** ៖
+  1. គណនាដេទែរមីណង់ $\det(A) = ad - bc$
+  2. ប្តូរទីតាំងធាតុលើអង្កត់ទ្រូងមេ ($a \leftrightarrow d$)
+  3. ប្តូរសញ្ញាធាតុលើអង្កត់ទ្រូងរង ($-b$ និង $-c$)
+  4. ចែកធាតុទាំងអស់នឹង $(ad - bc)$ ។
+• **ម៉ាទ្រីសព្រ័ទ្ធ (Singular Matrix)** ៖
+  បើ $ad - bc = 0$ ម៉ាទ្រីស $A$ **គ្មានម៉ាទ្រីសច្រាសទេ** ។
+• **លក្ខណៈ** ៖ $(A^{-1})^{-1} = A$ , $(AB)^{-1} = B^{-1}A^{-1}$ ។`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \implies A^{-1} = \dfrac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$ (លុះត្រាតែ $ad - bc \neq 0$) ។`, { size: 26, align: 'center', anim: true })
       ]),
 
-      /* 16 example inverse */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ៖__!!  រកម៉ាទ្រីសច្រាសនៃ $A = \begin{bmatrix} 3 & 5 \\ 1 & 2 \end{bmatrix}$ និង $B = \begin{bmatrix} 2 & 4 \\ 1 & 2 \end{bmatrix}$ ៖`, { size: 28 }),
-        solTitle(440, 180),
-        step(60, 250, 1100, R`• ចំពោះ $A$ ៖  $\det(A) = (3)(2) - (5)(1) = 6 - 5 = 1 \ne 0$`, { size: 27, h: 48 }),
-        step(100, 305, 1000, R`$\Rightarrow A^{-1} = \dfrac{1}{1} \begin{bmatrix} 2 & -5 \\ -1 & 3 \end{bmatrix} = \begin{bmatrix} 2 & -5 \\ -1 & 3 \end{bmatrix}$`, { size: 27, h: 54 }),
-        step(60, 375, 1100, R`• ចំពោះ $B$ ៖  $\det(B) = (2)(2) - (4)(1) = 4 - 4 = 0$`, { size: 27, h: 48 }),
-        step(100, 430, 1000, R`ដោយ $\det(B) = 0$ នាំឱ្យម៉ាទ្រីស $B$ !!គ្មានម៉ាទ្រីសច្រាសទេ!! ។`, { size: 27, h: 48 }),
-        S.conclude(510, R`$A^{-1} = \begin{bmatrix} 2 & -5 \\ -1 & 3 \end{bmatrix} \quad \text{និង} \quad B \text{ គ្មានម៉ាទ្រីសច្រាស}$`),
-        kids(1080, 480, 160)
+      /* 16 */ page([
+        sec('ឧទាហរណ៍គំរូ ៖ គណនាម៉ាទ្រីសច្រាសលំដាប់ ២'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  រកម៉ាទ្រីសច្រាសនៃ  $A = \begin{bmatrix} 3 & 5 \\ 1 & 2 \end{bmatrix}$  និង  $B = \begin{bmatrix} 2 & 4 \\ 1 & 2 \end{bmatrix}$ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• ចំពោះ $A$ ៖ គណនា $\det(A) = (3)(2) - (5)(1) = 6 - 5 = 1 \neq 0$ (មានច្រាស)`),
+        s(100, 290, 1080, R`  $\implies A^{-1} = \frac{1}{1} \begin{bmatrix} 2 & -5 \\ -1 & 3 \end{bmatrix} = \begin{bmatrix} 2 & -5 \\ -1 & 3 \end{bmatrix}$`),
+        s(100, 355, 1080, R`• ផ្ទៀងផ្ទាត់ ៖  $A \cdot A^{-1} = \begin{bmatrix} 3 & 5 \\ 1 & 2 \end{bmatrix} \begin{bmatrix} 2 & -5 \\ -1 & 3 \end{bmatrix} = \begin{bmatrix} 6-5 & -15+15 \\ 2-2 & -5+6 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$  (ពិត)`),
+        s(100, 420, 1080, R`• ចំពោះ $B$ ៖ $\det(B) = (2)(2) - (4)(1) = 4 - 4 = 0 \implies B$ **គ្មានម៉ាទ្រីសច្រាសទេ**`),
+        S.box(60, 495, 1160, 115, R`!!ចម្លើយ!! ៖  $A^{-1} = \begin{bmatrix} 2 & -5 \\ -1 & 3 \end{bmatrix}$  និង  ម៉ាទ្រីស $B$ គ្មានម៉ាទ្រីសច្រាស ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 17 section 4.2 matrix equation */ page([
-        title('៤.២ សមីការម៉ាទ្រីស (Matrix Equations)'),
-        S.box(40, 160, 1180, 130, R`!!__ទ្រឹស្តីបទ ៖__!!
-បើ $A$ ជាម៉ាទ្រីសច្រាសបាន ($\det(A) \ne 0$) នោះសមីការម៉ាទ្រីស ៖
-$$AX = B \iff X = A^{-1} B \qquad (\text{គុណ } A^{-1} \text{ ពីឆ្វេង})$$
-$$XA = B \iff X = B A^{-1} \qquad (\text{គុណ } A^{-1} \text{ ពីស្តាំ})$$`, { size: 26, align: 'center' }),
-        line(40, 310, 1100, R`!!__លំហាត់គំរូ ៖__!!  ដោះស្រាយសមីការ  $\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix} X = \begin{bmatrix} 4 \\ 1 \end{bmatrix}$ ៖`, { size: 28 }),
-        step(60, 375, 1100, R`តាង $A = \begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix} \Rightarrow \det(A) = 6 - 5 = 1 \implies A^{-1} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}$`, { size: 27, h: 50 }),
-        step(60, 440, 1100, R`នាំឱ្យ $X = A^{-1} B = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} \begin{bmatrix} 4 \\ 1 \end{bmatrix} = \begin{bmatrix} 3(4) + (-1)(1) \\ (-5)(4) + 2(1) \end{bmatrix} = \begin{bmatrix} 11 \\ -18 \end{bmatrix}$`, { size: 27, h: 54 }),
-        S.conclude(525, R`$X = \begin{bmatrix} 11 \\ -18 \end{bmatrix}$`),
-        kids(1080, 480, 160)
+      /* 17 */ page([
+        sec('៤.២ សមីការម៉ាទ្រីស (Matrix Equations)'),
+        card(60, 160, 560, 360, 'ទ្រឹស្តីបទសមីការម៉ាទ្រីស', R`ចំពោះម៉ាទ្រីសច្រាសបាន $A$ ($\det(A) \neq 0$) ៖
+• **សមីការទម្រង់ $AX = B$** ៖
+  គុណអង្គទាំងពីរនឹង $A^{-1}$ ពីខាងឆ្វេង ៖
+  $$A^{-1}(AX) = A^{-1}B \implies (A^{-1}A)X = A^{-1}B$$
+  $$IX = A^{-1}B \implies \mathbf{X = A^{-1}B}$$
+
+• **សមីការទម្រង់ $XA = B$** ៖
+  គុណអង្គទាំងពីរនឹង $A^{-1}$ ពីខាងស្តាំ ៖
+  $$X = B A^{-1}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ប្រយ័ត្នប្រយែង ៖ លំដាប់គុណ!', R`• ដោយសារវិធីគុណម៉ាទ្រីស **គ្មានលក្ខណៈត្រឡប់ ($AB \neq BA$)** ៖
+  - $AX = B \implies X = A^{-1}B$ (មិនមែន $BA^{-1}$ ទេ!)
+  - $XA = B \implies X = BA^{-1}$ (មិនមែន $A^{-1}B$ ទេ!)
+• **ប្រព័ន្ធសមីការលីនេអ៊ែរ $\to$ សមីការម៉ាទ្រីស** ៖
+  $$\begin{cases} ax + by = e \\ cx + dy = f \end{cases} \iff \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} e \\ f \end{bmatrix}$$
+  $$\iff AX = B \implies X = A^{-1}B$$`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖ $A$ នៅខាងឆ្វេង $X \to$ គុណ $A^{-1}$ ពីឆ្វេង ; $A$ នៅខាងស្តាំ $X \to$ គុណ $A^{-1}$ ពីស្តាំ!`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 18 practice exercises */ page([
-        title('លំហាត់អនុវត្ត'),
-        T(130, 588, 820, 40, 'ចម្លើយនៅស្លាយបន្ទាប់ — សូមព្យាយាមដោះស្រាយដោយខ្លួនឯងជាមុនសិន ។', { size: 20, color: '#868e96' }),
-        S.box(960, 190, 290, 360, R`!!ប្រអប់រូបមន្ត!!
-• $A \pm B = [a_{ij} \pm b_{ij}]$
-• $kA = [k \cdot a_{ij}]$
-• $C = AB$ (ដេក $\times$ ឈរ)
-• $A^{-1} = \dfrac{1}{ad-bc}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$
-• $AX = B \implies X = A^{-1}B$`, { size: 20, align: 'center' })
-      ].concat(rows([
-        R`រក $x, y$ បើ $\begin{bmatrix} x + y & 2 \\ 1 & x - y \end{bmatrix} = \begin{bmatrix} 5 & 2 \\ 1 & 1 \end{bmatrix}$`,
-        R`គេឱ្យ $A = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$ និង $B = \begin{bmatrix} 2 & 0 \\ 1 & -1 \end{bmatrix}$ ។ គណនា $2A - B$`,
-        R`គណនាផលគុណម៉ាទ្រីស $\begin{bmatrix} 2 & 1 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} 1 & -1 \\ 4 & 2 \end{bmatrix}$`,
-        R`រកម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស $M = \begin{bmatrix} 4 & 7 \\ 1 & 2 \end{bmatrix}$`,
-        R`ដោះស្រាយសមីការម៉ាទ្រីស $\begin{bmatrix} 1 & 2 \\ 3 & 5 \end{bmatrix} X = \begin{bmatrix} 5 \\ 11 \end{bmatrix}$`
-      ], { w: 840 }))),
+      /* 18 */ page([
+        sec('ឧទាហរណ៍គំរូ ៖ ដោះស្រាយសមីការម៉ាទ្រីស'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  ដោះស្រាយសមីការម៉ាទ្រីស  $\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix} X = \begin{bmatrix} 4 \\ 1 \end{bmatrix}$ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• សមីការមានទម្រង់ $AX = B$ ដែល $A = \begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}$ និង $B = \begin{bmatrix} 4 \\ 1 \end{bmatrix}$`),
+        s(100, 290, 1080, R`• គណនា $\det(A) = (2)(3) - (1)(5) = 6 - 5 = 1 \neq 0$`),
+        s(100, 355, 1080, R`• នាំឱ្យ $A^{-1} = \frac{1}{1} \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}$`),
+        s(100, 420, 1080, R`• រក $X = A^{-1}B = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} \begin{bmatrix} 4 \\ 1 \end{bmatrix} = \begin{bmatrix} 3(4) + (-1)(1) \\ (-5)(4) + 2(1) \end{bmatrix} = \begin{bmatrix} 12 - 1 \\ -20 + 2 \end{bmatrix} = \begin{bmatrix} 11 \\ -18 \end{bmatrix}$`),
+        S.box(60, 495, 1160, 115, R`!!ដូចនេះ!!  ម៉ាទ្រីសចម្លើយគឺ  $X = \begin{bmatrix} 11 \\ -18 \end{bmatrix}$ ។`, { size: 28, align: 'center', anim: true })
+      ]),
 
-      /* 19 answers */ page([
-        title('ចម្លើយលំហាត់អនុវត្ត'),
-        tip(130, 588, 1020, 50, R`!!គន្លឹះ ៖!! ពិនិត្យលក្ខខណ្ឌ $\det(A) \ne 0$ មុននឹងគណនាម៉ាទ្រីសច្រាស ឬដោះស្រាយសមីការ $AX = B$ ។`, { size: 22 })
-      ].concat(rows([
-        R`$\begin{cases} x+y=5 \\ x-y=1 \end{cases} \Rightarrow x = 3, \ y = 2$`,
-        R`$2A - B = \begin{bmatrix} 2 & 6 \\ 4 & 8 \end{bmatrix} - \begin{bmatrix} 2 & 0 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} 0 & 6 \\ 3 & 9 \end{bmatrix}$`,
-        R`$\begin{bmatrix} 2(1)+1(4) & 2(-1)+1(2) \\ 0(1)+3(4) & 0(-1)+3(2) \end{bmatrix} = \begin{bmatrix} 6 & 0 \\ 12 & 6 \end{bmatrix}$`,
-        R`$\det(M) = 8 - 7 = 1 \Rightarrow M^{-1} = \begin{bmatrix} 2 & -7 \\ -1 & 4 \end{bmatrix}$`,
-        R`$\det = 5 - 6 = -1 \Rightarrow A^{-1} = \begin{bmatrix} -5 & 2 \\ 3 & -1 \end{bmatrix} \Rightarrow X = A^{-1}B = \begin{bmatrix} -3 \\ 4 \end{bmatrix}$`
-      ], { w: 1100, anim: true }))),
+      /* 19 */ page([
+        sec('សង្ខេបជំពូកទី ៤ មេរៀនទី ១ ៖ រូបមន្តគន្លឹះនៃម៉ាទ្រីស'),
+        card(60, 160, 560, 360, 'ប្រមាណវិធី & ម៉ាទ្រីសឆ្លាស់', R`• **បូក/ដក** ៖ $A \pm B = [a_{ij} \pm b_{ij}]$ (លំដាប់ដូចគ្នា)
+• **គុណស្កាលែ** ៖ $kA = [k \cdot a_{ij}]$
+• **គុណពីរម៉ាទ្រីស** ៖ $(m \times p) \times (p \times n) = (m \times n)$
+  *(ជួរឈរ $A$ ស្មើជួរដេក $B$)*
+• **ម៉ាទ្រីសឆ្លាស់** ៖ $(A^T)^T = A$ , $(AB)^T = B^TA^T$
+• **ម៉ាទ្រីសឯកតា** ៖ $AI = IA = A$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ម៉ាទ្រីសច្រាស & សមីការម៉ាទ្រីស', R`• **ម៉ាទ្រីសច្រាសលំដាប់ ២** ៖
+  $$A^{-1} = \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix} \quad (\det(A) \neq 0)$$
+• **សមីការម៉ាទ្រីស** ៖
+  - $AX = B \implies X = A^{-1}B$
+  - $XA = B \implies X = BA^{-1}$
+• **លក្ខណៈច្រាស** ៖ $(AB)^{-1} = B^{-1}A^{-1}$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖  សូមបន្តឆ្លើយសំណួរ MCQ ៣ សំណួរខាងក្រោមដើម្បីវាស់ស្ទង់ការយល់ដឹង!`, { size: 26, align: 'center', anim: true })
+      ]),
 
-      /* 20-22 quizzes */
-      S.quiz(R`!!១.!! គេឱ្យ $A = \begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}$ និង $B = \begin{bmatrix} 1 & -1 \\ 0 & 2 \end{bmatrix}$ ។ តើផលគុណ $AB$ ស្មើនឹងប៉ុន្មាន?`, [R`$\begin{bmatrix} 2 & 4 \\ 1 & 7 \end{bmatrix}$`, R`$\begin{bmatrix} 2 & -3 \\ 0 & 8 \end{bmatrix}$`, R`$\begin{bmatrix} 3 & 2 \\ 1 & 6 \end{bmatrix}$`, R`$\begin{bmatrix} 1 & 4 \\ 2 & 7 \end{bmatrix}$`], 0, 30),
-      S.quiz(R`!!២.!! រកម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស $A = \begin{bmatrix} 5 & 7 \\ 2 & 3 \end{bmatrix}$ ៖`, [R`$\begin{bmatrix} 3 & -7 \\ -2 & 5 \end{bmatrix}$`, R`$\begin{bmatrix} -3 & 7 \\ 2 & -5 \end{bmatrix}$`, R`$\begin{bmatrix} 5 & -7 \\ -2 & 3 \end{bmatrix}$`, R`$\begin{bmatrix} 3 & 7 \\ 2 & 5 \end{bmatrix}$`], 0, 30),
-      S.quiz(R`!!៣.!! តម្លៃ $x$ ដែលធ្វើឱ្យ $\begin{bmatrix} x & 6 \\ 2 & 3 \end{bmatrix}$ គ្មានម៉ាទ្រីសច្រាស គឺ ៖`, ['$x = 2$', '$x = 4$', '$x = -4$', '$x = 0$'], 1, 30),
+      /* 20 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`គេឱ្យ $A = \begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}$ និង $B = \begin{bmatrix} 1 & -1 \\ 0 & 2 \end{bmatrix}$ ។ តើផលគុណ $AB$ ស្មើនឹងប៉ុន្មាន?`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\begin{bmatrix} 2 & 4 \\ 1 & 7 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\begin{bmatrix} 2 & -3 \\ 0 & 8 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\begin{bmatrix} 3 & 2 \\ 1 & 6 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\begin{bmatrix} 1 & 4 \\ 2 & 7 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះ $c_{11}=2+0=2, \ c_{12}=-2+6=4, \ c_{21}=1+0=1, \ c_{22}=-1+8=7$)`, { size: 23, align: 'center', anim: true })
+      ]),
 
-      /* 23 homework */ S.homework(R`!!១.!! គេឱ្យ $A = \begin{bmatrix} 2 & -1 \\ 3 & 4 \end{bmatrix}$ ។ គណនា $A^2 - 6A + 11I$ (ដែល $I$ ជាម៉ាទ្រីសឯកតា) ។
+      /* 21 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`រកម៉ាទ្រីសច្រាសនៃម៉ាទ្រីស  $A = \begin{bmatrix} 5 & 7 \\ 2 & 3 \end{bmatrix}$  ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\begin{bmatrix} 3 & -7 \\ -2 & 5 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\begin{bmatrix} -3 & 7 \\ 2 & -5 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\begin{bmatrix} 5 & -7 \\ -2 & 3 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\begin{bmatrix} 3 & 7 \\ 2 & 5 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះ $\det(A) = 15 - 14 = 1 \implies A^{-1} = \begin{bmatrix} 3 & -7 \\ -2 & 5 \end{bmatrix}$)`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 22 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`តម្លៃ $x$ ដែលធ្វើឱ្យម៉ាទ្រីស  $M = \begin{bmatrix} x & 6 \\ 2 & 3 \end{bmatrix}$  គ្មានម៉ាទ្រីសច្រាស គឺ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$x = 2$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$x = 4$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$x = -4$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$x = 0$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះគ្មានច្រាស $\iff \det(M) = 3x - 12 = 0 \implies 3x = 12 \implies x = 4$)`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 23 */ S.homework(R`!!១.!! គេឱ្យ $A = \begin{bmatrix} 2 & -1 \\ 3 & 4 \end{bmatrix}$ ។ គណនា $A^2 - 6A + 11I$ (ដែល $I$ ជាម៉ាទ្រីសឯកតា) ។
 !!២.!! ដោះស្រាយសមីការម៉ាទ្រីស $\begin{bmatrix} 3 & 1 \\ 5 & 2 \end{bmatrix} X = \begin{bmatrix} 2 & -1 \\ 4 & 0 \end{bmatrix}$ ។
 !!៣.!! រកតម្លៃ $m$ ដើម្បីឱ្យម៉ាទ្រីស $M = \begin{bmatrix} m-1 & 2 \\ 4 & m+1 \end{bmatrix}$ ជាម៉ាទ្រីសច្រាសបាន ។`),
 
@@ -4968,31 +5048,33 @@ $$XA = B \iff X = B A^{-1} \qquad (\text{គុណ } A^{-1} \text{ ពីស្�
     return {
       name: 'ថ្នាក់ទី១១ · ជំពូក៤ មេរៀនទី១ ម៉ាទ្រីស (២៤ ស្លាយ)',
       theme: 'school',
-      school: info.school,
-      school2: info.school2,
-      school3: info.school3,
-      teacher: info.teacher,
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
         { title: '១. សញ្ញាណ & ប្រភេទនៃម៉ាទ្រីស', slide: 3 },
-        { title: '២. ម៉ាទ្រីសស្មើគ្នា', slide: 8 },
-        { title: '៣. ប្រមាណវិធីលើម៉ាទ្រីស', slide: 9 },
+        { title: '២. ម៉ាទ្រីសស្មើគ្នា', slide: 7 },
+        { title: '៣. ប្រមាណវិធីលើម៉ាទ្រីស (បូក ដក គុណ)', slide: 9 },
         { title: '៤. ម៉ាទ្រីសច្រាស & សមីការម៉ាទ្រីស', slide: 14 },
-        { title: 'លំហាត់ & កិច្ចការផ្ទះ', slide: 17 }
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 18 }
       ],
       slides: slides
     };
   }
 
   function determinants(A) {
-    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, info = K.info, kids = K.kids,
-        line = K.line, step = K.step, title = K.title, tip = K.tip, rows = K.rows, solTitle = K.solTitle,
-        sarrusDiagram = K.sarrusDiagram;
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, sarrusDiagram = K.sarrusDiagram;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
     var R = String.raw;
 
     var slides = [
-      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៤==        មេរៀនទី២', 'ដេទែរមីណង់', info),
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៤==        មេរៀនទី២', 'ដេទែរមីណង់ (Determinants)', K.info),
 
       /* 2 */ K.toc([
         '==១. ដេទែរមីណង់លំដាប់ ២==',
@@ -5000,8 +5082,8 @@ $$XA = B \iff X = B A^{-1} \qquad (\text{គុណ } A^{-1} \text{ ពីស្�
         '==៣. ការពន្លាតតាមជួរដេក ឬជួរឈរ==',
         '==៤. លក្ខណៈសំខាន់ៗនៃដេទែរមីណង់==',
         '==៥. ច្បាប់ក្រាម័រ (Cramer\'s Rule)==',
-        '==៦. ពង្រឹងពុទ្ធិ និងកិច្ចការផ្ទះ=='
-      ], 40),
+        '==៦. សំណួរ MCQ & កិច្ចការផ្ទះ=='
+      ]),
 
       /* 3 */ S.objective([
         R`យល់ដឹងពីនិយមន័យ និងចេះគណនាដេទែរមីណង់លំដាប់ $2$ ($ad - bc$)`,
@@ -5010,179 +5092,227 @@ $$XA = B \iff X = B A^{-1} \qquad (\text{គុណ } A^{-1} \text{ ពីស្�
         R`អនុវត្តដេទែរមីណង់ក្នុងការដោះស្រាយប្រព័ន្ធសមីការលីនេអ៊ែរតាមច្បាប់ក្រាម័រ`
       ]),
 
-      /* 4 section 1 order 2 */ page([
-        title('១. ដេទែរមីណង់លំដាប់ ២'),
-        S.box(40, 160, 1180, 140, R`!!__និយមន័យ និងរូបមន្ត ៖__!!
-ចំពោះម៉ាទ្រីសការ៉េ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ ដេទែរមីណង់នៃ $A$ តាងដោយ $\det(A)$ ឬ $|A|$ កំណត់ដោយ ៖
-$$\det(A) = \begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$$`, { size: 28, align: 'center' }),
-        line(40, 320, 1100, R`!!__ក្បួនទន្ទេញ ៖__!! ផលគុណធាតុលើអង្កត់ទ្រូងមេ ដក ផលគុណធាតុលើអង្កត់ទ្រូងរង ($ad - bc$) ។`, { size: 28 }),
-        tip(40, 390, 1180, 75, R`!!ចំណាំ ៖!! និមិត្តសញ្ញាដេទែរមីណង់ប្រើបន្ទាត់ឈរត្រង់ $|A| = \begin{vmatrix} a & b \\ c & d \end{vmatrix}$ (ខុសពីម៉ាទ្រីសដែលប្រើវង់ក្រចកធំ $[ \ ]$) ។`, { size: 24 }),
-        kids()
+      /* 4 */ page([
+        sec('១.១ ដេទែរមីណង់លំដាប់ ២ (Second-Order Determinant)'),
+        card(60, 160, 560, 360, 'និយមន័យ និងរូបមន្ត', R`• **និយមន័យ** ៖ ចំពោះម៉ាទ្រីសការ៉េ $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ ដេទែរមីណង់នៃ $A$ តាងដោយ $\det(A)$ ឬ $|A|$ កំណត់ដោយ ៖
+$$\det(A) = \begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$$
+• **និមិត្តសញ្ញា** ៖ ប្រើបន្ទាត់ឈរត្រង់ $|A| = \begin{vmatrix} a & b \\ c & d \end{vmatrix}$ (ខុសពីម៉ាទ្រីសដែលប្រើវង់ក្រចកធំ $[ \ ]$) ។
+• **លទ្ធផល** ៖ ដេទែរមីណង់គឺជា **ចំនួនពិត** (Scalar) មិនមែនជាតារាងចំនួនទេ ។`, { size: 23 }),
+        card(660, 160, 560, 360, 'ក្បួនទន្ទេញ និងឧទាហរណ៍', R`• **ក្បួនទន្ទេញ** ៖
+  $$\det = (\text{ផលគុណអង្កត់ទ្រូងមេ}) - (\text{ផលគុណអង្កត់ទ្រូងរង})$$
+  $$\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$$
+• **ឧទាហរណ៍ ១** ៖
+  $\begin{vmatrix} 3 & 4 \\ 2 & 5 \end{vmatrix} = (3)(5) - (4)(2) = 15 - 8 = 7$
+• **ឧទាហរណ៍ ២** ៖
+  $\begin{vmatrix} -2 & -1 \\ 4 & 3 \end{vmatrix} = (-2)(3) - (-1)(4) = -6 + 4 = -2$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ គុណចុះក្រោមសញ្ញា $+$ គុណឡើងលើសញ្ញា $-$ ៖  $\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$ ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 5 examples order 2 */ page([
-        line(40, 115, 1200, '!!__លំហាត់គំរូ ១ ៖__!! គណនាដេទែរមីណង់ខាងក្រោម ៖', { size: 30 }),
-        solTitle(440, 180),
-        step(60, 250, 1100, R`ក. $\begin{vmatrix} 3 & 4 \\ 2 & 5 \end{vmatrix} = (3)(5) - (4)(2) = 15 - 8 = 7$`, { size: 28, h: 52 }),
-        step(60, 320, 1100, R`ខ. $\begin{vmatrix} -2 & -1 \\ 4 & 3 \end{vmatrix} = (-2)(3) - (-1)(4) = -6 + 4 = -2$`, { size: 28, h: 52 }),
-        step(60, 390, 1100, R`គ. $\begin{vmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{vmatrix} = \cos^2\theta - (-\sin^2\theta) = \cos^2\theta + \sin^2\theta = 1$`, { size: 28, h: 52 }),
-        S.conclude(475, R`$\text{ក. } 7 \qquad \text{ខ. } -2 \qquad \text{គ. } 1$`),
-        kids(1080, 480, 160)
+      /* 5 */ page([
+        sec('១.២ លំហាត់គំរូ ៖ គណនាដេទែរមីណង់លំដាប់ ២'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  គណនាដេទែរមីណង់ខាងក្រោម  ក. $D_1 = \begin{vmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{vmatrix}$  និង  ខ. $D_2 = \begin{vmatrix} \sqrt{3} & 1 \\ 2 & \sqrt{3} \end{vmatrix}$ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• ចំពោះ $D_1$ ៖  $D_1 = (\cos\theta)(\cos\theta) - (-\sin\theta)(\sin\theta) = \cos^2\theta + \sin^2\theta = 1$`),
+        s(100, 290, 1080, R`• ចំពោះ $D_2$ ៖  $D_2 = (\sqrt{3})(\sqrt{3}) - (1)(2) = 3 - 2 = 1$`),
+        s(100, 355, 1080, R`• ករណីពិសេស ៖ ដេទែរមីណង់នៃម៉ាទ្រីសរង្វិលមុំ $\theta$ គឺតែងតែស្មើ $1$ ជានិច្ច!`),
+        S.box(60, 495, 1160, 115, R`!!ចម្លើយ!! ៖  $D_1 = 1 \quad$ និង $\quad D_2 = 1$ ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 6 example 2: solve for x */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ២ ៖__!!  រកតម្លៃ $x$ បើ $\begin{vmatrix} x - 1 & 2 \\ 3 & x \end{vmatrix} = 0$ ៖`, { size: 30 }),
-        solTitle(440, 180),
-        step(80, 255, 1000, R`តាមរូបមន្តដេទែរមីណង់លំដាប់ ២ ៖`, { size: 28 }),
-        step(120, 315, 1000, R`$(x - 1)(x) - (2)(3) = 0 \iff x^2 - x - 6 = 0$`, { size: 28, h: 52 }),
-        step(120, 380, 1000, R`ដាក់ជាផលគុណកត្តា ៖  $(x - 3)(x + 2) = 0$`, { size: 28, h: 52 }),
-        step(120, 445, 1000, R`$\implies x - 3 = 0 \iff x = 3 \quad$ ឬ $\quad x + 2 = 0 \iff x = -2$`, { size: 28, h: 52 }),
-        S.conclude(525, R`$x = 3 \quad \text{ឬ} \quad x = -2$`),
-        kids(1080, 480, 160)
+      /* 6 */ page([
+        sec('១.៣ លំហាត់គំរូ ៖ រកអថេរ x ក្នុងសមភាពដេទែរមីណង់'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  រកតម្លៃនៃ $x$ ដោយដឹងថា $\begin{vmatrix} x - 1 & 2 \\ 3 & x \end{vmatrix} = 0$ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• ពន្លាតដេទែរមីណង់លំដាប់ ២ ៖  $(x - 1)(x) - (2)(3) = 0$`),
+        s(100, 290, 1080, R`• គុណពន្លាត ៖  $x^2 - x - 6 = 0$`),
+        s(100, 355, 1080, R`• ដាក់ជាផលគុណកត្តា ៖  $(x - 3)(x + 2) = 0$`),
+        s(100, 420, 1080, R`• ទាញរកឫស ៖  $x - 3 = 0 \implies x = 3 \quad$ ឬ $\quad x + 2 = 0 \implies x = -2$`),
+        S.box(60, 495, 1160, 115, R`!!ដូចនេះ!!  តម្លៃនៃ $x$ គឺ  $x = 3 \quad$ ឬ $\quad x = -2$ ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 7 section 2 sarrus rule */ page([
-        title('២. ដេទែរមីណង់លំដាប់ ៣ — ក្បួនសារុស (Sarrus)'),
-        S.box(40, 160, 680, 175, R`!!__ក្បួនសារុស (Sarrus\' Rule) ៖__!!
-ចម្លងជួរឈរទី ១ និងទី ២ ទៅខាងស្តាំ ៖
-• បូកផលគុណតាមទិសអង្កត់ទ្រូងមេ (៣ គូ ៖ សញ្ញា $+$)
-• ដកផលគុណតាមទិសអង្កត់ទ្រូងរង (៣ គូ ៖ សញ្ញា $-$)`, { size: 25 }),
-        sarrusDiagram(740, 160, 500, 370),
-        step(40, 360, 680, R`$\det = (a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32})$`, { size: 23 }),
-        step(40, 415, 680, R`$\quad\ \ -(a_{13}a_{22}a_{31} + a_{11}a_{23}a_{32} + a_{12}a_{21}a_{33})$`, { size: 23 }),
-        tip(40, 480, 680, 80, '!!ចំណាំសំខាន់ ៖!! ក្បួនសារុសប្រើបានតែចំពោះដេទែរមីណង់លំដាប់ ៣ ប៉ុណ្ណោះ (មិនអាចប្រើលើលំដាប់ ៤ ឬលើសពីនេះបានទេ)!', { size: 21 })
+      /* 7 */ page([
+        sec('២.១ ដេទែរមីណង់លំដាប់ ៣ ៖ ក្បួនសារុស (Sarrus\' Rule)'),
+        card(60, 160, 600, 360, 'ក្បួនសារុស (Sarrus)', R`ចំពោះម៉ាទ្រីស $3 \times 3$ ចម្លងជួរឈរទី ១ និងទី ២ ទៅខាងស្តាំ ៖
+• **ផលគុណតាមអង្កត់ទ្រូងមេ (សញ្ញា $+$)** ៖
+  $P_1 = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32}$
+• **ផលគុណតាមអង្កត់ទ្រូងរង (សញ្ញា $-$)** ៖
+  $P_2 = a_{13}a_{22}a_{31} + a_{11}a_{23}a_{32} + a_{12}a_{21}a_{33}$
+• **រូបមន្ត** ៖
+$$\det = P_1 - P_2$$
+• **ចំណាំសំខាន់** ៖ ក្បួនសារុសប្រើបានតែលើ **លំដាប់ ៣ ប៉ុណ្ណោះ**!`, { size: 23 }),
+        sarrusDiagram(680, 160, 540, 360),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនទន្ទេញ!! ៖ បូក ៣ គូតាមអង្កត់ទ្រូងមេ ដក ៣ គូតាមអង្កត់ទ្រូងរង ៖ $\det = P_{\text{មេ}} - P_{\text{រង}}$ ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 8 example sarrus */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ៖__!! គណនា $\Delta = \begin{vmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 1 & 0 & 6 \end{vmatrix}$ តាមក្បួនសារុស ៖`, { size: 28 }),
-        solTitle(440, 180),
-        step(60, 250, 1100, R`ចម្លងជួរឈរទី ១ និងទី ២ ៖  $\begin{matrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 1 & 0 & 6 \end{matrix} \begin{matrix} 1 & 2 \\ 0 & 4 \\ 1 & 0 \end{matrix}$`, { size: 27, h: 54 }),
-        step(60, 320, 1100, R`• ផលគុណតាមអង្កត់ទ្រូងមេ ៖  $(1)(4)(6) + (2)(5)(1) + (3)(0)(0) = 24 + 10 + 0 = 34$`, { size: 26, h: 50 }),
-        step(60, 385, 1100, R`• ផលគុណតាមអង្កត់ទ្រូងរង ៖  $(1)(4)(3) + (0)(5)(1) + (6)(0)(2) = 12 + 0 + 0 = 12$`, { size: 26, h: 50 }),
-        step(60, 450, 1100, R`នាំឱ្យ  $\Delta = 34 - 12 = 22$`, { size: 28, h: 50 }),
-        S.conclude(520, R`$\Delta = \begin{vmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 1 & 0 & 6 \end{vmatrix} = 22$`),
-        kids(1080, 480, 160)
+      /* 8 */ page([
+        sec('២.២ ឧទាហរណ៍គំរូ ៖ គណនាតាមក្បួនសារុស'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  គណនា $\Delta = \begin{vmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 1 & 0 & 6 \end{vmatrix}$ តាមក្បួនសារុស ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• ចម្លងជួរឈរទី ១ និងទី ២ ទៅខាងស្តាំ ៖  $\begin{matrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 1 & 0 & 6 \end{matrix} \begin{matrix} 1 & 2 \\ 0 & 4 \\ 1 & 0 \end{matrix}$`),
+        s(100, 290, 1080, R`• ផលគុណតាមអង្កត់ទ្រូងមេ ៖  $P_1 = (1)(4)(6) + (2)(5)(1) + (3)(0)(0) = 24 + 10 + 0 = 34$`),
+        s(100, 355, 1080, R`• ផលគុណតាមអង្កត់ទ្រូងរង ៖  $P_2 = (1)(4)(3) + (0)(5)(1) + (6)(0)(2) = 12 + 0 + 0 = 12$`),
+        s(100, 420, 1080, R`• នាំឱ្យ  $\Delta = P_1 - P_2 = 34 - 12 = 22$`),
+        S.box(60, 495, 1160, 115, R`!!ដូចនេះ!!  តម្លៃដេទែរមីណង់គឺ  $\Delta = 22$ ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 9 section 3 expansion */ page([
-        title('៣. ការពន្លាតតាមជួរដេក ឬជួរឈរ'),
-        S.box(40, 160, 1180, 150, R`!!__រូបមន្តពន្លាតតាមជួរដេកទី ១ ៖__!!
+      /* 9 */ page([
+        sec('៣.១ ការពន្លាតតាមជួរដេក ឬជួរឈរ (Laplace Expansion)'),
+        card(60, 160, 560, 360, 'រូបមន្តពន្លាតតាមជួរដេកទី ១', R`ពន្លាតដេទែរមីណង់លំដាប់ ៣ តាមជួរដេកទី ១ ៖
 $$\begin{vmatrix} a & b & c \\ d & e & f \\ g & h & k \end{vmatrix} = a \begin{vmatrix} e & f \\ h & k \end{vmatrix} - b \begin{vmatrix} d & f \\ g & k \end{vmatrix} + c \begin{vmatrix} d & e \\ g & h \end{vmatrix}$$
-សញ្ញាត្រូវកំណត់តាម $(-1)^{i+j}$ ៖ $\begin{bmatrix} + & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$`, { size: 25, align: 'center' }),
-        tip(40, 330, 1180, 75, '!!គន្លឹះជ្រើសរើស ៖!! ជ្រើសរើសពន្លាតតាមជួរដេក ឬជួរឈរណាដែលមានលេខ ០ ច្រើនជាងគេដើម្បីកាត់បន្ថយការគណនា!', { size: 23 }),
-        step(60, 420, 1100, R`• ឧទាហរណ៍ ៖  $\begin{vmatrix} 2 & 0 & 0 \\ 4 & 5 & 1 \\ 3 & -2 & 6 \end{vmatrix} = 2 \begin{vmatrix} 5 & 1 \\ -2 & 6 \end{vmatrix} - 0 + 0 = 2(30 - (-2)) = 64$`, { size: 27 }),
-        kids()
+• $a, b, c$ ជាធាតុនៃជួរដេកទី ១
+• ដេទែរមីណង់លំដាប់ ២ នីមួយៗបានពីការលុបជួរដេក និងជួរឈររបស់ធាតុនោះ (មីន័រ $M_{ij}$)
+• សញ្ញាត្រូវឆ្លាស់គ្នា ៖ $+ \ , \ - \ , \ +$ ។`, { size: 23 }),
+        card(660, 160, 560, 360, 'តារាងសញ្ញា និងគន្លឹះគណនា', R`• **តារាងសញ្ញាកូហ្វាក់ទ័រ** ៖
+  $$\begin{bmatrix} + & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
+• **គន្លឹះជ្រើសរើសជួរដេក/ឈរ** ៖
+  គួរជ្រើសរើសពន្លាតតាមជួរដេក ឬជួរឈរណាដែល **មានលេខ $0$ ច្រើនជាងគេ** ដើម្បីកាត់បន្ថយការគណនា!
+• **ឧទាហរណ៍** ៖ $\begin{vmatrix} 2 & 0 & 0 \\ 4 & 5 & 1 \\ 3 & -2 & 6 \end{vmatrix} = 2 \begin{vmatrix} 5 & 1 \\ -2 & 6 \end{vmatrix} = 2(30 - (-2)) = 64$ ។`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!គន្លឹះ!! ៖ ជ្រើសរើសជួរណាដែលមានលេខ ០ ច្រើនបំផុត នោះតួពន្លាតនឹងស្មើ ០ ដោយមិនបាច់គណនានាំឱ្យខាតពេល!`, { size: 24, align: 'center', anim: true })
       ]),
 
-      /* 10 section 4 properties */ page([
-        title('៤. លក្ខណៈសំខាន់ៗនៃដេទែរមីណង់'),
-        line(40, 160, 1100, '!!__លក្ខណៈគ្រឹះទាំង ៧ ដែលត្រូវចងចាំ ៖__!!', { size: 28 }),
-        step(60, 215, 1100, R`១. $\det(A^T) = \det(A)$  (ដេទែរមីណង់នៃម៉ាទ្រីសឆ្លាស់ស្មើដេទែរមីណង់ដើម)`, { size: 25, h: 44 }),
-        step(60, 265, 1100, R`២. ប្តូរពីរជួរដេក (ឬពីរជួរឈរ) នាំឱ្យដេទែរមីណង់ប្តូរសញ្ញា ($- \det$)`, { size: 25, h: 44 }),
-        step(60, 315, 1100, R`៣. បើមានពីរជួរដេក (ឬឈរ) ដូចគ្នា ឬសមាមាត្រគ្នា នោះ $\det = 0$`, { size: 25, h: 44 }),
-        step(60, 365, 1100, R`៤. បើមានមួយជួរដេក (ឬឈរ) ជាសូន្យទាំងអស់ នោះ $\det = 0$`, { size: 25, h: 44 }),
-        step(60, 415, 1100, R`៥. $\det(AB) = \det(A) \cdot \det(B)$  (ដេទែរមីណង់នៃផលគុណ ស្មើផលគុណដេទែរមីណង់)`, { size: 25, h: 44 }),
-        step(60, 465, 1100, R`៦. $\det(kA) = k^n \det(A)$  (ចំពោះម៉ាទ្រីសការ៉េលំដាប់ $n$)`, { size: 25, h: 44 }),
-        step(60, 515, 1100, R`៧. $\det(A^{-1}) = \dfrac{1}{\det(A)}$  (ចំពោះ $\det(A) \ne 0$)`, { size: 25, h: 44 }),
-        S.box(60, 575, 1160, 60, R`!!អនុវត្តរហ័ស ៖!! $\begin{vmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 0 & 0 & 6 \end{vmatrix} = 1 \times 4 \times 6 = 24$ (ដេទែរមីណង់ម៉ាទ្រីសត្រីកោណស្មើផលគុណអង្កត់ទ្រូងមេ)`, { size: 23, align: 'center', anim: true })
+      /* 10 */ page([
+        sec('៤.១ លក្ខណៈសំខាន់ៗនៃដេទែរមីណង់'),
+        card(60, 160, 560, 360, 'លក្ខណៈទី ១ ដល់ ទី ៤', R`1. $\det(A^T) = \det(A)$ (ឆ្លាស់ដេទែរមីណង់មិនប្រែប្រួល)
+2. ប្តូរពីរជួរដេក (ឬឈរ) នាំឱ្យដេទែរមីណង់ **ប្តូរសញ្ញា** ៖
+   $\det(A') = -\det(A)$
+3. បើមាន **ពីរជួរដូចគ្នា ឬសមាមាត្រគ្នា** នោះ $\det = 0$ ៖
+   $\begin{vmatrix} 1 & 2 & 3 \\ 1 & 2 & 3 \\ 4 & 5 & 6 \end{vmatrix} = 0$
+4. បើមាន **មួយជួរជាសូន្យទាំងអស់** នោះ $\det = 0$ ។`, { size: 23 }),
+        card(660, 160, 560, 360, 'លក្ខណៈទី ៥ ដល់ ទី ៧', R`5. $\det(AB) = \det(A) \cdot \det(B)$
+   (ដេទែរមីណង់នៃផលគុណស្មើផលគុណដេទែរមីណង់)
+6. ចំពោះម៉ាទ្រីសការ៉េលំដាប់ $n$ ៖
+   $$\det(kA) = k^n \det(A) \quad (k \in \mathbb{R})$$
+   *(លំដាប់ $2 \to k^2\det(A)$ ; លំដាប់ $3 \to k^3\det(A)$)*
+7. $\det(A^{-1}) = \dfrac{1}{\det(A)}$ (ចំពោះ $\det(A) \neq 0$)
+8. ម៉ាទ្រីសត្រីកោណ ៖ $\det$ ស្មើផលគុណធាតុអង្កត់ទ្រូងមេ!`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្តរហ័ស!! ៖ $\begin{vmatrix} 2 & 5 & 7 \\ 0 & 3 & 4 \\ 0 & 0 & 5 \end{vmatrix} = 2 \times 3 \times 5 = 30$ (ម៉ាទ្រីសត្រីកោណលើ) ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 11 section 5 cramer rule */ page([
-        title('៥. ច្បាប់ក្រាម័រសម្រាប់ប្រព័ន្ធសមីការ (Cramer\'s Rule)'),
-        S.box(40, 160, 1180, 150, R`!!__ច្បាប់ក្រាម័រ (Cramer\'s Rule) ៖__!!
-ប្រព័ន្ធសមីការ $\begin{cases} a_1 x + b_1 y = c_1 \\ a_2 x + b_2 y = c_2 \end{cases}$ មានដេទែរមីណង់ ៖
-$$D = \begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix} \quad , \quad D_x = \begin{vmatrix} c_1 & b_1 \\ c_2 & b_2 \end{vmatrix} \quad , \quad D_y = \begin{vmatrix} a_1 & c_1 \\ a_2 & c_2 \end{vmatrix}$$
-បើ $D \ne 0$ ប្រព័ន្ធសមីការមានគូចម្លើយតែមួយគត់ ៖  $x = \dfrac{D_x}{D} \quad , \quad y = \dfrac{D_y}{D}$`, { size: 25, align: 'center' }),
-        tip(40, 330, 1180, 75, R`!!ពិភាក្សាចម្លើយ ៖!! បើ $D = 0$ ហើយ $D_x \ne 0$ ឬ $D_y \ne 0 \implies$ គ្មានចម្លើយ ; បើ $D = D_x = D_y = 0 \implies$ មានចម្លើយរាប់មិនអស់ ។`, { size: 23 }),
-        kids()
+      /* 11 */ page([
+        sec('៥.១ ច្បាប់ក្រាម័រ (Cramer\'s Rule) សម្រាប់ប្រព័ន្ធសមីការ'),
+        card(60, 160, 560, 360, 'រូបមន្តច្បាប់ក្រាម័រលំដាប់ ២', R`ប្រព័ន្ធសមីការ $\begin{cases} a_1 x + b_1 y = c_1 \\ a_2 x + b_2 y = c_2 \end{cases}$ ៖
+• គណនាដេទែរមីណង់មេ ៖  $D = \begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix}$
+• ដេទែរមីណង់ធៀប $x$ ៖  $D_x = \begin{vmatrix} c_1 & b_1 \\ c_2 & b_2 \end{vmatrix}$
+• ដេទែរមីណង់ធៀប $y$ ៖  $D_y = \begin{vmatrix} a_1 & c_1 \\ a_2 & c_2 \end{vmatrix}$
+• **ចម្លើយ (បើ $D \neq 0$)** ៖
+  $$x = \frac{D_x}{D} \quad , \quad y = \frac{D_y}{D}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ការពិភាក្សាចម្លើយ', R`• **ករណីទី ១** ៖ បើ $D \neq 0$
+  $\implies$ ប្រព័ន្ធសមីការមាន **គូចម្លើយតែមួយគត់** $(x, y) = \left(\frac{D_x}{D}, \ \frac{D_y}{D}\right)$ ។
+• **ករណីទី ២** ៖ បើ $D = 0$
+  - បើ $D_x \neq 0$ ឬ $D_y \neq 0 \implies$ ប្រព័ន្ធ **គ្មានចម្លើយ** ។
+  - បើ $D = D_x = D_y = 0 \implies$ ប្រព័ន្ធមាន **ចម្លើយច្រើនរាប់មិនអស់** ។`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖ $D_x$ យកតួថេរ $c$ ជំនួសជួរឈរ $x$ ; $D_y$ យកតួថេរ $c$ ជំនួសជួរឈរ $y$ !`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 12 example cramer */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ៖__!!  ដោះស្រាយប្រព័ន្ធសមីការ  $\begin{cases} 3x + 2y = 8 \\ 5x - y = 9 \end{cases}$  តាមច្បាប់ក្រាម័រ ៖`, { size: 28 }),
-        solTitle(440, 180),
-        step(60, 250, 1100, R`• $D = \begin{vmatrix} 3 & 2 \\ 5 & -1 \end{vmatrix} = (3)(-1) - (2)(5) = -3 - 10 = -13 \ne 0$`, { size: 27, h: 50 }),
-        step(60, 315, 1100, R`• $D_x = \begin{vmatrix} 8 & 2 \\ 9 & -1 \end{vmatrix} = (8)(-1) - (2)(9) = -8 - 18 = -26$`, { size: 27, h: 50 }),
-        step(60, 380, 1100, R`• $D_y = \begin{vmatrix} 3 & 8 \\ 5 & 9 \end{vmatrix} = (3)(9) - (8)(5) = 27 - 40 = -13$`, { size: 27, h: 50 }),
-        step(60, 445, 1100, R`$\implies x = \dfrac{D_x}{D} = \dfrac{-26}{-13} = 2 \quad , \quad y = \dfrac{D_y}{D} = \dfrac{-13}{-13} = 1$`, { size: 27, h: 50 }),
-        S.conclude(520, R`$(x, y) = (2, 1)$`),
-        kids(1080, 480, 160)
+      /* 12 */ page([
+        sec('៥.២ ឧទាហរណ៍គំរូ ៖ ដោះស្រាយតាមច្បាប់ក្រាម័រ'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  ដោះស្រាយប្រព័ន្ធសមីការ  $\begin{cases} 3x + 2y = 8 \\ 5x - y = 9 \end{cases}$  តាមច្បាប់ក្រាម័រ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• គណនា $D = \begin{vmatrix} 3 & 2 \\ 5 & -1 \end{vmatrix} = (3)(-1) - (2)(5) = -3 - 10 = -13 \neq 0$ (មានចម្លើយមួយគត់)`),
+        s(100, 290, 1080, R`• គណនា $D_x = \begin{vmatrix} 8 & 2 \\ 9 & -1 \end{vmatrix} = (8)(-1) - (2)(9) = -8 - 18 = -26$`),
+        s(100, 355, 1080, R`• គណនា $D_y = \begin{vmatrix} 3 & 8 \\ 5 & 9 \end{vmatrix} = (3)(9) - (8)(5) = 27 - 40 = -13$`),
+        s(100, 420, 1080, R`• ទាញរកចម្លើយ ៖  $x = \frac{D_x}{D} = \frac{-26}{-13} = 2 \quad , \quad y = \frac{D_y}{D} = \frac{-13}{-13} = 1$`),
+        S.box(60, 495, 1160, 115, R`!!ដូចនេះ!!  ប្រព័ន្ធសមីការមានគូចម្លើយតែមួយគត់គឺ  $(x, y) = (2, 1)$ ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 13 practice exercises */ page([
-        title('លំហាត់អនុវត្ត'),
-        T(130, 588, 820, 40, 'ចម្លើយនៅស្លាយបន្ទាប់ — សូមព្យាយាមដោះស្រាយដោយខ្លួនឯងជាមុនសិន ។', { size: 20, color: '#868e96' }),
-        S.box(960, 190, 290, 360, R`!!ប្រអប់រូបមន្ត!!
-• $\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$
-• Sarrus (លំដាប់ ៣)
-• $x = \dfrac{D_x}{D} , y = \dfrac{D_y}{D}$
-• $\det(AB) = \det(A)\det(B)$
-• $\det(A^{-1}) = \dfrac{1}{\det(A)}$`, { size: 21, align: 'center' })
-      ].concat(rows([
-        R`គណនាដេទែរមីណង់ $\begin{vmatrix} 5 & -2 \\ 3 & 4 \end{vmatrix}$`,
-        R`រក $x$ បើ $\begin{vmatrix} x & 3 \\ 12 & x \end{vmatrix} = 0$`,
-        R`គណនា $\Delta = \begin{vmatrix} 2 & 1 & 0 \\ 0 & 3 & 4 \\ 1 & -1 & 2 \end{vmatrix}$ តាមក្បួនសារុស`,
-        R`ដោះស្រាយប្រព័ន្ធសមីការ $\begin{cases} 2x - 3y = 7 \\ 3x + y = 5 \end{cases}$ តាមក្រាម័រ`,
-        R`បើ $\det(A) = 4$ (ម៉ាទ្រីសលំដាប់ 2) ។ គណនា $\det(3A)$ និង $\det(A^{-1})$`
-      ], { w: 840 }))),
+      /* 13 */ page([
+        sec('សង្ខេបជំពូកទី ៤ មេរៀនទី ២ ៖ រូបមន្តគន្លឹះនៃដេទែរមីណង់'),
+        card(60, 160, 560, 360, 'ដេទែរមីណង់ & ក្បួនសារុស', R`• **លំដាប់ ២** ៖ $\det = ad - bc$
+• **លំដាប់ ៣ (សារុស)** ៖ $\det = P_{\text{មេ}} - P_{\text{រង}}$
+• **លក្ខណៈសំខាន់ៗ** ៖
+  - $\det(A^T) = \det(A)$
+  - ប្តូរពីរជួរ $\implies -\det$
+  - ពីរជួរដូចគ្នា ឬជួរសូន្យ $\implies \det = 0$
+  - $\det(AB) = \det(A)\det(B)$
+  - $\det(kA) = k^n \det(A)$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ច្បាប់ក្រាម័រ & ការពន្លាត', R`• **ការពន្លាតតាមជួរដេកទី ១** ៖
+  $\det = a M_{11} - b M_{12} + c M_{13}$
+• **ច្បាប់ក្រាម័រ** ៖
+  $$x = \frac{D_x}{D} \quad , \quad y = \frac{D_y}{D} \quad (D \neq 0)$$
+• **ម៉ាទ្រីសច្រាស** ៖
+  $A$ មានច្រាស $\iff \det(A) \neq 0$
+  $\det(A^{-1}) = \frac{1}{\det(A)}$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖  សូមបន្តឆ្លើយសំណួរ MCQ ៣ សំណួរខាងក្រោមដើម្បីវាស់ស្ទង់ការយល់ដឹង!`, { size: 26, align: 'center', anim: true })
+      ]),
 
-      /* 14 answers */ page([
-        title('ចម្លើយលំហាត់អនុវត្ត'),
-        tip(130, 588, 1020, 50, R`!!គន្លឹះ ៖!! ពិនិត្យសញ្ញា $+$ និង $-$ ពេលគុណអង្កត់ទ្រូងមេ និងអង្កត់ទ្រូងរងឱ្យបានត្រឹមត្រូវ ។`, { size: 22 })
-      ].concat(rows([
-        R`$(5)(4) - (-2)(3) = 20 + 6 = 26$`,
-        R`$x^2 - 36 = 0 \implies x = \pm 6$`,
-        R`$(12 + 4 + 0) - (0 - 8 + 0) = 16 - (-8) = 24$`,
-        R`$D = 11, \ D_x = 22, \ D_y = -11 \implies x = 2, \ y = -1$`,
-        R`$\det(3A) = 3^2 \det(A) = 9(4) = 36 \quad , \quad \det(A^{-1}) = \dfrac{1}{4}$`
-      ], { w: 1100, anim: true }))),
+      /* 14 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`គណនាដេទែរមីណង់  $\Delta = \begin{vmatrix} 4 & -2 \\ 3 & 5 \end{vmatrix}$  ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$26$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$14$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$-26$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$20$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះ $\Delta = (4)(5) - (-2)(3) = 20 - (-6) = 26$)`, { size: 23, align: 'center', anim: true })
+      ]),
 
-      /* 15-17 quizzes */
-      S.quiz(R`!!១.!! គណនាដេទែរមីណង់ $\begin{vmatrix} 4 & -2 \\ 3 & 5 \end{vmatrix}$ ៖`, ['$26$', '$14$', '$-26$', '$20$'], 0, 30),
-      S.quiz(R`!!២.!! បើ $A$ ជាម៉ាទ្រីសការ៉េលំដាប់ $2$ ដែល $\det(A) = 3$ នោះ $\det(2A)$ ស្មើនឹង ៖`, ['$6$', '$12$', '$18$', '$8$'], 1, 30),
-      S.quiz(R`!!៣.!! តម្លៃ $x$ ដែលធ្វើឱ្យ $\begin{vmatrix} x & 2 \\ 8 & x \end{vmatrix} = 0$ គឺ ៖`, [R`$x = 4$`, R`$x = -4$`, R`$x = \pm 4$`, R`$x = 16$`], 2, 30),
+      /* 15 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`បើ $A$ ជាម៉ាទ្រីសការ៉េលំដាប់ $2$ ដែល $\det(A) = 3$ នោះ $\det(2A)$ ស្មើនឹង ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$6$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$12$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$18$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$8$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះម៉ាទ្រីសលំដាប់ $n=2 \implies \det(2A) = 2^2 \det(A) = 4 \times 3 = 12$)`, { size: 23, align: 'center', anim: true })
+      ]),
 
-      /* 18 homework */ S.homework(R`!!១.!! រកតម្លៃនៃ $x$ បើ $\begin{vmatrix} x & 2 \\ 3 & x-1 \end{vmatrix} = 0$ ។
-!!២.!! គណនាដេទែរមីណង់ $\Delta = \begin{vmatrix} 1 & -2 & 3 \\ 2 & 0 & 1 \\ 4 & -1 & 5 \end{vmatrix}$ តាមពីរបែប (ក្បួនសារុស និងការពន្លាត) ។
-!!៣.!! ដោះស្រាយប្រព័ន្ធសមីការតាមច្បាប់ក្រាម័រ ៖ $\begin{cases} 4x + 3y = 11 \\ 2x - 5y = -1 \end{cases}$ ។`),
+      /* 16 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`តម្លៃ $x$ ដែលធ្វើឱ្យ $\begin{vmatrix} x & 2 \\ 8 & x \end{vmatrix} = 0$ គឺ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$x = 4$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$x = -4$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$x = \pm 4$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$x = 16$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ C!! (ព្រោះ $x^2 - 16 = 0 \iff x^2 = 16 \implies x = \pm 4$)`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 17 */ page([
+        sec('លំហាត់អនុវត្តន៍ពីសៀវភៅពុម្ព'),
+        S.box(80, 160, 1120, 350, R`!!១.!! គណនាដេទែរមីណង់ខាងក្រោម ៖
+    ក. $\begin{vmatrix} 5 & -2 \\ 3 & 4 \end{vmatrix} \qquad$ ខ. $\begin{vmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{vmatrix} \qquad$ គ. $\begin{vmatrix} 1 & -2 & 3 \\ 2 & 0 & 1 \\ 4 & -1 & 5 \end{vmatrix}$
+!!២.!! រកតម្លៃ $x$ បើ $\begin{vmatrix} x & 3 \\ 12 & x \end{vmatrix} = 0$ ។
+!!៣.!! ដោះស្រាយប្រព័ន្ធសមីការតាមច្បាប់ក្រាម័រ ៖
+    $\begin{cases} 4x + 3y = 11 \\ 2x - 5y = -1 \end{cases}$`, { size: 24, lh: '1.6' })
+      ]),
+
+      /* 18 */ S.homework(R`!!១.!! រកតម្លៃនៃ $x$ បើ $\begin{vmatrix} x & 2 \\ 3 & x-1 \end{vmatrix} = 0$ ។
+!!២.!! គណនាដេទែរមីណង់ $\Delta = \begin{vmatrix} 2 & 1 & 0 \\ 0 & 3 & 4 \\ 1 & -1 & 2 \end{vmatrix}$ តាមពីរបែប (ក្បួនសារុស និងការពន្លាត) ។
+!!៣.!! ដោះស្រាយប្រព័ន្ធសមីការតាមច្បាប់ក្រាម័រ ៖ $\begin{cases} 2x - 3y = 7 \\ 3x + y = 5 \end{cases}$ ។`),
 
       /* 19 */ S.thanks()
     ];
     return {
       name: 'ថ្នាក់ទី១១ · ជំពូក៤ មេរៀនទី២ ដេទែរមីណង់ (១៩ ស្លាយ)',
       theme: 'school',
-      school: info.school,
-      school2: info.school2,
-      school3: info.school3,
-      teacher: info.teacher,
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
         { title: '១. ដេទែរមីណង់លំដាប់ ២', slide: 3 },
         { title: '២. ដេទែរមីណង់លំដាប់ ៣ (សារុស)', slide: 6 },
-        { title: '៣. ការពន្លាត & លក្ខណៈ', slide: 8 },
-        { title: '៤. ច្បាប់ក្រាម័រ (Cramer)', slide: 10 },
-        { title: 'លំហាត់ & កិច្ចការផ្ទះ', slide: 12 }
+        { title: '៣. ការពន្លាតតាមជួរដេក/ឈរ', slide: 8 },
+        { title: '៤. លក្ខណៈដេទែរមីណង់ & ក្រាម័រ', slide: 9 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 12 }
       ],
       slides: slides
     };
   }
 
   function linearTrans(A) {
-    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, info = K.info, kids = K.kids,
-        line = K.line, step = K.step, title = K.title, tip = K.tip, rows = K.rows, solTitle = K.solTitle,
-        geomTransSvg = K.geomTransSvg;
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
+        title = K.title, tip = K.tip, card = K.card, geomTransSvg = K.geomTransSvg;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var s = function (x, y, w, text, o) { var e = step(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
     var R = String.raw;
 
     var slides = [
-      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៤==        មេរៀនទី៣', 'ការបំប្លែងលីនេអ៊ែរ', info),
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១១', '==ជំពូកទី៤==        មេរៀនទី៣', 'ការបំប្លែងលីនេអ៊ែរ (Linear Transformations)', K.info),
 
       /* 2 */ K.toc([
         '==១. សញ្ញាណនៃការបំប្លែងលីនេអ៊ែរ==',
         '==២. ម៉ាទ្រីសនៃការបំប្លែងធរណីមាត្រ (ឆ្លុះ & ចំណោល)==',
         '==៣. ការបំប្លែងវិល និងចំឡងតាមមាត្រដ្ឋាន==',
         '==៤. បន្សំនៃការបំប្លែងលីនេអ៊ែរ==',
-        '==៥. ពង្រឹងពុទ្ធិ និងកិច្ចការផ្ទះ=='
-      ], 40),
+        '==៥. សំណួរ MCQ & កិច្ចការផ្ទះ=='
+      ]),
 
       /* 3 */ S.objective([
         R`យល់ដឹងពីសញ្ញាណ និងសមីការម៉ាទ្រីសនៃការបំប្លែងលីនេអ៊ែរ $X' = MX$`,
@@ -5191,131 +5321,169 @@ $$D = \begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix} \quad , \quad D_x = \
         R`គណនាម៉ាទ្រីសនៃបន្សំការបំប្លែងលីនេអ៊ែរ $T_2 \circ T_1 \iff M = M_2 \cdot M_1$`
       ]),
 
-      /* 4 section 1 concept */ page([
-        title('១. សញ្ញាណនៃការបំប្លែងលីនេអ៊ែរ'),
-        S.box(40, 160, 680, 175, R`!!__និយមន័យ និងសមីការម៉ាទ្រីស ៖__!!
-ការបំប្លែងលីនេអ៊ែរ $T$ ក្នុងប្លង់ បំប្លែងចំណុច $M(x, y)$ ទៅជារូបភាព $M'(x', y')$ ដោយ ៖
-$$\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} \iff X' = M X$$
-ម៉ាទ្រីស $M = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ ហៅថា !!ម៉ាទ្រីសតាងការបំប្លែង $T$!! ។`, { size: 25 }),
-        geomTransSvg(740, 160, 500, 370, 'refl-x'),
-        step(40, 360, 680, R`• សមីការកូអរដោនេ ៖  $x' = ax + by \quad , \quad y' = cx + dy$`, { size: 26 }),
-        step(40, 420, 680, R`• រូបភាពនៃគល់តម្រុយ ៖  $T(0, 0) = (0, 0)$  ជានិច្ច!`, { size: 26 }),
-        tip(40, 490, 680, 75, R`!!ចំណាំ ៖!! ការបំប្លែងលីនេអ៊ែរបំប្លែងបន្ទាត់ត្រង់ទៅជាបន្ទាត់ត្រង់ និងរក្សាគល់តម្រុយនៅដដែល ។`, { size: 22 })
+      /* 4 */ page([
+        sec('១.១ សញ្ញាណនៃការបំប្លែងលីនេអ៊ែរ'),
+        card(60, 160, 600, 360, 'និយមន័យ និងសមីការម៉ាទ្រីស', R`• **និយមន័យ** ៖ ការបំប្លែងលីនេអ៊ែរ $T$ ក្នុងប្លង់ បំប្លែងចំណុច $M(x, y)$ ទៅជារូបភាព $M'(x', y')$ ដោយ ៖
+  $$\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} \iff \mathbf{X' = M X}$$
+• ម៉ាទ្រីស $M = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ ហៅថា **ម៉ាទ្រីសតាងការបំប្លែង $T$** ។
+• **សមីការកូអរដោនេ** ៖
+  $$\begin{cases} x' = ax + by \\ y' = cx + dy \end{cases}$$
+• **រូបភាពនៃគល់ $O$** ៖ $T(0, 0) = (0, 0)$ ជានិច្ច!`, { size: 23 }),
+        geomTransSvg(680, 160, 540, 360, 'refl-x'),
+        S.box(60, 545, 1160, 80, R`!!ចំណាំ!! ៖ ការបំប្លែងលីនេអ៊ែរបំប្លែងបន្ទាត់ត្រង់ទៅជាបន្ទាត់ត្រង់ និងរក្សាគល់តម្រុយនៅដដែល ។`, { size: 24, align: 'center', anim: true })
       ]),
 
-      /* 5 example 1 image of point */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ១ ៖__!!  គេឱ្យការបំប្លែង $T$ មានម៉ាទ្រីស $M = \begin{bmatrix} 2 & -1 \\ 3 & 4 \end{bmatrix}$ ។ រករូបភាពនៃចំណុច $A(3, 2)$ ៖`, { size: 28 }),
-        solTitle(440, 180),
-        step(60, 250, 1100, R`តាង $A'(x', y')$ ជារូបភាពនៃ $A(3, 2)$ តាមការបំប្លែង $T$ ៖`, { size: 28 }),
-        step(100, 315, 1000, R`$\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 2 & -1 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 3 \\ 2 \end{bmatrix} = \begin{bmatrix} 2(3) + (-1)(2) \\ 3(3) + 4(2) \end{bmatrix} = \begin{bmatrix} 6 - 2 \\ 9 + 8 \end{bmatrix} = \begin{bmatrix} 4 \\ 17 \end{bmatrix}$`, { size: 27, h: 54 }),
-        S.conclude(440, R`រូបភាពនៃចំណុច $A(3, 2)$ គឺ $A'(4, 17)$`),
-        kids(1080, 480, 160)
+      /* 5 */ page([
+        sec('១.២ ឧទាហរណ៍គំរូ ៖ រករូបភាពនៃចំណុច និងវ៉ិចទ័រ'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  គេឱ្យការបំប្លែង $T$ មានម៉ាទ្រីស $M = \begin{bmatrix} 2 & -1 \\ 3 & 4 \end{bmatrix}$ ។ រករូបភាពនៃចំណុច $A(3, 2)$ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• តាង $A'(x', y')$ ជារូបភាពនៃ $A(3, 2)$ តាមការបំប្លែង $T$`),
+        s(100, 290, 1080, R`• អនុវត្តរូបមន្តម៉ាទ្រីស $X' = MX$ ៖  $\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 2 & -1 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 3 \\ 2 \end{bmatrix}$`),
+        s(100, 355, 1080, R`• គុណម៉ាទ្រីស ៖  $\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 2(3) + (-1)(2) \\ 3(3) + 4(2) \end{bmatrix} = \begin{bmatrix} 6 - 2 \\ 9 + 8 \end{bmatrix} = \begin{bmatrix} 4 \\ 17 \end{bmatrix}$`),
+        S.box(60, 495, 1160, 115, R`!!ដូចនេះ!!  រូបភាពនៃចំណុច $A(3, 2)$ គឺចំណុច  $A'(4, 17)$ ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 6 section 2.1 reflections */ page([
-        title('២.១ ការបំប្លែងឆ្លុះធៀបនឹងអ័ក្សកូអរដោនេ'),
-        S.box(40, 160, 680, 210, R`!!__រូបមន្តម៉ាទ្រីសឆ្លុះ ៖__!!
-• ឆ្លុះធៀបនឹងអ័ក្ស $Ox$ ($y \to -y$) ៖
-  $$S_{Ox} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$$
-• ឆ្លុះធៀបនឹងអ័ក្ស $Oy$ ($x \to -x$) ៖
-  $$S_{Oy} = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$$
-• ឆ្លុះធៀបនឹងគល់ $O$ ($x \to -x, y \to -y$) ៖
-  $$S_O = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$$`, { size: 24, align: 'center' }),
-        geomTransSvg(740, 160, 500, 370, 'refl-y'),
-        step(40, 395, 680, R`• ឆ្លុះធៀបនឹងបន្ទាត់ $y = x$ ($x \leftrightarrow y$) ៖`, { size: 26 }),
-        step(100, 450, 580, R`$S_{y=x} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$`, { size: 28 }),
-        tip(40, 520, 680, 65, R`!!លក្ខណៈ ៖!! $S^2 = I$ (ឆ្លុះពីរដងបានរូបដើមវិញ)`, { size: 23 })
+      /* 6 */ page([
+        sec('២.១ ម៉ាទ្រីសនៃការបំប្លែងឆ្លុះធៀបនឹងអ័ក្ស (Reflections)'),
+        card(60, 160, 600, 360, 'រូបមន្តម៉ាទ្រីសឆ្លុះ', R`• **ឆ្លុះធៀបនឹងអ័ក្ស $Ox$ ($S_{Ox}$)** ៖ ($y \to -y$)
+  $$\begin{cases} x' = x \\ y' = -y \end{cases} \implies \mathbf{S_{Ox} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}}$$
+• **ឆ្លុះធៀបនឹងអ័ក្ស $Oy$ ($S_{Oy}$)** ៖ ($x \to -x$)
+  $$\begin{cases} x' = -x \\ y' = y \end{cases} \implies \mathbf{S_{Oy} = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}}$$
+• **ឆ្លុះធៀបនឹងគល់ $O$ ($S_O$)** ៖ ($x \to -x, y \to -y$)
+  $$\mathbf{S_O = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}}$$`, { size: 23 }),
+        geomTransSvg(680, 160, 540, 360, 'refl-y'),
+        S.box(60, 545, 1160, 80, R`!!លក្ខណៈ!! ៖ គ្រប់ម៉ាទ្រីសឆ្លុះសុទ្ធតែមាន $S^2 = I$ (ឆ្លុះពីរដងត្រឡប់មករូបដើមវិញ) និង $\det(S) = -1$ ។`, { size: 24, align: 'center', anim: true })
       ]),
 
-      /* 7 section 2.2 projections */ page([
-        title('២.២ ចំណោលកែងលើអ័ក្សកូអរដោនេ'),
-        S.box(40, 160, 1180, 140, R`!!__រូបមន្តម៉ាទ្រីសចំណោលកែង ៖__!!
-• ចំណោលកែងលើអ័ក្ស $Ox$ (រក្សា $x$, កម្ទេច $y \to 0$) ៖  $$P_{Ox} = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$$
-• ចំណោលកែងលើអ័ក្ស $Oy$ (កម្ទេច $x \to 0$, រក្សា $y$) ៖  $$P_{Oy} = \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}$$`, { size: 25, align: 'center' }),
-        line(40, 330, 1100, R`!!__ឧទាហរណ៍ ៖__!! ចំណោលកែងនៃ $M(5, -3)$ លើអ័ក្ស $Ox$ គឺ $M'(5, 0)$ និងលើ $Oy$ គឺ $M''(0, -3)$`, { size: 28 }),
-        step(60, 410, 1100, R`• លក្ខណៈពិសេស ៖  $P^2 = P$  (ការចោលពីរដងនៅតែដដែល — ហៅថា Idempotent)`, { size: 26, h: 46 }),
-        step(60, 470, 1100, R`• ពិនិត្យដេទែរមីណង់ ៖  $\det(P) = 0$  (ការបំប្លែងចំណោលគ្មានម៉ាទ្រីសច្រាសទេ)`, { size: 26, h: 46 }),
-        kids()
+      /* 7 */ page([
+        sec('២.២ ម៉ាទ្រីសឆ្លុះធៀបនឹងបន្ទាត់ y = x និងចំណោលកែង'),
+        card(60, 160, 560, 360, 'ឆ្លុះធៀបនឹងបន្ទាត់ y = x', R`• **រូបមន្ត** ៖ ចំណុច $M(x, y)$ ប្តូរជា $M'(y, x)$ ៖
+  $$\begin{cases} x' = y \\ y' = x \end{cases} \implies \mathbf{S_{y=x} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}}$$
+• **ឧទាហរណ៍** ៖
+  រូបភាពនៃចំណុច $A(3, 5)$ តាមការឆ្លុះធៀបបន្ទាត់ $y = x$ គឺ $A'(5, 3)$ ។
+• **ឆ្លុះធៀបបន្ទាត់ $y = -x$** ៖
+  $$\mathbf{S_{y=-x} = \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix}}$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ចំណោលកែងលើអ័ក្សកូអរដោនេ', R`• **ចំណោលកែងលើអ័ក្ស $Ox$ ($P_{Ox}$)** ៖
+  (រក្សា $x$, កម្ទេច $y \to 0$) ៖
+  $$\mathbf{P_{Ox} = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}}$$
+• **ចំណោលកែងលើអ័ក្ស $Oy$ ($P_{Oy}$)** ៖
+  (កម្ទេច $x \to 0$, រក្សា $y$) ៖
+  $$\mathbf{P_{Oy} = \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}}$$
+• **លក្ខណៈពិសេស** ៖ $P^2 = P$ និង $\det(P) = 0$ (គ្មានម៉ាទ្រីសច្រាស) ។`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!សរុប!! ៖ ម៉ាទ្រីសឆ្លុះមាន $\det = \pm 1$ (រក្សាផ្ទៃ) ចំណែកម៉ាទ្រីសចំណោលមាន $\det = 0$ (បាត់បង់វិមាត្រ) ។`, { size: 24, align: 'center', anim: true })
       ]),
 
-      /* 8 section 3.1 rotation */ page([
-        title('៣.១ ការបំប្លែងវិលជុំវិញគល់តម្រុយ (Rotation)'),
-        S.box(40, 160, 680, 160, R`!!__រូបមន្តម៉ាទ្រីសរង្វិល $R_\alpha$ ៖__!!
-ការបំប្លែងវិលជុំវិញគល់ $O$ មុំ $\alpha$ (ទិសវិជ្ជមាន) តាងដោយម៉ាទ្រីស ៖
-$$R_\alpha = \begin{bmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{bmatrix}$$`, { size: 26, align: 'center' }),
-        geomTransSvg(740, 160, 500, 370, 'rot'),
-        step(40, 345, 680, R`• វិលមុំ $90^\circ$ ៖  $R_{90^\circ} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$`, { size: 26 }),
-        step(40, 400, 680, R`• វិលមុំ $180^\circ$ ៖  $R_{180^\circ} = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} = S_O$`, { size: 26 }),
-        step(40, 455, 680, R`• វិលមុំ $270^\circ$ ៖  $R_{270^\circ} = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$`, { size: 26 }),
-        tip(40, 515, 680, 75, R`!!លក្ខណៈ ៖!! $\det(R_\alpha) = \cos^2\alpha + \sin^2\alpha = 1$  (រក្សាប្រវែង និងផ្ទៃក្រឡា)`, { size: 22 })
+      /* 8 */ page([
+        sec('៣.១ ម៉ាទ្រីសនៃការបំប្លែងវិល (Rotations)'),
+        card(60, 160, 600, 360, 'រូបមន្តម៉ាទ្រីសរង្វិល R_α', R`ការបំប្លែងវិលជុំវិញគល់ $O$ មុំ $\alpha$ (ទិសវិជ្ជមាន) ៖
+$$\mathbf{R_\alpha = \begin{bmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{bmatrix}}$$
+• **ករណីមុំពិសេសសំខាន់ៗ** ៖
+  - $R_{90^\circ} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \qquad (M(x, y) \to M'(-y, x))$
+  - $R_{180^\circ} = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} = S_O$
+  - $R_{270^\circ} = R_{-90^\circ} = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$
+• **លក្ខណៈ** ៖ $\det(R_\alpha) = \cos^2\alpha + \sin^2\alpha = 1$ (រក្សាប្រវែង និងផ្ទៃ) ។`, { size: 23 }),
+        geomTransSvg(680, 160, 540, 360, 'rot'),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ ការបំប្លែងវិល $R_\alpha$ រក្សាប្រវែងអង្កត់ និងរង្វាស់មុំនៅដដែល (Isometry) ។`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 9 example rotation */ page([
-        line(40, 115, 1200, R`!!__លំហាត់គំរូ ៖__!!  រករូបភាពនៃចំណុច $A(4, 2)$ តាមការបំប្លែងវិល $R_{90^\circ}$ និង $R_{60^\circ}$ ៖`, { size: 28 }),
-        solTitle(440, 180),
-        step(60, 250, 1100, R`• តាម $R_{90^\circ} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$ ៖   $\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 4 \\ 2 \end{bmatrix} = \begin{bmatrix} -2 \\ 4 \end{bmatrix} \implies A_1'(-2, 4)$`, { size: 27, h: 54 }),
-        step(60, 330, 1100, R`• តាម $R_{60^\circ} = \begin{bmatrix} \cos 60^\circ & -\sin 60^\circ \\ \sin 60^\circ & \cos 60^\circ \end{bmatrix} = \begin{bmatrix} 1/2 & -\sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{bmatrix}$ ៖`, { size: 26, h: 54 }),
-        step(100, 400, 1000, R`$\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 1/2 & -\sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{bmatrix} \begin{bmatrix} 4 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 - \sqrt{3} \\ 2\sqrt{3} + 1 \end{bmatrix}$`, { size: 27, h: 54 }),
-        S.conclude(495, R`$A_1'(-2, 4) \quad \text{និង} \quad A_2'(2 - \sqrt{3}, 2\sqrt{3} + 1)$`),
-        kids(1080, 480, 160)
+      /* 9 */ page([
+        sec('៣.២ ឧទាហរណ៍គំរូ ៖ ការបំប្លែងវិលជុំវិញគល់ O'),
+        l(60, 155, 1180, R`!!លំហាត់គំរូ ៖!!  រករូបភាពនៃចំណុច $A(4, 2)$ តាមការបំប្លែងវិល $R_{90^\circ}$ និង $R_{60^\circ}$ ៖`, { size: 27 }),
+        s(100, 225, 1080, R`• តាម $R_{90^\circ} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$ ៖   $\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 4 \\ 2 \end{bmatrix} = \begin{bmatrix} -2 \\ 4 \end{bmatrix} \implies A_1'(-2, 4)$`),
+        s(100, 290, 1080, R`• តាម $R_{60^\circ} = \begin{bmatrix} \cos 60^\circ & -\sin 60^\circ \\ \sin 60^\circ & \cos 60^\circ \end{bmatrix} = \begin{bmatrix} 1/2 & -\sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{bmatrix}$ ៖`),
+        s(100, 355, 1080, R`  $\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 1/2 & -\sqrt{3}/2 \\ \sqrt{3}/2 & 1/2 \end{bmatrix} \begin{bmatrix} 4 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 - \sqrt{3} \\ 2\sqrt{3} + 1 \end{bmatrix}$`),
+        S.box(60, 495, 1160, 115, R`!!ដូចនេះ!!  រូបភាពគឺ  $A_1'(-2, 4) \quad$ និង $\quad A_2'(2 - \sqrt{3}, \ 2\sqrt{3} + 1)$ ។`, { size: 28, align: 'center', anim: true })
       ]),
 
-      /* 10 section 3.2 scaling */ page([
-        title('៣.២ ចំឡងតាមមាត្រដ្ឋាន (Scaling / Dilation)'),
-        S.box(40, 160, 1180, 130, R`!!__រូបមន្តម៉ាទ្រីសចំឡងតាមមាត្រដ្ឋាន ៖__!!
-• ពង្រីក ឬបង្រួមស្មើទិសដោយមេគុណ $k$ (Homothety) ៖  $$H_k = \begin{bmatrix} k & 0 \\ 0 & k \end{bmatrix}$$
-• ពង្រីកតាមទិសដេក $k_x$ និងទិសឈរ $k_y$ ៖  $$D = \begin{bmatrix} k_x & 0 \\ 0 & k_y \end{bmatrix}$$`, { size: 26, align: 'center' }),
-        line(40, 315, 1100, R`!!__ឧទាហរណ៍ ៖__!!  ចំឡងដោយមេគុណ $k = 3$ បំប្លែងចំណុច $M(2, 5) \to M'(6, 15)$ ។`, { size: 28 }),
-        step(60, 390, 1100, R`• ផ្ទៃក្រឡា ៖  $\det(H_k) = k^2$  នាំឱ្យផ្ទៃក្រឡារូបភាពស្មើ $k^2$ ដងនៃផ្ទៃរូបដើម!`, { size: 26, h: 48 }),
-        step(60, 450, 1100, R`• បើ $k = -1 \implies H_{-1} = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} = S_O$  (ឆ្លុះធៀបនឹងគល់ $O$)`, { size: 26, h: 48 }),
-        kids()
+      /* 10 */ page([
+        sec('៣.៣ ចំឡងតាមមាត្រដ្ឋាន (Scaling / Dilation)'),
+        card(60, 160, 560, 360, 'និយមន័យ និងម៉ាទ្រីសចំឡង', R`• **ចំឡងស្មើទិសដោយមេគុណ $k$ (Homothety)** ៖
+  ចំណុច $M(x, y) \to M'(kx, ky)$ ៖
+  $$\mathbf{H_k = \begin{bmatrix} k & 0 \\ 0 & k \end{bmatrix}}$$
+• **ពង្រីក/បង្រួមតាមទិសដេក $k_x$ និងឈរ $k_y$** ៖
+  $$\mathbf{D = \begin{bmatrix} k_x & 0 \\ 0 & k_y \end{bmatrix}}$$
+• **ឧទាហរណ៍** ៖ $H_3 = \begin{bmatrix} 3 & 0 \\ 0 & 3 \end{bmatrix}$ បំប្លែង $M(2, 5) \to M'(6, 15)$ ។`, { size: 23 }),
+        card(660, 160, 560, 360, 'ផលប៉ះពាល់លើប្រវែង និងផ្ទៃក្រឡា', R`• **ប្រវែង** ៖
+  ប្រវែងអង្កត់ថ្មីស្មើ $|k|$ ដងនៃប្រវែងដើម ។
+• **ផ្ទៃក្រឡា** ៖
+  $$\det(H_k) = k^2$$
+  ផ្ទៃក្រឡារូបភាពថ្មីស្មើ $k^2$ ដងនៃផ្ទៃក្រឡារូបដើម!
+• **ករណី $k = -1$** ៖
+  $H_{-1} = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} = S_O$ (ឆ្លុះធៀបនឹងគល់ $O$) ។`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចងចាំ!! ៖ បើដេទែរមីណង់ស្មើ $\det(M)$ នោះផ្ទៃក្រឡារូបភាពស្មើ $|\det(M)|$ ដងនៃផ្ទៃរូបដើម!`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 11 section 4 composition */ page([
-        title('៤. បន្សំនៃការបំប្លែងលីនេអ៊ែរ (Composition)'),
-        S.box(40, 160, 1180, 140, R`!!__ទ្រឹស្តីបទ ៖__!!
-បើ $T_1$ មានម៉ាទ្រីស $M_1$ ហើយ $T_2$ មានម៉ាទ្រីស $M_2$ នោះបន្សំ $T = T_2 \circ T_1$ (ធ្វើ $T_1$ មុន រួចធ្វើ $T_2$ តាមក្រោយ) មានម៉ាទ្រីសតាង ៖
-$$M = M_2 \cdot M_1$$`, { size: 27, align: 'center' }),
-        tip(40, 320, 1180, 80, R`!!ប្រយ័ត្នលំដាប់គុណ ៖!! $T_2 \circ T_1$ ត្រូវគុណម៉ាទ្រីស $M_2 \cdot M_1$ (ម៉ាទ្រីសនៃការបំប្លែងដែលធ្វើមុន ត្រូវនៅខាងស្តាំ)!`, { size: 25 }),
-        line(40, 420, 1100, R`!!__លំហាត់គំរូ ៖__!! រកម៉ាទ្រីសនៃបន្សំឆ្លុះតាម $Ox$ រួចបន្តវិលមុំ $90^\circ$ ៖`, { size: 28 }),
-        step(80, 480, 1000, R`$M = R_{90^\circ} \cdot S_{Ox} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = S_{y=x}$`, { size: 28 }),
-        kids()
+      /* 11 */ page([
+        sec('៤.១ បន្សំនៃការបំប្លែងលីនេអ៊ែរ (Composition)'),
+        card(60, 160, 560, 360, 'ទ្រឹស្តីបទបន្សំការបំប្លែង', R`បើការបំប្លែង $T_1$ មានម៉ាទ្រីស $M_1$ ហើយ $T_2$ មានម៉ាទ្រីស $M_2$ ៖
+• បន្សំ $T = T_2 \circ T_1$ (ធ្វើ $T_1$ មុន រួចធ្វើ $T_2$ តាមក្រោយ) មានម៉ាទ្រីសតាង ៖
+  $$\mathbf{M = M_2 \cdot M_1}$$
+• **ប្រយ័ត្នប្រយែងលំដាប់គុណ** ៖
+  ម៉ាទ្រីសនៃការបំប្លែងដែល **ធ្វើមុន ត្រូវគុណនៅខាងស្តាំ** ជានិច្ច!
+  $$X' = M_2(M_1 X) = (M_2 M_1)X$$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ឧទាហរណ៍ជាក់ស្តែង ៖ ឆ្លុះរួចវិល', R`រកម៉ាទ្រីសនៃបន្សំឆ្លុះតាម $Ox$ រួចបន្តវិលមុំ $90^\circ$ ៖
+• $M_1 = S_{Ox} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$ (ធ្វើមុន)
+• $M_2 = R_{90^\circ} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$ (ធ្វើក្រោយ)
+• ម៉ាទ្រីសបន្សំ $M = M_2 \cdot M_1$ ៖
+$$M = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = S_{y=x}$$
+*(បន្សំនេះបង្កើតបានការឆ្លុះតាមបន្ទាត់ $y = x$!)*`, { size: 22 }),
+        S.box(60, 545, 1160, 80, R`!!ច្បាប់គ្រឹះ!! ៖ $T_2 \circ T_1 \iff M = M_2 \cdot M_1$ — អនុវត្តមុនគុណស្តាំ អនុវត្តក្រោយគុណឆ្វេង!`, { size: 25, align: 'center', anim: true })
       ]),
 
-      /* 12 practice exercises */ page([
-        title('លំហាត់អនុវត្ត'),
-        T(130, 588, 820, 40, 'ចម្លើយនៅស្លាយបន្ទាប់ — សូមព្យាយាមដោះស្រាយដោយខ្លួនឯងជាមុនសិន ។', { size: 20, color: '#868e96' }),
-        S.box(960, 190, 290, 360, R`!!ប្រអប់រូបមន្ត!!
-• $X' = MX$
-• $S_{Ox} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$
-• $S_{Oy} = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$
-• $R_\theta = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$
-• $T_2 \circ T_1 \iff M_2 M_1$`, { size: 21, align: 'center' })
-      ].concat(rows([
-        R`រករូបភាពនៃចំណុច $P(2, -5)$ តាមការបំប្លែងឆ្លុះធៀបនឹងអ័ក្ស $Ox$`,
-        R`រករូបភាពនៃចំណុច $Q(-3, 4)$ តាមការបំប្លែងវិល $R_{90^\circ}$`,
-        R`កំណត់ម៉ាទ្រីសតាង $T$ បើ $T(1, 0) = (2, 3)$ និង $T(0, 1) = (-1, 4)$`,
-        R`រករូបភាពនៃបន្ទាត់ $y = 2x + 1$ តាមការបំប្លែងឆ្លុះធៀបនឹងអ័ក្ស $Oy$`,
-        R`រកម៉ាទ្រីសនៃបន្សំការបំប្លែង $T_2 \circ T_1$ បើ $M_1 = S_{Oy}$ និង $M_2 = R_{180^\circ}$`
-      ], { w: 840 }))),
+      /* 12 */ page([
+        sec('សង្ខេបជំពូកទី ៤ មេរៀនទី ៣ ៖ តារាងម៉ាទ្រីសនៃការបំប្លែង'),
+        card(60, 160, 560, 360, 'ម៉ាទ្រីសឆ្លុះ & ចំណោល', R`• **ឆ្លុះអ័ក្ស $Ox$** ៖ $\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$
+• **ឆ្លុះអ័ក្ស $Oy$** ៖ $\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$
+• **ឆ្លុះគល់ $O$** ៖ $\begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$
+• **ឆ្លុះបន្ទាត់ $y=x$** ៖ $\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$
+• **ចំណោល $Ox$** ៖ $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$
+• **ចំណោល $Oy$** ៖ $\begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}$`, { size: 23 }),
+        card(660, 160, 560, 360, 'ម៉ាទ្រីសវិល & មាត្រដ្ឋាន', R`• **វិលមុំ $\alpha$** ៖ $\begin{bmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{bmatrix}$
+• **វិលមុំ $90^\circ$** ៖ $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$
+• **ចំឡងមាត្រដ្ឋាន $k$** ៖ $\begin{bmatrix} k & 0 \\ 0 & k \end{bmatrix}$
+• **បន្សំការបំប្លែង** ៖ $T_2 \circ T_1 \iff M = M_2 \cdot M_1$
+• **ផ្ទៃក្រឡារូបភាព** ៖ $S' = |\det(M)| \cdot S$`, { size: 23 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖  សូមបន្តឆ្លើយសំណួរ MCQ ៣ សំណួរខាងក្រោមដើម្បីវាស់ស្ទង់ការយល់ដឹង!`, { size: 26, align: 'center', anim: true })
+      ]),
 
-      /* 13 answers */ page([
-        title('ចម្លើយលំហាត់អនុវត្ត'),
-        tip(130, 588, 1020, 50, R`!!គន្លឹះ ៖!! ត្រូវចាំថាការបំប្លែងដែលអនុវត្តមុន ត្រូវគុណនៅខាងស្តាំ $M_2 \cdot M_1$ ។`, { size: 22 })
-      ].concat(rows([
-        R`$P'(2, 5)$`,
-        R`$\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} -3 \\ 4 \end{bmatrix} = \begin{bmatrix} -4 \\ -3 \end{bmatrix} \implies Q'(-4, -3)$`,
-        R`$M = \begin{bmatrix} 2 & -1 \\ 3 & 4 \end{bmatrix}$  (ជួរឈរទី ១ ជារូបភាព $(1, 0)$ ជួរឈរទី ២ ជារូបភាព $(0, 1)$)`,
-        R`$x \to -x \implies y = 2(-x) + 1 \implies y = -2x + 1$`,
-        R`$M = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = S_{Ox}$`
-      ], { w: 1100, anim: true }))),
+      /* 13 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`ម៉ាទ្រីសតាងការបំប្លែងឆ្លុះធៀបនឹងអ័ក្ស $Oy$ គឺ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះឆ្លុះអ័ក្ស $Oy \implies x' = -x$ និង $y' = y \implies S_{Oy} = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$)`, { size: 23, align: 'center', anim: true })
+      ]),
 
-      /* 14-16 quizzes */
-      S.quiz(R`!!១.!! ម៉ាទ្រីសតាងការបំប្លែងឆ្លុះធៀបនឹងអ័ក្ស $Oy$ គឺ ៖`, [R`$\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$`, R`$\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$`, R`$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$`, R`$\begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$`], 0, 30),
-      S.quiz(R`!!២.!! រូបភាពនៃចំណុច $(3, -2)$ តាមការបំប្លែងវិលជុំវិញគល់តម្រុយមុំ $90^\circ$ គឺ ៖`, ['$(2, 3)$', '$(-2, -3)$', '$(3, 2)$', '$(-3, 2)$'], 0, 30),
-      S.quiz(R`!!៣.!! គេឱ្យ $T(x, y) = (2x - y, x + 3y)$ ។ ម៉ាទ្រីសតាងការបំប្លែង $T$ គឺ ៖`, [R`$\begin{bmatrix} 2 & -1 \\ 1 & 3 \end{bmatrix}$`, R`$\begin{bmatrix} 2 & 1 \\ -1 & 3 \end{bmatrix}$`, R`$\begin{bmatrix} 1 & 3 \\ 2 & -1 \end{bmatrix}$`, R`$\begin{bmatrix} 2 & 3 \\ -1 & 1 \end{bmatrix}$`], 0, 30),
+      /* 14 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`រូបភាពនៃចំណុច $(3, -2)$ តាមការបំប្លែងវិលជុំវិញគល់តម្រុយមុំ $90^\circ$ គឺ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$(2, 3)$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$(-2, -3)$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$(3, 2)$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$(-3, 2)$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះ $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 3 \\ -2 \end{bmatrix} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$)`, { size: 23, align: 'center', anim: true })
+      ]),
 
-      /* 17 homework */ S.homework(R`!!១.!! កំណត់ម៉ាទ្រីស $M$ នៃការបំប្លែងដែលបំប្លែងចំណុច $(1, 0) \to (3, 2)$ និងចំណុច $(0, 1) \to (-1, 4)$ ។
+      /* 15 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`គេឱ្យ $T(x, y) = (2x - y, \ x + 3y)$ ។ ម៉ាទ្រីសតាងការបំប្លែង $T$ គឺ ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\begin{bmatrix} 2 & -1 \\ 1 & 3 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\begin{bmatrix} 2 & 1 \\ -1 & 3 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\begin{bmatrix} 1 & 3 \\ 2 & -1 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\begin{bmatrix} 2 & 3 \\ -1 & 1 \end{bmatrix}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះជួរដេក ១ គឺមេគុណ $x, y$ នៃ $x'$ : $(2, -1)$ និងជួរដេក ២ នៃ $y'$ : $(1, 3)$)`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 16 */ page([
+        sec('លំហាត់អនុវត្តន៍ពីសៀវភៅពុម្ព'),
+        S.box(80, 160, 1120, 350, R`!!១.!! រករូបភាពនៃចំណុច $P(2, -5)$ តាមការបំប្លែងឆ្លុះធៀបនឹងអ័ក្ស $Ox$ និងអ័ក្ស $Oy$ ។
+!!២.!! កំណត់ម៉ាទ្រីស $M$ នៃការបំប្លែងដែលបំប្លែងចំណុច $(1, 0) \to (3, 2)$ និង $(0, 1) \to (-1, 4)$ ។
+!!៣.!! រករូបភាពនៃត្រីកោណ $ABC$ ដែលមាន $A(0, 0), B(3, 1), C(1, 4)$ តាមការបំប្លែងវិល $R_{90^\circ}$ ។
+!!៤.!! បង្ហាញថាក្នុងប្លង់ បន្សំនៃការឆ្លុះធៀបនឹងអ័ក្ស $Ox$ រួចបន្តឆ្លុះធៀបនឹងអ័ក្ស $Oy$ គឺជាការឆ្លុះធៀបនឹងគល់ $O$ ។`, { size: 24, lh: '1.6' })
+      ]),
+
+      /* 17 */ S.homework(R`!!១.!! កំណត់ម៉ាទ្រីស $M$ នៃការបំប្លែងដែលបំប្លែងចំណុច $(1, 0) \to (3, 2)$ និងចំណុច $(0, 1) \to (-1, 4)$ ។
 !!២.!! រករូបភាពនៃត្រីកោណ $ABC$ ដែលមានកំពូល $A(0, 0), B(3, 1), C(1, 4)$ តាមការបំប្លែងវិលជុំវិញគល់តម្រុយមុំ $90^\circ$ ។
 !!៣.!! បង្ហាញថាក្នុងប្លង់ បន្សំនៃការឆ្លុះធៀបនឹងអ័ក្ស $Ox$ រួចបន្តឆ្លុះធៀបនឹងអ័ក្ស $Oy$ គឺជាការបំប្លែងឆ្លុះធៀបនឹងគល់តម្រុយ $O$ (ឬការវិលមុំ $180^\circ$) ។`),
 
@@ -5324,18 +5492,18 @@ $$M = M_2 \cdot M_1$$`, { size: 27, align: 'center' }),
     return {
       name: 'ថ្នាក់ទី១១ · ជំពូក៤ មេរៀនទី៣ ការបំប្លែងលីនេអ៊ែរ (១៨ ស្លាយ)',
       theme: 'school',
-      school: info.school,
-      school2: info.school2,
-      school3: info.school3,
-      teacher: info.teacher,
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
         { title: '១. សញ្ញាណការបំប្លែងលីនេអ៊ែរ', slide: 3 },
         { title: '២. ម៉ាទ្រីសឆ្លុះ & ចំណោល', slide: 5 },
-        { title: '៣. បំប្លែងវិល & មាត្រដ្ឋាន', slide: 7 },
+        { title: '៣. ម៉ាទ្រីសវិល & មាត្រដ្ឋាន', slide: 7 },
         { title: '៤. បន្សំនៃការបំប្លែង', slide: 10 },
-        { title: 'លំហាត់ & កិច្ចការផ្ទះ', slide: 11 }
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 11 }
       ],
       slides: slides
     };
