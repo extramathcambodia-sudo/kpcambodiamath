@@ -1948,6 +1948,210 @@
       return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
     };
 
+
+    // 23. Triangle Centers (មេដ្យាន, មេដ្យាទ័រ, កម្ពស់, ពុះមុំ)
+    K.svgTriangleCenters = function (x, y, w, h, type, opts) {
+      w = w || 410; h = h || 360; opts = opts || {};
+      type = type || 'centroid';
+      var body = '';
+      var cx = Math.round(w / 2);
+      var Ax = cx, Ay = 55, Bx = 45, By = 270, Cx = w - 45, Cy = 270;
+      var title = opts.title || 'បន្ទាត់ និងចំណុចពិសេសក្នុងត្រីកោណ';
+
+      if (type === 'centroid') {
+        title = opts.title || 'មេដ្យាន & ទីប្រជុំទម្ងន់ G (Centroid)';
+        var MaX = (Bx + Cx) / 2, MaY = (By + Cy) / 2;
+        var MbX = (Ax + Cx) / 2, MbY = (Ay + Cy) / 2;
+        var McX = (Ax + Bx) / 2, McY = (Ay + By) / 2;
+        var Gx = (Ax + Bx + Cx) / 3, Gy = (Ay + By + Cy) / 3;
+
+        body += '<polygon points="' + Ax + ',' + Ay + ' ' + Bx + ',' + By + ' ' + Cx + ',' + Cy + '" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.5"/>';
+        body += '<line x1="' + Ax + '" y1="' + Ay + '" x2="' + MaX + '" y2="' + MaY + '" stroke="#dc2626" stroke-width="2"/>';
+        body += '<line x1="' + Bx + '" y1="' + By + '" x2="' + MbX + '" y2="' + MbY + '" stroke="#16a34a" stroke-width="2"/>';
+        body += '<line x1="' + Cx + '" y1="' + Cy + '" x2="' + McX + '" y2="' + McY + '" stroke="#9333ea" stroke-width="2"/>';
+        body += '<circle cx="' + MaX + '" cy="' + MaY + '" r="3.5" fill="#dc2626"/>';
+        body += '<circle cx="' + MbX + '" cy="' + MbY + '" r="3.5" fill="#16a34a"/>';
+        body += '<circle cx="' + McX + '" cy="' + McY + '" r="3.5" fill="#9333ea"/>';
+        body += '<circle cx="' + Gx + '" cy="' + Gy + '" r="5.5" fill="#b91c1c" stroke="#fff" stroke-width="2"/>';
+        body += '<text x="' + Ax + '" y="' + (Ay - 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a" text-anchor="middle">A</text>';
+        body += '<text x="' + (Bx - 15) + '" y="' + (By + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">B</text>';
+        body += '<text x="' + (Cx + 10) + '" y="' + (Cy + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">C</text>';
+        body += '<text x="' + (Gx + 12) + '" y="' + (Gy - 6) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b91c1c">G</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">AG = (2/3)AM  |  AG = 2 GM</text>';
+      } else if (type === 'circumcenter') {
+        title = opts.title || 'មេដ្យាទ័រ & ផ្ចិតចារឹកក្រៅ O';
+        var Ox = cx, Oy = 180, R = 115;
+        body += '<circle cx="' + Ox + '" cy="' + Oy + '" r="' + R + '" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4"/>';
+        var tAx = Ox, tAy = Oy - R;
+        var tBx = Ox - 100, tBy = Oy + 57;
+        var tCx = Ox + 100, tCy = Oy + 57;
+        body += '<polygon points="' + tAx + ',' + tAy + ' ' + tBx + ',' + tBy + ' ' + tCx + ',' + tCy + '" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>';
+        body += '<line x1="' + Ox + '" y1="' + (tAy - 10) + '" x2="' + Ox + '" y2="' + (tBy + 20) + '" stroke="#dc2626" stroke-width="1.8"/>';
+        body += '<line x1="' + Ox + '" y1="' + Oy + '" x2="' + tAx + '" y2="' + tAy + '" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>';
+        body += '<line x1="' + Ox + '" y1="' + Oy + '" x2="' + tBx + '" y2="' + tBy + '" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>';
+        body += '<line x1="' + Ox + '" y1="' + Oy + '" x2="' + tCx + '" y2="' + tCy + '" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>';
+        body += '<circle cx="' + Ox + '" cy="' + Oy + '" r="5" fill="#16a34a" stroke="#fff" stroke-width="2"/>';
+        body += '<text x="' + tAx + '" y="' + (tAy - 8) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a" text-anchor="middle">A</text>';
+        body += '<text x="' + (tBx - 15) + '" y="' + (tBy + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">B</text>';
+        body += '<text x="' + (tCx + 15) + '" y="' + (tCy + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">C</text>';
+        body += '<text x="' + (Ox + 12) + '" y="' + (Oy + 5) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a">O</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#15803d" text-anchor="middle">OA = OB = OC = R</text>';
+      } else if (type === 'orthocenter') {
+        title = opts.title || 'កម្ពស់ & អរតូសង់ H (Orthocenter)';
+        var Hx = cx, Hy = 205;
+        body += '<polygon points="' + Ax + ',' + Ay + ' ' + Bx + ',' + By + ' ' + Cx + ',' + Cy + '" fill="#faf5ff" stroke="#7e22ce" stroke-width="2.5"/>';
+        body += '<line x1="' + Ax + '" y1="' + Ay + '" x2="' + cx + '" y2="270" stroke="#dc2626" stroke-width="2"/>';
+        body += '<line x1="' + Bx + '" y1="' + By + '" x2="' + (cx + 60) + '" y2="135" stroke="#2563eb" stroke-width="2"/>';
+        body += '<line x1="' + Cx + '" y1="' + Cy + '" x2="' + (cx - 60) + '" y2="135" stroke="#16a34a" stroke-width="2"/>';
+        body += '<circle cx="' + Hx + '" cy="' + Hy + '" r="5" fill="#7e22ce" stroke="#fff" stroke-width="2"/>';
+        body += '<text x="' + Ax + '" y="' + (Ay - 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a" text-anchor="middle">A</text>';
+        body += '<text x="' + (Bx - 15) + '" y="' + (By + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">B</text>';
+        body += '<text x="' + (Cx + 10) + '" y="' + (Cy + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">C</text>';
+        body += '<text x="' + (Hx + 12) + '" y="' + (Hy + 4) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7e22ce">H</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#6b21a8" text-anchor="middle">AH ⟂ BC  |  BH ⟂ AC  |  CH ⟂ AB</text>';
+      } else {
+        title = opts.title || 'ពុះមុំ & ផ្ចិតចារឹកក្នុង I (Incenter)';
+        var Ix = cx, Iy = 195, rIn = 55;
+        body += '<polygon points="' + Ax + ',' + Ay + ' ' + Bx + ',' + By + ' ' + Cx + ',' + Cy + '" fill="#fffbeb" stroke="#b45309" stroke-width="2.5"/>';
+        body += '<circle cx="' + Ix + '" cy="' + Iy + '" r="' + rIn + '" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>';
+        body += '<line x1="' + Ax + '" y1="' + Ay + '" x2="' + Ix + '" y2="' + (Iy + rIn) + '" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="4,3"/>';
+        body += '<line x1="' + Bx + '" y1="' + By + '" x2="' + (Ix + 50) + '" y2="' + (Iy - 35) + '" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/>';
+        body += '<line x1="' + Cx + '" y1="' + Cy + '" x2="' + (Ix - 50) + '" y2="' + (Iy - 35) + '" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="4,3"/>';
+        body += '<circle cx="' + Ix + '" cy="' + Iy + '" r="5" fill="#b45309" stroke="#fff" stroke-width="2"/>';
+        body += '<text x="' + Ax + '" y="' + (Ay - 10) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a" text-anchor="middle">A</text>';
+        body += '<text x="' + (Bx - 15) + '" y="' + (By + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">B</text>';
+        body += '<text x="' + (Cx + 10) + '" y="' + (Cy + 15) + '" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">C</text>';
+        body += '<text x="' + (Ix + 12) + '" y="' + (Iy - 6) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">I</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400e" text-anchor="middle">ចម្ងាយទៅជ្រុងទាំង៣ ស្មើគ្នា r  |  S = p · r</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 24. Solids 3D Comprehensive (ព្រីស, ស៊ីឡាំង, ពីរ៉ាមីត, កោន, ស្វ៊ែរ)
+    K.svgSolidsAll = function (x, y, w, h, solidType, opts) {
+      w = w || 410; h = h || 360; opts = opts || {};
+      solidType = solidType || 'prism';
+      var body = '';
+      var cx = Math.round(w / 2);
+      var title = opts.title || 'សូលីតធរណីមាត្រ (3D Solids)';
+
+      if (solidType === 'prism') {
+        title = opts.title || 'ព្រីសត្រង់ (Right Prism)';
+        var px = cx - 90, py = 120, pw = 130, ph = 120, pd = 50;
+        body += '<polygon points="' + px + ',' + py + ' ' + (px + pw) + ',' + py + ' ' + (px + pw + pd) + ',' + (py - pd) + ' ' + (px + pd) + ',' + (py - pd) + '" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>';
+        body += '<polygon points="' + (px + pw) + ',' + py + ' ' + (px + pw + pd) + ',' + (py - pd) + ' ' + (px + pw + pd) + ',' + (py + ph - pd) + ' ' + (px + pw) + ',' + (py + ph) + '" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>';
+        body += '<rect x="' + px + '" y="' + py + '" width="' + pw + '" height="' + ph + '" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>';
+        body += '<line x1="' + (px + pw + 20) + '" y1="' + py + '" x2="' + (px + pw + 20) + '" y2="' + (py + ph) + '" stroke="#dc2626" stroke-width="2"/>';
+        body += '<text x="' + (px + pw + 32) + '" y="' + (py + ph / 2 + 5) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">h</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">S_L = p · h  |  S_T = S_L + 2B  |  V = B · h</text>';
+      } else if (solidType === 'cylinder') {
+        title = opts.title || 'ស៊ីឡាំងបរិវត្ត (Cylinder)';
+        var cyx = cx, cyTop = 90, crx = 70, cry = 20, cyH = 130;
+        body += '<rect x="' + (cyx - crx) + '" y="' + cyTop + '" width="' + (2 * crx) + '" height="' + cyH + '" fill="#e0f2fe" stroke="none"/>';
+        body += '<line x1="' + (cyx - crx) + '" y1="' + cyTop + '" x2="' + (cyx - crx) + '" y2="' + (cyTop + cyH) + '" stroke="#0284c7" stroke-width="2"/>';
+        body += '<line x1="' + (cyx + crx) + '" y1="' + cyTop + '" x2="' + (cyx + crx) + '" y2="' + (cyTop + cyH) + '" stroke="#0284c7" stroke-width="2"/>';
+        body += '<ellipse cx="' + cyx + '" cy="' + (cyTop + cyH) + '" rx="' + crx + '" ry="' + cry + '" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>';
+        body += '<ellipse cx="' + cyx + '" cy="' + cyTop + '" rx="' + crx + '" ry="' + cry + '" fill="#7dd3fc" stroke="#0284c7" stroke-width="2"/>';
+        body += '<line x1="' + cyx + '" y1="' + cyTop + '" x2="' + (cyx + crx) + '" y2="' + cyTop + '" stroke="#dc2626" stroke-width="2"/>';
+        body += '<text x="' + (cyx + crx / 2) + '" y="' + (cyTop - 6) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#dc2626" text-anchor="middle">r</text>';
+        body += '<line x1="' + (cyx + crx + 20) + '" y1="' + cyTop + '" x2="' + (cyx + crx + 20) + '" y2="' + (cyTop + cyH) + '" stroke="#0369a1" stroke-width="2"/>';
+        body += '<text x="' + (cyx + crx + 32) + '" y="' + (cyTop + cyH / 2 + 5) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1">h</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0369a1" text-anchor="middle">S_L = 2πrh  |  S_T = 2πr(h+r)  |  V = πr²h</text>';
+      } else if (solidType === 'pyramid') {
+        title = opts.title || 'ពីរ៉ាមីតនិយ័ត (Pyramid)';
+        var apexX = cx, apexY = 65;
+        var pBx = cx - 80, pBy = 230, pWidth = 120, pDepth = 50;
+        body += '<polygon points="' + pBx + ',' + pBy + ' ' + (pBx + pWidth) + ',' + pBy + ' ' + (pBx + pWidth + pDepth) + ',' + (pBy - pDepth) + ' ' + (pBx + pDepth) + ',' + (pBy - pDepth) + '" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>';
+        body += '<polygon points="' + apexX + ',' + apexY + ' ' + pBx + ',' + pBy + ' ' + (pBx + pWidth) + ',' + pBy + '" fill="#fde68a" fill-opacity="0.7" stroke="#d97706" stroke-width="2"/>';
+        body += '<polygon points="' + apexX + ',' + apexY + ' ' + (pBx + pWidth) + ',' + pBy + ' ' + (pBx + pWidth + pDepth) + ',' + (pBy - pDepth) + '" fill="#f59e0b" fill-opacity="0.6" stroke="#d97706" stroke-width="2"/>';
+        body += '<line x1="' + apexX + '" y1="' + apexY + '" x2="' + apexX + '" y2="' + (pBy - pDepth / 2) + '" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>';
+        body += '<text x="' + (apexX - 20) + '" y="' + (apexY + 70) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#dc2626">h</text>';
+        var slantMidX = (pBx + pBx + pWidth) / 2, slantMidY = pBy;
+        body += '<line x1="' + apexX + '" y1="' + apexY + '" x2="' + slantMidX + '" y2="' + slantMidY + '" stroke="#16a34a" stroke-width="2"/>';
+        body += '<text x="' + (slantMidX + 12) + '" y="' + (apexY + 80) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16a34a">a</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400e" text-anchor="middle">S_L = (1/2) p · a  |  S_T = S_L + B  |  V = (1/3) B · h</text>';
+      } else if (solidType === 'cone') {
+        title = opts.title || 'កោនបរិវត្ត (Cone)';
+        var cApexX = cx, cApexY = 70;
+        var cBaseY = 230, cRadX = 80, cRadY = 22;
+        body += '<polygon points="' + cApexX + ',' + cApexY + ' ' + (cApexX - cRadX) + ',' + cBaseY + ' ' + (cApexX + cRadX) + ',' + cBaseY + '" fill="#ede9fe" stroke="none"/>';
+        body += '<line x1="' + cApexX + '" y1="' + cApexY + '" x2="' + (cApexX - cRadX) + '" y2="' + cBaseY + '" stroke="#7c3aed" stroke-width="2"/>';
+        body += '<line x1="' + cApexX + '" y1="' + cApexY + '" x2="' + (cApexX + cRadX) + '" y2="' + cBaseY + '" stroke="#7c3aed" stroke-width="2"/>';
+        body += '<ellipse cx="' + cApexX + '" cy="' + cBaseY + '" rx="' + cRadX + '" ry="' + cRadY + '" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>';
+        body += '<line x1="' + cApexX + '" y1="' + cApexY + '" x2="' + cApexX + '" y2="' + cBaseY + '" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>';
+        body += '<text x="' + (cApexX - 20) + '" y="' + (cApexY + 70) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#dc2626">h</text>';
+        body += '<line x1="' + cApexX + '" y1="' + cBaseY + '" x2="' + (cApexX + cRadX) + '" y2="' + cBaseY + '" stroke="#0284c7" stroke-width="2"/>';
+        body += '<text x="' + (cApexX + cRadX / 2) + '" y="' + (cBaseY + 16) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7" text-anchor="middle">r</text>';
+        body += '<text x="' + (cApexX + cRadX / 2 + 15) + '" y="' + (cApexY + 65) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#7c3aed">g</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#5b21b6" text-anchor="middle">g² = r² + h²  |  S_L = πrg  |  V = (1/3)πr²h</text>';
+      } else {
+        title = opts.title || 'ស្វ៊ែរ (Sphere)';
+        var sCx = cx, sCy = 160, sR = 75;
+        body += '<circle cx="' + sCx + '" cy="' + sCy + '" r="' + sR + '" fill="#ecfdf5" stroke="#059669" stroke-width="2.5"/>';
+        body += '<ellipse cx="' + sCx + '" cy="' + sCy + '" rx="' + sR + '" ry="' + (sR * 0.3) + '" fill="none" stroke="#059669" stroke-width="1.8" stroke-dasharray="5,4"/>';
+        body += '<line x1="' + sCx + '" y1="' + sCy + '" x2="' + (sCx + sR) + '" y2="' + sCy + '" stroke="#dc2626" stroke-width="2.2"/>';
+        body += '<circle cx="' + sCx + '" cy="' + sCy + '" r="3.5" fill="#059669"/>';
+        body += '<text x="' + (sCx + sR / 2) + '" y="' + (sCy - 6) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">R</text>';
+        body += '<text x="' + (sCx - 12) + '" y="' + (sCy - 6) + '" font-family="sans-serif" font-size="14" font-weight="bold" fill="#059669">O</text>';
+        body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#065f46" text-anchor="middle">S = 4πR²  |  V = (4/3)πR³</text>';
+      }
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
+    // 25. Compass & Bearings (ត្រីវិស័យ និងទិសដៅ)
+    K.svgCompass = function (x, y, w, h, opts) {
+      w = w || 410; h = h || 360; opts = opts || {};
+      var title = opts.title || 'ត្រីវិស័យ និងមុំទិសដៅ (Bearings)';
+      var body = '';
+      var cx = Math.round(w / 2), cy = 160, r = 85;
+
+      body += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="#f8fafc" stroke="#334155" stroke-width="2.5"/>';
+      body += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r - 10) + '" fill="none" stroke="#cbd5e1" stroke-width="1"/>';
+      body += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="#0f172a"/>';
+
+      var dirs = [
+        { name: 'N (000°)', ang: 0, col: '#dc2626' },
+        { name: 'NE (045°)', ang: 45, col: '#2563eb' },
+        { name: 'E (090°)', ang: 90, col: '#16a34a' },
+        { name: 'SE (135°)', ang: 135, col: '#2563eb' },
+        { name: 'S (180°)', ang: 180, col: '#d97706' },
+        { name: 'SW (225°)', ang: 225, col: '#2563eb' },
+        { name: 'W (270°)', ang: 270, col: '#16a34a' },
+        { name: 'NW (315°)', ang: 315, col: '#2563eb' }
+      ];
+
+      for (var i = 0; i < dirs.length; i++) {
+        var d = dirs[i];
+        var rad = (d.ang - 90) * Math.PI / 180;
+        var x1 = cx + (r - 14) * Math.cos(rad);
+        var y1 = cy + (r - 14) * Math.sin(rad);
+        var x2 = cx + r * Math.cos(rad);
+        var y2 = cy + r * Math.sin(rad);
+        var tx = cx + (r + 16) * Math.cos(rad);
+        var ty = cy + (r + 16) * Math.sin(rad) + 4;
+        body += '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + d.col + '" stroke-width="2"/>';
+        body += '<text x="' + tx + '" y="' + ty + '" font-family="sans-serif" font-size="10" font-weight="bold" fill="' + d.col + '" text-anchor="middle">' + d.name + '</text>';
+      }
+
+      body += '<polygon points="' + cx + ',' + (cy - r + 12) + ' ' + (cx - 6) + ',' + cy + ' ' + (cx + 6) + ',' + cy + '" fill="#dc2626"/>';
+      body += '<polygon points="' + cx + ',' + (cy + r - 12) + ' ' + (cx - 6) + ',' + cy + ' ' + (cx + 6) + ',' + cy + '" fill="#475569"/>';
+
+      if (opts.showBearing !== false) {
+        var bAng = opts.bearing || 60;
+        var bRad = (bAng - 90) * Math.PI / 180;
+        var bx = cx + (r - 10) * Math.cos(bRad);
+        var by = cy + (r - 10) * Math.sin(bRad);
+        body += '<line x1="' + cx + '" y1="' + cy + '" x2="' + bx + '" y2="' + by + '" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round"/>';
+        body += '<circle cx="' + bx + '" cy="' + by + '" r="4" fill="#e11d48"/>';
+      }
+
+      body += '<text x="' + (w / 2) + '" y="' + (h - 15) + '" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">មុំទិសដៅ ៖ ចាប់ពីជើង (000°) ស្របទ្រនិចនាឡិកា</text>';
+
+      return shape('custom', x, y, w, h, { svg: _wrapSvg(w, h, body, title) });
+    };
+
     return K;
   }
 
@@ -40277,6 +40481,1475 @@ function g8Circles(A) {
     };
   }
 
+  
+
+  function g8SpecialLinesTriangles(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
+        title = K.title, card = K.card, kids = K.kids, svgTriangleCenters = K.svgTriangleCenters;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var R = String.raw;
+
+    var slides = [
+      /* 1 Cover */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី៨', 'មេរៀនទី ១៦', 'បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ', K.info),
+
+      /* 2 TOC */ K.toc([
+        '==១. មេដ្យាន & ទីប្រជុំទម្ងន់ G (Centroid)==',
+        '២. លក្ខណៈនៃទីប្រជុំទម្ងន់ & សមាមាត្រ ២:១',
+        '==៣. បន្ទាត់មេដ្យាទ័រ & ផ្ចិតរង្វង់ចារឹកក្រៅ O==',
+        '៤. ទីតាំងផ្ចិត O ក្នុងត្រីកោណស្រួច កែង និងទាល',
+        '==៥. កម្ពស់ & អរតូសង់ H (Orthocenter)==',
+        '៦. កន្លះបន្ទាត់ពុះមុំ & ផ្ចិតរង្វង់ចារឹកក្នុង I',
+        '==៧. សង្ខេបប្រៀបធៀបចំណុចពិសេសទាំង ៤==',
+        '៨. សំណួរពហុជ្រើសរើស (MCQ) & លំហាត់អនុវត្តន៍'
+      ], 32),
+
+      /* 3 Objective */ S.objective([
+        'យល់ច្បាស់ពីនិយមន័យ និងលក្ខណៈនៃមេដ្យាន ទីប្រជុំទម្ងន់ G មេដ្យាទ័រ ផ្ចិតចារឹកក្រៅ O កម្ពស់ អរតូសង់ H និងផ្ចិតចារឹកក្នុង I',
+        'ចេះអនុវត្តសមាមាត្រ ២:១ នៃទីប្រជុំទម្ងន់ និងរូបមន្តផ្ទៃក្រឡា S = p · r ក្នុងការដោះស្រាយលំហាត់គណនា'
+      ], 'បន្ទាត់និងចំណុចពិសេសក្នុងត្រីកោណជាមូលដ្ឋានគ្រឹះនៃធរណីមាត្រអឺគ្លីត និងមានការអនុវត្តសំខាន់ក្នុងរូបវិទ្យា និងវិស្វកម្មសំណង់។'),
+
+      /* 4 Median & Definition */ page([
+        sec('១. មេដ្យាន និងទីប្រជុំទម្ងន់ G (Centroid)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យមេដ្យាន',
+          accent: 'navy',
+          body: [
+            '**មេដ្យាន (Median)** នៃត្រីកោណ គឺជាអង្កត់ដែលភ្ជាប់ពីកំពូលមួយទៅកាន់ចំណុចកណ្ដាលនៃជ្រុងឈម។',
+            '• ត្រីកោណនីមួយៗមានមេដ្យានចំនួន ៣ គូសចេញពីកំពូលទាំង ៣ ($A, B, C$)។',
+            '• បើ $M$ ជាចំណុចកណ្ដាលនៃ $[BC]$ នោះ $[AM]$ គឺជាមេដ្យានគូសចេញពីកំពូល $A$។',
+            '• មេដ្យានចែកផ្ទៃត្រីកោណជាពីរផ្នែកដែលមាន**ផ្ទៃក្រឡាស្មើគ្នា**៖',
+            '$$S_{ABM} = S_{ACM} = \frac{1}{2} S_{ABC}$$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ទីប្រជុំទម្ងន់ G (Centroid)',
+          accent: 'emerald',
+          body: [
+            '**ទ្រឹស្ដីបទ ៖**',
+            'មេដ្យានទាំង ៣ នៃត្រីកោណប្រសព្វគ្នាត្រង់**ចំណុចតែមួយ** ហៅថា **ទីប្រជុំទម្ងន់** តាងដោយអក្សរ $G$ (Centroid)។',
+            '• ទីប្រជុំទម្ងន់ $G$ តែងតែស្ថិតនៅ**ខាងក្នុង**ត្រីកោណជានិច្ច គ្រប់ប្រភេទត្រីកោណ (ស្រួច កែង ឬទាល)។',
+            '• ក្នុងរូបវិទ្យា ចំណុច $G$ គឺជាចំណុចកណ្ដាលទំនាញនៃបន្ទះត្រីកោណឯកសណ្ឋាន។'
+          ]
+        })
+      ]),
+
+      /* 5 Centroid Property 2:1 */ page([
+        sec('២. លក្ខណៈនៃទីប្រជុំទម្ងន់ G'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'សមាមាត្រ ២ : ១ នៃទីប្រជុំទម្ងន់',
+          accent: 'brand',
+          body: [
+            'ទីប្រជុំទម្ងន់ $G$ ចែកមេដ្យាននីមួយៗជាសមាមាត្រ **២ : ១** គិតពីកំពូល៖',
+            '$$AG = \frac{2}{3} AM \quad ; \quad GM = \frac{1}{3} AM$$',
+            '• ទំនាក់ទំនងប្រវែងរវាងកំណាត់ទាំងពីរ ៖',
+            '$$AG = 2 \times GM$$',
+            '• សមាមាត្រនេះពិតចំពោះមេដ្យានទាំង ៣ ៖',
+            '$$\frac{AG}{AM_a} = \frac{BG}{BM_b} = \frac{CG}{CM_c} = \frac{2}{3}$$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ១ ៖ គណនាប្រវែងមេដ្យាន',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** ក្នុង $\\triangle ABC$ មាន $G$ ជាទីប្រជុំទម្ងន់ និង $AM$ ជាមេដ្យាន។',
+            'ក. បើ $AM = 21\,\text{cm}$ គណនា $AG$ និង $GM$។',
+            'ខ. បើ $GM = 4\,\text{cm}$ គណនា $AG$ និង $AM$។',
+            '**ដំណោះស្រាយ ៖**',
+            'ក. $AG = \frac{2}{3}(21) = 14\,\text{cm} \implies GM = \frac{1}{3}(21) = 7\,\text{cm}$',
+            'ខ. $AG = 2 GM = 2(4) = 8\,\text{cm}$',
+            '   $AM = AG + GM = 8 + 4 = 12\,\text{cm}$'
+          ]
+        })
+      ]),
+
+      /* 6 Visual Centroid SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ មេដ្យាន និងទីប្រជុំទម្ងន់ G'),
+        svgTriangleCenters(60, 165, 410, 360, 'centroid', {
+          title: 'មេដ្យានទាំង ៣ និងទីប្រជុំទម្ងន់ G'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'លក្ខណៈផ្ទៃក្រឡាបង្កើតដោយ G',
+          accent: 'navy',
+          body: [
+            'ទីប្រជុំទម្ងន់ $G$ បង្កើតជាលក្ខណៈផ្ទៃក្រឡាពិសេស៖',
+            '• មេដ្យានទាំង ៣ ចែកត្រីកោណធំជា **៦ ត្រីកោណតូចៗដែលមានផ្ទៃក្រឡាស្មើគ្នា**៖',
+            '$$S_1 = S_2 = S_3 = S_4 = S_5 = S_6 = \frac{1}{6} S_{ABC}$$',
+            '• អង្កត់ភ្ជាប់ពី $G$ ទៅកំពូលទាំង ៣ ចែកត្រីកោណជា **៣ ត្រីកោណស្មើផ្ទៃគ្នា**៖',
+            '$$S_{GAB} = S_{GBC} = S_{GCA} = \frac{1}{3} S_{ABC}$$'
+          ]
+        })
+      ]),
+
+      /* 7 Perpendicular Bisector & Circumcenter */ page([
+        sec('៣. បន្ទាត់មេដ្យាទ័រ និងផ្ចិតរង្វង់ចារឹកក្រៅ O'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យបន្ទាត់មេដ្យាទ័រ',
+          accent: 'indigo',
+          body: [
+            '**បន្ទាត់មេដ្យាទ័រ (Perpendicular Bisector)** នៃអង្កត់មួយ គឺជាបន្ទាត់ដែលកែងនឹងអង្កត់នោះត្រង់ចំណុចកណ្ដាល។',
+            '• គ្រប់ចំណុច $M$ នៅលើបន្ទាត់មេដ្យាទ័រនៃ $[AB]$ មានចម្ងាយស្មើគ្នាពីចុង $A$ និង $B$ ៖ $MA = MB$។',
+            '• ត្រីកោណមួយមានបន្ទាត់មេដ្យាទ័រចំនួន ៣ នៃជ្រុងទាំង ៣។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ផ្ចិតរង្វង់ចារឹកក្រៅ O (Circumcenter)',
+          accent: 'emerald',
+          body: [
+            '**ទ្រឹស្ដីបទ ៖**',
+            'បន្ទាត់មេដ្យាទ័រទាំង ៣ នៃត្រីកោណប្រសព្វគ្នាត្រង់**ចំណុចមួយ** ហៅថា **ផ្ចិតរង្វង់ចារឹកក្រៅ** តាងដោយ $O$ (Circumcenter)។',
+            '• ចំណុច $O$ មានចម្ងាយស្មើគ្នាទៅកាន់កំពូលទាំង ៣ ៖',
+            '$$OA = OB = OC = R$$',
+            'ដែល $R$ ជាកាំនៃរង្វង់ចារឹកក្រៅត្រីកោណ។'
+          ]
+        })
+      ]),
+
+      /* 8 Circumcenter Position */ page([
+        sec('ទីតាំងផ្ចិត O តាមប្រភេទត្រីកោណ'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ទីតាំងនៃផ្ចិត O ទាំង ៣ ករណី',
+          accent: 'navy',
+          body: [
+            '• **ត្រីកោណស្រួច (Acute) ៖** $O$ ស្ថិតនៅ **ខាងក្នុង** ត្រីកោណ។',
+            '• **ត្រីកោណកែង (Right) ៖** $O$ ស្ថិតនៅ **ចំចំណុចកណ្ដាលអ៊ីប៉ូតេនុស** ៖',
+            '$$R = \frac{\text{អ៊ីប៉ូតេនុស}}{2}$$',
+            '*(ទ្រឹស្ដីបទគន្លឹះ ៖ កំពូលមុំកែងមើលអ៊ីប៉ូតេនុសក្រោមមុំ $90^\circ$)*',
+            '• **ត្រីកោណទាល (Obtuse) ៖** $O$ ស្ថិតនៅ **ខាងក្រៅ** ត្រីកោណ (ឈមនឹងមុំទាល)។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ២ ៖ រង្វង់ចារឹកក្រៅ $\\triangle$ កែង',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** ត្រីកោណ $ABC$ កែងត្រង់ $A$ មាន $AB = 9\,\text{cm}$ និង $AC = 12\,\text{cm}$។ គណនាកាំ $R$ នៃរង្វង់ចារឹកក្រៅ។',
+            '**ដំណោះស្រាយ ៖**',
+            '• តាមទ្រឹស្ដីបទពីតាក័រក្នុង $\\triangle ABC$ ៖',
+            '$$BC = \sqrt{AB^2 + AC^2} = \sqrt{9^2 + 12^2} = \sqrt{81 + 144} = 15\,\text{cm}$$',
+            '• កាំរង្វង់ចារឹកក្រៅ ៖',
+            '$$R = \frac{BC}{2} = \frac{15}{2} = 7.5\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 9 Visual Circumcenter SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ មេដ្យាទ័រ និងផ្ចិតចារឹកក្រៅ O'),
+        svgTriangleCenters(60, 165, 410, 360, 'circumcenter', {
+          title: 'មេដ្យាទ័រទាំង ៣ និងរង្វង់ចារឹកក្រៅ C(O, R)'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តកាំចារឹកក្រៅ R',
+          accent: 'brand',
+          body: [
+            'សម្រាប់ត្រីកោណទូទៅដែលមានជ្រុង $a, b, c$ និងផ្ទៃក្រឡា $S$ ៖',
+            '$$R = \frac{a \cdot b \cdot c}{4S}$$',
+            '• **ករណីត្រីកោណសម័ង្ស** (ជ្រុង $a$) ៖',
+            '$$R = \frac{a}{\sqrt{3}} = \frac{a\sqrt{3}}{3}$$',
+            '• **ករណីត្រីកោណកែង** ៖',
+            '$$R = \frac{c}{2} \quad (c \text{ ជាអ៊ីប៉ូតេនុស})$$'
+          ]
+        })
+      ]),
+
+      /* 10 Altitude & Orthocenter */ page([
+        sec('៤. កម្ពស់ និងអរតូសង់ H (Orthocenter)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យកម្ពស់',
+          accent: 'navy',
+          body: [
+            '**កម្ពស់ (Altitude)** នៃត្រីកោណ គឺជាអង្កត់ដែលគូសចេញពីកំពូលមួយ កែងនឹងបន្ទាត់ផ្ទុកជ្រុងឈម។',
+            '• ត្រីកោណមួយមានកម្ពស់ចំនួន ៣ តាងដោយ $h_a, h_b, h_c$។',
+            '• ទំនាក់ទំនងកម្ពស់និងផ្ទៃក្រឡា ៖',
+            '$$S = \frac{1}{2} a h_a = \frac{1}{2} b h_b = \frac{1}{2} c h_c$$',
+            '$$\implies a h_a = b h_b = c h_c = 2S$$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'អរតូសង់ H (Orthocenter)',
+          accent: 'emerald',
+          body: [
+            '**ទ្រឹស្ដីបទ ៖**',
+            'បន្ទាត់ផ្ទុកកម្ពស់ទាំង ៣ នៃត្រីកោណប្រសព្វគ្នាត្រង់**ចំណុចមួយ** ហៅថា **អរតូសង់** តាងដោយ $H$ (Orthocenter)។',
+            '• **ទីតាំងនៃអរតូសង់ H ៖**',
+            '  - ត្រីកោណស្រួច ៖ $H$ នៅ **ខាងក្នុង** ត្រីកោណ',
+            '  - ត្រីកោណកែង ៖ $H$ នៅ **ចំកំពូលមុំកែង** តែម្ដង',
+            '  - ត្រីកោណទាល ៖ $H$ នៅ **ខាងក្រៅ** ត្រីកោណ'
+          ]
+        })
+      ]),
+
+      /* 11 Visual Orthocenter SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ កម្ពស់ និងអរតូសង់ H'),
+        svgTriangleCenters(60, 165, 410, 360, 'orthocenter', {
+          title: 'កម្ពស់ទាំង ៣ និងអរតូសង់ H'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៣ ៖ កម្ពស់គូសទៅអ៊ីប៉ូតេនុស',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** $\\triangle ABC$ កែងត្រង់ $A$ មាន $AB = 6\,\text{cm}, AC = 8\,\text{cm}, BC = 10\,\text{cm}$។ គណនាកម្ពស់ $AH$។',
+            '**ដំណោះស្រាយ ៖**',
+            '• ផ្ទៃក្រឡាគិតតាមជ្រុងកែង ៖',
+            '$$S = \frac{1}{2} AB \times AC = \frac{1}{2}(6)(8) = 24\,\text{cm}^2$$',
+            '• ផ្ទៃក្រឡាគិតតាមអ៊ីប៉ូតេនុស ៖',
+            '$$S = \frac{1}{2} BC \times AH \implies 24 = \frac{1}{2}(10) \times AH$$',
+            '$$AH = \frac{2 \times 24}{10} = 4.8\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 12 Angle Bisector & Incenter */ page([
+        sec('៥. កន្លះបន្ទាត់ពុះមុំ និងផ្ចិតរង្វង់ចារឹកក្នុង I'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យកន្លះបន្ទាត់ពុះមុំ',
+          accent: 'indigo',
+          body: [
+            '**កន្លះបន្ទាត់ពុះមុំ (Angle Bisector)** គឺជាកន្លះបន្ទាត់ដែលចែកមុំមួយជាពីរមុំប៉ុនគ្នា។',
+            '• គ្រប់ចំណុចនៅលើកន្លះបន្ទាត់ពុះមុំ មានចម្ងាយស្មើគ្នាពីជ្រុងទាំងពីរនៃមុំនោះ។',
+            '• ត្រីកោណមួយមានកន្លះបន្ទាត់ពុះមុំក្នុងចំនួន ៣។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ផ្ចិតរង្វង់ចារឹកក្នុង I (Incenter)',
+          accent: 'emerald',
+          body: [
+            '**ទ្រឹស្ដីបទ ៖**',
+            'កន្លះបន្ទាត់ពុះមុំក្នុងទាំង ៣ នៃត្រីកោណប្រសព្វគ្នាត្រង់**ចំណុចមួយ** ហៅថា **ផ្ចិតរង្វង់ចារឹកក្នុង** តាងដោយ $I$ (Incenter)។',
+            '• ចំណុច $I$ ស្ថិតនៅ**ខាងក្នុងត្រីកោណជានិច្ច**។',
+            '• ចំណុច $I$ មានចម្ងាយស្មើគ្នាទៅកាន់ជ្រុងទាំង ៣ ៖',
+            '$$d(I, AB) = d(I, BC) = d(I, CA) = r$$',
+            'ដែល $r$ គឺជាកាំរង្វង់ចារឹកក្នុងត្រីកោណ។'
+          ]
+        })
+      ]),
+
+      /* 13 Incircle Formula S = p * r */ page([
+        sec('រូបមន្តកាំរង្វង់ចារឹកក្នុង r និងផ្ទៃក្រឡា S'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តគ្រឹះ ៖ S = p · r',
+          accent: 'brand',
+          body: [
+            'តាង $a, b, c$ ជាជ្រុងទាំង ៣ និង $p$ ជាកន្លះបរិមាត្រ ៖',
+            '$$p = \frac{a + b + c}{2}$$',
+            'ផ្ទៃក្រឡាត្រីកោណស្មើនឹង **កន្លះបរិមាត្រ គុណនឹង កាំចារឹកក្នុង** ៖',
+            '$$S = p \times r \quad \Longleftrightarrow \quad r = \frac{S}{p}$$',
+            '• **ករណីត្រីកោណកែង** ($a, b$ ជាជ្រុងកែង, $c$ ជាអ៊ីប៉ូតេនុស) ៖',
+            '$$r = \frac{a + b - c}{2}$$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៤ ៖ គណនាកាំចារឹកក្នុង r',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** $\\triangle ABC$ កែងត្រង់ $A$ មាន $AB = 6\,\text{cm}, AC = 8\,\text{cm}, BC = 10\,\text{cm}$។ គណនាកាំ $r$។',
+            '**ដំណោះស្រាយ ៖**',
+            '• វិធីទី ១ (រូបមន្តទូទៅ) ៖',
+            '$p = \frac{6 + 8 + 10}{2} = 12\,\text{cm}$ ; $S = \frac{1}{2}(6)(8) = 24\,\text{cm}^2$',
+            '$$r = \frac{S}{p} = \frac{24}{12} = 2\,\text{cm}$$',
+            '• វិធីទី ២ (រូបមន្តរហ័សសម្រាប់ $\\triangle$ កែង) ៖',
+            '$$r = \frac{6 + 8 - 10}{2} = \frac{4}{2} = 2\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 14 Visual Incenter SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ ពុះមុំ និងផ្ចិតចារឹកក្នុង I'),
+        svgTriangleCenters(60, 165, 410, 360, 'incenter', {
+          title: 'ពុះមុំទាំង ៣ និងរង្វង់ចារឹកក្នុង C(I, r)'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ករណីពិសេស ៖ ត្រីកោណសម័ង្ស',
+          accent: 'navy',
+          body: [
+            'ក្នុង**ត្រីកោណសម័ង្ស** (Equilateral Triangle) ៖',
+            '• មេដ្យាន មេដ្យាទ័រ កម្ពស់ និងពុះមុំ **ត្រួតស៊ីគ្នា**!',
+            '• ចំណុចពិសេសទាំង ៤ **ត្រួតស៊ីគ្នាជាចំណុចតែមួយ** ៖',
+            '$$G \equiv O \equiv H \equiv I$$',
+            '• កាំរង្វង់ចារឹកក្រៅ $R$ និងកាំចារឹកក្នុង $r$ ៖',
+            '$$R = 2r \quad ; \quad h = R + r = 3r$$',
+            '$$R = \frac{a\sqrt{3}}{3} \quad ; \quad r = \frac{a\sqrt{3}}{6}$$'
+          ]
+        })
+      ]),
+
+      /* 15 Summary Comparison Table */ page([
+        sec('៦. សង្ខេបប្រៀបធៀបចំណុចពិសេសទាំង ៤ ក្នុងត្រីកោណ'),
+        card({
+          x: 60, y: 165, w: 840, h: 360,
+          title: 'តារាងប្រៀបធៀបចំណុចពិសេសទាំង ៤ (G, O, H, I)',
+          accent: 'brand',
+          body: [
+            '| ចំណុច | ឈ្មោះខ្មែរ | ប្រសព្វនៃ | លក្ខណៈពិសេសចម្បង | ទីតាំងតាមប្រភេទត្រីកោណ |',
+            '| :---: | :---: | :---: | :---: | :---: |',
+            '| **$G$** | ទីប្រជុំទម្ងន់ | មេដ្យានទាំង ៣ | $AG = \\frac{2}{3}AM \\ ; \\ AG = 2GM$ | ខាងក្នុងត្រីកោណជានិច្ច |',
+            '| **$O$** | ផ្ចិតចារឹកក្រៅ | មេដ្យាទ័រទាំង ៣ | $OA = OB = OC = R$ | ស្រួច ៖ ក្នុង, កែង ៖ អ៊ីប៉ូតេនុស, ទាល ៖ ក្រៅ |',
+            '| **$H$** | អរតូសង់ | កម្ពស់ទាំង ៣ | $AH \\perp BC, BH \\perp AC, CH \\perp AB$ | ស្រួច ៖ ក្នុង, កែង ៖ កំពូលកែង, ទាល ៖ ក្រៅ |',
+            '| **$I$** | ផ្ចិតចារឹកក្នុង | ពុះមុំក្នុងទាំង ៣ | $d(I, \\text{ជ្រុង}) = r \\ ; \\ S = p \\cdot r$ | ខាងក្នុងត្រីកោណជានិច្ច |'
+          ]
+        })
+      ]),
+
+      /* 16 Euler Line */ page([
+        sec('ចំណេះដឹងបន្ថែម ៖ បន្ទាត់អយល័រ (Euler Line)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ទ្រឹស្ដីបទបន្ទាត់អយល័រ',
+          accent: 'navy',
+          body: [
+            'ក្នុងគ្រប់ត្រីកោណ (ដែលមិនមែនជាត្រីកោណសម័ង្ស) ៖',
+            '• អរតូសង់ $H$, ទីប្រជុំទម្ងន់ $G$ និងផ្ចិតចារឹកក្រៅ $O$ **រត់ត្រង់ជួរគ្នា** លើបន្ទាត់តែមួយ ហៅថា **បន្ទាត់អយល័រ (Euler Line)**!',
+            '• ទីប្រជុំទម្ងន់ $G$ ស្ថិតនៅចន្លោះ $H$ និង $O$ ដោយផ្ទៀងផ្ទាត់ ៖',
+            '$$HG = 2 GO$$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'លក្ខណៈពិសេសនៃបន្ទាត់អយល័រ',
+          accent: 'emerald',
+          body: [
+            '• ចំណុចកណ្ដាលនៃ $[HO]$ គឺជាផ្ចិតនៃ **រង្វង់ ៩ ចំណុច (Nine-Point Circle)**!',
+            '• បើ $\\triangle ABC$ ជាត្រីកោណសមបាត ($AB = AC$) នោះបន្ទាត់អយល័រត្រួតស៊ីគ្នានឹងអ័ក្សស៊ីមេទ្រីនៃត្រីកោណ។',
+            '• បើ $\\triangle ABC$ ជាត្រីកោណសម័ង្ស នោះ $H \equiv G \equiv O$ គ្មានបន្ទាត់អយល័រទេ។'
+          ]
+        })
+      ]),
+
+      /* 17 MCQ 1 & 2 */ page([
+        sec('សំណួរពហុជ្រើសរើស (MCQ Test - ភាគ ១)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ១',
+          accent: 'navy',
+          body: [
+            'ចំណុចប្រសព្វនៃមេដ្យានទាំង ៣ នៃត្រីកោណ ហៅថាអ្វី?',
+            '**A.** ផ្ចិតរង្វង់ចារឹកក្រៅ',
+            '**B.** ទីប្រជុំទម្ងន់',
+            '**C.** អរតូសង់',
+            '**D.** ផ្ចិតរង្វង់ចារឹកក្នុង',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **B. ទីប្រជុំទម្ងន់ (Centroid G)***'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ២',
+          accent: 'teal',
+          body: [
+            'ក្នុងត្រីកោណកែង ផ្ចិតនៃរង្វង់ចារឹកក្រៅ $O$ ស្ថិតនៅត្រង់ណា?',
+            '**A.** ខាងក្នុងត្រីកោណ',
+            '**B.** ត្រង់កំពូលមុំកែង',
+            '**C.** ចំចំណុចកណ្ដាលនៃអ៊ីប៉ូតេនុស',
+            '**D.** ខាងក្រៅត្រីកោណ',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C. ចំចំណុចកណ្ដាលនៃអ៊ីប៉ូតេនុស***'
+          ]
+        })
+      ]),
+
+      /* 18 MCQ 3 & 4 */ page([
+        sec('សំណួរពហុជ្រើសរើស (MCQ Test - ភាគ ២)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ៣',
+          accent: 'indigo',
+          body: [
+            'បើ $G$ ជាទីប្រជុំទម្ងន់ និង $AM = 18\,\text{cm}$ ជាមេដ្យាន នោះ $AG$ ស្មើនឹង៖',
+            '**A.** $6\,\text{cm}$',
+            '**B.** $9\,\text{cm}$',
+            '**C.** $12\,\text{cm}$',
+            '**D.** $14\,\text{cm}$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C** ព្រោះ $AG = \frac{2}{3}(18) = 12\,\text{cm}$*'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ៤',
+          accent: 'emerald',
+          body: [
+            'ចំណុចប្រសព្វនៃបន្ទាត់ពុះមុំក្នុងទាំង ៣ នៃត្រីកោណ មានលក្ខណៈពិសេសអ្វី?',
+            '**A.** ចែកកម្ពស់ជាសមាមាត្រ $2:1$',
+            '**B.** មានចម្ងាយស្មើគ្នាទៅកាន់កំពូលទាំង ៣',
+            '**C.** មានចម្ងាយស្មើគ្នាទៅកាន់ជ្រុងទាំង ៣',
+            '**D.** ស្ថិតនៅលើអ៊ីប៉ូតេនុសជានិច្ច',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C** ($d(I, \text{ជ្រុង}) = r$)*'
+          ]
+        })
+      ]),
+
+      /* 19 Practice 1: Centroid */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ១ ៖ គណនាប្រវែងដោយប្រើទីប្រជុំទម្ងន់ G'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ១',
+          accent: 'navy',
+          body: [
+            'ក្នុង $\\triangle ABC$ មានមេដ្យាន $[AM]$ និង $[BN]$ ប្រសព្វគ្នាត្រង់ទីប្រជុំទម្ងន់ $G$។',
+            'ដឹងថា $AG = 16\,\text{cm}$ និង $BN = 24\,\text{cm}$។',
+            'ក. គណនាប្រវែង $GM$ និងប្រវែងមេដ្យាន $AM$។',
+            'ខ. គណនាប្រវែង $BG$ និង $GN$។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'emerald',
+          body: [
+            'ក. ដោយ $G$ ជាទីប្រជុំទម្ងន់ ៖',
+            '$$AG = 2 GM \implies GM = \frac{AG}{2} = \frac{16}{2} = 8\,\text{cm}$$',
+            '$$AM = AG + GM = 16 + 8 = 24\,\text{cm}$$',
+            'ខ. គណនាកំណាត់មេដ្យាន $BN$ ៖',
+            '$$BG = \frac{2}{3} BN = \frac{2}{3}(24) = 16\,\text{cm}$$',
+            '$$GN = \frac{1}{3} BN = \frac{1}{3}(24) = 8\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 20 Practice 2: Circumcenter & Incenter */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ២ ៖ រង្វង់ចារឹកក្រៅ និងរង្វង់ចារឹកក្នុង'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ២',
+          accent: 'indigo',
+          body: [
+            'ត្រីកោណ $ABC$ កែងត្រង់ $A$ មានជ្រុងកែង $AB = 12\,\text{cm}$ និង $AC = 16\,\text{cm}$។',
+            'ក. គណនាប្រវែងអ៊ីប៉ូតេនុស $BC$។',
+            'ខ. គណនាកាំរង្វង់ចារឹកក្រៅ $R$។',
+            'គ. គណនាកាំរង្វង់ចារឹកក្នុង $r$ នៃត្រីកោណនេះ។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'teal',
+          body: [
+            'ក. $BC = \sqrt{12^2 + 16^2} = \sqrt{144 + 256} = 20\,\text{cm}$',
+            'ខ. កាំរង្វង់ចារឹកក្រៅ ៖',
+            '$$R = \frac{BC}{2} = \frac{20}{2} = 10\,\text{cm}$$',
+            'គ. កាំរង្វង់ចារឹកក្នុង ៖',
+            '$p = \frac{12 + 16 + 20}{2} = 24\,\text{cm}$ ; $S = \frac{1}{2}(12)(16) = 96\,\text{cm}^2$',
+            '$$r = \frac{S}{p} = \frac{96}{24} = 4\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 21 Practice 3: Altitude & Area */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៣ ៖ កម្ពស់ និងផ្ទៃក្រឡា'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ៣',
+          accent: 'brand',
+          body: [
+            'ត្រីកោណសមបាត $ABC$ មាន $AB = AC = 13\,\text{cm}$ និងបាត $BC = 10\,\text{cm}$។',
+            'ក. គណនាកម្ពស់ $AH$ គូសពីកំពូល $A$ មកបាត $BC$។',
+            'ខ. គណនាផ្ទៃក្រឡានៃត្រីកោណ $ABC$។',
+            'គ. គណនាកម្ពស់ $BK$ គូសពីកំពូល $B$ ទៅជ្រុង $AC$។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'emerald',
+          body: [
+            'ក. ក្នុង $\\triangle$ សមបាត $AH$ ជាមេដ្យានផង $\implies HC = \frac{10}{2} = 5\,\text{cm}$៖',
+            '$$AH = \sqrt{AC^2 - HC^2} = \sqrt{13^2 - 5^2} = 12\,\text{cm}$$',
+            'ខ. $S = \frac{1}{2} BC \times AH = \frac{1}{2}(10)(12) = 60\,\text{cm}^2$',
+            'គ. $S = \frac{1}{2} AC \times BK \implies 60 = \frac{1}{2}(13) \times BK$',
+            '$$BK = \frac{120}{13} \approx 9.23\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 22 Practice 4: PISA / Applied */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៤ ៖ ចំណោទជីវភាពជាក់ស្ដែង'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានចំណោទស្ថាបត្យកម្ម',
+          accent: 'navy',
+          body: [
+            'វិស្វករម្នាក់ចង់សង់សសរបង្គោលភ្លើងមួយនៅចំកណ្ដាលទីលានរាងត្រីកោណដែលមានកំពូលជាផ្ទះ ៣ ខ្នង $A, B, C$។',
+            'ក. ដើម្បីឲ្យសសរភ្លើងមានចម្ងាយស្មើគ្នាទៅកាន់ផ្ទះទាំង ៣ តើវិស្វករត្រូវជ្រើសរើសចំណុចពិសេសមួយណា?',
+            'ខ. បើជ្រើសរើសចំណុចដែលនៅក្បែរផ្លូវទាំង ៣ ស្មើគ្នា តើជាចំណុចណា?'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយវិភាគ',
+          accent: 'emerald',
+          body: [
+            'ក. ចម្ងាយស្មើគ្នាទៅកំពូលទាំង ៣ ៖',
+            '• ត្រូវជ្រើសរើស **ផ្ចិតរង្វង់ចារឹកក្រៅ O (Circumcenter)**',
+            '• ព្រោះ $OA = OB = OC = R$។',
+            '---',
+            'ខ. ចម្ងាយស្មើគ្នាទៅជ្រុងទាំង ៣ (ផ្លូវទាំង ៣) ៖',
+            '• ត្រូវជ្រើសរើស **ផ្ចិតរង្វង់ចារឹកក្នុង I (Incenter)**',
+            '• ព្រោះ $d(I, AB) = d(I, BC) = d(I, CA) = r$។'
+          ]
+        })
+      ]),
+
+      /* 23 Homework */ S.homework([
+        'ទន្ទេញនិយមន័យ និងលក្ខណៈនៃចំណុចពិសេសទាំង ៤ ៖ G, O, H, I',
+        'លំហាត់ទី ១ ៖ ក្នុង $\\triangle ABC$ មានមេដ្យាន $AM = 30\,\text{cm}$។ គណនាប្រវែង $AG$ និង $GM$។',
+        'លំហាត់ទី ២ ៖ ត្រីកោណកែងមានជ្រុង $5\,\text{cm}, 12\,\text{cm}, 13\,\text{cm}$។ គណនាកាំ $R$ និងកាំ $r$។',
+        'លំហាត់ទី ៣ ៖ បង្ហាញថាបើ $\\triangle ABC$ ជាត្រីកោណសម័ង្ស នោះ $R = 2r$។',
+        'លំហាត់ទី ៤ ៖ ស្រាវជ្រាវបន្ថែមអំពីបន្ទាត់អយល័រ និងរង្វង់ ៩ ចំណុច។'
+      ], K.info),
+
+      /* 24 Thanks */ S.thanks('សូមអរគុណប្អូនៗទាំងអស់គ្នា!', 'ជួបគ្នានៅមេរៀនទី ១៧ ៖ រូបធរណីមាត្រដែលមានវិមាត្របី (Solids)', K.info)
+    ];
+
+    return {
+      name: 'ថ្នាក់ទី៨ · មេរៀនទី១៦ បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ (២៤ ស្លាយ)',
+      theme: 'school',
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
+      slides: slides
+    };
+  }
+
+
+  function g8Solids3D(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
+        title = K.title, card = K.card, kids = K.kids, svgSolidsAll = K.svgSolidsAll;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var R = String.raw;
+
+    var slides = [
+      /* 1 Cover */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី៨', 'មេរៀនទី ១៧', 'រូបធរណីមាត្រដែលមានវិមាត្របី', K.info),
+
+      /* 2 TOC */ K.toc([
+        '==១. ពហុមុខ & រូបមន្តអយល័រ (Euler\'s Formula)==',
+        '២. ព្រីសត្រង់ (Right Prism) ផ្ទៃក្រឡា & មាឌ',
+        '==៣. ប្រលេពីប៉ែតកែង & គូប==',
+        '៤. ស៊ីឡាំងបរិវត្ត (Right Circular Cylinder)',
+        '==៥. ពីរ៉ាមីតនិយ័ត (Regular Pyramid)==',
+        '៦. កោនបរិវត្ត (Cone) & ស្វ៊ែរ (Sphere)',
+        '==៧. តារាងសង្ខេបរូបមន្តសូលីតទាំង ៥ ប្រភេទ==',
+        '៨. សំណួរពហុជ្រើសរើស (MCQ) & លំហាត់អនុវត្តន៍'
+      ], 32),
+
+      /* 3 Objective */ S.objective([
+        'ស្គាល់និយមន័យពហុមុខ និងចេះផ្ទៀងផ្ទាត់រូបមន្តអយល័រ V - E + F = 2',
+        'ចេះគណនាផ្ទៃខាង ផ្ទៃសរុប និងមាឌនៃព្រីសត្រង់ ស៊ីឡាំង ពីរ៉ាមីត កោន និងស្វ៊ែរ',
+        'ចេះអនុវត្តរូបមន្តសូលីតក្នុងការដោះស្រាយបញ្ហាជាក់ស្ដែង ដូចជាការគណនាមាឌទឹក និងផ្ទៃលាបថ្នាំ'
+      ], 'រូបធរណីមាត្រវិមាត្របី (សូលីត) ជារូបរាងនៃវត្ថុពិតជុំវិញខ្លួនយើង ចាប់ពីកំប៉ុងទឹក ដប អាគារ រហូតដល់ភពផែនដី។'),
+
+      /* 4 Polyhedron & Euler */ page([
+        sec('១. ពហុមុខ និងរូបមន្តអយល័រ (Polyhedron)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យពហុមុខ',
+          accent: 'navy',
+          body: [
+            '**ពហុមុខ (Polyhedron)** គឺជាសូលីតដែលព័ទ្ធជុំវិញដោយពហុកោណរាបស្មើជាច្រើន។',
+            '• ធាតុផ្សំសំខាន់ៗនៃពហុមុខ ៖',
+            '  - **មុខ (Faces - $F$) ៖** ផ្ទៃរាបពហុកោណដែលព័ទ្ធសូលីត',
+            '  - **កំពូល (Vertices - $V$) ៖** ចំណុចប្រសព្វនៃទ្រនុង',
+            '  - **ទ្រនុង (Edges - $E$) ៖** អង្កត់ប្រសព្វនៃមុខពីរជាប់គ្នា'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តអយល័រ (Euler\'s Formula)',
+          accent: 'emerald',
+          body: [
+            'ចំពោះគ្រប់ពហុមុខប៉ោង ចំនួនកំពូល $V$, ទ្រនុង $E$, និងមុខ $F$ ផ្ទៀងផ្ទាត់ ៖',
+            '$$V - E + F = 2$$',
+            '• **ឧទាហរណ៍ ៖ គូប (Cube)**',
+            '  - $V = 8$ (កំពូល)',
+            '  - $E = 12$ (ទ្រនុង)',
+            '  - $F = 6$ (មុខ)',
+            '$$\implies 8 - 12 + 6 = 2 \quad (\text{ពិត})$$'
+          ]
+        })
+      ]),
+
+      /* 5 Right Prism */ page([
+        sec('២. ព្រីសត្រង់ (Right Prism)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យ និងធាតុផ្សំ',
+          accent: 'navy',
+          body: [
+            '**ព្រីសត្រង់** គឺជាពហុមុខដែលមាន ៖',
+            '• បាតពីរជាពហុកោណប៉ុនគ្នា និងស្ថិតក្នុងប្លង់ស្របគ្នា',
+            '• មុខខាងជាចតុកោណកែង កែងនឹងបាត',
+            '• ទ្រនុងចំហៀងស្របគ្នានិងប៉ុនគ្នា ជាកម្ពស់ $h$ នៃព្រីស',
+            '• ឈ្មោះព្រីសអាស្រ័យលើរាងនៃបាត (ព្រីសត្រីកោណ, ចតុកោណ...)'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តផ្ទៃក្រឡា និងមាឌព្រីសត្រង់',
+          accent: 'emerald',
+          body: [
+            'តាង $p$ ជាបរិមាត្របាត, $B$ ជាផ្ទៃក្រឡាបាត, $h$ ជាកម្ពស់ ៖',
+            '• **ផ្ទៃខាង (Lateral Area) ៖**',
+            '$$S_L = p \times h$$',
+            '• **ផ្ទៃសរុប (Total Area) ៖**',
+            '$$S_T = S_L + 2B$$',
+            '• **មាឌ (Volume) ៖**',
+            '$$V = B \times h$$'
+          ]
+        })
+      ]),
+
+      /* 6 Visual Prism SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ ព្រីសត្រង់ (Right Prism)'),
+        svgSolidsAll(60, 165, 410, 360, 'prism', {
+          title: 'ព្រីសត្រង់ និងរូបមន្តគន្លឹះ'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ១ ៖ ព្រីសត្រីកោណកែង',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** ព្រីសត្រង់មួយមានកម្ពស់ $h = 10\,\text{cm}$ និងបាតជាត្រីកោណកែងមានជ្រុង $3\,\text{cm}, 4\,\text{cm}, 5\,\text{cm}$។ គណនា $S_L, S_T$ និង $V$។',
+            '**ដំណោះស្រាយ ៖**',
+            '• $p = 3 + 4 + 5 = 12\,\text{cm}$',
+            '• $B = \frac{1}{2} \times 3 \times 4 = 6\,\text{cm}^2$',
+            '• $S_L = 12 \times 10 = 120\,\text{cm}^2$',
+            '• $S_T = 120 + 2(6) = 132\,\text{cm}^2$',
+            '• $V = 6 \times 10 = 60\,\text{cm}^3$'
+          ]
+        })
+      ]),
+
+      /* 7 Cuboid & Cube */ page([
+        sec('៣. ប្រលេពីប៉ែតកែង និងគូប (Cuboid & Cube)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រលេពីប៉ែតកែង (Rectangular Prism)',
+          accent: 'navy',
+          body: [
+            'មានវិមាត្រ បណ្ដោយ $a$, ទទឹង $b$, កម្ពស់ $c$ ៖',
+            '• ផ្ទៃខាង ៖ $S_L = 2(a + b)c$',
+            '• ផ្ទៃសរុប ៖ $S_T = 2(ab + bc + ca)$',
+            '• មាឌ ៖ $V = a \times b \times c$',
+            '• អង្កត់ទ្រូង ៖ $d = \sqrt{a^2 + b^2 + c^2}$',
+            '*(មាន ៨ កំពូល, ១២ ទ្រនុង, ៦ មុខជាចតុកោណកែង)*'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គូប (Cube)',
+          accent: 'emerald',
+          body: [
+            'ជាករណីពិសេសនៃប្រលេពីប៉ែតកែងដែលមាន $a = b = c$ ៖',
+            '• ផ្ទៃខាង ៖ $S_L = 4a^2$',
+            '• ផ្ទៃសរុប ៖ $S_T = 6a^2$',
+            '• មាឌ ៖ $V = a^3$',
+            '• អង្កត់ទ្រូង ៖ $d = a\sqrt{3}$',
+            '**ឧទាហរណ៍ ៖** គូបមានជ្រុង $a = 5\,\text{cm}$ ៖',
+            '$$S_T = 6(25) = 150\,\text{cm}^2 \ ; \ V = 5^3 = 125\,\text{cm}^3$$'
+          ]
+        })
+      ]),
+
+      /* 8 Cylinder Definition & Formulas */ page([
+        sec('៤. ស៊ីឡាំងបរិវត្ត (Right Circular Cylinder)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យស៊ីឡាំងបរិវត្ត',
+          accent: 'navy',
+          body: [
+            '**ស៊ីឡាំងបរិវត្ត** កើតឡើងពីការបង្វិលចតុកោណកែងមួយជុំវិញជ្រុងមួយរបស់វា។',
+            '• បាតទាំងពីរជារង្វង់ប៉ុនគ្នាមានកាំ $r$',
+            '• ចម្ងាយរវាងបាតទាំងពីរគឺជាកម្ពស់ $h$',
+            '• ផ្ទៃខាងលាតចេញជាចតុកោណកែងដែលមាន ៖',
+            '  - បណ្ដោយស្មើបរិមាត្របាត ៖ $2\pi r$',
+            '  - ទទឹងស្មើកម្ពស់ ៖ $h$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តផ្ទៃក្រឡា និងមាឌស៊ីឡាំង',
+          accent: 'emerald',
+          body: [
+            '• **ផ្ទៃខាង (Lateral Area) ៖**',
+            '$$S_L = 2\pi r h$$',
+            '• **ផ្ទៃសរុប (Total Area) ៖**',
+            '$$S_T = 2\pi r h + 2\pi r^2 = 2\pi r(h + r)$$',
+            '• **មាឌ (Volume) ៖**',
+            '$$V = B \times h = \pi r^2 h$$'
+          ]
+        })
+      ]),
+
+      /* 9 Visual Cylinder SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ ស៊ីឡាំងបរិវត្ត (Cylinder)'),
+        svgSolidsAll(60, 165, 410, 360, 'cylinder', {
+          title: 'ស៊ីឡាំងបរិវត្ត និងរូបមន្ត'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ២ ៖ ស៊ីឡាំងបរិវត្ត',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** ស៊ីឡាំងមួយមានកាំបាត $r = 7\,\text{cm}$ និងកម្ពស់ $h = 10\,\text{cm}$ (យក $\pi \approx \frac{22}{7}$)។ គណនា $S_L, S_T, V$។',
+            '**ដំណោះស្រាយ ៖**',
+            '• $S_L = 2 \times \frac{22}{7} \times 7 \times 10 = 440\,\text{cm}^2$',
+            '• $2B = 2 \times \frac{22}{7} \times 49 = 308\,\text{cm}^2$',
+            '• $S_T = 440 + 308 = 748\,\text{cm}^2$',
+            '• $V = \frac{22}{7} \times 49 \times 10 = 1540\,\text{cm}^3$'
+          ]
+        })
+      ]),
+
+      /* 10 Regular Pyramid */ page([
+        sec('៥. ពីរ៉ាមីតនិយ័ត (Regular Pyramid)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យ និងអាប៉ូតែម a',
+          accent: 'navy',
+          body: [
+            '**ពីរ៉ាមីតនិយ័ត** គឺជាពីរ៉ាមីតដែលមាន ៖',
+            '• បាតជាពហុកោណនិយ័ត (ការេ ត្រីកោណសម័ង្ស...)',
+            '• កំពូលធ្លាក់កែងចំផ្ចិតបាត (កម្ពស់ $h$)',
+            '• មុខខាងជាត្រីកោណសមបាតប៉ុនៗគ្នា',
+            '• **អាប៉ូតែម ($a$) ៖** ជាកម្ពស់នៃមុខខាងត្រីកោណសមបាត ៖',
+            '$$a^2 = h^2 + r^2$$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តផ្ទៃក្រឡា និងមាឌពីរ៉ាមីត',
+          accent: 'emerald',
+          body: [
+            'តាង $p$ ជាបរិមាត្របាត, $B$ ជាផ្ទៃបាត, $a$ ជាអាប៉ូតែម, $h$ ជាកម្ពស់ ៖',
+            '• **ផ្ទៃខាង ៖** $S_L = \frac{1}{2} p \times a$',
+            '• **ផ្ទៃសរុប ៖** $S_T = S_L + B$',
+            '• **មាឌ ៖**',
+            '$$V = \frac{1}{3} B \times h$$',
+            '*(មាឌពីរ៉ាមីតស្មើ $\\frac{1}{3}$ នៃមាឌព្រីសដែលមានបាតនិងកម្ពស់ស្មើគ្នា)*'
+          ]
+        })
+      ]),
+
+      /* 11 Visual Pyramid SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ ពីរ៉ាមីតនិយ័ត (Pyramid)'),
+        svgSolidsAll(60, 165, 410, 360, 'pyramid', {
+          title: 'ពីរ៉ាមីតនិយ័ត និងរូបមន្ត'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៣ ៖ ពីរ៉ាមីតបាតការេ',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** ពីរ៉ាមីតនិយ័តបាតការេជ្រុង $6\,\text{cm}$ និងអាប៉ូតែម $a = 5\,\text{cm}$។ គណនា $h, S_L, V$។',
+            '**ដំណោះស្រាយ ៖**',
+            '• $r = \frac{6}{2} = 3\,\text{cm} \implies h = \sqrt{5^2 - 3^2} = 4\,\text{cm}$',
+            '• $p = 4 \times 6 = 24\,\text{cm}$',
+            '• $S_L = \frac{1}{2}(24)(5) = 60\,\text{cm}^2$',
+            '• $B = 6^2 = 36\,\text{cm}^2 \implies V = \frac{1}{3}(36)(4) = 48\,\text{cm}^3$'
+          ]
+        })
+      ]),
+
+      /* 12 Cone Definition & Formulas */ page([
+        sec('៦. កោនបរិវត្ត (Right Circular Cone)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យកោនបរិវត្ត',
+          accent: 'navy',
+          body: [
+            '**កោនបរិវត្ត** កើតឡើងពីការបង្វិលត្រីកោណកែងមួយជុំវិញជ្រុងកែងមួយ។',
+            '• បាតជារង្វង់កាំ $r$, កម្ពស់ $h$',
+            '• **ទ្រនុងបង្កើត ($g$ ឬ $l$) ៖**',
+            '$$g^2 = r^2 + h^2 \Longleftrightarrow g = \sqrt{r^2 + h^2}$$',
+            '• ផ្ទៃខាងលាតចេញជាចម្រៀករង្វង់កាំ $g$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តផ្ទៃក្រឡា និងមាឌកោន',
+          accent: 'emerald',
+          body: [
+            '• **ផ្ទៃខាង ៖** $S_L = \pi r g$',
+            '• **ផ្ទៃសរុប ៖** $S_T = \pi r g + \pi r^2 = \pi r(g + r)$',
+            '• **មាឌ ៖**',
+            '$$V = \frac{1}{3} \pi r^2 h$$',
+            '*(មាឌកោនស្មើ $\\frac{1}{3}$ នៃមាឌស៊ីឡាំងដែលមានបាតនិងកម្ពស់ស្មើគ្នា)*'
+          ]
+        })
+      ]),
+
+      /* 13 Visual Cone SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ កោនបរិវត្ត (Cone)'),
+        svgSolidsAll(60, 165, 410, 360, 'cone', {
+          title: 'កោនបរិវត្ត និងរូបមន្ត'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៤ ៖ កោនបរិវត្ត',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** កោនមួយមានកាំបាត $r = 6\,\text{cm}$ និងកម្ពស់ $h = 8\,\text{cm}$។ គណនា $g, S_L, V$ (គិតជាអនុគមន៍នៃ $\pi$)។',
+            '**ដំណោះស្រាយ ៖**',
+            '• $g = \sqrt{6^2 + 8^2} = \sqrt{100} = 10\,\text{cm}$',
+            '• $S_L = \pi(6)(10) = 60\pi\,\text{cm}^2$',
+            '• $S_T = 60\pi + \pi(6^2) = 96\pi\,\text{cm}^2$',
+            '• $V = \frac{1}{3}\pi(6^2)(8) = 96\pi\,\text{cm}^3$'
+          ]
+        })
+      ]),
+
+      /* 14 Sphere Definition & Formulas */ page([
+        sec('៧. ស្វ៊ែរ (Sphere)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យស្វ៊ែរ',
+          accent: 'navy',
+          body: [
+            '**ស្វ៊ែរ** គឺជាសំណុំចំណុចក្នុងលំហដែលមានចម្ងាយស្មើគ្នានឹងកាំ $R$ ពីចំណុចនឹង $O$ (ផ្ចិតស្វ៊ែរ)។',
+            '• ស្វ៊ែរកើតឡើងពីការបង្វិលកន្លះរង្វង់ជុំវិញអង្កត់ផ្ចិតរបស់វា។',
+            '• រាល់ប្លង់កាត់ស្វ៊ែរកាត់តាមផ្ចិត បង្កើតបានជា **រង្វង់ធំ (Great Circle)** ដែលមានកាំស្មើ $R$។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តផ្ទៃក្រឡា និងមាឌស្វ៊ែរ',
+          accent: 'emerald',
+          body: [
+            '• **ផ្ទៃក្រឡាស្វ៊ែរ ៖**',
+            '$$S = 4\pi R^2$$',
+            '*(ស្មើ ៤ ដងនៃផ្ទៃរង្វង់ធំ)*',
+            '• **មាឌស្វ៊ែរ ៖**',
+            '$$V = \frac{4}{3} \pi R^3$$',
+            '• កន្លះស្វ៊ែរ ៖ $V = \frac{2}{3}\pi R^3$ ; $S_T = 3\pi R^2$'
+          ]
+        })
+      ]),
+
+      /* 15 Visual Sphere SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ ស្វ៊ែរ (Sphere)'),
+        svgSolidsAll(60, 165, 410, 360, 'sphere', {
+          title: 'ស្វ៊ែរ និងរូបមន្ត'
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៥ ៖ ស្វ៊ែរ',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** ស្វ៊ែរមួយមានអង្កត់ផ្ចិត $D = 12\,\text{cm}$ ($R = 6\,\text{cm}$)។ គណនាផ្ទៃក្រឡា $S$ និងមាឌ $V$ ជាអនុគមន៍នៃ $\pi$។',
+            '**ដំណោះស្រាយ ៖**',
+            '• កាំស្វ៊ែរ ៖ $R = \frac{12}{2} = 6\,\text{cm}$',
+            '• ផ្ទៃក្រឡា ៖',
+            '$$S = 4\pi R^2 = 4\pi (6^2) = 144\pi\,\text{cm}^2$$',
+            '• មាឌ ៖ $V = \frac{4}{3}\pi (6^3) = \frac{4}{3}\pi (216) = 288\pi\,\text{cm}^3$'
+          ]
+        })
+      ]),
+
+      /* 16 Summary Formulas Table */ page([
+        sec('៨. តារាងសង្ខេបរូបមន្តសូលីតទាំង ៥ ប្រភេទ'),
+        card({
+          x: 60, y: 165, w: 840, h: 360,
+          title: 'តារាងសង្ខេបផ្ទៃខាង ផ្ទៃសរុប និងមាឌនៃសូលីត',
+          accent: 'brand',
+          body: [
+            '| សូលីតធរណីមាត្រ | ផ្ទៃខាង $S_L$ | ផ្ទៃសរុប $S_T$ | មាឌ $V$ | ទំនាក់ទំនងបន្ថែម |',
+            '| :---: | :---: | :---: | :---: | :---: |',
+            '| **ព្រីសត្រង់** | $p \\times h$ | $S_L + 2B$ | $B \\times h$ | $B$ ៖ ផ្ទៃបាត, $p$ ៖ បរិមាត្របាត |',
+            '| **ស៊ីឡាំងបរិវត្ត** | $2\\pi rh$ | $2\\pi r(h+r)$ | $\\pi r^2 h$ | បាតជារង្វង់ $B = \\pi r^2$ |',
+            '| **ពីរ៉ាមីតនិយ័ត** | $\\frac{1}{2} p \\times a$ | $S_L + B$ | $\\frac{1}{3} B \\times h$ | $a^2 = h^2 + r^2$ ($a$ អាប៉ូតែម) |',
+            '| **កោនបរិវត្ត** | $\\pi rg$ | $\\pi r(g+r)$ | $\\frac{1}{3}\\pi r^2 h$ | $g^2 = r^2 + h^2$ ($g$ ទ្រនុង) |',
+            '| **ស្វ៊ែរ** | — | $4\\pi R^2$ | $\\frac{4}{3}\\pi R^3$ | កន្លះស្វ៊ែរ ៖ $V = \\frac{2}{3}\\pi R^3$ |'
+          ]
+        })
+      ]),
+
+      /* 17 MCQ 1 & 2 */ page([
+        sec('សំណួរពហុជ្រើសរើស (MCQ Test - ភាគ ១)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ១',
+          accent: 'navy',
+          body: [
+            'ពហុមុខមួយមាន ៦ កំពូល និង ៨ មុខ។ តើពហុមុខនោះមានទ្រនុងចំនួនប៉ុន្មាន?',
+            '**A.** 10',
+            '**B.** 12',
+            '**C.** 14',
+            '**D.** 16',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **B** តាមរូបមន្តអយល័រ $6 - E + 8 = 2 \implies E = 12$*'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ២',
+          accent: 'teal',
+          body: [
+            'ស៊ីឡាំងមួយមានកាំបាត $r = 5\,\text{cm}$ និងកម្ពស់ $h = 10\,\text{cm}$។ មាឌស៊ីឡាំងស្មើនឹង៖',
+            '**A.** $50\pi\,\text{cm}^3$',
+            '**B.** $100\pi\,\text{cm}^3$',
+            '**C.** $250\pi\,\text{cm}^3$',
+            '**D.** $500\pi\,\text{cm}^3$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C** ព្រោះ $V = \pi(5^2)(10) = 250\pi\,\text{cm}^3$*'
+          ]
+        })
+      ]),
+
+      /* 18 MCQ 3 & 4 */ page([
+        sec('សំណួរពហុជ្រើសរើស (MCQ Test - ភាគ ២)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ៣',
+          accent: 'indigo',
+          body: [
+            'ស្វ៊ែរមួយមានកាំ $R = 3\,\text{cm}$។ ផ្ទៃក្រឡាស្វ៊ែរស្មើនឹងប៉ុន្មាន?',
+            '**A.** $9\pi\,\text{cm}^2$',
+            '**B.** $18\pi\,\text{cm}^2$',
+            '**C.** $36\pi\,\text{cm}^2$',
+            '**D.** $54\pi\,\text{cm}^2$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C** ព្រោះ $S = 4\pi(3^2) = 36\pi\,\text{cm}^2$*'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ៤',
+          accent: 'emerald',
+          body: [
+            'កោនបរិវត្តមួយមាន $r = 3\,\text{cm}$ និង $h = 4\,\text{cm}$។ ទ្រនុងបង្កើត $g$ ស្មើនឹង៖',
+            '**A.** $5\,\text{cm}$',
+            '**B.** $7\,\text{cm}$',
+            '**C.** $12\,\text{cm}$',
+            '**D.** $25\,\text{cm}$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **A** ព្រោះ $g = \sqrt{3^2 + 4^2} = 5\,\text{cm}$*'
+          ]
+        })
+      ]),
+
+      /* 19 Practice 1: Water Tank */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ១ ៖ គណនាមាឌទឹកក្នុងស៊ីឡាំង'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ១',
+          accent: 'navy',
+          body: [
+            'ធុងទឹកស៊ីឡាំងមួយមានអង្កត់ផ្ចិតបាត $40\,\text{cm}$ និងកម្ពស់ $1\,\text{m}$ ($100\,\text{cm}$)។',
+            'ក. គណនាមាឌធុងគិតជា $\text{cm}^3$ (យក $\pi \approx 3.14$)។',
+            'ខ. គណនាមាឌទឹកគិតជាលីត្រ ដែលធុងនេះអាចផ្ទុកបានពេញ ($1\,\text{L} = 1000\,\text{cm}^3$)។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'emerald',
+          body: [
+            'ក. កាំបាត ៖ $r = \frac{40}{2} = 20\,\text{cm}$',
+            'មាឌធុងស៊ីឡាំង ៖',
+            '$$V = \pi r^2 h = 3.14 \times (20^2) \times 100$$',
+            '$$V = 3.14 \times 400 \times 100 = 125,600\,\text{cm}^3$$',
+            'ខ. ប្តូរទៅជាលីត្រ ៖',
+            '$$V = \frac{125,600}{1000} = 125.6\,\text{លីត្រ}$$'
+          ]
+        })
+      ]),
+
+      /* 20 Practice 2: Regular Pyramid */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ២ ៖ ដំបូលផ្ទះរាងពីរ៉ាមីតនិយ័ត'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ២',
+          accent: 'indigo',
+          body: [
+            'ដំបូលផ្ទះរាងពីរ៉ាមីតនិយ័តបាតការេជ្រុង $8\,\text{m}$ និងអាប៉ូតែម $a = 5\,\text{m}$។',
+            'ក. គណនាផ្ទៃខាង $S_L$ នៃដំបូលនេះ។',
+            'ខ. បើថ្លៃប្រក់ក្បឿង $15$ ដុល្លារក្នុង $1\,\text{m}^2$ គណនាប្រាក់ចំណាយសរុប។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'teal',
+          body: [
+            'ក. បរិមាត្របាតការេ ៖ $p = 4 \times 8 = 32\,\text{m}$',
+            'ផ្ទៃខាងដំបូល ៖',
+            '$$S_L = \frac{1}{2} p \times a = \frac{1}{2}(32)(5) = 80\,\text{m}^2$$',
+            'ខ. ប្រាក់ចំណាយសរុប ៖',
+            '$$\text{ប្រាក់ចំណាយ} = 80 \times 15 = 1200\text{ ដុល្លារ}$$'
+          ]
+        })
+      ]),
+
+      /* 21 Practice 3: Melting and Recasting */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៣ ៖ ស្លលោហៈប្តូររាង (Recasting)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ៣',
+          accent: 'brand',
+          body: [
+            'ដុំដែកស្វ៊ែរមួយមានកាំ $R = 6\,\text{cm}$ ត្រូវបានគេយកទៅស្លរំលាយ រួចចាក់ធ្វើជាកោនបរិវត្តដែលមានកាំបាត $r = 6\,\text{cm}$។',
+            'គណនាកម្ពស់ $h$ នៃកោនដែលទើបបង្កើតបាន (សន្មតថាមិនបាត់បង់លោហៈពេលស្ល)។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'emerald',
+          body: [
+            '• មាឌស្វ៊ែរ ៖ $V_1 = \frac{4}{3}\pi R^3 = \frac{4}{3}\pi (6^3) = 288\pi\,\text{cm}^3$',
+            '• មាឌកោន ៖ $V_2 = \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi (6^2) h = 12\pi h$',
+            '• ដោយមាឌទាំងពីរស្មើគ្នា ($V_1 = V_2$) ៖',
+            '$$12\pi h = 288\pi \implies h = \frac{288}{12} = 24\,\text{cm}$$',
+            'ដូចនេះ កម្ពស់កោនគឺ $h = 24\,\text{cm}$។'
+          ]
+        })
+      ]),
+
+      /* 22 Homework */ S.homework([
+        'ទន្ទេញរូបមន្តផ្ទៃខាង ផ្ទៃសរុប និងមាឌនៃសូលីតទាំង ៥ ឲ្យចាំច្បាស់',
+        'លំហាត់ទី ១ ៖ គូបមួយមានមាឌ $216\,\text{cm}^3$។ គណនាប្រវែងជ្រុង និងផ្ទៃសរុប $S_T$។',
+        'លំហាត់ទី ២ ៖ កោនមួយមានកាំ $r=5\,\text{cm}$ និង $g=13\,\text{cm}$។ គណនាកម្ពស់ $h$ និងមាឌ $V$។',
+        'លំហាត់ទី ៣ ៖ ស្វ៊ែរមួយមានកាំ $R=9\,\text{cm}$។ គណនាផ្ទៃក្រឡា និងមាឌរបស់វា។',
+        'លំហាត់ទី ៤ ៖ ស្រាវជ្រាវអំពីការគណនាមាឌពីរ៉ាមីតកាត់ និងកោនកាត់។'
+      ], K.info),
+
+      /* 23 Thanks */ S.thanks('សូមអរគុណប្អូនៗទាំងអស់គ្នា!', 'ជួបគ្នានៅមេរៀនទី ១៨ ៖ មាត្រដ្ឋាន និងទិសដៅ (Scale & Bearings)', K.info)
+    ];
+
+    return {
+      name: 'ថ្នាក់ទី៨ · មេរៀនទី១៧ រូបធរណីមាត្រដែលមានវិមាត្របី (២៣ ស្លាយ)',
+      theme: 'school',
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
+      slides: slides
+    };
+  }
+
+
+  function g8ScaleBearings(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
+        title = K.title, card = K.card, kids = K.kids, svgCompass = K.svgCompass;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var R = String.raw;
+
+    var slides = [
+      /* 1 Cover */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី៨', 'មេរៀនទី ១៨', 'មាត្រដ្ឋាន និងទិសដៅ', K.info),
+
+      /* 2 TOC */ K.toc([
+        '==១. មាត្រដ្ឋានប្រវែង (Linear Scale)==',
+        '២. រូបមន្តប្តូរប្រវែងលើប្លង់ & ប្រវែងពិត',
+        '==៣. មាត្រដ្ឋានផ្ទៃក្រឡា & មាឌ==',
+        '៤. ទិសទាំង ៨ នៃត្រីវិស័យ (8 Compass Directions)',
+        '==៥. មុំទិសដៅ ៣ ខ្ទង់ (Three-Figure Bearings)==',
+        '៦. មុំទិសដៅត្រឡប់ (Back Bearing)',
+        '==៧. សង្ខេបវិធាន & MCQ Test==',
+        '៨. លំហាត់អនុវត្តន៍នាវាចរណ៍ & ផែនទី'
+      ], 32),
+
+      /* 3 Objective */ S.objective([
+        'យល់ច្បាស់ពីនិយមន័យមាត្រដ្ឋាន និងចេះគណនាប្តូររវាងប្រវែងលើប្លង់ និងប្រវែងពិតជាក់ស្ដែង',
+        'ចេះអនុវត្តមាត្រដ្ឋានផ្ទៃក្រឡា (1/n)² និងមាត្រដ្ឋានមាឌ (1/n)³ ក្នុងការដោះស្រាយបញ្ហាដីធ្លី',
+        'ស្គាល់ទិសទាំង ៨ នៃត្រីវិស័យ និងតម្លៃមុំនីមួយៗគិតពីទិសខាងជើង (000°)',
+        'ចេះអាន គូស និងកំណត់មុំទិសដៅ ៣ ខ្ទង់ និងមុំទិសដៅត្រឡប់ (Back Bearing)'
+      ], 'មាត្រដ្ឋាន និងមុំទិសដៅជាចំណេះដឹងយុទ្ធសាស្ត្រក្នុងការគូសប្លង់ ផែនទី ការធ្វើដំណើរតាមសមុទ្រ អាកាសចរណ៍ និងប្រព័ន្ធ GPS។'),
+
+      /* 4 Linear Scale Definition */ page([
+        sec('១. មាត្រដ្ឋានប្រវែង (Linear Scale)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យមាត្រដ្ឋាន',
+          accent: 'navy',
+          body: [
+            '**មាត្រដ្ឋាន (Scale)** គឺជាផលធៀបរវាងរង្វាស់ប្រវែងលើប្លង់ (ឬលើផែនទី) ទៅនឹងរង្វាស់ប្រវែងពិតជាក់ស្ដែងនៅលើដី ៖',
+            '$$\text{មាត្រដ្ឋាន} = \frac{\text{ប្រវែងលើប្លង់}}{\text{ប្រវែងពិតជាក់ស្ដែង}}$$',
+            '• **លក្ខខណ្ឌចាំបាច់ ៖** ប្រវែងទាំងពីរត្រូវតែមាន **ខ្នាតរង្វាស់ដូចគ្នា** (ឧទាហរណ៍ ៖ cm ដូចគ្នា)។',
+            '• មាត្រដ្ឋានអាចសរសេរជាទម្រង់ផលធៀប $1 : n$ ឬជាប្រភាគ $\frac{1}{n}$។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'រូបមន្តគន្លឹះគណនាមាត្រដ្ឋាន',
+          accent: 'emerald',
+          body: [
+            'បើមាត្រដ្ឋានគឺ $1 : n$ (ឬ $\frac{1}{n}$) ៖',
+            '• **រកប្រវែងពិត ៖**',
+            '$$\text{ប្រវែងពិត} = \text{ប្រវែងលើប្លង់} \times n$$',
+            '• **រកប្រវែងលើប្លង់ ៖**',
+            '$$\text{ប្រវែងលើប្លង់} = \frac{\text{ប្រវែងពិត}}{n}$$',
+            '• **រំលឹកប្តូរខ្នាត ៖**',
+            '$$1\,\text{km} = 1,000\,\text{m} = 100,000\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 5 Scale Examples */ page([
+        sec('២. គំរូលំហាត់មាត្រដ្ឋានប្រវែង'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ១ ៖ រកចម្ងាយពិត',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** លើផែនទីមួយមានមាត្រដ្ឋាន $1 : 50,000$។ ចម្ងាយរវាងភូមិពីរលើផែនទីគឺ $6\,\text{cm}$។ គណនាចម្ងាយពិតជា $\text{km}$។',
+            '**ដំណោះស្រាយ ៖**',
+            '• ចម្ងាយពិតគិតជាសង់ទីម៉ែត្រ ៖',
+            '$$\text{ចម្ងាយពិត} = 6 \times 50,000 = 300,000\,\text{cm}$$',
+            '• ប្តូរពី $\text{cm}$ ទៅជា $\text{km}$ ៖',
+            '$$300,000\,\text{cm} = \frac{300,000}{100,000} = 3\,\text{km}$$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ២ ៖ រកប្រវែងលើប្លង់',
+          accent: 'brand',
+          body: [
+            '**ប្រធាន ៖** ផ្លូវជាតិមួយមានប្រវែង $15\,\text{km}$។ តើលើផែនទីមាត្រដ្ឋាន $1 : 250,000$ ផ្លូវនេះមានប្រវែងប៉ុន្មាន $\text{cm}$?',
+            '**ដំណោះស្រាយ ៖**',
+            '• ប្តូរប្រវែងពិតទៅជា $\text{cm}$ ៖',
+            '$$15\,\text{km} = 15 \times 100,000 = 1,500,000\,\text{cm}$$',
+            '• ប្រវែងលើផែនទី ៖',
+            '$$\text{ប្រវែងលើប្លង់} = \frac{1,500,000}{250,000} = 6\,\text{cm}$$'
+          ]
+        })
+      ]),
+
+      /* 6 Area & Volume Scale */ page([
+        sec('៣. មាត្រដ្ឋានផ្ទៃក្រឡា និងមាត្រដ្ឋានមាឌ'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ទ្រឹស្ដីបទមាត្រដ្ឋានផ្ទៃ និងមាឌ',
+          accent: 'navy',
+          body: [
+            'បើមាត្រដ្ឋានប្រវែងគឺ $k = \frac{1}{n}$ នោះ ៖',
+            '• **មាត្រដ្ឋានផ្ទៃក្រឡា** គឺការេនៃមាត្រដ្ឋានប្រវែង ៖',
+            '$$\frac{S_{\text{ប្លង់}}}{S_{\text{ពិត}}} = k^2 = \left(\frac{1}{n}\right)^2 = \frac{1}{n^2}$$',
+            '• **មាត្រដ្ឋានមាឌ** គឺគូបនៃមាត្រដ្ឋានប្រវែង ៖',
+            '$$\frac{V_{\text{គំរូ}}}{V_{\text{ពិត}}} = k^3 = \left(\frac{1}{n}\right)^3 = \frac{1}{n^3}$$',
+            '• **រំលឹក ៖** $1\,\text{ha} = 10,000\,\text{m}^2 = 100,000,000\,\text{cm}^2$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៣ ៖ មាត្រដ្ឋានផ្ទៃក្រឡាដី',
+          accent: 'emerald',
+          body: [
+            '**ប្រធាន ៖** លើប្លង់មាត្រដ្ឋាន $1 : 2,000$ ស្រែមួយមានផ្ទៃក្រឡា $25\,\text{cm}^2$។ គណនាផ្ទៃក្រឡាពិតជាម៉ែត្រការេ ($\text{m}^2$)។',
+            '**ដំណោះស្រាយ ៖**',
+            '• មាត្រដ្ឋានផ្ទៃ ៖ $1 : (2,000)^2 = 1 : 4,000,000$',
+            '• ផ្ទៃពិតជា $\text{cm}^2$ ៖',
+            '$$S_{\text{ពិត}} = 25 \times 4,000,000 = 100,000,000\,\text{cm}^2$$',
+            '• ប្តូរទៅជា $\text{m}^2$ ៖',
+            '$$S_{\text{ពិត}} = \frac{100,000,000}{10,000} = 10,000\,\text{m}^2 = 1\,\text{ha}$$'
+          ]
+        })
+      ]),
+
+      /* 7 Compass 8 Directions */ page([
+        sec('៤. ទិសទាំង ៨ នៃត្រីវិស័យ (Compass Directions)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: '៤ ទិសចម្បង (Cardinal)',
+          accent: 'navy',
+          body: [
+            'ត្រីវិស័យចែកជារង្វង់ $360^\circ$ ៖',
+            '• **ជើង (North - N) ៖** $000^\circ$ ឬ $360^\circ$',
+            '• **កើត (East - E) ៖** $090^\circ$',
+            '• **ត្បូង (South - S) ៖** $180^\circ$',
+            '• **លិច (West - W) ៖** $270^\circ$',
+            '*(ទិសនីមួយៗកែងគ្នា $90^\circ$)*'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: '៤ ទិសរង (Intercardinal)',
+          accent: 'emerald',
+          body: [
+            'នៅចន្លោះទិសចម្បងទាំងបួន (មុំ $45^\circ$) ៖',
+            '• **ឦសាន (North-East - NE) ៖** $045^\circ$',
+            '• **អាគ្នេយ៍ (South-East - SE) ៖** $135^\circ$',
+            '• **និរតី (South-West - SW) ៖** $225^\circ$',
+            '• **ពាយ័ព្យ (North-West - NW) ៖** $315^\circ$'
+          ]
+        })
+      ]),
+
+      /* 8 Visual Compass SVG */ page([
+        sec('គំនូរធរណីមាត្រ ៖ ត្រីវិស័យ និងទិសទាំង ៨'),
+        svgCompass(60, 165, 410, 360, { showBearing: true, bearing: 60 }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គោលការណ៍វាស់មុំទិសដៅ',
+          accent: 'brand',
+          body: [
+            'មុំទិសដៅត្រូវគោរពតាមវិធាន ៣ យ៉ាង៖',
+            '• **១. វាស់ពីទិសខាងជើង** (North ray $000^\circ$)',
+            '• **២. វាស់តាមទ្រនិចនាឡិកា** (Clockwise)',
+            '• **៣. សរសេរជាលេខ ៣ ខ្ទង់** ៖',
+            '  - $45^\circ \implies \mathbf{045^\circ}$',
+            '  - $90^\circ \implies \mathbf{090^\circ}$',
+            '  - $240^\circ \implies \mathbf{240^\circ}$'
+          ]
+        })
+      ]),
+
+      /* 9 Three-Figure Bearings */ page([
+        sec('៥. មុំទិសដៅ ៣ ខ្ទង់ (Three-Figure Bearings)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'និយមន័យមុំទិសដៅពី A ទៅ B',
+          accent: 'navy',
+          body: [
+            '**មុំទិសដៅពី $A$ ទៅ $B$** គឺជាមុំរវាងកាំទិសជើងគូសចេញពី $A$ ទៅនឹងកាំ $[AB)$ គិតតាមទិសដៅស្របទ្រនិចនាឡិកា។',
+            '• ចំណុចចាប់ផ្ដើមវាស់គឺ **ចំណុច $A$** (កន្លែងឈរមើល)',
+            '• គូសបន្ទាត់ទិសជើង $N$ ត្រង់ចំណុច $A$',
+            '• បង្វិលស្របទ្រនិចនាឡិការហូតដល់ជួបអង្កត់ $[AB]$'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៤ ៖ កំណត់មុំទិសដៅ',
+          accent: 'teal',
+          body: [
+            '**ប្រធាន ៖** សរសេរមុំទិសដៅខាងក្រោមជាលេខ ៣ ខ្ទង់ ៖',
+            'ក. ទិសអាគ្នេយ៍ (SE)',
+            'ខ. ងាកចេញពីខាងជើងទៅខាងកើតមុំ $52^\circ$',
+            'គ. ងាកចេញពីខាងជើងទៅខាងលិចមុំ $40^\circ$',
+            '**ដំណោះស្រាយ ៖**',
+            'ក. ទិសអាគ្នេយ៍ ៖ $135^\circ$',
+            'ខ. ងាកពីជើងទៅកើត $52^\circ$ ៖ $052^\circ$',
+            'គ. ងាកពីជើងទៅលិច $40^\circ$ ៖ $360^\circ - 40^\circ = 320^\circ$'
+          ]
+        })
+      ]),
+
+      /* 10 Back Bearing */ page([
+        sec('៦. មុំទិសដៅត្រឡប់ (Back Bearing)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ទ្រឹស្ដីបទមុំទិសដៅត្រឡប់',
+          accent: 'indigo',
+          body: [
+            'បើមុំទិសដៅពី $A$ ទៅ $B$ គឺ $\theta$ នោះ **មុំទិសដៅត្រឡប់ពី $B$ មក $A$** គណនាតាម ៖',
+            '$$\text{បើ } \theta < 180^\circ \implies \text{Back Bearing} = \theta + 180^\circ$$',
+            '$$\text{បើ } \theta \ge 180^\circ \implies \text{Back Bearing} = \theta - 180^\circ$$',
+            '• ហេតុផល ៖ បន្ទាត់ទិសជើងនៅ $A$ និងនៅ $B$ ស្របគ្នា ដូច្នេះមុំឆ្លាស់ក្នុងបង្កើតបានផលសង $180^\circ$។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'គំរូលំហាត់ទី ៥ ៖ គណនាមុំត្រឡប់',
+          accent: 'emerald',
+          body: [
+            '**ប្រធាន ៖** គណនាមុំទិសដៅត្រឡប់ ៖',
+            'ក. មុំពី $P$ ទៅ $Q$ គឺ $075^\circ$។ គណនាមុំពី $Q$ មក $P$។',
+            'ខ. មុំពី $M$ ទៅ $N$ គឺ $250^\circ$។ គណនាមុំពី $N$ មក $M$។',
+            '**ដំណោះស្រាយ ៖**',
+            'ក. ដោយ $075^\circ < 180^\circ$ ៖',
+            '$$\text{Back} = 075^\circ + 180^\circ = 255^\circ$$',
+            'ខ. ដោយ $250^\circ \ge 180^\circ$ ៖',
+            '$$\text{Back} = 250^\circ - 180^\circ = 070^\circ$$'
+          ]
+        })
+      ]),
+
+      /* 11 Summary Rules Table */ page([
+        sec('៧. សង្ខេបវិធានមាត្រដ្ឋាន និងមុំទិសដៅ'),
+        card({
+          x: 60, y: 165, w: 840, h: 360,
+          title: 'តារាងសង្ខេបវិធាន និងរូបមន្តគន្លឹះ',
+          accent: 'brand',
+          body: [
+            '| ប្រធានបទ | រូបមន្ត / វិធាន | ឧទាហរណ៍ជាក់ស្ដែង |',
+            '| :---: | :---: | :---: |',
+            '| **មាត្រដ្ឋានប្រវែង** | $\text{មាត្រដ្ឋាន} = \frac{\text{ប្រវែងលើប្លង់}}{\text{ប្រវែងពិត}}$ ($1:n$) | មាត្រដ្ឋាន $1:50,000 \implies 2\,\text{cm}$ លើប្លង់ស្មើ $1\,\text{km}$ ពិត |',
+            '| **មាត្រដ្ឋានផ្ទៃក្រឡា** | $\frac{S_1}{S_2} = \left(\frac{1}{n}\right)^2 = \frac{1}{n^2}$ | មាត្រដ្ឋាន $1:1,000 \implies 1\,\text{cm}^2$ លើប្លង់ស្មើ $100\,\text{m}^2$ ពិត |',
+            '| **មាត្រដ្ឋានមាឌ** | $\frac{V_1}{V_2} = \left(\frac{1}{n}\right)^3 = \frac{1}{n^3}$ | មាត្រដ្ឋាន $1:100 \implies 1\,\text{cm}^3$ លើគំរូស្មើ $1\,\text{m}^3$ ពិត |',
+            '| **មុំទិសដៅ ៣ ខ្ទង់** | ចាប់ពីទិសជើង, ស្របទ្រនិចនាឡិកា | ជើង $000^\circ$, កើត $090^\circ$, ត្បូង $180^\circ$, លិច $270^\circ$ |',
+            '| **មុំទិសដៅត្រឡប់** | $\text{Back} = \theta \pm 180^\circ$ | មុំ $060^\circ \implies \text{Back} = 240^\circ \ ; \ 210^\circ \implies 030^\circ$ |'
+          ]
+        })
+      ]),
+
+      /* 12 MCQ 1 & 2 */ page([
+        sec('សំណួរពហុជ្រើសរើស (MCQ Test - ភាគ ១)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ១',
+          accent: 'navy',
+          body: [
+            'លើផែនទីមាត្រដ្ឋាន $1 : 100,000$ ចម្ងាយ $4\,\text{cm}$ លើផែនទីស្មើនឹងចម្ងាយពិតប៉ុន្មាន?',
+            '**A.** $0.4\,\text{km}$',
+            '**B.** $4\,\text{km}$',
+            '**C.** $40\,\text{km}$',
+            '**D.** $400\,\text{km}$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **B** ព្រោះ $4 \times 100,000\,\text{cm} = 400,000\,\text{cm} = 4\,\text{km}$*'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ២',
+          accent: 'teal',
+          body: [
+            'បើមាត្រដ្ឋានប្រវែងគឺ $1 : 200$ នោះមាត្រដ្ឋានផ្ទៃក្រឡាស្មើនឹង៖',
+            '**A.** $1 : 400$',
+            '**B.** $1 : 4,000$',
+            '**C.** $1 : 40,000$',
+            '**D.** $1 : 400,000$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C** ព្រោះ $(1/200)^2 = 1 / 40,000$*'
+          ]
+        })
+      ]),
+
+      /* 13 MCQ 3 & 4 */ page([
+        sec('សំណួរពហុជ្រើសរើស (MCQ Test - ភាគ ២)'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ៣',
+          accent: 'indigo',
+          body: [
+            'តើមុំទិសដៅ ៣ ខ្ទង់នៃទិសនិរតី (South-West) គឺស្មើនឹងប៉ុន្មាន?',
+            '**A.** $135^\circ$',
+            '**B.** $180^\circ$',
+            '**C.** $225^\circ$',
+            '**D.** $315^\circ$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C** ($180^\circ + 45^\circ = 225^\circ$)*'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'សំណួរទី ៤',
+          accent: 'emerald',
+          body: [
+            'បើមុំទិសដៅពី $A$ ទៅ $B$ គឺ $085^\circ$ នោះមុំទិសដៅត្រឡប់ពី $B$ មក $A$ ស្មើនឹង៖',
+            '**A.** $095^\circ$',
+            '**B.** $175^\circ$',
+            '**C.** $265^\circ$',
+            '**D.** $275^\circ$',
+            '---',
+            '*ចម្លើយត្រឹមត្រូវគឺ **C** ព្រោះ $085^\circ + 180^\circ = 265^\circ$*'
+          ]
+        })
+      ]),
+
+      /* 14 Practice 1: Map Scale */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ១ ៖ មាត្រដ្ឋានប្លង់សាលារៀន'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ១',
+          accent: 'navy',
+          body: [
+            'លើប្លង់សាលារៀនមួយមានមាត្រដ្ឋាន $1 : 500$។ ទីលានបាល់ទាត់មានបណ្ដោយ $18\,\text{cm}$ និងទទឹង $12\,\text{cm}$ លើប្លង់។',
+            'ក. គណនាវិមាត្រពិតនៃទីលានជាម៉ែត្រ ($\text{m}$)។',
+            'ខ. គណនាផ្ទៃក្រឡាពិតនៃទីលានគិតជាម៉ែត្រការេ ($\text{m}^2$)។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'emerald',
+          body: [
+            'ក. វិមាត្រពិត ៖',
+            '• បណ្ដោយ ៖ $18 \times 500\,\text{cm} = 9000\,\text{cm} = 90\,\text{m}$',
+            '• ទទឹង ៖ $12 \times 500\,\text{cm} = 6000\,\text{cm} = 60\,\text{m}$',
+            'ខ. ផ្ទៃក្រឡាពិត ៖',
+            '$$S = 90\,\text{m} \times 60\,\text{m} = 5,400\,\text{m}^2$$'
+          ]
+        })
+      ]),
+
+      /* 15 Practice 2: Ship Navigation */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ២ ៖ ការធ្វើដំណើរតាមមុំទិសដៅ'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ២',
+          accent: 'indigo',
+          body: [
+            'កប៉ាល់មួយចេញដំណើរពីកំពង់ផែ $O$ ទៅកោះ $A$ តាមមុំទិសដៅ $090^\circ$ បាន $12\,\text{km}$ រួចបន្តដំណើរទៅកោះ $B$ តាមមុំ $180^\circ$ បាន $5\,\text{km}$។',
+            'ក. គណនាចម្ងាយត្រង់ពីកំពង់ផែ $O$ ទៅកោះ $B$។',
+            'ខ. កំណត់មុំទិសដៅត្រឡប់ពីកោះ $A$ មកកំពង់ផែ $O$។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'teal',
+          body: [
+            'ក. ដំណើរទៅកើត ($090^\circ$) $12\,\text{km}$ រួចចុះទៅត្បូង ($180^\circ$) $5\,\text{km}$ បង្កើតបាន $\\triangle OAB$ កែងត្រង់ $A$ ៖',
+            '$$OB = \sqrt{OA^2 + AB^2} = \sqrt{12^2 + 5^2} = 13\,\text{km}$$',
+            'ខ. មុំទិសដៅពី $O$ ទៅ $A$ គឺ $090^\circ$ ៖',
+            '$$\text{Back} = 090^\circ + 180^\circ = 270^\circ \quad (\text{ទិសខាងលិច})$$'
+          ]
+        })
+      ]),
+
+      /* 16 Practice 3: Triangular Navigation */ page([
+        sec('លំហាត់អនុវត្តន៍ទី ៣ ៖ មុំទិសដៅ និងត្រីកោណកែង'),
+        card({
+          x: 60, y: 165, w: 410, h: 360,
+          title: 'ប្រធានលំហាត់ទី ៣',
+          accent: 'brand',
+          body: [
+            'យន្តហោះមួយហោះចេញពីព្រលាន $P$ តាមមុំទិសដៅ $000^\circ$ (ទិសជើងត្រង់) បានចម្ងាយ $80\,\text{km}$ ដល់ចំណុច $Q$។ បន្ទាប់មក ហោះទៅទិសខាងកើត ($090^\circ$) បាន $60\,\text{km}$ ដល់ចំណុច $R$។',
+            'ក. គណនាចម្ងាយត្រង់ $PR$ ពីព្រលានទៅ $R$។',
+            'ខ. គណនាមុំទិសដៅត្រឡប់ពី $Q$ មក $P$។'
+          ]
+        }),
+        card({
+          x: 490, y: 165, w: 410, h: 360,
+          title: 'ដំណោះស្រាយលម្អិត',
+          accent: 'emerald',
+          body: [
+            'ក. $\\triangle PQR$ កែងត្រង់ $Q$ ៖',
+            '$$PR = \sqrt{PQ^2 + QR^2} = \sqrt{80^2 + 60^2} = \sqrt{6400 + 3600} = 100\,\text{km}$$',
+            'ខ. មុំពី $P$ ទៅ $Q$ គឺ $000^\circ$ (ទិសជើង) ៖',
+            '$$\text{Back} = 000^\circ + 180^\circ = 180^\circ \quad (\text{ទិសខាងត្បូង})$$'
+          ]
+        })
+      ]),
+
+      /* 17 Homework */ S.homework([
+        'ទន្ទេញវិធាន ៣ យ៉ាងនៃមុំទិសដៅ ៣ ខ្ទង់ និងរូបមន្តមុំត្រឡប់ Back Bearing',
+        'លំហាត់ទី ១ ៖ ផែនទីមានមាត្រដ្ឋាន $1 : 250,000$។ ចម្ងាយ $8.4\,\text{cm}$ លើផែនទីស្មើនឹងប៉ុន្មាន $\text{km}$?',
+        'លំហាត់ទី ២ ៖ ដីមួយមានផ្ទៃក្រឡាពិត $2\,\text{ha}$។ រកផ្ទៃលើប្លង់មាត្រដ្ឋាន $1 : 1,000$ (គិតជា $\text{cm}^2$)។',
+        'លំហាត់ទី ៣ ៖ បើមុំពី $X$ ទៅ $Y$ គឺ $315^\circ$ គណនាមុំត្រឡប់ពី $Y$ មក $X$។',
+        'លំហាត់ទី ៤ ៖ ស្រាវជ្រាវអំពីការប្រើប្រាស់ត្រីវិស័យ និង GPS លើទូរស័ព្ទដៃទំនើប។'
+      ], K.info),
+
+      /* 18 Thanks */ S.thanks('សូមអរគុណប្អូនៗទាំងអស់គ្នា!', 'ជោគជ័យក្នុងការបញ្ចប់កម្មវិធីសិក្សាគណិតវិទ្យាថ្នាក់ទី ៨ ទាំងមូល!', K.info)
+    ];
+
+    return {
+      name: 'ថ្នាក់ទី៨ · មេរៀនទី១៨ មាត្រដ្ឋាន និងទិសដៅ (១៨ ស្លាយ)',
+      theme: 'school',
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
+      slides: slides
+    };
+  }
+
   window.KPSlideTemplates = [
     {
       id: 'g7-integers',
@@ -41099,6 +42772,70 @@ function g8Circles(A) {
         { title: '៨. សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 18 }
       ],
       build: g8Circles
+    },
+    {
+      id: 'g8-special-lines-triangles',
+      ver: 1,
+      grade: '8',
+      chapterNum: null,
+      chapter: 'គណិតវិទ្យាថ្នាក់ទី ៨',
+      lessonNum: 16,
+      lesson: 'មេរៀនទី ១៦ ៖ បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ',
+      name: 'ថ្នាក់ទី៨ · មេរៀនទី១៦ បន្ទាត់ និងអង្កត់ពិសេសក្នុងត្រីកោណ (២៤ ស្លាយ)',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. មេដ្យាន & ទីប្រជុំទម្ងន់ G', slide: 3 },
+        { title: '២. បន្ទាត់មេដ្យាទ័រ & ផ្ចិតចារឹកក្រៅ O', slide: 6 },
+        { title: '៣. កម្ពស់ & អរតូសង់ H', slide: 9 },
+        { title: '៤. ពុះមុំ & ផ្ចិតចារឹកក្នុង I', slide: 11 },
+        { title: '៥. តារាងសង្ខេប & បន្ទាត់អយល័រ', slide: 14 },
+        { title: '៦. MCQ & លំហាត់អនុវត្តន៍', slide: 16 }
+      ],
+      build: g8SpecialLinesTriangles
+    },
+    {
+      id: 'g8-solids-3d',
+      ver: 1,
+      grade: '8',
+      chapterNum: null,
+      chapter: 'គណិតវិទ្យាថ្នាក់ទី ៨',
+      lessonNum: 17,
+      lesson: 'មេរៀនទី ១៧ ៖ រូបធរណីមាត្រដែលមានវិមាត្របី',
+      name: 'ថ្នាក់ទី៨ · មេរៀនទី១៧ រូបធរណីមាត្រដែលមានវិមាត្របី (២៣ ស្លាយ)',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. ពហុមុខ & រូបមន្តអយល័រ', slide: 3 },
+        { title: '២. ព្រីសត្រង់ & គូប', slide: 4 },
+        { title: '៣. ស៊ីឡាំងបរិវត្ត (Cylinder)', slide: 7 },
+        { title: '៤. ពីរ៉ាមីតនិយ័ត (Pyramid)', slide: 9 },
+        { title: '៥. កោនបរិវត្ត (Cone)', slide: 11 },
+        { title: '៦. ស្វ៊ែរ (Sphere)', slide: 13 },
+        { title: '៧. តារាងសង្ខេប MCQ & លំហាត់', slide: 15 }
+      ],
+      build: g8Solids3D
+    },
+    {
+      id: 'g8-scale-bearings',
+      ver: 1,
+      grade: '8',
+      chapterNum: null,
+      chapter: 'គណិតវិទ្យាថ្នាក់ទី ៨',
+      lessonNum: 18,
+      lesson: 'មេរៀនទី ១៨ ៖ មាត្រដ្ឋាន និងទិសដៅ',
+      name: 'ថ្នាក់ទី៨ · មេរៀនទី១៨ មាត្រដ្ឋាន និងទិសដៅ (១៨ ស្លាយ)',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. មាត្រដ្ឋានប្រវែង (Scale)', slide: 3 },
+        { title: '២. មាត្រដ្ឋានផ្ទៃក្រឡា & មាឌ', slide: 5 },
+        { title: '៣. ទិសទាំង ៨ នៃត្រីវិស័យ', slide: 6 },
+        { title: '៤. មុំទិសដៅ ៣ ខ្ទង់', slide: 8 },
+        { title: '៥. មុំទិសដៅត្រឡប់ (Back)', slide: 9 },
+        { title: '៦. សង្ខេប MCQ & លំហាត់អនុវត្តន៍', slide: 10 }
+      ],
+      build: g8ScaleBearings
     },
 {
       id: 'g10-polynomials',
