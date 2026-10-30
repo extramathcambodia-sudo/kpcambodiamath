@@ -6,7 +6,23 @@
 
   // building blocks shared by the grade 11 school-style decks
   function kit(A) {
-    var T = A.T, shape = A.shape, S = A.school, K = { T: T, shape: shape, page: A.slide, S: S };
+    var T = A.T, rawShape = A.shape, S = A.school;
+    var shape = function (type, x, y, w, h, opts) {
+      if (w === 410) {
+        w = 560;
+        if (x === 60) x = 60;
+        else if (x >= 470 && x <= 520) x = 660;
+      } else if (w === 840) {
+        w = 1160;
+        x = 60;
+      }
+      if (h === 360) {
+        h = 510;
+        if (y >= 150 && y <= 180) y = 155;
+      }
+      return rawShape(type, x, y, w, h, opts);
+    };
+    var K = { T: T, shape: shape, page: A.slide, S: S };
     // header / footer as in the sample deck — change them in រចនា › ក្បាល / ជើងស្លាយ
     K.info = { school: 'វិទ្យាល័យ', school2: 'ព្រះស៊ីសុវត្ថិ', school3: '(NGS)', teacher: 'បង្រៀនដោយ លោកគ្រូ ខែម ពុទ្ធី' };
     K.kids = function (x, y, w) { return S.kids(x, y, w); };
@@ -238,6 +254,46 @@
       return e;
     };
     K.card = function (x, y, w, h, text, o, extra) {
+      if (typeof x === 'object' && x !== null) {
+        var opt = x;
+        var cx = opt.x !== undefined ? opt.x : 60;
+        var cy = opt.y !== undefined ? opt.y : 155;
+        var cw = opt.w !== undefined ? opt.w : 560;
+        var ch = opt.h !== undefined ? opt.h : 510;
+
+        if (cw === 410) {
+          cw = 560;
+          if (cx === 60) cx = 60;
+          else if (cx >= 470 && cx <= 520) cx = 660;
+        } else if (cw === 840) {
+          cw = 1160;
+          cx = 60;
+        }
+        if (ch === 360) {
+          ch = 510;
+          if (cy >= 150 && cy <= 180) cy = 155;
+        }
+
+        var cTitle = opt.title || opt.header || '';
+        var cBody = Array.isArray(opt.body) ? opt.body.join('\n\n') : (opt.body || opt.text || '');
+        var sz = opt.size || 21;
+        var clr = opt.color || '#002060';
+        var bdr = '#c5d3e8';
+        if (opt.accent === 'emerald') bdr = '#10b981';
+        else if (opt.accent === 'teal') bdr = '#14b8a6';
+        else if (opt.accent === 'indigo') bdr = '#6366f1';
+        else if (opt.accent === 'brand') bdr = '#2563eb';
+        else if (opt.accent === 'navy') bdr = '#1e3a8a';
+
+        return K.card(cx, cy, cw, ch, cTitle, cBody, {
+          size: sz,
+          color: clr,
+          border: bdr,
+          valign: opt.valign || 'top',
+          align: opt.align
+        });
+      }
+
       if (typeof o === 'string') {
         if (/^[A-Dក-ឃ]$/.test(String(text).trim())) {
           text = '!!' + String(text).trim() + '.!!   ' + o;
@@ -248,7 +304,8 @@
       }
       var sz = (o && o.size) ? o.size : 26;
       var clr = (o && o.color) ? o.color : '#002060';
-      var e = T(x, y, w, h, text, { size: sz, fill: '#f5f8fc', border: '#c5d3e8', bw: 2, radius: 16, color: clr, valign: (o && o.valign) || 'top' });
+      var bdr = (o && o.border) ? o.border : '#c5d3e8';
+      var e = T(x, y, w, h, text, { size: sz, fill: '#f5f8fc', border: bdr, bw: 2, radius: 16, color: clr, valign: (o && o.valign) || 'top' });
       for (var k in o) e[k] = o[k];
       e.size = (o && o.size) ? o.size : sz;
       if (!e.color) e.color = clr;
