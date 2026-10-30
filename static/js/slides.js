@@ -1422,6 +1422,7 @@
   window.KPSlides = {
     // building blocks for template decks (static/js/slides_templates.js)
     api: { T: T, shape: shp, timer: timerEl, slide: SCHOOL.page, school: SCHOOL, kh: kh, uid: uid },
+    paint: paint,
     reloadTemplates: reloadTemplates,
     filterGrade: function (g) {
       if (!S.store || !S.store.decks) return;
