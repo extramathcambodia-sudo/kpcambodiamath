@@ -12435,6 +12435,988 @@ function g10GraphIneq(A) {
     };
   }
 
+
+
+function g10TrigRatios(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
+        title = K.title, card = K.card;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var R = String.raw;
+
+    var slides = [
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១០', '==ជំពូកទី៥==        មេរៀនទី១', 'ផលធៀបត្រីកោណមាត្រ', K.info),
+
+      /* 2 */ K.toc([
+        '==១. និយមន័យផលធៀបត្រីកោណមាត្រ (sin, cos, tan)==',
+        '២. តម្លៃផលធៀបត្រីកោណមាត្រនៃមុំពិសេស (30°, 45°, 60°)',
+        '==៣. ទំនាក់ទំនងគ្រឹះរវាងផលធៀបត្រីកោណមាត្រ==',
+        '៤. ការពង្រីកផលធៀបក្នុងរង្វង់ត្រីកោណមាត្រ (0° ដល់ 180°)',
+        '==៥. លំហាត់គំរូ & សំណួរ PISA==',
+        '៦. សំណួរ MCQ & កិច្ចការផ្ទះ'
+      ]),
+
+      /* 3 */ S.objective([
+        R`យល់ច្បាស់ពីនិយមន័យស៊ីនុស កូស៊ីនុស និងតង់សង់ក្នុងត្រីកោណកែង និងចងចាំតម្លៃមុំពិសេស $30^\circ, 45^\circ, 60^\circ$`,
+        R`ចេះប្រើរូបមន្តទំនាក់ទំនងគ្រឹះ ពង្រីកផលធៀបត្រីកោណមាត្រដល់មុំទាល ($180^\circ - \alpha$) និងដោះស្រាយចំណោទជីវភាពជាក់ស្តែង`
+      ]),
+
+      /* 4 */ page([
+        sec('៥.១ និយមន័យផលធៀបត្រីកោណមាត្រក្នុងត្រីកោណកែង'),
+        card(60, 155, 560, 375, 'និយមន័យផលធៀបទាំង ៣', R`ពិចារណាត្រីកោណកែង $ABC$ កែងត្រង់ $C$ មានមុំស្រួច $A$ ៖
+• **ជ្រុងឈម (Opposite side)** ៖ $a = BC$
+• **ជ្រុងជាប់ (Adjacent side)** ៖ $b = AC$
+• **អ៊ីប៉ូតេនុស (Hypotenuse)** ៖ $c = AB$
+• **រូបមន្តគ្រឹះ** ៖
+  - **ស៊ីនុស (Sine)** ៖ $\mathbf{\sin A = \dfrac{\text{ឈម}}{\text{អ៊ីប៉ូតេនុស}} = \dfrac{a}{c}}$
+  - **កូស៊ីនុស (Cosine)** ៖ $\mathbf{\cos A = \dfrac{\text{ជាប់}}{\text{អ៊ីប៉ូតេនុស}} = \dfrac{b}{c}}$
+  - **តង់សង់ (Tangent)** ៖ $\mathbf{\tan A = \dfrac{\text{ឈម}}{\text{ជាប់}} = \dfrac{a}{b}}$
+• **កូតង់សង់ (Cotangent)** ៖ $\mathbf{\cot A = \dfrac{\text{ជាប់}}{\text{ឈម}} = \dfrac{b}{a}}$`, { size: 20 }),
+        card(660, 155, 560, 375, 'លក្ខណៈសំខាន់ & ក្បួនចាំងាយៗ', R`• **លក្ខណៈទំហំនៃផលធៀប (មុំស្រួច $0^\circ < A < 90^\circ$)** ៖
+  - $0 < \sin A < 1$
+  - $0 < \cos A < 1$
+  - $\tan A > 0$ (អាចធំជាង $1$, ស្មើ $1$ ឬតូចជាង $1$)
+• **ក្បួនទន្ទេញចាំងាយ (Mnemonic)** ៖
+  - **ស៊ីឈរ (Sin = ឈម / អ៊ីប៉ូតេនុស)**
+  - **កូជាប់ (Cos = ជាប់ / អ៊ីប៉ូតេនុស)**
+  - **តង់ឈមជាប់ (Tan = ឈម / ជាប់)**
+• **ឧទាហរណ៍** ៖ ត្រីកោណកែងមាន $a = 3, b = 4 \implies c = 5$ ៖
+  $$\sin A = \dfrac{3}{5} = 0.6, \quad \cos A = \dfrac{4}{5} = 0.8, \quad \tan A = \dfrac{3}{4} = 0.75$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចាំ!! ៖ $\sin = \dfrac{\text{ឈម}}{\text{អ៊ីប៉ូតេនុស}}, \; \cos = \dfrac{\text{ជាប់}}{\text{អ៊ីប៉ូតេនុស}}, \; \tan = \dfrac{\text{ឈម}}{\text{ជាប់}}$! ជានិច្ចកាល $0 < \sin, \cos < 1$ ចំពោះមុំស្រួច!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 5 */ page([
+        sec('៥.២ តម្លៃផលធៀបត្រីកោណមាត្រនៃមុំពិសេស (៣០°, ៤៥°, ៦០°)'),
+        card(60, 155, 560, 375, 'ប្រភពធរណីមាត្រនៃមុំពិសេស', R`• **មុំ $45^\circ$ (ត្រីកោណកែងសមបាត)** ៖
+  - ជ្រុងកែង $a = b = 1 \implies c = \sqrt{1^2 + 1^2} = \sqrt{2}$
+  $$\sin 45^\circ = \dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}, \quad \cos 45^\circ = \dfrac{\sqrt{2}}{2}, \quad \tan 45^\circ = 1$$
+• **មុំ $30^\circ$ និង $60^\circ$ (កន្លះត្រីកោណសម័ង្ស)** ៖
+  - ត្រីកោណសម័ង្សជ្រុង $2$ មានកម្ពស់ $h = \sqrt{2^2 - 1^2} = \sqrt{3}$
+  - មុំ $30^\circ$ ៖ ឈម $= 1$, ជាប់ $= \sqrt{3}$, អ៊ីប៉ូ $= 2$
+    $$\sin 30^\circ = \dfrac{1}{2}, \quad \cos 30^\circ = \dfrac{\sqrt{3}}{2}, \quad \tan 30^\circ = \dfrac{\sqrt{3}}{3}$$
+  - មុំ $60^\circ$ ៖ ឈម $= \sqrt{3}$, ជាប់ $= 1$, អ៊ីប៉ូ $= 2$
+    $$\sin 60^\circ = \dfrac{\sqrt{3}}{2}, \quad \cos 60^\circ = \dfrac{1}{2}, \quad \tan 60^\circ = \sqrt{3}$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'តារាងតម្លៃមុំពិសេសស្តង់ដា', R`| មុំ $\alpha$ | $0^\circ$ | $30^\circ$ | $45^\circ$ | $60^\circ$ | $90^\circ$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **$\sin \alpha$** | $0$ | $\dfrac{1}{2}$ | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{\sqrt{3}}{2}$ | $1$ |
+| **$\cos \alpha$** | $1$ | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{1}{2}$ | $0$ |
+| **$\tan \alpha$** | $0$ | $\dfrac{\sqrt{3}}{3}$ | $1$ | $\sqrt{3}$ | $\parallel$ (គ្មានន័យ) |
+| **$\cot \alpha$** | $\parallel$ | $\sqrt{3}$ | $1$ | $\dfrac{\sqrt{3}}{3}$ | $0$ |
+
+• **ក្បួនបាតដៃឆ្វេងចាំតម្លៃ $\sin$** ៖
+  $$\sin \alpha = \dfrac{\sqrt{\text{ចំនួនម្រាមដៃខាងក្រោម}}}{2}$$
+  *(ម្រាមកូន $=0^\circ$, នាង $=30^\circ$, កណ្តាល $=45^\circ$, ចង្អុល $=60^\circ$, មេ $=90^\circ$)*`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនចាំលឿន!! ៖ ស៊ីនុសរត់ពីតូចទៅធំ $\dfrac{\sqrt{0}}{2}, \dfrac{\sqrt{1}}{2}, \dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{3}}{2}, \dfrac{\sqrt{4}}{2}$; កូស៊ីនុសរត់ច្រាសមកវិញ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 6 */ page([
+        sec('៥.៣ ទំនាក់ទំនងគ្រឹះរវាងផលធៀបត្រីកោណមាត្រ'),
+        card(60, 155, 560, 375, 'រូបមន្តគ្រឹះទាំង ៤', R`គ្រប់មុំស្រួច $\alpha$ ($0^\circ < \alpha < 90^\circ$) ៖
+• **រូបមន្តពីតាករត្រីកោណមាត្រ** ៖
+  $$\mathbf{\sin^2 \alpha + \cos^2 \alpha = 1}$$
+  - សម្រាយបញ្ជាក់ ៖ $\left(\dfrac{a}{c}\right)^2 + \left(\dfrac{b}{c}\right)^2 = \dfrac{a^2 + b^2}{c^2} = \dfrac{c^2}{c^2} = 1$
+• **ផលធៀបតង់សង់ & កូតង់សង់** ៖
+  $$\mathbf{\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}}, \quad \mathbf{\cot \alpha = \dfrac{\cos \alpha}{\sin \alpha}}, \quad \mathbf{\tan \alpha \cdot \cot \alpha = 1}$$
+• **ទំនាក់ទំនងជាមួយការេតង់សង់** ៖
+  $$\mathbf{1 + \tan^2 \alpha = \dfrac{1}{\cos^2 \alpha}} \quad (\alpha \neq 90^\circ)$$
+  $$\mathbf{1 + \cot^2 \alpha = \dfrac{1}{\sin^2 \alpha}} \quad (\alpha \neq 0^\circ)$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍អនុវត្តន៍រូបមន្ត', R`• **លំហាត់ ១** ៖ គេឱ្យ $\sin \alpha = \dfrac{3}{5}$ ($0^\circ < \alpha < 90^\circ$) ។ គណនា $\cos \alpha$ និង $\tan \alpha$ ។
+  - គណនា $\cos \alpha$ ៖
+    $$\cos^2 \alpha = 1 - \sin^2 \alpha = 1 - \left(\dfrac{3}{5}\right)^2 = 1 - \dfrac{9}{25} = \dfrac{16}{25}$$
+    $$\cos \alpha = \sqrt{\dfrac{16}{25}} = \mathbf{\dfrac{4}{5}} \quad (\text{ព្រោះ } \cos \alpha > 0)$$
+  - គណនា $\tan \alpha$ ៖
+    $$\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha} = \dfrac{3/5}{4/5} = \mathbf{\dfrac{3}{4}}$$
+• **លំហាត់ ២** ៖ គេឱ្យ $\tan \alpha = 2$ ។ គណនា $\cos \alpha$ ៖
+  $$\dfrac{1}{\cos^2 \alpha} = 1 + \tan^2 \alpha = 1 + 2^2 = 5 \implies \cos \alpha = \mathbf{\dfrac{1}{\sqrt{5}} = \dfrac{\sqrt{5}}{5}}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្តមាស!! ៖ $\sin^2 \alpha + \cos^2 \alpha = 1$ និង $1 + \tan^2 \alpha = \dfrac{1}{\cos^2 \alpha}$ ជួយរកផលធៀបទាំងអស់ពេលស្គាល់តែមួយ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 7 */ page([
+        sec('៥.៤ ផលធៀបត្រីកោណមាត្រនៃមុំបំពេញគ្នា (Complementary Angles)'),
+        card(60, 155, 560, 375, 'ទ្រឹស្តីបទមុំបំពេញគ្នា ($90^\circ - \alpha$)', R`ក្នុងត្រីកោណកែង $ABC$ កែងត្រង់ $C$ មាន $A + B = 90^\circ$ ($B = 90^\circ - A$) ៖
+• **ទ្រឹស្តីបទ** ៖ ផលធៀបនៃមុំមួយ ស្មើនឹងកូផលធៀបនៃមុំបំពេញរបស់វា ៖
+  $$\mathbf{\sin(90^\circ - \alpha) = \cos \alpha}$$
+  $$\mathbf{\cos(90^\circ - \alpha) = \sin \alpha}$$
+  $$\mathbf{\tan(90^\circ - \alpha) = \cot \alpha} = \dfrac{1}{\tan \alpha}$$
+  $$\mathbf{\cot(90^\circ - \alpha) = \tan \alpha}$$
+• **ការបកស្រាយ** ៖
+  - ជ្រុងឈមនៃមុំ $A$ គឺជាជ្រុងជាប់នៃមុំ $B$
+  - ជ្រុងជាប់នៃមុំ $A$ គឺជាជ្រុងឈមនៃមុំ $B$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍គណនាលម្អិត', R`• **គណនាតម្លៃកន្សោម** ៖
+  1. $\sin 75^\circ - \cos 15^\circ$ ៖
+     - ដោយ $75^\circ + 15^\circ = 90^\circ \implies \sin 75^\circ = \cos 15^\circ$
+     $$\sin 75^\circ - \cos 15^\circ = \cos 15^\circ - \cos 15^\circ = \mathbf{0}$$
+  2. $\dfrac{\sin 38^\circ}{\cos 52^\circ} + \tan 20^\circ \cdot \tan 70^\circ$ ៖
+     - $\cos 52^\circ = \sin(90^\circ - 52^\circ) = \sin 38^\circ \implies \dfrac{\sin 38^\circ}{\sin 38^\circ} = 1$
+     - $\tan 70^\circ = \cot 20^\circ = \dfrac{1}{\tan 20^\circ} \implies \tan 20^\circ \cdot \dfrac{1}{\tan 20^\circ} = 1$
+     - សរុប ៖ $1 + 1 = \mathbf{2}$
+  3. $\sin^2 22^\circ + \sin^2 68^\circ = \sin^2 22^\circ + \cos^2 22^\circ = \mathbf{1}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួន!! ៖ ផលបូកមុំស្មើ $90^\circ \implies \sin = \cos$ និង $\tan = \cot$! ជួយសម្រួលកន្សោមស្មុគស្មាញឱ្យក្លាយជាលេខងាយៗ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 8 */ page([
+        sec('៥.៥ ការពង្រីកផលធៀបក្នុងរង្វង់ត្រីកោណមាត្រ (0° ដល់ 180°)'),
+        card(60, 155, 560, 375, 'និយមន័យតាមកូអរដោនេក្នុងកន្លះរង្វង់', R`ក្នុងតម្រុយ $(xOy)$ ពិចារណាកន្លះរង្វង់ត្រីកោណមាត្រកាំ $R = 1$ ៖
+• **និយមន័យ** ៖ គ្រប់មុំ $\alpha$ ($0^\circ \le \alpha \le 180^\circ$) កំណត់ចំណុច $M(x, y)$ លើកន្លះរង្វង់ ៖
+  - **កូស៊ីនុស** គឺជាអាប់ស៊ីសនៃ $M$ ៖ $\mathbf{\cos \alpha = x}$
+  - **ស៊ីនុស** គឺជាអរដោនេនៃ $M$ ៖ $\mathbf{\sin \alpha = y}$
+  - **តង់សង់** ៖ $\mathbf{\tan \alpha = \dfrac{y}{x} = \dfrac{\sin \alpha}{\cos \alpha}} \quad (\alpha \neq 90^\circ)$
+• **សញ្ញានៃផលធៀបតាមមុំ** ៖
+  - មុំស្រួច ($0^\circ < \alpha < 90^\circ$) ៖ $\sin \alpha > 0, \cos \alpha > 0, \tan \alpha > 0$
+  - មុំកែង ($\alpha = 90^\circ$) ៖ $\sin 90^\circ = 1, \cos 90^\circ = 0, \tan 90^\circ$ គ្មានន័យ
+  - មុំទាល ($90^\circ < \alpha \le 180^\circ$) ៖ $\sin \alpha > 0, \mathbf{\cos \alpha < 0}, \mathbf{\tan \alpha < 0}$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ចំណុចពិសេសលើអ័ក្សកូអរដោនេ', R`• **តម្លៃព្រំដែន** ៖
+  - $\alpha = 0^\circ \implies M(1, 0)$ ៖
+    $$\sin 0^\circ = 0, \quad \cos 0^\circ = 1, \quad \tan 0^\circ = 0$$
+  - $\alpha = 90^\circ \implies M(0, 1)$ ៖
+    $$\sin 90^\circ = 1, \quad \cos 90^\circ = 0$$
+  - $\alpha = 180^\circ \implies M(-1, 0)$ ៖
+    $$\sin 180^\circ = 0, \quad \cos 180^\circ = -1, \quad \tan 180^\circ = 0$$
+• **សម្គាល់សំខាន់** ៖
+  - ចំពោះគ្រប់មុំ $\alpha \in [0^\circ, 180^\circ]$ ៖
+    $$\mathbf{0 \le \sin \alpha \le 1} \quad (\text{ស៊ីនុសវិជ្ជមានជានិច្ច})$$
+    $$\mathbf{-1 \le \cos \alpha \le 1} \quad (\text{កូស៊ីនុសអាចអវិជ្ជមាន})$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ ចំពោះមុំទាល ($90^\circ < \alpha \le 180^\circ$) ស៊ីនុសនៅតែវិជ្ជមាន ($\sin > 0$) ែកឯកូស៊ីនុស និងតង់សង់អវិជ្ជមាន ($\cos, \tan < 0$)!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 9 */ page([
+        sec('៥.៦ ផលធៀបនៃមុំបន្ថែមគ្នា ($180^\circ - \alpha$)'),
+        card(60, 155, 560, 375, 'ទ្រឹស្តីបទមុំបន្ថែមគ្នា (Supplementary Angles)', R`ពិចារណាមុំ $\alpha$ និងមុំបន្ថែម $180^\circ - \alpha$ ($0^\circ \le \alpha \le 180^\circ$) ៖
+• **ទ្រឹស្តីបទ** ៖
+  $$\mathbf{\sin(180^\circ - \alpha) = \sin \alpha}$$
+  $$\mathbf{\cos(180^\circ - \alpha) = -\cos \alpha}$$
+  $$\mathbf{\tan(180^\circ - \alpha) = -\tan \alpha} \quad (\alpha \neq 90^\circ)$$
+  $$\mathbf{\cot(180^\circ - \alpha) = -\cot \alpha}$$
+• **ការបកស្រាយធរណីមាត្រ** ៖
+  - ចំណុច $M(\cos \alpha, \sin \alpha)$ និង $M'(\cos(180^\circ-\alpha), \sin(180^\circ-\alpha))$ ឆ្លុះគ្នាធៀបនឹងអ័ក្ស $Oy$
+  - មានអរដោនេដូចគ្នា ($y' = y$) និងអាប់ស៊ីសផ្ទុយគ្នា ($x' = -x$)`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍គណនាមុំទាលពិសេស', R`• **គណនាតម្លៃផលធៀបនៃមុំទាល** ៖
+  1. មុំ $120^\circ = 180^\circ - 60^\circ$ ៖
+     $$\sin 120^\circ = \sin 60^\circ = \mathbf{\dfrac{\sqrt{3}}{2}}$$
+     $$\cos 120^\circ = -\cos 60^\circ = \mathbf{-\dfrac{1}{2}}$$
+     $$\tan 120^\circ = -\tan 60^\circ = \mathbf{-\sqrt{3}}$$
+  2. មុំ $135^\circ = 180^\circ - 45^\circ$ ៖
+     $$\sin 135^\circ = \sin 45^\circ = \mathbf{\dfrac{\sqrt{2}}{2}}, \quad \cos 135^\circ = \mathbf{-\dfrac{\sqrt{2}}{2}}, \quad \tan 135^\circ = \mathbf{-1}$$
+  3. មុំ $150^\circ = 180^\circ - 30^\circ$ ៖
+     $$\sin 150^\circ = \sin 30^\circ = \mathbf{\dfrac{1}{2}}, \quad \cos 150^\circ = \mathbf{-\dfrac{\sqrt{3}}{2}}, \quad \tan 150^\circ = \mathbf{-\dfrac{\sqrt{3}}{3}}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនមាស!! ៖ $\sin(180^\circ - \alpha) = \sin \alpha$ រក្សាសញ្ញាដដែល; $\cos$ និង $\tan$ ត្រូវថែមសញ្ញាដក $(-)$ ពីមុខ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 10 */ page([
+        sec('៥.៧ ទំនាក់ទំនងត្រីកោណមាត្រក្នុងត្រីកោណទូទៅ ($A+B+C=180^\circ$)'),
+        card(60, 155, 560, 375, 'លក្ខណៈពិសេសនៃមុំក្នុងត្រីកោណ', R`ក្នុងគ្រប់ត្រីកោណ $ABC$ ផលបូកមុំក្នុងស្មើ $180^\circ$ ៖ $A + B + C = 180^\circ \implies A + B = 180^\circ - C$
+• **ផលធៀបនៃផលបូកពីរមុំ** ៖
+  $$\mathbf{\sin(A + B) = \sin C}$$
+  $$\mathbf{\cos(A + B) = -\cos C}$$
+  $$\mathbf{\tan(A + B) = -\tan C}$$
+• **ផលធៀបនៃកន្លះផលបូកពីរមុំ $\left(\dfrac{A+B}{2} = 90^\circ - \dfrac{C}{2}\right)$** ៖
+  $$\mathbf{\sin\left(\dfrac{A + B}{2}\right) = \cos\left(\dfrac{C}{2}\right)}$$
+  $$\mathbf{\cos\left(\dfrac{A + B}{2}\right) = \sin\left(\dfrac{C}{2}\right)}$$
+  $$\mathbf{\tan\left(\dfrac{A + B}{2}\right) = \cot\left(\dfrac{C}{2}\right)}$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍ស្រាយសមភាពក្នុងត្រីកោណ', R`• **លំហាត់** ៖ ស្រាយបញ្ជាក់ថាក្នុងត្រីកោណ $ABC$ គេបាន ៖
+  $$\sin\left(\dfrac{A+B}{2}\right) + \cos\left(\dfrac{A+B}{2}\right) = \cos\left(\dfrac{C}{2}\right) + \sin\left(\dfrac{C}{2}\right)$$
+• **សម្រាយបញ្ជាក់** ៖
+  - ដោយ $A + B + C = 180^\circ \implies \dfrac{A + B}{2} = 90^\circ - \dfrac{C}{2}$
+  - អនុវត្តរូបមន្តមុំបំពេញ ៖
+    $$\sin\left(\dfrac{A+B}{2}\right) = \sin\left(90^\circ - \dfrac{C}{2}\right) = \cos\left(\dfrac{C}{2}\right)$$
+    $$\cos\left(\dfrac{A+B}{2}\right) = \cos\left(90^\circ - \dfrac{C}{2}\right) = \sin\left(\dfrac{C}{2}\right)$$
+  - បូកអង្គទាំងពីរចូលគ្នា គេទាញបានសមភាពពិត !`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!គន្លឹះ!! ៖ ក្នុងត្រីកោណ $A+B = 180^\circ - C \implies \sin(A+B)=\sin C$; ហើយ $\dfrac{A+B}{2} = 90^\circ - \dfrac{C}{2} \implies \sin = \cos$!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 11 */ page([
+        sec('៥.៨ វិធីសាស្ត្រគណនាកម្ពស់ & ចម្ងាយមិនអាចទៅដល់'),
+        card(60, 155, 560, 375, 'មុំងើយ & មុំទម្លាក់ (Elevation & Depression)', R`• **មុំងើយ (Angle of Elevation)** ៖
+  - មុំបង្កើតឡើងរវាង **ខ្សែភ្នែកផ្តេក** និង **ខ្សែភ្នែកសម្លឹងឡើងលើ** ទៅកាន់វត្ថុខ្ពស់
+• **មុំទម្លាក់ (Angle of Depression)** ៖
+  - មុំបង្កើតឡើងរវាង **ខ្សែភ្នែកផ្តេក** និង **ខ្សែភ្នែកសម្លឹងចុះក្រោម** ទៅកាន់វត្ថុទាប
+• **លក្ខណៈធរណីមាត្រ** ៖
+  - មុំងើយពីចំណុច $A$ ទៅ $B$ ស្មើនឹងមុំទម្លាក់ពី $B$ មក $A$ (មុំឆ្លាស់ក្នុង)
+• **រូបមន្តអនុវត្ត** ៖
+  $$\text{កម្ពស់ } h = d \cdot \tan \theta$$
+  ដែល $d$ ជាចម្ងាយផ្តេក និង $\theta$ ជាមុំងើយ`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍វាស់កម្ពស់ដងទង់ជាតិ', R`• **លំហាត់** ៖ សិស្សម្នាក់ឈរនៅចម្ងាយ $15\text{ m}$ ពីគល់ដងទង់ជាតិមួយ ។ គាត់វាស់ឃើញមុំងើយទៅកាន់កំពូលដងទង់ជាតិស្មើ $30^\circ$ ។ គណនាកម្ពស់ដងទង់ជាតិ បើកម្ពស់ពីភ្នែកសិស្សដល់ដីគឺ $1.5\text{ m}$ (យក $\sqrt{3} \approx 1.732$) ។
+• **ដំណោះស្រាយ** ៖
+  - តាង $h_1$ ជាកម្ពស់ពីកម្រិតភ្នែកទៅកំពូល ៖
+    $$h_1 = d \cdot \tan 30^\circ = 15 \times \dfrac{\sqrt{3}}{3} = 5\sqrt{3}\text{ m}$$
+    $$h_1 \approx 5 \times 1.732 = 8.66\text{ m}$$
+  - កម្ពស់សរុបនៃដងទង់ជាតិ ៖
+    $$H = h_1 + 1.5 = 8.66 + 1.5 = \mathbf{10.16\text{ m}}$$
+• **ដូចនេះ** ៖ ដងទង់ជាតិមានកម្ពស់ប្រហែល $10.16\text{ m}$ ។`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖ កម្ពស់ជាក់ស្តែង $H = d \cdot \tan \theta + h_{\text{ភ្នែក}}$! ត្រូវបូកកម្ពស់អ្នកវាស់ជានិច្ចពេលអនុវត្តជាក់ស្តែង!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 12 */ page([
+        sec('៥.៩ វិធីសាស្ត្រគណនាកម្ពស់ពេលគល់មិនអាចទៅដល់'),
+        card(60, 155, 560, 375, 'ម៉ូឌែលគណិតវិទ្យាវាស់ពីរចំណុច', R`ឧបមាត្រូវការវាស់កម្ពស់ភ្នំ ឬប៉ម $h$ ដែលមិនអាចចូលទៅដល់គល់បាន ៖
+• **វិធីសាស្ត្រវាស់** ៖
+  - ឈរនៅចំណុច $A$ វាស់មុំងើយឃើញ $\alpha$
+  - ដើរថយក្រោយជាបន្ទាត់ត្រង់ចម្ងាយ $d$ ទៅចំណុច $B$ វាស់មុំងើយឃើញ $\beta$ ($\beta < \alpha$)
+• **រូបមន្តកម្ពស់ $h$** ៖
+  - ពី $A$ ៖ $x = \dfrac{h}{\tan \alpha}$
+  - ពី $B$ ៖ $x + d = \dfrac{h}{\tan \beta}$
+  - ដកគ្នា ៖ $d = h\left(\dfrac{1}{\tan \beta} - \dfrac{1}{\tan \alpha}\right) = h(\cot \beta - \cot \alpha)$
+  $$\mathbf{h = \dfrac{d}{\cot \beta - \cot \alpha} = \dfrac{d \cdot \tan \alpha \cdot \tan \beta}{\tan \alpha - \tan \beta}}$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍គណនាលម្អិត', R`• **លំហាត់** ៖ អ្នកវាស់វែងម្នាក់សម្លឹងទៅកំពូលប្រាសាទមួយឃើញមុំងើយ $60^\circ$ ។ ពេលគាត់ដើរថយក្រោយចម្ងាយ $20\text{ m}$ គាត់វាស់ឃើញមុំងើយ $30^\circ$ ។ គណនាកម្ពស់ប្រាសាទ $h$ ។
+• **ដំណោះស្រាយ** ៖
+  - $d = 20\text{ m}, \alpha = 60^\circ, \beta = 30^\circ$
+  - $\tan 60^\circ = \sqrt{3}, \quad \tan 30^\circ = \dfrac{\sqrt{3}}{3}$
+  - ជំនួសចូលរូបមន្ត ៖
+    $$h = \dfrac{20 \cdot \sqrt{3} \cdot \dfrac{\sqrt{3}}{3}}{\sqrt{3} - \dfrac{\sqrt{3}}{3}} = \dfrac{20 \cdot 1}{\dfrac{2\sqrt{3}}{3}} = \dfrac{60}{2\sqrt{3}} = \dfrac{30}{\sqrt{3}} = \mathbf{10\sqrt{3}\text{ m}}$$
+  - តម្លៃប្រហែល ៖ $h \approx 10 \times 1.732 = \mathbf{17.32\text{ m}}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្តវិស្វកម្ម!! ៖ $h = \dfrac{d}{\cot \beta - \cot \alpha}$ អនុញ្ញាតឱ្យគណនាកម្ពស់ភ្នំ ឬប្រាសាទដោយគ្រាន់តែវាស់ពីរចំណុចលើដី!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 13 */ page([
+        sec('៥.១០ ត្រីកោណកែង & ការដោះស្រាយត្រីកោណកែង'),
+        card(60, 155, 560, 375, 'សញ្ញាណការដោះស្រាយត្រីកោណកែង', R`• **និយមន័យ** ៖ ការដោះស្រាយត្រីកោណកែង គឺជាការស្វែងរករង្វាស់ជ្រុង និងមុំទាំងអស់ដែលមិនទាន់ស្គាល់ ដោយផ្អែកលើធាតុស្គាល់យ៉ាងតិចពីរ (ក្នុងនោះមានជ្រុងយ៉ាងតិចមួយ) ។
+• **ករណីទី ១ ៖ ស្គាល់អ៊ីប៉ូតេនុស $c$ និងមុំស្រួច $A$** ៖
+  - $B = 90^\circ - A$
+  - $a = c \cdot \sin A$
+  - $b = c \cdot \cos A$
+• **ករណីទី ២ ៖ ស្គាល់ជ្រុងកែងមួយ $a$ និងមុំស្រួច $A$** ៖
+  - $B = 90^\circ - A$
+  - $b = \dfrac{a}{\tan A}$ (ឬ $b = a \cdot \cot A$)
+  - $c = \dfrac{a}{\sin A}$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ករណីស្គាល់ជ្រុងពីរ', R`• **ករណីទី ៣ ៖ ស្គាល់ជ្រុងកែងទាំងពីរ $a$ និង $b$** ៖
+  - រកអ៊ីប៉ូតេនុស ៖ $c = \sqrt{a^2 + b^2}$
+  - រកមុំ ៖ $\tan A = \dfrac{a}{b} \implies A = \arctan\left(\dfrac{a}{b}\right)$
+  - $B = 90^\circ - A$
+• **ករណីទី ៤ ៖ ស្គាល់អ៊ីប៉ូតេនុស $c$ និងជ្រុងកែង $a$** ៖
+  - ជ្រុងកែងមួយទៀត ៖ $b = \sqrt{c^2 - a^2}$
+  - រកមុំ ៖ $\sin A = \dfrac{a}{c} \implies A = \arcsin\left(\dfrac{a}{c}\right)$
+• **ឧទាហរណ៍** ៖ ត្រីកោណកែងកែងត្រង់ $C$ មាន $a = 6, c = 12$ ៖
+  - $\sin A = \dfrac{6}{12} = \dfrac{1}{2} \implies \mathbf{A = 30^\circ}$
+  - $B = 90^\circ - 30^\circ = \mathbf{60^\circ}$
+  - $b = \sqrt{12^2 - 6^2} = \sqrt{144 - 36} = \sqrt{108} = \mathbf{6\sqrt{3}}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួន!! ៖ គ្រប់ត្រីកោណកែងអាចដោះស្រាយចេញទាំងស្រុងបាន ឱ្យតែស្គាល់ធាតុពីរ (ជ្រុង២ ឬ ជ្រុង១ និងមុំស្រួច១)!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 14 */ page([
+        sec('៥.១១ ការបំប្លែងកន្សោមត្រីកោណមាត្រ & ស្រាយសមភាព'),
+        card(60, 155, 560, 375, 'វិធីសាស្ត្រស្រាយសមភាពត្រីកោណមាត្រ', R`• **យុទ្ធសាស្ត្រសំខាន់ៗទាំង ៤** ៖
+  1. បំប្លែងតង់សង់ និងកូតង់សង់ទៅជាស៊ីនុស និងកូស៊ីនុស ៖
+     $$\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}, \quad \cot \alpha = \dfrac{\cos \alpha}{\sin \alpha}$$
+  2. តម្រូវភាគបែងរួម និងបង្រួមប្រភាគ
+  3. ប្រើរូបមន្តពីតាករ $\sin^2 \alpha + \cos^2 \alpha = 1$ ឬ $1 - \cos^2 \alpha = \sin^2 \alpha$
+  4. គុណនឹងកន្សោមឆ្លាស់ (Conjugate) ដូចជា $(1 - \cos \alpha)(1 + \cos \alpha) = \sin^2 \alpha$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍ស្រាយសមភាព', R`• **លំហាត់** ៖ ស្រាយបញ្ជាក់សមភាព ៖
+  $$\dfrac{\sin \alpha}{1 + \cos \alpha} + \dfrac{1 + \cos \alpha}{\sin \alpha} = \dfrac{2}{\sin \alpha}$$
+• **សម្រាយបញ្ជាក់** ៖
+  - តម្រូវភាគបែងអង្គខាងឆ្វេង ៖
+    $$\text{LHS} = \dfrac{\sin^2 \alpha + (1 + \cos \alpha)^2}{\sin \alpha (1 + \cos \alpha)}$$
+    $$= \dfrac{\sin^2 \alpha + 1 + 2\cos \alpha + \cos^2 \alpha}{\sin \alpha (1 + \cos \alpha)}$$
+  - ដោយ $\sin^2 \alpha + \cos^2 \alpha = 1$ ៖
+    $$= \dfrac{1 + 1 + 2\cos \alpha}{\sin \alpha (1 + \cos \alpha)} = \dfrac{2 + 2\cos \alpha}{\sin \alpha (1 + \cos \alpha)}$$
+    $$= \dfrac{2(1 + \cos \alpha)}{\sin \alpha (1 + \cos \alpha)} = \mathbf{\dfrac{2}{\sin \alpha} = \text{RHS}}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!គន្លឹះ!! ៖ ពេលជួបភាគបែង $1 \pm \cos \alpha$ ត្រូវនឹកឃើញភ្លាមដល់ផលគុណឆ្លាស់ដើម្បីទាញរក $\sin^2 \alpha$!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 15 */ page([
+        sec('៥.១២ សង្ខេបតារាងរូបមន្តគ្រឹះនៃផលធៀបត្រីកោណមាត្រ'),
+        card(60, 155, 560, 375, 'តារាងរូបមន្តទំនាក់ទំនងគ្រឹះ', R`| រូបមន្ត | សមីការគណិតវិទ្យា | លក្ខខណ្ឌ |
+| :--- | :--- | :--- |
+| **ពីតាករ** | $\sin^2 \alpha + \cos^2 \alpha = 1$ | គ្រប់ $\alpha$ |
+| **តង់សង់** | $\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}$ | $\alpha \neq 90^\circ$ |
+| **កូតង់សង់** | $\cot \alpha = \dfrac{\cos \alpha}{\sin \alpha}$ | $\alpha \neq 0^\circ, 180^\circ$ |
+| **ផលគុណ** | $\tan \alpha \cdot \cot \alpha = 1$ | $\alpha \neq 0^\circ, 90^\circ$ |
+| **ការេតង់សង់** | $1 + \tan^2 \alpha = \dfrac{1}{\cos^2 \alpha}$ | $\alpha \neq 90^\circ$ |
+| **ការេកូតង់សង់** | $1 + \cot^2 \alpha = \dfrac{1}{\sin^2 \alpha}$ | $\alpha \neq 0^\circ, 180^\circ$ |`, { size: 20 }),
+        card(660, 155, 560, 375, 'តារាងមុំបំពេញ & មុំបន្ថែម', R`| ផលធៀប | មុំបំពេញ ($90^\circ - \alpha$) | មុំបន្ថែម ($180^\circ - \alpha$) |
+| :---: | :---: | :---: |
+| **$\sin$** | $\cos \alpha$ | $\mathbf{\sin \alpha}$ |
+| **$\cos$** | $\sin \alpha$ | $\mathbf{-\cos \alpha}$ |
+| **$\tan$** | $\cot \alpha$ | $\mathbf{-\tan \alpha}$ |
+| **$\cot$** | $\tan \alpha$ | $\mathbf{-\cot \alpha}$ |
+
+• **ចន្លោះតម្លៃនៃផលធៀបលើ $[0^\circ, 180^\circ]$** ៖
+  - $0 \le \sin \alpha \le 1$
+  - $-1 \le \cos \alpha \le 1$
+  - $-\infty < \tan \alpha < +\infty$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ គ្រប់គ្រងរូបមន្តទាំងនេះឱ្យច្បាស់ ធានាថានឹងអាចបំប្លែង និងគណនាផលធៀបត្រីកោណមាត្របានយ៉ាងស្ទាត់ជំនាញ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 16 */ page([
+        sec('លំហាត់គំរូទី ១ ៖ គណនាផលធៀបត្រីកោណមាត្រពីតម្លៃដែលបានឱ្យ'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់ & វិភាគ', R`• **ប្រធាន** ៖
+  ក. គេឱ្យ $\cos \alpha = -\dfrac{3}{5}$ ដែល $90^\circ < \alpha < 180^\circ$ ។ គណនា $\sin \alpha$ និង $\tan \alpha$ ។
+  ខ. គេឱ្យ $\tan \alpha = -2$ ដែល $0^\circ \le \alpha \le 180^\circ$ ។ គណនា $\cos \alpha$ និង $\sin \alpha$ ។
+• **វិភាគ** ៖
+  - ក. មុំ $\alpha$ ជាមុំទាល ($90^\circ < \alpha < 180^\circ$) នាំឱ្យ $\sin \alpha > 0$ និង $\tan \alpha < 0$ ។ ប្រើ $\sin^2 \alpha = 1 - \cos^2 \alpha$ ។
+  - ខ. $\tan \alpha = -2 < 0 \implies \alpha$ ជាមុំទាល $\implies \cos \alpha < 0$ និង $\sin \alpha > 0$ ។ ប្រើ $1 + \tan^2 \alpha = \dfrac{1}{\cos^2 \alpha}$ ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត ក & ខ', R`• **ក. ករណី $\cos \alpha = -\dfrac{3}{5}$** ៖
+  - $\sin^2 \alpha = 1 - \left(-\dfrac{3}{5}\right)^2 = 1 - \dfrac{9}{25} = \dfrac{16}{25}$
+  - ដោយ $90^\circ < \alpha < 180^\circ \implies \sin \alpha > 0$ ៖
+    $$\sin \alpha = \sqrt{\dfrac{16}{25}} = \mathbf{\dfrac{4}{5}}$$
+  - គណនា $\tan \alpha$ ៖
+    $$\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha} = \dfrac{4/5}{-3/5} = \mathbf{-\dfrac{4}{3}}$$
+• **ខ. ករណី $\tan \alpha = -2$** ៖
+  - $\dfrac{1}{\cos^2 \alpha} = 1 + (-2)^2 = 5 \implies \cos^2 \alpha = \dfrac{1}{5}$
+  - ដោយ $\tan \alpha < 0 \implies \cos \alpha < 0$ ៖
+    $$\cos \alpha = -\sqrt{\dfrac{1}{5}} = \mathbf{-\dfrac{\sqrt{5}}{5}}$$
+  - $\sin \alpha = \tan \alpha \cdot \cos \alpha = (-2)\left(-\dfrac{\sqrt{5}}{5}\right) = \mathbf{\dfrac{2\sqrt{5}}{5}}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ ក. $\sin \alpha = \dfrac{4}{5}, \tan \alpha = -\dfrac{4}{3}$; ខ. $\cos \alpha = -\dfrac{\sqrt{5}}{5}, \sin \alpha = \dfrac{2\sqrt{5}}{5}$!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 17 */ page([
+        sec('លំហាត់គំរូទី ២ ៖ គណនាតម្លៃកន្សោមដោយប្រើមុំពិសេស & មុំបំពេញ'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់កន្សោម', R`• **ប្រធាន** ៖ គណនាតម្លៃលេខនៃកន្សោមខាងក្រោមដោយមិនប្រើម៉ាស៊ីនគិតលេខ ៖
+  $$A = 2\sin 30^\circ - \sqrt{3}\cos 150^\circ + \tan 135^\circ$$
+  $$B = \sin^2 10^\circ + \sin^2 20^\circ + \dots + \sin^2 80^\circ$$
+  $$C = \dfrac{\tan 25^\circ \cdot \tan 65^\circ}{\cos 40^\circ \cdot \sin 50^\circ + \sin 40^\circ \cdot \cos 50^\circ}$$
+• **វិភាគ** ៖
+  - $A$ ៖ បំប្លែងមុំទាល $150^\circ = 180^\circ - 30^\circ$ និង $135^\circ = 180^\circ - 45^\circ$
+  - $B$ ៖ ផ្គុំគូនៃមុំបំពេញគ្នា $\sin^2 \alpha + \sin^2(90^\circ - \alpha) = 1$
+  - $C$ ៖ ប្រើ $\tan 65^\circ = \cot 25^\circ$ និង $\sin 50^\circ = \cos 40^\circ$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត A, B & C', R`• **គណនា $A$** ៖
+  - $\sin 30^\circ = \dfrac{1}{2}$
+  - $\cos 150^\circ = -\cos 30^\circ = -\dfrac{\sqrt{3}}{2}$
+  - $\tan 135^\circ = -\tan 45^\circ = -1$
+  $$A = 2\left(\dfrac{1}{2}\right) - \sqrt{3}\left(-\dfrac{\sqrt{3}}{2}\right) + (-1) = 1 + \dfrac{3}{2} - 1 = \mathbf{\dfrac{3}{2}}$$
+• **គណនា $B$** ៖
+  - មាន ៨ តួ ផ្គុំបាន ៤ គូ ៖
+    $(\sin^2 10^\circ + \sin^2 80^\circ) + (\sin^2 20^\circ + \sin^2 70^\circ) + (\sin^2 30^\circ + \sin^2 60^\circ) + (\sin^2 40^\circ + \sin^2 50^\circ)$
+  - គូនីមួយៗស្មើ $1 \implies B = 1 + 1 + 1 + 1 = \mathbf{4}$
+• **គណនា $C$** ៖
+  - ភាគយក ៖ $\tan 25^\circ \cdot \cot 25^\circ = 1$
+  - ភាគបែង ៖ $\cos^2 40^\circ + \sin^2 40^\circ = 1 \implies C = \dfrac{1}{1} = \mathbf{1}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ $A = \dfrac{3}{2}$, $B = 4$, $C = 1$! វិធីផ្គុំគូមុំបំពេញគឺជាវិធីដ៏ឆ្លាតវៃក្នុងការសម្រួលកន្សោមវែងៗ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 18 */ page([
+        sec('លំហាត់គំរូទី ៣ ៖ សម្រួលកន្សោម & ស្រាយសមភាពត្រីកោណមាត្រ'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់សម្រួល', R`• **ប្រធាន** ៖
+  ក. សម្រួលកន្សោម ៖
+     $$P = \dfrac{\sin(180^\circ - \alpha) \cdot \cos(90^\circ - \alpha)}{\tan(180^\circ - \alpha) \cdot \cos(180^\circ - \alpha)}$$
+  ខ. ស្រាយបញ្ជាក់សមភាព ៖
+     $$\dfrac{1 - \sin \alpha}{\cos \alpha} = \dfrac{\cos \alpha}{1 + \sin \alpha}$$
+• **វិភាគ** ៖
+  - ក. ជំនួសតាមរូបមន្តមុំបំពេញ និងមុំបន្ថែម រួចសម្រួលផលធៀប
+  - ខ. គុណខ្វែង ឬគុណភាគយក និងភាគបែងនឹងកន្សោមឆ្លាស់ $(1 + \sin \alpha)$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត ក & ខ', R`• **ក. សម្រួលកន្សោម $P$** ៖
+  - $\sin(180^\circ - \alpha) = \sin \alpha$
+  - $\cos(90^\circ - \alpha) = \sin \alpha$
+  - $\tan(180^\circ - \alpha) = -\tan \alpha = -\dfrac{\sin \alpha}{\cos \alpha}$
+  - $\cos(180^\circ - \alpha) = -\cos \alpha$
+  - ភាគយក ៖ $\sin \alpha \cdot \sin \alpha = \sin^2 \alpha$
+  - ភាគបែង ៖ $\left(-\dfrac{\sin \alpha}{\cos \alpha}\right)(-\cos \alpha) = \sin \alpha$
+  $$P = \dfrac{\sin^2 \alpha}{\sin \alpha} = \mathbf{\sin \alpha}$$
+• **ខ. ស្រាយបញ្ជាក់សមភាព** ៖
+  - ពិនិត្យអង្គខាងឆ្វេង គុណនឹង $(1 + \sin \alpha)$ ទាំងលើទាំងក្រោម ៖
+    $$\dfrac{1 - \sin \alpha}{\cos \alpha} = \dfrac{(1 - \sin \alpha)(1 + \sin \alpha)}{\cos \alpha (1 + \sin \alpha)}$$
+    $$= \dfrac{1 - \sin^2 \alpha}{\cos \alpha (1 + \sin \alpha)} = \dfrac{\cos^2 \alpha}{\cos \alpha (1 + \sin \alpha)} = \mathbf{\dfrac{\cos \alpha}{1 + \sin \alpha}}$$
+  - សមភាពត្រូវបានស្រាយបញ្ជាក់ពិត !`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ ក. $P = \sin \alpha$; ខ. សមភាពពិតតាមរយៈការគុណនឹងកន្សោមឆ្លាស់ $1 - \sin^2 \alpha = \cos^2 \alpha$!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 19 */ page([
+        sec('លំហាត់គំរូទី ៤ ៖ ចំណោទជីវភាពវាស់កម្ពស់ប្រាសាទបុរាណ'),
+        card(60, 155, 560, 375, 'ប្រធានចំណោទជាក់ស្តែង', R`• **ប្រធាន** ៖ ក្រុមស្រាវជ្រាវបុរាណវិទ្យាមួយចង់វាស់កម្ពស់ប្រាង្គកណ្តាលនៃប្រាសាទអង្គរវត្ត ដោយមិនបាច់ឡើងទៅលើ ៖
+  - អ្នកស្រាវជ្រាវឈរនៅត្រង់ចំណុច $A$ លើខឿនប្រាសាទ វាស់ឃើញមុំងើយទៅកំពូលប្រាង្គស្មើ $45^\circ$ ។
+  - គាត់ដើរថយក្រោយជាបន្ទាត់ត្រង់ចម្ងាយ $24.5\text{ m}$ ដល់ចំណុច $B$ រួចវាស់មុំងើយឃើញ $30^\circ$ ។
+  - កម្ពស់ឧបករណ៍វាស់ (Theodolite) ពីផ្ទៃខឿនគឺ $1.5\text{ m}$ ។
+• **សំណួរ** ៖ គណនាកម្ពស់សរុបនៃប្រាង្គកណ្តាលពីផ្ទៃខឿន (យក $\sqrt{3} \approx 1.732$) ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត & គណនាលេខ', R`• **គំរូនីយកម្មគណិតវិទ្យា** ៖
+  - តាង $h$ ជាកម្ពស់ពីកម្រិតឧបករណ៍ដល់កំពូលប្រាង្គ
+  - $d = 24.5\text{ m}, \quad \alpha = 45^\circ, \quad \beta = 30^\circ$
+  - $\tan 45^\circ = 1 \implies \cot 45^\circ = 1$
+  - $\tan 30^\circ = \dfrac{\sqrt{3}}{3} \implies \cot 30^\circ = \sqrt{3}$
+• **អនុវត្តរូបមន្តកម្ពស់** ៖
+  $$h = \dfrac{d}{\cot 30^\circ - \cot 45^\circ} = \dfrac{24.5}{\sqrt{3} - 1}$$
+  $$h = \dfrac{24.5(\sqrt{3} + 1)}{(\sqrt{3} - 1)(\sqrt{3} + 1)} = \dfrac{24.5(\sqrt{3} + 1)}{3 - 1} = \dfrac{24.5(\sqrt{3} + 1)}{2}$$
+  $$h = 12.25 \times (1.732 + 1) = 12.25 \times 2.732 \approx \mathbf{33.47\text{ m}}$$
+• **កម្ពស់សរុបនៃប្រាង្គកណ្តាល** ៖
+  $$H = h + h_{\text{ឧបករណ៍}} = 33.47 + 1.5 = \mathbf{34.97\text{ m}} \approx \mathbf{35\text{ m}}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ កម្ពស់ប្រាង្គកណ្តាលប្រាសាទអង្គរវត្តពីផ្ទៃខឿនគឺប្រហែល $35\text{ m}$ (ត្រូវគ្នានឹងទិន្នន័យស្ថាបត្យកម្មជាក់ស្តែង)!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 20 PISA */ page([
+        sec('លំហាត់ស្តង់ដា PISA ៖ ការដំឡើងផ្ទាំងសូឡាស្រូបពន្លឺព្រះអាទិត្យ (Solar Panel Tilt)'),
+        card(60, 155, 560, 375, 'ស្ថានភាពជាក់ស្តែង (Real-World Context)', R`• **បរិបទ** ៖ ដើម្បីបង្កើនប្រសិទ្ធភាពស្រូបថាមពលអតិបរមានៅកម្ពុជា វិស្វករថាមពលកកើតឡើងវិញត្រូវដំឡើងផ្ទាំងសូឡាដែលមានប្រវែង $L = 2.0\text{ m}$ ឱ្យផ្អៀងតាមមុំចោត $\theta = 15^\circ$ ធៀបនឹងដីរាប ៖
+  - **សំណួរទី ១** ៖ គណនាកម្ពស់បញ្ឈរ $h$ នៃចុងខាងលើនៃផ្ទាំងសូឡាធៀបនឹងដីរាប (ដឹងថា $\sin 15^\circ \approx 0.2588$) ។
+  - **សំណួរទី ២** ៖ គណនាប្រវែងស្រមោលផ្តេក $d$ នៃផ្ទាំងសូឡានៅលើដី (ដឹងថា $\cos 15^\circ \approx 0.9659$) ។
+  - **សំណួរទី ៣** ៖ នៅថ្ងៃមួយ ពេលថ្ងៃត្រង់កាំរស្មីព្រះអាទិត្យចាំងចុះមកកែងនឹងផ្ទាំងសូឡា ។ បើពន្លឺព្រះអាទិត្យមានអាំងតង់ស៊ីតេ $I_0 = 1000\text{ W/m}^2$ ចូរពន្យល់តាមរូបមន្តត្រីកោណមាត្រថាហេតុអ្វីបានជាការផ្អៀងផ្ទាំងសូឡាផ្តល់ថាមពលច្រើនជាងការដាក់ផ្ទាំងសូឡាដេកស្មើរាប ?`, { size: 20 }),
+        card(660, 155, 560, 375, 'គំរូនីយកម្មគណិតវិទ្យា & ដំណោះស្រាយ', R`• **សំណួរទី ១ ៖ កម្ពស់បញ្ឈរ $h$** ៖
+  - ក្នុងត្រីកោណកែង ៖ $\sin \theta = \dfrac{h}{L} \implies h = L \cdot \sin \theta$
+  $$h = 2.0 \times \sin 15^\circ \approx 2.0 \times 0.2588 = \mathbf{0.52\text{ m}} \; (52\text{ cm})$$
+• **សំណួរទី ២ ៖ ប្រវែងស្រមោលផ្តេក $d$** ៖
+  - $\cos \theta = \dfrac{d}{L} \implies d = L \cdot \cos \theta$
+  $$d = 2.0 \times \cos 15^\circ \approx 2.0 \times 0.9659 = \mathbf{1.93\text{ m}}$$
+• **សំណួរទី ៣ ៖ ការពន្យល់តាមត្រីកោណមាត្រ** ៖
+  - អាំងតង់ស៊ីតេស្រូបជាក់ស្តែង $I = I_0 \cdot \cos \alpha$ ដែល $\alpha$ ជាមុំរវាងកាំរស្មី និងខ្សែបន្ទាត់កែងនៃផ្ទាំងសូឡា ។
+  - ពេលផ្ទាំងសូឡាកែងនឹងកាំរស្មីព្រះអាទិត្យ ($\alpha = 0^\circ$) ៖
+    $$I = I_0 \cdot \cos 0^\circ = I_0 \times 1 = \mathbf{1000\text{ W/m}^2} \quad (\text{អតិបរមា } 100\%)$$
+  - បើដាក់ដេកស្មើ ($\alpha = 15^\circ$) ៖ $I = 1000 \times \cos 15^\circ \approx 966\text{ W/m}^2$ (បាត់បង់ថាមពល $3.4\%$) !`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!PISA Reflection!! ៖ ផលធៀបត្រីកោណមាត្រស៊ីនុស និងកូស៊ីនុស គឺជាបេះដូងនៃការរចនាបច្ចេកវិទ្យាថាមពលបៃតង និងវិស្វកម្មសំណង់ទំនើប!`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 21 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`បើ $\sin \alpha = \dfrac{3}{5}$ ហើយ $\alpha$ ជាមុំស្រួច នោះតម្លៃនៃ $\tan \alpha$ ស្មើនឹង ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\tan \alpha = \dfrac{4}{5}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$\tan \alpha = \dfrac{3}{4}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\tan \alpha = \dfrac{4}{3}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$\tan \alpha = \dfrac{5}{3}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះ $\cos \alpha = \sqrt{1 - (3/5)^2} = \dfrac{4}{5} \implies \tan \alpha = \dfrac{3/5}{4/5} = \dfrac{3}{4}$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 22 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`តម្លៃនៃកន្សោម $\cos 120^\circ$ ស្មើនឹង ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$\dfrac{1}{2}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$-\dfrac{1}{2}$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$\dfrac{\sqrt{3}}{2}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$-\dfrac{\sqrt{3}}{2}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះ $\cos 120^\circ = \cos(180^\circ - 60^\circ) = -\cos 60^\circ = -\dfrac{1}{2}$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 23 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`តម្លៃនៃកន្សោម $\sin^2 35^\circ + \sin^2 55^\circ + \tan 45^\circ$ ស្មើនឹង ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$1$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$2$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$3$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$0$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះ $\sin 55^\circ = \cos 35^\circ \implies \sin^2 35^\circ + \cos^2 35^\circ = 1$ និង $\tan 45^\circ = 1 \implies 1 + 1 = 2$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 24 */ page([
+        sec('លំហាត់អនុវត្តន៍ក្នុងសៀវភៅសិក្សាគោល (Textbook Practice)'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់អនុវត្តន៍', R`• **លំហាត់ ១** ៖ ត្រីកោណ $ABC$ កែងត្រង់ $C$ មាន $A = 30^\circ$ និង $c = 10\text{ cm}$ ។
+  គណនារង្វាស់ជ្រុង $a, b$ និងមុំ $B$ ។
+• **លំហាត់ ២** ៖ គណនាតម្លៃនៃកន្សោម ៖
+  $$A = 4\cos 60^\circ - 2\sin 150^\circ + \sqrt{3}\tan 120^\circ$$
+• **លំហាត់ ៣** ៖ ស្រាយបញ្ជាក់សមភាពត្រីកោណមាត្រ ៖
+  $$\dfrac{\sin \alpha}{1 - \cos \alpha} - \dfrac{\sin \alpha}{1 + \cos \alpha} = 2\cot \alpha$$
+• **លំហាត់ ៤** ៖ បុរសម្នាក់សម្លឹងមើលកំពូលបង្គោលអង់តែនមួយឃើញមុំងើយ $45^\circ$ ។ បើចម្ងាយពីគាត់ទៅបង្គោលគឺ $25\text{ m}$ និងកម្ពស់ភ្នែក $1.6\text{ m}$ គណនាកម្ពស់បង្គោលអង់តែន ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ការណែនាំ & ចម្លើយសង្ខេប', R`• **ចម្លើយលំហាត់ ១** ៖
+  - $B = 90^\circ - 30^\circ = \mathbf{60^\circ}$
+  - $a = c \cdot \sin 30^\circ = 10(1/2) = \mathbf{5\text{ cm}}$
+  - $b = c \cdot \cos 30^\circ = 10(\sqrt{3}/2) = \mathbf{5\sqrt{3}\text{ cm}}$
+• **ចម្លើយលំហាត់ ២** ៖
+  - $A = 4(1/2) - 2(1/2) + \sqrt{3}(-\sqrt{3}) = 2 - 1 - 3 = \mathbf{-2}$
+• **ចម្លើយលំហាត់ ៣** ៖
+  - តម្រូវភាគបែង ៖ $\dfrac{\sin \alpha(1+\cos \alpha) - \sin \alpha(1-\cos \alpha)}{1-\cos^2 \alpha}$
+  - សម្រួល ៖ $\dfrac{2\sin \alpha \cos \alpha}{\sin^2 \alpha} = \dfrac{2\cos \alpha}{\sin \alpha} = \mathbf{2\cot \alpha}$ (ពិត)
+• **ចម្លើយលំហាត់ ៤** ៖
+  - $H = 25 \cdot \tan 45^\circ + 1.6 = 25(1) + 1.6 = \mathbf{26.6\text{ m}}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖ ធ្វើលំហាត់ទាំង ៤ នេះដោយខ្លួនឯងដើម្បីពង្រឹងសមត្ថភាពក្នុងការប្រឡងប្រចាំឆមាស!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 25 */ S.homework(R`!!១.!! គេឱ្យ $\sin \alpha = \dfrac{12}{13}$ ($90^\circ < \alpha < 180^\circ$) ។ គណនា $\cos \alpha$ និង $\tan \alpha$ ។
+!!២.!! គណនាតម្លៃលេខ ៖ $E = \cos^2 15^\circ + \cos^2 35^\circ + \cos^2 55^\circ + \cos^2 75^\circ$ ។
+!!៣.!! ស្រាយបញ្ជាក់សមភាព ៖ $(1 + \tan \alpha)^2 + (1 - \tan \alpha)^2 = \dfrac{2}{\cos^2 \alpha}$ ។
+!!៤.!! ចំណោទ ៖ ពីកំពូលប៉មខ្ពស់ $50\text{ m}$ គេសម្លឹងឃើញទូកមួយនៅសមុទ្រក្រោមមុំទម្លាក់ $30^\circ$ ។ គណនាចម្ងាយពីជើងប៉មទៅទូកនោះ ។`),
+
+      /* 26 */ S.thanks()
+    ];
+
+    return {
+      name: 'ថ្នាក់ទី១០ · ជំពូក៥ មេរៀនទី១ ផលធៀបត្រីកោណមាត្រ (២៦ ស្លាយ)',
+      grade: '10',
+      chapterNum: 5,
+      chapter: 'ជំពូកទី ៥ ៖ ផលធៀបត្រីកោណមាត្រ',
+      lessonNum: 1,
+      lesson: 'មេរៀនទី ១ ៖ ផលធៀបត្រីកោណមាត្រ',
+      theme: 'school',
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. និយមន័យផលធៀប sin, cos, tan', slide: 3 },
+        { title: '២. មុំពិសេស 30°, 45°, 60°', slide: 4 },
+        { title: '៣. ទំនាក់ទំនងគ្រឹះ & មុំបំពេញ', slide: 5 },
+        { title: '៤. ការពង្រីកដល់មុំទាល 180°-α', slide: 7 },
+        { title: 'លំហាត់គំរូ & PISA Test', slide: 15 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 20 }
+      ],
+      slides: slides
+    };
+  }
+
+function g10TrigApps(A) {
+    var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, line = K.line, step = K.step,
+        title = K.title, card = K.card;
+    var sec = function (text, y) { return title(text, { x: 60, y: y || 100, size: 34, color: 'brand' }); };
+    var l = function (x, y, w, text, o) { var e = line(x, y, w, text, { size: 25, h: 46 }); for (var k in o) e[k] = o[k]; return e; };
+    var R = String.raw;
+
+    var slides = [
+      /* 1 */ S.cover('==គណិតវិទ្យា== ថ្នាក់ទី១០', '==ជំពូកទី៥==        មេរៀនទី២', 'ការអនុវត្តផលធៀបត្រីកោណ', K.info),
+
+      /* 2 */ K.toc([
+        '==១. ទ្រឹស្តីបទស៊ីនុស & កាំរង្វង់ចារឹកក្រៅ (2R)==',
+        '២. ទ្រឹស្តីបទកូស៊ីនុស (ច្បាប់កូស៊ីនុស)',
+        '==៣. រូបមន្តគណនាផ្ទៃក្រឡាត្រីកោណ & រូបមន្តហេរុង==',
+        '៤. ការដោះស្រាយត្រីកោណទូទៅ & ចំណោទត្រីកោណមាត្រ',
+        '==៥. លំហាត់គំរូ & សំណួរ PISA==',
+        '៦. សំណួរ MCQ & កិច្ចការផ្ទះ'
+      ]),
+
+      /* 3 */ S.objective([
+        R`ចេះប្រើទ្រឹស្តីបទស៊ីនុស និងទ្រឹស្តីបទកូស៊ីនុស ដើម្បីគណនារង្វាស់ជ្រុង និងមុំនៃត្រីកោណទូទៅយ៉ាងស្ទាត់ជំនាញ`,
+        R`ចេះគណនាផ្ទៃក្រឡាត្រីកោណតាមផលគុណជ្រុង និងមុំ ប្រើរូបមន្តហេរុង និងអនុវត្តដោះស្រាយចំណោទវាស់វែងចម្ងាយជាក់ស្តែង`
+      ]),
+
+      /* 4 */ page([
+        sec('៥.១ ទ្រឹស្តីបទស៊ីនុស (The Law of Sines)'),
+        card(60, 155, 560, 375, 'ខ្លឹមសារទ្រឹស្តីបទស៊ីនុស', R`ក្នុងត្រីកោណ $ABC$ ណាមួយ តាង $a = BC, b = AC, c = AB$ ជាប្រវែងជ្រុងឈមនឹងមុំ $A, B, C$ រៀងគ្នា ហើយ $R$ ជាកាំនៃរង្វង់ចារឹកក្រៅត្រីកោណ ៖
+• **ទ្រឹស្តីបទស៊ីនុស** ៖
+  $$\mathbf{\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R}$$
+• **រូបមន្តទាញចេញ** ៖
+  - គណនាជ្រុង ៖ $a = 2R \sin A, \quad b = 2R \sin B, \quad c = 2R \sin C$
+  - ផលធៀបជ្រុង ៖ $a : b : c = \sin A : \sin B : \sin C$
+  - គណនាកាំ $R$ ៖ $\mathbf{R = \dfrac{a}{2\sin A} = \dfrac{b}{2\sin B} = \dfrac{c}{2\sin C}}$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ករណីប្រើប្រាស់ទ្រឹស្តីបទស៊ីនុស', R`• **ទ្រឹស្តីបទស៊ីនុសត្រូវបានប្រើនៅពេល** ៖
+  1. **ស្គាល់មុំពីរ និងជ្រុងមួយ (AAS ឬ ASA)** ៖
+     - គណនាមុំទីបី ៖ $C = 180^\circ - (A + B)$
+     - គណនាជ្រុងដែលនៅសល់តាមផលធៀបស៊ីនុស
+  2. **ស្គាល់ជ្រុងពីរ និងមុំឈមនឹងជ្រុងមួយ (SSA)** ៖
+     - គណនាមុំឈមនឹងជ្រុងទីពីរ ៖ $\sin B = \dfrac{b \sin A}{a}$
+     *(ចំណាំ ៖ អាចមានដំណោះស្រាយ ១, ដំណោះស្រាយ ២ ឬគ្មានដំណោះស្រាយ)*
+• **ឧទាហរណ៍** ៖ ត្រីកោណ $ABC$ មាន $a = 10, A = 30^\circ$ ៖
+  $$2R = \dfrac{a}{\sin A} = \dfrac{10}{\sin 30^\circ} = \dfrac{10}{1/2} = 20 \implies \mathbf{R = 10}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្តគ្រឹះ!! ៖ $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R$! ប្រើពេលស្គាល់មុំពីរជ្រុងមួយ ឬជ្រុងពីរនិងមុំឈម!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 5 */ page([
+        sec('៥.២ សម្រាយបញ្ជាក់ទ្រឹស្តីបទស៊ីនុស'),
+        card(60, 155, 560, 375, 'សម្រាយបញ្ជាក់តាមកម្ពស់ h', R`• **គូសកម្ពស់ $h = AH$ កែងនឹងបាត $BC$** ៖
+  - ក្នុងត្រីកោណកែង $ABH$ ៖
+    $$\sin B = \dfrac{h}{c} \implies \mathbf{h = c \sin B}$$
+  - ក្នុងត្រីកោណកែង $ACH$ ៖
+    $$\sin C = \dfrac{h}{b} \implies \mathbf{h = b \sin C}$$
+• **ទាញរកទំនាក់ទំនង** ៖
+  $$c \sin B = b \sin C \iff \mathbf{\dfrac{b}{\sin B} = \dfrac{c}{\sin C}}$$
+• តាមលំនាំដូចគ្នា បើគូសកម្ពស់ពីកំពូល $B$ មកលើ $AC$ គេបាន ៖
+  $$\dfrac{a}{\sin A} = \dfrac{c}{\sin C}$$
+• ដូចនេះ ៖ $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}$ ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'សម្រាយបញ្ជាក់ទំនាក់ទំនង $2R$', R`• **គូសអង្កត់ផ្ចិត $CD = 2R$ នៃរង្វង់ចារឹកក្រៅ** ៖
+  - ត្រីកោណ $BCD$ កែងត្រង់ $B$ (ចារឹកក្នុងកន្លះរង្វង់) ៖
+    $$\sin D = \dfrac{BC}{CD} = \dfrac{a}{2R}$$
+• **ករណី $A$ ជាមុំស្រួច** ៖
+  - មុំចារឹក $\widehat{A}$ និង $\widehat{D}$ ស្ទាក់ធ្នូ $BC$ ដូចគ្នា $\implies \widehat{D} = \widehat{A}$
+  - $\sin A = \sin D = \dfrac{a}{2R} \iff \mathbf{\dfrac{a}{\sin A} = 2R}$
+• **ករណី $A$ ជាមុំទាល** ៖
+  - ចតុកោណ $ABDC$ ចារឹកក្នុងរង្វង់ $\implies \widehat{A} + \widehat{D} = 180^\circ$
+  - $\sin D = \sin(180^\circ - A) = \sin A = \dfrac{a}{2R} \iff \mathbf{\dfrac{a}{\sin A} = 2R}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!សម្រាយបញ្ជាក់!! ៖ ទំនាក់ទំនង $\dfrac{a}{\sin A} = 2R$ ពិតជានិច្ច មិនថាមុំស្រួច មុំកែង ឬមុំទាលឡើយ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 6 */ page([
+        sec('៥.៣ ទ្រឹស្តីបទកូស៊ីនុស (The Law of Cosines)'),
+        card(60, 155, 560, 375, 'ខ្លឹមសារទ្រឹស្តីបទកូស៊ីនុស', R`ក្នុងត្រីកោណ $ABC$ ណាមួយ ៖
+• **ទ្រឹស្តីបទកូស៊ីនុស (គណនាជ្រុង)** ៖
+  $$\mathbf{a^2 = b^2 + c^2 - 2bc \cos A}$$
+  $$\mathbf{b^2 = a^2 + c^2 - 2ac \cos B}$$
+  $$\mathbf{c^2 = a^2 + b^2 - 2ab \cos C}$$
+• **រូបមន្តទាញរកមុំ (ពេលស្គាល់ជ្រុងទាំង ៣)** ៖
+  $$\mathbf{\cos A = \dfrac{b^2 + c^2 - a^2}{2bc}}$$
+  $$\mathbf{\cos B = \dfrac{a^2 + c^2 - b^2}{2ac}}$$
+  $$\mathbf{\cos C = \dfrac{a^2 + b^2 - c^2}{2ab}}$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'លក្ខណៈពិសេស & ទំនាក់ទំនងពីតាករ', R`• **ករណីពិសេស (មុំកែង $A = 90^\circ$)** ៖
+  - $\cos 90^\circ = 0$
+  $$a^2 = b^2 + c^2 - 2bc(0) \iff \mathbf{a^2 = b^2 + c^2}$$
+  *(ទ្រឹស្តីបទកូស៊ីនុសគឺជា **ការពង្រីកនៃទ្រឹស្តីបទពីតាករ** ចំពោះគ្រប់ត្រីកោណ !)*
+• **វិនិច្ឆ័យប្រភេទមុំ $A$ តាមសញ្ញានៃ $\cos A$** ៖
+  - បើ $b^2 + c^2 - a^2 > 0 \iff a^2 < b^2 + c^2 \implies \mathbf{A \text{ ជាមុំស្រួច}}$
+  - បើ $a^2 = b^2 + c^2 \implies \mathbf{A \text{ ជាមុំកែង}}$
+  - បើ $b^2 + c^2 - a^2 < 0 \iff a^2 > b^2 + c^2 \implies \mathbf{A \text{ ជាមុំទាល}}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ក្បួនមាស!! ៖ $a^2 = b^2 + c^2 - 2bc \cos A$ ប្រើពេលស្គាល់ជ្រុងពីរមុំមួយ (SAS) ឬស្គាល់ជ្រុងទាំងបី (SSS)!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 7 */ page([
+        sec('៥.៤ សម្រាយបញ្ជាក់ទ្រឹស្តីបទកូស៊ីនុស'),
+        card(60, 155, 560, 375, 'សម្រាយបញ្ជាក់តាមពីតាករ', R`• **ជ្រើសរើសតម្រុយ $(xOy)$ ដាក់គល់ត្រង់ $A(0, 0)$** ៖
+  - ជ្រុង $AB$ នៅលើអ័ក្សផ្តេក ៖ $B(c, 0)$
+  - កំពូល $C$ កំណត់ដោយមុំ $A$ និងប្រវែង $b = AC$ ៖
+    $$x_C = b \cos A, \quad y_C = b \sin A \implies C(b \cos A, b \sin A)$$
+• **គណនាចម្ងាយ $a = BC$ តាមរូបមន្តចម្ងាយ** ៖
+  $$a^2 = BC^2 = (x_C - x_B)^2 + (y_C - y_B)^2$$
+  $$a^2 = (b \cos A - c)^2 + (b \sin A - 0)^2$$
+  $$a^2 = b^2 \cos^2 A - 2bc \cos A + c^2 + b^2 \sin^2 A$$
+  $$a^2 = b^2(\cos^2 A + \sin^2 A) + c^2 - 2bc \cos A$$
+  $$\mathbf{a^2 = b^2 + c^2 - 2bc \cos A} \quad (\text{ព្រោះ } \cos^2 A + \sin^2 A = 1)$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍អនុវត្តន៍', R`• **លំហាត់** ៖ ត្រីកោណ $ABC$ មាន $b = 5, c = 8$ និងមុំ $A = 60^\circ$ ។ គណនាប្រវែងជ្រុង $a$ ។
+• **ដំណោះស្រាយ** ៖
+  - អនុវត្តទ្រឹស្តីបទកូស៊ីនុស ៖
+    $$a^2 = b^2 + c^2 - 2bc \cos A$$
+    $$a^2 = 5^2 + 8^2 - 2(5)(8) \cos 60^\circ$$
+    $$a^2 = 25 + 64 - 80\left(\dfrac{1}{2}\right)$$
+    $$a^2 = 89 - 40 = 49$$
+    $$\mathbf{a = \sqrt{49} = 7}$$
+• **ដូចនេះ** ៖ ជ្រុង $a = 7$ ឯកតាប្រវែង ។`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!សម្រាយបញ្ជាក់!! ៖ វិធីសាស្ត្រកូអរដោនេដេកាត និងរូបមន្តពីតាករ $\cos^2 A + \sin^2 A = 1$ បញ្ជាក់ទ្រឹស្តីបទកូស៊ីនុសយ៉ាងងាយបំផុត!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 8 */ page([
+        sec('៥.៥ ផ្ទៃក្រឡាត្រីកោណតាមផលគុណពីរជ្រុង និងស៊ីនុសមុំ'),
+        card(60, 155, 560, 375, 'រូបមន្តផ្ទៃក្រឡាត្រីកោណ (Area of Triangle)', R`• **រូបមន្តគ្រឹះ** ៖ ផ្ទៃក្រឡា $S$ នៃត្រីកោណ $ABC$ ស្មើនឹងពាក់កណ្តាលនៃផលគុណរវាងជ្រុងពីរ និងស៊ីនុសនៃមុំបង្កើតដោយជ្រុងទាំងពីរនោះ ៖
+  $$\mathbf{S = \dfrac{1}{2} ab \sin C = \dfrac{1}{2} bc \sin A = \dfrac{1}{2} ac \sin B}$$
+• **សម្រាយបញ្ជាក់** ៖
+  - ផ្ទៃក្រឡាត្រីកោណ ៖ $S = \dfrac{1}{2} \times \text{បាត} \times \text{កម្ពស់} = \dfrac{1}{2} a \cdot h_a$
+  - ក្នុងត្រីកោណកែង ៖ $h_a = b \sin C$
+  - ជំនួសចូល ៖ $S = \dfrac{1}{2} a(b \sin C) = \dfrac{1}{2} ab \sin C$ (ពិត)`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍គណនាផ្ទៃក្រឡា', R`• **លំហាត់ ១** ៖ គណនាផ្ទៃក្រឡា $\triangle ABC$ បើ $a = 6\text{ cm}, b = 8\text{ cm}$ និង $C = 30^\circ$ ៖
+  $$S = \dfrac{1}{2} ab \sin C = \dfrac{1}{2}(6)(8)\sin 30^\circ = 24 \times \dfrac{1}{2} = \mathbf{12\text{ cm}^2}$$
+• **លំហាត់ ២ (ករណីមុំទាល)** ៖ គណនាផ្ទៃក្រឡា $\triangle ABC$ បើ $b = 4, c = 5$ និង $A = 120^\circ$ ៖
+  - $\sin 120^\circ = \sin(180^\circ - 60^\circ) = \sin 60^\circ = \dfrac{\sqrt{3}}{2}$
+  $$S = \dfrac{1}{2}(4)(5)\sin 120^\circ = 10 \times \dfrac{\sqrt{3}}{2} = \mathbf{5\sqrt{3}\text{ ឯកតាផ្ទៃ}}$$
+• **លំហាត់ ៣** ៖ ត្រីកោណសម័ង្សជ្រុង $a$ មានមុំ $60^\circ$ ៖
+  $$S = \dfrac{1}{2}(a)(a)\sin 60^\circ = \mathbf{\dfrac{a^2\sqrt{3}}{4}}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្ត!! ៖ $S = \dfrac{1}{2} ab \sin C$! ប្រើបានទាំងមុំស្រួច មុំកែង និងមុំទាល មិនបាច់គណនាកម្ពស់ជាមុនឡើយ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 9 */ page([
+        sec('៥.៦ រូបមន្តហេរុង (Heron\'s Formula) គណនាផ្ទៃក្រឡា'),
+        card(60, 155, 560, 375, 'ខ្លឹមសាររូបមន្តហេរុង', R`ឱ្យត្រីកោណ $ABC$ ស្គាល់រង្វាស់ជ្រុងទាំងបី $a, b, c$ ៖
+• **កន្លះបរិមាត្រ (Semi-perimeter)** ៖
+  $$\mathbf{p = \dfrac{a + b + c}{2}}$$
+• **រូបមន្តហេរុង** ៖
+  $$\mathbf{S = \sqrt{p(p - a)(p - b)(p - c)}}$$
+• **ប្រភពប្រវត្តិសាស្ត្រ** ៖
+  - រូបមន្តនេះត្រូវបានរកឃើញដោយគណិតវិទូក្រិក **Heron នៃ Alexandria** (ស.វ. ទី ១ នៃ គ.ស.)
+  - អនុញ្ញាតឱ្យគណនាផ្ទៃក្រឡាត្រីកោណដោយផ្ទាល់ពីប្រវែងជ្រុងទាំងបីដោយមិនចាំបាច់ដឹងមុំ !`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍អនុវត្តន៍រូបមន្តហេរុង', R`• **លំហាត់** ៖ គណនាផ្ទៃក្រឡាត្រីកោណដែលមានជ្រុង $a = 13, b = 14, c = 15$ ៖
+• **ដំណោះស្រាយ** ៖
+  - គណនាកន្លះបរិមាត្រ $p$ ៖
+    $$p = \dfrac{13 + 14 + 15}{2} = \dfrac{42}{2} = \mathbf{21}$$
+  - គណនាផលដកនីមួយៗ ៖
+    $$p - a = 21 - 13 = 8$$
+    $$p - b = 21 - 14 = 7$$
+    $$p - c = 21 - 15 = 6$$
+  - អនុវត្តរូបមន្តហេរុង ៖
+    $$S = \sqrt{21 \times 8 \times 7 \times 6} = \sqrt{(7 \times 3) \times (8) \times 7 \times (2 \times 3)}$$
+    $$S = \sqrt{7^2 \times 3^2 \times 16} = 7 \times 3 \times 4 = \mathbf{84\text{ ឯកតាផ្ទៃ}}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្តហេរុង!! ៖ $S = \sqrt{p(p-a)(p-b)(p-c)}$ ដែល $p = \dfrac{a+b+c}{2}$! ងាយស្រួលបំផុតពេលស្គាល់ជ្រុងទាំង ៣!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 10 */ page([
+        sec('៥.៧ ទំនាក់ទំនងផ្ទៃក្រឡា និងកាំរង្វង់ R, r'),
+        card(60, 155, 560, 375, 'កាំរង្វង់ចារឹកក្រៅ R & កាំរង្វង់ចារឹកក្នុង r', R`• **ទំនាក់ទំនងជាមួយកាំរង្វង់ចារឹកក្រៅ $R$** ៖
+  - ដោយ $\sin C = \dfrac{c}{2R} \implies S = \dfrac{1}{2} ab \sin C = \dfrac{1}{2} ab \left(\dfrac{c}{2R}\right)$
+  $$\mathbf{S = \dfrac{abc}{4R}} \iff \mathbf{R = \dfrac{abc}{4S}}$$
+• **ទំនាក់ទំនងជាមួយកាំរង្វង់ចារឹកក្នុង $r$** ៖
+  - ផ្ទៃក្រឡា $\triangle ABC = S_{\triangle IBC} + S_{\triangle IAC} + S_{\triangle IAB}$
+  - $S = \dfrac{1}{2}ar + \dfrac{1}{2}br + \dfrac{1}{2}cr = r \left(\dfrac{a+b+c}{2}\right) = p \cdot r$
+  $$\mathbf{S = p \cdot r} \iff \mathbf{r = \dfrac{S}{p}}$$
+  *(ដែល $p$ ជាកន្លះបរិមាត្រ)*`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍គណនា R និង r', R`• **លំហាត់** ៖ ត្រីកោណ $ABC$ មាន $a = 13, b = 14, c = 15$ (មាន $S = 84, p = 21$) ។
+  ក. គណនាកាំ $R$ នៃរង្វង់ចារឹកក្រៅត្រីកោណ ។
+  ខ. គណនាកាំ $r$ នៃរង្វង់ចារឹកក្នុងត្រីកោណ ។
+• **ដំណោះស្រាយ** ៖
+  - ក. គណនា $R$ ៖
+    $$R = \dfrac{abc}{4S} = \dfrac{13 \times 14 \times 15}{4 \times 84} = \dfrac{2730}{336} = \mathbf{8.125} = \mathbf{\dfrac{65}{8}}$$
+  - ខ. គណនា $r$ ៖
+    $$r = \dfrac{S}{p} = \dfrac{84}{21} = \mathbf{4}$$
+• **សន្និដ្ឋាន** ៖ កាំរង្វង់ចារឹកក្រៅ $R = 8.125$, កាំរង្វង់ចារឹកក្នុង $r = 4$ ឯកតា ។`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្តសំខាន់!! ៖ $R = \dfrac{abc}{4S}$ (រង្វង់ចារឹកក្រៅ) និង $r = \dfrac{S}{p}$ (រង្វង់ចារឹកក្នុង)! ជាស្ពានតភ្ជាប់រវាងធរណីមាត្រ និងត្រីកោណមាត្រ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 11 */ page([
+        sec('៥.៨ ការដោះស្រាយត្រីកោណទូទៅ (Solving Oblique Triangles)'),
+        card(60, 155, 560, 375, 'ករណីទាំង ៤ នៃត្រីកោណទូទៅ', R`| ករណី | ទិន្នន័យស្គាល់ | វិធីសាស្ត្រដោះស្រាយ |
+| :---: | :---: | :--- |
+| **AAS / ASA** | មុំ២ ជ្រុង១ | រកមុំទី ៣ ($180^\circ - (A+B)$) រួចប្រើ **ទ្រឹស្តីបទស៊ីនុស** រកជ្រុង |
+| **SAS** | ជ្រុង២ មុំចន្លោះ១ | ប្រើ **ទ្រឹស្តីបទកូស៊ីនុស** រកជ្រុងទី ៣ រួចប្រើទ្រឹស្តីបទស៊ីនុសរកមុំ |
+| **SSS** | ជ្រុងទាំង ៣ | ប្រើ **ទ្រឹស្តីបទកូស៊ីនុស** រកមុំធំជាងគេមុន រួចរកមុំផ្សេងទៀត |
+| **SSA** | ជ្រុង២ មុំឈម១ | ប្រើ **ទ្រឹស្តីបទស៊ីនុស** (ករណីមិនច្បាស់លាស់ Ambiguous Case) |`, { size: 20 }),
+        card(660, 155, 560, 375, 'យុទ្ធសាស្ត្រដោះស្រាយករណី SAS', R`• **លំហាត់** ៖ ដោះស្រាយ $\triangle ABC$ បើ $a = 7, b = 5$ និង $C = 60^\circ$ ។
+• **ដំណោះស្រាយ** ៖
+  1. រកជ្រុង $c$ តាមទ្រឹស្តីបទកូស៊ីនុស ៖
+     $$c^2 = a^2 + b^2 - 2ab \cos C = 7^2 + 5^2 - 2(7)(5)\cos 60^\circ$$
+     $$c^2 = 49 + 25 - 70(0.5) = 74 - 35 = 39 \implies \mathbf{c = \sqrt{39} \approx 6.24}$$
+  2. រកមុំ $B$ តាមទ្រឹស្តីបទស៊ីនុស ៖
+     $$\sin B = \dfrac{b \sin C}{c} = \dfrac{5 \sin 60^\circ}{\sqrt{39}} = \dfrac{5(\sqrt{3}/2)}{\sqrt{39}} \approx 0.6934$$
+     $$\implies \mathbf{B \approx 43.9^\circ}$$
+  3. រកមុំ $A$ ៖
+     $$\mathbf{A = 180^\circ - (60^\circ + 43.9^\circ) = 76.1^\circ}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!យុទ្ធសាស្ត្រ!! ៖ ស្គាល់ SAS ឬ SSS ប្រើកូស៊ីនុសមុន; ស្គាល់ ASA ឬ AAS ប្រើស៊ីនុសមុន!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 12 */ page([
+        sec('៥.៩ ករណីមិនច្បាស់លាស់នៃទ្រឹស្តីបទស៊ីនុស (Ambiguous Case SSA)'),
+        card(60, 155, 560, 375, 'ការវិភាគចំនួនត្រីកោណករណី SSA', R`ឱ្យជ្រុង $a, b$ និងមុំស្រួច $A$ ($h = b \sin A$ ជាកម្ពស់) ៖
+• **ករណី ១ ៖ $a < h$ ($a < b \sin A$)** ៖
+  - ជ្រុង $a$ ខ្លីពេក មិនអាចប៉ះបាតបានឡើយ
+  - **គ្មានត្រីកោណ** ផ្ទៀងផ្ទាត់ ($\sin B > 1$ គ្មានន័យ)
+• **ករណី ២ ៖ $a = h$ ($a = b \sin A$)** ៖
+  - ជ្រុង $a$ កាត់កែងនឹងបាត
+  - បង្កើតបាន **ត្រីកោណកែង ១ គត់** ($B = 90^\circ$)
+• **ករណី ៣ ៖ $h < a < b$** ៖
+  - បង្កើតបាន **ត្រីកោណ ២ ផ្សេងគ្នា** ៖
+    + ត្រីកោណទី ១ មាន $B_1$ ជាមុំស្រួច
+    + ត្រីកោណទី ២ មាន $B_2 = 180^\circ - B_1$ ជាមុំទាល
+• **ករណី ៤ ៖ $a \ge b$** ៖
+  - បង្កើតបាន **ត្រីកោណ ១ គត់**`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍វិភាគ SSA', R`• **លំហាត់** ៖ កំណត់ចំនួនត្រីកោណដែលអាចបង្កើតបាន បើ $A = 30^\circ, b = 10$ និង $a = 7$ ។
+• **ដំណោះស្រាយ** ៖
+  - គណនាកម្ពស់ $h$ ៖
+    $$h = b \sin A = 10 \sin 30^\circ = 10\left(\dfrac{1}{2}\right) = \mathbf{5}$$
+  - ប្រៀបធៀប ៖
+    $$h = 5 < a = 7 < b = 10$$
+  - ដោយ $h < a < b$ នោះ **មានត្រីកោណ ២ អាចបង្កើតបាន** ៖
+    $$\sin B = \dfrac{b \sin A}{a} = \dfrac{10(0.5)}{7} = \dfrac{5}{7} \approx 0.7143$$
+    + មុំស្រួច ៖ $\mathbf{B_1 \approx 45.6^\circ} \implies C_1 = 180^\circ - (30^\circ + 45.6^\circ) = \mathbf{104.4^\circ}$
+    + មុំទាល ៖ $\mathbf{B_2 = 180^\circ - 45.6^\circ = 134.4^\circ} \implies C_2 = 180^\circ - (30^\circ + 134.4^\circ) = \mathbf{15.6^\circ}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ប្រយ័ត្ន!! ៖ ពេលដោះស្រាយករណី SSA ត្រូវពិនិត្យជានិច្ចថាតើ $\sin B < 1$ អាចផ្តល់មុំទាល $180^\circ - B$ បានដែរឬទេ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 13 */ page([
+        sec('៥.១០ ទ្រឹស្តីបទមេដ្យានក្នុងត្រីកោណ (Median Formula)'),
+        card(60, 155, 560, 375, 'រូបមន្តប្រវែងមេដ្យាន', R`ក្នុងត្រីកោណ $ABC$ តាង $m_a, m_b, m_c$ ជាប្រវែងមេដ្យានគូសចេញពីកំពូល $A, B, C$ ទៅកាន់ចំណុចកណ្តាលជ្រុងឈមរៀងគ្នា ៖
+• **រូបមន្តមេដ្យាន (Apollonius\'s Theorem)** ៖
+  $$\mathbf{m_a^2 = \dfrac{2(b^2 + c^2) - a^2}{4} = \dfrac{b^2 + c^2}{2} - \dfrac{a^2}{4}}$$
+  $$\mathbf{m_b^2 = \dfrac{2(a^2 + c^2) - b^2}{4} = \dfrac{a^2 + c^2}{2} - \dfrac{b^2}{4}}$$
+  $$\mathbf{m_c^2 = \dfrac{2(a^2 + b^2) - c^2}{4} = \dfrac{a^2 + b^2}{2} - \dfrac{c^2}{4}}$$
+• **ផលបូកការេមេដ្យានទាំង ៣** ៖
+  $$\mathbf{m_a^2 + m_b^2 + m_c^2 = \dfrac{3}{4}(a^2 + b^2 + c^2)}$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍គណនាមេដ្យាន', R`• **លំហាត់** ៖ ត្រីកោណ $ABC$ មាន $a = 6, b = 7, c = 8$ ។ គណនាប្រវែងមេដ្យាន $m_a$ គូសចេញពីកំពូល $A$ ។
+• **ដំណោះស្រាយ** ៖
+  - អនុវត្តរូបមន្តមេដ្យាន $m_a$ ៖
+    $$m_a^2 = \dfrac{2(b^2 + c^2) - a^2}{4}$$
+    $$m_a^2 = \dfrac{2(7^2 + 8^2) - 6^2}{4}$$
+    $$m_a^2 = \dfrac{2(49 + 64) - 36}{4} = \dfrac{2(113) - 36}{4}$$
+    $$m_a^2 = \dfrac{226 - 36}{4} = \dfrac{190}{4} = 47.5$$
+    $$\mathbf{m_a = \sqrt{47.5} = \dfrac{\sqrt{190}}{2} \approx 6.89}$$
+• **ដូចនេះ** ៖ ប្រវែងមេដ្យាន $m_a \approx 6.89$ ឯកតា ។`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្ត!! ៖ $m_a^2 = \dfrac{2(b^2 + c^2) - a^2}{4}$ ទាញចេញពីទ្រឹស្តីបទកូស៊ីនុស អនុញ្ញាតឱ្យគណនាប្រវែងមេដ្យានបានយ៉ាងរហ័ស!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 14 */ page([
+        sec('៥.១១ ទ្រឹស្តីបទកន្លះបន្ទាត់ពុះមុំក្នុងត្រីកោណ (Angle Bisector)'),
+        card(60, 155, 560, 375, 'លក្ខណៈ & ប្រវែងកន្លះបន្ទាត់ពុះមុំ', R`តាង $AD = l_a$ ជាកន្លះបន្ទាត់ពុះមុំក្នុងនៃមុំ $A$ ក្នុង $\triangle ABC$ ($D \in [BC]$) ៖
+• **ទ្រឹស្តីបទផលធៀបកន្លះបន្ទាត់ពុះមុំ** ៖
+  $$\mathbf{\dfrac{DB}{DC} = \dfrac{AB}{AC} = \dfrac{c}{b}}$$
+  - កូអរដោនេ ឬប្រវែងចែក ៖ $DB = \dfrac{ac}{b+c}, \quad DC = \dfrac{ab}{b+c}$
+• **រូបមន្តប្រវែងកន្លះបន្ទាត់ពុះមុំ $l_a$** ៖
+  $$\mathbf{l_a^2 = bc - DB \cdot DC = bc \left[1 - \left(\dfrac{a}{b+c}\right)^2\right]}$$
+  $$\mathbf{l_a = \dfrac{2bc \cos(A/2)}{b + c}}$$`, { size: 20 }),
+        card(660, 155, 560, 375, 'ឧទាហរណ៍អនុវត្តន៍', R`• **លំហាត់** ៖ ត្រីកោណ $ABC$ មាន $b = 6, c = 4$ និង $A = 60^\circ$ ។ គណនាប្រវែងកន្លះបន្ទាត់ពុះមុំ $AD = l_a$ ។
+• **ដំណោះស្រាយ** ៖
+  - មុំពាក់កណ្តាល ៖ $\dfrac{A}{2} = 30^\circ \implies \cos 30^\circ = \dfrac{\sqrt{3}}{2}$
+  - អនុវត្តរូបមន្ត $l_a$ ៖
+    $$l_a = \dfrac{2bc \cos(A/2)}{b + c}$$
+    $$l_a = \dfrac{2(6)(4)\cos 30^\circ}{6 + 4} = \dfrac{48 \times \dfrac{\sqrt{3}}{2}}{10} = \dfrac{24\sqrt{3}}{10} = \mathbf{\dfrac{12\sqrt{3}}{5}}$$
+  - តម្លៃប្រហែល ៖ $l_a \approx \dfrac{12 \times 1.732}{5} \approx \mathbf{4.16}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!រូបមន្ត!! ៖ $l_a = \dfrac{2bc \cos(A/2)}{b + c}$ និងផលធៀប $\dfrac{DB}{DC} = \dfrac{c}{b}$ ជារូបមន្តស្តង់ដាក្នុងការប្រឡងបាក់ឌុប និងសិស្សពូកែ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 15 */ page([
+        sec('៥.១២ សង្ខេបតារាងរូបមន្តគ្រឹះនៃត្រីកោណទូទៅ'),
+        card(60, 155, 560, 375, 'តារាងទ្រឹស្តីបទគ្រឹះ', R`| ទ្រឹស្តីបទ / រូបមន្ត | សមីការគណិតវិទ្យា |
+| :--- | :--- |
+| **ទ្រឹស្តីបទស៊ីនុស** | $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R$ |
+| **ទ្រឹស្តីបទកូស៊ីនុស** | $a^2 = b^2 + c^2 - 2bc \cos A$ |
+| **ទាញរកកូស៊ីនុសមុំ** | $\cos A = \dfrac{b^2 + c^2 - a^2}{2bc}$ |
+| **កាំរង្វង់ចារឹកក្រៅ** | $R = \dfrac{a}{2\sin A} = \dfrac{abc}{4S}$ |
+| **កាំរង្វង់ចារឹកក្នុង** | $r = \dfrac{S}{p} \quad \left(p = \dfrac{a+b+c}{2}\right)$ |`, { size: 20 }),
+        card(660, 155, 560, 375, 'តារាងរូបមន្តផ្ទៃក្រឡាត្រីកោណ', R`| វិធីសាស្ត្រគណនាផ្ទៃ $S$ | រូបមន្តគណិតវិទ្យា |
+| :--- | :--- |
+| **តាមបាត & កម្ពស់** | $S = \dfrac{1}{2} a \cdot h_a$ |
+| **តាមពីរជ្រុង & មុំ** | $S = \dfrac{1}{2} ab \sin C = \dfrac{1}{2} bc \sin A = \dfrac{1}{2} ac \sin B$ |
+| **រូបមន្តហេរុង** | $S = \sqrt{p(p-a)(p-b)(p-c)}$ |
+| **តាមកាំរង្វង់ចារឹកក្រៅ** | $S = \dfrac{abc}{4R}$ |
+| **តាមកាំរង្វង់ចារឹកក្នុង** | $S = p \cdot r$ |`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចងចាំ!! ៖ គ្រប់គ្រងរូបមន្តក្នុងតារាងទាំងពីរនេះបានល្អ ធានាដោះស្រាយគ្រប់លំហាត់ត្រីកោណមាត្រអនុវត្តបាន ១០០%!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 16 */ page([
+        sec('លំហាត់គំរូទី ១ ៖ ដោះស្រាយត្រីកោណស្គាល់ជ្រុងមួយ និងមុំពីរ (ASA)'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់ & វិភាគ', R`• **ប្រធាន** ៖ ក្នុងត្រីកោណ $ABC$ គេស្គាល់ $a = 12\text{ cm}, B = 45^\circ$ និង $C = 60^\circ$ ។
+  ក. គណនារង្វាស់មុំ $A$ ។
+  ខ. គណនាប្រវែងជ្រុង $b$ និង $c$ ។
+  គ. គណនាកាំ $R$ នៃរង្វង់ចារឹកក្រៅត្រីកោណ $ABC$ ។
+• **វិភាគ** ៖
+  - ក. មុំ $A = 180^\circ - (B + C) = 180^\circ - 105^\circ = 75^\circ$
+  - ខ. ប្រើទ្រឹស្តីបទស៊ីនុស $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}$
+  - ដឹងថា $\sin 75^\circ = \sin(45^\circ + 30^\circ) = \dfrac{\sqrt{6} + \sqrt{2}}{4} \approx 0.9659$ ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត ក, ខ & គ', R`• **ក. គណនាមុំ $A$** ៖
+  $$\mathbf{A = 180^\circ - (45^\circ + 60^\circ) = 75^\circ}$$
+• **ខ. គណនាជ្រុង $b$ និង $c$** ៖
+  - តាមទ្រឹស្តីបទស៊ីនុស ៖
+    $$b = \dfrac{a \sin B}{\sin A} = \dfrac{12 \sin 45^\circ}{\sin 75^\circ} \approx \dfrac{12 \times 0.7071}{0.9659} \approx \mathbf{8.78\text{ cm}}$$
+    $$c = \dfrac{a \sin C}{\sin A} = \dfrac{12 \sin 60^\circ}{\sin 75^\circ} \approx \dfrac{12 \times 0.8660}{0.9659} \approx \mathbf{10.76\text{ cm}}$$
+• **គ. គណនាកាំ $R$** ៖
+  $$2R = \dfrac{a}{\sin A} \implies R = \dfrac{12}{2 \sin 75^\circ} = \dfrac{6}{0.9659} \approx \mathbf{6.21\text{ cm}}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ $A = 75^\circ, b \approx 8.78\text{ cm}, c \approx 10.76\text{ cm}$, កាំរង្វង់ចារឹកក្រៅ $R \approx 6.21\text{ cm}$!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 17 */ page([
+        sec('លំហាត់គំរូទី ២ ៖ ដោះស្រាយត្រីកោណស្គាល់ជ្រុងពីរ និងមុំចន្លោះ (SAS)'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់ & វិភាគ', R`• **ប្រធាន** ៖ គេឱ្យត្រីកោណ $ABC$ មាន $b = 6, c = 10$ និងមុំ $A = 120^\circ$ ។
+  ក. គណនាប្រវែងជ្រុង $a$ ។
+  ខ. គណនារង្វាស់មុំ $B$ និង $C$ ។
+  គ. គណនាផ្ទៃក្រឡា $S$ នៃត្រីកោណ $ABC$ ។
+• **វិភាគ** ៖
+  - ក. ស្គាល់ $b, c$ និងមុំចន្លោះ $A$ ប្រើទ្រឹស្តីបទកូស៊ីនុសរក $a$ (ដឹងថា $\cos 120^\circ = -0.5$)
+  - ខ. ប្រើទ្រឹស្តីបទស៊ីនុសរកមុំ $B$ រួចទាញរកមុំ $C$
+  - គ. ប្រើរូបមន្តផ្ទៃ $S = \dfrac{1}{2} bc \sin A$ ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត ក, ខ & គ', R`• **ក. គណនាជ្រុង $a$** ៖
+  $$a^2 = b^2 + c^2 - 2bc \cos 120^\circ = 6^2 + 10^2 - 2(6)(10)(-0.5)$$
+  $$a^2 = 36 + 100 + 60 = 196 \implies \mathbf{a = \sqrt{196} = 14}$$
+• **ខ. គណនាមុំ $B$ និង $C$** ៖
+  $$\sin B = \dfrac{b \sin A}{a} = \dfrac{6 \sin 120^\circ}{14} = \dfrac{6(\sqrt{3}/2)}{14} = \dfrac{3\sqrt{3}}{14} \approx 0.3712$$
+  $$\implies \mathbf{B \approx 21.8^\circ}$$
+  $$\mathbf{C = 180^\circ - (120^\circ + 21.8^\circ) = 38.2^\circ}$$
+• **គ. គណនាផ្ទៃក្រឡា $S$** ៖
+  $$S = \dfrac{1}{2} bc \sin A = \dfrac{1}{2}(6)(10)\sin 120^\circ = 30 \times \dfrac{\sqrt{3}}{2} = \mathbf{15\sqrt{3}} \approx \mathbf{25.98}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ $a = 14, B \approx 21.8^\circ, C \approx 38.2^\circ$; ផ្ទៃក្រឡា $S = 15\sqrt{3} \approx 25.98$ ឯកតាការេ!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 18 */ page([
+        sec('លំហាត់គំរូទី ៣ ៖ ដោះស្រាយត្រីកោណស្គាល់ជ្រុងបី (SSS) & ហេរុង'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់ & វិភាគ', R`• **ប្រធាន** ៖ គេឱ្យត្រីកោណ $ABC$ មានប្រវែងជ្រុងទាំងបី $a = 7, b = 8, c = 9$ ។
+  ក. គណនាកូស៊ីនុស និងរង្វាស់នៃមុំតូចបំផុត និងមុំធំបំផុត ។
+  ខ. គណនាផ្ទៃក្រឡា $S$ នៃត្រីកោណតាមរូបមន្តហេរុង ។
+  គ. គណនាប្រវែងកម្ពស់ $h_a$ គូសចេញពីកំពូល $A$ មកលើជ្រុង $a$ ។
+• **វិភាគ** ៖
+  - មុំតូចបំផុតឈមនឹងជ្រុងតូចបំផុត ($a = 7 \implies$ មុំ $A$)
+  - មុំធំបំផុតឈមនឹងជ្រុងធំបំផុត ($c = 9 \implies$ មុំ $C$)
+  - គណនា $S$ តាមហេរុង រួចប្រើ $S = \dfrac{1}{2} a \cdot h_a \implies h_a = \dfrac{2S}{a}$ ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត ក, ខ & គ', R`• **ក. គណនាមុំ $A$ និង $C$** ៖
+  $$\cos A = \dfrac{b^2 + c^2 - a^2}{2bc} = \dfrac{8^2 + 9^2 - 7^2}{2(8)(9)} = \dfrac{64 + 81 - 49}{144} = \dfrac{96}{144} = \dfrac{2}{3} \approx 0.6667$$
+  $$\implies \mathbf{A \approx 48.2^\circ} \quad (\text{មុំតូចបំផុត})$$
+  $$\cos C = \dfrac{a^2 + b^2 - c^2}{2ab} = \dfrac{7^2 + 8^2 - 9^2}{2(7)(8)} = \dfrac{49 + 64 - 81}{112} = \dfrac{32}{112} = \dfrac{2}{7} \approx 0.2857$$
+  $$\implies \mathbf{C \approx 73.4^\circ} \quad (\text{មុំធំបំផុត})$$
+• **ខ. គណនាផ្ទៃក្រឡា $S$ (ហេរុង)** ៖
+  - $p = \dfrac{7 + 8 + 9}{2} = 12$
+  $$S = \sqrt{12(12 - 7)(12 - 8)(12 - 9)} = \sqrt{12 \times 5 \times 4 \times 3} = \sqrt{720} = \mathbf{12\sqrt{5}} \approx \mathbf{26.83}$$
+• **គ. គណនាកម្ពស់ $h_a$** ៖
+  $$h_a = \dfrac{2S}{a} = \dfrac{2(12\sqrt{5})}{7} = \mathbf{\dfrac{24\sqrt{5}}{7}} \approx \mathbf{7.67}$$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ $A \approx 48.2^\circ, C \approx 73.4^\circ$; ផ្ទៃក្រឡា $S = 12\sqrt{5} \approx 26.83$; កម្ពស់ $h_a \approx 7.67$!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 19 */ page([
+        sec('លំហាត់គំរូទី ៤ ៖ ចំណោទវាស់ចម្ងាយឆ្លងកាត់ទន្លេមេគង្គ'),
+        card(60, 155, 560, 375, 'ប្រធានចំណោទជាក់ស្តែង', R`• **ប្រធាន** ៖ វិស្វករស្ពានមួយក្រុមចង់វាស់ចម្ងាយរវាងចំណុចពីរ $A$ និង $B$ ឆ្លងកាត់ទន្លេមេគង្គដោយមិនបាច់ឆ្លងទឹក ៖
+  - គេជ្រើសរើសចំណុច $C$ មួយនៅត្រើយម្ខាងជាមួយ $A$ ហើយវាស់បានចម្ងាយ $AC = 120\text{ m}$ ។
+  - នៅចំណុច $A$ គេវាស់ឃើញមុំ $\widehat{BAC} = 65^\circ$ ។
+  - នៅចំណុច $C$ គេវាស់ឃើញមុំ $\widehat{BCA} = 75^\circ$ ។
+• **សំណួរ** ៖
+  1. គណនារង្វាស់មុំ $\widehat{ABC}$ ។
+  2. គណនាប្រវែងទទឹងស្ពានដែលត្រូវសាងសង់ពី $A$ ទៅ $B$ (យក $\sin 40^\circ \approx 0.6428, \sin 75^\circ \approx 0.9659$) ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ដំណោះស្រាយលម្អិត & គណនាលេខ', R`• **១. គណនាមុំ $\widehat{ABC}$** ៖
+  - ផលបូកមុំក្នុងត្រីកោណ $ABC$ ៖
+    $$\widehat{B} = 180^\circ - (65^\circ + 75^\circ) = 180^\circ - 140^\circ = \mathbf{40^\circ}$$
+• **២. គណនាចម្ងាយ $AB$ (ទទឹងស្ពាន)** ៖
+  - អនុវត្តទ្រឹស្តីបទស៊ីនុសក្នុង $\triangle ABC$ ៖
+    $$\dfrac{AB}{\sin C} = \dfrac{AC}{\sin B}$$
+    $$AB = \dfrac{AC \cdot \sin C}{\sin B} = \dfrac{120 \cdot \sin 75^\circ}{\sin 40^\circ}$$
+  - ជំនួសតម្លៃលេខ ៖
+    $$AB \approx \dfrac{120 \times 0.9659}{0.6428} \approx \dfrac{115.908}{0.6428} \approx \mathbf{180.32\text{ m}}$$
+• **សន្និដ្ឋាន** ៖ ប្រវែងទទឹងស្ពានតភ្ជាប់ពី $A$ ទៅ $B$ គឺប្រហែល $\mathbf{180.3\text{ m}}$ ។`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!ចម្លើយ!! ៖ មុំ $\widehat{B} = 40^\circ$; ចម្ងាយឆ្លងកាត់ទន្លេ $AB \approx 180.3\text{ m}$! អនុវត្តជាក់ស្តែងក្នុងវិស្វកម្មស្ថាបត្យកម្មស្ពានថ្នល់!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 20 PISA */ page([
+        sec('លំហាត់ស្តង់ដា PISA ៖ ការកំណត់ទីតាំងនាវាសង្គ្រោះបន្ទាន់ (Marine Search & Rescue)'),
+        card(60, 155, 560, 375, 'ស្ថានភាពជាក់ស្តែង (Real-World Context)', R`• **បរិបទ** ៖ ក្នុងប្រតិបត្តិការសង្គ្រោះបន្ទាន់នៅឈូងសមុទ្រកម្ពុជា ស្ថានីយរ៉ាដាឆ្នេរសមុទ្រពីរ $A$ និង $B$ ស្ថិតនៅចម្ងាយពីគ្នា $AB = 50\text{ km}$ តាមខ្សែបន្ទាត់ឆ្នេរ (ទិសដៅពីលិចទៅកើត) ៖
+  - ស្ថានីយ $A$ ចាប់បានសញ្ញាសង្គ្រោះបន្ទាន់ (SOS) ពីទូកនេសាទមួយ $C$ តាមទិសដៅមុំ $\widehat{CAB} = 40^\circ$ ។
+  - ស្ថានីយ $B$ ចាប់បានសញ្ញា SOS នោះតាមទិសដៅមុំ $\widehat{CBA} = 60^\circ$ ។
+• **សំណួរទី ១** ៖ គណនាមុំ $\widehat{ACB}$ និងចម្ងាយពីស្ថានីយនីមួយៗទៅកាន់ទូកនេសាទ $C$ ($AC$ និង $BC$) ។
+• **សំណួរទី ២** ៖ នាវាល្បាតសង្គ្រោះមួយចតនៅស្ថានីយ $B$ ហើយអាចបើកក្នុងល្បឿនជាមធ្យម $40\text{ km/h}$ ។ តើត្រូវចំណាយពេលប៉ុន្មាននាទីដើម្បីទៅដល់ទូកនេសាទ ? (យក $\sin 80^\circ \approx 0.9848, \sin 60^\circ \approx 0.8660, \sin 40^\circ \approx 0.6428$)`, { size: 20 }),
+        card(660, 155, 560, 375, 'គំរូនីយកម្មគណិតវិទ្យា & ដំណោះស្រាយ', R`• **សំណួរទី ១ ៖ មុំ $\widehat{ACB}$ និងចម្ងាយ $AC, BC$** ៖
+  - $\widehat{C} = 180^\circ - (40^\circ + 60^\circ) = \mathbf{80^\circ}$
+  - តាមទ្រឹស្តីបទស៊ីនុស ៖ $\dfrac{AB}{\sin C} = \dfrac{AC}{\sin B} = \dfrac{BC}{\sin A}$
+    $$AC = \dfrac{50 \sin 60^\circ}{\sin 80^\circ} \approx \dfrac{50 \times 0.8660}{0.9848} \approx \mathbf{43.97\text{ km}}$$
+    $$BC = \dfrac{50 \sin 40^\circ}{\sin 80^\circ} \approx \dfrac{50 \times 0.6428}{0.9848} \approx \mathbf{32.64\text{ km}}$$
+• **សំណួរទី ២ ៖ រយៈពេលធ្វើដំណើរសង្គ្រោះ** ៖
+  - ចម្ងាយពី $B$ ទៅ $C$ គឺ $d = 32.64\text{ km}$
+  - រយៈពេល ៖ $t = \dfrac{d}{v} = \dfrac{32.64}{40} = 0.816\text{ ម៉ោង}$
+  - គិតជានាទី ៖ $t = 0.816 \times 60 \approx \mathbf{49\text{ នាទី}}$
+• **សន្និដ្ឋាន** ៖ នាវាល្បាតសង្គ្រោះនឹងទៅដល់ទូកនេសាទក្នុងរយៈពេលប្រហែល **៤៩ នាទី** !`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!PISA Reflection!! ៖ វិធីសាស្ត្រត្រីកោណមាត្រកំណត់ទីតាំង (Triangulation) គឺជាមូលដ្ឋានគ្រឹះនៃប្រព័ន្ធរ៉ាដា GPS និងការសង្គ្រោះជីវិតមនុស្ស!`, { size: 23, align: 'center', anim: true })
+      ]),
+
+      /* 21 MCQ 1 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ១)'),
+        l(60, 155, 1180, R`ក្នុងត្រីកោណ $ABC$ បើ $a = 8, A = 30^\circ$ នោះកាំ $R$ នៃរង្វង់ចារឹកក្រៅស្មើនឹង ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$R = 4$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$R = 8$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$R = 16$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$R = 8\sqrt{3}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ B!! (ព្រោះ $2R = \dfrac{a}{\sin A} = \dfrac{8}{\sin 30^\circ} = \dfrac{8}{0.5} = 16 \implies R = 8$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 22 MCQ 2 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ២)'),
+        l(60, 155, 1180, R`ត្រីកោណ $ABC$ មាន $b = 3, c = 4$ និង $A = 60^\circ$ ។ ប្រវែងជ្រុង $a$ ស្មើនឹង ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$a = \sqrt{13}$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$a = 5$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$a = \sqrt{37}$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$a = \sqrt{7}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ A!! (ព្រោះ $a^2 = 3^2 + 4^2 - 2(3)(4)\cos 60^\circ = 9 + 16 - 24(0.5) = 25 - 12 = 13 \implies a = \sqrt{13}$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 23 MCQ 3 */ page([
+        sec('សំណួរត្រួតពិនិត្យការយល់ដឹង (MCQ ៣)'),
+        l(60, 155, 1180, R`ផ្ទៃក្រឡាត្រីកោណដែលមានរង្វាស់ជ្រុងទាំងបី $3, 4, 5$ ស្មើនឹង ៖`, { size: 28 }),
+        card(100, 230, 480, 100, 'A', R`$S = 12$`, { size: 26, align: 'center' }),
+        card(640, 230, 480, 100, 'B', R`$S = 10$`, { size: 26, align: 'center' }),
+        card(100, 350, 480, 100, 'C', R`$S = 6$`, { size: 26, align: 'center' }),
+        card(640, 350, 480, 100, 'D', R`$S = 6\sqrt{2}$`, { size: 26, align: 'center' }),
+        S.box(100, 495, 1020, 80, R`!!ចម្លើយត្រឹមត្រូវ ៖ C!! (ព្រោះ $3^2 + 4^2 = 5^2 \implies$ ជាត្រីកោណកែង មានផ្ទៃ $S = \dfrac{1}{2}(3)(4) = 6$ ឬប្រើហេរុង $p=6 \implies S=\sqrt{6(3)(2)(1)}=6$)`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 24 */ page([
+        sec('លំហាត់អនុវត្តន៍ក្នុងសៀវភៅសិក្សាគោល (Textbook Practice)'),
+        card(60, 155, 560, 375, 'ប្រធានលំហាត់អនុវត្តន៍', R`• **លំហាត់ ១** ៖ ដោះស្រាយ $\triangle ABC$ បើ $a = 8, B = 60^\circ, C = 45^\circ$ ។
+• **លំហាត់ ២** ៖ ត្រីកោណ $ABC$ មាន $a = 5, b = 7, c = 8$ ។
+  ក. គណនាកូស៊ីនុសមុំ $B$ និងទាញរករង្វាស់មុំ $B$
+  ខ. គណនាផ្ទៃក្រឡា $S$ នៃត្រីកោណ
+• **លំហាត់ ៣** ៖ គណនាកាំរង្វង់ចារឹកក្រៅ $R$ និងកាំរង្វង់ចារឹកក្នុង $r$ នៃត្រីកោណដែលមានជ្រុង $a = 5, b = 6, c = 7$ ។`, { size: 20 }),
+        card(660, 155, 560, 375, 'ការណែនាំ & ចម្លើយសង្ខេប', R`• **ចម្លើយលំហាត់ ១** ៖
+  - $A = 180^\circ - (60^\circ + 45^\circ) = \mathbf{75^\circ}$
+  - $b = \dfrac{8 \sin 60^\circ}{\sin 75^\circ} \approx \mathbf{7.18}, \quad c = \dfrac{8 \sin 45^\circ}{\sin 75^\circ} \approx \mathbf{5.86}$
+• **ចម្លើយលំហាត់ ២** ៖
+  - $\cos B = \dfrac{5^2 + 8^2 - 7^2}{2(5)(8)} = \dfrac{25+64-49}{80} = \dfrac{40}{80} = \dfrac{1}{2} \implies \mathbf{B = 60^\circ}$
+  - $S = \dfrac{1}{2}ac \sin B = \dfrac{1}{2}(5)(8)\sin 60^\circ = 20 \times \dfrac{\sqrt{3}}{2} = \mathbf{10\sqrt{3}}$
+• **ចម្លើយលំហាត់ ៣** ៖
+  - $p = \dfrac{5+6+7}{2} = 9$
+  - $S = \sqrt{9(4)(3)(2)} = \sqrt{216} = \mathbf{6\sqrt{6}}$
+  - $R = \dfrac{5 \times 6 \times 7}{4(6\sqrt{6})} = \dfrac{35}{4\sqrt{6}} = \mathbf{\dfrac{35\sqrt{6}}{24}} \approx \mathbf{3.57}$
+  - $r = \dfrac{S}{p} = \dfrac{6\sqrt{6}}{9} = \mathbf{\dfrac{2\sqrt{6}}{3}} \approx \mathbf{1.63}$`, { size: 20 }),
+        S.box(60, 545, 1160, 80, R`!!អនុវត្ត!! ៖ ធ្វើលំហាត់ទាំង ៣ នេះដោយខ្លួនឯងដើម្បីពង្រឹងសមត្ថភាពក្នុងការប្រឡងប្រចាំឆមាស!`, { size: 24, align: 'center', anim: true })
+      ]),
+
+      /* 25 */ S.homework(R`!!១.!! ដោះស្រាយត្រីកោណ $ABC$ បើស្គាល់ $b = 10, c = 12$ និង $A = 45^\circ$ ។
+!!២.!! ត្រីកោណមួយមានជ្រុង $a = 4, b = 5, c = 7$ ។ គណនាផ្ទៃក្រឡា $S$ និងប្រវែងមេដ្យាន $m_a$ ។
+!!៣.!! បង្ហាញថាក្នុងគ្រប់ត្រីកោណ $ABC$ គេបាន $\dfrac{a+b}{c} = \dfrac{\cos\left(\frac{A-B}{2}\right)}{\sin\left(\frac{C}{2}\right)}$ (រូបមន្ត Mollweide) ។
+!!៤.!! ចំណោទ ៖ ពីកំពូលភ្នំមួយ គេមើលឃើញបង្គោលពីរនៅលើដីរាបក្រោមមុំទម្លាក់ $30^\circ$ និង $45^\circ$ ។ បើបង្គោលទាំងពីរនៅឆ្ងាយពីគ្នា $100\text{ m}$ គណនាកម្ពស់ភ្នំ ។`),
+
+      /* 26 */ S.thanks()
+    ];
+
+    return {
+      name: 'ថ្នាក់ទី១០ · ជំពូក៥ មេរៀនទី២ ការអនុវត្តផលធៀបត្រីកោណ (២៦ ស្លាយ)',
+      grade: '10',
+      chapterNum: 5,
+      chapter: 'ជំពូកទី ៥ ៖ ផលធៀបត្រីកោណមាត្រ',
+      lessonNum: 2,
+      lesson: 'មេរៀនទី ២ ៖ ការអនុវត្តផលធៀបត្រីកោណ',
+      theme: 'school',
+      school: K.info.school,
+      school2: K.info.school2,
+      school3: K.info.school3,
+      teacher: K.info.teacher,
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. ទ្រឹស្តីបទស៊ីនុស & កាំ 2R', slide: 3 },
+        { title: '២. ទ្រឹស្តីបទកូស៊ីនុស', slide: 5 },
+        { title: '៣. ផ្ទៃក្រឡា & រូបមន្តហេរុង', slide: 7 },
+        { title: '៤. ការដោះស្រាយត្រីកោណទូទៅ', slide: 10 },
+        { title: 'លំហាត់គំរូ & PISA Test', slide: 15 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 20 }
+      ],
+      slides: slides
+    };
+  }
+
 window.KPSlideTemplates = [
     {
       id: 'g10-polynomials',
@@ -12707,6 +13689,49 @@ window.KPSlideTemplates = [
       ],
       build: g10GraphIneq
     },
+    {
+      id: 'g10-trig-ratios',
+      ver: 1,
+      grade: '10',
+      chapterNum: 5,
+      chapter: 'ជំពូកទី ៥ ៖ ផលធៀបត្រីកោណមាត្រ',
+      lessonNum: 1,
+      lesson: 'មេរៀនទី ១ ៖ ផលធៀបត្រីកោណមាត្រ',
+      name: 'ថ្នាក់ទី១០ · ជំពូក៥ មេរៀនទី១ ផលធៀបត្រីកោណមាត្រ (២៦ ស្លាយ)',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. និយមន័យផលធៀប sin, cos, tan', slide: 3 },
+        { title: '២. មុំពិសេស 30°, 45°, 60°', slide: 4 },
+        { title: '៣. ទំនាក់ទំនងគ្រឹះ & មុំបំពេញ', slide: 5 },
+        { title: '៤. ការពង្រីកដល់មុំទាល 180°-α', slide: 7 },
+        { title: 'លំហាត់គំរូ & PISA Test', slide: 15 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 20 }
+      ],
+      build: g10TrigRatios
+    },
+    {
+      id: 'g10-trig-apps',
+      ver: 1,
+      grade: '10',
+      chapterNum: 5,
+      chapter: 'ជំពូកទី ៥ ៖ ផលធៀបត្រីកោណមាត្រ',
+      lessonNum: 2,
+      lesson: 'មេរៀនទី ២ ៖ ការអនុវត្តផលធៀបត្រីកោណ',
+      name: 'ថ្នាក់ទី១០ · ជំពូក៥ មេរៀនទី២ ការអនុវត្តផលធៀបត្រីកោណ (២៦ ស្លាយ)',
+      sections: [
+        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
+        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
+        { title: '១. ទ្រឹស្តីបទស៊ីនុស & កាំ 2R', slide: 3 },
+        { title: '២. ទ្រឹស្តីបទកូស៊ីនុស', slide: 5 },
+        { title: '៣. ផ្ទៃក្រឡា & រូបមន្តហេរុង', slide: 7 },
+        { title: '៤. ការដោះស្រាយត្រីកោណទូទៅ', slide: 10 },
+        { title: 'លំហាត់គំរូ & PISA Test', slide: 15 },
+        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 20 }
+      ],
+      build: g10TrigApps
+    },
+
 
 
     {
