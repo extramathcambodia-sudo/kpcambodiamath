@@ -1664,8 +1664,8 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
-  <script src="static/js/slides.js?v=42"></script>
-  <script src="static/js/slides_templates.js?v=42"></script>
+  <script src="static/js/slides.js?v=44"></script>
+  <script src="static/js/slides_templates.js?v=44"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
@@ -1753,6 +1753,10 @@
     function getOptionKey(opt, idx) {
       if (typeof opt === 'object' && opt && opt.key) return opt.key;
       return ['ក', 'ខ', 'គ', 'ឃ'][idx] || '';
+    }
+
+    function escapeHtml(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
 
     function formatMathContent(str) {
@@ -2017,7 +2021,7 @@
       });
       if (g !== 'all') {
         currentGrade = g;
-        selectLessonGrade(g);
+        try { selectLessonGrade(g); } catch (err) { console.error('selectLessonGrade error:', err); }
         if (window.KPSlides && window.KPSlides.filterGrade) {
           window.KPSlides.filterGrade(g);
         }

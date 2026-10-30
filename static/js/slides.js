@@ -275,6 +275,7 @@
       });
       var d = t.build(window.KPSlides.api);
       d.id = uid(); d.tpl = t.id; d.updated = d.seededAt = Date.now();
+      if (t.grade) d.grade = t.grade;
       if (t.chapter) d.chapter = t.chapter;
       if (t.chapterNum != null) d.chapterNum = t.chapterNum;
       if (t.lesson) d.lesson = t.lesson;
@@ -371,6 +372,10 @@
     if (d.school2 == null) d.school2 = 'Cambodian Mathematics';
     if (d.teacher == null) d.teacher = 'បង្រៀនដោយ លោកគ្រូ ...';
     if (d.school3 == null) d.school3 = '';
+    if (!d.grade && d.name) {
+      var gm = d.name.match(/ថ្នាក់ទី\s*([១២៣៤៥៦៧៨៩០\d]+)/);
+      if (gm) d.grade = String(parseKhmerNum(gm[1]));
+    }
     // Auto-detect Chapter and Lesson if not specified
     if (!d.chapter) {
       var n = d.name || '';
@@ -1370,7 +1375,9 @@
     reloadTemplates: reloadTemplates,
     filterGrade: function (g) {
       if (!S.store || !S.store.decks) return;
-      if (new URLSearchParams(location.search).get('deck')) return;
+      if (window.history && history.replaceState && location.search) {
+        try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
+      }
       var gStr = String(g);
       var gKh = kh(g);
       if (S.deck) {
@@ -1384,13 +1391,34 @@
       for (var i = 0; i < keys.length; i++) {
         var d = S.store.decks[keys[i]];
         var n = (d.name || '') + ' ' + (d.tpl || '');
-        if (n.indexOf('g' + gStr) !== -1 || n.indexOf('ថ្នាក់ទី' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី ' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី' + gStr) !== -1) {
+        if (d.grade === gStr || n.indexOf('g' + gStr) !== -1 || n.indexOf('ថ្នាក់ទី' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី ' + gKh) !== -1 || n.indexOf('ថ្នាក់ទី' + gStr) !== -1) {
           match = d;
           break;
         }
       }
-      if (match && (!S.deck || S.deck.id !== match.id)) {
+      if (!match && window.KPSlideTemplates) {
+        for (var j = 0; j < window.KPSlideTemplates.length; j++) {
+          var t = window.KPSlideTemplates[j];
+          if (t.grade === gStr || t.id.indexOf('g' + gStr) !== -1) {
+            var newD = t.build(window.KPSlides.api);
+            newD.id = uid(); newD.tpl = t.id; newD.updated = newD.seededAt = Date.now();
+            if (t.grade) newD.grade = t.grade;
+            if (t.chapter) newD.chapter = t.chapter;
+            if (t.chapterNum != null) newD.chapterNum = t.chapterNum;
+            if (t.lesson) newD.lesson = t.lesson;
+            if (t.lessonNum != null) newD.lessonNum = t.lessonNum;
+            if (t.sections) newD.sections = t.sections;
+            deckDefaults(newD);
+            S.store.decks[newD.id] = newD;
+            if (S.store.seeded) S.store.seeded[t.id] = t.ver;
+            match = newD;
+            break;
+          }
+        }
+      }
+      if (match) {
         switchDeck(match.id);
+        if (root) syncRibbon();
         renderAll();
       }
     },

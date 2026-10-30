@@ -6788,6 +6788,11 @@ $$= (x^2 - 2x + 1)(x^2 + 2x + 1) = (x - 1)^2 (x + 1)^2$$`),
 
     return {
       name: 'ថ្នាក់ទី១០ · ជំពូក១ មេរៀនទី១ ពហុធា (២២ ស្លាយ)',
+      grade: '10',
+      chapterNum: 1,
+      chapter: 'ជំពូកទី ១ ៖ ពហុធា',
+      lessonNum: 1,
+      lesson: 'មេរៀនទី ១ ៖ ពហុធា',
       theme: 'school',
       school: K.info.school,
       school2: K.info.school2,
@@ -7125,6 +7130,11 @@ $$= rac{2x - 2}{(x - 1)(x + 1)} = rac{2(x - 1)}{(x - 1)(x + 1)} = rac{2}{x + 
 
     return {
       name: 'ថ្នាក់ទី១០ · ជំពូក១ មេរៀនទី២ ប្រមាណវិធីចែកពហុធា (២២ ស្លាយ)',
+      grade: '10',
+      chapterNum: 1,
+      chapter: 'ជំពូកទី ១ ៖ ពហុធា',
+      lessonNum: 2,
+      lesson: 'មេរៀនទី ២ ៖ ប្រមាណវិធីចែកពហុធា',
       theme: 'school',
       school: K.info.school,
       school2: K.info.school2,
