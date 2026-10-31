@@ -320,6 +320,24 @@
     tpls.forEach(function (t) {
       if (!t.id) return;
       var hasDeck = Object.keys(S.store.decks).some(function (k) { return S.store.decks[k].tpl === t.id; });
+      if (hasDeck) {
+        // ALWAYS update chapter, part, track, lesson, name on existing decks to guarantee
+        // that localStorage stays 100% in sync with the official textbook curriculum!
+        Object.keys(S.store.decks).forEach(function (k) {
+          var o = S.store.decks[k];
+          if (o.tpl === t.id) {
+            if (t.grade) o.grade = t.grade;
+            if (t.chapter) o.chapter = t.chapter;
+            if (t.chapterNum != null) o.chapterNum = t.chapterNum;
+            if (t.lesson) o.lesson = t.lesson;
+            if (t.lessonNum != null) o.lessonNum = t.lessonNum;
+            if (t.track) o.track = t.track;
+            if (t.part) o.part = t.part;
+            if (t.trackName) o.trackName = t.trackName;
+            if (t.name && (seeded[t.id] !== t.ver || o.updated === o.seededAt)) o.name = t.name;
+          }
+        });
+      }
       if (hasDeck && seeded[t.id] === t.ver) return;
       Object.keys(S.store.decks).forEach(function (k) {
         var o = S.store.decks[k];
@@ -334,6 +352,9 @@
       if (t.lesson) d.lesson = t.lesson;
       if (t.lessonNum != null) d.lessonNum = t.lessonNum;
       if (t.sections) d.sections = t.sections;
+      if (t.track) d.track = t.track;
+      if (t.part) d.part = t.part;
+      if (t.trackName) d.trackName = t.trackName;
       deckDefaults(d);
       S.store.decks[d.id] = d;
       seeded[t.id] = t.ver;

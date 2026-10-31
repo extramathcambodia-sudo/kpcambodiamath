@@ -50705,7 +50705,7 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
     },
     {
       id: 'g11-limits',
-      ver: 3,
+      ver: 20,
       grade: '11',
       track: 'science',
       part: 'sc2',
@@ -50728,7 +50728,7 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
     },
     {
       id: 'g11-derivatives',
-      ver: 4,
+      ver: 20,
       grade: '11',
       track: 'science',
       part: 'sc2',
@@ -50751,7 +50751,7 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
     },
     {
       id: 'g11-sc-l19',
-      ver: 2,
+      ver: 20,
       grade: '11',
       track: 'science',
       part: 'sc2',
@@ -50774,7 +50774,7 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
     },
     {
       id: 'g11-sc-l20',
-      ver: 2,
+      ver: 20,
       grade: '11',
       track: 'science',
       part: 'sc2',
@@ -50921,7 +50921,7 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
     },
     {
       id: 'g11-sc-l26',
-      ver: 1,
+      ver: 20,
       grade: '11',
       track: 'science',
       part: 'sc2',
@@ -50947,7 +50947,7 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
     },
     {
       id: 'g11-sc-l27',
-      ver: 1,
+      ver: 20,
       grade: '11',
       track: 'science',
       part: 'sc2',
@@ -50973,7 +50973,7 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
     },
     {
       id: 'g11-sc-l28',
-      ver: 1,
+      ver: 20,
       grade: '11',
       track: 'science',
       part: 'sc2',
