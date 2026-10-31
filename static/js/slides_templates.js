@@ -2560,11 +2560,11 @@ $1,\ 4,\ 9,\ 16,\ 25,\ \ldots$`, [R`$a_n = 2n$`, R`$a_n = 2n^2$`, R`$a_n = n^2$`
 
       /* 43 */ S.thanks()
     ];
-    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី១ ស៊ីតចំនួនពិត', theme: 'school', school: info.school, school2: info.school2, school3: info.school3,
+    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី១ ស្វ៊ីតចំនួនពិត', theme: 'school', school: info.school, school2: info.school2, school3: info.school3,
              teacher: info.teacher, slides: slides };
   }
 
-  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី២ ស៊ីតនព្វន្ត — follows the teacher's sample deck page by page
+  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី២ ស្វ៊ីតនព្វន្ត — follows the teacher's sample deck page by page
   function arithmetic(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
         title = K.title, tip = K.tip, card = K.card, chain = K.chain, hops = K.hops, bars = K.bars, rows = K.rows;
@@ -3036,11 +3036,11 @@ $S_n = \dfrac{n}{2}[2a_1 + (n - 1)d]$`, { size: 18, border: '#adb5bd', align: 'c
 
       /* 39 */ S.thanks()
     ];
-    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី២ ស៊ីតនព្វន្ត', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
+    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី២ ស្វ៊ីតនព្វន្ត', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
              teacher: K.info.teacher, slides: slides };
   }
 
-  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៣ ស៊ីតធរណីមាត្រ — follows the teacher's sample deck page by page
+  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៣ ស្វ៊ីតធរណីមាត្រ — follows the teacher's sample deck page by page
   function geometric(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
         title = K.title, tip = K.tip, chain = K.chain, bars = K.bars;
@@ -3094,7 +3094,7 @@ $6 = 2 \times 3,\ \ 18 = 6 \times 3,\ \ 54 = 18 \times 3,\ \ 162 = 54 \times 3$
 ស៊ីតបែបនេះ ហៅថា !!ស៊ីតធរណីមាត្រ!! ។`, { size: 28, anim: true })])),
 
       /* 6 definition */ page([
-        title('មេរៀនទី ៣ ៖ ស៊ីតធរណីមាត្រ', { x: 80, size: 38, color: 'title' }),
+        title('មេរៀនទី ៣ ៖ ស្វ៊ីតធរណីមាត្រ', { x: 80, size: 38, color: 'title' }),
         sec('១. និយមន័យស៊ីតធរណីមាត្រ', 152),
         line(80, 215, 1000, R`!!__ឧទាហរណ៍ ១ ៖__!!   គេមានស៊ីត  $2,\ 6,\ 18,\ 54,\ 162,\ \ldots$`, { size: 28 }),
         step(200, 268, 480, R`$a_1 = 2$`, { size: 26, h: 44 }),
@@ -3515,11 +3515,11 @@ $16 + 8 + 4 + 2 + \ldots$`, [R`$S = 30$`, R`$S = 32$`, R`$S = 34$`, R`$S = 64$`]
 
       /* 40 */ S.thanks()
     ];
-    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៣ ស៊ីតធរណីមាត្រ', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
+    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៣ ស្វ៊ីតធរណីមាត្រ', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
              teacher: K.info.teacher, slides: slides };
   }
 
-  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៤ ផលបូកតួនៃស៊ីតផ្សេងៗ — content from the lesson page (book pages 24–35)
+  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៤ ផលបូកតួនៃស្វ៊ីតផ្សេងៗ — content from the lesson page (book pages 24–35)
   function sums(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
         title = K.title, tip = K.tip, card = K.card, rows = K.rows;
@@ -3980,11 +3980,11 @@ $a_6 = 36 - 6 + 1 = 31$ ✓`, { size: 22, anim: true })
 
       /* 47 */ S.thanks()
     ];
-    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៤ ផលបូកតួនៃស៊ីតផ្សេងៗ', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
+    return { name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៤ ផលបូកតួនៃស្វ៊ីតផ្សេងៗ', theme: 'school', school: K.info.school, school2: K.info.school2, school3: K.info.school3,
              teacher: K.info.teacher, slides: slides };
   }
 
-  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៥ ទំនាក់ទំនងតួនៃស៊ីត — book pages 36–43
+  // ថ្នាក់ទី១១ ជំពូកទី១ មេរៀនទី៥ ទំនាក់ទំនងតួនៃស្វ៊ីត — book pages 36–43
   function recurrence(A) {
     var K = kit(A), T = K.T, shape = K.shape, page = K.page, S = K.S, kids = K.kids, line = K.line, step = K.step,
         title = K.title, tip = K.tip, card = K.card, rows = K.rows;
@@ -4255,12 +4255,12 @@ $$\begin{cases} a_{n+2} - \alpha a_{n+1} = \beta(a_{n+1} - \alpha a_n)\\ a_{n+2}
     ];
 
     return {
-      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៥ ទំនាក់ទំនងតួនៃស៊ីត',
+      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៥ ទំនាក់ទំនងតួនៃស្វ៊ីត',
       grade: '11',
       chapterNum: 1,
       chapter: 'ជំពូកទី ១ ៖ ស៊ីត និងអនុមានរួមគណិតវិទ្យា',
       lessonNum: 5,
-      lesson: 'មេរៀនទី ៥ ៖ ទំនាក់ទំនងតួនៃស៊ីត',
+      lesson: 'មេរៀនទី ៥ ៖ ទំនាក់ទំនងតួនៃស្វ៊ីត',
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'វត្ថុបំណងមេរៀន', slide: 2 },
@@ -50318,8 +50318,8 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
       chapterNum: 1,
       chapter: 'វិទ្យាសាស្ត្រភាគ១ · ជំពូកទី 1 ៖ ស្វ៊ីតនិងអនុមានរួមគណិតវិទ្យា',
       lessonNum: 1,
-      lesson: 'មេរៀនទី ១ ៖ ស៊ីតចំនួនពិត',
-      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី១ ស៊ីតចំនួនពិត (៤៣ ស្លាយ)',
+      lesson: 'មេរៀនទី ១ ៖ ស្វ៊ីតចំនួនពិត',
+      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី១ ស្វ៊ីតចំនួនពិត (៤៣ ស្លាយ)',
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'វត្ថុបំណងមេរៀន', slide: 2 },
@@ -50341,8 +50341,8 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
       chapterNum: 1,
       chapter: 'វិទ្យាសាស្ត្រភាគ១ · ជំពូកទី 1 ៖ ស្វ៊ីតនិងអនុមានរួមគណិតវិទ្យា',
       lessonNum: 2,
-      lesson: 'មេរៀនទី ២ ៖ ស៊ីតនព្វន្ត',
-      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី២ ស៊ីតនព្វន្ត (៣៩ ស្លាយ)',
+      lesson: 'មេរៀនទី ២ ៖ ស្វ៊ីតនព្វន្ត',
+      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី២ ស្វ៊ីតនព្វន្ត (៣៩ ស្លាយ)',
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'វត្ថុបំណងមេរៀន', slide: 2 },
@@ -50365,8 +50365,8 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
       chapterNum: 1,
       chapter: 'វិទ្យាសាស្ត្រភាគ១ · ជំពូកទី 1 ៖ ស្វ៊ីតនិងអនុមានរួមគណិតវិទ្យា',
       lessonNum: 3,
-      lesson: 'មេរៀនទី ៣ ៖ ស៊ីតធរណីមាត្រ',
-      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៣ ស៊ីតធរណីមាត្រ (៤០ ស្លាយ)',
+      lesson: 'មេរៀនទី ៣ ៖ ស្វ៊ីតធរណីមាត្រ',
+      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៣ ស្វ៊ីតធរណីមាត្រ (៤០ ស្លាយ)',
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'វត្ថុបំណងមេរៀន', slide: 2 },
@@ -50389,8 +50389,8 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
       chapterNum: 1,
       chapter: 'វិទ្យាសាស្ត្រភាគ១ · ជំពូកទី 1 ៖ ស្វ៊ីតនិងអនុមានរួមគណិតវិទ្យា',
       lessonNum: 4,
-      lesson: 'មេរៀនទី ៤ ៖ ផលបូកតួនៃស៊ីតផ្សេងៗ',
-      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៤ ផលបូកតួនៃស៊ីតផ្សេងៗ (៤៧ ស្លាយ)',
+      lesson: 'មេរៀនទី ៤ ៖ ផលបូកតួនៃស្វ៊ីតផ្សេងៗ',
+      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៤ ផលបូកតួនៃស្វ៊ីតផ្សេងៗ (៤៧ ស្លាយ)',
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'វត្ថុបំណងមេរៀន', slide: 2 },
@@ -50412,8 +50412,8 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
       chapterNum: 1,
       chapter: 'វិទ្យាសាស្ត្រភាគ១ · ជំពូកទី 1 ៖ ស្វ៊ីតនិងអនុមានរួមគណិតវិទ្យា',
       lessonNum: 5,
-      lesson: 'មេរៀនទី ៥ ៖ ទំនាក់ទំនងតួនៃស៊ីត',
-      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៥ ទំនាក់ទំនងតួនៃស៊ីត (៣២ ស្លាយ)',
+      lesson: 'មេរៀនទី ៥ ៖ ទំនាក់ទំនងតួនៃស្វ៊ីត',
+      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · មេរៀនទី៥ ទំនាក់ទំនងតួនៃស្វ៊ីត (៣២ ស្លាយ)',
       sections: [
         { title: 'ក្របមេរៀន (Cover)', slide: 0 },
         { title: 'វត្ថុបំណងមេរៀន', slide: 2 },
@@ -50612,26 +50612,6 @@ $$C(-2, 3) \quad \text{និង} \quad D(4, -5)$$
         { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 13 }
       ],
       build: trigAdvancedEq
-    },
-    {
-      id: 'g11-trig',
-      ver: 6,
-      grade: '11',
-      track: 'science',
-      part: 'sc1',
-      trackName: 'វិទ្យាសាស្ត្រភាគ១',
-      chapterNum: 3,
-      chapter: 'វិទ្យាសាស្ត្រភាគ១ · ជំពូកទី 3 ៖ អនុគមន៍ត្រីកោណមាត្រ',
-      lessonNum: 4,
-      lesson: 'មេរៀនទី ៤ ៖ សមីការនិងវិសមីការត្រីកោណមាត្រ (ចាស់)',
-      name: 'ថ្នាក់ទី១១ (វិទ្យាសាស្ត្រភាគ១) · ជំពូក៣ សមីការនិងវិសមីការត្រីកោណមាត្រ',
-      sections: [
-        { title: 'ក្របមេរៀន (Cover)', slide: 0 },
-        { title: 'មាតិកា & វត្ថុបំណង', slide: 1 },
-        { title: '១. សមីការត្រីកោណមាត្រគ្រឹះ', slide: 3 },
-        { title: 'សង្ខេប MCQ & កិច្ចការផ្ទះ', slide: 14 }
-      ],
-      build: trigBasicEq
     },
     {
       id: 'g11-matrices',

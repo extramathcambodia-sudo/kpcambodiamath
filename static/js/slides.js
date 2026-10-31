@@ -317,6 +317,26 @@
   function seedTemplates() {
     var seeded = S.store.seeded || (S.store.seeded = {}), first = null;
     var tpls = window.KPSlideTemplates || [];
+
+    // Clean up legacy deprecated templates and ensure Chapter 5 is strictly sc2
+    Object.keys(S.store.decks).forEach(function (k) {
+      var d = S.store.decks[k];
+      if (!d) return;
+      if (d.tpl === 'g11-trig') {
+        delete S.store.decks[k];
+        return;
+      }
+      if ((d.grade === '11' || (d.id && d.id.indexOf('g11') === 0)) && d.chapterNum === 5 && d.part !== 'ss') {
+        d.part = 'sc2';
+        d.track = 'science';
+        d.trackName = 'វិទ្យាសាស្ត្រភាគ២';
+        d.chapter = 'វិទ្យាសាស្ត្រភាគ២ · ជំពូកទី 5 ៖ លីមីតនិងដេរីវេ';
+        if (d.name && d.name.indexOf('វិទ្យាសាស្ត្រភាគ១') !== -1) {
+          d.name = d.name.replace('វិទ្យាសាស្ត្រភាគ១', 'វិទ្យាសាស្ត្រភាគ២');
+        }
+      }
+    });
+
     tpls.forEach(function (t) {
       if (!t.id) return;
       var hasDeck = Object.keys(S.store.decks).some(function (k) { return S.store.decks[k].tpl === t.id; });
@@ -334,7 +354,8 @@
             if (t.track) o.track = t.track;
             if (t.part) o.part = t.part;
             if (t.trackName) o.trackName = t.trackName;
-            if (t.name && (seeded[t.id] !== t.ver || o.updated === o.seededAt)) o.name = t.name;
+            if (t.name) o.name = t.name;
+            if (t.sections) o.sections = t.sections;
           }
         });
       }
@@ -355,6 +376,7 @@
       if (t.track) d.track = t.track;
       if (t.part) d.part = t.part;
       if (t.trackName) d.trackName = t.trackName;
+      if (t.name) d.name = t.name;
       deckDefaults(d);
       S.store.decks[d.id] = d;
       seeded[t.id] = t.ver;
@@ -1023,8 +1045,56 @@
         }
       }
 
+      // If active deck does not match current grade/track filter, auto-switch to first valid deck!
       if (S.deck && deckKeys.indexOf(S.deck.id) === -1) {
-        deckKeys.unshift(S.deck.id);
+        if (deckKeys.length > 0) {
+          S.deck = S.store.decks[deckKeys[0]];
+          S.store.current = S.deck.id;
+          S.cur = 0;
+          renderAll();
+          return;
+        } else {
+          deckKeys.unshift(S.deck.id);
+        }
+      }
+
+      function getPartWeight(d) {
+        var part = d.part || '';
+        if (part === 'sc1') return 1000;
+        if (part === 'sc2') return 2000;
+        if (part === 'ss') return 3000;
+        var s = (d.chapter || '') + ' ' + (d.name || '');
+        if (s.indexOf('វិទ្យាសាស្ត្រភាគ១') !== -1 || s.indexOf('ភាគ១') !== -1 || s.indexOf('ភាគ 1') !== -1) return 1000;
+        if (s.indexOf('វិទ្យាសាស្ត្រភាគ២') !== -1 || s.indexOf('ភាគ២') !== -1 || s.indexOf('ភាគ 2') !== -1) return 2000;
+        if (s.indexOf('វិទ្យាសាស្ត្រសង្គម') !== -1 || s.indexOf('សង្គម') !== -1) return 3000;
+        return 4000;
+      }
+
+      function getCleanLessonTitle(d) {
+        var s = d.lessonTitle || '';
+        if (!s && d.lesson) {
+          var parts = d.lesson.split('៖');
+          if (parts.length > 1) s = parts.slice(1).join('៖').trim();
+          else s = d.lesson.trim();
+        }
+        if (!s && d.name) {
+          s = d.name;
+          s = s.replace(/\s*\([\d០-៩]+\s*ស្លាយ\)/, '');
+          s = s.replace(/^ថ្នាក់ទី\s*[\d០-៩]+(?:\s*\([^)]+\))?\s*[·:\-]?\s*/, '');
+          s = s.replace(/^ជំពូក\s*[\d០-៩]+\s*[·:\-]?\s*/, '');
+          s = s.replace(/^មេរៀនទី\s*[\d០-៩]+\s*[·:\-]?\s*/, '');
+          s = s.trim();
+        }
+        return s || d.name || 'មេរៀន';
+      }
+
+      function getSlideCount(d) {
+        if (d.slides && d.slides.length) return d.slides.length;
+        if (d.name) {
+          var m = d.name.match(/\(([\d០-៩]+)\s*ស្លាយ\)/);
+          if (m) return m[1];
+        }
+        return 0;
       }
 
       var groups = {};
@@ -1032,31 +1102,80 @@
       deckKeys.forEach(function (k) {
         var d = S.store.decks[k];
         deckDefaults(d);
+        var pWeight = getPartWeight(d);
+        var chNum = (d.chapterNum != null ? d.chapterNum : 99);
         var ch = d.chapter || 'បទបង្ហាញផ្សេងៗ';
-        if (!groups[ch]) {
-          groups[ch] = { name: ch, order: (d.chapterNum != null ? d.chapterNum : 99), decks: [] };
-          chapterKeys.push(ch);
+        // Unique group key: book weight + chapter
+        var grpId = pWeight + '___' + ch;
+
+        if (!groups[grpId]) {
+          var grpOrder = pWeight + chNum;
+          var label = ch;
+
+          if (activeG === '11') {
+            var prefix = '';
+            if (pWeight === 1000) prefix = '📗 វិទ្យាសាស្ត្រភាគ១ · ';
+            else if (pWeight === 2000) prefix = '📘 វិទ្យាសាស្ត្រភាគ២ · ';
+            else if (pWeight === 3000) prefix = '📙 វិទ្យាសាស្ត្រសង្គម · ';
+
+            var chClean = ch.replace(/^វិទ្យាសាស្ត្រភាគ[១២12]\s*·\s*/, '')
+                            .replace(/^វិទ្យាសាស្ត្រសង្គម\s*·\s*/, '');
+            if (S.activeG11Part && S.activeG11Part !== 'all') {
+              label = chClean;
+            } else {
+              label = prefix + chClean;
+            }
+          }
+
+          groups[grpId] = {
+            id: grpId,
+            name: label,
+            order: grpOrder,
+            decks: []
+          };
+          chapterKeys.push(grpId);
         }
-        groups[ch].decks.push(d);
+        groups[grpId].decks.push(d);
       });
 
       chapterKeys.sort(function (a, b) {
         if (groups[a].order !== groups[b].order) return groups[a].order - groups[b].order;
-        return a.localeCompare(b, 'km');
+        return groups[a].name.localeCompare(groups[b].name, 'km');
       });
 
       var opts = '';
-      chapterKeys.forEach(function (chKey) {
-        var grp = groups[chKey];
+      chapterKeys.forEach(function (grpId) {
+        var grp = groups[grpId];
         grp.decks.sort(function (a, b) {
           if (a.lessonNum != null && b.lessonNum != null && a.lessonNum !== b.lessonNum) {
             return a.lessonNum - b.lessonNum;
           }
           return (a.name || '').localeCompare(b.name || '', 'km');
         });
+
         opts += '<optgroup label="' + esc(grp.name) + '">';
         grp.decks.forEach(function (d) {
-          opts += '<option value="' + d.id + '"' + (d.id === S.deck.id ? ' selected' : '') + '>' + esc(d.name) + '</option>';
+          var sel = (d.id === S.deck.id ? ' selected' : '');
+          var cTitle = getCleanLessonTitle(d);
+          var sCount = getSlideCount(d);
+          var countStr = sCount ? ' (' + kh(sCount) + ' ស្លាយ)' : '';
+
+          var optText = '';
+          if (activeG === '11') {
+            var pw = getPartWeight(d);
+            var bTag = '';
+            if (!S.activeG11Part || S.activeG11Part === 'all') {
+              if (pw === 1000) bTag = '[ភាគ១] ';
+              else if (pw === 2000) bTag = '[ភាគ២] ';
+              else if (pw === 3000) bTag = '[សង្គម] ';
+            }
+            var chTag = (d.chapterNum != null) ? 'ជំពូក' + kh(d.chapterNum) + ' · ' : '';
+            var lesTag = (d.lessonNum != null) ? 'មេរៀនទី' + kh(d.lessonNum) + ' ៖ ' : '';
+            optText = bTag + chTag + lesTag + cTitle + countStr;
+          } else {
+            optText = d.name;
+          }
+          opts += '<option value="' + d.id + '"' + sel + '>' + esc(optText) + '</option>';
         });
         opts += '</optgroup>';
       });
@@ -1307,6 +1426,14 @@
 
   function setG11Track(part) {
     S.activeG11Part = part || 'all';
+    window.currentG11Track = S.activeG11Part;
+    var btnText = document.getElementById('g11-btn-text');
+    if (btnText) {
+      if (part === 'sc1') btnText.textContent = '១១ · វិទ្យាសាស្ត្រភាគ១';
+      else if (part === 'sc2') btnText.textContent = '១១ · វិទ្យាសាស្ត្រភាគ២';
+      else if (part === 'ss') btnText.textContent = '១១ · វិទ្យាសាស្ត្រសង្គម';
+      else btnText.textContent = 'ថ្នាក់ទី ១១';
+    }
     var activeG = getActiveGrade();
     if (activeG === '11' && part && part !== 'all') {
       var curPart = S.deck ? S.deck.part : '';
