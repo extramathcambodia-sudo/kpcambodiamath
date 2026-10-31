@@ -30,9 +30,24 @@
     var kind = sl.kind || 'content';
     if (sl.plain || kind === 'cover') return '';
     var n = idx + 1, left = (kind === 'content' || kind === 'toc') ? 23 : kind === 'thanks' ? 28 : 48, top = kind === 'thanks' ? 3 : -9;
-    return '<div class="sl-deco sl-hdr" style="left:' + left + 'px;top:' + top + 'px">' + schoolName(deck) + '</div>' +
+    return (kind === 'goal' && deck.grade !== '11' ? bookCover(deck.grade) : '') +
+      '<div class="sl-deco sl-hdr" style="left:' + left + 'px;top:' + top + 'px">' + schoolName(deck) + '</div>' +
       (kind === 'thanks' ? '' : '<div class="sl-deco sl-badge">' + (n < 10 ? '0' : '') + n + '</div>') +
       '<div class="sl-deco sl-ftr">' + esc(deck.teacher || '') + '</div>';
+  }
+  // bg-goal.jpg has the grade 11 textbook baked in; other grades get bg-goal-blank.jpg plus a cover drawn for their grade
+  var BOOK_COLORS = { '7': ['#fde68a', '#f59e0b'], '8': ['#bfdbfe', '#3b82f6'], '9': ['#fecaca', '#ef4444'], '10': ['#ddd6fe', '#8b5cf6'] };
+  function goalImage(deck) { return deck.grade === '11' ? 'bg-goal' : 'bg-goal-blank'; }
+  function bookCover(grade) {
+    var c = BOOK_COLORS[grade] || ['#bbf7d0', '#22c55e'];
+    return '<div class="sl-deco sl-book" style="background:linear-gradient(160deg,' + c[0] + ',#ffffff 55%,' + c[0] + ')">' +
+      '<div class="sl-book-min">ក្រសួងអប់រំ យុវជន និងកីឡា</div>' +
+      '<div class="sl-book-title">គណិតវិទ្យា</div>' +
+      (grade ? '<div class="sl-book-grade" style="border-color:' + c[1] + '">ថ្នាក់ទី<b style="color:' + c[1] + '">' + kh(grade) + '</b></div>' : '') +
+      '<svg class="sl-book-art" viewBox="0 0 200 120"><path d="M10 100H190M30 115V8" stroke="#334155" stroke-width="2"/>' +
+      '<path d="M30 100Q80 10 120 60T190 20" fill="none" stroke="' + c[1] + '" stroke-width="3"/>' +
+      '<path d="M30 90L180 30" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4"/></svg>' +
+      '<div class="sl-book-foot">គ្រឹះស្ថានបោះពុម្ព និងចែកផ្សាយ</div></div>';
   }
   function schoolName(d) {
     return '<span style="color:#002060">' + esc(d.school || '') + '</span> <span style="color:#f68c1f">' + esc(d.school2 || '') + '</span>' +
@@ -222,7 +237,7 @@
     var t = th();
     st.innerHTML = '';
     st.style.background = sl.bg || t.bg;
-    if (t.images && !sl.bg && !sl.plain) st.style.background = 'url("' + SCHOOL_IMG + (t.images[sl.kind] || t.images.content) + '.jpg") center / 100% 100% no-repeat, ' + t.bg;
+    if (t.images && !sl.bg && !sl.plain) st.style.background = 'url("' + SCHOOL_IMG + (sl.kind === 'goal' ? goalImage(S.deck) : t.images[sl.kind] || t.images.content) + '.jpg") center / 100% 100% no-repeat, ' + t.bg;
     st.style.fontFamily = t.bodyFont || '';
     st.style.setProperty('--sl-accent', t.accent);
     st.style.setProperty('--sl-brand', t.brand || t.accent);
