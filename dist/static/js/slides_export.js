@@ -43,6 +43,64 @@
   function shot(node, scale, bg) {
     return window.html2canvas(node, { scale: scale, backgroundColor: bg, useCORS: true, logging: false });
   }
+  // Draw a node with the browser's own layout engine: the node + the page's CSS (fonts embedded as data URLs)
+  // inside an SVG <foreignObject>. Both html2canvas and html-to-image misplace KaTeX fractions; this does not.
+  var FONT_FAMILIES = /KaTeX|Battambang|Kantumruy|Koulen|Montserrat/;
+  var cssPromise;
+  function dataURL(url) {
+    return fetch(url).then(function (r) { return r.blob(); }).then(function (b) {
+      return new Promise(function (ok) { var fr = new FileReader(); fr.onload = function () { ok(fr.result); }; fr.readAsDataURL(b); });
+    }).catch(function () { return null; });
+  }
+  function pageCSS() {
+    if (cssPromise) return cssPromise;
+    var texts = Array.prototype.map.call(document.styleSheets, function (sh) {
+      var base = sh.href || location.href;
+      var rules = null;
+      try { rules = sh.cssRules; } catch (e) { rules = null; }      // cross-origin sheet (Google Fonts): fetch it
+      var got = rules ? Promise.resolve(Array.prototype.map.call(rules, function (r) { return r.cssText; }).join('\n'))
+                      : fetch(sh.href).then(function (r) { return r.text(); }).catch(function () { return ''; });
+      return got.then(function (css) {
+        return css.replace(/url\(\s*(['"]?)([^'")]+)\1\s*\)/g, function (m, q, u) {
+          return /^(data:|#)/.test(u) ? m : 'url("' + new URL(u, base).href + '")';
+        });
+      });
+    });
+    cssPromise = Promise.all(texts).then(function (parts) {
+      var css = parts.join('\n'), jobs = [];
+      // keep only the @font-face blocks the slides use, with their files inlined
+      css = css.replace(/@font-face\s*\{[^}]*\}/g, function (block) {
+        if (!FONT_FAMILIES.test(block)) return '';
+        var key = '\u0001' + jobs.length + '\u0001';
+        var u = /url\("([^"]+\.(?:woff2|woff|ttf|otf)[^"]*)"\)/.exec(block) || /url\("([^"]+)"\)/.exec(block);
+        jobs.push(u ? dataURL(u[1]).then(function (d) {
+          return d ? block.split(u[1]).join(d).replace(/,?\s*url\("(?!data:)[^"]*"\)\s*(format\([^)]*\))?/g, '') : '';
+        }) : Promise.resolve(block));
+        return key;
+      });
+      return Promise.all(jobs).then(function (done) {
+        return css.replace(/\u0001(\d+)\u0001/g, function (m, k) { return done[+k]; })
+                  .replace(/url\("(?!data:)[^"]*"\)/g, 'none');              // other pictures are not needed in maths passes
+      });
+    });
+    return cssPromise;
+  }
+  function drawDom(node, w, h, scale) {
+    return pageCSS().then(function (css) {
+      var html = new XMLSerializer().serializeToString(node);
+      var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w * scale + '" height="' + h * scale + '">' +
+        '<foreignObject x="0" y="0" width="' + w + '" height="' + h + '" transform="scale(' + scale + ')">' +
+        '<div xmlns="http://www.w3.org/1999/xhtml" style="width:' + w + 'px;height:' + h + 'px"><style><![CDATA[' + css.replace(/\]\]>/g, '') + ']]></style>' +
+        html + '</div></foreignObject></svg>';
+      var img = new Image();
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+      return img.decode().then(function () {
+        var c = document.createElement('canvas'); c.width = w * scale; c.height = h * scale;
+        c.getContext('2d').drawImage(img, 0, 0);
+        return c;
+      });
+    });
+  }
   function rectIn(node, st) {
     var a = node.getBoundingClientRect(), b = st.getBoundingClientRect();
     return { x: a.left - b.left, y: a.top - b.top, w: a.width, h: a.height };
@@ -126,10 +184,12 @@
           st.style.background = 'transparent';
           st.querySelectorAll('.sl-el:not(.sl-text), .sl-deco').forEach(function (x) { saved.els.push([x, x.style.visibility]); x.style.visibility = 'hidden'; });
           st.querySelectorAll('.sl-txt').forEach(function (x) { saved.els.push([x, x.style.cssText]); x.style.background = 'transparent'; x.style.borderColor = 'transparent'; x.style.textShadow = 'none'; });
-          return shot(st, 2, null).then(function (cv2) {
+          return drawDom(st, 1280, 720, 2).then(function (cv2) {
             rich.forEach(function (it) {
-              var r = rectIn(it.node, st), pad = 3;
-              var x = Math.max(0, r.x - pad), y = Math.max(0, r.y - pad), w = Math.min(1280 - x, r.w + 2 * pad), h = Math.min(720 - y, r.h + 2 * pad);
+              // fractions, underbraces and roots reach outside the line box; a neighbouring formula caught in the
+              // margin is cut from the same picture at the same place, so the overlap is invisible
+              var r = rectIn(it.node, st), pad = 4, vpad = Math.max(8, r.h * 0.18);
+              var x = Math.max(0, r.x - pad), y = Math.max(0, r.y - vpad), w = Math.min(1280 - x, r.w + 2 * pad), h = Math.min(720 - y, r.h + 2 * vpad);
               if (w < 2 || h < 2) return;
               var c = document.createElement('canvas'); c.width = Math.round(w * 2); c.height = Math.round(h * 2);
               c.getContext('2d').drawImage(cv2, x * 2, y * 2, w * 2, h * 2, 0, 0, c.width, c.height);
@@ -147,12 +207,16 @@
             if (!rs.some(function (r) { return r.text.replace(/\u00a0/g, ' ').trim(); })) return;
             var r = rectIn(it.node, st), cs = getComputedStyle(it.node);
             var fs = parseFloat(cs.fontSize), lh = parseFloat(cs.lineHeight) || fs * 1.25;
-            var w = Math.min(1280 - r.x, r.w * 1.06 + 8);
+            // Khmer OS fonts run wider than the web fonts: a line that fits on screen must not wrap into the next one
+            var oneLine = r.h < lh * 1.5, align = /center/.test(cs.textAlign) ? 'center' : /right|end/.test(cs.textAlign) ? 'right' : 'left';
+            var x = r.x, w = Math.min(1280 - r.x, r.w * 1.08 + 10);
+            if (it.node.classList.contains('sl-ftr')) { w = 640; x = r.x + r.w - w; align = 'right'; }
+            else if (it.deco) w = Math.max(w, 1280 - r.x - 140);
+            else if (align === 'center' && oneLine) { x = Math.max(0, r.x - r.w * 0.1); w = Math.min(1280 - x, r.w * 1.2); }
             slide.addText(rs, {
-              x: r.x / PX, y: r.y / PX, w: w / PX, h: Math.max(r.h, lh) / PX, margin: 0, valign: 'top',
-              align: /center/.test(cs.textAlign) ? 'center' : /right|end/.test(cs.textAlign) ? 'right' : 'left',
-              fontFace: it.head ? HEAD_FONT : BODY_FONT, fontSize: Math.round(fs * 0.75 * 2) / 2,
-              lineSpacing: Math.round(lh * 0.75), wrap: true, fit: 'none'
+              x: x / PX, y: (r.y + lh * 0.08) / PX, w: w / PX, h: Math.max(r.h, lh) / PX, margin: 0, valign: 'top', align: align,
+              fontFace: it.head ? HEAD_FONT : BODY_FONT, fontSize: Math.round(fs * 0.75 * (it.head ? 0.86 : 0.93) * 2) / 2,
+              lineSpacing: Math.round(lh * 0.75), wrap: !oneLine, fit: 'none'
             });
           });
           if (sl.notes) slide.addNotes(sl.notes);
@@ -256,17 +320,23 @@
         i = k; continue;
       }
       if (/^\s*-{3,}\s*$/.test(ln)) { flush(); closeLists(0); out.push('\\par\\noindent\\rule{\\linewidth}{0.4pt}\\par'); i++; continue; }
-      var bm = /^(\s*)(•|-|\*|[0-9០-៩]+[.)]|[ក-ឃ][.)])\s+(.*)$/.exec(ln);
-      if (bm && !/^\*\*/.test(ln.trim())) {
+      // a whole line in colour markers (table of contents "==១. …==") is still a numbered item
+      var wrapped = /^(\s*)(==|!!)(.+)\2\s*$/.exec(ln), probe = wrapped ? wrapped[1] + wrapped[3] : ln;
+      var bm = /^(\s*)(•|-|\*|[0-9០-៩]+[.)]|[ក-ឃ][.)])\s+(.*)$/.exec(probe);
+      if (bm && !/^\*\*/.test(probe.trim())) {
         flush();
-        var lvl = bm[1].length >= 2 ? 2 : 1;
+        var lvl = bm[1].length >= 2 && list.length ? 2 : 1;
         if (list.length > lvl) closeLists(lvl);
         while (list.length < lvl) { out.push('\\begin{itemize}'); list.push(lvl); }
         var lab = /^[•\-*]$/.test(bm[2]) ? '' : '[' + inlineTex(bm[2]) + ']';
-        out.push('\\item' + lab + ' ' + put(inlineTex(bm[3])));
+        var body = put(inlineTex(bm[3]));
+        if (wrapped) body = '\\textcolor{' + (wrapped[2] === '==' ? 'kporange' : 'kpred') + '}{' + body + '}';
+        out.push('\\item' + lab + ' ' + body);
         i++; continue;
       }
       if (!ln.trim()) { flush(); if (!list.length) out.push(''); i++; continue; }
+      // an indented line under a bullet (often a display formula) belongs to that bullet
+      if (list.length && /^\s+\S/.test(ln)) { out.push(put(inlineTex(ln.trim()))); i++; continue; }
       closeLists(0);
       para.push(put(inlineTex(ln)));
       i++;
@@ -291,6 +361,7 @@
     '% !TEX program = xelatex',
     '% KP Cambodian Mathematics — Beamer export. Compile with XeLaTeX (Overleaf: Menu → Compiler → XeLaTeX).',
     '\\documentclass[aspectratio=169,11pt]{beamer}',
+    '\\usefonttheme[onlymath]{serif}',
     '\\usepackage{fontspec}',
     '\\usepackage{amsmath,amssymb,mathtools,cancel,bm,graphicx,xcolor,array,adjustbox}',
     '\\IfFontExistsTF{Khmer OS Battambang}{\\setsansfont{Khmer OS Battambang}[Script=Khmer,AutoFakeBold=2]\\setmainfont{Khmer OS Battambang}[Script=Khmer,AutoFakeBold=2]}',
@@ -321,7 +392,7 @@
         var art = sl.els.filter(function (e) { return (e.type === 'shape' && e.svg) || e.type === 'image'; });
         // frame title: the display-font heading at the top of the slide
         var head = texts.filter(function (e) { return e.font === 'display' && e.y <= 160 && !e.fill && !e.border; })
-                        .sort(function (a, c) { return a.y - c.y; })[0];
+                        .sort(function (a, c) { return (c.size || 28) - (a.size || 28) || a.y - c.y; })[0];
         var body = texts.filter(function (e) { return e !== head && (e.size || 28) >= 14; });
         var pics = {};
         var draw = art.length ? (function () {
@@ -390,5 +461,5 @@
     }).catch(function (e) { b.done(); throw e; });
   }
 
-  var api = window.KPSlidesExport = { pptx: pptx, beamer: beamer, textTex: textTex };
+  var api = window.KPSlidesExport = { pptx: pptx, beamer: beamer, textTex: textTex, splitLines: splitLines };
 })();

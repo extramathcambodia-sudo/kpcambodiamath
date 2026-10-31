@@ -126,6 +126,7 @@
         while (j < lines.length && !FENCE_RE.test(lines[j])) j++;
         if (j < lines.length) { flush(); out.push('<pre class="sl-md-pre">' + lines.slice(i + 1, j).join('\n') + '</pre>'); i = j + 1; continue; }
       }
+      if (/^\s*-{3,}\s*$/.test(lines[i])) { flush(); out.push('<hr class="sl-md-hr">'); i++; if (i < lines.length && !lines[i].trim()) i++; continue; }
       if (ROW_RE.test(lines[i]) && i + 1 < lines.length && SEP_RE.test(lines[i + 1])) {
         var k = i + 2;
         while (k < lines.length && ROW_RE.test(lines[k])) k++;

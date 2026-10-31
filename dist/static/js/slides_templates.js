@@ -275,7 +275,11 @@
         }
 
         var cTitle = opt.title || opt.header || '';
-        var cBody = Array.isArray(opt.body) ? opt.body.join('\n\n') : (opt.body || opt.text || '');
+        // body lines are separate paragraphs, but rows of a "| a | b |" table must stay on consecutive lines
+        var cBody = Array.isArray(opt.body) ? opt.body.reduce(function (acc, ln, i, arr) {
+          var row = /^\s*\|/.test(ln) && i > 0 && /^\s*\|/.test(arr[i - 1]);
+          return i ? acc + (row ? '\n' : '\n\n') + ln : ln;
+        }, '') : (opt.body || opt.text || '');
         var sz = opt.size || 21;
         var clr = opt.color || '#002060';
         var bdr = '#c5d3e8';
