@@ -26,9 +26,11 @@ Both **Claude** and **Antigravity** collaborate on this single codebase:
    python build_dist.py
    ```
    This generates `dist/` and `dist.zip`.
-3. **Deploy to Netlify:**
-   * Netlify is configured to deploy automatically on `git push origin main`.
-   * Alternatively, drag the freshly generated `dist/` folder onto [Netlify Drop](https://app.netlify.com/drop).
+3. **Deploy to Cloudflare Pages (since 2026-10-31):**
+   * Live site: **https://kpcmath.pages.dev/** (Cloudflare Pages project `kpcmath`).
+   * Deploy only when the user asks, in batches: `python build_dist.py` then `wrangler pages deploy --branch main` from the project root (uploads `dist/` and `functions/`).
+   * `git push` does **not** deploy. The old Netlify site (`kpcmath.netlify.app`) is frozen: the free plan's 300 monthly credits were used up by auto-deploying on every push.
+   * AI teaching assistant: `ai-assistant.html` + `functions/api/ai.ts` (`/api/ai`). Secrets `ANTHROPIC_API_KEY` and `AI_ACCESS_CODE` are set on the Cloudflare project, never in the repo.
 
 ---
 
@@ -39,5 +41,5 @@ Both **Claude** and **Antigravity** collaborate on this single codebase:
 * **`static/js/slides_templates.js`:** Pre-built curriculum slide decks for Grade 11 (Sequences, Arithmetic Progression, Geometric Progression, Sum of Sequences, Recurrence Relations).
 * **`KPCambodianmathematics.html`:** Main platform portal and entry point.
 * **`build_dist.py`:** Packages the deployment bundle into `dist/`.
-* **`netlify.toml`:** Netlify hosting and cache configuration.
+* **`wrangler.toml`:** Cloudflare Pages configuration (`dist/` output, Functions compatibility). `netlify.toml` is kept only for the frozen Netlify site.
 

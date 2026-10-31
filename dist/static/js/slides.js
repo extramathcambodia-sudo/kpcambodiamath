@@ -751,6 +751,15 @@
             s = s.split(':'); return '<button class="sl-tab" data-tab="' + s[0] + '">' + s[1] + '</button>';
           }).join('') +
           '<div class="sl-tabs-r">' +
+          '<label class="sl-g11-track-label" id="sl-g11-track-wrap" style="display:none;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:600;">' +
+          '<span style="white-space:nowrap">📚 ផ្នែក៖</span>' +
+          '<select class="sl-sel-in sl-top-g11-track" title="ជ្រើសរើសផ្នែកថ្នាក់ទី១១" style="background:#ffffff;color:#002060;font-weight:700;font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid #ced4da;cursor:pointer;outline:none;">' +
+          '<option value="all">ថ្នាក់ទី១១ ទាំងអស់</option>' +
+          '<option value="sc1">វិទ្យាសាស្ត្រភាគ១</option>' +
+          '<option value="sc2">វិទ្យាសាស្ត្រភាគ២</option>' +
+          '<option value="ss">វិទ្យាសាស្ត្រសង្គម</option>' +
+          '</select>' +
+          '</label>' +
           '<label class="sl-deck-picker-label" style="display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:600;">' +
           '<span style="white-space:nowrap">📖 មេរៀន៖</span>' +
           '<select class="sl-sel-in sl-top-deck" data-prop="deck" title="ជ្រើសរើសជំពូក និងមេរៀន" style="background:#ffffff;color:#002060;font-weight:700;font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid #ced4da;max-width:320px;cursor:pointer;outline:none;"></select>' +
@@ -900,14 +909,30 @@
     }
     set('bg', hexOr(slide().bg, '#ffffff'));
     set('school', S.deck.school || ''); set('school2', S.deck.school2 || ''); set('school3', S.deck.school3 || ''); set('teacher', S.deck.teacher || '');
+    var activeG = getActiveGrade();
+    var g11TrackWrap = root ? root.querySelector('#sl-g11-track-wrap') : null;
+    if (g11TrackWrap) {
+      if (activeG === '11') {
+        g11TrackWrap.style.display = 'inline-flex';
+        var trkSel = g11TrackWrap.querySelector('.sl-top-g11-track');
+        if (trkSel) trkSel.value = S.activeG11Part || 'all';
+      } else {
+        g11TrackWrap.style.display = 'none';
+      }
+    }
+
     var dsList = root ? root.querySelectorAll('[data-prop="deck"]') : [];
     if (dsList.length) {
-      var activeG = getActiveGrade();
       var allDeckKeys = Object.keys(S.store.decks);
       var deckKeys = allDeckKeys;
       if (activeG && activeG !== 'all') {
         var filteredKeys = allDeckKeys.filter(function (k) {
-          return getDeckGrade(S.store.decks[k]) === activeG;
+          var d = S.store.decks[k];
+          if (getDeckGrade(d) !== activeG) return false;
+          if (activeG === '11' && S.activeG11Part && S.activeG11Part !== 'all') {
+            return d.part === S.activeG11Part;
+          }
+          return true;
         });
         if (filteredKeys.length > 0) {
           deckKeys = filteredKeys;
@@ -995,15 +1020,95 @@
     if (document.querySelector('.sl-menu')) { closeMenu(); return; }
     var list = window.KPSlideTemplates || [];
     var m = document.createElement('div'); m.className = 'sl-menu';
-    m.innerHTML = list.length ? list.map(function (t, i) { return '<button data-i="' + i + '">' + esc(t.name) + '</button>'; }).join('')
-                              : '<div style="padding:8px 12px;font-size:12px">មិនទាន់មានគំរូ</div>';
+    m.style.maxHeight = '420px';
+    m.style.display = 'flex';
+    m.style.flexDirection = 'column';
+
+    var curG = getActiveGrade();
+    var curP = S.activeG11Part || 'all';
+    var defaultFilter = 'all';
+    if (curG === '11') {
+      defaultFilter = curP !== 'all' ? ('11-' + curP) : '11-all';
+    } else if (curG && curG !== 'all') {
+      defaultFilter = curG;
+    }
+
+    var filterHeader = document.createElement('div');
+    filterHeader.style.padding = '6px 10px';
+    filterHeader.style.borderBottom = '1px solid #e9ecef';
+    filterHeader.style.background = '#f8f9fa';
+    filterHeader.innerHTML = '<select class="sl-tpl-filter" style="width:100%;font-size:12px;font-weight:700;padding:4px 8px;border-radius:6px;border:1px solid #ced4da;color:#002060;outline:none;cursor:pointer;">' +
+      '<option value="all">គ្រប់គំរូទាំងអស់ (' + kh(list.length) + ' គំរូ)</option>' +
+      '<option value="7">ថ្នាក់ទី ៧</option>' +
+      '<option value="8">ថ្នាក់ទី ៨</option>' +
+      '<option value="9">ថ្នាក់ទី ៩</option>' +
+      '<option value="10">ថ្នាក់ទី ១០</option>' +
+      '<option value="11-all">ថ្នាក់ទី ១១ ទាំងអស់</option>' +
+      '<option value="11-sc1">ថ្នាក់ទី ១១ · វិទ្យាសាស្ត្រភាគ១</option>' +
+      '<option value="11-sc2">ថ្នាក់ទី ១១ · វិទ្យាសាស្ត្រភាគ២</option>' +
+      '<option value="11-ss">ថ្នាក់ទី ១១ · វិទ្យាសាស្ត្រសង្គម</option>' +
+      '<option value="12">ថ្នាក់ទី ១២</option>' +
+    '</select>';
+
+    var itemsWrap = document.createElement('div');
+    itemsWrap.style.overflowY = 'auto';
+    itemsWrap.style.flex = '1';
+
+    function renderTplItems(val) {
+      var filtered = list.map(function (t, i) { return { t: t, i: i }; });
+      if (val !== 'all') {
+        if (val.indexOf('11-') === 0) {
+          var p = val.replace('11-', '');
+          filtered = filtered.filter(function (item) {
+            var g = String(item.t.grade || '');
+            if (g !== '11') return false;
+            if (p === 'all') return true;
+            return item.t.part === p;
+          });
+        } else {
+          filtered = filtered.filter(function (item) {
+            return String(item.t.grade || '') === val;
+          });
+        }
+      }
+      if (!filtered.length) {
+        itemsWrap.innerHTML = '<div style="padding:10px 14px;font-size:12px;color:#6c757d">មិនមានគំរូក្នុងផ្នែកនេះទេ</div>';
+      } else {
+        itemsWrap.innerHTML = filtered.map(function (item) {
+          return '<button data-i="' + item.i + '">' + esc(item.t.name) + '</button>';
+        }).join('');
+      }
+    }
+
+    m.appendChild(filterHeader);
+    m.appendChild(itemsWrap);
+
+    var sel = filterHeader.querySelector('select');
+    sel.value = defaultFilter;
+    renderTplItems(defaultFilter);
+
+    sel.addEventListener('change', function () {
+      renderTplItems(sel.value);
+    });
+
     var r = btn.getBoundingClientRect();
     m.style.left = r.left + 'px'; m.style.top = r.bottom + 4 + 'px';
     m.addEventListener('click', function (e) {
       var x = e.target.closest('[data-i]'); if (!x) return;
       closeMenu(); commitEdit();
-      var d = list[+x.dataset.i].build(window.KPSlides.api);
+      var t = list[+x.dataset.i];
+      var d = t.build(window.KPSlides.api);
       d.id = uid(); d.updated = Date.now();
+      if (t.grade) d.grade = t.grade;
+      if (t.chapter) d.chapter = t.chapter;
+      if (t.chapterNum != null) d.chapterNum = t.chapterNum;
+      if (t.lesson) d.lesson = t.lesson;
+      if (t.lessonNum != null) d.lessonNum = t.lessonNum;
+      if (t.sections) d.sections = t.sections;
+      if (t.track) d.track = t.track;
+      if (t.part) d.part = t.part;
+      if (t.trackName) d.trackName = t.trackName;
+      deckDefaults(d);
       addDeck(d); renderAll(); save(); status('✓ បានបង្កើត «' + d.name + '» (' + kh(d.slides.length) + ' ស្លាយ)');
     });
     document.body.appendChild(m);
@@ -1078,7 +1183,37 @@
     }
   }
 
+  function setG11Track(part) {
+    S.activeG11Part = part || 'all';
+    var activeG = getActiveGrade();
+    if (activeG === '11' && part && part !== 'all') {
+      var curPart = S.deck ? S.deck.part : '';
+      if (curPart !== part) {
+        var match = null;
+        var keys = Object.keys(S.store.decks);
+        for (var i = 0; i < keys.length; i++) {
+          var d = S.store.decks[keys[i]];
+          if (getDeckGrade(d) === '11' && d.part === part) {
+            match = d;
+            break;
+          }
+        }
+        if (match) {
+          switchDeck(match.id);
+          renderAll();
+          return;
+        }
+      }
+    }
+    syncRibbon();
+  }
   function onInput(e) {
+    if (e.target.classList.contains('sl-top-g11-track')) {
+      if (e.type === 'change') {
+        setG11Track(e.target.value);
+      }
+      return;
+    }
     if (e.target.classList.contains('sl-top-section')) {
       if (e.type === 'change') {
         var slIdx = +e.target.value;
@@ -1424,13 +1559,14 @@
     api: { T: T, shape: shp, timer: timerEl, slide: SCHOOL.page, school: SCHOOL, kh: kh, uid: uid },
     paint: paint,
     reloadTemplates: reloadTemplates,
-    filterGrade: function (g) {
+    filterGrade: function (g, part) {
       if (!S.store || !S.store.decks) return;
       if (window.history && history.replaceState && location.search) {
         try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
       }
       var gStr = (g == null || g === '' || g === 'all') ? 'all' : String(g);
       S.activeGrade = gStr;
+      if (part !== undefined) S.activeG11Part = part;
 
       if (gStr === 'all') {
         if (root) syncRibbon();
@@ -1438,7 +1574,8 @@
       }
 
       var curGrade = S.deck ? getDeckGrade(S.deck) : '';
-      if (curGrade === gStr) {
+      var curPart = S.deck ? S.deck.part : '';
+      if (curGrade === gStr && (!S.activeG11Part || S.activeG11Part === 'all' || curPart === S.activeG11Part)) {
         if (root) syncRibbon();
         return;
       }
@@ -1448,8 +1585,12 @@
       for (var i = 0; i < keys.length; i++) {
         var d = S.store.decks[keys[i]];
         if (getDeckGrade(d) === gStr) {
-          match = d;
-          break;
+          if (gStr === '11' && S.activeG11Part && S.activeG11Part !== 'all') {
+            if (d.part === S.activeG11Part) { match = d; break; }
+          } else {
+            match = d;
+            break;
+          }
         }
       }
 
@@ -1457,6 +1598,9 @@
         for (var j = 0; j < window.KPSlideTemplates.length; j++) {
           var t = window.KPSlideTemplates[j];
           if (String(t.grade) === gStr || (t.id && t.id.indexOf('g' + gStr) === 0)) {
+            if (gStr === '11' && S.activeG11Part && S.activeG11Part !== 'all') {
+              if (t.part !== S.activeG11Part) continue;
+            }
             var newD = t.build(window.KPSlides.api);
             newD.id = uid(); newD.tpl = t.id; newD.updated = newD.seededAt = Date.now();
             if (t.grade) newD.grade = t.grade;
@@ -1465,6 +1609,9 @@
             if (t.lesson) newD.lesson = t.lesson;
             if (t.lessonNum != null) newD.lessonNum = t.lessonNum;
             if (t.sections) newD.sections = t.sections;
+            if (t.track) newD.track = t.track;
+            if (t.part) newD.part = t.part;
+            if (t.trackName) newD.trackName = t.trackName;
             deckDefaults(newD);
             S.store.decks[newD.id] = newD;
             if (S.store.seeded) S.store.seeded[t.id] = t.ver;
@@ -1481,6 +1628,9 @@
       } else {
         if (root) syncRibbon();
       }
+    },
+    setG11Track: function (part) {
+      setG11Track(part);
     },
     open: function (optG) {
       var g = optG || window.currentGrade || S.activeGrade;
