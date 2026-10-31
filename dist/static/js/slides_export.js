@@ -294,7 +294,17 @@
          .replace(/\u0001/g, '\\quad{}').replace(/\*\*/g, '');
     return s;
   }
-  function cellsOf(line) { return line.trim().replace(/^\||\|$/g, '').split('|'); }
+  // same rule as the renderer: "|" inside $...$ belongs to the maths, not the table
+  function cellsOf(line) {
+    var s = line.trim().replace(/^\||\|$/g, ''), out = [], cur = '', math = false;
+    for (var i = 0; i < s.length; i++) {
+      var ch = s.charAt(i);
+      if (ch === '$' && s.charAt(i - 1) !== '\\') math = !math;
+      if (ch === '|' && !math) { out.push(cur); cur = ''; } else cur += ch;
+    }
+    out.push(cur);
+    return out;
+  }
   function textTex(text) {
     var maths = [];
     var src = String(text || '').replace(MATH_RE, function (m) { maths.push(mathOut(m)); return '\u0000' + (maths.length - 1) + '\u0000'; });

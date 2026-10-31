@@ -108,7 +108,17 @@
   }
   // markdown-style "| a | b |" tables (with a "| :--- | :---: |" row) and ``` code blocks become real blocks
   var ROW_RE = /^\s*\|.*\|\s*$/, SEP_RE = /^\s*\|(\s*:?-{3,}:?\s*\|)+\s*$/, FENCE_RE = /^\s*(\\?`){3}\s*$/;
-  function cells(line) { return line.trim().replace(/^\||\|$/g, '').split('|'); }
+  // split a table row on "|" outside $...$, so |x| inside maths stays in its cell
+  function cells(line) {
+    var s = line.trim().replace(/^\||\|$/g, ''), out = [], cur = '', math = false;
+    for (var i = 0; i < s.length; i++) {
+      var ch = s.charAt(i);
+      if (ch === '$' && s.charAt(i - 1) !== '\\') math = !math;
+      if (ch === '|' && !math) { out.push(cur); cur = ''; } else cur += ch;
+    }
+    out.push(cur);
+    return out;
+  }
   function table(rows) {
     var al = cells(rows[1]).map(function (c) { c = c.trim(); return /^:-+:$/.test(c) ? 'center' : /-:$/.test(c) ? 'right' : 'left'; });
     var tr = function (line, tag) {
@@ -225,9 +235,20 @@
     d.style.left = el.x + 'px'; d.style.top = el.y + 'px'; d.style.width = el.w + 'px'; d.style.height = el.h + 'px';
     d.style.transform = el.rot ? 'rotate(' + el.rot + 'deg)' : '';
   }
+  // scale down display formulas wider than their box (css default is 1.3em)
+  function fitMath(b) {
+    b.querySelectorAll('.katex-display').forEach(function (m) {
+      var k = m.querySelector('.katex');
+      if (!k || !m.clientWidth || m.scrollWidth <= m.clientWidth + 1) return;
+      // site css sizes .katex with !important, so the override must be important too
+      var cur = parseFloat(getComputedStyle(k).fontSize) / parseFloat(getComputedStyle(m).fontSize);
+      k.style.setProperty('font-size', Math.max(0.75, cur * m.clientWidth / m.scrollWidth - 0.01) + 'em', 'important');
+    });
+  }
   // shrink text that overflows its box (display only — el.size is kept)
   function fit(scope) {
     scope.querySelectorAll('.sl-txt').forEach(function (b) {
+      fitMath(b);
       var inner = b.firstChild, fs = parseFloat(b.style.fontSize), n = 0;
       var avail = function () { var cs = getComputedStyle(b); return b.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom); };
       var minFs = 19;
@@ -1221,7 +1242,7 @@
   }
 
   // downloads are switched on grade by grade, once that grade's decks have been reviewed
-  var DOWNLOAD_GRADES = ['7', '8'];
+  var DOWNLOAD_GRADES = ['7', '8', '9'];
   function canDownload(d) { return !!d && DOWNLOAD_GRADES.indexOf(getDeckGrade(d)) >= 0; }
   function loadScript(src) {
     return new Promise(function (ok, fail) {
@@ -1243,7 +1264,7 @@
       var x = e.target.closest('[data-v]'); if (!x) return;
       closeMenu(); commitEdit();
       if (x.dataset.v === 'pdf') { printDeck(); return; }
-      loadScript('static/js/slides_export.js?v=1').then(function () {
+      loadScript('static/js/slides_export.js?v=2').then(function () {
         return window.KPSlidesExport[x.dataset.v](S.deck, { paint: paint, W: W, H: H, status: status });
       }).catch(function (err) { alert('ទាញយកមិនបានទេ ៖ ' + err.message); });
     });
