@@ -411,6 +411,7 @@ def header(base, grades, current=""):
             <a href="{base}classroom.html"><span class="mi">{ic('users')}</span><span><span class="mt">ថ្នាក់រៀនរបស់ខ្ញុំ</span><span class="md">សិស្ស ពិន្ទុ មធ្យមភាគប្រចាំខែ ឆមាស និងឆ្នាំ</span></span></a>
             <a href="{base}studio.html"><span class="mi">{ic('layers')}</span><span><span class="mt">Exam Studio</span><span class="md">ធនាគារសំណួរ OMR កង់ចាប់ឈ្មោះ និងហ្គេមក្នុងថ្នាក់</span></span></a>
             <a href="{base}geometry-angle-bisector.html"><span class="mi">{ic('target')}</span><span><span class="mt">សំណង់ធរណីមាត្រ</span><span class="md">សង់ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ</span></span></a>
+            <a href="{base}ai-assistant.html"><span class="mi">{ic('message')}</span><span><span class="mt">AI ជំនួយគ្រូ</span><span class="md">កិច្ចតែងការ លំហាត់ MCQ និងការពន្យល់ ដោយ AI</span></span></a>
             <a href="{base}admin.html"><span class="mi">{ic('flag')}</span><span><span class="mt">Admin</span><span class="md">គ្រប់គ្រងថ្នាក់ គ្រូ ពាក្យសម្ងាត់ និងទិន្នន័យ</span></span></a>
             <a href="{base}teachers.html" class="menu-all">ឧបករណ៍គ្រូទាំងអស់</a>
           </div></li>
@@ -764,8 +765,9 @@ def build_teachers(data):
         ("student.html", "user", "សិស្សចូលប្រឡង", "សិស្សបញ្ចូលកូដថ្នាក់ និង PIN ដើម្បីប្រឡងអនឡាញ និងមើលពិន្ទុរបស់ខ្លួន ។"),
         ("studio.html", "layers", "Exam Studio", "ធនាគារសំណួរ សន្លឹកចម្លើយ OMR កំណត់ពេលប្រឡង កង់ចាប់ឈ្មោះ និងហ្គេមក្រុមសម្រាប់ថ្នាក់រៀន ។"),
         ("geometry-angle-bisector.html", "target", "សំណង់ធរណីមាត្រ", "បង្ហាញការសង់កន្លះបន្ទាត់ពុះមុំ ដោយបន្ទាត់ និងកំពាស មួយជំហានម្ដងៗ ។"),
+        ("ai-assistant.html", "message", "AI ជំនួយគ្រូ", "សរសេរកិច្ចតែងការ បង្កើតលំហាត់ សំណួរ MCQ ដោះស្រាយ និងពន្យល់មេរៀន ជាភាសាខ្មែរ ដោយ AI ។"),
     ]
-    cards = "".join(f'<a class="tool" href="{u}"><span class="tool-i">{ic(i)}</span><b>{t}</b><span>{d}</span></a>' for u, i, t, d in tools)
+    cards ="".join(f'<a class="tool" href="{u}"><span class="tool-i">{ic(i)}</span><b>{t}</b><span>{d}</span></a>' for u, i, t, d in tools)
     steps = [
         ("បង្កើតថ្នាក់", "នៅ «ថ្នាក់រៀនរបស់ខ្ញុំ» បង្កើតថ្នាក់ ហើយបិទភ្ជាប់បញ្ជីឈ្មោះសិស្ស ។ ប្រព័ន្ធផ្ដល់ PIN ឱ្យសិស្សម្នាក់ៗ ។"),
         ("បង្កើតវិញ្ញាសា", "ជ្រើសមេរៀន និងចំនួនសំណួរ ហើយបោះពុម្ព ឬចុច «ដាក់ឱ្យថ្នាក់ប្រឡង» សម្រាប់ប្រឡងអនឡាញ ។"),
@@ -781,6 +783,45 @@ def build_teachers(data):
 """
     page = head(f"សម្រាប់គ្រូ — {SITE}", "ឧបករណ៍បង្កើតវិញ្ញាសា និងគ្រប់គ្រងពិន្ទុថ្នាក់រៀន សម្រាប់គ្រូគណិតវិទ្យា", "")
     return page + header("", grades, "teach") + body + footer("", grades)
+
+
+AI_MODES = [("plan", "កិច្ចតែងការ"), ("exercises", "លំហាត់ និងចម្លើយ"), ("quiz", "សំណួរ MCQ"),
+            ("solve", "ដោះស្រាយមួយជំហានម្ដងៗ"), ("explain", "ពន្យល់មេរៀន"), ("chat", "សួរដោយសេរី")]
+
+
+def build_ai(data):
+    """AI teaching assistant; the answers come from netlify/functions/ai-assistant.mts (/api/ai)"""
+    grades = data["grades"]
+    modes = "".join(f'<label><input type="radio" name="mode" value="{v}"{" checked" if i == 0 else ""}><span>{t}</span></label>'
+                    for i, (v, t) in enumerate(AI_MODES))
+    opts = '<option value="">គ្រប់ថ្នាក់</option>' + "".join(f'<option value="{g["id"]}">{esc(g["name"])}</option>' for g in grades)
+    body = '<main id="content">' + page_hero([("index.html", "ទំព័រដើម"), ("teachers.html", "សម្រាប់គ្រូ"), (None, "AI ជំនួយគ្រូ")],
+                                            "AI ជំនួយគ្រូ", "រៀបចំកិច្ចតែងការ លំហាត់ សំណួរ និងការពន្យល់មេរៀនគណិតវិទ្យា ជាភាសាខ្មែរ ក្នុងរយៈពេលប៉ុន្មានវិនាទី ។")
+    body += f"""<section class="section section-tight"><div class="wrap">
+<form class="ai-card" id="ai-form" autocomplete="off">
+  <fieldset class="ai-modes"><legend>ខ្ញុំចង់បាន</legend>{modes}</fieldset>
+  <div class="ai-row">
+    <label>ថ្នាក់<select id="ai-grade">{opts}</select></label>
+    <label>លេខកូដគ្រូ<input type="password" id="ai-code" required placeholder="លេខកូដពី Admin"></label>
+  </div>
+  <label class="sr-only" for="ai-prompt">សំណើ</label>
+  <textarea id="ai-prompt" required maxlength="4000"></textarea>
+  <div class="ai-actions">
+    <button class="btn btn-primary" id="ai-send" type="submit">{ic('send')} ផ្ញើ</button>
+    <button class="btn btn-ghost" id="ai-stop" type="button" hidden>បញ្ឈប់</button>
+    <button class="btn btn-ghost" id="ai-new" type="button">ចាប់ផ្ដើមថ្មី</button>
+  </div>
+  <p class="ai-hint">AI អាចមានកំហុស ។ សូមពិនិត្យចម្លើយ មុនយកទៅប្រើក្នុងថ្នាក់ ។ សួរបន្តបានក្រោយចម្លើយនីមួយៗ ។</p>
+</form>
+<div class="ai-out" id="ai-out" aria-live="polite" hidden></div>
+</div></section>
+</main>
+"""
+    page = head(f"AI ជំនួយគ្រូ — {SITE}", "AI ជំនួយគ្រូគណិតវិទ្យា៖ កិច្ចតែងការ លំហាត់ សំណួរ MCQ និងការពន្យល់មេរៀន ជាភាសាខ្មែរ", "",
+                '<link rel="stylesheet" href="static/css/ai.css?v=1">\n')
+    scripts = ('<script src="static/katex/katex.min.js" defer></script>\n<script src="static/katex/contrib/auto-render.min.js" defer></script>\n'
+               '<script src="static/js/ai-assistant.js?v=1" defer></script>\n')
+    return page + header("", grades, "teach") + body + footer("", grades, scripts)
 
 
 ABOUT_IMG = "static/img/about/"
@@ -1587,6 +1628,7 @@ def main():
              write(f"{SITE}.html", build_redirect("index.html", SITE)),
              write("practice.html", build_practice(data)),
              write("teachers.html", build_teachers(data)),
+             write("ai-assistant.html", build_ai(data)),
              write("about.html", build_about(data)),
              write("books.html", build_books(data)),
              write("privacy.html", build_privacy(data)),
@@ -1612,7 +1654,7 @@ def main():
     main_pages = [("index.html", "ទំព័រដើម"), ("practice.html", "តេស្ត និងវិញ្ញាសា"), ("teachers.html", "សម្រាប់គ្រូ"),
                   ("exam-builder.html", "បង្កើតវិញ្ញាសា"), ("classroom.html", "ថ្នាក់រៀនរបស់ខ្ញុំ"), ("student.html", "សិស្សចូលប្រឡង"),
                   ("studio.html", "Exam Studio"), ("geometry-angle-bisector.html", "សំណង់ធរណីមាត្រ"),
-                  ("admin.html", "Admin"), ("books.html", "សៀវភៅ PDF"), ("about.html", "អំពីយើង"), ("privacy.html", "គោលការណ៍ឯកជនភាព")]
+                  ("ai-assistant.html", "AI ជំនួយគ្រូ"), ("admin.html", "Admin"), ("books.html", "សៀវភៅ PDF"), ("about.html", "អំពីយើង"), ("privacy.html", "គោលការណ៍ឯកជនភាព")]
     files.append(write("sitemap.html", build_sitemap_page(data, main_pages)))
     write_seo([u for u, _ in main_pages] + [f"grade-{g['id']}.html" for g in data["grades"]] +
               [lesson_url(g["id"], l["num"]) for g in data["grades"] for l in grade_lessons(data, g["id"])])

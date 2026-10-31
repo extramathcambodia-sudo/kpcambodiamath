@@ -17,7 +17,7 @@ DIST = os.path.join(BASE, "dist")
 # pages built by build_site_from_template.py / build_teacher.py / build_khmermath_portal.py
 PAGES = ["index.html", "KPCambodianmathematics.html", "practice.html", "teachers.html", "about.html", "books.html", "privacy.html",
          "sitemap.html", "404.html", "exam.html", "monthly.html", "exam-builder.html", "classroom.html", "student.html",
-         "studio.html", "geometry-angle-bisector.html"]
+         "studio.html", "geometry-angle-bisector.html", "ai-assistant.html"]
 FILES = ["math_data.js", "sitemap.xml", "robots.txt", "manifest.webmanifest", "FIREBASE_SETUP.md"]
 DIRS = ["static", "lesson", "exams9"]
 SKIP = (".json",)          # static/bank/*.json were replaced by the .js banks

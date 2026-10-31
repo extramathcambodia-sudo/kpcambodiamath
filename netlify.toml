@@ -6,6 +6,11 @@
 [build.environment]
   PYTHON_VERSION = "3.10"
 
+# AI teaching assistant (netlify/functions/ai-assistant.mts -> /api/ai)
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 [[headers]]
   for = "/static/*"
   [headers.values]
