@@ -1299,6 +1299,29 @@
             break;
           }
         }
+        if (!match && window.KPSlideTemplates) {
+          for (var j = 0; j < window.KPSlideTemplates.length; j++) {
+            var t = window.KPSlideTemplates[j];
+            if (String(t.grade) === '11' && t.part === part) {
+              var newD = t.build(window.KPSlides.api);
+              newD.id = uid(); newD.tpl = t.id; newD.updated = newD.seededAt = Date.now();
+              if (t.grade) newD.grade = t.grade;
+              if (t.chapter) newD.chapter = t.chapter;
+              if (t.chapterNum != null) newD.chapterNum = t.chapterNum;
+              if (t.lesson) newD.lesson = t.lesson;
+              if (t.lessonNum != null) newD.lessonNum = t.lessonNum;
+              if (t.sections) newD.sections = t.sections;
+              if (t.track) newD.track = t.track;
+              if (t.part) newD.part = t.part;
+              if (t.trackName) newD.trackName = t.trackName;
+              deckDefaults(newD);
+              S.store.decks[newD.id] = newD;
+              if (S.store.seeded) S.store.seeded[t.id] = t.ver;
+              match = newD;
+              break;
+            }
+          }
+        }
         if (match) {
           switchDeck(match.id);
           renderAll();
@@ -1322,6 +1345,29 @@
           if (getDeckGrade(d) === '12' && d.part === part) {
             match = d;
             break;
+          }
+        }
+        if (!match && window.KPSlideTemplates) {
+          for (var j = 0; j < window.KPSlideTemplates.length; j++) {
+            var t = window.KPSlideTemplates[j];
+            if (String(t.grade) === '12' && t.part === part) {
+              var newD = t.build(window.KPSlides.api);
+              newD.id = uid(); newD.tpl = t.id; newD.updated = newD.seededAt = Date.now();
+              if (t.grade) newD.grade = t.grade;
+              if (t.chapter) newD.chapter = t.chapter;
+              if (t.chapterNum != null) newD.chapterNum = t.chapterNum;
+              if (t.lesson) newD.lesson = t.lesson;
+              if (t.lessonNum != null) newD.lessonNum = t.lessonNum;
+              if (t.sections) newD.sections = t.sections;
+              if (t.track) newD.track = t.track;
+              if (t.part) newD.part = t.part;
+              if (t.trackName) newD.trackName = t.trackName;
+              deckDefaults(newD);
+              S.store.decks[newD.id] = newD;
+              if (S.store.seeded) S.store.seeded[t.id] = t.ver;
+              match = newD;
+              break;
+            }
           }
         }
         if (match) {
@@ -1687,9 +1733,11 @@
     // building blocks for template decks (static/js/slides_templates.js)
     api: { T: T, shape: shp, timer: timerEl, slide: SCHOOL.page, school: SCHOOL, kh: kh, uid: uid },
     paint: paint,
+    getDeck: function () { return S.deck; },
+    getStore: function () { return S.store; },
     reloadTemplates: reloadTemplates,
     filterGrade: function (g, part) {
-      if (!S.store || !S.store.decks) return;
+      if (!S.store || !S.store.decks) load();
       if (window.history && history.replaceState && location.search) {
         try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
       }
@@ -1705,7 +1753,10 @@
 
       var curGrade = S.deck ? getDeckGrade(S.deck) : '';
       var curPart = S.deck ? S.deck.part : '';
-      if (curGrade === gStr && (!S.activeG11Part || S.activeG11Part === 'all' || curPart === S.activeG11Part)) {
+      var partMatch = true;
+      if (gStr === '11' && S.activeG11Part && S.activeG11Part !== 'all') partMatch = (curPart === S.activeG11Part);
+      if (gStr === '12' && S.activeG12Part && S.activeG12Part !== 'all') partMatch = (curPart === S.activeG12Part);
+      if (curGrade === gStr && partMatch) {
         if (root) syncRibbon();
         return;
       }
@@ -1717,6 +1768,8 @@
         if (getDeckGrade(d) === gStr) {
           if (gStr === '11' && S.activeG11Part && S.activeG11Part !== 'all') {
             if (d.part === S.activeG11Part) { match = d; break; }
+          } else if (gStr === '12' && S.activeG12Part && S.activeG12Part !== 'all') {
+            if (d.part === S.activeG12Part) { match = d; break; }
           } else {
             match = d;
             break;
@@ -1730,6 +1783,9 @@
           if (String(t.grade) === gStr || (t.id && t.id.indexOf('g' + gStr) === 0)) {
             if (gStr === '11' && S.activeG11Part && S.activeG11Part !== 'all') {
               if (t.part !== S.activeG11Part) continue;
+            }
+            if (gStr === '12' && S.activeG12Part && S.activeG12Part !== 'all') {
+              if (t.part !== S.activeG12Part) continue;
             }
             var newD = t.build(window.KPSlides.api);
             newD.id = uid(); newD.tpl = t.id; newD.updated = newD.seededAt = Date.now();
@@ -1771,8 +1827,9 @@
       if (!S.built) { load(); build(); setTab('home'); }
       var g = linked ? S.activeGrade : (optG || window.currentGrade || S.activeGrade);
       if (g && g !== 'all') S.activeGrade = String(g);
+      var activeTrack = (g === '11' || g === 11) ? (window.currentG11Track || S.activeG11Part) : ((g === '12' || g === 12) ? (window.currentG12Track || S.activeG12Part) : undefined);
       if (g) {
-        window.KPSlides.filterGrade(g);
+        window.KPSlides.filterGrade(g, activeTrack);
       }
       requestAnimationFrame(function () { fitStage(); renderAll(); });
     }

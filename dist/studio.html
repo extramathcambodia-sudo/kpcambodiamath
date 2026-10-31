@@ -1149,7 +1149,7 @@
                 <span id="g12-btn-text">ថ្នាក់ទី ១២</span>
                 <svg class="w-3 h-3 transition-transform duration-200" id="g12-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
               </button>
-              <div id="g12-dropdown-menu" class="hidden absolute top-full right-0 mt-1.5 w-48 bg-white rounded-xl shadow-xl border border-slate-200/80 py-1.5 z-50 text-xs font-semibold text-slate-700 animate-fadeIn">
+              <div id="g12-dropdown-menu" class="hidden absolute top-full left-0 mt-1.5 w-48 bg-white rounded-xl shadow-xl border border-slate-200/80 py-1.5 z-50 text-xs font-semibold text-slate-700 animate-fadeIn">
                 <button onclick="selectG12Track('all', event)" class="w-full text-left px-3.5 py-2 hover:bg-slate-50 transition flex items-center justify-between text-slate-800">
                   <span>ថ្នាក់ទី ១២ ទាំងអស់</span>
                 </button>
@@ -1710,8 +1710,8 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
-  <script src="static/js/slides.js?v=58"></script>
-  <script src="static/js/slides_templates.js?v=84"></script>
+  <script src="static/js/slides.js?v=65"></script>
+  <script src="static/js/slides_templates.js?v=90"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
@@ -2173,7 +2173,7 @@
     // =========================================================
     // 1. LESSON VIEWER SYSTEM (Modeled after lesson/g7/L01.html)
     // =========================================================
-    function selectLessonGrade(grade) {
+    function selectLessonGrade(grade, track) {
       currentLessonGrade = grade;
       [7, 8, 9, 10, 11, 12].forEach(g => {
         const tab = document.getElementById('lesson-tab-' + g);
@@ -2186,9 +2186,38 @@
         }
       });
 
-      const lessons = window.MATH_DATA.lessons[String(grade)] || [];
+      let lessons = window.MATH_DATA.lessons[String(grade)] || [];
+      if (grade == 11 && track && track !== 'all') {
+        if (track === 'sc1') {
+          lessons = lessons.filter(l => l.category && (l.category.indexOf('វិទ្យាសាស្ត្រ') !== -1 || l.category.indexOf('ស្វ៊ីត') !== -1) && !l.category.includes('ភាគ២') && !l.category.includes('សង្គម'));
+        } else if (track === 'sc2') {
+          lessons = lessons.filter(l => l.category && l.category.includes('ភាគ២'));
+        } else if (track === 'ss') {
+          lessons = lessons.filter(l => l.category && (l.category.includes('សង្គម') || l.category.includes('វិទ្យាសាស្ត្រសង្គម')));
+        }
+      } else if (grade == 12 && track && track !== 'all') {
+        if (track === 'sc1') {
+          lessons = lessons.filter(l => {
+            const num = parseInt(l.num, 10);
+            const cat = l.category || '';
+            return (num >= 1 && num <= 14) || ['ចំនួនកុំផ្លិច', 'លីមីត', 'ដេរីវេ', 'អនុគមន៍'].some(k => cat.includes(k));
+          });
+        } else if (track === 'sc2') {
+          lessons = lessons.filter(l => {
+            const num = parseInt(l.num, 10);
+            const cat = l.category || '';
+            return (num >= 15 && num <= 33) || ['អាំងតេក្រាល', 'សមីការឌីផេរ៉ង់ស្យែល', 'ប្រូបាប', 'កោនិក', 'វ៉ិចទ័រ'].some(k => cat.includes(k));
+          });
+        } else if (track === 'ss') {
+          lessons = lessons.filter(l => {
+            const cat = l.category || '';
+            return !['ចំនួនកុំផ្លិច', 'សមីការឌីផេរ៉ង់ស្យែល', 'វ៉ិចទ័រ', 'ធរណីមាត្រក្នុងលំហ'].some(k => cat.includes(k));
+          });
+        }
+      }
+      const trackBadge = (grade == 11 || grade == 12) && track && track !== 'all' ? (track === 'sc1' ? ' · វិទ្យាសាស្ត្រភាគ១' : track === 'sc2' ? ' · វិទ្យាសាស្ត្រភាគ២' : ' · វិទ្យាសាស្ត្រសង្គម') : '';
       const badge = document.getElementById('lesson-count-badge');
-      if (badge) badge.textContent = `កំពុងបង្ហាញ៖ ${lessons.length} មេរៀន (ថ្នាក់ទី ${grade})`;
+      if (badge) badge.textContent = `កំពុងបង្ហាញ៖ ${lessons.length} មេរៀន (ថ្នាក់ទី ${grade}${trackBadge})`;
 
       const sidebar = document.getElementById('lessons-sidebar-container');
       if (!sidebar) return;
