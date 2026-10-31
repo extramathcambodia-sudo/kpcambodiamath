@@ -566,8 +566,11 @@
     objective: function (items, note) {
       var els = [T(30, 100, 420, 100, 'វត្ថុបំណង', { size: 48, font: 'display', color: '#003893' }),
                  T(30, 205, 780, 90, 'ក្រោយពីសិក្សាមេរៀននេះចប់សិស្សទទួល', { size: 43, font: 'display', color: '#ff8200' }),
-                 T(667, 98, 506, 71, note || 'ប្អូនៗ អាចសិក្សាបន្ថែម នៅក្នុងសៀវភៅ', { size: 30, font: 'display', color: '#ffffff', align: 'center', valign: 'middle' })];
-      items.slice(0, 2).forEach(function (it, i) { els.push(T(184, 322 + i * 78, 640, 70, it, { size: 30, font: 'display', color: '#002c5b', valign: 'middle' })); });
+                 T(667, 98, 506, 71, note || 'ប្អូនៗ អាចសិក្សាបន្ថែម នៅក្នុងសៀវភៅ', { size: !note || note.length <= 40 ? 30 : note.length <= 75 ? 22 : 17, font: 'display', color: '#ffffff', align: 'center', valign: 'middle' })];
+      // the artwork has room for two lines; longer lists go into one white panel so no objective is dropped
+      if (items.length > 2) els.push(T(100, 300, 690, 300, items.map(function (it) { return '• ' + it; }).join('\n'),
+        { size: items.length > 3 ? 22 : 25, font: 'display', color: '#002c5b', valign: 'middle', fill: '#ffffff', radius: 18 }));
+      else items.forEach(function (it, i) { els.push(T(184, 322 + i * 78, 640, 70, it, { size: 30, font: 'display', color: '#002c5b', valign: 'middle' })); });
       return SCHOOL.page(els, { kind: 'goal' });
     },
     quiz: function (q, opts, ans, sec, title) {
