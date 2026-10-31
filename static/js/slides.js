@@ -81,16 +81,47 @@
     try { return katex.renderToString(src, { displayMode: display, throwOnError: false, macros: clone(MACROS) }); }
     catch (e) { return esc(src); }
   }
-  function plain(s) {
-    return esc(s)
+  function inline(s) {
+    return s
       .replace(/^#{1,4}\s*(.+)$/gm, '<b>$1</b>')
       .replace(/^\s*\*\*\s*$/gm, '')
       .replace(/\*\*([^*]+?)\*\*/g, '<b>$1</b>')
       .replace(/__(.+?)__/g, '<u>$1</u>')
       .replace(/!!(.+?)!!/g, '<span class="sl-c-accent">$1</span>')
       .replace(/==(.+?)==/g, '<span class="sl-c-brand">$1</span>')
-      .replace(/\\q?quad\b/g, '&emsp;')
-      .replace(/\n/g, '<br>');
+      .replace(/\\q?quad\b/g, '&emsp;');
+  }
+  // markdown-style "| a | b |" tables (with a "| :--- | :---: |" row) and ``` code blocks become real blocks
+  var ROW_RE = /^\s*\|.*\|\s*$/, SEP_RE = /^\s*\|(\s*:?-{3,}:?\s*\|)+\s*$/, FENCE_RE = /^\s*(\\?`){3}\s*$/;
+  function cells(line) { return line.trim().replace(/^\||\|$/g, '').split('|'); }
+  function table(rows) {
+    var al = cells(rows[1]).map(function (c) { c = c.trim(); return /^:-+:$/.test(c) ? 'center' : /-:$/.test(c) ? 'right' : 'left'; });
+    var tr = function (line, tag) {
+      return '<tr>' + cells(line).map(function (c, i) { return '<' + tag + ' style="text-align:' + (al[i] || 'left') + '">' + inline(c.trim()) + '</' + tag + '>'; }).join('') + '</tr>';
+    };
+    return '<table class="sl-md-table"><thead>' + tr(rows[0], 'th') + '</thead><tbody>' +
+      rows.slice(2).map(function (r) { return tr(r, 'td'); }).join('') + '</tbody></table>';
+  }
+  function plain(s) {
+    var lines = esc(s).split('\n'), out = [], text = [], i = 0;
+    var flush = function () { if (text.length) out.push(inline(text.join('\n')).replace(/\n/g, '<br>')); text = []; };
+    while (i < lines.length) {
+      if (FENCE_RE.test(lines[i])) {
+        var j = i + 1;
+        while (j < lines.length && !FENCE_RE.test(lines[j])) j++;
+        if (j < lines.length) { flush(); out.push('<pre class="sl-md-pre">' + lines.slice(i + 1, j).join('\n') + '</pre>'); i = j + 1; continue; }
+      }
+      if (ROW_RE.test(lines[i]) && i + 1 < lines.length && SEP_RE.test(lines[i + 1])) {
+        var k = i + 2;
+        while (k < lines.length && ROW_RE.test(lines[k])) k++;
+        flush(); out.push(table(lines.slice(i, k))); i = k;
+        if (i < lines.length && !lines[i].trim()) i++;   // the blank line after a table is the table's own margin
+        continue;
+      }
+      text.push(lines[i]); i++;
+    }
+    flush();
+    return out.join('');
   }
   // maths is swapped for placeholders first so **bold** / !!colour!! may wrap formulas
   function fmt(text) {
@@ -538,9 +569,13 @@
       });
       return SCHOOL.page(els);
     },
-    homework: function (body) {
+    // body: text, or a list of exercises (one per line); note: optional hint shown under the list
+    homework: function (body, note) {
+      var long = Array.isArray(body) || !!note;
+      var text = Array.isArray(body) ? body.join('\n') : body;
+      if (note) text += '\n\n💡 ' + note;
       return SCHOOL.page([T(390, 200, 500, 100, 'កិច្ចការផ្ទះ', { size: 64, font: 'display', color: 'head', align: 'center', shadow: true }),
-                          SCHOOL.box(117, 290, 964, 300, body, { radius: 40, size: 36, bw: 3 }),
+                          SCHOOL.box(117, 290, 964, long ? 340 : 300, text, { radius: 40, size: long ? 24 : 36, bw: 3 }),
                           SCHOOL.kids(1110, 84, 150)]);
     },
     thanks: function () { return SCHOOL.page([], { kind: 'thanks' }); }
