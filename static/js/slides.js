@@ -246,7 +246,7 @@
     if (deco) st.insertAdjacentHTML('beforeend', deco);
     sl.els.forEach(function (el) {
       var d = buildEl(el);
-      if (el.anim) d.classList.add(mode === 'show' ? 'sl-hidden' : 'sl-anim-mark');
+      if (el.anim && mode !== 'print') d.classList.add(mode === 'show' ? 'sl-hidden' : 'sl-anim-mark');
       // anim set to a name (not just true) groups elements that appear on the same click
       if (el.anim && el.anim !== true) d.dataset.grp = el.anim;
       st.appendChild(d);
@@ -807,10 +807,10 @@
             s = s.split(':'); return '<button class="sl-tab" data-tab="' + s[0] + '">' + s[1] + '</button>';
           }).join('') +
           '<div class="sl-tabs-r">' +
-          '<label class="sl-g11-track-label" id="sl-g11-track-wrap" style="display:none;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:600;">' +
+          '<label class="sl-track-label" id="sl-track-wrap" style="display:none;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:600;">' +
           '<span style="white-space:nowrap">📚 ផ្នែក៖</span>' +
-          '<select class="sl-sel-in sl-top-g11-track" title="ជ្រើសរើសផ្នែកថ្នាក់ទី១១" style="background:#ffffff;color:#002060;font-weight:700;font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid #ced4da;cursor:pointer;outline:none;">' +
-          '<option value="all">ថ្នាក់ទី១១ ទាំងអស់</option>' +
+          '<select class="sl-sel-in sl-top-track" title="ជ្រើសរើសផ្នែក" style="background:#ffffff;color:#002060;font-weight:700;font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid #ced4da;cursor:pointer;outline:none;">' +
+          '<option value="all">ទាំងអស់</option>' +
           '<option value="sc1">វិទ្យាសាស្ត្រភាគ១</option>' +
           '<option value="sc2">វិទ្យាសាស្ត្រភាគ២</option>' +
           '<option value="ss">វិទ្យាសាស្ត្រសង្គម</option>' +
@@ -826,6 +826,7 @@
           '</label>' +
           '<button class="sl-btn-reload" data-act="reload-tpl" title="ផ្ទុកមេរៀនទាំងអស់ឡើងវិញ (Reload all lesson decks)" style="background:#495057;color:#fff;font-weight:700;font-size:12px;padding:4px 10px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;">🔄 ផ្ទុកមេរៀន</button>' +
           '<span class="sl-title" style="display:none"></span>' +
+          '<button class="sl-dl" data-act="download" title="ទាញយកមេរៀននេះជា PowerPoint, LaTeX Beamer ឬ PDF" style="display:none">⬇ ទាញយក</button>' +
           '<button class="sl-play" data-act="show-cur" title="បញ្ចាំងពីស្លាយនេះ">▶ បញ្ចាំង</button></div>' +
         '</div>' +
         '<div class="sl-ribbon"></div>' +
@@ -946,6 +947,8 @@
   }
 
   function syncRibbon() {
+    var dl = root && root.querySelector('.sl-dl');
+    if (dl) dl.style.display = canDownload(S.deck) ? '' : 'none';
     if (!ribbon) return;
     var el = selEl();
     ribbon.classList.toggle('sl-nosel', !el);
@@ -966,14 +969,15 @@
     set('bg', hexOr(slide().bg, '#ffffff'));
     set('school', S.deck.school || ''); set('school2', S.deck.school2 || ''); set('school3', S.deck.school3 || ''); set('teacher', S.deck.teacher || '');
     var activeG = getActiveGrade();
-    var g11TrackWrap = root ? root.querySelector('#sl-g11-track-wrap') : null;
-    if (g11TrackWrap) {
-      if (activeG === '11') {
-        g11TrackWrap.style.display = 'inline-flex';
-        var trkSel = g11TrackWrap.querySelector('.sl-top-g11-track');
-        if (trkSel) trkSel.value = S.activeG11Part || 'all';
+    var trackWrap = root ? (root.querySelector('#sl-track-wrap') || root.querySelector('#sl-g11-track-wrap')) : null;
+    if (trackWrap) {
+      if (activeG === '11' || activeG === '12') {
+        trackWrap.style.display = 'inline-flex';
+        var trkSel = trackWrap.querySelector('.sl-top-track, .sl-top-g11-track');
+        var curPart = (activeG === '11') ? (S.activeG11Part || 'all') : (S.activeG12Part || 'all');
+        if (trkSel) trkSel.value = curPart;
       } else {
-        g11TrackWrap.style.display = 'none';
+        trackWrap.style.display = 'none';
       }
     }
 
@@ -987,6 +991,9 @@
           if (getDeckGrade(d) !== activeG) return false;
           if (activeG === '11' && S.activeG11Part && S.activeG11Part !== 'all') {
             return d.part === S.activeG11Part;
+          }
+          if (activeG === '12' && S.activeG12Part && S.activeG12Part !== 'all') {
+            return d.part === S.activeG12Part;
           }
           return true;
         });
@@ -1072,6 +1079,36 @@
     document.body.appendChild(m);
   }
 
+  // downloads are switched on grade by grade, once that grade's decks have been reviewed
+  var DOWNLOAD_GRADES = ['7', '8'];
+  function canDownload(d) { return !!d && DOWNLOAD_GRADES.indexOf(getDeckGrade(d)) >= 0; }
+  function loadScript(src) {
+    return new Promise(function (ok, fail) {
+      if (document.querySelector('script[data-src="' + src + '"]')) return ok();
+      var s = document.createElement('script'); s.src = src; s.dataset.src = src;
+      s.onload = ok; s.onerror = function () { fail(new Error('មិនអាចផ្ទុក ' + src)); };
+      document.head.appendChild(s);
+    });
+  }
+  function downloadMenu(btn) {
+    if (document.querySelector('.sl-menu')) { closeMenu(); return; }
+    var m = document.createElement('div'); m.className = 'sl-menu';
+    m.innerHTML = '<button data-v="pptx">📊 PowerPoint (.pptx) — អក្សរកែបាន</button>' +
+      '<button data-v="beamer">📄 LaTeX Beamer (.zip) — XeLaTeX</button>' +
+      '<button data-v="pdf">🖨 PDF — ជ្រើស «Save as PDF»</button>';
+    var r = btn.getBoundingClientRect();
+    m.style.left = Math.max(8, r.right - 300) + 'px'; m.style.top = r.bottom + 4 + 'px';
+    m.addEventListener('click', function (e) {
+      var x = e.target.closest('[data-v]'); if (!x) return;
+      closeMenu(); commitEdit();
+      if (x.dataset.v === 'pdf') { printDeck(); return; }
+      loadScript('static/js/slides_export.js?v=1').then(function () {
+        return window.KPSlidesExport[x.dataset.v](S.deck, { paint: paint, W: W, H: H, status: status });
+      }).catch(function (err) { alert('ទាញយកមិនបានទេ ៖ ' + err.message); });
+    });
+    document.body.appendChild(m);
+  }
+
   function templateMenu(btn) {
     if (document.querySelector('.sl-menu')) { closeMenu(); return; }
     var list = window.KPSlideTemplates || [];
@@ -1081,10 +1118,13 @@
     m.style.flexDirection = 'column';
 
     var curG = getActiveGrade();
-    var curP = S.activeG11Part || 'all';
     var defaultFilter = 'all';
     if (curG === '11') {
+      var curP = S.activeG11Part || 'all';
       defaultFilter = curP !== 'all' ? ('11-' + curP) : '11-all';
+    } else if (curG === '12') {
+      var curP = S.activeG12Part || 'all';
+      defaultFilter = curP !== 'all' ? ('12-' + curP) : '12-all';
     } else if (curG && curG !== 'all') {
       defaultFilter = curG;
     }
@@ -1103,7 +1143,10 @@
       '<option value="11-sc1">ថ្នាក់ទី ១១ · វិទ្យាសាស្ត្រភាគ១</option>' +
       '<option value="11-sc2">ថ្នាក់ទី ១១ · វិទ្យាសាស្ត្រភាគ២</option>' +
       '<option value="11-ss">ថ្នាក់ទី ១១ · វិទ្យាសាស្ត្រសង្គម</option>' +
-      '<option value="12">ថ្នាក់ទី ១២</option>' +
+      '<option value="12-all">ថ្នាក់ទី ១២ ទាំងអស់</option>' +
+      '<option value="12-sc1">ថ្នាក់ទី ១២ · វិទ្យាសាស្ត្រភាគ១</option>' +
+      '<option value="12-sc2">ថ្នាក់ទី ១២ · វិទ្យាសាស្ត្រភាគ២</option>' +
+      '<option value="12-ss">ថ្នាក់ទី ១២ · វិទ្យាសាស្ត្រសង្គម</option>' +
     '</select>';
 
     var itemsWrap = document.createElement('div');
@@ -1113,11 +1156,12 @@
     function renderTplItems(val) {
       var filtered = list.map(function (t, i) { return { t: t, i: i }; });
       if (val !== 'all') {
-        if (val.indexOf('11-') === 0) {
-          var p = val.replace('11-', '');
+        if (val.indexOf('11-') === 0 || val.indexOf('12-') === 0) {
+          var targetGrade = val.substring(0, 2);
+          var p = val.substring(3);
           filtered = filtered.filter(function (item) {
             var g = String(item.t.grade || '');
-            if (g !== '11') return false;
+            if (g !== targetGrade) return false;
             if (p === 'all') return true;
             return item.t.part === p;
           });
@@ -1236,6 +1280,7 @@
       case 'export': exportJSON(); break;
       case 'import': root.querySelector('.sl-f-json').click(); break;
       case 'print': printDeck(); break;
+      case 'download': downloadMenu(a); break;
     }
   }
 
@@ -1263,10 +1308,38 @@
     }
     syncRibbon();
   }
+
+  function setG12Track(part) {
+    S.activeG12Part = part || 'all';
+    var activeG = getActiveGrade();
+    if (activeG === '12' && part && part !== 'all') {
+      var curPart = S.deck ? S.deck.part : '';
+      if (curPart !== part) {
+        var match = null;
+        var keys = Object.keys(S.store.decks);
+        for (var i = 0; i < keys.length; i++) {
+          var d = S.store.decks[keys[i]];
+          if (getDeckGrade(d) === '12' && d.part === part) {
+            match = d;
+            break;
+          }
+        }
+        if (match) {
+          switchDeck(match.id);
+          renderAll();
+          return;
+        }
+      }
+    }
+    syncRibbon();
+  }
+
   function onInput(e) {
-    if (e.target.classList.contains('sl-top-g11-track')) {
+    if (e.target.classList.contains('sl-top-track') || e.target.classList.contains('sl-top-g11-track')) {
       if (e.type === 'change') {
-        setG11Track(e.target.value);
+        var actG = getActiveGrade();
+        if (actG === '12') setG12Track(e.target.value);
+        else setG11Track(e.target.value);
       }
       return;
     }
@@ -1622,7 +1695,8 @@
       }
       var gStr = (g == null || g === '' || g === 'all') ? 'all' : String(g);
       S.activeGrade = gStr;
-      if (part !== undefined) S.activeG11Part = part;
+      if (gStr === '11' && part !== undefined) S.activeG11Part = part;
+      if (gStr === '12' && part !== undefined) S.activeG12Part = part;
 
       if (gStr === 'all') {
         if (root) syncRibbon();
@@ -1687,6 +1761,9 @@
     },
     setG11Track: function (part) {
       setG11Track(part);
+    },
+    setG12Track: function (part) {
+      setG12Track(part);
     },
     open: function (optG) {
       // opened from a lesson page (studio.html?deck=...): keep that deck's grade, not the studio default
