@@ -255,8 +255,10 @@
     }
     if (!Object.keys(S.store.decks).length) addDeck(sampleDeck());
     seedTemplates();
-    openLinkedDeck();
-    var initG = getActiveGrade();
+    var linked = openLinkedDeck();
+    // a deck opened from a lesson page wins over the studio's default grade (window.currentGrade = 10)
+    if (linked) S.activeGrade = getDeckGrade(S.deck) || 'all';
+    var initG = linked ? 'all' : getActiveGrade();
     if (initG && initG !== 'all') {
       var matchGKey = Object.keys(S.store.decks).find(function (k) { return getDeckGrade(S.store.decks[k]) === initG; });
       if (matchGKey) S.store.current = matchGKey;
@@ -307,12 +309,12 @@
   // studio.html?deck=<template id> (the lesson page's «ស្លាយបង្រៀន» button) opens the newest copy of that deck
   function openLinkedDeck() {
     var want = new URLSearchParams(location.search).get('deck'), best = null;
-    if (!want) return;
+    if (!want) return false;
     Object.keys(S.store.decks).forEach(function (k) {
       var d = S.store.decks[k];
       if (d.tpl === want && (!best || (d.seededAt || d.updated || 0) >= (best.seededAt || best.updated || 0))) best = d;
     });
-    if (best) { S.store.current = best.id; S.deck = best; return; }
+    if (best) { S.store.current = best.id; S.deck = best; return true; }
     (window.KPSlideTemplates || []).forEach(function (t) {
       if (t.id !== want || best) return;
       best = t.build(window.KPSlides.api);
@@ -328,6 +330,7 @@
       S.deck = best;
       try { localStorage.setItem(KEY, JSON.stringify(S.store)); } catch (e) {}
     });
+    return !!best;
   }
 
   function parseKhmerNum(s) {
@@ -1633,9 +1636,11 @@
       setG11Track(part);
     },
     open: function (optG) {
-      var g = optG || window.currentGrade || S.activeGrade;
-      if (g && g !== 'all') S.activeGrade = String(g);
+      // opened from a lesson page (studio.html?deck=...): keep that deck's grade, not the studio default
+      var linked = !S.built && new URLSearchParams(location.search).get('deck');
       if (!S.built) { load(); build(); setTab('home'); }
+      var g = linked ? S.activeGrade : (optG || window.currentGrade || S.activeGrade);
+      if (g && g !== 'all') S.activeGrade = String(g);
       if (g) {
         window.KPSlides.filterGrade(g);
       }
