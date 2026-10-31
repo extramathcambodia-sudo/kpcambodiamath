@@ -40,7 +40,8 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
   } catch {
     return text(400, "សំណើមិនត្រឹមត្រូវ ។");
   }
-  if (body.code !== env.AI_ACCESS_CODE) return text(401, "លេខកូដគ្រូមិនត្រឹមត្រូវ ។");
+  // trim: a secret piped in from a Windows shell can carry a trailing \r\n
+  if ((body.code ?? "").trim() !== env.AI_ACCESS_CODE.trim()) return text(401, "លេខកូដគ្រូមិនត្រឹមត្រូវ ។");
 
   const prompt = (body.prompt ?? "").trim();
   if (!prompt) return text(400, "សូមសរសេរសំណួរ ។");
