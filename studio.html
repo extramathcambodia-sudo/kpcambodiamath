@@ -1710,8 +1710,8 @@
 
   <!-- Geometric Construction Engine Script -->
   <script src="static/js/construct.js"></script>
-  <script src="static/js/slides.js?v=65"></script>
-  <script src="static/js/slides_templates.js?v=90"></script>
+  <script src="static/js/slides.js?v=66"></script>
+  <script src="static/js/slides_templates.js?v=95"></script>
 
   <!-- =========================================================
        APPLICATION CORE LOGIC
@@ -2188,12 +2188,24 @@
 
       let lessons = window.MATH_DATA.lessons[String(grade)] || [];
       if (grade == 11 && track && track !== 'all') {
+        const sc1Cats = [
+          'ស៊ីតនិងអនុមានរួមគណិតវិទ្យា (វិទ្យាសាស្ត្រ)',
+          'អនុគមន៍អិចស្ប៉ូណង់ស្យែលនិងអនុគមន៍លោការីត (វិទ្យាសាស្ត្រ)',
+          'អនុគមន៍ត្រីកោណមាត្រ (វិទ្យាសាស្ត្រ)',
+          'ម៉ាទ្រីស ដេទែរមីណង់ និងបម្លែងលីនេអ៊ែរ (វិទ្យាសាស្ត្រ)'
+        ];
+        const sc2Cats = [
+          'លីមីតនិងដេរីវេ (វិទ្យាសាស្ត្រ)',
+          'ចម្លាស់ បន្សំ និងប្រូបាប (វិទ្យាសាស្ត្រ)',
+          'ស្ថិតិ (វិទ្យាសាស្ត្រ)',
+          'ធរណីមាត្រក្នុងលំហ (វិទ្យាសាស្ត្រ)'
+        ];
         if (track === 'sc1') {
-          lessons = lessons.filter(l => l.category && (l.category.indexOf('វិទ្យាសាស្ត្រ') !== -1 || l.category.indexOf('ស្វ៊ីត') !== -1) && !l.category.includes('ភាគ២') && !l.category.includes('សង្គម'));
+          lessons = lessons.filter(l => sc1Cats.includes(l.category));
         } else if (track === 'sc2') {
-          lessons = lessons.filter(l => l.category && l.category.includes('ភាគ២'));
+          lessons = lessons.filter(l => sc2Cats.includes(l.category));
         } else if (track === 'ss') {
-          lessons = lessons.filter(l => l.category && (l.category.includes('សង្គម') || l.category.includes('វិទ្យាសាស្ត្រសង្គម')));
+          lessons = lessons.filter(l => l.category && l.category.includes('វិទ្យាសាស្ត្រសង្គម'));
         }
       } else if (grade == 12 && track && track !== 'all') {
         if (track === 'sc1') {
